@@ -78,8 +78,7 @@
                 <!-- hr -->
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <!-- <hr class="hr_style_v3_01 mtb10pxi"> -->
-                    <hr class="hr_style_v3_02">
+                    <hr class="hr_style_v3_01 mtb10pxi">
                   </div>
                 </div>
                 <!-- /hr -->
@@ -90,11 +89,10 @@
 
                     <div class="col-md-2 col-sm-2 col-xs-2 circular-player-container">
                       <ngx-circular-player 
-                        id="aud5" 
+                        id="aud4" 
                         strokeColor="#FFFFFF"
                         source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/p_index.mp3"
-                        progressStrokeColor=rgba(229,141,130,1)
-                        class="">
+                        progressStrokeColor=rgba(229,141,130,1)>
                       </ngx-circular-player>
                     </div>
                     
@@ -587,7 +585,7 @@
                           </div>
 
                           <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="col-md-6 col-sm-6 col-xs-6 p0 center_flex">
                                 <div class="col-md-3 col-sm-3 col-xs-3 p0 circular-player-container">
                                   <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_play.svg" class="w100"> -->
@@ -627,25 +625,26 @@
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
                             <ng-container *ngFor="let item of currentList">
-                              <div class="col-md-3 col-sm-3 col-xs-4">
-                                <a *ngIf="item.day =='0';else notIntro" (click)="RouteToWisdomExercise(item)">
-                                  <button type="button" [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
-                                    Intro
-                                  </button>
-                                </a>
-
-                                <ng-template #notIntro>
-                                  <a (click)="RouteToWisdomExercise(item)">
-                                    <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
-                                    Day  {{item.day}}
-                                    </button>
-                                  </a>
-                                </ng-template>
-                              </div>  
+                            <div class="col-md-3 col-sm-3 col-xs-4" (click)="RouteToWisdomExercise(item)">
+                              <a  *ngIf="item.day =='0';else notIntro">
+                                <button type="button"  [ngClass]="getWisdomClass(item)"  class="btn m0px btn_wec">
+                                  Intro
+                                </button>
+                              </a>
+                            </div>
+                            <ng-template #notIntro>
+                            <div class="col-md-3 col-sm-3 col-xs-4" (click)="RouteToWisdomExercise(item)">
+                              <a>
+                                <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec">
+                                Day  {{item.day}}
+                                </button>
+                              </a>
+                            </div>
+                            </ng-template>   
                             </ng-container>
+
                           </div>
                         </div>
-                        
 
                       </div>
                     </div>
