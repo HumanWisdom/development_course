@@ -958,9 +958,15 @@
         padding-top: 2%;
     }
 
-    .oli_tray 
+    /* .oli_tray 
     {
-        /* bottom: 8% !important; */
+        bottom: 8% !important;
+    } */
+
+    .lab-modal-body
+    {
+        top: 0;
+        overflow: auto;
     }
 
     .col_cw
