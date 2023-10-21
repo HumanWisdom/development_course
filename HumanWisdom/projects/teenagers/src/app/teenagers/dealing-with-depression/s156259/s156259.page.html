@@ -1,0 +1,12 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      The ‘I’ is a creation of our thinking process and the entity that feels depressed. If our mind can be completely silent, with not a single thought, there is no ‘I’ left to feel depressed. You can access this silence through breathing exercises, through mediation and by looking without language. Explore it for yourself and find out if it is true.
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
