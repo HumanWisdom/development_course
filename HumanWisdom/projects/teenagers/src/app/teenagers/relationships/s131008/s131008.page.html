@@ -12,17 +12,16 @@
           <div class="x_content p0">
 
             <form>
-              
-              <h6 class="txt4">
-               {{q1}}
-              </h6>
+             
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
                     <div class="">                                            
+                       
+                      <app-progress-slider [q]="q1" r="1" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
                       
-                      <app-only-slider  pFilter="Extremely important" nFilter="Not that important"  (sendRating)="receiveRating($event)"></app-only-slider>
+                      <!-- <app-only-slider  pFilter="Extremely important" nFilter="Not that important"  (sendRating)="receiveRating($event)"></app-only-slider> -->
 
                     </div>                    
                   </a>
