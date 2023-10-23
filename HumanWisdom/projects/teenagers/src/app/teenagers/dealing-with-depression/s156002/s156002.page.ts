@@ -35,7 +35,7 @@ export class S156002Page implements OnInit {
     private service:TeenagersService,
     private location:Location
   ) { 
-    this.service.setmoduleID(92);
+    //this.service.setmoduleID(92);
   }
 
   ngOnInit() 
