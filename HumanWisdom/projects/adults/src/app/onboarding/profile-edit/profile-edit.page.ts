@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { AdultsService } from 'src/app/adults/adults.service';
 
 @Component({
   selector: 'app-profile-edit',
@@ -18,18 +19,32 @@ export class ProfileEditPage implements OnInit {
   imageupload;
   content = '';
   enableAlert = false;
+  countryCode: any = '';
+  countryList:any = [];
+  isdcode:any = '';
+  country:any = '';
+  phoneno:any = '';
+  age:any = '';
+  profession:any = '';
+  title:any = '';
 
-  constructor(private onboardingService: OnboardingService, private router: Router) {
+  constructor(private onboardingService: OnboardingService, private router: Router, private Service: AdultsService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
 
   ngOnInit() {
+    this.getCountry();
     setTimeout(() => {
       this.onboardingService.getuser(this.userId).subscribe((res) => {
         this.userdetail = res[0];
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
         this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.email = this.userdetail['Email']
+        this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0'  ? '' : this.userdetail['Age']
+        this.country = this.userdetail['Country']
+        this.isdcode = this.userdetail['ISD_Code'] ? '+' + this.userdetail['ISD_Code'] : ''
+        this.profession = this.userdetail['Profession']
+        this.phoneno = this.userdetail['PhoneNo']
         let userres = JSON.parse(localStorage.getItem("loginResponse"));
         let nameupdate = localStorage.getItem(
           "nameupdate"
@@ -84,7 +99,13 @@ export class ProfileEditPage implements OnInit {
       "RoleID": this.userdetail['RoleId'],
       "FName": name[0],
       "LName": name[1] === undefined ? '' : name[1],
-      "Email": this.email
+      "Email": this.email,
+      "ISD_Code": this.isdcode,
+      "Country": this.country,
+      "PhoneNo": this.phoneno,
+      "Age": this.age,
+      "Profession": this.profession,
+      "Title": this.title
     }
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
@@ -102,5 +123,30 @@ export class ProfileEditPage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+  }
+
+  getCountry() {
+    this.Service.GetCountry().subscribe((res: any) => {
+      this.countryList = res;
+      if (res['in_eu']) {
+        this.countryCode = 'EUR'
+      } else {
+        this.countryCode = res['country_code_iso3']
+      }
+    },
+
+      error => {
+        console.log(error)
+      },
+      () => {
+      });
+
+  }
+
+  dataChanged(event) {
+    let fil = this.countryList.filter((d) => d['Country'] === event);
+    if(fil.length > 0) {
+       this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
+    }
   }
 }

@@ -29,7 +29,6 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -48,10 +47,10 @@
               </div>
 
               <div class="div_inputs mt30px">
-                <div class="row">                    
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-md-3 col-sm-3 col-xs-3 p0">
-                      <select class="sp_fc">
+                      <select class="sp_fc" [(ngModel)]="title">
                         <option>Title</option>
                         <option>Ms</option>
                         <option>Mr.</option>
@@ -64,8 +63,8 @@
                     </div>
                   </div>
                 </div>
-                
-                <div class="row">                    
+
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                     <input type="text" id="name" class="sp_fc active" placeholder="Hellen.boothman@gmail.com" [(ngModel)]="email">
                   </div>
@@ -74,27 +73,30 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-md-2 col-sm-2 col-xs-3 pl0px">
-                      <input type="text" name="name" class="sp_fc" placeholder="+91">
+                      <input type="text" name="name" class="sp_fc" placeholder="+91" [(ngModel)]="isdcode">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-9 p0">
-                      <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX">
+                      <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
                     </div>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text" name="name" class="sp_fc" placeholder="Country">
+                    <input type="search" name="name" list="countryList" class="sp_fc inputSearchField" (ngModelChange)="dataChanged($event)" placeholder="Country" [(ngModel)]="country">
+                    <datalist id="countryList">
+                      <option value="{{data['Country']}}" *ngFor="let data of countryList">
+                    </datalist>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-md-4 col-sm-4 col-xs-4 pl0px">
-                      <input type="text" name="name" class="sp_fc" placeholder="Age">
+                      <input type="text" name="name" class="sp_fc" placeholder="Age" [(ngModel)]="age">
                     </div>
                     <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                      <input type="text" name="name" class="sp_fc" placeholder="Profession">
+                      <input type="text" name="name" class="sp_fc" placeholder="Profession" [(ngModel)]="profession">
                     </div>
                   </div>
                 </div>
@@ -110,7 +112,6 @@
 
               <div class="pagebreak"></div>
 
-            </form>
           </div>
         </div>
       </div>
