@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro-happierme',
@@ -8,7 +9,7 @@ import { Location } from "@angular/common";
 })
 export class IntroHappiermePage implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,15 @@ export class IntroHappiermePage implements OnInit {
   }
 
   getclcickevent($event){
-
+            
   }
-
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url, 'T', title])
+    }else{
+     let concat = encodeURIComponent(url.replaceAll('/','~'));
+     this.router.navigate(['adults/audiopage/', concat, '1', 'T', title])
+    }
+ }
 }
+

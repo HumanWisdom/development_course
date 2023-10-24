@@ -162,7 +162,7 @@ export class S75002Page implements OnInit, AfterViewInit {
       className += "editable ";
     }
     if (this.vistedScreens.some((x) => x.ScreenNo == day)) {
-      className += "inactive ";
+      className += "uneditable";
     }
     if (this.nextDay == +dayclass) {
       className = "nextDayButton ";
