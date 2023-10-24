@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import "bcswipe";
 import { AdultsService } from "../../adults.service";
 import "hammerjs";
+import { SharedService } from "../../../../../../shared/services/shared.service";
 declare var $: any;
 var moveleft = false;
 @Component({
@@ -142,32 +143,7 @@ export class S75002Page implements OnInit, AfterViewInit {
   //   }
   // }
   getClass(day) {
-    var dayclass = "";
-    var className = "";
-    if (day === "75002p0") {
-      dayclass = "0";
-    } else if (day === "75002p1") {
-      dayclass = "1";
-    } else if (day === "75002p2") {
-      dayclass = "2";
-    } else if (day === "75002p3") {
-      dayclass = "3";
-    } else if (day === "75002p4") {
-      dayclass = "4";
-    } else if (day === "75002p5") {
-      dayclass = "5";
-    }
-
-    if (this.currentDay.toString() == dayclass) {
-      className += "editable ";
-    }
-    if (this.vistedScreens.some((x) => x.ScreenNo == day)) {
-      className += "uneditable";
-    }
-    if (this.nextDay == +dayclass) {
-      className = "nextDayButton ";
-    }
-    return className;
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
 
   getdayevent(event) {
