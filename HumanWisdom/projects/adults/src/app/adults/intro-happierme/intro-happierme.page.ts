@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from "@angular/common";
 import { Router } from '@angular/router';
 
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class IntroHappiermePage implements OnInit {
 
   constructor(private location: Location,private router: Router) { }
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
 
   ngOnInit() {
   }
@@ -19,9 +21,15 @@ export class IntroHappiermePage implements OnInit {
     this.location.back();
   }
 
-  getclcickevent($event){
-            
+  
+  getclcickevent(event) 
+  {
+    if (event === 'enablepopup') 
+    {
+      this.enablepopup.nativeElement.click();
+    }
   }
+  
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
      this.router.navigate([url, 'T', title])
@@ -30,5 +38,6 @@ export class IntroHappiermePage implements OnInit {
      this.router.navigate(['adults/audiopage/', concat, '1', 'T', title])
     }
  }
+
 }
 

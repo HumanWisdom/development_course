@@ -28529,7 +28529,8 @@ video::-webkit-media-controls-panel
 #aud4 
 {
   position: absolute;
-  left: 35%;
+  /* left: 35%; */
+  left: 50%;
 }
 
 #aud4 svg
@@ -28579,6 +28580,66 @@ video::-webkit-media-controls-panel
 }
 
 #aud4 .pause .after
+{
+  width: 4px !important;
+  height: 15.2857px !important;
+  left: calc(45% + 5px) !important;
+}
+
+/* aud5 */
+#aud5 
+{
+  position: absolute;
+  left: 35%;
+}
+
+#aud5 svg
+{
+  width: 40px !important;
+}
+
+#aud5 .play,
+#aud5 .pause
+{
+  background: #E58D82 !important;
+  width: 33px !important;
+  height: 33px !important;
+  left: 50% !important;
+}
+
+#aud5 .pause .before,
+#aud5 .pause .after
+{
+  background-color: #FFFFFF !important;
+}
+
+#aud5 .arrow
+{
+  left: 45%;
+  margin: 0 !important;
+  /* transform: rotate(150deg) skewX(-30deg) scale(1,.866) translate(50%,0%); */
+  transform: rotate(30deg) skewX(-30deg) scale(1,.866) translate(0%,10%);
+}
+
+#aud5 .arrow,
+#aud5 .arrow:before,
+#aud5 .arrow:after
+{
+  width: 0.7em!important;
+  height: 0.7em!important;
+  border-top-right-radius: 30%;
+  background: #FFFFFF !important;
+}
+
+#aud5 .pause .before
+{
+  width: 4px !important;
+  height: 15.2857px !important;
+  /* left: calc(50% - 10px); */
+  left: 36% !important;
+}
+
+#aud5 .pause .after
 {
   width: 4px !important;
   height: 15.2857px !important;
@@ -30512,6 +30573,12 @@ svg path
   border: 0;
 }
 
+.btn_wec.active
+{
+  background: #FFFFFF;
+  color: #E58D82;
+}
+
 .btn_wec.inactive
 {
   /* background: #EBEBEB;
@@ -30545,6 +30612,7 @@ svg path
   border: 0; */
 
   background: rgba(255, 255, 255, 0.25);
+  /* background: rgba(41, 45, 86, 1); */
   color: rgba(255, 255, 255, 0.50);
 }
 
@@ -33985,6 +34053,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   margin-right: 10px;
   padding: 0;
+  width: unset;
 }
 
 .rdm 
@@ -35167,5 +35236,16 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .toc_adiv_img a:last-child>.row
 {
   margin-bottom: 0;
+}
+
+.btn_wec_ext_01
+{
+  width: 89px;
+  height: 89px;
+}
+
+.odiv.ae_days::-webkit-scrollbar-track
+{
+  margin: 0 20px 0 20px;
 }
 /* /version - 03 */
