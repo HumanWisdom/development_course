@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 declare var $: any;
 @Component({
   selector: 'HumanWisdom-s75006',
@@ -266,37 +267,7 @@ export class S75006Page implements OnInit {
 
 
   getClass(day) {
-    var dayclass = '';
-    var className = '';
-    if (day === '75006p0') {
-      dayclass = "0";
-    }
-    else if (day === '75006p1') {
-      dayclass = '1';
-    }
-    else if (day === '75006p2') {
-      dayclass = '2';
-    }
-    else if (day === '75006p3') {
-      dayclass = '3';
-    }
-    else if (day === '75006p4') {
-      dayclass = '4';
-    }
-    else if (day === '75006p5') {
-      dayclass = '5';
-    }
-
-    if (this.currentDay.toString() == dayclass) {
-      className += 'editable ';
-    }
-    if (this.vistedScreens.some(x => x.ScreenNo == day)) {
-      className += 'inactive ';
-    }
-    if (this.nextDay == +(dayclass)) {
-      className = 'nextDayButton ';
-    }
-    return className;
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
     this.nextDay = null;
