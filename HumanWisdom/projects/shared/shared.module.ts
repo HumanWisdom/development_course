@@ -279,7 +279,7 @@ import { LoginRegisterModalComponent } from './component/login-register-modal/lo
     VideoContentCrossComponent,
     ModalComponent,
     AdultsAudioMeditationComponent,
-    LoginRegisterModalComponent
+    LoginRegisterModalComponent,
   ]
 })
 export class SharedModule { }
