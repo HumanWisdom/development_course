@@ -1453,7 +1453,6 @@
           Day 5
         </button>
       </a>
-<app-day-exercise [currentDay]="currentDay" [nextDay]="nextDay" [vistedScreens]="vistedScreens" (GetDayEvent)="getdayevent($event)" ></app-day-exercise>
 
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75007p6')" (click)="getdayevent('6')">
@@ -1469,7 +1468,6 @@
   </div>
 </div>
 <!-- footer  -->
-<!-- <app-day-exercise [currentDay]="currentDay" [nextDay]="nextDay" [vistedScreens]="vistedScreens" (GetDayEvent)="getdayevent($event)" ></app-day-exercise> -->
 
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Please subscribe to access your online Journal'">
