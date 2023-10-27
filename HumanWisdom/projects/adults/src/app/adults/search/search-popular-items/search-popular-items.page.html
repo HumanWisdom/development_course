@@ -231,9 +231,9 @@
                         </h4>
                       </div>
                     </div>
-
-                    <app-podcast-toc [isdefaultShow]="true"  [podcastList]="this.searchData.PodCastRes" ></app-podcast-toc>
-
+                    <ng-container *ngIf="searchData.PodCastRes.length>0">
+                        <app-podcast-toc [isdefaultShow]="true"  [podcastList]="searchData.PodCastRes" ></app-podcast-toc>
+                    </ng-container>
                     <div class="row" *ngIf="searchData.PodCastRes.length==0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <span>No Record Found</span>
