@@ -600,10 +600,11 @@
     src="https://static.mailerlite.com/js/w/webforms.min.js?v7316d10e2931a97c7b0f5c7e7e7be3ea"></script>
 
   <script>
-  $(document).on('click', '.ihamburger', function () 
-  {
-    $('body').addClass("overflow_hidden");
-  });
+   $(document).on('click', '.ihamburger', function () 
+   {
+    $('body').removeClass("overflow_auto");
+     $('body').addClass("overflow_hidden");
+   });
 
   $(document).on('click', '.iclose', function () 
   {
@@ -641,6 +642,12 @@
   $(document).on('click', '.back_hs', function () 
   {
     $('.menu_parent').removeClass("overflow_hiddeni");
+  });
+
+  $(document).on('click', 'ul.dh_ul li a', function () 
+  {
+    $('body').removeClass("overflow_hidden");
+    $('body').addClass("overflow_auto");
   });
   </script>
 
