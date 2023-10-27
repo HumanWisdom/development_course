@@ -543,6 +543,12 @@
         }
     })
 
+    window.addEventListener('manage_subscr', function () {
+      if (window.webkit) {
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
+        }
+    })
+
 
     // $(document).on('click', '#rm_01', function(){
     //   $('#rm_txt_01').slideToggle();

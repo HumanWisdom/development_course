@@ -1,0 +1,13 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Check your learning. Which of these #10 strategies feel relevant to you?
+      Which ones are you going to work on? Only you can explore and change your thinking, and this can aid your recovery, and make it last
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

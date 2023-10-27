@@ -24,7 +24,6 @@
                 "input": "projects/adults/src/assets",
                 "output": "assets"
               },
-
               "projects/adults/src/web.config",
               "projects/adults/src/serviceworker.js",
               {
@@ -168,7 +167,7 @@
                 "styles": {
                   "minify": true,
                   "inlineCritical": false
-                  },
+                },
                 "fonts": true
               },
               "outputHashing": "all",
@@ -201,9 +200,7 @@
             "production": {
               "browserTarget": "adults:build:production"
             },
-            
-            "ci": {
-            }
+            "ci": {}
           }
         },
         "extract-i18n": {
@@ -488,6 +485,22 @@
             ],
             "scripts": []
           }
+        }
+      }
+    },
+    "shared": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/shared",
+      "sourceRoot": "projects/shared/",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser"
         }
       }
     }
