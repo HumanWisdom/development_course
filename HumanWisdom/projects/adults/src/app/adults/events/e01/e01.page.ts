@@ -18,6 +18,8 @@ export class E01Page implements OnInit {
   eventID = 0;
   enableRegister = false;
   emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
+  content = '';
+  enableAlert = false;
 
   constructor(private service: AdultsService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -63,11 +65,17 @@ export class E01Page implements OnInit {
       "EmailID": this.email
     }
     this.service.registerevent(obj).subscribe((res) => {
-      alert(res);
+      // alert(res);
+      this.content = res;
+      this.enableAlert = true;
       this.name = '';
       this.email = '';
     },
-      error => alert(error),
+      (error) => {
+        this.content = error;
+        this.enableAlert = true;
+        // alert(error)
+      },
       () => {
       }
     )
@@ -99,6 +107,11 @@ export class E01Page implements OnInit {
     } else {
       return true;
     }
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 
 }
