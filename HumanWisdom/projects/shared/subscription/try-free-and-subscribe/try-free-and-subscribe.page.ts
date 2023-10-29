@@ -23,12 +23,19 @@ export class TryFreeAndSubscribePage implements OnInit {
   paymentIntentModel: paymentIntentModel;
   pricingModel: any;
   userId: number;
+  trialStatus : string = 'No Trial';
+  isFromCancelled: boolean = false;
+  cartList = [];
   constructor(private router: Router, private onboardingService: OnboardingService,
     private location: Location) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     this.Redeem = Constant.Redeem;
-    this.selectedSubscription = this.Annual;
+    this.onboardingService.checkTrial().subscribe(res=>{
+      if(res){
+        this.trialStatus = this.trialStatus;
+      }
+    })
   }
 
   ngOnInit() {
@@ -37,6 +44,8 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   InitializeDefaultValues() {
+    let canclled = SharedService.getDataFromLocalStorage(Constant.isFromCancelled);
+    this.isFromCancelled =  (canclled == null || canclled == undefined || canclled =='null' || canclled =='') ? false : (canclled==Constant.ShortTrue) ? true:false;
     var sub = SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan);
     if (sub == Constant.AnnualPlan ||
       sub == Constant.MonthlyPlan) {
@@ -90,6 +99,14 @@ export class TryFreeAndSubscribePage implements OnInit {
     }
   }
 
+
+  dashboard(){
+    this.router.navigateByUrl('/adults/adult-dashboard');
+  }
+
+  checkout(){
+    this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.cartList[0]['Plan'] } })
+  }
   getCountry() {
     this.onboardingService.getCountry().subscribe((res: any) => {
       if (res[Constant.In_eu]) {
@@ -106,6 +123,31 @@ export class TryFreeAndSubscribePage implements OnInit {
       () => {
       });
   }
+
+  // personalisedaddcart() {
+  //   let m = JSON.parse(localStorage.getItem('cartlist'));
+  //   let ym = localStorage.getItem('personalised subscription');
+  //   if (m != null && ym != null) {
+  //     this.service.addItem({
+  //       "UserId": this.userId,
+  //       "RateId": m['RateID'],
+  //       "Qty": 1,
+  //       "PlanId": ym === 'Monthly' ? 1 : 2,
+  //       "MySelf": 1,
+  //       "LearnerEmail": '',
+  //       "LearnerMsg": '',
+  //     })
+  //       .subscribe(res => {
+  //         this.viewCart()
+  //       },
+  //         error => {
+  //           console.log(error)
+  //         },
+  //         () => {
+  //           this.totalPrice()
+  //         })
+  //   }
+  // }
 
   getPricing() {
     this.onboardingService.getPricing(this.countryCode).subscribe(res => {
