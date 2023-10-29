@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchDataModel } from '../../../../../../shared/models/search-data-model';
 import { AdultsService } from '../../adults.service';
 import { ForumService } from '../../../../../../shared/forum/forum.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -218,4 +219,11 @@ export class SearchPopularItemsPage implements OnInit {
     this.router.navigate([res['ModuleUrl']]);
   }
 
+  timeSince(date){
+    return moment.utc(date).fromNow();
+  }
+
+  stripTags(story){
+    // 
+  }
 }
