@@ -249,6 +249,16 @@ export class HamburgerComponent implements OnInit {
     }
   }
 
+  routeManageSubscriptiont(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(this.ios){
+      const manage_subscr = new CustomEvent("manage_subscr");
+      window.dispatchEvent(manage_subscr);
+    }else{
+      this.router.navigate([route], { replaceUrl: true, skipLocationChange: true });
+    }
+  }
+
   navigate(url) {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
@@ -282,5 +292,11 @@ export class HamburgerComponent implements OnInit {
         }
       }
     }
+  }
+  GetSubscriptionText(){
+    if(this.ios){
+      return "Manage Subscriptions"
+    }
+    return "My Subscriptions"
   }
 }
