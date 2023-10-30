@@ -18,7 +18,7 @@ export class S114048Page implements OnInit
   moduleLink="/self-interest"
   moduleName=" Self Interest"
   sectionName= "How the Mind Works";
-  moduleId=155
+  moduleId=115
   moduleList: any = [
     {
       name: 'Stress',
