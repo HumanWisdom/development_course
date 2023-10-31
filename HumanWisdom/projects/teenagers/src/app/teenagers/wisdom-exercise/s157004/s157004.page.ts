@@ -333,7 +333,7 @@ export class S157004Page implements OnInit {
           "SessionID": 0,
         })
         if(this.currentDay>this.totaldays){
-          this.router.navigate(['teenagerss/wisdom-exercise/s157005']);
+          this.router.navigate(['/wisdom-exercise/s157005']);
         }else{
           this.getdayevent(this.currentDay.toString());
         }

@@ -320,7 +320,7 @@ export class S157009Page implements OnInit {
           "SessionID": 0,
         })
         if(this.currentDay>this.totaldays){
-          this.router.navigate(['teenagerss/wisdom-exercise/s157010']);
+          this.router.navigate(['/wisdom-exercise/s157010']);
         }else{
           this.getdayevent(this.currentDay.toString());
         }
@@ -400,7 +400,7 @@ export class S157009Page implements OnInit {
       else if (this.slideStart == 1) {
         this.currentDay = this.currentDay - 1;
         if(this.currentDay<0){
-          this.router.navigate(['teenagerss/wisdom-exercise/s157008']);
+          this.router.navigate(['teenagers/wisdom-exercise/s157008']);
         }else{
           this.getdayevent(this.currentDay.toString());
         }
