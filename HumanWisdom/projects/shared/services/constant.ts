@@ -34,4 +34,6 @@ export class Constant {
     public static TestimonialId = 'TestimonialId';
     public static EmptyString ='';
     public static userId = 'userId';
+    public static isFromCancelled='isFromCancelled';
+    public static Checkout = "Checkout";
 }

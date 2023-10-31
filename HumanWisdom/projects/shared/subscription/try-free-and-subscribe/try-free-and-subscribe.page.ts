@@ -33,7 +33,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     this.Redeem = Constant.Redeem;
     this.onboardingService.checkTrial().subscribe(res=>{
       if(res){
-        this.trialStatus = this.trialStatus;
+        this.trialStatus = res;
       }
     })
   }
@@ -105,7 +105,11 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   checkout(){
-    this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.cartList[0]['Plan'] } })
+    SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
+    var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
+    localStorage.setItem('totalAmount',amt);
+    SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+    this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
   }
   getCountry() {
     this.onboardingService.getCountry().subscribe((res: any) => {
@@ -123,31 +127,6 @@ export class TryFreeAndSubscribePage implements OnInit {
       () => {
       });
   }
-
-  // personalisedaddcart() {
-  //   let m = JSON.parse(localStorage.getItem('cartlist'));
-  //   let ym = localStorage.getItem('personalised subscription');
-  //   if (m != null && ym != null) {
-  //     this.service.addItem({
-  //       "UserId": this.userId,
-  //       "RateId": m['RateID'],
-  //       "Qty": 1,
-  //       "PlanId": ym === 'Monthly' ? 1 : 2,
-  //       "MySelf": 1,
-  //       "LearnerEmail": '',
-  //       "LearnerMsg": '',
-  //     })
-  //       .subscribe(res => {
-  //         this.viewCart()
-  //       },
-  //         error => {
-  //           console.log(error)
-  //         },
-  //         () => {
-  //           this.totalPrice()
-  //         })
-  //   }
-  // }
 
   getPricing() {
     this.onboardingService.getPricing(this.countryCode).subscribe(res => {

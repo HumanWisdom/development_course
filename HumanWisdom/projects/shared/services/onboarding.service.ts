@@ -187,6 +187,9 @@ export class OnboardingService {
   getCancelReason(): Observable<any> {
     return this.http.get(this.path + '/cancelReasons/');
   }
-
+   
+  checkTrial(): Observable<any>{
+    return this.http.get(this.path + '/CheckIsTrial/');
+  }
 
 }
