@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            With children, we need to be especially careful with our criticism. If we are not aware, we can use our authority as parents to be continually critical of what they are doing and do so harshly, because they are just acting differently to the way we would. Too much criticism can be hurtful, damage their self-esteem, make them rebellious, and as they get older, strain our relationships with them. As parents it is of course normal to look after them and correct them, but how we do it is so important, and we need all our understanding and intelligence to do it well
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+            

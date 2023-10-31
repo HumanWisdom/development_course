@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If we feel there is no escape from our inner emotional pain or stress we can get depressed.
+          <br>We may also get anxious that the stressful situation may repeat itself, for example we may get another complaint against us at work, and live with a chronic anxiety of that. This can be prevented by realising our automatic reaction can be changed by using our intelligence to understand where that react comes from and exploring all the ideas in this program.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

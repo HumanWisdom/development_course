@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          In any situation we have the option of looking with generosity, or with a critical lens. Our mind usually picks the critical view - and we are either critical of ourselves or others. This causes a disturbance in our own thinking and peace vanishes. Compassion means realizing that we are just human and not perfect. Nobody is. People usually do the best they can given their conditioning and their circumstances. Compassion means seeking out the good in others and giving people the benefit of the doubt. Compassion comes from seeing that deep down we human beings are the same, and our minds function in similar ways. Compassion makes forgiveness easier, as we have explored before, and it is a gift we give ourselves.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

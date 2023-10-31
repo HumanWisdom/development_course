@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How does the fear of death shape our lives? We want to continue forever, and since we know we cannot, we talk of legacies and how we will be remembered. Does it matter as much as we think it does? Is it another form of vanity? How many people who died a hundred years ago do you still remember?
+         <br> Every culture in the world has its own belief about what happens after we die and these beliefs are based on fear, and can bring comfort. These beliefs sometimes make us live virtuous lives because we want to have a good afterlife, whatever that may be. But the same beliefs can also divide human beings from each other and can cause conflict. The fear they try to cover over still lingers under the surface because it has not been properly addressed.
+          
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

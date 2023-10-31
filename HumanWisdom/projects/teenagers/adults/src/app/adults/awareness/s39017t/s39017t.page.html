@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Here is another exercise. When you are next in a conversation with friends, notice what is happening in all the different layers of your thinking.             
+          </p>
+          <p>
+            In layer one is the other person speaking. In layer 2 is your reaction to what is being said. In layer 3 may be the urge to speak, or a feeling of boredom if the conversation is not interesting, or you judging the other person based on your own conditioning.
+          </p>
+          <p>
+            In layer 4 is the 'I' recording the conversation, and your self-interest looking for what's in this for you.  Do it with passion and see what happens. Remember nothing is right or wrong in your thinking - just a fact that needs to be explored and understood.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

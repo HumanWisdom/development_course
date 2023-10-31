@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          It is so important to rebuild that connection, for our own benefit. Begin today. Just go up to a tree alone. Stay with it for a while. It helps provide the oxygen that you breathe. Have some reverence for it. Notice the detail of the bark, and its branches and leaves. Keep looking. The more you notice, the quieter your mind becomes, until you share a silence with that tree. In this silence you feel a deep sense of kinship with the tree and all of nature. In that silence you also discover your own sense of peace.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

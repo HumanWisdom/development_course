@@ -1,0 +1,14 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext [bg]="bg">
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      Continue to observe the many ways that conditioning operates in your life. It is not wrong, but understanding it allows you to make informed choices and live with wisdom.
+    </h1>
+    <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

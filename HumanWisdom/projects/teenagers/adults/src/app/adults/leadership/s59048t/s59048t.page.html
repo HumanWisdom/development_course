@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Your success as a leader depends on your ability to listen to others, make well thought through 
+          judgements and be able to communicate your ideas to others. This is no easy thing, and there are 
+          many ways we can get it wrong. It is particularly important to check what others have understood 
+          once you have said something, and equally important to check your understanding of what others 
+          have said, by asking them a question. Active listening is a skill we can all learn. 
+          To give someone our complete attention, even if it is for 5 minutes, is the mark of a good leader.
+           It is important to look beyond the words being spoken, to understand what people may not be able 
+           to say, perhaps out of fear. The more you observe yourself as you communicate,
+           the more you can understand others, and can improve your communication skills.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

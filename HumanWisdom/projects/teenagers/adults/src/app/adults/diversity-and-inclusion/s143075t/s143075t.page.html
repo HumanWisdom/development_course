@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            If we have accepted the importance to ourselves and our organization of examining our unconscious biases - how do we begin?
+          </p>
+
+          <p>
+            We follow the 3 principles of enquiry. Review the modules in the understand yourself section in the pathway program for more details.
+          </p>
+
+          <p>
+            We begin with curiosity - just noticing the thoughts that come up when we meet people who are different. We then accept them as coming from our own mind - and not caused by others. And then we ask a question - where do these thoughts, or firmly held beliefs come from? It is the question we ask ourselves that opens the door to wisdom and change
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

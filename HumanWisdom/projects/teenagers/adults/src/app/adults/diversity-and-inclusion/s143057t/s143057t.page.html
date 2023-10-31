@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          All of us humans become unconsciously attached to our various identities - our gender, skin color, nationality, religion and so on. Our attachment to our various identities makes us want to be with people like us because that makes us feel more comfortable. This influences the people we will hire, the people we hang out with, and the people we tend to favour. We are not aware of this process going on in the background. If we want a more diverse and inclusive organization we need to wake up to this process in our own thinking - it isn’t wrong, but observing it allows us to do the right thing in the moment.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

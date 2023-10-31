@@ -1,0 +1,18 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            If fear had its rightful place in our lives, how would our lives change? The unfamiliar would no longer cause fear, and we could embrace new ideas and ways of being. We could live in peace with others, because we would no longer be frightened of them. So much of the conflict in the world is fuelled by a mutual fear of each other. We could be free to follow our own path in life, not being afraid a road few people had taken. We could be at peace with ourselves, because our anxieties would disappear. We would not continue in unhappy jobs or relationships just because we were afraid of change. I could go on. This is not a utopian ideal. It is actually possible to live in such a way that fear has its rational and rightful place in our lives. Give your heart to find out. Your life could be transformed.
+              </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

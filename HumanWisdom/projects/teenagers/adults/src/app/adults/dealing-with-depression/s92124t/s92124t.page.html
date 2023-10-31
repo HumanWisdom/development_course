@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Continue breathing in slowly filling your lungs with air to a count of 4, and breathe out to a count of 8 with your eyes closed.
+          </p>
+
+          <p>
+            Now introduce this new element into the exercise:
+          </p>
+
+          <p>
+            As you continue with the exercise, place your index finger in a horizontal manner just under your nose. Notice how the air coming in is slightly cooler than the air coming out. Do this for 1 minute. Now remove your finger and see if you continue to notice that the air coming in is cooler than the air coming out. 
+          </p>
+
+          <p>
+            Focus on your nostrils and the temperature of the air. Keep observing the thoughts that arise, as if from a distance, without judging them or reacting to them. You are not your thoughts - just your breath.
+          </p>
+
+          <p>
+            Do this for 5 minutes 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

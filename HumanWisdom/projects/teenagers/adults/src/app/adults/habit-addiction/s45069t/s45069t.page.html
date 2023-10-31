@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Why does our mind continually seek pleasure? Have a look at this pyramid again, which represents the different layers of our thinking. Deep down in layer 4, hidden from our awareness is the nature of the ‘I’ which is restless, bored and feels the ache of emptiness. Pleasure distracts us from this emptiness for a while. That is why we need more and more of it. 
+<br>The long term solution is to become aware of and make our peace with this inner emptiness we feel. If we did not need to escape automatically and unconsciously, then pleasure would have its rightful place in our lives, and we could avoid the jaws of addiction’
+
+
+           </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

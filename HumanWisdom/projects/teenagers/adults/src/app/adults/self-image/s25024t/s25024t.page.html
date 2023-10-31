@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          How we think we look is an important part of our self-image. This may not be how others see us of course.  We live in a world where we are conditioned to believe that our appearance is an important part of how attractive and this now begins in primary school. People become anxious about how they look, and that anxiety can unconsciously shape our life for decades. This drives the cosmetic and fashion industry and keeps the plastic surgeons in business. It is a paradox that we become anxious about the one thing we cannot change - which is how we look, and may  ignore the many other areas which perhaps contribute more to our attractiveness: our health, our weight, our sense of joy, our generosity, our passions, and our attitude to life.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

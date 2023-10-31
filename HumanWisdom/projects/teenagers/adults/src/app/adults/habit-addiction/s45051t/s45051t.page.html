@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Addiction is a special kind of hell - for the addict and all the people in his or her life. No one is immune to it - rich or poor. It is much easier to prevent than to treat. As we will explore in the next session, addicts need our compassion and help because the same unconscious patterns of thinking that drive them to addiction, operate in all of us. We have just been fortunate  to not have had their life circumstances.
+            </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

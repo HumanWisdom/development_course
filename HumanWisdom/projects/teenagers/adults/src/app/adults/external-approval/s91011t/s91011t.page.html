@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Mark is 30 and works as a doctor in a hospital. He has worked really hard to get into medicine, and qualified a few years ago. He takes great pride in his work and tries to do it well, but recently he has become disillusioned and is thinking of leaving. He feels he has a thankless job and he stops caring as much about his patients. He thinks nobody recognizes his worth and he blames his hospital for how he feels. Nobody appreciates him for the excellent doctor that he is. He has senior consultants he works for. 
+          </p>
+
+          <p>
+            They are quick to criticise any mistakes he makes, but never praise him for all the hard work he does. His morale is low, and he complains about his job to everyone he meets, dragging their morale down as well 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

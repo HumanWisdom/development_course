@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          What happens in our thinking when the person who loved us leaves? In layer 1 is the event that has happened. Say a marriage has ended. In layer 2 we feel sad, and angry, and blame the events in layer 1 for how we feel. In layer 3, which represents our hidden patterns of thinking, our ego is hurt and our emotional needs are no longer being met. The loneliness and emptiness of the ‘I’ is exposed and we feel the pain of it. The real reason for our pain is not what has happened in the world, but what is going on in the deeper layers of our thinking. It is our reaction to events that causes our pain.
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Depression can affect your daily routine so it is important that you consciously set up a routine for yourself and set small goals to accomplish each day. Don’t be too hard on yourself if you fail to achieve your goal. This is where the support of a friend or family member can be helpful - someone who is there to help you achieve your goals.
+          </p>
+
+          <p>
+            First things to go in the schedule are when you wake up and sleep, time for meditation, exercise, eating regular meals, keeping social media use in check, when you are meeting someone. Even if you increase an activity by 5 minutes a day - that is a step in the right direction. You can use the online journal in the app to do this. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Unmet expectations are a major cause of conflict. These could range from wanting someone to cook you a meal or dress in a particular way, to how you want them to talk to your friends and family. We are sometimes not aware we have these expectations. Where do our expectations come from and why do we expect others to meet them? And why do we get angry and upset when they are not met? It is difficult to accept that since these expectations come from our thinking they are ultimately our responsibility.  We can find many reasons to justify them. We may think that if others cared for us or loved us, surely they would do this for us, and so on. 
+          <br>How can we deal with the expectations of others if we regard them as unreasonable?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

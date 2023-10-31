@@ -1,0 +1,14 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      You can then put the interests of your organisation ahead of your own, or be generous and put colleagues' interests above your own, and be genuinely helpful to others.
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

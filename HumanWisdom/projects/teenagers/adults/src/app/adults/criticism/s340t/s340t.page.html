@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Criticism can also be an agent of positive change, if it is received in the right way, as we will explore. It can help us grow as individuals, help us learn, and make us better at our jobs. In all countries it can keep the power of politicians in check and help organisations improve, even though it may sting at the time. Some countries suppress journalists' freedoms because the fear of criticism is commonplace. 
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

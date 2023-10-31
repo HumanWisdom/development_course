@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There is no widely accepted definition of bullying. It is usually defined as repeated behaviour which is intended to hurt a person or group either emotionally or physically, and is often aimed at certain people because of their race, religion, gender or sexual orientation or any other aspect such as appearance or disability.
+          </p>
+
+          <p>
+            It usually involves an imbalance of power, with the strong bullying the weak.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

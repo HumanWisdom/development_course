@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Self-criticism or self-hate can affect our life in many ways. It can cause stress, and lead to low self-esteem, which can impact our relationships and our self-confidence. If we do not love ourselves for who we are, we may find it difficult to find others to do so, or we may end up in dysfunctional relationships where we may be treated badly because that is all we think we deserve. One study estimates that a quarter of 14 year olds had self-harmed in the UK. Its an expression of an inner turmoil and can lead to depression. What can be done to prevent and address the problem at its root?
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

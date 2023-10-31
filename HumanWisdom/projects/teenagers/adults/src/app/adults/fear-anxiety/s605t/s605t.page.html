@@ -1,0 +1,24 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Follow this pyramid down to layer 4.
+            <br>
+            Beneath all our layers of thinking is the ‘I’ that feels anxious. What is the nature of this ‘I’? When we go looking for it, it cant be found, but is there in all its fury when we feel anxious. We have explored this in more depth in a separate module. Like fear, it too is a creation of our thinking process. The ‘I’ is just an identification with all our memories, but has a virtual reality that is absolutely real. This is simple, but not easy to understand, but if you can, this is another way that fear can have its natural place in our lives, as a protection from physical threats, and to realise that the ‘I’ it is protecting is a form of virtual reality 
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+

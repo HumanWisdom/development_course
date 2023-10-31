@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module on meditation. It is part of the 1st circle of wisdom, which is nurturing a quiet mind. A quiet mind allows us to be sensitive and notice our thoughts and feelings more clearly. We offer you many ways you can do this and meditation is one of these ways.
+          <br>
+          We are going to explore what meditation is, its many benefits, some of the pitfalls to avoid and introduce you to some simple meditation techniques. If you are unfamiliar with it don’t worry, everyone was at one point before they discovered its many benefits. We invite you to be curious about it.  Human beings have been meditating for thousands of years. There must be a very good reason why they have done that.  
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

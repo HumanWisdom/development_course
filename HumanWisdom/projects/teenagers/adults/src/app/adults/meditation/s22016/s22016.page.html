@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      At the heart of meditation is a mind that is calm, quiet, still.
+    </h1>
+    
+  </form>  
+</app-kta-prevnext>
+ 
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+	

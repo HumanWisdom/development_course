@@ -1,0 +1,127 @@
+<app-toc-header [moduleName]="'Fear of Death'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="txt_comparison">
+          Most of us fear death. We don’t want to talk about it. The fear of death can rob us of the joy of living. We explore how we can overcome our fear of dying and in doing so can live fully in the present, so our lives are rich and without regret. How would you live if you knew your time on earth was limited?
+        </h4>
+      </div>
+    </div>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
+        <a [routerLink]="['/adults/dealing-with-death', dealingwithdeathResume]" *ngIf="lastvisited">
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <div class="toc_adiv">
+      <a routerLink="/adults/dealing-with-death/s64002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Overcoming the fear of dying
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                25:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/dealing-with-death/s64040">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #2
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Living with an awareness of death, helps us celebrate life
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                16:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <!-- video row -->
+      <a routerLink="/adults/dealing-with-death/s64071p1">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/27.svg" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #3
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Exploring death, for a richer life
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  42:58
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>

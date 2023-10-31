@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            It is not easy to open our heart and share what we are feeling with others. It makes us feel vulnerable and our fear of what others may think holds us back.
+          </p>
+
+          <p>
+            It is a great way of unburdening our thoughts and feelings and feeling lighter in ourselves. We need to find someone who will listen without judging us, or telling us what to do - at least initially. You could even say: ‘Could you please initially just listen to me without judging me or telling me what to do - once I’m done sharing, I’d be open to hearing what you have to say’. Therapists do this most effectively - the vast majority of what they do is just listen. It is important that we do not take people for granted and acknowledge the service they are providing us and be grateful for it.
+          </p>
+
+          <p>
+            Talking to others also helps us make sense of what we are thinking - once it's out there we can look at it and examine it. It also allows others to challenge our narratives and suggest different ways of looking at situation - we need to be open to this of course. Notice how resistant you are to anyone challenging what you are thinking - let that resistance go and open your mind to other ways of looking at things - that is the key to transformation and healing
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

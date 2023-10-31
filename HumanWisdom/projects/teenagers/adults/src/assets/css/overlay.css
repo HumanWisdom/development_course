@@ -1,0 +1,1214 @@
+.comparison_envy_overlay_w2
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_02.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_02.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+.comparison_envy_overlay_w3
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_03.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_03.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+.comparison_envy_overlay_w4
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_04.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_04.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+.comparison_envy_overlay_w6
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(134, 85, 85, 0.6)0.6), 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_06.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_06.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+.comparison_envy_overlay_w7
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_07.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_07.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+.comparison_envy_overlay_w8
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_08.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_08.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+.comparison_envy_overlay_w9
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/module1/green_yellow_09.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green_yellow/green_yellow_09.svg') no-repeat center center fixed !important;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+
+}
+
+/* .anger_base1,
+.anger_overlay1,
+.anger_base2,
+.anger_overlay2,
+.happiness_base1,
+.happiness_overlay1_mobile,
+.happiness_base2,
+.happiness_overlay2_mobile,
+.happiness_base3,
+.happiness_overlay3_mobile,
+.happiness_overlay1_desktop,
+.happiness_overlay2_desktop,
+.happiness_overlay3_desktop,
+.fear_anxiety_base1,
+.fear_anxiety_overlay1_mobile,
+.fear_anxiety_overlay1_desktop,
+.without_language_base1,
+.without_language_overlay1_mobile,
+.without_language_overlay1_desktop,
+.stress_base1,
+.stress_overlay1_mobile,
+.stress_overlay1_desktop,
+.stress_base2,
+.stress_overlay2_mobile,
+.stress_overlay2_desktop,
+.relationships_base1,
+.relationships_overlay1_mobile,
+.relationships_overlay1_desktop,
+.communication_base1,
+.communication_overlay1_mobile,
+.communication_overlay1_desktop,
+.communication_base2,
+.communication_overlay2_mobile,
+.communication_overlay2_desktop,
+.living_with_peace_base1,
+.living_with_peace_overlay1_mobile,
+.living_with_peace_overlay1_desktop,
+.love_base1,
+.love_overlay1_mobile,
+.love_overlay1_desktop,
+.love_base2,
+.love_overlay2_mobile,
+.love_overlay2_desktop,
+.love_base3,
+.love_overlay3_mobile,
+.love_overlay3_desktop,
+.love_base4,
+.love_overlay4_mobile,
+.love_overlay4_desktop
+{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh; 
+} */
+
+.anger_base1 
+{  
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_04.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.anger_overlay1
+{  
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/anger/overlay/01.jpg');   */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_01.jpg');  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.anger_base2
+{  
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_05.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.anger_overlay2
+{ 
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/anger/overlay/02.jpg');   */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_02.jpg');  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_02.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.anger_overlay_w11
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_11.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_11.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.anger_overlay_w3
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/anger/Red_Pink_03.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_03.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.anger_overlay_w1
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_01.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_01.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.anger_overlay_w5
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_05.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_05.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.anger_overlay_w12
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_12.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_12.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.anger_overlay_w2
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_02.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_02.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.anger_overlay_w10
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_10.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/red_pink/red_pink_10.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w2
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_02.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_02.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w3
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_03.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_03.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w5
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_05.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_05.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w6
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_06.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_06.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w8
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_08.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_08.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w11
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_11.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_11.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.conditioning_overlay_w12
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_12.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/pink_orange/pink_orange_12.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w2
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_02.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_02.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w3
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_03.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_03.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w4
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_04.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_04.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w5
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_05.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_05.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w6
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_06.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_06.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w7
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_07.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_07.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w8
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_08.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_08.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w10
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_10.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_10.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w11
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_11.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_11.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.criticism_overlay_w12
+{
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_12.svg')!important; */
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/svgs/green/green_12.svg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.stress_overlay1
+{ 
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_01.jpg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.stress_overlay2
+{ 
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_02.jpg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.stress_overlay3
+{ 
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_03.jpg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  /* mix-blend-mode: multiply; */
+}
+
+.happiness_base1 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #ddd 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;
+
+}
+
+.happiness_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.happiness_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_desktop_01.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+
+.happiness_base2 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #5D5D5D 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;  
+}
+
+.happiness_overlay2_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_02.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_02.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.happiness_overlay2_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_desktop_02.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.happiness_base3 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #5D5D5D 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;  
+}
+
+.happiness_overlay3_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_03.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_03.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.happiness_overlay3_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_desktop_03.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.red_pink_overlay_footer
+{
+  /* background: rgba(255, 255, 255, 0.25) !important; */
+  background: #ba5870;
+}
+
+.fear_anxiety_base1
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #5D5D5D 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;  
+}
+
+.fear_anxiety_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/fear_anxiety/fear_anxiety_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/fear_anxiety/fear_anxiety_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.fear_anxiety_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/fear_anxiety/fear_anxiety_desktop_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.without_language_base1 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #ddd 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;
+
+}
+
+.without_language_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/art_of_enquiry/art_of_enquiry_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/art_of_enquiry/art_of_enquiry_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.without_language_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/art_of_enquiry/art_of_enquiry_desktop_01.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.stress_base1 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #5D5D5D 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;  
+}
+
+.stress_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_01.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.stress_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_desktop_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.stress_base2 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #5D5D5D 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;  
+}
+
+.stress_overlay2_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_02.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_02.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.stress_overlay2_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_desktop_02.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.relationships_base1
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #5D5D5D 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;  
+}
+
+.relationships_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/relationships/relationships_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/relationships/relationships_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.relationships_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/relationships/relationships_desktop_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+
+.communication_base1 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #ddd 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;
+
+}
+
+.communication_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/communication/communication_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/communication/communication_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.communication_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/communication/communication_desktop_01.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.communication_base2
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #ddd 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;
+
+}
+
+.communication_overlay2_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/communication/communication_mobile_02.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/communication/communication_mobile_02.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.communication_overlay2_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/communication/communication_desktop_02.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.living_with_peace_base1 
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #ddd 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;
+
+}
+
+.living_with_peace_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/living_with_peace/living_with_peace_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/living_with_peace/living_with_peace_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.living_with_peace_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/living_with_peace/living_with_peace_desktop_01.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.love_base1,
+.love_base2,
+.love_base3,
+.love_base4
+{  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 1;
+
+  background: linear-gradient(180deg, rgba(93, 93, 93, 0) 0%, #ddd 48.96%, rgba(93, 93, 93, 0) 100%);
+  mix-blend-mode: multiply;
+
+}
+
+.love_overlay1_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_01.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_01.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.love_overlay1_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_desktop_01.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.love_overlay2_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_02.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_02.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.love_overlay2_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_desktop_02.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.love_overlay3_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_03.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_03.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.love_overlay3_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_desktop_03.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.love_overlay4_mobile
+{  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_04.jpg') no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply; */
+
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_mobile_04.jpg');
+  background-color: #5d5d5d;
+  background-blend-mode: multiply;
+  background-size: cover !important;
+}
+
+.love_overlay4_desktop
+{  
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/love/love_desktop_04.jpg') no-repeat right center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}

@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            After you get better from a bout of depression, you are vulnerable to feeling this way again - especially if life gets challenging. Once you have suffered depression it can come back.
+          </p>
+
+          <p>
+            This is why it is important to keep up with everything you have learned about yourself and the illness and stick to the lifestyle changes you have made so far. 
+          </p>
+
+          <p>
+            Recovering from depression does not always mean you are happy though, and that is another journey you will need to embark on. Review the module on Happiness in the app.
+          </p>
+
+          <p>
+            The rest of the app is available to help you on this journey including modules on stress, anxiety, relationships, self-esteem, and meditation.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

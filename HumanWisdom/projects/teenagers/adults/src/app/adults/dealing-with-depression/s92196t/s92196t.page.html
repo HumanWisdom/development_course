@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            All our important past experiences get stored in our memory and become part of our conditioning. We get automatically attached to our past because it becomes part of the ‘me’.
+            We may get attached to our painful memories which may have triggered our depression, and struggle to let them go.
+          </p>
+
+          <p>
+            We resist any attempts to look at what has happened to us in a fresh way, or to forgive others for what they may have done because that means letting go of something we are attached to.
+          </p>
+
+          <p>
+            This attachment can hold back our recovery and trap us in a prison of our own making. Seeing this clearly allows us to let the past go because we see it no longer serves us, and the only life we have to live is in the present. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

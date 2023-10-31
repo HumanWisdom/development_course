@@ -1,0 +1,39 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Let’s look at an example, say, I am passing a shoe shop. That's what’s happening in the world outside - or layer 1.
+          </p>
+          
+          <p>
+            I look inside and feel an urge to go in.
+          </p>
+
+          <p>
+            I think I really need another pair of shoes, and go in and buy one.
+          </p>
+
+          <p>
+            I ignore the thought that says I already have more than I can wear. This is what's going on in my thinking or layer 2. This is all I am aware of.
+          </p>
+
+          <p>
+            If I explore why I did that, I realise that I was feeling a bit restless, and uneasy, and the thought of buying a shoe brought a burst of pleasure I could not resist.
+          </p>
+
+          <p>
+            Buying shoes is a recurring source of pleasure for me. I wear the shoes twice, and they join the others in my cupboard. All this goes on in layer 3 or the unconscious patterns of thinking that govern my behaviour. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

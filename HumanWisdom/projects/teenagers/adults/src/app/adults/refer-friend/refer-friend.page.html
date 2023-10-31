@@ -1,0 +1,115 @@
+<!-- top navigation -->
+<app-feature-header title="Refer a friend"></app-feature-header>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <div class="raf_div_01">
+                <div class="row center_flex mb15px">
+                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+                      Introduce a friend to HumanWisdom
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row center_flex">
+                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                      We will plant a tree for every friend who subscribes.
+                      <a routerLink="/adults/treesisters" class="fw_600 fc_e58d82">
+                        Click here
+                      </a>
+                      to read about our Tree Planting Program.
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="mtb30px mregister">
+                  <div class="row mb10px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                      <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" placeholder="Friend name">
+                      <div class="fc_img">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                      <input type="text" id="email" (keyup)="keyemail($event.target)" class="sp_fc" placeholder="Friend email">
+                      <div class="fc_img">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <button type="submit" class="btn btn_raf_submit w100" (click)="submitrefer()">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt30px mb15px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <hr class="mtb0px hr_style_v3_05">
+                  </div>
+
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                      Or share via
+                    </h4>
+                  </div>
+
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <hr class="mtb0px hr_style_v3_05">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row center_flex">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <share-buttons  [theme]="'circles-dark'"
+                  [include]="['facebook','twitter','linkedin','whatsapp']"
+                  [show]="4"
+                  [size]="1"
+                  [url]="'https://humanwisdom.me/'"
+                  [description]="'Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom'"
+                  [autoSetMeta]="false"
+                 >
+                  </share-buttons>
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>

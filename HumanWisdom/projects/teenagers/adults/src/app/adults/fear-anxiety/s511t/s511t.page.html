@@ -1,0 +1,19 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Fear shapes our lives in many ways, some of which we are not aware of. We humans spent 1.9 trillion dollars on arms in 2019, while 800 million of us went hungry, some in the richest countries in the world. Why are we so afraid of each other? We never ask this question. Fear of being attacked can make us aggressive, both in our personal lives, and as countries. In this session we are going to explore  the many others ways fear shapes our lives. Ask yourself how it shapes yours. Fear is not right or wrong and a core part of being human. As Marie Curie said, it just needs to be understood. The future of humanity depends on finding a different way of being. 
+            </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There is strong evidence that aerobic exercise can help people who are depressed. Exercise is as good as anti-depressants for mild and moderate depression. It’s something in your control to help you feel better.  It does this by secreting hormones called endorphins which boost your mood. It also results in new nerve cell growth in the hippocampus, an area of the brain that regulates your mood. Both of these combined make you feel better. Exercise can also help with sleep, loss of weight, and heart health.
+          </p>
+
+          <p>
+            There is of course the challenge of getting started. Depression robs you of the motivation to do anything - particularly if it is severe.
+          </p>
+
+          <p>
+            Begin with walking every day - start with 5 minutes, then 10 and build up to 30 minutes of brisk walking twice a day. If you are able, go swimming, or running or cycling - use the gym if you can.
+          </p>
+
+          <p>
+            Find a friend to exercise with. It will take 8 weeks or more for you to feel the benefits. 
+          </p>
+
+          <p>
+            Exercise is also a great way to boost your mood, to deal with life’s challenges and prevent a recurrence of depressive symptoms
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

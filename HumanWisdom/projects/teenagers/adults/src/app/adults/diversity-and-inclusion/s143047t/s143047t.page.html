@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Where do our biases or prejudices come from, and why are we so attached to them?
+          Everyone has their own particular prejudices, even those who are discriminated against.
+          Wanting to be free of bias and prejudice is the first step - but it is not enough. We need to go deeper to understand the hidden drivers in our thinking that create our biases and our attachment to them. They operate from beyond the screen of our awareness shaping our thoughts and actions. This awareness is what brings long term freedom. Let's get started.          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

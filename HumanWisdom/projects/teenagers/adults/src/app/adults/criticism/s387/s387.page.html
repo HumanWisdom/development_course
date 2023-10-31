@@ -1,0 +1,35 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+
+<app-kta-prevnext [bg]="bg">
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Responding to criticism with intelligence:
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      1. Do not react, breathe, zoom out
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      2. Ask a follow-up question
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      3. Realise its their conditioning talking 
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      4. Say sorry (if needed)
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      5. Ask what you can learn
+    </h1>
+
+  </form>  
+</app-kta-prevnext>
+ 
+<!-- <app-kta-footer [bg_cft]="bg_cft" (previousEmitter)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

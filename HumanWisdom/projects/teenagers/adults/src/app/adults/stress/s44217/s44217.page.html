@@ -1,0 +1,18 @@
+
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#10 This feeling of stress will pass. </p>
+      All feelings pass. The worst events blow over. People forget, and move on. <br>This too will pass.
+ 
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

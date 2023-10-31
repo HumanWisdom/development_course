@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module exploring wisdom leadership.It is part of the 5th circle of wisdom,
+           where we use our understanding of how our minds work to live with wisdom, and in this case, being the best leader we can be. The fate of countries and organisations is decided by the quality of the leaders they have. In the end, leadership is about executing a vision and managing people, and to do that we have to understand them. The best way to understand others, is to understand ourselves, because as we have explored, deep down we are the same human being. We are going to explore what leadership is, how to meet the challenges you will face, and how to lead with wisdom. We will also explore compassion, and how we can incorporate that into organisations, so everyone feels at ease  about themselves, good about working there, and goes that extra mile in the work they do.
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our stress, and our emotional distress is quite often the difference between how things are, and how we wanted them to be. If you can accept things completely as they are, deep down, your stress can dissolve.
+          </p>
+
+          <p>
+            Perhaps someone you love has died, or a loved one has left you for another. Or you may have failed an exam, or lost a job, or your business may have collapsed. Or, you may have a health problem which cannot be cured. Whatever the reason, if the event cannot be changed, can you accept yourself and your circumstances completely now - as they are?
+          </p>
+
+          <p>
+            This is not easy - but stay with that feeling, allowing it to wash over you. Meet it without language as we have discussed.  Realise that you are much more capable than you realise and you have the energy in you to recover from this shock and take the next step to feel better again.
+          </p>
+
+          <p>
+            Millions of people before you have done this and you can too
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Our minds are naturally critical and judgemental. This happens automatically, without our awareness. Our mind compares what we hear with what we know and this creates a reaction where we judge others all the time. Listening with generosity begins when we become aware of this process in our thinking and just hit the pause button. This allows us to listen with generosity, without judgment, without being critical of the other person even if we don’t express it. We give others the benefit of the doubt. Where there is more than one way of looking at a person or situation, we chose the more generous option. This embodies compassion, and is love in action. It begins with an awareness of what is happening in our thinking as we listen.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

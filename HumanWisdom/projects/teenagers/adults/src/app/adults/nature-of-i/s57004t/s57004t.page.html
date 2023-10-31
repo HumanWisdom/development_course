@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this session where we are going to explore a subject that is at the heart of being 
+          human - the ‘I’ or the ‘Me’. It is part of the 3rd circle of wisdom, where we explore how the mind works, and this is the same in all of us. It is important to explore it because there are some universal features of the ‘I’ which are the same in all human beings. Understanding them helps us to understand ourselves and others and that is the beginning of wisdom. Normally the ‘I’ operates unconsciously, without our awareness. To begin, all you need is an open mind willing to look and learn about yourself, without judgement. Just be curious. We are going to ask questions and explore them. 
+          They can help reveal the many subtle ways this ‘I operates in the background, shaping our lives
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

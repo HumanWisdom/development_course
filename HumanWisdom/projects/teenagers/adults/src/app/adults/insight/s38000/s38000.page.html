@@ -1,0 +1,104 @@
+<app-toc-header [moduleName]="'3 Stage of Insight'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="txt_comparison">
+          In this module we explore the beauty of insight - it is the art of seeing something clearly in ourselves - an Aha! moment - and it has the potential to leave us transformed. We explore the 3 stages of insight and how we can move from one to the other.
+        </h4>
+      </div>
+    </div>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
+        <a [routerLink]="['/adults/insight', insightResume]" *ngIf="lastvisited">
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div> 
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <div class="toc_adiv">
+      <a routerLink="/adults/insight/s38001">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                3 stages of insight
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                08:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+       <!-- video row -->
+       <a routerLink="/adults/insight/s38019p2">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/insight_01.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #2
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  What is insight?
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  06:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+    
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    
+  </form>    
+
+</app-index-content> 
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

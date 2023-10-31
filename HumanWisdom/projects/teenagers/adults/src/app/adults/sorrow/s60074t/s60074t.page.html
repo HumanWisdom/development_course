@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          When the shock of loss hits us, it can take our breath away. It could be the sudden death of a loved one, or a pet, or a job, or someone we love decides to leave us, or the loss of something else we value. Our mind is in turmoil and feels like it's drowning in different thoughts which we cannot control, and which come at us so quickly, we don’t know how to respond.
+          At times like this all we can do is anchor ourselves to our breathing. Follow one of the exercises in the breathing module. If you haven’t done that as yet - go ahead and do that now. The breathing connects us to the present, and lets us focus on what we need to do next. 
+          
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

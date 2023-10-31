@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          How we say something is sometimes more important than what we say, but we don’t realise that. We don’t pay much attention to the tone of our voice, but it can have a massive impact on others. Tone can convey so many different feelings and moods - affection, irritation, anger, surprise, sarcasm, and so on. We are usually not aware of the tone of our voice as we speak, but this will often decide what the other person understands and how they react to us. Our reactions to others also depend on the tone they speak with. If we can see our tone of voice is rising we know we are heading for an argument and can do something about it.  Just observe your own tone, and that of others, and that will allow you to respond with intelligence each time.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

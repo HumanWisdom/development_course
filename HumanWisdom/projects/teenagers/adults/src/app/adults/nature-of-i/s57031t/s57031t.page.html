@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored how the ‘I’ wants more and more. It looks for every opportunity to strengthen
+           itself. You could call this our ego, but it is much more than that. Our self-interest is rooted 
+           in the ‘I’ and this translates into our behaviour in all aspects of our life. We like to speak
+            more than we like to listen, seek to be important and accumulate power if we can. 
+            We take all this for granted. It is behind much of the stress we feel if we cannot get what we
+             want, or if we find others are better than us. It is also why we do not live with a sense of
+              peace.
+
+
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Have you noticed how our mind constantly judges and has an opinion on almost everything we see or hear, and certainly about the people we meet and what they are doing. We automatically compare what we see with our idea of normal, which is our conditioning and any difference we find can make us react and judge others and be critical of them, because they are different to us, or behaving in a way we wouldn’t. For example, if I do not smoke, I will be critical of those who do, but if I am a smoker myself, then I am much more accepting of people. Watch this process in yourself and you will see how common it is.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

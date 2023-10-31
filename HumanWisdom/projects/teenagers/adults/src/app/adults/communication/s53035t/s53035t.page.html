@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          In the global village we are going to meet people who are very different to us. How can we connect with them? This will determine the success of our relationships, which is so important for our happiness. Our instinct is to have an internal resistance when we encounter differences with others. To respond with wisdom we need to begin by recognising this process operating unconsciously in the background, and put it to one side. We then have to consciously find points of connection with people, realising that we share a common humanity. We can do this by being curious, keeping an open mind, and finding common ground with them. It could be our shared love for children, or trees, or sport - it doesn't matter. Once we have built that bond of affection with people, we can then tackle difficult subjects if we need to, and often realise they recede in importance
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

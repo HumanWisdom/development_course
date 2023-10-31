@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Last year I was speaking to some university students and asked them how social media affected their lives. They said it made them compare themselves with others, feel envious, feel inferior, created unrealistic expectations, made them dislike their bodies, feel stressed, pressured them to conform and behave in a particular way, and affected their relationships.VO: I said 'Hang On' - 'How can an inanimate object, like a phone, make you think and feel and behave in a particular way without your awareness or consent?'. Other people can't make us do anything without a discussion or an argument, so how come the phone does that so effortlessly? There was a long silence.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

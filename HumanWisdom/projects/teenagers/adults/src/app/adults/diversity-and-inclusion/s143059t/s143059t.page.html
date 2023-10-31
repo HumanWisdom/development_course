@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Fear is part of being human, and acts to protect us from physical harm, but if we are not aware, can also operate in dysfunctional ways to make us automatically afraid of anyone who is different, seeing them as a threat, and this can translate into unconscious prejudice. If we are prone to anxiety - this feeling is more easily triggered. We are not aware of this process going on in the background. Just noticing our own internal reactions and questioning what is behind them allows us to respond appropriately and with intelligence in each situation.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#8 Take ownership of your feelings.  </p>
+      It's difficult to do but is the first step in being able to do something about it. Above all, don’t allow yourself to feel like a victim. That makes you powerless to respond.
+
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

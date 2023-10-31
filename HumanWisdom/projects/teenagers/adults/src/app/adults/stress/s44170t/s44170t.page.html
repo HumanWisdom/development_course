@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our minds naturally take what we already have for granted, and focus on what we don’t have, which can cause stress. Our mind is wired to always seek stimulation, which comes from the new, so we overlook the old. We need to therefore consciously ask ourselves what we have to be grateful for and what all we take for granted. This could be a long list, including your health, loved ones, and so on. We all have something we can appreciate. We can consciously appreciate the people in our life, and that can enhance all our relationships.
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            This need for  approval in us is so powerful that sometimes our idea of success becomes what others think of us. This often happens without our awareness. 
+          </p>
+
+          <p>
+            We judge others based on how famous they are – even if they are famous for just being famous – the modern social media influencer. On social media the currency of success has become how many followers people have.
+          </p>
+
+          <p>
+            We can judge the success of our lives based on how much recognition we have had – how many papers I have published if I am a researcher, how much status I have achieved in society, how many awards I have had If I am in public service, and so on.
+          </p>
+
+          <p>
+            Meanwhile, the mind that seeks Need for approval to feel good about itself – remains thirsty. No amount of external validation quenches the thirst of the heart for feeling at peace with itself.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+           How can we become comfortable in our own company?
+Perhaps the first step is to let go of any images of who we would like to be, and accept ourselves for what we look like, how much we earn, what job we do, how important we are, how many friends we have, and who we are. All these images stop us being comfortable being with ourselves. The second step is to realise that deep down we are the same human being as everyone else. All the differences between us and others are on the surface.The third step is to just practice being alone sometimes, making time to be still and nurturing a quiet mind. This last step is crucial, and involves having a deeper understanding that our feeling of loneliness comes from within
+
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How can we explore loneliness and find out what’s behind it? We are going to apply the principles we explored in the Art of Learning section. Begin by being curious. Have a mind open to learning. To study anything you have to get close to it - so do not escape from that feeling when it rises. Spend time alone, and when it rises observe it without judgment and without language. Our pattern is always to escape from it, so it may feel strange to walk towards it and be with it. But it's only in being with it, questioning it, and observing it for ourselves that there is a chance of freedom.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

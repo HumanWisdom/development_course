@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The sixth obstacle to discovering wisdom is subtle, and occurs if the enquiry remains purely intellectual. I have seen many people fall into this trap, including myself at one point.
+            We may read something that sounds true. It sounds logical and beautiful and we decide to follow whatever is being advised.
+          </p>         
+          <p>
+            What we don't realise is that we may have fallen for the words, and memorised them, and can repeat them, but didn't do the actual work of looking at and learning about ourselves. That is why this section on the art of enquiry is so important. Unless you do that looking and learning about yourself, you won't feel this journey has been an enriching one for you, and the life-changing gift of this wisdom will elude you. It’s so important to actually notice what is happening in your own thinking and explore what you can learn about how your mind works. THis leads to wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

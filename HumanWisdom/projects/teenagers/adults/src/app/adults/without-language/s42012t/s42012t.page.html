@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Try this exercise. Just observe the moment you reach for your phone and what is happening in your thinking as you do so. Did you notice why you reached for your phone? You probably saw it, and that triggered a stimulus for an old habit. What is that feeling that prompted you to reach for the phone? Was it a feeling of restlessness and not being at ease? Now stay with that feeling of restlessness or inner boredom without naming it or trying to move away from it. What happened?
+            Did you notice your mind becoming really quiet and a sense of peace?
+          </p>
+          <p>
+            It’s very subtle indeed. Do it again, till you do notice that quietness inside. It's quite beautiful.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Before we begin the breath work let's take a moment to understand the science behind it. Like any skill, the more you practice the better you will feel. You may not feel any benefits for the first 2 weeks, but if you do this regularly - even for 10-15 minutes a day, you will start to see the results soon.
+          </p>
+
+          <p>
+            The slow deep breathing exercises stimulate the vagus nerve which is part of the parasympathetic nervous system. Your heart rate slows down, your blood pressure reduces, and you start feeling calmer. The fight-flight response reduces and more oxygen goes to the thinking part of your brain. It has also been shown to reduce the levels of the stress hormone cortisol.
+          </p>
+
+          <p>
+            When combined with a deep awareness of the breath, these exercises connect you to the present. They distract you from your thinking mind, and break the loop of negative thinking that fuels your depression.
+          </p>
+
+          <p>
+            Breathing exercises also boost your concentration and ability to focus, which is impacted by depression. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

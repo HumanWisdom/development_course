@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          If you notice that you are having a reaction, what can you do? Say you are beginning to have an argument and you can see your mind is becoming reactive. You are repeating yourself and so is the other person. You notice you're getting stressed. In the early phases of a reaction it's possible to pull back before you lose control. You could take some deep breaths and anchor yourself to your breathing. You would have practised this before. Or, you could say, can we talk about this later, when we have all calmed down? If you lose control of your reaction you are going to say and do things you may later regret
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      When we are unhappy we assume that it is the other person, or our work, that is responsible.
+      <br> That may be true, but our unhappiness could also be caused by our own hidden thinking patterns, which we are not aware of.
+      <span class="highligted_span">
+        (See modules on Stress and Happiness)
+      </span>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

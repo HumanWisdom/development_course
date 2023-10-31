@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Pleasure can cloud our judgment and make us do things we may later regret.
+          </p>
+          
+          <p>
+            The anticipation of pleasure can be so great that it can make us have an affair, or steal something, or buy something we may not need on impulse, or drink too much alcohol, or take drugs.
+          </p>
+
+          <p>
+            My example is passing a bookshop, and telling myself I don't need any more books, but invariably finding myself going in and buying some more. How does pleasure do that to us? And why is that important to know? Researchers think this is linked to the neurochemicals dopamine and serotonin secreted in the brain. It’s important to know because this process occurs unconsciously, and if we are conscious of it, we can avoid the problems that can follow.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer> 

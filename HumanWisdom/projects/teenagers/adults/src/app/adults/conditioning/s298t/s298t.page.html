@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Our conditioning is also responsible for all our prejudices.  
+          </p>          
+          <p>
+            If we meet people who are different to us, it creates a disturbance in our thinking, and we react from that.
+          </p>
+          <p>
+            This prejudice takes many forms like racism, homophobia anti-semitism and islamophobia. We are also conditioned by the prejudices of the people around us and we absorb them without thinking. That is why some prejudices, like anti-semitism and homophobia get handed down from generation to generation.
+          </p>
+          <p>
+            Because we do not like to be disturbed we surround ourselves with people like us, and since there is no one now to challenge our views, they go unchecked, and we form our own echo chamber. Thinking we are right and others are wrong. This is how tribes form and conflict begins.
+          </p>
+          <p>
+            And it all begins with our unconscious conditioning influences.
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

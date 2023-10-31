@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We have explored how stress is just the difference between how things are and how we want them to be - whether in the world outside or within. It follows that if we can accept situations, and people and ourselves as we are, the stress ends immediately. We cannot help our initial stress reaction, but if we can breathe, pause, and zoom out we can ask ourselves a simple question: Can I accept things as they are? Does it really matter? If it doesn't matter and you can accept, your stress dissolves.
+          </p>
+          <p>
+            If someone has hit your car and its damaged, you could just accept it and be grateful no one is injured and the car will get repaired. If your partner is really annoying because she wants to do things her way, you could ask does it really matter what colour the wall is, and just accept it - and so on.
+          </p>
+          <p>
+            Of course, it is not always possible to accept and sometimes we need to change things and that's okay too.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

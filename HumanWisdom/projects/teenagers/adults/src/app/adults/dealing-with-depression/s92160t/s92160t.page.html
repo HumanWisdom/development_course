@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Meditation has been proven to help with depression in many scientific studies.
+            The breathing exercises you did in the previous session are a great foundation to begin a meditation practice. It is so simple to begin. We have an entire module dedicated to meditation in the app. There are also several audio meditations you can practise.
+          </p>
+
+          <p>
+            To begin, just find a chair you can sit up straight in - or if you can, sit on the floor with your legs crossed and eyes closed. All you need to do is become aware of your surroundings - all the sounds you are hearing, then notice your body and how it is feeling, then observe your thoughts and feelings as they come and go - and this is the difficult bit - observe them without trying to control them, or judge them. Gradually your mind will quieten. Don’t try to actively quieten your mind - that just leads to frustration and disappointment. All you need to do is be a quiet observer. In the beginning it will not feel easy - that's okay - keep going. It gets better. 
+          </p>
+
+          <p>
+            Sit for 10 minutes a day to start with, gradually increasing this to 30 minutes a day. It will take about 8 weeks for you to notice the difference. The key is to begin. If you can do it with a friend it will be much easier - or you can join a meditation or mindfulness class locally. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

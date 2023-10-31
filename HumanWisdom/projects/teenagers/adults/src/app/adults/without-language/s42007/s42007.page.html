@@ -1,0 +1,21 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-txt-overlay-top base="without_language_base1" overlay="without_language_overlay1_mobile" class="mshowhide">
+  <form>
+    <h1 class="txt1">
+      Did you notice so much more detail when you didn’t name it, and did your mind go quiet at the same time?
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-txt-overlay-top>
+
+<!-- <app-txt-overlay-top base="without_language_base1" overlay="without_language_overlay1_desktop" class="dshowhide">
+  <form>
+    <h1 class="txt1">
+      Did you notice so much more detail when you didn’t name it, and did your mind go quiet at the same time?
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-txt-overlay-top> -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

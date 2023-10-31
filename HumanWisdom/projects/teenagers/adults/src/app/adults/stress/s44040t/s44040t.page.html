@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Let me share a story to illustrate this. A friend who runs a company told me he had two secretaries that worked for him, doing the same job. Each worked half the week. One was always stressed saying that there was too much work to do, the phone never stopped ringing and so on - and she blamed the job for her stress. The other lady doing the same job was never stressed. SHe came in at 9, left at 5, and was happy throughout the day. The job was the same, but their reactions were different. Even if this was pointed out to the secretary who was stressed, she was convinced it was the job that was causing her stress.
+          <br>This is not to be critical or say stress is our fault, but to illustrate how the human mind works.
+          <br> Our mind automatically assumes our stress is caused by external events, and is convinced that is true.
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

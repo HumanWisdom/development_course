@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In general our mind reacts to external events by thinking about the worst possible outcome - and that can become a habit without us realising it. It is called catastrophizing. 
+          </p>
+
+          <p>
+            We overestimate the likelihood of something bad happening.
+            When it happens we imagine it is going to be much worse than we imagine
+            And we underestimate our ability to deal with that situation
+          </p>
+
+          <p>
+            An example could be thinking of going out and meeting people. We imagine that nobody will like us or want to talk to us, and that will make us feel terrible, and we will not be able to cope - so we do not go out anywhere.
+          </p>
+
+          <p>
+            Or we don’t go to work thinking we will not be able to do our job, that we will not be able to cope, that others will think less of us.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

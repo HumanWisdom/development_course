@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our beliefs meet many of our emotional needs as human beings, and it's easy to see why we get attached to them. This is not a conscious process. It seems to happen automatically without our awareness. We are often not aware we have these emotional needs, the process by which beliefs form or the process of attachment. Isn't that amazing?  We may have had the best education, but that education did not teach us to understand the hidden patterns of thinking that shape our lives in ways that we are not aware. If we become conscious of this process, we can respond with wisdom.
+          </h3> 
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

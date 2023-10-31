@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Consider an example. Say you are telling me about your holiday - that's layer 1.
+          </p>
+          
+          <p>
+            In layer 2, I'm reacting to what you are saying by feeling jealous, and blaming you for how I am feeling. Or I am feeling guilty for feeling jealous. I cannot help having this feeling or seem to control it.
+          </p>
+
+          <p>
+            I may be getting angry with you and we stop being friends because you have made me feel bad.
+          </p>
+
+          <p>
+            That's the extent of my awareness usually. Layers 3 and 4 are hidden from me, so I do not know what is going on there.
+          </p>          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

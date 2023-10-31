@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Comparison is essential in many ways. It allows us to recognise the people we meet, because we compare the person in front of us with the person we have met before. It also helps us keep us safe. If I see a snake, I know from my memory whether it’s poisonous or not, and can take precautions. It also brings us pleasure. If I am better than others, or have more than others, or win something, that creates a burst of pleasure. Lastly, it allows us to learn from others who may be better than us.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

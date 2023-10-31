@@ -1,0 +1,22 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">  
+  <form>
+    <h4 class="mtb0px comparison">
+      Conditioning
+    </h4>
+    <div class="clearfix"></div>
+
+    <h5 class="mtb0px session">
+      Session #3
+    </h5>
+    <div class="clearfix"></div>
+
+    <br>
+
+    <h1 class="session_title ">
+      How can we respond to our conditioning with intelligence?
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-tap-start>

@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes, if we can look at a person or situation differently we can change how we feel.
+          </p>
+
+          <p>
+            There are many different ways of exploring any situation, but we are so sure our point of view is right. 
+          </p>
+
+          <p>
+            For example, if someone we love says they do not love us anymore and wants to leave we can feel bitter, angry and get depressed. We blame them for how we feel.
+          </p>
+
+          <p>
+            Is there another way to look at this situation? An alternative way is that we could accept that people are free to leave a relationship at any time - it is not a prison - and perhaps we need to let them go in peace.    
+          </p>
+
+          <p>
+            Or, if someone has disappointed us, we could just accept that they have other priorities at this time.
+          </p>
+
+          <p>
+            Or, if we have been overlooked for a promotion, we could get really sad and depressed, or use that as a learning opportunity to get feedback and improve. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

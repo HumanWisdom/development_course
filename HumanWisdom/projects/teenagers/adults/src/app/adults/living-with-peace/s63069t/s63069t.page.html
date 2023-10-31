@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          To live in peace we begin by making peace with the world around us, and deal with all the conflicts in our lives. We then need to travel inwards, and make peace with ourselves, and our inner emptiness or feeling of inner boredom. This is at the heart of being human, and common to all human beings. If you are unfamiliar with this, have a look at the separate module where we explore this. This is the ultimate barrier to feeling at peace, and one which we can all overcome. The first step to doing this is to recognize it operating in the background. The second step is to accept it and not escape from it. The third step is to meet it without language, and we have explored how you can do this in a separate module. If you do this, you can carry this deep sense of peace with you through life, and it is not disturbed by external events.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

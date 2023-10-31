@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Have you noticed how the patterns of anger keep repeating themselves in our lives? The same trigger will usually generate the same anger reaction in us, while someone next to us may be really calm. Why is that? Why can't we seem to learn from the last time we were angry, and avoid it this time? A mother may get angry with her son for the same reason each time, for example if he did not clear his plate after dinner. If she paused and saw that pattern was not working, and the effects of that anger on herself and her son, she might consider a different way to address that problem.
+           </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Perhaps the pain of loneliness is also caused by the difference between how things are, and how we want them to be. We are alone and want to be with someone. We are in a relationship and want to feel more connected. We are with a group of people and wish we knew more of them. If we become aware of, and let go of how we want things to be, and instead focus on what we can appreciate about our current situation, and what we have to be grateful for, that acceptance can reduce or even end our stress and feeling of loneliness. We can then move forwards and do whatever needs to be done. I can reach out to people at a party, for example, and introduce myself, or explore how I can deepen
+           the quality of my connections, but do this with with a heart that doesn't feel the ache of loneliness.
+            </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

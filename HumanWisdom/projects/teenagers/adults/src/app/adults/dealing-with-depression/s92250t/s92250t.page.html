@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The mind that has been depressed may still tend to look at things negatively and continue to catastrophise - imaging the worst possible outcome and our inability to deal with it.
+          </p>
+
+          <p>
+            We can also continue to make assumptions about ourselves and others which are negative.
+          </p>
+
+          <p>
+            It is so important to work to break this cycle and develop a more positive attitude.
+          </p>
+
+          <p>
+            Think the best of yourself and others. Find something more positive to say about yourself and others in every situation. Give people the benefit of the doubt. Imagine that good things will happen and you will be better. If something untoward happens, learn to zoom out and see the bigger picture, and focus on what you still have to be grateful for. 
+          </p>
+
+          <p>
+            You are doing the important work of training your brain to think differently. It takes time - but your life will be transformed as a result.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

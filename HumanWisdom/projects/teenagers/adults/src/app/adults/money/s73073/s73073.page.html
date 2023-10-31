@@ -1,0 +1,16 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      We use money as a measure of success because we think the more we have, the happier we will be.
+       That is often an illusion. True success means being happy, loving what we do, living without fear 
+       and conflict, and with compassion and a sense of peace. This comes from wisdom.
+
+
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

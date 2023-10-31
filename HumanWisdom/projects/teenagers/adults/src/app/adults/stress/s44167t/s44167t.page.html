@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Healthy relationships require nurturing and investment of time, energy and goodwill, but the long term benefits are enormous. We could all do more. They provide a shelter from the many storms of life, and contribute to our long-term happiness. If we ignore them and take them for granted, they can result in conflict and stress. When we are stressed, having a friend to talk to can make all the difference and without people we feel close to, we can feel lonely, which can also add to our stress.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            The first of these unconscious drivers is our conditioning. All our past influences are stored in our memory and become our conditioning. All our opinions, beliefs and habits are a product of this conditioning. We are not aware we have been conditioned but become attached to it - because it becomes the ‘Me’ - my opinion, my beliefs etc. Because we are not aware we have been conditioned, we never question our opinions - and this is how our biases and prejudices form.
+          </p>
+
+          <p>
+            For example, if I have grown up in an environment which was all white and there was regular talk of immigrants in a negative light, that can become my unconscious bias I carry with me for life - unless I am able to understand and question my own thinking.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module where we are going to explore our various opinions and beliefs. We all have our opinions, but seldom pause to ask where they come from and the many unconscious ways they influence our life. Exploring this allows us to communicate better, understand those who have different opinions and beliefs to our own, and build bridges instead of walls. All our relationships - between people, and countries can improve with this understanding and it could therefore reduce conflict everywhere. It can therefore contribute to our success in all areas of our life.  Let's get started.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

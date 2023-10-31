@@ -1,0 +1,14 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#7</p>
+      Keep a journal. Challenge every negative thought you have, and find a positive way to look at the same situation. What can you appreciate about your life?
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

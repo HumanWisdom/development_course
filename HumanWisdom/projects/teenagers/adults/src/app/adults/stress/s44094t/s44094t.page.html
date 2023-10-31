@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We have explored how the human mind constantly seeks pleasure through buying things, through work, seeking new experiences, our relationships and activities which boost our sense of importance. This happens hidden from our awareness and is not right or wrong. Desire is wanting something and pursuing it, for the pot of pleasure that awaits us. If we want something we cannot get we can become frustrated. We may not be able to afford something we want for example, or don’t get the promotion we were expecting.
+          </p>
+          <p>
+           Sometimes after getting the thing we want, the euphoria fades, and we feel empty and restless and need to repeat the pleasure. If we can’t, we can get stressed. This doesn’t mean pleasure is bad, or wrong. Understanding this allows us to respond with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

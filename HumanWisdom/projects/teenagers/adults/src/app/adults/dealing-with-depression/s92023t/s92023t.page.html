@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            For decades it was thought depression was caused by a chemical imbalance in the brain, of a chemical called serotonin. This led to a new class of drugs called serotonin-uptake inhibitors (SSRI’s) being prescribed. Common examples include Prozac, Citalopram or Sertraline.
+            In 2022 two scientists from University College London evaluated all the research so far and concluded that there was no evidence that depression was linked to a chemical imbalance in the brain, and the SSRI’s were no better than a placebo in their effect. A placebo effect simply means if you believe a treatment is going to work, in most cases it does
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

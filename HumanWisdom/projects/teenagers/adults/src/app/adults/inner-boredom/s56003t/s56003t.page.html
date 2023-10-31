@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module where we are going to explore our inner boredom and feeling of emptiness, that is at the heart of being human. It is part of the 3rd circle of wisdom where we explore how the mind works. You can also call this our inner restlessness or the void we feel. It  is the ache we feel that prompts us to begin our journeys in the world looking for fulfilment. It is an integral part of being human and the ‘I’ , but worth exploring separately because it has such a huge impact on our lives. In this module we are going to explore the many unconscious ways this inner emptiness shapes our lives, and how by exploring it we can discover a sense of peace.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

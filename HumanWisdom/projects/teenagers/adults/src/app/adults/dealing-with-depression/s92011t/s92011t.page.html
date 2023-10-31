@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sadness, and depression are probably at two ends of the same scale. You are more capable than you realise and have the inner resources to get better yourself. We are going to guide you and show you how.
+          </p>
+
+          <p>
+            In most cases depression begins in our thinking as a reaction to external events, or past events, or an illness in our body. We are going to focus on the common causes of depression, how we can diagnose it early, its impact on our lives, and the number of ways we can use our wisdom to overcome it more easily in a step by step manner.
+          </p>
+
+          <p>
+            If you are not depressed, the information and tips in this module may help you avoid it, and support others with it.
+          </p>
+
+          <p>
+            We are going to introduce you to a gentle 4 step plan to overcome your sadness and depression yourself. It is not a substitute for medical advice, and you should seek professional help if you can
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

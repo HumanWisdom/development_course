@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Your values are the principles or standards of behaviour you hold yourself to, your moral compass as you go through life. They are what you regard as important and they influence all the decisions you make.They are the basis on which our character is formed
+          </p>
+
+          <p>
+            If you haven’t already thought about them, now is a good time to honestly reflect on what your values are, and how you may want them to change as you grow as a person.
+          </p>
+
+          <p>
+            It’s when things get tough that our values are really tested.
+          </p>
+
+          <p>
+            We are now going to explore the common values people hold. Decide for yourself how this applies to you.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We don’t like to talk about death do we? We hide the fact from children, and don’t like to think about it ourselves. When people close to us die, we are forced to confront the fact of our own mortality, but then we forget and move on. If we try to ignore something, the fear of it sometimes grows larger in our mind, and that fear can shape our lives in unconscious ways. I spoke to some teenagers in a school and I was surprised to hear that the fear of death was their number one fear - more than exams. It may be because no one had ever talked about it with them - at home or in school. Talking about death can help us get past our fear of it, and bring us to a point where it becomes something we live with comfortably, as a part of life, so when our time comes, we are at peace.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

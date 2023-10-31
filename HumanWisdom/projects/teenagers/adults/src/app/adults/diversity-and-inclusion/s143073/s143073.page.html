@@ -1,0 +1,23 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      Being told to change - doesnt bring change.
+      <br>
+      A lecture about diversity and inclusion - will not bring change.
+      <br>
+      Policies will not bring change.
+      <br>
+      Real change comes from the inside, from being open to examining our own thinking
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

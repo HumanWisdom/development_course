@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored that just as the physical body has a need for food and water, 
+          so the psychological body or the ‘I’ also has many emotional needs we expect others to meet.
+           We have a need to be loved, listened to, to be understood. We have a need for pleasure, for 
+           stimulation, for security, to be important and even for power. Wherever these needs are met 
+           we get attached -  be it people,, situations or  ideas and even habits and pets. We then
+            suffer if we lose anything we are attached to, or feel anxious about the idea of losing it,
+             because we are worried about our needs being met…. Where do these needs come from? They are
+              common to all of  us human beings. Perhaps they are a response 
+          to the deep inner restlessness and emptiness of the ‘I’. When our needs are met, for a short time, this feeling seems to go away or is hidden from our immediate awareness , and we feel reassured and happy.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

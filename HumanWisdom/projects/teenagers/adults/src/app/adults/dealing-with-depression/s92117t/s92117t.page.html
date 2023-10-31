@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this session we are going to introduce you to a series of practical things you can do to feel better now. When you are feeling down you cannot think straight and no amount of logic will help you get out of the loop of negative thinking. Sometimes you cannot ‘think’ yourself out of depression.
+          </p>
+
+          <p>
+            Remember it’s not you - it's just the automatic way your mind has reacted to whatever situation was responsible for triggering this bout of depression.
+          </p>
+
+          <p>
+            In this session you are going to learn the power of regular breathing, havening and tapping, journaling, the importance of being in nature, and learn a new skill - meeting the thoughts and feelings you have without language. We will also explore how talking to someone you are close to and opening your heart to them can do the world of good.
+          </p>
+
+          <p>
+            Practice some of these exercises daily, even when you are feeling better, so whenever you feel low again you have the tools to hand to recover yourself. Lets begin with breathing
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

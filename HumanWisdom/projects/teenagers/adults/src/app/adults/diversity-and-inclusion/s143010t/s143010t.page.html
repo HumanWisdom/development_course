@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          According to Deloitte, diverse companies enjoy 2.3 times higher cash flow per employee. Gartner found that inclusive teams improve team performance by up to 30 percent. In a BCG study, companies with diverse management teams had a 19 percent increase in revenue compared to their less diverse counterparts. Besides the fact that diversity improves your current business, 67 percent of workers consider diversity when seeking employment. McKinsey found that for every 10 percent increase in gender diversity, EBIT rose by 3.5 percent.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

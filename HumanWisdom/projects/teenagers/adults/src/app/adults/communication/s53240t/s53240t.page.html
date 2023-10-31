@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Arguments are common in all relationships, and at work. They can escalate into conflict and strain relationships. How can we avoid them? To answer that we need to have an awareness from moment to moment of what is happening in our thinking. If you have this awareness you can see an argument starting off long before anyone else does and do something about it. You will notice yourself repeating your point of view, the tone of your voice rising, talking about unrelated issues, feeling attacked, and not listening to the other person. Your mind goes into reactive mode and all intelligence gets suspended while a shouting match breaks out. How can we avoid this?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The emotional pain we feel when the ‘I’ is hurt is often more than if we have a physical pain.
+           Emotional pain is not as easy to get rid of, and we keep going over it in our thinking. 
+           Everytime we do this it gets stronger.
+          We also become afraid of being hurt, if we have been hurt before. This may explain why we
+           are sensitive to criticism, or afraid of getting too close to people, or get possessive about 
+           things we value, or get anxious about people leaving us, or about failure.
+            In protecting ourselves from being hurt we may behave in ways that are not in our best interest, 
+            ot kind to others. This fear is often unconscious, and shapes our lives in subtle ways
+          
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

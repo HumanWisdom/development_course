@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes we feel unhappy and cannot understand why. We keep looking for things in our life that we could change that would make us happier. We think if we got a better job, or a new car, or a new partner, or took up a new hobby, we would be happier. No matter what we do though, we cannot shake off this feeling of being dissatisfied and glum. What is going on? If we examine this pyramid which represents the different layers of our thinking, we can understand why. Deep down, in layer 4, the ‘I’ is restless, bored, empty. It is hidden from our awareness. In layer 2, which is our conscious mind, we feel this restlessness and don’t understand where it is coming from. We think it’s coming from what we are doing in the world, in layer 1, but it isn’t. Perhaps the answer lies in going deeper and understanding the origins of that feeling, as we will explore
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

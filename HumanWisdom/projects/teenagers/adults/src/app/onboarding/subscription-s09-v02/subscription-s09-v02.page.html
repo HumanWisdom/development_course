@@ -1,0 +1,327 @@
+<!-- top navigation -->
+<div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="goBack()" alt="" class="p0">
+        </a>
+      </div>
+  
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+        <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+          My Subscriptions
+        </h1>
+      </div>
+  
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+      </div>
+    </div>
+  </div>
+  <!-- /top navigation -->
+  
+  <!-- <app-bg-video></app-bg-video> -->
+  
+  <!-- page content -->
+  <div class="right_col mc_01">
+    <div class="">
+      <div class="row center_flex">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+          <div class="x_panel p0">
+            <div class="x_content p0">
+              <form>
+  
+                <!-- accordion - active programs-->
+                <div class="panel-group spanelgroup mb10pxi">
+                  <div class="panel panel-default">
+                    <div class="panel-heading p0">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ap">
+  
+                          <div class="row active_programs">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h6 class="fw_400 fs_18px lh_150p fc_ffffff">
+                                Active Programs
+                              </h6>
+                            </div>
+  
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <button class="fw_600 fs_16px lh_140p fc_e58d82 prog_count">
+                                <!-- 3 -->
+                                {{myprograms.length}}
+                              </button>
+                            </div>
+                          </div>
+  
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="ap" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ng-container *ngFor="let item of myprograms">
+                            <div class="ms_program">
+                                <div class="row" (click)="RouteToManageSubscription(item)">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                        {{item['Prog']}}
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div class="row center_flex mt10px mb20px">
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft"  (click)="RouteToManageSubscription(item)">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
+                                        Monthly Subscription
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='2'">
+                                      Yearly Subscription
+                                  </h4>
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.isTrial=='1'">
+                                    Free Trial
+                                  </h4>
+                                 </div>
+        
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            
+                                    
+                                    <div *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenewText">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                        Next Payment
+                                      </h4>
+          
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                      </h4>
+                                  </div>
+                                    
+                                  <ng-template #autoRenewText>
+                                    <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                            Auto-renew
+                                        </h4>
+            
+                                        <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                            {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                        </h4>
+                                    </div>
+                                  </ng-template>
+                                    <div *ngIf="!donotautorenew(item, 'compareauto')">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                            Expired
+                                        </h4>
+            
+                                        <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                            {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                        </h4>
+                                    </div>
+                                    <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                            Expiry
+                                        </h4>
+            
+                                        <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                            {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                        </h4>
+                                    </div>
+
+                                  </div>
+                                </div>
+        
+                                <div class="row center_flex" (click)="RouteToManageSubscription(item)">
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
+                                    <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
+                                        {{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}
+                                    </h4>
+                                  </div>
+        
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                    
+                                  <button 
+                                    *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenew"
+                                        type="button" 
+                                        class="btn btn_ms"
+                                        id="{{'Cancel' + item['ActKey']}}"
+                                        (click)="RouteToManageSubscription(item)"
+                                        >
+                                        Cancel Subscription
+                                    </button>
+                                 <ng-template #autorenew>
+                                    <button 
+                                        type="button" 
+                                        class="btn btn_ms"
+                                        id="{{'donotautorenew' + item['ActKey']}}"
+                                        [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                        (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
+                                        Do not auto-renew
+                                    </button>
+                                  </ng-template>
+
+
+                                    <button 
+                                        type="button" 
+                                        class="btn btn_ms"
+                                        id="{{'autorenew' + item['ActKey']}}"
+                                        [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                        (click)="autorenew(item['ActKey'], 'donotautorenew' + item['ActKey'], item['ActKey'])">
+                                        Activate Auto-Renew
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                        </ng-container>
+                        
+  
+                        <!-- <div class="ms_program">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                Adults
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex mt10px mb20px">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                Free trial - Yearly subscription
+                              </h4>
+                            </div>
+  
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                Next payment
+                              </h4>
+  
+                              <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                30 Jul, 2023
+                              </h4>
+                            </div>
+                          </div>
+  
+                          <div class="row center_flex">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 display_webkit_inline_box">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg" class="img-responsive mr10px">
+                              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
+                                Nita Hamm
+                              </h4>
+                            </div>
+  
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <button type="button" class="btn btn_ms">
+                                Cancel subscription
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="ms_program">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                Children (&lt13 years)
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex mt10px mb20px">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                Monthly subscription
+                              </h4>
+                            </div>
+  
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                Expiry
+                              </h4>
+  
+                              <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                10 Apr, 2024
+                              </h4>
+                            </div>
+                          </div>
+  
+                          <div class="row center_flex">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 display_webkit_inline_box">
+                              <div class="col-md-1 col-sm-1 col-xs-1 p0">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg" class="img-responsive mr10px">
+                              </div>
+                              
+                              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                                <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
+                                  Agata Corcrain
+                                </h4>
+  
+                                <h4 class="mt0px mb5px fs_12px fw_400 lh_150p fc_ffffff">
+                                  Agata Corcrain
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /accordion - active programs -->
+  
+                <!-- accordion - not yet started -->
+                <div class="panel-group spanelgroup">
+                  <div class="panel panel-default">
+                    <div class="panel-heading p0">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#nys">
+  
+                          <div class="row active_programs">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h6 class="fw_400 fs_18px lh_150p fc_ffffff">
+                                Not Yet Started
+                              </h6>
+                            </div>
+  
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <button class="fw_600 fs_16px lh_140p fc_e58d82 prog_count">
+                                {{notmyprograms.length}}
+                              </button>
+                            </div>
+                          </div>
+  
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="nys" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="ms_program">
+                          <div class="row center_flex">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                                Children
+                                <span class="fw_400">
+                                  (&lt;13 years)
+                                </span>
+                              </h4>
+  
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                Program Code: A580IUBG
+                              </h4>
+                            </div>
+  
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                Invite sent
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /accordion - not yet started -->
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /page content -->

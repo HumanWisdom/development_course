@@ -1,0 +1,15 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Now apply these #8 tips to the habits you want to change. Make a note in your journal of your daily progress. Good luck! 
+      <span class="highligted_span">
+        (To learn the art of paying attention see the section on Nurturing a quiet mind)
+      </span>
+     </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

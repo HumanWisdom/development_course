@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          In the midst of our suffering it is often natural to ask - ‘Why Me , why did it happen to me - why was I so unfortunate, what have I done to deserve this’, and so on.  It may be completely understandable given the circumstances of your loss - if someone dies in an accident, or a war zone, or someone you loved goes off with another. This is just the way your mind reacts to suffering, and is natural. It brings us a subtle pleasure, but it also carries a risk. The risk is that you can start feeling like a victim, and that can rob you of the energy you need to come out of this fog of suffering and live your life fully again. You have to consciously stop this from happening, because your mind is not going to do this for you, and if you don’t snap out of it, you can get trapped in your own suffering. 
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

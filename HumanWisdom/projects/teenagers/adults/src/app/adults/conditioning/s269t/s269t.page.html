@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            The next time you are critical of someone, explore the role that conditioning plays in that. You compare your normal, which is your conditioning, with that of the other, and the difference prompts you to say something critical to them. Your criticism is as much a reflection of your own conditioning as theirs. This understanding may make you pause, and ask if they are just different, or wrong, and if you can accept that they are just a product of their conditioning, which happens to be different from yours. This understanding allow us to respond with intelligence
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

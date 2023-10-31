@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When you are depressed you withdraw from the people in your life that you are close to - your mind is focused on the despair you feel and do not have the space to think of others. You may resist attempts by others to help you. Or, you may be angry because you do not think they understand you well enough. Engaging with friends can seem too much of an effort or you do not want them to see you in this way so you gradually stop seeing them. They try hard to reach out to you but eventually give up. As a result, many relationships get strained and you may feel even more lonely and unsupported as a result. You may not even realise this is happening around you. 
+          </p>
+
+          <p>
+            It is no wonder that depressed people often feel very lonely - as if nobody understands them.
+            Being aware of this allows you to do something about it
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our Self-interest operates often beyond our awareness shaping our thoughts and actions. In most situations our mind asks - ‘What's in it for me?’ - but we are not aware of that. It could translate into  - How is hiring this person going to help me personally - rather than the organization. I may choose someone who I think will benefit me personally, rather than the organization. It can also impact my relationships with people.
+          It can come in the way of building a more inclusive culture in an organization, and again, just being aware of it in the background, allows us to respond with intelligence.           
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

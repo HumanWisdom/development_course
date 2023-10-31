@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      If we are not watchful, our hidden self-interest can cause corruption, and our mind can justify our actions to ourselves. Slowly, this robs us of our goodness of spirit, and we don’t notice what we have lost. 
+
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

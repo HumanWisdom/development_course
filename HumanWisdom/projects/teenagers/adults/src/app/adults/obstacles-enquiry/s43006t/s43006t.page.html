@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            On this inner journey of learning and discovery the mountains we think we need to climb in our mind, are all imaginary. We imagine all sorts of difficulties that we will encounter on this journey of learning about ourselves, and so don’t begin, and can lose out on
+          </p>         
+          <p>
+            The unfamiliar always feels like an internal mountain to climb, but as you take the first step and start walking the path opens, and the mountain disappears, because it wasn't real in the first place. As the poet Rumi said ‘As you start to walk on the way, the way appears’
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            In this session we are going to explore why criticism can feel so painful. After all it's just words. The feeling of hurt is often automatic and we seem to have little control over it. We are going to explore what is going on in our thinking when we are criticised, why some criticisms don’t hurt at all, and others do, and why different people respond differently to the same criticism. We will also explore how we can respond with intelligence, because if we can do that, it can allow us to live much richer lives
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+           

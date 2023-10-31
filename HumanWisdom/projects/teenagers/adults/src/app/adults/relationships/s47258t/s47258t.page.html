@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          We find it much easier to criticize others than to appreciate them. We have explored before how our mind is constantly looking for stimulation, which is the new, and so tends to overlook the old. This is why we often overlook what we already have - and can take people for granted. If we understand this we can find things to appreciate about the people in our life consciously. 
+          <br>This can enhance all our relationships. Of course it needs to be done with sincerity and intelligence.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

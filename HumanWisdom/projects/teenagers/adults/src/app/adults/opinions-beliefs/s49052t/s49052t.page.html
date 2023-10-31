@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Beliefs are powerful. Belief seems a deep seated human need. Religious beliefs have shaped human beings and our shared history for millenia. Political beliefs have shaped our history.
+          <br>We also have our personal beliefs about ourselves and what we think we are capable of, and beliefs around what happens after death. In this session we are going to explore the different beliefs we have, how we acquire them, the many emotional needs they fulfill,  why we get attached to them, and the problems they can cause. They are neither right or wrong, but understanding the many hidden patterns of thinking behind them, allows us to respond with wisdom.
+          
+         </h3> 
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

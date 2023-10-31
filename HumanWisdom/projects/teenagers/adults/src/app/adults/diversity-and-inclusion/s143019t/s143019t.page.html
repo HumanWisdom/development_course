@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          In 2001 Marianne Bertrand, a professor at the University of Chicago, used a experiment to measure the extent of race-based job discrimination. She sent fictitious resumes in response to 300 help-wanted ads listed in the Boston Globe and the Chicago Tribune. They used the callback rate for interviews to measure the success of each resume. Approximately 5,000 resumes were sent. Each resume was randomly assigned either a very white-sounding name or a very African-American-sounding name. The authors found that applicants with white-sounding names were 50 percent more likely to get called for an initial interview than applicants with African-American-sounding names.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

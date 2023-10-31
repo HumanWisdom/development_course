@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          So many relationships break down because of money. Friends drift apart if one has more than the other, because of the envy that follows. Siblings fight tooth and nail over the estate after their parents die, forgetting the love they once had for each other, and the fact that they did not earn a penny of it themselves. If one person in a relationship has more money than the other, a power dynamic can follow which can strain the relationship. Money can bring out the worst in people. The relationships that get damaged are more valuable than the money that caused their break-up. Love is the most precious resource in the world - but we need real clarity of thinking and wisdom to see that clearly. If we did, we would compromise, and bend over backwards to ensure an amicable solution, no matter what the problem.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

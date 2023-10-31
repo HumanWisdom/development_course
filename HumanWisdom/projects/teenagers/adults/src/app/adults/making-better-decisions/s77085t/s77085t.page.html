@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Again, this is not something we do consciously, but well worth doing.
+            It’s based on asking two questions:
+          </p>
+
+          <p>
+            What are the risks of doing what we have decided to do?
+            What are the risks of not doing the same thing?
+          </p>
+
+          <p>
+            For example - one may be tempted to travel without a ticket - because one thinks one can get away with it. If one is caught then there is a risk of getting a criminal conviction, and clearly here the risks outweigh the benefits significantly - so many people are forced to resign from their jobs over relatively minor misdemeanors because they lied when they were caught.
+          </p>
+
+          <p>
+            Or, if one has a pain in the tummy and one thinks that it is not serious and does not want to bother the doctor. The risk analysis there would clearly show you the importance of going to see the doctor, because of the risk of missing a cancer if one did not go.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are all conditioned by our family, culture and social media and not aware of it. As part of that process we develop ideas of who we ‘should’ be - what we should be doing with our careers, how we should look, how much money we should be earning, how popular we should be and so on. This happens without our awareness, and we think these ideas are originally ours. Our mind then compares where we are in life, with where we think we should be, and if we feel we are not good enough, we can get depressed and self-critical. The first step is to observe this process in our thinking and realise it's not intelligent. We can then question our conditioning and let go of all these images of who we should be. That brings acceptance, and peace.
+
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

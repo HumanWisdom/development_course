@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          We are keen to protect the image we have cultivated for ourselves, and that applies also to companies and countries. What others think of us, shapes our lives in a number of ways. In many societies in the world people spend far more on weddings than they can afford, just so others will have a good opinion about them. Families try to outdo each other and it becomes a reflection of self-importance, money and prestige. In other cases companies and politicians hire PR companies to protect their image. These companies may start a campaign to influence what we think of a particular country or company. Why does it matter so much?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We may have an intention to be honest and that is a great start. 
+If we are in an environment where dishonesty is the norm, we may be subtly conditioned to think this
+ is okay. Everyone else is doing it, so what is the problem? Our mind can justify anything to itself.
+We also need to become aware of our self-interest operating in the background, and see how it impacts
+ our thinking and behaviour, so in the moment we have to decide, we can make the honest decision, 
+ and not one dictated by our self-interest. This self-interest is part of being human and not wrong, 
+ but just needs to be understood. Lastly we need to become aware of our unconscious fears which can
+  drive us to protect ourselves, for example to cover up a mistake we have made. When that cover-up 
+  is exposed our integrity is compromised.
+
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

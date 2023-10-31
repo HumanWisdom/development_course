@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          If you can spot that you are in the middle of an argument then you can do something about it. You need to create the space for your intelligence to step in and you can do that by just being quiet. With that intelligence you may realise that it is pointless continuing with the argument. You are not going to convince the other person to change their mind. The more you try the more entrenched their opinion will become. You may say things you will regret later, and that may strain the relationship. The smart thing is to just say ‘Can we pause this discussion and come back to it later? ’. You can return to the discussion when you are both calmer.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

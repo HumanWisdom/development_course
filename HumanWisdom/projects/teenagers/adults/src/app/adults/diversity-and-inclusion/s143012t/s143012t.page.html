@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            When employees feel included, they’re more engaged. Highly engaged employees go the extra mile for the organization. This higher engagement has a ripple effect on profitability, team morale, and retention. People working in inclusive workplaces also tend to take less leave for health issues. When companies support D&I initiatives,  83 percent of millennials are actively engaged in their work.
+          </p>
+
+          <p>
+            By building an inclusive work environment, you can instill greater trust between employees and leadership一an enormous problem in today’s workforce.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

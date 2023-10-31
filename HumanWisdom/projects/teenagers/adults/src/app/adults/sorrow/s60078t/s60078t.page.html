@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          You are going to experience a whole range of feelings in reaction to this loss. They are all normal. Our normal pattern is to interpret these feelings, comment on them, or justify them or resist them. There is a great beauty in just letting these feelings be. Lets them come, rise fully, experience them fully and let them fade away again. When another wave comes, you can feel that fully too. In this way the feelings come, and go completely. If you try and suppress them, they never get fully expressed and can linger for a long time, sometimes for years.
+Sometimes these feelings can be overwhelming and it's tempting to try and escape - through alcohol or drugs - but that can just make things worse.
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

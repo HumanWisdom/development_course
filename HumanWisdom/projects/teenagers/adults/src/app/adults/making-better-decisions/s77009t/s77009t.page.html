@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are many times in our life when we are not sure what to do and cannot make a decision, even though we need to make one.
+          </p>
+
+          <p>
+            If we are 18 and choosing what to study at university, we may be afraid of making the wrong decision, or not be sure what to do. How do we process all the different thoughts which are pulling us in different directions and make the right choice for ourselves?
+          </p>
+
+          <p>
+            Or we may be in an unhappy relationship or job, and want to leave but are afraid of the consequences, so we put off the decision, but continue to be unhappy.
+          </p>
+
+          <p>
+            You could be torn between doing the right thing for the company you work for, and the right thing for your own career. This also applies to doctors, lawyers, politicians, and so on. What will you choose to do?
+          </p>
+
+          <p>
+            Understanding the many hidden drivers in our thinking that shape our decisions can make the process easier.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

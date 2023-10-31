@@ -1,0 +1,20 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext [bg]="bg">
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      These emotional needs are not right or wrong, and the same in everyone. 
+    </h1>
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      We can begin by being aware of them, taking ownership of them, and then having a conversation about them. This can lead to happier relationships.
+    </h1>
+    
+    <div class="clearfix"></div>
+
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

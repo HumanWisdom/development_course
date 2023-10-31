@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If you can think of different ways of seeing things, then you can ask if there are different ways to respond. Asking the question opens the door to intelligence. In an argument it may mean saying nothing, or thinking how it's going to be received before saying something, or listening more carefully. Otherwise the argument may continue escalating and harm your relationship. 
+          Or, if you have failed an exam, your initial reaction may be to follow a familiar pattern of escape through drinking for example, but asking this question may allow you to consider other options - like going for a run to clear your mind, for example.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

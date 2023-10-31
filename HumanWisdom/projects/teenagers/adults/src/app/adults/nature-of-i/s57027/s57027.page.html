@@ -1,0 +1,14 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      The ‘I’ seeks pleasure in response to the feeling of emptiness within. Seeking pleasure through food can lead to obesity. 
+      Seeking it through alcohol or drugs leads to addiction. Pleasure is not wrong - it just needs to be understood, so it has its rightful place in our lives.
+
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
