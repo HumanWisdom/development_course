@@ -1,10 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange, Input } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
-import * as $ from 'jquery';
-import { BehaviorSubject, Subject } from "rxjs";
-import { addEventListener } from "@ionic/core/dist/types/utils/helpers";
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
 
 @Component({
@@ -29,15 +26,12 @@ export class IndexPage implements OnInit, AfterViewInit {
   jrList = [];
   jrListC = [];
   topic = [];
-
-
-
   searchedText: string;
   isReloadList = true;
   enableAlert = false;
   guest = false;
   Subscriber = false;
-
+  enableTab = 'All'
 
   constructor(
     private router: Router,
@@ -45,7 +39,8 @@ export class IndexPage implements OnInit, AfterViewInit {
     public service: AdultsService,
     private location: Location,
     public logeventservice: LogEventService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private cd: ChangeDetectorRef
   ) {
 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
@@ -84,7 +79,8 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   showGuidedQuestions() {
-    if (this.searchedText != "") {
+    this.enableTab = 'Guided';
+    if (this.searchedText) {
       this.jrList = this.jrListC.filter(
         (it) =>
           (it?.Response?.toLowerCase().includes(
@@ -120,8 +116,8 @@ export class IndexPage implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => {
       var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
-      if(data && data!=null){
-        data[0].addEventListener('click', this.clearInput.bind(this));
+      if (data && data != null) {
+        data[0]?.addEventListener('click', this.clearInput.bind(this));
       }
     }, 1000);
   }
@@ -250,7 +246,8 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   showAll() {
-    if (this.searchedText != "") {
+    this.enableTab = 'All';
+    if (this.searchedText) {
       this.jrList = this.jrListC.filter(
         (it) =>
           it?.Response?.toLowerCase().includes(
@@ -260,13 +257,14 @@ export class IndexPage implements OnInit, AfterViewInit {
             this.searchedText.toLowerCase()
           )
       );
-    }else{
+    } else {
       this.viewJournalAndReflections();
     }
   }
 
   showReflections() {
-    if (this.searchedText != "") {
+    this.enableTab = 'Reflections';
+    if (this.searchedText) {
       this.jrList = this.jrListC.filter(
         (it) =>
           (it?.Response?.toLowerCase().includes(
@@ -282,7 +280,8 @@ export class IndexPage implements OnInit, AfterViewInit {
     }
   }
   showNotes() {
-    if (this.searchedText != "") {
+    this.enableTab = 'Diary';
+    if (this.searchedText) {
       this.jrList = this.jrListC.filter(
         (it) =>
           (it?.Response?.toLowerCase().includes(
@@ -295,6 +294,7 @@ export class IndexPage implements OnInit, AfterViewInit {
       );
     } else {
       this.jrList = this.jrListC.filter((p) => p.JrType == "Diary");
+      this.cd.detectChanges()
     }
 
   }

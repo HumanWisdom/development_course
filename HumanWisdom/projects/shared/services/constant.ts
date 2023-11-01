@@ -19,8 +19,8 @@ export class Constant {
     public static PaymentIntentModel = "PaymentIntentModel";
     public static ClientSecret = "clientSecret";
     public static Isloggedin = "isloggedin";
-    public static ShortTrue ="T";
-    public static SelectedPlanModel ="SelectedPlanModel";
+    public static ShortTrue = "T";
+    public static SelectedPlanModel = "SelectedPlanModel";
     public static MonthPlanFreeTrial = 7;
     public static AnnualPlanFreeTrial = 14;
     public static One = 1;
@@ -32,6 +32,9 @@ export class Constant {
     public static ManageSubscriptionData = 'ManageSubscriptionData';
     public static ActivationKey = 'ActivationKey';
     public static TestimonialId = 'TestimonialId';
-    public static EmptyString ='';
+    public static EmptyString = '';
     public static userId = 'userId';
+    public static isFromCancelled = 'isFromCancelled';
+    public static Checkout = "Checkout";
+    public static NoTrial = 'No Trial';
 }

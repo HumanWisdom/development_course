@@ -28,22 +28,21 @@ export class NotePage implements OnInit {
   urlMid: any
   id = 0
   readOnly = false;
+  enableSave = false
+  oldnotes = '';
+
   @ViewChild('savebtn') savebtn:any;
   @ViewChild('successbtn') successbtn :any;
+
   constructor(
     private router: Router,
     private service: AdultsService,
     private location: Location,
     private activate: ActivatedRoute,
-    public logeventservice: LogEventService
-  ) {
-
-
-  }
+    public logeventservice: LogEventService,
+  ) {  }
 
   ngOnInit() {
-
-
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     console.log(this.userId)
@@ -58,6 +57,7 @@ export class NotePage implements OnInit {
     console.log(this.urlNotes, this.urlTitle, this.urlId, this.urlType)
     if (this.urlId != 0) {
       this.notes = this.urlNotes
+      this.oldnotes = this.notes
       this.title = this.urlTitle
       this.id = this.urlId
       this.readOnly = true
@@ -203,6 +203,14 @@ export class NotePage implements OnInit {
 
   goBack() {
     this.location.back()
+  }
+
+  dataChanged(event) {
+    if(this.oldnotes !== event) {
+      this.enableSave = true;
+    }else if(this.oldnotes.trim() === event.trim()) {
+      this.enableSave = false;
+    }
   }
 
 }
