@@ -152,7 +152,7 @@ if(res) {
 
   RouteToManageSubscription(item){
     if((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1){
-      SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData,JSON.stringify(item));
+       SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData,JSON.stringify(item));
       this.router.navigate(["/myprogram/manage-subscription"]);
     }
   }

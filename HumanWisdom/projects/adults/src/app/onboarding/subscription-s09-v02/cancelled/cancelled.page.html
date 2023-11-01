@@ -38,10 +38,10 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row" *ngIf="trialData">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                    Your free trial began on Jul 16, 2023. Your premium access lasts until Jul 30, 2023.
+                    Your free trial began on {{ item['BoughtName'] | date : 'dd LLL yy'}}. Your premium access lasts until {{ item['ExpDate'] | date : 'dd LLL yy'}}.
                   </h4>
 
                   <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
@@ -73,8 +73,8 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext">
       <a>
-        <button  (click)="Subscribe()" type="button" class="btn btn_tfas">
-          Subscribe
+        <button  (click)="dashboard()" type="button" class="btn btn_tfas">
+          Continue to dashboard
         </button>
       </a>
     </div>

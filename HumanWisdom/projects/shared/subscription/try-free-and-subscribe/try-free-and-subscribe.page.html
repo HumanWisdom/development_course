@@ -40,11 +40,18 @@
                   <h4  *ngIf="trialStatus == 'underway'" class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
                     Your free trial is currently {{trialStatus}}
                   </h4>
+               
 
                   
                   <h4 *ngIf="trialStatus == 'ended'" class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
                     Your free trial has {{trialStatus}}
                   </h4>
+                </div>
+              </div>
+              <div class="row mb20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <span *ngIf="trialStatus == 'ended'" style="font-size: small;" class="fc_ffffff">To access HappierMe Premium, choose one of the subscription options below:</span>
+                  <span *ngIf="trialStatus == 'underway'" style="font-size: small;" class="fc_ffffff"> Your premium access lasts until {{expDate}}. To revive your subscription and continue to access HappierMe Premium after  {{expDate}} , choose one of the subscription options below:</span>
                 </div>
               </div>
 
@@ -129,7 +136,7 @@
               </div>
      
               <a class="" (click)="SelectSubscriptionType(Redeem)">
-                <div class="row div_monthly"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Redeem}">
+                <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Redeem}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
                       Redeem subscription code
@@ -175,13 +182,13 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
       <a>
-        <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="!isFromCancelled">
+        <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'No Trial'">
           Try free and subscribe
         </button>
-        <button type="button" (click)="checkout()" class="btn btn_tfas" *ngIf="isFromCancelled && (trialStatus == 'ended' || trialStatus == 'No Trial')">
+        <button type="button" (click)="checkout()" class="btn btn_tfas" *ngIf="trialStatus == 'ended'">
           Proceed to subscribe
         </button>
-        <button type="button" (click)="dashboard()" class="btn btn_tfas" *ngIf="isFromCancelled && trialStatus == 'underway'">
+        <button type="button" (click)="dashboard()" class="btn btn_tfas" *ngIf="trialStatus == 'underway'">
           Continue to dashboard
         </button>
       </a>
