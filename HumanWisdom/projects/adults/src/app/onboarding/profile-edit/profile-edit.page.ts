@@ -27,6 +27,7 @@ export class ProfileEditPage implements OnInit {
   age:any = '';
   profession:any = '';
   title:any = '';
+  titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
 
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: AdultsService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -42,9 +43,10 @@ export class ProfileEditPage implements OnInit {
         this.email = this.userdetail['Email']
         this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0'  ? '' : this.userdetail['Age']
         this.country = this.userdetail['Country']
-        this.isdcode = this.userdetail['ISD_Code'] ? '+' + this.userdetail['ISD_Code'] : ''
+        this.isdcode = this.userdetail['ISD_Code'] ? this.userdetail['ISD_Code'].toString().includes('+') ? this.userdetail['ISD_Code'] : '+' + this.userdetail['ISD_Code'] : ''
         this.profession = this.userdetail['Profession']
         this.phoneno = this.userdetail['PhoneNo']
+        this.title = !this.userdetail['Title'] ? 'Title' : this.userdetail['Title']
         let userres = JSON.parse(localStorage.getItem("loginResponse"));
         let nameupdate = localStorage.getItem(
           "nameupdate"
