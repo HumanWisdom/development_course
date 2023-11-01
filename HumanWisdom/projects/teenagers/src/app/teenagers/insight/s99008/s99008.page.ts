@@ -16,9 +16,9 @@ export class S99008Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   title="Stage #2 – An insight during the event"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/insight/audios/1.3.mp3'
-
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/insight/audios/1.3.mp3'
+ 
   transcriptPage="insight/s99008t"
   toc="insight/s99001"
   bookmark=0

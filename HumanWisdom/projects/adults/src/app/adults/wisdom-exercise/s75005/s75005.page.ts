@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 declare var $: any;
 @Component({
   selector: 'HumanWisdom-s75005',
@@ -530,64 +531,7 @@ export class S75005Page implements OnInit {
     }, 700);
   }
   getClass(day) {
-    var dayclass = '';
-    var className = '';
-    if (day === '75005p0') {
-      dayclass = "0";
-    }
-    else if (day === '75005p1') {
-      dayclass = '1';
-    }
-    else if (day === '75005p2') {
-      dayclass = '2';
-    }
-    else if (day === '75005p3') {
-      dayclass = '3';
-    }
-    else if (day === '75005p4') {
-      dayclass = '4';
-    }
-    else if (day === '75005p5') {
-      dayclass = '5';
-    }
-    else if (day === '75005p6') {
-      dayclass = '6';
-    }
-    else if (day === '75005p7') {
-      dayclass = '7';
-    }
-    else if (day === '75005p8') {
-      dayclass = '8';
-    }
-    else if (day === '75005p9') {
-      dayclass = '9';
-    }
-    else if (day === '75005p10') {
-      dayclass = '10';
-    }
-    else if (day === '75005p11') {
-      dayclass = '11';
-    }
-    else if (day === '75005p12') {
-      dayclass = '12';
-    }
-    else if (day === '75005p13') {
-      dayclass = '13';
-    }
-    else if (day === '75005p14') {
-      dayclass = '14';
-    }
-
-    if (this.currentDay.toString() == dayclass) {
-      className += 'editable ';
-    }
-    if (this.vistedScreens.some(x => x.ScreenNo == day)) {
-      className += 'inactive ';
-    }
-    if (this.nextDay == +(dayclass)) {
-      className = 'nextDayButton ';
-    }
-    return className;
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
     this.nextDay = null;

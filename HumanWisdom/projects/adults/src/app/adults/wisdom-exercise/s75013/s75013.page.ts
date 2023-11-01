@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 //import { colorSets } from '@swimlane/ngx-charts';
 declare var $: any;
 @Component({
@@ -269,44 +270,7 @@ export class S75013Page implements OnInit {
     }, 700);
   }
   getClass(day) {
-    var dayclass = '';
-    var className = '';
-    if (day === '75013p0') {
-      dayclass = "0";
-    }
-    else if (day === '75013p1') {
-      dayclass = '1';
-    }
-    else if (day === '75013p2') {
-      dayclass = '2';
-    }
-    else if (day === '75013p3') {
-      dayclass = '3';
-    }
-    else if (day === '75013p4') {
-      dayclass = '4';
-    }
-    else if (day === '75013p5') {
-      dayclass = '5';
-    }
-    else if (day === '75013p6') {
-      dayclass = '6';
-    }
-    else if (day === '75013p7') {
-      dayclass = '7';
-    }
-
-
-    if (this.currentDay.toString() == dayclass) {
-      className += 'editable ';
-    }
-    if (this.vistedScreens.some(x => x.ScreenNo == day)) {
-      className += 'inactive ';
-    }
-    if (this.nextDay == +(dayclass)) {
-      className = 'nextDayButton ';
-    }
-    return className;
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
     this.nextDay = null;

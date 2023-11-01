@@ -2336,8 +2336,6 @@
   <!--/class -->
 </div>
 <!-- /page content -->
-
-<!-- footer  -->
 <div class="mfooter p0">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft col_cw">
@@ -2346,31 +2344,31 @@
           Intro
         </button>
       </a>
-  
+
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75004p1')" (click)="getdayevent('1')">
           Day 1
         </button>
       </a>
-  
+
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75004p2')" (click)="getdayevent('2')">
           Day 2
         </button>
       </a>
-  
+
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75004p3')" (click)="getdayevent('3')">
           Day 3
         </button>
       </a>
-  
+
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75004p4')" (click)="getdayevent('4')">
           Day 4
         </button>
       </a>
-  
+
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75004p5')" (click)="getdayevent('5')">
           Day 5
@@ -2396,10 +2394,12 @@
           Day 9
         </button>
       </a>
-  
+
     </div>
   </div>
 </div>
+<!-- footer  -->
+
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Please subscribe to access your online Journal'">
 </app-modal>

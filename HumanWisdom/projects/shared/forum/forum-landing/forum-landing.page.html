@@ -42,8 +42,10 @@
                   <input type="search" autofocus autocomplete="off" (keydown.enter)="onEnterKey($event)"  [(ngModel)]="searchInput"  (focusout)="onFocusOutEvent()" class="form-control has-feedback-left pfy_search hide_search" #threadsearch
                     id="inputSuccess2" name="searchEn" placeholder="Search forum">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span *ngIf=" searchInput!=''" (click)="clearSearch()"
+                   class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
                 </div>
-              </div>
+                </div>
               <!-- /search -->
 
               <div class="row">
@@ -318,7 +320,7 @@
               <!-- /post -->
 
               <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)"
-                [okText]="'Ok'" [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal>
+              [okText]="'Ok'" [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal>
 
               <div class="pagebreak"></div>
 
@@ -868,4 +870,6 @@
     </div>
   </div>
 </div>
+
+
 <!-- /choose category -->

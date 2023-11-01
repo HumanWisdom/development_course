@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="mtb30px mregister">
-                  <div class="row mb10px">                    
+                  <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                       <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" placeholder="Friend name">
                       <div class="fc_img">
@@ -45,7 +45,7 @@
                     </div>
                   </div>
 
-                  <div class="row">                    
+                  <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                       <input type="text" id="email" (keyup)="keyemail($event.target)" class="sp_fc" placeholder="Friend email">
                       <div class="fc_img">
@@ -57,7 +57,7 @@
 
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <button type="submit" class="btn btn_raf_submit w100" (click)="submitrefer()">
+                    <button type="submit" [disabled]="disabled()"  class="btn btn_raf_submit w100" (click)="submitrefer()">
                       Submit
                     </button>
                   </div>
