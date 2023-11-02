@@ -21,10 +21,8 @@
 
 <app-bg-video  *ngIf="defaultShow"></app-bg-video>
 
-<!-- page content -->
-<div class="right_col mc_01"  *ngIf="!defaultShow">
-  <!-- Class -->
-  <div class="cw100p">
+
+  <div class="cw100p" *ngIf="!defaultShow">
     <div class="row center_flex">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 bg_292d56">
         <div class="x_panel p0">
@@ -109,7 +107,6 @@
     </div>
   </div>
   <!--/Class -->
-</div>
 
 <div class="right_col mc_01"  *ngIf="defaultShow">
   <!-- Class -->
