@@ -963,7 +963,8 @@
         bottom: 8% !important;
     } */
 
-    .lab-modal-body
+    /* .lab-modal-body */
+    .modal.fade.in .modal_ext_01
     {
         top: 0;
         overflow: auto;
@@ -982,7 +983,8 @@
         height: 155px;
     }
 
-    .modal.fade.in .lab-modal-body
+    /* .modal.fade.in .lab-modal-body */
+    .modal.fade.in .modal_ext_01
     {
         overflow-y: overlay !important;
         height: 100%;

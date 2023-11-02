@@ -732,4 +732,9 @@ export class SubscriptionS01V04Page implements OnInit {
     }
     return result;
   }
+
+  goBack() 
+  {
+    this.location.back()
+  }
 }
