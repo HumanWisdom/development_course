@@ -458,7 +458,7 @@ export class S157011Page implements OnInit {
     var hintDetails = document.getElementsByClassName('active');
     if(hintDetails && hintDetails!=null){
     var journalWe =  hintDetails[0].querySelector('app-journal-we') as any;
-    if(journalWe!=null && journalWe.dataset){
+    if(journalWe!=null && journalWe.dataset.hint){
       this.hintValue = journalWe.dataset;
       this.isShowBulb = true;
       const element = document.getElementById('hinttext');
