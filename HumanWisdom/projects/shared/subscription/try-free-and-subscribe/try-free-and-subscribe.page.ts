@@ -23,12 +23,25 @@ export class TryFreeAndSubscribePage implements OnInit {
   paymentIntentModel: paymentIntentModel;
   pricingModel: any;
   userId: number;
+  trialStatus : string = 'No Trial';
+  isFromCancelled: boolean = false;
+  cartList = [];
+  startDate:any;
+  expDate:any;
   constructor(private router: Router, private onboardingService: OnboardingService,
     private location: Location) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     this.Redeem = Constant.Redeem;
-    this.selectedSubscription = this.Annual;
+    this.onboardingService.checkTrial().subscribe(res=>{
+      if(res){
+        this.trialStatus = res.IsTrial;
+         if(this.trialStatus == Constant.NoTrial){
+          this.startDate = res.StartDate;
+          this.expDate = res.ExpDate;
+         }
+      }
+    })
   }
 
   ngOnInit() {
@@ -37,6 +50,8 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   InitializeDefaultValues() {
+    let canclled = SharedService.getDataFromLocalStorage(Constant.isFromCancelled);
+    this.isFromCancelled =  (canclled == null || canclled == undefined || canclled =='null' || canclled =='') ? false : (canclled==Constant.ShortTrue) ? true:false;
     var sub = SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan);
     if (sub == Constant.AnnualPlan ||
       sub == Constant.MonthlyPlan) {
@@ -81,7 +96,15 @@ export class TryFreeAndSubscribePage implements OnInit {
       this.SetPaymentIntentModel();
       this.SetDataInLocalStorage();
       if (this.selectedSubscription != this.Redeem) {
-        this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+        if(this.trialStatus == 'No Trial'){
+          this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+        }else {
+          SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
+          var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
+          localStorage.setItem('totalAmount',amt);
+          SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+          this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
+        }
       } else {
         this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
       }
@@ -90,6 +113,18 @@ export class TryFreeAndSubscribePage implements OnInit {
     }
   }
 
+
+  dashboard(){
+    this.router.navigateByUrl('/adults/adult-dashboard');
+  }
+
+  checkout(){
+    SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
+    var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
+    localStorage.setItem('totalAmount',amt);
+    SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+    this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
+  }
   getCountry() {
     this.onboardingService.getCountry().subscribe((res: any) => {
       if (res[Constant.In_eu]) {

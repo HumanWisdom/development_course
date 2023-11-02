@@ -3,6 +3,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
+import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
 
 @Component({
   selector: 'app-subscription-payment',
@@ -28,24 +31,42 @@ export class SubscriptionPaymentPage implements OnInit {
   defaultCountry: any;
   defaultCountryname: any;
   defaultCurrencySymbol: any
-
+  obj:any;
   constructor(private service: OnboardingService,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount')
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
+    let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
+    
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
-    let obj = {
+    var checkout = SharedService.getDataFromLocalStorage(Constant.Checkout);
+    if(checkout == 'T'){
+        this.obj = {
+          UserID: userId,
+          ProgramID: '9',
+          PlanId:  plan === 'Annual' || 'Yearly' ? '2' : '1',
+          DiscountCode:  0,
+          Quantity: 1,
+          AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
+          MyselfSub: "1",
+          RateID: rateId
+        } 
+  }else{
+    this.obj = {
       UserID: userId,
       ProgramID: '9',
       PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
-      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : ''
-    }
-    this.service.stripe(obj)
+      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
+    } 
+  }
+   
+    SharedService.setDataInLocalStorage(Constant.Checkout,'F')
+    this.service.stripe(this.obj)
       .subscribe(res => {
         this.stripeId = res;
         this.enable = true;
@@ -182,7 +203,7 @@ export class SubscriptionPaymentPage implements OnInit {
                 });
               } else {
 
-                // The payment has succeeded.
+                // The payment has succeeded.0.
                 localStorage.setItem('personalised', 'F');
                 if (localStorage.getItem('ispartnershipClick') == 'T') {
                   if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {

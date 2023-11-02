@@ -1,13 +1,13 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" routerLink="/adults/adult-dashboard">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
         My daily practice
       </h1>
@@ -25,7 +25,7 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -48,11 +48,16 @@
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
                             <ol class="carousel-indicators">
-                              <li data-target="#mdp_carousel" data-slide-to="0" [ngClass]="[dailyid === '0' ? 'active' : '']"></li>
-                              <li data-target="#mdp_carousel" data-slide-to="1" [ngClass]="[dailyid === '1' ? 'active' : '']"></li>
-                              <li data-target="#mdp_carousel" data-slide-to="2" [ngClass]="[dailyid === '2' ? 'active' : '']"></li>
-                              <li data-target="#mdp_carousel" data-slide-to="3" [ngClass]="[dailyid === '3' ? 'active' : '']"></li>
-                              <li data-target="#mdp_carousel" data-slide-to="4" [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
+                              <li data-target="#mdp_carousel" data-slide-to="0"
+                                [ngClass]="[dailyid === '0' ? 'active' : '']"></li>
+                              <li data-target="#mdp_carousel" data-slide-to="1"
+                                [ngClass]="[dailyid === '1' ? 'active' : '']"></li>
+                              <li data-target="#mdp_carousel" data-slide-to="2"
+                                [ngClass]="[dailyid === '2' ? 'active' : '']"></li>
+                              <li data-target="#mdp_carousel" data-slide-to="3"
+                                [ngClass]="[dailyid === '3' ? 'active' : '']"></li>
+                              <li data-target="#mdp_carousel" data-slide-to="4"
+                                [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
                             </ol>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
@@ -72,7 +77,8 @@
                     <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg"
+                            alt="" class="img-responsive">
                         </div>
                       </div>
 
@@ -85,11 +91,14 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0" >
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="row tcenter">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== '' && enableVideo">
-                              <video playinline class="cvideo" #video controlsList="nodownload" preload="metadata" onplay="Logevent('click_play_video_breathing_exercise')" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg">
-                                <source [src]="videoLink" type="video/mp4" >
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                              *ngIf="videoLink !== '' && enableVideo">
+                              <video playinline class="cvideo" #video controlsList="nodownload" preload="metadata"
+                                onplay="Logevent('click_play_video_breathing_exercise')"
+                                poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg">
+                                <source [src]="videoLink" type="video/mp4">
                               </video>
                             </div>
                           </div>
@@ -110,7 +119,8 @@
                     <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
+                            alt="" class="img-responsive">
                         </div>
                       </div>
 
@@ -132,15 +142,17 @@
 
                       <div class="row mtb20px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <textarea type="text" id="comment" name="thread" [disabled]="guest || !isloggedIn || this.Subscriber === '0'"
-                           [(ngModel)]="questext" required="required" class="mdp_answer_here"
-                           [placeholder]="placeholder" maxlength="256"></textarea>
+                          <textarea type="text" id="comment" name="thread"
+                            [disabled]="guest || !isloggedIn || this.Subscriber === '0'" [(ngModel)]="questext"
+                            required="required" class="mdp_answer_here" [placeholder]="placeholder"
+                            maxlength="256"></textarea>
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <button type="submit" (click)="subdailyques()" [disabled]="guest || !isloggedIn || this.Subscriber === '0'" class="btn mdp_add_to_journal">
+                          <button type="submit" (click)="subdailyques()"
+                            [disabled]="guest || !isloggedIn || this.Subscriber === '0'" class="btn mdp_add_to_journal">
                             Add to journal
                           </button>
                         </div>
@@ -155,9 +167,9 @@
                       </div>
 
                       <!-- popup buttons -->
-                      <button type="button" class="btn" data-toggle="modal" data-target="#added">
+                      <!-- <button type="button" class="btn" data-toggle="modal" data-target="#added">
                         added
-                      </button>
+                      </button> -->
                       <!-- /popup buttons -->
 
                       <div class="pagebreak"></div>
@@ -168,7 +180,8 @@
                     <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg"
+                            alt="" class="img-responsive">
                         </div>
                       </div>
 
@@ -182,7 +195,9 @@
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_a.svg" alt="" class="img-responsive">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_a.svg"
+                            alt="" class="img-responsive">
                         </div>
                       </div>
 
@@ -194,7 +209,7 @@
                         </div>
                       </div>
 
-                     <div class="row mtb20px">
+                      <div class="row mtb20px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <hr class="hr_style_v3_04">
                         </div>
@@ -203,7 +218,7 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ttuppercase">
-                           {{dailyinsAuthor}}
+                            {{dailyinsAuthor}}
                           </h4>
                         </div>
                       </div>
@@ -214,7 +229,8 @@
                     <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio.svg"
+                            alt="" class="img-responsive">
                         </div>
                       </div>
 
@@ -233,14 +249,15 @@
                           </h1>
                         </div>
                       </div>
-                        
+
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="audioLink !== '' && enableVideo ">
                           <!-- <audio controls controlsList="nodownload" #audio (click)="Logevent('click_play_audio_meditation')">
                             <source [src]="audioLink" type="audio/mpeg">
                           </audio> -->
-                          <audio id="aud1" controls controlsList="nodownload" #audio (click)="Logevent('click_play_audio_meditation')">
+                          <audio id="aud1" controls controlsList="nodownload" #audio
+                            (click)="Logevent('click_play_audio_meditation')">
                             <source [src]="audioLink" type="audio/mpeg">
                           </audio>
                         </div>
@@ -252,7 +269,8 @@
                     <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg"
+                            alt="" class="img-responsive">
                         </div>
                       </div>
 
@@ -328,3 +346,6 @@
   </div>
 </div>
 <!-- /added popup -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
+  [content]="content"></app-modal>
