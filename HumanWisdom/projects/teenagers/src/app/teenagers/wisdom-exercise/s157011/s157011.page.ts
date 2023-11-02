@@ -43,6 +43,8 @@ export class S157011Page implements OnInit {
   totaldays=8;
   DaysWithIntro=9;
   isShowButton = false;
+  isShowBulb=false;
+  hintValue:any;
   userId: any = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
     public service:TeenagersService, private teenagers:TeenagersService,public router:Router) {
@@ -244,6 +246,7 @@ export class S157011Page implements OnInit {
 
   next() {
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
         this.slideStart = this.slideStart + 1;
@@ -287,6 +290,7 @@ export class S157011Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+      this.setHint();
     }, 700);
   }
   
@@ -334,6 +338,7 @@ export class S157011Page implements OnInit {
   }
   back() {
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -361,6 +366,7 @@ export class S157011Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+        this.setHint();
     }, 700);
   }
 
@@ -441,6 +447,23 @@ export class S157011Page implements OnInit {
       this.router.navigate(['/log-in']);
     }else{
       this.enableAlert = false;
+    }
+  }
+  resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    var hintDetails = document.getElementsByClassName('active');
+    if(hintDetails && hintDetails!=null){
+    var journalWe =  hintDetails[0].querySelector('app-journal-we') as any;
+    if(journalWe!=null && journalWe.dataset){
+      this.hintValue = journalWe.dataset;
+      this.isShowBulb = true;
+      const element = document.getElementById('hinttext');
+        element.innerHTML = this.hintValue.hint;
+    }
     }
   }
 }

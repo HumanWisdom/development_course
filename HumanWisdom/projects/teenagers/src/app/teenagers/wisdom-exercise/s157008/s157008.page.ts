@@ -48,6 +48,7 @@ export class S157008Page implements OnInit {
   DaysWithIntro=8;
   userId: any = localStorage.getItem('userId');
   isShowButton = false;
+
   constructor(private elementRef: ElementRef,
     public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
     this.startTime = Date.now()
@@ -293,6 +294,7 @@ export class S157008Page implements OnInit {
   }
   next() {
     this.nextDay = null;
+
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
         this.slideStart = this.slideStart + 1;
@@ -336,6 +338,7 @@ export class S157008Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+
     }, 700);
    
 
@@ -384,6 +387,7 @@ export class S157008Page implements OnInit {
 
   back() {
     this.nextDay = null;
+
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -412,6 +416,7 @@ export class S157008Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+
     }, 700);
   }
 
@@ -456,4 +461,5 @@ export class S157008Page implements OnInit {
       this.enableAlert = false;
     }
   }
+
 }

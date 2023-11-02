@@ -21,6 +21,9 @@
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
       </a>
+      <a  *ngIf="isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
+      </a>
     </div>
   </div>
 </div>
@@ -298,7 +301,7 @@
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2217"
-                        [hint]="' It could be the other person really likes you and is just having some fun.'"></app-journal-we>
+                        data-hint=" It could be the other person really likes you and is just having some fun."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -451,7 +454,7 @@
                   <!-- journal -->
                   <div class="item">
                     <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2219"
-                      [hint]="'For example, you tried to convince a friend that your football club is better.'"></app-journal-we>
+                      data-hint="For example, you tried to convince a friend that your football club is better."></app-journal-we>
                   </div>
                   <!-- /journal -->
 
@@ -618,7 +621,7 @@
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2221"
-                        [hint]="'You may be dismissive or find something wrong in what they are saying'"></app-journal-we>
+                        data-hint="You may be dismissive or find something wrong in what they are saying"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -741,7 +744,7 @@
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2223"
-                        [hint]="'It is not easy to admit that we may have a prejudice - it could be against a person with a different skin colour, or gender identity, or religion, or nationality.'"></app-journal-we>
+                        data-hint="It is not easy to admit that we may have a prejudice - it could be against a person with a different skin colour, or gender identity, or religion, or nationality."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -923,14 +926,14 @@
                      <!-- journal -->
                      <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2225"
-                        [hint]="'You may think of yourself as clever, or not good enough, or good at sport.'"></app-journal-we>
+                        data-hint="You may think of yourself as clever, or not good enough, or good at sport."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2226"
-                        [hint]="'Others often see us differently from how we see ourselves'"></app-journal-we>
+                        data-hint="Others often see us differently from how we see ourselves"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1087,7 +1090,7 @@
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2227"
-                        [hint]="'This is quite common. We want to be liked by everyone.'"></app-journal-we>
+                        data-hint="This is quite common. We want to be liked by everyone."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1134,7 +1137,7 @@
                    <!-- journal -->
                    <div class="item">
                     <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2228"
-                      [hint]="' Most of the time we are sure we know what others think. Be curious instead. Ask them.'"></app-journal-we>
+                      data-hint=" Most of the time we are sure we know what others think. Be curious instead. Ask them."></app-journal-we>
                   </div>
                   <!-- /journal -->
 
@@ -1264,7 +1267,7 @@
     <!-- journal -->
     <div class="item">
       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2229"
-        [hint]="'You may not feel people listen, or they interrupt you.'"></app-journal-we>
+        data-hint="You may not feel people listen, or they interrupt you."></app-journal-we>
     </div>
     <!-- /journal -->
                     <!-- quotation -->
@@ -1310,14 +1313,14 @@
                       <!-- journal -->
                       <div class="item">
                         <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2230"
-                          [hint]="'We are usually sure people have understood what we are saying.'"></app-journal-we>
+                          data-hint="We are usually sure people have understood what we are saying."></app-journal-we>
                       </div>
                       <!-- /journal -->
   
                       <!-- journal -->
                       <div class="item">
                         <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2231"
-                          [hint]="'This is quite common - we are afraid to tell others what we feel.'"></app-journal-we>
+                          data-hint="This is quite common - we are afraid to tell others what we feel."></app-journal-we>
                       </div>
                       <!-- /journal -->
 
@@ -1434,14 +1437,14 @@
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2232"
-                        [hint]="'We may appear confident when we feel afraid, for example'"></app-journal-we>
+                        data-hint="We may appear confident when we feel afraid, for example"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2233"
-                        [hint]="'We may feel lonely'"></app-journal-we>
+                        data-hint="We may feel lonely"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1657,14 +1660,14 @@
    <!-- journal -->
    <div class="item">
     <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2234"
-      [hint]="'What is your religion, or nationality? Where did that come from?'"></app-journal-we>
+      data-hint="What is your religion, or nationality? Where did that come from?"></app-journal-we>
   </div>
   <!-- /journal -->
 
   <!-- journal -->
   <div class="item">
     <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2235"
-      [hint]="'We are usually quite attached to our identity - we may get defensive if someone criticises our country, for example.'"></app-journal-we>
+      data-hint="We are usually quite attached to our identity - we may get defensive if someone criticises our country, for example."></app-journal-we>
   </div>
   <!-- /journal -->
 
@@ -1785,24 +1788,24 @@
                      <!-- journal -->
                      <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2236"
-                        [hint]="'It can cause so much division and conflict between different tribes, and countries.'"></app-journal-we>
+                        data-hint="It can cause so much division and conflict between different tribes, and countries."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2237"
-                        [hint]="'It makes us feel comfortable, and secure.'"></app-journal-we>
+                        data-hint="It makes us feel comfortable, and secure."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2238"
-                        [hint]="'You could get on better with others who are different, and contribute to a more peaceful world.'"></app-journal-we>
+                        data-hint="You could get on better with others who are different, and contribute to a more peaceful world."></app-journal-we>
                     </div>
                     <!-- /journal -->
-                    
+
                     <!-- quotation -->
                     <div class="item">
                       <div class="row center_flex p20px">
@@ -1890,36 +1893,7 @@
               <!-- /day 10 -->
 
 
-                                  <!-- exercise -->
-                                  <div class="item">
-                                    <div class="row center_flex mt60px">
-                                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-              
-                                        <div class="row center_flex mb20px">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                              Benefits of letting go of our attachment to our identities:
-                                            </h4>
-                                          </div>
-                                        </div>
-              
-                                        <div class="row center_flex">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
-                                              <li class="">Reduced conflict in our relationships</li>
-                                              <li class="">Connect with others as the human beings we are  </li>
-                                              <li class="">Be able to look at different perspectives</li>
-                                               <li class="">Contribute to peace in the world </li>
-              
-                                              <li class="">Feel a great inner freedom to just be you</li>
-                                            </ul>
-                                          </div>
-                                        </div>
-              
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- /exercise -->
+
               
 
               
@@ -2015,3 +1989,12 @@
 [content]="'Please subscribe to access your online Journal'">
 </app-modal>
 <!-- /footer -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      
+      </h4>
+    </div>
+  </div>
+</div>
