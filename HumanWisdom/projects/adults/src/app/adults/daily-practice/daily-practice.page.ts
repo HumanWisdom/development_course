@@ -37,6 +37,8 @@ export class DailyPracticePage implements OnInit {
   Subscriber: any;
   guest = true;
   placeholder = 'Answer here'
+  enableAlert = false;
+  content = ''
 
   constructor(
     private route: ActivatedRoute,
@@ -106,7 +108,9 @@ export class DailyPracticePage implements OnInit {
   subdailyques() {
     this.logeventservice.logEvent('click_add_answer_here');
     if(!this.isloggedIn || !this.isSubscribe){
-      alert("Subscribe to activate your online journal");
+      this.content = "Subscribe to activate your online journal";
+      this.enableAlert = true;
+      // alert("Subscribe to activate your online journal");
     }else{
       let obj = {
         ReflectionId: this.dailyqusrefid,
@@ -115,7 +119,9 @@ export class DailyPracticePage implements OnInit {
       }
       this.service.submitDailypractiseQuestion(obj).subscribe((res) => {
         if (res) {
-          window.alert('Successfully added daily question')
+          this.content = "Successfully added daily question";
+          this.enableAlert = true;
+          // window.alert('Successfully added daily question')
         }
       })
     }
@@ -130,14 +136,19 @@ export class DailyPracticePage implements OnInit {
   next(){
     this.enableVideo= false;
   setTimeout(() => {
-    this.enableVideo =true; 
+    this.enableVideo =true;
   }, 200);
   }
 
   back(){
     this.enableVideo= false;
     setTimeout(() => {
-      this.enableVideo =true; 
+      this.enableVideo =true;
     }, 200);
+  }
+
+  getAlertcloseEvent() {
+    this.enableAlert = false;
+    this.content = '';
   }
 }
