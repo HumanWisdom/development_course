@@ -20,9 +20,9 @@ export class S157015Page implements OnInit {
 
 
   slideStart = 0;
-  totalSlidesCount = 6;
+  totalSlidesCount = 2;
 
-  details: string = '1/1'
+  details: string = '1/2'
   vistedScreens: any[] = [];
   currentDay: number = 0;
   nextDay: number = null;
@@ -34,7 +34,7 @@ export class S157015Page implements OnInit {
   totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  totaldays=7;
+  totaldays=0;
   userId: any = localStorage.getItem('userId');
   DaysWithIntro=8;
   isShowButton = false;
@@ -82,7 +82,7 @@ export class S157015Page implements OnInit {
   getdayevent(event) {
     if (event === 'intro') {
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 2;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.screenNumber = "157015p0";
@@ -101,33 +101,34 @@ export class S157015Page implements OnInit {
   next() {
     this.nextDay = null;
     setTimeout(() => {
-      this.router.navigate(['/wisdom-exercise/s157016']);
-      // if (this.slideStart < this.totalSlidesCount) {
-      //   this.slideStart = this.slideStart + 1;
-      //   if (this.slideStart == this.totalSlidesCount) {
-      //     this.nextDay = this.currentDay + 1;
-      //     setTimeout(() => {
-      //       this.endTime = Date.now();
-      //       this.totalTime = this.endTime - this.startTime;
-      //       if (this.userId !== 563) this.submitProgress();
-      //     }, 400);
-      //   }
+      // this.router.navigate(['/wisdom-exercise/s157016']);
+      if (this.slideStart < this.totalSlidesCount) {
+        this.slideStart = this.slideStart + 1;
+        if (this.slideStart == this.totalSlidesCount) {
+         // this.nextDay = this.currentDay + 1;
+         this.router.navigate(['/wisdom-exercise/s157016']);
+          setTimeout(() => {
+            this.endTime = Date.now();
+            this.totalTime = this.endTime - this.startTime;
+            if (this.userId !== 563) this.submitProgress();
+          }, 400);
+        }
 
-      // } else if (this.slideStart == this.totalSlidesCount) {
-      //   this.currentDay = this.currentDay + 1;
-      //   this.vistedScreens.push({
-      //     "ScreenNo": '157015p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
-      //     "ModuleID": 157,
-      //     "SessionID": 0,
-      //   })
-      //   if(this.currentDay>this.totaldays){
-      //     this.router.navigate(['/wisdom-exercise/s157016']);
-      //   }else{
-      //     this.getdayevent(this.currentDay.toString());
-      //   }
-      // } else {
-      //   this.slideStart = 1;
-      // }
+      } else if (this.slideStart == this.totalSlidesCount) {
+        //this.currentDay = this.currentDay + 1;
+        this.vistedScreens.push({
+          "ScreenNo": '157015p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
+          "ModuleID": 157,
+          "SessionID": 0,
+        })
+        if(this.currentDay>this.totaldays){
+          this.router.navigate(['/wisdom-exercise/s157016']);
+        }else{
+          this.getdayevent(this.currentDay.toString());
+        }
+      } else {
+        this.slideStart = 1;
+      }
       this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
         children[1]?.children[0]?.lastChild?.classList.value;
