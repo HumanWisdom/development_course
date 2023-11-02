@@ -105,7 +105,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: this.isProduction ? 'https://staging.humanwisdom.me/adults/subscription/free-trial' : 'https://staging.humanwisdom.me/adults/subscription/free-trial'
+            return_url: this.isProduction ? 'https://staging.happierme.app/adults/subscription/free-trial' : 'https://staging.happierme.app/adults/subscription/free-trial'
           }
         });
 
