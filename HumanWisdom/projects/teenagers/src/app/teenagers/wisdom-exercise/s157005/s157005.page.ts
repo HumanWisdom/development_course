@@ -51,6 +51,8 @@ export class S157005Page implements OnInit {
   delay = 20;
   methodSTartTime: any;
   methodEndTime: any;
+  isShowBulb=false;
+  hintValue:any;
   constructor(private elementRef: ElementRef,
     public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
     this.startTime = Date.now()
@@ -485,6 +487,7 @@ export class S157005Page implements OnInit {
 
   next() {
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
         this.slideStart = this.slideStart + 1;
@@ -528,6 +531,7 @@ export class S157005Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+      this.setHint();
     }, 700);
   }
   getClass(day) {
@@ -591,6 +595,7 @@ export class S157005Page implements OnInit {
     return className;
   }
   back() {
+    this.resetHintValue();
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < 1) {
@@ -619,6 +624,7 @@ export class S157005Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+        this.setHint();
     }, 700);
   }
 
@@ -659,6 +665,25 @@ export class S157005Page implements OnInit {
       this.router.navigate(['/log-in']);
     }else{
       this.enableAlert = false;
+    }
+  }
+
+  
+  resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    var hintDetails = document.getElementsByClassName('active');
+    if(hintDetails && hintDetails!=null){
+    var journalWe =  hintDetails[0].querySelector('app-journal-we') as any;
+    if(journalWe!=null && journalWe.dataset){
+      this.hintValue = journalWe.dataset;
+      this.isShowBulb = true;
+      const element = document.getElementById('hinttext');
+        element.innerHTML = this.hintValue.hint;
+    }
     }
   }
 

@@ -21,6 +21,9 @@
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
       </a>
+      <a  *ngIf="isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
+      </a>
     </div>
   </div>
 </div>
@@ -424,7 +427,7 @@
 
                    <!-- journal -->
                    <div class="item">
-                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2180" [hint]="'He could ask - what is going on in my mind to make me react in this way?'"></app-journal-we>
+                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2180" data-hint="He could ask - what is going on in my mind to make me react in this way?"></app-journal-we>
                   </div>
                   <!-- /journal -->
 
@@ -644,7 +647,7 @@
 
                   <!-- journal -->
                   <div class="item">
-                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2182" [hint]="'She could have accepted that her friend had other priorities'"></app-journal-we>
+                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2182" data-hint="She could have accepted that her friend had other priorities"></app-journal-we>
                   </div>
                   <!-- /journal -->
 
@@ -761,7 +764,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2183" [hint]="'you could be angry with yourself for not getting the exam grades you want. You could just accept you did your best, and your anger would fade away.'"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2183" data-hint="you could be angry with yourself for not getting the exam grades you want. You could just accept you did your best, and your anger would fade away."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -999,7 +1002,7 @@
 
                    <!-- journal -->
                    <div class="item">
-                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2185" [hint]="'You could accept your friend as they are, and your relationship could improve.'"></app-journal-we>
+                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2185" data-hint="You could accept your friend as they are, and your relationship could improve."></app-journal-we>
                   </div>
                   <!-- /journal -->
 
@@ -1503,7 +1506,7 @@
 
                    <!-- journal -->
                    <div class="item">
-                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2189" [hint]="'It could be that accepting your school grades as they are could help ease your stress'"></app-journal-we>
+                    <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2189" data-hint="It could be that accepting your school grades as they are could help ease your stress"></app-journal-we>
                   </div>
                   <!-- /journal -->
 
