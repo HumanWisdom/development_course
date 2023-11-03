@@ -74,7 +74,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public day: string = '';
   public bullyingP: any
   public externalapprovalP: any;
-  public exerciseNo : any;
+  public exerciseNo: any;
   //static progress mapping
   constructor(private route: Router, private aservice: AdultsService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
@@ -83,7 +83,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     private router: Router,
   ) {
 
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom,Constant.NullValue);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
     this.logeventservice.logEvent('View_For_you');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
@@ -120,12 +120,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.welcome.nativeElement.click();
         }, 1000);
       }
-      
+
       this.getModuleList();
       this.getProgress();
     }
     this.GetWisdomScreens();
-     this.getUserPreference();
+    this.getUserPreference();
   }
 
   getModuleList(isLoad?) {
@@ -162,40 +162,40 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
 
 
-   /*  this.aservice.getUserpreference().subscribe((res) => {
-      let perd = this.aservice.getperList();
-     // let perd = []
-      this.personalisedforyou = []
-      this.indList = []
-      if (res && res !== "") {
-        let arr = res.split('').filter((d) => d !== ',');
-        arr.forEach((d) => {
-          perd.forEach((r) => {
-            if (d === r['id']) {
-              r['active'] = true;
-              this.personalisedforyou.push(r);
-            }
-          })
-        })
-        perd.forEach((r) => {
-          let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
-          if (!find) {
-            r['active'] = false;
-            this.personalisedforyou.push(r);
-          }
-        })
-        this.personalisedforyou.forEach((d) => {
-          if (d['active']) {
-            this.indList.push(d['id'])
-          }
-        })
-      } else {
-        perd.forEach((r) => {
-          r['active'] = false;
-          this.personalisedforyou.push(r);
-        })
-      }
-    }) */
+    /*  this.aservice.getUserpreference().subscribe((res) => {
+       let perd = this.aservice.getperList();
+      // let perd = []
+       this.personalisedforyou = []
+       this.indList = []
+       if (res && res !== "") {
+         let arr = res.split('').filter((d) => d !== ',');
+         arr.forEach((d) => {
+           perd.forEach((r) => {
+             if (d === r['id']) {
+               r['active'] = true;
+               this.personalisedforyou.push(r);
+             }
+           })
+         })
+         perd.forEach((r) => {
+           let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
+           if (!find) {
+             r['active'] = false;
+             this.personalisedforyou.push(r);
+           }
+         })
+         this.personalisedforyou.forEach((d) => {
+           if (d['active']) {
+             this.indList.push(d['id'])
+           }
+         })
+       } else {
+         perd.forEach((r) => {
+           r['active'] = false;
+           this.personalisedforyou.push(r);
+         })
+       }
+     }) */
   }
 
   getinp(event) {
@@ -245,7 +245,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.logeventservice.logEvent('click_calm_mind');
         this.route.navigate(['/adults/curated/have-calm-mind'])
       }
-    }else {
+    } else {
       if (this.isloggedIn) {
         let fill = this.personalisedforyou.filter((d) => d['name'] === name);
         const index = this.indList.indexOf(id);
@@ -880,7 +880,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 
- GetWisdomScreens() {
+  GetWisdomScreens() {
     this.aservice.GetWisdomScreens().subscribe(res => {
       this.wisdomExerciseList = res;
       var allCompletedScreen: boolean = false;
@@ -892,7 +892,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       let exercise: any
       let emptyList = false;
       let increaseExcercise = false;
-   //   Any of the exercise is not completed
+      //   Any of the exercise is not completed
       if (data.length == 0) {
         emptyList = true;
         data = this.wisdomExerciseList;
@@ -905,14 +905,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
         } else {
           exercise = data[data.length - 1];
         }
-       // It contains data may be some exercise is completed
+        // It contains data may be some exercise is completed
         var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
         if (completed.length == 0) {
           increaseExcercise = true;
           emptyList = true;
         }
       }
-     // Setting final title and Exercise no
+      // Setting final title and Exercise no
       this.Title = exercise.Title;
 
       this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
@@ -924,7 +924,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (this.exerciseNo == "13") {
         this.exerciseNo = "1";
       }
-     // Checking the length if its less than 10  to append for current session number
+      // Checking the length if its less than 10  to append for current session number
       if (this.exerciseNo.length == 1) {
         this.exerciseNo = "0" + this.exerciseNo;
       }
@@ -955,7 +955,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
         var wediv = document.querySelector(".ae_days")?.getBoundingClientRect().x;
         if (document.querySelector(".ae_days")) {
-          document.querySelector(".ae_days").scrollLeft = editable-wediv;
+          document.querySelector(".ae_days").scrollLeft = editable - wediv;
         }
 
       }, 5000);
@@ -968,11 +968,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   getWisdomClass(exercise) {
     if (exercise.completed == '1') {
-      return 'uneditable';
+      return ' uneditable';
     } else if (exercise.completed == '0' && this.day == exercise.day) {
-      return 'editable';
+      return ' editable';
     } else {
-      return 'active';
+      return ' inactive';
     }
   }
 
@@ -1012,10 +1012,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         });
   }
-  navigateToPathway(url){
+  navigateToPathway(url) {
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate([url]);
   }
 
-  
+
 }

@@ -83,7 +83,7 @@ export class ForumLandingPage implements OnInit {
   public fiveCirclesP: any
   public hcwhP: any
   public percentage: any
-  searchInput : any;
+  searchInput : any='';
   mediaPercent: any
   freeScreens = []
   isWelcomePopup = false;
@@ -379,6 +379,11 @@ export class ForumLandingPage implements OnInit {
       });
   }
 
+  clearSearch(){
+    this.searchInput = '';
+    this.getAllposts(0);
+  }
+
   getOrderbyLatestPost(childs) {
     childs.sort(function (a, b) {
       return b.PostID - a.PostID;
@@ -624,8 +629,11 @@ export class ForumLandingPage implements OnInit {
   }
  
   startNewThread(tagId){
-    localStorage.setItem('tagId',tagId);
-    this.router.navigate(['/forum/forum-thread-start-new']);
+    if(this.isLoggedIn){
+      localStorage.setItem('tagId',tagId);
+      this.router.navigate(['/forum/forum-thread-start-new']);
+    }else{
+      this.enableAlert= true;
+    }
   }
-   
 }

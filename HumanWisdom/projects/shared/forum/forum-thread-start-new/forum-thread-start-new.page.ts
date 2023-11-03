@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-forum-thread-start-new',
@@ -27,6 +28,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   @ViewChild('checkboxSelect') checkboxSelect: any;
   @ViewChild('closeCategory') closeCategory: any;
   programType: ProgramType.Adults;
+  isSubscriber:boolean;
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
     this.router.events
@@ -41,6 +43,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       console.log(p);
       this.postID = p;
     }
+    this.isSubscriber = SharedService.isSubscriber(); 
   }
 
   ngOnInit() {
@@ -128,11 +131,12 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   ngAfterViewInit(){
     setTimeout(()=>{
+      this.categoryList = this.service.GetTagList();
       this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 1;
       if (this.selectedOption == 5) {
       this.isChecked = true;
   
-      this.categoryList = this.service.GetTagList();
+
       const data = this.categoryList.filter(x=>x.value== this.selectedOption);
       if(data!=null && data.length>0){
         this.buttonText =  data[0].label;

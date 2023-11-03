@@ -508,6 +508,10 @@ const routes: Routes = [
   {
     path: 'redeem-congratulation',
     loadChildren: () => import('./redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
+  },
+  {
+    path: 'intro-happierme',
+    loadChildren: () => import('./intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
   }
 ];
 

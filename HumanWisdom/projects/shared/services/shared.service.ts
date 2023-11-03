@@ -48,4 +48,48 @@ import { Constant } from './constant';
     return 0
   }
 
+  public static GetExerciseClassName(day,currentDay,vistedScreens,nextDay){
+    var dayclass = "";
+    var className = "";
+    if (day.includes("p0")) {
+      dayclass = "0";
+    } else if (day.includes("p1")) {
+      dayclass = "1";
+    } else if(day.includes("p2")) {
+      dayclass = "2";
+    } else if(day.includes("p3")) {
+      dayclass = "3";
+    } else if(day.includes("p4")) {
+      dayclass = "4";
+    } else if(day.includes("p5")) {
+      dayclass = "5";
+    } else if(day.includes("p6")) {
+      dayclass = "6";
+    } else if(day.includes("p7")) {
+      dayclass = "7";
+    } else if(day.includes("p8")) {
+      dayclass = "8";
+    } else if(day.includes("p9")) {
+      dayclass = "9";
+    } else if(day.includes("p10")) {
+      dayclass = "10";
+    } else if(day.includes("p11")) {
+      dayclass = "11";
+    }
+
+    if (currentDay.toString() == dayclass) {
+      className += " editable ";
+    }
+    else if (vistedScreens.some((x) => x.ScreenNo == day)) {
+      className += " uneditable";
+    }
+    if (nextDay == +dayclass) {
+      className = " active";
+    }
+    else if (vistedScreens.some((x) => x.ScreenNo != day)) {
+      className += " inactive";
+    }
+    return className;
+  }
+
 }

@@ -958,9 +958,16 @@
         padding-top: 2%;
     }
 
-    .oli_tray 
+    /* .oli_tray 
     {
-        /* bottom: 8% !important; */
+        bottom: 8% !important;
+    } */
+
+    /* .lab-modal-body */
+    .modal.fade.in .modal_ext_01
+    {
+        top: 0;
+        overflow: auto;
     }
 
     .col_cw
@@ -976,7 +983,8 @@
         height: 155px;
     }
 
-    .modal.fade.in .lab-modal-body
+    /* .modal.fade.in .lab-modal-body */
+    .modal.fade.in .modal_ext_01
     {
         overflow-y: overlay !important;
         height: 100%;
@@ -1103,5 +1111,13 @@
 
     .fs_12px {
         font-size: 10px !important;
+    }
+}
+
+@media (min-width: 1500px)
+{
+    .col_cw
+    {
+        width: 20%;
     }
 }
