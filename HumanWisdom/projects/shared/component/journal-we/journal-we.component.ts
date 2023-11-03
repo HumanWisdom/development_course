@@ -13,7 +13,6 @@ export class JournalWeComponent implements OnInit {
    journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
   @Output() guestEvent=new EventEmitter<any>();
   @Input()
-  @Input() hint = '';
   rId = 854
   enableAlert=false;
   enabletick = false;
