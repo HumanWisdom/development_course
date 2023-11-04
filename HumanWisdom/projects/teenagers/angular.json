@@ -24,6 +24,7 @@
                 "input": "projects/adults/src/assets",
                 "output": "assets"
               },
+
               "projects/adults/src/web.config",
               "projects/adults/src/serviceworker.js",
               {
@@ -167,7 +168,7 @@
                 "styles": {
                   "minify": true,
                   "inlineCritical": false
-                },
+                  },
                 "fonts": true
               },
               "outputHashing": "all",
@@ -200,7 +201,9 @@
             "production": {
               "browserTarget": "adults:build:production"
             },
-            "ci": {}
+            
+            "ci": {
+            }
           }
         },
         "extract-i18n": {
@@ -522,7 +525,7 @@
           "options": {}
         }
       }
-    }
+    },
   },
   "cli": {
     "analytics": "001ae092-cd06-476b-b66e-dec3fff6955c",
