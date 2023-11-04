@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-find-inspiration',
@@ -10,7 +11,7 @@ export class FindInspirationPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,private router:Router) { }
 
   ngOnInit() {
   }
@@ -20,7 +21,10 @@ export class FindInspirationPage implements OnInit {
       this.enablepopup.nativeElement.click();
     }
   }
-
+   rightToJournal(){
+    this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+   }
+   
   goBack() {
     this.location.back()
   }
