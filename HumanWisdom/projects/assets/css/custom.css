@@ -15682,7 +15682,8 @@ input[type="search"].dark::-webkit-search-cancel-button {
   position: absolute;
   right: 0;
   top: 0;
-  background: #E58D82 !important;
+  /* background: #E58D82 !important; */
+  background: #834B66 !important;
   border-radius: 0px 10px;
   /* font-family: Roboto; */
   font-style: normal;
@@ -28849,7 +28850,8 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 
 .cyan_light
 {
-  background: #70C6BD !important;
+  /* background: #70C6BD !important; */
+  background: #CB6171 !important;
 }
 
 .gqtns_icon
@@ -29670,7 +29672,8 @@ svg path
 
 .gray_light
 {
-  background: #ADADAD !important;
+  /* background: #ADADAD !important; */
+  background: #E58D82 !important;
 }
 
 .float_none
@@ -35262,8 +35265,10 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .btn_recent.active
 {
-  background: #E58D82;
-  color: #ffffff;
+  /* background: #E58D82;
+  color: #ffffff; */
+  background: #FFF;
+  color: #292D56;
   filter: unset !important;
 }
 
@@ -35275,5 +35280,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .pt20pxi
 {
   padding-top: 20px !important;
+}
+
+.img_ki_bmp
+{
+  border-radius: 6px;
+  border: 1px solid #FFF;
 }
 /* /version - 03 */
