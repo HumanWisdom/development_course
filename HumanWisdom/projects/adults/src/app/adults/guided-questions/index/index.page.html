@@ -31,6 +31,9 @@
               <div class="tab-content">
                 <!-- journal -->
                 <div id="tab1" class="tab-pane fade in active" *ngIf="isDiary">
+                  <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="jrList.length==0">
+                    No Record Found
+                  </h4>
                   <form>
 
                     <ng-container *ngIf="isReloadList">
@@ -57,8 +60,10 @@
                           </a>
                         </div>
                       </div>
+                  
                     </ng-container>
                   </form>
+                  
                 </div>
                 <!-- /journal -->
 
@@ -205,26 +210,30 @@
 
                     <div class="row gqtns_recent_tabs">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 pb10px odiv odiv_mdp">
-                        <button type="button" class="btn btn_recent"
-                          [ngStyle]="{'background-color': enableTab === 'All' ? '#E58D82' : '#424675'}"
+                        <button type="button" class="btn btn_recent" 
+                          [ngStyle]="{'background-color': enableTab === 'All' ? '' : '#424675'}"
+                          [ngClass]="{'active': enableTab === 'All'}"
                           (click)="showAll()">
                           All Notes
                         </button>
 
                         <button (click)="showNotes()"
-                        [ngStyle]="{'background-color': enableTab === 'Diary' ? '#E58D82' : '#424675'}"
+                        [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : '#424675'}"
+                        [ngClass]="{'active': enableTab === 'Diary'}"
                          class="btn btn_recent">
                           Diary
                         </button>
 
                         <button (click)="showReflections()"
-                        [ngStyle]="{'background-color': enableTab === 'Reflections' ? '#E58D82' : '#424675'}"
+                        [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : '#424675'}"
+                        [ngClass]="{'active': enableTab === 'Reflections'}"
                         class="btn btn_recent">
                           Reflections
                         </button>
 
                         <button (click)="showGuidedQuestions()"
-                        [ngStyle]="{'background-color': enableTab === 'Guided' ? '#E58D82' : '#424675'}"
+                        [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : '#424675'}"
+                        [ngClass]="{'active': enableTab === 'Guided'}"
                          class="btn btn_recent">
                           Guided Questions
                         </button>
