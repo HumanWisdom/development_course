@@ -242,7 +242,13 @@ const routes: Routes = [
   {
     path: 'dealing-with-depression',
     loadChildren: () => import('./teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
-  }
+  },
+
+  {
+    path: 'wisdom-exercise',
+    loadChildren: () => import('./teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  },
+
 ];
   
 
