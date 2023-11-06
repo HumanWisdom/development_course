@@ -580,6 +580,10 @@ export class ViewcartPage implements OnInit {
     }
   }
 
+  back(){
+    this.location.back();
+  }
+
 }
 
 
