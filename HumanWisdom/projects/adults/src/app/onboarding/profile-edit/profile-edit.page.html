@@ -7,7 +7,7 @@
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
         Edit Profile
       </h1>
@@ -30,92 +30,98 @@
         <div class="x_panel p0">
           <div class="x_content p0">
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <img src="{{imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}" alt="" class="img-responsive border_profile_img"/>
-                </div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <img
+                  src="{{imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
+                  alt="" class="img-responsive border_profile_img" />
               </div>
+            </div>
 
-              <div class="row mt15px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <!-- <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+            <div class="row mt15px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <!-- <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
                     Change Photo
                   </h4> -->
-                  <label for="files" class="mt0px fs_15px fw_600 lh_150p fc_e58d82">Change Photo</label>
-                  <input id="files" style="visibility:hidden;" (change)="getFileUpload($event)" type="file">
+                <label for="files" class="mt0px fs_15px fw_600 lh_150p fc_e58d82">Change Photo</label>
+                <input id="files" style="visibility:hidden;" (change)="getFileUpload($event)" type="file">
+              </div>
+            </div>
+
+            <div class="div_inputs mt30px">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                    <select class="sp_fc" [(ngModel)]="title">
+                      <option *ngFor="let item of titleList" [value]="item">{{item}}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
+                    <input type="text" id="name" class="sp_fc active" placeholder="Hellen Boothman"
+                      [(ngModel)]="fullname">
+                  </div>
                 </div>
               </div>
 
-              <div class="div_inputs mt30px">
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <div class="col-md-3 col-sm-3 col-xs-3 p0">
-                      <select class="sp_fc" [(ngModel)]="title">
-                        <option *ngFor="let item of titleList" [value]="item">{{item}}</option>
-                      </select>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-                      <input type="text" id="name" class="sp_fc active" placeholder="Hellen Boothman" [(ngModel)]="fullname">
-                    </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                  <input type="text" id="name" class="sp_fc active" placeholder="Hellen.boothman@gmail.com"
+                    [(ngModel)]="email">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-2 col-sm-2 col-xs-3 pl0px">
+                    <input type="text" name="name" class="sp_fc" placeholder="+91" [(ngModel)]="isdcode">
+                  </div>
+                  <div class="col-md-10 col-sm-10 col-xs-9 p0">
+                    <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
                   </div>
                 </div>
+              </div>
 
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                    <input type="text" id="name" class="sp_fc active" placeholder="Hellen.boothman@gmail.com" [(ngModel)]="email">
-                  </div>
-                </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <input name="name" list="countryList" class="sp_fc inputSearchField"
+                    (ngModelChange)="dataChanged($event)" placeholder="Country" [(ngModel)]="country">
+                  <datalist id="countryList">
+                    <option value="{{data['Country']}}" *ngFor="let data of countrylist()">
+                  </datalist>
 
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <div class="col-md-2 col-sm-2 col-xs-3 pl0px">
-                      <input type="text" name="name" class="sp_fc" placeholder="+91" [(ngModel)]="isdcode">
-                    </div>
-                    <div class="col-md-10 col-sm-10 col-xs-9 p0">
-                      <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="search" name="name" list="countryList" class="sp_fc inputSearchField" (ngModelChange)="dataChanged($event)" placeholder="Country" [(ngModel)]="country">
-                    <datalist id="countryList">
-                      <option value="{{data['Country']}}" *ngFor="let data of countryList">
-                    </datalist>
-
-                    <!-- default select -->
-                    <!-- <select class="sp_fc">
+                  <!-- default select -->
+                  <!-- <select class="sp_fc">
                       <option selected>Select</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select> -->
-                    <!-- /default select -->
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <div class="col-md-4 col-sm-4 col-xs-4 pl0px">
-                      <input type="text" maxlength="3" name="name" class="sp_fc" placeholder="Age" [(ngModel)]="age">
-                    </div>
-                    <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                      <input type="text" name="name" class="sp_fc" placeholder="Profession" [(ngModel)]="profession">
-                    </div>
-                  </div>
+                  <!-- /default select -->
                 </div>
               </div>
 
-              <div class="row mt20px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button type="button" class="btn profile_dmd" (click)="updateUser()" [disabled]="email === '' || fullname === ''" type="submit">
-                    Update Changes
-                  </button>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-4 col-sm-4 col-xs-4 pl0px">
+                    <input type="text" maxlength="3" name="name" class="sp_fc" placeholder="Age" [(ngModel)]="age">
+                  </div>
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                    <input type="text" name="name" class="sp_fc" placeholder="Profession" [(ngModel)]="profession">
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div class="pagebreak"></div>
+            <div class="row mt20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <button type="button" class="btn profile_dmd" (click)="updateUser()"
+                  [disabled]="email === '' || fullname === ''" type="submit">
+                  Update Changes
+                </button>
+              </div>
+            </div>
+
+            <div class="pagebreak"></div>
 
           </div>
         </div>
@@ -130,6 +136,5 @@
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="content">
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
 </app-modal>

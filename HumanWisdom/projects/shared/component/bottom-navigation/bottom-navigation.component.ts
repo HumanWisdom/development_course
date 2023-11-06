@@ -106,6 +106,7 @@ export class BottomNavigationComponent implements OnInit {
       this.router.navigate(['/adults/journal']);
     }
   }
+  
 
   routeSearch() {
     if(ProgramType.Teenagers==this.programType || 

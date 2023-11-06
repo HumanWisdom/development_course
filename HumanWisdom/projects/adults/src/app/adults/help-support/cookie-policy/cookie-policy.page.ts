@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-cookie-policy',
   templateUrl: './cookie-policy.page.html',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CookiePolicyPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private location: Location) { }
 
   ngOnInit() {
     if (!this.router.url.includes('/cookies-policy')) {
@@ -23,5 +23,9 @@ export class CookiePolicyPage implements OnInit {
        this.router.navigate(['/adults/adult-dashboard'])
      }
  }
+
+ goBack() {
+  this.location.back()
+}
 
 }
