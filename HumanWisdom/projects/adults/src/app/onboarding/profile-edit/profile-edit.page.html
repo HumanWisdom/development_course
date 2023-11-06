@@ -51,11 +51,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-md-3 col-sm-3 col-xs-3 p0">
                       <select class="sp_fc" [(ngModel)]="title">
-                        <option>Title</option>
-                        <option>Ms</option>
-                        <option>Mr.</option>
-                        <option>Mrs.</option>
-                        <option>Others</option>
+                        <option *ngFor="let item of titleList" [value]="item">{{item}}</option>
                       </select>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
@@ -87,6 +83,15 @@
                     <datalist id="countryList">
                       <option value="{{data['Country']}}" *ngFor="let data of countryList">
                     </datalist>
+
+                    <!-- default select -->
+                    <!-- <select class="sp_fc">
+                      <option selected>Select</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select> -->
+                    <!-- /default select -->
                   </div>
                 </div>
 

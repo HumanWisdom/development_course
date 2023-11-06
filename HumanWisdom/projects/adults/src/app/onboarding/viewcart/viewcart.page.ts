@@ -467,9 +467,9 @@ export class ViewcartPage implements OnInit {
       this.service.addItem({
         "UserId": this.userId,
         "RateId": activecart[0].RateId,
-        "Qty": this.cartList.length + 1,
+        "Qty": 1,
         "PlanId": activecart[0].planId,
-        "MySelf": this.myself,
+        "MySelf": 0,
         "LearnerEmail": this.learnermail,
         "LearnerMsg": this.learnermsg,
       })

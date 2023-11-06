@@ -109,7 +109,7 @@
 
                       <div class="row mb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                          <input [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" maxlength="15" required>
+                          <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" maxlength="15" required>
 
                           <div class="fc_img" (click)="hideFunction('password')">
                             <img *ngIf="passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
@@ -127,7 +127,7 @@
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                          <input [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc" placeholder="Required Password" id="repeatpassowrd" formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
+                          <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc" placeholder="Required Password" id="repeatpassowrd" formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
 
                           <div class="fc_img" (click)="hideFunction('')">
                             <img *ngIf="confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
@@ -258,7 +258,7 @@
 
                     <div class="row mb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                        <input [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
+                        <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
 
                         <div class="fc_img" (click)="hideFunction('password')">
                           <img *ngIf="passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
