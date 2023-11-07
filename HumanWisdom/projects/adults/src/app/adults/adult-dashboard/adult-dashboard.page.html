@@ -160,9 +160,9 @@
             <!-- /daily practice -->
 
             <!-- explore a topic in depth-for guest user -->
-            <!-- <div class="row">
+            <div class="row" *ngIf="isloggedIn && !isSubscriber && YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a class="prelative">
+                <a class="prelative" (click)="changeTopic()">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -183,11 +183,11 @@
                   </div>
                 </a>
               </div>
-            </div> -->
+            </div>
             <!-- /explore a topic in depth-for guest user -->
 
             <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
+            <div class="row" *ngIf="isloggedIn && isSubscriber && YourTopicofChoice.length !== 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a class="prelative" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
