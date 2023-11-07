@@ -11,7 +11,7 @@ import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
 import { ForumService } from '../forum.service';
 import { ProgramType } from "../../models/program-model";
-
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-forum-landing',
   templateUrl: './forum-landing.page.html',
@@ -118,6 +118,19 @@ export class ForumLandingPage implements OnInit {
     
     this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     this.categoryList = this.serivce.GetTagList();
+  }
+  ngOnInit() {
+    this.title.setTitle('Online Community for Wisdom Exchange')
+    this.meta.updateTag({ property: 'title', content: 'Online Community for Wisdom Exchange' })
+    this.meta.updateTag({ property: 'description', content: 'Join our discussion forum for inspirational discussions and exchange of wisdom on personal growth and mental wellness. Find emotional support and engage in mindful conversations.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Online community,Discussion forum,Wisdom exchange,Inspirational discussions,Self-improvement forum,Personal growth community,Mental wellness community,Mindful conversations,Emotional support forum,Personal development discussions' })
+    this.userName = localStorage.getItem('name');
+    this.selectthread = this.threadlist[0].value;
+    if(this.defaultShow){
+      this.getAllposts(0);
+    }else{
+        this.getForumSearchData();
+    }
   }
   like(item, index) {
     if (this.isLoggedIn) {
@@ -279,6 +292,11 @@ export class ForumLandingPage implements OnInit {
     });
   }
 
+  DisabledComment(item){
+    return SharedService.DisabledComment(item);
+  }
+ 
+
   filterBasedOnTags(tagId){
     const data = this.categoryList.filter(x=>x.value==tagId);
     if(data!=null && data.length>0){
@@ -310,19 +328,7 @@ export class ForumLandingPage implements OnInit {
       this.closeCategoryModal();
     }, 100);
   }
-  ngOnInit() {
-    this.title.setTitle('Online Community for Wisdom Exchange')
-    this.meta.updateTag({ property: 'title', content: 'Online Community for Wisdom Exchange' })
-    this.meta.updateTag({ property: 'description', content: 'Join our discussion forum for inspirational discussions and exchange of wisdom on personal growth and mental wellness. Find emotional support and engage in mindful conversations.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Online community,Discussion forum,Wisdom exchange,Inspirational discussions,Self-improvement forum,Personal growth community,Mental wellness community,Mindful conversations,Emotional support forum,Personal development discussions' })
-    this.userName = localStorage.getItem('name');
-    this.selectthread = this.threadlist[0].value;
-    if(this.defaultShow){
-      this.getAllposts(0);
-    }else{
-        this.getForumSearchData();
-    }
-  }
+  
 
   share() {
 

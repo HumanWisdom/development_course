@@ -7,6 +7,7 @@ import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-forum-thread',
@@ -88,6 +89,10 @@ export class ForumThreadPage implements OnInit {
         this.isEditComment = true;
       }
     }
+  }
+
+  DisabledComment(item){
+    return SharedService.DisabledComment(item);
   }
 
   getPostData() {
