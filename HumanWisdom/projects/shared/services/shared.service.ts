@@ -92,4 +92,8 @@ import { Constant } from './constant';
     return className;
   }
 
+  public static DisabledComment(item){
+    return parseInt(item.TagIds)==5 && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
+  }
+
 }
