@@ -22334,7 +22334,13 @@ ul.dh_ul li:last-child
 #lst_disc
 {
   list-style-type: disc !important;
-  padding-left: revert;
+  /* padding-left: revert; */
+  padding: 0 0 0 20px;
+}
+
+#lst_disc li p 
+{
+  margin: 0 0 5px 0;
 }
 /* /t&c */
 
@@ -22875,7 +22881,7 @@ ul.dh_ul li:last-child
 
 .cfc10_fl
 {
-  border-right: 1px solid #ADADAD !important;
+  border-right: 1px solid #FFF !important;
   left: 15px;
   display: flex;
   justify-content: center;
@@ -22886,11 +22892,11 @@ ul.dh_ul li:last-child
 
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 15px;
   display: flex;
   align-items: center;
-  color: #5D5D5D;
+  color: #FFF;
 }
 
 .btn_update_changes
@@ -24153,9 +24159,14 @@ a
   box-shadow: unset;
 }
 
+#accordion_faq .panel-default
+{
+  background: transparent;
+}
+
 #accordion_faq .panel-title > a:after
 {
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/accordion_down.svg);
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_peach.svg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24164,7 +24175,7 @@ a
 }
 
 #accordion_faq .panel-title > a[aria-expanded="true"]:after {
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/accordion_up.svg);
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_peach.svg);
 }
 
 #accordion_faq .panel-body
@@ -32106,7 +32117,7 @@ label.select_label:after
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #5d5d5d;
+  color: #fff;
 }
 
 .tn_bv
@@ -35260,7 +35271,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .odiv.ae_days::-webkit-scrollbar-track
 {
-  margin: 0 20px 0 20px;
+  margin: 0 20px 0 0px !important
 }
 
 .btn_recent.active
@@ -35272,11 +35283,6 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   filter: unset !important;
 }
 
-.podcast_img
-{
-  
-}
-
 .pt20pxi
 {
   padding-top: 20px !important;
@@ -35286,5 +35292,115 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 6px;
   border: 1px solid #FFF;
+}
+
+.mc_01_v3_ext
+{
+  padding: 0 0 0 0 !important;
+}
+
+.adults_index_img 
+{
+  border-radius: 0 0 20px 20px;
+}
+
+.cptrem 
+{
+  padding-top: 8rem !important;
+}
+
+.div_subscription_emails .row 
+{
+  margin-bottom: 20px;
+}
+
+.div_subscription_emails .row:last-child
+{
+  margin-bottom: 0;
+}
+
+.div_cac .sp_fc::-webkit-input-placeholder 
+{
+  color: rgba(255, 255, 255, 1);
+}
+
+.div_cus 
+{
+  text-align: center;
+  border-radius: 16px;
+  background: #120F40;
+  padding: 20px;
+}
+
+.div_contact_mail
+{
+  border-radius: 12px;
+  background: #292D56;
+  padding: 10px !important;
+}
+
+/* .hspages ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+.hspages ol > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+.hspages ol > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;    
+}
+
+li ol > li {
+  margin: 0;
+}
+
+li ol > li:before {
+  content: counters(item, ".") " ";
+} */
+
+.ol_help_support ol li 
+{
+  display:block;
+} 
+
+.ol_help_support ol > li:first-child 
+{
+  counter-reset: item;
+}
+
+.ol_help_support ol > li 
+{
+  counter-increment: item; position: relative;
+}
+
+.ol_help_support ol > li:before 
+{
+  content:counters(item, ".") ". "; 
+  position: absolute; 
+  margin-right: 100%; 
+  right: 10px;
+}
+
+.ol_help_support ol
+{
+  padding: 0 0 0 20px !important;
+}
+
+.odiv.ae_days 
+{
+  padding: 0 20px 10px 0px !important;
+}
+
+.ml20px 
+{
+  margin-left: 20px;
 }
 /* /version - 03 */

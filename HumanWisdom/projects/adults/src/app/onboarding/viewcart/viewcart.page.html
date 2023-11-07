@@ -1,11 +1,26 @@
 <!-- header -->
-<app-tn-hwp-project></app-tn-hwp-project>
+<!-- <app-tn-hwp-project></app-tn-hwp-project> -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="back()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Cart
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    </div>
+  </div>
+</div>
 <!-- /header -->
 
 <app-bg-video></app-bg-video>
-
-
-
 
 <!-- page content -->
 <div class="right_col mc_01">
@@ -99,16 +114,18 @@
                   </div>
                 </div>
                 
-                <div class="row mb20px" *ngFor="let c of cartListResult[0]?.LearnerEmail">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                      <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                    </div>
+                <div class="div_subscription_emails">
+                  <div class="row" *ngFor="let c of cartListResult[0]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Adults', 'Annual')">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                      </button>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Adults', 'Annual')">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -190,16 +207,18 @@
                   </div>
                 </div>
 
-                <div class="row" *ngFor="let c of cartListResult[1]?.LearnerEmail">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                      <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                    </div>
+                <div class="div_subscription_emails">
+                  <div class="row" *ngFor="let c of cartListResult[1]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Adults', 'Monthly')">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                      </button>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Adults', 'Monthly')">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -282,16 +301,18 @@
                   </div>
                 </div>
 
-                <div class="row" *ngFor="let c of cartListResult[2]?.LearnerEmail">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                      <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                    </div>
+                <div class="div_subscription_emails">
+                  <div class="row" *ngFor="let c of cartListResult[2]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Teenagers', 'Annual')">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                      </button>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Teenagers', 'Annual')">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -372,16 +393,18 @@
                   </div>
                 </div>
 
-                <div class="row" *ngFor="let c of cartListResult[3]?.LearnerEmail">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                      <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                    </div>
+                <div class="div_subscription_emails">
+                  <div class="row" *ngFor="let c of cartListResult[3]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Teenagers', 'Monthly')">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                      </button>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Teenagers', 'Monthly')">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
