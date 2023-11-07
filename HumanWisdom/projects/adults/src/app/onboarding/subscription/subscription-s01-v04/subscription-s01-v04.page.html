@@ -15,7 +15,7 @@
       </h1>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright" *ngIf="totalCount !== 0">
       <a class="prelative" (click)="proceedcart()">
         <h6 class="mtb0px fs_12px fw_500 lh_140p fc_e58d82 cart_cnt">
           {{totalCount}}
