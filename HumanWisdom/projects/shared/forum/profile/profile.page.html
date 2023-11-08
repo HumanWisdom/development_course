@@ -184,7 +184,7 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
+                          <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button" [disabled]="DisabledComment(item)"
                             class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg"
@@ -194,7 +194,7 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button (click)="shareOnThread()" type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                          <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px">

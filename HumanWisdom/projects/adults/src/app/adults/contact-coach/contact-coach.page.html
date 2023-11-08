@@ -91,12 +91,7 @@
                 <div class="row">
                   <div class="col-md-2 col-sm-2 col-xs-3 p0">
                     <div class="dropdown dropdown_outer">
-                      <label class="select_label m0px w100">
-                        <select (change)="onChange($event)" type="text" name="countryList"  class="sp_fc btn_select" [(ngModel)]="form.Country" >
-                          <option value="0" selected >IN</option>
-                          <option *ngFor="let list of countryList" [ngValue]="list.CountryName">{{list.CountryName}}</option>
-                        </select>
-                      </label>
+                      <button class="dropdown-toggle sp_fc" type="button" data-toggle="dropdown" data-toggle="dropdown" id="code"></button>
                     </div>
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-9 pr0px">
