@@ -6,6 +6,8 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ForumService } from '../forum.service';
 import { OnboardingService } from "../../services/onboarding.service";
 import { ProgramType } from "../../models/program-model";
+import { environment } from '../../../environments/environment';
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -73,11 +75,11 @@ export class ProfilePage implements OnInit {
 
   
   shareOnThread(item){
-    this.path = "http://humanwisdom.me/forum/forum-thread/"+item.PostID;
-  // } else {
-  //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
-  // }
-
+    if(environment.production){
+      this.path = "https://humanwisdom.me/forum/forum-thread/"+item.PostID;
+    }else{
+      this.path = "https://staging.happierme.app/forum/forum-thread/"+item.PostID;
+    }
   this.ngNavigatorShareService.share({
     title: 'HumanWisdom Program',
     text: 'Hey, check out the HumanWisdom Program',
@@ -156,6 +158,11 @@ export class ProfilePage implements OnInit {
       }
     });
   }
+
+  DisabledComment(item){
+   return SharedService.DisabledComment(item);
+ }
+
   postreport(item, actionType) {
     console.log(item);
     this.replyflag = !this.replyflag;
