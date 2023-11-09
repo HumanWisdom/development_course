@@ -311,7 +311,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                this.content ="You have enetered wrong credentials. Please try again.";
+                this.content ="You have entered wrong credentials. Please try again.";
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
@@ -482,7 +482,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                this.content ="You have enetered wrong credentials. Please try again.";
+                this.content ="You have entered wrong credentials. Please try again.";
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
@@ -601,7 +601,7 @@ export class LoginSignupPage implements OnInit {
       (res) => {
         if (res.UserId === 0) {
           this.showAlert = true;
-          this.content = "You have enetered wrong credentials. Please try again.";
+          this.content = "You have entered wrong credentials. Please try again.";
           this.enableAlert = true;
           this.email = "";
           this.password = "";
