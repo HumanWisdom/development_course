@@ -147,17 +147,45 @@ export class SubscriptionS01V04Page implements OnInit {
       console.log(this.cartList)
     }
     this.learnermail = '';
-    if (type === 'Adults') {
-      if (plan === 'Annual') {
-        this.aaenableEmailbox = enable
-      } else {
-        this.aenableMonthEmailbox = enable
+    if(enable) {
+      if (type === 'Adults') {
+        if (plan === 'Annual') {
+          this.aaenableEmailbox = enable;
+          this.aenableMonthEmailbox = false;
+          this.teenageraenableEmailbox = false;
+          this.teenagerenableMonthEmailbox = false;
+        } else {
+          this.aenableMonthEmailbox = enable
+          this.aaenableEmailbox = false;
+          this.teenageraenableEmailbox = false;
+          this.teenagerenableMonthEmailbox = false;
+        }
+      } else if (type === 'Teenagers') {
+        if (plan === 'Annual') {
+          this.aaenableEmailbox = false;
+          this.aenableMonthEmailbox = false;
+          this.teenagerenableMonthEmailbox = false;
+          this.teenageraenableEmailbox = enable
+        } else {
+          this.aaenableEmailbox = false;
+          this.aenableMonthEmailbox = false;
+          this.teenageraenableEmailbox = false;
+          this.teenagerenableMonthEmailbox = enable
+        }
       }
-    } else if (type === 'Teenagers') {
-      if (plan === 'Annual') {
-        this.teenageraenableEmailbox = enable
-      } else {
-        this.teenagerenableMonthEmailbox = enable
+    }else {
+      if (type === 'Adults') {
+        if (plan === 'Annual') {
+          this.aaenableEmailbox = enable;
+        } else {
+          this.aenableMonthEmailbox = enable
+        }
+      } else if (type === 'Teenagers') {
+        if (plan === 'Annual') {
+          this.teenageraenableEmailbox = enable
+        } else {
+          this.teenagerenableMonthEmailbox = enable
+        }
       }
     }
   }
