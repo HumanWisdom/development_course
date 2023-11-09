@@ -85,7 +85,7 @@ export class WisdomScalePage implements OnInit {
   wisdomScore: any
   nextPath: any
   public lineChartData: ChartDataSets[] = [
-    { data: [], label: 'Wisdom Survey' },
+    { data: [], label: 'Happiness Survey' },
   ];
   public lineChartLabels: Label[] = [];
   public lineChartOptions: ChartOptions = {
@@ -120,9 +120,9 @@ export class WisdomScalePage implements OnInit {
 
   ngOnInit() {
 
-    this.title.setTitle('Mindful Insights: Our Wisdom Survey for a More Fulfilling Life')
-    this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Wisdom Survey for a More Fulfilling Life'})
-    this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our wisdom survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })
+    this.title.setTitle('Mindful Insights: Our Happiness Survey for a More Fulfilling Life')
+    this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life'})
+    this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our Happiness Survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })
     this.meta.updateTag({ property: 'keywords', content: 'Personal growth survey,Self-improvement survey,Mindfulness survey,Happiness survey,Success survey,Mental health survey,Life lessons survey,Positive mindset survey' })
 
 
