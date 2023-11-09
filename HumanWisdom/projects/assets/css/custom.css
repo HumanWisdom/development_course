@@ -35403,4 +35403,9 @@ li ol > li:before {
 {
   margin-left: 20px;
 }
+
+.btn_popups .btn:nth-child(2)
+{
+  margin-top: 10px;
+}
 /* /version - 03 */

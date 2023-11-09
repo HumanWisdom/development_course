@@ -1,51 +1,45 @@
 <span #enablecookiemodal data-toggle="modal" data-target="#modal-alert"></span>
 
 <!-- v1.1 -->
-<div class="modal fade" id="modal-alert" tabindex="-1" data-keyboard="false" role="dialog"
-  aria-labelledby="modal_cookie_title" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered w100" role="document">
+<div class="modal fade in" id="modal-alert" data-keyboard="false" data-backdrop="false" data-dismiss="modal">
+  
     <div class="row center_flex">
-      <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12 popup_04 prelative">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
-        <div class="modal-header b0">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal"
-                aria-label="Close"></button>
-            </div>
+        <div class="row mb10px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+            <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+              {{title}}
+            </h4>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+              {{content}}
+            </h4>
           </div>
         </div>
 
-        <div class="modal-body pt0px">
-          <div class="row center_flex">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <h4 class="fw_400 fs_18px lh_21px fc_ffffff boldi italici">
-                {{title}}
-              </h4>
-              <h4 class="fw_400 fs_18px lh_21px fc_ffffff italici">
-                {{content}}
-              </h4>
-            </div>
+        <div class="row mt30px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
+            <button type="btn" class="btn btn_ctd" data-dismiss="modal" *ngIf="modalid === ''" (click)="close('ok')">
+              {{okText}}
+            </button>
+  
+            <button type="btn" class="btn btn_ctd" data-dismiss="modal" id="liLogout" *ngIf="modalid === 'logout'"  (click)="close('ok')">
+              {{okText}}
+            </button>
+  
+            <button type="btn" class="btn btn_ctd" data-dismiss="modal" *ngIf="enableCancel" (click)="close('cancel')">
+              {{cancelText}}
+            </button>
           </div>
-        </div>
-
-        <div class="modal-footer b0">
-          <button type="button" *ngIf="modalid === ''" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
-            {{okText}}
-          </button>
-
-          <button type="button" *ngIf="modalid === 'logout'" id="liLogout" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
-            {{okText}}
-          </button>
-
-          <button type="button" (click)="close('cancel')" class="btn btn-warning mb0pxi mr0pxi btn_cookies_close" data-dismiss="modal" *ngIf="enableCancel">
-            {{cancelText}}
-          </button>
         </div>
 
       </div>
     </div>
-  </div>
 </div>
 <!-- /v1.1 -->
 
