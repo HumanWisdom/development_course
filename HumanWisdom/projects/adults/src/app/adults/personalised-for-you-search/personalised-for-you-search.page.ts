@@ -1017,5 +1017,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.router.navigate([url]);
   }
 
+  rightToJournal(){
+    this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+   }
 
 }
