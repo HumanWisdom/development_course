@@ -83,11 +83,17 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <input name="name" list="countryList" class="sp_fc inputSearchField"
+
+                  <select name="country" (change)="dataChanged($event)" class="sp_fc btn_select" [(ngModel)]="country" >
+                    <option value="0" selected >Select</option>
+                    <option value="{{data['Country']}}" *ngFor="let data of countryList">{{data['Country']}}</option>
+                  </select>
+
+                  <!-- <input name="name" list="countryList" class="sp_fc inputSearchField"
                     (ngModelChange)="dataChanged($event)" placeholder="Country" [(ngModel)]="country">
                   <datalist id="countryList">
                     <option value="{{data['Country']}}" *ngFor="let data of countrylist()">
-                  </datalist>
+                  </datalist> -->
 
                   <!-- default select -->
                   <!-- <select class="sp_fc">

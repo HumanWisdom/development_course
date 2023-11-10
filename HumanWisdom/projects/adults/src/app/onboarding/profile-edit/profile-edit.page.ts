@@ -151,12 +151,4 @@ export class ProfileEditPage implements OnInit {
        this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
     }
   }
-
-  countrylist() {
-    if(this.country) {
-      return this.countryList.filter(d=> d['Country'].toLowerCase().startsWith(this.country.toLowerCase()));
-    }else {
-      return this.countryList;
-    }
-  }
 }
