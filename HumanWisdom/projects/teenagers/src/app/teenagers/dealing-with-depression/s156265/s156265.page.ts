@@ -18,7 +18,7 @@ export class S156265Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="7/9"
-  link="/dealing-with-depression/s156265"
+  link="/dealing-with-depression/s156266"
   name="#8 A conversation wtih someone who has overcome thier depression"
   progressImg=""
   toc="dealing-with-depression/s156001"
