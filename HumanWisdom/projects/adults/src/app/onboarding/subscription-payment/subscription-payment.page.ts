@@ -120,6 +120,7 @@ export class SubscriptionPaymentPage implements OnInit {
             ':-webkit-autofill': {
               color: '#000000',
               backgroundColor: '#120F40',
+              colorBackground:'#120F40',
             },
             ':focus': {
               color: '#fff',
