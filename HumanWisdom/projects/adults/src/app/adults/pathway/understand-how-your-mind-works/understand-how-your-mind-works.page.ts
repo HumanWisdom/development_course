@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 @Component({
   selector: 'app-understand-how-your-mind-works',
@@ -15,6 +17,8 @@ export class UnderstandHowYourMindWorksPage implements OnInit {
   constructor(public router: Router, public service: AdultsService, private location: Location) { }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
   }
 
   getclcickevent(event) {

@@ -22881,7 +22881,7 @@ ul.dh_ul li:last-child
 
 .cfc10_fl
 {
-  border-right: 1px solid #ADADAD !important;
+  border-right: 1px solid #FFF !important;
   left: 15px;
   display: flex;
   justify-content: center;
@@ -22892,11 +22892,11 @@ ul.dh_ul li:last-child
 
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 15px;
   display: flex;
   align-items: center;
-  color: #5D5D5D;
+  color: #FFF;
 }
 
 .btn_update_changes
@@ -35271,7 +35271,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .odiv.ae_days::-webkit-scrollbar-track
 {
-  margin: 0 20px 0 20px;
+  margin: 0 20px 0 0px !important
 }
 
 .btn_recent.active
@@ -35281,11 +35281,6 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: #FFF;
   color: #292D56;
   filter: unset !important;
-}
-
-.podcast_img
-{
-  
 }
 
 .pt20pxi
@@ -35311,7 +35306,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .cptrem 
 {
-  padding-top: 1rem !important;
+  padding-top: 8rem !important;
 }
 
 .div_subscription_emails .row 
@@ -35397,5 +35392,20 @@ li ol > li:before {
 .ol_help_support ol
 {
   padding: 0 0 0 20px !important;
+}
+
+.odiv.ae_days 
+{
+  padding: 0 20px 10px 0px !important;
+}
+
+.ml20px 
+{
+  margin-left: 20px;
+}
+
+.btn_popups .btn:nth-child(2)
+{
+  margin-top: 10px;
 }
 /* /version - 03 */

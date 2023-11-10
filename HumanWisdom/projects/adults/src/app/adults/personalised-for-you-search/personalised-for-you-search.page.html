@@ -361,7 +361,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" routerLink="/adults/journal?isGuided=true">
+                    <button class="" (click)="rightToJournal()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -385,7 +385,7 @@
                           </h4>
 
                           <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Wisdom score
+                            Happiness score
                           </h4>
                         </div>
                       </div>
@@ -640,7 +640,7 @@
                           </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row ml20px">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
                             <ng-container *ngFor="let item of currentList">
                               <div class="col-md-3 col-sm-3 col-xs-4">
@@ -683,7 +683,7 @@
             <!-- subscribe to premium -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <button type="button" class="v3_btn_subscribe_premium" (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe')">
+                <button type="button" class="v3_btn_subscribe_premium" (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
