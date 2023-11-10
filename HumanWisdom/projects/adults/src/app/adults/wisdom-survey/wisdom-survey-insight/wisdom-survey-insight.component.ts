@@ -65,7 +65,7 @@ export class WisdomSurveyInsightComponent implements OnInit {
       var arrFiltered = result.filter(obj => !uniq[obj.name] && (uniq[obj.name] = true));
       this.multi = [
         {
-          name: 'Wisdom Survey',
+          name: 'Happiness Survey',
           series: arrFiltered
         }
       ]
