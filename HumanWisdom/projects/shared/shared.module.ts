@@ -89,6 +89,7 @@ import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.c
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
 import { AdultsAudioMeditationComponent } from './component/adults-audio-meditation/adults-audio-meditation.component';
 import { LoginRegisterModalComponent } from './component/login-register-modal/login-register-modal.component';
+import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premium-block/subscribe-to-premium-block.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -171,7 +172,8 @@ import { LoginRegisterModalComponent } from './component/login-register-modal/lo
     VideoContentCrossComponent,
     ModalComponent,
     AdultsAudioMeditationComponent,
-    LoginRegisterModalComponent
+    LoginRegisterModalComponent,
+    SubscribeToPremiumBlockComponent
   ],
   imports: [
     CommonModule,
@@ -280,6 +282,7 @@ import { LoginRegisterModalComponent } from './component/login-register-modal/lo
     ModalComponent,
     AdultsAudioMeditationComponent,
     LoginRegisterModalComponent,
+    SubscribeToPremiumBlockComponent
   ]
 })
 export class SharedModule { }

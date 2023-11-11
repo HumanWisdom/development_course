@@ -126,6 +126,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.GetWisdomScreens();
     this.getUserPreference();
+    this.isSubscribe=SharedService.isSubscriber();
   }
 
   getModuleList(isLoad?) {
