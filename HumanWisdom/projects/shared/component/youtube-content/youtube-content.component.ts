@@ -36,7 +36,7 @@ export class YoutubeContentComponent implements OnInit {
 
     let sub = localStorage.getItem("Subscriber")
     if (sub=='0' && access=='paid' )
-      this.router.navigate(['/onboarding/free-limit']);
+    this.router.navigate(['/subscription/start-your-free-trial']);
 
     if(window.history.state.class)
     {
