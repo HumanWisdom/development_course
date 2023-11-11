@@ -81,30 +81,53 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="row mt30px mb30px prelative">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                    [(ngModel)]="country" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
+                    (focus)="onFocus()"
+                    [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}"
+                    placeholder="Search for a country">
+                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span *ngIf=" country!=''" (click)="clearSearch()"
+                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                    aria-hidden="true"></span>
+                </div>
 
+                <div class="row adsearch">
+                  <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                    <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                      <li *ngFor="let item of searchResult" (click)="dataChanged(item['Country'])" name="list"
+                        class="is-search list-group-item">{{item['Country']}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0"> -->
+              <!--
                   <select name="country" (change)="dataChanged($event)" class="sp_fc btn_select" [(ngModel)]="country" >
                     <option value="0" selected >Select</option>
                     <option value="{{data['Country']}}" *ngFor="let data of countryList">{{data['Country']}}</option>
-                  </select>
+                  </select> -->
 
-                  <!-- <input name="name" list="countryList" class="sp_fc inputSearchField"
+              <!-- <input name="name" list="countryList" class="sp_fc inputSearchField"
                     (ngModelChange)="dataChanged($event)" placeholder="Country" [(ngModel)]="country">
                   <datalist id="countryList">
                     <option value="{{data['Country']}}" *ngFor="let data of countrylist()">
                   </datalist> -->
 
-                  <!-- default select -->
-                  <!-- <select class="sp_fc">
+              <!-- default select -->
+              <!-- <select class="sp_fc">
                       <option selected>Select</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select> -->
-                  <!-- /default select -->
-                </div>
-              </div>
+              <!-- /default select -->
+              <!-- </div>
+              </div> -->
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
