@@ -21,6 +21,9 @@
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
       </a>
+      <a  *ngIf="isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
+      </a>
     </div>
   </div>
 </div>
@@ -1333,7 +1336,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2308"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2308" data-hint="when you are with a group of friends"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1531,3 +1534,12 @@
 [content]="'Please subscribe to access your online Journal'">
 </app-modal>
 <!-- /footer -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      
+      </h4>
+    </div>
+  </div>
+</div>

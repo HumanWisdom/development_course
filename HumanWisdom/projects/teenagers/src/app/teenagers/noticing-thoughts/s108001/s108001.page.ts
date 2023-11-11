@@ -1,124 +1,184 @@
-import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ProgramModel } from '../../../../../../shared/models/program-model';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s108001',
   templateUrl: './s108001.page.html',
   styleUrls: ['./s108001.page.scss'],
 })
-export class S108001Page implements OnInit, OnDestroy {
+export class S108001Page implements OnInit,OnDestroy {
+  
+  bg_tn = ""
+  bg_cft = ""
+  bg = ""
 
-  bg_tts = "bg_blue"
-  bg_tn = "bg_blue"
-  bg_cft = "bg_blue"
-  bg = "blue_flat"
-
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  screenType = localStorage.getItem("text")
-  moduleId = localStorage.getItem("moduleId")
-  screenNumber = 108001
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark = 0
-  toc = ""
-   path = setTimeout(() => {
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("text")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=108001
+  startTime:any
+  endTime:any
+  totalTime:any
+  bookmark:any
+  bookmarkList=[]
+  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-  moduleData:ProgramModel;
+  token="1234"
+  shareUrl=this.path+"?t="+this.token
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+  socialShare=false
+  loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
+  t:any
+  kindnessResume=sessionStorage.getItem("kindnessResume")
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.png"
+  tocColor="white"
+  lastvisited = false;
+  stories: any = []
   pgResume=sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
 
   constructor
   (
     private router: Router,
-    private service: TeenagersService,
-    private location: Location
+    private service:TeenagersService,
+    private location:Location,
+    private url: ActivatedRoute
   ) 
   { 
     this.getSetModuleData(108);
-
-
+    this.url.queryParams.subscribe(params => {
+      this.t = params['t'];
+    })
+     
+    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    if(story?.length <= 2) 
+    {
+      story.forEach((e) => 
+      {
+        arraythree.push(e)
+      })
+      splitarr.push(arraythree)
+    }
+    else
+    {
+      story?.forEach((e) => 
+      {
+        if(arraythree.length < 2) 
+        {
+          arraythree.push(e)
+        }
+        else 
+        {
+          splitarr.push(arraythree)
+          arraythree = []
+          arraythree.push(e)
+        }
+      })
+    }
+    this.stories = splitarr
+    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    // this.stories = JSON.parse(this.stories)
   }
 
   ngOnInit() 
   {
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    // continue where you left    
+    let last = localStorage.getItem('lastvisited');
+    if(last === 'T') 
+    {
+      this.lastvisited = true;
     }
     else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    {
+      this.lastvisited = false;
+    }    
+    // /continue where you left
+
+    console.log(this.shareUrl,this.loginResponse)
+    
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
     }
 
-    this.startTime = Date.now();
-
-    if (JSON.parse(sessionStorage.getItem("bookmark108001")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark108001")) == 108001)
-      this.bookmark = 108001
-  }
-
-  receiveBookmark(e) 
-  {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 108001
+    if(!this.t) //if no token in url- not shared
+    {
+      if(this.loginResponse.Subscriber!=1 && !this.freeScreens.includes(this.screenNumber))
+        console.log("move")
+    }
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark108001", JSON.stringify(this.bookmark))
+    {
+      console.log("show")
+    }
+   
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    this.createScreen()
   }
 
-  createScreen() 
+  addToken()
+  {
+    history.replaceState(null, null, this.path+`?t=${this.token}`);
+    this.socialShare=true
+  }
+
+  toggleBookmark()
+  {
+    if(this.bookmark==0)
+      this.bookmark=1
+    else
+      this.bookmark=0
+  }
+
+  createScreen()
   {
     this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>
+      {
+        
+      })
   }
 
-  submitProgress() 
+  submitProgress()
   {
     this.service.submitProgressText({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-    error => { console.log(error) },
-    () => {
-      //this.router.navigate(['/adults/conditioning/s234'])
-    })
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+      })
   }
 
-  goNext() 
-  {
-    // this.router.navigate(['/adults/comparison/s2'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/noticing-thoughts/s108002'])
-  }
-
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
+
+  routeJournal()
+  {
+    this.router.navigate(['/teenagers/journal'])
+  }
 
   getSetModuleData(moduleId){
     this.service.setmoduleID(moduleId);
@@ -127,6 +187,13 @@ export class S108001Page implements OnInit, OnDestroy {
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       console.log(res[0].lastScreen)
      });
+  }
+   youtube(link) 
+  {
+    this.router.navigate(['/curated/youtubelink', link],{
+    state: {
+      class: this.bg,
+    }})
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,31 +8,27 @@ import { Location } from '@angular/common';
   templateUrl: './s139015.page.html',
   styleUrls: ['./s139015.page.scss'],
 })
-export class S139015Page implements OnInit,OnDestroy {
- 
+export class S139015Page implements OnInit,OnDestroy 
+{
   bg_tn=""
   bg_cft=""
   bg=""
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.7.mp4'  
-  title="The root cause of stress"
-  poster="https://humanwisdoms139015.s139015.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
+
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("video")
+  screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=139015
   startTime:any
   endTime:any
-  totalTime:any  
-  toc="/pressure-of-exams/s139001"
+  totalTime:any
   bookmark=0
+  toc="pressure-of-exams/s139001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+ 
   constructor
   (
     private router: Router,
@@ -45,6 +41,7 @@ export class S139015Page implements OnInit,OnDestroy {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -79,7 +76,9 @@ export class S139015Page implements OnInit,OnDestroy {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+    }).subscribe(res=>
+      { 
+      })
   }
 
   submitProgress()
@@ -87,18 +86,21 @@ export class S139015Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/pressure-of-exams/s139016'])
-    this.service.submitProgressAv({
+    this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
+      "timeSpent":this.totalTime
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/pressure-of-exams/s234'])
       })
   }
 

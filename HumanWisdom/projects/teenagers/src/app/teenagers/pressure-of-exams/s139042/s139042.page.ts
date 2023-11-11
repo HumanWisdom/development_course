@@ -1,7 +1,6 @@
-import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import * as jQuery from 'jquery';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class S139042Page implements OnInit {
   bg=""
 
   toc="pressure-of-exams/s139001"
-  hint = ""
+  hint = "you could accept them and move on."
 
   path = setTimeout(() => {
     return this.router.url;
@@ -31,7 +30,7 @@ export class S139042Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 2015
+  rId = 2014
   reflection: any
   reflectionA: any
   r139042 = JSON.parse(sessionStorage.getItem("r139042"))

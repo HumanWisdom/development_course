@@ -16,7 +16,7 @@ export class S156135Page implements OnInit,OnDestroy {
   bg="dark_blue_w4"
   title="Discover the benefits of journaling"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/dealing-with-depression/audios/2.9.mp3'
+  audioLink=this.mediaAudio+'/dealing-with-depression/audios+2.9.mp3'
 
   transcriptPage="dealing-with-depression/s156135t"
   toc="dealing-with-depression/s156001"

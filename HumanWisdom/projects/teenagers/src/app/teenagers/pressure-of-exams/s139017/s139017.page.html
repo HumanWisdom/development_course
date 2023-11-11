@@ -1,5 +1,17 @@
-<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)></app-audio-content>
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      Once we see clearly that stress is caused by how our mind automatically reacts to exams, we can work on ourselves to change how we think, and react to situations. The situation does not change, but we do, and our stress can ease. See the module on Stress for details.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

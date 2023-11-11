@@ -1,30 +1,70 @@
-<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-toc-header [moduleName]="'kindness'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
-<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
-    
-  <form>
+<app-index-content>
 
-    <h4 class="mtb0px comparison">
-      Pressure of exams
-    </h4>
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+         
+        </h4>
+      </div>
+    </div>
 
-    <div class="clearfix"></div>
-
-    <h5 class="mtb0px session">
-      Session #1
-    </h5>
-
-    <div class="clearfix"></div>
 
     <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
+        <a [routerLink]="['/kindness', pgResume]" *ngIf="pgResume">
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <!-- <a routerLink="/kindness/s1">
+          <button type="button" class="btn btn_default mb0 txt_pink_orange" data-dismiss="modal">Start from the beginning</button>
+        </a> -->
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <div class="toc_adiv">
+      <a routerLink="/kindness/s137002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Pressure of exams
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+
+  </div>
+
   
-    <h1 class="session_title ">
-      Dealing with the pressure of exams
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    
+  </form>    
 
-    </h1>
+</app-index-content> 
 
-    <div class="clearfix"></div>
-
-  </form>
-
-</app-tap-start>
+<app-index-footer></app-index-footer>

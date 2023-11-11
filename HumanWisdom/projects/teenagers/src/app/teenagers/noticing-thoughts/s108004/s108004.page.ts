@@ -1,133 +1,115 @@
-import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
+
+
 
 @Component({
   selector: 'app-s108004',
   templateUrl: './s108004.page.html',
   styleUrls: ['./s108004.page.scss'],
 })
-export class S108004Page implements OnInit {
-
+export class S108004Page implements OnInit,OnDestroy {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w3"
-  hint = ""
-  toc = ""
-   path = setTimeout(() => {
+  bg = "blue_w2"
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/noticing_thoughts/videos/1.1.mp4'  
+  title="Noticing and documenting our thoughts "
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_01.jpg"
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("video")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=108004
+  startTime:any
+  endTime:any
+  totalTime:any  
+  toc=""
+  bookmark=0
+  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  qrList = JSON.parse(localStorage.getItem("qrList"))
-  moduleId = localStorage.getItem("moduleId")
-  screenType = localStorage.getItem("reflection")
-  screenNumber = 108004
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark: any
-  rId = 1229
-  reflection: any
-  reflectionA: any
-  r108004 = JSON.parse(sessionStorage.getItem("r108004"))
-  shared: any
-  confirmed: any
-
+  avDuration:any
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  
   constructor
   (
     private router: Router,
-    private service: TeenagersService,
-    private location: Location
+    private service:TeenagersService,
+    private location:Location
   ) 
   { }
 
   ngOnInit() 
   {
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    this.reflectionA = this.qrList.ListOfReflection
-    this.findReflection()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
     }
     this.startTime = Date.now();
+    this.startTime = Date.now();
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark108004"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark108004"))==1)
+      this.bookmark=1
   }
 
-  sharedForum(e) 
+  receiveBookmark(e)
   {
     console.log(e)
-    this.shared = e
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark108004",JSON.stringify(this.bookmark))
   }
 
-  confirmShare() 
-  {
-    this.confirmed = true
-  }
-
-  createScreen() 
+  createScreen()
   {
     this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {})
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>{})
   }
 
-  findReflection() 
+  submitProgress()
   {
-    for (var i = 0; i < this.reflectionA.length; i++) 
-    {
-      if (this.rId == this.reflectionA[i].ReflectionId) 
-      {
-        this.reflection = this.reflectionA[i].Que
-        // this.optionList.push(this.questionA[i])
-      }
-    }
-    console.log(this.reflection)
-  }
-
-  submitProgress(e) 
-  {
-    console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r108004", JSON.stringify(e))
-    this.r108004 = sessionStorage.getItem("r108004")
-    console.log(this.r108004)
-    this.service.submitProgressReflection({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
-      "Resp": this.r108004
-    }).subscribe(res => {},
-      error => {
-        console.log(error)
-        this.router.navigate(['/noticing-thoughts/s108005'])
-
-      },
-      () => {
-        this.router.navigate(['/noticing-thoughts/s108005'])
+    this.router.navigate(['/noticing-thoughts/s108005'])
+    this.service.submitProgressAv({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
   }
 
-  previous() 
+  prev()
   {
     this.router.navigate(['/noticing-thoughts/s108003'])
   }
 
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
 
 }

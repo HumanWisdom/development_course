@@ -9,26 +9,30 @@ import { Location } from '@angular/common';
   styleUrls: ['./s139016.page.scss'],
 })
 export class S139016Page implements OnInit,OnDestroy {
-
+ 
   bg_tn=""
   bg_cft=""
   bg=""
-
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.7.mp4'  
+  title="The root cause of stress"
+  poster="https://humanwisdoms139016.s139016.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("text")
+  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=139016
   startTime:any
   endTime:any
-  totalTime:any
+  totalTime:any  
+  toc="/pressure-of-exams/s139001"
   bookmark=0
-  toc="pressure-of-exams/s139001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+  avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
- 
+  
   constructor
   (
     private router: Router,
@@ -41,7 +45,6 @@ export class S139016Page implements OnInit,OnDestroy {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -76,9 +79,7 @@ export class S139016Page implements OnInit,OnDestroy {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      { 
-      })
+    }).subscribe(res=>{})
   }
 
   submitProgress()
@@ -86,21 +87,18 @@ export class S139016Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/pressure-of-exams/s139017'])
-    this.service.submitProgressText({
+    this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      },
-      error=>{console.log(error)},
-      ()=>{
-        //this.router.navigate(['/pressure-of-exams/s234'])
       })
   }
 

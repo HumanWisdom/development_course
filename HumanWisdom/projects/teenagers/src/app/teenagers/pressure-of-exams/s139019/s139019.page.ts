@@ -13,7 +13,6 @@ export class S139019Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-
   toc="pressure-of-exams/s139001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -31,7 +30,7 @@ export class S139019Page implements OnInit {
   }, 1000);
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+  
   constructor(
     private router: Router,
     private service:TeenagersService,
@@ -98,7 +97,7 @@ export class S139019Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-    
+   
       
     
   });
