@@ -25,8 +25,8 @@ export class S78009Page implements OnInit {
     },
     {
       "no":2,
-      "heading":"Wisdom Survey",
-      "text":"Keep track of your progress(wisdom score) as you do the program.",
+      "heading":"Happiness Survey",
+      "text":"Keep track of your progress(Happiness score) as you do the program.",
       "link":"/wisdom-survey",
       "linkText":"",
       "module-id":""

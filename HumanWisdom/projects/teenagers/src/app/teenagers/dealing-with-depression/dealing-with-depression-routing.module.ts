@@ -150,7 +150,7 @@ import { S156130Page } from './s156130/s156130.page';
 import { S156131Page } from './s156131/s156131.page';
 import { S156132Page } from './s156132/s156132.page';
 import { S156133Page } from './s156133/s156133.page';
-// import { S156133tPage } from './s156133t/s156133t.page';
+ import { S156133tPage } from './s156133t/s156133t.page';
 import { S156134Page } from './s156134/s156134.page';
 import { S156135Page } from './s156135/s156135.page';
 import { S156135tPage } from './s156135t/s156135t.page';
@@ -936,10 +936,10 @@ const routes: Routes = [
     path: 's156133',   
     component: S156133Page,
   },
-  // {
-  //   path: 's156133t',   
-  //   component: S156133tPage,
-  // },
+  {
+    path: 's156133t',   
+    component: S156133tPage,
+  },
   {
     path: 's156134',   
     component: S156134Page,

@@ -1,21 +1,40 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-quotation [bg]="bg">
+<app-oneline-text [bg]="bg">
   <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Revision tips
+    </h1>
+    <div class="clearfix"></div>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 mb20px">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/quotation_01.svg" alt="">
-      </div>
-    </div>
+    <h3 class="txt8 oneliner_txt_pointer">
+     1.  Breaking learning into small chunks
+    </h3>
 
-    <h1 class="mtb0px quotation_txt">
-      When you believe in yourself, everything is possible
+    <h3 class="txt8 oneliner_txt_pointer">
+     2.  Make notes or flashcards or mind maps 
 
-   </h1>
-    <hr class="hr_style_v3_05 mtb20px">
+    </h3>
 
-  </form>
-</app-quotation>
+    <h3 class="txt8 oneliner_txt_pointer">
+     3.  Create a timetable and stick to it
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      4.  There is no substitute for hard work
+     </h3>
+
+     <h3 class="txt8 oneliner_txt_pointer">
+      5.  Stress decreases your mental capacity - so make learning fun
+
+     </h3>
+
+     <h3 class="txt8 oneliner_txt_pointer">
+      6.  Ask someone to check your learning
+     </h3>
+
+    </form>          
+</app-oneline-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

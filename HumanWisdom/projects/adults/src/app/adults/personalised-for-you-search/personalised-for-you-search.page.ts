@@ -126,6 +126,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.GetWisdomScreens();
     this.getUserPreference();
+    this.isSubscribe=SharedService.isSubscriber();
   }
 
   getModuleList(isLoad?) {
@@ -1017,5 +1018,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.router.navigate([url]);
   }
 
+  rightToJournal(){
+    this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+   }
 
 }

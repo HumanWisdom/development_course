@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,8 +8,8 @@ import { Location } from '@angular/common';
   templateUrl: './s139012.page.html',
   styleUrls: ['./s139012.page.scss'],
 })
-export class S139012Page implements OnInit,OnDestroy 
-{
+export class S139012Page implements OnInit,OnDestroy {
+
   bg_tn=""
   bg_cft=""
   bg=""

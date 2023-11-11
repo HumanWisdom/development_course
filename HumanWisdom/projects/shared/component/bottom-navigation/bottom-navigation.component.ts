@@ -15,7 +15,7 @@ export class BottomNavigationComponent implements OnInit {
   @Input() programType :ProgramType = ProgramType.Adults;
   journal = false
   fourm = false
-  profile = false
+  profile = true
   isloggedIn = false
   enableprofile = false
   search = false
@@ -41,28 +41,24 @@ export class BottomNavigationComponent implements OnInit {
       this.router.url.includes('/adults/search')) {
       this.dash = false
       this.journal = false
-      this.profile = false
       this.fourm = false;
       this.search = true;
     }
     if (this.router.url == "/adults/adult-dashboard") {
       this.dash = true
       this.journal = false
-      this.profile = false
       this.search = false;
     }
     if ((this.router.url == "/adults/journal") ||
       this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
       (this.router.url.indexOf('/adults/note') > -1)) {
       this.dash = false
-      this.profile = false
       this.journal = true
     }
     let reg = new RegExp('forum')
     if ((reg.test(this.router.url))) {
       this.dash = false
       this.journal = false
-      this.profile = false
       this.fourm = true;
     }
     if (this.router.url == "/onboarding/user-profile"
@@ -71,21 +67,19 @@ export class BottomNavigationComponent implements OnInit {
       this.dash = false
       this.journal = false
       this.fourm = false;
-      this.profile = true
-
-      if (this.isloggedIn) {
-        var loggedInUserId = SharedService.getUserId();
-        if(loggedInUserId>0){
-          this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
-            this.userdetail = res[0];
-            this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
-            this.enableprofile = true;
-            this.profile = true;
-          });
-        }
-      }
     }
   
+    if (this.isloggedIn) {
+      var loggedInUserId = SharedService.getUserId();
+      if(loggedInUserId>0){
+        this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
+          this.userdetail = res[0];
+          this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+          this.enableprofile = true;
+          this.profile = true;
+        });
+      }
+    }
   }
 
   routeDash() {
@@ -106,6 +100,7 @@ export class BottomNavigationComponent implements OnInit {
       this.router.navigate(['/adults/journal']);
     }
   }
+  
 
   routeSearch() {
     if(ProgramType.Teenagers==this.programType || 

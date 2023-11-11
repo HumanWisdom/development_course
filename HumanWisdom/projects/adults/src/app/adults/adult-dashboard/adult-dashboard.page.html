@@ -160,9 +160,9 @@
             <!-- /daily practice -->
 
             <!-- explore a topic in depth-for guest user -->
-            <!-- <div class="row">
+            <div class="row" *ngIf="isloggedIn && !isSubscriber && YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a class="prelative">
+                <a class="prelative" (click)="changeTopic()">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -183,11 +183,11 @@
                   </div>
                 </a>
               </div>
-            </div> -->
+            </div>
             <!-- /explore a topic in depth-for guest user -->
 
             <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
+            <div class="row" *ngIf="isloggedIn && isSubscriber && YourTopicofChoice.length !== 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a class="prelative" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
@@ -740,7 +740,7 @@
               </div>
             </div>
             <!-- /find answers -->
-
+           <ng-container *ngIf="!isSubscriber">
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -750,29 +750,7 @@
             <!-- /hr -->
 
             <!-- subscribe to premium -->
-            <div class="row" *ngIf="!isSubscriber">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <button type="button" class="v3_btn_subscribe_premium">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_subscribe_premium.svg" class="v3_subscribe_premium">
-                      </div>
-
-                      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 tleft">
-                        <h4 class="mtb0px fw_400 fs_18px lh_140p fc_ffffff">
-                          Subscribe to Premium
-                        </h4>
-
-                        <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff">
-                          £4.20/month, billed annually
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
+              <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
             <!-- /subscribe to premium -->
 
             <!-- hr -->
@@ -782,7 +760,6 @@
               </div>
             </div>
             <!-- /hr -->
-          <ng-container *ngIf="isSubscriber">
             <!-- what people are saying -->
             <div class="row mb30px" >
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
@@ -792,7 +769,7 @@
                   </h2>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                  <a routerLink="/adults/testimonials">
+                  <a>
                     <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                       View all
                     </h2>
@@ -804,9 +781,8 @@
             <!-- /what people are saying -->
 
             <!-- testimonials -->
-            <div class="row">
+             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 odiv">
-
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -842,7 +818,7 @@
                     </div>
                   </div>
                 </div>
-
+    
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -1159,14 +1135,14 @@
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <a click)="readMore('Merrick')">
+                      <a (click)="readMore('Merrick')">
                         <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
                           READ MORE
                         </h4>
                       </a>
                     </div>
                   </div>
-                </div>
+                </div> 
 
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
@@ -1238,12 +1214,13 @@
                       </a>
                     </div>
                   </div>
-                </div>
+                </div> 
 
               </div>
             </div>
-            <!-- /testimonials -->
+
           </ng-container>
+            <!-- /testimonials -->
             <div class="pagebreak"></div>
 
           </div>

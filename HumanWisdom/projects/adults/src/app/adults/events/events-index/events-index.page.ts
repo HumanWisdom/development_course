@@ -69,7 +69,7 @@ export class EventsIndexPage implements OnInit {
   youtube(link, RowID) {
     let sub: any = localStorage.getItem("Subscriber")
     if(RowID>=4 && sub==0) 
-       this.router.navigate(['/onboarding/free-limit']);
+    this.router.navigate(['/subscription/start-your-free-trial']);
     else if (RowID<=3)
       this.router.navigate(['/adults/curated/youtubelink', link+"=rdtfghjhfdg"])
     else

@@ -3918,6 +3918,9 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
+  SubscribeToPremium(){
+    this.router.navigate(['/subscription/start-your-free-trial']);
+  }
 
   // RouteToWisdomExercise(exercise) {
   //   var weR = exercise?.ScreenNo;
@@ -4016,7 +4019,7 @@ export class AdultDashboardPage implements OnInit {
 
   readMore(str){
     SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
-    this.router.navigate(['/adults/testimonials'])
+    this.router.navigate(['/adults/testimonials']);
   }
 
 }

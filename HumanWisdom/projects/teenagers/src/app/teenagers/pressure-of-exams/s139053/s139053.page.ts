@@ -10,47 +10,125 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S139053Page implements OnInit {
 
- 
   bg_tn=""
   bg_cft=""
   bg=""
 
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
+  toc="pressure-of-exams/s139001"
+  hint = ""
 
-  constructor(private router: Router,
-    private service:TeenagersService,
-    private location:Location) { }
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+  moduleId = localStorage.getItem("moduleId")
+  screenType = localStorage.getItem("reflection")
+  screenNumber = 139053
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
+  rId = 2018
+  reflection: any
+  reflectionA: any
+  r139053 = JSON.parse(sessionStorage.getItem("r139053"))
+  shared: any
+  confirmed: any
+
+  constructor
+  (
+    private router: Router,
+    private service: TeenagersService,
+    private location: Location
+  ) 
+  { }
 
   ngOnInit() 
   {
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    this.sessionPoints()
+    this.createScreen()
+    this.reflectionA = this.qrList.ListOfReflection
+    this.findReflection()
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
+    this.startTime = Date.now();
   }
 
-  sessionPoints()
+  sharedForum(e) 
   {
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"139001,139002,139003,139004,139005,139006,139007,139008,139009,139010,139011,139012,139013,139014,139015,139016,139017,139018,139019,139020,139021,139022,139023,139024,139025,139026,139027,139028,139029,139030,139031,139032,139033,139034,139035,139036,139037,139038,139039,139040,139041,139042,139043,139044,139045,139046,139047,139048,139049,139050,139051,139052"})
-    .subscribe(res=>
-      {console.log("points",res)
-      this.points=res
-    })
+    console.log(e)
+    this.shared = e
   }
 
-  submitProgress()
+  confirmShare() 
   {
-    this.router.navigate(['/pressure-of-exams/s139054'])
+    this.confirmed = true
   }
 
-  prev()
+  createScreen() 
   {
-    this.router.navigate(['/pressure-of-exams/s1399052'])
+    this.service.createScreen({
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {})
   }
+
+  findReflection() 
+  {
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
+      }
+    }
+    console.log(this.reflection)
+  }
+
+  submitProgress(e) 
+  {
+    console.log("returned response", e)
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    sessionStorage.setItem("r139053", JSON.stringify(e))
+    this.r139053 = sessionStorage.getItem("r139053")
+    console.log(this.r139053)
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r139053
+    }).subscribe(res => {},
+      error => {
+        console.log(error)
+        this.router.navigate(['/pressure-of-exams/s139054'])
+
+      },
+      () => {
+        this.router.navigate(['/pressure-of-exams/s139054'])
+      })
+  }
+
+  previous() 
+  {
+    this.router.navigate(['/pressure-of-exams/s139052'])
+  }
+
+  ngOnDestroy() 
+  {}
 
 }
