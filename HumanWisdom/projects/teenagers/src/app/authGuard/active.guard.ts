@@ -58,7 +58,7 @@ export class ActiveGuard implements CanActivate, OnInit {
         else {
           /* localStorage.setItem("StoryType","Locked")
           console.log(res) */
-          this.router.navigate(['/onboarding/free-limit'], { replaceUrl: true, skipLocationChange: false })
+          this.router.navigate(['/subscription/start-your-free-trial']);
           return false;
         }
 
@@ -84,7 +84,7 @@ export class ActiveGuard implements CanActivate, OnInit {
         else {
           /*     localStorage.setItem("StoryType","Locked")
               console.log(res) */
-          this.router.navigate(['/onboarding/free-limit'], { replaceUrl: true, skipLocationChange: false })
+              this.router.navigate(['/subscription/start-your-free-trial']);
           return false;
         }
 
@@ -98,7 +98,7 @@ export class ActiveGuard implements CanActivate, OnInit {
     }
     else {
       // window.alert('You Have Reached Free Limit')
-      this.router.navigate(['/onboarding/free-limit'])
+      this.router.navigate(['/subscription/start-your-free-trial']);
       return false
     }
 

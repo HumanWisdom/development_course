@@ -17,7 +17,7 @@ export class AudioVideoGuard implements CanActivate {
       if(isloggedin === 'T') {
         return true
       }else {
-        this.router.navigate(['/onboarding/free-limit'])
+        this.router.navigate(['/subscription/start-your-free-trial']);
         return false
       }
     }

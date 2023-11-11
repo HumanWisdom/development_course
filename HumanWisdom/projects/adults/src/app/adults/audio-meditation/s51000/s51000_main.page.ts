@@ -164,7 +164,7 @@ export class S51000Page implements OnInit, OnDestroy {
   audioevent(data) {
     let sub: any = localStorage.getItem("Subscriber")
     if (sub == 0 && data['RowID'] >= 4) {
-      this.router.navigate(['/onboarding/free-limit']);
+      this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
       this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
     }

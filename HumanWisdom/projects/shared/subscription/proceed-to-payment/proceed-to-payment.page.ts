@@ -85,10 +85,13 @@ export class ProceedToPaymentPage implements OnInit {
         }
       });
     }
-
-
-
-
   }
+    
+
+    buyGift(){
+      this.router.navigateByUrl('/adults/give-the-gift-of-wisdom');
+    }
+
+
 
 }
