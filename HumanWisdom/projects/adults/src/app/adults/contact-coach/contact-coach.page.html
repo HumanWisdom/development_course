@@ -69,22 +69,45 @@
                   Please Enter Valid EmailID
                 </div>
 
-                <div class="row mt15px">
+                <div class="row mt30px mb30px prelative">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                    <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                      [(ngModel)]="form.Country" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
+                      (focus)="onFocus()"
+                      [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}"
+                      placeholder="Search for a country">
+                    <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                    <span *ngIf="form.Country!=''" (click)="clearSearch()"
+                      class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                      aria-hidden="true"></span>
+                  </div>
+  
+                  <div class="row adsearch">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                      <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                        <li *ngFor="let item of searchResult" (click)="dataChanged(item['CountryName'])" name="list"
+                          class="is-search list-group-item">{{item['CountryName']}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="row mt15px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <label class="select_label m0px w100">
 
                       <select name="Country" (change)="onChange($event)" class="sp_fc btn_select" [(ngModel)]="form.Country" >
                         <option value="0" selected >Select</option>
                         <option *ngFor="let list of countryList" [ngValue]="list.CountryName">{{list.CountryName}}</option>
-                      </select>
+                      </select> -->
 
                       <!-- <select (change)="onChange($event)" type="text" name="countryList"  class="sp_fc btn_select" [(ngModel)]="form.Country" >
                         <option value="0" selected >Select Country</option>
                         <option *ngFor="let list of countryList" [ngValue]="list.CountryName">{{list.CountryName}}</option>
                       </select> -->
-                    </label>
+                    <!-- </label>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="row mt20px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
