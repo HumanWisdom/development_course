@@ -2,17 +2,17 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="goBack()">                          
+      <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
-      </a>  
+      </a>
     </div>
-    
+
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter ws_pre">
         Contact a Coach
-      </h1>  
+      </h1>
     </div>
-    
+
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
     </div>
   </div>
@@ -50,7 +50,7 @@
                             <option value="Mr.">Mr.</option>
                             <option value="Mrs.">Mrs.</option>
                             <option value="Others">Others</option>
-                          </select> 
+                          </select>
                         </label>
                       </div>
                     </div>
@@ -66,16 +66,22 @@
                   </div>
                 </div>
                 <div *ngIf="!ValidateEmail(true)" class="white alert alert-danger w100">
-                  Please Enter Valid EmailID 
+                  Please Enter Valid EmailID
                 </div>
 
                 <div class="row mt15px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <label class="select_label m0px w100">
-                      <select (change)="onChange($event)" type="text" name="countryList"  class="sp_fc btn_select" [(ngModel)]="form.Country" >
-                        <option value="0" selected >Select Country</option>
+
+                      <select name="Country" (change)="onChange($event)" class="sp_fc btn_select" [(ngModel)]="form.Country" >
+                        <option value="0" selected >Select</option>
                         <option *ngFor="let list of countryList" [ngValue]="list.CountryName">{{list.CountryName}}</option>
                       </select>
+
+                      <!-- <select (change)="onChange($event)" type="text" name="countryList"  class="sp_fc btn_select" [(ngModel)]="form.Country" >
+                        <option value="0" selected >Select Country</option>
+                        <option *ngFor="let list of countryList" [ngValue]="list.CountryName">{{list.CountryName}}</option>
+                      </select> -->
                     </label>
                   </div>
                 </div>
@@ -135,3 +141,6 @@
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
+</app-modal>

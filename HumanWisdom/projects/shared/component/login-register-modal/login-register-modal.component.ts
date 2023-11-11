@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output, Input } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output, Input, HostListener } from "@angular/core";
 import { UntypedFormBuilder, Validators, AbstractControl } from "@angular/forms";
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -13,10 +13,14 @@ import { Constant } from "../../services/constant";
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
   styleUrls: ['./login-register-modal.component.scss'],
+  host: {
+    '(document:click)': 'closeFn($event)',
+  },
 })
 export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('redeemsubscription') redeemsubscription: ElementRef;
+  @ViewChild('activemodal') activemodal: ElementRef;
 
   @Output() closeModal = new EventEmitter<boolean>();
   @Input() isAdvertpage = false;
@@ -60,7 +64,6 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   enabledModal = false;
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
-
   constructor(
     public platform: Platform,
     private router: Router,
@@ -101,9 +104,18 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     }
     let namedata = localStorage.getItem('name')?.split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
-    if (namedata.length > 0) {
+    if (namedata?.length > 0) {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    }
+  }
+
+
+  closeFn(event) {
+    if (this.enabledModal && !this.activemodal.nativeElement.contains(event.target)) {
+      setTimeout(() => {
+        this.closeModal.emit(false);
+      })
     }
   }
 
@@ -133,8 +145,10 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
 
   already(value) {
     if (!this.enabledModal) {
-      this.enabledModal = true;
       this.redeemsubscription.nativeElement.click();
+      setTimeout(() => {
+        this.enabledModal = true;
+      }, 200)
     }
     if (value === 'login') {
       this.firstpage = false;

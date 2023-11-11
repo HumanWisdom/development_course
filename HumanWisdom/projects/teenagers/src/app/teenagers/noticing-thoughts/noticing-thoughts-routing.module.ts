@@ -4,12 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { S108001Page } from './s108001/s108001.page';
 import { S108002Page } from './s108002/s108002.page';
-import { S108002tPage } from './s108002t/s108002t.page';
+import { S108003tPage } from './s108003t/s108003t.page';
 import { S108003Page } from './s108003/s108003.page';
 import { S108004Page } from './s108004/s108004.page';
 import { S108005Page } from './s108005/s108005.page';
 import { S108006Page } from './s108006/s108006.page';
 import { S108007Page } from './s108007/s108007.page';
+import { S108008Page } from './s108008/s108008.page';
 
 const routes: Routes = [
   {
@@ -28,9 +29,9 @@ const routes: Routes = [
     // data: { animation: 0 }
   },
   {
-    path: 's108002t',
+    path: 's108003t',
 
-    component: S108002tPage,
+    component: S108003tPage,
     // data: { animation: 1 }
   },
   {
@@ -61,6 +62,12 @@ const routes: Routes = [
     path: 's108007',
 
     component: S108007Page,
+    // data: { animation: 6 }
+  },
+  {
+    path: 's108008',
+
+    component: S108008Page,
     // data: { animation: 6 }
   },
 

@@ -1,15 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from '../../teenagers.service';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s139004',
   templateUrl: './s139004.page.html',
   styleUrls: ['./s139004.page.scss'],
 })
-export class S139004Page implements OnInit,OnDestroy {
- 
+export class S139004Page implements OnInit, OnDestroy 
+{
+
   bg_tn=""
   bg_cft=""
   bg=""

@@ -131,9 +131,9 @@ export class AdvertsHwpPage implements OnInit {
     this.paymentIntentModel = {
       DiscountCode: "0",
       PlanID: selectedSubscription == Constant.MonthlyPlan ? SubscriptionType.Monthly.toString() : SubscriptionType.Annual.toString(),
-      ProgID: SharedService.ProgramId.toString(),
+      ProgID: SharedService.ProgramId?.toString(),
       RateID: this.cardlist?.RateID?.toString(),
-      UserID: this.userId.toString()
+      UserID: this.userId?.toString()
     } as paymentIntentModel
   }
 
@@ -156,11 +156,11 @@ export class AdvertsHwpPage implements OnInit {
       }
     } else if (val === 'redeem' || val == 'Monthly' || val == 'Yearly') {
       if(val === 'Monthly') {
-      
+
         SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan,Constant.MonthlyPlan );
         this.SetPaymentIntentModel(val);
         this.SetDataInLocalStorage();
-      } 
+      }
       else if(val === 'Yearly') {
         SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan,Constant.AnnualPlan );
         this.SetPaymentIntentModel(val);
@@ -223,7 +223,6 @@ export class AdvertsHwpPage implements OnInit {
   }
 
   getClosemodalEvent(event) {
-    this.enabledModal = event
     this.enabledModal = false;
   }
 }

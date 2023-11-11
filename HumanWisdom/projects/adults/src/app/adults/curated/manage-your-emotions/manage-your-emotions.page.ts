@@ -3,6 +3,9 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
+
 
 @Component({
   selector: 'HumanWisdom-manage-your-emotions',
@@ -60,6 +63,8 @@ export class ManageYourEmotionsPage implements OnInit {
      }
 
   ngOnInit() {
+
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
     this.meta.updateTag({ property: 'title', content: 'Managing Emotions with Mindfulness & Positive Psychology' })
