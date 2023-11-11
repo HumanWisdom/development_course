@@ -33,7 +33,7 @@ export class SubscriptionPaymentPage implements OnInit {
   defaultCurrencySymbol: any
   obj:any;
   constructor(private service: OnboardingService,
-    private location:Location
+    private location:Location,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount')
