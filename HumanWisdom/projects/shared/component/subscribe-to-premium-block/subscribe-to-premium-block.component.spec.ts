@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { S139007tPage } from './s139007t.page';
+import { SubscribeToPremiumBlockComponent } from './subscribe-to-premium-block.component';
 
-describe('S139007tPage', () => {
-  let component: S139007tPage;
-  let fixture: ComponentFixture<S139007tPage>;
+describe('SubscribeToPremiumBlockComponent', () => {
+  let component: SubscribeToPremiumBlockComponent;
+  let fixture: ComponentFixture<SubscribeToPremiumBlockComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ S139007tPage ],
+      declarations: [ SubscribeToPremiumBlockComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(S139007tPage);
+    fixture = TestBed.createComponent(SubscribeToPremiumBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -155,7 +155,7 @@ export class S157010Page implements OnInit {
     }
     else if (event === '2') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 4;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -171,7 +171,7 @@ export class S157010Page implements OnInit {
     }
     else if (event === '3') {
       this.slideStart = 0;
-      this.totalSlidesCount = 4;
+      this.totalSlidesCount = 7;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -187,7 +187,7 @@ export class S157010Page implements OnInit {
     }
     else if (event === '4') {
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 9;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -203,7 +203,7 @@ export class S157010Page implements OnInit {
     }
     else if (event === '5') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -219,7 +219,7 @@ export class S157010Page implements OnInit {
     }
     else if (event === '6') {
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 9;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -235,7 +235,7 @@ export class S157010Page implements OnInit {
     }
     else if (event === '7') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 7;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;

@@ -13,7 +13,7 @@ export class S156160Page implements OnInit {
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w4"
-  hint = ""
+  hint = "It could be your family, or a sibling, or a friend."
   toc = "/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;

@@ -16,7 +16,7 @@ export class S156141Page implements OnInit,OnDestroy {
   bg="dark_blue_w10"
   title="Looking without language"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/dealing-with-depression/audios/3.0.mp3'
+  audioLink=this.mediaAudio+'/dealing-with-depression/audios+3.0.mp3'
 
   transcriptPage="dealing-with-depression/s156141t"
   toc="dealing-with-depression/s156001"

@@ -6,7 +6,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-subscription-payment',
   templateUrl: './subscription-payment.page.html',
@@ -33,6 +33,7 @@ export class SubscriptionPaymentPage implements OnInit {
   defaultCurrencySymbol: any
   obj:any;
   constructor(private service: OnboardingService,
+    private location:Location,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount')
@@ -298,6 +299,10 @@ export class SubscriptionPaymentPage implements OnInit {
       }
     }, 9000)
 
+  }
+
+  back(){
+    this.location.back();
   }
 
   ngOnInit() {

@@ -49,7 +49,7 @@ export class S156277Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/dealing-with-depression/s156276'])
+    this.router.navigate(['/dealing-with-depression/s156272'])
   }
 
 }

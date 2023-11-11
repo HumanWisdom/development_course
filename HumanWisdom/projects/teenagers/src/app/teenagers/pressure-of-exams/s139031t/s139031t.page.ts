@@ -4,11 +4,11 @@ import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'HumanWisdom-s139030t',
-  templateUrl: './s139030t.page.html',
-  styleUrls: ['./s139030t.page.scss'],
+  selector: 'HumanWisdom-s139031t',
+  templateUrl: './s139031t.page.html',
+  styleUrls: ['./s139031t.page.scss'],
 })
-export class S139030tPage implements OnInit {
+export class S139031tPage implements OnInit {
 
   bg_tn=""
   bg_cft=""
@@ -19,9 +19,9 @@ export class S139030tPage implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  audioPage="/pressure-of-exams/s139030"
+  audioPage="/pressure-of-exams/s139031"
 
-  screenNumber=139030
+  screenNumber=139031
   startTime:any
   endTime:any
   totalTime:any
@@ -43,7 +43,7 @@ export class S139030tPage implements OnInit {
 
   // multistep wizard
   $( document ).ready(function() {
-    // var base_color = "rgb(230,230,230)";
+    // var base_color = "rgb(231,231,231)";
     // var active_color = "rgb(237, 40, 70)";
     var base_color = "rgba(196,196,196,1)";
       var active_color = "#E58D82";
@@ -156,9 +156,9 @@ export class S139030tPage implements OnInit {
     this.startTime = Date.now();
 
     
-    if(JSON.parse(sessionStorage.getItem("bookmark139030t"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark139031t"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark139030t"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark139031t"))==1)
       this.bookmark=1
 
    
@@ -175,7 +175,7 @@ export class S139030tPage implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark139030t",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark139031t",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -195,7 +195,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/pressure-of-exams/s139031'])
+    this.router.navigate(['/pressure-of-exams/s139032'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -223,7 +223,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/pressure-of-exams/s139029'])
+    this.router.navigate(['/pressure-of-exams/s139030'])
 
 
   }
