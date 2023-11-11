@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'HumanWisdom-s3-video',
@@ -14,7 +15,7 @@ export class S3VideoComponent implements OnInit {
   public linkcode: any;
   public wisdomshort: boolean = true;
 
-  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private location: Location) {
     let url: any = window.location.href;
     if(url.includes('videopage')) {
       this.wisdomshort = false;
@@ -43,4 +44,8 @@ export class S3VideoComponent implements OnInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url)
 }
 
+  goBack() 
+  {
+    this.location.back()
+  }
 }
