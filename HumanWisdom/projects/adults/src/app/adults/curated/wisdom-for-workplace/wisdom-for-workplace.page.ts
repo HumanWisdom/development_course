@@ -67,6 +67,9 @@ export class WisdomForWorkplacePage implements OnInit {
      }
 
   ngOnInit() {
+
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/wisdom-for-workplace');
+
     this.title.setTitle('Wisdom at Work: Strategies for Career Growth and Development')
     this.meta.updateTag({ property: 'title', content: 'Wisdom at Work: Strategies for Career Growth and Development' })
     this.meta.updateTag({ property: 'description', content: 'Discover wisdom and insights for career growth and development. Find strategies for effective communication, time management, and more.' })
