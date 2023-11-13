@@ -15,6 +15,8 @@ export class ContactCoachPage implements OnInit {
   phonecode=''
   enableAlert = false;
   content = '';
+  searchResult = [];
+
 
   constructor(private location:Location,private adultService:AdultsService,
     private meta: Meta, private title: Title) {
@@ -67,6 +69,36 @@ export class ContactCoachPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
+
+
+  dataChanged(event) {
+    this.searchResult = [];
+    this.form.Country = event;
+  }
+
+  getAutoCompleteList(value) {
+    if (this.countryList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.countryList;
+      } else {
+        this.searchResult = this.countryList.filter(x => (x['CountryName'].toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    if (this.form?.Country == '') {
+      this.searchResult = this.countryList;
+    } else {
+      this.searchResult = this.countryList.filter(x => (x['CountryName'].toLocaleLowerCase()).includes(this.form?.Country?.toLocaleLowerCase()));
+    }
+  }
+
+  clearSearch() {
+    this.form.Country = '';
+    this.searchResult = [];
+  }
+
 
   submit(){
    this.adultService.contactForm(this.form).subscribe(res=>{

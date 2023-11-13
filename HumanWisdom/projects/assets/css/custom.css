@@ -23399,7 +23399,8 @@ ul.dh_ul li:last-child
 
 .cvideo_01
 {
-  width: auto;
+  /* width: auto; */
+  width: 100%;
   max-height: 65vh;
 }
 
@@ -34752,7 +34753,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
-  color: #fff;
+  /* color: #fff; */
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .div_intro 

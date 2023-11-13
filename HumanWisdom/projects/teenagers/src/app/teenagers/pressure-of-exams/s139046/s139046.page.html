@@ -1,1 +1,54 @@
-<app-reflection  [rid]="rId" [bg_tn]="bg_tn" [bg_cft]="bg_cft" [toc]="toc" [hint]="hint" [bg]="bg" [reflection]="reflection" [reflectionResponse]="r139046" (sendResponse)="submitProgress($event)" (goPrevious)="previous()"></app-reflection>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Your success in life depends on your ability to:
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Work hard
+         </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. Communicate well
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Have great relationships
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Be confident
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. Solve problems
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. Be emotionally intelligent
+
+    </h3> 
+    
+    <h3 class="txt8 oneliner_txt_pointer">
+      07. Cope with pressure and stress
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      08. Be creative
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      09. Be self-aware
+    </h3>
+ 
+    </form>          
+</app-oneline-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

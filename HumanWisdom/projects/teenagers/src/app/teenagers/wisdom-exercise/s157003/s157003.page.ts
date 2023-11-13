@@ -157,7 +157,7 @@ export class S157003Page implements OnInit {
       this.startTime = Date.now()
       this.slideStart = 0;
       this.currentDay = 2;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 8;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -172,7 +172,7 @@ export class S157003Page implements OnInit {
       this.startTime = Date.now()
       this.slideStart = 0;
       this.currentDay = 3;
-      this.totalSlidesCount = 4;
+      this.totalSlidesCount = 5;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;

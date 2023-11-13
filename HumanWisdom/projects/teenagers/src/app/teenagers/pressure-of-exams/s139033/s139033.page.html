@@ -1,52 +1,37 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      #5 ways to look after yourself while revising
+    </h1>
+    <div class="clearfix"></div>
 
-<app-bg-video></app-bg-video>
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Get enough sleep
+         </h3>
 
-<!-- page content -->
-<div class="right_col mc_01">
-  <!-- Class -->  
-  <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 sc_01 bg_292d56">
-        <div class="x_panel p0">                        
-          <div class="x_content p0">
-            <form>              
-              <h5 class="txt1">
-                #7 ways to deal with disappointing exam results
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. Exercise regularly
+    </h3>
 
-              </h5>
-              <div class="clearfix"></div>
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Take regular breaks
 
-              <!-- multistep wizard -->
-              <div id="svg_wrap"></div>              
+    </h3>
 
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Practice a hobby 
 
+    </h3>
 
-              <!-- /multistep wizard -->  
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. Don't forget to have fun
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                 
-                </div>
-              </div>
-              
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--/Class --> 
-</div>
-<!-- /page content -->
+    </h3>
+
+ 
+    </form>          
+</app-oneline-text>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-

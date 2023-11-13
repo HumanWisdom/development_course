@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s156278',
@@ -8,7 +9,7 @@ import {Location } from '@angular/common'
   styleUrls: ['./s156278.page.scss'],
 })
 export class S156278Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="dealing-with-depression/s156001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/20.png"
   
@@ -16,7 +17,7 @@ export class S156278Page implements OnInit {
   moduleLink="/teenagers/pleasure"
   moduleName=" Pleasure"
   sectionName= "How the Mind Works";
-  moduleId=20
+  moduleId=124
   moduleList: any = [
     {
       name: 'Stress',
@@ -45,10 +46,10 @@ export class S156278Page implements OnInit {
     if (cur && cur === 'stress') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
      
-      this.moduleLink = "/adults/external-approval"
+      this.moduleLink = "/external-approval"
       this.moduleName = "Need for approval"
       this.sectionName = "Explore How Your Mind Works";
-      this.moduleId = 91
+      this.moduleId = 123
     
     }
   }

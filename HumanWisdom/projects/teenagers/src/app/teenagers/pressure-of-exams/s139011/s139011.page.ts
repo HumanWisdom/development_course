@@ -26,7 +26,7 @@ export class S139011Page implements OnInit,OnDestroy {
   toc="pressure-of-exams/s139001"
   path = setTimeout(() => {
     return this.router.url;
-  }, 1000);
+  }, 1100);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
   constructor

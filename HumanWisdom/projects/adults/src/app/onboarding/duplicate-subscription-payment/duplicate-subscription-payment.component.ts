@@ -25,7 +25,8 @@ cardCaptureReady = false
   stripeId: string;
   amount: any;
   uID: any;
-
+  enableAlert = false;
+  content = '';
 
   constructor(private service: OnboardingService,
     private router: Router) {
@@ -38,9 +39,9 @@ cardCaptureReady = false
       var style = {
         base: {
           iconColor: '#c4f0ff',
-           color: '#fff',  
+           color: '#fff',
           '::placeholder': {
-       
+
           },
           ':-webkit-autofill': {
             color: '#fff',
@@ -99,16 +100,20 @@ cardCaptureReady = false
               name:  (<HTMLInputElement>document.getElementById('name')).value,
             },
           }).then((result) => {
-            if(result.error) 
+            if(result.error)
             {
-              alert(result.error.message);
-            } 
-            else 
+              this.content = result.error.message;
+              this.enableAlert = true;
+              // alert(result.error.message);
+            }
+            else
             {
               this.service.attachPaymentMethod(this.uID, result.paymentMethod.id)
                     .subscribe(res => {
                       localStorage.setItem('personalised', 'F');
-                      alert('Your Card Details Have Been Updated');
+                      this.content = 'Your Card Details Have Been Updated';
+                      this.enableAlert = true;
+                      // alert('Your Card Details Have Been Updated');
                       this.router.navigate(['/onboarding/user-profile'])
                     })
             }
@@ -120,6 +125,11 @@ cardCaptureReady = false
 
   ngOnInit() {
   }
-  
 
+
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
 }

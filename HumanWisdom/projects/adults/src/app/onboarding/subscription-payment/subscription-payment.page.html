@@ -9,7 +9,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" (click)="back()" alt="" class="p0">
       </a>
     </div>
 
@@ -99,7 +99,7 @@
                   </div>
                 </div>
 
-              
+
                 <!-- We'll put the error messages in this element -->
                 <div id="card-element-errors" role="alert"></div>
 
@@ -126,7 +126,7 @@
                 </div> -->
 
 
-                <div class="row">                    
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
                       Total Payable
@@ -158,7 +158,7 @@
                         Confirm Payment
                       </button>
                       <button type="button" id="btnsubmit" class="btn btn-warning mb0 btn_confirm_payment w100"
-                        data-dismiss="modal">Confirm Payment</button> 
+                        data-dismiss="modal">Confirm Payment</button>
                      </div>
                 </div> -->
                 <div class="pagebreak"></div>
@@ -190,3 +190,6 @@
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
+</app-modal>
