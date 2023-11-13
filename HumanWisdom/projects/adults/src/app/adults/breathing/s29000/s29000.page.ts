@@ -73,6 +73,9 @@ export class S29000Page implements OnInit,OnDestroy
 
   ngOnInit()
   {
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+
     // continue where you left
     let last = localStorage.getItem('lastvisited');
     if(last === 'T')
@@ -143,7 +146,9 @@ export class S29000Page implements OnInit,OnDestroy
 
   goBack()
   {
-    this.location.back()
+   // this.location.back()
+   this.router.navigate(['/adults/pathway/develop-a-calm-mind'])
+
   }
 
 }

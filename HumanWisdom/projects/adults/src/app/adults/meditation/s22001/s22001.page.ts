@@ -82,7 +82,11 @@ export class S22001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
-    // continue where you left    
+   
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+  
+     // continue where you left  
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
     {
@@ -148,9 +152,9 @@ export class S22001Page implements OnInit,OnDestroy {
     
 
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 
   submitProgress(){

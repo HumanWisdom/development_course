@@ -41,6 +41,10 @@ export class S30001Page implements OnInit, OnDestroy {
     private location: Location
   ) { }
   ngOnInit() {
+
+    if(!localStorage.getItem("NaviagtedFrom")) 
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+  
     this.service.setmoduleID(30);
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
