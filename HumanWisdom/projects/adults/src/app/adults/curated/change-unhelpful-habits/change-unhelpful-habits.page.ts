@@ -50,6 +50,8 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/change-unhelpful-habits');
+
     this.title.setTitle('Change Unhelpful Habits: Transform Your Life with Positive Behavior Change')
     this.meta.updateTag({ property: 'title', content: 'Change Unhelpful Habits: Transform Your Life with Positive Behavior Change' })
     this.meta.updateTag({ property: 'description', content: 'Ready to overcome negative habits and transform your life? Discover effective strategies to break bad habits and develop healthy ones with our curated collection of self-improvement tips and mindset shift techniques.' })

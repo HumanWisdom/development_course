@@ -39,6 +39,10 @@ export class S162Page implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/manage-your-emotions');
+
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
 
