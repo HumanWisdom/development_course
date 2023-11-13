@@ -28,6 +28,7 @@ export class ProfileEditPage implements OnInit {
   profession:any = '';
   title:any = '';
   titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
+  searchResult = [];
 
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: AdultsService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -146,9 +147,34 @@ export class ProfileEditPage implements OnInit {
   }
 
   dataChanged(event) {
+    this.searchResult = [];
+    this.country = event;
     let fil = this.countryList.filter((d) => d['Country'] === event);
     if(fil.length > 0) {
        this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
     }
+  }
+
+  getAutoCompleteList(value) {
+    if (this.countryList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.countryList;
+      } else {
+        this.searchResult = this.countryList.filter(x => (x['Country'].toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    if (this.country == '') {
+      this.searchResult = this.countryList;
+    } else {
+      this.searchResult = this.countryList.filter(x => (x['Country'].toLocaleLowerCase()).includes(this.country?.toLocaleLowerCase()));
+    }
+  }
+
+  clearSearch() {
+    this.country = '';
+    this.searchResult = [];
   }
 }

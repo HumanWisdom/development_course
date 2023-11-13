@@ -147,6 +147,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[0]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -168,6 +169,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[1]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -189,6 +191,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[2]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -210,6 +213,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[3]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -231,6 +235,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[4]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -252,6 +257,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[5]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -274,6 +280,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[6]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -295,6 +302,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[7]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -316,6 +324,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[8]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )
@@ -337,6 +346,7 @@ export class ProgressPage implements OnInit {
             {
               'No': this.tableData[9]['value'].length + 1,
               'Month': name.substring(0, 3),
+              'Year': d['year'],
               'Perc': (parseInt(d['Score']) / 5) * 100
             }
           )

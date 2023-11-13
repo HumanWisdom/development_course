@@ -6,7 +6,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-subscription-payment',
   templateUrl: './subscription-payment.page.html',
@@ -32,14 +32,18 @@ export class SubscriptionPaymentPage implements OnInit {
   defaultCountryname: any;
   defaultCurrencySymbol: any
   obj:any;
+  enableAlert = false;
+  content = '';
+
   constructor(private service: OnboardingService,
+    private location:Location,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount')
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
-    
+
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
     var checkout = SharedService.getDataFromLocalStorage(Constant.Checkout);
@@ -53,7 +57,7 @@ export class SubscriptionPaymentPage implements OnInit {
           AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
           MyselfSub: "1",
           RateID: rateId
-        } 
+        }
   }else{
     this.obj = {
       UserID: userId,
@@ -62,9 +66,9 @@ export class SubscriptionPaymentPage implements OnInit {
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
       AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
-    } 
+    }
   }
-   
+
     SharedService.setDataInLocalStorage(Constant.Checkout,'F')
     this.service.stripe(this.obj)
       .subscribe(res => {
@@ -102,7 +106,9 @@ export class SubscriptionPaymentPage implements OnInit {
     this.service.getPricing(this.countryCode).subscribe(res => {
       this.defaultCurrencySymbol = res[0]['ISOCode'];
     }, (err) => {
-      window.alert(err.error['Message'])
+      this.content = err.error['Message'];
+      this.enableAlert = true;
+      // window.alert(err.error['Message'])
     }
     )
   }
@@ -113,9 +119,9 @@ export class SubscriptionPaymentPage implements OnInit {
         var style = {
           base: {
             iconColor: '#c4f0ff',
-             color: '#fff',  
+             color: '#fff',
             '::placeholder': {
-         
+
             },
             ':-webkit-autofill': {
               color: '#000000',
@@ -198,7 +204,9 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate(['/adults/hwp-premium-congratulations']);
                       }
                     } else {
-                      alert('Your Payment Is Successfully Submitted');
+                      this.content = 'Your Payment Is Successfully Submitted';
+                      this.enableAlert = true;
+                      // alert('Your Payment Is Successfully Submitted');
                       this.router.navigate(['/onboarding/myprogram'])
                     }
                   }
@@ -218,7 +226,9 @@ export class SubscriptionPaymentPage implements OnInit {
                     this.router.navigate(['/adults/hwp-premium-congratulations']);
                   }
                 } else {
-                  alert('Your Payment Is Successfully Submitted');
+                  this.content = 'Your Payment Is Successfully Submitted';
+                  this.enableAlert = true;
+                  // alert('Your Payment Is Successfully Submitted');
                   this.router.navigate(['/onboarding/myprogram'])
                 }
 
@@ -274,7 +284,9 @@ export class SubscriptionPaymentPage implements OnInit {
             }
           }).then((result) => {
             if (result.error) {
-              alert(result.error.message);
+              this.content = result.error.message;
+              this.enableAlert = true;
+              // alert(result.error.message);
             } else {
               localStorage.setItem('personalised', 'F');
               if (localStorage.getItem('ispartnershipClick') == 'T') {
@@ -288,7 +300,9 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
               } else {
-                alert('Your Payment Is Successfully Submitted');
+                this.content = 'Your Payment Is Successfully Submitted';
+                this.enableAlert = true;
+                // alert('Your Payment Is Successfully Submitted');
                 this.router.navigate(['/onboarding/myprogram'])
               }
             }
@@ -300,7 +314,17 @@ export class SubscriptionPaymentPage implements OnInit {
 
   }
 
+  back(){
+    this.location.back();
+  }
+
   ngOnInit() {
   }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
+
 
 }

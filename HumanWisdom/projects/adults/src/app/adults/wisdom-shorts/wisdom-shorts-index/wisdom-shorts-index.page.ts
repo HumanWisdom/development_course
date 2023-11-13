@@ -89,7 +89,7 @@ export class WisdomShortsIndexPage implements OnInit {
         if(loggedin && loggedin === 'T' && sub && sub === '1') {
           this.router.navigate([video])
         }else {
-          this.router.navigate(['/onboarding/free-limit'])
+          this.router.navigate(['/subscription/start-your-free-trial']);
         }
       }
     })

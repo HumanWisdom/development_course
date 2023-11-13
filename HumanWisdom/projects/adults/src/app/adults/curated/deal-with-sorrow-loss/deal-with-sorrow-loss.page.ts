@@ -57,6 +57,9 @@ export class DealWithSorrowLossPage implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/deal-with-sorrow-loss');
+
+
     this.title.setTitle('Ways to Deal with Sorrow and Loss')
     this.meta.updateTag({ property: 'title', content: 'Ways to Deal with Sorrow and Loss' })
     this.meta.updateTag({ property: 'description', content: 'Explore effective ways to deal with sorrow and overcome the grief of losing a loved one. Find healing after loss with these helpful tips for self-care and coping with death.' })

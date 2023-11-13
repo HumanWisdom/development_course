@@ -160,9 +160,9 @@
             <!-- /daily practice -->
 
             <!-- explore a topic in depth-for guest user -->
-            <div class="row" *ngIf="isloggedIn && !isSubscriber && YourTopicofChoice.length === 0">
+            <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a class="prelative" (click)="changeTopic()">
+                <a class="prelative">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -183,11 +183,11 @@
                   </div>
                 </a>
               </div>
-            </div>
+            </div> -->
             <!-- /explore a topic in depth-for guest user -->
 
             <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && isSubscriber && YourTopicofChoice.length !== 0">
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a class="prelative" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
@@ -740,7 +740,7 @@
               </div>
             </div>
             <!-- /find answers -->
-           <ng-container *ngIf="!isSubscriber">
+
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -750,7 +750,29 @@
             <!-- /hr -->
 
             <!-- subscribe to premium -->
-              <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
+            <div class="row" *ngIf="!isSubscriber">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <button type="button" class="v3_btn_subscribe_premium">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_subscribe_premium.svg" class="v3_subscribe_premium">
+                      </div>
+
+                      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 tleft">
+                        <h4 class="mtb0px fw_400 fs_18px lh_140p fc_ffffff">
+                          Subscribe to Premium
+                        </h4>
+
+                        <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff">
+                          £4.20/month, billed annually
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
             <!-- /subscribe to premium -->
 
             <!-- hr -->
@@ -760,6 +782,7 @@
               </div>
             </div>
             <!-- /hr -->
+          <ng-container *ngIf="isSubscriber">
             <!-- what people are saying -->
             <div class="row mb30px" >
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
@@ -769,7 +792,7 @@
                   </h2>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                  <a>
+                  <a routerLink="/adults/testimonials">
                     <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                       View all
                     </h2>
@@ -781,8 +804,9 @@
             <!-- /what people are saying -->
 
             <!-- testimonials -->
-             <div class="row">
+            <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -818,7 +842,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -1135,14 +1159,14 @@
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <a (click)="readMore('Merrick')">
+                      <a click)="readMore('Merrick')">
                         <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
                           READ MORE
                         </h4>
                       </a>
                     </div>
                   </div>
-                </div> 
+                </div>
 
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
@@ -1214,13 +1238,12 @@
                       </a>
                     </div>
                   </div>
-                </div> 
+                </div>
 
               </div>
             </div>
-
-          </ng-container>
             <!-- /testimonials -->
+          </ng-container>
             <div class="pagebreak"></div>
 
           </div>
@@ -1341,39 +1364,46 @@
 <span #enablecookiemodal data-toggle="modal" data-target="#modal_cookie"></span>
 
 <!-- cookie modal  -->
-<div class="modal fade in" id="modal_cookie" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="modal_cookie_title" aria-hidden="true">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
-      <div class="modal-header b0">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="modal_cookie" tabindex="-1" data-keyboard="false" role="dialog"
+  aria-labelledby="modal_cookie_title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered w100" role="document">
+    <div class="row center_flex">
+      <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12 modal_cookie">
+
+        <div class="modal-header b0">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal"
+                aria-label="Close">
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright"> -->
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="row center_flex">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
-            This website uses cookies
-          </h4>
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
-            By continuing to browse you are agreeing to our use of cookies as explained in our 
-            <a class="underline fs_15px fw_400 lh_150p fc_ffffff_0_5" (click)="opennewTab()">Cookie Policy</a>
-          </h4>
+        <div class="modal-body pt0px">
+          <!-- modal content -->
+          <div class="row center_flex">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <h4 class="fw_400 fs_18px lh_21px fc_000000 boldi italici">
+                This website uses cookies
+              </h4>
+              <h4 class="fw_400 fs_18px lh_21px fc_000000 italici">
+                By continuing to browse you are agreeing to our use of cookies as explained in our &nbsp;<a
+                  class="italic underline" (click)="opennewTab()">Cookie Policy</a>
+              </h4>
+            </div>
+          </div>
+          <!-- /modal content -->
         </div>
-      </div>
-      
-      <div class="row mt30px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
-          <button type="button" class="btn btn_ctd" data-dismiss="modal">
-            Close
-          </button>
+        <div class="modal-footer b0">
+          <!-- <button type="button" class="btn btn-secondary cblack" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="acceptCookies()">Accept all cookies</button> -->
 
-          <button type="button" class="btn btn_ctd" (click)="acceptCookies()">
-            Accept all cookies
-          </button>
+          <button type="button" class="btn btn-warning mb0 btn_cookies_close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning mb0pxi mr0px ml10pxi btn_accept_cookies"
+            (click)="acceptCookies()">Accept all cookies</button>
         </div>
+
       </div>
     </div>
   </div>
