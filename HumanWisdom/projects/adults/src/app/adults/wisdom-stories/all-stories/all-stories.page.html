@@ -3,19 +3,19 @@
 
 <!-- top navigation -->
 <app-feature-header title="Life Stories"></app-feature-header>
-<!-- /top navigation --> 
+<!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01">				
+<div class="right_col mc_01">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form> 
+            <form>
               <!-- search -->
               <div class="row prelative">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
@@ -37,17 +37,17 @@
                       </h6>
                     </div>
                   </div>
-  
+
                   <div class="row mt15px mb10px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">                       
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <a routerLink="/adults/wisdom-stories/submit-story">
                         <button type="button" class="btn btn_submit_story" data-dismiss="modal">
                           Submit your own story
                         </button>
                       </a>
                     </div>
-                  </div>   
-                  
+                  </div>
+
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                       <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
@@ -63,15 +63,15 @@
                   <hr class="hr_style_v3_01">
                 </div>
               </div>
-              
+
               <!-- stories -->
               <a *ngFor="let s of storyList">
-                <div (click)="toRead(s)" class="row div_is_01">
+                <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-md-4 col-sm-4 col-xs-4 p0">
                       <img src="{{s.Img}}"  alt="" class="w100 c120px">
                     </div>
-                    
+
                     <div class="col-md-7 col-sm-7 col-xs-7 plr12px">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -106,11 +106,16 @@
                       </div> -->
                     </div>
 
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && s.ExclFromChild === '0'">
                       <!-- lock -->
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
                       <!-- /lock -->
                     </div>
+
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber || s.ExclFromChild === '1'">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+
                   </div>
                 </div>
               </a>
@@ -135,12 +140,12 @@
                     <div class="panel-body">
                       <!-- stories -->
                       <a *ngFor="let s of secondstoryList">
-                        <div (click)="toRead(s)" class="row div_is_01">
+                        <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0">
                               <img src="{{s.Img}}"  alt="" class="w100 c150px">
                             </div>
-                            
+
                             <div class="col-md-8 col-sm-8 col-xs-8 pl12px pr0px">
                               <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -149,7 +154,7 @@
                                   </h6>
                                 </div>
                               </div>
-        
+
                               <div class="row mtb10px">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                   <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff fc_ffffff_0_5 ellipsis">
@@ -158,7 +163,7 @@
                                   </h6>
                                 </div>
                               </div>
-        
+
                               <!-- <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   <div class="col-md-5 col-sm-5 col-xs-5 p0">
@@ -174,6 +179,16 @@
                                 </div>
                               </div> -->
                             </div>
+
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && s.ExclFromChild === '0'">
+                              <!-- lock -->
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                              <!-- /lock -->
+                            </div>
+
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber || s.ExclFromChild === '1'">
+                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                            </div>
                           </div>
                         </div>
                       </a>
@@ -183,13 +198,13 @@
                 </div>
               </div>
               <!-- /view more -->
-            </form>              
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
 
