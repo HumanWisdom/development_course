@@ -1,1 +1,17 @@
-<app-reflection  [rid]="rId" [bg_tn]="bg_tn" [bg_cft]="bg_cft" [toc]="toc" [hint]="hint" [bg]="bg" [reflection]="reflection" [reflectionResponse]="r137072" (sendResponse)="submitProgress($event)" (goPrevious)="previous()"></app-reflection>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      Kindness is not always doing things. It is also seeing the best in people and thinking positive rather than negative thoughts about them. This is expressed in your body language, even if you say nothing.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

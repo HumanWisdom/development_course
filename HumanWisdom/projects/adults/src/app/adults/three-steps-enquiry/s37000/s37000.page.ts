@@ -71,6 +71,8 @@ export class S37000Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-yourself');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -145,8 +147,8 @@ export class S37000Page implements OnInit,OnDestroy {
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 }

@@ -27,6 +27,8 @@ export class HaveCalmMindPage implements OnInit {
   constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-calm-mind');
+
     this.title.setTitle('Mindfulness Practices for a Calm Mind')
     this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })
     this.meta.updateTag({ property: 'description', content: 'Learn effective mindfulness practices for calming the mind and reducing stress. Discover relaxation techniques and self-care tips for anxiety and mental clarity.' })

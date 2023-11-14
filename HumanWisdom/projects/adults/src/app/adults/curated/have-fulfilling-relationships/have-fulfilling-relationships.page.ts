@@ -60,6 +60,8 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
      }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-fulfilling-relationships');
+
     this.title.setTitle('Building Healthy Relationships')
     this.meta.updateTag({ property: 'title', content: 'Building Healthy Relationships' })
     this.meta.updateTag({ property: 'description', content: 'Learn how to build healthy, fulfilling relationships that last with these helpful tips.' })

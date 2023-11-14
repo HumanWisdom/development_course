@@ -82,6 +82,10 @@ export class S232Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 

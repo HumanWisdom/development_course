@@ -90,6 +90,10 @@ continue(){
 
   ngOnInit() 
   {
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+  
     this.pgResume=sessionStorage.getItem("pgResume");
     // continue where you left    
     let last = localStorage.getItem('lastvisited');

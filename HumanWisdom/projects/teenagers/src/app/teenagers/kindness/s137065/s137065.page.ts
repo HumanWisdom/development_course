@@ -1,84 +1,142 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'HumanWisdom-s137065',
+  selector: 'app-s137065',
   templateUrl: './s137065.page.html',
   styleUrls: ['./s137065.page.scss'],
 })
 export class S137065Page implements OnInit {
 
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
-  bg="pink_orange_w1"
-
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
+  bg="red_pink_w2"
+  toc="kindness/s137001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  qrList=JSON.parse(localStorage.getItem("qrList"))
-  moduleId=JSON.parse(localStorage.getItem("moduleId"))
-  screenType=JSON.parse(localStorage.getItem("question"))
+  screenType=localStorage.getItem("text")
+  moduleId=localStorage.getItem("moduleId")
+
   screenNumber=137065
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
-  questionA:any
-  question:any
-  optionList=[]
-  //sendOption=[]
-  sessionOption137065=JSON.parse(sessionStorage.getItem("sessionOption137065"))
-  sendOption=JSON.parse(sessionStorage.getItem("sessionOption137065"))
+
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/kindness/s137001"
 
-  constructor(private router: Router,
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  
+  constructor(
+    private router: Router,
     private service:TeenagersService,
-    private location:Location) { }
+    private location:Location
+  ) { }
+ ngOnInit() {
 
-  ngOnInit() {
-    console.log(this.sendOption,this.sessionOption137065)
-    if(this.sessionOption137065==null)
-    {
-      this.sessionOption137065=[]
-      this.sendOption=[]
+  // multistep wizard
+  $( document ).ready(function() {
+    // var base_color = "rgb(230,230,230)";
+    // var active_color = "rgb(237, 40, 70)";
+    var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
+
+    var i;
+    
+    var child = 1;
+    var length = $("section").length - 1;
+    $("#prev").addClass("disabled");
+    $("#submit").addClass("disabled");
+    
+    $("section").not("section:nth-of-type(1)").hide();
+    $("section").not("section:nth-of-type(1)").css('transform','translateX(100px)');
+    
+    var svgWidth = length * 200 + 24;
+    $("#svg_wrap").html(
+      '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
+        svgWidth +
+        ' 24" xml:space="preserve"></svg>'
+    );
+    
+    function makeSVG(tag, attrs) {
+      var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      for (var k in attrs) el.setAttribute(k, attrs[k]);
+      return el;
     }
+    
+    for (i = 0; i < length; i++) {
+      var positionX = 12 + i * 200;
+     var rect = makeSVG("rect", { x: positionX+12, y: 9, width: 176, height: 6 });
+      document.getElementById("svg_form_time").appendChild(rect);
+      // <g><rect x="12" y="9" width="200" height="6"></rect></g>'
+      var circle = makeSVG("circle", {
+        cx: positionX,
+        cy: 12,
+        r: 12,
+        width: positionX,
+        height: 6
+      });
+      document.getElementById("svg_form_time").appendChild(circle);
+    }
+    
+    var circle = makeSVG("circle", {
+      cx: positionX + 200,
+      cy: 12,
+      r: 12,
+      width: positionX,
+      height: 6
+    });
+    document.getElementById("svg_form_time").appendChild(circle);
+    
+    $('#svg_form_time rect').css('fill',base_color);
+    $('#svg_form_time circle').css('fill',base_color);
+    $("circle:nth-of-type(1)").css("fill", active_color);
+    
+    
+   
+      
+    
+  });
+  // /multistep wizard
+
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    this.startTime = Date.now();
-    if(this.qrList.ListOfQueOpts) {
-      for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
-      {
-        this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
-      }
-    }
-
-    this.questionA=this.qrList?.ListOfQueOpts
-    this.question=this.findQuestion(304).Question
-    this.optionList=this.findQuestion(304).optionList
-    console.log(this.optionList,this.question)
-
+    
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+  else
+    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    this.startTime = Date.now();
+  
+    this.startTime = Date.now();
+
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark137065"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark137065"))==1)
+      this.bookmark=1
+
+   
+   
+ 
+ 
+    
+
+  }
+  receiveBookmark(e)
+  {
+    console.log(e)
+   if(e==true)
+    this.bookmark=1
     else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+      this.bookmark=0
+    sessionStorage.setItem("bookmark137065",JSON.stringify(this.bookmark))
   }
-
-  ngAfterViewInit(): void 
-  {
-    if(this.optionList && this.sessionOption137065) {
-      this.optionList.forEach((d) => {
-        if(this.sessionOption137065.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
-        }
-      }) 
-    }   
-  }
-
-  createScreen()
-  {
+createScreen(){
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
@@ -88,91 +146,57 @@ export class S137065Page implements OnInit {
       {
         
       })
+    
+ 
   }
 
-  receiveBookmark(e)
-  {
-    console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-  }
-
-  findQuestion(q)
-  {
-    this.optionList=[]
-    for(var i=0;i<this.questionA.length;i++)
-    {
-      if(this.questionA[i].CorrectAns=="0")
-        this.questionA[i].CorrectAns=false
-      else
-        this.questionA[i].CorrectAns=true
-
-      if(q==this.questionA[i].QueId)
-      {
-        var question=this.questionA[i].Que
-        this.optionList.push(this.questionA[i])
-      }  
-    }
-    return({"Question":question,"optionList":this.optionList})
-  }
-
-  selectOption(id,e, divid)
-  {
-    console.log(id,e)
-    if(e==true)
-    {
-      document.getElementById(divid).style.backgroundColor = '#FFC455';
-      this.sendOption.push(id)
-    }
-    else if(e==false)
-    {
-      document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
-      this.sendOption.forEach((element,index)=>{
-        if(element==id) this.sendOption.splice(index,1);
-      });
-    }
-    console.log(this.sendOption)
-    sessionStorage.setItem("sessionOption137065",JSON.stringify(this.sendOption))
-  }
-
-  submitProgress()
-  {
-    //if(this.sendOption!=null)
-    {
-      this.service.submitProgressQuestion({"ModuleId":this.moduleId,
-      "screenType":this.screenType, 
-      "ScrNumber":this.screenNumber,  
-      "Bookmark":this.bookmark, 
-      "UserId":this.userId, 
-      "timeSpent":this.totalTime,
-      "OptionIDs":this.sendOption.join()})
-      .subscribe((res) => {});
-    }
+  submitProgress(){
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/kindness/s137066'])
-  }
+    if (this.userId === 563) return;
+    
+    this.service.submitProgressText({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime
+    }).subscribe(res=>
+      {
+        
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+       
+       
+     
+      },
+      error=>{console.log(error)},
+      ()=>{
+      
+      })
+    
 
-  prev()
-  {
+  }
+  prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/kindness/s137064'])
+
+
   }
 
-  sessionFetch(id, divid)
-  {
-    if(this.sessionOption137065.includes(id))
-    {
-      // document.getElementById(divid).style.backgroundColor = '#FFC455';
-      return true
-    }
-    else 
-    {
-      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
-      return false
-    }
-  }
   
-  ngOnDestroy()
-  {}
 
+  ngOnDestroy(){
+    
+
+
+
+  }
+
+  
+
+ 
 }
