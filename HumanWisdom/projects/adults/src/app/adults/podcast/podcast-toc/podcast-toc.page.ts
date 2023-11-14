@@ -24,6 +24,7 @@ export class PodcastTocPage implements OnInit {
   iframeSrc:SafeResourceUrl;
   @Input() podcastList = [];
   @Input() isdefaultShow = false;
+  isSubscriber = false;
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
@@ -51,6 +52,14 @@ export class PodcastTocPage implements OnInit {
     this.tag=routTag;
   }
  this.iframeSrc= this.getSourceForPodBin();
+
+ let userid = localStorage.getItem('isloggedin');
+ let sub: any = localStorage.getItem('Subscriber');
+ if (userid === 'T' && sub === '1') {
+   this.isSubscriber = true;
+ } else {
+   this.isSubscriber = false;
+ }
 }
 
   getSourceForPodBin(){
