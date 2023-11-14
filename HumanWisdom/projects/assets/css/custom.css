@@ -35410,4 +35410,22 @@ li ol > li:before {
 {
   margin-top: 10px;
 }
+
+.absolute_checkmark 
+{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.img_close_delete
+{
+  width: 30px;
+  height: 30px;
+}
+
+.div_subscription_emails_01 .row 
+{
+  margin-top: 20px;
+}
 /* /version - 03 */
