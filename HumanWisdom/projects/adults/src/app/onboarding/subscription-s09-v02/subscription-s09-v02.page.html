@@ -102,7 +102,15 @@
                                           {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                       </h4>
                                   </div>
-                                  
+                                  <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1' && item['AutoRenew'] === 0">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                       Expiry
+                                    </h4>
+        
+                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                        {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                    </h4>
+                                </div>
                                 </ng-template>
                                   <div *ngIf="!donotautorenew(item, 'compareauto')">
                                       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
@@ -113,7 +121,7 @@
                                           {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                       </h4>
                                   </div>
-                                  <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
+                                  <div *ngIf="(donotautorenew(item, 'compareauto') && item['MySelf'] === '0')">
                                       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
                                           Expiry
                                       </h4>
@@ -519,16 +527,7 @@
                                       >
                                       Cancel Subscription
                                   </button>
-<!--                                          
-                                  <button 
-                                  *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '0' "
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'buyAgain' + item['ActKey']}}"
-                                      (click)="buyAgain(item)"
-                                      >
-                                      Buy again
-                                  </button> -->
+                             
                                   <button 
                                   *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '1' && item.canceled == 1"
                                       type="button" 
