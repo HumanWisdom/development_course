@@ -160,4 +160,15 @@ if(res) {
   goBack(){
     this.location.back();
   }
+
+  buyAgain(item){
+    SharedService.setDataInLocalStorage('BuyAgain',JSON.stringify(item));
+    this.router.navigate(["/onboarding/add-to-cart"]);
+
+  }
+
+  ReviveSubscription(){
+    this.router.navigate(['/subscription/try-free-and-subscribe']);
+  }
+
 }
