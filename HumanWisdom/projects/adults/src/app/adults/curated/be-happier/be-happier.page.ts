@@ -56,6 +56,8 @@ export class BeHappierPage implements OnInit {
     }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/be-happier');
+
     this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
     this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
     this.meta.updateTag({ property: 'description', content: 'Discover simple, practical tips for living a happier life and find joy in everyday moments.' })

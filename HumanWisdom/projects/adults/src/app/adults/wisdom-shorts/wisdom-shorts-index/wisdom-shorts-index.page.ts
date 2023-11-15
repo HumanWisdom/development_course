@@ -20,6 +20,7 @@ export class WisdomShortsIndexPage implements OnInit {
   path: string;
   address: string;
   wisdomshorts = [];
+  isSubscriber = false;
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: AdultsService, private meta: Meta, private title: Title) {
@@ -34,6 +35,13 @@ export class WisdomShortsIndexPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy adults who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
     this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
 
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
   }
 
   getwisdomshorts() {

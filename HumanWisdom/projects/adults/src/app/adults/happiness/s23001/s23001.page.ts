@@ -82,6 +82,10 @@ export class S23001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -148,9 +152,9 @@ export class S23001Page implements OnInit,OnDestroy {
     
 
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 
   submitProgress(){

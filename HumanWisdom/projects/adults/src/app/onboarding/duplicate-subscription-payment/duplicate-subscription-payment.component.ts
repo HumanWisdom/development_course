@@ -3,6 +3,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { Location } from '@angular/common'; 
+
 
 @Component({
   selector: 'app-duplicate-subscription-payment',
@@ -29,7 +31,7 @@ cardCaptureReady = false
   content = '';
 
   constructor(private service: OnboardingService,
-    private router: Router) {
+    private router: Router, private location :Location) {
       this.amount = localStorage.getItem('totalAmount')
     this.uID = JSON.parse(localStorage.getItem("userId"))
   }
@@ -44,7 +46,7 @@ cardCaptureReady = false
 
           },
           ':-webkit-autofill': {
-            color: '#fff',
+            color: '#000000',
           },
           ':focus': {
             color: '#fff',
@@ -132,4 +134,9 @@ cardCaptureReady = false
     this.content = '';
     this.enableAlert = false;
   }
+
+  goBack(){
+    this.location.back();
+  }
+
 }

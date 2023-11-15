@@ -72,6 +72,10 @@ export class S57001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
+
+
     // continue where you left
     let last = localStorage.getItem('lastvisited');
     if(last === 'T')
@@ -146,8 +150,8 @@ export class S57001Page implements OnInit,OnDestroy {
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 }
