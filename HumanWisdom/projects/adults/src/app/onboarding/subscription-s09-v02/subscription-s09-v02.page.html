@@ -283,7 +283,7 @@
               <!-- /accordion - active programs -->
 
               <!-- accordion - not yet started -->
-              <div class="panel-group spanelgroup">
+              <div class="panel-group spanelgroup  mb10pxi">
                 <div class="panel panel-default">
                   <div class="panel-heading p0">
                     <h4 class="panel-title">
@@ -475,52 +475,6 @@
                                   Free Trial
                                 </h4>
                                </div>
-      
-                                <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          
-                                  
-                                  <div *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenewText">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
-                                      Next Payment
-                                    </h4>
-        
-                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
-                                        {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                    </h4>
-                                </div>
-                                  
-                                <ng-template #autoRenewText>
-                                  <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1' && item['AutoRenew'] === 1">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
-                                          Auto-renew
-                                      </h4>
-          
-                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
-                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                      </h4>
-                                  </div>
-                                  
-                                </ng-template>
-                                  <div *ngIf="!donotautorenew(item, 'compareauto')">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
-                                          Expired
-                                      </h4>
-          
-                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
-                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                      </h4>
-                                  </div>
-                                  <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
-                                          Expiry
-                                      </h4>
-          
-                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
-                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                      </h4>
-                                  </div>
-
-                                </div>
                               </div>
       
                               <div class="row center_flex">
@@ -544,7 +498,7 @@
                                       Cancel Subscription
                                   </button>
                                          
-                                  <button 
+                                  <!-- <button 
                                   *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '0' "
                                       type="button" 
                                       class="btn btn_ms"
@@ -552,7 +506,7 @@
                                       (click)="buyAgain(item)"
                                       >
                                       Buy again
-                                  </button>
+                                  </button> -->
                                   <button 
                                   *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '1' && item.canceled == 1"
                                       type="button" 
