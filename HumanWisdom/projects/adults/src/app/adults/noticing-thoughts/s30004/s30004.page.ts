@@ -14,7 +14,7 @@ export class S30004Page implements OnInit {
   bg = "blue_w3"
   hint = ""
 
-  toc = ""
+  toc = "/pathway/develop-a-calm-mind/"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

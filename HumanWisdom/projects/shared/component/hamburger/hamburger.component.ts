@@ -112,7 +112,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
       if (sub === "1" || sub === 1) {
         this.subscriber = true;
       }
-    }, 9000);
+    },100);
   }
 
   routeGuide() {

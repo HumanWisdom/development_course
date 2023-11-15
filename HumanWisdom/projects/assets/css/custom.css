@@ -12050,6 +12050,7 @@ h1.module_title
   font-size: 51px;
   line-height: 130%;
   color: #FFFFFF;
+  word-wrap: break-word;
   /* text-transform: capitalize; */
 }
 
@@ -34173,6 +34174,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border-radius: 16px 16px 0px 0px;
   text-align: center;
   padding: 8px 10px;
+  background: #E58D82;
 }
 
 .div_annual 
@@ -35427,5 +35429,36 @@ li ol > li:before {
 .div_subscription_emails_01 .row 
 {
   margin-top: 20px;
+}
+
+.pe_search 
+{
+  height: 50px;
+  width: 100%;
+  border-radius: 16px !important;
+  border: 1px solid rgba(204, 204, 204, 0.25) !important;
+  background: #120F40;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff !important;
+  text-align: left !important;
+  padding: 12px 10px !important;
+}
+
+.div_pe input[type=search]::placeholder
+{
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+
+.div_pe .ad_sclose_icon.fa-search:before
+{
+  color: #FFF !important;
+}
+
+.pe_tsp
+{
+  padding: 0 !important;
 }
 /* /version - 03 */
