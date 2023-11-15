@@ -245,7 +245,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     }else{
-      this.router.navigate([route], { replaceUrl: true, skipLocationChange: true });
+      this.router.navigate([route]);
     }
   }
 
