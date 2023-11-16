@@ -3972,6 +3972,7 @@ export class AdultDashboardPage implements OnInit {
        this.router.navigate([res['Url']]);
     }
     else {
+      localStorage.setItem('wisdomvideotitle', res['Title']);
       this.router.navigate([res['Url']]);
     }
   }

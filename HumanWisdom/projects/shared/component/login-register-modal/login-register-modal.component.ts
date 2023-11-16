@@ -112,6 +112,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   @HostListener('document:mousedown', ['$event'])
   onClick(event: MouseEvent): void {
     if (!this.enableAlert && !this.alertenabled && !this.activemodal.nativeElement.contains(event.target)) {
+      this.actclosemodal?.nativeElement?.click();
       this.closeModal.emit(false);
     }
   }
