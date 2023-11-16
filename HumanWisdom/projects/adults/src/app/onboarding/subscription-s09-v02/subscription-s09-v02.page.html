@@ -139,7 +139,7 @@
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
                                   <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
-                                      {{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}
+                                      {{item['MySelf'] === '0' ? (item['ConsumerEmail'] == '' || item['CosumerEmail'] == null) ? 'Deleted User' : item['ConsumerEmail']  : item['BoughtName']}}
                                   </h4>
                                 </div>
       
@@ -155,25 +155,8 @@
                                       Cancel Subscription
                                   </button>
                                          
-                                  <button 
-                                  *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '0' "
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'buyAgain' + item['ActKey']}}"
-                                      (click)="buyAgain(item)"
-                                      >
-                                      Buy again
-                                  </button>
-                                  <button 
-                                  *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '1' && item.canceled == 1"
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'buyAgain' + item['ActKey']}}"
-                                      (click)="buyAgain(item)"
-                                      >
-                                      Revive Subscription
-                                  </button>
-                                  <h4 *ngIf="item.canceled === 1" class="mtb0px fs_15px fw_500 fc_ffffff">
+ 
+                                  <h4 *ngIf="item.canceled === 1" style="margin-bottom: 2px;" class="fs_15px fw_500 fc_ffffff">
                                    cancelled
                                 </h4>
                                 <button 
@@ -383,50 +366,38 @@
 
                                 </div>
                               </div>
-      
-                              <div class="row center_flex" (click)="RouteToManageSubscription(item)">
+                              <h4 *ngIf="item.canceled === 1" style="margin-bottom: 2px;" class=" fs_15px fw_500 fc_ffffff">
+                                cancelled
+                             </h4>
+                              <div class="row center_flex">
                                 <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
                                   <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
-                                      {{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}
+                                      {{item['MySelf'] === '0' ?  (item['ConsumerEmail'] == '' || item['CosumerEmail'] == null) ? 'Deleted User' : item['ConsumerEmail']  : item['BoughtName']}}
                                   </h4>
                                 </div>
       
                                 <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                  
                                 <button 
-                                  *ngIf="item.isTrial==1 && item['MySelf'] === '1'  && item.canceled == 0 ; else autoRenew"
+                                  *ngIf="(item['MySelf'] === '1' && !isActiveSubscription) || (item['MySelf'] === '1' && item.canceled == 1 && !isActiveSubscription)  "
                                       type="button" 
                                       class="btn btn_ms"
-                                      id="{{'Cancel' + item['ActKey']}}"
-                                      (click)="RouteToManageSubscription(item)"
+                                      id="{{'buyAgain' + item['ActKey']}}"
+                                      (click)="buyAgain(item)"
                                       >
-                                      Cancel Subscription
-                                  </button>
-                                  <h4 *ngIf="item.canceled === 1" class="mtb0px fs_15px fw_500 fc_ffffff">
-                                   cancelled
-                                </h4>
-                               <ng-template #autorenew>
-                                  <button 
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'donotautorenew' + item['ActKey']}}"
-                                      [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                      (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
-                                      Do not auto-renew
-                                  </button>
-                                </ng-template>
-
-
-                                  <button 
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'autorenew' + item['ActKey']}}"
-                                      [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                      (click)="autorenew(item['ActKey'], 'donotautorenew' + item['ActKey'], item['ActKey'])">
-                                      Activate Auto-Renew
-                                  </button>
+                                      Revive Subscription
+                                </button>
+                                <button 
+                                *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '0' "
+                                    type="button" 
+                                    class="btn btn_ms"
+                                    id="{{'buyAgain' + item['ActKey']}}"
+                                    (click)="buyAgain(item)"
+                                    >
+                                    Buy again
+                                </button>
+                               
                                 </div>
                               </div>
                             </div>
@@ -512,50 +483,14 @@
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg" class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
                                   <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
-                                      {{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}
+                                      {{item['MySelf'] === '0' ? item['Email'] : item['Email']}}
                                   </h4>
                                 </div>
       
                                 <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                  
-                                  <button 
-                                  *ngIf="item.isTrial==1 && item['MySelf'] === '1'  && item.canceled == 0 ; else autoRenew"
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'Cancel' + item['ActKey']}}"
-                                      (click)="RouteToManageSubscription(item)"
-                                      >
-                                      Cancel Subscription
-                                  </button>
-                             
-                                  <button 
-                                  *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '1' && item.canceled == 1"
-                                      type="button" 
-                                      class="btn btn_ms"
-                                      id="{{'buyAgain' + item['ActKey']}}"
-                                      (click)="buyAgain(item)"
-                                      >
-                                      Revive Subscription
-                                  </button>
                                   <h4 *ngIf="item.canceled === 1" class="mtb0px fs_15px fw_500 fc_ffffff">
                                    cancelled
                                 </h4>
-                                <button 
-                                type="button" 
-                                class="btn btn_ms"
-                                id="{{'donotautorenew' + item['ActKey']}}"
-                                [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
-                                Do not auto-renew
-                                </button>
-                                <button 
-                                type="button" 
-                                class="btn btn_ms"
-                                id="{{'autorenew' + item['ActKey']}}"
-                                [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                (click)="autorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'autorenew')">
-                                Activate Auto-Renew
-                              </button>
                                 </div>
                               </div>
                             </div>
