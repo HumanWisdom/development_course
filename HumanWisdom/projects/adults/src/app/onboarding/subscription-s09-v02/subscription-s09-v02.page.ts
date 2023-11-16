@@ -57,8 +57,8 @@ export class SubscriptionS09V02Page implements OnInit {
     this.service.myprogram(userId)
       .subscribe(res => {
         if (this.platform.IOS) {
-          this.myprograms = res.filter((d) => d['Active'] === 1 && new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
-          this.notmyprograms = res.filter((d) => d['Active'] === 0 && new Date(d['ExpDate']).getTime() < new Date().getTime()&& !d['ExpDate']?.includes('1900'));
+          this.myprograms = res.filter((d) => new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
+          this.notmyprograms = res.filter((d) => new Date(d['ExpDate']).getTime() < new Date().getTime()&& !d['ExpDate']?.includes('1900'));
           this.notStarted = res.filter((d) => d['ExpDate']?.includes('1900'));
         }
         else {
@@ -184,8 +184,12 @@ export class SubscriptionS09V02Page implements OnInit {
 
   }
 
-  ReviveSubscription() {
-    this.router.navigate(['/subscription/try-free-and-subscribe']);
+  ReviveSubscription(item) {
+    this.service.ReviveSubscription(item.ActKey).subscribe(res=>{
+      if(res){
+        this.getProgramData();
+      }
+    })
   }
 
 }
