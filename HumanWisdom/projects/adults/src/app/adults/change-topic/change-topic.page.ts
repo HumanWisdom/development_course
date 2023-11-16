@@ -53,7 +53,7 @@ export class ChangeTopicPage implements OnInit {
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           localStorage.setItem("Subscriber", res['Subscriber'])
-
+          localStorage.setItem("NoOfVisits", res['NoOfVisits'])
         }
       })
     }
@@ -62,6 +62,8 @@ export class ChangeTopicPage implements OnInit {
   ngOnInit() {
     let NoOfVisits = localStorage.getItem("NoOfVisits")
     this.isRoutedFromLogin = NoOfVisits === '1' ? true : false;
+    console.log(this.isRoutedFromLogin);
+    console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
   }
