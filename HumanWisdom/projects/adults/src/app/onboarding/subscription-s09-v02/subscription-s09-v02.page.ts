@@ -26,7 +26,7 @@ export class SubscriptionS09V02Page implements OnInit {
   public startinvite = 'Send Invite'
   public currentid = '';
   public previd = '';
-  
+  public isActiveSubscription = false;
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
     private router: Router,
@@ -34,6 +34,7 @@ export class SubscriptionS09V02Page implements OnInit {
     public platform: Platform) { }
 
   ngOnInit() {
+    this.isActiveSubscription = SharedService.isSubscriber();
     this.getProgramData();
   }
 
