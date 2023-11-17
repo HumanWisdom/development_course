@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from '../adults.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-repeat-user',
@@ -37,8 +37,11 @@ export class RepeatUserPage implements OnInit {
   public feedbackSurvey = 7
   public moduleId = 7
 
-  constructor(public service: AdultsService, public router: Router) {
-    let authtoken = JSON.parse(localStorage.getItem("token"))
+  constructor(public service: AdultsService, public router: Router, private route: ActivatedRoute) {
+    let authtoken;
+    this.route.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
       localStorage.setItem('socialLogin', 'T');
@@ -58,7 +61,7 @@ export class RepeatUserPage implements OnInit {
         }
       })
     }
-    if (localStorage.getItem("isloggedin") === 'T') {
+    if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
