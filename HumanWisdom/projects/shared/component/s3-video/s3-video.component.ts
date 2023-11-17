@@ -23,9 +23,10 @@ export class S3VideoComponent implements OnInit {
       let name = this.linkcode.split('-videos')[0]
       let link = this.linkcode.split('-videos')[1]
       this.linkcode = name + '/videos' + link.replaceAll('-', '/');
-      this.videoTitle = this.route.snapshot.paramMap.get('title');
+      this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
     }else {
-      this.linkcode = this.route.snapshot.paramMap.get('videolink')
+      this.linkcode = this.route.snapshot.paramMap.get('videolink');
+      this.videoTitle = localStorage.getItem('wisdomvideotitle') ? localStorage.getItem('wisdomvideotitle') : '';
     }
    }
 
@@ -44,7 +45,7 @@ export class S3VideoComponent implements OnInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url)
 }
 
-  goBack() 
+  goBack()
   {
     this.location.back()
   }

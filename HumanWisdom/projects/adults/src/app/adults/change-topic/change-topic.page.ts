@@ -37,7 +37,10 @@ export class ChangeTopicPage implements OnInit {
 
   constructor(private location: Location, private service: AdultsService,
     public router: Router, public activatedRoute: ActivatedRoute) {
-      let authtoken = JSON.parse(localStorage.getItem("token"))
+    let authtoken;
+    this.activatedRoute.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
       localStorage.setItem('socialLogin', 'T');
