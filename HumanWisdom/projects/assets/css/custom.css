@@ -31027,8 +31027,10 @@ svg path
 {
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/adverts/bg_02.svg) no-repeat center center;
   background-size: cover;
-  margin: 0 -10px;
-  padding: 50px 10px 40px 10px;
+  /* margin: 0 -10px;
+  padding: 50px 10px 40px 10px; */
+  margin: 0;
+  padding: 20px;
 }
 /* /adverts v1 */
 
@@ -31506,7 +31508,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 }
 
 #mlb2-5755373 .subscribe-form {
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 0;
     border: 0px solid #F6F6F6 !important;
     background: #FFFFFF none !important;
     border-radius: 0px !important;
@@ -33370,7 +33373,9 @@ body *
 /* change topic buttons */
 .div_ct button:hover
 {
-  filter: brightness(90%);
+  /* filter: brightness(90%); */
+  border: 1px solid #FFF;
+  background-color: unset !important;
 }
 
 .div_ct button:active,
@@ -35390,12 +35395,18 @@ li ol > li:before {
   content:counters(item, ".") ". "; 
   position: absolute; 
   margin-right: 100%; 
-  right: 10px;
+  /* right: 10px; */
+  right: 5px;
 }
 
 .ol_help_support ol
 {
-  padding: 0 0 0 20px !important;
+  padding: 0 0 0 0 !important;
+}
+
+.ol_help_support .ol_parent
+{
+  padding: 0 0 0 40px !important;
 }
 
 .odiv.ae_days 
@@ -35460,5 +35471,29 @@ li ol > li:before {
 .pe_tsp
 {
   padding: 0 !important;
+}
+
+.adverts_testimonials > [class^="col-"]
+{
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 0;
+  width: 95%;
+}
+
+.at_txt
+{
+  background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  min-height: 357px;
+  text-align: center;
+  margin-top: -12%;
+  padding: 20px;
+}
+
+.at_txt p
+{
+  white-space: normal;
 }
 /* /version - 03 */
