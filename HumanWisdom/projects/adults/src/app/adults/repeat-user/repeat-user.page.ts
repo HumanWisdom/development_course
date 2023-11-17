@@ -60,8 +60,7 @@ export class RepeatUserPage implements OnInit {
 
         }
       })
-    }
-    if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
+    }else (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
