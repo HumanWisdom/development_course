@@ -153,10 +153,10 @@ export class IncomePartnerPage implements OnInit {
     }
   }
 
-  goBack()
+  /*goBack()
   {
   this.router.navigate(['adults/adult-dashboard'])
-  }
+  }*/
 
   redirectToIncomeActivityReport(){
     this.router.navigate(['adults/partnership-report/income-activity'])
@@ -169,7 +169,7 @@ export class IncomePartnerPage implements OnInit {
   redirectToTreeReport(){
     this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
   }
-  back(){
+  goBack(){
     this.location.back();
   }
 
