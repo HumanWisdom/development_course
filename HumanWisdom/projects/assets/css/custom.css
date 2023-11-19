@@ -21326,10 +21326,9 @@ and (orientation : portrait)
 
 .get_in_touch
 {
-  background: #FFC455;
-  padding: 30px 0 30px 0;
-  /* margin: 26px -15px 72px -15px; */
-  margin: 26px 0px 72px 0px;
+  background: #F5F5F5;
+  padding: 20px 0;
+  margin: 20px -20px;
 }
 
 .mt60px
@@ -23478,13 +23477,14 @@ ul.dh_ul li:last-child
 
 .bgm_hwp_project_02
 {
-  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/project/bgm_02.svg');
-  background-size: cover;
+  /* background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/project/bgm_02.svg');
+  background-size: cover; */
+  background: #F5F5F5;
 }
 
 .wp_childrens_adults_img
 {
-  margin-top: 60px;
+  margin-top: 0;
   margin-left: -10px;
   margin-right: -10px;
   position: relative;
@@ -23499,13 +23499,13 @@ ul.dh_ul li:last-child
   position: relative;
   margin-top: -25px;
   /* margin: -100px -10px 0 -10px; */
-  margin: -100px 0px 0 0px;
+  margin: -100px -20px 0 -20px;
 }
 
 .wp_cat_inner
 {
-  margin-top: 13rem;
-  /* padding: 0 20px 20px 20px; */
+  margin-top: 12rem;
+  padding: 0 20px 20px 20px !important;
 }
 
 .br50p
@@ -24418,7 +24418,8 @@ a
 
 .mlr-20px
 {
-  margin: 0 -20px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .onscrollbg_montecarlo_active
@@ -26080,23 +26081,15 @@ h1
 
 .btn_subscription_options
 {
-  /* height: 90px; */
-  height: auto;
+  height: 60px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #FFFFFF;
-  box-sizing: border-box;
-  border-radius: 10px;
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  color: #FFFFFF;
-  margin: 0;
+  background: #FFF;
+  border-radius: 16px;
   text-align: left;
-  padding: 21px 31px;
-  opacity: 1 !important;
+  padding: 20px;
   white-space: normal;
+  display: flex;
+  align-items: center;
 }
 
 .psubscription_options
@@ -28604,7 +28597,8 @@ video::-webkit-media-controls-panel
 #aud5 
 {
   position: absolute;
-  left: 35%;
+  /* left: 35%; */
+  left: 50%;
 }
 
 #aud5 svg
@@ -28612,13 +28606,20 @@ video::-webkit-media-controls-panel
   width: 40px !important;
 }
 
-#aud5 .play,
-#aud5 .pause
+#aud5 .play
 {
   background: #E58D82 !important;
   width: 33px !important;
   height: 33px !important;
   left: 50% !important;
+}
+
+#aud5 .pause
+{
+  background: #E58D82 !important;
+  width: 33px !important;
+  height: 33px !important;
+  left: 52% !important;
 }
 
 #aud5 .pause .before,
@@ -28632,7 +28633,7 @@ video::-webkit-media-controls-panel
   left: 45%;
   margin: 0 !important;
   /* transform: rotate(150deg) skewX(-30deg) scale(1,.866) translate(50%,0%); */
-  transform: rotate(30deg) skewX(-30deg) scale(1,.866) translate(0%,10%);
+  /* transform: rotate(30deg) skewX(-30deg) scale(1,.866) translate(0%,10%); */
 }
 
 #aud5 .arrow,
@@ -29203,8 +29204,8 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   /* height: 60px; */
   height: 80px;
   border: 0;
-  /* box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
-  background: #FFFFFF; */
+  /* box-shadow: 0 2px 2px rgb(0 0 0 / 10%); */
+  /* background: #FFFFFF; */
   background: #292D56;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -30425,7 +30426,8 @@ svg path
 
 .mtb30px
 {
- margin: 30px 0;
+ margin-top: 30px;
+ margin-bottom: 30px;
 }
 
 .c3
@@ -30483,11 +30485,6 @@ svg path
   text-align: center;
   letter-spacing: 0.1em;
   color: #000000;
-}
-
-.mtb30px
-{
-  margin: 30px 0;
 }
 
 .pr_ab_wd
@@ -31025,11 +31022,14 @@ svg path
 /* adverts v1 */
 .bg_adverts_01
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/adverts/bg_02.svg) no-repeat center center;
-  background-size: cover;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/adverts/bg_02.svg) no-repeat center center; */
   /* margin: 0 -10px;
   padding: 50px 10px 40px 10px; */
-  margin: 0;
+  /* margin: 0;
+  padding: 20px; */
+  background: #F5F5F5;
+  background-size: cover;
+  margin: 0 -20px;
   padding: 20px;
 }
 /* /adverts v1 */
@@ -31075,21 +31075,22 @@ svg path
 
 #panel_adverts.panel-group .panel-heading
 {
-  background: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-  border-bottom: 1px solid #5D5D5D;
+  background: #F5F5F5;
+  padding: 20px;
+  margin: 0 0 0px 0;
+  border-bottom: 0;
 }
 
 #panel_adverts .panel-default>.panel-heading+.panel-collapse>.panel-body
 {
-  padding: 0 !important;
+  padding: 0px 20px 20px 20px !important;
+  background: #F5F5F5;
 }
 
-#panel_adverts .panel-title
+/* #panel_adverts .panel-title
 {
   margin-bottom: 15px;
-}
+} */
 
 .advert_ft_ul
 {
@@ -31101,9 +31102,9 @@ svg path
 {
   font-weight: 400;
   font-size: 12px;
-  line-height: 140%;
-  color: #5D5D5D;
-  margin-bottom:  10px;
+  line-height: 150%;
+  color: #120F40;
+  margin-bottom:  20px;
 }
 
 .mb50px
@@ -31118,13 +31119,13 @@ svg path
 
 .adverts_ft_social_btns
 {
-  background: #F5F5F5;
-  margin: 70px -10px 0 -10px;
+  background: #E58D82;
+  /* margin: 70px -10px 0 -10px; */
   padding: 40px 0;
   /* position: fixed;
   bottom: 0; */
   position: absolute;
-  bottom: -5px;
+  bottom: 0px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -31139,12 +31140,12 @@ svg path
 .advert_ul_01
 {
   padding: 0 25px;
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 .advert_ul_01 li
 {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 /* .panel-title  a.saccordion:after {
@@ -31376,13 +31377,13 @@ svg path
   border: 0;
   height: 40px;
   width: 92px;
-  background: #FFF;
+  background: #E58D82;
   border-radius: 20px;
   font-weight: 600;
   font-size: 12px;
   line-height: 140%;
   text-align: center;
-  color: #CB6171;
+  color: #FFF;
 }
 
 .mcflex_advertsh
@@ -35242,7 +35243,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .mcflex_advertsh .navbar-toggle:hover,
 .mcflex_advertsh .navbar-toggle:focus
 {
-  background: rgba(0,0,0,0.1);
+  /* background: rgba(0,0,0,0.1); */
+  background: #E58D82;
   border-radius: 100%;
   width: 40px;
   height: 40px;
@@ -35496,4 +35498,104 @@ li ol > li:before {
 {
   white-space: normal;
 }
+
+/* landing */
+.div_best_value_01
+{
+  border-radius: 16px 16px 0px 0px;
+  text-align: center;
+  padding: 8px 10px;
+  background: #E58D82;
+}
+
+.div_annual_01
+{
+  border-radius: 0px 0px 16px 16px;
+  background: #FFF;
+  padding: 20px;
+  border: 1px solid #E58D82;
+}
+
+.div_monthly_01
+{
+  border-radius: 16px;
+  background: #FFF;
+  padding: 20px;
+}
+
+.btn_tff 
+{
+  height: 50px;
+  border-radius: 100px;
+  background: #E58D82;
+  padding: 10px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.ltestimonials
+{
+  /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
+  background: #E58D82;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  height: 289px;
+  text-align: center;
+  margin-top: -12%;
+  padding: 20px;
+}
+
+.ltestimonials p
+{
+  white-space: normal;
+}
+
+.ltestimonials .ttxt
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.hr_style_20 
+{
+  border: 1px solid rgba(18, 15, 64, 0.10);
+}
+
+#panel_adverts .panel-title > a[aria-expanded="true"]:after
+{
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_minus.svg);
+}
+
+#panel_adverts .panel-title > a:after {
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_plus.svg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  bottom: 0;
+}
+
+.dtn_default_ext
+{
+  height: 80px;
+  border: 0;
+  background: #FFF;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.img_logo
+{
+  max-width: 150px;
+}
+
+.img_parent 
+{
+  border-radius: 50%;
+  border: 10px solid #FFF;
+}
+/* /landing */
 /* /version - 03 */

@@ -1,21 +1,22 @@
-<!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()" *ngIf="isShowLink">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg" alt="" class="p0"/>
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Become a Partner
-      </h1>
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          Become a Partner
+        </h1>
+      </a>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more.svg" alt="" class="p0"/>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more_grey.svg" alt="" class="p0"/>
       </a>
       <ul class="dropdown-menu dm_partnership" role="menu">
         <li>
@@ -25,17 +26,17 @@
         </li>
 
         <li>
-          <a id="btnShare" (click)="share()">
+          <a (click)="share()">
             Share
           </a>
         </li>
 
         <li>
           <a *ngIf="!isPartner" (click)="BecomeAPartner()">
-            Become a Partner
+           About Partnership
           </a>
         </li>
-
+        
         <li>
           <a (click)="scroll_to_Faq()">
             Partnership FAQ
@@ -45,4 +46,3 @@
     </div>
   </div>
 </div>
-<!-- /top navigation -->
