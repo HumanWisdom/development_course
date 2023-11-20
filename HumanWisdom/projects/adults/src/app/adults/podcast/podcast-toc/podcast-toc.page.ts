@@ -24,6 +24,7 @@ export class PodcastTocPage implements OnInit {
   iframeSrc:SafeResourceUrl;
   @Input() podcastList = [];
   @Input() isdefaultShow = false;
+  isSubscriber = false;
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
@@ -51,6 +52,14 @@ export class PodcastTocPage implements OnInit {
     this.tag=routTag;
   }
  this.iframeSrc= this.getSourceForPodBin();
+
+ let userid = localStorage.getItem('isloggedin');
+ let sub: any = localStorage.getItem('Subscriber');
+ if (userid === 'T' && sub === '1') {
+   this.isSubscriber = true;
+ } else {
+   this.isSubscriber = false;
+ }
 }
 
   getSourceForPodBin(){
@@ -92,7 +101,7 @@ export class PodcastTocPage implements OnInit {
   audioevent(data) {
     let sub: any = localStorage.getItem("Subscriber")
     if (sub == 0 && data['PodcastID'] >= 4) {
-      this.router.navigate(['/onboarding/free-limit']);
+      this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
        if(data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')){
         data['MediaUrl'] =  data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/','/');

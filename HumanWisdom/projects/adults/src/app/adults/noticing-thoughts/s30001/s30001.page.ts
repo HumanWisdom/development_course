@@ -24,7 +24,7 @@ export class S30001Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = ""
+  toc = "/pathway/develop-a-calm-mind/"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -41,6 +41,10 @@ export class S30001Page implements OnInit, OnDestroy {
     private location: Location
   ) { }
   ngOnInit() {
+
+    if(!localStorage.getItem("NaviagtedFrom")) 
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+  
     this.service.setmoduleID(30);
     //localStorage.removeItem("bookmarkList")
     this.createScreen()

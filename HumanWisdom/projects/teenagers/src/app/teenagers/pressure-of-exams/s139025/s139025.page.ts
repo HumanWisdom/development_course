@@ -55,11 +55,11 @@ export class S139025Page implements OnInit {
     $("section").not("section:nth-of-type(1)").hide();
     $("section").not("section:nth-of-type(1)").css('transform','translateX(100px)');
     
-    var svgWidth = length * 200 + 24;
+    var svgWidth = length * 200 + 25;
     $("#svg_wrap").html(
       '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
         svgWidth +
-        ' 24" xml:space="preserve"></svg>'
+        ' 25" xml:space="preserve"></svg>'
     );
     
     function makeSVG(tag, attrs) {
@@ -197,27 +197,7 @@ export class S139025Page implements OnInit {
       "fill",
       base_color
     );
-    // tb copied mul;tiple times
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-    
+   
   });
   // /multistep wizard
 

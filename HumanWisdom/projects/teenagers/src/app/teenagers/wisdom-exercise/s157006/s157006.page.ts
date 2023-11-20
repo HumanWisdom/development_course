@@ -142,7 +142,7 @@ export class S157006Page implements OnInit {
     }
     else if (event === '1') {
       this.slideStart = 0;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 8;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = true;

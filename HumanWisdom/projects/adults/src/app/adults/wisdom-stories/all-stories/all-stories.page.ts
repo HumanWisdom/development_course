@@ -18,7 +18,8 @@ export class AllStoriesPage implements OnInit {
   sId:any
   enable_view_more_less = false;
   view_more_less="View More"
-  
+  isSubscriber = false;
+
   constructor(private router: Router,
     private service:AdultsService,
     private location:Location,
@@ -30,8 +31,13 @@ export class AllStoriesPage implements OnInit {
     this.meta.updateTag({ property: 'title', content: 'Transform Your Life with Wisdom Stories' })
     this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through the real-life stories of adults and find ways to apply it in your life.' })
     this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories for adults,Inspiring stories for adults,Life lessons from stories,Adult wisdom tales,Uplifting stories for adults,Motivational stories for grown-ups,Adult storytelling,Personal growth through stories,Life-changing stories for adults,Empowering adult stories' })
-
-
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
   }
   goBack(){
     this.location.back()
@@ -39,23 +45,23 @@ export class AllStoriesPage implements OnInit {
   getStories(){
     this.service.getScenarios().subscribe(res=>
       {
-        if(res) 
+        if(res)
         {
           let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
-      
-          
-          if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
-
-            res = new Array()
-            res = dateres.filter(p => p.ExclFromChild === "True")
-            res.forEach(element => {
-              dateres.splice(dateres.indexOf(element),1)
-              dateres.unshift(element)
-            });
 
 
+          // if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
 
-          }
+          //   res = new Array()
+          //   res = dateres.filter(p => p.ExclFromChild === "1")
+          //   res.forEach(element => {
+          //     dateres.splice(dateres.indexOf(element),1)
+          //     dateres.unshift(element)
+          //   });
+
+
+
+          // }
 
          this.storyList=dateres.slice(0, 10)
           this.secondstoryList=dateres.slice(10)
@@ -66,7 +72,7 @@ export class AllStoriesPage implements OnInit {
       error=>console.log(error),
       ()=>{
         let res = localStorage.getItem("isloggedin");
-        if(res && res === 'T') { 
+        if(res && res === 'T') {
           this.service.readStories().subscribe(r=>{
             this.readStories= r.map(a => a.ScenarioID)
             //this.readStories=r.ScenarioID
@@ -76,20 +82,23 @@ export class AllStoriesPage implements OnInit {
     )
   }
 
-  toRead(obj){
-    localStorage.setItem("story",JSON.stringify(obj))
+  toRead(obj, enable){
     let res = localStorage.getItem("isloggedin");
-    this.sId=obj.ScenarioID
-    if(res && res === 'T') {
-      this.service.clickStory(obj.ScenarioID).subscribe(res=>{
-          this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
-      })
-    }  else {
-      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+    if(enable) {
+      localStorage.setItem("story",JSON.stringify(obj))
+      this.sId=obj.ScenarioID
+      if(res && res === 'T') {
+        this.service.clickStory(obj.ScenarioID).subscribe(res=>{
+            this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+        })
+      } else {
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      }
+    }else{
+      if(!this.isSubscriber) {
+        this.router.navigate(['/subscription/start-your-free-trial']);
+      }
     }
-
-
-    
   }
 
   searchStory(){

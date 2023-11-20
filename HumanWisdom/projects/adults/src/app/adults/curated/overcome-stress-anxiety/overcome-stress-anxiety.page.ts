@@ -49,6 +49,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/overcome-stress-anxiety');
+
     this.title.setTitle('Stress Relief Tips for Improved Mental Health')
     this.meta.updateTag({ property: 'title', content: 'Stress Relief Tips for Improved Mental Health' })
     this.meta.updateTag({ property: 'description', content: 'Learn practical stress relief tips that can help improve your mental health and well-being.' })

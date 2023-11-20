@@ -1,0 +1,48 @@
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()" *ngIf="isShowLink">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg" alt="" class="p0"/>
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          Become a Partner
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more_grey.svg" alt="" class="p0"/>
+      </a>
+      <ul class="dropdown-menu dm_partnership" role="menu">
+        <li>
+          <a routerLink="/adults/adult-dashboard/">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a (click)="share()">
+            Share
+          </a>
+        </li>
+
+        <li>
+          <a *ngIf="!isPartner" (click)="BecomeAPartner()">
+           About Partnership
+          </a>
+        </li>
+        
+        <li>
+          <a (click)="scroll_to_Faq()">
+            Partnership FAQ
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

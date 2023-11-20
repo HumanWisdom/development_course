@@ -33,7 +33,7 @@ export class JournalGuard implements CanActivate {
   }
 
   navigatefreelimit() {
-    return this.router.navigate(['/onboarding/free-limit']);
+    this.router.navigate(['/subscription/start-your-free-trial']);
   }
 
 }

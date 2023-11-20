@@ -3,7 +3,7 @@
 <app-toc-header [moduleName]="'Short videos'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <!-- page content -->
-<div class="right_col mc_01">
+<div class="right_col mc_01_v3 mc_01_v3_ext">
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -12,11 +12,11 @@
           <div class="x_content p0">
             <form >
 
-              <div class="row ls_story_img">
+              <!-- <div class="row ls_story_img">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex prelative">
                   <img class="ws_view_story img-responsive w100" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_shorts.png">
                 </div>
-              </div>
+              </div> -->
 
               <div class="row mt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -25,7 +25,7 @@
                   </h4>
                 </div>
               </div>
-          
+
               <div class="row mt10px mb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
@@ -44,7 +44,7 @@
                           <img src="{{data.ImgUrl}}" alt="" class="p0 session_img">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg" alt="" class="p0 session_img_play">
                         </div>
-            
+
                         <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                           <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
                             {{data['Title']}}
@@ -53,12 +53,23 @@
                             {{data['Timing']}} min
                           </h4>
                         </div>
-                        
+
                       </div>
-            
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i <= 2">
                         <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                       </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i > 2">
+                        <!-- lock -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <!-- /lock -->
+                      </div>
+
                     </div>
                   </div>
                 </a>

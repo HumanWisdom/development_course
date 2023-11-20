@@ -10,54 +10,47 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S139054Page implements OnInit {
 
-  toc="pressure-of-exams/s139001"
-  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
  
-  // bg=""
-  // moduleLink="/adults/stress"
-  // moduleName=" Stress"
-  // sectionName= "Transform your life - I";
-  // moduleId=44
-
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
-  
+  bg_tn=""
+  bg_cft=""
   bg=""
-  moduleLink="/self-interest"
-  moduleName="Self-interest"
-  sectionName= "Transform your life - I";
-  moduleId=115
-  moduleList: any = [
-    {
-      name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
-      link: '/stress',
-      id: 125
-    },
-    {
-      name: 'Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
-      link: '/anxiety',
-      id: 105
-    },
-    {
-      name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
-      link: '/relationships',
-      id: 131
-    },
-  ]
 
-  constructor() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'leadership') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
-      this.moduleLink = "/leadership"
-      this.moduleName = "Leadership"
-      this.sectionName = "Transform your life";
-      this.moduleId = 59
-    }
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
+
+  constructor(private router: Router,
+    private service:TeenagersService,
+    private location:Location) { }
+
+  ngOnInit() 
+  {
+    if(this.saveUsername==false)
+      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+    else
+      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    this.sessionPoints()
   }
 
-  ngOnInit() {}
+  sessionPoints()
+  {
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"139001,139002,139003,139004,139005,139006,139007,139008,139009,139010,139011,139012,139013,139014,139015,139016,139017,139018,139019,139020,139021,139022,139023,139024,139025,139026,139027,139028,139029,139030,139031,139032,139033,139034,139035,139036,139037,139038,139039,139040,139041,139042,139043,139044,139045,139046,139047,139048,139049,139050,139051,139052"})
+    .subscribe(res=>
+      {console.log("points",res)
+      this.points=res
+    })
+  }
+
+  submitProgress()
+  {
+    this.router.navigate(['/pressure-of-exams/s139055'])
+  }
+
+  prev()
+  {
+    this.router.navigate(['/pressure-of-exams/s1399053'])
+  }
 
 }

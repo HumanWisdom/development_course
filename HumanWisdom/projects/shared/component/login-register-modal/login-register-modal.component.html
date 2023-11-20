@@ -330,3 +330,7 @@
   </div>
 </div>
 <!-- /activate subscription modal -->
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
+</app-modal>

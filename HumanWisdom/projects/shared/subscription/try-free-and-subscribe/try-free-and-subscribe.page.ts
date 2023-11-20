@@ -35,10 +35,10 @@ export class TryFreeAndSubscribePage implements OnInit {
     this.Redeem = Constant.Redeem;
     this.onboardingService.checkTrial().subscribe(res=>{
       if(res){
-        this.trialStatus = res.IsTrial;
-         if(this.trialStatus == Constant.NoTrial){
-          this.startDate = res.StartDate;
-          this.expDate = res.ExpDate;
+        this.trialStatus = res[0].IsTrial;
+         if(this.trialStatus != Constant.NoTrial){
+          this.startDate = res[0].StartDate;
+          this.expDate = res[0].ExpDate;
          }
       }
     })
@@ -106,7 +106,8 @@ export class TryFreeAndSubscribePage implements OnInit {
           this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
         }
       } else {
-        this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
+        //this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
+        this.router.navigateByUrl('/adults/redeem-subscription');
       }
     } else {
       this.router.navigateByUrl('/login');
@@ -188,5 +189,13 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
   routeToDashboard() {
     this.router.navigateByUrl('/adults/adult-dashboard');
+  }
+
+  buyGift(){
+    this.router.navigateByUrl('/adults/give-the-gift-of-wisdom');
+  }
+
+  terms(){
+    this.router.navigateByUrl('/terms-and-conditions');
   }
 }

@@ -12,10 +12,7 @@ import { Constant } from "../../services/constant";
 @Component({
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
-  styleUrls: ['./login-register-modal.component.scss'],
-  host: {
-    '(document:click)': 'closeFn($event)',
-  },
+  styleUrls: ['./login-register-modal.component.scss']
 })
 export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
@@ -64,6 +61,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   enabledModal = false;
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
+  alertenabled: boolean = false;
+
   constructor(
     public platform: Platform,
     private router: Router,
@@ -110,14 +109,22 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     }
   }
 
-
-  closeFn(event) {
-    if (this.enabledModal && !this.activemodal.nativeElement.contains(event.target)) {
-      setTimeout(() => {
-        this.closeModal.emit(false);
-      })
+  @HostListener('document:mousedown', ['$event'])
+  onClick(event: MouseEvent): void {
+    if (!this.enableAlert && !this.alertenabled && !this.activemodal.nativeElement.contains(event.target)) {
+      this.actclosemodal?.nativeElement?.click();
+      this.closeModal.emit(false);
     }
   }
+
+
+  // closeFn(event) {
+  //   if (this.enabledModal && this.activemodal.nativeElement.contains(event.target)) {
+  //     setTimeout(() => {
+  //       this.closeModal.emit(false);
+  //     })
+  //   }
+  // }
 
   ngOnInit() {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -194,6 +201,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         error => {
           this.content = error.error.Message;
           this.enableAlert = true;
+          this.alertenabled = true;
           // window.alert(error.error.Message)
         },
         () => {
@@ -226,6 +234,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       }, (err) => {
         this.content = err.error['Message'];
         this.enableAlert = true;
+        this.alertenabled = true;
         // window.alert(err.error['Message'])
       })
   }
@@ -235,91 +244,97 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     let password = val === '' || val === 'second' ? localStorage.getItem("pswd") : this.loginpassword;
     this.services.emailLogin(email, password)
       .subscribe(
-        res => {//
-          if (val === 'act') {
+        res => {
+          if(res?.Errors) {
+            this.content = res?.Errors;
+            this.enableAlert = true;
+            this.alertenabled = true;
+          }else {
+            if (val === 'act') {
+              localStorage.setItem("isloggedin", 'T')
+              localStorage.setItem("remember", 'T')
+              this.fifthpage = false;
+            } else if (val === 'second') {
+              localStorage.setItem("isloggedin", 'T')
+              localStorage.setItem("remember", 'T')
+              this.secondpage = false;
+            }
+            this.firstpage = false
+            this.fifthpage = false
+            this.thirdpage = true
+            this.enabledModal = false
             localStorage.setItem("isloggedin", 'T')
+            this.isLoggedIn = true
+            this.loginResponse = res
+            console.log(this.loginResponse)
+            localStorage.setItem('guest', 'F');
             localStorage.setItem("remember", 'T')
-            this.fifthpage = false;
-          } else if (val === 'second') {
-            localStorage.setItem("isloggedin", 'T')
-            localStorage.setItem("remember", 'T')
-            this.secondpage = false;
-          }
-          this.firstpage = false
-          this.fifthpage = false
-          this.thirdpage = true
-          this.enabledModal = false
-          localStorage.setItem("isloggedin", 'T')
-          this.isLoggedIn = true
-          this.loginResponse = res
-          console.log(this.loginResponse)
-          localStorage.setItem('guest', 'F');
-          localStorage.setItem("remember", 'T')
-          localStorage.setItem('socialLogin', 'T');
-          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-          localStorage.setItem("video", JSON.stringify(this.video))
-          localStorage.setItem("audio", JSON.stringify(this.audio))
-          localStorage.setItem('btnclick', 'F')
-          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-          sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-          localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-          localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-          localStorage.setItem("userId", JSON.stringify(this.userId))
-          localStorage.setItem("email", email)
-          localStorage.setItem("FnName", this.socialFirstName)
-          localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-          localStorage.setItem("LName", this.socialLastName)
-          localStorage.setItem("pswd", '')
-          localStorage.setItem("name", this.loginResponse.Name)
-          localStorage.setItem("first", 'T')
-          let namedata = localStorage.getItem('name').split(' ')
-          this.modaldata['email'] = localStorage.getItem('email');
-          this.modaldata['firstname'] = namedata[0];
-          this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-          if (parseInt(this.loginResponse.UserId) == 0) {
-
-          }
-          else {
-            this.userId = this.loginResponse.UserId
-            this.userName = this.loginResponse.Name
+            localStorage.setItem('socialLogin', 'T');
+            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+            localStorage.setItem("video", JSON.stringify(this.video))
+            localStorage.setItem("audio", JSON.stringify(this.audio))
+            localStorage.setItem('btnclick', 'F')
             localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
             sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            localStorage.setItem("userId", JSON.stringify(this.userId))
             localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-            if (this.saveUsername == true) {
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-              localStorage.setItem("userName", JSON.stringify(this.userName))
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("email", email)
+            localStorage.setItem("FnName", this.socialFirstName)
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+            localStorage.setItem("LName", this.socialLastName)
+            localStorage.setItem("pswd", '')
+            localStorage.setItem("name", this.loginResponse.Name)
+            localStorage.setItem("first", 'T')
+            let namedata = localStorage.getItem('name').split(' ')
+            this.modaldata['email'] = localStorage.getItem('email');
+            this.modaldata['firstname'] = namedata[0];
+            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+            if (parseInt(this.loginResponse.UserId) == 0) {
+
             }
             else {
-              sessionStorage.setItem("userId", JSON.stringify(this.userId))
-              sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-              sessionStorage.setItem("userName", JSON.stringify(this.userName))
-            }
-            let acceptCookie = localStorage.getItem('activeCode');
-            let subscribePage = localStorage.getItem('subscribepage');
-            if (acceptCookie === 'T' || subscribePage === 'T') {
-              localStorage.setItem("isloggedin", 'T')
-              if (acceptCookie === 'T') {
-                localStorage.setItem("activeCode", 'F')
+              this.userId = this.loginResponse.UserId
+              this.userName = this.loginResponse.Name
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              if (this.saveUsername == true) {
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                localStorage.setItem("userName", JSON.stringify(this.userName))
               }
-              if (subscribePage === 'T') {
-                localStorage.setItem("subscribepage", 'F')
+              else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                sessionStorage.setItem("userName", JSON.stringify(this.userName))
               }
-            } else {
-              localStorage.setItem("isloggedin", 'T')
+              let acceptCookie = localStorage.getItem('activeCode');
+              let subscribePage = localStorage.getItem('subscribepage');
+              if (acceptCookie === 'T' || subscribePage === 'T') {
+                localStorage.setItem("isloggedin", 'T')
+                if (acceptCookie === 'T') {
+                  localStorage.setItem("activeCode", 'F')
+                }
+                if (subscribePage === 'T') {
+                  localStorage.setItem("subscribepage", 'F')
+                }
+              } else {
+                localStorage.setItem("isloggedin", 'T')
+              }
             }
-          }
-          this.actclosemodal?.nativeElement?.click();
-          this.closeModal.emit(false);
-          if (this.isAdvertpage) {
-            if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-              SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
-            ) {
-              this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
-            } else {
-              this.router.navigate(['/adults/redeem-subscription']);
+            this.actclosemodal?.nativeElement?.click();
+            this.closeModal.emit(false);
+            if (this.isAdvertpage) {
+              if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+                SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+              ) {
+                this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+              } else {
+                this.router.navigate(['/adults/redeem-subscription']);
+              }
             }
           }
         },
@@ -531,6 +546,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       } else {
         this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
         this.enableAlert = true;
+        this.alertenabled = true;
         // window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
       }
     });
@@ -541,16 +557,19 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     this.content = '';
     this.enablecancel = false;
     this.enableAlert = false;
-    if (event === 'ok') {
-      this.logeventservice.logEvent('click_logout_Hamburger')
-      if (this.platform.isBrowser) {
-        localStorage.setItem("isloggedin", "F");
-        localStorage.setItem("guest", "T");
-        localStorage.setItem("navigateToUpgradeToPremium", "false");
-        localStorage.setItem("btnClickBecomePartner", "false");
-        this.router.navigate(["/onboarding/login"]);
-      }
-    }
+    setTimeout(() => {
+      this.alertenabled = false;
+    }, 200)
+    // if (event === 'ok') {
+    //   this.logeventservice.logEvent('click_logout_Hamburger')
+    //   if (this.platform.isBrowser) {
+    //     localStorage.setItem("isloggedin", "F");
+    //     localStorage.setItem("guest", "T");
+    //     localStorage.setItem("navigateToUpgradeToPremium", "false");
+    //     localStorage.setItem("btnClickBecomePartner", "false");
+    //     this.router.navigate(["/onboarding/login"]);
+    //   }
+    // }
   }
 
   closeModalevent() {
