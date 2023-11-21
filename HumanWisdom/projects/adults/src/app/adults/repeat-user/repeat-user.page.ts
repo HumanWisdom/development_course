@@ -289,6 +289,10 @@ export class RepeatUserPage implements OnInit {
         this.routeOpinionsAndBeliefs(1)
         break
       }
+      case "50": {
+        this.goToYourWisdomScoreComponent();
+        break;
+      }
       case "51": {
         this.routeGuidedMeditation(1)
         break
@@ -347,6 +351,10 @@ export class RepeatUserPage implements OnInit {
       }
       case "74": {
         this.routehowcanwisdomhelp(1)
+        break
+      }
+      case "75": {
+        this.wisdomexercise();
         break
       }
       case "76": {
@@ -2184,5 +2192,33 @@ export class RepeatUserPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
+
+  goToYourWisdomScoreComponent() {
+    //this.logeventservice.logEvent('click_wisdom_score');
+    this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
+  }
+
+  wisdomexercise() {
+    this.service.GetLastVisitedScreen(this.userId)
+    
+    .subscribe(res => {
+      console.log(res)
+      
+   
+    if( res[0]['screenno'].length >=1)
+    {
+     this.router.navigate(['adults/wisdom-exercise/s' +  res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)], {
+       state: {
+         day: 2,
+       }
+     });
+    }
+    else 
+    this.router.navigate([`/adults/wisdom-exercise/s75001`])
+ 
+  });
+    
+ 
+   }
 
 }
