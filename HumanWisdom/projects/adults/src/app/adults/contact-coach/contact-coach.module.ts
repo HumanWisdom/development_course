@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -14,10 +14,14 @@ import { SharedModule } from '../../../../../shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
     ContactCoachPageRoutingModule,
     SharedModule
   ],
-  declarations: [ContactCoachPage]
+  declarations: [ContactCoachPage],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: ContactCoachPage,
+    multi: true,
+  }]
 })
 export class ContactCoachPageModule {}
