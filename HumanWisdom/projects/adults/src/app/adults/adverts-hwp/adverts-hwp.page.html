@@ -1,112 +1,15 @@
 <div class="wrapper">
   <!-- top navigation -->
-  <!-- <app-tn-advert></app-tn-advert> -->
-  <div class="dtn bg_nonei">
-
-    <!-- top navigation -->
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px onscrollbg col_cw">
-        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-          <a (click)="routedashboard()">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg" class="img-responsive" alt="HumanWisdom">
-          </a>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-        </div> -->
-
-        <!-- hamburger -->
-        <nav class="navbar navbar-default navbar-static-top">
-
-          <div class="row dtn_default flex_ai">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-
-              <div class="mcflex_advertsh">
-
-                <button type="button" class="navbar-toggle collapsed m0px" data-toggle="collapse" data-target="#navbar"
-                  aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-
-                <button type="button" class="btn m0px mr20pxi fright btn_htry_free" (click)="routedashboard('free')">
-                  {{isLoggedIn ? 'Go to App' : 'Try for free'}}
-                </button>
-
-                <a class="" (click)="route_adverts_hwp()">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hwp_logo_v3.svg" alt="HumanWisdom" class="img-responsive">
-                </a>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div id="navbar" class="collapse">
-            <ul class="nav navbar-nav fw_400 fs_18px lh_21px fc_000000">
-              <li class="active">
-                <a (click)="navigate('/adults/adverts-about/','click_Our_Story')">
-                  Our Story
-                </a>
-              </li>
-              <li>
-                <a (click)="navigate('/adults/give-the-gift-of-wisdom', 'click_give_the_gift_wisdom')">
-                  Give the gift of Happiness
-                </a>
-              </li>
-              <li>
-                <a (click)="navigate('/adults/adverts-hwp-app','click_HumanWisdom_App' )">
-                  The HappierMe App
-                </a>
-              </li>
-              <li>
-                <a (click)="navigate('/adults/adverts-work/', 'click_HumanWisdom_for_Business')">
-                  HappierMe for Business
-                </a>
-              </li>
-              <li>
-                <a (click)="navigate('/adults/adverts-student/',  'click_HumanWisdom_for_Education')">
-                  HappierMe for Education
-                </a>
-              </li>
-              <li>
-                <a (click)="Logevent()">
-                  {{login}}
-                </a>
-              </li>
-
-            </ul>
-          </div>
-
-        </nav>
-        <!-- /hamburger -->
-
-      </div>
-    </div>
-    <!-- /top navigation -->
-
-  </div>
+  <app-tn-advert></app-tn-advert>
   <!-- /top navigation -->
-
-  <!-- <video autoplay loop preload="true" class="bg_adverts_hwp" controlsList="nodownload">
-    <source
-      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adverts/videos/02.mp4"
-      type="video/mp4">
-  </video> -->
 
   <app-bg-video></app-bg-video>
 
-  <!-- <div class="video-container bg_adverts_hwp">
-    <iframe src="https://www.youtube.com/embed/Yj2iELI6OeI?&autoplay=1&mute=1&playsinline=1"></iframe>
-  </div> -->
-
   <!-- page content -->
   <div class="right_col mc_01 bg_nonei">
-    <!-- Class -->
     <div class="cw100p">
       <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 p0 bg_white col_cw">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white col_cw">
           <div class="x_panel p0">
             <div class="x_content p0">
               <form>
@@ -114,24 +17,23 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                    <div class="bg_adverts_01">
-                      <div class="row center_flex">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="fs_24px lh_130p fw_500 fc_1092a7 mt0px mb30px">
-                            <span class="">Learn about yourself<br></span>
-                            <span class="">Grow as a person<br></span>
-                            <!-- <span class="">Flourish in life</span> -->
-                            <span class="">Be happier</span>
-                          </h4>
+                    
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_600 lh_150p fc_120f40">
+                          <span class="">Learn about yourself<br></span>
+                          <span class="">Grow as a person<br></span>
+                          <span class="">Be happier</span>
+                        </h4>
 
-                          <h4 class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
-                            <!-- A life-companion to help you overcome stress and anxiety, have healthy relationships, be happier and succeed in life -->
-                            A life-companion to help you overcome stress and anxiety, have happier relationships and succeed in life.
-                          </h4>
-                        </div>
+                        <h4 class="mtb20px fs_15px fw_400 lh_150p fc_120f40">
+                          A life-companion to help you overcome stress and anxiety, have happier relationships and succeed in life.
+                        </h4>
                       </div>
+                    </div>
 
-                      <div class="row mt50px mb50px center_flex">
+                    <div class="bg_adverts_01">
+                      <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <video controls playinline class="cvideo"
                             poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video_01.svg"
@@ -143,134 +45,128 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex">
+                      <div class="row mt30px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="fw_500 fs_33px lh_39px fc_ffffff mtb0px tcenter">
+                          <h4 class="mtb0px fs_24px fw_600 lh_150p fc_120f40 tcenter">
                             HappierMe Premium
                           </h4>
                         </div>
                       </div>
 
-                      <div class="row">
+                      <div class="row mt15px mb30px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="fw_400 fs_15px lh_18px fc_ffffff tcenter mt30px mb30px">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40 tcenter">
                             Unlock the complete experience
                           </h4>
                         </div>
                       </div>
 
-                      <div class="row center_flex">
+                      <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <div class="row mb10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="panel panel-default psubscription_options">
-                                <div class="panel-heading best_value">
+                          <a class="">
+                            <div class="row mb20px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            
+                                <div class="row div_best_value_01">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_15px fw_500 lh_140p fc_ffffff">
+                                      Best value
+                                    </h4>
+                                  </div>
+                                </div>
+            
+                                <div class="div_annual_01">
                                   <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <h4 class="fw_500 fs_12px lh_14px fc_000000 mtb0px">
-                                        Best value
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <h4 class="mtb0px fs_15px fw_400 lh_140p fc_120f40">
+                                        Annual
+                                      </h4>
+                                    </div>
+                                  </div>
+            
+                                  <div class="row mtb5px">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <h4 class="mtb0px fs_24px fw_600 lh_170p fc_120f40">
+                                        £4.25
+                                        <span class="fs_15px fw_400 lh_170p fc_292d56">
+                                          /month, billed annually
+                                        </span>
                                       </h4>
                                     </div>
                                   </div>
                                 </div>
-
-                                <div class="panel-body p0">
-                                  <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('Yearly')"
-                                        class="btn btn_subscription_options">
-                                        <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
-                                          Annual
-                                        </h4>
-                                        <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                          {{cardlist['CurSymbol'] + ' ' + cardlist['Annual'] / 12}}/month after 14-day trial
-                                        </h4>
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
+            
                               </div>
                             </div>
-                          </div>
+                          </a>
 
-                          <div class="row mb10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('Monthly')"
-                                class="btn btn_subscription_options">
-                                <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
-                                  Monthly
-                                </h4>
-                                <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                  {{cardlist['CurSymbol'] + ' ' + cardlist['Monthly']}}/month after 7-day trial
-                                </h4>
-                              </button>
+                          <a class=""> 
+                            <div class="row div_monthly_01 mb20px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            
+                                <div class="row mb5px">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_15px fw_400 lh_140p fc_120f40">
+                                      Monthly
+                                    </h4>
+                                  </div>
+                                </div>
+            
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_24px fw_600 lh_170p fc_120f40">
+                                      £8.00 
+                                      <span class="fs_15px fw_400 lh_170p fc_292d56">
+                                        /month
+                                      </span>
+                                    </h4>
+                                  </div>
+                                </div>
+            
+                              </div>
                             </div>
-                          </div>
+                          </a>
 
-                          <!-- <div class="row center_flex">
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                              <h4 class="fw_400 fs_15px lh_130p fc_ffffff tcenter mt20px mb20px">
-                                Don’t worry, you can cancel your free trial within 14 days
-                              </h4>
-                            </div>
-                          </div> -->
-
-                          <!-- <div class="row center_flex">
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 tcenter mb30px">
-                              <a class="fw_700 fs_15px lh_130p fc_ffffff mt0px underline" data-toggle="modal"
-                                data-target="#activate_subscription">
-                                Redeem subscription code
-                              </a>
-                            </div>
-                          </div> -->
-
-                          <div class="row mb10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('redeem')"
-                                class="btn btn_subscription_options h60pxi flex_ai">
-                                <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
+                          <a class="" [disabled]="isSubscriber" (click)="routedashboard('redeem')">
+                            <div class="row btn_subscription_options mb20px">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fs_15px fw_400 lh_140p fc_120f40">
                                   Redeem subscription code
                                 </h4>
-                              </button>
+                              </div>
                             </div>
-                          </div>
+                          </a>
 
-                          <div class="row mb30px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <a routerLink="/give-the-gift-of-wisdom/">
-                                <button type="submit" class="btn btn_subscription_options h60pxi flex_ai">
-                                  <h4 class="fw_500 fs_18px lh_21px mtb0px flex_ai">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_ffc455.svg"
-                                      class="img-responsive mr10px">
-                                    Give the gift of happiness
-                                  </h4>
-                                </button>
-                              </a>
+                          <a class="" routerLink="/give-the-gift-of-wisdom/">
+                            <div class="row btn_subscription_options">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fs_15px fw_400 lh_140p fc_120f40 flex_ai">
+                                  <img
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/like_peach.svg"
+                                    class="img-responsive mr10px">
+                                  Give the gift of happiness
+                                </h4>
+                              </div>
                             </div>
-                          </div>
+                          </a>
+
+                          <a class="" (click)="routedashboard('free')">
+                            <div class="row btn_tff mtb30px">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                  {{isLoggedIn ? 'Go to App' : 'Try for free'}}
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
 
                           <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a>
-                                <button type="button" (click)="routedashboard('free')"
-                                  class="btn h60px bg_lg_ffc4f5_01 bs_01 br_30px m0px fw_500 fs_18px lh_21px fc_000000 w100">
-                                  {{isLoggedIn ? 'Go to App' : 'Try for free'}}
-                                </button>
-                              </a>
-                            </div>
-                          </div>
-
-                          <div class="row mt60px mb60px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                               <!-- desktop playstore -->
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                <a
-                                  (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/playstore_white.svg"
-                                    alt="" class="img-responsive w100">
+                                <a (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_playstore.svg" class="img-responsive w100">
                                 </a>
                               </div>
                               <!-- /desktop playstore -->
@@ -278,9 +174,7 @@
                               <!-- desktop appstore -->
                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
                                 <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/appstore_white.svg"
-                                    alt="" class="img-responsive w100">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_appstore.svg" class="img-responsive w100">
                                 </a>
                               </div>
                               <!-- /desktop appstore -->
@@ -291,18 +185,17 @@
                       </div>
                     </div>
 
-                    <div class="row mt50px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="fw_400 fs_24px lh_140p fc_1092a7 mtb0px">
-                          <span class="fw_700">Much more than a wellness app,</span>
-                          <span class="">with 70+ subjects</span>
+                    <div class="row mt30px center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                          Much more than a wellness app,with 70+ subjects
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row mt20px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <ul class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
+                    <div class="row mt10px mb20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <ul class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                           <li class="">
                             Prevent and overcome stress and anxiety
                           </li>
@@ -330,293 +223,522 @@
                       </div>
                     </div>
 
-                    <div class="row mt30px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/adverts/bubbles.svg"
-                          class="img-responsive w100">
+                    <div class="row mlr-20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/bubbles.svg" class="img-responsive w100">
                       </div>
                     </div>
 
-                    <div class="row mt50px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="fw_700 fs_24px lh_140p fc_1092a7 mtb0px">
+                    <div class="row mt30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
                           Dive deeper
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row mt20px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
-                          Feel better today, and then go deeper to understand the root cause. Learn to prevent problems
-                          and overcome them for the long term.
+                    <div class="row mt10px mb20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                          Feel better today, and then go deeper to understand the root cause. Learn to prevent problems and overcome them for the long term.
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row mt30px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                    <div class="row mlr-20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/adverts/dive_deeper.svg"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_dive_deeper.svg"
                           class="img-responsive w100">
                       </div>
                     </div>
 
-                    <div class="row mt50px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="fw_400 fs_24px lh_140p fc_1092a7 mtb0px">
-                          <span class="fw_700">Learn, grow, </span>
-                          <!-- <span class="">and live your best life</span> -->
-                          <span class="">and make the most of your life</span>
+                    <div class="row mt30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                          Learn, grow,and make the most of your life
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row mt20px center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
-                          The app is packed with features - meditations, life stories, journal, videos, podcasts, guided
-                          questions, live events, forum and more
+                    <div class="row mt10px mb30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                          The app is packed with features - meditations, life stories, journal, videos, podcasts, guided questions, live events, forum and more
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row center_flex">
-                      <div class="col-md-12 col-sm-12 col-xs-12 tleft pititle plr20px">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg"
-                          alt="" class="img-responsive" />
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12 ghn  adverts_testimonials pl20px">
-
+                    <!-- testimonials -->
+                    <div class="row mr-20pxi">
+                      <div class="col-md-12 col-sm-12 col-xs-12 pl0px odiv">
                         <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_julie_goodfellow.svg"
-                                alt="" class="img-responsive" />
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_adam_beagley.svg" alt="" class="img-responsive"/>
                             </div>
                           </div>
-
-                          <div class="row at_txt">
+        
+                          <div class="row ltestimonials">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_20px lh_140p fc_ffffff mt10px mb5px ">
-                                Julie Goodfellow
-                              </h4>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff mt0px mb20px">
-                                Headteacher, UK
-                              </h6>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft">
-                                I subscribed to The HumanWisdom app for all my staff because I have seen how
-                                enlightening and transformative it is to understand my reactions to situations, and my
-                                personal emotions such as anxiety, depression and anger. To be able to help others
-                                understand, with wisdom, why they feel as they do, is my life-long gift to them
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_tinamarie_rodriguez.svg"
-                                alt="" class="img-responsive" />
-                            </div>
-                          </div>
-
-                          <div class="row pt1">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_20px lh_140p fc_ffffff mt10px mb5px ">
-                                Tinamarie Rodriguez
-                              </h4>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff mt0px mb20px">
-                                LIFE COACH, USA
-                              </h6>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft">
-                                This app is exactly what each and every person in the world needs every day. It will
-                                give each person the tools to lead a purposeful and fulfilling life.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_dominic_curran.svg"
-                                alt="" class="img-responsive" />
-                            </div>
-                          </div>
-
-                          <div class="row pt1">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_20px lh_140p fc_ffffff mt10px mb5px ">
-                                Dominic Curran
-                              </h4>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff mt0px mb20px">
-                                Teacher England
-                              </h6>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft">
-                                The HumanWisdom App has helped me to look at what I think, how I think, and helped me to
-                                question why I think in certain ways. This understanding has transformed my life
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_carolyn_king.svg"
-                                alt="" class="img-responsive" />
-                            </div>
-                          </div>
-
-                          <div class="row pt1">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_20px lh_140p fc_ffffff mt10px mb5px ">
-                                Carolyn King
-                              </h4>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff mt0px mb20px">
-                                Melbourne
-                              </h6>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft">
-                                I absolutely love the HumanWisdom app. It has enabled me to really go on a journey of
-                                self-exploration. It covers so many different aspects of how our mind works in the real
-                                world. I would highly recommend this app to anyone that wishes to improve their life
-                                through the art of self-enquiry.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_adam_beagley.svg"
-                                alt="" class="img-responsive" />
-                            </div>
-                          </div>
-
-                          <div class="row pt1">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_20px lh_140p fc_ffffff mt10px mb5px ">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
                                 Adam Beagley
                               </h4>
                             </div>
-
+        
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff mt0px mb20px">
-                                Student
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                STUDENT, UK
                               </h6>
                             </div>
-
+        
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft">
-                                I find this app inspiring. I believe this could be monumental for our generation.
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                HumanWisdom has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved ...
                               </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Adam')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
                             </div>
                           </div>
                         </div>
-
+            
                         <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_chandra_ramamurthy.svg"
-                                alt="" class="img-responsive" />
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_laura_toop.svg" alt="" class="img-responsive"/>
                             </div>
                           </div>
-
-                          <div class="row pt1">
+        
+                          <div class="row ltestimonials">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_20px lh_140p fc_ffffff mt10px mb5px ">
-                                Chandra Ramamurthy
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Laura Toop
                               </h4>
                             </div>
-
+        
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff mt0px mb20px">
-                                Psychologist
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                LIFE LEADERSHIP COACH, UK
                               </h6>
                             </div>
-
+        
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft">
-                                Using the Human Wisdom app has been life affirming. I have only two words after using
-                                this app - Game Changer! This app needs to be scaled up to reach every school and
-                                workplace. This program is an essential service and serves the need of mitigating mental
-                                health problems in our society
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                Oh how I wish I had had this app available to me when my life imploded many years ago. In fact, I wish I had had access as a child. It would have made a sign...
                               </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Laura')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
                             </div>
                           </div>
                         </div>
-
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_julie_goodfellow.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Julie Goodfellow
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                HEAD TEACHER, UK
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                I subscribed to the HumanWisdom app for all my staff because I have seen how enlightening and transformative it is to understand my reactions...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Julie')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_carolyn_king.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Carolyn King
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                KINESIOLOGIST, Australia
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                "I absolutely love the HumanWisdom app.
+                                It has enabled me to really go on a journey of self-exploration. It covers so many different aspect...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Carolyn')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_chandra_ramamurthy.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Chandra Ramamurthy
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                CLINICAL PSYCHOLOGIST, India
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                The past few months of using the app have been life affirming. I have only two words after using the app - GAME CHANGER! This app needs to be scaled up, to...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Chandra')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_suzanne_oades.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Suzanne Oades
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                PSYCHOTHERAPIST, UK
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                By knowing more about how my mind works, I have learned to make better choices in how I think, behave and act. The HumanWisdom app is a space...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Suzanne')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_tinamarie_rodriguez.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Tinamarie Rodriguez
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                LIFE COACH, USA
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                This app is exactly what each and every person in the world needs every day. It will give each person the tools to lead a purposeful and fulfilling life.
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Tinamarie')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_dominic_curran.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Dominic Curran
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                TEACHER, England
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                The HumanWisdom app has helped me to look at what I think, and helped me to question why I think in certain ways. This understanding has transformed ...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Dominic')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_anthony_seldon.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Sir Anthony Seldon
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                EDUCATIONALIST & HISTORIAN, UK
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their rel...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Anthony')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_tim_merrick.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Tim Merrick
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                EXECUTIVE COACH, USA
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                It’s so easy to get caught up in all the things we have to do, want to do, and should do. What we gain in productivity we lose in self-awareness, meaning, and satisf...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Merrick')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div> 
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_jo_thackwray.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Jo Thackwray
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                LIFE COACH, UK
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                This is a world changing project I am so pleased and privileged to be involved in. To inspire the next generation to be in tune with their own wisdom will truly be w...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Thackwray')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_saakshi_singla.svg" alt="" class="img-responsive"/>
+                            </div>
+                          </div>
+        
+                          <div class="row ltestimonials">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
+                                Saakshi Singla
+                              </h4>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h6 class="fw_400 fs_12px lh_140p fc_ffffff ttuppercase mt0px mb20px">
+                                PSYCHOLOGIST & COUNSELLOR, India
+                              </h6>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                                HumanWisdom is what today’s world, which is full of stress, needs so so desperately. I have been using the HumanWisdom app in my counseling practice a...
+                              </p>
+                            </div>
+        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <a (click)="readMore('Saakshi')">
+                                <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
+                                  READ MORE
+                                </h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div> 
+        
                       </div>
                     </div>
+                    <!-- /testimonials -->
 
                     <!-- consistent bottom -->
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <hr class="hr_style_19 mt50px mb50px">
+                        <hr class="hr_style_20 mtb30px">
                       </div>
                     </div>
 
-                    <div class="row center_flex">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="fw_400 fs_15px lh_140p fc_5d5d5d mtb0px tcenter">
-                          Sign up to our newsletter and enter a prize draw for a free annual subscription to HumanWisdom
-                          Premium
+                    <div class="row mb30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40 tcenter">
+                          Sign up to our newsletter and enter a prize draw for a free annual subscription to HappierMe Premium
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row center_flex mt20px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <!-- html -->
                         <app-newsletter></app-newsletter>
                         <!-- /html -->
                       </div>
                     </div>
 
-                    <div class="row mt50px mb50px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px tcenter">
-                        <h4 class="fw_700 fs_14px lh_130p fc_59595b mtb0px">
+                    <div class="row mt30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                        <h4 class="mtb0px fs_12px fw_500 lh_150p fc_120f40">
                           GET IN TOUCH
                         </h4>
 
-                        <h4 class="fw_700 fs_24px lh_130p fc_59595b mb0px mt10px">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_120f40">
                           <a href="mailto:team@happierme.app" target="_top" class="">
                             team@happierme.app
                           </a>
@@ -624,27 +746,30 @@
                       </div>
                     </div>
 
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_20 mtb30px">
+                      </div>
+                    </div>
+
                     <!-- accordion -->
                     <app-ft-advert></app-ft-advert>
                     <!-- /accordion -->
 
-                    <div class="row mt50px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4 class="mtb0px fw_400 fs_21px lh_140p fc_000000">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_120f40">
                           Get the app
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row mt10px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
+                    <div class="row mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <!-- desktop playstore -->
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                          <a
-                            (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/playstore_black.svg"
-                              alt="" class="img-responsive w100">
+                          <a (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_playstore_dark.svg" class="img-responsive w100">
                           </a>
                         </div>
                         <!-- /desktop playstore -->
@@ -652,9 +777,7 @@
                         <!-- desktop appstore -->
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
                           <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/appstore_black.svg"
-                              alt="" class="img-responsive w100">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/adverts_appstore_dark.svg" class="img-responsive w100">
                           </a>
                         </div>
                         <!-- /desktop appstore -->
@@ -667,71 +790,70 @@
 
                 <div class="pb_30rem"></div>
 
-                <!-- floatable footer -->
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter adverts_ft_social_btns">
-
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                        <a href="https://facebook.com/happiermeapp/">
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_01.svg"
-                              class="">
-                          </div>
-                        </a>
-
-                        <a href="https://twitter.com/happiermeapp">
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/twitter_01.svg"
-                              class="">
-                          </div>
-                        </a>
-
-                        <a href="https://www.instagram.com/happiermeapp/">
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/instagram_01.svg"
-                              class="">
-                          </div>
-                        </a>
-
-                        <a href="https://linkedin.com/company/happierme">
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/linkedin_01.svg"
-                              class="">
-                          </div>
-                        </a>
-
-                        <a href="https://www.youtube.com/@happierme">
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/youtube_01.svg"
-                              class="">
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="row mt20px">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_400 fs_14px lh_130p fc_59595b mtb0px tcenter">
-                          2022 HumanWisdom. All rights reserved.
-                        </h4>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <!-- /floatable footer -->
-
               </form>
             </div>
           </div>
         </div>
+
+        <!-- floatable footer -->
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter adverts_ft_social_btns col_cw">
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                <a href="https://facebook.com/happiermeapp/">
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_01.svg"
+                      class="">
+                  </div>
+                </a>
+
+                <a href="https://twitter.com/happiermeapp">
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/twitter_01.svg"
+                      class="">
+                  </div>
+                </a>
+
+                <a href="https://www.instagram.com/happiermeapp/">
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/instagram_01.svg"
+                      class="">
+                  </div>
+                </a>
+
+                <a href="https://linkedin.com/company/happierme">
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/linkedin_01.svg"
+                      class="">
+                  </div>
+                </a>
+
+                <a href="https://www.youtube.com/@happierme">
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/youtube_01.svg"
+                      class="">
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row mt20px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                  2022 HumanWisdom. All rights reserved.
+                </h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /floatable footer -->
       </div>
     </div>
-    <!--/Class -->
   </div>
   <!-- /page content -->
 </div>
@@ -739,6 +861,5 @@
 <app-modal *ngIf="enableAlert" [enableCancel]="enablecancel" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
   [content]="content">
 </app-modal>
-
 
 <Login-register-modal *ngIf="enabledModal" [isAdvertpage]="true" (closeModal)="getClosemodalEvent($event)"></Login-register-modal>

@@ -264,7 +264,8 @@
   /* min-height: 100vh; */
   transition: none;
   /* background-color: none !important; */
-  background: #000000 !important;
+  /* background: #000000 !important; */
+  background: #f9e9df !important
 }
 
 .bg_292d56
