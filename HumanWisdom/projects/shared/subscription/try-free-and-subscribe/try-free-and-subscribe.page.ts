@@ -87,6 +87,8 @@ export class TryFreeAndSubscribePage implements OnInit {
   SelectSubscriptionType(subscriptionType: string) {
     if (subscriptionType != Constant.Redeem) {
       SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan, subscriptionType);
+    }else if(subscriptionType == Constant.Redeem) {
+      this.router.navigate(['/adults/redeem-subscription'])
     }
     this.selectedSubscription = subscriptionType;
   }

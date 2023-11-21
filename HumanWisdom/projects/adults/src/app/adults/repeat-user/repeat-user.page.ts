@@ -53,6 +53,7 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("userId", res['UserId'])
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
+          this.name = res['Name'];
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
@@ -62,6 +63,7 @@ export class RepeatUserPage implements OnInit {
       })
     } else if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
+      this.userName = this.name;
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
       this.getBookmarks();
@@ -92,6 +94,7 @@ export class RepeatUserPage implements OnInit {
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("email", res['Email'])
       localStorage.setItem("name", res.Name)
+      this.userName = res.Name;
       localStorage.setItem("text", JSON.stringify(this.text))
       localStorage.setItem("video", JSON.stringify(this.video))
       localStorage.setItem("audio", JSON.stringify(this.audio))
