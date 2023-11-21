@@ -53,6 +53,7 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("userId", res['UserId'])
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
+          this.name = res['Name'];
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
@@ -60,13 +61,14 @@ export class RepeatUserPage implements OnInit {
 
         }
       })
-    }else if(localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
+    } else if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
+      this.userName = this.name;
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
       this.getBookmarks();
     }
-   }
+  }
 
   ngOnInit() {
   }
@@ -81,32 +83,35 @@ export class RepeatUserPage implements OnInit {
   loginadult(res) {
     this.loginResponse = res
     this.userId = res.UserId
-    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
-    else localStorage.setItem("guest", 'F')
-    sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-    localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-    localStorage.setItem("token", JSON.stringify(res.access_token))
-    localStorage.setItem("Subscriber", res.Subscriber)
-    localStorage.setItem("userId", JSON.stringify(this.userId))
-    localStorage.setItem("email", res['Email'])
-    localStorage.setItem("name", res.Name)
-    localStorage.setItem("text", JSON.stringify(this.text))
-    localStorage.setItem("video", JSON.stringify(this.video))
-    localStorage.setItem("audio", JSON.stringify(this.audio))
-    localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
-    localStorage.setItem("question", JSON.stringify(this.question))
-    localStorage.setItem("reflection", JSON.stringify(this.reflection))
-    localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
-    this.userId = JSON.parse(localStorage.getItem("userId"))
-    localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-    localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    if (res['Email'] === "guest@humanwisdom.me") {
+      localStorage.setItem('guest', 'T')
+    }else {
+      localStorage.setItem("guest", 'F')
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      localStorage.setItem("Subscriber", res.Subscriber)
+      localStorage.setItem("userId", JSON.stringify(this.userId))
+      localStorage.setItem("email", res['Email'])
+      localStorage.setItem("name", res.Name)
+      this.userName = res.Name;
+      localStorage.setItem("text", JSON.stringify(this.text))
+      localStorage.setItem("video", JSON.stringify(this.video))
+      localStorage.setItem("audio", JSON.stringify(this.audio))
+      localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+      localStorage.setItem("question", JSON.stringify(this.question))
+      localStorage.setItem("reflection", JSON.stringify(this.reflection))
+      localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+      localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    }
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.userName = JSON.parse(localStorage.getItem("userName"))
-    }
-    else {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-      this.userName = JSON.parse(sessionStorage.getItem("userName"))
+    } else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.userName = JSON.parse(localStorage.getItem("userName"))
     }
     this.getBookmarks()
     this.getProgress()
@@ -131,16 +136,16 @@ export class RepeatUserPage implements OnInit {
     }
   }
 
-    getBookmarks() {
-      this.service.getBookmarks(this.userId)
-        .subscribe(res => {
-          this.bookmarks = res
-          this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
-          localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
-        })
-    }
+  getBookmarks() {
+    this.service.getBookmarks(this.userId)
+      .subscribe(res => {
+        this.bookmarks = res
+        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
+      })
+  }
 
-   routeResume() {
+  routeResume() {
     let r = this.resume[0]['screenno'].substring(0, 2);
     localStorage.setItem("pageaction", 'next')
     switch (r.toString()) {

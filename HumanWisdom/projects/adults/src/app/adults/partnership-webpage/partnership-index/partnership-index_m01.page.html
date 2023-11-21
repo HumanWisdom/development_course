@@ -1,19 +1,23 @@
 <!-- top navigation -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+<div class="row center_flex" id="indexpage">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" routerLink="/adults/adult-dashboard">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="p0"/>
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Partnership Program
-      </h1>
+      <a class="">
+        <h1 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px tcenter">Partnership Program</h1>
+      </a>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <!-- <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more.svg" alt="" class="p0"/>
+      </a> -->
+
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more.svg" alt="" class="p0"/>
       </a>
@@ -42,6 +46,7 @@
           </a>
         </li>
       </ul>
+
     </div>
   </div>
 </div>
@@ -54,7 +59,7 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white col_cw">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
           <div class="x_panel p0">
             <div class="x_content p0">
 
@@ -570,7 +575,7 @@
                       </div>
 
                       <div class="row" *ngIf="!isPartner">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                           <a>
                             <button type="button" (click)="BecomeAPartner()" class="btn btn-warning mb0 btn_bp w100">
                               Become a Partner
@@ -994,7 +999,7 @@
                       <!-- /faqs -->
 
                       <div class="row" *ngIf="!isPartner">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                           <a>
                             <button type="button" (click)="BecomeAPartner()" class="btn btn-warning mb0 btn_bp w100">
                               Become a Partner

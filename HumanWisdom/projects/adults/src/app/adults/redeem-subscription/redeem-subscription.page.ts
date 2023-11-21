@@ -215,7 +215,11 @@ export class RedeemSubscriptionPage implements OnInit {
   }
 
   getClosemodalEvent(event) {
-    this.enabledModal = event
+    this.enabledModal = event;
+    let namedata = localStorage.getItem('name').split(' ')
+    this.modaldata['email'] = localStorage.getItem('email');
+    this.modaldata['firstname'] = namedata[0];
+    this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
   }
 }
 
