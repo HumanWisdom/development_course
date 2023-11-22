@@ -5,6 +5,7 @@ import { Location } from '@angular/common'
 import { AdultsService } from 'src/app/adults/adults.service';
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
 import { ForumService } from '../../../../../../shared/forum/forum.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 
 
 @Component({
@@ -97,6 +98,17 @@ export class SubscriptionS01V04Page implements OnInit {
       setTimeout(() => {
         this.ActivationFlow();
       }, 300);
+    }
+    var data  = SharedService.getDataFromLocalStorage('BuyAgain');
+    if(data && data!=null){
+     var cart = JSON.parse(data);
+     setTimeout(() => {
+      this.cartListResult[0].planId=parseInt(cart.PlanID);
+      this.cartListResult[0].RateId=cart.RateID;
+      this.learnermail= cart.ConsumerEmail
+      this.addToCart('Adults','Annual');
+     }, 5000);
+      
     }
   }
 
@@ -643,6 +655,7 @@ export class SubscriptionS01V04Page implements OnInit {
             "LearnerMsg": this.learnermsg,
           })
             .subscribe(res => {
+              localStorage.removeItem('BuyAgain');
               this.cartId = res
               for (var i = 0; i < this.cartList.length; i++) {
                 if (this.cartList[i].ProgID === pid[0]['ProgID']) {

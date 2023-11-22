@@ -37,7 +37,10 @@ export class ChangeTopicPage implements OnInit {
 
   constructor(private location: Location, private service: AdultsService,
     public router: Router, public activatedRoute: ActivatedRoute) {
-      let authtoken = JSON.parse(localStorage.getItem("token"))
+    let authtoken;
+    this.activatedRoute.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
       localStorage.setItem('socialLogin', 'T');
@@ -53,7 +56,7 @@ export class ChangeTopicPage implements OnInit {
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           localStorage.setItem("Subscriber", res['Subscriber'])
-
+          localStorage.setItem("NoOfVisits", res['NoOfVisits'])
         }
       })
     }
@@ -62,6 +65,8 @@ export class ChangeTopicPage implements OnInit {
   ngOnInit() {
     let NoOfVisits = localStorage.getItem("NoOfVisits")
     this.isRoutedFromLogin = NoOfVisits === '1' ? true : false;
+    console.log(this.isRoutedFromLogin);
+    console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
   }

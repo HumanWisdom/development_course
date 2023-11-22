@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from '../adults.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-repeat-user',
@@ -37,8 +37,11 @@ export class RepeatUserPage implements OnInit {
   public feedbackSurvey = 7
   public moduleId = 7
 
-  constructor(public service: AdultsService, public router: Router) {
-    let authtoken = JSON.parse(localStorage.getItem("token"))
+  constructor(public service: AdultsService, public router: Router, private route: ActivatedRoute) {
+    let authtoken;
+    this.route.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
       localStorage.setItem('socialLogin', 'T');
@@ -50,6 +53,7 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("userId", res['UserId'])
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
+          this.name = res['Name'];
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
@@ -57,14 +61,14 @@ export class RepeatUserPage implements OnInit {
 
         }
       })
-    }
-    if (localStorage.getItem("isloggedin") === 'T') {
+    } else if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
+      this.userName = this.name;
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
       this.getBookmarks();
     }
-   }
+  }
 
   ngOnInit() {
   }
@@ -79,32 +83,35 @@ export class RepeatUserPage implements OnInit {
   loginadult(res) {
     this.loginResponse = res
     this.userId = res.UserId
-    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
-    else localStorage.setItem("guest", 'F')
-    sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-    localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-    localStorage.setItem("token", JSON.stringify(res.access_token))
-    localStorage.setItem("Subscriber", res.Subscriber)
-    localStorage.setItem("userId", JSON.stringify(this.userId))
-    localStorage.setItem("email", res['Email'])
-    localStorage.setItem("name", res.Name)
-    localStorage.setItem("text", JSON.stringify(this.text))
-    localStorage.setItem("video", JSON.stringify(this.video))
-    localStorage.setItem("audio", JSON.stringify(this.audio))
-    localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
-    localStorage.setItem("question", JSON.stringify(this.question))
-    localStorage.setItem("reflection", JSON.stringify(this.reflection))
-    localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
-    this.userId = JSON.parse(localStorage.getItem("userId"))
-    localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-    localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    if (res['Email'] === "guest@humanwisdom.me") {
+      localStorage.setItem('guest', 'T')
+    }else {
+      localStorage.setItem("guest", 'F')
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      localStorage.setItem("Subscriber", res.Subscriber)
+      localStorage.setItem("userId", JSON.stringify(this.userId))
+      localStorage.setItem("email", res['Email'])
+      localStorage.setItem("name", res.Name)
+      this.userName = res.Name;
+      localStorage.setItem("text", JSON.stringify(this.text))
+      localStorage.setItem("video", JSON.stringify(this.video))
+      localStorage.setItem("audio", JSON.stringify(this.audio))
+      localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+      localStorage.setItem("question", JSON.stringify(this.question))
+      localStorage.setItem("reflection", JSON.stringify(this.reflection))
+      localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+      localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    }
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.userName = JSON.parse(localStorage.getItem("userName"))
-    }
-    else {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-      this.userName = JSON.parse(sessionStorage.getItem("userName"))
+    } else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.userName = JSON.parse(localStorage.getItem("userName"))
     }
     this.getBookmarks()
     this.getProgress()
@@ -129,16 +136,16 @@ export class RepeatUserPage implements OnInit {
     }
   }
 
-    getBookmarks() {
-      this.service.getBookmarks(this.userId)
-        .subscribe(res => {
-          this.bookmarks = res
-          this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
-          localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
-        })
-    }
+  getBookmarks() {
+    this.service.getBookmarks(this.userId)
+      .subscribe(res => {
+        this.bookmarks = res
+        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
+      })
+  }
 
-   routeResume() {
+  routeResume() {
     let r = this.resume[0]['screenno'].substring(0, 2);
     localStorage.setItem("pageaction", 'next')
     switch (r.toString()) {
@@ -282,6 +289,10 @@ export class RepeatUserPage implements OnInit {
         this.routeOpinionsAndBeliefs(1)
         break
       }
+      case "50": {
+        this.goToYourWisdomScoreComponent();
+        break;
+      }
       case "51": {
         this.routeGuidedMeditation(1)
         break
@@ -340,6 +351,10 @@ export class RepeatUserPage implements OnInit {
       }
       case "74": {
         this.routehowcanwisdomhelp(1)
+        break
+      }
+      case "75": {
+        this.wisdomexercise();
         break
       }
       case "76": {
@@ -2177,5 +2192,33 @@ export class RepeatUserPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
+
+  goToYourWisdomScoreComponent() {
+    //this.logeventservice.logEvent('click_wisdom_score');
+    this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
+  }
+
+  wisdomexercise() {
+    this.service.GetLastVisitedScreen(this.userId)
+    
+    .subscribe(res => {
+      console.log(res)
+      
+   
+    if( res[0]['screenno'].length >=1)
+    {
+     this.router.navigate(['adults/wisdom-exercise/s' +  res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)], {
+       state: {
+         day: 2,
+       }
+     });
+    }
+    else 
+    this.router.navigate([`/adults/wisdom-exercise/s75001`])
+ 
+  });
+    
+ 
+   }
 
 }

@@ -40,6 +40,7 @@ export class S51000Page implements OnInit, OnDestroy {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+  isSubscriber = false;
 
   constructor(
     private router: Router,
@@ -74,6 +75,14 @@ export class S51000Page implements OnInit, OnDestroy {
     this.stories = splitarr
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
+
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
   }
 
   ngOnInit() {

@@ -18,7 +18,7 @@ export class S30002tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage = "/noticing-thoughts/s30002"
-  toc = ""
+  toc = "/pathway/develop-a-calm-mind/"
 
   screenType = localStorage.getItem("audio")
   userId: any

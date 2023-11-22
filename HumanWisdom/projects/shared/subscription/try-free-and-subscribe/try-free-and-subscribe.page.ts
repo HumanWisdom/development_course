@@ -87,6 +87,8 @@ export class TryFreeAndSubscribePage implements OnInit {
   SelectSubscriptionType(subscriptionType: string) {
     if (subscriptionType != Constant.Redeem) {
       SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan, subscriptionType);
+    }else if(subscriptionType == Constant.Redeem) {
+      this.router.navigate(['/adults/redeem-subscription'])
     }
     this.selectedSubscription = subscriptionType;
   }
@@ -106,7 +108,8 @@ export class TryFreeAndSubscribePage implements OnInit {
           this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
         }
       } else {
-        this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
+        //this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
+        this.router.navigateByUrl('/adults/redeem-subscription');
       }
     } else {
       this.router.navigateByUrl('/login');
