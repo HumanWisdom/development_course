@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Let me share two stories of people who were kind to me, and the impact that had on me.
+            The first was about 40 years ago when I was a medical student, attending a wedding in Bombay. My uncle got chest pain, and was having a heart attack. We got him into a taxi and went to the nearest hospital. On the way his heart stopped working and we revived him. At the hospital he was rushed into the Intensive Care Unit - but we were told there were no beds for him. I remember a young doctor who reassured us and arranged for him to stay on the trolley, in the middle of the ICU, and kept looking after him, till a bed was found elsewhere. He went out of his way to be kind, and I never forgot that.
+            The second was when my son was 2 years old and admitted for some surgery to his nose. It was under general anesthetic. The procedure was simple but as a parent I was so worried about him. After the procedure the surgeon called me to say everything had gone well. He need not have done that - and its a kindness I never forgot.
+            My father was a doctor for 50 years and he used to say - the only thing your patients will remember is your kindness. I practiced that myself, and passed that on to all the young surgeons I trained in my career as a spine surgeon.
+            
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
