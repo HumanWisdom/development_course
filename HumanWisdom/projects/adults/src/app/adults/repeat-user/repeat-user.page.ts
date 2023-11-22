@@ -53,6 +53,7 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("userId", res['UserId'])
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
+          this.name = res['Name'];
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
@@ -62,6 +63,7 @@ export class RepeatUserPage implements OnInit {
       })
     } else if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
+      this.userName = this.name;
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
       this.getBookmarks();
@@ -92,6 +94,7 @@ export class RepeatUserPage implements OnInit {
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("email", res['Email'])
       localStorage.setItem("name", res.Name)
+      this.userName = res.Name;
       localStorage.setItem("text", JSON.stringify(this.text))
       localStorage.setItem("video", JSON.stringify(this.video))
       localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -286,6 +289,10 @@ export class RepeatUserPage implements OnInit {
         this.routeOpinionsAndBeliefs(1)
         break
       }
+      case "50": {
+        this.goToYourWisdomScoreComponent();
+        break;
+      }
       case "51": {
         this.routeGuidedMeditation(1)
         break
@@ -344,6 +351,10 @@ export class RepeatUserPage implements OnInit {
       }
       case "74": {
         this.routehowcanwisdomhelp(1)
+        break
+      }
+      case "75": {
+        this.wisdomexercise();
         break
       }
       case "76": {
@@ -2181,5 +2192,33 @@ export class RepeatUserPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
+
+  goToYourWisdomScoreComponent() {
+    //this.logeventservice.logEvent('click_wisdom_score');
+    this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
+  }
+
+  wisdomexercise() {
+    this.service.GetLastVisitedScreen(this.userId)
+    
+    .subscribe(res => {
+      console.log(res)
+      
+   
+    if( res[0]['screenno'].length >=1)
+    {
+     this.router.navigate(['adults/wisdom-exercise/s' +  res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)], {
+       state: {
+         day: 2,
+       }
+     });
+    }
+    else 
+    this.router.navigate([`/adults/wisdom-exercise/s75001`])
+ 
+  });
+    
+ 
+   }
 
 }
