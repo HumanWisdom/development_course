@@ -109,8 +109,8 @@
             </a>
           </div>
 
-          <div>
-            <app-hamburger [userDetails]="userDetails"></app-hamburger>
+          <div *ngIf="enableHamburger">
+            <app-hamburger  [userDetails]="userDetails"></app-hamburger>
           </div>
 
         </div>
