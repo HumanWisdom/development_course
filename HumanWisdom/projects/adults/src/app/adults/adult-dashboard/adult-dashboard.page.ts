@@ -104,6 +104,7 @@ export class AdultDashboardPage implements OnInit {
   // public addictionP: any
   // public foodP: any
   // public moneyP: any
+  isEnableHam=true;
   public Subscriber: any
   public alertMsg: any
   public friendemail = ''
@@ -200,9 +201,10 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
+      this.isEnableHam=false;
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
-
+        this.isEnableHam=true;
         if (res) {
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
