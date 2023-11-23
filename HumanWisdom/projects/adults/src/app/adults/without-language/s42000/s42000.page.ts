@@ -71,6 +71,8 @@ export class S42000Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    
+    if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-yourself');
 
     // continue where you left    
