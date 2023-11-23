@@ -6404,7 +6404,7 @@ a:focus {
     text-decoration: none
 }
 .nav.navbar-nav>li>a {
-    color: #515356 !important
+    color: #CB6171 !important
 }
 .nav.top_menu>li>a {
     position: relative;
@@ -21326,7 +21326,7 @@ and (orientation : portrait)
 
 .get_in_touch
 {
-  background: #F5F5F5;
+  background: #FCF2EC;
   padding: 20px 0;
   margin: 20px -20px;
 }
@@ -23479,7 +23479,7 @@ ul.dh_ul li:last-child
 {
   /* background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/project/bgm_02.svg');
   background-size: cover; */
-  background: #F5F5F5;
+  background: #FCF2EC;
 }
 
 .wp_childrens_adults_img
@@ -31029,7 +31029,7 @@ svg path
   padding: 50px 10px 40px 10px; */
   /* margin: 0;
   padding: 20px; */
-  background: #F5F5F5;
+  background: #FCF2EC;
   background-size: cover;
   margin: 0 -20px;
   padding: 20px;
@@ -31077,7 +31077,7 @@ svg path
 
 #panel_adverts.panel-group .panel-heading
 {
-  background: #F5F5F5;
+  background: #FCF2EC;
   padding: 20px;
   margin: 0 0 0px 0;
   border-bottom: 0;
@@ -31086,7 +31086,7 @@ svg path
 #panel_adverts .panel-default>.panel-heading+.panel-collapse>.panel-body
 {
   padding: 0px 20px 20px 20px !important;
-  background: #F5F5F5;
+  background: #FCF2EC;
 }
 
 /* #panel_adverts .panel-title
@@ -31121,7 +31121,7 @@ svg path
 
 .adverts_ft_social_btns
 {
-  background: #E58D82;
+  background: #FCF2EC;
   /* margin: 70px -10px 0 -10px; */
   padding: 40px 0;
   /* position: fixed;
@@ -31327,8 +31327,9 @@ svg path
 
 #navbar
 {
-  background: #F5F5F5;
+  background: #FFF;
   padding: 40px 20px 0 20px;
+  margin-top: 2px;
 }
 
 #navbar ul
@@ -31341,7 +31342,8 @@ svg path
 {
   padding: 20px 10px 20px 10px;
   padding: 10px 0 10px 0;
-  border-bottom: 1px solid #DADADA;
+  /* border-bottom: 1px solid #DADADA; */
+  border-bottom: 1px solid rgba(18, 15, 64, 0.10);
 }
 
 #navbar .navbar-nav>.active>a,
@@ -35236,7 +35238,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .container_v3_01 
 {
-  background: #120F40;
+  background: #FCF2EC;
   border-radius: 16px;
   padding: 20px;
 }
@@ -35516,6 +35518,7 @@ li ol > li:before {
   background: #FFF;
   padding: 20px;
   border: 1px solid #E58D82;
+  text-align: left;
 }
 
 .div_monthly_01
@@ -35523,6 +35526,7 @@ li ol > li:before {
   border-radius: 16px;
   background: #FFF;
   padding: 20px;
+  text-align: left;
 }
 
 .btn_tff 
