@@ -1784,6 +1784,13 @@ export class AdultDashboardPage implements OnInit {
         // this.routeOpinionsAndBeliefs(1)
         break
       }
+      case "50": {
+        this.goToYourWisdomScoreComponent();
+
+        // this.service.setmoduleID(id, '/adults/wisdom-survey', '/adults/wisdom-survey/');
+        // this.routeOpinionsAndBeliefs(1)
+        break
+      }
       case "51": {
         this.service.setmoduleID(id, '/adults/guided-meditation', '/adults/guided-meditation/s51000');
         // this.routeGuidedMeditation(1)
@@ -1859,6 +1866,11 @@ export class AdultDashboardPage implements OnInit {
         // this.routehowcanwisdomhelp(1)
         break
       }
+      case "75": {
+        this.wisdomexercise();        
+        break
+      }
+
       case "76": {
         this.service.setmoduleID(id, '/adults/bullying', '/adults/bullying/s76001');
         // this.routeBullying(1)
@@ -3765,7 +3777,20 @@ export class AdultDashboardPage implements OnInit {
   */
 
   wisdomexercise() {
-    this.router.navigate([`/adults/wisdom-exercise/s75001`])
+   
+   if( this.resumeLastvisited[0]['screenno'].length >=1)
+   {
+    this.router.navigate(['adults/wisdom-exercise/s' +  this.resumeLastvisited[0]['screenno'].substring(0, this.resumeLastvisited[0]['screenno'].length - 2)], {
+      state: {
+        day: 2,
+      }
+    });
+   }
+   else 
+   this.router.navigate([`/adults/wisdom-exercise/s75001`])
+
+    
+
   }
 
   // getinp(event) {
@@ -3974,6 +3999,7 @@ export class AdultDashboardPage implements OnInit {
        this.router.navigate([res['Url']]);
     }
     else {
+      localStorage.setItem('wisdomvideotitle', res['Title']);
       this.router.navigate([res['Url']]);
     }
   }

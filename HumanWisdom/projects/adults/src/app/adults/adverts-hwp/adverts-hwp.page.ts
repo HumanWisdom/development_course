@@ -225,6 +225,11 @@ export class AdvertsHwpPage implements OnInit {
   getClosemodalEvent(event) {
     this.enabledModal = false;
   }
+
+  readMore(str){
+    SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
+    this.router.navigate(['/adults/testimonials']);
+  }
 }
 
 
