@@ -54,7 +54,10 @@ export class S3VideoComponent implements OnInit {
 
   goBack(){
     if(this.services.currentUrl && this.services.currentUrl.includes('wisdom-shorts')) {
-      this.router.navigate(["/adults/wisdom-shorts"]);
+    
+      if(this.services.previousUrl.length ==0)
+       { this.router.navigate(["/adults/wisdom-shorts"]);}
+        else { this.location.back(); }
     }else {
       this.location.back()
     }
