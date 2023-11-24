@@ -1,7 +1,7 @@
 export const environment = {
-    production: false,
+    production: true,
     apiURL: "https://staging.humanwisdom.info/api",
-    clientUrl:"https://staging.happierme.app/",
+    clientUrl: "https://humanwisdom.me/",
     stripeKey: "pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl",
     firebase: {
         apiKey: "AIzaSyBvrX8WpyA4YoqdzwhNOmCG4tDP34_92Nc",
