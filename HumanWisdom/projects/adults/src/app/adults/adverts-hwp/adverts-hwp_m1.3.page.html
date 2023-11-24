@@ -76,7 +76,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <button class="btn w100p m0px p0" [disabled]="isSubscriber" (click)="routedashboard('Yearly')">
+                          <a class="">
                             <div class="row mb20px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             
@@ -100,10 +100,9 @@
                                   <div class="row mtb5px">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                       <h4 class="mtb0px fs_24px fw_600 lh_170p fc_120f40">
-                                        <!-- £4.25 -->
-                                        {{cardlist['CurSymbol'] + ' ' + cardlist['Annual'] / 12}}
+                                        £4.25
                                         <span class="fs_15px fw_400 lh_170p fc_292d56">
-                                          /month after 14-day trial
+                                          /month, billed annually
                                         </span>
                                       </h4>
                                     </div>
@@ -112,9 +111,9 @@
             
                               </div>
                             </div>
-                          </button>
+                          </a>
 
-                          <button class="btn w100p m0px p0" [disabled]="isSubscriber" (click)="routedashboard('Monthly')"> 
+                          <a class=""> 
                             <div class="row div_monthly_01 mb20px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             
@@ -129,10 +128,9 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="mtb0px fs_24px fw_600 lh_170p fc_120f40">
-                                      <!-- £8.00  -->
-                                      {{cardlist['CurSymbol'] + ' ' + cardlist['Monthly']}}
+                                      £8.00 
                                       <span class="fs_15px fw_400 lh_170p fc_292d56">
-                                        /month after 7-day trial
+                                        /month
                                       </span>
                                     </h4>
                                   </div>
@@ -140,7 +138,7 @@
             
                               </div>
                             </div>
-                          </button>
+                          </a>
 
                           <button class="btn btn_subscription_options mb20px" [disabled]="isSubscriber" (click)="routedashboard('redeem')">
                             <div class="row">
