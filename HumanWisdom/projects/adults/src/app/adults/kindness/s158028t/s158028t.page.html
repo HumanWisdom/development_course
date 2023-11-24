@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Why is there so little kindness in the world? Why do we humans find it so much easier to be mean to each other, than to be kind? It does not mean people are ‘bad’, but the answer may lie in our thinking, in the way our mind is wired. We are often not aware of our self-interest operating in the background - our mind is constantly thinking about itself and how to get its emotional and material needs met.
+
+            If being kind to others can help us meet those needs, then we are more likely to be kind,  and we can feel disappointed if we do not get back what we expected. The other person also may feel disappointed if they realise there was an ulterior motive behind our kindness.
+            
+            Whenever we are learning about ourselves it is important to suspend judgment, and not regard what we observe as good or bad, but just be curious as to what is going on in our thinking. This understanding does the work of bringing change.
+            
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
