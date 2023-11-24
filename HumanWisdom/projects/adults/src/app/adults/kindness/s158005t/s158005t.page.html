@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this session where we are going to find out how we can be more kind to ourselves, to others, and to the earth. If we have this feeling of goodness In us then it touches everything in our lives.
+            When people are kind to us it can make our day, put a spring in our step, banish the blues, and make us happy. 
+            When we are kind to others it can light up their day, make them feel good, and also make us feel good about ourselves.
+            We are going to explore what gets in the way of being naturally kind, and how you can grow to be a person whose first instinct in any situation is to be kind. 
+            It makes you a beautiful person, with a light that shines from the inside. Of all the life skills you can learn, this is perhaps the most important, because it will enhance all your relationships, which are essential for your own happiness
+          
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
