@@ -4,7 +4,7 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from '@angular/cdk/platform';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 
@@ -13,12 +13,12 @@ import { OnboardingService } from '../../services/onboarding.service';
   templateUrl: './tn-dashboard-v03.component.html',
   styleUrls: ['./tn-dashboard-v03.component.scss'],
 })
-export class TnDashboardV03Component implements OnInit {
+export class TnDashboardV03Component implements OnInit,OnChanges {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
   @Output() playstoreenable = new EventEmitter<boolean>();
-
+  @Input() enableHamburger = false;
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -43,6 +43,16 @@ export class TnDashboardV03Component implements OnInit {
     }
 
   }
+  ngOnChanges(changes: SimpleChanges): void {
+      if(!changes.enableHamburger.firstChange){
+        if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
+          console.log(changes.enableHamburger.currentValue);
+          this.enableHamburger = changes.enableHamburger.currentValue;
+        }
+      }
+  }
+
+  
 
   ngOnInit() {
     setTimeout(() => {
@@ -133,4 +143,6 @@ export class TnDashboardV03Component implements OnInit {
   routedashboard() {
     this.router.navigate(['/adults/adult-dashboard'])
   }
+
+  
 }

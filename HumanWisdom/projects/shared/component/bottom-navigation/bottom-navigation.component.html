@@ -131,7 +131,7 @@
 
         <div *ngIf="enableprofile && profile">
           <img class="footer-user-profile"
-          src="{{url ===undefined ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
+          src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Profile

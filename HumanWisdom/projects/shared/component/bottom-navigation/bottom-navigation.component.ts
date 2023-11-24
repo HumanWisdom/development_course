@@ -22,7 +22,7 @@ export class BottomNavigationComponent implements OnInit {
   Subscriber: any;
   guest: any;
   userdetail:any;
-  url:string;
+  url:string='';
   defaultUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg";
   @Input() isGuidedQuestion?: boolean = false;
   @Output() saveQuestion = new EventEmitter();
@@ -78,6 +78,9 @@ export class BottomNavigationComponent implements OnInit {
           this.enableprofile = true;
           this.profile = true;
         });
+      }else{
+        this.enableprofile = true;
+        this.profile = true;
       }
     }
   }
