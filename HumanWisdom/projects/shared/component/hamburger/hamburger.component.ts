@@ -112,7 +112,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
       if (sub === "1" || sub === 1) {
         this.subscriber = true;
       }
-    }, 9000);
+    },100);
   }
 
   routeGuide() {
@@ -245,7 +245,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     }else{
-      this.router.navigate([route], { replaceUrl: true, skipLocationChange: true });
+      this.router.navigate([route]);
     }
   }
 

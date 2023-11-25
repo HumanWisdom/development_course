@@ -1,0 +1,26 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      #3 steps to being more kind
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      Step 1 - Realise the importance of kindness
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      Step 2 - Be aware of what gets in the way of being kind
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      Step 3 - Look for ways you can be more kind in your daily life, and keep a journal.
+
+    </h3>
+
+    </form>          
+</app-oneline-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

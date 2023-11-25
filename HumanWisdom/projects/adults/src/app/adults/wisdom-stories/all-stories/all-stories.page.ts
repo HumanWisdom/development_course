@@ -83,16 +83,20 @@ export class AllStoriesPage implements OnInit {
   }
 
   toRead(obj, enable){
+    let res = localStorage.getItem("isloggedin");
     if(enable) {
       localStorage.setItem("story",JSON.stringify(obj))
-      let res = localStorage.getItem("isloggedin");
       this.sId=obj.ScenarioID
       if(res && res === 'T') {
         this.service.clickStory(obj.ScenarioID).subscribe(res=>{
             this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
         })
-      }  else {
+      } else {
         this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      }
+    }else{
+      if(!this.isSubscriber) {
+        this.router.navigate(['/subscription/start-your-free-trial']);
       }
     }
   }

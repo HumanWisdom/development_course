@@ -397,6 +397,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
         })
   }
 
+  
+
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {
