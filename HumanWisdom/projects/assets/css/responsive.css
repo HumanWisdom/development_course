@@ -211,10 +211,10 @@
         padding: 0px 10px !important;
     }
 
-    .tsp 
+    /* .tsp 
     {
         padding: 0px 10px !important;
-    }
+    } */
 
     .td_search_icon_ext
     {
@@ -449,10 +449,10 @@
         width: 70%
     }
 
-    .tsp
+    /* .tsp
     {
         padding: 0px 20px !important;
-    }
+    } */
 }
 
 @media (max-width: 768px)
