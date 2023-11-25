@@ -1,0 +1,36 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"
+  [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The first step is to realise the importance of kindness - for yourself, for others, and for the world.</p>
+          <p>
+            The second step is to ask yourself a question - What gets in the way of being more kind?
+            Observe how your mind is self-absorbed, how it is always looking to get its needs met, and how it acts from
+            self-interest - willing to do things for others if it's going to get something back. Observe this without
+            judgment. This does not mean you are selfish, just human. To break the hidden patterns of thinking, we first
+            have to study them, and that is all we are doing.</p>
+
+          <p>The third step is then to look for ways to be more kind in your daily life - whether it's a kind word, a
+            smile, thinking of someone in a more positive way, or doing something for someone. You may feel people take
+            advantage of your kindness - don’t let that stop you. You are being kind because of who you are, not because
+            of who they are.</p>
+
+          <p> Keep a journal of what you did, how your mind reacted when a kindness was not returned, and if you were
+            able to rise above that and still be kind</p>
+
+        </h3>
+      </div>
+    </div>
+
+  </form>
+
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

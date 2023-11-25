@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Its often assumed that kindness is something that benefits others, but not ourselves.
+            In any relationship kindness cements the bond we have with others, and keeps the relationship healthy. Without it all friendships and relationships start crumbling from the inside. Since so much of our happiness depends on the quality of our relationships, it is important that we keep them healthy with regular, unexpected acts of kindness
+            Kindness towards people we don’t know and may never meet again, is also important for our own sense of wellbeing. It is a reflection of a heart at peace with itself and this innate generosity in our spirit can make us feel good about ourselves, and create a ripple effect which usually ends up nourishing our life in unexpected ways.
+            
+            If we are kind to others in the expectation that they will be kind to us, or return that gesture in equal measure, we are likely to be disappointed, and probably feel bitter about it - it is natural for our mind, which is rooted in self-interest, to think of what we are going to get back. It is worth observing that thought in ourselves and putting that to one side.
+            
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

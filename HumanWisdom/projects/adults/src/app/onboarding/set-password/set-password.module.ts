@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SetPasswordPageRoutingModule } from './set-password-routing.module';
 
 import { SetPasswordPage } from './set-password.page';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [
