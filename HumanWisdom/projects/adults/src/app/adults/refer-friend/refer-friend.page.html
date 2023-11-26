@@ -12,7 +12,6 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
 
               <div class="raf_div_01">
                 <div class="row center_flex mb15px">
@@ -38,20 +37,24 @@
                 <div class="mtb30px mregister">
                   <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                      <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" placeholder="Friend name">
+                      <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" required [(ngModel)]="name" placeholder="Friend name">
                       <div class="fc_img">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
                       </div>
                     </div>
+
+                    <small class="text danger ml-10">{{namevalidation()}}</small>
+
                   </div>
 
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                      <input type="text" id="email" (keyup)="keyemail($event.target)" class="sp_fc" placeholder="Friend email">
+                      <input type="text" id="email" (keyup)="keyemail($event.target)" required [(ngModel)]="email" class="sp_fc" placeholder="Friend email">
                       <div class="fc_img">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
                       </div>
                     </div>
+                    <small class="text danger ml-10">{{emailvalidation()}}</small>
                   </div>
                 </div>
 
@@ -98,7 +101,6 @@
 
               <div class="pagebreak"></div>
 
-            </form>
           </div>
         </div>
       </div>
