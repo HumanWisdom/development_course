@@ -12,6 +12,7 @@ import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import moengage from "@moengage/web-sdk";
 import { MoengageService } from './moengage.service';
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -59,6 +60,7 @@ export class AppComponent implements OnDestroy {
     }
     localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId=ProgramType.Adults;
+    SharedService.ClientUrl = environment.clientUrl; 
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     if (this.platform.ANDROID || this.platform.IOS) {

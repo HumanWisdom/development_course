@@ -102,8 +102,10 @@
   position: absolute;
   top: 78%;
   left: 27.13%;
-  height: 10%;
-  width: 17%;
+  /* height: 10%;
+  width: 17%; */
+  height: 9%;
+  width: 15%;
   background-size: 98% 99% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/human-wisdom-icon.png);  */
