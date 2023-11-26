@@ -31709,9 +31709,10 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 
 .adsearch_ul
 {
-  border: 1px solid #EBEBEB;
+  /* border: 1px solid #EBEBEB; */
   border-radius: 0 0 20px 20px;
-  border-top: 2px solid #EBEBEB;
+  /* border-top: 2px solid #EBEBEB; */
+  border: 0;
   max-height: 19.3rem;
   overflow-y: overlay;
 }
@@ -31719,7 +31720,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 .adsearch_ul .list-group-item
 {
   border-radius: 0 !important;
-  border: 0;
+  /* border: 0; */
+  border-bottom: 2px solid #EBEBEB;
 }
 
 .adsearch_ul .list-group-item:last-child
@@ -35603,5 +35605,20 @@ li ol > li:before {
   border-radius: 50%;
   border: 10px solid #FFF;
 }
+
+.pb_16rem
+{
+  padding-bottom: 16rem;
+}
 /* /landing */
+
+.tsp
+{
+    padding: 0;
+}
+
+.img_cbr_01
+{
+  border-radius: 12px;
+}
 /* /version - 03 */
