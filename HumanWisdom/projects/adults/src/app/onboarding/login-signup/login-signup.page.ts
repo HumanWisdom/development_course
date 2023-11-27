@@ -9,8 +9,9 @@ import {
 import { AdultsService } from "src/app/adults/adults.service";
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from "../../../../../shared/services/shared.service";
 
-declare var $:any;
+declare var $: any;
 @Component({
   selector: "app-login-signup",
   templateUrl: "./login-signup.page.html",
@@ -92,12 +93,12 @@ export class LoginSignupPage implements OnInit {
   //   password:new FormControl(''),
   //   confirmPassword:new FormControl('')
   // })
-  registrationForm :any;
+  registrationForm: any;
 
   content = '';
   enableAlert = false;
-  passwordhide : boolean = true;
-  confirmpasswordhide : boolean = true;
+  passwordhide: boolean = true;
+  confirmpasswordhide: boolean = true;
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -237,7 +238,7 @@ export class LoginSignupPage implements OnInit {
             );
             this.initializeRegistrationForm();
             this.closeotpmodal.nativeElement.click();
-            this.isSignUp =  false;
+            this.isSignUp = false;
             // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
@@ -311,7 +312,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                this.content ="You have entered wrong credentials. Please try again.";
+                this.content = "You have entered wrong credentials. Please try again.";
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
@@ -360,7 +361,12 @@ export class LoginSignupPage implements OnInit {
                 let subscribePage = localStorage.getItem("subscribepage");
                 let option = localStorage.getItem("introoption");
                 let giftwisdom = localStorage.getItem("giftwisdom");
-                if (option === "T") {
+                const url = SharedService.UrlToRedirect;
+                if (url != null) {
+                  SharedService.UrlToRedirect = null;
+                  this.router.navigate([url]);
+                }
+                else if (option === "T") {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
                   this.router.navigate(["/intro/personalised-for-you"]);
@@ -388,7 +394,7 @@ export class LoginSignupPage implements OnInit {
                       });
                     } else {
                       localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if(this.loginResponse?.NoOfVisits === 1) {
+                      if (this.loginResponse?.NoOfVisits === 1) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
@@ -482,7 +488,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                this.content ="You have entered wrong credentials. Please try again.";
+                this.content = "You have entered wrong credentials. Please try again.";
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
@@ -531,7 +537,12 @@ export class LoginSignupPage implements OnInit {
                 let subscribePage = localStorage.getItem("subscribepage");
                 let option = localStorage.getItem("introoption");
                 let giftwisdom = localStorage.getItem("giftwisdom");
-                if (option === "T") {
+                const url = SharedService.UrlToRedirect;
+                if (url != null) {
+                  SharedService.UrlToRedirect = null;
+                  this.router.navigate([url]);
+                }
+                else if (option === "T") {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
                   this.router.navigate(["/intro/personalised-for-you"]);
@@ -559,7 +570,7 @@ export class LoginSignupPage implements OnInit {
                       });
                     } else {
                       localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if(this.loginResponse?.NoOfVisits === 1) {
+                      if (this.loginResponse?.NoOfVisits === 1) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
@@ -568,7 +579,7 @@ export class LoginSignupPage implements OnInit {
                             routedFromLogin: true,
                           }
                         });
-                      }else {
+                      } else {
                         this.router.navigate(["/adults/repeat-user"]);
                       }
                     }
@@ -586,7 +597,7 @@ export class LoginSignupPage implements OnInit {
             }
           });
       } else {
-        this.content ="Please ensure that you use an email based authentication with your Auth provider or try another method";
+        this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
         this.enableAlert = true;
       }
     });
@@ -607,13 +618,13 @@ export class LoginSignupPage implements OnInit {
           this.password = "";
         } else if (res.UserId === -1) {
           this.showAlert = true;
-          this.content =  "Email was Not Verified. Please signup again with the same Email ID to verify it.";
+          this.content = "Email was Not Verified. Please signup again with the same Email ID to verify it.";
           this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else {
-          const accessObj:any = window;
-            (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
+          const accessObj: any = window;
+          (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
             (accessObj)?.Moengage.add_email(this.email);
             (accessObj)?.Moengage.add_first_name(res.Name);
           })
@@ -687,7 +698,12 @@ export class LoginSignupPage implements OnInit {
           let persub = localStorage.getItem("personalised subscription");
           let option = localStorage.getItem("introoption");
           let giftwisdom = localStorage.getItem("giftwisdom");
-          if (option === "T") {
+          const url = SharedService.UrlToRedirect;
+          if (url != null) {
+            SharedService.UrlToRedirect = null;
+            this.router.navigate([url]);
+          }
+          else if (option === "T") {
             localStorage.setItem("introoption", "F");
             localStorage.setItem("isloggedin", "T");
             this.router.navigate(["/intro/personalised-for-you"]);
@@ -772,7 +788,7 @@ export class LoginSignupPage implements OnInit {
                       }
                     } else {
                       localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if(this.loginResponse?.NoOfVisits === 1) {
+                      if (this.loginResponse?.NoOfVisits === 1) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
@@ -781,7 +797,7 @@ export class LoginSignupPage implements OnInit {
                             routedFromLogin: true,
                           }
                         });
-                      }else {
+                      } else {
                         this.router.navigate(["/adults/repeat-user"]);
                       }
                     }
@@ -894,28 +910,28 @@ export class LoginSignupPage implements OnInit {
     this.enableAlert = false;
   }
 
-  getLoginTab(){
+  getLoginTab() {
     this.isSignUp = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
   }
- initializeRegistrationForm(){
-  this.registrationForm = this.fb.group(
-    {
-      fullname: ["", [Validators.required, Validators.minLength(6)]],
-      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      password: ["", [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
-    },
-    { validator: this.PasswordValidator }
-  );
- }
-
- hideFunction(type) {
-  if(type === 'password') {
-    this.passwordhide = !this.passwordhide;
-  }else {
-    this.confirmpasswordhide = !this.confirmpasswordhide;
+  initializeRegistrationForm() {
+    this.registrationForm = this.fb.group(
+      {
+        fullname: ["", [Validators.required, Validators.minLength(6)]],
+        email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+        password: ["", [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
+      },
+      { validator: this.PasswordValidator }
+    );
   }
-}
+
+  hideFunction(type) {
+    if (type === 'password') {
+      this.passwordhide = !this.passwordhide;
+    } else {
+      this.confirmpasswordhide = !this.confirmpasswordhide;
+    }
+  }
 }
