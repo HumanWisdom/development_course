@@ -6,7 +6,8 @@ import { Constant } from './constant';
     public static ProgramId:ProgramType=ProgramType.Adults;
     public static TeenagerBaseUrl:string='https://staging.humanwisdom.me/teenagers/#/';
     public static AdultsBaseUrl:string='https://humanwisdom.me/';
- 
+    public static UrlToRedirect:string= null;
+    public static ClientUrl:string = 'https://staging.happierme.app/adults/';
   constructor() {
   }
     

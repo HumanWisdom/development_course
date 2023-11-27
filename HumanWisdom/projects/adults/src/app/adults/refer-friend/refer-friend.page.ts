@@ -67,4 +67,24 @@ export class ReferFriendPage implements OnInit {
       return true;
     }
   }
+
+  namevalidation() {
+    if (this.name === '') {
+      return 'Please enter name';
+    } else if (this.name.length < 3) {
+      return 'Name must be at least 3 characters';
+    } else {
+      return '';
+    }
+  }
+
+  emailvalidation() {
+    if (this.email === '') {
+      return 'Please enter email';
+    } else if (!(this.emailElmtRegex.test(this.email))) {
+      return 'Please enter valid email';
+    } else {
+      return '';
+    }
+  }
 }

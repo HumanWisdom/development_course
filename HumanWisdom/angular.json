@@ -155,6 +155,29 @@
                 }
               ]
             },
+            "pre-production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.pre-prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
             "staging": {
               "fileReplacements": [
                 {
@@ -520,6 +543,22 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {}
+        }
+      }
+    },
+    "shared": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/shared",
+      "sourceRoot": "projects/shared/",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser"
         }
       }
     }

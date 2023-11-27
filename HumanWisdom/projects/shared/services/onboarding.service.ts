@@ -193,7 +193,7 @@ export class OnboardingService {
   }
 
   ReviveSubscription(key): Observable<any>{
-    return this.http.post(this.path + `/api/ReviveSubscription/${key}`,{});
+    return this.http.post(this.path + `/ReviveSubscription/${key}`,{});
   }
 
 }
