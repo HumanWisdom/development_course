@@ -35621,4 +35621,30 @@ li ol > li:before {
 {
   border-radius: 12px;
 }
+
+.Body span,
+.Body b span,
+#docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p span
+{
+  font-size: 12px !important;
+  font-weight: 400;
+  line-height: 150%;
+  font-style: normal;
+  color: #FFFFFF !important;
+}
+
+.Body span.Hyperlink0 a span,
+.Body span.Hyperlink1 a span
+{
+  font-size: 12px !important;
+  font-weight: 600;
+  line-height: 150%;
+  font-style: normal;
+  color: #E58D82 !important;
+}
+
+#docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p
+{
+  background: transparent !important;
+}
 /* /version - 03 */
