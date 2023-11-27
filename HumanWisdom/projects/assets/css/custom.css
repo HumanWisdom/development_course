@@ -33910,8 +33910,10 @@ label.chkb_post_anonymously > input[type="checkbox"] + *::before
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  background: #E58D82;
-  border: 0;
+  /* background: #E58D82;
+  border: 0; */
+  background: transparent;
+  border: 1px solid #E58D82;
 }
 
 label.chkb_post_anonymously > input[type="checkbox"]:checked + *::before
@@ -33919,6 +33921,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *::before
   background: #E58D82 url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg) 50% no-repeat;
   border-color: unset;
   border-radius: 4px;
+  border: 0;
 }
 
 label.chkb_post_anonymously > input[type="checkbox"]:checked + * 
@@ -35624,7 +35627,8 @@ li ol > li:before {
 
 .Body span,
 .Body b span,
-#docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p span
+#docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p span,
+.h4_blogs p span
 {
   font-size: 12px !important;
   font-weight: 400;
@@ -35634,7 +35638,8 @@ li ol > li:before {
 }
 
 .Body span.Hyperlink0 a span,
-.Body span.Hyperlink1 a span
+.Body span.Hyperlink1 a span,
+.h4_blogs a span
 {
   font-size: 12px !important;
   font-weight: 600;
@@ -35643,7 +35648,8 @@ li ol > li:before {
   color: #E58D82 !important;
 }
 
-#docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p
+#docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p,
+.h4_blogs p
 {
   background: transparent !important;
 }
