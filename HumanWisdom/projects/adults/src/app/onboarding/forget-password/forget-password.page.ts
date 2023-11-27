@@ -23,6 +23,8 @@ export class ForgetPasswordPage implements OnInit {
   socialEmail:any
   urlKey:any
   showMessage=false
+  enableAlert = false;
+  content = '';
 
   constructor(private fb: UntypedFormBuilder,
     private router: Router,
@@ -42,13 +44,14 @@ export class ForgetPasswordPage implements OnInit {
     this.service.sendPasswordLink(this.email)
     .subscribe(
       res=>{
-        
+
       },
       error=>{
         console.log(error)
       },
       ()=>{
-        window.alert('A recovery link has been sent to you')
+        this.content = 'A recovery link has been sent to you';
+        this.enableAlert = true;
       }
 
     )
@@ -72,7 +75,7 @@ export class ForgetPasswordPage implements OnInit {
       this.service.verifyGoogle(this.idToken)
       .subscribe(res=>
         {
-          
+
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -99,18 +102,18 @@ export class ForgetPasswordPage implements OnInit {
                 window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
 
               }
-                
+
               else if(d[1]==0)
               {
                 this.router.navigate(['/adults/adult-dashboard'])
 
               }
-               
+
 
             }
           )
-          
-            
+
+
           }
         })
     },
@@ -120,7 +123,7 @@ export class ForgetPasswordPage implements OnInit {
      // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
     });
 
-   
+
 
 
   }
@@ -140,7 +143,7 @@ export class ForgetPasswordPage implements OnInit {
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
         {
-          
+
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -167,18 +170,18 @@ export class ForgetPasswordPage implements OnInit {
                 window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
 
               }
-                
+
               else if(d[1]==0)
               {
                 this.router.navigate(['/adults/adult-dashboard'])
 
               }
-               
+
 
             }
           )
-          
-            
+
+
           }
         })
     });
@@ -187,6 +190,11 @@ export class ForgetPasswordPage implements OnInit {
 
   loginpage() {
     this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 
 }
