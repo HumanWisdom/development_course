@@ -14,7 +14,7 @@ export class S58087p3Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/18.mp4'
+  videoLink = this.mediaVideo + '/events/30.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "How can we be more resilient?"
