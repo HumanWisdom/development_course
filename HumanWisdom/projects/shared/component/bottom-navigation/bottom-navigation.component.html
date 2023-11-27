@@ -120,7 +120,7 @@
       -->
 
       <a (click)="profileclickevent()" class="footer_index">
-        <div *ngIf="!enableprofile">
+        <div *ngIf="!enableprofile && isloggedIn">
           <img class="footer-user-profile"
           src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
             alt="">
@@ -129,7 +129,7 @@
           </p>
         </div>
 
-        <div *ngIf="enableprofile">
+        <div *ngIf="enableprofile && isloggedIn">
           <img class="footer-user-profile"
           src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
             alt="">
