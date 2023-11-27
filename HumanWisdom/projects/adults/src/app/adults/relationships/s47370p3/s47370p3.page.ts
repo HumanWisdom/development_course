@@ -14,7 +14,7 @@ export class S47370p3Page implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/12.mp4'
+  videoLink = this.mediaVideo + '/events/17.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "Exploring forgiveness"

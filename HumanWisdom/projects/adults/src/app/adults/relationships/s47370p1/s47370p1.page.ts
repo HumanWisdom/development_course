@@ -14,7 +14,7 @@ export class S47370p1Page implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/4.mp4'
+  videoLink = this.mediaVideo + '/events/40.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "Why do we get hurt in relationships?"

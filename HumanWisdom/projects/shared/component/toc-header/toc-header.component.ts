@@ -37,10 +37,13 @@ export class TocHeaderComponent implements OnInit {
 
   share(){
     this.shareUrl(SharedService.ProgramId);
+    console.log(this.baseUrl+this.path);
+    console.log(this.path);
+    
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
-      url: this.baseUrl+this.path
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.baseUrl+this.path      
     }).then( (response) => {
       console.log(response);
     })
