@@ -27,6 +27,8 @@ export class SetPasswordPage implements OnInit {
   user:any
   enableAlert = false;
   content = '';
+  passwordhide: boolean = true;
+  confirmpasswordhide: boolean = true;
 
   constructor(private router:Router,
     private service: OnboardingService,
@@ -206,6 +208,14 @@ export class SetPasswordPage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+  }
+
+  hideFunction(type) {
+    if (type === 'password') {
+      this.passwordhide = !this.passwordhide;
+    } else {
+      this.confirmpasswordhide = !this.confirmpasswordhide;
+    }
   }
 
 }
