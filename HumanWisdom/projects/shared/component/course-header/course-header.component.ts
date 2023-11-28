@@ -29,9 +29,7 @@ export class CourseHeaderComponent implements OnInit {
   urlT: any
   shared = false
   showheaderbar = true
-  address = setTimeout(() => {
-    return this.router.url;
-  }, 500);
+  address:any;
   modName: any
   scrNumber: any
   programName: string;
@@ -72,7 +70,7 @@ export class CourseHeaderComponent implements OnInit {
     if(this.guest || !this.Subscriber) {
       this.placeHolder = "Please subscribe to access your online journal";
     }
-
+    this.address = this.router.url;
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.showheaderbar = true;
     // console.log(this.ac)
@@ -241,4 +239,5 @@ export class CourseHeaderComponent implements OnInit {
       }
     }
   }
+
 }

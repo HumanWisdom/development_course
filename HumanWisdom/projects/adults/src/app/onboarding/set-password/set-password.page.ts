@@ -25,6 +25,10 @@ export class SetPasswordPage implements OnInit {
   socialEmail:any
   urlKey:any
   user:any
+  enableAlert = false;
+  content = '';
+  passwordhide: boolean = true;
+  confirmpasswordhide: boolean = true;
 
   constructor(private router:Router,
     private service: OnboardingService,
@@ -32,8 +36,8 @@ export class SetPasswordPage implements OnInit {
     private activate:ActivatedRoute) {
     this.activate.queryParams.subscribe(params => {
       this.urlEmail= params['email'];
-     
-      console.log("urlEmail",this.urlEmail)}); 
+
+      console.log("urlEmail",this.urlEmail)});
 
    }
 
@@ -52,27 +56,29 @@ export class SetPasswordPage implements OnInit {
           resp=>
           {
             console.log(resp)
-           
+
             if(resp.toLocaleLowerCase().match('your password has been reset.'))
             {
-            
-              
+
+
                this.successPassword=1
                sessionStorage.setItem("successPassword",JSON.stringify(this.successPassword))
                this.router.navigate(["/onboarding/login"]);
-               window.alert('Password successfully Set')
+               this.content = 'Password successfully Set';
+              this.enableAlert = true;
+              //  window.alert('Password successfully Set')
 
             }
-             
-    
+
+
           })
 
     }
-    
+
 
   }
 
-  
+
   googleLogin(){
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
@@ -86,7 +92,7 @@ export class SetPasswordPage implements OnInit {
       this.service.verifyGoogle(this.idToken)
       .subscribe(res=>
         {
-          
+
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -113,18 +119,18 @@ export class SetPasswordPage implements OnInit {
                 window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
 
               }
-                
+
               else if(d[1]==0)
               {
                 this.router.navigate(['/adults/adult-dashboard'])
 
               }
-               
+
 
             }
           )
-          
-            
+
+
           }
         })
     },
@@ -134,7 +140,7 @@ export class SetPasswordPage implements OnInit {
      // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
     });
 
-   
+
 
 
   }
@@ -154,7 +160,7 @@ export class SetPasswordPage implements OnInit {
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
         {
-          
+
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -181,22 +187,35 @@ export class SetPasswordPage implements OnInit {
                 window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
 
               }
-                
+
               else if(d[1]==0)
               {
                 this.router.navigate(['/adults/adult-dashboard'])
 
               }
-               
+
 
             }
           )
-          
-            
+
+
           }
         })
     });
 
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
+
+  hideFunction(type) {
+    if (type === 'password') {
+      this.passwordhide = !this.passwordhide;
+    } else {
+      this.confirmpasswordhide = !this.confirmpasswordhide;
+    }
   }
 
 }
