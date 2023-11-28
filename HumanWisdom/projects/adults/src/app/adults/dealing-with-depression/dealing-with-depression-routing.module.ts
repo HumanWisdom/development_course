@@ -312,6 +312,7 @@ import { S92265Page } from './s92265/s92265.page';
 import { S92266Page } from './s92266/s92266.page';
 import { S92267Page } from './s92267/s92267.page';
 import { S92268Page } from './s92268/s92268.page';
+import { S92268p1Page } from './s92268p1/s92268p1.page';
 
 const routes: Routes = [
   {
@@ -1867,6 +1868,11 @@ const routes: Routes = [
     path: 's92268',   
     canActivate:[ActiveGuard],  
     component: S92268Page,
+  },
+  {
+    path: 's92268p1',   
+    canActivate:[ActiveGuard],  
+    component: S92268p1Page,
   },
 ];
 
