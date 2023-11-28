@@ -168,7 +168,7 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   RouteToManageSubscription(item) {
-    if (item.canceled === '0') {
+    if (item.canceled ==0) {
       if ((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1) {
         SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData, JSON.stringify(item));
         this.router.navigate(["/myprogram/manage-subscription"]);
