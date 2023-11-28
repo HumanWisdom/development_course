@@ -121,7 +121,7 @@ export class WisdomScalePage implements OnInit {
   ngOnInit() {
 
     this.title.setTitle('Mindful Insights: Our Happiness Survey for a More Fulfilling Life')
-    this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life'})
+    this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life' })
     this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our Happiness Survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })
     this.meta.updateTag({ property: 'keywords', content: 'Personal growth survey,Self-improvement survey,Mindfulness survey,Happiness survey,Success survey,Mental health survey,Life lessons survey,Positive mindset survey' })
 
@@ -162,24 +162,24 @@ export class WisdomScalePage implements OnInit {
           this.optionList10 = this.findQuestion(131).optionList
         })
 
-        this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
-          console.log(r)
-          var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-          r = r.sort((a,b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
-          // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
-          // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
-          r.forEach((d) => {
-            if(this.lineChartData[0]['data'].length < 6) {
-              let name = monthNames[d['month'] - 1];
-              this.lineChartData[0]['data'].push(parseInt(d['Score']));
-              if(!(this.lineChartLabels.find(a =>a.includes(d['year'].slice(-2))))) {
-                this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3)+ "'" + d['year'].slice(-2));
-              }else {
-                this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3));
-              }
-            }
-          })
-        });
+    this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
+      console.log(r)
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
+      // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
+      // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
+      r.forEach((d) => {
+        if (this.lineChartData[0]['data'].length < 6) {
+          let name = monthNames[d['month'] - 1];
+          this.lineChartData[0]['data'].push(parseInt(d['Score']));
+          if (!(this.lineChartLabels.find(a => a.includes(d['year'].slice(-2))))) {
+            this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3) + "'" + d['year'].slice(-2));
+          } else {
+            this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3));
+          }
+        }
+      })
+    });
   }
 
   onSelect(event) {
@@ -191,14 +191,14 @@ export class WisdomScalePage implements OnInit {
     e = JSON.parse(e)
     switch (e.Id) {
       case "1": {
-        this.rating1 = (e.Rating==5)?1: (5-e.Rating)
+        this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
         console.log(this.rating1)
         this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
         console.log("selected rating", this.s1)
         break;
       }
       case "2": {
-        this.rating2 = (e.Rating==5)?1: (5-e.Rating)
+        this.rating2 = (e.Rating == 5) ? 1 : (5 - e.Rating)
         // this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
         // this.optionList2.sort((a, b) => a.OptId - b.OptId);
         // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
@@ -207,50 +207,50 @@ export class WisdomScalePage implements OnInit {
         break;
       }
       case "3": {
-        this.rating3 = (e.Rating==0)?(1):e.Rating
-        this.s3 = this.optionList3.find(x => x.Points ==  this.rating3).OptId
+        this.rating3 = (e.Rating == 0) ? (1) : e.Rating
+        this.s3 = this.optionList3.find(x => x.Points == this.rating3).OptId
         console.log("selected rating", this.s3)
         break;
       } case "4": {
-        this.rating4 = (e.Rating==0)?(1):e.Rating
-        this.s4 = this.optionList4.find(x => x.Points ==  this.rating4).OptId
+        this.rating4 = (e.Rating == 0) ? (1) : e.Rating
+        this.s4 = this.optionList4.find(x => x.Points == this.rating4).OptId
         console.log("selected rating", this.s4)
         break;
       } case "5": {
-        this.rating5 = (e.Rating==0)?(1):e.Rating
-        this.s5 = this.optionList5.find(x => x.Points ==  this.rating5).OptId
+        this.rating5 = (e.Rating == 0) ? (1) : e.Rating
+        this.s5 = this.optionList5.find(x => x.Points == this.rating5).OptId
         console.log("selected rating", this.s5)
         break;
       } case "6": {
-        this.rating6 = (e.Rating==5)?1: (5-e.Rating)
-        this.s6 = this.optionList6.find(x => x.Points ==   this.rating6).OptId
+        this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        this.s6 = this.optionList6.find(x => x.Points == this.rating6).OptId
         console.log("selected rating", this.s6)
         break;
 
       }
       case "7": {
-        this.rating7 = (e.Rating==5)?1: (5-e.Rating)
-        this.s7 = this.optionList7.find(x => x.Points ==  this.rating7).OptId
+        this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        this.s7 = this.optionList7.find(x => x.Points == this.rating7).OptId
         console.log("selected rating", this.s7)
         break;
 
       }
       case "8": {
-        this.rating8 = (e.Rating==0)?(1):e.Rating
-        this.s8 = this.optionList8.find(x => x.Points ==  this.rating8).OptId
+        this.rating8 = (e.Rating == 0) ? (1) : e.Rating
+        this.s8 = this.optionList8.find(x => x.Points == this.rating8).OptId
         console.log("selected rating", this.s8)
         break;
 
       }
       case "9": {
-        this.rating9 = (e.Rating==0)?(1):e.Rating
-        this.s9 = this.optionList9.find(x => x.Points ==  this.rating9).OptId
+        this.rating9 = (e.Rating == 0) ? (1) : e.Rating
+        this.s9 = this.optionList9.find(x => x.Points == this.rating9).OptId
         console.log("selected rating", this.s9)
         break;
 
       }
       case "10": {
-        this.rating10 = (e.Rating==0)?(1):e.Rating
+        this.rating10 = (e.Rating == 0) ? (1) : e.Rating
         this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
         console.log("selected rating", this.s10)
         break;
@@ -325,5 +325,14 @@ export class WisdomScalePage implements OnInit {
 
   goBack() {
     this.location.back()
+  }
+
+  viewClickEvent(url) {
+    let res = localStorage.getItem("isloggedin")
+    if (res && res === 'T') {
+      this.router.navigate([url]);
+    } else {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
 }
