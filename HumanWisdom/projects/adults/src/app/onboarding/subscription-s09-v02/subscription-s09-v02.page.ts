@@ -16,7 +16,7 @@ import {
 export class SubscriptionS09V02Page implements OnInit {
   public myprograms = [];
   public notmyprograms = [];
-  public notStarted =[];
+  public notStarted = [];
   public openAssign = false;
   public activeKey = '';
   public activeName = '';
@@ -58,7 +58,7 @@ export class SubscriptionS09V02Page implements OnInit {
       .subscribe(res => {
         if (this.platform.IOS) {
           this.myprograms = res.filter((d) => new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
-          this.notmyprograms = res.filter((d) => new Date(d['ExpDate']).getTime() < new Date().getTime()&& !d['ExpDate']?.includes('1900'));
+          this.notmyprograms = res.filter((d) => new Date(d['ExpDate']).getTime() < new Date().getTime() && !d['ExpDate']?.includes('1900'));
           this.notStarted = res.filter((d) => d['ExpDate']?.includes('1900'));
         }
         else {
@@ -134,12 +134,12 @@ export class SubscriptionS09V02Page implements OnInit {
           document.getElementById('donotautorenew' + id).style.display = 'none'
         }
       })
-     }
-     
-     //else if (donot ='autorenew'){
+    }
+
+    //else if (donot ='autorenew'){
     //   this.autorenew(key,val,id);
     // }
-     else if (val === 'compare') {
+    else if (val === 'compare') {
       return new Date(key['ExpDate']).getTime() > new Date().getTime()
     } else {
       return new Date(key['ExpDate']).getTime() > new Date().getTime()
@@ -168,9 +168,11 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   RouteToManageSubscription(item) {
-    if ((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1) {
-      SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData, JSON.stringify(item));
-      this.router.navigate(["/myprogram/manage-subscription"]);
+    if (item.canceled === '0') {
+      if ((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1) {
+        SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData, JSON.stringify(item));
+        this.router.navigate(["/myprogram/manage-subscription"]);
+      }
     }
   }
 
@@ -185,8 +187,8 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   ReviveSubscription(item) {
-    this.service.ReviveSubscription(item.ActKey).subscribe(res=>{
-      if(res){
+    this.service.ReviveSubscription(item.ActKey).subscribe(res => {
+      if (res) {
         this.getProgramData();
       }
     })

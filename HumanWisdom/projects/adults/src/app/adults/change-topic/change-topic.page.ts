@@ -107,6 +107,7 @@ export class ChangeTopicPage implements OnInit {
     if (parseInt(id) > 0) {
       this.isSelected = true;
     }
+    this.update();
   }
 
   next(){

@@ -14,12 +14,12 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   thread = '';
   userID = "107";
   postID = '0';
-  selectedOption: number = 1;
+  selectedOption: number = 0;
   userinfo = {
     userimage: null,
     username: '',
   };
-  buttonText:string ="Mental health"
+  buttonText:string ="Choose Category"
   imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
@@ -81,7 +81,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         this.postModal.nativeElement.click();
         this.thread = "";
         this.postID = "",
-          this.selectedOption = 1;
+        this.selectedOption = 0;
       }
     })
 
@@ -132,7 +132,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   ngAfterViewInit(){
     setTimeout(()=>{
       this.categoryList = this.service.GetTagList();
-      this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 1;
+      this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
       if (this.selectedOption == 5) {
       this.isChecked = true;
   
