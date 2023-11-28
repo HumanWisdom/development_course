@@ -24,7 +24,7 @@ export class IndexPage implements OnInit {
   }
 
   goBack() {
-    if((this.service.previousUrl.length>0 && this.service.previousUrl.includes("/pathways/")) || (this.service.previousUrl.length==0))
+    if((this.service.previousUrl.length>0 && this.service.previousUrl.includes("/pathway/")) || (this.service.previousUrl.length==0))
     {
       this.router.navigate(['/adults/search'])
     }
