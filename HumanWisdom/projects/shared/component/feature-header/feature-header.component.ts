@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {AdultsService} from "../../../adults/src/app/adults/adults.service";
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { SharedService } from '../../../shared/services/shared.service';
+import { ProgramType } from '../../../shared/models/program-model';
 
 @Component({
   selector: 'app-feature-header',
@@ -19,8 +21,8 @@ export class FeatureHeaderComponent implements OnInit {
   token=JSON.parse(localStorage.getItem("token"))
   socialShare=false
   address: any;
-  path="https://humanwisdom.me/adults/wisdom-stories"
-
+  path:any;
+  baseUrl:any;
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
     private location:Location,
@@ -36,6 +38,18 @@ export class FeatureHeaderComponent implements OnInit {
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
    
   }
+  shareUrl (programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl=SharedService.AdultsBaseUrl;
+      break;
+      case ProgramType.Teenagers:
+        this.baseUrl=SharedService.TeenagerBaseUrl;
+       break;
+      default:
+      this.baseUrl=SharedService.TeenagerBaseUrl;
+    }
+  }
 
   addToken(){
     // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
@@ -43,7 +57,7 @@ export class FeatureHeaderComponent implements OnInit {
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
-      url: this.path
+      url: this.baseUrl+this.address
     }).then( (response) => {
       console.log(response);
     })

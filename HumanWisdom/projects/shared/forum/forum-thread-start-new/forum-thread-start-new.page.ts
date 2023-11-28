@@ -64,7 +64,22 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     });
   }
   post() {
-    
+    if(this.selectedOption!=0){
+         this.submitPost();
+    }
+
+
+  }
+
+  getPlaceHolder(){
+    if(this.selectedOption == 5){
+      return "Ask one of our trained coaches a question on any of the topics covered in the app. You can ask a question anonymously. The answers will be visible to all."
+    }else{
+      return "Talk about issues related to stress, anxiety, depression and mental health."
+    }
+  }
+
+  submitPost(){
     this.service.submitPost(
       {
         Post: this.thread,
@@ -84,7 +99,6 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         this.selectedOption = 0;
       }
     })
-
   }
 
   closePost() {
