@@ -33,12 +33,12 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff txt_justify">
-                    We have trained HumanWisdom coaches around the world who are available to guide you through the app and provide extra support to help you live your best life. To help us connect you with the right coach please fill in the form below.
+                    We have trained HappierMe coaches around the world who are available to guide you through the app and provide extra support to help you live your best life. To help us connect you with the right coach please fill in the form below.
                   </h4>
                 </div>
               </div>
 
-              <div class="div_cac">
+              <div class="div_inputs">
                 <div class="row mt30px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-md-3 col-sm-3 col-xs-3 pr0px pl0px">
@@ -60,7 +60,7 @@
                   </div>
                 </div>
 
-                <div class="row mt15px">
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <input type="text" name="email" class="sp_fc" placeholder="Email-Id" [(ngModel)]="form.EmailID">
                   </div>
@@ -69,7 +69,7 @@
                   Please Enter Valid EmailID
                 </div>
 
-                <div class="row mt30px mb30px prelative">
+                <div class="row prelative">
                   <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                     <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list"
                       [(ngModel)]="form.Country" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
@@ -81,7 +81,7 @@
                       class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
                       aria-hidden="true"></span>
                   </div>
-  
+
                   <div class="row adsearch">
                     <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                       <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
@@ -120,7 +120,7 @@
                 <div class="row">
                   <div class="col-md-2 col-sm-2 col-xs-3 p0">
                     <div class="dropdown dropdown_outer">
-                      <button class="dropdown-toggle sp_fc" type="button" data-toggle="dropdown" data-toggle="dropdown" id="code"></button>
+                      <button class="dropdown-toggle sp_fc" type="button" data-toggle="dropdown" data-toggle="dropdown" id="code">{{countryFIPS}}</button>
                     </div>
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-9 pr0px">
@@ -131,13 +131,13 @@
                 <div *ngIf="form.ContactNo==null ||   checkValidPhoneNo()" class="white alert alert-danger w100">
                   Please Enter Valid Phone No.
                 </div>
+              </div>
 
-                <div class="row mt15px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
-                      We will be in touch with some options for you to consider including costs involved.
-                    </h6>
-                  </div>
+              <div class="row mt15px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                    We will be in touch with some options for you to consider including costs involved.
+                  </h6>
                 </div>
               </div>
 

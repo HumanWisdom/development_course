@@ -16,16 +16,17 @@ export class TocHeaderComponent implements OnInit {
   @Input() tocColor: string;
   @Input() tocAlt: string;
   @Input() moduleName = 'Stress';
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  path:any;
   baseUrl:string;
   programName:'';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router ,
     private location: Location) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.path = this.router.url;
+  }
+
   goBack(){
     var url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
     if(url && url!=null && url != 'null'){
@@ -37,10 +38,13 @@ export class TocHeaderComponent implements OnInit {
 
   share(){
     this.shareUrl(SharedService.ProgramId);
+    console.log(this.baseUrl+this.path);
+    console.log(this.path);
+    
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
-      url: this.baseUrl+this.path
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.baseUrl+this.path      
     }).then( (response) => {
       console.log(response);
     })

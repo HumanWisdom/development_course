@@ -47,6 +47,7 @@ export class ChangeTopicPage implements OnInit {
       localStorage.setItem('acceptcookie', 'T')
       this.service.verifytoken(authtoken).subscribe((res) => {
         if (res) {
+          this.isRoutedFromLogin = true;
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           localStorage.setItem("userId", res['UserId'])

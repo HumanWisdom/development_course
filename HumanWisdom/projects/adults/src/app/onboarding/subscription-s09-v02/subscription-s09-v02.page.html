@@ -60,7 +60,7 @@
                     <div class="panel-body">
                       <ng-container *ngFor="let item of myprograms">
                         <div class="ms_program">
-                          <div class="row" (click)="RouteToManageSubscription(item)">
+                          <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                 {{item['Prog']}}
@@ -68,7 +68,7 @@
                             </div>
                           </div>
                           <div class="row center_flex mt10px mb20px">
-                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft" (click)="RouteToManageSubscription(item)">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
                               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
                                 Monthly Subscription
                               </h4>
@@ -148,7 +148,8 @@
                                 (click)="RouteToManageSubscription(item)">
                                 Cancel Subscription
                               </button>
-                              <button *ngIf="item.canceled == 1" type="button" class="btn btn_ms"
+
+                              <button *ngIf="item.canceled == 1;else autoRenew" type="button" class="btn btn_ms"
                                 id="{{'buyAgain' + item['ActKey']}}" (click)="ReviveSubscription(item)">
                                 Revive Subscription
                               </button>
@@ -157,16 +158,17 @@
                                 class="fs_15px fw_500 fc_ffffff">
                                 cancelled
                               </h4> -->
-                              <button type="button" class="btn btn_ms" id="{{'donotautorenew' + item['ActKey']}}"
-                                [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                <button type="button" class="btn btn_ms" id="{{'donotautorenew' + item['ActKey']}}"
+                                [ngStyle]="{'display': item['MySelf'] === '1' && item.canceled == 0 && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
                                 (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
                                 Do not auto-renew
                               </button>
                               <button type="button" class="btn btn_ms" id="{{'autorenew' + item['ActKey']}}"
-                                [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                [ngStyle]="{'display': item['MySelf'] === '1' &&  item.canceled == 0 && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
                                 (click)="autorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'autorenew')">
                                 Activate Auto-Renew
                               </button>
+                            
                             </div>
                           </div>
                         </div>
@@ -205,7 +207,7 @@
                     <div class="panel-body">
                       <ng-container *ngFor="let item of notmyprograms">
                         <div class="ms_program">
-                          <div class="row" (click)="RouteToManageSubscription(item)">
+                          <div class="row" >
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                 {{item['Prog']}}
@@ -213,7 +215,7 @@
                             </div>
                           </div>
                           <div class="row center_flex mt10px mb20px">
-                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft" (click)="RouteToManageSubscription(item)">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
                               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
                                 Monthly Subscription
                               </h4>
@@ -332,7 +334,7 @@
                     <div class="panel-body">
                       <ng-container *ngFor="let item of notStarted">
                         <div class="ms_program">
-                          <div class="row" (click)="RouteToManageSubscription(item)">
+                          <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                 {{item['Prog']}}
@@ -340,7 +342,7 @@
                             </div>
                           </div>
                           <div class="row center_flex mt10px mb20px">
-                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft" (click)="RouteToManageSubscription(item)">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
                               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
                                 Monthly Subscription
                               </h4>

@@ -62,6 +62,11 @@ export class WisdomForWorkplacePage implements OnInit {
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/4.mp3',
           title: 'The Wise Leader'
+        },
+        pc06: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/55.mp3',
+          title: 'Be emotionally intelligent, and a better leader'
         }
       }
      }

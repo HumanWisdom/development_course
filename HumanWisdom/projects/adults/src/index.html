@@ -606,89 +606,98 @@
   <script type="text/javascript"
     src="https://static.mailerlite.com/js/w/webforms.min.js?v7316d10e2931a97c7b0f5c7e7e7be3ea"></script>
 
-  <script>
-   /*
-   $(document).on('click', '.ihamburger', function () 
-   {
-    $('body').removeClass("overflow_auto");
-     $('body').addClass("overflow_hidden");
-   });
-   */
 
-   //test
-   $(document).on('click', '.ihamburger', function () 
-   {
-    $('body').removeClass("overflow_auto").addClass("overflow_hidden");
-    $(".right_col,.mfooter,.dtn").css({"pointer-events": "none"});
-    $(".menu_parent").css({"pointer-events": "auto"});
-    $("#modal_logout").css({"pointer-events": "auto"});
-   });
-   ///test
+    <script>
+    /*
+    $(document).on('click', '.ihamburger', function () 
+    {
+      $('body').removeClass("overflow_auto");
+      $('body').addClass("overflow_hidden");
+    });
+    */
+  
+    //test
+    $(document).on('click', '.ihamburger', function () 
+    {
+      $('body').removeClass("overflow_auto").addClass("overflow_hidden");
+      $('.m-menu').scrollTop(0);
+      /*$(".mfooter,.dtn").css({"pointer-events": "none"});
+      $(".menu_parent").css({"pointer-events": "auto"});
+      $("#modal_logout").css({"pointer-events": "auto"});*/
+    });
 
-  $(document).on('click', '.iclose', function () 
-  {
-    $('body').removeClass("overflow_hidden");
-    $(".right_col,.mfooter,.dtn").css({"pointer-events": "auto"});
-  });
+    $(document).on('click', '.m-menu__overlay', function () 
+    {
+      $('body').removeClass("overflow_hidden").addClass("overflow_auto");
+    });
+    ///test
+   
+    $(document).on('click', '.iclose', function () 
+    {
+      $('body').removeClass("overflow_hidden");
+      $(".right_col,.mfooter,.dtn").css({"pointer-events": "auto"});
+    });
+  
+    $(document).on('click', '.title_p', function () 
+    {
+      $('.m-menu').scrollTop(0);
+      $('.menu_parent').addClass("overflow_hiddeni");
+    });
+      
+    $(document).on('click', '.back_p', function () 
+    {
+      $('.menu_parent').removeClass("overflow_hiddeni");
+    });
+  
+    $(document).on('click', '.title_au', function () 
+    {
+      $('.m-menu').scrollTop(0);
+      $('.menu_parent').addClass("overflow_hiddeni");
+    });
+      
+    $(document).on('click', '.back_au', function () 
+    {
+      $('.menu_parent').removeClass("overflow_hiddeni");
+    });
+  
+    $(document).on('click', '.title_hs', function () 
+    {
+      $('.m-menu').scrollTop(0);
+      $('.menu_parent').addClass("overflow_hiddeni");
+    });
+      
+    $(document).on('click', '.back_hs', function () 
+    {
+      $('.menu_parent').removeClass("overflow_hiddeni");
+    });
+  
+    $(document).on('click', 'ul.dh_ul li a', function () 
+    {
+      $('body').removeClass("overflow_hidden").addClass("overflow_auto");
+    });
+  
+    $(document).on('click', '.hc_profile', function () 
+    {
+      $('body').removeClass("overflow_hidden").addClass("overflow_auto");
+    });
+  
+    $(document).on('click', '.btn_ctd', function () 
+    {
+      $('body').removeClass("overflow_hidden").addClass("overflow_auto");
+    });
+  
+    $(document).on('click', '.hamburger_sociali a', function () 
+    {
+      $('body').removeClass("overflow_hidden").addClass("overflow_auto");
+    });
+  
+    $(document).on('click', 'ul.dh_ul li a.hc_sfn', function () 
+    {
+      $('body').removeClass("overflow_auto").addClass("overflow_hidden");
+    });
+    </script>
 
-  $(document).on('click', '.title_p', function () 
-  {
-    $('.m-menu').scrollTop(0);
-    $('.menu_parent').addClass("overflow_hiddeni");
-  });
-    
-  $(document).on('click', '.back_p', function () 
-  {
-    $('.menu_parent').removeClass("overflow_hiddeni");
-  });
-
-  $(document).on('click', '.title_au', function () 
-  {
-     $('.m-menu').scrollTop(0);
-     $('.menu_parent').addClass("overflow_hiddeni");
-  });
-    
-  $(document).on('click', '.back_au', function () 
-  {
-    $('.menu_parent').removeClass("overflow_hiddeni");
-  });
-
-  $(document).on('click', '.title_hs', function () 
-  {
-     $('.m-menu').scrollTop(0);
-     $('.menu_parent').addClass("overflow_hiddeni");
-  });
-    
-  $(document).on('click', '.back_hs', function () 
-  {
-    $('.menu_parent').removeClass("overflow_hiddeni");
-  });
-
-  $(document).on('click', 'ul.dh_ul li a', function () 
-  {
-    $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-  });
-
-  $(document).on('click', '.hc_profile', function () 
-  {
-    $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-  });
-
-  $(document).on('click', '.btn_ctd', function () 
-  {
-    $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-  });
-
-  $(document).on('click', '.hamburger_sociali a', function () 
-  {
-    $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-  });
-
-  $(document).on('click', 'ul.dh_ul li a.hc_sfn', function () 
-  {
-    $('body').removeClass("overflow_auto").addClass("overflow_hidden");
-  });
-  </script>
+  
 
 </body>
 
