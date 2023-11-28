@@ -25,7 +25,9 @@ export class S159077Page implements OnInit {
   totalTime: any
   bookmark = 0
   toc = "social-media/s159001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor
@@ -99,7 +101,7 @@ export class S159077Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/social-media/s138073'])
+    this.router.navigate(['/social-media/s159076'])
   }
 
   goNext() 
@@ -108,7 +110,7 @@ export class S159077Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/social-media/s138075'])
+    this.router.navigate(['/social-media/s159078'])
   }
 
   ngOnDestroy() 

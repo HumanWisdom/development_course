@@ -32,7 +32,9 @@ export class S159053Page implements OnInit {
   //sendOption=[]
   sessionOption159053=JSON.parse(sessionStorage.getItem("sessionOption159053"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption159053"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/social-media/s159001" 
   
   constructor(
@@ -152,7 +154,7 @@ export class S159053Page implements OnInit {
 
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159051'])
+    this.router.navigate(['/social-media/s159054'])
     if (this.userId === 563) return;
 
     
@@ -175,7 +177,7 @@ export class S159053Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159049'])
+    this.router.navigate(['/social-media/s159052'])
 
 
   }

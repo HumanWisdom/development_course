@@ -31,7 +31,7 @@ export class S159003tPage implements OnInit
   avDuration=localStorage.getItem("avDuration159003")
   totalTime=localStorage.getItem("totalTime159003")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName ="teenagers"
+  progName ="adults"
   
   constructor
   (

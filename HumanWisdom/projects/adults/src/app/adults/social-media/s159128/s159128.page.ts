@@ -17,7 +17,7 @@ export class S159128Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="3/5"
+  progressText="3/4"
   link="/social-media/s159090"
   name="A short film"
   progressImg=""

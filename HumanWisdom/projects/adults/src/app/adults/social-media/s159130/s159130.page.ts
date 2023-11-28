@@ -24,7 +24,7 @@ export class S159130Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/social-medial/s138001"
+  toc="/social-medial/s159001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
