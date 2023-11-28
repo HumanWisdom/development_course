@@ -14,7 +14,7 @@ export class S58087p2Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/8.mp4'
+  videoLink = this.mediaVideo + '/events/10.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "Finding our true purpose in life"

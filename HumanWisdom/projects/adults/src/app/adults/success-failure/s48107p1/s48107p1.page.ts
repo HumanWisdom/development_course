@@ -14,7 +14,7 @@ export class S48107p1Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/19.mp4'
+  videoLink = this.mediaVideo + '/events/31.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "How can wisdom help us be successful"
