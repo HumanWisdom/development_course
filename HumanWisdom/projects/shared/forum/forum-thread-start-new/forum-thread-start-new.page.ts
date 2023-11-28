@@ -67,8 +67,6 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     if(this.selectedOption!=0){
          this.submitPost();
     }
-
-
   }
 
   getPlaceHolder(){
