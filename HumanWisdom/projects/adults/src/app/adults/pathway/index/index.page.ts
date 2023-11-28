@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { AdultsService } from '../../adults.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -10,7 +12,7 @@ export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private router: Router, private service: AdultsService) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,17 @@ export class IndexPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    if((this.service.previousUrl.length>0 && this.service.previousUrl.includes("/pathway/")) || (this.service.previousUrl.length==0))
+    {
+      this.router.navigate(['/adults/search'])
+    }
+      else
+    {
+      this.location.back()
+
+    }
+  
+    
   }
 
 }

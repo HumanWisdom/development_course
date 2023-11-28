@@ -4,30 +4,30 @@ import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
 
 @Component({
-  selector: 'app-s47370p1',
-  templateUrl: './s47370p1.page.html',
-  styleUrls: ['./s47370p1.page.scss'],
+  selector: 'app-s92268p1',
+  templateUrl: './s92268p1.page.html',
+  styleUrls: ['./s92268p1.page.scss'],
 })
-export class S47370p1Page implements OnInit {
+export class S92268p1Page implements OnInit {
 
-  bg_tn = "bg_purple"
-  bg_cft = "bg_purple"
-  bg = "purple_w2"
+  bg_tn = "bg_dark_blue"
+  bg_cft = "bg_dark_blue"
+  bg = "dark_blue_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/40.mp4'
+  videoLink = this.mediaVideo + '/events/29.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
-  title = "Why do we get hurt in relationships?"
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/relationships/relationships_01.jpg"
+  title = " Dealing with depression - a dialogue"
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/dealing-with-depression/dealing-with-depression_01.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "47370p1"
+  screenNumber = "92268p1"
   startTime: any
   endTime: any
   totalTime: any
-  toc = "/relationships/s47000"
+  toc = "/dealing-with-depression/s92001"
   bookmark = 0
    path = setTimeout(() => {
     return this.router.url;
@@ -54,9 +54,9 @@ export class S47370p1Page implements OnInit {
     this.startTime = Date.now();
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark47370p1")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark92268p1")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark47370p1")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark92268p1")) == 1)
       this.bookmark = 1
   }
 
@@ -66,7 +66,7 @@ export class S47370p1Page implements OnInit {
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark47370p1", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark92268p1", JSON.stringify(this.bookmark))
   }
 
   createScreen() {
@@ -82,7 +82,7 @@ export class S47370p1Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/relationships/s47370p2'])
+    this.router.navigate(['/adults/dealing-with-depression/s92268'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -101,7 +101,7 @@ export class S47370p1Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/relationships/s47000'])
+    this.router.navigate(['/adults/dealing-with-depression/s92001'])
   }
 
   ngOnDestroy() {

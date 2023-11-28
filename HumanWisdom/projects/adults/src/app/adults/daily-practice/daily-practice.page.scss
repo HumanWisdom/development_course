@@ -151,7 +151,7 @@ color: white; /* For Chrome and Safari */
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
 color: white;
-} 
+}
 
 /* Customize the play and pause icons */
 audio::-webkit-media-controls-play-button::before,
@@ -190,4 +190,8 @@ background: rgb(18, 15, 64);
 #aud1
 {
 width: 100%;
+}
+
+.cvideo {
+  object-fit: scale-down;
 }

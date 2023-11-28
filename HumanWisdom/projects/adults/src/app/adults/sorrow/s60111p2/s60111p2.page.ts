@@ -14,7 +14,7 @@ export class S60111p2Page implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/13.mp4'
+  videoLink = this.mediaVideo + '/events/19.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "Dealing with grief"
