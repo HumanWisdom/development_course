@@ -29,7 +29,7 @@ export class CourseHeaderComponent implements OnInit {
   urlT: any
   shared = false
   showheaderbar = true
-  address = this.router.url
+  address:any;
   modName: any
   scrNumber: any
   programName: string;
@@ -70,7 +70,7 @@ export class CourseHeaderComponent implements OnInit {
     if(this.guest || !this.Subscriber) {
       this.placeHolder = "Please subscribe to access your online journal";
     }
-
+    this.address = this.router.url;
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.showheaderbar = true;
     // console.log(this.ac)
@@ -78,7 +78,7 @@ export class CourseHeaderComponent implements OnInit {
 
     // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
-
+    this.path = this.router.url;
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
     this.getProgress(this.scrNumber)
@@ -239,4 +239,5 @@ export class CourseHeaderComponent implements OnInit {
       }
     }
   }
+
 }

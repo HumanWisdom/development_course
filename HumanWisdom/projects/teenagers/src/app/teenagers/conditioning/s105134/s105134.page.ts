@@ -52,8 +52,9 @@ export class S105134Page implements OnInit
     $(document).ready(function () {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
-      var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#60A757";
+     var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
+
       var i;
       var child = 1;
       var length = $("section").length - 1;
@@ -149,6 +150,7 @@ export class S105134Page implements OnInit
         currentSection.nextAll('section').css('transform', 'translateX(100px)');
         $('section').not(currentSection).hide();
       });
+      
 
       // second
       $("#svg_form_time rect").css("fill", active_color);
@@ -170,9 +172,31 @@ export class S105134Page implements OnInit
         "fill",
         base_color
       );
+      $("#svg_form_time rect").css("fill", active_color);
+      $("#svg_form_time circle").css("fill", active_color);
+      $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+      var circle_child = child + 1;
+      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+        "fill",
+        base_color
+      );
+      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+        "fill",
+        base_color
+      );
+    
     });
     // /multistep wizard
+    
   }
+  
 
   createScreen() 
   {

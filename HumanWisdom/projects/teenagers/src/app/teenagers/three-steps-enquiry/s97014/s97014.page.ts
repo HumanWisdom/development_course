@@ -15,8 +15,8 @@ export class S97014Page implements OnInit,OnDestroy {
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
   bg="pink_orange_w12"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/three-steps-enquiry/videos/1.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/three-steps-enquiry/videos/1.1.mp4'  
   title="3 steps to enquiry"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
@@ -33,7 +33,9 @@ export class S97014Page implements OnInit,OnDestroy {
   
   toc="three-steps-enquiry/s97001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

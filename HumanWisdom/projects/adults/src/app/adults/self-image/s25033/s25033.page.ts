@@ -15,7 +15,9 @@ export class S25033Page implements OnInit {
   bg = "blue_w4"
   hint = "It could be that you assume someone doesn't like you and that is why they ignored you, but they could just be dealing with a different issue and be thinking about that."
   toc = "/self-image/s25001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

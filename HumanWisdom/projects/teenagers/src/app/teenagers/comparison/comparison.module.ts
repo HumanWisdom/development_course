@@ -192,6 +192,7 @@ import { S111153Page } from './s111153/s111153.page';
 import { S111154Page } from './s111154/s111154.page';
 import { S111155Page } from './s111155/s111155.page';
 import { S111156Page } from './s111156/s111156.page';
+import { S111156p1Page } from './s111156p1/s111156p1.page';
 import { S111157Page } from './s111157/s111157.page';
 
 @NgModule({
@@ -383,6 +384,7 @@ import { S111157Page } from './s111157/s111157.page';
     S111154Page,
     S111155Page,
     S111156Page,
+    S111156p1Page,
     S111157Page,
   ],
   imports: [

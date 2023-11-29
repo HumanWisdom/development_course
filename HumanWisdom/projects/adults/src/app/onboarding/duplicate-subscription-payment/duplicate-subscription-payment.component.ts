@@ -3,6 +3,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { Location } from '@angular/common'; 
+
 
 @Component({
   selector: 'app-duplicate-subscription-payment',
@@ -25,21 +27,65 @@ cardCaptureReady = false
   stripeId: string;
   amount: any;
   uID: any;
-
+  enableAlert = false;
+  content = '';
 
   constructor(private service: OnboardingService,
-    private router: Router) {
+    private router: Router, private location :Location) {
       this.amount = localStorage.getItem('totalAmount')
     this.uID = JSON.parse(localStorage.getItem("userId"))
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
+      var style = {
+        base: {
+          iconColor: '#c4f0ff',
+           color: '#fff',
+          '::placeholder': {
+
+          },
+          ':-webkit-autofill': {
+            color: '#000000',
+          },
+          ':focus': {
+            color: '#fff',
+          },
+        },
+        invalid: {
+          iconColor: '#FFC7EE',
+          color: '#fff',
+        },
+      };
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
-        var cardNumberElement = elements.create('cardNumber',{placeholder:'Card Number'});
-        var cardExpiryElement = elements.create('cardExpiry');
-        var cardCvcElement = elements.create('cardCvc');
+        var cardNumberElement = elements.create('cardNumber', {
+          style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },
+        });
+        var cardExpiryElement = elements.create('cardExpiry', {
+          style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },
+        });
+        var cardCvcElement = elements.create('cardCvc',{
+          style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },
+        });
 
         cardNumberElement.mount('#card-number');
         cardExpiryElement.mount('#card-expiry');
@@ -56,27 +102,41 @@ cardCaptureReady = false
               name:  (<HTMLInputElement>document.getElementById('name')).value,
             },
           }).then((result) => {
-            if(result.error) 
+            if(result.error)
             {
-              alert(result.error.message);
-            } 
-            else 
+              this.content = result.error.message;
+              this.enableAlert = true;
+              // alert(result.error.message);
+            }
+            else
             {
               this.service.attachPaymentMethod(this.uID, result.paymentMethod.id)
                     .subscribe(res => {
                       localStorage.setItem('personalised', 'F');
-                      alert('Your Card Details Have Been Updated');
+                      this.content = 'Your Card Details Have Been Updated';
+                      this.enableAlert = true;
+                      // alert('Your Card Details Have Been Updated');
                       this.router.navigate(['/onboarding/user-profile'])
                     })
             }
           });
         });
-
     }, 9000)
 
   }
 
   ngOnInit() {
+  }
+
+
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

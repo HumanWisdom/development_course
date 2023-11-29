@@ -254,7 +254,7 @@
 .bg_video,
 .right_col
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/video/bg_video.svg) no-repeat center center!important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/video/bg_video.svg) no-repeat center center!important; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
@@ -263,10 +263,30 @@
   z-index: 0; 
   /* min-height: 100vh; */
   transition: none;
-  background-color: none !important;
+  /* background-color: none !important; */
+  /* background: #000000 !important; */
+  background: #f9e9df !important
 }
 
 .bg_292d56
 {
-  background: #292D56;
+  background: #292D56 !important;
+}
+
+.bg_183c79
+{
+  background: #183C79;
+}
+
+.v1_3_bg_splash
+{  
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/splash.svg) no-repeat center center fixed !important; */
+  background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  z-index: 0; 
+  min-height: 100vh; 
 }

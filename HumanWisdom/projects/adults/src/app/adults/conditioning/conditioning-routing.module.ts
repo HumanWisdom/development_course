@@ -123,6 +123,7 @@ import { S321p1Page } from './s321p1/s321p1.page';
 import { S321p2Page } from './s321p2/s321p2.page';
 import { S321p3Page } from './s321p3/s321p3.page';
 import { S322Page } from './s322/s322.page';
+import { S322p1Page } from './s322p1/s322p1.page';
 import { S323Page } from './s323/s323.page';
 
 const routes: Routes = [
@@ -745,10 +746,16 @@ const routes: Routes = [
     component:S322Page,
   },
   {
+    path: 's322p1',   
+    canActivate:[ActiveGuard],  
+    component:S322p1Page,
+  },
+  {
     path: 's323',   
     canActivate:[ActiveGuard],  
     component:S323Page,
-  },  
+  },   
+ 
 ];
 
 @NgModule({

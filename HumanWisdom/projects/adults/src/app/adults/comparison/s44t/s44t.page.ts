@@ -15,7 +15,9 @@ export class S44tPage implements OnInit {
   bg="comparison_envy_w2"  
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/comparison/s44"
   toc="/comparison/s0"
   

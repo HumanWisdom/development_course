@@ -17,7 +17,9 @@ export class S120064Page implements OnInit
   bg="blue_pink_w1" 
   hint = " You could be on your phone all the time, for example and that could affect your relationships.  "
   toc = "/emotional-needs/s120001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -28,7 +30,7 @@ export class S120064Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1908
   reflection: any
   reflectionA: any
   r120064 = JSON.parse(sessionStorage.getItem("r120064"))

@@ -24,7 +24,7 @@ export class S37000Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  threeStepsResume=sessionStorage.getItem("threeStepsResume")
+  threeStepsResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/37.png"
   tocColor="white"
   lastvisited = false;
@@ -71,6 +71,8 @@ export class S37000Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-yourself');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -145,8 +147,8 @@ export class S37000Page implements OnInit,OnDestroy {
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 }

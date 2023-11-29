@@ -16,11 +16,13 @@ export class S124024Page implements OnInit,OnDestroy
   bg="pink_orange_w8"
   title="Pleasure can make us do things we may regret"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/pleasure/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/pleasure/audios/1.3.mp3'
   transcriptPage="pleasure/s124024t"
   toc="pleasure/s124001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

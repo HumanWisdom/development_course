@@ -14,12 +14,14 @@ export class S129008Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w2" 
   title="Mostly, this lack of peace comes from within  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/living-with-peace/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+1.2.mp3'
   transcriptPage="living-with-peace/s129008t"
   toc="living-with-peace/s129001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -89,7 +91,7 @@ export class S129008Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/living-with-peace/s129009'])
+    this.router.navigate(['/living-with-peace/s129008p1'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

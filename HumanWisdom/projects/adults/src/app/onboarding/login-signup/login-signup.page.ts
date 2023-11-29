@@ -9,8 +9,9 @@ import {
 import { AdultsService } from "src/app/adults/adults.service";
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from "../../../../../shared/services/shared.service";
 
-
+declare var $: any;
 @Component({
   selector: "app-login-signup",
   templateUrl: "./login-signup.page.html",
@@ -25,6 +26,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild("closemodal") closemodal: ElementRef;
   @ViewChild("enabletab") enabletab: ElementRef;
   @ViewChild("enableotpmodal") enableotpmodal: ElementRef;
+  @ViewChild("closeotpmodal") closeotpmodal: ElementRef;
 
   user: any;
   userId: any;
@@ -48,7 +50,7 @@ export class LoginSignupPage implements OnInit {
   enableLogin = false;
   scrId: any;
   x = [];
-
+  isSignUp = false;
   value: number = 100;
   showWarning = false;
   showMessage = false;
@@ -70,19 +72,19 @@ export class LoginSignupPage implements OnInit {
   message: any;
 
   get fullname() {
-    return this.registrationForm.get("fullname");
+    return this.registrationForm?.get("fullname");
   }
   get emailvalid() {
-    return this.registrationForm.get("email");
+    return this.registrationForm?.get("email");
   }
   get passwordvalid() {
-    return this.registrationForm.get("password");
+    return this.registrationForm?.get("password");
   }
   get confirmpasswordvalid() {
-    return this.registrationForm.get("confirmPassword");
+    return this.registrationForm?.get("confirmPassword");
   }
   get passwordvalidation() {
-    return this.registrationForm.get("confirmPassword").value !== this.registrationForm.get("password").value;
+    return this.registrationForm?.get("confirmPassword").value !== this.registrationForm.get("password").value;
   }
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
@@ -91,18 +93,12 @@ export class LoginSignupPage implements OnInit {
   //   password:new FormControl(''),
   //   confirmPassword:new FormControl('')
   // })
-  registrationForm = this.fb.group(
-    {
-      fullname: ["", [Validators.required, Validators.minLength(6)]],
-      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      password: ["", [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
-    },
-    { validator: this.PasswordValidator }
-  );
+  registrationForm: any;
 
   content = '';
   enableAlert = false;
+  passwordhide: boolean = true;
+  confirmpasswordhide: boolean = true;
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -112,6 +108,7 @@ export class LoginSignupPage implements OnInit {
     private aservice: AdultsService,
     private service: OnboardingService
   ) {
+    this.initializeRegistrationForm();
     // let acceptCookie = localStorage.getItem('acceptcookie');
     // if(acceptCookie === null)
     //   this.router.navigate(['/adults/help-support/cookie-policy'])
@@ -120,7 +117,7 @@ export class LoginSignupPage implements OnInit {
       this.urlPassword = params["pwd"];
       let res = localStorage.getItem("isloggedin");
       if (res === "T") {
-        this.router.navigate(["/adults/adult-dashboard"]);
+        this.routedashboard();
       } else {
         this.enableLogin = true;
       }
@@ -138,9 +135,9 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
-    if (!this.router.url.includes('/log-in')) {
-      window.history.pushState('', '', '/log-in');
-    }
+    // if (!this.router.url.includes('/log-in')) {
+    //   window.history.pushState('', '', '/log-in');
+    // }
 
   }
   forbiddenNameValidator(
@@ -235,7 +232,13 @@ export class LoginSignupPage implements OnInit {
             );
             this.content = "Code has been verified , Login with Your Credentials";
             this.enableAlert = true;
-            window.location.reload();
+            localStorage.setItem(
+              "signupfirst",
+              'T'
+            );
+            this.initializeRegistrationForm();
+            this.closeotpmodal.nativeElement.click();
+            this.isSignUp = false;
             // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
@@ -309,7 +312,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                this.content ="You have enetered wrong credentials. Please try again.";
+                this.content = "You have entered wrong credentials. Please try again.";
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
@@ -358,7 +361,12 @@ export class LoginSignupPage implements OnInit {
                 let subscribePage = localStorage.getItem("subscribepage");
                 let option = localStorage.getItem("introoption");
                 let giftwisdom = localStorage.getItem("giftwisdom");
-                if (option === "T") {
+                const url = SharedService.UrlToRedirect;
+                if (url != null) {
+                  SharedService.UrlToRedirect = null;
+                  this.router.navigate([url]);
+                }
+                else if (option === "T") {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
                   this.router.navigate(["/intro/personalised-for-you"]);
@@ -385,11 +393,19 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                      if (this.loginResponse?.NoOfVisits === 1) {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      } else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -472,7 +488,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                this.content ="You have enetered wrong credentials. Please try again.";
+                this.content = "You have entered wrong credentials. Please try again.";
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
@@ -521,7 +537,12 @@ export class LoginSignupPage implements OnInit {
                 let subscribePage = localStorage.getItem("subscribepage");
                 let option = localStorage.getItem("introoption");
                 let giftwisdom = localStorage.getItem("giftwisdom");
-                if (option === "T") {
+                const url = SharedService.UrlToRedirect;
+                if (url != null) {
+                  SharedService.UrlToRedirect = null;
+                  this.router.navigate([url]);
+                }
+                else if (option === "T") {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
                   this.router.navigate(["/intro/personalised-for-you"]);
@@ -548,11 +569,19 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                      if (this.loginResponse?.NoOfVisits === 1) {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      } else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -568,7 +597,7 @@ export class LoginSignupPage implements OnInit {
             }
           });
       } else {
-        this.content ="Please ensure that you use an email based authentication with your Auth provider or try another method";
+        this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
         this.enableAlert = true;
       }
     });
@@ -583,17 +612,22 @@ export class LoginSignupPage implements OnInit {
       (res) => {
         if (res.UserId === 0) {
           this.showAlert = true;
-          this.content = "You have enetered wrong credentials. Please try again.";
+          this.content = "You have entered wrong credentials. Please try again.";
           this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else if (res.UserId === -1) {
           this.showAlert = true;
-          this.content =  "Email was Not Verified. Please signup again with the same Email ID to verify it.";
+          this.content = "Email was Not Verified. Please signup again with the same Email ID to verify it.";
           this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else {
+          const accessObj: any = window;
+          (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
+            (accessObj)?.Moengage.add_email(this.email);
+            (accessObj)?.Moengage.add_first_name(res.Name);
+          })
           this.loginResponse = res;
           localStorage.setItem("socialLogin", "F");
           localStorage.setItem("isloggedin", "T");
@@ -664,7 +698,12 @@ export class LoginSignupPage implements OnInit {
           let persub = localStorage.getItem("personalised subscription");
           let option = localStorage.getItem("introoption");
           let giftwisdom = localStorage.getItem("giftwisdom");
-          if (option === "T") {
+          const url = SharedService.UrlToRedirect;
+          if (url != null) {
+            SharedService.UrlToRedirect = null;
+            this.router.navigate([url]);
+          }
+          else if (option === "T") {
             localStorage.setItem("introoption", "F");
             localStorage.setItem("isloggedin", "T");
             this.router.navigate(["/intro/personalised-for-you"]);
@@ -748,11 +787,19 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                       }
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                      if (this.loginResponse?.NoOfVisits === 1) {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      } else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -812,7 +859,10 @@ export class LoginSignupPage implements OnInit {
   }
 
   getsignuptab() {
+    this.isSignUp = true;
     this.showAlert = false;
+    this.passwordhide = true;
+    this.confirmpasswordhide = true;
   }
 
   freescreens() {
@@ -858,5 +908,30 @@ export class LoginSignupPage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+  }
+
+  getLoginTab() {
+    this.isSignUp = false;
+    this.passwordhide = true;
+    this.confirmpasswordhide = true;
+  }
+  initializeRegistrationForm() {
+    this.registrationForm = this.fb.group(
+      {
+        fullname: ["", [Validators.required, Validators.minLength(6)]],
+        email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+        password: ["", [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
+      },
+      { validator: this.PasswordValidator }
+    );
+  }
+
+  hideFunction(type) {
+    if (type === 'password') {
+      this.passwordhide = !this.passwordhide;
+    } else {
+      this.confirmpasswordhide = !this.confirmpasswordhide;
+    }
   }
 }

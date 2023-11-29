@@ -7,7 +7,7 @@ import { environment} from '../../../../environments/environment'
 import { OnboardingService } from '../../../../shared/services/onboarding.service';
 import { SharedService } from "../../../../shared/services/shared.service";
 import { ProgramType } from "../../../../shared/models/program-model";
-
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -58,6 +58,7 @@ export class AdultsService {
   constructor(private http: HttpClient,
      handler: HttpBackend,
       private services: OnboardingService,
+      private router: Router
      ) {
         if(SharedService.ProgramId!=null){
           this.programId=SharedService.ProgramId;
@@ -370,16 +371,24 @@ export class AdultsService {
     return this.http.get(this.path + `/GetModules/` + id)
   }
 
-  setmoduleID(id) {
+  setmoduleID(id, lastVisitedurl = '', indexUrl = '') {
     if (localStorage.getItem("isloggedin") === 'T') {
-      this.activateModule(id);
+      this.activateModule(id, lastVisitedurl, indexUrl);
     } else {
       this.emaillogin(id);
     }
 
   }
 
-  activateModule(id) {
+  GetLastVisitedScreen(data: any): Observable<any> {
+    return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${this.programId}`)
+  }
+
+  GetDashboardFeature(data: any): Observable<any> {
+    return this.http.get(this.path + `/GetDashboard_Features/${data}`)
+  }
+
+  activateModule(id, lastVisitedurl = '', indexUrl = '') {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
     let pgResume;
     let mediaPercent;
@@ -389,13 +398,31 @@ export class AdultsService {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
         pgResume = "s" + res.lastVisitedScreen
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
         sessionStorage.setItem("pgResume", pgResume)
         mediaPercent = parseInt(res.MediaPercent);
-        let freeScreens = res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+        // let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
         console.log(qrList)
+      },error => {
+        console.log(error)
+      },
+      () => {
+        if(lastVisitedurl !== '' && indexUrl !== '') {
+          if (pgResume && pgResume !== '') {
+            this.router.navigate([`${lastVisitedurl}/${pgResume}`])
+          } else {
+            this.router.navigate([`${indexUrl}`])
+          }
+        }
       })
   }
 
@@ -442,7 +469,8 @@ export class AdultsService {
           localStorage.setItem("userId", JSON.stringify(userId))
           localStorage.setItem("email", email)
           localStorage.setItem("pswd", password)
-          localStorage.setItem("name", res.Name)
+          localStorage.setItem("name", res.Name);
+          this.freescreens();
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
@@ -478,7 +506,6 @@ export class AdultsService {
           //this.getBookmarks()
           setTimeout(() => {
             // this.getProgress()
-            // this.freescreens();
             this.getBookmark(userId)
           }, 1000);
 
@@ -522,7 +549,33 @@ export class AdultsService {
 
   }
 
+
+  freescreens(){
+    console.log("freeScreens");
+    let x=[];
+    this.freeScreens().subscribe(res=>
+      {
+          let result = res.map(a => a.FreeScrs);
+          let arr;
+          result=result.forEach(element => {
+          x.push(element?.map(a=>a.ScrNo))
+          arr = Array.prototype.concat.apply([], x);
+          })
+          localStorage.setItem("freeScreens",JSON.stringify(arr))
+        }
+      )
+  }
+
+
   addUserRefPost(data: any): Observable<any> {
     return this.http.post(this.path + '/AddUserRefPost', data)
+  }
+
+  AddUserPreference(data:any): Observable<any>{
+    return this.http.post(this.path + `/AddUserPreference/${data}`, null)
+  }
+
+  GetPodcastList(): Observable<any> {
+    return this.http.get(this.path + '/GetPodcastsListing');
   }
 }

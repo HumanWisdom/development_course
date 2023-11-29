@@ -16,7 +16,9 @@ export class S101013Page implements OnInit {
   bg = "dark_blue_w11"
   hint = "Usually when we are critical of ourselves we do often know why, and the real reason may be how we have been influenced in the past by our parents, or social media, or by friends."
   toc = "/no-judgement/s101001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

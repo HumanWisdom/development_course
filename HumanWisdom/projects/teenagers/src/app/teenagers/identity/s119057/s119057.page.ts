@@ -14,12 +14,15 @@ export class S119057Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2" 
   title="Responding with intelligence  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/identity/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/identity/audios/identity+3.1.mp3'
+
   transcriptPage="identity/s119057t"
   toc="identity/s119001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

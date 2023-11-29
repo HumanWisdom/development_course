@@ -12,7 +12,7 @@ export class S76061Page implements OnInit {
 
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
-  bg="pink_orange_w1"
+  bg="pink_orange_w3"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -30,7 +30,9 @@ export class S76061Page implements OnInit {
   //sendOption=[]
   sessionOption76061=JSON.parse(sessionStorage.getItem("sessionOption76061"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption76061"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/bullying/s76001"
 
   constructor(private router: Router,
@@ -54,8 +56,8 @@ export class S76061Page implements OnInit {
     }
 
     this.questionA=this.qrList?.ListOfQueOpts
-    this.question=this.findQuestion(304).Question
-    this.optionList=this.findQuestion(304).optionList
+    this.question=this.findQuestion(303).Question
+    this.optionList=this.findQuestion(303).optionList
     console.log(this.optionList,this.question)
 
     if(this.saveUsername==false)
@@ -121,12 +123,12 @@ export class S76061Page implements OnInit {
     console.log(id,e)
     if(e==true)
     {
-      document.getElementById(divid).style.backgroundColor = '#FFC455';
+     document.getElementById(divid).style.backgroundColor = '#E58D82';
       this.sendOption.push(id)
     }
     else if(e==false)
     {
-      document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
       this.sendOption.forEach((element,index)=>{
         if(element==id) this.sendOption.splice(index,1);
       });
@@ -160,12 +162,12 @@ export class S76061Page implements OnInit {
   {
     if(this.sessionOption76061.includes(id))
     {
-      // document.getElementById(divid).style.backgroundColor = '#FFC455';
+      //document.getElementById(divid).style.backgroundColor = '#E58D82';
       return true
     }
     else 
     {
-      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
       return false
     }
   }

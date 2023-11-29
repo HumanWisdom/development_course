@@ -13,7 +13,7 @@ export class S105078Page implements OnInit
   bg_cft="bg_pink_orange"
   bg="pink_orange_w3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/3.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/3.1.mp3'
   title="How can we become aware of our conditioning?"
   toc="/conditioning/s105001"
   transcriptPage="conditioning/s105078t"
@@ -26,7 +26,9 @@ export class S105078Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

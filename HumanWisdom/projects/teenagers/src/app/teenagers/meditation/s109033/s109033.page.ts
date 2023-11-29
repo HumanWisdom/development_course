@@ -9,6 +9,7 @@ import { TeenagersService } from '../../teenagers.service';
   styleUrls: ['./s109033.page.scss'],
 })
 export class S109033Page implements OnInit {
+
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w8"
@@ -22,8 +23,12 @@ export class S109033Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  
+  
  
   constructor(
     private router: Router,
@@ -35,8 +40,8 @@ export class S109033Page implements OnInit {
    $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+   var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -90,27 +95,7 @@ export class S109033Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-   // second
-   $("#svg_form_time rect").css("fill", active_color);
-   $("#svg_form_time circle").css("fill", active_color);
-   $("#prev").removeClass("disabled");
-     if (child >= length) {
-       $(this).addClass("disabled");
-       $('#submit').removeClass("disabled");
-     }
-     if (child <= length) {
-       child++;
-     }
-   var circle_child = child + 1;
-   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-     "fill",
-     base_color
-   );
-   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-     "fill",
-     base_color
-   );
-         
+   
       
     
   });
@@ -178,7 +163,7 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-       
+        
       })
     
 

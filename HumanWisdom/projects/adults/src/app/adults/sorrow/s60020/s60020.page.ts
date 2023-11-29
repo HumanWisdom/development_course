@@ -15,7 +15,9 @@ export class S60020Page implements OnInit {
   bg = "purple_w12"
   hint = " It could be you get into a new relationship quickly, or go into depression.  "
   toc = "/sorrow/s60001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

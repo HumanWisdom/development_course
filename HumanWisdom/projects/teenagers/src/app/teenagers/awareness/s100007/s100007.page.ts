@@ -14,7 +14,7 @@ export class S100007Page implements OnInit {
   bg_cft="bg_red_pink"
   bg="red_pink_w5"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/awareness/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.3.mp3'
   title=""
 
   toc="awareness/s100001"
@@ -29,7 +29,9 @@ export class S100007Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   progName="teenagers"
   
 

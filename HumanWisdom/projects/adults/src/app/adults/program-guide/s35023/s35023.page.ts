@@ -41,7 +41,9 @@ export class S35023Page implements OnInit,OnDestroy {
   
   toc="program-guide/s35001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
@@ -104,7 +106,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/program-guide/s35025'])
+    this.router.navigate(['/adults/program-guide/s35024'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

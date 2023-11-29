@@ -5,6 +5,7 @@ import {AdultsService} from "../../../adults/src/app/adults/adults.service";
 import { NgxCaptureService } from 'ngx-capture';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { LogEventService } from '../../services/log-event.service';
 
 
 
@@ -19,20 +20,22 @@ export class CourseFooterComponent implements OnInit {
   @Input() bg: string;
   @Input() bg_cft: string;
   @Input() isUseCloseButton:boolean=false;
+  @Input() enableDashboard:boolean=false;
   progUrl: string;
   urlT:any
   shared=false;
   programName="";
   //@ViewChild('screen', { static: true }) screen: any;
+  @Input() screenName: any = '';
 
   constructor(
     private router: Router,
     private service:AdultsService,
     private ac:ActivatedRoute,
-    private sharedService:SharedService
+    private sharedService:SharedService,
     //private captureService:NgxCaptureService
-
-  ) { 
+    public logeventservice: LogEventService
+  ) {
     if(this.router.getCurrentNavigation()) {
       this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
     }
@@ -54,11 +57,12 @@ export class CourseFooterComponent implements OnInit {
   }
 
   next(){
+    this.logeventservice.logEvent('Click_Next', true, this.screenName);
     this.nextEmitter.emit()
-
   }
 
   previous(){
+    this.logeventservice.logEvent('Click_Previous', true, this.screenName);
     this.previousEmitter.emit()
 
   }
@@ -69,7 +73,7 @@ export class CourseFooterComponent implements OnInit {
     }
    this.goToDash();
   }
-  
+
   goToDash() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.router.navigate(['/adults/adult-dashboard'])
@@ -81,7 +85,7 @@ export class CourseFooterComponent implements OnInit {
       this.router.navigate(['/adults/adult-dashboard'])
     }
   }
-  
+
   getProgramTypeName(value: number): string {
     const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
     return enumKey as string;

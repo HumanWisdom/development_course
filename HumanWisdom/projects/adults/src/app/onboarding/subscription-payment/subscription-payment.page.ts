@@ -3,7 +3,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
+import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-subscription-payment',
   templateUrl: './subscription-payment.page.html',
@@ -28,24 +31,46 @@ export class SubscriptionPaymentPage implements OnInit {
   defaultCountry: any;
   defaultCountryname: any;
   defaultCurrencySymbol: any
+  obj:any;
+  enableAlert = false;
+  content = '';
 
   constructor(private service: OnboardingService,
+    private location:Location,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount')
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
+    let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
+
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
-    let obj = {
+    var checkout = SharedService.getDataFromLocalStorage(Constant.Checkout);
+    if(checkout == 'T'){
+        this.obj = {
+          UserID: userId,
+          ProgramID: '9',
+          PlanId:  plan === 'Annual' || 'Yearly' ? '2' : '1',
+          DiscountCode:  0,
+          Quantity: 1,
+          AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
+          MyselfSub: "1",
+          RateID: rateId
+        }
+  }else{
+    this.obj = {
       UserID: userId,
       ProgramID: '9',
       PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
-      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : ''
+      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
     }
-    this.service.stripe(obj)
+  }
+
+    SharedService.setDataInLocalStorage(Constant.Checkout,'F')
+    this.service.stripe(this.obj)
       .subscribe(res => {
         this.stripeId = res;
         this.enable = true;
@@ -81,7 +106,9 @@ export class SubscriptionPaymentPage implements OnInit {
     this.service.getPricing(this.countryCode).subscribe(res => {
       this.defaultCurrencySymbol = res[0]['ISOCode'];
     }, (err) => {
-      window.alert(err.error['Message'])
+      this.content = err.error['Message'];
+      this.enableAlert = true;
+      // window.alert(err.error['Message'])
     }
     )
   }
@@ -89,6 +116,27 @@ export class SubscriptionPaymentPage implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       if (this.stripeId !== undefined) {
+        var style = {
+          base: {
+            iconColor: '#c4f0ff',
+             color: '#fff',
+            '::placeholder': {
+
+            },
+            ':-webkit-autofill': {
+              color: '#000000',
+              backgroundColor: '#120F40',
+              colorBackground:'#120F40',
+            },
+            ':focus': {
+              color: '#fff',
+            },
+          },
+          invalid: {
+            iconColor: '#FFC7EE',
+            color: '#FFC7EE',
+          },
+        };
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
         var paymentRequest = stripe.paymentRequest({
@@ -156,14 +204,16 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate(['/adults/hwp-premium-congratulations']);
                       }
                     } else {
-                      alert('Your Payment Is Successfully Submitted');
+                      this.content = 'Your Payment Is Successfully Submitted';
+                      this.enableAlert = true;
+                      // alert('Your Payment Is Successfully Submitted');
                       this.router.navigate(['/onboarding/myprogram'])
                     }
                   }
                 });
               } else {
 
-                // The payment has succeeded.
+                // The payment has succeeded.0.
                 localStorage.setItem('personalised', 'F');
                 if (localStorage.getItem('ispartnershipClick') == 'T') {
                   if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
@@ -176,7 +226,9 @@ export class SubscriptionPaymentPage implements OnInit {
                     this.router.navigate(['/adults/hwp-premium-congratulations']);
                   }
                 } else {
-                  alert('Your Payment Is Successfully Submitted');
+                  this.content = 'Your Payment Is Successfully Submitted';
+                  this.enableAlert = true;
+                  // alert('Your Payment Is Successfully Submitted');
                   this.router.navigate(['/onboarding/myprogram'])
                 }
 
@@ -186,9 +238,29 @@ export class SubscriptionPaymentPage implements OnInit {
         });
 
 
-        var cardNumberElement = elements.create('cardNumber', { placeholder: 'Card Number' });
-        var cardExpiryElement = elements.create('cardExpiry');
-        var cardCvcElement = elements.create('cardCvc');
+        var cardNumberElement = elements.create('cardNumber', {
+        placeholder: 'Card Number' ,
+        style: style,
+        classes: {
+          base: 'form-control w-full',
+          complete: 'is-valid',
+          empty: 'is-empty',
+          invalid: 'is-invalid',
+        },});
+        var cardExpiryElement = elements.create('cardExpiry',{style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },});
+        var cardCvcElement = elements.create('cardCvc',{ style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },});
 
         cardNumberElement.mount('#card-number');
         cardExpiryElement.mount('#card-expiry');
@@ -212,7 +284,9 @@ export class SubscriptionPaymentPage implements OnInit {
             }
           }).then((result) => {
             if (result.error) {
-              alert(result.error.message);
+              this.content = result.error.message;
+              this.enableAlert = true;
+              // alert(result.error.message);
             } else {
               localStorage.setItem('personalised', 'F');
               if (localStorage.getItem('ispartnershipClick') == 'T') {
@@ -226,7 +300,9 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
               } else {
-                alert('Your Payment Is Successfully Submitted');
+                this.content = 'Your Payment Is Successfully Submitted';
+                this.enableAlert = true;
+                // alert('Your Payment Is Successfully Submitted');
                 this.router.navigate(['/onboarding/myprogram'])
               }
             }
@@ -238,7 +314,17 @@ export class SubscriptionPaymentPage implements OnInit {
 
   }
 
+  back(){
+    this.location.back();
+  }
+
   ngOnInit() {
   }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
+
 
 }

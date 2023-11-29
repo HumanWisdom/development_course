@@ -1,0 +1,114 @@
+<!-- top navigation -->
+<!-- <div class="top_nav ml0 tcenter inav">
+  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg" alt="" class="img-responsive iw100">
+  <div class="nav_menu absolute_top p20px">
+      <nav>          
+          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
+            <li class="">                    
+                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
+                  <h4 class="btn_back_grey">
+                    Back
+                  </h4> 
+                </a>                  
+            </li>   
+            
+            <li class="lishare">                    
+              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey.svg" alt="" class="p0">
+              </a>                  
+            </li>
+          </ul>
+      </nav>
+  </div>
+</div> -->
+<!-- /top navigation -->
+<app-toc-header [moduleName]="'Living with Peace'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          We all want to live with a sense of peace within, and in a peaceful world, but this peace eludes us. In this module we will explore what causes us to live in conflict, and what we can do to live with a sense of peace. This peace allows us to grow as human beings and make the most of our limited time on earth.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/adults/living-with-peace', livingwithpeaceResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_blue" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <!-- <a routerLink="/adults/living-with-peace/s63002">
+          <button type="button" class="btn btn_default mb0 txt_blue" data-dismiss="modal">Start from the beginning</button>
+        </a> -->
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/adults/living-with-peace/s63002">
+      <div class="row crow box bg_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why don’t we live in peace?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              17 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/adults/living-with-peace/s63033">
+      <div class="row crow box bg_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              How can we use wisdom to live in peace?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              24 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+
+  </form>    
+
+</app-index-content> 
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

@@ -300,7 +300,9 @@ import { S44235Page } from './s44235/s44235.page'; 
 import { S44236Page } from './s44236/s44236.page';  
 import { S44237Page } from './s44237/s44237.page';  
 import { S44238Page } from './s44238/s44238.page';  
-import { S44239Page } from './s44239/s44239.page';  
+import { S44239Page } from './s44239/s44239.page'; 
+import { S44239p1Page } from './s44239p1/s44239p1.page';
+import { S44239p2Page } from './s44239p2/s44239p2.page';  
 import { S44240Page } from './s44240/s44240.page';  
 
 const routes: Routes = [
@@ -1804,10 +1806,22 @@ const routes: Routes = [
     component: S44239Page,
   },
   {
+    path: 's44239p1',   
+     canActivate:[ActiveGuard],  
+    component: S44239p1Page,
+  },
+  {
+    path: 's44239p2',   
+     canActivate:[ActiveGuard],  
+    component: S44239p2Page,
+  },
+  {
     path: 's44240',   
      canActivate:[ActiveGuard],  
     component: S44240Page,
   },  
+ 
+ 
   
 ];
 

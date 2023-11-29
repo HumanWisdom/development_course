@@ -16,13 +16,15 @@ export class S95016Page implements OnInit,OnDestroy {
   bg_cft="bg_green_yellow"
   bg="green_yellow_w12"
   title="Treat the problem, not just the symptom"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.5.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/benefits-of-enquiry/audios/1.5.mp3'
 
   transcriptPage="benefits-of-enquiry/s95016t"
   toc="benefits-of-enquiry/s95001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

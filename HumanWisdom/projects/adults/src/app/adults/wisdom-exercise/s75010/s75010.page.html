@@ -1,15 +1,15 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" routerLink="/adults/wisdom-exercise/s75001">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a class="">
-        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
           #9 Looking without thinking
         </h1>
       </a>
@@ -17,8 +17,9 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
       <a (click)="changeType()" class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
       </a>
     </div>
   </div>
@@ -32,95 +33,100 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
               <!-- carousel -->
               <div class="container" *ngIf="enableintro"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
                     <!-- introduction -->
                     <div class="item active">
-                      <div class="row center_flex mt40px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09_a.png"
-                                alt="" class="img-responsive w100">
+                                alt="" class="img-responsive w100 br_blr_20px">
                             </div>
                           </div>
 
-                          <div class="row mt30px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_12px lh_14px fc_000000 mtb0px">
-                                Exercise #9
-                              </h4>
+                          <div class="p20px">
+                            <div class="row mb15px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="fw_400 fs_15px lh_150p fc_ffffff mtb0px">
+                                  Exercise #9
+                                </h4>
+                              </div>
                             </div>
-                          </div>
 
-                          <div class="row mt10px mb15px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_500 fs_24px lh_130p fc_000000 mtb0px">
-                                Looking without thinking
-                              </h4>
+                            <div class="row mb15px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="fw_600 fs_18px lh_150p fc_ffffff mtb0px">
+                                  Looking without thinking
+                                </h4>
+                              </div>
                             </div>
-                          </div>
 
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
-                                Welcome to this session where we are going to learn an amazing skill - how to be with a thought or feeling without naming it or reacting to it. This has many benefits which we will explore.
-                                Keep in mind the basic principles of enquiry:
-                              </h4>
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="fw_400 fs_15px lh_150p fc_ffffff mtb0px">
+                                  Welcome to this session where we are going to learn an amazing skill - how to be with a thought or feeling without naming it or reacting to it. This has many benefits which we will explore.
+                                  Keep in mind the basic principles of enquiry:
+                                </h4>
 
-                              <ul class="fw_400 fs_15px lh_140p fc_000000 pt15px pl15px">
-                                <li class="">
-                                  Be curious - we are just looking and learning about ourselves
-                                </li>
+                                <ul class="fw_400 fs_15px lh_150p fc_ffffff pl15px">
+                                  <li class="mt15px">
+                                    Be curious - we are just looking and learning about ourselves
+                                  </li>
 
-                                <li class="">
-                                  For learning to take place we need to pause judgement
-                                </li>
+                                  <li class="mt15px">
+                                    For learning to take place we need to pause judgement
+                                  </li>
 
-                                <li class="">
-                                  What we observe in ourselves is not  right or wrong, good or bad
-                                </li>
+                                  <li class="mt15px">
+                                    What we observe in ourselves is not  right or wrong, good or bad
+                                  </li>
 
-                                <li class="">
-                                  Deep down, we are all the same human beings
-                                </li>
-                              </ul>
+                                  <li class="mt15px">
+                                    Deep down, we are all the same human beings
+                                  </li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
 
@@ -131,19 +137,19 @@
 
                     <!-- audio -->
                     <div class="item">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
                                 Introduction - Learn an amazing new skill
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.1.mp3">
                               </app-audio-player>
@@ -154,8 +160,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             This may seem like a very strange idea at first - but learning to notice a thought or feeling without reacting to it is a skill that everyone can learn and it can quite simply revolutionise your life, creating space for wisdom to operate.
@@ -182,10 +188,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             To look at a thought or feeling and do nothing about it needs a mind that is sensitive, quiet, and alert. This simple practice opens the door to wisdom and right action
                           </p>
                           
@@ -196,10 +202,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Can you observe a thought or feeling, as you would watch a leaf fall from a tree, or a bird in flight - just noticing it, without thinking about it.
                           </p>
                           
@@ -210,10 +216,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Of all the skills you will learn, this can feel the most challenging. It's simple, but not easy. Open your heart to learn it and do it with passion. It can transform your life.
                           </p>
                           
@@ -230,50 +236,56 @@
 
               <!-- day 01 -->
               <div class="container" *ngIf="enableday1"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-                        
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
                     <!-- audio -->
                     <div class="item active">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Benefits of looking without acting/reacting
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 1
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Benefits of looking without acting/reacting
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.2.mp3">
                               </app-audio-player>
@@ -284,8 +296,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             There are many benefits of learning to look at a feeling or thought without thinking, without labelling, or reacting, or judging, or blaming someone.
@@ -316,20 +328,20 @@
 
                     <!-- exercise -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex mb20px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
                                 Some benefits of looking at a thought/feeling and not reacting:
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
                                 <li class="">
                                   Manage your emotions
                                 </li>
@@ -364,19 +376,22 @@
 
                     <!-- audio -->
                     <div class="item">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                A simple breathing exercise to quieten your mind
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 1
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  A simple breathing exercise to quieten your mind
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.3.mp3">
                               </app-audio-player>
@@ -387,8 +402,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             Practice this simple  breathing exercise several times a day, whenever you have a few minutes to yourself. Each time you do it your mind will quieten, making it easier to notice your thoughts and feelings as they arise. It is also helpful while watching a thought or feeling because it makes the mind go quiet.
@@ -414,20 +429,20 @@
 
                     <!-- exercise -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex mb20px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
                                 What does looking without action involve?
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
                                 <li class="">
                                   Noticing a thought or feeling
                                 </li>
@@ -470,10 +485,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             The moment you label a thought or feeling, or resist it, or give in to it, you lose touch with it. You stop seeing the flower in front of you once you label it as a rose, or you stop seeing the tree once you call it an oak tree.
                           </p>
                           
@@ -490,32 +505,35 @@
 
               <!-- day 02 -->
               <div class="container" *ngIf="enableday2"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-                        
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
@@ -533,20 +551,20 @@
 
                      <!-- exercise -->
                      <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex mb20px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
                                 Noticing our urge to speak, and not giving in to it or suppressing it can help us:
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
                                 <li class="">
                                   Decide if we need to say anything
                                 </li>
@@ -577,20 +595,20 @@
 
                     <!-- quotation -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
                               <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
                                 alt="" class="img-responsive">
                             </div>
                           </div>
 
                           <div class="row center_flex we_quotation">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
                                 Wisdom is….speaking with care, and being mindful of how it is going to be received. 
                                 This can enhance all our relationships.
                               </h4>
@@ -598,14 +616,14 @@
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <hr class="we_hr">
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
                                 
                               </h4>
                             </div>
@@ -624,33 +642,35 @@
 
               <!-- day 03 -->
               <div class="container" *ngIf="enableday3"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-                       
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
@@ -662,19 +682,22 @@
 
                     <!-- audio -->
                     <div class="item">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Overcoming smartphone addiction
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 3
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Overcoming smartphone addiction
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.4.mp3">
                               </app-audio-player>
@@ -685,8 +708,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             Smartphone addiction is the commonest form of addiction on earth - though most people would not call it that.
@@ -724,10 +747,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             As you notice the urge to pick up the phone, and stay with that feeling, becoming conscious of your breathing, your mind quietens. You create space to decide if you really need to pick up the phone.
                           </p>
 
@@ -738,34 +761,34 @@
 
                     <!-- quotation -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
                               <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
                                 alt="" class="img-responsive">
                             </div>
                           </div>
 
                           <div class="row center_flex we_quotation">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
                                 Digital addiction is going to be one of the great mental health crises of our time
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <hr class="we_hr">
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
                                 Sam Altman
                               </h4>
                             </div>
@@ -778,10 +801,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             The key is to notice, and not resist the feeling, but not to give into it either. Being able to notice the feeling or thought that makes you reach for the phone, and stay with it, brings its own change.
                           </p>
 
@@ -798,50 +821,56 @@
 
               <!-- day 04 -->
               <div class="container" *ngIf="enableday4"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
                     <!-- audio -->
                     <div class="item active">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Exploring your eating and drinking habits
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 4
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Exploring your eating and drinking habits
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.5.mp3">
                               </app-audio-player>
@@ -852,8 +881,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             The urge to eat or have a fizzy drink or some alcohol is powerful and one we find difficult to control. Overeating or drinking too much can become a habit - and this is driven by powerful emotions in us that we are not aware of. Presented with food or drink we are often unable to control how much we consume.
@@ -881,19 +910,22 @@
 
                     <!-- audio -->
                     <div class="item">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Noticing habits around food
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 4
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Noticing habits around food
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.6.mp3">
                               </app-audio-player>
@@ -904,8 +936,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             Just as we have brought our attention to bear on our urge to speak we are going to do the same to food and drink.
@@ -931,10 +963,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Noticing our unconscious habits around food and drink is simple, but not easy, and requires perseverance. As you notice the beginning of the habit, tune into your breathing and notice how the urge fades away, and your mind quietens.
                           </p>
 
@@ -945,10 +977,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Your environment can trigger your habits without you being aware of it. For example, if the biscuits are on the table in front of you, you are more likely to eat them.
                           </p>
 
@@ -971,10 +1003,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             By becoming aware of our habits around food and drink we can eat and drink in moderation and avoid the problems of not doing so.
                           </p>
 
@@ -985,10 +1017,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             The root cause of obesity and excessive alcohol consumption is in our thinking - in our unconscious habits, in our need for stimulation and pleasure, and as a balm for our feelings of stress and anxiety. The answer lies in a deeper awareness of what is going on.
                           </p>
 
@@ -1005,50 +1037,56 @@
 
               <!-- day 05 -->
               <div class="container" *ngIf="enableday5"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-                       
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
                     <!-- audio -->
                     <div class="item active">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Exploring anxiety
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 5
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Exploring anxiety
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.7.mp3">
                               </app-audio-player>
@@ -1059,8 +1097,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             Anxiety affects between 20 and 40% of people. We know it is caused by our thinking because when we distract ourselves, the anxiety abates for a while.
@@ -1098,10 +1136,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Anxiety has its roots in thinking. If we can meet it completely, without thinking, it can dissolve.
                           </p>
 
@@ -1124,10 +1162,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             When we pay complete attention to a feeling, it transforms into silence. This gives our mind space to understand what is behind  the feeling, and respond with wisdom.
                           </p>
 
@@ -1138,10 +1176,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Remember - the feeling of anxiety is real, but the danger it is pointing to may not be. When this is seen clearly, it can dissolve.
                           </p>
 
@@ -1158,50 +1196,56 @@
 
               <!-- day 06 -->
               <div class="container" *ngIf="enableday6"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
                     <!-- audio -->
                     <div class="item active">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Stay with your feeling of emptiness or loneliness
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 6
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Stay with your feeling of emptiness or loneliness
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.8.mp3">
                               </app-audio-player>
@@ -1212,8 +1256,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             To be human is to feel the ache of loneliness sometimes. This can come on even when you are with people. Sometimes we call it a feeling of emptiness. Most of modern life is set up to avoid this feeling if we can. We have endless digital entertainment. Despite this, the ache of loneliness or emptiness does not go away and follows us like a shadow we  try to escape from all the time. This leaves us with no sense of peace.
@@ -1239,20 +1283,20 @@
 
                     <!-- exercise -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex mb20px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
                                 Staying with your feeling of loneliness can help you:
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
                                 <li class="">
                                   Always be comfortable being with yourself
                                 </li>
@@ -1279,10 +1323,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Escaping from our loneliness is neither right or wrong, good or bad.
                             It's just something to explore. On the other side of that feeling lies peace.
                           </p>
@@ -1300,10 +1344,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Notice this feeling of loneliness/emptiness when it rises in you. Stay with it. Do not resist it, or give in to it, or judge it, or even name it. Just be with it, tuning into your breathing as you do so. Share what happened.
                           </p>
 
@@ -1314,10 +1358,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Before you put on the TV, or browse the internet, or go shopping, or reach for a drink - PAUSE - and notice the feeling behind that urge. Don’t name it, or resist it, or give in to it - tune into your breathing and just stay with that feeling. What happened?
                           </p>
 
@@ -1328,10 +1372,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             If you can stay with the ache of loneliness or emptiness, and meet that feeling completely without naming it, or escaping from it, or judging it - it dissolves into a sense of peace.
                           </p>
 
@@ -1348,10 +1392,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Of all the skills you can learn, to meet a feeling or thought without language or resistance can feel the most challenging. Stick with it anyway. It can transform your life.
                           </p>
 
@@ -1368,50 +1412,56 @@
 
                <!-- day 07 -->
                <div class="container" *ngIf="enableday7"  (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
 
-                  <div class="row center_flex">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
-                      <ol class="carousel-indicators">
-
-                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
-                         
-                        </h4>
-
-                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
-                            Back
-                          </h4>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
-                            Next
-                          </h4>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </ol>
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4  class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                           </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ol>
 
                   <div class="carousel-inner">
 
                     <!-- audio -->
                     <div class="item active">
-                      <div class="row center_flex safari_tcenter mt60px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
-                                Meeting emotional pain
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 7
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Meeting emotional pain
+                                </h4>
                               </h4>
                             </div>
                           </div>
 
                           <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.9.mp3">
                               </app-audio-player>
@@ -1422,8 +1472,8 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff italic txt_justify">
 
                           <p>
                             We use the term emotional pain here to cover the feeling of hurt we feel when we are criticized, or the grief we feel when we lose what we have loved, or if a memory of pain from the past surfaces and clouds our present.
@@ -1453,20 +1503,20 @@
 
                     <!-- exercise -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row center_flex mb20px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
                                 Benefits of meeting our emotional pain without resistance or language:
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
                                 <li class="">
                                   We do not escape to alcohol, or drugs to numb the pain
                                 </li>
@@ -1501,10 +1551,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Staying with the pain as it arises can help us heal more quickly and move on with our lives.
                           </p>
 
@@ -1515,34 +1565,34 @@
 
                     <!-- quotation -->
                     <div class="item">
-                      <div class="row center_flex mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
                               <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
                                 alt="" class="img-responsive">
                             </div>
                           </div>
 
                           <div class="row center_flex we_quotation">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
                                 People go through so much pain trying to avoid pain.
                               </h4>
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <hr class="we_hr">
                             </div>
                           </div>
 
                           <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
                                 Neil Strauss
                               </h4>
                             </div>
@@ -1555,10 +1605,10 @@
 
                     <!-- simple text -->
                     <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             Well done for completing this session.
                             Continue to the next Wisdom Exercise.
                           </p>
@@ -1585,70 +1635,67 @@
   <!--/class -->
 </div>
 <!-- /page content -->
-
-<!-- footer  -->
 <div class="mfooter p0">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft col_cw">
   
   
       <a>
-        <button type="button" class="btn m0px btn_wec"   [ngClass]="getClass('75010p0')"
-          (click)="getdayevent('intro')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p0')" (click)="getdayevent('intro')">
           Intro
         </button>
       </a>
-  
+
       <a>
-        <button type="button" class="btn m0px btn_wec"
-          [ngClass]="getClass('75010p1')" (click)="getdayevent('1')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p1')" (click)="getdayevent('1')">
           Day 1
         </button>
       </a>
-  
+
       <a>
-        <button type="button" class="btn m0px btn_wec"
-        [ngClass]="getClass('75010p2')" (click)="getdayevent('2')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p2')" (click)="getdayevent('2')">
           Day 2
         </button>
       </a>
-  
+
       <a>
-        <button type="button" class="btn m0px btn_wec"
-        [ngClass]="getClass('75010p3')" (click)="getdayevent('3')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p3')" (click)="getdayevent('3')">
           Day 3
         </button>
       </a>
-  
+
       <a>
-        <button type="button" class="btn m0px btn_wec"
-        [ngClass]="getClass('75010p4')" (click)="getdayevent('4')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p4')" (click)="getdayevent('4')">
           Day 4
         </button>
       </a>
-  
+
       <a>
-        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75010p5')"
-          (click)="getdayevent('5')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p5')" (click)="getdayevent('5')">
           Day 5
         </button>
       </a>
 
       <a>
-        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75010p6')"
-          (click)="getdayevent('6')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p6')" (click)="getdayevent('6')">
           Day 6
         </button>
       </a>
       <a>
-        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75010p7')"
-          (click)="getdayevent('7')">
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p7')" (click)="getdayevent('7')">
           Day 7
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p8')" (click)="getdayevent('8')">
+          Day 8
         </button>
       </a>
     </div>
   </div>
 </div>
+<!-- footer  -->
+
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Please subscribe to access your online Journal'">
 </app-modal>

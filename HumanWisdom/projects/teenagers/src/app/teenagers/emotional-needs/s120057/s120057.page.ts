@@ -17,7 +17,9 @@ export class S120057Page implements OnInit
   bg="blue_pink_w1" 
   hint = " It may be you want someone to think you are special to them, or you want to be the head of your school team, or want others to praise you.  "
   toc = "/emotional-needs/s120001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -28,7 +30,7 @@ export class S120057Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1906
   reflection: any
   reflectionA: any
   r120057 = JSON.parse(sessionStorage.getItem("r120057"))

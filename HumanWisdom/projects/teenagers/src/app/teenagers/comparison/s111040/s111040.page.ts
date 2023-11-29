@@ -14,12 +14,14 @@ export class S111040Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w10"
   title="Self-critical"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/2.7.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/2.7.mp3'
   transcriptPage="comparison/s111040t"
   toc="comparison/s111001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

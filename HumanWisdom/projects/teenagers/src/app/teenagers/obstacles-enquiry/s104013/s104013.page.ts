@@ -14,12 +14,14 @@ export class S104013Page implements OnInit,OnDestroy {
   bg_cft="bg_teal"
   bg="teal_w1"
   title="#2 This enquiry challenges my opinions"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/obstacles-enquiry/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/obstacles-enquiry/audios/1.2.mp3'
   transcriptPage="obstacles-enquiry/s104013t"
   toc="obstacles-enquiry/s104001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

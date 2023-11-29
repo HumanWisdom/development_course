@@ -19,13 +19,13 @@ export class S47371Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=62
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/53.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
   
   bg=""
-  moduleLink="/adults/communication"
-  moduleName="02. Communication"
+  moduleLink="/adults/stress"
+  moduleName="Stress"
   sectionName= "Transform your life - II";
-  moduleId=53
+  moduleId=44
 
   moduleList: any = [
     {

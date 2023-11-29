@@ -20,7 +20,9 @@ export class S231p1Page implements OnInit {
   overallPercentage:any
   bookmark=0
   toc="/anger/s162p0"
-path=this.router.url
+path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,
@@ -54,11 +56,11 @@ path=this.router.url
 
   }
   submitProgress(){
-    this.router.navigate(['/adults/anger/s231p2'])
+    this.router.navigate(['/adults/anger/s231p0'])
 
   }
   previous(){
-    this.router.navigate(['/adults/anger/s230p3'])
+    this.router.navigate(['/adults/anger/s229'])
 
   }
 

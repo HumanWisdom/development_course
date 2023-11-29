@@ -16,11 +16,13 @@ export class S117114Page implements OnInit,OnDestroy
   bg="green_yellow_w9"
   title="Fear contributes to loneliness  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.8.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.9.mp3'
   transcriptPage="loneliness/s117114t"
   toc="loneliness/s117001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

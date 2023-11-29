@@ -18,12 +18,14 @@ export class S127121Page implements OnInit
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "127029"
+  screenNumber = "127121"
   startTime: any
   endTime: any
   totalTime: any
   bookmark = 0
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   constructor
   (
@@ -52,8 +54,9 @@ export class S127121Page implements OnInit
     {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
-      var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#FFC455";
+     var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
+
       var i;
       var child = 1;
       var length = $("section").length - 1;

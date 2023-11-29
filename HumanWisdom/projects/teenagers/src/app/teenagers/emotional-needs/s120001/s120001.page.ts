@@ -20,14 +20,17 @@ export class S120001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
-  socialShare=false
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+    socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  emotionalneedsResume=sessionStorage.getItem("emotionalneedsResume")
+  pgResume=sessionStorage.getItem("pgResume")  
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/18.png"
   tocColor="white"
   lastvisited = false;

@@ -1,121 +1,132 @@
-import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
-import * as jQuery from 'jquery';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 import { TeenagersService } from '../../teenagers.service';
 
-
 @Component({
-  selector: 'app-s108002-audio',
+  selector: 'app-s108002',
   templateUrl: './s108002.page.html',
   styleUrls: ['./s108002.page.scss'],
 })
-export class S108002Page implements OnInit,OnDestroy {
+export class S108002Page implements OnInit, OnDestroy {
 
+  bg_tts = "bg_blue"
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w1"
-  title="Noticing Thoughts"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/noticing_thoughts/audios/noticing-thoughts+1.1.mp3'
-  transcriptPage="/noticing-thoughts/s108002t"
-  toc=""
-  bookmark=0
-  path=this.router.url
-  avDuration:any
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("audio")
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=108002
-  startTime:any
-  endTime:any
-  totalTime:any
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName="teenagers"
-  
+  bg = "blue_flat"
+
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  screenType = localStorage.getItem("text")
+  moduleId = localStorage.getItem("moduleId")
+  screenNumber = 108002
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark = 0
+  toc = ""
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
+  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+  moduleData:ProgramModel;
+  pgResume=sessionStorage.getItem("pgResume")
+
   constructor
   (
     private router: Router,
-    private service:TeenagersService,
-    private location:Location
+    private service: TeenagersService,
+    private location: Location
   ) 
-  { }
- 
+  { 
+    this.getSetModuleData(108);
+
+
+  }
+
   ngOnInit() 
   {
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
-    this.startTime = Date.now();
-    this.startTime = Date.now();
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark108002"))==0)
-      this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark108002"))==1)
-      this.bookmark=1
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
+
+    this.startTime = Date.now();
+
+    if (JSON.parse(sessionStorage.getItem("bookmark108002")) == 0)
+      this.bookmark = 0
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark108002")) == 108002)
+      this.bookmark = 108002
   }
- 
-  createScreen()
+
+  receiveBookmark(e) 
+  {
+    console.log(e)
+    if (e == true)
+      this.bookmark = 108002
+    else
+      this.bookmark = 0
+    sessionStorage.setItem("bookmark108002", JSON.stringify(this.bookmark))
+  }
+
+  createScreen() 
   {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
+
+    })
   }
- 
-  receiveBookmark(e)
+
+  submitProgress() 
   {
-    console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark108002",JSON.stringify(this.bookmark))
+    this.service.submitProgressText({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime
+    }).subscribe(res => {
+      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+    },
+    error => { console.log(error) },
+    () => {
+      //this.router.navigate(['/adults/conditioning/s234'])
+    })
   }
- 
-  receiveAvDuration(e)
+
+  goNext() 
   {
-    console.log(e)
-    this.avDuration=e
-  }
- 
-  submitProgress()
-  {
+    // this.router.navigate(['/adults/comparison/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    if (this.userId !== 563) this.submitProgress()
     this.router.navigate(['/noticing-thoughts/s108003'])
-    this.service.submitProgressAv({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
-    }).subscribe(res=>
-      { 
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      })
   }
 
-  prev()
-  {
-    this.router.navigate(['/noticing-thoughts/s108001'])
-  }
+  ngOnDestroy() 
+  {}
 
-  ngOnDestroy()
-  {
-    localStorage.setItem("totalTime108002",this.totalTime)
-    localStorage.setItem("avDuration108002",this.avDuration)
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }

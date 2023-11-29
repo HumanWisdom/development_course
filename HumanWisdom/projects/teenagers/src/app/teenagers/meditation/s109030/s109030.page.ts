@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
@@ -8,29 +8,27 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s109030.page.html',
   styleUrls: ['./s109030.page.scss'],
 })
-export class S109030Page implements OnInit,OnDestroy {
+export class S109030Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w7"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/meditation/videos/2.2.mp4'  
-  title="What are the benefits and limitations of meditation?"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/meditation/meditation_04.jpg"
+  bg="blue_w6" 
+  
+  toc="meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("video")
+  screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=109030
   startTime:any
   endTime:any
-  totalTime:any 
-  toc="meditation/s109001"
+  totalTime:any
   bookmark=0
-  path=this.router.url
-  avDuration:any
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+ 
   constructor
   (
     private router: Router,
@@ -43,6 +41,7 @@ export class S109030Page implements OnInit,OnDestroy {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -77,7 +76,9 @@ export class S109030Page implements OnInit,OnDestroy {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+    }).subscribe(res=>
+      { 
+      })
   }
 
   submitProgress()
@@ -85,24 +86,29 @@ export class S109030Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/meditation/s109031'])
-    this.service.submitProgressAv({
+    this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
+      "timeSpent":this.totalTime
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
   }
+
   prev()
   {
     this.router.navigate(['/meditation/s109029'])
   }
+
   ngOnDestroy()
   {}
 

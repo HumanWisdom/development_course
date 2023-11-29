@@ -11,9 +11,12 @@ import { TeenagersService } from '../../teenagers.service';
 export class S95014Page implements OnInit {
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
-  bg = "green_yellow_w5"
+  bg = "comparison_envy_w7"
+
   toc = "benefits-of-enquiry/s95001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -35,7 +38,7 @@ export class S95014Page implements OnInit {
   elseSelected = false
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
-
+  enableTick = false;
 
   constructor(private router: Router,
     private service: TeenagersService,
@@ -100,35 +103,46 @@ export class S95014Page implements OnInit {
 
   }
 
-  checkOption(opt) {
+  checkOption(opt)
+  {
     this.sessionOption = []
-    if (opt.CorrectAns) {
+   
+    if (opt.CorrectAns)
+    {
+      this.enableTick = true;
       this.option = opt.OptId
-      sessionStorage.setItem("sessionOptions95014", JSON.stringify(this.option))
-      document.getElementById(opt.OptId).style.background = '#FFC455';
+      sessionStorage.setItem("sessionOptions111012", JSON.stringify(this.option))
+      document.getElementById(opt.OptId).style.background = '#E58D82';
+      document.getElementById(opt.OptId+ 'text').style.color = '#FFFFFF';
       if (this.falseans !== '') {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
-      } else {
+      }
+      else
+      {
         this.falseans = opt.OptId
       }
-    } else {
-      if (this.falseans !== '') {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
-        document.getElementById(this.falseans).style.opacity = '0.75';
-        this.falseans = opt.OptId
-      } else {
-        this.falseans = opt.OptId
-      }
-      document.getElementById(opt.OptId).style.background = '#5D5D5D';
-      document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
-    //this.option.push(optId)
-
-    //this.sendOption.push(this.option[this.option.length-1])
+    else
+    {
+      this.enableTick = false;
+      if (this.falseans !== '')
+      {
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        // document.getElementById(this.falseans).style.opacity = '0.1';
+        this.falseans = opt.OptId
+      }
+      else
+      {
+        this.falseans = opt.OptId
+      }
+      document.getElementById(opt.OptId).style.background = '#120F40';
+      // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
+    }
+    console.log(this.enableTick)
   }
 
 

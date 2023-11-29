@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            All our past influences get stored in our memory, and we can call this our conditioning. We are not aware we have been conditioned and think all our thoughts and opinions are originally ours, and then we get attached to them. In a relationship, where people with different conditioning influences meet, there is the potential for conflict in a number of ways, with each person thinking they are right, and trying to convince the other person of that.
+            <br>
+            Conditioning is not permanent and is always changing as you are exposed to new influences and experiences. It is not wrong and just needs to be understood and questioned.
+            Boys and girls are conditioned differently in some parts of the world - how do you think this applies where you are?
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

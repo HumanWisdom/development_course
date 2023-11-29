@@ -5,238 +5,193 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_login_signup">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
-              <ul class="nav nav-tabs login_signup_tab flex_ai">
-                <li id="SignupTab" class="active">
-                  <a data-toggle="tab" (click)="getsignuptab()" href="#tab1">
-                    Sign up
-                  </a>
-                </li>
-                <li id="LoginTab" #enabletab onclick="$('#tab2').trigger('click')">
+              <ul class="nav nav-tabs login_signup_tab flex_ai m0px">
+                <li id="LoginTab" #enabletab [ngClass]="{'active' : !isSignUp }" (click)="getLoginTab()">
                   <a data-toggle="tab" href="#tab2">
                     Login
                   </a>
                 </li>
+                <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
+                  <a data-toggle="tab" href="#tab1" (click)="getsignuptab()">
+                    Sign up
+                  </a>
+                </li>
               </ul>
 
-              <div class="tab-content mt40px">
+              <div class="tab-content">
                 <!-- signup -->
-                <div id="tab1" class="tab-pane fade in active">
+                <div id="tab1" class="tab-pane fade" *ngIf="isSignUp" [ngClass]="{' in active' : isSignUp }">
                   <form [formGroup]="registrationForm">
 
-                    <div class="row ls_connect_with">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
-                          CONNECT WITH
-                        </h4>
-                      </div>
-                    </div>
-
-                    <div class="row center_flex">
+                    <div class="row mtb20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                          <button type="submit" class="btn btn-default w100 btn_login_signup tcenter"
-                            (click)="fbLogin()">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_ls.svg"
-                              alt="" class="img-responsive">
-                          </button>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                          <button type="submit" class="btn btn-default w100 btn_login_signup tcenter"
-                            (click)="googleLogin()">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_ls.svg"
-                              alt="" class="img-responsive">
-                          </button>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                          <button type="button" class="btn btn-default w100 btn_login_signup tcenter"
-                            (click)="signInWithApple()">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg"
-                              class="img-responsive">
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row ls_or_signup">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
-                          OR SIGN UP
+                        <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff tcenter">
+                          Register now and try happierMe for free
                         </h4>
                       </div>
                     </div>
-
-                    <!-- <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">First Name*</label>
-                        <input type="text" id="fullname" class="form-control cfc8" name="firstname" required />
-                      </div>
-                    </div>
-
-                    <div class="row mt15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Last Name*</label>
-                        <input type="text" id="fullname" class="form-control cfc8" name="lastname" required />
-                      </div>
-                    </div> -->
 
                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full
-                          Name*</label>
-                        <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8"
-                          maxlength="20" name="fullname" required />
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <hr class="hr_style_v3_05">
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                            Connect with
+                          </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <hr class="hr_style_v3_05">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row center_flex mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+                          <button type="submit" class="btn btn_login_signup tcenter" (click)="fbLogin()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+                          <button type="submit" class="btn btn_login_signup tcenter" (click)="googleLogin()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pr0px">
+                          <button type="submit" class="btn btn_login_signup tcenter" (click)="signInWithApple()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mtb30px mregister">
+                      <div class="row mb10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" class="sp_fc" placeholder="Full Name" formControlName="fullname" id="fullname" maxlength="20">
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+                          </div>
+                        </div>
                         <div *ngIf="fullname.invalid && fullname.touched">
-                          <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
-                          <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 6
-                            characters</small>
+                          <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name is required</small>
+                          <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name must be at least 6 characters</small>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="row mt15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email
-                          address*</label>
-                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname"
-                          maxlength="50" autocomplete="new-password" required />
+                      <!-- <div class="row mb10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" id="name" class="sp_fc fc_name" placeholder="Last Name">
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+                          </div>
+                        </div>
+                      </div> -->
+
+                      <div class="row mb10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" class="sp_fc" placeholder="Email Address" id="email" formControlName="email" maxlength="50" autocomplete="new-password" required>
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                          </div>
+                        </div>
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
-                          <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email
-                            address</small>
-                          <small *ngIf="emailvalid.errors?.pattern" class="text danger">Please enter a valid
-                            email</small>
+                          <small *ngIf="emailvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter email address</small>
+                          <small *ngIf="emailvalid.errors?.pattern" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter a valid email</small>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="row mt15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname"
-                          class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
-                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();"
-                          autocomplete="new-password" id="password" class="form-control cfc8" name="fullname" required
-                          maxlength="15" />
-                        <!--   <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
-                          Password must be Minimum 6 Characters. No Spaces allowed
-                        </label> -->
+                      <div class="row mb10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" maxlength="15" required>
 
+                          <div class="fc_img" (click)="hideFunction('password')">
+                            <img *ngIf="passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                              class="img-responsive" >
+
+                              <img *ngIf="!passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                              class="img-responsive" >
+                          </div>
+                        </div>
                         <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
-                          <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter
-                            password</small>
-                          <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 6
-                            characters</small>
+                          <small *ngIf="passwordvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter password</small>
+                          <small *ngIf="passwordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">password must be at least 6 characters</small>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="row mt15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat
-                          password*</label>
-                        <input type="password" formControlName="confirmPassword" maxlength="15"
-                          (keydown.space)="$event.preventDefault();" id="repeatpassowrd" class="form-control cfc8"
-                          name="fullname" required />
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc" placeholder="Required Password" id="repeatpassowrd" formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
 
+                          <div class="fc_img" (click)="hideFunction('')">
+                            <img *ngIf="confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                              class="img-responsive">
+
+                              <img *ngIf="!confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                              class="img-responsive">
+                          </div>
+                        </div>
                         <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
-                          <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat
-                            password</small>
-                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must
-                            be at least 6 characters</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter Repeat password</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Repeat password must be at least 6 characters</small>
                         </div>
                         <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
-                          <small *ngIf="passwordvalidation" class="text danger">Password and Repeat
-                            password must
-                            be same</small>
+                          <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Password and Repeat password must be same</small>
                         </div>
                       </div>
                     </div>
 
-                    <div class="row mt20px">
+                    <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
-                          By continuing, you agree to our
-                          <a (click)="navigate('/adults/help-support/terms-conditions')">
-                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Terms of Use</span>
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                          If you have a problem with signup, please email
+                          <a class="fw_500 fc_ffffff" href="mailto:support@humanwisdom.me" target="_top">
+                            team@happierme.app
                           </a>
-                          &nbsp;and&nbsp;
-                          <a (click)="navigate('/adults/help-support/privacy-policy')">
-                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Privacy Policy </span>
+                          By continuing you agree to our
+                          <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/terms-conditions')">
+                            terms of use
+                          </a>
+                          and
+                          <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/privacy-policy')">
+                            privacy policy
                           </a>
                         </h4>
+                      </div>
+                    </div>
+
+                    <div class="row mt40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid" (click)="signup()">
+                          Sign up
+                        </button>
                       </div>
                     </div>
 
                     <div class="row mt10px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
-                          If you have a problem with registration please email
-                          <a href="mailto:support@humanwisdom.me" target="_top">
-                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">support@humanwisdom.me</span>
-                          </a>
-                        </h4>
-                      </div>
-                    </div>
-
-                    <!-- ios -->
-                    <!-- <div class="row mt21px">
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-                        <button type="submit" class="btn btn-default w100 btn_scan_ios">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/scan_ios.svg" alt="" class="img-responsive w100p">
-                        </button>
-                      </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 pl0">
-                        <button type="submit" class="btn btn-default w100 btn_login_signup">Sign Up</button>
-                      </div>
-                    </div> -->
-                    <!-- /ios -->
-
-                    <!-- windows -->
-                    <div class="row btn_ls_signup">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <button type="submit" class="btn btn-default w100 btn_login_signup"
-                          [disabled]="!registrationForm.valid" (click)="signup()">Sign Up</button>
-                      </div>
-                    </div>
-                    <!-- /windows -->
-
-                    <!-- <div class="row ls_already_user">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_400 fs_12px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
-                          Already a user?
-                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
-                            Login here
-                          </a>
-                        </h4>
-                      </div>
-                    </div> -->
-
-                    <div class="row ls_already_user">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                          <span class="">
-                            <span class="fw_400 fs_12px lh_140p fc_ffffff">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 tleft">
+                          <h4 class="mtb0px fs_15px fw_400 lh_21px fc_e58d82">
+                            <span class="">
                               Already a user?
                             </span>
-
-                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline"
-                              onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')"
-                              data-toggle="tab" href="#tab2">
+                            <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2">
                               Login here
                             </a>
-                          </span>
+                          </h4>
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="routedashboard()">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
+                          <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="routedashboard()">
                             Continue as Guest
                           </a>
                         </div>
-
                       </div>
                     </div>
 
@@ -245,115 +200,112 @@
                 <!-- /signup -->
 
                 <!-- login -->
-                <div id="tab2" class="tab-pane fade">
+                <div id="tab2" class="tab-pane fade in active" *ngIf="!isSignUp" [ngClass]="{' in active' : !isSignUp }">
 
-                  <div class="row ls_connect_with">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
-                        CONNECT WITH
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div class="row center_flex">
+                  <div class="row mtb20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <button type="submit" class="btn btn-default w100 btn_login_signup tcenter" (click)="fbLogin()">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_ls.svg"
-                            alt="" class="img-responsive">
-                        </button>
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <button type="submit" class="btn btn-default w100 btn_login_signup tcenter"
-                          (click)="googleLogin()">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_ls.svg"
-                            alt="" class="img-responsive">
-                        </button>
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <button type="button" class="btn btn-default w100 btn_login_signup tcenter"
-                          (click)="signInWithApple()">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg"
-                            class="img-responsive">
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row ls_or_login">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
-                        OR LOGIN
+                      <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff tcenter">
+                        Register now and try happierMe for free
                       </h4>
                     </div>
                   </div>
 
-                  <div class="row mt15px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email
-                        address*</label>
-                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname"
-                        autocomplete="new-password" required />
-                    </div>
-                  </div>
-
-                  <div class="row mt15px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
-                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"
-                        autocomplete="new-password" name="fullname" required />
-                      <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
-                        Password must be Minimum 6 Characters. No Spaces allowed
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- <div class="row mt30px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div class="checkbox p0 mtb0px">
-                        <label class="mt0px inline_box ls_checkbox">
-                          <input type="checkbox" [checked]="true" disabled />
-                          <span></span>
-                          <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
-                            Remember me
-                          </h4>
-                        </label>
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <hr class="hr_style_v3_05">
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                          Connect with
+                        </h4>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <hr class="hr_style_v3_05">
                       </div>
                     </div>
-                  </div> -->
+                  </div>
 
-                  <div class="row btn_ls_login">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <button type="submit" class="btn btn-default w100 btn_login_signup"
-                        [disabled]="!this.email||!this.password" type="button" (click)="emailLogin()">Login</button>
+                  <div class="row center_flex mt15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+                        <button type="submit" class="btn btn_login_signup tcenter" (click)="fbLogin()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                        </button>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+                        <button type="submit" class="btn btn_login_signup tcenter" (click)="googleLogin()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
+                        </button>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pr0px">
+                        <button type="submit" class="btn btn_login_signup tcenter" (click)="signInWithApple()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">
+                        </button>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- <div class="row ls_forgot_password">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <a routerLink="/onboarding/forgotpassword">
-                        <h4 class="fw_500 fs_14px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
-                          Forgot Password?
-                        </h4>
+                  <div class="mt30px mregister">
+                    <div class="row mb10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                        <input type="text" class="sp_fc" placeholder="Email Address" id="email2" [(ngModel)]="this.email" autocomplete="new-password" required>
+                        <div class="fc_img">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                        <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
+
+                        <div class="fc_img" (click)="hideFunction('password')">
+                          <img *ngIf="passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                            class="img-responsive" >
+                            <img *ngIf="!passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                            class="img-responsive" >
+                        </div>
+
+                        <!-- <div class="fc_img">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+                        </div> -->
+                      </div>
+                      <!-- <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
+                        Password must be Minimum 6 Characters. No Spaces allowed
+                      </label> -->
+                    </div>
+                  </div>
+
+                  <!-- <div class="row mt10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+                      <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" routerLink="/onboarding/forgotpassword">
+                        Forgot password ?
                       </a>
                     </div>
                   </div> -->
 
-                  <div class="row ls_forgot_password">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="row mt40px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <button type="btn" class="btn btn_ctd" [disabled]="!this.email||!this.password" (click)="emailLogin()">
+                        Sign in
+                      </button>
+                    </div>
+                  </div>
 
+                  <div class="row mt10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" routerLink="/onboarding/forgotpassword">
-                          Forgot Password?
+                        <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" routerLink="/onboarding/forgotpassword">
+                          Forgot password ?
                         </a>
                       </div>
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" (click)="routedashboard()">
+                        <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="routedashboard()">
                           Continue as Guest
                         </a>
                       </div>
-
                     </div>
                   </div>
 
@@ -367,50 +319,8 @@
     </div>
   </div>
   <!--/Class -->
-
-  <!-- footer  -->
-  <!-- <div class="ls_position">
-    <div class="prelative">
-
-      <div class="row mt20px ls-row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/footer.png" class="img-responsive ls_footer_img">
-        </div>
-      </div>
-
-      <div class="row absolute_center_ls_footer">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <div class="row mt20px center_flex">
-            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-              <h4 class="fw_700 fs_12px lh_14px fc_243949 ls_pt12em">
-                OR CONNECT WITH
-              </h4>
-            </div>
-          </div>
-
-          <div class="row mt15px center_flex">
-            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 p0">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <button type="submit" class="btn btn-warning w100 btn_login_signup tcenter" (click)="fbLogin()">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/facebook_ls.png" alt="" class="img-responsive">
-                </button>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <button type="submit" class="btn btn-warning w100 btn_login_signup tcenter" (click)="googleLogin()">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_ls.png" alt="" class="img-responsive">
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div> -->
-  <!-- /footer -->
 </div>
 <!-- /page content -->
-
 
 <!-- popup modal -->
 <div class="modal fade" id="modal_popup" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog"
@@ -460,50 +370,55 @@
   </div>
 </div>
 <!-- /popup modal -->
+
 <span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>
 
 <div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="otpModalLabel" aria-hidden="true">
-  <div class="modal-dialog center_flex" role="document">
-    <div class="modal-content popup_03">
-      <div class="modal-body">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
-        <div class="row mb10px">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <h4 class="fw_400 fs_14px lh_21px fc_000000 italici mtb0px">
-              <span class="mtb0px">
-                A one-time password has been sent to your email address
-              </span>
+      <button type="button" style="visibility: hidden;" class="btn_popup_close m0px" #closeotpmodal data-dismiss="modal" aria-label="Close">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+      </button>
 
-              <span class="fc_1092a7 fw_500">
-                (Check your spam folder too).
-              </span>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+            <span class="mtb0px">
+              A one-time password has been sent to your email address
+            </span>
 
-              <br>
+            <span class="fc_ffffff">
+              (Check your spam folder too).
+            </span>
 
-              <span class="mtb0px">
-                Please enter it below.
-              </span>
-            </h4>
-          </div>
+            <br>
+
+            <span class="mtb0px">
+              Please enter it below.
+            </span>
+          </h4>
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
-          </div>
+      <div class="row mt10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <input type="text" class="form-control sp_fc" [(ngModel)]="verificationCode" id="recipient-name">
         </div>
+      </div>
 
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <button type="btn" class="btn btn_ctd" [disabled]="!verificationCode" (click)="verifyCode()">
+            Submit
+          </button>
+        </div>
       </div>
-      <div class="modal-footer b0">
-        <button type="button" class="btn btn-primary" [disabled]="!verificationCode" (click)="verifyCode()">Submit</button>
-      </div>
+
     </div>
   </div>
 </div>
 
 <span #enableotpmodal data-toggle="modal" data-target="#enableotpmodal"></span>
 
-
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="content">
-</app-modal>
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>

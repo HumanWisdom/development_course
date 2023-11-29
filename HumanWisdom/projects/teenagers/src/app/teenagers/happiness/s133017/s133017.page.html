@@ -1,0 +1,16 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+    <h1 class="txt1">
+      Because we are conditioned to think that happiness comes from pleasure, we pursue it all our lives - working hard to earn more and more, become famous, acquire power, and when that is not enough, we turn to drugs and alcohol.
+      </h1>
+        <div class="clearfix"></div>
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

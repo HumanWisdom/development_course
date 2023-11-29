@@ -30,6 +30,7 @@ import { S37014Page } from './s37014/s37014.page';
 import { S37015Page } from './s37015/s37015.page';
 import { S37016Page } from './s37016/s37016.page';
 import { S37017Page } from './s37017/s37017.page';
+import { S37017p1Page } from './s37017p1/s37017p1.page';
 import { S37018Page } from './s37018/s37018.page';
 
 @NgModule({
@@ -56,6 +57,7 @@ import { S37018Page } from './s37018/s37018.page';
     S37015Page,
     S37016Page,
     S37017Page,
+    S37017p1Page,
     S37018Page,
   ],
   imports: [

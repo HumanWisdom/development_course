@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Bullying affects 1 in 5 teenagers but cyberbullying is more common - affecting 1 in 3 teens. It involves posting harmful content about others, or embarrassing them online by commenting on their posts. In real life people exercise at least some restraint, but on social media people feel more bold to say what they want.
+          People bully others for many reasons. Seeing others doing better than you can make you feel angry, and bullying offers a release. You want others to feel what you are feeling - a teenager told me. Being critical of others strengthens our own certainty we are right - and that brings a certain pleasure. 
+          If you are being bullied, what are your options? You can ignore them, turn off your social media account, block them, or tell an adult. Responding in kind by being mean back can just make things worse.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -5,6 +5,7 @@ import { S123001Page } from './s123001/s123001.page';
 import { S123002Page } from './s123002/s123002.page';
 import { S123003Page } from './s123003/s123003.page';
 import { S123003tPage } from './s123003t/s123003t.page';
+import { S123003p1Page } from './s123003p1/s123003p1.page';
 import { S123004Page } from './s123004/s123004.page';
 import { S123005Page } from './s123005/s123005.page';
 import { S123006Page } from './s123006/s123006.page';
@@ -31,6 +32,7 @@ import { S123024Page } from './s123024/s123024.page';
 import { S123025Page } from './s123025/s123025.page';
 import { S123026Page } from './s123026/s123026.page';
 import { S123027Page } from './s123027/s123027.page';
+import { S123027p1Page } from './s123027p1/s123027p1.page';
 import { S123028Page } from './s123028/s123028.page';
 import { S123029Page } from './s123029/s123029.page';
 import { S123029tPage } from './s123029t/s123029t.page';
@@ -47,7 +49,10 @@ import { S123037Page } from './s123037/s123037.page';
 import { S123038Page } from './s123038/s123038.page';
 import { S123039Page } from './s123039/s123039.page';
 import { S123039tPage } from './s123039t/s123039t.page';
+import { S123039p1Page } from './s123039p1/s123039p1.page';
 import { S123040Page } from './s123040/s123040.page';
+import { S123040p1Page } from './s123040p1/s123040p1.page';
+import { S123040p1tPage } from './s123040p1t/s123040p1t.page';
 import { S123041Page } from './s123041/s123041.page';
 import { S123041tPage } from './s123041t/s123041t.page';
 import { S123042Page } from './s123042/s123042.page';
@@ -91,6 +96,8 @@ import { S123073Page } from './s123073/s123073.page';
 import { S123074Page } from './s123074/s123074.page';
 import { S123074tPage } from './s123074t/s123074t.page';
 import { S123075Page } from './s123075/s123075.page';
+import { S123075p1Page } from './s123075p1/s123075p1.page';
+import { S123075p2Page } from './s123075p2/s123075p2.page';
 import { S123076Page } from './s123076/s123076.page';
 import { S123077Page } from './s123077/s123077.page';
 import { S123078Page } from './s123078/s123078.page';
@@ -100,6 +107,11 @@ import { S123081Page } from './s123081/s123081.page';
 import { S123082Page } from './s123082/s123082.page';
 import { S123083Page } from './s123083/s123083.page';
 import { S123084Page } from './s123084/s123084.page';
+import { S123085Page } from './s123085/s123085.page';
+import { S123086Page } from './s123086/s123086.page';
+import { S123087Page } from './s123087/s123087.page';
+import { S123088Page } from './s123088/s123088.page';
+
 
 
 const routes: Routes = [
@@ -123,6 +135,10 @@ const routes: Routes = [
   {
     path: 's123003t',
     component: S123003tPage,
+  },
+  {
+    path: 's123003p1',
+    component: S123003p1Page,
   },
   {
     path: 's123004',
@@ -235,6 +251,10 @@ const routes: Routes = [
     component: S123027Page,
   },
   {
+    path: 's123027p1',
+    component: S123027p1Page,
+  },
+  {
     path: 's123028',
     component: S123028Page,
   },
@@ -300,9 +320,22 @@ const routes: Routes = [
     component: S123039tPage,
   },
   {
+    path: 's123039p1',
+    component: S123039p1Page,
+  },
+  {
     path: 's123040',
     component: S123040Page,
   },
+  {
+    path: 's123040p1',
+    component: S123040p1Page,
+  },
+  {
+    path: 's123040p1t',
+    component: S123040p1tPage,
+  },
+ 
   {
     path: 's123041',
     component: S123041Page,
@@ -481,6 +514,14 @@ const routes: Routes = [
     component: S123075Page,
   },
   {
+    path: 's123075p1',
+    component: S123075p1Page,
+  },
+  {
+    path: 's123075p2',
+    component: S123075p2Page,
+  },
+  {
     path: 's123076',
     component: S123076Page,
   },
@@ -516,8 +557,23 @@ const routes: Routes = [
     path: 's123084',
     component: S123084Page,
   },
- 
-  
+  {
+    path: 's123085',
+    component: S123085Page,
+  },
+  {
+    path: 's123086',
+    component: S123086Page,
+  },
+  {
+    path: 's123087',
+    component: S123087Page,
+  },
+  {
+    path: 's123088',
+    component: S123088Page,
+  },
+
 ];
 
 @NgModule({

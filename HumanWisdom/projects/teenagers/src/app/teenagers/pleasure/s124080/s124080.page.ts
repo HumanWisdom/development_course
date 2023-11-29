@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s124080',
@@ -19,27 +20,27 @@ export class S124080Page implements OnInit
   moduleName=" Sorrow and Loss"
   sectionName= "Understand Emotions";
   moduleId=116
-
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Happiness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
       link: '/happiness',
-      id: 23
+      id: 133
       
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
  
     },
     {
       name: 'Inner Boredom',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/56.png',
       link: '/inner-boredom',
-      id: 56
+      id: 121
   
     },
   ]

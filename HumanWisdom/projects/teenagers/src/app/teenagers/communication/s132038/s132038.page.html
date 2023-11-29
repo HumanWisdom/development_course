@@ -1,0 +1,42 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      What can we do to connect with people who are different?
+    </h1>
+    <div class="clearfix"></div>
+  
+    <h3 class="txt2 lengthy_txt_pointer">
+     
+      <p class="mb0px fw_500">1. Recognise your internal resistance </p>
+    </h3>
+  
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">  2. Put that to one side consciously </p>
+    </h3>
+  
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">3. Be curious, ask questions </p>
+    </h3>  
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">4. Find some common ground </p>
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">5. Be genuine </p>
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">6. Once there is an affection-connection, you can explore your differences </p>
+    </h3>
+  
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">7. Find empathy - try and see the world from their point of view </p>
+    </h3>
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

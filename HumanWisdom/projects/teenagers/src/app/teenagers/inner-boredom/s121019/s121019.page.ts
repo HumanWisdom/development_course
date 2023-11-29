@@ -14,12 +14,14 @@ export class S121019Page implements OnInit,OnDestroy
   bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
   title="Our emotional needs arise from this inner emptiness  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/inner-boredom/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+1.3.mp3'
   transcriptPage="inner-boredom/s121019t"
   toc="inner-boredom/s121001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

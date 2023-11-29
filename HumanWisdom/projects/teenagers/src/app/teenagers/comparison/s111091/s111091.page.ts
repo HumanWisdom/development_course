@@ -13,8 +13,8 @@ export class S111091Page implements OnInit
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w9"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/6.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/6.4.mp3'
   title="The 4 levels of awareness"
   toc="/comparison/s111001"
   transcriptPage="comparison/s111091t"
@@ -27,7 +27,9 @@ export class S111091Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

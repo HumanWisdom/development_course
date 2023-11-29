@@ -22,7 +22,9 @@ export class S125001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
   localFreeScreens =localStorage.getItem("freeScreens");
@@ -30,12 +32,12 @@ export class S125001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  stressResume=sessionStorage.getItem("stressResume")
+  pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
-  pgResume=sessionStorage.getItem("pgResume")
+ 
   moduleData:ProgramModel;
 
   constructor

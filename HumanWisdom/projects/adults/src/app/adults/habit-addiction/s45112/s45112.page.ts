@@ -26,7 +26,9 @@ export class S45112Page implements OnInit, OnDestroy {
   totalTime: any
   bookmark = 0
   toc = "habit-addiction/s45001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
 

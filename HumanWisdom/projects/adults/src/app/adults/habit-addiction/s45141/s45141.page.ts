@@ -15,7 +15,9 @@ export class S45141Page implements OnInit {
   bg = "purple_w11"
   toc = "/habit-addiction/s45001"
   hint = " It could be just calling someone, or making them some food, or saying something nice to them. "
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,11 +16,13 @@ export class S124019Page implements OnInit,OnDestroy
   bg="pink_orange_w3"
   title="What is the nature of pleasure?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/pleasure/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/pleasure/audios/1.1.mp3'
   transcriptPage="pleasure/s124019t"
   toc="pleasure/s124001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

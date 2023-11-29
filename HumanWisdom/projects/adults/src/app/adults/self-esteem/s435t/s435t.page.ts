@@ -22,7 +22,9 @@ export class S435tPage implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/self-esteem/s435"
   toc="/self-esteem/s433"
   avDuration=localStorage.getItem("avDuration435")

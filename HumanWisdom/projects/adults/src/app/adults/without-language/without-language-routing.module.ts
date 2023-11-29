@@ -32,11 +32,10 @@ import { S42022Page } from './s42022/s42022.page';
 const routes: Routes = [
   {
     path: '',
-     component: S42001Page,
+     component: S42000Page,
   },  
   {
-    path: 's42000',
-     canActivate:[ActiveGuard],  
+    path: 's42000',     
     component: S42000Page,
   },   
   {

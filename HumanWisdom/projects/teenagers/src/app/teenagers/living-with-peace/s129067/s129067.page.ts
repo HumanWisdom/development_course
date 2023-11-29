@@ -13,8 +13,8 @@ export class S129067Page implements OnInit
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w11"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/living-with-peace/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/living-with-peace/audios/living-with-peace+2.7.mp3'
   title="#6 Keep learning about yourself  "
   toc="/living-with-peace/s129001"
   transcriptPage="living-with-peace/s129067t"
@@ -27,7 +27,9 @@ export class S129067Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

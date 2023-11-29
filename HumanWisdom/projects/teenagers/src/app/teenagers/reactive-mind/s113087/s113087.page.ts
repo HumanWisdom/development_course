@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s113087',
@@ -18,25 +19,27 @@ export class S113087Page implements OnInit
   moduleName = "Self Image"
   sectionName = "How the Mind Works";
   moduleId = 114
+  programType : ProgramType = ProgramType.Teenagers;
+
   moduleList: any = [
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/teenagers/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Anger',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
       link: '/teenagers/anger',
-      id: 14
+      id: 118
 
     },
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/teenagers/fear-anxiety',
-      id: 19
+      id: 112
 
     },
   ]

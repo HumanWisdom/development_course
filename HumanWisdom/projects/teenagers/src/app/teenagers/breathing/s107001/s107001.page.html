@@ -1,17 +1,10 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Breathing Exercises'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
   <form>                                
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Breathing Exercises
-        </h1>
-      </div>
-    </div>
-
+  
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h4 class="txt_comparison">
@@ -25,8 +18,8 @@
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
         <a [routerLink]="['/breathing', pgResume]" *ngIf="pgResume">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_teal" data-dismiss="modal">Continue where you left</button>
-        </a>
+          <button type="button" class="btn  mb0 btn_begin_here " data-dismiss="modal">Continue where you left</button>
+         </a>
       </div>
     </div>                    
 

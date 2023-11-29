@@ -117,6 +117,7 @@ import { S76089Page } from './s76089/s76089.page'; 
 import { S76090Page } from './s76090/s76090.page';  
 import { S76091Page } from './s76091/s76091.page';  
 import { S76092Page } from './s76092/s76092.page';  
+import { S76092p1Page } from './s76092p1/s76092p1.page';  
 import { S76093Page } from './s76093/s76093.page';  
 
 const routes: Routes = [
@@ -700,10 +701,16 @@ const routes: Routes = [
     component: S76092Page,
   },
   {
+    path: 's76092p1',   
+    canActivate:[ActiveGuard],  
+    component: S76092p1Page,
+  },
+  {
     path: 's76093',   
     canActivate:[ActiveGuard],  
     component: S76093Page,
   },
+ 
   
 ];
 

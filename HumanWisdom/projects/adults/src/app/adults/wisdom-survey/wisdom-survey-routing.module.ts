@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'wisdom-survey-insight',
     loadChildren: () => import('./wisdom-survey-insight/wisdom-survey-insight.module').then( m => m.WisdomSurveyInsightModule)
   },
+  {
+    path: 'progress',
+    loadChildren: () => import('./progress/progress.module').then( m => m.ProgressPageModule)
+  },
 ];
 
 @NgModule({

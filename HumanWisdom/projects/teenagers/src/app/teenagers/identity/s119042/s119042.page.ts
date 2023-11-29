@@ -16,7 +16,9 @@ export class S119042Page implements OnInit
   bg="dark_blue_w6"
   hint = "There are so many examples. Ask the forum if you are not sure.  "
   toc = "/identity/s119001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S119042Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1889
   reflection: any
   reflectionA: any
   r119042 = JSON.parse(sessionStorage.getItem("r119042"))

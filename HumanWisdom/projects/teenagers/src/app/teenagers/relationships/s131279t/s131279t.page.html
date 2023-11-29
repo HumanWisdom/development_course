@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Probably the best gift we can offer others in all our relationships is our own happy nature. If we are happy, it is more likely the other person is going to be happy, and the other way around. Explore the module on Happiness to find out more. If you have a friend who is always unhappy, how likely are you to want to spend time with them? Developing a positive attitude, being grateful for what you have and looking at people with generosity helps a lot.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

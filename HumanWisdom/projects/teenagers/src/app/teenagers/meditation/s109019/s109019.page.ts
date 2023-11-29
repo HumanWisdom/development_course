@@ -12,7 +12,7 @@ export class S109019Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w1" 
+  bg="blue_w8" 
   
   toc="meditation/s109001"
   userId:any
@@ -24,7 +24,9 @@ export class S109019Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
   constructor

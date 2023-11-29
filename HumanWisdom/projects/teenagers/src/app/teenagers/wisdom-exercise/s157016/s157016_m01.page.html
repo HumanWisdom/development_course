@@ -1,0 +1,151 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" routerLink="/wisdom-exercise/s157001">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          #15 Connecting with silence
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- carousel -->
+              <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                            
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2309"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                   <!-- simple text -->
+                   <div class="item">
+                    <div class="row center_flex tleft mt60px">
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                        <p class="fw_400 fs_21px lh_140p fc_000000">
+                          Observing our thoughts is not easy - but an invaluable skill we can all learn.
+
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2310"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+                                      
+                    <!-- simple text -->
+                   <div class="item">
+                    <div class="row center_flex tleft mt60px">
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                        <p class="fw_400 fs_21px lh_140p fc_000000">
+                          As we observe our thoughts, our mind quietens, making it easier to notice the more subtle ones.
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /carousel -->
+
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter p0">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"   [ngClass]="getClass('157016p0')"
+          (click)="getdayevent('intro')">
+          Intro
+        </button>
+      </a>
+  
+
+    </div>
+  </div>
+</div>
+<app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+[content]="'Please subscribe to access your online Journal'">
+</app-modal>
+<!-- /footer -->

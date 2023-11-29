@@ -6978,7 +6978,7 @@ table.display thead td:active {
     clear: both
 }
 .dataTables_scrollBody {
-    *margin-top: -1px;
+     margin-top: -1px;
     -webkit-overflow-scrolling: touch
 }
 .top .dataTables_info {
@@ -10469,7 +10469,7 @@ body,
 }
 
 /* pulse btn */
-@import "compass/css3";
+@import '~compass-mixins/lib/compass/css3';
 .obtn {
   width: 200px;
   height: 100%;

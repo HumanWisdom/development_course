@@ -201,7 +201,9 @@ import { S59166Page } from './s59166/s59166.page'; 
 import { S59167Page } from './s59167/s59167.page';  
 import { S59168Page } from './s59168/s59168.page';  
 import { S59169Page } from './s59169/s59169.page';  
-import { S59170Page } from './s59170/s59170.page';  
+import { S59170Page } from './s59170/s59170.page'; 
+import { S59170p1Page } from './s59170p1/s59170p1.page';  
+import { S59170p2Page } from './s59170p2/s59170p2.page';   
 import { S59171Page } from './s59171/s59171.page';  
 
 import { LeadershipRoutingModule } from './leadership-routing.module';
@@ -406,6 +408,8 @@ import { LeadershipRoutingModule } from './leadership-routing.module';
     S59168Page ,   
     S59169Page ,
     S59170Page ,
+    S59170p1Page ,
+    S59170p2Page ,
     S59171Page ,
   ],
   imports: [

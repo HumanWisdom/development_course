@@ -14,7 +14,7 @@ export class S47365Page implements OnInit, OnDestroy {
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
   bg = "purple_flat"
-
+  toc="relationships/s47000"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")

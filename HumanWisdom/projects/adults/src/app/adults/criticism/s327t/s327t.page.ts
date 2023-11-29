@@ -16,7 +16,9 @@ export class S327tPage implements OnInit {
   bg="criticism_w2" 
   
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/criticism/s327"
   toc="/criticism/s324"
   

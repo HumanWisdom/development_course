@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There is a debate about exactly how much of our communication is non-verbal with numbers ranging from 60-90%. Whatever the number, our body language and tone of voice play a big role and so we need to pay attention. Our body language includes our facial expression, head nodding, leaning forwards, using gestures, and whether we smile or not. Making eye contact, touching if appropriate and our overall sense of ease in ourselves also plays a role in non-verbal communication. The tone of our voice carries our emotion, and people can react to that. That is why difficult conversations are best conducted when we feel calm, and can have a soft and relaxed voice.
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

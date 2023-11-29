@@ -12,8 +12,8 @@ export class S117084Page implements OnInit
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w9"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/loneliness/audios/3.4.mp3'
   title="To get over our loneliness, we have to understand its origins  "
   toc="/loneliness/s117001"
   transcriptPage="loneliness/s117084t"
@@ -26,7 +26,9 @@ export class S117084Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

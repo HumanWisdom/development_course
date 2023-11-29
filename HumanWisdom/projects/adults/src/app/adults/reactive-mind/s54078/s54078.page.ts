@@ -14,6 +14,7 @@ export class S54078Page implements OnInit, OnDestroy {
   bg_tn = "bg_light_blue"
   bg_cft = "bg_light_blue"
   bg = "light_blue_flat"
+  toc="reactive-mind/s54001"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

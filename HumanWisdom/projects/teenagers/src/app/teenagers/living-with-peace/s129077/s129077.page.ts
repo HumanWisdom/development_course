@@ -124,8 +124,9 @@ export class S129077Page implements OnInit
     $(document).ready(function () {
       // var base_color = "rgb(111152,111152,111152)";
       // var active_color = "rgb(237, 40, 70)";
-      var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#60A757";
+     var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
+
       var i;
       var child = 1;
       var length = $("section").length - 1;
@@ -227,18 +228,17 @@ export class S129077Page implements OnInit
     this.createScreen()
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-    this.q1 = this.findQuestion(460).Question
-    this.optionList1 = this.findQuestion(460).optionList
-    this.q2 = this.findQuestion(461).Question
-    this.optionList2 = this.findQuestion(461).optionList
-    this.q3 = this.findQuestion(462).Question
-    this.optionList3 = this.findQuestion(462).optionList
-    this.q4 = this.findQuestion(463).Question
-    this.optionList4 = this.findQuestion(463).optionList
-    this.q5 = this.findQuestion(464).Question
-    this.optionList5 = this.findQuestion(464).optionList
-    this.q6 = this.findQuestion(0).Question
-    this.optionList6 = this.findQuestion(0).optionList
+    this.q1 = this.findQuestion(546).Question
+    this.optionList1 = this.findQuestion(546).optionList
+    this.q2 = this.findQuestion(547).Question
+    this.optionList2 = this.findQuestion(547).optionList
+    this.q3 = this.findQuestion(548).Question
+    this.optionList3 = this.findQuestion(548).optionList
+    this.q4 = this.findQuestion(549).Question
+    this.optionList4 = this.findQuestion(549).optionList
+    this.q5 = this.findQuestion(550).Question
+    this.optionList5 = this.findQuestion(550).optionList
+
     console.log(this.q1, this.optionList1)
     console.log(this.q2, this.optionList2)
     console.log(this.q3, this.optionList3)
@@ -295,13 +295,7 @@ export class S129077Page implements OnInit
         console.log("selected rating", this.s5)
         break;
       } 
-      case "6": 
-      {
-        this.rating1 = e.Rating
-        this.s6 = this.optionList6.find(x => x.Points == e.Rating).OptId
-        console.log("selected rating", this.s6)
-        break;
-      }
+     
       default: 
       {
         console.log("week")

@@ -16,7 +16,9 @@ export class S111149Page implements OnInit
   bg = "green_yellow_w4"
   hint = "I’m more conscious of how my mind works, my understanding of envy, judgement, and stress has expanded. I hope understanding my feelings will transform my life."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

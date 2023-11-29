@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          To explore what is going on in our thinking during a difficult conversation consider this pyramid which represents the different layers of our thinking. In layer 1, which is the world around you, your friend does not invite you to a party. In layer 2 you are feeling hurt and irritated In layer 3, is your fear which stops you telling your friend how you really feel and you gradually drift apart. If you could overcome that fear maybe you could save that friendship.
+        </h3>                  
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

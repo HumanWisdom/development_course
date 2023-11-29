@@ -4,6 +4,10 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { Location } from '@angular/common';
+import { ShareService } from 'ngx-sharebuttons';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -64,12 +68,22 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bookmarks = []
   public resume = []
   public bookmarkLength: any
-
+  wisdomExerciseList = [];
+  currentList = [];
+  public Title: string = '';
+  public day: string = '';
+  public bullyingP: any
+  public externalapprovalP: any;
+  public exerciseNo: any;
+  //static progress mapping
   constructor(private route: Router, private aservice: AdultsService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
-    public cd: ChangeDetectorRef
+    public cd: ChangeDetectorRef,
+    private location: Location,
+    private router: Router,
   ) {
 
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
     this.logeventservice.logEvent('View_For_you');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
@@ -106,10 +120,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.welcome.nativeElement.click();
         }, 1000);
       }
+
       this.getModuleList();
-      this.getProgress()
+      this.getProgress();
     }
-     this.getUserPreference();
+    this.GetWisdomScreens();
+    this.getUserPreference();
+    this.isSubscribe=SharedService.isSubscriber();
   }
 
   getModuleList(isLoad?) {
@@ -146,40 +163,40 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
 
 
-   /*  this.aservice.getUserpreference().subscribe((res) => {
-      let perd = this.aservice.getperList();
-     // let perd = []
-      this.personalisedforyou = []
-      this.indList = []
-      if (res && res !== "") {
-        let arr = res.split('').filter((d) => d !== ',');
-        arr.forEach((d) => {
-          perd.forEach((r) => {
-            if (d === r['id']) {
-              r['active'] = true;
-              this.personalisedforyou.push(r);
-            }
-          })
-        })
-        perd.forEach((r) => {
-          let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
-          if (!find) {
-            r['active'] = false;
-            this.personalisedforyou.push(r);
-          }
-        })
-        this.personalisedforyou.forEach((d) => {
-          if (d['active']) {
-            this.indList.push(d['id'])
-          }
-        })
-      } else {
-        perd.forEach((r) => {
-          r['active'] = false;
-          this.personalisedforyou.push(r);
-        })
-      }
-    }) */
+    /*  this.aservice.getUserpreference().subscribe((res) => {
+       let perd = this.aservice.getperList();
+      // let perd = []
+       this.personalisedforyou = []
+       this.indList = []
+       if (res && res !== "") {
+         let arr = res.split('').filter((d) => d !== ',');
+         arr.forEach((d) => {
+           perd.forEach((r) => {
+             if (d === r['id']) {
+               r['active'] = true;
+               this.personalisedforyou.push(r);
+             }
+           })
+         })
+         perd.forEach((r) => {
+           let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
+           if (!find) {
+             r['active'] = false;
+             this.personalisedforyou.push(r);
+           }
+         })
+         this.personalisedforyou.forEach((d) => {
+           if (d['active']) {
+             this.indList.push(d['id'])
+           }
+         })
+       } else {
+         perd.forEach((r) => {
+           r['active'] = false;
+           this.personalisedforyou.push(r);
+         })
+       }
+     }) */
   }
 
   getinp(event) {
@@ -195,32 +212,41 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   clickbtn(name, val = '', event, ind, id) {
     if (val === '') {
+      localStorage.setItem('storyNumber', id);
       if (name === 'Manage your emotions') {
+        localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
         this.route.navigate(['/adults/curated/manage-your-emotions'])
       } else if (name === 'Mental Health') {
+        localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
       } else if (name === 'Work and Leadership') {
+        localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
         this.logeventservice.logEvent('click_workplace');
         this.route.navigate(['/adults/curated/wisdom-for-workplace'])
       } else if (name === 'Have fulfilling relationships') {
+        localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
         this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
       } else if (name === 'Be happier') {
+        localStorage.setItem('curatedurl', '/adults/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/be-happier'])
       } else if (name === 'Habits and Addiction') {
+        localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
         this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/change-unhelpful-habits'])
       } else if (name === 'Deal with sorrow and loss') {
+        localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
         this.logeventservice.logEvent('click_sorrow_loss');
         this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
       } else if (name === 'Meditation') {
+        localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
         this.logeventservice.logEvent('click_calm_mind');
         this.route.navigate(['/adults/curated/have-calm-mind'])
       }
-    }else {
+    } else {
       if (this.isloggedIn) {
         let fill = this.personalisedforyou.filter((d) => d['name'] === name);
         const index = this.indList.indexOf(id);
@@ -826,4 +852,174 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.enablepopup.nativeElement.click();
     }
   }
+
+  goBack() {
+    this.location.back()
+  }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+
+    if (params != '' && route != '') {
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      if (route == '/adults/adverts-work' ||
+        route == '/adults/adverts-student' ||
+        route == '/adults/adverts-about' ||
+        route == '/adults/help-support/faq' ||
+        route == '/adults/help-support/terms-conditions' ||
+        route == '/adults/help-support/support' ||
+        route == '/adults/partnership-webpage/partnership-index/') {
+        this.navigate(route);
+        return;
+      }
+      this.router.navigate([route])
+    }
+  }
+
+  navigate(url) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+  }
+
+  GetWisdomScreens() {
+    this.aservice.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      var allCompletedScreen: boolean = false;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      if (this.wisdomExerciseList.length == data.length) {
+        allCompletedScreen = true;
+      }
+      console.log(data.length);
+      let exercise: any
+      let emptyList = false;
+      let increaseExcercise = false;
+      //   Any of the exercise is not completed
+      if (data.length == 0) {
+        emptyList = true;
+        data = this.wisdomExerciseList;
+        exercise = data[0];
+      }
+      else {
+        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+        if (incomppletedExercise.length > 0) {
+          exercise = incomppletedExercise[0];
+        } else {
+          exercise = data[data.length - 1];
+        }
+        // It contains data may be some exercise is completed
+        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+        if (completed.length == 0) {
+          increaseExcercise = true;
+          emptyList = true;
+        }
+      }
+      // Setting final title and Exercise no
+      this.Title = exercise.Title;
+
+      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+
+      if (allCompletedScreen) {
+        this.exerciseNo = "1";
+      }
+      if (this.exerciseNo == "13") {
+        this.exerciseNo = "1";
+      }
+      // Checking the length if its less than 10  to append for current session number
+      if (this.exerciseNo.length == 1) {
+        this.exerciseNo = "0" + this.exerciseNo;
+      }
+      if (incomppletedExercise && incomppletedExercise.length > 0) {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      } else {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      }
+      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+
+
+      //Pushing final list for display
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let obj = {
+          " SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+          "Title": item.Title
+        }
+        this.currentList.push(obj);
+      }
+      if (this.currentList.length > 0) {
+        this.Title = this.currentList[0].Title;
+      }
+      // Dynamic Scroll
+      setTimeout(() => {
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".ae_days")?.getBoundingClientRect().x;
+        if (document.querySelector(".ae_days")) {
+          document.querySelector(".ae_days").scrollLeft = editable - wediv;
+        }
+
+      }, 5000);
+
+      console.log(this.currentList);
+    })
+  }
+
+
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return ' uneditable';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return ' editable';
+    } else {
+      return ' inactive';
+    }
+  }
+
+  RouteToWisdomExercise(exercise) {
+    var weR = exercise?.ScreenNo;
+    localStorage.setItem("moduleId", JSON.stringify(75))
+    this.aservice.clickModule(75, this.userId)
+      .subscribe(res => {
+        console.log(res)
+        this.qrList = res
+        weR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("weR", weR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        if (exercise != null) {
+          this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+            state: {
+              day: exercise.day,
+            }
+          });
+        } else {
+          this.router.navigate(['adults/wisdom-exercise/']);
+        }
+      },
+        error => {
+          console.log(error)
+        });
+  }
+  navigateToPathway(url) {
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate([url]);
+  }
+
+  rightToJournal(){
+    this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+   }
+
 }

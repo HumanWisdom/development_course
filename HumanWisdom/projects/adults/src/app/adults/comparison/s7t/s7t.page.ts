@@ -15,7 +15,9 @@ export class S7tPage implements OnInit
   bg_cft="bg_green_yellow"
   bg="comparison_envy_w4"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/comparison/s7"
   toc="/comparison/s0"
   screenType=localStorage.getItem("audio")

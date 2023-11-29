@@ -15,9 +15,9 @@ export class S99012Page implements OnInit,OnDestroy {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w10"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/insight/videos/1.1.mp4'  
-  title="The beauty of insight"
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/insight/videos/1.1.mp4'
+ title="The beauty of insight"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
   userId:any
@@ -33,7 +33,9 @@ export class S99012Page implements OnInit,OnDestroy {
   
   toc="insight/s99001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

@@ -28,7 +28,9 @@ export class S91044Page implements OnInit,OnDestroy {
   totalTime:any
   toc="/external-approval/s91001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
@@ -79,7 +81,7 @@ export class S91044Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/external-approval/s91045'])
+    this.router.navigate(['adults/external-approval/s91045'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -97,7 +99,7 @@ export class S91044Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/external-approval/s91043'])
+    this.router.navigate(['adults/external-approval/s91043'])
   }
 
   ngOnDestroy(){}

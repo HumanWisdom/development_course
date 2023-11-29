@@ -16,13 +16,15 @@ export class S99009Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w7"
   title="Stage #3 – Insight breaks the pattern"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/insight/audios/1.4.mp3'
-
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/insight/audios/1.4.mp3'
+ 
   transcriptPage="insight/s99009t"
   toc="insight/s99001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

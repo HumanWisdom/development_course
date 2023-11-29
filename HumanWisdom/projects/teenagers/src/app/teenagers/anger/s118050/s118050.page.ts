@@ -14,7 +14,7 @@ export class S118050Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/anger/videos/1.2.mp4'
+  videoLink=this.mediaVideo+'/teenagers/modules/anger/videos/1.2.mp4'
   poster="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/video_posters/anger/anger_02.jpg"
   title="How do we respond when we are angry?"
   userId:any
@@ -27,7 +27,9 @@ export class S118050Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/anger/s118001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

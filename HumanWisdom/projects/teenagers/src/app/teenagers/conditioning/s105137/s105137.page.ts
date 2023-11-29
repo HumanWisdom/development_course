@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s105137',
@@ -18,25 +20,26 @@ export class S105137Page implements OnInit
   moduleLink="/comparison"
   moduleName=" Comparison"
   sectionName= "Explore How Your Mind Works";
-  moduleId=7
+  moduleId=111
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
-      id: 47
+      id: 131
     },
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
-      id: 19
+      id: 112
     },
   ]
 
@@ -48,14 +51,14 @@ export class S105137Page implements OnInit
       this.moduleLink = "/adults/reactive-mind"
       this.moduleName = "Reactive Mind"
       this.sectionName = "Explore How Your Mind Works";
-      this.moduleId = 54
+      this.moduleId = 125
     }
     else if (cur && cur === 'habits') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
       this.moduleLink = "/adults/stress"
       this.moduleName = "Stress"
       this.sectionName = "Transform your life";
-      this.moduleId = 44
+      this.moduleId = 125
     }
   }
 

@@ -8,13 +8,15 @@ import { AdultsService } from "../../adults.service";
   styleUrls: ['./s26018.page.scss'],
 })
 
-export class S26018Page implements OnInit 
+export class S26018Page implements OnInit
 {
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w5"
   toc = "benefits-of-enquiry/s26001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -36,16 +38,17 @@ export class S26018Page implements OnInit
   elseSelected = false
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
+  enableTick = false
 
   constructor
   (
     private router: Router,
     private service: AdultsService,
     private location: Location
-  ) 
+  )
   { }
 
-  ngOnInit() 
+  ngOnInit()
   {
     this.createScreen()
     if (JSON.parse(sessionStorage.getItem("bookmar26020")) == 0)
@@ -61,7 +64,7 @@ export class S26018Page implements OnInit
     this.startTime = Date.now();
   }
 
-  createScreen() 
+  createScreen()
   {
     this.service.createScreen({
       "ScrId": 0,
@@ -71,7 +74,7 @@ export class S26018Page implements OnInit
     }).subscribe(res => {})
   }
 
-  receiveBookmark(e) 
+  receiveBookmark(e)
   {
     console.log(e)
     if (e == true)
@@ -81,63 +84,67 @@ export class S26018Page implements OnInit
     sessionStorage.setItem("bookmark26018", JSON.stringify(this.bookmark))
   }
 
-  findQuestion() 
+  findQuestion()
   {
-    for (var i = 0; i < this.questionA.length; i++) 
+    for (var i = 0; i < this.questionA.length; i++)
     {
-      if (this.questionA[i].CorrectAns == "0")
+      if (this.questionA[i].CorrectAns == "0"){
         this.questionA[i].CorrectAns = false
-      else
+      } else{
+        this.enableTick = true;
         this.questionA[i].CorrectAns = true
-
-      if (this.queId == this.questionA[i].QueId) 
+      }
+      if (this.queId == this.questionA[i].QueId)
       {
         this.question = this.questionA[i].Que
         this.optionList.push(this.questionA[i])
       }
     }
     console.log(this.question, this.optionList)
+    console.log(this.enableTick)
   }
-
-  checkOption(opt) 
+  checkOption(opt)
   {
     this.sessionOption = []
-    if (opt.CorrectAns) 
+   
+    if (opt.CorrectAns)
     {
+      this.enableTick = true;
       this.option = opt.OptId
-      sessionStorage.setItem("sessionOptions26018", JSON.stringify(this.option))
-      document.getElementById(opt.OptId).style.background = '#FFC455';
-      if (this.falseans !== '') 
-      {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
+      sessionStorage.setItem("sessionOptions111012", JSON.stringify(this.option))
+      document.getElementById(opt.OptId).style.background = '#E58D82';
+      document.getElementById(opt.OptId+ 'text').style.color = '#FFFFFF';
+      if (this.falseans !== '') {
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
-      } 
-      else 
+      }
+      else
       {
         this.falseans = opt.OptId
       }
-    } 
-    else 
-    {
-      if (this.falseans !== '') 
-      {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
-        document.getElementById(this.falseans).style.opacity = '0.75';
-        this.falseans = opt.OptId
-      } 
-      else 
-      {
-        this.falseans = opt.OptId
-      }
-      document.getElementById(opt.OptId).style.background = '#5D5D5D';
-      document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
+    else
+    {
+      this.enableTick = false;
+      if (this.falseans !== '')
+      {
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        // document.getElementById(this.falseans).style.opacity = '0.1';
+        this.falseans = opt.OptId
+      }
+      else
+      {
+        this.falseans = opt.OptId
+      }
+      document.getElementById(opt.OptId).style.background = '#120F40';
+      // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
+    }
+    console.log(this.enableTick)
   }
-
-  submitProgress() 
+  submitProgress()
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -154,12 +161,12 @@ export class S26018Page implements OnInit
       .subscribe((res) => { });
   }
 
-  prev() 
+  prev()
   {
     this.router.navigate(['/adults/benefits-of-enquiry/s26016'])
   }
 
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
 
 }

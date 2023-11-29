@@ -1,0 +1,28 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-quotation [bg]="bg">
+
+  <form>
+
+    <div class="row mt20px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/quotation_01.svg" alt="">
+      </div>
+    </div>
+
+    <h1 class="mb0px mt20px fs_24px fw_400 lh_130p fc_ffffff">
+      Everything we hear is an opinion, not a fact.
+     <br> Everything we see is a perspective, not the truth
+
+    </h1>
+
+    <hr class="hr_style_v3_05 mt30px mb20px">
+
+    <h1 class="mb0px fs_18px fw_400 fc_ffffff">
+      Marcus Aurelius
+    </h1>
+
+  </form>
+</app-quotation>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

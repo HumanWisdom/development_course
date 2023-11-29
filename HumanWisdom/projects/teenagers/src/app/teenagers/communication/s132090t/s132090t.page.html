@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Today, a friend was talking about a child with a rare genetic disorder and the many struggles the boy, and the family faced. A response started forming in my mind. It came from my time spent working in a children's hospital and seeing many disabled children there. I noticed the urge to interrupt and speak and share this very important opinion I had. As I did so I realized I was only half listening. Slowly, a realization dawned on me. My friend was not really interested in my opinion. She just wanted to share her story. I realized the kind thing to do was just to listen. The urge to speak fell away. All thoughts of wanting to steer the conversation to what I wanted to talk about fell away. I just stopped, and listened without any resistance. An amazing thing happened - my mind went completely silent, and in that silence there was a deep sense of peace. I continued listening in that way.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -15,9 +15,11 @@ export class S49061tPage implements OnInit {
   bg="purple_red_w11"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/opinions-beliefs/s49061"
-  toc="/opinions-beliefs/s62001"
+  toc="/opinions-beliefs/s49001"
   
   screenType=localStorage.getItem("audio")
   userId:any

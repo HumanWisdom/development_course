@@ -18,7 +18,7 @@ export class S112139Page implements OnInit, AfterViewInit
   bg="purple_red_w4"
   title="Put your fears into one of 3 buckets  1.	Really rare  2.	Inevitable  3.	Possible  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.18.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.18.mp3'
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -30,7 +30,9 @@ export class S112139Page implements OnInit, AfterViewInit
   transcriptPage="/fear-anxiety/s112139t"
   toc="fear-anxiety/s112001"  
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"));
   reachedLimit = false;

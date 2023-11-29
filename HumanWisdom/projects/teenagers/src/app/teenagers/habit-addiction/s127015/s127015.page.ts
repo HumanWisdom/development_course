@@ -15,7 +15,9 @@ export class S127015Page implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w1"
   toc = "/habit-addiction/s127001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -52,8 +54,8 @@ export class S127015Page implements OnInit {
     this.createScreen()
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-    this.q1 = this.findQuestion(286).Question
-    this.optionList1 = this.findQuestion(286).optionList
+    this.q1 = this.findQuestion(523).Question
+    this.optionList1 = this.findQuestion(523).optionList
     console.log(this.q1, this.optionList1)
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }

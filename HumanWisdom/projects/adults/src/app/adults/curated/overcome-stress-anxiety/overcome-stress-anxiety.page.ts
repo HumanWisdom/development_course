@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -25,14 +25,32 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
+  mediaUrl: any;
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+      this.mediaUrl = {
+        pc01: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          title: 'Understanding our own ego'
+        },
+        pc02: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
+          title: 'How can we overcome anxiety?'
+        }
+      }
     }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/overcome-stress-anxiety');
+
     this.title.setTitle('Stress Relief Tips for Improved Mental Health')
     this.meta.updateTag({ property: 'title', content: 'Stress Relief Tips for Improved Mental Health' })
     this.meta.updateTag({ property: 'description', content: 'Learn practical stress relief tips that can help improve your mental health and well-being.' })
@@ -379,6 +397,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
         })
   }
 
+  
+
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {
@@ -434,5 +454,15 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.router.navigate(["/onboarding/login"]);
       }
     }
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 }

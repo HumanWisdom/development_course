@@ -17,9 +17,11 @@ export class S30002Page implements OnInit {
   audioLink = this.mediaAudio + '/noticing_thoughts/audios/noticing-thoughts+1.1.mp3'
 
   transcriptPage = "noticing-thoughts/s30002t"
-  toc = ""
+  toc = "/pathway/develop-a-calm-mind/"
   bookmark = 0
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration: any
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

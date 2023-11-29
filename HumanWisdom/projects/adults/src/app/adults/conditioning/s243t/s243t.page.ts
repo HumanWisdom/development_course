@@ -15,7 +15,9 @@ export class S243tPage implements OnInit {
   bg="conditioning_w10"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/conditioning/s243"
   toc="/conditioning/s232"
   

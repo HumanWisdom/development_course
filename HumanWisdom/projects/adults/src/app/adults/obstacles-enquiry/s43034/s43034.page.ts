@@ -20,7 +20,9 @@ export class S43034Page implements OnInit {
   overallPercentage:any
   bookmark=0
   toc="obstacles-enquiry/s43000"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,
@@ -58,7 +60,7 @@ export class S43034Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/adults/obstacles-enquiry/s43029p4'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029'])
 
   }
 

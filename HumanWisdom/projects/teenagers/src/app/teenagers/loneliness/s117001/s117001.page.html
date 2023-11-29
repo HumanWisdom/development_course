@@ -1,15 +1,9 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Loneliness'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
   <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Loneliness
-        </h1>
-      </div>
-    </div>
+    
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -25,8 +19,8 @@
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
         <a [routerLink]="['/loneliness', lonelinessResume]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green_yellow" data-dismiss="modal">Continue where you left</button>
-        </a>
+          <button type="button" class="btn  mb0 btn_begin_here " data-dismiss="modal">Continue where you left</button>
+         </a>
         <!-- <a routerLink="/loneliness/s1">
           <button type="button" class="btn btn_default mb0 txt_green_yellow" data-dismiss="modal">Start from the beginning</button>
         </a> -->
@@ -108,6 +102,36 @@
         </div>                    
       </div>
     </a>
+    <a routerLink="/loneliness/s117123p1">
+      <div class="row box_01 bg_green_yellow p0">
+        <div  
+          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
+          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/40.svg);">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
+        </div>        
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h6 class="session_no mtb0px">
+              Session #4
+            </h6>                    
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
+              <h4 class="session_name mtb0px">
+                How can we overcome loneliness
+              </h4>    
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+              <h4 class="session_time mtb0px">
+                30:20 min
+              </h4>    
+            </div>
+          </div>   
+        </div>                        
+      </div>
+    </a> 
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
     

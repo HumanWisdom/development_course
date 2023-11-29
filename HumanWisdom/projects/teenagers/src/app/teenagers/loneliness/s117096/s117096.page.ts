@@ -16,11 +16,13 @@ export class S117096Page implements OnInit,OnDestroy
   bg="green_yellow_w9"
   title="Acceptance helps  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.5.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.6.mp3'
   transcriptPage="loneliness/s117096t"
   toc="loneliness/s117001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

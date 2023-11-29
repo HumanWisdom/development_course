@@ -17,7 +17,9 @@ export class S120022Page implements OnInit
   bg="blue_pink_w1" 
   hint = "  We could feel sad, or angry, or don't feel loved  "
   toc = "/emotional-needs/s120001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -28,7 +30,7 @@ export class S120022Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1898
   reflection: any
   reflectionA: any
   r120022 = JSON.parse(sessionStorage.getItem("r120022"))

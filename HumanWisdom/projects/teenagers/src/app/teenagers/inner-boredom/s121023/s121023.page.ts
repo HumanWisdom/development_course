@@ -13,10 +13,10 @@ export class S121023Page implements OnInit,OnDestroy {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/inner-boredom/videos/1.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/inner-boredom/videos/1.3.mp4' 
   title="How can this feeling of emptiness be harmful to us?  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/inner-boredom/inner-boredom_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/inner_boredom/inner_boredom_03.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
@@ -27,7 +27,9 @@ export class S121023Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/inner-boredom/s121001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

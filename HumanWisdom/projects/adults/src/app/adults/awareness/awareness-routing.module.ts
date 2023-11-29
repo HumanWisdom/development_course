@@ -23,7 +23,7 @@ import { S39012Page } from './s39012/s39012.page';
 import { S39012tPage } from './s39012t/s39012t.page';
 import { S39013Page } from './s39013/s39013.page';
 import { S39014Page } from './s39014/s39014.page';
-import { S39015Page } from './s39015/s39015.page';
+import { S39015Page } from './s39015/s39015.page'
 import { S39016Page } from './s39016/s39016.page';
 import { S39016tPage } from './s39016t/s39016t.page';
 import { S39017Page } from './s39017/s39017.page';
@@ -52,6 +52,7 @@ const routes: Routes = [
   },  
   {
     path: 's39001',
+    canActivate:[ActiveGuard],  
      component: S39001Page,
   },
   {

@@ -17,7 +17,7 @@ export class S123049Page implements OnInit
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/2"
+  progressText="1/3"
   link="/external-approval/s123050"
   name="#2 Four ways external-approval impacts our life"
   progressImg=""
@@ -50,7 +50,7 @@ export class S123049Page implements OnInit
   {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="external-approval").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==123).Percentage)
      console.log(this.progressPercent)
     })
   }

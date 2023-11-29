@@ -15,8 +15,8 @@ export class S82007Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w5"
   title=""
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/five-circles-of-wisdom/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/five-circles-of-wisdom/audios/1.3.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",
@@ -29,7 +29,9 @@ export class S82007Page implements OnInit,OnDestroy {
   transcriptPage="five-circles-of-wisdom/s82007t"
   toc="five-circles-of-wisdom/s82001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

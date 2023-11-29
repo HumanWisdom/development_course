@@ -18,11 +18,13 @@ export class S117076Page implements OnInit,OnDestroy {
   title=" Being comfortable with ourselves  "  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/loneliness/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/loneliness/audios/1.3.mp3'
   transcriptPage="loneliness/s117076t"
   toc="loneliness/s117001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

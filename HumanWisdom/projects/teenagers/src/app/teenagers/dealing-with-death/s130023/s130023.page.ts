@@ -16,7 +16,9 @@ export class S130023Page implements OnInit
   bg = "teal_w3"
   hint = " it could make you anxious about the future"
   toc = "/dealing-with-death/s130001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

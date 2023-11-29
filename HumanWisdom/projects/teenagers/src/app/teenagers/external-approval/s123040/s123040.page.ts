@@ -8,15 +8,16 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s123040.page.html',
   styleUrls: ['./s123040.page.scss'],
 })
-export class S123040Page implements OnInit 
-{
+export class S123040Page implements OnInit {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_w7"
-  hint = ""
+  hint = " it could be because you were worried what others will think"
   toc = "/external-approval/s123001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +28,7 @@ export class S123040Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1939
   reflection: any
   reflectionA: any
   r123040 = JSON.parse(sessionStorage.getItem("r123040"))
@@ -35,56 +36,46 @@ export class S123040Page implements OnInit
   confirmed: any
 
   constructor
-  (
-    private router: Router,
-    private service: TeenagersService,
-    private location: Location
-  ) 
-  { }
+    (
+      private router: Router,
+      private service: TeenagersService,
+      private location: Location
+    ) { }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
     }
     this.startTime = Date.now();
   }
 
-  sharedForum(e) 
-  {
+  sharedForum(e) {
     console.log(e)
     this.shared = e
   }
 
-  confirmShare() 
-  {
+  confirmShare() {
     this.confirmed = true
   }
 
-  createScreen() 
-  {
+  createScreen() {
     this.service.createScreen({
       "ScrId": 0,
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {})
+    }).subscribe(res => { })
   }
 
-  findReflection() 
-  {
-    for (var i = 0; i < this.reflectionA.length; i++) 
-    {
-      if (this.rId == this.reflectionA[i].ReflectionId) 
-      {
+  findReflection() {
+    for (var i = 0; i < this.reflectionA.length; i++) {
+      if (this.rId == this.reflectionA[i].ReflectionId) {
         this.reflection = this.reflectionA[i].Que
         // this.optionList.push(this.questionA[i])
       }
@@ -92,8 +83,7 @@ export class S123040Page implements OnInit
     console.log(this.reflection)
   }
 
-  submitProgress(e) 
-  {
+  submitProgress(e) {
     console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -109,23 +99,21 @@ export class S123040Page implements OnInit
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
       "Resp": this.r123040
-    }).subscribe(res => {},
+    }).subscribe(res => { },
       error => {
         console.log(error)
-        this.router.navigate(['/external-approval/s123041'])
+        this.router.navigate(['/external-approval/s123040p1'])
 
       },
       () => {
-        this.router.navigate(['/external-approval/s123041'])
+        this.router.navigate(['/external-approval/s123040p1'])
       })
   }
 
-  previous() 
-  {
-    this.router.navigate(['/external-approval/s123039'])
+  previous() {
+    this.router.navigate(['/external-approval/s123039p1'])
   }
 
-  ngOnDestroy() 
-  {}
+  ngOnDestroy() { }
 
 }

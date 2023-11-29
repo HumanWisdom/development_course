@@ -24,7 +24,9 @@ export class S91037Page implements OnInit, OnDestroy {
   totalTime: any
   bookmark = 0
   toc = "external-approval/s91001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor(
@@ -75,7 +77,7 @@ export class S91037Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/external-approval/s91038'])
+    this.router.navigate(['adults/external-approval/s91038'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -96,7 +98,7 @@ export class S91037Page implements OnInit, OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s91036'])
+    this.router.navigate(['adults/external-approval/s91036'])
   }
 
   goNext() 

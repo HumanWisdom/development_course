@@ -1,0 +1,270 @@
+<!-- top navigation - with hint -->
+<div *ngIf="hint" class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01" [ngClass]="bg_tn">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai">
+      <div class="p0 mr20px">
+        <a class="" (click)="goToDash()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg"
+            class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+      <div class="p0">
+        <a class="" (click)="goToToc()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive"
+            alt="HumanWisdom">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <h6 class="fw_500 fs_16px fc_ffc455 tcenter">
+          Reflection
+        </h6>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai jc_flexend rmargin">
+      <a aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reflection_hint.svg"
+          class="img-responsive" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress">
+        <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- top navigation - without hint -->
+<div *ngIf="!hint" class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01" [ngClass]="bg_tn">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="" (click)="goToDash()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg"
+            class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="" (click)="goToToc()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive"
+            alt="HumanWisdom">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <h6 class="fw_500 fs_16px fc_ffc455 tcenter">
+          Reflection
+        </h6>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai jc_flexend">
+      <!-- <a aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reflection_hint.svg" class="img-responsive" alt="">
+      </a> -->
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress" [ngStyle]="{'visibility': !showheaderbar ? 'hidden' : 'visible'}">
+        <div class="progress-bar" role="progressbar"
+          [ngStyle]="{'visibility': !showheaderbar ? 'hidden' : 'visible' ,'min-width': progress + '%', 'max-width': progress + '%', 'width': progress + '%'}"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress">
+        <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div> -->
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+        <div [ngClass]="[pageaction === 'next' ? 'x_panel p0' : pageaction === 'prev' ? 'x_panel p0' : 'x_panel p0' ]">
+          <div class="x_content p0">
+            <form>
+              <!-- <h5 class="txt4 justified_center"> -->
+              <h5 class="txt4">
+                {{this.reflection}}
+              </h5>
+
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" [disabled]="textDisabled" required="required"
+                    class="form-control txt19 p30_20px rtextarea" name="message" rows="12" [placeholder]="placeholder"
+                    [(ngModel)]="reflectionData" [readonly]="enableReadonly"></textarea>
+                </div>
+              </div>
+
+              <!-- condition 1 -->
+              <div *ngIf="!shared && !confirmed">
+                <div class="row pt40px pb31px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <a class="">
+                      <div class="box tleft flex_left jbox1">
+                        <!-- svg checkbox -->
+                        <input class="inp-cbx" id="cb1" [disabled]="textDisabled" type="checkbox" name="shared"
+                          [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)" />
+                        <label class="cbx mt0px" for="cb1">
+                          <span>
+                            <svg width="12px" height="10px">
+                              <use xlink:href="#check"></use>
+                            </svg>
+                          </span>
+                          <span class="txt42 cb_span">
+                            Share this note on the forum
+                          </span>
+
+
+                        </label>
+                        <!--SVG Sprites-->
+                        <svg class="inline-svg">
+                          <symbol id="check" viewbox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                          </symbol>
+                        </svg>
+                        <!-- /svg checkbox -->
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <h5 class="txt7 justified_center">
+                  Reflections, unless shared, are private and can be viewed in your journal.
+                </h5>
+              </div>
+              <!-- /condition 1 -->
+
+              <!-- condition 2 -->
+              <div *ngIf="shared && !confirmed">
+                <div class="row pt40px pb31px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="input-group cinputgroup1">
+
+                      <a class="">
+                        <div class="box tleft flex_left jbox2 cbr1">
+                          <input class="inp-cbx" id="cb1" type="checkbox" [disabled]="textDisabled" name="shared"
+                            [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)" />
+                          <label class="cbx mt0px" for="cb1">
+                            <span>
+                              <svg width="12px" height="10px">
+                                <use xlink:href="#check"></use>
+                              </svg>
+                            </span>
+                            <span class="txt42 cb_span">
+                              Share this note on the forum
+                            </span>
+                          </label>
+                          <svg class="inline-svg">
+                            <symbol id="check" viewbox="0 0 12 10">
+                              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                          </svg>
+                        </div>
+                      </a>
+
+                      <span class="input-group-btn">
+                        <button type="button" (click)="confirmShare()" [disabled]="textDisabled || reflectionData === ''"
+                          class="btn btn-warning igbtn1">Confirm?</button>
+                      </span>
+                    </div>
+
+
+                  </div>
+                </div>
+                <h5 class="txt7 justified_center">
+                  All posts shared on the forum are moderated
+                </h5>
+              </div>
+              <!-- /condition 2 -->
+
+              <!-- condition 3 -->
+              <div *ngIf="confirmed">
+                <div class="row pb8px pt30px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post.svg" alt=""
+                      class="">
+                  </div>
+                </div>
+
+                <h5 class="txt48 justified_center pb16px">
+                  Great! We will notify you once it is published.
+                </h5>
+
+                <div class="row center_flex">
+                  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
+                    <button type="button" class="btn btn-default w100 mb0 jbtn1"
+                      (click)="this.router.navigate(['/forum'])">See what others have to say</button>
+                  </div>
+                </div>
+              </div>
+              <!-- /condition 3 -->
+
+              <!-- modal -->
+              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="false">
+                <div class="row center_flex">
+                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ex_modal_body">
+                    <button type="button" class="close ex_close" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span>
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/header/close.png" alt="" class=""> -->
+                      <span class="sr-only">Close</span>
+                    </button>
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="lh2_5rem tleft">
+                          {{hint}}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /modal -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray" [ngClass]="bg_cft">
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
+        <button type="button" class="btn w100 mb0 btn_prev" (click)="previous()">Previous</button>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6 p0">
+        <button type="button" class="btn btn-default w100 mb0 btn_next" (click)="next()">Next</button>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /footer -->

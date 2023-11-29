@@ -14,9 +14,11 @@ export class S216tPage implements OnInit {
   bg="anger_w4"  
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/anger/s216"
-  toc="/anger/s0"
+  toc="/anger/s162"
   
   constructor(private router: Router,
     private service:AdultsService,

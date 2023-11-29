@@ -8,16 +8,18 @@ import { Location } from '@angular/common';
   styleUrls: ['./s26.page.scss'],
 })
 
-export class S26Page implements OnInit 
+export class S26Page implements OnInit
 {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bookmark=0
   toc="comparison/s0"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
   screenType=JSON.parse(localStorage.getItem("question"))
@@ -47,18 +49,17 @@ export class S26Page implements OnInit
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) 
+  )
   { }
 
-  ngOnInit() 
+  ngOnInit()
   {
-    console.log("sessionOptions",this.sessionOptions)
     this.createScreen()
     for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
     {
       this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
     }
-   
+
     this.questionA=this.qrList.ListOfQueOpts
     this.q0=this.findQuestion(34).Question
     this.optionList0=this.findQuestion(34).optionList
@@ -73,12 +74,6 @@ export class S26Page implements OnInit
     this.optionList4=this.findQuestion(39).optionList
     this.q5=this.findQuestion(40).Question
     this.optionList5=this.findQuestion(40).optionList
-    console.log(this.optionList0)
-    console.log(this.optionList1)
-    console.log(this.optionList2)
-    console.log(this.optionList3)
-    console.log(this.optionList4)
-    console.log(this.optionList5)
 
     if(this.saveUsername==false)
     {
@@ -113,14 +108,13 @@ export class S26Page implements OnInit
       {
         var question=this.questionA[i].Que
         this.optionList.push(this.questionA[i])
-      }  
+      }
     }
     return({"Question":question,"optionList":this.optionList})
   }
 
   selectOption(id)
   {
-    console.log(id)
     for(var j=0;j<this.sendOptions.length;j++)
     {
       if(this.sendOptions.includes(id)==false)
@@ -131,12 +125,12 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(40)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id) 
+            this.sendOptions.push(id)
           }
           else if(this.sendOptions.indexOf(39)===-1)
           {
             this.sendOptions.push(id)
-          } 
+          }
         }
         if(id==40)
         {
@@ -144,7 +138,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(39)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id) 
+            this.sendOptions.push(id)
           }
           else if(this.sendOptions.indexOf(40)===-1)
           {
@@ -157,12 +151,12 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(42)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id) 
+            this.sendOptions.push(id)
           }
           else if(this.sendOptions.indexOf(42)===-1)
           {
             this.sendOptions.push(id)
-          } 
+          }
         }
         if(id==42)
         {
@@ -170,7 +164,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(41)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -181,7 +175,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(45)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -192,7 +186,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(44)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -203,7 +197,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(47)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -214,7 +208,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(46)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -225,7 +219,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(49)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -236,7 +230,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(48)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -247,7 +241,7 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(51)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
@@ -258,19 +252,17 @@ export class S26Page implements OnInit
           {
             var index=this.sendOptions.indexOf(50)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
       }
       else{
-        console.log("exists")
       }
     }
     this.sendOptions.push(id)
     this.sendOptions=[...new Set(this.sendOptions)]
-    console.log(this.sendOptions)
     sessionStorage.setItem("sessionOptions",JSON.stringify(this.sendOptions))
   }
 
@@ -304,13 +296,12 @@ export class S26Page implements OnInit
 
   receiveBookmark(e)
   {
-    console.log(e)
     if(e==true)
       this.bookmark=1
     else
       this.bookmark=0
   }
-  
+
   ngOnDestroy()
   {}
 

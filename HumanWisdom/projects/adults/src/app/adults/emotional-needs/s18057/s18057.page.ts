@@ -14,7 +14,9 @@ export class S18057Page implements OnInit {
   bg = "blue_pink_w3"
   hint = "It may be you want someone to think you are special to them, or you want to be the head of your department or organisation or political party, or country."
   toc = "/emotional-needs/s18001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

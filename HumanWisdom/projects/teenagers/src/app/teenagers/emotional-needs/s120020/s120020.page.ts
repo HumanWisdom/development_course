@@ -23,7 +23,9 @@ export class S120020Page implements OnInit,OnDestroy
   totalTime:any
   bookmark=0
   toc="emotional-needs/s120001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
   constructor
@@ -100,7 +102,7 @@ export class S120020Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/emotional-needs/s120019'])
+    this.router.navigate(['/emotional-needs/s120019p1'])
   }
 
   ngOnDestroy()

@@ -24,7 +24,9 @@ export class S43018Page implements OnInit {
   
   bookmark=0
   toc="obstacles-enquiry/s43000"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

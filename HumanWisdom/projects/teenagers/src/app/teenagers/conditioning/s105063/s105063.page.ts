@@ -16,11 +16,13 @@ export class S105063Page implements OnInit,OnDestroy
   bg="pink_orange_w6"
   title="Conditioning and criticism"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/2.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/2.3.mp3'
   transcriptPage="conditioning/s105063t"
   toc="conditioning/s105001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

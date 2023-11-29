@@ -15,8 +15,8 @@ export class S112007Page implements OnInit {
   bg="purple_red_w1"
   title="Symptoms of anxiety"
   toc="fear-anxiety/s112001"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/fear-anxiety/audios/1.2.mp3'
   transcriptPage="/fear-anxiety/s112007t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -27,7 +27,9 @@ export class S112007Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url  
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);  
   avDuration:any  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName="teenagers"

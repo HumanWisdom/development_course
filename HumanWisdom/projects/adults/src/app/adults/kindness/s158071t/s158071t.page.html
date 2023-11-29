@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are many different ways to be kind - in fact there are so many, that we are spoilt for choice, and really can’t make any excuses for not being kind.
+ 
+          </p>
+          <p>
+            Kindness begins in our thinking, in how we think of ourselves and others. Are we aware of our negative self-talk, and do we speak more kindly to ourselves. Are we critical of others so we can feel good about ourselves, or more generous and accepting of difference when we meet others?
+        
+          </p>
+
+          <p>
+            Its in how we listen and speak that there are other opportunities to be kind. Do we listen without interrupting. Are we curious and ask questions rather than offer our opinion? Do we speak with care, asking ourselves how its going to be received? Do we hold our tongue and say nothing, if it means being unkind?
+           
+          </p>
+          <p>
+            There are so many ways we can express our kindness. It could be making some food for others, or writing them a note, or saying something positive on their social media post, or spending time with them.
+          </p>
+        </h3>               
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

@@ -14,12 +14,14 @@ export class S122049Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w2" 
   title="How can we explore the ‘I’ ? "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/nature-of-the-i/audios/1.10.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+2.1.mp3' 
   transcriptPage="nature-of-the-i/s122049t"
   toc="nature-of-the-i/s122001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

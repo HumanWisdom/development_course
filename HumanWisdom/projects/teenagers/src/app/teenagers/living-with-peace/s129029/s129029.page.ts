@@ -16,7 +16,9 @@ export class S129029Page implements OnInit
   bg="blue_w6"
   hint = ""
   toc = "/living-with-peace/s129001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S129029Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1998
   reflection: any
   reflectionA: any
   r129029 = JSON.parse(sessionStorage.getItem("r129029"))
@@ -122,7 +124,7 @@ export class S129029Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129028'])
+    this.router.navigate(['/living-with-peace/s129028p1'])
   }
 
   ngOnDestroy() 

@@ -22,7 +22,9 @@ export class S46011Page implements OnInit,OnDestroy {
   yellow="#FFC455"
   toc="food-health/s46001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -121,5 +123,10 @@ export class S46011Page implements OnInit,OnDestroy {
     localStorage.setItem("totalTime46011",this.totalTime)
     localStorage.setItem("avDuration46011",this.avDuration)
  
+  }
+
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
   }
 }

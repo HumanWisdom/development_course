@@ -16,12 +16,14 @@ export class S115052Page implements OnInit,OnDestroy
   bg_cft="bg_purple_red"
   bg="purple_red_w6"
   title="Responding with wisdom"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/self-interest/audios/2.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/self-interest/audios/2.1.mp3'
   transcriptPage="self-interest/s115052t"
   toc="self-interest/s115001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

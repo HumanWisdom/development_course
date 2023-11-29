@@ -20,7 +20,9 @@ export class S143001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
   freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
@@ -88,6 +90,10 @@ continue(){
 
   ngOnInit() 
   {
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+  
     this.pgResume=sessionStorage.getItem("pgResume");
     // continue where you left    
     let last = localStorage.getItem('lastvisited');

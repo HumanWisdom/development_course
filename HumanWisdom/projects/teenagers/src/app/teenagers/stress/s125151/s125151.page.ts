@@ -14,12 +14,16 @@ export class S125151Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w10"
   title="#5 We get anxious or depressed"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/1.17.mp3'
+
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/stress/audios/1.17.mp3'
+
   transcriptPage="stress/s125151t"
   toc="stress/s125001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

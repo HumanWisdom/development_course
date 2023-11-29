@@ -11,11 +11,11 @@ import { AdultsService } from '../../adults.service';
 export class S51013Page implements OnInit {
   
   toc="guided-meditation/s51000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/28.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/22.png"
   
   bg=""
-  moduleLink="/adults/nature"
-  moduleName="05. Nature"
+  moduleLink="/adults/meditation"
+  moduleName="Meditation"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=22
   moduleList: any = [

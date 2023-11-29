@@ -13,8 +13,8 @@ export class S104026Page implements OnInit,OnDestroy {
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="teal_w12"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/obstacles-enquiry/videos/1.3.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/obstacles-enquiry/videos/1.3.mp4'  
   title="The obstacles to enquiry"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/reactive_mind/reactive_mind_01.jpg"
   userId:any
@@ -27,7 +27,9 @@ export class S104026Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="obstacles-enquiry/s104001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

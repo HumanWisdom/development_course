@@ -14,7 +14,7 @@ export class S117030Page implements OnInit {
   bg_cft="bg_green_yellow"
   bg="green_yellow_w7"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.3.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+1.4.mp3'
   title=" What is going on in our thinking, when we feel lonely?  "
 
   toc="loneliness/s117001"
@@ -29,7 +29,9 @@ export class S117030Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   progName= "teenagers";  
   avDuration:any
   

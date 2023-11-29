@@ -13,8 +13,8 @@ export class S123006Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w4"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/external-approval/videos/2.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/external-approval/videos/1.1.mp4'  
   title="In what ways do we seek external validation or approval?  "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/01.jpg"
   userId:any
@@ -27,7 +27,9 @@ export class S123006Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/external-approval/s123001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

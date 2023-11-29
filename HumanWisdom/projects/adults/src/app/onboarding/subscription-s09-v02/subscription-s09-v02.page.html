@@ -1,376 +1,412 @@
 <!-- top navigation -->
-<!-- <nav class="navbar navbar-default navbar-static-top cnavbar-default">
-  <div class="black_div"></div>
-  <div class="container ncenter_flex pt1rem">
-    <div class="navbar-header nh center_flex subscription_nav">
-      <button type="button" class="navbar-toggle collapsed unhide_ntbtn" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="cimg" href="#">
-        <img src="assets/images/logo/logo_transparent.png" class="img-responsive clogo" alt="">
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="goBack()"
+          alt="" class="p0">
       </a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse hide_nav">      
-      <ul class="nav navbar-nav navbar-right">        
-        <ul class="nav navbar-nav cnavbar-nav mr-20px pb1rem">          
-          <li class="libr"><a href="https://humanwisdom.me/onboarding/login">Login</a></li>                    
-          <li class="libr"><a href="https://humanwisdom.me/onboarding/signup">Register</a></li>
-          <li class="libr"><a href="https://humanwisdom.me/hwp/webpages/help.php">Help</a></li>
-          <li class=""><a href="https://humanwisdom.me/hwp/webpages/profile.php">My Profile</a></li>          
-          <li role="separator" class="divider"></li>
-        </ul>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">        
-        <ul class="nav navbar-nav cnavbar-nav">          
-          <li><a href="">About</a></li>          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Programs <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="https://humanwisdom.me/hwp/webpages/wp_childrens.php">Children</a></li>
-              <li><a href="https://humanwisdom.me/hwp/webpages/wp_teenagers.php">Teenager</a></li>
-              <li><a href="https://humanwisdom.me/hwp/webpages/wp_adults.php">Adults</a></li>
-              <li><a href="https://humanwisdom.me/hwp/webpages/wp_parents.php">Parents</a></li>
-            </ul>
-          </li>
-          <li class="active"><a href="https://humanwisdom.me/hwp/webpages/wisdom_community.php">Community</a></li>
-          <li><a href="">Wisdom Survey</a></li>
-          <li><a href="">Wisdom Journal</a></li>
-          <li><a href="https://humanwisdom.me/onboarding/addcart">Subscribe</a></li>
-          <li><a href="https://humanwisdom.me/hwp/webpages/testimonials.php">Testimonials</a></li>
-        </ul>
-      </ul>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        My Subscriptions
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
     </div>
   </div>
-</nav> -->
+</div>
 <!-- /top navigation -->
 
-<!-- header -->
-<app-tn-hwp-project></app-tn-hwp-project>
-<!-- /header -->
-
-<app-bg-video></app-bg-video>
+<!-- <app-bg-video></app-bg-video> -->
 
 <!-- page content -->
 <div class="right_col mc_01">
-    <!-- Class -->
-    <div class="">
-        <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
-                <div class="x_panel p0">
-                    <div class="x_content plr10px">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="ob_txt1">
-                                        My Programs
+  <div class="">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- accordion - active programs-->
+              <div class="panel-group spanelgroup mb10pxi">
+                <div class="panel panel-default">
+                  <div class="panel-heading p0">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#ap">
+
+                        <div class="row active_programs">
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                            <h6 class="fw_400 fs_18px lh_150p fc_ffffff">
+                              Active Programs
+                            </h6>
+                          </div>
+
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            <button class="fw_600 fs_16px lh_140p fc_e58d82 prog_count">
+                              <!-- 3 -->
+                              {{myprograms.length}}
+                            </button>
+                          </div>
+                        </div>
+
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="ap" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ng-container *ngFor="let item of myprograms">
+                        <div class="ms_program" >
+                          <div class="row"  (click)="RouteToManageSubscription(item)">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                {{item['Prog']}}
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex mt10px mb20px">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft" (click)="RouteToManageSubscription(item)">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
+                                Monthly Subscription
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='2'">
+                                Yearly Subscription
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.isTrial=='1'">
+                                Free Trial
+                              </h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+
+
+                              <div *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenewText">
+                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                  Next Payment
+                                </h4>
+
+                                <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                </h4>
+                              </div>
+
+                              <ng-template #autoRenewText>
+                                <div *ngIf="item['AutoRenew'] === 1">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                    Auto-renew
+                                  </h4>
+
+                                  <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                    {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                  </h4>
+                                </div>
+                                <div *ngIf="item['AutoRenew'] === 0">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                    Expiry
+                                  </h4>
+
+                                  <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                    {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                  </h4>
+                                </div>
+                              </ng-template>
+                              <div *ngIf="(item.canceled === '1')" >
+                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                  Cancelled At
+                                </h4>
+
+                                <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                </h4>
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai" (click)="RouteToManageSubscription(item)">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg"
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
+                              <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
+                                {{item['MySelf'] === '0' ? (item['ConsumerEmail'] == '' || item['CosumerEmail'] == null)
+                                ? 'Deleted User' : item['ConsumerEmail'] : item['BoughtName']}}
+                              </h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+
+                              <button
+                                *ngIf="item.isTrial==1 && item['MySelf'] === '1'  && item.canceled == 0 ; else autoRenew"
+                                type="button" class="btn btn_ms" id="{{'Cancel' + item['ActKey']}}"
+                                (click)="RouteToManageSubscription(item)">
+                                Cancel Subscription
+                              </button>
+
+                              <button *ngIf="item.canceled == 1;else autoRenew" type="button" class="btn btn_ms"
+                                id="{{'buyAgain' + item['ActKey']}}" (click)="ReviveSubscription(item)">
+                                Revive Subscription
+                              </button>
+<!-- 
+                              <h4 *ngIf="item.canceled === 1" style="margin-bottom: 2px;"
+                                class="fs_15px fw_500 fc_ffffff">
+                                cancelled
+                              </h4> -->
+                                <button type="button" class="btn btn_ms" id="{{'donotautorenew' + item['ActKey']}}"
+                                [ngStyle]="{'display': item['MySelf'] === '1' && item.canceled == 0 && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
+                                Do not auto-renew
+                              </button>
+                              <button type="button" class="btn btn_ms" id="{{'autorenew' + item['ActKey']}}"
+                                [ngStyle]="{'display': item['MySelf'] === '1' &&  item.canceled == 0 && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                (click)="autorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'autorenew')">
+                                Activate Auto-Renew
+                              </button>
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /accordion - active programs -->
+
+              <!-- accordion - not yet started -->
+              <div class="panel-group spanelgroup  mb10pxi">
+                <div class="panel panel-default">
+                  <div class="panel-heading p0">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#nys">
+
+                        <div class="row active_programs">
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                            <h6 class="fw_400 fs_18px lh_150p fc_ffffff">
+                              InActive Programs
+                            </h6>
+                          </div>
+
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            <button class="fw_600 fs_16px lh_140p fc_e58d82 prog_count">
+                              {{notmyprograms.length}}
+                            </button>
+                          </div>
+                        </div>
+
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="nys" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ng-container *ngFor="let item of notmyprograms">
+                        <div class="ms_program">
+                          <div class="row" >
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                {{item['Prog']}}
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex mt10px mb20px">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
+                                Monthly Subscription
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='2'">
+                                Yearly Subscription
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.isTrial=='1'">
+                                Free Trial
+                              </h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+
+
+                              <!-- <div *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenewText">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                      Next Payment
+                                    </h4>
+        
+                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                        {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                     </h4>
                                 </div>
-                            </div>
-
-                            <hr class="shr1">
-
-                            <!-- accordion - active programs-->
-                            <div class="panel-group spanelgroup">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading p0">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" href="#ap">
-
-                                                <div class="row active_programs mt30px cmlr-10px">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                                        <h6 class="fw_400 fs_18px lh_21px fc_000000">
-                                                            Active Programs
-                                                        </h6>
-                                                    </div>
-
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                                        <h6 class="fw_400 fs_18px lh_21px fc_000000">
-                                                            {{myprograms.length}}
-                                                        </h6>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="ap" class="panel-collapse collapse">
-                                        <div class="panel-body">
-
-                                            <ng-container *ngFor="let item of myprograms">
-                                                <div class="row center_flex pt20px">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                                                        <h6 class="fw_500 fs_16px lh_19px fc_000000">
-                                                            {{item['Prog']}}
-                                                        </h6>
-                                                        <h6 class="fw_400 fs_10px lh_12px fc_5d5d5d">
-                                                            Program Code: {{item['ActKey']}}
-                                                        </h6>
-                                                    </div>
-
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d"
-                                                            *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
-                                                            Auto-renew: {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                                        </h6>
-                                                        <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d"
-                                                            *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
-                                                            Expiry: {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                                        </h6>
-                                                        <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d" *ngIf="!donotautorenew(item, 'compareauto')">
-                                                            Expired: {{ item['ExpDate'] | date : 'dd LLL yy'}}
-                                                        </h6>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row center_flex">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                                                        <h6 class="fw_500 fs_14px lh_16px fc_1092a7 tleft mtb0px">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg"
-                                                                *ngIf="item['MySelf'] === '0'" alt="" class="">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg"
-                                                                *ngIf="item['MySelf'] === '1'" alt="" class="">
-                                                            <span class="ml5px">{{item['MySelf'] === '0' ?
-                                                                item['ConsumedName'] : item['BoughtName']}}</span>
-                                                        </h6>
-                                                    </div>
-
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <button class="btn btn-default dn_autorenew"
-                                                            id="{{'donotautorenew' + item['ActKey']}}"
-                                                            [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                                            type="button"
-                                                            (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
-                                                            Do not Auto-renew
-                                                        </button>
-
-                                                        <button id="{{'autorenew' + item['ActKey']}}"
-                                                            [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                                            class="btn btn-warning btn_apply_coupon w100" type="button"
-                                                            (click)="autorenew(item['ActKey'], 'donotautorenew' + item['ActKey'], item['ActKey'])">
-                                                            Activate Auto-Renew
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                                <!-- <div class="row spt10px">
-                                  <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
-                                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
-                                      </div>
-                                      <div class="col-md-10 col-sm-10 col-xs-10 p0">                            
-                                          <h6 class="sfw_500 fs_18px lh_130p fc_5d5d5d tleft mtb0px">                            
-                                              agata.corcrain@gmail.com
-                                          </h6>  
-                                      </div>                                           
+                                  
+                                <ng-template #autoRenewText>
+                                  <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1' && item['AutoRenew'] === 1 ">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                          Auto-renew
+                                      </h4>
+          
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                      </h4>
                                   </div>
-                
-                                  <div class="col-md-6 col-sm-6 col-xs-4 p0 tright">
-                                      <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d">
-                                          Expiry: 10 Apr 21
-                                      </h6>
-                                  </div>
-                              </div> -->
-                                            </ng-container>
+                                </ng-template> -->
+                              <div *ngIf="!donotautorenew(item, 'compareauto')">
+                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                  Expired
+                                </h4>
 
-                                        </div>
-                                        <!-- <div class="panel-footer">Panel Footer</div> -->
-                                    </div>
-                                </div>
+                                <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                </h4>
+                              </div>
+                              <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
+                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                  Expiry
+                                </h4>
+
+                                <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                </h4>
+                              </div>
+
                             </div>
-                            <!-- /accordion - active programs -->
-
-                            <!-- accordion - not yet started -->
-                            <div class="panel-group spanelgroup">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading p0">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" href="#nys">
-
-                                                <div class="row active_programs mt30px cmlr-10px">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                                        <h6 class="fw_400 fs_18px lh_21px fc_000000">
-                                                            Not Yet Started
-                                                        </h6>
-                                                    </div>
-
-                                                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                                        <h6 class="fw_400 fs_18px lh_21px fc_000000">
-                                                            {{notmyprograms.length}}
-                                                        </h6>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="nys" class="panel-collapse collapse">
-                                        <div class="panel-body" style="margin-bottom: 100px">
-
-                                            <ng-container *ngFor="let item of notmyprograms">
-                                                <div class="row spt10px center_flex" *ngIf="item['Email'] !== ''">
-                                                    <div class="col-md-10 col-sm-10 col-xs-8 p0 center_flex">
-                                                        <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg"
-                                                                alt="" class="">
-                                                        </div>
-                                                        <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                                                            <h6 class="sfw_500 fs_18px lh_130p fc_5d5d5d tleft mtb0px ellipsis_01">
-                                                                {{item['Email']}}
-                                                            </h6>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-2 col-sm-2 col-xs-4 pr0px tright"
-                                                        >
-                                                        <h6 class="fw_500 fs_12px lh_14px fc_b92f48 mtb0px fright ws_nowrap">
-                                                            Invite Sent
-                                                        </h6>
-                                                    </div>
-                                                </div>
-                                                <hr class="shr3">
-                                                <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
-                                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                                                        <h6 class="fw_500 fs_14px lh_16px fc_5d5d5d mtb0px">
-                                                            Adults
-                                                        </h6>
-                                                    </div>
-
-                                                    <div class="col-md-8 col-sm-8 col-xs-8 tright flexalign_center">
-                                                        <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                            <h6 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
-                                                                {{item['ActKey']}}
-                                                            </h6>
-                                                        </div>
-                                                        <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                                            <button class="btn btn-warning btn_assign w100"
-                                                                type="button" (click)="getAssignClick(item)">
-                                                                Assign
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <hr class="shr3" *ngIf="item['Email'] === ''">
-                                                <div id="{{item['ActKey']}}" style="display: none;">
-                                                    <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
-                                                        <div
-                                                            class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                                                            <h6 class="txt53 mtb0px">
-                                                                Parents
-                                                            </h6>
-                                                        </div>
-
-                                                        <div class="col-md-8 col-sm-8 col-xs-8 p0 tright">
-                                                            <h6 class="mtb0px inline_box">
-                                                                <span class="fw_400 fs_12px lh_14px fc_5d5d5d">
-                                                                    Subscription Code:
-                                                                </span>
-                                                                <span class="fw_500 fs_12px lh_14px fc_000000">
-                                                                    {{activeKey}}
-                                                                </span>
-                                                            </h6>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                                            <div class="checkbox">
-                                                                <label class="subscribe_check mt0px">
-                                                                    <input type="checkbox" id="{{item['ActKey'] + 'checkbox'}}"
-                                                                        (change)="myselfEvent($event.target)"
-                                                                        name="remember" value="" />
-                                                                    <span class="">
-                                                                        <span class="pl0_3rem chk_rm fw_400 fs_12px lh_14px fc_5d5d5d">
-                                                                            This program is for me
-                                                                        </span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row pt10px"
-                                                        *ngIf="item['Email'] === '' && myself === 0">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                                            <input type="text" class="form-control cfc4"
-                                                                (keyup)="emailKeyup($event)"
-                                                                placeholder="Learner’s Email*">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row spt10px"
-                                                        *ngIf="item['Email'] === '' && myself === 0">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                                            <textarea class="form-control cfc5" rows="3"
-                                                                (keyup)="messageKeyup($event)"
-                                                                placeholder="Message for Learner (optional)"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row pt0px center_flex mt30px"
-                                                        *ngIf="item['Email'] === ''">
-                                                        <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                                            <button class="btn btn-warning btn_send_invite w100"
-                                                                (click)="submitAssignKey(item)"
-                                                                [disabled]="email === '' && myself === 0" type="button">
-                                                                {{startinvite}}
-                                                            </button>
-                                                        </div>
-
-                                                        <div class="col-md-4 col-sm-4 col-xs-4 pr0">
-                                                            <button class="btn btn-warning btn_cancel w100"
-                                                                (click)="cancelAsign()" type="button">
-                                                                Cancel
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </ng-container>
-
-                                        </div>
-                                        <!-- <div class="panel-footer">Panel Footer</div> -->
-                                    </div>
-                                </div>
+                          </div>
+                          <h4 *ngIf="item.canceled === 1" style="margin-bottom: 2px;" class=" fs_15px fw_500 fc_ffffff">
+                            cancelled
+                          </h4>
+                          <div class="row center_flex">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg"
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
+                              <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
+                                {{item['MySelf'] === '0' ? (item['ConsumerEmail'] == '' || item['CosumerEmail'] == null)
+                                ? 'Deleted User' : item['ConsumerEmail'] : item['BoughtName']}}
+                              </h4>
                             </div>
-                            <!-- /accordion - not yet started -->
 
-                            <!-- <hr class="shr3"> -->
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
 
-                            <!-- <div class="row pt0px center_flex">
-                                <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                                    <h6 class="fw_500 fs_14px lh_16px fc_5d5d5d mtb0px">
-                                        Adults
-                                    </h6>
-                                </div>
+                              <button *ngIf="!donotautorenew(item, 'compareauto')  && item['MySelf'] === '0' "
+                                type="button" class="btn btn_ms" id="{{'buyAgain' + item['ActKey']}}"
+                                (click)="buyAgain(item)">
+                                Buy again
+                              </button>
 
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0 tright flexalign_center">
-                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                        <h6 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
-                                            A580IUBG
-                                        </h6>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0 tright">
-                                        <button class="btn btn-warning btn_assign w100" type="button">                            
-                                            Assign
-                                        </button>
-                                    </div>                        
-                                </div>                    
-                            </div>     -->
-
-                        </form>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+              <!-- /accordion - not yet started -->
+              <div class="panel-group spanelgroup mb10pxi">
+                <div class="panel panel-default">
+                  <div class="panel-heading p0">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#nystarted">
+
+                        <div class="row active_programs">
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                            <h6 class="fw_400 fs_18px lh_150p fc_ffffff">
+                              Not Yet Started
+                            </h6>
+                          </div>
+
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            <button class="fw_600 fs_16px lh_140p fc_e58d82 prog_count">
+                              <!-- 3 -->
+                              {{notStarted.length}}
+                            </button>
+                          </div>
+                        </div>
+
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="nystarted" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ng-container *ngFor="let item of notStarted">
+                        <div class="ms_program">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                {{item['Prog']}}
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex mt10px mb20px">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
+                                Monthly Subscription
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='2'">
+                                Yearly Subscription
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.isTrial=='1'">
+                                Free Trial
+                              </h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <div *ngIf="!donotautorenew(item, 'compareauto')">
+                                <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                          Expired
+                                      </h4>
+          
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                      </h4> -->
+                              </div>
+                              <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
+                                <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                          Expiry
+                                      </h4>
+          
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                      </h4> -->
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg"
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
+                              <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
+                                {{item['MySelf'] === '0' ? item['Email'] : item['Email']}}
+                              </h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <h4 *ngIf="item.canceled === 1" class="mtb0px fs_15px fw_500 fc_ffffff">
+                                cancelled
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- /page content -->
-
-<!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
-<!-- /footer -->

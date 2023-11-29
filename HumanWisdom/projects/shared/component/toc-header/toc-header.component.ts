@@ -4,6 +4,7 @@ import {Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
+import { Constant } from '../../services/constant';
 
 @Component({
   selector: 'app-toc-header',
@@ -14,24 +15,36 @@ export class TocHeaderComponent implements OnInit {
   @Input() tocImage: string;
   @Input() tocColor: string;
   @Input() tocAlt: string;
-  path=this.router.url
+  @Input() moduleName = 'Stress';
+  path:any;
   baseUrl:string;
   programName:'';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router ,
     private location: Location) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.path = this.router.url;
+  }
+
   goBack(){
-    this.location.back()
+    var url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+    if(url && url!=null && url != 'null'){
+      this.router.navigate([url]);
+    }else{
+      this.location.back();
+    }
   }
 
   share(){
     this.shareUrl(SharedService.ProgramId);
+    console.log(this.baseUrl+this.path);
+    console.log(this.path);
+    
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
-      url: this.baseUrl+this.path
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.baseUrl+this.path      
     }).then( (response) => {
       console.log(response);
     })

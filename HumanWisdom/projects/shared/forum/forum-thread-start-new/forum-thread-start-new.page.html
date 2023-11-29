@@ -1,20 +1,19 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a routerLink="/forum/forum-landing/">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="img-responsive">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" routerLink="/forum/forum-landing/">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <a>
-        <h1 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-          New Thread
-        </h1>
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        New Thread
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
     </div>
   </div>
 </div>
@@ -23,79 +22,328 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->
-  <div class="cw100p">    
-
+<div class="right_col mc_01">		
+  <div class="cw100p">
     <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
-          <div class="x_panel p0">
-            <div class="x_content p0">
-              <form> 
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form> 
 
-                <div class="row forum_pt20px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="{{'data:image/jpg;base64,' + userinfo.userimage}}" *ngIf="userinfo.userimage" alt="" class="w100 fimg_02">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_09.svg" *ngIf="!userinfo.userimage"  alt="" class="p0">
-                    </div> -->
-                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                      <h4 class="fw_500 fs_14px lh_16px fc_000000 mtb0px">
-                        {{userinfo.username}}
-                      </h4>                      
-                    </div>                     
+              <div class="row" *ngIf="categoryList.length>0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <!-- <select [(ngModel)]="selectedOption" name="categoryListName" id="categoryListName" class="form-select forum_v3_start_new_thread">
+                    <option *ngFor="let item of categoryList" [value]="item.value" >{{item.label}}</option>
+                  </select> -->
+
+                  <div class="row">
+                    <button type="button"  class="btn btn_all_threads btn-thread" data-toggle="modal"
+                      data-target="#choose_category"[innerText]="buttonText" >   
+                                                     
+                    </button>
+                    <i data-toggle="modal" data-target="#choose_category" class="fa fa-angle-down btn-down"></i>   
                   </div>
+
                 </div>
+              </div>
 
-                <!-- <div class="row forum_pt20px">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <a href="">
-                      <h4 class="fw_500 fs_12px lh_14px fc_1092a7 mtb0px">
-                        + Add category (min. 1)
-                      </h4>
-                    </a>
-                  </div>
-                </div>                 -->
-
-                <div class="row forum_pt20px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 prelative">
-                    <div class="placeholder_odiv">
-                      <h4 class="fw_400 fs_16px lh_19px fc_adadad">
-                        Start a new thread
-                      </h4>
+              <div class="row mt20px" *ngIf="selectedOption == 4 && imageUrl!=null" >
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <label for="img-edit" class="tcenter w100 prelative">
+                    <div class="">
+                      <img [src]="imageUrl" class="img-responsive w100 h-250 img-forum">
                     </div>
-                    <textarea type="text" id="comment" name="thread" [(ngModel)]="thread" required="required" class="placeholder_idiv" placeholder="" maxlength="256"></textarea>
-                    <div class="placeholder_noc">
-                      <h4 class="fw_400 fs_10px lh_12px fc_adadad">
-                        {{thread.length}}/256
-                      </h4>
-                    </div>                    
-                  </div>
-                  <!-- <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" required="required" class="input_file" placeholder="Add image / audio / video / file">
-                  </div> -->
+                    <div class="absolute_edit">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_img_edit.svg" class="img-responsive">
+                    </div>
+                    <input id="img-edit" (change)="getFileUpload($event)" type="file" class="">
+                  </label>
                 </div>
+              </div>
 
-                <div class="row forum_pt20px">                  
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <button type="submit" class="btn btn-warning btn_fw_post w100" (click)="post()">                      
-                      Post
-                    </button>  
-                  </div>
+              <div class="row mtb20px"  *ngIf="selectedOption == 4 && imageUrl==null">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex div_ftui">
+                  <label for="forum_thread_img" class="tcenter">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_upload_img.svg" clas="img-respsonsive">
+                    <h4 class="mb0px mt15px fs_12px fw_500 lh_150p fc_e58d82">
+                      Upload image (max 2MB)
+                    </h4>
+                    <input id="forum_thread_img" (change)="getFileUpload($event)" type="file">
+                  </label>
                 </div>
+              </div>
 
-                <div class="pagebreak"></div>
+              <div class="row mtb20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea type="text" class="mtb0px ta_new_thread" id="Post" name="Post" 
+                   rows="10" 
+                   placeholder="{{getPlaceHolder()}}"
+                    maxlength="256" 
+                  [(ngModel)]="thread" required="required"></textarea>
+                </div>
+              </div>
 
-              </form>              
-            </div>
+              <div class="row mtb20px" *ngIf="selectedOption == 5">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <label for="forum_post_checkbox" class="tcenter chkb_post_anonymously mt0px">
+                    <input id="forum_post_checkbox" #checkboxSelect [(ngModel)]="isChecked" [value]="isChecked" type="checkbox" class="">
+                    <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
+                      <span class="ml10px">
+                        Post anonymously
+                      </span>
+                    </h4>
+                  </label>
+                </div>
+              </div>
+
+              <div class="row" style="display: none;">                  
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+                  <button type="button" class="btn btn_v3_nt_post" #postModal data-toggle="modal" data-target="#posted_successfully">                      
+                    Posted modal
+                  </button>  
+                </div>
+              </div>
+
+              <div class="row" >                  
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 btn_post_anonymously">
+          <button type="button" class="btn btn_ctd center_flex"   data-toggle="modal" data-target="#modal_logout"
+              (click)="post()">                      
+                    Post
+                  </button>  
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>              
           </div>
         </div>
+      </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
 <!-- /page content -->
 
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+<!-- posted successfully -->
+<div class="modal fade" id="posted_successfully" data-keyboard="false" data-backdrop="false">
+  <div class="row center_flex h100p">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v3_modal_posted_successfully">
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-dismiss="modal" aria-label="close">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_close_modal.svg" class="img-responsive fright">
+          </button>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_tick_successfull.svg" class="img-responsive">
+        </div>
+      </div>
+
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <h3 class="mtb0px fs_18px fw_600 lh_145p fc_ffffff tcenter">
+            Thread successfully posted
+          </h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- /posted successfully -->
+
+
+<!-- choose category -->
+<div class="modal fade" id="choose_category" data-keyboard="false" data-backdrop="false">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc choose-category-popup">
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+            <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              CHOOSE CATEGORY
+            </h4>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+            <button type="button" class="btn_popup_close m0px" #closeCategory   data-dismiss="modal" aria-label="close">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_close_modal.svg"
+                class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <a class="" (click)="filterBasedOnTags(1)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Mental health
+            </h3>
+          </div>
+        </div>
+
+        <div class="row" >
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Stress, anxiety, depression and mental health issues
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(2)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Relationships
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              The many different relationships we have, with ourselves and others
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(3)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Work
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Work related issues
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(4)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Nuggets of Inspiration
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Stories, quotes, and what makes you happy
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(5)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Ask a coach
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Questions for our team of HappierMe coaches
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+     </div>
+  </div>
+</div>
+<!-- /choose category -->
+<!-- modal logout -->
+<div *ngIf="selectedOption==0" class="modal fade in" id="modal_logout" data-keyboard="false" data-backdrop="false">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <a class="">
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/modal_logout.svg" alt="" class="p0"> -->
+          </a>
+        </div>
+      </div>
+
+      <div class="row mtb30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+            Are you sure you want to continue without Category?
+          </h4>
+        </div>
+      </div>
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <button type="btn" id="liLogout" #closeLogoutmodal data-dismiss="modal" class="btn btn_ctd" (click)="submitPost()">
+            Continue
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <a data-dismiss="modal" #closeLogoutmodal class="mtb0px fs_15px fw_400 lh_21px fc_e58d82">
+            Cancel
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- /modal logout -->

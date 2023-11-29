@@ -8,6 +8,7 @@ import { PersonalisedForYouSearchPageRoutingModule } from './personalised-for-yo
 
 import { PersonalisedForYouSearchPage } from './personalised-for-you-search.page';
 import { SharedModule } from '../../../../../shared/shared.module';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SharedModule } from '../../../../../shared/shared.module';
     IonicModule,
     PersonalisedForYouSearchPageRoutingModule,
     SharedModule,
+    NgxCircularPlayerModule,
   ],
   declarations: [PersonalisedForYouSearchPage]
 })

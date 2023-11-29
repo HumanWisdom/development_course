@@ -22,7 +22,9 @@ export class S63067Page implements OnInit,OnDestroy {
   yellow="#FFC455"
   toc="living-with-peace/s63001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -123,4 +125,9 @@ export class S63067Page implements OnInit,OnDestroy {
     localStorage.setItem("avDuration63067",this.avDuration)
 
   }
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
+  }
+  
 }

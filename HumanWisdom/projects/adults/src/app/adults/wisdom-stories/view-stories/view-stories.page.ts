@@ -112,7 +112,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 26:{
      
-        this.links.push({'id':26,'module':"Benefits of Enquiry",'route':'/adults/benefits-of-enquiry'})
+        this.links.push({'id':26,'module':"Benefits of self-awareness",'route':'/adults/benefits-of-enquiry'})
         break
        }
        case 36:{

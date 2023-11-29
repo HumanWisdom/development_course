@@ -16,7 +16,9 @@ export class S143011Page implements OnInit
   bg = "bg_292d56"
   hint = "Is it just to treat people fairly, or does it also improve retention?"
   toc = "/diversity-and-inclusion/s143001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

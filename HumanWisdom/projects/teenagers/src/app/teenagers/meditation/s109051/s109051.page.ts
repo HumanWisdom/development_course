@@ -23,9 +23,11 @@ export class S109051Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-   
+
   constructor(
     private router: Router,
     private service:TeenagersService,
@@ -36,8 +38,8 @@ export class S109051Page implements OnInit {
    $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+   var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -90,70 +92,48 @@ export class S109051Page implements OnInit {
     $('#svg_form_time circle').css('fill',base_color);
     $("circle:nth-of-type(1)").css("fill", active_color);
     
-    // second
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-        
-    // second
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-        
-    // second
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-          
-   
+    
+   // second
+   $("#svg_form_time rect").css("fill", active_color);
+   $("#svg_form_time circle").css("fill", active_color);
+   $("#prev").removeClass("disabled");
+     if (child >= length) {
+       $(this).addClass("disabled");
+       $('#submit').removeClass("disabled");
+     }
+     if (child <= length) {
+       child++;
+     }
+   var circle_child = child + 1;
+   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+     "fill",
+     base_color
+   );
+   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+     "fill",
+     base_color
+   );
+
+   // second
+   $("#svg_form_time rect").css("fill", active_color);
+   $("#svg_form_time circle").css("fill", active_color);
+   $("#prev").removeClass("disabled");
+     if (child >= length) {
+       $(this).addClass("disabled");
+       $('#submit').removeClass("disabled");
+     }
+     if (child <= length) {
+       child++;
+     }
+   var circle_child = child + 1;
+   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+     "fill",
+     base_color
+   );
+   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+     "fill",
+     base_color
+   );
       
     
   });
@@ -174,6 +154,10 @@ export class S109051Page implements OnInit {
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109051"))==1)
       this.bookmark=1
    
+   
+ 
+ 
+    
   }
   receiveBookmark(e)
   {
@@ -194,8 +178,6 @@ createScreen(){
       {
         
       })
-    
- 
   }
 
   submitProgress(){
@@ -224,6 +206,7 @@ createScreen(){
   }
   prev(){
     this.router.navigate(['/meditation/s109050'])
+
 
   }
 

@@ -14,13 +14,15 @@ export class S121041Page implements OnInit,OnDestroy
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
-  title="‘If I stay with it, it goes away ‘  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/inner-boredom/audios/1.3.mp3'
+  title="‘If I stay with it, it goes away’"
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/inner-boredom/audios/inner-boredom+2.3.mp3'
   transcriptPage="inner-boredom/s121041t"
   toc="inner-boredom/s121001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

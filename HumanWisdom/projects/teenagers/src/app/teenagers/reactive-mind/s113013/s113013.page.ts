@@ -13,8 +13,8 @@ export class S113013Page implements OnInit
   bg_tn="bg_light_blue"
   bg_cft="bg_light_blue"
   bg="light_blue_w11"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/reactive-mind/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/reactive-mind/audios/1.3.mp3'
   title="The reactive mind"
   toc="/reactive-mind/s113001"
   transcriptPage="reactive-mind/s113013t"
@@ -27,7 +27,9 @@ export class S113013Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

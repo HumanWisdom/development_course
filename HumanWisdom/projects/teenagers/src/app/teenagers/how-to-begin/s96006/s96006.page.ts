@@ -17,13 +17,16 @@ export class S96006Page implements OnInit,OnDestroy {
   bg_cft="bg_teal"
   bg="teal_w4"
   title="#1 Curiosity"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/how-to-begin/audios/1.1.mp3'
+ 
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/how-to-begin/audios/1.1.mp3'
 
   transcriptPage="how-to-begin/s96006t"
   toc="how-to-begin/s96001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

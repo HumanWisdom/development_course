@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This is a pyramid representing the different layers of our thinking. Lets begin exploring this from the bottom. In layer 4 is the ‘I’ which feels restless, empty, bored. We are usually not aware of this. This prompts the ‘I’ to seek pleasure because the stimulation pleasure brings covers over this emptiness, and we feel happy. In layer 2, which is the thinking process we are aware of comes the thought that we need to go shopping, or on holiday or eat something tasty and so on. Since pleasure fades quickly we have to keep finding new sources of pleasure, and more money to be able to afford them, otherwise we feel restless again
+        </h3>               
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -18,7 +18,7 @@ export class S125047Page implements OnInit,AfterViewInit
   bg_cft="bg_dark_blue"
   bg="stress_overlay3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/1.2.mp3';
+  audioLink=this.mediaAudio+'/teenagers/modules/stress/audios/1.2.mp3';
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -32,7 +32,9 @@ export class S125047Page implements OnInit,AfterViewInit
   toc="/stress/s125001"
   transcriptPage="/stress/s125047t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   progName= "teenagers";
   

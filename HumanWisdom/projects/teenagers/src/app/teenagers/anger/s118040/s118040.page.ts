@@ -16,11 +16,13 @@ export class S118040Page implements OnInit,OnDestroy
   bg="red_pink_w7"
   title="How do we respond when we get angry?"   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/anger/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/anger/audios/1.2.mp3'
   transcriptPage="anger/s118040t"
   toc="anger/s118001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

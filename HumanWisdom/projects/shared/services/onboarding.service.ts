@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment} from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
+import { paymentIntentModel } from "../models/search-data-model";
 
 @Injectable({
   providedIn: 'root'
@@ -174,4 +175,25 @@ export class OnboardingService {
   attachPaymentMethod(UserID: any, StripePayMethodID): Observable<any> {
     return this.http.post(this.path + `/AttachPaymentMethod/${StripePayMethodID}/${UserID}`, {})
   }
+
+  createSetupIntent(paymentIntent:paymentIntentModel){
+    return this.http.post(this.path + '/CreateSetupIntent/', paymentIntent);
+  }
+
+  cancelSubscription(code,reasonId): Observable<any> {
+    return this.http.post(this.path + `/CancelSubscription/${code}/${reasonId}`, {});
+  }
+  
+  getCancelReason(): Observable<any> {
+    return this.http.get(this.path + '/cancelReasons/');
+  }
+   
+  checkTrial(): Observable<any>{
+    return this.http.get(this.path + '/CheckIsTrial/');
+  }
+
+  ReviveSubscription(key): Observable<any>{
+    return this.http.post(this.path + `/ReviveSubscription/${key}`,{});
+  }
+
 }

@@ -72,7 +72,7 @@ export class TeenagersService {
     return this.http.get(this.path + `/clickModule/${data}/${userId}`)
   }
   getPoints(data: any): Observable<any> {
-    return this.http.get(this.path + `/UserScore/${data}`)
+    return this.http.get(this.path + `/UserScore/${data}/11`)
   }
   viewJournal(data: any): Observable<any> {
 
@@ -401,8 +401,8 @@ export class TeenagersService {
     let moduleId = 7;
     let Subscriber;
     let userName;
-    let mediaAudio = "https://d1tenzemoxuh75.cloudfront.net/teenagers/modules"
-    let mediaVideo = "https://d1tenzemoxuh75.cloudfront.net/teenagers/modules"
+    let mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
+    let mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
     let saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
     this.services.emailLogin(email, password)
       .subscribe(

@@ -1,70 +1,184 @@
 <div *ngIf="enablewisdomstory">
-  <!-- related wisdom stories -->
-<div class="row index_rwst_title" *ngIf="wisdomstories[0].length !== 0">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <h4 class="fw_700 fs_14px lh_16px fc_5d5d5d mtb0px">
-      Related Wisdom Stories
-    </h4>
-  </div>
-</div>
-
-<!-- stories -->
-
   
-<div class="row index_rwst">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngFor="let data of wisdomstories">
-   
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of data">
-      <a (click)="viewstory(item)">
-        <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
-        <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
-          {{item['Title']}}
-        </h4>
-      </a>
+  <div class="row index_rwst_title" *ngIf="wisdomstories[0].length !== 0">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h4 class="fs_18px fw_600 lh_140p fc_ffffff mtb0px">
+        Related Life Stories
+      </h4>
     </div>
-     
   </div>
-</div>
 
-<!-- /stories -->
-
-<div class="panel-group index_rwst_view_more" id="accordion_ws" *ngIf="wisdomstoriesbottom.length !== 0">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01" (click)="toggleDisplayDiv()"> -->
-      <a class="accordion-toggle" (click)="toggle_view_more_less()">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h4 class="fw_500 fs_14px lh_16px fc_1092a7 mtb0px tcenter mb20px" id="vm">
-              <!-- View more -->
-              {{view_more_less}}
-            </h4>
-          </div>
-        </div>
-      </a>
+  <!-- <div class="row index_rwst">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngFor="let data of wisdomstories">
+    
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of data">
+        <a (click)="viewstory(item)">
+          <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
+          <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
+            {{item['Title']}}
+          </h4>
+        </a>
+      </div>
+      
     </div>
-    <!-- <div id="ws_01" class="panel-collapse collapse"> -->
-    <div id="ws_01" class="panel-collapse" *ngIf="enable_view_more_less">
-      <div class="panel-body">
-        <!-- stories -->
-         <div class="row index_rwst">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngFor="let data of wisdomstoriesbottom">
-   
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of data">
-              <a (click)="viewstory(item)">
-                <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
-                <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
-                  {{item['Title']}}
-                </h4>
-              </a>
+  </div> -->
+
+  <div class="row mt20px">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow" *ngFor="let data of wisdomstories">
+      
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of data">
+        <a (click)="viewstory(item)">
+          <div class="row box_v3_04a">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="{{item['Img']}}" class="img-responsive">
+                </div>
+              </div>  
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
+                    {{item['Title']}}
+                  </h4>
+                </div>
+              </div>  
+
             </div>
-             
           </div>
-        </div>
-        <!-- /stories -->
-       </div>
+        </a>
+      </div>
+
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <a>
+          <div class="row box_v3_04a">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png" class="img-responsive">
+                </div>
+              </div>  
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
+                    Breathing exercises
+                  </h4>
+                </div>
+              </div> 
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <a>
+          <div class="row box_v3_04a">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png" class="img-responsive">
+                </div>
+              </div>  
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
+                    Noticing thoughts
+                  </h4>
+                </div>
+              </div> 
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <a>
+          <div class="row box_v3_04a">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png" class="img-responsive">
+                </div>
+              </div>  
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
+                    Meditation
+                  </h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <a>
+          <div class="row box_v3_04a">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png" class="img-responsive">
+                </div>
+              </div>  
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
+                    Guided audio meditation
+                  </h4>
+                </div>
+              </div> 
+
+            </div>
+          </div>
+        </a>
+      </div> -->
+
     </div>
   </div>
-</div>
-<!-- /related wisdom stories -->
+
+  <!-- <div class="panel-group index_rwst_view_more" id="accordion_ws" *ngIf="wisdomstoriesbottom.length !== 0">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion-toggle" (click)="toggle_view_more_less()">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <h4 class="fw_500 fs_14px lh_16px fc_1092a7 mtb0px tcenter mb20px" id="vm">
+                {{view_more_less}}
+              </h4>
+            </div>
+          </div>
+        </a>
+      </div>
+      
+      <div id="ws_01" class="panel-collapse" *ngIf="enable_view_more_less">
+        <div class="panel-body">
+          <div class="row index_rwst">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngFor="let data of wisdomstoriesbottom">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of data">
+                <a (click)="viewstory(item)">
+                  <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
+                  <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
+                    {{item['Title']}}
+                  </h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
 </div>

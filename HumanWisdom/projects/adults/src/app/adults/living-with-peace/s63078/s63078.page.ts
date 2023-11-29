@@ -47,7 +47,7 @@ export class S63078Page implements OnInit {
     this.router.navigate(['/adults/living-with-peace/s63079'])
   }
   prev(){
-    this.router.navigate(['/adults/living-with-peace/s63077'])
+    this.router.navigate(['/adults/living-with-peace/s63073'])
 
   }
 

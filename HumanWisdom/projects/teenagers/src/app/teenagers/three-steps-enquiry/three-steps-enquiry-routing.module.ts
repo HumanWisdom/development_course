@@ -23,6 +23,7 @@ import { S97015Page } from './s97015/s97015.page';
 import { S97016Page } from './s97016/s97016.page';
 import { S97017Page } from './s97017/s97017.page';
 import { S97018Page } from './s97018/s97018.page';
+import { S97018p1Page } from './s97018p1/s97018p1.page';
 import { S97019Page } from './s97019/s97019.page';
 
 const routes: Routes = [
@@ -141,10 +142,18 @@ const routes: Routes = [
     component: S97018Page,
   },
   {
+    path: 's97018p1',
+     
+    component: S97018p1Page,
+  },
+  {
     path: 's97019',
      
     component: S97019Page,
   },
+ 
+  
+
 
 ];
 

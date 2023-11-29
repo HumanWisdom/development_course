@@ -27,7 +27,9 @@ export class S57060Page implements OnInit,OnDestroy {
 
   bookmark=0
   toc="nature-of-i/s57001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
@@ -108,7 +110,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/adults/nature-of-i/s56059'])
+    this.router.navigate(['/adults/nature-of-i/s57059'])
 
   }
   

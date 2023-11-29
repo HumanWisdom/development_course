@@ -16,11 +16,13 @@ export class S124038Page implements OnInit,OnDestroy
   bg="pink_orange_w8"
   title="How does pleasure affect our relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/pleasure/audios/1.6.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/pleasure/audios/1.6.mp3'
   transcriptPage="pleasure/s124038t"
   toc="pleasure/s124001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

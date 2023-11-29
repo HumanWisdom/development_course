@@ -19,7 +19,9 @@ export class S23001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
  
   token="1234"
@@ -28,7 +30,7 @@ export class S23001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  hR=sessionStorage.getItem("hR")
+  hR=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/23.png"
   tocColor="white"
   lastvisited = false;
@@ -80,6 +82,10 @@ export class S23001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -146,9 +152,9 @@ export class S23001Page implements OnInit,OnDestroy {
     
 
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 
   submitProgress(){

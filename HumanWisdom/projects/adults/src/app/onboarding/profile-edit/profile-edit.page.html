@@ -1,18 +1,19 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollbs bg_transparent">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a (click)="closeprofileedit()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
-          class="img-responsive">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="closeprofileedit()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0">
       </a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Edit Profile
+      </h1>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
-    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright"></div>
   </div>
 </div>
 <!-- /top navigation -->
@@ -20,115 +21,135 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_03">
+<div class="right_col mc_01">
   <!-- Class -->
   <div class="cw100p">
+
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 p0 sc_01 bg_user_profile pt_rightcol">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
-              <div class="row forum_pt20px center_flex">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex w50p">
-                  <div class="opaque_border_outer">
-                    <img
-                      src="{{imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
-                      alt="" class="p0 opaque_border_inner img-responsive img_profile_01">
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <img
+                  src="{{imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
+                  alt="" class="img-responsive border_profile_img" />
+              </div>
+            </div>
+
+            <div class="row mt15px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <!-- <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                    Change Photo
+                  </h4> -->
+                <label for="files" class="mt0px fs_15px fw_600 lh_150p fc_e58d82">Change Photo</label>
+                <input id="files" style="visibility:hidden;" (change)="getFileUpload($event)" type="file">
+              </div>
+            </div>
+            
+            <div class="div_inputs mt30px">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                    <select class="sp_fc" [(ngModel)]="title">
+                      <option *ngFor="let item of titleList" [value]="item">{{item}}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
+                    <input type="text" id="name" class="sp_fc active" placeholder="Full Name" [(ngModel)]="fullname">
                   </div>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                  <a class="">
-                    <h6 class="tcenter fw_700 fs_12px lh_14px fc_ffffff mtb0px mt10px underline">
-                      <label for="files" class="btn">Change Profile Picture</label>
-                      <input id="files" style="visibility:hidden;" (change)="getFileUpload($event)" type="file">
-                    </h6>
-                  </a>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                  <input type="text" id="name" class="sp_fc active" placeholder="Hellen.boothman@gmail.com"
+                    [(ngModel)]="email">
                 </div>
               </div>
 
-              <div class="row mt30px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-2 col-sm-2 col-xs-3 pr0px">
-                    <select class="form-control cfc10 p0">
-                      <option>Title</option>
-                      <option>Ms</option>
-                      <option>Mr.</option>
-                      <option>Mrs.</option>
-                      <option>Others</option>
-                    </select>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                    <input type="text" name="name" class="sp_fc" placeholder="+XX" [(ngModel)]="isdcode">
                   </div>
-                  <div class="col-md-10 col-sm-10 col-xs-9">
-                    <input type="text" name="name" [(ngModel)]="fullname" class="cfc10" placeholder="Full Name">
+                  <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
+                    <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
                   </div>
                 </div>
               </div>
 
-              <div class="row mt15px plr10px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" name="email" [(ngModel)]="email" class="cfc10" placeholder="E-mail">
+              <div class="row prelative">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px div_pe">
+                  <input type="search" class="form-control hide_search pe_search" name="search-list"
+                    [(ngModel)]="country" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
+                    (focus)="onFocus()"
+                    [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}"
+                    placeholder="Search for a country">
+                  <span *ngIf=" country!=''" (click)="clearSearch()"
+                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                    aria-hidden="true"></span>
+                </div>
+
+                <div class="row adsearch">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pe_tsp">
+                    <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                      <li *ngFor="let item of searchResult" (click)="dataChanged(item['Country'])" name="list"
+                        class="is-search list-group-item">{{item['Country']}}</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <!-- <div class="row mt15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <select class="form-control cfc10">
-                    <option>Country</option>
-                    <option>Option one</option>
-                    <option>Option two</option>
-                    <option>Option three</option>
-                    <option>Option four</option>
-                  </select>
-                </div>
-              </div> -->
-
-              <!-- <div class="row mt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="fw_700 fs_12px lh_14px fc_ffffff mt0px">
-                    Contact
-                  </h6>
-                </div>
-              </div> -->
-
-              <!-- <div class="row">
-                <div class="col-md-2 col-sm-2 col-xs-3">
-                  <select class="form-control cfc10">
-                    <option>IN</option>
-                    <option>Option one</option>
-                    <option>Option two</option>
-                    <option>Option three</option>
-                    <option>Option four</option>
-                  </select>
-                </div>
-                <div class="col-md-10 col-sm-10 col-xs-9">
-                  <input type="text" required="required" class="cfc10 feedback_left cfc10_fl_p" placeholder="">
-                  <span class="form-control-feedback left cfc10_fl" aria-hidden="true">
-                    +91
-                  </span>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-4 col-sm-4 col-xs-4 pl0px">
+                    <input type="text" maxlength="3" name="name" class="sp_fc" placeholder="Age" [(ngModel)]="age">
+                  </div>
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                    <input type="text" name="name" class="sp_fc" placeholder="Profession" [(ngModel)]="profession">
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div class="row mt15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 mt0px">
-                    Your contact details will not appear on your profile
-                  </h6>
-                </div>
-              </div> -->
+            <!-- <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0"> -->
+            <!--
+                <select name="country" (change)="dataChanged($event)" class="sp_fc btn_select" [(ngModel)]="country" >
+                  <option value="0" selected >Select</option>
+                  <option value="{{data['Country']}}" *ngFor="let data of countryList">{{data['Country']}}</option>
+                </select> -->
 
-              <div class="row mt40px center_flex">
-                <div class="col-md-6 col-sm-6 col-xs-6 center_flex">
-                  <button (click)="updateUser()" [disabled]="email === '' || fullname === ''" type="submit"
-                    class="btn btn-warning btn_update_changes w100">
-                    Update Changes
-                  </button>
-                </div>
+            <!-- <input name="name" list="countryList" class="sp_fc inputSearchField"
+                  (ngModelChange)="dataChanged($event)" placeholder="Country" [(ngModel)]="country">
+                <datalist id="countryList">
+                  <option value="{{data['Country']}}" *ngFor="let data of countrylist()">
+                </datalist> -->
+
+            <!-- default select -->
+            <!-- <select class="sp_fc">
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select> -->
+            <!-- /default select -->
+            <!-- </div>
+            </div> -->
+
+            <div class="row mt20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <button type="button" class="btn profile_dmd" (click)="updateUser()"
+                  [disabled]="email === '' || fullname === ''" type="submit">
+                  Update Changes
+                </button>
               </div>
+            </div>
 
-              <div class="pagebreak"></div>
-            </form>
+            <div class="pagebreak"></div>
+
           </div>
         </div>
       </div>
@@ -142,6 +163,5 @@
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="content">
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
 </app-modal>

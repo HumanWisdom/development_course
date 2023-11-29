@@ -135,6 +135,7 @@ import { S48104Page } from './s48104/s48104.page';
 import { S48105Page } from './s48105/s48105.page';
 import { S48106Page } from './s48106/s48106.page';
 import { S48107Page } from './s48107/s48107.page';
+import { S48107p1Page } from './s48107p1/s48107p1.page';
 import { S48108Page } from './s48108/s48108.page';
 
 @NgModule({
@@ -266,6 +267,7 @@ import { S48108Page } from './s48108/s48108.page';
     S48105Page,
     S48106Page,   
     S48107Page,
+    S48107p1Page,
     S48108Page,    
   ],
   imports: [

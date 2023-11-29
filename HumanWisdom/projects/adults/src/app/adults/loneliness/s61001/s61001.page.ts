@@ -24,7 +24,7 @@ export class S61001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  lonelinessResume=sessionStorage.getItem("lonelinessResume")
+  lonelinessResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/61.png"
   tocColor="white"
   lastvisited = false;
@@ -71,6 +71,9 @@ export class S61001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/manage-your-emotions');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -144,8 +147,8 @@ export class S61001Page implements OnInit,OnDestroy {
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
-  goBack(){
+/*   goBack(){
     this.location.back()
-  }
+  } */
 
 }

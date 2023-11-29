@@ -16,7 +16,9 @@ export class S123076Page implements OnInit
   bg = "blue_w7"
   hint = ""
   toc = "/external-approval/s123001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S123076Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1945
   reflection: any
   reflectionA: any
   r123076 = JSON.parse(sessionStorage.getItem("r123076"))
@@ -122,7 +124,7 @@ export class S123076Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/external-approval/s123075'])
+    this.router.navigate(['/external-approval/s123075p2'])
   }
 
   ngOnDestroy() 

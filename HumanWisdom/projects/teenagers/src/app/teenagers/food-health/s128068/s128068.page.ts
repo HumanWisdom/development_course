@@ -16,7 +16,9 @@ export class S128068Page implements OnInit
   bg="green_w6"
   hint = " It could be that we need to have 4 meals a day, or that every meal needs to include something sweet, or that fizzy drinks are good for health.  "
   toc = "/food-health/s128001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S128068Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1983
   reflection: any
   reflectionA: any
   r128068 = JSON.parse(sessionStorage.getItem("r128068"))

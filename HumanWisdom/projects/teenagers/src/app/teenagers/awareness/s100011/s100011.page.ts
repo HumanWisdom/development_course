@@ -16,7 +16,7 @@ export class S100011Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w9"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/awareness/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/awareness/videos/1.1.mp4'  
   title="Exploring awareness"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
@@ -33,7 +33,9 @@ export class S100011Page implements OnInit,OnDestroy {
   
   toc="awareness/s100001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

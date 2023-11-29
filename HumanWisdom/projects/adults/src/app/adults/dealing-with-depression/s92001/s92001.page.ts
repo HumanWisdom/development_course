@@ -39,6 +39,7 @@ export class S92001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(92);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -75,6 +76,9 @@ export class S92001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/manage-your-emotions');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -138,9 +142,9 @@ export class S92001Page implements OnInit,OnDestroy {
     this.router.navigate(['/journal'])
   }
 
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
   youtube(link) 
   {

@@ -19,7 +19,9 @@ export class S125213Page implements OnInit,OnDestroy
   transcriptPage="stress/s125213t"
   toc="stress/s125001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

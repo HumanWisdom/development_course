@@ -14,12 +14,14 @@ export class S130007Page implements OnInit,OnDestroy
   bg_cft="bg_teal"
   bg="teal_w5"
   title="Let’s talk about death  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/dealing-with-death/audios/dealing-with-death+1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/dealing-with-death/audios/1.2.mp3'
   transcriptPage="dealing-with-death/s130007t"
   toc="dealing-with-death/s130001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

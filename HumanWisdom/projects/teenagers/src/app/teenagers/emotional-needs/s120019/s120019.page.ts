@@ -12,8 +12,9 @@ export class S120019Page implements OnInit
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_w7"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/emotional-needs/audios/3.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+1.2.mp3'
+
   title="Understanding emotional needs "
   toc="/emotional-needs/s120001"
   transcriptPage="emotional-needs/s120019t"
@@ -26,7 +27,9 @@ export class S120019Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";
@@ -89,7 +92,7 @@ export class S120019Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/emotional-needs/s120020'])
+    this.router.navigate(['/emotional-needs/s120019p1'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,

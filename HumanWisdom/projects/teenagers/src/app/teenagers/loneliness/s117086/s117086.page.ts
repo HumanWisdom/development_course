@@ -16,11 +16,13 @@ export class S117086Page implements OnInit,OnDestroy
   bg="green_yellow_w11"
   title=" What is the ‘I’ that feels lonely?  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.3.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.4.mp3'
   transcriptPage="loneliness/s117086t"
   toc="loneliness/s117001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

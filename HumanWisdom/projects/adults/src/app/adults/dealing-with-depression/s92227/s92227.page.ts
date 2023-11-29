@@ -15,7 +15,9 @@ export class S92227Page implements OnInit {
   bg = "dark_blue_w3"
   hint = ""
   toc = "/dealing-with-depression/s92001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -116,7 +118,7 @@ export class S92227Page implements OnInit {
 
   previous() 
   {
-    this.router.navigate(['/adults/dealing-with-depression/s920226'])
+    this.router.navigate(['/adults/dealing-with-depression/s92226'])
   }
 
   ngOnDestroy() 

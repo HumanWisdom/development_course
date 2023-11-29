@@ -15,8 +15,8 @@ export class S112045Page implements OnInit {
   bg="purple_red_w3"
   toc="fear-anxiety/s112001"
   title="#7 Parents pass their fears on to children"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.5.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/fear_anxiety/audios/fear+2.7.mp3'
   transcriptPage="/fear-anxiety/s112045t"  
 
   userId:any
@@ -28,7 +28,9 @@ export class S112045Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
   avDuration:any  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

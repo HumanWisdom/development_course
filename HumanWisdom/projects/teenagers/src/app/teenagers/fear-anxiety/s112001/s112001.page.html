@@ -1,13 +1,7 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Fear & Anxiety'"[tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 <app-index-content>
   <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Fear & Anxiety
-        </h1>
-      </div>
-    </div>
+    
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -21,7 +15,7 @@
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
         <a [routerLink]="['/fear-anxiety', pgResume]" *ngIf="pgResume">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple_red" data-dismiss="modal">Continue where you left</button>
+          <button type="button" class="btn  mb0 btn_begin_here " data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
     </div>                  
@@ -120,7 +114,7 @@
         </div>                    
       </div>
     </a>
-    <a routerLink="/fear-anxiety/s112093">
+    <a routerLink="/fear-anxiety/s112119">
       <div class="row crow box bg_purple_red">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <h6 class="session_no mtb0px">
@@ -141,36 +135,69 @@
         </div>                    
       </div>
     </a>
-    <!-- audio row -->
-    <a routerLink="/fear-anxiety/s112119">
-      <div class="row crow box bg_purple_red p0">        
-        <div class="col-md-12 col-sm-12 col-xs-12 plr20px">          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h6 class="session_no mtb0px">
-                Session #6
-              </h6>  
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg" alt="" class="p0 img_ar">
-            </div>
-          </div>   
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 flex_jc_baseline">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
+   
+    <a routerLink="/fear-anxiety/s112167p1">
+      <div class="row box_01 bg_purple_red p0">
+        <div  
+          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
+          style="background-image: url( https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/fear_anxiety_01.svg);">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
+        </div>        
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h6 class="session_no mtb0px">
+              Session #7
+            </h6>                    
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
               <h4 class="session_name mtb0px">
-                Releasing Fear - a meditation
+              Fear and Anxiety
               </h4>    
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2 p0">   
               <h4 class="session_time mtb0px">
-                4 min
+                10:11 min
               </h4>    
             </div>
           </div>   
         </div>                        
       </div>
     </a> 
+    <a routerLink="/fear-anxiety/s112167p2">
+      <div class="row box_01 bg_purple_red p0">
+        <div  
+          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
+          style="background-image: url( https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/04.svg);">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
+        </div>        
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h6 class="session_no mtb0px">
+              Session #8
+            </h6>                    
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
+              <h4 class="session_name mtb0px">
+                Overcoming anxiety using wisdom
+              </h4>    
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+              <h4 class="session_time mtb0px">
+                44:52 min
+              </h4>    
+            </div>
+          </div>   
+        </div>                        
+      </div>
+    </a> 
+
+ 
     <!-- /audio row -->   
     
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>

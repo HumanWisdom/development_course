@@ -33,7 +33,9 @@ export class S112033Page implements OnInit {
 
   shared: any
   confirmed: any
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

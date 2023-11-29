@@ -13,8 +13,8 @@ export class S79017Page implements OnInit,OnDestroy {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w12"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/what-is-wisdom/videos/1.2.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/what-is-wisdom/videos/1.2.mp4'  
   title="How can we begin to look at ourselves?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_02.jpg"
   
@@ -28,7 +28,9 @@ export class S79017Page implements OnInit,OnDestroy {
   totalTime:any
   toc="/what-is-wisdom/s79001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  

@@ -13,7 +13,7 @@ export class S118011Page implements OnInit
   bg_cft="bg_red_pink"
   bg="red_pink_w9"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/anger/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/anger/audios/1.1.mp3'
   title="Anger based on conditioning"
   toc="/anger/s118001"
   transcriptPage="anger/s118011t"
@@ -26,7 +26,9 @@ export class S118011Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

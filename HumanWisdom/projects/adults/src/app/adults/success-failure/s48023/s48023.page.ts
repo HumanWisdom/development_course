@@ -15,7 +15,9 @@ export class S48023Page implements OnInit {
   bg = "light_blue_w9"
   hint = "  What are your ideas of what it's like to be successful on the inside?  "
   toc = "/success-failure/s48001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

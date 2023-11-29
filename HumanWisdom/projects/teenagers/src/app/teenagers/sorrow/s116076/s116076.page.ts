@@ -18,11 +18,13 @@ export class S116076Page implements OnInit,OnDestroy {
   title="#4 Offer no resistance. Do not escape."  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/sorrow/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/sorrow/audios/1.2.mp3'
   transcriptPage="sorrow/s116076t"
   toc="sorrow/s116001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

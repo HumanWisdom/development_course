@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges } from "@angular/core";
 import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
@@ -16,7 +16,10 @@ import {
   templateUrl: "./hamburger.component.html",
   styleUrls: ["./hamburger.component.scss"],
 })
-export class HamburgerComponent implements OnInit {
+export class HamburgerComponent implements OnInit, OnChanges {
+  @ViewChild('closemodal') closemodal: ElementRef;
+  @ViewChild('closeLogoutmodal') closeLogoutmodal: ElementRef;
+
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(", ");
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
@@ -33,6 +36,10 @@ export class HamburgerComponent implements OnInit {
   subscriberType = "";
   enableprofile = true;
   enableAlert = false;
+  content = '';
+  enablebecomepartner = false;
+  @Input()
+  userDetails = [];
 
   constructor(
     private router: Router,
@@ -44,6 +51,26 @@ export class HamburgerComponent implements OnInit {
   getmenuevent() {
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
+    }
+  }
+
+  closemenuevent(){
+    this.closemodal.nativeElement.click();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.userDetails.length !== 0) {
+      let userdetail = this.userDetails[0];
+      localStorage.setItem("isPartner", this.userDetails[0].IsPartner);
+      localStorage.setItem("PartnerOption", this.userDetails[0].PartnerOption);
+      this.url =
+        userdetail["UserImagePath"].split("\\")[1] +
+        "?" +
+        new Date().getTime();
+      this.isPartner = localStorage.getItem("isPartner");
+      this.partnerOption = localStorage.getItem("PartnerOption");
+      this.partnerOption = localStorage.getItem("PartnerOption");
+      this.subscriberType = localStorage.getItem("SubscriberType");
     }
   }
 
@@ -81,25 +108,11 @@ export class HamburgerComponent implements OnInit {
       if (userid === "T") {
         this.isloggedIn = true;
       }
-      let userId = JSON.parse(localStorage.getItem("userId"));
-      console.log(userid)
-      this.Onboardingservice.getuser(userId).subscribe((res) => {
-        let userdetail = res[0];
-        localStorage.setItem("isPartner", res[0].IsPartner);
-        localStorage.setItem("PartnerOption", res[0].PartnerOption);
-        this.url =
-          userdetail["UserImagePath"].split("\\")[1] +
-          "?" +
-          new Date().getTime();
-        this.isPartner = localStorage.getItem("isPartner");
-        this.partnerOption = localStorage.getItem("PartnerOption");
-        this.partnerOption = localStorage.getItem("PartnerOption");
-        this.subscriberType = localStorage.getItem("SubscriberType");
-      });
+
       if (sub === "1" || sub === 1) {
         this.subscriber = true;
       }
-    }, 9000);
+    },100);
   }
 
   routeGuide() {
@@ -117,6 +130,8 @@ export class HamburgerComponent implements OnInit {
   }
 
   logout() {
+    this.content = 'Are you sure you want to logout ?';
+    this.enablebecomepartner = false;
     this.enableAlert = true;
   }
 
@@ -195,13 +210,9 @@ export class HamburgerComponent implements OnInit {
     this.logeventservice.logEvent('click_BecomeAPartner_Hamburger')
     //  localStorage.setItem("navigateToUpgradeToPremium","true");
     if (localStorage.getItem("isloggedin") == "F" || localStorage.getItem("isloggedin") == null) {
-      var retVal = confirm("To become a Partner you will need to Complete Registration and login?");
-      if (retVal == true) {
-        this.Onboardingservice.navigateToUpgradeToPremium = true;
-        this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
-      } else {
-        return false;
-      }
+      this.content = 'To become a Partner you will need to Complete Registration and login?';
+      this.enablebecomepartner = true;
+      this.enableAlert = true;
     } else {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -228,24 +239,56 @@ export class HamburgerComponent implements OnInit {
     }
   }
 
+  routeManageSubscriptiont(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(this.ios){
+      const manage_subscr = new CustomEvent("manage_subscr");
+      window.dispatchEvent(manage_subscr);
+    }else{
+      this.router.navigate([route]);
+    }
+  }
+
   navigate(url) {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
+    this.content = '';
     if(event === 'ok') {
-      this.logeventservice.logEvent('click_logout_Hamburger');
-      if (this.platform.isBrowser) {
-        localStorage.setItem("isloggedin", "F");
-        localStorage.setItem("guest", "T");
-        localStorage.setItem("navigateToUpgradeToPremium", "false");
-        localStorage.setItem("btnClickBecomePartner", "false");
-        this.router.navigate(["/onboarding/login"], {
-          replaceUrl: true,
-          skipLocationChange: true
-        });
+      const accessObj:any = window;
+      (accessObj)?.Moengage?.destroy_session();
+      if(this.enablebecomepartner) {
+        let res = localStorage.getItem("isloggedin");
+        if(!res || res === 'F') {
+            this.closeLogoutmodal.nativeElement.click();
+            localStorage.setItem("isloggedin", "F");
+            localStorage.setItem("guest", "T");
+            localStorage.setItem("navigateToUpgradeToPremium", "true");
+            localStorage.setItem("btnClickBecomePartner", "true");
+            this.router.navigate(["/onboarding/login"]);
+        }else{
+          this.Onboardingservice.navigateToUpgradeToPremium = true;
+          this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+        }
+      }else {
+        this.logeventservice.logEvent('click_logout_Hamburger');
+        if (this.platform.isBrowser) {
+          this.closeLogoutmodal.nativeElement.click();
+          localStorage.setItem("isloggedin", "F");
+          localStorage.setItem("guest", "T");
+          localStorage.setItem("navigateToUpgradeToPremium", "false");
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(["/onboarding/login"]);
+        }
       }
     }
+  }
+  GetSubscriptionText(){
+    if(this.ios){
+      return "Manage Subscriptions"
+    }
+    return "My Subscriptions"
   }
 }

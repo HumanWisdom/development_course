@@ -5,9 +5,8 @@
   height: 621px;
   background-repeat: no-repeat !important;
   background-size: 101% 100% !important;
-  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/outer-rec.png); */
-   background: url(../images/outer-rec.png);
-  /* top: 9%; */
+  /* background: url(../images/outer-rec.png); */
+  background-color: #292D56;
 }
 
 .img-url{
@@ -22,15 +21,17 @@
   /* left: 38%; */
   background-size: 100% 100%!important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-rec.png); */
-  background: url(../images/inner-rec.png);
+  /* background: url(../images/inner-rec.png); */
   background-repeat: no-repeat !important;
+  background-color: #120F40;
+  border: 1px solid #E58D82;
 }
 
 .inner-icon {
   position: absolute;
-  top: 10.35%;
-  height: 13%;
-  width: 16%;
+  top: 30.35%;
+  height: 14%;
+  width: 13%;
   background-size: 100% 86% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-icon.png); */
@@ -38,25 +39,23 @@
 }
 
 .cert-h1 {
-  font-family: "Merriweather";
-  font-size: 2.4rem;
-  font-weight: 400;
+  font-size: 3.4rem;
+  font-weight: 600;
   letter-spacing: 0em;
   text-align: center;
   color: #FFFFFF;
   position: absolute;
-  top: 24.98%;
+  top: 9.98%;
 }
 
 .vector {
   position: absolute;
-  width: 3rem;
+  width: 1.8rem;
   z-index: 999;
 }
 
 .cert-txt {
-  font-family: "Merriweather";
-  font-size: 1.17rem;
+  font-size: 1.3rem;
   letter-spacing: 0em;
   text-align: center;
   color: #FFFFFF;
@@ -66,8 +65,7 @@
 
 .cert-txt1 {
   position: absolute;
-  top: 45.6%;
-  font-family: "Merriweather";
+  top: 46.6%;
   font-size: 1rem;
   letter-spacing: 0em;
   text-align: center;
@@ -77,7 +75,6 @@
 .cert-txt2 {
     position: absolute;
     top: 54.59%;
-    font-family: "Merriweather";
     font-style: normal;
     font-size: 2.4rem;
     text-align: center;
@@ -87,7 +84,6 @@
 .cert-txt3 {
     position: absolute;
     top: 64.3%;
-    font-family: "Merriweather";
     font-style: normal;
     font-size: 1.3rem;
     text-align: center;
@@ -96,7 +92,6 @@
 .cert-txt3-1 {
   position: absolute;
   top: 68.3%;
-  font-family: "Merriweather";
   font-style: normal;
   font-size: 1.3rem;
   text-align: center;
@@ -105,10 +100,12 @@
 
 .cert-logo {
   position: absolute;
-  top: 82%;
-  left: 23.13%;
-  height: 10%;
-  width: 17%;
+  top: 78%;
+  left: 27.13%;
+  /* height: 10%;
+  width: 17%; */
+  height: 9%;
+  width: 15%;
   background-size: 98% 99% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/human-wisdom-icon.png);  */
@@ -117,7 +114,6 @@
 
 .cert-txt4 {
   /* margin-left: 1.8rem; */
-  font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
   font-size: 1.4rem;
@@ -125,12 +121,11 @@
   text-align: initial;
   z-index: 999;
   position: absolute;
-  top: 84%;
-  left: 40%;
+  top: 81%;
+  left: 43%;
 }
 
 .cert-txt5 {
-  font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -149,15 +144,14 @@
 
 .cert-txt6 {
   position: absolute;
-  font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   text-align: center;
-  color: #FFC455;
+  color:#fff;
   /* margin-top: 25%; */
-  top: 102%;
-  left: 40%;
+  top: 90%;
+  left: 39%;
 }
 
 .vector-3 {
@@ -169,7 +163,7 @@
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-2.png); */
-   background: url(../images/Vector-2.png);
+   background: url(../images/vector-left.png);
 }
 
 .vector-4 {
@@ -181,7 +175,7 @@
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-1.png); */
-  background: url(../images/Vector-1.png);
+  background: url(../images/vector-right.png);
 }
 
 .m-top{
@@ -203,15 +197,15 @@
 
 .m-top13
 {
-  margin-top: 19rem;
+  margin-top: 13rem;
 }
 .m-left3
 {
-  margin-left: -16.5rem;
+  margin-left: -17.2rem;
 }
 .m-right3
 {
-  margin-right: -16.5rem;
+  margin-right: -17.1rem;
 }
 
 .ml{
@@ -227,4 +221,32 @@ margin-top: 8%;
 margin-bottom: 8%;
 }
 /* /certficate */
+
+/* /forum */
+.m-bottom{
+  margin-bottom: 3rem; 
+}
+.btn-down{
+  color:#E8A880;
+  background: transparent;
+  cursor: pointer;
+  padding-left: 9px;
+  font-size: 16px;
+}
+.btn-thread{
+  display: contents!important;
+}
+.choose-category-popup{
+  top: 40%;
+}
+
+.h-250{
+height: 250px;
+}
+
+.img-forum{
+border-radius: 1rem;
+}
+
+/* /forum */
 

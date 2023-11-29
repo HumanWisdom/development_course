@@ -23,8 +23,12 @@ export class S109056Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
+
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  
   
  
   constructor(
@@ -37,8 +41,8 @@ export class S109056Page implements OnInit {
    $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+   var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -237,30 +241,7 @@ export class S109056Page implements OnInit {
       "fill",
       base_color
     );
-        
-    // second
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-          
-   
-      
+
     
   });
   // /multistep wizard
@@ -279,10 +260,7 @@ export class S109056Page implements OnInit {
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109056"))==1)
       this.bookmark=1
-   
-   
- 
- 
+
     
   }
   receiveBookmark(e)
@@ -304,8 +282,6 @@ createScreen(){
       {
         
       })
-    
- 
   }
 
   submitProgress(){

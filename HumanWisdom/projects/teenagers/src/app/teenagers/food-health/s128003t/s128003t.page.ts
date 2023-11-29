@@ -15,7 +15,9 @@ export class S128003tPage implements OnInit
   bg_cft="bg_green"
   bg="green_w1"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/food-health/s128003"
   toc="/food-health/s128001"
   screenType=localStorage.getItem("audio")

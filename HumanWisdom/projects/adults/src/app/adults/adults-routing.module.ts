@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
 import { ActiveGuard } from '../active.guard';
+import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
+import { AudioVideoGuard } from '../audio-video.guard';
+import { RedeemCongratulationPage } from './redeem-congratulation/redeem-congratulation.page';
 
 const routes: Routes = [
   {
@@ -298,6 +301,10 @@ const routes: Routes = [
     loadChildren: () => import('./podcast/podcast.module').then(m => m.PodcastModule)
   },
   {
+    path: 'subscription',
+    loadChildren: () => import('../adults/subscription/subscription.module').then(m => m.SubscriptionModule)
+  },
+  {
     path: 'podcast/:tag',
     loadChildren: () => import('./podcast/podcast.module').then(m => m.PodcastModule),
   },
@@ -336,6 +343,11 @@ const routes: Routes = [
   {
     path: 'wisdom-shorts/:videolink',
     canActivate:[ActiveGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'wisdom-shorts/:videolink/:enable',
+    canActivate:[AudioVideoGuard],
     component: S3VideoComponent
   },
   {
@@ -431,6 +443,80 @@ const routes: Routes = [
     path: 'diversity-and-inclusion',
     loadChildren: () => import('./diversity-and-inclusion/diversity-and-inclusion.module').then(m=>m.DiversityAndInclusionModule)
   },
+  {
+    path: 'repeat-user',
+    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'feel-better-now',
+    loadChildren: () => import('./feel-better-now/feel-better-now.module').then( m => m.FeelBetterNowModule)
+  },
+  {
+    path: 'pathway',
+    loadChildren: () => import('./pathway/pathway.module').then( m => m.PathwayModule)
+  },
+  {
+    path: 'select-a-topic-to-explore',
+    loadChildren: () => import('./select-a-topic-to-explore/select-a-topic-to-explore.module').then( m => m.SelectATopicToExplorePageModule)
+  },
+  {
+    path: 'find-inspiration',
+    loadChildren: () => import('./find-inspiration/find-inspiration.module').then( m => m.FindInspirationPageModule)
+  },
+  {
+    path: 'change-topic',
+    loadChildren: () => import('./change-topic/change-topic.module').then( m => m.ChangeTopicPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'find-answers/:url',
+    loadChildren: () => import('./find-answers/find-answers.module').then( m => m.FindAnswersModule)
+  },
+  {
+    path:'change-topic',
+    loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
+  },
+  {
+    path: 'videopage/:videolink/:enable',
+    canActivate: [AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'videopage/:videolink/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 'awareness-exercises-transcript',
+    loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
+  },
+  {
+    path: 'redeem-subscription',
+    loadChildren: () => import('./redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
+  },
+  {
+    path: 'redeem-congratulation',
+    loadChildren: () => import('./redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
+  },
+  {
+    path: 'intro-happierme',
+    loadChildren: () => import('./intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
+  },
+  {
+    path: 'kindness',
+    loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
+  }
 ];
 
  @NgModule({

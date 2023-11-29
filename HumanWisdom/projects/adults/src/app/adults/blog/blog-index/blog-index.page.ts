@@ -14,11 +14,13 @@ import { Meta, Title } from '@angular/platform-browser';
 export class BlogIndexPage implements OnInit {
   blogList:any;
   searchedTitle:any;
-  path='#' + this.router.url
+  path:any;
   
   constructor(private service: AdultsService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
-    public meta: Meta, private title: Title) { }
+    public meta: Meta, private title: Title) { 
+      this.path='#' + this.router.url
+    }
 
   ngOnInit() {
     this.title.setTitle('Explore Your Inner World with Our Self-Discovery Blog')

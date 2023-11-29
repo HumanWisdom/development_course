@@ -14,12 +14,14 @@ export class S123036Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="Our need for external approval can result in low self-esteem  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/external-approval/audios/1.6.mp3'
   transcriptPage="external-approval/s123036t"
   toc="external-approval/s123001  "
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

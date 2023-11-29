@@ -15,7 +15,9 @@ export class S58076Page implements OnInit {
   bg = "dark_blue_w3"
   hint = " It’s not always up to management. Each person in an organisation has a responsibility, and can play a role.  "
   toc = "/work/s58001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

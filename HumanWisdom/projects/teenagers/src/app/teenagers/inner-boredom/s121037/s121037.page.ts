@@ -14,12 +14,14 @@ export class S121037Page implements OnInit,OnDestroy
   bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
   title="This emptiness is not to be feared  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/inner-boredom/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/inner-boredom/audios/inner-boredom+2.1.mp3'
   transcriptPage="inner-boredom/s121037t"
   toc="inner-boredom/s121001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

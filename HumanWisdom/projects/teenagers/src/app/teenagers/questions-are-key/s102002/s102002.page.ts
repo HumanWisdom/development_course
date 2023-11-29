@@ -23,7 +23,9 @@ export class S102002Page implements OnInit {
   totalTime: any
   bookmark = 0
   toc = "questions-are-key/s102001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 

@@ -15,7 +15,9 @@ export class S62103Page implements OnInit {
   bg = "blue_pink_w1"
   hint = "It may stop you getting close to someone, or being the authentic you   "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,7 @@ export class S30001Page implements OnInit, OnDestroy {
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_flat"
-
+  toc = "/pathway/develop-a-calm-mind/"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -24,8 +24,10 @@ export class S30001Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = ""
-  path = this.router.url
+
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
 
@@ -39,6 +41,16 @@ export class S30001Page implements OnInit, OnDestroy {
     private location: Location
   ) { }
   ngOnInit() {
+    
+   
+
+    if(!localStorage.getItem("NaviagtedFrom")) 
+        localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+    else
+        this.toc = localStorage.getItem("NaviagtedFrom").toString();
+      
+
+    
     this.service.setmoduleID(30);
     //localStorage.removeItem("bookmarkList")
     this.createScreen()

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+            Welcome to this module where we are going to explore how social media impacts our lives in good ways and bad, why addiction to it is a growing problem, and talk about the many hidden drivers in our thinking that shape our experience of it.<br><br>
+            A deeper understanding of what is going on in our thinking, without our awareness, can help us use social media in such a way that it serves us, and avoid its many pitfalls.Used without this understanding, it can cause all sorts of problems as many of  the statistics show
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

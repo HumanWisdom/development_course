@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { HaveFulfillingRelationshipsTranscriptPageRoutingModule } from './have-fulfilling-relationships-transcript-routing.module';
 
 import { HaveFulfillingRelationshipsTranscriptPage } from './have-fulfilling-relationships-transcript.page';
@@ -13,6 +15,7 @@ import { HaveFulfillingRelationshipsTranscriptPage } from './have-fulfilling-rel
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     HaveFulfillingRelationshipsTranscriptPageRoutingModule
   ],
   declarations: [HaveFulfillingRelationshipsTranscriptPage]

@@ -2,6 +2,7 @@ import { Component, OnInit,Input,Output, EventEmitter,AfterViewInit, ViewChild }
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-tap-start',
@@ -23,10 +24,13 @@ export class TapStartComponent implements OnInit,AfterViewInit {
   bg_cft="bg_dark_blue"
   shared = false;
   urlT:any
+  @Input() screenName: any = '';
 
   constructor( private captureService:NgxCaptureService,
     private aservice:AdultsService,
-    private router:Router) {
+    private router:Router,
+    public logeventservice: LogEventService
+    ) {
       if(this.router.getCurrentNavigation()) {
         this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
       }
@@ -42,13 +46,14 @@ export class TapStartComponent implements OnInit,AfterViewInit {
     {
       this.shared=true
     }
-    this.path=this.router.url
+    this.path = this.router.url;
     let str = this.path.replace(/\D/g,'');
     this.scrId = str;
     //this.scrId=this.scrId.parseInt()
 
   }
   next(){
+    this.logeventservice.logEvent('Click_TapToStart', true, this.screenName);
     this.nextEmitter.emit()
   }
   ngAfterViewInit(){

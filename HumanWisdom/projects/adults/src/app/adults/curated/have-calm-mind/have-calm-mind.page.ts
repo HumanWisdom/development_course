@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -12,6 +12,8 @@ import { AdultsService } from '../../adults.service';
 
 export class HaveCalmMindPage implements OnInit {
 
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
   userId = 100
   qrList: any
   goToPage: any
@@ -21,10 +23,27 @@ export class HaveCalmMindPage implements OnInit {
   gamP: any
   meditationP: any
   withoutLanguageP: any
+  mediaUrl: any;
 
-  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) { }
+  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) 
+  { 
+    this.mediaUrl = {
+      pc01: 
+      {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+        title: 'Understanding our own ego'
+      },
+      pc02: 
+      {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
+        title: 'How can we overcome anxiety?'
+      }
+    }
+  }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-calm-mind');
+
     this.title.setTitle('Mindfulness Practices for a Calm Mind')
     this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })
     this.meta.updateTag({ property: 'description', content: 'Learn effective mindfulness practices for calming the mind and reducing stress. Discover relaxation techniques and self-care tips for anxiety and mental clarity.' })
@@ -350,6 +369,16 @@ export class HaveCalmMindPage implements OnInit {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
     this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 
 }

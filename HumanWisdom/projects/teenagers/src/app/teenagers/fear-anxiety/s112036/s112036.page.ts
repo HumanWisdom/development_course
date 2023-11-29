@@ -15,8 +15,8 @@ export class S112036Page implements OnInit {
   bg="purple_red_w8"
   toc="fear-anxiety/s112001"
   title="#3 Fear of losing people we love "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/fear-anxiety/audios/2.3.mp3'
   transcriptPage="/fear-anxiety/s112036t"
   progName = "teenagers"
   userId:any
@@ -28,7 +28,9 @@ export class S112036Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
   avDuration:any
   

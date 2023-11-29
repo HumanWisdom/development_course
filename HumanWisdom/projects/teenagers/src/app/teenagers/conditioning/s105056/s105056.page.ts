@@ -14,7 +14,7 @@ export class S105056Page implements OnInit,OnDestroy {
   bg_cft="bg_pink_orange"
   bg="pink_orange_w11"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/conditioning/videos/2.3.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/conditioning/videos/2.3.mp4'  
   title="How does conditioning impact our relationships?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_01.jpg"
   userId:any
@@ -27,7 +27,9 @@ export class S105056Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/conditioning/s105001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

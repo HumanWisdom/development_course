@@ -13,8 +13,8 @@ export class S122005Page implements OnInit
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w11"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/nature-of-the-i/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+1.2.mp3'
   title="The ‘I’ operates hidden from our awareness"
   toc="/nature-of-the-i/s122001"
   transcriptPage="nature-of-the-i/s122005t"
@@ -27,7 +27,9 @@ export class S122005Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

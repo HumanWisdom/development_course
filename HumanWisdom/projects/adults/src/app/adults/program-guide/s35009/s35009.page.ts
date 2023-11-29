@@ -35,8 +35,8 @@ export class S35009Page implements OnInit {
   "linkText":"",
   "module-id":""},
   {"no":3,
-  "heading":"Wisdom Survey",
-  "text":"A series of 10 questions to Keep track of your progress (wisdom score) as you do the program.",
+  "heading":"Happiness Survey",
+  "text":"A series of 10 questions to Keep track of your progress (Happiness score) as you do the program.",
   "link":"/adults/wisdom-survey",
   "linkText":"",
   "module-id":""},
@@ -136,7 +136,9 @@ totalTime:any
 
 bookmark=0
 toc="program-guide/s35001"
-path=this.router.url
+path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
 bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

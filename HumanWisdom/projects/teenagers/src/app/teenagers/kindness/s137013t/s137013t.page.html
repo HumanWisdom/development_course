@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If someone is kind to us it makes us happy and more likely to be kind to others. It makes us feel heard, and seen, and acknowledged. It could be someone listens to us without interrupting, or is curious and asks us a question about our life, or cooks something for us, or gives us a smile.
+This can boost our confidence - making us think we are worthy of someone’s care and concern. 
+It can reduce our stress levels, and boost our overall sense of wellbeing.
+Recognising and being grateful for a kind gesture is important. If we are focused on our own suffering or thinking about something else - we can become blind to the kindness others offer us - so its important to have a mind that is sensitive, and grateful for what we receive - so our heart can feel the joy of that gift of kindness and acknowledge the effort made by others. 
+Our mind often tends to take things for granted - like a parent who cooks us a meal, or a friend who calls us to find out how we are doing. 
+
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

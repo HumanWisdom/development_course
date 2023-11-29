@@ -1,12 +1,12 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import * as jQuery from 'jquery';
 import { TeenagersService } from '../../teenagers.service';
 
 
-
 @Component({
-  selector: 'app-s108003',
+  selector: 'app-s108003-audio',
   templateUrl: './s108003.page.html',
   styleUrls: ['./s108003.page.scss'],
 })
@@ -14,24 +14,27 @@ export class S108003Page implements OnInit,OnDestroy {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w2"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/noticing_thoughts/videos/1.1.mp4'  
-  title="Noticing and documenting our thoughts "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_01.jpg"
+  bg = "blue_w1"
+  title="Noticing Thoughts"
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/noticing_thoughts/audios/noticing-thoughts+1.1.mp3'
+  transcriptPage="/noticing-thoughts/s108003t"
+  toc=""
+  bookmark=0
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
+  avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("video")
+  screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=108003
   startTime:any
   endTime:any
-  totalTime:any  
-  toc=""
-  bookmark=0
-  path=this.router.url
-  avDuration:any
+  totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName="teenagers"
   
   constructor
   (
@@ -40,11 +43,9 @@ export class S108003Page implements OnInit,OnDestroy {
     private location:Location
   ) 
   { }
-
+ 
   ngOnInit() 
   {
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -55,23 +56,13 @@ export class S108003Page implements OnInit,OnDestroy {
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    
+    this.createScreen()
     if(JSON.parse(sessionStorage.getItem("bookmark108003"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark108003"))==1)
       this.bookmark=1
   }
-
-  receiveBookmark(e)
-  {
-    console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark108003",JSON.stringify(this.bookmark))
-  }
-
+ 
   createScreen()
   {
     this.service.createScreen({
@@ -81,7 +72,23 @@ export class S108003Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>{})
   }
-
+ 
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark108003",JSON.stringify(this.bookmark))
+  }
+ 
+  receiveAvDuration(e)
+  {
+    console.log(e)
+    this.avDuration=e
+  }
+ 
   submitProgress()
   {
     this.endTime = Date.now();
@@ -108,6 +115,9 @@ export class S108003Page implements OnInit,OnDestroy {
   }
 
   ngOnDestroy()
-  {}
+  {
+    localStorage.setItem("totalTime108003",this.totalTime)
+    localStorage.setItem("avDuration108003",this.avDuration)
+  }
 
 }

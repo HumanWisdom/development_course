@@ -16,12 +16,14 @@ export class S109011Page implements OnInit,OnDestroy {
   bg_cft="bg_blue"
   bg="blue_w9"
   title="Meditation is understanding oneself"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/meditation/audios//meditation+1.2'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/meditation/audios/1.2.mp3'
   transcriptPage="meditation/s109011t"
   toc="meditation/s109001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

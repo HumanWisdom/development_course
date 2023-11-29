@@ -16,7 +16,9 @@ export class S117104Page implements OnInit
   bg = "green_yellow_w5"
   hint = "If we don’t ask this question, they can fade away, leaving us feeling alone."
   toc = "/loneliness/s117001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

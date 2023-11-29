@@ -16,7 +16,9 @@ export class S129066Page implements OnInit
   bg="blue_w6"
   hint = "  You could stop expecting others to make you feel important, for example.  "
   toc = "/living-with-peace/s129001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S129066Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 2003
   reflection: any
   reflectionA: any
   r129066 = JSON.parse(sessionStorage.getItem("r129066"))

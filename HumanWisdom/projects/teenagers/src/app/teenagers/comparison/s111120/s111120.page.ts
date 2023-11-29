@@ -14,12 +14,14 @@ export class S111120Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w9"
   title="Observing without language"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/7.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/7.3.mp3'
   transcriptPage="comparison/s111120t"
   toc="comparison/s111001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

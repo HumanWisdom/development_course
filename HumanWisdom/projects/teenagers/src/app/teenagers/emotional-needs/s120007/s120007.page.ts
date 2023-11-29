@@ -13,10 +13,10 @@ export class S120007Page implements OnInit,OnDestroy {
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_w5"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/emotional-needs/videos/1.2.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/emotional-needs/videos/1.2.mp4'
   title="How can we begin to explore our emotional needs?  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/emotional-needs/emotional-needs_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/emotional_needs/emotional_needs_02.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
@@ -27,7 +27,9 @@ export class S120007Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/emotional-needs/s120001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

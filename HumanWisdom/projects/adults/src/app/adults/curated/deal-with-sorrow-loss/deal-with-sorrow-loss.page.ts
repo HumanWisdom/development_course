@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -12,6 +12,8 @@ import { AdultsService } from '../../adults.service';
 
 export class DealWithSorrowLossPage implements OnInit {
 
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
   userId = 100
   qrList: any
   goToPage: any
@@ -23,14 +25,41 @@ export class DealWithSorrowLossPage implements OnInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
+  mediaUrl: any;
 
 
   constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+      this.mediaUrl = {
+        pc01: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/44.mp3',
+          title: 'Coping with an illness'
+        },
+        pc02: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          title: 'The Art of Living and Dying'
+        },
+        pc03: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/28.mp3',
+          title: 'Healing Emotional Pain'
+        },
+        pc04: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/10.mp3',
+          title: 'Overcome Grief and Find Meaning'
+        }
+      }
   }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/deal-with-sorrow-loss');
+
+
     this.title.setTitle('Ways to Deal with Sorrow and Loss')
     this.meta.updateTag({ property: 'title', content: 'Ways to Deal with Sorrow and Loss' })
     this.meta.updateTag({ property: 'description', content: 'Explore effective ways to deal with sorrow and overcome the grief of losing a loved one. Find healing after loss with these helpful tips for self-care and coping with death.' })
@@ -319,6 +348,16 @@ export class DealWithSorrowLossPage implements OnInit {
     }else {
       this.router.navigate([route]);
     }
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 
 }

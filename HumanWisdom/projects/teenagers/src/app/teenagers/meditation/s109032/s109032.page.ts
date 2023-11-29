@@ -18,12 +18,14 @@ export class S109032Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber="109032"
+  screenNumber=109032
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   
@@ -34,12 +36,13 @@ export class S109032Page implements OnInit {
     private location:Location
   ) { }
  ngOnInit() {
-   // multistep wizard
-   $( document ).ready(function() {
+
+  // multistep wizard
+  $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+   var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -98,6 +101,7 @@ export class S109032Page implements OnInit {
     
   });
   // /multistep wizard
+
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
@@ -108,16 +112,15 @@ export class S109032Page implements OnInit {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
+
     
     if(JSON.parse(sessionStorage.getItem("bookmark109032"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109032"))==1)
       this.bookmark=1
+
    
-   
- 
- 
-    
+
   }
   receiveBookmark(e)
   {
@@ -158,10 +161,14 @@ createScreen(){
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+       
+       
+     
       },
       error=>{console.log(error)},
       ()=>{
-        
+      
+       // this.router.navigate(['/meditation/s109032'])
       })
     
 
@@ -172,9 +179,7 @@ createScreen(){
 
   }
 
-  goNext(){
-   
-  }
+  
 
   ngOnDestroy(){
     
@@ -185,4 +190,5 @@ createScreen(){
 
   
 
+ 
 }

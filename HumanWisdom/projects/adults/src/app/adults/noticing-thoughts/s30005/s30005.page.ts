@@ -23,8 +23,10 @@ export class S30005Page implements OnInit {
   totalTime: any
 
   bookmark = 0
-  toc = ""
-  path = this.router.url
+  toc = "/pathway/develop-a-calm-mind/"
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))

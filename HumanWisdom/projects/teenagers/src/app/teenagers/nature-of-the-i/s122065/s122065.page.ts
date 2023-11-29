@@ -24,7 +24,9 @@ export class S122065Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="nature-of-the-i/s122001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
   constructor
@@ -83,7 +85,7 @@ export class S122065Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/nature-of-the-i/s122066'])
+    this.router.navigate(['/nature-of-the-i/s122068'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

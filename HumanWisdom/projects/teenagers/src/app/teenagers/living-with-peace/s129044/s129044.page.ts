@@ -16,7 +16,9 @@ export class S129044Page implements OnInit
   bg="blue_w6"
   hint = " See our module on comparison"
   toc = "/living-with-peace/s129001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S129044Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 2001
   reflection: any
   reflectionA: any
   r129044 = JSON.parse(sessionStorage.getItem("r129044"))

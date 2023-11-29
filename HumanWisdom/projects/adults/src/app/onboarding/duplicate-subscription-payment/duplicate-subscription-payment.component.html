@@ -1,138 +1,77 @@
 <!-- header -->
-<app-tn-hwp-project></app-tn-hwp-project>
 <!-- /header -->
 
 <app-bg-video></app-bg-video>
 
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"  (click)="goBack()"  alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Update payment details
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright"></div>
+  </div>
+</div>
+
+
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- Class -->
-  <div class="">
+  <div class="cw100p">
+
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
-          <div class="x_content plr10px">
-            <form>
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="fw_400 fs_24px lh_28px fc_000000">
-                    Payment
-                  </h4>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_7">
-                </div>
-              </div>              
-
-              <!--
-              <div class="row mt40px">
-                <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
-                  <div class="radio">
-                    <label class="mt0px">
-                      <input type="radio" checked="false" value="option1" id="optionsRadios1" name="optionsRadios"> 
-                      <span class="">
-                        <span class="">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/paypal_01.svg" alt="" class="ml5px"> 
-                        </span>
-                      </span>
-                    </label>
-                  </div>                  
-                </div>    
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_8">
-                </div>
-              </div>  
-              -->
-
-              <div class="row flex_ai mt40px">
-                <div class="col-md-7 col-sm-7 col-xs-7">
-                  <div class="radio">
-                    <label class="mt0px">
-                      <input type="radio" checked="false" value="option1" id="optionsRadios1" name="optionsRadios">
-                      <span class="">
-                        <span class="fw_500 fs_16px lh_19px fc_000000 ml5px va_middle">
-                          Credit or Debit Card
-                        </span>
-                      </span>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5">
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/visa_active.svg" alt=""
-                      class="">
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mastercard_active.svg"
-                      alt="" class="">
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/maestro_active.svg"
-                      alt="" class="">
-                  </div>
-                </div>
-              </div>
-
-              <form id="payment-form">
-                <div id="card-element" width="100%">
-                  <div class="row mt26px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" id="name" class="form-control cfc3 pcfc tleft" placeholder="Cardholder’s Name">
-                    </div>
-                  </div>
-
-                  <div class="row mt26px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" id="postal-code" class="form-control cfc3 pcfc tleft" placeholder="Postal Code">
-                    </div>
-                  </div>
-
-                  <div class="row mt26px mlr10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12 cfc3" >
-                      <div id="card-number" style="flex-basis:100%;"></div>
-                    </div>
-                  </div>
- 
-                  <div class="row mt26px mlr10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12 cfc3">
-                      <div id="card-expiry"  style="flex-basis:100%;" ></div>
-                    </div>
-                  </div>
-
-                  <div class="row mt26px mlr10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12 cfc3">
-                      <div id="card-cvc"  style="flex-basis:100%;"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- We'll put the error messages in this element -->
-                <div id="card-element-errors" role="alert"></div>
-
-             
+          <div class="x_content p0">
+            <form id="payment-form">
+              <div id="card-element" class="mtb30px" >
                 <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <hr class="hr_style_9">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <input type="text" autocomplete="off" id="name" class="sp_fc mb10px fc_name" placeholder="Cardholder’s Name">
                   </div>
                 </div>
 
-                <div class="row mt21px">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <a>
-                      <button type="button" id="btnsubmit" class="btn btn-warning mb0 btn_confirm_payment w100"
-                        data-dismiss="modal">Update</button>
-                    </a>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <input type="text"  autocomplete="off"  id="postal-code" class="sp_fc mb10px" placeholder="Postal code">
                   </div>
                 </div>
-              </form>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div id="card-number" class="sp_fc mb10px"></div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-6 pl0px pr5px">
+                    <div id="card-expiry" class="sp_fc mb10px"></div>
+                  </div>
+
+                  <div class="col-md-6 col-sm-6 col-xs-6 pr0px pl5px">
+                    <div type="text" id="card-cvc" class="sp_fc mb10px" ></div>
+                  </div>
+                </div>
+              </div>
+              <!-- We'll put the error messages in this element -->
+              <div id="card-element-errors" role="alert"></div>
 
 
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <button type="button"   data-dismiss="modal"  type="button" id="btnsubmit" class="btn profile_dmd">
+                    Update
+                  </button>
+                </div>
+              </div>
               <div class="pagebreak"></div>
             </form>
           </div>
@@ -141,8 +80,9 @@
     </div>
   </div>
 </div>
-<!-- /page content -->
 
-<!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
+</app-modal>

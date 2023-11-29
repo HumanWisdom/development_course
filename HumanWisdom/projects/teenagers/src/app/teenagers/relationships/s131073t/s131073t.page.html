@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Hidden from our awareness our mind compares itself with others constantly.
+            <br>
+            It's an unconscious and automatic process and can affect our relationships. All we may be aware of is a feeling of being annoyed because someone has better grades than us, or can afford things we cannot afford to buy. Becoming aware of it and how it affects our relationships allows us to respond with intelligence and wisdom.
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

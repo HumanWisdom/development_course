@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { OvercomeStressAnxietyTranscriptPageRoutingModule } from './overcome-stress-anxiety-transcript-routing.module';
 
 import { OvercomeStressAnxietyTranscriptPage } from './overcome-stress-anxiety-transcript.page';
@@ -13,6 +15,7 @@ import { OvercomeStressAnxietyTranscriptPage } from './overcome-stress-anxiety-t
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     OvercomeStressAnxietyTranscriptPageRoutingModule
   ],
   declarations: [OvercomeStressAnxietyTranscriptPage]

@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Where does our urge to speak come from, such that we can’t contain ourselves sometimes?
+            <br>
+            In any conversation you can observe this in yourself and in others, as people constantly interrupt each other to speak and it seems no one is really listening with any depth. This is true of most human beings and linked to the way the mind functions. It is not right or wrong, but understanding what is happening allows us to respond with intelligence. Perhaps speaking strengthens the sense of ‘me’ and brings us a subtle pleasure when we do. This urge is strong enough to stop listening half-way through someone’s speech, and interrupt them. Perhaps it's also worth asking ourselves how we feel when we are interrupted. Just observing this urge to speak in ourselves is enough to allow us to respond with intelligence.   
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

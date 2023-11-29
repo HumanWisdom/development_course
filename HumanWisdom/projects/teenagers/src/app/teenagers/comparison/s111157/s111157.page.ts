@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s111157',
@@ -17,26 +19,27 @@ export class S111157Page implements OnInit
   moduleLink="/reactive-mind"
   moduleName=" Reactive Mind"
   sectionName= "How the Mind Works";
-  moduleId=112
+  moduleId=113
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Self-Esteem',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
       link: '/self-esteem',
-      id: 17
+      id: 126
  
     },
     {
       name: 'Anger',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
       link: '/anger',
-      id: 14
+      id: 118
   
     },
   ]

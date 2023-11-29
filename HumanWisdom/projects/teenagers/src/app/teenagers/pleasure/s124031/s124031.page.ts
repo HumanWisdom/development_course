@@ -16,7 +16,9 @@ export class S124031Page implements OnInit
   bg = "pink_orange_w3"
   hint = "It could be picking up your phone, or buying a sweet from a shop"
   toc = "/pleasure/s124001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S124031Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1421
+  rId = 1952
   reflection: any
   reflectionA: any
   r124031 = JSON.parse(sessionStorage.getItem("r124031"))

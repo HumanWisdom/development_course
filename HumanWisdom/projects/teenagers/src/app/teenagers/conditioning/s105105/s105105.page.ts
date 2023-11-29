@@ -16,11 +16,13 @@ export class S105105Page implements OnInit,OnDestroy
   bg="pink_orange_w12"
   title="We surround ourselves with people like us"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/3.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/3.5.mp3'
   transcriptPage="conditioning/s105105t"
   toc="conditioning/s105001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

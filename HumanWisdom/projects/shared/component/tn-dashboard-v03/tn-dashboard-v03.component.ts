@@ -4,7 +4,7 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from '@angular/cdk/platform';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 
@@ -13,12 +13,12 @@ import { OnboardingService } from '../../services/onboarding.service';
   templateUrl: './tn-dashboard-v03.component.html',
   styleUrls: ['./tn-dashboard-v03.component.scss'],
 })
-export class TnDashboardV03Component implements OnInit {
+export class TnDashboardV03Component implements OnInit,OnChanges {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
   @Output() playstoreenable = new EventEmitter<boolean>();
-
+  @Input() enableHamburger = false;
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -33,6 +33,8 @@ export class TnDashboardV03Component implements OnInit {
   ios = false;
   cardlist = [];
   countryCode: any;
+  userDetails: any = [];
+
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -41,6 +43,16 @@ export class TnDashboardV03Component implements OnInit {
     }
 
   }
+  ngOnChanges(changes: SimpleChanges): void {
+      if(!changes.enableHamburger.firstChange){
+        if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
+          console.log(changes.enableHamburger.currentValue);
+          this.enableHamburger = changes.enableHamburger.currentValue;
+        }
+      }
+  }
+
+  
 
   ngOnInit() {
     setTimeout(() => {
@@ -55,6 +67,7 @@ export class TnDashboardV03Component implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
 
       this.Onboardingservice.getuser(userId).subscribe((res) => {
+        this.userDetails = res;
         let userdetail = res[0];
         this.url = userdetail['UserImagePath'].split('\\')[1]
         this.name = localStorage.getItem('name');
@@ -91,11 +104,11 @@ export class TnDashboardV03Component implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate(['/onboarding/login'])
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate(['/onboarding/login'])
   }
 
   giftwisdom() {
@@ -109,7 +122,7 @@ export class TnDashboardV03Component implements OnInit {
   }
 
   Subscribe() {
-    this.router.navigate(['/onboarding/add-to-cart']);
+    this.router.navigate(['/subscription/start-your-free-trial']);
   }
 
   clickbanner(url = '') {
@@ -130,4 +143,6 @@ export class TnDashboardV03Component implements OnInit {
   routedashboard() {
     this.router.navigate(['/adults/adult-dashboard'])
   }
+
+  
 }

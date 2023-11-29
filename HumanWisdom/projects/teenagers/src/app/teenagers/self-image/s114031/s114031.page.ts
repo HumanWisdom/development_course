@@ -14,12 +14,14 @@ export class S114031Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w12"
   title="We project images of ourselves"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/self-image/audios/1.5.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/self-image/audios/1.5.mp3'
   transcriptPage="self-image/s114031t"
   toc="self-image/s114001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

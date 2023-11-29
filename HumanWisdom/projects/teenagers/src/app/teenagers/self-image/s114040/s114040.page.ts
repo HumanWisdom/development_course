@@ -15,7 +15,9 @@ export class S114040Page implements OnInit
   bg = "blue_w9"
   hint = " It could be that someone ignores you and you assume they don’t like you,but they could just be thinking about something else"
   toc = "/self-image/s114001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -40,11 +40,14 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
     this.closemodal.nativeElement.click();
     if (this.service.previousUrl) {
       let curatedurl = localStorage.getItem('curatedurl');
-      if (curatedurl === 'F' && this.service.previousUrl.includes("wisdom-shorts")) {
+      let feelbetternow = localStorage.getItem('feelbetternow');
+      if (feelbetternow !== 'T' && curatedurl === 'F' && this.service.previousUrl.includes("wisdom-shorts")) {
         this.router.navigate(['/adults/wisdom-shorts'])
-      } else if(curatedurl && curatedurl !== 'F'){
+      } else if(feelbetternow !== 'T' && curatedurl && curatedurl !== 'F'){
         this.router.navigate([curatedurl])
-      } else {
+      } else if(feelbetternow === 'T'){
+        this.location.back()
+      }else {
         this.location.back()
       }
     } else {
@@ -52,14 +55,11 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
     }
   }
 
-  backroute(previousUrl) {
-
-  }
 
   loginpage(issub = false) {
     this.closemodal.nativeElement.click()
     if (issub && this.isloggedIn) {
-      this.router.navigate(['/onboarding/add-to-cart'])
+      this.router.navigate(['/adults/subscription/start-your-free-trial'])
     } else {
       this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
     }

@@ -12,8 +12,8 @@ export class S102005Page implements OnInit {
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_w3"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/questions-are-key/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/questions-are-key/audios/1.2.mp3'
   title=""
   toc="questions-are-key/s102001"
   transcriptPage="questions-are-key/s102005t"
@@ -26,7 +26,9 @@ export class S102005Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url  
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);  
   avDuration:any  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
   progName="teenagers"

@@ -17,7 +17,9 @@ export class S44028Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   toc="/stress/s44001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
  
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
@@ -82,7 +84,7 @@ export class S44028Page implements OnInit {
     if(this.optionList && this.sessionOption44028) {
       this.optionList.forEach((d) => {
         if(this.sessionOption44028.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+          document.getElementById(d['OptStr']).style.backgroundColor = '#E58D82';
         }
       }) 
     }   
@@ -136,12 +138,12 @@ export class S44028Page implements OnInit {
    console.log(id,e)
    if(e==true)
    {
-    document.getElementById(divid).style.backgroundColor = '#FFC455';
+    document.getElementById(divid).style.backgroundColor = '#E58D82';
      this.sendOption.push(id)
    }
    else if(e==false)
    {
-    document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+    document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
     this.sendOption.forEach((element,index)=>{
       if(element==id) this.sendOption.splice(index,1);
    });
@@ -176,12 +178,12 @@ prev(){
  sessionFetch(id, divid){
     if(this.sessionOption44028.includes(id))
     {
-      // document.getElementById(divid).style.backgroundColor = '#FFC455';
+      //document.getElementById(divid).style.backgroundColor = '#E58D82';
       return true
     }
 
     else {
-      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
       return false
     }
   }

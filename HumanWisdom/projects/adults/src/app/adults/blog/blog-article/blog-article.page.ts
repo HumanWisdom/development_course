@@ -8,6 +8,8 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 import { Meta, Title } from '@angular/platform-browser';
 import {  Renderer2 } from '@angular/core';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-blog-article',
@@ -23,12 +25,12 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsLen = 0;
   BlogCommentsList = 0;
   BlogCommentsListabove = []
-  path = this.router.url
+  path:any;
   content = '';
   enableAlert = false;
   enablecancel = false;
   public isLoggedIn = false
-
+  address:any;
   constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
@@ -38,8 +40,9 @@ export class BlogArticlePage implements OnInit {
       } else {
         this.isLoggedIn = false;
       }
-    this.route.queryParams.subscribe(params => {
-      this.blogid = params?.sId
+      this.address =  this.router.url;
+      this.route.queryParams.subscribe(params => {
+      this.blogid = this.extractUntilQuestionMark(params?.sId)
       if(isNaN(+this.blogid)){
         var blogid=this.getBlogList(this.blogid);
 
@@ -55,6 +58,15 @@ export class BlogArticlePage implements OnInit {
 
 
   }
+   extractUntilQuestionMark(inputString) {
+    var index = inputString.indexOf('?');
+    if (index !== -1) {
+        var result = inputString.substring(0, index);
+        return result;
+    } else {
+        return inputString;
+    }
+}
 
   getblog() {
     localStorage.setItem('blogId',this.blogid);
@@ -180,11 +192,13 @@ export class BlogArticlePage implements OnInit {
     this.location.back()
   }
 
+
   share() {
+    this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
-      url: this.path+'&t='+ JSON.parse(localStorage.getItem("token"))
+      url: this.path
     }).then((response) => {
       console.log(response);
     })
@@ -192,6 +206,21 @@ export class BlogArticlePage implements OnInit {
         console.log(error);
       });
   }
+
+  shareUrl(programType:ProgramType) {
+    const token= JSON.parse(localStorage.getItem("token"))
+    switch (programType) {
+      case ProgramType.Adults:
+          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${token}`
+        break;
+      case ProgramType.Teenagers:
+        this.path = SharedService.TeenagerBaseUrl + this.address + `?t=${token}`
+        break;
+      default:
+          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${token}`
+    }
+  }
+
 
   commentbottom() {
     if(!this.isLoggedIn) {

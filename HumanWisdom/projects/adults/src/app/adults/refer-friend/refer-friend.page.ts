@@ -13,6 +13,7 @@ export class ReferFriendPage implements OnInit {
   name = '';
   content = '';
   enableAlert = false;
+  emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
 
   constructor(private service: AdultsService, private location: Location, public platform: Platform) { }
 
@@ -36,7 +37,6 @@ export class ReferFriendPage implements OnInit {
   }
 
   submitrefer() {
-    if (this.email !== '' && this.name !== '' && this.name.length > 3) {
       let userId = JSON.parse(localStorage.getItem("userId"))
       let data = {
         "UserId": userId,
@@ -53,14 +53,38 @@ export class ReferFriendPage implements OnInit {
           (<HTMLInputElement>document.getElementById('email')).value = '';
         }
       })
-    } else {
-      this.content = 'Please enter complete details';
-      this.enableAlert = true;
-    }
   }
 
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+  }
+
+  disabled() {
+    if (this.emailElmtRegex.test(this.email) && this.name.length > 3) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  namevalidation() {
+    if (this.name === '') {
+      return 'Please enter name';
+    } else if (this.name.length < 3) {
+      return 'Name must be at least 3 characters';
+    } else {
+      return '';
+    }
+  }
+
+  emailvalidation() {
+    if (this.email === '') {
+      return 'Please enter email';
+    } else if (!(this.emailElmtRegex.test(this.email))) {
+      return 'Please enter valid email';
+    } else {
+      return '';
+    }
   }
 }

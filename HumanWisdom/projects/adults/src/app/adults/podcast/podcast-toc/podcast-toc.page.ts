@@ -6,6 +6,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Platform } from "@angular/cdk/platform";
 import { Meta, Title } from '@angular/platform-browser';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
+import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 
 @Component({
@@ -15,32 +18,49 @@ import { LogEventService } from '../../../../../../shared/services/log-event.ser
 })
 
 export class PodcastTocPage implements OnInit {
- 
-  path=this.router.url
+
+  path:any;
   tag='all';
   iframeSrc:SafeResourceUrl;
+  @Input() podcastList = [];
+  @Input() isdefaultShow = false;
+  isSubscriber = false;
+  address:any;
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
     private activatedRoute:ActivatedRoute,
-    private location: Location,    
+    private location: Location,
     public logeventservice: LogEventService,
     private sanitizer: DomSanitizer,
-    private meta: Meta, private title: Title) {
+    private meta: Meta, private title: Title,
+    private service: AdultsService
+    ) {
      }
 
   ngOnInit() {
-
+    if(!this.isdefaultShow){
+      this.getPodcast()
+      this.address = this.router.url;
+    }
     this.title.setTitle('Inspiring Your Best Life: Our Motivational Podcast')
     this.meta.updateTag({ property: 'title', content: 'Inspiring Your Best Life: Our Motivational Podcast'})
     this.meta.updateTag({ property: 'description', content: 'Get motivated with our inspiring podcast. Our experts share tips on positive mindset, motivation, and more to help you unlock your full potential.' })
     this.meta.updateTag({ property: 'keywords', content: 'Wisdom podcast,Personal growth podcast,Self-improvement podcast,Mindfulness podcast,Inspirational podcast,Motivational podcast,Self-help podcast,Life lessons podcast,Philosophy podcast,Happiness podcast,Success podcast,Mental health podcast,Emotional intelligence podcast,Spiritual growth podcast,Life coaching podcast,Positive mindset podcast' })
-  
+
     this.logeventservice.logEvent('view_humanwisdom_podcast');
   let routTag=   this.activatedRoute.snapshot.paramMap.get('tag');
   if(routTag && routTag!=null && routTag !='' && routTag =='sorrow'){
     this.tag=routTag;
   }
  this.iframeSrc= this.getSourceForPodBin();
+
+ let userid = localStorage.getItem('isloggedin');
+ let sub: any = localStorage.getItem('Subscriber');
+ if (userid === 'T' && sub === '1') {
+   this.isSubscriber = true;
+ } else {
+   this.isSubscriber = false;
+ }
 }
 
   getSourceForPodBin(){
@@ -52,22 +72,56 @@ export class PodcastTocPage implements OnInit {
   goBack(){
    this.location.back();
   }
-
+  shareUrl(programType:ProgramType) {
+    const token= JSON.parse(localStorage.getItem("token"))
+    switch (programType) {
+      case ProgramType.Adults:
+          this.path = SharedService.AdultsBaseUrl + this.address;
+        break;
+      case ProgramType.Teenagers:
+        this.path = SharedService.TeenagerBaseUrl + this.address;
+        break;
+      default:
+          this.path = SharedService.AdultsBaseUrl + this.address;
+    }
+  }
   share(){
     /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
-   let url="https://humanwisdom.me"+this.path;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
-      url: url
+      url: this.path
     }).then( (response) => {
       console.log(response);
     })
     .catch( (error) => {
       console.log(error);
     });
+  }
+
+  getPodcast() {
+    this.service.GetPodcastList().subscribe((res) => {
+      if (res) {
+        this.podcastList = res;
+      }
+    })
+  }
+
+  audioevent(data) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if (sub == 0 && data['PodcastID'] >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       if(data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')){
+        data['MediaUrl'] =  data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/','/');
+       }
+      let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/','~'));
+      this.router.navigate(['adults/audiopage/', concat, '1', 'T', data['Title']])
+      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
+      // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
+    }
   }
 }

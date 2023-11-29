@@ -12,6 +12,7 @@ import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import moengage from "@moengage/web-sdk";
 import { MoengageService } from './moengage.service';
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -59,6 +60,7 @@ export class AppComponent implements OnDestroy {
     }
     localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId=ProgramType.Adults;
+    SharedService.ClientUrl = environment.clientUrl; 
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     if (this.platform.ANDROID || this.platform.IOS) {
@@ -78,6 +80,7 @@ export class AppComponent implements OnDestroy {
     });
 
     this.initializeApp();
+    this.getFreeScreens();
   }
 
   prepareRoute(outlet: RouterOutlet) {
@@ -298,5 +301,24 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.navigationSubs.unsubscribe();
+  }
+
+  getFreeScreens(){
+    if(localStorage.getItem("freeScreens") == null ||  localStorage.getItem("freeScreens") == 'undefined'  || localStorage.getItem("freeScreens") == undefined ){
+       this.services.freeScreens().subscribe((res)=>{
+        if(res){
+          let x = []
+          let result = res.map(a => a.FreeScrs);
+          let arr;
+          result = result.forEach(element => {
+            if (element && element.length !== 0) {
+               x.push(element.map(a => a.ScrNo))
+              arr = Array.prototype.concat.apply([], x);
+            }
+          })
+          localStorage.setItem("freeScreens", JSON.stringify(arr))
+        }
+       });
+    }
   }
 }

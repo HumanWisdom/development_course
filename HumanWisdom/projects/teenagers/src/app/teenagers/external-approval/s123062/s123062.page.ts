@@ -14,12 +14,14 @@ export class S123062Page implements OnInit,OnDestroy
   bg_cft="bg_blue_w3"
   bg="blue_w3"
   title="#3 Explore what is behind this need to feel important"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/external-approval/audios/2.4.mp3'
   transcriptPage="external-approval/s123062t"
   toc="external-approval/s123001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

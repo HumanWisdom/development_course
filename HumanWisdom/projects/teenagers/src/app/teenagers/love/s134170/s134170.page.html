@@ -1,0 +1,22 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#3</p>
+      Learn from your mistakes, forgive yourself, make amends, and move on.<br> 
+      Celebrate the gift of life, and live fully in the present.
+    </h1>
+     
+     <div class="clearfix"></div>
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+

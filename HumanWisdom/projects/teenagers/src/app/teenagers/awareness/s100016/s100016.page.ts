@@ -17,12 +17,14 @@ export class S100016Page implements OnInit,OnDestroy {
   bg="red_pink_w2"
   title="Awareness exercise 2"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/awareness/audios/1.8.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.8.mp3'
 
   transcriptPage="awareness/s100016t"
   toc="awareness/s100001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

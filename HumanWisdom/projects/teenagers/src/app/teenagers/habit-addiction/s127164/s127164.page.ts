@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s127164',
@@ -19,26 +20,28 @@ export class S127164Page implements OnInit
   moduleName="Food and Health"
   sectionName= "Transform your life - II";
   moduleId=128
+  programType : ProgramType = ProgramType.Teenagers;
+
   moduleList: any = [
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
-      id: 15
+      id: 105
 
     },
     {
       name: 'Comparison & Envy',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png',
       link: '/comparison',
-      id: 7
+      id: 111
 
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     
     },
   ]

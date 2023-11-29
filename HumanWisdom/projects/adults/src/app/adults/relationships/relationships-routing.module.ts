@@ -412,7 +412,10 @@ import { S47366Page } from './s47366/s47366.page';  
 import { S47367Page } from './s47367/s47367.page';  
 import { S47368Page } from './s47368/s47368.page';  
 import { S47369Page } from './s47369/s47369.page';  
-import { S47370Page } from './s47370/s47370.page';  
+import { S47370Page } from './s47370/s47370.page'; 
+import { S47370p1Page } from './s47370p1/s47370p1.page';  
+import { S47370p2Page } from './s47370p2/s47370p2.page';  
+import { S47370p3Page } from './s47370p3/s47370p3.page';  
 import { S47371Page } from './s47371/s47371.page';  
 
 const routes: Routes = [
@@ -2478,10 +2481,26 @@ const routes: Routes = [
     component: S47370Page,
   },
   {
+    path: 's47370p1',   
+   canActivate:[ActiveGuard],  
+    component: S47370p1Page,
+  },
+  {
+    path: 's47370p2',   
+   canActivate:[ActiveGuard],  
+    component: S47370p2Page,
+  },
+  {
+    path: 's47370p3',   
+   canActivate:[ActiveGuard],  
+    component: S47370p3Page,
+  },
+  {
     path: 's47371',   
    canActivate:[ActiveGuard],  
     component: S47371Page,
-  }, 
+  },   
+
 ];
 
 @NgModule({

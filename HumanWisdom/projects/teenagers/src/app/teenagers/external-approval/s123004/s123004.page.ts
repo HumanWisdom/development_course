@@ -24,7 +24,9 @@ export class S123004Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="external-approval/s123001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
   constructor
@@ -104,7 +106,7 @@ export class S123004Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123003'])
+    this.router.navigate(['/external-approval/s123003p1'])
   }
 
   ngOnDestroy()

@@ -311,6 +311,8 @@ import { S125244Page } from './s125244/s125244.page'; 
 import { S125245Page } from './s125245/s125245.page';  
 import { S125246Page } from './s125246/s125246.page';  
 import { S125247Page } from './s125247/s125247.page';  
+import { S125247p1Page } from './s125247p1/s125247p1.page';  
+import { S125247p2Page } from './s125247p2/s125247p2.page';  
 import { S125248Page } from './s125248/s125248.page';
 
 import { StressRoutingModule } from './stress-routing.module';
@@ -624,6 +626,8 @@ S125244Page ,
 S125245Page ,
 S125246Page ,
 S125247Page ,
+S125247p1Page ,
+S125247p2Page ,
 S125248Page 
   ],
   imports: [

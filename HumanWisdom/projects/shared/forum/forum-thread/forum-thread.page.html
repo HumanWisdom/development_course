@@ -1,289 +1,345 @@
 <app-bg-video></app-bg-video>
 
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" routerLink="/forum/forum-landing/">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Forum
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright" (click)="share()">
+      <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="p0">
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
 <!-- page content -->
-<div class="right_col mc_03">				
-  <!-- Class -->
+<div class="right_col mc_01">		
   <div class="cw100p">    
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
-          <div id="toast-container" #toastContainerRef>
-            <ng-template toastrContainer></ng-template>
-          </div>
+          <div id="toast-container" #toastContainerRef><ng-template toastrContainer></ng-template></div>
           <div class="x_content p0">
-            <form>  
-              <div class="row pt3remi">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <div class="col-md-1 col-sm-1 col-xs-1 p0">
-                    <a routerLink="/forum/forum-landing/">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_black.svg" alt="" class="p0">
-                    </a>
-                  </div>  
-                  <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                    <img src="{{'data:image/jpg;base64,' + posttread.UserImage}}" *ngIf="posttread.UserImage" alt="" class="w100 fimg_02">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!posttread.UserImage" alt="" class="w100 fimg_01">
-                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_09.svg" alt="" class="p0"> -->
-                  </div>  
-                  <div class="col-md-7 col-sm-7 col-xs-7 pr0">
-                    <h4 class="fw_500 fs_14px lh_16px fc_000000 mtb0px">
-                      {{posttread.UserName}}
-                    </h4>
-                    <h4 class="fw_400 fs_12px fc_adadad mtb0px">
-                      {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
-                    </h4>
-                  </div>
-                  <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" alt="" class="p0"> -->
-                  </div>  
-                </div>
-              </div>
+            <form>
 
-              <div class="row forum_pt20px">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                  <h4 class="mtb0px">
-                    <span  *ngIf="!isEditPost" class="fw_500 fs_14px lh_16px fc_000000">{{posttread.POST}} </span>  
-                    <textarea *ngIf="isEditPost" (focusout)="onChange($event)" type="text"name="Post" id="Post" [(ngModel)]="posttread.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
-                 
-                  </h4>
-            
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-1" *ngIf="isPostEditable">
-                  <button type="submit" *ngIf="posttread.UserId==userID|| posttread.UserName == UserName"  (click)="editPost()" class="btn btn_ficons">
-                    <i class="fa fa-pencil"> </i>
-                  </button>
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-1" *ngIf="isPostEditable">
-                  <button type="submit" *ngIf="posttread.UserId==userID || posttread.UserName == UserName"  (click)="deletePost()" class="btn btn_ficons">
-                    <i class="fa fa-trash-o"> </i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- <div class="row forum_pt10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <div class="col-md-9 col-sm-9 col-xs-9 p0">
-                    <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
-                      <span class="fw_400 fs_12px fc_1092a7 lcs">{{posttread.PostLikeCount}}</span>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
-                      <span class="fw_400 fs_12px fc_1092a7 lcs">{{posttread.ReplyCount}}</span>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
-                      <span class="fw_400 fs_12px fc_1092a7 lcs">Share</span>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-3 col-xs-3 tright pr0">
-                    <span class="fw_400 fs_10px lh_12px fc_1092a7">
-                      Following
-                    </span>
-                  </div>
-                </div>
-              </div> -->
-
-              <div class="row forum_pt10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <div class="col-md-9 col-sm-9 col-xs-9 p0">
-                    <div class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
-                      <button type="submit"  (click)="like(posttread.PostID,null,0)" class="btn btn_ficons">
-                        <i  
-                          *ngIf="posttread.Liked=='0'"
-                          class="fa fa-heart-o">
-                        </i>
-
-                        <i 
-                          *ngIf="posttread.Liked=='1'"
-                          class="fa fa-heart">
-                        </i>                  
-                        <span [innerText]="posttread.PostLikeCount"></span>
-                      </button>  
-                    </div>
-                    <div *ngIf="isLoggedIn" class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
-                      <button type="submit" class="btn btn_ficons">
-                        <i class="fa fa-reply"></i>
-                        <!-- <span [innerText]="GetReplyCount()" ></span> -->
-                        Comment
-                      </button>  
-                    </div>
-                    <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
-                      <span class="fw_400 fs_12px fc_1092a7 lcs">Share</span>
-                    </div> -->
-                  </div>
-                  <div  class="col-md-3 col-sm-3 col-xs-3 pr0 flex_ai">
-                    <button type="submit" class="btn btn_ficons jc_flexend" (click)="follow(posttread)">
-                      <i class="fa fa-user-plus"></i>
-                      <span *ngIf="posttread.Followed=='1'">
-                        Following
-                      </span>
-                      <span *ngIf="posttread.Followed=='0'">
-                        Follow
-                      </span>
-                    </button>  
-                  </div>
-                </div>
-              </div>
-
-              <!-- comment -->
-              <!-- <div class="row pt20px pb10px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" id="comment" required="required" class="form-control fc_comment" placeholder="Add a comment" (click)="navi()">
-                </div>
-              </div> -->
-
-              <div class="row pt20px pb10px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0" >
-                      <textarea type="text"name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>           
-                    </div> 
-              
-                    <div class="col-md-12 col-sm-12 col-xs-12 tright mt5px p0">
-                      <button type="submit"(click)="submitComment()" class="btn btn-warning btn_post">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
-                        Comment
-                      </button>             
-                    </div>                   
-                </div>
-              </div> 
-              <!-- /comment -->
-
-              <hr class="hr_style_3">
-
-              <ng-container *ngIf="list && list.ReplyPost">
-                <div *ngFor="let item of replyPost();let index=index">
-                  <!-- section 1 -->
-                  <div class="row pt30px" >
-                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" (click)="reloadthread(item)">
-                      <img src="{{'data:image/jpg;base64,' + item.ReplyPostUserImage}}" *ngIf="item.ReplyPostUserImage" alt="" class="w100 fimg_02">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!item.ReplyPostUserImage" alt="" class="w100 fimg_01">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_04.svg" alt="" class="w100">
-                    </div> -->
-
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-md-10 col-sm-10 col-xs-10 p0">                      
-                        <h4 class="fw_500 fs_14px lh_16px fc_000000 commenter mtb0px">
-                          {{item.ReplyPostUserName}}
-                          <span class="fw_400 fs_10px fc_adadad">
-                            {{getLocalPostDate(item.ReplyPostDate)| date: 'medium' }}
-                          </span>
+              <!-- post -->
+              <div class="div_forum_post" *ngIf="posttread">
+                <a class="">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                        <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff" *ngIf="posttread.Anonymous=='1'">
+                          <!-- Jennifer Hitchner -->
+                          Anonymous
                         </h4>
-                       
-                        <h4  *ngIf="(editCommentId != item.ReplyPostID)"  class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                          {{item.ReplyPost}}
-                        </h4> 
-                        
-                        <textarea *ngIf="editCommentId == item.ReplyPostID" (focusout)="onChangeComment(item)" type="text"name="comment" id="comment" [(ngModel)]="item.ReplyPost" required="required" class="txtarea_fl_comment" placeholder="Edit Comment" rows="5"></textarea>           
-                      </div> 
-                      <div class="col-md-1 col-sm-1 col-xs-1" >
-                        <button type="submit" *ngIf="item.ReplyPostUserID==userID" [disabled]="!isLoggedIn" (click)="editComment(item.ReplyPostID)" class="btn btn_ficons">
-                          <i class="fa fa-pencil"> </i>
+
+                        <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff" (click)="gotToProfile(posttread.UserId)" *ngIf="posttread.Anonymous=='0'">
+                          <!-- Jennifer Hitchner -->
+                          {{posttread.UserName}}
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright" *ngIf="posttread.UserName != UserName" (click)="follow(posttread)">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='0'">
+                          <i class="fa fa-plus mr3px"></i>
+                          <span class="underline">
+                            Follow
+                          </span>
                         </button>
-                      </div> 
-                      
-                      <div class="col-md-1 col-sm-1 col-xs-1" >
-                        <button type="submit" *ngIf="item.ReplyPostUserID==userID" [disabled]="!isLoggedIn" (click)="deleteComment(item.ReplyPostID)" class="btn btn_ficons">
-                          <i class="fa fa-trash-o"> </i>
+
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='1'">
+                          <i class="fa fa-minus mr3px"></i>
+                          <span class="underline">
+                            Unfollow
+                          </span>
                         </button>
                       </div>
 
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright" *ngIf="posttread.UserName == UserName"  (click)="follow(posttread)">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='0'">
+                          <i class="fa fa-plus mr3px"></i>
+                          <span class="underline">
+                            Follow
+                          </span>
+                        </button>
 
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='1'">
+                          <i class="fa fa-minus mr3px"></i>
+                          <span class="underline">
+                            Unfollow
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="(posttread.UserName == UserName) && (posttread.ReplyCount=='0')">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_more.svg"
+                              class="img-responsive">
+                          </button>
+                          <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost()">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Edit
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_edit.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <hr class="hr_style_v3_07 mtb10pxi">
+                              </div>
+                            </div>
+
+                            <a class="dropdown-item"  (click)="deletePost()">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Delete
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_trash.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+
+
+
+                    </div>
+                  </div>
+
+                  <div class="row mt5px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
+                        <!-- March 26 -->
+                        {{getLocalPostDate(posttread?.PostDate)}}
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row mtb15px" >
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" *ngIf="posttread.TagName!=''">
+                        <button type="button" class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
+                          {{posttread.TagName}}
+                        </button>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright" *ngIf="posttread.ImagePath">
+                        <img
+                        src="https://d1tenzemoxuh75.cloudfront.net{{posttread.ImagePath}}"
+                          class="img-responsive w100">
+                      </div>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex lcs_div">
-                      <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
-                          <span class="fw_400 fs_12px fc_1092a7 lcs">{{item.ReplyPostLikeCount}}</span> -->
-                          <button  type="submit"  (click)="like(item.ReplyPostID,posttread.PostID,index)" class="btn btn_ficons jc_flexstart">
-                            <i 
-                              *ngIf="item.Liked=='0'"
-                              class="fa fa-heart-o">
-                            </i>
-    
-                            <i  
-                              *ngIf="item.Liked=='1'"
-                              class="fa fa-heart">
-                            </i> 
-                            <span [innerText]="item.ReplyPostLikeCount"></span>
-                          </button> 
-                        </div>
-                      </div>
-                      <!-- 
-                      <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai"  (click)="toggle(item)">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
-                        <span class="fw_400 fs_12px fc_1092a7 lcs">{{item.ReplyPostReplyCount}}</span>
-                      </div>            
-                      -->
-                      <div class="col-md-6 col-sm-6 col-xs-6 flex_ai jc_flexend">
-                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="reportpost(item)">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
-                          <span class="fw_400 fs_12px fc_1092a7 lcs ws_nowrap">Report Post</span> -->
-                          <button type="submit" class="btn btn_ficons jc_flexend">
-                            <i class="fa fa-triangle-exclamation"></i>
-                            Report
-                          </button> 
-                        </div>                      
-                      </div>                 
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!posttread.isEditPost">
+                        <!-- Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help -->
+                        {{posttread.POST}}
+                      </h4>
+                      <textarea *ngIf="posttread.isEditPost" (focusout)="editPost()" type="text"name="Post" id="Post" [(ngModel)]="posttread.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
                     </div>
                   </div>
 
-                  <!-- comment -->
+                  <div class="row mt30px mb20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="like(posttread.PostID,null,0)">
+                            <img *ngIf="posttread.Liked=='0'"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                            class="img-responsive mr5px">
+                          <img *ngIf="posttread.Liked=='1'"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                            class="img-responsive mr5px">
+                            {{posttread.PostLikeCount}}
+                        </button>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" [disabled]="DisabledComment(posttread)" (click)="enableCommentTextBox()" >
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
+                          {{posttread.ReplyCount}}
+                          </button>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="shareOnThread(posttread)">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
+                            Share
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row"  *ngIf="isEditComment">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <textarea type="text" rows="5" 
+                      placeholder="Comment here" class="ta_forum_comment" 
+                      id="PostComment" name="PostComment"
+                        [(ngModel)]="PostComment"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row"  *ngIf="isReportPost">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <textarea type="text" rows="5" 
+                      placeholder="Report here" class="ta_forum_comment" 
+                      id="PostComment" name="PostComment"
+                        [(ngModel)]="PostComment"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                  *ngIf="isLoggedIn && isEditComment">
+                  <button type="submit" class="btn btn-warning btn_post" (click)="commentPost()">
+                    Comment
+                  </button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                  *ngIf="isLoggedIn && isReportPost">
+                  <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
+                    Report
+                  </button>
+                </div>
+                </a>
+              </div>
+              <!-- /post -->
+
+              <div class="row mt40px mb15px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ttuppercase">
+                    COMMENTS
+                  </h4>
+                </div>
+              </div>
+
+              <!-- comment -->
+              <ng-container *ngIf="list && list.ReplyPost.ReplyPostUserID!=''">
+                <div class="div_comment_list" *ngFor="let item of list.ReplyPost;let index=index">
+                  <div class="row mb5px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="gotToProfile(item.ReplyPostUserID)">
+                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
+                        <!-- Manoj Krishna -->
+                        {{item.ReplyPostUserName}}
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff" *ngIf="(editCommentId != item.ReplyPostID)">
+                        <!-- It is possible to move on from our past experiences and heal ourselves - see the modules on stress, conditioning in the app. See the podcast on Overcoming emotional pain in the app. -->
+                        {{item.ReplyPost}}
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row div_forum_post mt20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                        <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                          
+                          <img *ngIf="item.Liked=='0'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                          class="img-responsive mr5px">
+                        <img *ngIf="item.Liked=='1'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                          class="img-responsive mr5px">
+                          <span [innerText]="item.ReplyPostLikeCount"></span>
+                        </button>
+                      </div>
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                        <button type="button"  (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="row forum_pt20px" *ngIf="replyflag && activereply.ReplyPostID === item.ReplyPostID">
                     <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_08.svg" alt="" class="w100">
                     </div> -->
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
-                        <input type="text" name="posttext" id="comment" [(ngModel)]="posttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
+                        <input type="text" name="posttext" id="comment" [(ngModel)]="reportText" required="required" class="form-control fc_comment" placeholder="Report Post">                    
                       </div> 
 
                       <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px p0 tright mt5px">
-                        <button type="submit" class="btn btn-warning btn_post" (click)="post(item)">
+                        <button type="submit" class="btn btn-warning btn_post" (click)="reportComment(item)">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
                           Report
                         </button>             
                       </div>                   
                     </div>
                   </div> 
-                  <!-- /comment -->
-                  
-                  <!-- reply post -->
-                  <div class="row forum_pt20px" *ngIf="commentflag && activecomment.ReplyPostID === item.ReplyPostID">
-                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0"></div> -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
-                        <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report Post">                
-                      </div> 
 
-                      <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px p0 tright mt5px">
-                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item)">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
-                          Report
-                        </button>             
-                      </div>                   
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <hr class="hr_style_v3_05 mtb20px">
                     </div>
-                  </div> 
-                  <!-- /reply post -->
-                  <!-- /section 1 -->
+                  </div>
                 </div>
-              </ng-container>   
+              </ng-container>
+              <!-- /comment -->
 
               <div class="pagebreak"></div>
+
             </form>              
           </div>
         </div>
       </div>
     </div>
   </div>
-  <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
-  [content]="'Please register to use this feature'">
- </app-modal>
 
-  <!--/Class --> 
+  <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal>
 </div>
 <!-- /page content -->
 

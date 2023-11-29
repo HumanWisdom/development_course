@@ -13,8 +13,8 @@ export class S129027Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/living-with-peace/videos/2.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/living-with-peace/videos/1.3.mp4'
   title="Relationship conflict  "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/living_with_peace/living_with_peace_02.jpg"
   userId:any
@@ -27,7 +27,9 @@ export class S129027Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="living-with-peace/s129001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
@@ -84,7 +86,7 @@ export class S129027Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/living-with-peace/s129028'])
+    this.router.navigate(['/living-with-peace/s129027p1'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +104,7 @@ export class S129027Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/living-with-peace/s129026'])
+    this.router.navigate(['/living-with-peace/s129026p2'])
   }
 
   ngOnDestroy()

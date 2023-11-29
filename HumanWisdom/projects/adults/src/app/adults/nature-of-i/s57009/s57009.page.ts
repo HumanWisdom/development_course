@@ -22,7 +22,9 @@ export class S57009Page implements OnInit,OnDestroy {
   yellow="#FFC455"
   toc="nature-of-i/s57001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -128,5 +130,10 @@ export class S57009Page implements OnInit,OnDestroy {
     localStorage.setItem("totalTime57009",this.totalTime)
     localStorage.setItem("avDuration57009",this.avDuration)
  
+  }
+
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
   }
 }

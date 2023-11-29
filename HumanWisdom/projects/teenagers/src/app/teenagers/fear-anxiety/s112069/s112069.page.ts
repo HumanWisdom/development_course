@@ -15,7 +15,7 @@ export class S112069Page implements OnInit {
   bg="purple_red_w10"
   title="Our mind magnifies threats"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.11.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.11.mp3'
   transcriptPage="/fear-anxiety/s112069t"
   toc="fear-anxiety/s112001"  
 
@@ -28,7 +28,9 @@ export class S112069Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url  
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);  
   avDuration:any  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName="teenagers" 

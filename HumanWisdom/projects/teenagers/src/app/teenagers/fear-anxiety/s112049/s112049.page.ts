@@ -16,7 +16,7 @@ export class S112049Page implements OnInit {
   toc="fear-anxiety/s112001"
   title="#9 Fear of the future and the unknown"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.7.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.7.mp3'
   transcriptPage="/fear-anxiety/s112049t" 
 
   userId:any
@@ -28,7 +28,9 @@ export class S112049Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
   avDuration:any  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

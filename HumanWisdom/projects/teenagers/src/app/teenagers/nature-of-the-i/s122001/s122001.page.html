@@ -1,16 +1,10 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header  [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
   <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          The Nature of the ‘I’
-        </h1>
-      </div>
-    </div>
-
+    
+    <div class="clearfix"></div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h4 class="txt_comparison">
@@ -25,7 +19,7 @@
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
         <a [routerLink]="['/nature-of-the-i', natureoftheiResume]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green_yellow" data-dismiss="modal">Continue where you left</button>
+          <button type="button" class="btn  mb0 btn_begin_here " data-dismiss="modal">Continue where you left</button>
         </a>
         <!-- <a routerLink="/identity/s1">
           <button type="button" class="btn btn_default mb0 txt_green_yellow" data-dismiss="modal">Start from the beginning</button>

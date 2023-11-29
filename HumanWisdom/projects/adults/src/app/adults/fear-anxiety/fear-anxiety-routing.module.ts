@@ -187,6 +187,7 @@ import { S615p2Page } from './s615p2/s615p2.page'; 
 import { S615p3Page } from './s615p3/s615p3.page'; 
 import { S615p4Page } from './s615p4/s615p4.page'; 
 import { S616Page } from './s616/s616.page'; 
+import { S616p1Page } from './s616p1/s616p1.page'; 
 import { S617Page } from './s617/s617.page';    
 import { S614p2Page } from './s614p2/s614p2.page';    
 
@@ -1133,6 +1134,11 @@ const routes: Routes = [
     component: S616Page,
   },
   {
+    path: 's616p1',   
+    canActivate:[ActiveGuard],  
+    component: S616p1Page,
+  },
+  {
     path: 's617',   
     canActivate:[ActiveGuard],  
     component: S617Page,
@@ -1142,6 +1148,8 @@ const routes: Routes = [
     canActivate:[ActiveGuard],  
     component: S614p2Page,
   },
+ 
+
 ];
 
 @NgModule({

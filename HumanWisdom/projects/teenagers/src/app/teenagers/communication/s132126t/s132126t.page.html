@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Fear stops us being honest in our relationships. You may need to say something to a friend, for their own sake, but are afraid of their reaction, so you may say nothing. Or, if you are in an unhappy relationship your fear of the consequences may stop you speaking out or of changing things. If you cannot share what is bothering you, it erodes the quality of your relationship until it is too late. All problems are best addressed quickly so they do not cause long term damage. How you say something is as important as what you say, as we have explored. Speaking the truth needs to be done with intelligence and kindness.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

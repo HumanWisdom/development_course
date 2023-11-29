@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This diagram illustrates the hidden role our conditioning plays in communication. It begins with  a feeling or an idea you want to communicate. Let’s call it ABC. This then gets processed by your conditioning, which is the sum of all your past experiences, and translated into words. You are not aware of your conditioning, or this process occurring in the background. I am person B and I hear those words. They are then processed by my memory and I give those words a meaning based on my conditioning. In my mind I understand that you are talking about XYZ. I respond accordingly. You assume I have understood what you are saying and can’t understand why I am talking about XYZ. This is one reason communication problems can occur.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

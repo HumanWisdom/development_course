@@ -16,7 +16,9 @@ export class S125238Page implements OnInit
   bg = "dark_blue_w6"
   hint = "Most of us are not aware of this. It is not wrong and happens behind the scenes. Reflect on how this has affected you."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

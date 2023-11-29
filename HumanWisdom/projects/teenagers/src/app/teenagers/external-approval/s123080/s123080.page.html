@@ -1,44 +1,30 @@
-<app-feedback-question skipToPage="/external-approval/s123080">
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
   <form>
 
-    <h2 class="mtb0px txt13">
-      Feedback Survey
-    </h2>
-
-    <h4 class="mt0px txt14">
-      External Approval Module
+    <h4 class="mtb0px comparison">
+      External Approval
     </h4>
 
-    <!-- multistep wizard -->
-    <div id="svg_wrap"></div>   
-    <section>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <a class="sb_anchor">
-            <div class="box textarea_box">
-              <h4 class="pt1rem txt15">
-               {{reflection}}
-              </h4>    
+    <div class="clearfix"></div>
 
-              <hr>
+    <h5 class="mtb0px session">
+      Session #3
+    </h5>
 
-              <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r123080"></textarea>
+    <div class="clearfix"></div>
 
-              <br>
+    <br>
+  
+    <h1 class="session_title ">
+      Our need for external validation
 
-            </div>                    
-          </a>
-        </div>
-      </div>        
-    </section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <!-- /multistep wizard -->
+    </h1>
+
+    <div class="clearfix"></div>
 
   </form>
 
-</app-feedback-question>
-
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>         
+</app-tap-start>

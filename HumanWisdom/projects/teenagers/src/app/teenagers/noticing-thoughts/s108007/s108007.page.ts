@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import { ProgramType } from '../../../../../../shared/models/program-model';
+import { TeenagersService } from '../../teenagers.service';
+
 
 @Component({
   selector: 'app-s108007',
@@ -9,50 +10,48 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
   styleUrls: ['./s108007.page.scss'],
 })
 export class S108007Page implements OnInit {
-  
-  toc=""
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/22.png"
-  bg=""
-  moduleLink="/meditation"
-  moduleName="04. Meditation"
-  sectionName= "Nurturing a Quiet Mind";
-  moduleId=109
-  programType : ProgramType = ProgramType.Teenagers;
-  moduleList: any = [
-    {
-      name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
-      link: '/breathing',
-      id: 29
-    },
-    {
-      name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
-      link: '/meditation',
-      id: 22
-    },
-    {
-      name: 'Nature',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
-      link: '/nature',
-      id: 28
-    },
-  ]
 
-  constructor() {
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  bg="blue_w5"
 
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation.jpg"
-      
-      this.moduleLink = "/adults/guided-meditation"
-      this.moduleName = "Guided Meditation"
-      this.sectionName = "Develop a Calm Mind";
-      this.moduleId = 51
-    
-    }
-   }
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
+
+
+  constructor(private router: Router,
+    private service:TeenagersService,
+    private location:Location) { }
 
   ngOnInit() {
+    if(this.saveUsername==false)
+    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+    else
+      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    this.sessionPoints()
   }
+
+  sessionPoints(){
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"108001,108002,108003,108004,108005"})
+    .subscribe(res=>
+      {console.log("points",res)
+      this.points=res
+    })
+   
+
+  }
+
+  submitProgress(){
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/noticing-thoughts/s108008'])
+  }
+  prev(){
+    localStorage.setItem("pageaction", 'prev')
+    this.router.navigate(['/noticing-thoughts/s108006'])
+
+  }
+
 }

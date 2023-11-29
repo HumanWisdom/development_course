@@ -16,7 +16,9 @@ export class S128053Page implements OnInit
   bg="green_w6"
   hint = "It could be you need to eat more salads and drink more water. Habits stop change. "
   toc = "/food-health/s128001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S128053Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1980
   reflection: any
   reflectionA: any
   r128053 = JSON.parse(sessionStorage.getItem("r128053"))

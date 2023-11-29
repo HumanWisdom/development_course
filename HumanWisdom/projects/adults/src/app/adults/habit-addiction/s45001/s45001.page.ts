@@ -24,7 +24,7 @@ export class S45001Page implements OnInit,OnDestroy
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  addictionResume=sessionStorage.getItem("addictionResume")
+  addictionResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/45.png"
   tocColor="white"
   lastvisited = false;
@@ -73,6 +73,9 @@ export class S45001Page implements OnInit,OnDestroy
 
   ngOnInit() 
   {
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -140,10 +143,10 @@ export class S45001Page implements OnInit,OnDestroy
   {
     this.router.navigate(['/adults/journal'])
   }
-
+/* 
   goBack()
   {
     this.location.back()
   }
-
+ */
 }

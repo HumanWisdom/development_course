@@ -1,0 +1,371 @@
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_03">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <div class="container">
+              <ul class="nav nav-tabs login_signup_tab flex_ai m0px">
+                <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
+                  <a data-toggle="tab" href="#tab1" (click)="getsignuptab()">
+                    Sign up
+                  </a>
+                </li>
+                <li id="LoginTab" #enabletab [ngClass]="{'active' : !isSignUp }" (click)="getLoginTab()">
+                  <a data-toggle="tab" href="#tab2">
+                    Login
+                  </a>
+                </li>                  
+              </ul>
+        
+              <div class="tab-content">
+                <!-- signup -->
+                <div id="tab1" class="tab-pane fade" *ngIf="isSignUp" [ngClass]="{' in active' : isSignUp }">
+                  <form [formGroup]="registrationForm">
+
+                    <div class="row mtb20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff tcenter">
+                          Register now and try humanwisdom for free
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <hr class="hr_style_v3_05">
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                            Connect with
+                          </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <hr class="hr_style_v3_05">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row center_flex mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+                          <button type="submit" class="btn btn_login_signup tcenter" (click)="fbLogin()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">                            
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+                          <button type="submit" class="btn btn_login_signup tcenter" (click)="googleLogin()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">                            
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pr0px">
+                          <button type="submit" class="btn btn_login_signup tcenter" (click)="signInWithApple()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">                            
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mtb30px mregister">
+                      <div class="row mb10px">                    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" class="sp_fc fc_name" placeholder="Full Name" formControlName="fullname" id="fullname" maxlength="20">
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+                          </div>
+
+                          <div *ngIf="fullname.invalid && fullname.touched">
+                            <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
+                            <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 6 characters</small>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <!-- <div class="row mb10px">                    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" id="name" class="sp_fc fc_name" placeholder="Last Name">
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+                          </div>
+                        </div>
+                      </div> -->
+              
+                      <div class="row mb10px">                    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" class="sp_fc" placeholder="Email Address" id="email" formControlName="email" maxlength="50" autocomplete="new-password" required>
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                          </div>
+
+                          <div *ngIf="emailvalid.invalid && emailvalid.touched">
+                            <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email address</small>
+                            <small *ngIf="emailvalid.errors?.pattern" class="text danger">Please enter a valid email</small>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="row mb10px">                    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" class="sp_fc" placeholder="Password" id="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" maxlength="15" required>
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+                          </div>
+
+                          <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
+                            <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
+                            <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 6 characters</small>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="row">                    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                          <input type="text" class="sp_fc" placeholder="Required Password" id="repeatpassowrd" formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
+                          <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+                          </div>
+
+                          <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
+                            <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat password</small>
+                            <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must be at least 6 characters</small>
+                          </div>
+                          <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
+                            <small *ngIf="passwordvalidation" class="text danger">Password and Repeat password must be same</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                          If you have a problem with signup, please email
+                          <a class="fw_500 fc_ffffff" href="mailto:support@humanwisdom.me" target="_top">
+                            support@humanwisdom.me.
+                          </a>
+                          By continuing you agree to our
+                          <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/terms-conditions')">
+                            terms of use
+                          </a>
+                          and
+                          <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/privacy-policy')">
+                            privacy policy
+                          </a>
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row mt40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid" (click)="signup()">
+                          Sign up
+                        </button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+                <!-- /signup -->
+
+                <!-- login -->
+                <div id="tab2" class="tab-pane fade in active" *ngIf="!isSignUp" [ngClass]="{' in active' : !isSignUp }">
+                  
+                  <div class="row mtb20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff tcenter">
+                        Register now and try humanwisdom for free
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <hr class="hr_style_v3_05">
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                          Connect with
+                        </h4>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <hr class="hr_style_v3_05">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row center_flex mt15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+                        <button type="submit" class="btn btn_login_signup tcenter" (click)="fbLogin()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">                            
+                        </button>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+                        <button type="submit" class="btn btn_login_signup tcenter" (click)="googleLogin()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">                            
+                        </button>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pr0px">
+                        <button type="submit" class="btn btn_login_signup tcenter" (click)="signInWithApple()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">                            
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt30px mregister">
+                    <div class="row mb10px">                    
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                        <input type="text" class="sp_fc" placeholder="Email Address" id="email2" [(ngModel)]="this.email" autocomplete="new-password" required>
+                        <div class="fc_img">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="row mb10px">                    
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                        <input type="text"class="sp_fc" placeholder="Password" id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
+                        <div class="fc_img">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+                        </div>
+                      </div>
+                      <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
+                        Password must be Minimum 6 Characters. No Spaces allowed
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row mt10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+                      <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" routerLink="/onboarding/forgotpassword">
+                        Forgot password ?
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="row mt40px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <button type="btn" class="btn btn_ctd" [disabled]="!this.email||!this.password" (click)="emailLogin()">
+                        Sign in
+                      </button>
+                    </div>
+                  </div>
+                  
+                </div>
+                <!-- /login -->
+              </div>
+            </div>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- popup modal -->
+<div class="modal fade" id="modal_popup" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal_free_limit" role="document">
+    <div class="">
+      <div class="modal-header b0">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/modal_close_01.svg" alt=""
+                class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body pt0px">
+        <!-- modal content -->
+        <div class="row center_flex">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter boldi">
+              You do not have an Active Subcription
+            </h4>
+            <!-- <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Please <a (click)="getrenew()" style="color: blue;">Click</a> Here to renew or <a style="color: blue;" (click)="getfreeuser()">Click</a> Here to proceed as a free user
+            </h4>   -->
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click here to <a (click)="getrenew()" style="color: blue;" class="italic">Subscribe</a>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              <span class="">OR</span>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click here to <a (click)="getrenew()" style="color: blue;" class="italic">Use Your Subscription Code</a>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              <span class="">OR</span>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click Here to proceed as a <a style="color: blue;" (click)="getfreeuser()" class="italic">Free User</a>
+            </h4>
+          </div>
+        </div>
+        <!-- /modal content -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /popup modal -->
+
+<span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>
+
+<div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="otpModalLabel" aria-hidden="true">
+  <div class="modal-dialog center_flex" role="document">
+    <div class="modal-content popup_03">
+      <div class="modal-body">
+
+        <button type="button" style="visibility: hidden;" class="btn_popup_close m0px" #closeotpmodal data-dismiss="modal" aria-label="Close">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+            class="img-responsive fright">
+        </button>
+
+        <div class="row mb10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="fw_400 fs_14px lh_21px fc_000000 italici mtb0px">
+              <span class="mtb0px">
+                A one-time password has been sent to your email address
+              </span>
+
+              <span class="fc_1092a7 fw_500">
+                (Check your spam folder too).
+              </span>
+
+              <br>
+
+              <span class="mtb0px">
+                Please enter it below.
+              </span>
+            </h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer b0">
+        <button type="button" class="btn btn-primary" [disabled]="!verificationCode" (click)="verifyCode()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<span #enableotpmodal data-toggle="modal" data-target="#enableotpmodal"></span>
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>

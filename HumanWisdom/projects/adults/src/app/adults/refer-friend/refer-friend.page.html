@@ -1,24 +1,5 @@
 <!-- top navigation -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollbs">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt=""
-          class="img-responsive">
-      </a>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <a>
-        <h1 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-          Refer a Friend
-        </h1>
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-
-    </div>
-  </div>
-</div>
+<app-feature-header title="Refer a friend"></app-feature-header>
 <!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
@@ -28,70 +9,84 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white p0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
 
               <div class="raf_div_01">
-                <div class="row mt40px">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_400 fs_24px lh_120p fc_000000 tcenter">
-                      Introduce a friend to
-                      <span class="fw_700 fs_24px lh_120p fc_000000">
-                        HumanWisdom
-                      </span>
+                <div class="row center_flex mb15px">
+                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+                      Introduce a friend to HappierMe
                     </h4>
                   </div>
                 </div>
 
-                <div class="row mt15px">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_400 fs_14px lh_140p fc_000000 tcenter mb0px">
+                <div class="row center_flex">
+                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
                       We will plant a tree for every friend who subscribes.
-                    </h4>
-
-                    <h4 class="fw_400 fs_12px lh_140p fc_000000 mt5px tcenter">
-                      <a routerLink="/adults/treesisters" class="fw_700 fs_12px lh_140p fc_000000 underline">Click
-                        here</a>
+                      <a routerLink="/adults/treesisters" class="fw_600 fc_e58d82">
+                        Click here
+                      </a>
                       to read about our Tree Planting Program.
                     </h4>
                   </div>
                 </div>
 
-                <div class="row mt30px">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" id="name" (keyup)="keyname($event.target)" class="form-control cfc7"
-                      placeholder="Friend’s Name">
+                <div class="mtb30px mregister">
+                  <div class="row mb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                      <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" required [(ngModel)]="name" placeholder="Friend name">
+                      <div class="fc_img">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <small class="text danger ml-10">{{namevalidation()}}</small>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                      <input type="text" id="email" (keyup)="keyemail($event.target)" required [(ngModel)]="email" class="sp_fc" placeholder="Friend email">
+                      <div class="fc_img">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                      </div>
+                    </div>
+                    <small class="text danger ml-10">{{emailvalidation()}}</small>
                   </div>
                 </div>
 
-                <div class="row mt10px">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" id="email" (keyup)="keyemail($event.target)" class="form-control cfc7"
-                      placeholder="Friend’s E-mail">
-                  </div>
-                </div>
-
-                <div class="row mt30px pb40px center_flex">
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                    <button type="submit" class="btn btn-warning btn_raf_submit w100" (click)="submitrefer()">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <button type="submit" [disabled]="disabled()"  class="btn btn_raf_submit w100" (click)="submitrefer()">
                       Submit
                     </button>
                   </div>
                 </div>
               </div>
 
-              <div class="row mt30px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="fw_500 fs_12px lh_140p fc_5d5d5d">
-                    OR SHARE VIA
-                  </h4>
+              <div class="row mt30px mb15px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <hr class="mtb0px hr_style_v3_05">
+                  </div>
+
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                      Or share via
+                    </h4>
+                  </div>
+
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <hr class="mtb0px hr_style_v3_05">
+                  </div>
                 </div>
               </div>
 
-              <div class="row center_flex mt10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+              <div class="row center_flex">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                   <share-buttons  [theme]="'circles-dark'"
                   [include]="['facebook','twitter','linkedin','whatsapp']"
                   [show]="4"
@@ -99,53 +94,13 @@
                   [url]="'https://humanwisdom.me/'"
                   [description]="'Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom'"
                   [autoSetMeta]="false"
-                 ></share-buttons>
-
-
-                 <!-- <a  target="_blank"  href="whatsapp://send?text=https://humanwisdom.me/
-                 Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom"  data-action="share/whatsapp/share" > -->
-                  <!-- <div class="col-md-2 col-sm-2 col-xs-2" (click)="sharewhatsapp()">
-                    <img style="width:50px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/whatsapp.png"
-                      class="">
-                  </div> -->
-                <!-- </a> -->
-
-
-                  <!-- <a  href="https://web.whatsapp.com/" action="whatsapp://send" >
-
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/whatsapp.png"
-                      class="">
-
-
-
-                  </a>
-
-                  <a href="https://www.instagram.com/humanwisdom.me/">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/instagram.png"
-                        class="">
-                    </div>
-                  </a>
-
-                  <a href="https://www.facebook.com/humanwisdomguide/">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/facebook.png"
-                        class="">
-                    </div>
-                  </a>
-
-                  <a href="https://twitter.com/HumanWisdom_me">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/twitter.png"
-                        class="">
-                    </div>
-                  </a> -->
+                 >
+                  </share-buttons>
                 </div>
               </div>
 
               <div class="pagebreak"></div>
 
-            </form>
           </div>
         </div>
       </div>
@@ -159,6 +114,4 @@
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="content">
-</app-modal>
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>

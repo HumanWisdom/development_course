@@ -16,7 +16,7 @@ export class S235tPage implements OnInit {
   bg="conditioning_w2"
 
   bookmark=0
-  path=this.router.url
+ path :any;
   audioPage="/conditioning/s235"
   toc="/conditioning/s232"
   
@@ -27,17 +27,15 @@ export class S235tPage implements OnInit {
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-
-  
- 
-  
   avDuration=localStorage.getItem("avDuration235")
   totalTime=localStorage.getItem("totalTime235")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   constructor(private router: Router,
     private service:AdultsService,
-    ) { }
+    ) {
+      this.path = this.router.url;
+     }
  
  
   ngOnInit() {

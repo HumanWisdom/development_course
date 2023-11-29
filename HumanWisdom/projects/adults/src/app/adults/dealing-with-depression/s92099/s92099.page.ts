@@ -30,7 +30,9 @@ export class S92099Page implements OnInit {
   //sendOption=[]
   sessionOption92099=JSON.parse(sessionStorage.getItem("sessionOption92099"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption92099"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/dealing-with-depression/s92001"
 
   constructor(private router: Router,
@@ -121,12 +123,12 @@ export class S92099Page implements OnInit {
     console.log(id,e)
     if(e==true)
     {
-      document.getElementById(divid).style.backgroundColor = '#FFC455';
+     document.getElementById(divid).style.backgroundColor = '#E58D82';
       this.sendOption.push(id)
     }
     else if(e==false)
     {
-      document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
       this.sendOption.forEach((element,index)=>{
         if(element==id) this.sendOption.splice(index,1);
       });
@@ -160,12 +162,12 @@ export class S92099Page implements OnInit {
   {
     if(this.sessionOption92099.includes(id))
     {
-      // document.getElementById(divid).style.backgroundColor = '#FFC455';
+      //document.getElementById(divid).style.backgroundColor = '#E58D82';
       return true
     }
     else 
     {
-      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
       return false
     }
   }

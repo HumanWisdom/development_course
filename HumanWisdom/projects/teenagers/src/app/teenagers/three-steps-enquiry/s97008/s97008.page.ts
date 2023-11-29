@@ -16,13 +16,15 @@ export class S97008Page implements OnInit,OnDestroy {
   bg_cft="bg_pink_orange"
   bg="pink_orange_w6"
   title="Step #3 - Question. Why do I think or feel this way?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/three-steps-enquiry/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/three-steps-enquiry/audios/1.3.mp3'
 
   transcriptPage="three-steps-enquiry/s97008t"
   toc="three-steps-enquiry/s97001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

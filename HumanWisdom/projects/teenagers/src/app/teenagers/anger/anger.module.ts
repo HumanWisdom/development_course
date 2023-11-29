@@ -130,6 +130,7 @@ import { S118100Page } from './s118100/s118100.page';
 import { S118101Page } from './s118101/s118101.page';
 import { S118102Page } from './s118102/s118102.page';
 import { S118103Page } from './s118103/s118103.page';
+import { S118103p1Page } from './s118103p1/s118103p1.page';
 import { S118104Page } from './s118104/s118104.page';
 
 import { AngerRoutingModule } from './anger-routing.module';
@@ -264,6 +265,7 @@ import { TeenagersService } from '../teenagers.service';
     S118101Page,
     S118102Page,
     S118103Page,
+    S118103p1Page,
     S118104Page,
   ],
   imports: [

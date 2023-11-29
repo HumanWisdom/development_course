@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s129001',
@@ -20,18 +22,25 @@ export class S129001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  livingwithpeaceResume=sessionStorage.getItem("livingwithpeaceResume")
+ 
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/63.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  pgResume=sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
+
 
   constructor
   (
@@ -41,7 +50,7 @@ export class S129001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(111);
+    this.getSetModuleData(129);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -167,6 +176,15 @@ export class S129001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/journal'])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }

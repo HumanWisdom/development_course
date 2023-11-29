@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -10,6 +10,8 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./be-happier.page.scss'],
 })
 export class BeHappierPage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   userId = 100
   qrList: any
@@ -22,14 +24,40 @@ export class BeHappierPage implements OnInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
+  mediaUrl: any;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+      this.mediaUrl = {
+        pc01: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/44.mp3',
+          title: 'Coping with an illness'
+        },
+        pc02: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/40.mp3',
+          title: 'Overcoming Depression'
+        },
+        pc03: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/45.mp3',
+          title: 'The Resilience Mindset'
+        },
+        pc04: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          title: 'The Art of Living and Dying'
+        }
+      }
     }
 
   ngOnInit() {
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/be-happier');
+
     this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
     this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
     this.meta.updateTag({ property: 'description', content: 'Discover simple, practical tips for living a happier life and find joy in everyday moments.' })
@@ -326,5 +354,15 @@ export class BeHappierPage implements OnInit {
     }else {
       this.router.navigate([route]);
     }
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 }

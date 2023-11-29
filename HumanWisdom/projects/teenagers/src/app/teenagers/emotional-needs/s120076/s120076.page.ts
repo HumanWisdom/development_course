@@ -12,8 +12,9 @@ export class S120076Page implements OnInit
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_w7"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/emotional-needs/audios/3.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+3.4.mp3'
+
   title="#3 Ask questions  "
   toc="/emotional-needs/s120001"
   transcriptPage="emotional-needs/s120076t"
@@ -26,7 +27,9 @@ export class S120076Page implements OnInit
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName= "teenagers";

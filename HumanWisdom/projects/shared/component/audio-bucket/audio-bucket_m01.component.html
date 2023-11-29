@@ -1,0 +1,51 @@
+<div class="right_col ml0 cright_col" #screen [ngClass]="bg" role="main">
+  <!-- Class -->
+  <div class="cw100p cabsolute_pyramid">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <div class="x_panel dflexblock_pyramid">
+          <div class="x_content c_white fwunset tcenter pt0px mt0px">
+            <form class="">
+
+              <h1 class="txt1 tcenter">
+                {{title}}
+              </h1>
+
+              <!-- jquery audio player plugin  -->
+              <!-- <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div #playerContainer id="playerContainer" class=""></div>
+                </div>
+              </div> -->
+              <!-- /jquery audio player plugin -->
+
+              <!-- angular audio player plugin  -->
+              <!-- <ngx-circular-player></ngx-circular-player>   -->
+              <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
+                  <audio id="aud1" controls controlsList="nodownload" #audio>
+                    <source [src]="audioLink" type="audio/mpeg">
+                  </audio>
+                  <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                   -->
+                </div>
+              </div>
+              <!-- /angular audio player plugin -->
+
+              <h3 *ngFor="let l of list"class="txt8 oneliner_txt_pointer">
+                  1. Conditioning
+              </h3>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">
+</app-modal>

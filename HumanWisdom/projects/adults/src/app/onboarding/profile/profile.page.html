@@ -1,494 +1,432 @@
-<!-- <app-topnav></app-topnav> -->
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" routerLink="/adults/adult-dashboard">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
 
-<!-- header -->
-<app-tn-hwp-project [enablebookmark]="isSubscribe"></app-tn-hwp-project>
-<!-- <app-tn-dashboard-v03></app-tn-dashboard-v03> -->
-<!-- /header -->
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Profile
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+      <!-- <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/settings.svg" alt="" class="p0">
+      </a> -->
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
 <div class="right_col mc_01">
-  <!-- Class -->
   <div class="cw100p">
 
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_user_profile">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
-              <div class="row forum_pt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <div class="opaque_border_outer">
-                    <img
-                      src="{{url === '' ||  url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
-                      alt="" class="p0 opaque_border_inner img-responsive img_profile_01">
-                  </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                  <h4 class="tcenter fw_400 fs_20px lh_23px fc_ffffff mtb0px pt20px">
-                    {{loginResponse.Name}}
-                  </h4>
+              <!-- new code -->
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
 
-                  <h6 class="tcenter fw_400 fs_12px lh_14px fc_ffffff mtb0px mt5px mb0pxi">
-                    {{email}}
-                  </h6>
-                </div>
-              </div>
-
-              <!-- <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                    <a class="" routerLink="/onboarding/profile-edit">
-                      <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px pt20px">
-                        Edit Profile
-                      </h6>
-                    </a>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                      <img src="{{url === '' ||  url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}" alt="" class="img-responsive border_profile_img"/>
+                    </div>
                   </div>
 
-                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                    <a class="" routerLink="/onboarding/change-password">
-                      <h6 class="tcenter fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px mt10px">
-                        Change Password
-                      </h6>
-                    </a>
-                  </div>
-                </div> -->
+                  <div class="pt1 profile_pe_div">
+                    <div class="row mt35px mb5px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                          {{loginResponse.Name}}
+                        </h4>
+                      </div>
+                    </div>
 
-              <div class="row pt20px center_flex">
-                <div class="col-md-8 col-sm-8 col-xs-12 center_flex">
-                  <!-- <div class="col-md-6 col-sm-6 col-xs-6 tright pprofile_pwd">
-                    <a class="" routerLink="/onboarding/profile-edit">
-                      <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
-                        Edit Profile
-                      </h6>
-                    </a>
-                  </div>
-                  <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                    <a class="" routerLink="/onboarding/change-password">
-                      <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
-                        Change Password
-                      </h6>
-                    </a>
-                  </div> -->
-                  <a class="" (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')">
-                    <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
-                      Edit Profile
-                    </h6>
-                  </a>
-                  <hr class="vhr_01">
-                  <a class="" (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
-                    <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
-                      Change Password
-                    </h6>
-                  </a>
-
-                  <!-- <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                      <a class="" (click)="deleteMyData()">
-                        <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
-                          Delete My Data
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                          {{email}}
                         </h6>
-                      </a>
-                    </div> -->
-                </div>
-
-
-              </div>
-
-              <div class="row" *ngIf="isPartner">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <a class="" (click)="getAffiliate()" *ngIf="RoleID === 8">
-                    <h6 class="tcenter fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px mt10px">
-                      Partnership Report
-                    </h6>
-                  </a>
-                </div>
-              </div>
-
-              <div class="row mt30px profile_div">
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai forum_pt20px">
-                  <div class="col-md-2 col-sm-2 col-xs-2 prelative tcenter">
-                    <div class="wpts_circle">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_03.svg"
-                        alt="" class="p0">
-                      <h6 class="fw_700 fs_16px lh_19px fc_243949 absolute_01">
-                        {{loginResponse.Points}}
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-5 col-xs-5 p0">
-                    <h4 class="fw_700 fs_12px lh_14px fc_243949">
-                      Wisdom Points
-                    </h4>
-                  </div>
-                  <!-- <div class="col-md-6 col-sm-5 col-xs-5 tright">
-                    <a>
-                      <h4 class="fw_500 fs_12px lh_130p fc_1092a7">
-                        <span class="pr5px">
-                          Redeem Now
-                        </span>
-                        <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg"
-                          alt="" class="p0">
-                      </h4>
-                    </a>
-                  </div> -->
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_4">
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d tleft mtb0px">
-                      Overall Progress
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai pt10px_01">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="progress prelative profile_progress">
-                      <div class="progress-bar prelative profile_pb" [style.width]="overallPercentage + '%'"></div>
-                      <h6 class="absolute_02 fw_700 fs_16px lh_19px fc_ffffff">
-                        {{overallPercentage}}%
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      {{loginResponse.Modules}}
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      Modules
-                    </h6>
-                  </div>
-
-                  <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      {{loginResponse.Notes}}
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      Notes
-                    </h6>
-                  </div>
-
-                  <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      {{loginResponse.Surveys}}
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      Surveys
-                    </h6>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_4">
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                    <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d">
-                      Wisdom Survey Score
-                    </h4>
-                  </div>
-                  <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                    <a routerLink="/adults/wisdom-survey/wisdom-survey-insight">
-                      <h4 class="fw_500 fs_12px lh_130p fc_1092a7">
-                        <span class="pr5px">
-                          Insights
-                        </span>
-                        <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg"
-                          alt="" class="p0">
-                      </h4>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                  <div class="col-md-2 col-sm-2 col-xs-3">
-                    <h4 class="fw_700 fs_32px lh_37px fc_b92f48">
-                      {{loginResponse.hwScore}}
-                    </h4>
-                  </div>
-                  <div class="col-md-10 col-sm-10 col-xs-9 p0 tleft">
-                    <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d">
-                      {{score}}% {{direction}} since last survey
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <button type="submit" (click)="survey()" class="btn btn-warning w100 btn_tws">
-                      Take the Wisdom Survey
-                    </button>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d">
-                      Fill the wisdom survey once a week and track your wisdom progress
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_4">
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d">
-                      This week
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="sun ? 'btn_tw_01' : 'btn_tw_02'">
-                      S
-                    </button>
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="mon ? 'btn_tw_01' : 'btn_tw_02'">
-                      M
-                    </button>
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="tue ? 'btn_tw_01' : 'btn_tw_02'">
-                      T
-                    </button>
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="wed ? 'btn_tw_01' : 'btn_tw_02'">
-                      W
-                    </button>
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="thu ? 'btn_tw_01' : 'btn_tw_02'">
-                      T
-                    </button>
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="fri ? 'btn_tw_01' : 'btn_tw_02'">
-                      F
-                    </button>
-                    <button type="submit" class="btn btn-warning btn-round" [ngClass]="sat ? 'btn_tw_01' : 'btn_tw_02'">
-                      S
-                    </button>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 pt16px">
-                  <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      <!-- {{loginResponse.WkHours}} hours -->
-                      {{loginResponse.WkHours}} minutes
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      This week
-                    </h6>
-                  </div>
-
-                  <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <!-- <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      {{loginResponse.Streak}} days
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      Streak
-                    </h6> -->
-                  </div>
-
-                  <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <!-- <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      72 hours
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      Total usage
-                    </h6> -->
-
-                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      {{loginResponse.Streak}} days
-                    </h6>
-                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                      Streak
-                    </h6>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="enablepayment">
-                  <hr class="hr_style_4">
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="enablepayment">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                        Payment Details
-                      </h4>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                      <a routerLink="/onboarding/payment-details">
-                        <h4 class="fw_500 fs_12px lh_130p fc_1092a7 mtb0px">
-                          <span class="pr5px">
-                            Update
-                          </span>
-                          <img
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg"
-                            alt="" class="p0">
-                        </h4>
-                      </a>
-                    </div>
-
-                  </div>
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_400 fs_12px lh_14px fc_adadad mt5b0px" *ngIf="paymentDetail">
-                      {{paymentDetail['CCName'] + ' ' + 'xxxx xxxx xxxx ' + paymentDetail['CCNumber']}}
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_4">
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                        Subscriptions
-                      </h4>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                      <a routerLink="/onboarding/myprogram">
-                        <h4 class="fw_500 fs_12px lh_130p fc_1092a7 mtb0px">
-                          <span class="pr5px">
-                            Details
-                          </span>
-                          <img
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg"
-                            alt="" class="p0">
-                        </h4>
-                      </a>
-                    </div>
-
-                  </div>
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 *ngFor="let p of myPrograms" class="fw_400 fs_12px lh_14px fc_adadad mt5b0px">
-                      {{p.Prog}} : {{p.ActKey}}
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_4">
-                </div>
-
-                <!-- <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                      <div class="col-md-6 col-sm-6 col-xs-6">
-                        <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                          Certificates
-                        </h4>
                       </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                        <a>
-                          <h4 class="fw_500 fs_12px lh_130p fc_c4c4c4 mtb0px">
-                            <span class="pr5px">
-                              Details
-                            </span>
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg" alt="" class="p0">
+                    </div>
+
+                    <div class="row mtb20px center_flex">
+                      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <div class="prelative">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_wisdom_points.svg" class="img-responsive w100p">
+                            <h4 class="mtb0px fs_12px fw_600 lh_100p fc_ffffff absolute_center_txt">
+                              {{loginResponse.Points}}
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                            Progress points
                           </h4>
-                        </a>
+                        </div>
+
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright ws_nowrap">
+                          <!-- <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                            Redeem now
+                            <i class="fa fa-angle-right ml10px"></i>
+                          </h4> -->
+                        </div>
                       </div>
-
                     </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_400 fs_12px lh_14px fc_adadad mt5b0px">
-                        No certificates earned yet
-                      </h4>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft">
+                           Overall Progress
+                          </h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_15px fw_600 lh_18px fc_ffffff tright">
+                            {{overallPercentage}}%
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt5px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="progress progress-sm progress_profile">
+                          <div class="progress-bar" role="progressbar" aria-valuemax="100" [style.width]="overallPercentage + '%'"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mtb20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                            {{loginResponse.Modules}}
+                          </h4>
+
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                            Modules
+                          </h4>
+                        </div>
+
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                            {{loginResponse.Notes}}
+                          </h4>
+
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                            Notes
+                          </h4>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                            {{loginResponse.Surveys}}
+                          </h4>
+
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                            Surveys
+                          </h4>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                          <button type="button" class="btn btn_profile_ep" (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')">
+                            Edit Profile
+                          </button>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                          <button type="button" class="btn btn_profile_cp" (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
+                            Change password
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <hr class="hr_style_4">
-                  </div> -->
-
-                <div class="col-md-12 col-sm-12 col-xs-12 pb5rem">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai" routerLink="/adults/refer-friend">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
-                        Invite Friends
-                      </h4>
+                  <div class="div_wss mt20px">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tleft">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff tleft">
+                            Happiness score
+                          </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                          <a routerLink="/adults/wisdom-survey/progress">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                              Progress
+                              <i class="fa fa-angle-right ml10px"></i>
+                            </h4>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                      <a>
-                        <h4 class="fw_500 fs_12px lh_130p fc_1092a7 mtb0px">
-                          <span class="pr5px">
-                            Share
-                          </span>
-                          <img
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg"
-                            alt="" class="p0">
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_v3_04 mtb15pxi">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82 tleft">
+                          {{loginResponse.hwScore}}
                         </h4>
-                      </a>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tleft">
+                          {{score}}% {{direction}} up since last survey
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row mt20px mb10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <button type="button" class="btn btn_ttws" (click)="survey()">
+                          Take the happiness survey
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft">
+                          <!-- Fill the happiness survey once a week and track your happiness progress -->
+                          Fill the happiness survey once a month and track your happiness progress
+                        </h4>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <hr class="hr_style_4">
-                </div>
+                  <div class="row mt20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff tleft">
+                        This week
+                      </h4>
+                    </div>
+                  </div>
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <a (click)="deleteMyData()">
-                    <h4 class="fw_500 fs_12px lh_130p fc_1092a7 dmd">
-                      Delete my data
-                    </h4>
-                  </a>
-                  <!-- <button type="submit" class="btn btn-default" (click)="deleteMyData()">
-                    <h4 class="fw_500 fs_12px lh_130p fc_1092a7 dmd">
-                      Delete my data
-                    </h4>
-                  </button>  -->
-                </div>
+                  <div class="row mtb15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_days ws_nowrap center_flex">
+                      <button type="button" class="btn btn_profile_days peach" [ngClass]="sun ? 'peach' : 'gray'">
+                        S
+                      </button>
 
-                <!-- delete my data using modal -->
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                  delete my data modal
-                </button>
+                      <button type="button" class="btn btn_profile_days" [ngClass]="mon ? 'peach' : 'gray'">
+                        M
+                      </button>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
+                      <button type="button" class="btn btn_profile_days" [ngClass]="tue ? 'peach' : 'gray'">
+                        T
+                      </button>
+
+                      <button type="button" class="btn btn_profile_days" [ngClass]="wed ? 'peach' : 'gray'">
+                        W
+                      </button>
+
+                      <button type="button" class="btn btn_profile_days" [ngClass]="thu ? 'peach' : 'gray'">
+                        T
+                      </button>
+
+                      <button type="button" class="btn btn_profile_days" [ngClass]="fri ? 'peach' : 'gray'">
+                        F
+                      </button>
+
+                      <button type="button" class="btn btn_profile_days" [ngClass]="sat ? 'peach' : 'gray'">
+                        S
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row mt20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                         <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                              {{loginResponse.WkHours}} minutes
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                              This week
+                            </h4> 
                           </div>
                         </div>
                       </div>
-                      <div class="modal-body">
-                        ...
+
+                      <div class="div_middle left"></div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 div_middle">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                              {{loginResponse.Streak}} days
+                            </h4>  
+                          </div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                              Streak
+                            </h4>
+                          </div>
+                        </div>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+
+                      <div class="div_middle right"></div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                              72 hours
+                            </h4> 
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                              Total usage
+                            </h4>
+                          </div>
+                        </div>
                       </div>
+
                     </div>
                   </div>
-                </div> -->
-                <!-- /delete my data using modal -->
 
+                  <div class="row mtb20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <hr class="hr_style_v3_04">
+                    </div>
+                  </div>
+
+                  <div class="div_pi">
+                    <a *ngIf="enablepayment">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                              Payment Details
+                            </h4>
+
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7" *ngIf="paymentDetail">
+                              <!-- Mastercard 42xx xxxx xxxx xx91 -->
+                              {{paymentDetail['CCName'] + ' ' + 'xxxx xxxx xxxx ' + paymentDetail['CCNumber']}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                            <a routerLink="/onboarding/payment-details">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                                Update
+                                <i class="fa fa-angle-right ml10px"></i>
+                              </h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a>
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                              Subscription
+                            </h4>
+
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7" *ngFor="let p of myPrograms">
+                              {{p.Prog}}: {{p.ActKey}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                            <a routerLink="/onboarding/myprogram">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                                Details
+                                <i class="fa fa-angle-right ml10px"></i>
+                              </h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <!-- <a>
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                            Certificates
+                          </h4>
+
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                            No certificates earned yet
+                          </h4>
+                        </div>
+                      </div>
+                    </a> -->
+
+                    <a routerLink="/adults/refer-friend">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                              Invite Friends
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                              Share
+                              <i class="fa fa-angle-right ml10px"></i>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="row mt20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <button type="button" class="btn profile_dmd center_flex" (click)="deleteMyData()">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_trash.svg" class="img-responsive mr10px">
+                        Delete my data
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
               </div>
+              <!-- /new code -->
 
               <div class="pagebreak"></div>
 
@@ -498,7 +436,6 @@
       </div>
     </div>
   </div>
-  <!--/Class -->
 </div>
 <!-- /page content -->
 

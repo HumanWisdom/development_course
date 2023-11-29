@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The longest relationship for most of us is with our parents, with plenty of accumulated memories, both happy and sad. We see them through the screen of those memories. If they are happy ones, our relationships are loving. If they are not, they can be strained. As we get older, perhaps we begin to see them as fallible human beings and that can be disappointing, because as children we held them in such high regard. We could ask if we are friends with them, and is there a sense of kindness and caring, or just one of duty? Can we let go of any painful memories and see them freshly, as human beings, and meet them with acceptance and compassion? As they get older they need us to look after them, just as they looked after us. It's the cycle of life. How we do that is a test of our character as human beings
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

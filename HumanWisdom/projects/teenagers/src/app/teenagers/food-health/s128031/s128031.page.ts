@@ -14,12 +14,14 @@ export class S128031Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w3"
   title="Obesity and mental health  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/food-health/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/food-health/audios/food-health+1.2.mp3'
   transcriptPage="food-health/s128031t"
   toc="food-health/s128001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

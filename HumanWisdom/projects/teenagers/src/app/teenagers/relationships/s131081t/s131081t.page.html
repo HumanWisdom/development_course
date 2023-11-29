@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If you notice, your mind is usually thinking about itself most of the time. It is difficult for most of us to accept that deep down the human mind operates from self-interest, because we do not want to think we are selfish. As a result we don’t examine it and it continues to operate from behind the screen of our awareness and impacts our life, including our relationships. To explore anything within us we have to suspend judgement so we can observe it. Just that process of being aware of it and how it operates in our life allows us to respond with intelligence, so we can act with integrity. This awareness also helps us to understand and have more compassion for others who may be acting from their self-interest.
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

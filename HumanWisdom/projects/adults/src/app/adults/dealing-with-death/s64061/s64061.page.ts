@@ -15,7 +15,9 @@ export class S64061Page implements OnInit {
   bg = "teal_w11"
   hint = " It may be you value your close relationships, but do not put enough energy into them  "
   toc = "/dealing-with-death/s64001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -20,7 +20,9 @@ export class S112001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url 
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000); 
  
   token="1234"
   shareUrl=this.path+"?t="+this.token
@@ -29,15 +31,14 @@ export class S112001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  fearResume=sessionStorage.getItem("fearResume")
+  pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/19.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
-  pgResume=sessionStorage.getItem("pgResume")
-  resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");
+ 
   moduleData:ProgramModel;
-  addictionResume=sessionStorage.getItem("addictionResume")
+ 
  
  constructor
   (

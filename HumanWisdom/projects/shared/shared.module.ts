@@ -1,7 +1,7 @@
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 import { FtPrevNextComponent } from '../shared/component/ft-prev-next/ft-prev-next.component';
 import { FtPrevComponent } from '../shared/component/ft-prev/ft-prev.component';
@@ -87,6 +87,9 @@ import { TxtOverlayTopComponent } from './component/txt-overlay-top/txt-overlay-
 import { VideoContentCrossComponent } from './component/video-content-cross/video-content-cross.component';
 import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
+import { AdultsAudioMeditationComponent } from './component/adults-audio-meditation/adults-audio-meditation.component';
+import { LoginRegisterModalComponent } from './component/login-register-modal/login-register-modal.component';
+import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premium-block/subscribe-to-premium-block.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -167,7 +170,10 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     VideoYoutubeComponent,
     CertificationComponent,
     VideoContentCrossComponent,
-    ModalComponent
+    ModalComponent,
+    AdultsAudioMeditationComponent,
+    LoginRegisterModalComponent,
+    SubscribeToPremiumBlockComponent
   ],
   imports: [
     CommonModule,
@@ -180,6 +186,7 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
       debug: true
     }),
     ShareIconsModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 75,
       "space": -5,
@@ -272,7 +279,10 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     BgVideoComponent,
     VideoYoutubeComponent,
     VideoContentCrossComponent,
-    ModalComponent
+    ModalComponent,
+    AdultsAudioMeditationComponent,
+    LoginRegisterModalComponent,
+    SubscribeToPremiumBlockComponent
   ]
 })
 export class SharedModule { }

@@ -14,7 +14,7 @@ export class S105098Page implements OnInit,OnDestroy {
   bg_cft="bg_pink_orange"
   bg="pink_orange_w5"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/conditioning/videos/3.3.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/conditioning/videos/3.3.mp4'  
   title="How can we be free of past suffering? If you are in the middle of a painful event now, there are other resources in the app to help - eg. - modules on Bullying, Stress, Sorrow, and Anxiety."
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_01.jpg"
   userId:any
@@ -27,7 +27,9 @@ export class S105098Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/conditioning/s105001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

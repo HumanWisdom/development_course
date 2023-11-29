@@ -20,14 +20,19 @@ export class S123001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+  //freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  externalapprovalResume=sessionStorage.getItem("externalapprovalResume")
+  pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
   tocColor="white"
   lastvisited = false;
@@ -41,7 +46,7 @@ export class S123001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(111);
+    this.service.setmoduleID(123);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })

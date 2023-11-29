@@ -16,7 +16,9 @@ export class S119021Page implements OnInit
   bg="dark_blue_w6"
   hint = "You could dislike people with different identities or think ill of them, for example"
   toc = "/identity/s119001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -27,7 +29,7 @@ export class S119021Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1883
   reflection: any
   reflectionA: any
   r119021 = JSON.parse(sessionStorage.getItem("r119021"))

@@ -14,7 +14,7 @@ export class S44234Page implements OnInit,OnDestroy {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_flat"
-
+ 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -26,7 +26,9 @@ export class S44234Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="/stress/s44001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   constructor(

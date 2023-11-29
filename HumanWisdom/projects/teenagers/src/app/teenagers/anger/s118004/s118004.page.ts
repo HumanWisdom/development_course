@@ -15,12 +15,14 @@ export class S118004Page implements OnInit,OnDestroy
   bg_cft="bg_red_pink"
   bg="red_pink_w2"
   title="Exploring anger"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/anger/audios/anger+1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/anger/audios/Anger+1.1.mp3'
   transcriptPage="anger/s118004t"
   toc="anger/s118001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

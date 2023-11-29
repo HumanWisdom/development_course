@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Do you ever pause and ask yourself what relationship you have with your teachers? Do you see them as human beings who have their own challenges to deal with? Are you afraid of them? Do you have affection for them? Do you value them and respect them? 
+            Or, do you judge them constantly as good or bad? 
+            They are after all, the same human being you are deep down and they are trying to do their best for you. Just like you, they will have days when they are not at their best. They have feelings like you do, and can get hurt, just as you can. Do you appreciate how difficult their job can be?
+            Do you look to them for praise, and are you hurt when you don’t get it? 
+            Do you just see them as doing a job which is to serve you - or do you see it as a two way relationship. As in all relationships, you get back what you put in. 
+            What are you doing to nurture your relationships with your teachers? Do you ever pause and say thank-you, for example? 
+         
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

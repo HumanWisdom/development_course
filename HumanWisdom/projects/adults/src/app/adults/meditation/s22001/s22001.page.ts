@@ -19,7 +19,9 @@ export class S22001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
  
   token="1234"
@@ -28,7 +30,7 @@ export class S22001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  meditationResume=sessionStorage.getItem("meditationResume")
+  meditationResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/22.png"
   tocColor="white"
   lastvisited = false;
@@ -80,7 +82,11 @@ export class S22001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
-    // continue where you left    
+   
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+  
+     // continue where you left  
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
     {
@@ -146,9 +152,9 @@ export class S22001Page implements OnInit,OnDestroy {
     
 
   }
-  goBack(){
+ /*  goBack(){
     this.location.back()
-  }
+  } */
 
 
   submitProgress(){

@@ -1,8 +1,11 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
+
 
 @Component({
   selector: 'HumanWisdom-manage-your-emotions',
@@ -10,6 +13,8 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./manage-your-emotions.page.scss'],
 })
 export class ManageYourEmotionsPage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   userId = 100
   qrList: any
@@ -25,15 +30,41 @@ export class ManageYourEmotionsPage implements OnInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
+  mediaUrl: any;
 
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+      this.mediaUrl = {
+        pc01: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          title: 'Understanding our own ego'
+        },
+        pc02: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          title: 'The Art of Living and Dying'
+        },
+        pc03: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
+          title: 'Five ways to avoid stress'
+        },
+        pc04: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/31.mp3',
+          title: 'Cultivating Calm: Deal with Anger'
+        }
+      }
      }
 
   ngOnInit() {
+
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
     this.meta.updateTag({ property: 'title', content: 'Managing Emotions with Mindfulness & Positive Psychology' })
@@ -373,6 +404,22 @@ export class ManageYourEmotionsPage implements OnInit {
     }else {
       this.router.navigate([route]);
     }
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+  }
+
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
 }

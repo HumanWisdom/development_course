@@ -27,7 +27,9 @@ audioLink=this.mediaAudio+'/Criticism/audios/criticism+3.5.mp3'
  endTime:any
  totalTime:any
  bookmark=0
- path=this.router.url
+ path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
  avDuration:any
  transcriptPage="/criticism/s381t"
 

@@ -16,8 +16,8 @@ export class S119004Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_flat"
   title=""
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/identity/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/identity/audios/identity+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",
@@ -29,7 +29,9 @@ export class S119004Page implements OnInit,OnDestroy
   transcriptPage="identity/s119004t"
   toc="identity/s119001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -12,7 +12,8 @@ export class S109069Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w6"
+  bg="blue_w4" 
+  
   toc="meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -23,9 +24,11 @@ export class S109069Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url 
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+ 
   constructor
   (
     private router: Router,
@@ -38,6 +41,7 @@ export class S109069Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -72,7 +76,9 @@ export class S109069Page implements OnInit {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+    }).subscribe(res=>
+      { 
+      })
   }
 
   submitProgress()
@@ -88,7 +94,7 @@ export class S109069Page implements OnInit {
       "screenType":this.screenType,
       "timeSpent":this.totalTime
     }).subscribe(res=>
-      {
+      { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },

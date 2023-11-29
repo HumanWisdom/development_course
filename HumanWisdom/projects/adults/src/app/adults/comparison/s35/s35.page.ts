@@ -22,7 +22,9 @@ export class S35Page implements OnInit,AfterViewInit,OnDestroy {
   transcriptPage="comparison/s35t"
   toc="comparison/s0"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

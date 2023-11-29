@@ -99,4 +99,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
       });
   }
 
+  clickbanner(url){
+    
+  }
 }

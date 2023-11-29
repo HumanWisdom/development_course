@@ -211,10 +211,10 @@
         padding: 0px 10px !important;
     }
 
-    .tsp 
+    /* .tsp 
     {
         padding: 0px 10px !important;
-    }
+    } */
 
     .td_search_icon_ext
     {
@@ -387,13 +387,21 @@
     .odiv::-webkit-scrollbar-track,
     .ghn::-webkit-scrollbar-track
     {
-        margin: 0 0 0 1rem;
+        /* margin: 0 0 0 1rem; */
         /* margin: 0 0 0 0.2rem; */
+        /* margin: 0 20px 0 20px; */
+        margin: 0 20px 0 0px;
     }
 
     .wediv::-webkit-scrollbar-track
     {
         margin: 0 0 0 0 !important;
+    }
+
+    .oxdiv::-webkit-scrollbar-track,
+    .oxdiv_ae::-webkit-scrollbar-track
+    {
+        margin: 0 0 0 20px !important;
     }
 
     .cp0_01
@@ -416,10 +424,10 @@
         margin: 0;
     }
 
-    .dpanel_01 .panel-body
+    /* .dpanel_01 .panel-body
     {
         margin-right: -10px;
-    }
+    } */
 
     .cp20px
     {
@@ -441,10 +449,10 @@
         width: 70%
     }
 
-    .tsp
+    /* .tsp
     {
         padding: 0px 20px !important;
-    }
+    } */
 }
 
 @media (max-width: 768px)
@@ -622,6 +630,16 @@
     .ad_search_icon
     {
         left: 7% !important;
+    }
+
+    .odiv_user > [class^="col-"]
+    {
+        width: 60%;
+    }
+
+    .oli_tray 
+    {
+        /* padding: 0 58px; */
     }
 }
 
@@ -823,7 +841,7 @@
 
     #ic_carousel .carousel-indicators
     {
-        bottom: 8%;
+        /* bottom: 8%; */
     }
 
     .mpfy
@@ -939,6 +957,23 @@
     {
         padding-top: 2%;
     }
+
+    /* .oli_tray 
+    {
+        bottom: 8% !important;
+    } */
+
+    /* .lab-modal-body */
+    .modal.fade.in .modal_ext_01
+    {
+        top: 0;
+        overflow: auto;
+    }
+
+    .col_cw
+    {
+        width: 30%;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)
@@ -946,6 +981,13 @@
     .textarea_02 
     {
         height: 155px;
+    }
+
+    /* .modal.fade.in .lab-modal-body */
+    .modal.fade.in .modal_ext_01
+    {
+        overflow-y: overlay !important;
+        height: 100%;
     }
 }
 
@@ -989,6 +1031,11 @@
         height: auto;
         z-index: unset;
     }
+
+    .oli_tray
+    {
+        /* padding: 0 !important; */
+    }
 }
 
 @media (max-width: 1366px)
@@ -1023,6 +1070,12 @@
     {
         font-size: 35px;
     }
+
+    /* .lab-modal-body 
+    {
+        height: 400px !important;
+        overflow: overlay;
+    } */
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) 
@@ -1031,4 +1084,40 @@
   {
     display: block;
   }
+}
+
+@media (min-width: 1281px)
+{
+    .box_v3_03 
+    {
+        height: 430px;
+    }
+}
+
+@media (min-width: 1367px)
+{
+    .lab-modal-body
+    {
+        top: 0;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 300px)
+{
+    .fs_18px {
+        font-size: 12px !important;
+    }
+
+    .fs_12px {
+        font-size: 10px !important;
+    }
+}
+
+@media (min-width: 2560px)
+{
+    .col_cw
+    {
+        width: 20%;
+    }
 }

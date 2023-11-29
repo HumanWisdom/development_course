@@ -18,11 +18,13 @@ export class S117034Page implements OnInit,OnDestroy {
   title="Not being connected with ourselves can make us feel lonely"  
   
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+1.3.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+1.5.mp3'
   transcriptPage="loneliness/s117034t"
   toc="loneliness/s117001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

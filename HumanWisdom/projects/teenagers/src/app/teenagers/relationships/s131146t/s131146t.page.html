@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Arguments occur in all friendships - usually over differences of opinion. I support this football club and you support the other one. I want to see one movie, and you another. Simple arguments can quickly get out of control if there are some underlying unresolved issues. You can ask yourself if the real reason for the argument is deeper than what appears on the surface. 
+            <br>All our opinions come from our unconscious conditioning which we are attached to, and the same process operates in both people having the argument. This understanding can often take the heat out of the situation and allow a compromise to be reached.
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

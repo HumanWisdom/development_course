@@ -45,10 +45,10 @@ export class S58087Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/adults/work/s58088'])
+    this.router.navigate(['/adults/work/s58087p1'])
   }
   prev(){
-    this.router.navigate(['/adults/work/s58086'])
+    this.router.navigate(['/adults/work/s58082'])
 
   }
 

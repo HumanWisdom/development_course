@@ -191,6 +191,64 @@ const routes: Routes = [
     path: 'dealing-with-death',
     loadChildren: () => import('./teenagers/dealing-with-death/dealing-with-death.module').then(m => m.DealingWithDeathModule)
   },
+  {
+    path: 'relationships',
+    loadChildren: () => import('./teenagers/relationships/relationships.module').then(m => m.RelationshipsModule)
+  },
+  {
+    path: 'communication',
+    loadChildren: () => import('./teenagers/communication/communication.module').then(m => m.CommunicationModule)
+  },
+  {
+    path: 'happiness',
+    loadChildren: () => import('./teenagers/happiness/happiness.module').then(m => m.HappinessModule)
+  },
+  {
+    path: 'love',
+    loadChildren: () => import('./teenagers/love/love.module').then(m => m.LoveModule)
+  },
+  {
+    path: 'bullying',
+    loadChildren: () => import('./teenagers/bullying/bullying.module').then(m => m.BullyingModule)
+  },
+  {
+    path: 'criticism',
+    loadChildren: () => import('./teenagers/criticism/criticism.module').then(m => m.CriticismModule)
+  }, 
+  {
+    path: 'opinions-beliefs',
+    loadChildren: () => import('./teenagers/opinions-beliefs/opinions-beliefs.module').then(m => m.OpinionsBeliefsModule)
+  },
+  {
+    path: 'success-failure',
+    loadChildren: () => import('./teenagers/success-failure/success-failure.module').then(m => m.SuccessFailureModule)
+  },
+  {
+    path: 'making-better-decisions',
+    loadChildren: () => import('./teenagers/making-better-decisions/making-better-decisions.module').then(m => m.MakingBetterDecisionsModule)
+  },
+  {
+    path: 'kindness',
+    loadChildren: () => import('./teenagers/kindness/kindness.module').then(m => m.KindnessModule)
+  },
+  {
+    path: 'social-media',
+    loadChildren: () => import('./teenagers/social-media/social-media.module').then(m => m.SocialMediaModule)
+  },
+  {
+    path: 'pressure-of-exams',
+    loadChildren: () => import('./teenagers/pressure-of-exams/pressure-of-exams.module').then(m => m.PressureOfExamsModule)
+  },
+  {
+    path: 'dealing-with-depression',
+    loadChildren: () => import('./teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
+  },
+
+  {
+    path: 'wisdom-exercise',
+    loadChildren: () => import('./teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  },
+
 ];
   
 
