@@ -23,8 +23,23 @@ export class HaveCalmMindPage implements OnInit {
   gamP: any
   meditationP: any
   withoutLanguageP: any
+  mediaUrl: any;
 
-  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) { }
+  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) 
+  { 
+    this.mediaUrl = {
+      pc01: 
+      {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+        title: 'Understanding our own ego'
+      },
+      pc02: 
+      {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
+        title: 'How can we overcome anxiety?'
+      }
+    }
+  }
 
   ngOnInit() {
     localStorage.setItem("NaviagtedFrom", '/adults/curated/have-calm-mind');
@@ -360,6 +375,10 @@ export class HaveCalmMindPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 
 }

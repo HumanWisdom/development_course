@@ -19,7 +19,7 @@ export class FeatureHeaderComponent implements OnInit {
   token=JSON.parse(localStorage.getItem("token"))
   socialShare=false
   address: any;
-  path="https://humanwisdom.me/adults/wisdom-stories"
+  path="https://humanwisdom.me"
 
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
@@ -34,10 +34,11 @@ export class FeatureHeaderComponent implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
-   
+
   }
 
   addToken(){
+    this.path += this.service.currentUrl;
     // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
     this.socialShare=true;
     this.ngNavigatorShareService.share({
@@ -54,6 +55,6 @@ export class FeatureHeaderComponent implements OnInit {
    goBack(){
      this.location.back()
    }
- 
+
 
 }
