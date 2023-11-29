@@ -42,7 +42,7 @@ export class BlogArticlePage implements OnInit {
       }
       this.address =  this.router.url;
       this.route.queryParams.subscribe(params => {
-      this.blogid = params?.sId
+      this.blogid = this.extractUntilQuestionMark(params?.sId)
       if(isNaN(+this.blogid)){
         var blogid=this.getBlogList(this.blogid);
 
@@ -58,6 +58,15 @@ export class BlogArticlePage implements OnInit {
 
 
   }
+   extractUntilQuestionMark(inputString) {
+    var index = inputString.indexOf('?');
+    if (index !== -1) {
+        var result = inputString.substring(0, index);
+        return result;
+    } else {
+        return inputString;
+    }
+}
 
   getblog() {
     localStorage.setItem('blogId',this.blogid);

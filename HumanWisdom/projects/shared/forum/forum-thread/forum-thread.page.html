@@ -193,8 +193,8 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" [disabled]="DisabledComment(posttread)" >
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" (click)="enableCommentTextBox()" class="img-responsive mr5px">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" [disabled]="DisabledComment(posttread)" (click)="enableCommentTextBox()" >
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
                           {{posttread.ReplyCount}}
                           </button>
                         </div>
