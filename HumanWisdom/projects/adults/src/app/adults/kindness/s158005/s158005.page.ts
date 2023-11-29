@@ -14,7 +14,7 @@ export class S158005Page implements OnInit,OnDestroy {
   bg_cft="bg_pink_orange"
   bg="pink_orange_w4"
   title="The importance of kindness?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/teenagers/modules/kindness/audios/1.1.mp3'
   transcriptPage="kindness/s158005t"
   toc="kindness/s158001"

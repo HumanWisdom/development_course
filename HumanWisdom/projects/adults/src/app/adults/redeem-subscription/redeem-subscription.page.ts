@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdultsService } from '../adults.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'redeem-subscription',
@@ -49,7 +50,8 @@ export class RedeemSubscriptionPage implements OnInit {
     private router: Router,
     private services: OnboardingService,
     public service: AdultsService,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private location: Location 
   ) {
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
@@ -221,6 +223,11 @@ export class RedeemSubscriptionPage implements OnInit {
     this.modaldata['firstname'] = namedata[0];
     this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
   }
+
+  goBack(){
+    this.location.back()
+  }
+
 }
 
 
