@@ -64,8 +64,10 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     });
   }
   post() {
-    if(this.selectedOption!=0){
+    if(this.selectedOption!=0 && this.buttonText !='Choose Category'){
          this.submitPost();
+    }else{
+      this.selectedOption=0;
     }
   }
 

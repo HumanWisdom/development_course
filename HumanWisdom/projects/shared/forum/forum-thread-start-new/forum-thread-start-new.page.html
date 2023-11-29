@@ -329,7 +329,7 @@
 
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="btn" id="liLogout" #closeLogoutmodal class="btn btn_ctd" (click)="submitPost()">
+          <button type="btn" id="liLogout" #closeLogoutmodal data-dismiss="modal" class="btn btn_ctd" (click)="submitPost()">
             Continue
           </button>
         </div>
@@ -337,7 +337,7 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <a data-dismiss="modal" class="mtb0px fs_15px fw_400 lh_21px fc_e58d82">
+          <a data-dismiss="modal" #closeLogoutmodal class="mtb0px fs_15px fw_400 lh_21px fc_e58d82">
             Cancel
           </a>
         </div>
