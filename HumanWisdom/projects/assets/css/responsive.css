@@ -1121,3 +1121,22 @@
         width: 20%;
     }
 }
+
+@media (max-width: 360px)
+{
+    .img_logo 
+    {
+        width: 100px;
+    }
+
+    .active_programs
+    {
+        height: auto;
+    }
+
+    .active_programs h6
+    {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
