@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our mind is comparing all the time but we are not aware of it. We compare what we see or what we hear with what we know and this is going on behind the scenes without our awareness. 
+          If we see someone doing better than us - perhaps going on a better holiday, or wearing a new dress, or doing something ‘cool’ we can get envious of them.
+          The hurt of envy can lead to anger and us thinking that they are just showing off to make us feel bad. It can also lead to anger and feelings of low self-esteem. All this happens automatically.
+          Before social media you only had a few people to compare yourself with. Now you can compare yourself to hundreds of people everyday, so the envy and pain it can cause is magnified. 
+          Becoming aware of this process going on in the background helps us take charge of it, so we only compare ourselves with others when it suits us, and can be free
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
