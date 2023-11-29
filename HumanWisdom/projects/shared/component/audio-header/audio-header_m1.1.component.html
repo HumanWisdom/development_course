@@ -154,35 +154,73 @@
 <!-- /Modal -->
 
 <!-- add note modal -->
-<div class="modal fade in" id="exampleModalCenter" data-keyboard="false" data-backdrop="false">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
-      
-      <div class="mregister">
-        <div class="row mb10px">                    
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-            <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal_note_journal w100p mt0px" role="document">
+    <!-- top navigation -->
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_border_box">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+          <div
+            class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-3 col-md-offset-4 col-sm-offset-2 col-xs-offset-2">
+            <a data-toggle="modal" data-dismiss="modal">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit_fill.svg"
+                class="img-responsive" alt="">
+            </a>
           </div>
         </div>
       </div>
-
-      <div class="row mt30px mb10px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="btn" class="btn btn_ctd" [disabled]="guest || !Subscriber" (click)="addNote()" data-dismiss="modal">
-            Add note
-          </button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" data-dismiss="modal">
-            Skip
-          </a>
-        </div>
-      </div>
-
     </div>
+    <!-- /top navigation -->
+
+    <!-- content -->
+    <div class="row center_flex h100vh">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="modal-body">
+          <form>
+
+            <div class="row pt20px pb30px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12"
+                [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
+              </div>
+            </div>
+
+            <div class="row center_flex flex_wrap">
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                <a>
+                  <button type="button" [disabled]="guest || !Subscriber" class="btn btn_ctd" (click)="addNote()"
+                    data-dismiss="modal">Add Note to Journal</button>
+                </a>
+              </div>
+            </div>
+
+            <br>
+
+            <div class="row center_flex flex_wrap">
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                <a>
+                  <!-- <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button> -->
+                  <h4 class="mb0 w100 btn_skip txt5 fs16px tcenter" data-dismiss="modal">Skip</h4>
+                </a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /content -->
+
   </div>
 </div>
 <!-- /add note modal -->
