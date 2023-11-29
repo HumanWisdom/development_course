@@ -14,10 +14,10 @@ export class S64071p1Page implements OnInit {
   bg_cft = "bg_teal"
   bg = "teal_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/16.mp4'
+  videoLink = this.mediaVideo + '/events/27.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
-  title = "Dealing with dealing-with-death"
+  title = "Exploring death, for a richer life"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/dealing_with_death/dealing_with_death_01.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
