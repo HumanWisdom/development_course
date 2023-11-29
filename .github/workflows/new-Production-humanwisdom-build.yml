@@ -87,14 +87,18 @@ jobs:
       with:
         host: ${{ secrets.NEW_PRODUCTION_HOST }}
         username: ${{ secrets.New_PRODUCTION_USERNAME }}
-        key: ${{ secrets.NEW_PRODUCTION_SSH_KEY }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
         script: |
-          sudo rm -rf builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/course_backup_1
           sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
           sudo mkdir -p /var/www/html/course
           sudo rm -rf /var/www/html/course
-          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course      
+          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course
+          sudo chown ubuntu:ubuntu /var/www/html/course
+          sudo chown ubuntu:ubuntu /var/www/html/course_backup_1
+          
+          
           
