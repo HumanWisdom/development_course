@@ -55,6 +55,16 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/9.mp3',
           title: 'Living with Compassion'
+        },
+        pc05: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/57.mp3',
+          title: 'Understanding expectations for happier relationships'
+        },
+        pc06: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/56.mp3',
+          title: 'How can we be more kind?'
         }
       }
      }

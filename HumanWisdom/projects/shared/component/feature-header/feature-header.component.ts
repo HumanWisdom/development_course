@@ -23,6 +23,7 @@ export class FeatureHeaderComponent implements OnInit {
   address: any;
   path:any;
   baseUrl:any;
+
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
     private location:Location,
@@ -36,7 +37,7 @@ export class FeatureHeaderComponent implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
-   
+
   }
   shareUrl (programType) {
     switch (programType) {
@@ -52,6 +53,7 @@ export class FeatureHeaderComponent implements OnInit {
   }
 
   addToken(){
+    this.shareUrl(SharedService.ProgramId);
     // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
     this.socialShare=true;
     this.ngNavigatorShareService.share({
@@ -68,6 +70,6 @@ export class FeatureHeaderComponent implements OnInit {
    goBack(){
      this.location.back()
    }
- 
+
 
 }
