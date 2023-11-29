@@ -514,10 +514,6 @@ const routes: Routes = [
     loadChildren: () => import('./intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
   },
   {
-    path: 'social-media',
-    loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
-  },
-  {
     path: 'kindness',
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
   }
