@@ -57,8 +57,8 @@ export class FeatureHeaderComponent implements OnInit {
     // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
     this.socialShare=true;
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.baseUrl+this.address
     }).then( (response) => {
       console.log(response);
