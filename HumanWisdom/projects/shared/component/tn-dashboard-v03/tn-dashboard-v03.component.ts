@@ -34,6 +34,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   cardlist = [];
   countryCode: any;
   userDetails: any = [];
+  loginResponse: any;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
@@ -41,6 +42,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     if (userid === 'T') {
       this.isloggedIn = true
     }
+    this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -52,7 +54,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
       }
   }
 
-  
+
 
   ngOnInit() {
     setTimeout(() => {
@@ -144,5 +146,5 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
-  
+
 }

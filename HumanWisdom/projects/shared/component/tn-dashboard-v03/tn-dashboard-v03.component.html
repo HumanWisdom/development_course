@@ -67,7 +67,8 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
         <a (click)="routedashboard()">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_v3.svg" class="img-responsive" alt="HumanWisdom"> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hwp_logo_v3_white.svg" class="img-responsive img_logo" alt="HumanWisdom">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hwp_logo_v3_white.svg"
+            class="img-responsive img_logo" alt="HumanWisdom">
         </a>
       </div>
 
@@ -92,8 +93,8 @@
       <!-- logged in  -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="isloggedIn">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
-          <div class=""  *ngIf="!subscriber" >
-            <a  id="liSubscribe" (click)="Subscribe()" class="">
+          <div class="" *ngIf="!subscriber">
+            <a id="liSubscribe" (click)="Subscribe()" class="">
               <button type="button" class="btn_login center_flex">
                 Subscribe
               </button>
@@ -107,12 +108,17 @@
 
           <div class="mlr10px">
             <a>
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg" (click)="goToNotification()" class="" alt="">
+              <img *ngIf="loginResponse['NewNotifications'] && loginResponse['NewNotifications'] !== 0"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg"
+                (click)="goToNotification()" class="" alt="">
+              <img *ngIf="!loginResponse['NewNotifications'] || loginResponse['NewNotifications'] === 0"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_inactive.svg"
+                (click)="goToNotification()" class="" alt="">
             </a>
           </div>
 
           <div *ngIf="enableHamburger">
-            <app-hamburger  [userDetails]="userDetails"></app-hamburger>
+            <app-hamburger [userDetails]="userDetails"></app-hamburger>
           </div>
 
         </div>
