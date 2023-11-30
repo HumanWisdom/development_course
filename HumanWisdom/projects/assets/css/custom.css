@@ -26090,6 +26090,7 @@ h1
   white-space: normal;
   display: flex;
   align-items: center;
+  border: 0 !important;
 }
 
 .psubscription_options
@@ -26356,7 +26357,9 @@ h1
 .mdpd_title
 {
   margin: 11px 0 0 0;
-  white-space: break-spaces;
+  /* white-space: break-spaces; */
+  white-space: initial;
+  word-wrap: break-word;
 }
 
 .btn_mdpd_pfy
@@ -35628,7 +35631,9 @@ li ol > li:before {
 .Body span,
 .Body b span,
 #docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p span,
-.h4_blogs p span
+.h4_blogs p span,
+.h4_blogs h2 font,
+.h4_blogs p font
 {
   font-size: 12px !important;
   font-weight: 400;
@@ -35639,7 +35644,8 @@ li ol > li:before {
 
 .Body span.Hyperlink0 a span,
 .Body span.Hyperlink1 a span,
-.h4_blogs a span
+.h4_blogs a span,
+.h4_blogs p a font
 {
   font-size: 12px !important;
   font-weight: 600;
@@ -35652,5 +35658,10 @@ li ol > li:before {
 .h4_blogs p
 {
   background: transparent !important;
+}
+
+.btn_am
+{
+  background: transparent;
 }
 /* /version - 03 */
