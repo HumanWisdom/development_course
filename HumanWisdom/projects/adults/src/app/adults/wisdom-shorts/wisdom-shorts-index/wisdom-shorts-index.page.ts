@@ -74,8 +74,8 @@ export class WisdomShortsIndexPage implements OnInit {
     console.log("url")
     this.path = "https://happierme.app" + this.address;
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);

@@ -167,8 +167,8 @@ export class AudioHeaderComponent implements OnInit {
       this.path = this.baseUrl + this.address + `?t=${this.token}`
     }
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
     })
