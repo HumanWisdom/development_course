@@ -48,10 +48,10 @@
               </div>
 
               <div class="row mt20px" *ngIf="selectedOption == 4 && imageUrl!=null" >
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="img-edit" class="tcenter w100 prelative">
                     <div class="">
-                      <img [src]="imageUrl" class="img-responsive h-250 img-forum">
+                      <img [src]="imageUrl" class="img-responsive w100 h-250 img-forum">
                     </div>
                     <div class="absolute_edit">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_img_edit.svg" class="img-responsive">
@@ -77,7 +77,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea type="text" class="mtb0px ta_new_thread" id="Post" name="Post" 
                    rows="10" 
-                   placeholder="{{getPlaceHolder()}}"
+                   placeholder="Talk about issues related to stress, anxiety, depression and mental health."
                     maxlength="256" 
                   [(ngModel)]="thread" required="required"></textarea>
                 </div>
@@ -106,8 +106,7 @@
 
               <div class="row" >                  
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 btn_post_anonymously">
-          <button type="button" class="btn btn_ctd center_flex"   data-toggle="modal" data-target="#modal_logout"
-              (click)="post()">                      
+                  <button type="button" class="btn btn_v3_nt_post"  (click)="post()">                      
                     Post
                   </button>  
                 </div>
@@ -164,7 +163,7 @@
 <!-- choose category -->
 <div class="modal fade" id="choose_category" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc choose-category-popup col_cw">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc choose-category-popup">
 
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -302,48 +301,7 @@
         </div>
       </a>
 
-    </div>
+     </div>
   </div>
 </div>
 <!-- /choose category -->
-<!-- modal logout -->
-<div *ngIf="selectedOption==0" class="modal fade in" id="modal_logout" data-keyboard="false" data-backdrop="false">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
-
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <a class="">
-            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/modal_logout.svg" alt="" class="p0"> -->
-          </a>
-        </div>
-      </div>
-
-      <div class="row mtb30px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
-            Are you sure you want to continue without Category?
-          </h4>
-        </div>
-      </div>
-
-      <div class="row mb10px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="btn" id="liLogout" #closeLogoutmodal data-dismiss="modal" class="btn btn_ctd" (click)="submitPost()">
-            Continue
-          </button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <a data-dismiss="modal" #closeLogoutmodal class="mtb0px fs_15px fw_400 lh_21px fc_e58d82">
-            Cancel
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!-- /modal logout -->

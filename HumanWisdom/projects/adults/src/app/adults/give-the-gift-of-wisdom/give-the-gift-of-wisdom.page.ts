@@ -87,7 +87,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   share() {
     this.ngNavigatorShareService
       .share({
-        title: "HumanWisdom Program",
+        title: "HappierMe Program",
         text:
           "Hey, checkout HumanWisdom's Give the gift of Wisdom program – https://www.humanwisdom.me/adults/give-the-gift-of-wisdom"
       })
