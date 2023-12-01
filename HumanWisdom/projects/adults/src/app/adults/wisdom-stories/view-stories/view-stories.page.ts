@@ -308,8 +308,8 @@ export class ViewStoriesPage implements OnInit {
 
   addToken(){
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path+'?sId='+this.sId +'&t='+ JSON.parse(localStorage.getItem("token"))
     }).then( (response) => {
     })

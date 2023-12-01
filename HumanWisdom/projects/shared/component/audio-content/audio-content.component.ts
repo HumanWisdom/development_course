@@ -6,13 +6,16 @@ import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-audio-content',
   templateUrl: './audio-content.component.html',
-  styleUrls: [ ProgramType.Adults == SharedService.ProgramId ?  './audio-content.component.scss' : './audio-content-teenager.component.scss']
+  styleUrls: ['./audio-content.component.scss'],
+  // styleUrls: [ ProgramType.Adults == SharedService.ProgramId ?  './audio-content.component.scss' : './audio-content-teenager.component.scss']
 })
 export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   yellow = "#FFC455"
   @Input() bg: string;
   @Input() title: string;
   @Input() audioLink: string;
+  @Input() transcriptPage: string;
+  
   @Output() sendAvDuration = new EventEmitter<string>();
   myAudio: any
   pauseTime: any

@@ -37,9 +37,9 @@ export class S51000Page implements OnInit, OnDestroy {
   stories: any = []
 
   baseUrl:string;
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  path :any;
+ 
+
   isSubscriber = false;
 
   constructor(
@@ -72,6 +72,7 @@ export class S51000Page implements OnInit, OnDestroy {
         }
       })
     }
+    this.path = this.router.url;
     this.stories = splitarr
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
@@ -191,8 +192,8 @@ export class S51000Page implements OnInit, OnDestroy {
   share(){
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.baseUrl+this.path
     }).then( (response) => {
       console.log(response);
