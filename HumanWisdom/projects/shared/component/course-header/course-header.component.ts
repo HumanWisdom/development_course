@@ -78,9 +78,14 @@ export class CourseHeaderComponent implements OnInit {
 
     // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
-    this.path = this.router.url;
+    this.path = this.router.url;   
+
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
+
+    if(this.path.includes("noticing-thoughts") && isNaN(this.scrNumber)){
+      this.scrNumber="30001"
+          }
     this.getProgress(this.scrNumber)
 
     this.shared = false
@@ -136,7 +141,10 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   goToToc() {
-    this.router.navigate(['/' + this.programName + '/' + this.toc])
+    if(this.toc.includes(this.programName))
+     this .router.navigate(['/' + this.toc])
+    else
+      this.router.navigate(['/' + this.programName + '/' + this.toc])
   }
 
   goToDash() {

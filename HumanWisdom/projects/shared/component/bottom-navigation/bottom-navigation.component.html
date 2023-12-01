@@ -16,7 +16,7 @@
 
       <a (click)="routeDash()" class="footer_index">
         <div *ngIf="!dash">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_home_inactive.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_home_inactive.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Home
@@ -24,7 +24,7 @@
         </div>
 
         <div *ngIf="dash">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_home_active.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_home_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Home
@@ -34,7 +34,7 @@
 
       <!-- <a (click)="routeSearch()" class="footer_index">
         <div *ngIf="!search">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/search.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/search.svg"
             alt="">
           <p class="mb0px silver_chalice">
             Search
@@ -44,7 +44,7 @@
 
         <div *ngIf="search">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/search_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/search_active.svg"
             alt="">
           <p class="mb0px">
             Search
@@ -54,7 +54,7 @@
 
       <a (click)="routeSearch()" class="footer_index">
         <div *ngIf="!search">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_explore_inactive.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_explore_inactive.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Explore
@@ -64,7 +64,7 @@
 
         <div *ngIf="search">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_explore_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_explore_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Explore
@@ -74,7 +74,7 @@
 
       <a (click)="routeJournal()" class="footer_index">
         <div *ngIf="!journal">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_journal_inactive.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_journal_inactive.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Journal
@@ -83,7 +83,7 @@
 
         <div *ngIf="journal">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_journal_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_journal_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Journal
@@ -93,7 +93,7 @@
 
       <a (click)="routeForum()" class="footer_index">
         <div *ngIf="!fourm">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_forum_inactive.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_forum_inactive.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Forum
@@ -102,7 +102,7 @@
 
         <div *ngIf="fourm">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_forum_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_forum_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Forum
@@ -112,7 +112,7 @@
 
       <!--
       <a class="footer_index"> 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more.svg" alt="">        
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/more.svg" alt="">        
         <p class="mb0px">
           More
         </p>
@@ -122,7 +122,7 @@
       <a (click)="profileclickevent()" class="footer_index">
         <div *ngIf="!enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url == '' ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url }}"
+          src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/UsersAvatar/' + url)}}"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Profile
@@ -131,7 +131,7 @@
 
         <div *ngIf="enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url == '' ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
+          src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/UsersAvatar/' + url)}}"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Profile
@@ -139,7 +139,7 @@
         </div>
 
         <div *ngIf="!isloggedIn">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_footer_login.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_footer_login.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Login
