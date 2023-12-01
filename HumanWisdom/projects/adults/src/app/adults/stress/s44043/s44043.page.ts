@@ -15,7 +15,7 @@ export class S44043Page implements OnInit,OnDestroy {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="stress_overlay3"
-  title=""
+  title="Where do our reactions come from?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/stress/audios/stress+2.2.mp3'
 
