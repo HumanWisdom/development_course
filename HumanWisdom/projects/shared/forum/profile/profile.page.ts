@@ -49,7 +49,7 @@ export class ProfilePage implements OnInit {
   public resume = []
   public bookmarkLength: any;
   profileData: any = [];
-  profileImage: string;
+  profileImage: string='';
   enableAlert: boolean;
   profileUsername:string="";
   programType = ProgramType.Adults

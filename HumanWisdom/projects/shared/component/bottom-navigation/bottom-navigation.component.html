@@ -122,7 +122,7 @@
       <a (click)="profileclickevent()" class="footer_index">
         <div *ngIf="!enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
+          src="{{url == '' ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url }}"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Profile
@@ -131,7 +131,7 @@
 
         <div *ngIf="enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url === '' ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
+          src="{{url == '' ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Profile
