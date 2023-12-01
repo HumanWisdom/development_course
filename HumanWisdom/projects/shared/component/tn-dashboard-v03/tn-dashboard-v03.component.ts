@@ -46,7 +46,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-      if(!changes.enableHamburger.firstChange){
+      if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
         if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
           console.log(changes.enableHamburger.currentValue);
           this.enableHamburger = changes.enableHamburger.currentValue;
