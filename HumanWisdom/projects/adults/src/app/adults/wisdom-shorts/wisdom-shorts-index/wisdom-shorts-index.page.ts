@@ -20,7 +20,9 @@ export class WisdomShortsIndexPage implements OnInit {
   path: string;
   address: string;
   wisdomshorts = [];
+  allwisdomshorts = [];
   isSubscriber = false;
+  searchedText:any
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: AdultsService, private meta: Meta, private title: Title) {
@@ -57,7 +59,7 @@ export class WisdomShortsIndexPage implements OnInit {
         });
 
         this.wisdomshorts = res;
-
+        this.allwisdomshorts = res;
 
       }
     })
@@ -74,8 +76,8 @@ export class WisdomShortsIndexPage implements OnInit {
     console.log("url")
     this.path = "https://happierme.app" + this.address;
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -84,7 +86,7 @@ export class WisdomShortsIndexPage implements OnInit {
         console.log(error);
       });
   }
-  
+
   wisdoshortsevent(val, video, title) {
     localStorage.setItem('wisdomvideotitle', title);
     let loggedin = localStorage.getItem("isloggedin")
@@ -94,12 +96,17 @@ export class WisdomShortsIndexPage implements OnInit {
       if (res === true) {
         this.router.navigate([video])
       } else {
-        if(loggedin && loggedin === 'T' && sub && sub === '1') {
+        if (loggedin && loggedin === 'T' && sub && sub === '1') {
           this.router.navigate([video])
-        }else {
+        } else {
           this.router.navigate(['/subscription/start-your-free-trial']);
         }
       }
     })
+  }
+
+  searchPodcast() {
+    let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+    this.wisdomshorts = filterlist;
   }
 }

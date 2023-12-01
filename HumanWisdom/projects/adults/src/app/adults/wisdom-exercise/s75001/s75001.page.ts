@@ -31,8 +31,8 @@ export class S75001Page implements OnInit {
   }
   share(){
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: "https://humanwisdom.me"+this.path
     }).then( (response) => {
       console.log(response);

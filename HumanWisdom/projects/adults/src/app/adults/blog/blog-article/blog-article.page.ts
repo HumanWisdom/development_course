@@ -196,8 +196,8 @@ export class BlogArticlePage implements OnInit {
   share() {
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);

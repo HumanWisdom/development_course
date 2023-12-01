@@ -14,6 +14,8 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() bg: string;
   @Input() title: string;
   @Input() audioLink: string;
+  @Input() transcriptPage: string;
+  
   @Output() sendAvDuration = new EventEmitter<string>();
   myAudio: any
   pauseTime: any
