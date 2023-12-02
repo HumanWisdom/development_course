@@ -23,9 +23,13 @@ export class PodcastTocPage implements OnInit {
   tag='all';
   iframeSrc:SafeResourceUrl;
   @Input() podcastList = [];
+  allpodcastList = [];
   @Input() isdefaultShow = false;
   isSubscriber = false;
   address:any;
+  searchedText:any
+
+
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
     private activatedRoute:ActivatedRoute,
@@ -106,6 +110,7 @@ export class PodcastTocPage implements OnInit {
     this.service.GetPodcastList().subscribe((res) => {
       if (res) {
         this.podcastList = res;
+        this.allpodcastList = res;
       }
     })
   }
@@ -124,4 +129,9 @@ export class PodcastTocPage implements OnInit {
       // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
   }
+
+  searchPodcast(){
+    let filterlist =this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+    this.podcastList=filterlist;
+}
 }

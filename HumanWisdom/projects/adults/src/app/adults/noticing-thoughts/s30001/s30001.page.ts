@@ -14,7 +14,7 @@ export class S30001Page implements OnInit, OnDestroy {
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_flat"
-  toc = "/pathway/develop-a-calm-mind/"
+  toc = ""
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -43,11 +43,10 @@ export class S30001Page implements OnInit, OnDestroy {
   ngOnInit() {
     
    
-
     if(!localStorage.getItem("NaviagtedFrom")) 
         localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
     else
-        this.toc = localStorage.getItem("NaviagtedFrom").toString();
+        this.toc = localStorage.getItem("NaviagtedFrom").toString(); 
       
 
     
@@ -117,6 +116,11 @@ export class S30001Page implements OnInit, OnDestroy {
 
     if (this.userId !== 563) this.submitProgress()
 
+  }
+
+  goToToc() {
+    console.log('/adults/pathway/develop-a-calm-mind')
+    this.router.navigate(['/adults/pathway/develop-a-calm-mind'])
   }
 
   ngOnDestroy() {
