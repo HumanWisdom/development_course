@@ -51,6 +51,11 @@ export class BeHappierPage implements OnInit {
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
+        },
+        pc05: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/54.mp3',
+          title: 'How can we be happier?'
         }
       }
     }
