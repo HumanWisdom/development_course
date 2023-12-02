@@ -105,7 +105,7 @@ export class WisdomShortsIndexPage implements OnInit {
     })
   }
 
-  searchPodcast() {
+  searchShorts() {
     let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
     this.wisdomshorts = filterlist;
   }
