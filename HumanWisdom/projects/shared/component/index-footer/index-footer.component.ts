@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-index-footer',
@@ -15,13 +17,24 @@ export class IndexFooterComponent implements OnInit {
   enableprofile=false
   search=false
   Subscriber: any;
-  constructor(private router: Router) { }
+  url='';
+  userdetail:any;
+  defaultUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg";
+  constructor(private router: Router,private onboardingService: OnboardingService) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
     if(userid === 'T') {
-      this.isloggedIn = true
+      this.isloggedIn = true;
       this.Subscriber = localStorage.getItem('Subscriber')
+    }
+    var loggedInUserId = SharedService.getUserId();
+    if(loggedInUserId>0){
+      this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
+        this.userdetail = res[0];
+        this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+        this.profile = true;
+      });
     }
     if(this.router.url=="/adults/adult-dashboard")
     {

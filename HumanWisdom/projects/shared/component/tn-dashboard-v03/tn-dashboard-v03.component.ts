@@ -124,7 +124,9 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   }
 
   Subscribe() {
-    this.router.navigate(['/subscription/start-your-free-trial']);
+    if(!this.ios){
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
 
   clickbanner(url = '') {
