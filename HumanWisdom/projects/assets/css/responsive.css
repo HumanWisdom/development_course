@@ -89,6 +89,13 @@
     {
         margin-top: 14.4%;
     }
+
+    body,    
+    .body,
+    .main_container
+    {
+        background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important;
+    }
 }
 
 @media (min-width: 413px) and (max-width: 767px)
