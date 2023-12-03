@@ -11,20 +11,20 @@
           </h4>
           <!-- playstore -->
           <a *ngIf="android" (click)="clickbanner()">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_playstore_ffffff.svg" alt=""
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/icons/google_playstore_ffffff.svg" alt=""
               class="img-responsive img_google_playstore">
           </a>
           <!-- /playstore -->
 
           <!-- appstore -->
           <a *ngIf="ios" (click)="clickbanner()">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/appstore_ffffff.svg" alt=""
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/icons/appstore_ffffff.svg" alt=""
               class="img-responsive img_google_playstore">
           </a>
           <!-- /appstore -->
         </div>
         <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" id="google_playstore_hide" (click)="closeplaystore()">
-          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_grey.svg" alt="" class=""> -->
+          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_grey.svg" alt="" class=""> -->
           <i class="fa fa-close fs_20px fc_ffffff"></i>
         </div>
       </div>
@@ -36,7 +36,7 @@
           <!-- desktop playstore -->
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 flex_ai">
             <a (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dplaystore.svg" alt=""
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/icons/dplaystore.svg" alt=""
                 class="img-responsive">
             </a>
           </div>
@@ -45,14 +45,14 @@
           <!-- desktop appstore -->
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 flex_ai">
             <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dappstore.svg" alt=""
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/icons/dappstore.svg" alt=""
                 class="img-responsive">
             </a>
           </div>
           <!-- /desktop appstore -->
         </div>
         <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" id="google_playstore_hide" (click)="closeplaystore()">
-          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_grey.svg" alt="" class=""> -->
+          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_grey.svg" alt="" class=""> -->
           <i class="fa fa-close fs_20px fc_ffffff"></i>
         </div>
       </div>
@@ -66,8 +66,9 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px col_cw">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
         <a (click)="routedashboard()">
-          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_v3.svg" class="img-responsive" alt="HumanWisdom"> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hwp_logo_v3_white.svg" class="img-responsive img_logo" alt="HumanWisdom">
+          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/logo/hwp_logo_v3.svg" class="img-responsive" alt="HumanWisdom"> -->
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hwp_logo_v3_white.svg"
+            class="img-responsive img_logo" alt="HumanWisdom">
         </a>
       </div>
 
@@ -92,8 +93,8 @@
       <!-- logged in  -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="isloggedIn">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
-          <div class=""  *ngIf="!subscriber" >
-            <a  id="liSubscribe" (click)="Subscribe()" class="">
+          <div class="" *ngIf="!subscriber">
+            <a id="liSubscribe" (click)="Subscribe()" class="">
               <button type="button" class="btn_login center_flex">
                 Subscribe
               </button>
@@ -101,18 +102,23 @@
           </div>
           <!-- <div *ngIf="isShowbookMark">
             <a routerLink="/adults/bookmarks">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_grey.svg" class="" alt="">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/bookmark_grey.svg" class="" alt="">
             </a>
           </div> -->
 
           <div class="mlr10px">
             <a>
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg" (click)="goToNotification()" class="" alt="">
+              <img *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0"
+                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_active.svg"
+                (click)="goToNotification()" class="" alt="">
+              <img *ngIf="!loginResponse || !loginResponse?.NewNotifications || loginResponse?.NewNotifications === 0"
+                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_inactive.svg"
+                (click)="goToNotification()" class="" alt="">
             </a>
           </div>
 
           <div *ngIf="enableHamburger">
-            <app-hamburger  [userDetails]="userDetails"></app-hamburger>
+            <app-hamburger [userDetails]="userDetails"></app-hamburger>
           </div>
 
         </div>
@@ -153,7 +159,7 @@
 
           <div class="mlr20px">
             <a>
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg" (click)="goToNotification()" class="" alt="">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_active.svg" (click)="goToNotification()" class="" alt="">
             </a>
           </div>
 

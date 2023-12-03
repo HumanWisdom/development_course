@@ -216,8 +216,11 @@ export class LoginSignupPage implements OnInit {
       .subscribe(
         (res) => {
           if (res) {
-            this.closemodal.nativeElement.click();
             this.codeVerified = true;
+            this.initializeRegistrationForm();
+            this.closeotpmodal.nativeElement.click();
+            this.closemodal.nativeElement.click();
+            this.isSignUp = false;
             localStorage.setItem(
               "codeVerified",
               JSON.stringify(this.codeVerified)
@@ -230,15 +233,14 @@ export class LoginSignupPage implements OnInit {
               "password",
               JSON.stringify(this.registrationForm.get("password").value)
             );
-            this.content = "Code has been verified , Login with Your Credentials";
-            this.enableAlert = true;
+            setTimeout(() =>{
+              this.content = "Code has been verified , Login with Your Credentials";
+              this.enableAlert = true;
+            }, 1000)
             localStorage.setItem(
               "signupfirst",
               'T'
             );
-            this.initializeRegistrationForm();
-            this.closeotpmodal.nativeElement.click();
-            this.isSignUp = false;
             // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
