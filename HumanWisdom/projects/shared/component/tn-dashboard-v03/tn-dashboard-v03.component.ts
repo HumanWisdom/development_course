@@ -42,7 +42,6 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     if (userid === 'T') {
       this.isloggedIn = true
     }
-    this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -52,6 +51,9 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
           this.enableHamburger = changes.enableHamburger.currentValue;
         }
       }
+
+      this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+
   }
 
 
