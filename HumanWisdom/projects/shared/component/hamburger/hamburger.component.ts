@@ -237,6 +237,8 @@ export class HamburgerComponent implements OnInit, OnChanges {
       }
       if(!this.ios && route == '/subscription/start-your-free-trial'){
          this.router.navigate([route])
+      } else if(route != '/subscription/start-your-free-trial'){
+        this.router.navigate([route])
       }
     }
   }
