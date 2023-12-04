@@ -108,10 +108,10 @@
 
           <div class="mlr10px">
             <a>
-              <img *ngIf="loginResponse['NewNotifications'] && loginResponse['NewNotifications'] !== 0"
+              <img *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_active.svg"
                 (click)="goToNotification()" class="" alt="">
-              <img *ngIf="!loginResponse['NewNotifications'] || loginResponse['NewNotifications'] === 0"
+              <img *ngIf="!loginResponse || !loginResponse?.NewNotifications || loginResponse?.NewNotifications === 0"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_inactive.svg"
                 (click)="goToNotification()" class="" alt="">
             </a>
