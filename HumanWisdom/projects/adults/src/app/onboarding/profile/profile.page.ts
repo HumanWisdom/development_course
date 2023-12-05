@@ -152,7 +152,7 @@ export class ProfilePage implements OnInit {
             console.log(error)
           },
           () => {
-            if (!isSubscribe) {
+           /*  if (!isSubscribe) {
               this.isCancel = false;
               this.enableAlert = true;
               this.contentText = "We will delete your data once your subscription period ends"
@@ -160,7 +160,10 @@ export class ProfilePage implements OnInit {
               this.isCancel = false;
               this.enableAlert = true;
               this.contentText = "Your data will be deleted from our system within the next 7 days"
-            }
+            } */
+              this.isCancel = false;
+              this.enableAlert = true;
+              this.contentText = "Your data has been deleted successfuly."
           }
         )
     }
