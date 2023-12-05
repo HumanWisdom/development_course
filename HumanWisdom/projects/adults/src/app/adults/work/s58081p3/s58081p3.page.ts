@@ -41,7 +41,7 @@ export class S58081p3Page implements OnInit,OnDestroy {
     private location:Location) { }
  
   ngOnInit() {
-    $('.transcriptDiv').hide();
+    $('#transcriptDiv').hide();
 
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
