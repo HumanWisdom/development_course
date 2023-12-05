@@ -116,7 +116,7 @@ export class ProfilePage implements OnInit {
   }
 
   deleteMyData() {
-    this.contentText = 'Are you sure you want to delete your data?';
+    this.contentText = 'Are you sure you want to delete your data? Your entire account, including content and purchases will be deleted.';
     this.isCancel = true;
     this.enableAlert = true;
   }
@@ -140,7 +140,7 @@ export class ProfilePage implements OnInit {
     } else {
       isSubscribe = false;
     }
-    if (event === 'ok' && this.contentText === 'Are you sure you want to delete your data?') {
+    if (event === 'ok' && this.contentText === 'Are you sure you want to delete your data? Your entire account, including content and purchases will be deleted.') {
       this.Onboardingservice.deleteMyData({
         UserID: localStorage.getItem("userId").toString(),
         Email: localStorage.getItem("email")
