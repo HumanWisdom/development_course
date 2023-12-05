@@ -18,7 +18,7 @@ export class AudioHeaderComponent implements OnInit {
   @Input() path: string; //to go back to the course page from note
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
-  // @Input() transcriptPage: string;
+  @Input() transcriptPage: string;
   @Input() progName: string;
   progUrl: string;
   note: any
