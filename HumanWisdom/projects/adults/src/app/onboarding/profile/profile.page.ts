@@ -155,7 +155,8 @@ export class ProfilePage implements OnInit {
            /*  if (!isSubscribe) {
               this.isCancel = false;
               this.enableAlert = true;
-              this.contentText = "We will delete your data once your subscription period ends"
+              this.contentText = "We will delete your data once your subscription period ends";
+              this.Logout();
             } else {
               this.isCancel = false;
               this.enableAlert = true;
@@ -164,9 +165,22 @@ export class ProfilePage implements OnInit {
               this.isCancel = false;
               this.enableAlert = true;
               this.contentText = "Your data has been deleted successfuly."
+              this.Logout();
           }
         )
     }
   }
 
+  Logout() {
+      const accessObj:any = window;
+      (accessObj)?.Moengage?.destroy_session();
+        this.logeventservice.logEvent('click_logout_Hamburger');
+        if (this.platform.isBrowser) {
+          localStorage.setItem("isloggedin", "F");
+          localStorage.setItem("guest", "T");
+          localStorage.setItem("navigateToUpgradeToPremium", "false");
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(["/onboarding/login"]);
+        }
+      }
 }
