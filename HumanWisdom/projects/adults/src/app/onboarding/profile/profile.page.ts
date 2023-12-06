@@ -30,6 +30,7 @@ export class ProfilePage implements OnInit {
   userData: any;
   enablepayment = true;
   isPartner = false;
+  isDeleted=false;
   enableSuccessAlert = false;
   partnerOption = localStorage.getItem('PartnerOption');
   score = 0;
@@ -165,11 +166,12 @@ export class ProfilePage implements OnInit {
              } */
             this.isCancel = false;
             this.enableAlert = true;
+            this.isDeleted=true;
             this.contentText = "Your data has been deleted successfuly.";
 
           }
         )
-    } else if (this.contentText == 'Your data has been deleted successfuly') {
+    } else if (this.isDeleted) {
       this.Logout();
     }
   }
