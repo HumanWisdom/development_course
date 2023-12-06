@@ -155,15 +155,29 @@ export class ProfilePage implements OnInit {
             if (!isSubscribe) {
               this.isCancel = false;
               this.enableAlert = true;
-              this.contentText = "We will delete your data once your subscription period ends"
+              this.contentText = "We will delete your data once your subscription period ends";
+              this.Logout();
             } else {
               this.isCancel = false;
               this.enableAlert = true;
-              this.contentText = "Your data will be deleted from our system within the next 7 days"
+              this.contentText = "Your data will be deleted from our system within the next 7 days";
+              this.Logout();
             }
           }
         )
     }
   }
 
+  Logout() {
+      const accessObj:any = window;
+      (accessObj)?.Moengage?.destroy_session();
+        this.logeventservice.logEvent('click_logout_Hamburger');
+        if (this.platform.isBrowser) {
+          localStorage.setItem("isloggedin", "F");
+          localStorage.setItem("guest", "T");
+          localStorage.setItem("navigateToUpgradeToPremium", "false");
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(["/onboarding/login"]);
+        }
+      }
 }
