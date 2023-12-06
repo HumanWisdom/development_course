@@ -40,6 +40,8 @@ export class CourseHeaderComponent implements OnInit {
   guest = false;
   Subscriber = false;
   enableAlert = false;
+  content = '';
+  enablecancel = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -78,7 +80,7 @@ export class CourseHeaderComponent implements OnInit {
 
     // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
-    this.path = this.router.url;   
+    this.path = this.router.url;
 
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
@@ -99,6 +101,8 @@ export class CourseHeaderComponent implements OnInit {
   }
   toggleBookmark() {
     if (this.guest || !this.Subscriber) {
+      this.content = 'Please subscribe to activate this feature';
+      this.enablecancel = true;
       this.enableAlert = true;
     } else {
       this.bookmark = !this.bookmark
@@ -166,12 +170,18 @@ export class CourseHeaderComponent implements OnInit {
       "Notes": this.note,
       "UserId": this.userId
 
-    }).subscribe((res) => { },
+    }).subscribe((res) => {
+      this.content = 'Note has been successfully saved to diary';
+      this.enablecancel = false;
+      this.enableAlert = true;
+    },
       error => {
         console.log(error)
       },
       () => {
-
+        this.content = 'Note has been successfully saved to diary';
+        this.enablecancel = false;
+        this.enableAlert = true;
       })
   }
 
@@ -238,6 +248,8 @@ export class CourseHeaderComponent implements OnInit {
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
+    this.enablecancel = false;
+    this.content = '';
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
         this.router.navigate(["/onboarding/add-to-cart"]);
