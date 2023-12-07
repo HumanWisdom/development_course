@@ -82,13 +82,13 @@ export class HaveCalmMindPage implements OnInit {
     }
   }
 
-  audiopage(audiofile, title, id) {
-    if (this.guest || !this.Subscriber) {
+  audiopage(audiofile, title, id, isfree=0) {
+    if ((isfree==0) && (this.guest || !this.Subscriber)) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
     }
   }
 
