@@ -84,7 +84,7 @@ export class S32010Page implements OnInit {
     if(this.optionList && this.sessionOption32010) {
       this.optionList.forEach((d) => {
         if(this.sessionOption32010.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+          document.getElementById(d['OptStr']).style.backgroundColor = '#E58D82';
         }
       }) 
     }   
