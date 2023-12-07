@@ -84,7 +84,7 @@ export class S613Page implements OnInit {
     if(this.optionList && this.sessionOption613) {
       this.optionList.forEach((d) => {
         if(this.sessionOption613.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+          document.getElementById(d['OptStr']).style.backgroundColor = '#E58D82';
         }
       }) 
     }   
