@@ -30,6 +30,8 @@ export class ProfilePage implements OnInit {
   userData: any;
   enablepayment = true;
   isPartner = false;
+  isDeleted=false;
+  enableSuccessAlert = false;
   partnerOption = localStorage.getItem('PartnerOption');
   score = 0;
   isSubscribe = false;
@@ -152,21 +154,41 @@ export class ProfilePage implements OnInit {
             console.log(error)
           },
           () => {
-           /*  if (!isSubscribe) {
-              this.isCancel = false;
-              this.enableAlert = true;
-              this.contentText = "We will delete your data once your subscription period ends"
-            } else {
-              this.isCancel = false;
-              this.enableAlert = true;
-              this.contentText = "Your data will be deleted from our system within the next 7 days"
-            } */
-              this.isCancel = false;
-              this.enableAlert = true;
-              this.contentText = "Your data has been deleted successfuly."
+            /*  if (!isSubscribe) {
+               this.isCancel = false;
+               this.enableAlert = true;
+               this.contentText = "We will delete your data once your subscription period ends";
+               this.Logout();
+             } else {
+               this.isCancel = false;
+               this.enableAlert = true;
+               this.contentText = "Your data will be deleted from our system within the next 7 days"
+             } */
+            this.isCancel = false;
+            this.enableAlert = true;
+            this.isDeleted=true;
+            this.contentText = "Your data has been deleted successfuly.";
+
           }
         )
+    } else if (this.isDeleted) {
+      this.Logout();
     }
   }
 
+  Logout() {
+    const accessObj: any = window;
+    (accessObj)?.Moengage?.destroy_session();
+    this.logeventservice.logEvent('click_logout_Hamburger');
+    if (this.platform.isBrowser) {
+      localStorage.setItem("isloggedin", "F");
+      localStorage.setItem("guest", "T");
+      localStorage.setItem("navigateToUpgradeToPremium", "false");
+      localStorage.setItem("btnClickBecomePartner", "false");
+      this.router.navigate(["/onboarding/login"]);
+    } else {
+      const event = new CustomEvent('logoutbtn');
+      window.dispatchEvent(event);
+    }
+  }
 }
