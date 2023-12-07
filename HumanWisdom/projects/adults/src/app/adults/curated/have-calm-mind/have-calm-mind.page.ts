@@ -23,10 +23,15 @@ export class HaveCalmMindPage implements OnInit {
   gamP: any
   meditationP: any
   withoutLanguageP: any
+  guest = false;
+  Subscriber = false;
   mediaUrl: any;
 
   constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) 
   { 
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
     this.mediaUrl = {
       pc01: 
       {
@@ -62,17 +67,29 @@ export class HaveCalmMindPage implements OnInit {
   }
 
   youtube(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/curated/youtubelink', link])
+    }
   }
 
   s3video(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
+    }
   }
 
-  audiopage(audiofile, title, id) {
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+  audiopage(audiofile, title, id, isfree=0) {
+    if ((isfree==0) && (this.guest || !this.Subscriber)) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    }
   }
 
   getsupport(url, id, ind = 0) {

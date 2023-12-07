@@ -260,7 +260,7 @@
         </a>
       </li> -->
 
-      <li>
+      <li *ngIf="!ios">
         <a  (click)="Logevent('/adults/adverts-work', '', 'click_hwp_business_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -278,7 +278,7 @@
         </a>
       </li>
 
-      <li>
+      <li *ngIf="!ios"> 
         <a  (click)="Logevent('/adults/adverts-student', '', 'click_hwp_education_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -333,7 +333,7 @@
       </li>
 
       <!-- multilayer li for about us -->
-      <li>
+      <li *ngIf="!ios">
         <label class="a-label__chevron title_au" for="item-about_us">
           <!-- Item 2 -->
           <div class="row">

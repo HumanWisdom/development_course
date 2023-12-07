@@ -90,7 +90,7 @@ export class EventsIndexPage implements OnInit {
        return;
      } */
     console.log("url")
-    this.path = "https://humanwisdom.me" + this.address;
+    this.path = "https://happierme.app" + this.address;
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: 'Hey, check out the HappierMe Program',
