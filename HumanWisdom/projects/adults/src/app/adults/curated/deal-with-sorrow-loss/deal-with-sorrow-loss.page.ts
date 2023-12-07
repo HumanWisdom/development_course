@@ -78,11 +78,9 @@ export class DealWithSorrowLossPage implements OnInit {
     this.location.back()
   }
   routeGuided() {
-    if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
+  
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
-    }
+   
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
@@ -359,11 +357,9 @@ export class DealWithSorrowLossPage implements OnInit {
   }
 
   enableRoute(route) {
-    if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
+  
       this.router.navigate([route]);
-    }
+   
   }
 
   getclcickevent(event) {

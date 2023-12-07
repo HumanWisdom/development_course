@@ -411,11 +411,9 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   enableRoute(route) {
-    if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
+   
       this.router.navigate([route]);
-    }
+    
   }
 
   getclcickevent(event) {
