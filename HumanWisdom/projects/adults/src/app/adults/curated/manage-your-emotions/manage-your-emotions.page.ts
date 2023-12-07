@@ -41,22 +41,22 @@ export class ManageYourEmotionsPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
         pc02: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc03: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
+          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         },
         pc04: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/31.mp3',
+          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/31.mp3',
           title: 'Cultivating Calm: Deal with Anger'
         }
       }
@@ -64,13 +64,13 @@ export class ManageYourEmotionsPage implements OnInit {
 
   ngOnInit() {
 
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-
+ 
     this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
     this.meta.updateTag({ property: 'title', content: 'Managing Emotions with Mindfulness & Positive Psychology' })
     this.meta.updateTag({ property: 'description', content: 'Gain mastery over your emotions with our expert-guided coping strategies for anger management, stress management, and mood regulation. Learn how to practice emotional self-regulation and self-awareness techniques that promote mindfulness and positive psychology.' })
     this.meta.updateTag({ property: 'keywords', content: 'Emotional intelligence,Coping with emotions,Anger management,Emotional self-regulation,Self-awareness techniques,Mindfulness practices,Positive psychology,Mood regulation,Anger management,Self-control techniques,Stress management' })
 
+    localStorage.setItem("NaviagtedFrom", '/adults/curated/manage-your-emotions');
 
     localStorage.setItem('curated', 'emotions');
     let rem = localStorage.getItem('remember');
@@ -107,17 +107,29 @@ export class ManageYourEmotionsPage implements OnInit {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/curated/youtubelink', link])
+    }
   }
 
   s3video(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
+    }
   }
 
   audiopage(audiofile, title, id) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
     this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    }
   }
 
   getsupport(url, id, ind = 0) {
@@ -371,7 +383,7 @@ export class ManageYourEmotionsPage implements OnInit {
 
               }
 
-              x.imgPath = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
+              x.imgPath = `https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/${x.ModuleId}.png`
             }
           }
         })
@@ -400,8 +412,8 @@ export class ManageYourEmotionsPage implements OnInit {
 
   enableRoute(route) {
     if (this.guest || !this.Subscriber) {
-      this.enableAlert = true;
-    }else {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
       this.router.navigate([route]);
     }
   }
