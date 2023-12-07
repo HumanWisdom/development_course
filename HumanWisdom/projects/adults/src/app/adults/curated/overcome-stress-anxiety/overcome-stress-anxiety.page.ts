@@ -119,17 +119,29 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/curated/youtubelink', link])
+    }
   }
 
   s3video(link) {
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+      this.router.navigate(['/adults/wisdom-shorts', link])
+    }
   }
 
   audiopage(audiofile, title, id) {
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    }
   }
 
   routeBreathing(cont: any = 1) {
@@ -447,11 +459,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
   }
 
   enableRoute(route) {
-    if (this.guest || !this.Subscriber) {
-      this.enableAlert = true;
-    }else {
+   
       this.router.navigate([route]);
-    }
+    
   }
 
   getAlertcloseEvent(event) {
