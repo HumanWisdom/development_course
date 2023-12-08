@@ -40,7 +40,9 @@ export class S159129Page implements OnInit, OnDestroy {
     private location: Location
   ) 
   { 
-    this.path=this.router.url;
+    this. path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);;
   }
 
   ngOnInit() 
