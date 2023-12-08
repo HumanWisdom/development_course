@@ -474,15 +474,12 @@
 
       $(document).on('click', '#liLogout', function () {
         console.log("internal logout clicked");
-        if ((localStorage.getItem('isloggedin') == 'T') == false) {
-
           if (window.AndroidHandler) {
             window.AndroidHandler.logout();
           }
           if (window.webkit) {
             window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
           }
-        }
       });
 
       $(document).on('click', '#liSubscribe', function () {
