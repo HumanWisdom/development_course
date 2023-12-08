@@ -187,8 +187,18 @@ export class ProfilePage implements OnInit {
       localStorage.setItem("btnClickBecomePartner", "false");
       this.router.navigate(["/onboarding/login"]);
     } else {
-      const event = new CustomEvent('logoutbtn');
-      window.dispatchEvent(event);
+     this.clickButtonById("liLogout");
     }
   }
+
+   clickButtonById(buttonId: string): void {
+    const buttonElement: HTMLButtonElement | null = document.getElementById(buttonId) as HTMLButtonElement;
+
+    if (buttonElement) {
+        buttonElement.click();
+    } else {
+        console.error(`Button with ID '${buttonId}' not found`);
+    }
+}
+
 }

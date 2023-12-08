@@ -122,7 +122,7 @@
       <a (click)="profileclickevent()" class="footer_index">
         <div *ngIf="!enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url === '' ? defaultUrl : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/UsersAvatar/' + url}}"
+          src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_inactive.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Profile
@@ -131,7 +131,7 @@
 
         <div *ngIf="enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url === '' ? defaultUrl : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/UsersAvatar/' + url}}"
+          src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_active.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Profile
