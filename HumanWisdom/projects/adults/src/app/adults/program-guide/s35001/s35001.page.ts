@@ -28,7 +28,7 @@ export class S35001Page implements OnInit,OnDestroy {
   bookmarkList=[]
   
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/35.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/35.jpg"
   tocColor="white"
   tocAlt="User Guide - HappierMe apps for mental health and wellbeing"
   lastvisited = false;

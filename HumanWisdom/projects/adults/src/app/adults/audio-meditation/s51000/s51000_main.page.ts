@@ -28,7 +28,7 @@ export class S51000Page implements OnInit, OnDestroy {
   audiomeditation = []
 
   gamR = sessionStorage.getItem("gamR")
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation_01.png"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/guided_audio_meditation.jpg"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
