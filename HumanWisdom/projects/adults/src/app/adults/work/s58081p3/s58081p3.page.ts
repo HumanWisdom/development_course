@@ -2,7 +2,7 @@ import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} fro
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import * as jQuery from 'jquery';
+
 
 @Component({
   selector: 'app-s58081p3',
@@ -17,8 +17,8 @@ export class S58081p3Page implements OnInit,OnDestroy {
   title="Workplace relationships - Podcast"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/work/audios/work+3.1.mp3'
-
   transcriptPage=""
+
   toc="work/s58001"
   bookmark=0
   path = setTimeout(() => {
@@ -41,6 +41,8 @@ export class S58081p3Page implements OnInit,OnDestroy {
     private location:Location) { }
  
   ngOnInit() {
+    $('#transcriptDiv').hide();
+
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else

@@ -29,6 +29,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmark: any
   bookmarkList = []
   audiomeditation = []
+  allaudiomeditation = []
 
   gamR = sessionStorage.getItem("gamR")
   tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation_01.png"
@@ -36,10 +37,11 @@ export class S51000Page implements OnInit, OnDestroy {
   lastvisited = false;
   stories: any = []
 
-  baseUrl:string;
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  baseUrl: string;
+  path: any;
+
+  searchedText: any
+
   isSubscriber = false;
 
   constructor(
@@ -72,6 +74,7 @@ export class S51000Page implements OnInit, OnDestroy {
         }
       })
     }
+    this.path = this.router.url;
     this.stories = splitarr
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
@@ -118,6 +121,7 @@ export class S51000Page implements OnInit, OnDestroy {
     this.service.GetAudioMeditation().subscribe((res) => {
       if (res) {
         this.audiomeditation = res;
+        this.allaudiomeditation = res;
       }
     })
   }
@@ -188,30 +192,35 @@ export class S51000Page implements OnInit, OnDestroy {
     }
   }
 
-  share(){
+  share() {
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.baseUrl+this.path
     }).then( (response) => {
       console.log(response);
     })
-    .catch( (error) => {
-      console.log(error);
-    });
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  shareUrl (programType) {
+  shareUrl(programType) {
     switch (programType) {
       case ProgramType.Adults:
-        this.baseUrl=SharedService.AdultsBaseUrl;
-      break;
+        this.baseUrl = SharedService.AdultsBaseUrl;
+        break;
       case ProgramType.Teenagers:
-        this.baseUrl=SharedService.TeenagerBaseUrl;
-       break;
+        this.baseUrl = SharedService.TeenagerBaseUrl;
+        break;
       default:
-      this.baseUrl=SharedService.TeenagerBaseUrl;
+        this.baseUrl = SharedService.TeenagerBaseUrl;
     }
+  }
+
+  searchAudio() {
+    let filterlist = this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+    this.audiomeditation = filterlist;
   }
 }

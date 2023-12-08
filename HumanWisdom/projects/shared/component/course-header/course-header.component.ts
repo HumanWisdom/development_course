@@ -40,6 +40,8 @@ export class CourseHeaderComponent implements OnInit {
   guest = false;
   Subscriber = false;
   enableAlert = false;
+  content = '';
+  enablecancel = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -79,8 +81,13 @@ export class CourseHeaderComponent implements OnInit {
     // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
     this.path = this.router.url;
+
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
+
+    if(this.path.includes("noticing-thoughts") && isNaN(this.scrNumber)){
+      this.scrNumber="30001"
+          }
     this.getProgress(this.scrNumber)
 
     this.shared = false
@@ -94,6 +101,8 @@ export class CourseHeaderComponent implements OnInit {
   }
   toggleBookmark() {
     if (this.guest || !this.Subscriber) {
+      this.content = 'Please subscribe to activate this feature';
+      this.enablecancel = true;
       this.enableAlert = true;
     } else {
       this.bookmark = !this.bookmark
@@ -136,7 +145,10 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   goToToc() {
-    this.router.navigate(['/' + this.programName + '/' + this.toc])
+    if(this.toc.includes(this.programName))
+     this .router.navigate(['/' + this.toc])
+    else
+      this.router.navigate(['/' + this.programName + '/' + this.toc])
   }
 
   goToDash() {
@@ -158,20 +170,26 @@ export class CourseHeaderComponent implements OnInit {
       "Notes": this.note,
       "UserId": this.userId
 
-    }).subscribe((res) => { },
+    }).subscribe((res) => {
+      this.content = 'Note has been successfully saved to diary';
+      this.enablecancel = false;
+      this.enableAlert = true;
+    },
       error => {
         console.log(error)
       },
       () => {
-
+        this.content = 'Note has been successfully saved to diary';
+        this.enablecancel = false;
+        this.enableAlert = true;
       })
   }
 
   share() {
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -230,6 +248,8 @@ export class CourseHeaderComponent implements OnInit {
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
+    this.enablecancel = false;
+    this.content = '';
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
         this.router.navigate(["/onboarding/add-to-cart"]);

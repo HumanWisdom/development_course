@@ -42,19 +42,19 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   @Input() moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png',
       link: '/breathing',
       id: 29
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/30.png',
       link: '/noticing-thoughts',
       id: 30
     },
     {
       name: 'Guided Audio Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/51.png',
       link: '/guided-meditation',
       id: 51
     },
@@ -118,7 +118,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   shareIndex() {
     this.socialShare = true
-    this.shareUrl = "https://humanwisdom.me/adults/" + this.toc + `?t=${this.token}`
+    this.shareUrl = "https://happierme.app/adults/" + this.toc + `?t=${this.token}`
 
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
        alert(`This service/api is not supported in your Browser`);
@@ -126,8 +126,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
      } */
 
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.shareUrl
     }).then((response) => {
       console.log(response);

@@ -9,7 +9,7 @@
         </a>
       </div> -->
       <div class="p0">
-        <a class="tcenter" href="javascript:;" *ngIf="toc" (click)="goToToc()">
+        <a class="tcenter"  (click)="goToToc()">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom"> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="HumanWisdom">
         </a>
@@ -102,10 +102,10 @@
 <!-- add note modal -->
 <div class="modal fade in" id="exampleModalCenter" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
-      
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
+
       <div class="mregister">
-        <div class="row mb10px">                    
+        <div class="row mb10px">
           <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
             <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
           </div>
@@ -135,6 +135,6 @@
 
 
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
-  [content]="'Please subscribe to activate this feature'">
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="enablecancel"
+  [content]="content">
 </app-modal>

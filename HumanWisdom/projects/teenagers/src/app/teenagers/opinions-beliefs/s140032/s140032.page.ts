@@ -15,7 +15,9 @@ export class S140032Page implements OnInit {
   bg = "comparison_envy_w8"
   hint = "Do you get defensive? Or angry? Or try and convince the other person of your point of view? "
   toc = "/opinions-beliefs/s140001"
-  path = this.router.url
+ path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

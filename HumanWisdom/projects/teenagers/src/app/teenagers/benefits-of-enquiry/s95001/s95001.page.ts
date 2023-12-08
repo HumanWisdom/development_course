@@ -28,7 +28,7 @@ export class S95001Page implements OnInit, OnDestroy  {
   pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/26.png"
   tocColor="white"
-  tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
+  tocAlt="User Guide - HappierMe apps for mental health and wellbeing"
   lastvisited = false;
   stories = []
   resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");

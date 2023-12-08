@@ -20,9 +20,10 @@ export class TreesistersPage implements OnInit {
   share(){
     this.ngNavigatorShareService
     .share({
-      title: "HumanWisdom Program",
+      title: "HappierMe Program",
       text:
-        "Hey, checkout HumanWisdom's Tree planting program – https://www.humanwisdom.me/adults/treesisters"
+        "Hey, checkout HappierMe's Tree planting program – https://happierme.app/adults/treesisters",
+      url: "https://happierme.app/adults/treesisters"
     })
     .then((response) => {
       console.log(response);

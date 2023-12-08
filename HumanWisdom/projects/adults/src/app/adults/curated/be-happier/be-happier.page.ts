@@ -51,6 +51,11 @@ export class BeHappierPage implements OnInit {
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
+        },
+        pc05: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/54.mp3',
+          title: 'How can we be happier?'
         }
       }
     }
@@ -78,17 +83,29 @@ export class BeHappierPage implements OnInit {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/curated/youtubelink', link])
+    }
   }
 
   s3video(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
+    }
   }
 
   audiopage(audiofile, title, id) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
     this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    }
   }
 
   toRead(obj) {
@@ -349,11 +366,8 @@ export class BeHappierPage implements OnInit {
   }
 
   enableRoute(route) {
-    if (this.guest || !this.Subscriber) {
-      this.enableAlert = true;
-    }else {
-      this.router.navigate([route]);
-    }
+        this.router.navigate([route]);
+   
   }
 
   getclcickevent(event) {
