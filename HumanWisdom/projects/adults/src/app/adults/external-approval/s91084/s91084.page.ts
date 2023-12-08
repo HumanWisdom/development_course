@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S91084Page implements OnInit {
   
   toc="external-approval/s91001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.jpg"
   
   bg=""
   moduleLink="/adults/conditioning"
@@ -45,7 +45,7 @@ export class S91084Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/29.jpg"
       this.moduleLink = "/adults/breathing"
       this.moduleName = "Breathing"
       this.sectionName = "Develop a calm mind";

@@ -31,7 +31,7 @@ export class S324Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   criticismResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/16.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/16.jpg"
   tocColor="white"
   lastvisited = false;
   stories: any = []
