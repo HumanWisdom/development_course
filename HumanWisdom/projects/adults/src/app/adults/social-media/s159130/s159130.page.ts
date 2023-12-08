@@ -26,8 +26,9 @@ export class S159130Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/social-medial/s159001"
   bookmark=0
-  
-  path:any;
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
@@ -37,9 +38,7 @@ export class S159130Page implements OnInit,OnDestroy {
     private service:AdultsService,
     private location:Location
   ) 
-  { 
-    this.path = this.router.url;
-  }
+  { }
 
   ngOnInit() 
   {
