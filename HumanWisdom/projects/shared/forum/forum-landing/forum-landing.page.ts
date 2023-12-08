@@ -260,14 +260,14 @@ export class ForumLandingPage implements OnInit {
   }
 
   shareOnThread(item){
-      this.path = "http://humanwisdom.me/forum/forum-thread/"+item.PostID;
+      this.path = "https://happierme.app/forum/forum-thread/"+item.PostID;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
     // }
 
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -338,17 +338,17 @@ export class ForumLandingPage implements OnInit {
      } */
     if (this.urlT) {
       console.log("url")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.urlT}`
 
     }
     else {
       console.log("local")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -365,17 +365,17 @@ export class ForumLandingPage implements OnInit {
   shareLandingPage(){
      if (this.urlT) {
       console.log("url")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.urlT}`
 
     }
     else {
       console.log("local")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
       console.log(response);

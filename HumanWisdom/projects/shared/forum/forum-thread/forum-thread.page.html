@@ -5,7 +5,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" routerLink="/forum/forum-landing/">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
@@ -17,7 +17,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright" (click)="share()">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0">
       </a>
     </div>
   </div>
@@ -88,7 +88,7 @@
                           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_more.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg"
                               class="img-responsive">
                           </button>
                           <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
@@ -102,7 +102,7 @@
                                   </div>
                                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                                     <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_edit.svg"
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_edit.svg"
                                       class="img-responsive">
                                   </div>
                                 </div>
@@ -125,7 +125,7 @@
                                   </div>
                                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                                     <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_trash.svg"
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_trash.svg"
                                       class="img-responsive">
                                   </div>
                                 </div>
@@ -183,25 +183,25 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="like(posttread.PostID,null,0)">
                             <img *ngIf="posttread.Liked=='0'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                             class="img-responsive mr5px">
                           <img *ngIf="posttread.Liked=='1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
                             class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
                         </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" [disabled]="DisabledComment(posttread)" >
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" (click)="enableCommentTextBox()" class="img-responsive mr5px">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" [disabled]="DisabledComment(posttread)" (click)="enableCommentTextBox()" >
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
                           {{posttread.ReplyCount}}
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="shareOnThread(posttread)">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
                             Share
                           </button>
                         </div>
@@ -209,7 +209,7 @@
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost()">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
                           Report
                         </button>
                       </div>
@@ -285,10 +285,10 @@
                         <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_e58d82">
                           
                           <img *ngIf="item.Liked=='0'"
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                           class="img-responsive mr5px">
                         <img *ngIf="item.Liked=='1'"
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
                           class="img-responsive mr5px">
                           <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>
@@ -296,7 +296,7 @@
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                         <button type="button"  (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
                           Report
                         </button>
                       </div>
@@ -305,7 +305,7 @@
 
                   <div class="row forum_pt20px" *ngIf="replyflag && activereply.ReplyPostID === item.ReplyPostID">
                     <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_08.svg" alt="" class="w100">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/forum_08.svg" alt="" class="w100">
                     </div> -->
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
@@ -314,7 +314,7 @@
 
                       <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px p0 tright mt5px">
                         <button type="submit" class="btn btn-warning btn_post" (click)="reportComment(item)">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
+                          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
                           Report
                         </button>             
                       </div>                   

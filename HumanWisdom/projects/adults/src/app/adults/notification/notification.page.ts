@@ -61,7 +61,7 @@ export class NotificationPage implements OnInit {
           );
           this.notificationModel[i].Time = this.time_ago(updatedDate);
         }
-        res.slice(11, res.length).map((item, i) => {
+        res.slice(10, res.length).map((item, i) => {
           this.olderNotitification.push(item);
         });
         for (var i = 0; i < this.olderNotitification.length; i++) {

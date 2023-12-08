@@ -127,14 +127,14 @@ export class AudioHeaderComponent implements OnInit {
     }
   }
 
-  goToTranscript() {
+ /*  goToTranscript() {
     let progNamePath = this.progName == "teenagers" ? '/' : '/adults/';
     if (this.urlT) {
       this.router.navigate([progNamePath + this.transcriptPage], { queryParams: { t: this.urlT } })
     }
     else
       this.router.navigate([progNamePath + this.transcriptPage])
-  }
+  } */
 
   addNote() {
     this.service.submitJournal({
@@ -167,8 +167,8 @@ export class AudioHeaderComponent implements OnInit {
       this.path = this.baseUrl + this.address + `?t=${this.token}`
     }
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
     })

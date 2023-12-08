@@ -90,7 +90,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise')">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
                                   alt="Wisdom Stories" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Breathing exercise
@@ -102,7 +102,7 @@
                               <a
                                 (click)="DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day')">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3.svg"
                                   alt="Journal" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Question
@@ -115,7 +115,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration')">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Testimonials" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily inspiration
@@ -126,7 +126,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_audio_meditation')">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Audio meditation
@@ -137,7 +137,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge')">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily
@@ -163,7 +163,7 @@
             <div class="row" *ngIf="YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a class="prelative" routerLink="/adults/select-a-topic-to-explore">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
@@ -189,8 +189,8 @@
             <!-- your topic of choice -->
             <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a class="prelative" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                <a class="prelative box_v3_01" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
+                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
@@ -261,13 +261,13 @@
                             <!-- <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="youtube('gUM9Ln_xo7k')" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_09.svg" alt="Happiness" class="ctimg_dash">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_09.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
 
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_short_video.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_short_video.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -298,13 +298,13 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a class="prelative" routerLink="/adults/intro-happierme">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
 
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -335,7 +335,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
                               <a (click)="routeResume('23', true)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_01.svg" alt="Happiness" class="ctimg_dash">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_01.svg" alt="Happiness" class="ctimg_dash">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -344,7 +344,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -418,7 +418,7 @@
                             <!-- <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="routeHappiness(0)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_03.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_03.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -427,7 +427,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -458,7 +458,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="routeHappiness(0)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_04.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_04.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -467,7 +467,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_blog.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_blog.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -488,7 +488,7 @@
                                 <div class="row">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
                                     <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
-                                      HumanWisdom • 5 May 2023
+                                      HappierMe • 5 May 2023
                                     </h4>
                                   </div>
                                 </div>
@@ -498,7 +498,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="routeHappiness(0)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_05.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_05.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -507,7 +507,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_short_video.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_short_video.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -538,7 +538,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="routeHappiness(0)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_06.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_06.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -547,7 +547,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_event.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_event.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -578,7 +578,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="routeHappiness(0)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_07.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_07.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -587,7 +587,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_podcast.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_podcast.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -618,7 +618,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="routeHappiness(0)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_08.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_08.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -627,7 +627,7 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_guided_questions.svg" class="img-responsive w100">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_guided_questions.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -750,7 +750,11 @@
             <!-- /hr -->
 
             <!-- subscribe to premium -->
-              <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
+              </div>
+            </div>
             <!-- /subscribe to premium -->
 
 
@@ -790,7 +794,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_adam_beagley.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_adam_beagley.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -826,7 +830,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_laura_toop.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_laura_toop.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -862,7 +866,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_julie_goodfellow.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_julie_goodfellow.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -898,7 +902,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_carolyn_king.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_carolyn_king.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -935,7 +939,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_chandra_ramamurthy.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_chandra_ramamurthy.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -971,7 +975,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_suzanne_oades.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_suzanne_oades.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1007,7 +1011,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_tinamarie_rodriguez.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_tinamarie_rodriguez.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1043,7 +1047,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_dominic_curran.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_dominic_curran.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1079,7 +1083,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_anthony_seldon.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_anthony_seldon.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1115,7 +1119,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_tim_merrick.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_tim_merrick.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1151,7 +1155,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_jo_thackwray.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_jo_thackwray.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1187,7 +1191,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_testimonial_saakshi_singla.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_saakshi_singla.svg" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1249,7 +1253,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
             <button type="button" #closerefermodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close"
               (click)="closerefer()">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/modal_close_01.svg" alt=""
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/modal_close_01.svg" alt=""
                 class="img-responsive fright">
             </button>
           </div>
@@ -1304,7 +1308,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
             <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close"
               style="cursor:pointer;">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white_01.svg" alt=""
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white_01.svg" alt=""
                 class="img-responsive fright">
             </button>
           </div>
@@ -1314,7 +1318,7 @@
         <!-- modal content -->
         <!-- <div class="row mt6px">
           <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_01.svg" alt=""
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_01.svg" alt=""
               class="img-responsive">
           </div>
         </div> -->
@@ -1395,7 +1399,7 @@
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')"
                   data-dismiss="modal" aria-label="Close">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white.svg" alt=""
                     class="img-responsive fright">
                 </button>
               </div>
@@ -1421,19 +1425,19 @@
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 center_flex">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/facebook_as.svg"
                       (click)="fbLogin()" class="img-responsive">
                   </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/google_as.svg"
                       (click)="googleLogin()" class="img-responsive">
                   </button>
                 </div>
                 <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/apple_as.svg" class="img-responsive">
                 </button>
               </div> -->
               </div>
@@ -1552,7 +1556,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')"
                 data-dismiss="modal" aria-label="Close">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white.svg" alt=""
                   class="img-responsive fright">
               </button>
             </div>
@@ -1630,7 +1634,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')" #closemodal
                 data-dismiss="modal" aria-label="Close">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white.svg" alt=""
                   class="img-responsive fright">
               </button>
             </div>
@@ -1742,7 +1746,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')"
                 data-dismiss="modal" aria-label="Close">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white.svg" alt=""
                   class="img-responsive fright">
               </button>
             </div>
@@ -1768,19 +1772,19 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 center_flex">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/facebook_as.svg"
                     (click)="fbLogin()" class="img-responsive">
                 </button>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/google_as.svg"
                     (click)="googleLogin()" class="img-responsive">
                 </button>
               </div>
               <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/apple_as.svg" class="img-responsive">
                 </button>
               </div> -->
             </div>
@@ -1839,7 +1843,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')"
                 data-dismiss="modal" aria-label="Close">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white.svg" alt=""
                   class="img-responsive fright">
               </button>
             </div>
@@ -1891,7 +1895,7 @@
           <div class="pfy_sl_modal">
 
             <button type="button" class="btn_popup_close m0px" #closepopup data-dismiss="modal" aria-label="Close">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/close_white.svg" alt=""
                 class="img-responsive fright">
             </button>
 
@@ -1928,19 +1932,19 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/facebook_as.svg"
                       (click)="fbLogin('journal')" class="img-responsive">
                   </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/google_as.svg"
                       (click)="googleLogin('journal')" class="img-responsive">
                   </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg"
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/apple_as.svg"
                       (click)="signInWithApple()" class="img-responsive">
                   </button>
                 </div>

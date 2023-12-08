@@ -89,6 +89,13 @@
     {
         margin-top: 14.4%;
     }
+
+    body,    
+    .body,
+    .main_container
+    {
+        background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important;
+    }
 }
 
 @media (min-width: 413px) and (max-width: 767px)
@@ -1119,5 +1126,24 @@
     .col_cw
     {
         width: 20%;
+    }
+}
+
+@media (max-width: 360px)
+{
+    .img_logo 
+    {
+        width: 100px;
+    }
+
+    .active_programs
+    {
+        height: auto;
+    }
+
+    .active_programs h6
+    {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }

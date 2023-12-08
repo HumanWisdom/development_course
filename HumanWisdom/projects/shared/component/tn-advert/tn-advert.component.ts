@@ -28,6 +28,9 @@ export class TnAdvertComponent implements OnInit {
 
   routedashboard() {
     if (!this.isLoggedIn) {
+      if(!(localStorage.getItem('fromlandingpage'))){
+        localStorage.setItem("fromlandingpage", 'T')
+      }
       this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     } else {
       this.router.navigate(['/adults/adult-dashboard'])

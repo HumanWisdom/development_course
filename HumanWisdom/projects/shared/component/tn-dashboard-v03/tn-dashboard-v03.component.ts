@@ -34,6 +34,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   cardlist = [];
   countryCode: any;
   userDetails: any = [];
+  loginResponse: any;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
@@ -44,7 +45,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-      if(!changes.enableHamburger.firstChange){
+      if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
         if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
           console.log(changes.enableHamburger.currentValue);
           this.enableHamburger = changes.enableHamburger.currentValue;
@@ -52,7 +53,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
       }
   }
 
-  
+
 
   ngOnInit() {
     setTimeout(() => {
@@ -73,7 +74,11 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
         this.name = localStorage.getItem('name');
       })
 
-    }, 9000)
+    }, 9000);
+
+    setTimeout(()=>{
+      this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+    }, 2000)
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
       if (this.platform.IOS || this.platform.SAFARI) {
@@ -122,7 +127,9 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   }
 
   Subscribe() {
-    this.router.navigate(['/subscription/start-your-free-trial']);
+    if(!this.ios){
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
 
   clickbanner(url = '') {
@@ -144,5 +151,5 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
-  
+
 }

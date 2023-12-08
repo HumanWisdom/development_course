@@ -134,8 +134,8 @@ export class PartnershipIndexPage implements OnInit {
 
   share() {
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Partnership Program',
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Partnership Program',
       url: this.router.url
     }).then((response) => {
       console.log(response);

@@ -81,7 +81,7 @@ export class S100Page implements OnInit {
     if(this.optionList && this.sessionOption100) {
       this.optionList.forEach((d) => {
         if(this.sessionOption100.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+          document.getElementById(d['OptStr']).style.backgroundColor = '#E58D82';
         }
       }) 
     }   

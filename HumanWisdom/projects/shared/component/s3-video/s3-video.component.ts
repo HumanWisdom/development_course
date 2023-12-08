@@ -40,9 +40,9 @@ export class S3VideoComponent implements OnInit {
   ngOnInit() {
     let code = '';
     if(this.wisdomshort) {
-      code = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_shorts/videos/${this.linkcode}`;
+      code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
     }else {
-      code = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/${this.linkcode}`;
+      code = `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
       // code = `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
     }
     this.videoLink = this.getSafeUrl(code);

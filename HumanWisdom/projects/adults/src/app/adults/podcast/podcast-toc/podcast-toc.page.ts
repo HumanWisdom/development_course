@@ -7,6 +7,8 @@ import { Platform } from "@angular/cdk/platform";
 import { Meta, Title } from '@angular/platform-browser';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
 import { AdultsService } from '../../adults.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 
 @Component({
@@ -17,14 +19,16 @@ import { AdultsService } from '../../adults.service';
 
 export class PodcastTocPage implements OnInit {
 
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  path:any;
   tag='all';
   iframeSrc:SafeResourceUrl;
   @Input() podcastList = [];
+  allpodcastList = [];
   @Input() isdefaultShow = false;
   isSubscriber = false;
+  address:any;
+  searchedText:any
+
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
@@ -40,6 +44,7 @@ export class PodcastTocPage implements OnInit {
   ngOnInit() {
     if(!this.isdefaultShow){
       this.getPodcast()
+      this.address = this.router.url;
     }
     this.title.setTitle('Inspiring Your Best Life: Our Motivational Podcast')
     this.meta.updateTag({ property: 'title', content: 'Inspiring Your Best Life: Our Motivational Podcast'})
@@ -71,17 +76,28 @@ export class PodcastTocPage implements OnInit {
   goBack(){
    this.location.back();
   }
-
+  shareUrl(programType:ProgramType) {
+    const token= JSON.parse(localStorage.getItem("token"))
+    switch (programType) {
+      case ProgramType.Adults:
+          this.path = SharedService.AdultsBaseUrl + this.address;
+        break;
+      case ProgramType.Teenagers:
+        this.path = SharedService.TeenagerBaseUrl + this.address;
+        break;
+      default:
+          this.path = SharedService.AdultsBaseUrl + this.address;
+    }
+  }
   share(){
     /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
-   let url="https://humanwisdom.me"+this.path;
     this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
-      url: url
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.path
     }).then( (response) => {
       console.log(response);
     })
@@ -94,6 +110,7 @@ export class PodcastTocPage implements OnInit {
     this.service.GetPodcastList().subscribe((res) => {
       if (res) {
         this.podcastList = res;
+        this.allpodcastList = res;
       }
     })
   }
@@ -112,4 +129,9 @@ export class PodcastTocPage implements OnInit {
       // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
   }
+
+  searchPodcast(){
+    let filterlist =this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+    this.podcastList=filterlist;
+}
 }

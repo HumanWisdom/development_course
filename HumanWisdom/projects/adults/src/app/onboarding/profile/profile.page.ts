@@ -30,6 +30,8 @@ export class ProfilePage implements OnInit {
   userData: any;
   enablepayment = true;
   isPartner = false;
+  isDeleted=false;
+  enableSuccessAlert = false;
   partnerOption = localStorage.getItem('PartnerOption');
   score = 0;
   isSubscribe = false;
@@ -116,7 +118,7 @@ export class ProfilePage implements OnInit {
   }
 
   deleteMyData() {
-    this.contentText = 'Are you sure you want to delete your data?';
+    this.contentText = 'Are you sure you want to delete your data? Your entire account, including content and purchases will be deleted.';
     this.isCancel = true;
     this.enableAlert = true;
   }
@@ -140,7 +142,7 @@ export class ProfilePage implements OnInit {
     } else {
       isSubscribe = false;
     }
-    if (event === 'ok' && this.contentText === 'Are you sure you want to delete your data?') {
+    if (event === 'ok' && this.contentText === 'Are you sure you want to delete your data? Your entire account, including content and purchases will be deleted.') {
       this.Onboardingservice.deleteMyData({
         UserID: localStorage.getItem("userId").toString(),
         Email: localStorage.getItem("email")
@@ -152,18 +154,51 @@ export class ProfilePage implements OnInit {
             console.log(error)
           },
           () => {
-            if (!isSubscribe) {
-              this.isCancel = false;
-              this.enableAlert = true;
-              this.contentText = "We will delete your data once your subscription period ends"
-            } else {
-              this.isCancel = false;
-              this.enableAlert = true;
-              this.contentText = "Your data will be deleted from our system within the next 7 days"
-            }
+            /*  if (!isSubscribe) {
+               this.isCancel = false;
+               this.enableAlert = true;
+               this.contentText = "We will delete your data once your subscription period ends";
+               this.Logout();
+             } else {
+               this.isCancel = false;
+               this.enableAlert = true;
+               this.contentText = "Your data will be deleted from our system within the next 7 days"
+             } */
+            this.isCancel = false;
+            this.enableAlert = true;
+            this.isDeleted=true;
+            this.contentText = "Your data has been deleted successfuly.";
+
           }
         )
+    } else if (this.isDeleted) {
+      this.Logout();
     }
   }
+
+  Logout() {
+    const accessObj: any = window;
+    (accessObj)?.Moengage?.destroy_session();
+    this.logeventservice.logEvent('click_logout_Hamburger');
+    if (this.platform.isBrowser) {
+      localStorage.setItem("isloggedin", "F");
+      localStorage.setItem("guest", "T");
+      localStorage.setItem("navigateToUpgradeToPremium", "false");
+      localStorage.setItem("btnClickBecomePartner", "false");
+      this.router.navigate(["/onboarding/login"]);
+    } else {
+     this.clickButtonById("liLogout");
+    }
+  }
+
+   clickButtonById(buttonId: string): void {
+    const buttonElement: HTMLButtonElement | null = document.getElementById(buttonId) as HTMLButtonElement;
+
+    if (buttonElement) {
+        buttonElement.click();
+    } else {
+        console.error(`Button with ID '${buttonId}' not found`);
+    }
+}
 
 }
