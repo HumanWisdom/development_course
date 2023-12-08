@@ -1,0 +1,39 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Some statistics on social media use:
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      1. 91% of teens use social media
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      2. Youtube, TikTok, Instagram, and Snapchat are the most popular platforms
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">
+      3. Adults spend 145 min on average on social media.This equates to 5.7 years of a person’s life, if they live to 73.
+      24% of people say they are addicted to social media (Forbes) 
+      
+    </h3>
+
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      4. Teens check their phones more than 150 times/day
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      5. 35% of teens feel lonely, despite time on social media
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">      
+      6. Social media use more than 3 hours a day is associated with mental health problems
+
+    </h3>
+
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
