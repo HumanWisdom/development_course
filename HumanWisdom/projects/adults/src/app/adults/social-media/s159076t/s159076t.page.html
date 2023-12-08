@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Now that we have explored the impact of social media and the many hidden drivers in our thinking, how can we apply this understanding to respond with intelligence?
+          Social Media is not wrong, and cannot be wished away, but we can develop our own strategies on how to deal with it in a healthy way so it serves us, and enhances our lives, rather than be a source of all the problems we have discussed.
+          This is not a prescriptive approach and you will decide for yourself which of these will work for you.
+        </h3>
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

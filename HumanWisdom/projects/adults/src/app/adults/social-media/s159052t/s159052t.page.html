@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this session where we are going to explore the many hidden drivers in our thinking that shape our use of social media and how it influences us. 
+          It is curious that we read so many books, newspapers, and magazines, and watch so much TV, but none of those shape our lives as much as social media does. Why is that?
+          Understanding these unconscious drivers in our own thinking can help us be aware of them on a daily basis, and then respond with our intelligence, so we can use social media so it serves us, but avoid its many pitfalls and not become a slave to it.
+       </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
