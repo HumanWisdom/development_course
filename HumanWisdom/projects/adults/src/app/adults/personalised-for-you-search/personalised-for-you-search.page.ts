@@ -23,6 +23,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   personalisedforyou = []
 
   indList = []
+  isEnableHam=true;
   isloggedIn = false;
   searchinp = '';
   public user: any

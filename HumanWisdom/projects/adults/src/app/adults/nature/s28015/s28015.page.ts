@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S28015Page implements OnInit {
 
   toc="nature/s28001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/29.jpg"
  
   bg=""
   moduleLink="/adults/breathing"
@@ -46,7 +46,7 @@ export class S28015Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/29.jpg"
       
       this.moduleLink = "/adults/breathing"
       this.moduleName = "Breathing"

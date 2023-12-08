@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S41020Page implements OnInit {
   
   toc="questions-are-key/s41000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/42.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/42.jpg"
   
   bg=""
   moduleLink="/adults/without-language/s42001"
