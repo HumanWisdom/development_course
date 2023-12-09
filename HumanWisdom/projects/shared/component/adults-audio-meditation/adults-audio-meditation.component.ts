@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-adults-audio-meditation',
@@ -18,7 +19,8 @@ export class AdultsAudioMeditationComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private service: AdultsService
   )
   {
     this.audioLink = this.route.snapshot.paramMap.get('audiolink')
@@ -26,7 +28,14 @@ export class AdultsAudioMeditationComponent implements OnInit {
     this.type = this.route.snapshot.paramMap.get('type')
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+   let curr = this.service.currentUrl;
+   if(curr.includes('podcast')) {
+      this.type = '';
+   }else{
+    this.type = 'Audio';
+   }
+  }
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
