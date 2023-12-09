@@ -35634,9 +35634,10 @@ li ol > li:before {
 #docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p span,
 .h4_blogs p span,
 .h4_blogs h2 font,
-.h4_blogs p font
+.h4_blogs p font,
+.h4_blogs
 {
-  font-size: 12px !important;
+  font-size: 16px !important;
   font-weight: 400;
   line-height: 150%;
   font-style: normal;
@@ -35648,8 +35649,8 @@ li ol > li:before {
 .h4_blogs a span,
 .h4_blogs p a font
 {
-  font-size: 12px !important;
-  font-weight: 600;
+  font-size: 16px !important;
+  font-weight: 600 !important;
   line-height: 150%;
   font-style: normal;
   color: #E58D82 !important;
@@ -35664,5 +35665,32 @@ li ol > li:before {
 .btn_am
 {
   background: transparent;
+}
+
+.h4_blogs ol 
+{
+  padding: 0 15px !important;
+  color: #FFF !important;
+}
+
+.h4_blogs ol li
+{
+  color: #FFF !important;
+}
+
+.h4_blogs p
+{
+  padding: 0;
+  margin: 0 !important;
+}
+
+.h4_blogs p b 
+{
+  color: #FFF !important;
+}
+
+.h4_blogs a span
+{
+  word-break: break-word;
 }
 /* /version - 03 */

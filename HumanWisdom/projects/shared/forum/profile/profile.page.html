@@ -5,7 +5,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" routerLink="/forum/forum-landing/">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
@@ -17,7 +17,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="" (click)="share()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0">
       </a>
     </div>
   </div>
@@ -39,7 +39,7 @@
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                       <img 
-                      src="{{ profileImage  === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.profileImage.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + profileImage)}}"
+                      src="{{ profileImage  === undefined ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' :  (this.profileImage.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/UsersAvatar/' + profileImage)}}"
                       alt="" class="p0 opaque_border_inner img-responsive img_profile_01"/>
                     </div>
                   </div>
@@ -153,7 +153,7 @@
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <!-- <button type="button" class="btn">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_more.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg" class="img-responsive">
                         </button> -->
                       </div>
                     </div>
@@ -174,10 +174,10 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                               class="img-responsive mr5px">
                             <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
                               class="img-responsive mr5px">
                             {{item.PostLikeCount}}
                           </button>
@@ -187,7 +187,7 @@
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button" [disabled]="DisabledComment(item)"
                             class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
                             <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
                               class="img-responsive mr5px">
                             {{item.ReplyCount}}
                           </button>
@@ -196,7 +196,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px">
                             Share
                           </button>
@@ -207,7 +207,7 @@
                         <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82"
                           (click)="reportpost(item,'report')">
                           <img
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg"
+                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                             class="img-responsive mr5px">
                           Report
                         </button>

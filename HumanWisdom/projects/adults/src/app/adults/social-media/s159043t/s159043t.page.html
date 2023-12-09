@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Social media is designed in a way to show you more of what you already like. So if you have a particular point of view, for example if you think climate change is a hoax, then your social media feed will be full of posts that reinforce that opinion. We can create an echo chamber where no one challenges our way of thinking, and if they do, they are quickly brushed aside because we feel so many people agree with us. 
+
+          This process naturally creates divisions in society, with each side digging in and thinking they are right and others are wrong. This can evolve into conflict and lives can be lost, for example around the abortion issue in America. 
+          
+          It is therefore vital to be able to question our own opinions, and be able to explore any issue from different perspectives. Don’t believe everything you see or read. Try and verify that information from other sources. Remember that everyone is trying to get you to think in a particular way and this is especially true at election time. Having a mind that is curious and able to question what we see and read is so important so we can make more intelligent choices, and still get on with people we disagree with.
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

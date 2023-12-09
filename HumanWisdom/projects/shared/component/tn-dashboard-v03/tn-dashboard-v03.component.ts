@@ -42,7 +42,6 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     if (userid === 'T') {
       this.isloggedIn = true
     }
-    this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -75,7 +74,11 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
         this.name = localStorage.getItem('name');
       })
 
-    }, 9000)
+    }, 9000);
+
+    setTimeout(()=>{
+      this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+    }, 2000)
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
       if (this.platform.IOS || this.platform.SAFARI) {

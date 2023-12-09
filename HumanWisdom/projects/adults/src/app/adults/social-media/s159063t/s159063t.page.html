@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Loneliness is at the heart of being human and up to 60% of people feel lonely, 30% of them in marriages.
+          We think having lots of friends on social media is an answer, and maybe it distracts us from that feeling for a while, but it soon returns.
+          It is a paradox that loneliness is more common among young people, who are the most digitally connected generation.
+          It is the depth of connection we have with another person that determines how lonely we feel, and social media is not a natural place for that. We have not been taught the communication skills we need to deepen our connection with others. 
+          We join groups and have lots of online friends but do not have the real life connections that we need to not feel lonely.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

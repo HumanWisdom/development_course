@@ -119,7 +119,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" /> -->
   <!-- /poppins regular 400 -->
 
@@ -144,14 +145,15 @@
   <!-- google analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="buM8gRBCbgoR1Mzr06i_CWNtSYhwRsmPTow7XhIDCYk" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211149613-1"></script>
+  
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211149613-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-211149613-1');
-  </script>
+  </script> -->
   <!-- /google analytics -->
 
   <!-- Google tag (gtag.js) -->
@@ -165,7 +167,7 @@
     gtag('config', 'G-44RHVTTNB8');
   </script>
 
- 
+
   <!-- Meta Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -187,25 +189,25 @@
   <!-- End Meta Pixel Code -->
 
   <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       FB.init({
-        appId      : 806018844533100,
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v17.0'
-            });
-        
-      FB.AppEvents.logPageView();   
-        
+        appId: 806018844533100,
+        cookie: true,
+        xfbml: true,
+        version: 'v17.0'
+      });
+
+      FB.AppEvents.logPageView();
+
     };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
   </script>
 
 
@@ -233,7 +235,7 @@
   <script src="assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3/roundslider.js'></script>
   <script src="assets/js/script.js"></script>
- 
+
 
   <script>
     $(document).on('click', '.video26', function () {
@@ -472,16 +474,13 @@
 
 
       $(document).on('click', '#liLogout', function () {
-
-        if ((localStorage.getItem('isloggedin') == 'T') == false) {
-
+        console.log("internal logout clicked");
           if (window.AndroidHandler) {
             window.AndroidHandler.logout();
           }
           if (window.webkit) {
             window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
           }
-        }
       });
 
       $(document).on('click', '#liSubscribe', function () {
@@ -490,64 +489,64 @@
         }
       });
 
-      
+
       window.addEventListener('cancelButtonClicked', function () {
-       
-        var key='';
-        if(localStorage.getItem('ActivationKey') && localStorage.getItem('ActivationKey').toString() !=null ){
-          this.key=localStorage.getItem('ActivationKey').toString();
+
+        var key = '';
+        if (localStorage.getItem('ActivationKey') && localStorage.getItem('ActivationKey').toString() != null) {
+          this.key = localStorage.getItem('ActivationKey').toString();
         }
 
         if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("CancelSubscription" + key);
         }
-       
-        if (window.AndroidHandler) {
-            window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
-          }
-        // Perform the download action here
-      });
-    });
 
-      window.addEventListener('downloadButtonClicked', function () {
-        console.log('fileName1:' + localStorage.getItem('fileName'));
-         var fileName='Completion';
-        if(localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() !=null ){
-          this.fileName=localStorage.getItem('fileName').toString();
-          console.log('fileName2:'+ localStorage.getItem('fileName').toString() + myFileContentData);
-        }
-        console.log(myFileContentData);
-        if (window.webkit) {
-          window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + this.fileName + "_" + myFileContentData);
-        }
-       
         if (window.AndroidHandler) {
-          var fileName='Completion Certificate';
-          if(localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() !=null ){
-          this.fileName=localStorage.getItem('fileName').toString();
-          console.log('fileName2:'+ localStorage.getItem('fileName').toString() + myFileContentData);
-          }
           window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
         }
         // Perform the download action here
       });
+    });
+
+    window.addEventListener('downloadButtonClicked', function () {
+      console.log('fileName1:' + localStorage.getItem('fileName'));
+      var fileName = 'Completion';
+      if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+        this.fileName = localStorage.getItem('fileName').toString();
+        console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
+      }
+      console.log(myFileContentData);
+      if (window.webkit) {
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + this.fileName + "_" + myFileContentData);
+      }
+
+      if (window.AndroidHandler) {
+        var fileName = 'Completion Certificate';
+        if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+          this.fileName = localStorage.getItem('fileName').toString();
+          console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
+        }
+        window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
+      }
+      // Perform the download action here
+    });
 
     window.addEventListener('ShareEvent', function () {
-      var fileName='Completion Certificate' ;
-          if(localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() !=null ){
-          this.fileName=localStorage.getItem('fileName').toString();
-          }
-         console.log(myFileContentData);
-         console.log(this.fileName);
-         if (window.AndroidHandler) {
-          window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
-        }
+      var fileName = 'Completion Certificate';
+      if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+        this.fileName = localStorage.getItem('fileName').toString();
+      }
+      console.log(myFileContentData);
+      console.log(this.fileName);
+      if (window.AndroidHandler) {
+        window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
+      }
     })
 
     window.addEventListener('manage_subscr', function () {
       if (window.webkit) {
-          window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
-        }
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
+      }
     })
 
 
@@ -582,7 +581,7 @@
       debug_logs: 0,
       swPath: "/serviceworker.js"
     });
-    
+
     window.Moengage.add_first_name(localStorage.getItem('name'));
     window.Moengage.add_email(localStorage.getItem('email'));
     // setTimeout(() => {
@@ -607,7 +606,7 @@
     src="https://static.mailerlite.com/js/w/webforms.min.js?v7316d10e2931a97c7b0f5c7e7e7be3ea"></script>
 
 
-    <script>
+  <script>
     /*
     $(document).on('click', '.ihamburger', function () 
     {
@@ -615,10 +614,9 @@
       $('body').addClass("overflow_hidden");
     });
     */
-  
+
     //test
-    $(document).on('click', '.ihamburger', function () 
-    {
+    $(document).on('click', '.ihamburger', function () {
       $('body').removeClass("overflow_auto").addClass("overflow_hidden");
       $('.m-menu').scrollTop(0);
       /*$(".mfooter,.dtn").css({"pointer-events": "none"});
@@ -626,78 +624,69 @@
       $("#modal_logout").css({"pointer-events": "auto"});*/
     });
 
-    $(document).on('click', '.m-menu__overlay', function () 
-    {
+    $(document).on('click', '.m-menu__overlay', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
     });
     ///test
-   
-    $(document).on('click', '.iclose', function () 
-    {
+
+    $(document).on('click', '.iclose', function () {
       $('body').removeClass("overflow_hidden");
-      $(".right_col,.mfooter,.dtn").css({"pointer-events": "auto"});
+      $(".right_col,.mfooter,.dtn").css({ "pointer-events": "auto" });
     });
-  
-    $(document).on('click', '.title_p', function () 
-    {
+
+    $(document).on('click', '.title_p', function () {
       $('.m-menu').scrollTop(0);
       $('.menu_parent').addClass("overflow_hiddeni");
     });
-      
-    $(document).on('click', '.back_p', function () 
-    {
+
+    $(document).on('click', '.back_p', function () {
       $('.menu_parent').removeClass("overflow_hiddeni");
     });
-  
-    $(document).on('click', '.title_au', function () 
-    {
+
+    $(document).on('click', '.title_au', function () {
       $('.m-menu').scrollTop(0);
       $('.menu_parent').addClass("overflow_hiddeni");
     });
-      
-    $(document).on('click', '.back_au', function () 
-    {
+
+    $(document).on('click', '.back_au', function () {
       $('.menu_parent').removeClass("overflow_hiddeni");
     });
-  
-    $(document).on('click', '.title_hs', function () 
-    {
+
+    $(document).on('click', '.title_hs', function () {
       $('.m-menu').scrollTop(0);
       $('.menu_parent').addClass("overflow_hiddeni");
     });
-      
-    $(document).on('click', '.back_hs', function () 
-    {
+
+    $(document).on('click', '.back_hs', function () {
       $('.menu_parent').removeClass("overflow_hiddeni");
     });
-  
-    $(document).on('click', 'ul.dh_ul li a', function () 
-    {
+
+    $(document).on('click', 'ul.dh_ul li a', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
     });
-  
-    $(document).on('click', '.hc_profile', function () 
-    {
+
+    $(document).on('click', '.hc_profile', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
     });
-  
-    $(document).on('click', '.btn_ctd', function () 
-    {
+
+    $(document).on('click', '.btn_ctd', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
     });
-  
-    $(document).on('click', '.hamburger_sociali a', function () 
-    {
+
+    /*$(document).on('click', '.hamburger_sociali a', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-    });
-  
-    $(document).on('click', 'ul.dh_ul li a.hc_sfn', function () 
-    {
+    });*/
+
+    $(document).on('click', 'ul.dh_ul li a.hc_sfn', function () {
       $('body').removeClass("overflow_auto").addClass("overflow_hidden");
     });
-    </script>
 
-  
+    $(document).on('click', 'hamburger_sociali a', function () {
+      $('body').removeClass("overflow_auto").addClass("overflow_hiddeni");
+    });
+  </script>
+
+
 
 </body>
 

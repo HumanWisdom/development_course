@@ -42,6 +42,7 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit() {
+    console.log(this.transcriptPage);
     var str = this.router.url
     var lastSlash = str.lastIndexOf("/");
     str = str.substring(lastSlash + 2);

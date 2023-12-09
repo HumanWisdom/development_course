@@ -356,7 +356,7 @@
                       </div>
                     </a>
 
-                    <a>
+                    <a *ngIf="enablepayment">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -436,6 +436,9 @@
       </div>
     </div>
   </div>
+</div>
+<div style="display: none;">
+  <button id="liLogout" ></button>
 </div>
 <!-- /page content -->
 

@@ -29,7 +29,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmarkList = []
 
   gamR = sessionStorage.getItem("pgResume")
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.jpg"
   tocColor = "white"
   lastvisited = false;
   stories: any = []

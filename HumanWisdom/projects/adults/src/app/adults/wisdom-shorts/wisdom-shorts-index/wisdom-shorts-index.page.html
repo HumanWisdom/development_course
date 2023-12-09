@@ -14,7 +14,7 @@
 
               <!-- <div class="row ls_story_img">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex prelative">
-                  <img class="ws_view_story img-responsive w100" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_shorts.png">
+                  <img class="ws_view_story img-responsive w100" src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.jpg">
                 </div>
               </div> -->
 
@@ -49,47 +49,56 @@
               </div>
               <!-- /search -->
 
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="title_content">
+                    CONTENTS
+                  </h4>
+                </div>
+              </div>
+
               <div class="toc_adiv_01">
-                <ng-container *ngFor="let data of wisdomshorts; let i=index">                <!-- video row -->
-                <a (click)="wisdoshortsevent(data, data['VideoUrl'], data['Title'])">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-                        <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                          <img src="{{data.ImgUrl}}" alt="" class="p0 session_img">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg" alt="" class="p0 session_img_play">
+                <ng-container *ngFor="let data of wisdomshorts; let i=index">                
+                  <!-- video row -->
+                  <a (click)="wisdoshortsevent(data, data['VideoUrl'], data['Title'])">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+                          <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                            <img src="{{data.ImgUrl}}" alt="" class="p0 session_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg" alt="" class="p0 session_img_play">
+                          </div>
+
+                          <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                              {{data['Title']}}
+                            </h4>
+                            <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                              {{data['Timing']}} min
+                            </h4>
+                          </div>
+
                         </div>
 
-                        <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
-                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
-                            {{data['Title']}}
-                          </h4>
-                          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                            {{data['Timing']}} min
-                          </h4>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i <= 2">
+                          <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                        </div>
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                          <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                        </div>
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i > 2">
+                          <!-- lock -->
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                          <!-- /lock -->
                         </div>
 
                       </div>
-
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i <= 2">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
-
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
-
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i > 2">
-                        <!-- lock -->
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
-                        <!-- /lock -->
-                      </div>
-
                     </div>
-                  </div>
-                </a>
-              </ng-container>
-                <!-- /video row -->
+                  </a>
+                  <!-- /video row -->
+                </ng-container>
               </div>
 
               <div class="pagebreak"></div>

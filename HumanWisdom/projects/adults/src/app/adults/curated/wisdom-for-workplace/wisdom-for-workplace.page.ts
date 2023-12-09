@@ -66,7 +66,12 @@ export class WisdomForWorkplacePage implements OnInit {
         pc06: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/55.mp3',
-          title: 'Be emotionally intelligent, and a better leader'
+          title: 'Resilience podcast with Brad Hook'
+        },
+        pc07: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/60.mp3',
+          title: 'How can we be successful?'
         }
       }
      }
@@ -95,17 +100,31 @@ export class WisdomForWorkplacePage implements OnInit {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+        this.router.navigate(['/adults/curated/youtubelink', link])
+    }
   }
 
   s3video(link) {
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+
+      this.router.navigate(['/adults/wisdom-shorts', link])
+    }
+  
   }
 
   audiopage(audiofile, title, id) {
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    }
   }
 
   getsupport(url, id, ind = 0) {
@@ -523,11 +542,9 @@ export class WisdomForWorkplacePage implements OnInit {
   }
 
   enableRoute(route) {
-    if (this.guest || !this.Subscriber) {
-      this.enableAlert = true;
-    }else {
+    
       this.router.navigate([route]);
-    }
+   
   }
 
   getclcickevent(event) {
@@ -537,6 +554,11 @@ export class WisdomForWorkplacePage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (this.guest || !this.Subscriber) {
+      //this.enableAlert = true;
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    }
   }
 }
