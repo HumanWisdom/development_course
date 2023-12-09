@@ -32664,42 +32664,50 @@ body *
 
 .div_sate .col-lg-6:nth-child(1) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_sate .col-lg-6:nth-child(2) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_sate .col-lg-6:nth-child(3) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_sate .col-lg-6:nth-child(4) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_sate .col-lg-6:nth-child(5) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_sate .col-lg-6:nth-child(6) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_sate .col-lg-6:nth-child(7) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_sate .col-lg-6:nth-child(8) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_sate .col-lg-6,
@@ -33386,7 +33394,7 @@ body *
 {
   /* filter: brightness(90%); */
   border: 1px solid #FFF;
-  background-color: unset !important;
+  /* background-color: unset !important; */
 }
 
 .div_ct button:active,
@@ -33425,42 +33433,50 @@ body *
 
 .div_ct .col-lg-6:nth-child(1) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_ct .col-lg-6:nth-child(2) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_ct .col-lg-6:nth-child(3) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_ct .col-lg-6:nth-child(4) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_ct .col-lg-6:nth-child(5) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_ct .col-lg-6:nth-child(6) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_ct .col-lg-6:nth-child(7) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_ct .col-lg-6:nth-child(8) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_ct .col-lg-6
