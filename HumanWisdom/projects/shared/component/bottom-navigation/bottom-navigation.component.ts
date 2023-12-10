@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
-//import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
   selector: 'app-bottom-navigation',
@@ -13,12 +12,12 @@ import { OnboardingService } from '../../services/onboarding.service';
 export class BottomNavigationComponent implements OnInit {
   @Input() dash = false;
   @Input() programType :ProgramType = ProgramType.Adults;
-  journal = false
-  fourm = false
-  profile = true
+  @Input() journal = false
+  @Input() fourm = false
+  @Input() profile = true
   isloggedIn = false
-  enableprofile = false
-  search = false
+  @Input() enableprofile = false
+  @Input() search = false
   Subscriber: any;
   guest: any;
   userdetail:any;
@@ -46,9 +45,10 @@ export class BottomNavigationComponent implements OnInit {
       this.enableprofile = false;
     }
     if (this.router.url == "/adults/adult-dashboard") {
-      this.dash = true
-      this.journal = false
+      this.dash = true;
+      this.journal = false;
       this.search = false;
+      this.fourm = false;
       this.enableprofile = false;
     }
     if ((this.router.url == "/adults/journal") ||
@@ -56,6 +56,8 @@ export class BottomNavigationComponent implements OnInit {
       (this.router.url.indexOf('/adults/note') > -1)) {
       this.dash = false
       this.journal = true;
+      this.search = false;
+      this.fourm = false;
       this.enableprofile = false;
     }
     let reg = new RegExp('forum')
@@ -64,6 +66,7 @@ export class BottomNavigationComponent implements OnInit {
       this.journal = false
       this.fourm = true;
       this.enableprofile = false;
+      this.journal = false;
     }
     if (this.router.url == "/onboarding/user-profile"
       || this.router.url.includes('/profile-edit')) {
@@ -71,6 +74,7 @@ export class BottomNavigationComponent implements OnInit {
       this.journal = false
       this.fourm = false;
       this.enableprofile = true;
+      this.search = false;
     }
   
     if (this.isloggedIn) {
