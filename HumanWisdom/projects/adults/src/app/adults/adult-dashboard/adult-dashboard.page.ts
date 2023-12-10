@@ -232,9 +232,9 @@ export class AdultDashboardPage implements OnInit {
 
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
-      this.enablebanner = true;
+      SharedService.enablebanner = true;
     } else {
-      this.enablebanner = false;
+      SharedService.enablebanner = false;
     }
 
 
@@ -513,7 +513,7 @@ export class AdultDashboardPage implements OnInit {
   // }
 
   getplaystore(event) {
-    this.enablebanner = false
+    SharedService.enablebanner = false
   }
 
   getUserPreference() {
@@ -1455,7 +1455,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   closeplaystore() {
-    this.enablebanner = false;
+    SharedService.enablebanner = false;
   }
 
   submitrefer() {
@@ -4049,5 +4049,7 @@ export class AdultDashboardPage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
     this.router.navigate(['/adults/testimonials']);
   }
-
+  getEnableBanner(){
+    return SharedService.enablebanner;
+  }
 }

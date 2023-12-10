@@ -12,6 +12,13 @@
   <ngx-json-ld [json]="schema"></ngx-json-ld>
   <router-outlet #outlet="outlet"></router-outlet>
 </main>
+<!-- top navigation -->
+<!-- header -->
+<ng-container *ngIf="isShowHeader"> 
+<app-tn-dashboard-v03 [enableplaystore]="enableplaystore" [routeid]="routeid" [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03>
+</ng-container>
+<!-- /header -->
+<!-- /top navigation -->
 
 <router-outlet></router-outlet>
 <ng-container *ngIf="enableFooter()">

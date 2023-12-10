@@ -8,6 +8,7 @@ import { Constant } from './constant';
     public static AdultsBaseUrl:string='https://humanwisdom.me/';
     public static UrlToRedirect:string= null;
     public static ClientUrl:string = 'https://staging.happierme.app/adults/';
+    public static enablebanner = false;
   constructor() {
   }
     
