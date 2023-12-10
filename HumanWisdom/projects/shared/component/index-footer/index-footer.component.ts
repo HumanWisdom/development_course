@@ -19,7 +19,7 @@ export class IndexFooterComponent implements OnInit {
   Subscriber: any;
   url='';
   userdetail:any;
-  defaultUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg";
+  defaultUrl = "https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_active.svg";
   constructor(private router: Router,private onboardingService: OnboardingService) { }
 
   ngOnInit() {
@@ -32,7 +32,10 @@ export class IndexFooterComponent implements OnInit {
     if(loggedInUserId>0){
       this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
         this.userdetail = res[0];
-        this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+        if(this.userdetail['UserImagePath'] !='')
+        {
+            this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+        }
         this.profile = true;
       });
     }

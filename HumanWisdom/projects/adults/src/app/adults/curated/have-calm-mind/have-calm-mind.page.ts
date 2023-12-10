@@ -23,10 +23,16 @@ export class HaveCalmMindPage implements OnInit {
   gamP: any
   meditationP: any
   withoutLanguageP: any
+  awarenessP: any
+  guest = false;
+  Subscriber = false;
   mediaUrl: any;
 
   constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) 
   { 
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
     this.mediaUrl = {
       pc01: 
       {
@@ -37,6 +43,11 @@ export class HaveCalmMindPage implements OnInit {
       {
         url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
         title: 'How can we overcome anxiety?'
+      },
+      pc03: 
+      {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/24.mp3',
+        title: 'Journey to inner peace'
       }
     }
   }
@@ -62,17 +73,29 @@ export class HaveCalmMindPage implements OnInit {
   }
 
   youtube(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/curated/youtubelink', link])
+    }
   }
 
   s3video(link) {
+    if (this.guest || !this.Subscriber) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
+    }
   }
 
-  audiopage(audiofile, title, id) {
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+  audiopage(audiofile, title, id, isfree=0) {
+    if ((isfree==0) && (this.guest || !this.Subscriber)) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }else{
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    }
   }
 
   getsupport(url, id, ind = 0) {
@@ -337,6 +360,39 @@ export class HaveCalmMindPage implements OnInit {
         })
   }
 
+  routeAwareness(cont: any = 1) 
+{
+      var awarenessResume
+      localStorage.setItem("moduleId", JSON.stringify(39))
+      this.service.clickModule(39, this.userId)
+            .subscribe(res => {
+            localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+            this.qrList = res
+            awarenessResume = "s" + res.lastVisitedScreen
+            this.goToPage = res.lastVisitedScreen
+            // continue where you left
+            if (res.lastVisitedScreen === '') {
+                  localStorage.setItem("lastvisited", 'F')
+            }
+            else {
+                  localStorage.setItem("lastvisited", 'T')
+            }
+            // /continue where you left
+            sessionStorage.setItem("awarenessResume", awarenessResume)
+            localStorage.setItem("qrList", JSON.stringify(this.qrList))
+       },
+      error => {
+            console.log(error)
+      },
+      () => {
+      if (cont == "1") {
+            this.router.navigate([`/adults/awareness/${awarenessResume}`])
+      }
+      else
+            this.router.navigate([`/adults/awareness/s39000`])
+      })
+}
+
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {
@@ -362,6 +418,7 @@ export class HaveCalmMindPage implements OnInit {
         this.gamP = res.ModUserScrPc.find(e => e.Module == "Guided Audio Meditation")?.Percentage
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
         this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
+        this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
       })
   }
 

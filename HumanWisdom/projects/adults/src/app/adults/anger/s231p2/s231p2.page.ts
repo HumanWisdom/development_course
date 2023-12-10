@@ -20,19 +20,19 @@ export class S231p2Page implements OnInit {
   moduleList: any = [
     {
       name: 'Reactive mind',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/54.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/54.jpg',
       link: '/reactive-mind',
       id: 54
     },
     {
       name: 'Stress',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/44.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/44.jpg',
       link: '/stress',
       id: 44
     },
     {
       name: 'Relationships',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/47.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/47.jpg',
       link: '/relationships',
       id: 47
     },

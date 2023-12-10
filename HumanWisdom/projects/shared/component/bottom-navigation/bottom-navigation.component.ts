@@ -22,7 +22,7 @@ export class BottomNavigationComponent implements OnInit {
   guest: any;
   userdetail:any;
   url:string='';
-  defaultUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg";
+  defaultUrl = "https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_inactive.svg";
   @Input() isGuidedQuestion?: boolean = false;
   @Output() saveQuestion = new EventEmitter();
   @Output() journalclick = new EventEmitter();
@@ -35,6 +35,23 @@ export class BottomNavigationComponent implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber')
       this.guest = localStorage.getItem('guest')
     }
+
+    if (this.isloggedIn) {
+      var loggedInUserId = SharedService.getUserId();
+      if(loggedInUserId>0){
+        this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
+          this.userdetail = res[0];
+          if(this.userdetail['UserImagePath'] !='')
+          {
+            this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+          }
+          this.profile = true;
+        });
+      }else{
+        this.profile = true;
+      }
+    }
+   
     if (this.router.url == "/adults/search"
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {
@@ -77,18 +94,7 @@ export class BottomNavigationComponent implements OnInit {
       this.search = false;
     }
   
-    if (this.isloggedIn) {
-      var loggedInUserId = SharedService.getUserId();
-      if(loggedInUserId>0){
-        this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
-          this.userdetail = res[0];
-          this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
-          this.profile = true;
-        });
-      }else{
-        this.profile = true;
-      }
-    }
+    
   }
 
   routeDash() {

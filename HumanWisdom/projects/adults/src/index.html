@@ -145,14 +145,15 @@
   <!-- google analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="buM8gRBCbgoR1Mzr06i_CWNtSYhwRsmPTow7XhIDCYk" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211149613-1"></script>
+  
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211149613-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-211149613-1');
-  </script>
+  </script> -->
   <!-- /google analytics -->
 
   <!-- Google tag (gtag.js) -->
@@ -672,12 +673,16 @@
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
     });
 
-    $(document).on('click', '.hamburger_sociali a', function () {
+    /*$(document).on('click', '.hamburger_sociali a', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-    });
+    });*/
 
     $(document).on('click', 'ul.dh_ul li a.hc_sfn', function () {
       $('body').removeClass("overflow_auto").addClass("overflow_hidden");
+    });
+
+    $(document).on('click', 'hamburger_sociali a', function () {
+      $('body').removeClass("overflow_auto").addClass("overflow_hiddeni");
     });
   </script>
 

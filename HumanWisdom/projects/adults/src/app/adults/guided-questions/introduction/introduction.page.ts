@@ -22,7 +22,7 @@ export class IntroductionPage implements OnInit {
   }
 
   ngOnInit() {
-  
+
   }
 
   goBack() {
@@ -35,7 +35,12 @@ export class IntroductionPage implements OnInit {
   }
 
   NavigateToQuestions() {
-    this.router.navigate(['/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+    let log = localStorage.getItem("isloggedin");
+    if (log === 'T') {
+      this.router.navigate(['/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+    }else{
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
 
   GetGuidedQs_Topics(url) {

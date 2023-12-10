@@ -260,7 +260,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   shareOnThread(item){
-      this.path = "http://humanwisdom.me/forum/forum-thread/"+item.PostID;
+      this.path = "https://happierme.app/forum/forum-thread/"+item.PostID;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
     // }
@@ -338,12 +338,12 @@ export class ForumLandingPage implements OnInit {
      } */
     if (this.urlT) {
       console.log("url")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.urlT}`
 
     }
     else {
       console.log("local")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({
@@ -365,12 +365,12 @@ export class ForumLandingPage implements OnInit {
   shareLandingPage(){
      if (this.urlT) {
       console.log("url")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.urlT}`
 
     }
     else {
       console.log("local")
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+      this.path = "https://happierme.app/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({

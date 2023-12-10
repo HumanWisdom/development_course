@@ -87,10 +87,7 @@ jobs:
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/course
           sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
-          sudo chown ubuntu:ubuntu /var/www/html/course
- 
-           - name: Cleaning up Teenagers pipeline
-             run: sleep 30   
+          sudo chown ubuntu:ubuntu /var/www/html/course 
           
   build-teenagers:
      runs-on: ubuntu-latest
