@@ -32408,6 +32408,7 @@ body *
   align-items: center;
   justify-content: center;
   height: 100px;
+  padding: 20px;
 }
 
 .box_v3_02
@@ -35708,5 +35709,10 @@ li ol > li:before {
 .h4_blogs a span
 {
   word-break: break-word;
+}
+
+.pr15pxi
+{
+  padding-right: 15px !important;
 }
 /* /version - 03 */
