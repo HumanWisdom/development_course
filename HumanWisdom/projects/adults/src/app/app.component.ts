@@ -44,6 +44,11 @@ export class AppComponent implements OnDestroy {
   isloggedIn = false
   enableprofile = false
   search = false;
+  enableplaystore = false;
+  routeid='search';
+  isEnableHam = true;
+  enablebanner = false;
+  isShowHeader = false;
   @ViewChild('enablepopup') enablepopup: ElementRef;
   constructor(
     private platform: Platform,
@@ -335,7 +340,7 @@ export class AppComponent implements OnDestroy {
       this.enablepopup.nativeElement.click();
     }
   }
-  
+
   enableFooter() {
     if (this.router.url == "/adults/search"
       || this.router.url.includes('/adults/site-search/') ||
@@ -345,6 +350,10 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.search = true;
       this.enableprofile = false;
+      this.routeid='search';
+      this.isEnableHam = true;
+      this.enableplaystore = false;
+      this.isShowHeader=true;
       return true;
     }
     if (this.router.url == "/adults/adult-dashboard") {
@@ -353,6 +362,9 @@ export class AppComponent implements OnDestroy {
       this.search = false;
       this.fourm = false;
       this.enableprofile = false;
+      this.isEnableHam = true;
+      this.enableplaystore = true;
+      this.isShowHeader=true;
       return true;
     }
     if ((this.router.url == "/adults/journal") ||
@@ -363,6 +375,9 @@ export class AppComponent implements OnDestroy {
       this.search = false;
       this.fourm = false;
       this.enableprofile = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader=false;
       return true;
     }
     let reg = new RegExp('forum')
@@ -372,6 +387,9 @@ export class AppComponent implements OnDestroy {
       this.fourm = true;
       this.enableprofile = false;
       this.journal = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader=false;
       return true;
     }
     if (this.router.url == "/onboarding/user-profile"
@@ -381,9 +399,30 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.enableprofile = true;
       this.search = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader=false;
       return true;
     }
+  if (this.router.url == "/adults/notification") {
+    this.dash = false
+    this.journal = false
+    this.fourm = false;
+    this.enableprofile = false;
+    this.search = false;
+    this.isEnableHam = false;
+    this.enableplaystore = false;
+    this.isShowHeader=true;
+    return true;
+  }
+    this.isShowHeader=false;
     return false;
   }
+
+  
+  getplaystore(event) {
+    SharedService.enablebanner = false
+  }
+  
 }
 
