@@ -18,7 +18,7 @@ export class S46079Page implements OnInit {
   // moduleName=" Money"
   // sectionName= "Transform your life - II";
   // moduleId=73
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/63.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/63.jpg"
  
   bg=""
   moduleLink="/adults/living-with-peace"

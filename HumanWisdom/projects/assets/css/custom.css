@@ -32408,6 +32408,7 @@ body *
   align-items: center;
   justify-content: center;
   height: 100px;
+  padding: 20px;
 }
 
 .box_v3_02
@@ -32664,42 +32665,50 @@ body *
 
 .div_sate .col-lg-6:nth-child(1) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_sate .col-lg-6:nth-child(2) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_sate .col-lg-6:nth-child(3) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_sate .col-lg-6:nth-child(4) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_sate .col-lg-6:nth-child(5) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_sate .col-lg-6:nth-child(6) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_sate .col-lg-6:nth-child(7) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_sate .col-lg-6:nth-child(8) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_sate .col-lg-6,
@@ -33386,7 +33395,7 @@ body *
 {
   /* filter: brightness(90%); */
   border: 1px solid #FFF;
-  background-color: unset !important;
+  /* background-color: unset !important; */
 }
 
 .div_ct button:active,
@@ -33425,42 +33434,50 @@ body *
 
 .div_ct .col-lg-6:nth-child(1) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_ct .col-lg-6:nth-child(2) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_ct .col-lg-6:nth-child(3) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_ct .col-lg-6:nth-child(4) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_ct .col-lg-6:nth-child(5) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_ct .col-lg-6:nth-child(6) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
+  background: #E58D82;
 }
 
 .div_ct .col-lg-6:nth-child(7) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
+  background: #834B66;
 }
 
 .div_ct .col-lg-6:nth-child(8) button
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat; */
+  background: #CB6171;
 }
 
 .div_ct .col-lg-6
@@ -35634,7 +35651,8 @@ li ol > li:before {
 #docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p span,
 .h4_blogs p span,
 .h4_blogs h2 font,
-.h4_blogs p font
+.h4_blogs p font,
+.h4_blogs
 {
   font-size: 16px !important;
   font-weight: 400;
@@ -35649,7 +35667,7 @@ li ol > li:before {
 .h4_blogs p a font
 {
   font-size: 16px !important;
-  font-weight: 600;
+  font-weight: 600 !important;
   line-height: 150%;
   font-style: normal;
   color: #E58D82 !important;
@@ -35664,5 +35682,37 @@ li ol > li:before {
 .btn_am
 {
   background: transparent;
+}
+
+.h4_blogs ol 
+{
+  padding: 0 15px !important;
+  color: #FFF !important;
+}
+
+.h4_blogs ol li
+{
+  color: #FFF !important;
+}
+
+.h4_blogs p
+{
+  padding: 0;
+  margin: 0 !important;
+}
+
+.h4_blogs p b 
+{
+  color: #FFF !important;
+}
+
+.h4_blogs a span
+{
+  word-break: break-word;
+}
+
+.pr15pxi
+{
+  padding-right: 15px !important;
 }
 /* /version - 03 */

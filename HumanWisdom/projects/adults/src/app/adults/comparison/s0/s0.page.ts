@@ -29,7 +29,7 @@ export class S0Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   comparisonR=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/07.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.jpg"
   tocColor="white"
   lastvisited = false;
   stories: any = []

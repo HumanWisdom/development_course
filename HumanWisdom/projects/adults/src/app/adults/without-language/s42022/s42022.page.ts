@@ -11,7 +11,7 @@ import {AdultsService} from "../../adults.service";
 export class S42022Page implements OnInit {
   
   toc="without-language/s42000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/43.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/43.jpg"
   
   bg=""
   moduleLink="/adults/obstacles-enquiry/s43001"
@@ -54,7 +54,7 @@ export class S42022Page implements OnInit {
     
     }
     else if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/29.jpg"
      
       this.moduleLink = "/adults/breathing"
       this.moduleName = "Breathing"

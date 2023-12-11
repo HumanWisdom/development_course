@@ -12,7 +12,7 @@ export class S54084Page implements OnInit {
 
   toc = "reactive-mind/s54001"
   bg="";
-  moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/25.png"
+  moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/25.jpg"
   moduleLink = "/adults/self-image"
   moduleName = "Self Image"
   sectionName = "How the Mind Works";
@@ -51,7 +51,7 @@ export class S54084Page implements OnInit {
     
     }
    else if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/92.jpg"
       this.moduleLink = "/adults/dealing-with-depression"
       this.moduleName = "Dealing with depression"
       this.sectionName = "Manage your emotions";
