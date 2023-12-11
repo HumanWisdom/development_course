@@ -12,12 +12,12 @@
     </div>
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
         <a [routerLink]="['/adults/guided-meditation', gamR]" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
-    </div> 
+    </div>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -26,13 +26,13 @@
         </h4>
       </div>
     </div>
-    
+
     <div class="toc_adiv">
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51002">
+      <a (click)="routeGuided(true, '/adults/guided-meditation/s51002')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #1
@@ -55,10 +55,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51003">
+      <a (click)="routeGuided(true, '/adults/guided-meditation/s51003')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #2
@@ -81,10 +81,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51004">
+      <a (click)="routeGuided(true, '/adults/guided-meditation/s51004')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #3
@@ -107,10 +107,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51005">
+      <a (click)="routeGuided('/adults/guided-meditation/s51005')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #4
@@ -123,8 +123,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -133,10 +139,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #5
@@ -149,8 +155,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -159,10 +171,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p1">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p1')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #6
@@ -175,8 +187,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -185,10 +203,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p2">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p2')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #7
@@ -201,8 +219,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -211,10 +235,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p3">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p3')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #8
@@ -227,20 +251,25 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
           </div>
         </div>
       </a>
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p4">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p4')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #9
@@ -253,20 +282,26 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
         </div>
-      </a> 
+      </a>
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p5">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p5')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #10
@@ -279,8 +314,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -289,10 +330,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p6">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p6')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #11
@@ -305,8 +346,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -315,10 +362,10 @@
       <!-- /audio row -->
 
       <!-- audio row -->
-      <a routerLink="/adults/guided-meditation/s51006p7">
+      <a (click)="routeGuided('/adults/guided-meditation/s51006p7')">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Meditation #12
@@ -331,8 +378,14 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -351,7 +404,7 @@
 
     <!-- <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles> -->
 
-  </form>  
+  </form>
 </app-index-content>
 
 <app-index-footer></app-index-footer>
