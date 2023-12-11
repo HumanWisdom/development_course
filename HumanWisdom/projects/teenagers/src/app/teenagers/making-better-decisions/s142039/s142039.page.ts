@@ -14,7 +14,9 @@ export class S142039Page implements OnInit {
   bg = "light_blue_w2"
   hint = "It may be something different from the previous list, which is just a guide."
   toc = "/making-better-decisions/s142001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

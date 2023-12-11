@@ -14,7 +14,7 @@ export class S138051Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind compares all the time"
+  title="#1 Our mind compares all the time"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.7.mp3'
   transcriptPage="social-media/s138051t"
