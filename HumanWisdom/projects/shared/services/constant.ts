@@ -37,4 +37,5 @@ export class Constant {
     public static isFromCancelled = 'isFromCancelled';
     public static Checkout = "Checkout";
     public static NoTrial = 'No Trial';
+    public static ProfileImage='ProfileImage';
 }

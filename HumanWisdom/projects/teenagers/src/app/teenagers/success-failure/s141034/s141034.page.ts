@@ -15,7 +15,9 @@ export class S141034Page implements OnInit {
   bg = "light_blue_w2"
   hint = " It could make you neglect your relationships, for example"
   toc = "/success-failure/s141001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

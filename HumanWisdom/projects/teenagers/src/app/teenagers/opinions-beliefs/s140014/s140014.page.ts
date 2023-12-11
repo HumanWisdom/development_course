@@ -15,7 +15,9 @@ export class S140014Page implements OnInit {
   bg = "purple_red_w11"
   hint = "Why are you attached to your opinions, which are not yours anyway?"
   toc = "/opinions-beliefs/s140001"
-  path = this.router.url
+ path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

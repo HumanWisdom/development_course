@@ -31,7 +31,9 @@ export class S142100Page implements OnInit {
   //sendOption=[]
   sessionOption142100=JSON.parse(sessionStorage.getItem("sessionOption142100"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption142100"))
-  path=this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/making-better-decisions/s142001"
 
   constructor(private router: Router,
