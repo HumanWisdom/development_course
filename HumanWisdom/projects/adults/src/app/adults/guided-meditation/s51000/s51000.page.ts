@@ -208,7 +208,7 @@ export class S51000Page implements OnInit, OnDestroy {
     this.router.navigate(['adults/guided-meditation/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 
-  routeGuided(active = false, url) {
+  routeGuided(url, active = false) {
     if(active || this.isLoggedIn) {
       this.router.navigate([url])
     }else {
