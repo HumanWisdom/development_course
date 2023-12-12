@@ -19,7 +19,7 @@ export class S432Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=49
 
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/58.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/58.webp"
   
   bg=""
   moduleLink="/adults/work"

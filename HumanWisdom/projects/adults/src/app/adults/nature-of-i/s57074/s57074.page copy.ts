@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S57074Page implements OnInit {
   
   toc="nature-of-i/s57001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.webp"
  
   bg=""
   moduleLink="/adults/conditioning"

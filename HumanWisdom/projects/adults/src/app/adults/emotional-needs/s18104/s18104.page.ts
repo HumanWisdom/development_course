@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S18104Page implements OnInit {
   
   toc="emotional-needs/s18001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/56.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/56.webp"
   
   bg=""
   moduleLink="/adults/inner-boredom"
@@ -35,7 +35,7 @@ export class S18104Page implements OnInit {
     },
     {
       name: 'No Judgement',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/40.jpg',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/40.webp',
       link: '/no-judgement',
       id: 40
   
@@ -54,7 +54,7 @@ export class S18104Page implements OnInit {
     
     }
     else if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/42.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/42.webp"
      
       this.moduleLink = "/adults/without-language"
       this.moduleName = "Look Without Language"
