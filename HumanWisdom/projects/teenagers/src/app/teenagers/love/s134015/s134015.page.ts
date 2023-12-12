@@ -27,7 +27,9 @@ export class S134015Page implements OnInit,OnDestroy {
   totalTime:any  
   toc="/love/s134001"
   bookmark=0
-  path=this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

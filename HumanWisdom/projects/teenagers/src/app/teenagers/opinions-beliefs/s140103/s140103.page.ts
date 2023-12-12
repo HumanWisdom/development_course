@@ -16,7 +16,9 @@ export class S140103Page implements OnInit {
   hint=""
 
   toc = "/opinions-beliefs/s140001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

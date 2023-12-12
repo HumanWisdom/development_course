@@ -14,7 +14,9 @@ export class S142050Page implements OnInit {
   bg = "light_blue_w4"
   hint = " It could make you want to be a builder, if your Dad is a builder"
   toc = "/making-better-decisions/s142001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S140007Page implements OnInit {
   bg = "comparison_envy_w8"
   hint = "What are the factors that influenced you to have this opinion?"
   toc = "/opinions-beliefs/s140001"
-  path = this.router.url
+ path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

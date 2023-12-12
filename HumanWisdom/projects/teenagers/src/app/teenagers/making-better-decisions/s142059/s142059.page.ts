@@ -15,7 +15,9 @@ export class S142059Page implements OnInit
   bg = "light_blue_w1"
   hint = "You are on your phone all day or on computer games"
   toc = "/making-better-decisions/s142001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
