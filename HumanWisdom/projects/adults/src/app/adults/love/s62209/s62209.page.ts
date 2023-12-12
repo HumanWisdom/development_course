@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S62209Page implements OnInit {
   
   toc="love/s62001"
-  // moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.jpg"
+  // moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.webp"
   
   // bg=""
   // moduleLink="/adults/criticism"
@@ -19,7 +19,7 @@ export class S62209Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=16
 
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.webp"
   
   bg=""
   moduleLink="/adults/bullying"
@@ -54,7 +54,7 @@ export class S62209Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'relationships') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/49.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/49.webp"
       
       this.moduleLink = "/adults/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"

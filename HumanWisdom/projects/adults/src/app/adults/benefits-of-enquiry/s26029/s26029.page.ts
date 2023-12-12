@@ -12,7 +12,7 @@ export class S26029Page implements OnInit {
   
   toc="benefits-of-enquiry/s26001"
   bg=""
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/36.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/36.webp"
   moduleLink="/adults/how-to-begin/s36001"
   moduleName="How to begin?"
   sectionName= "Understand yourself";

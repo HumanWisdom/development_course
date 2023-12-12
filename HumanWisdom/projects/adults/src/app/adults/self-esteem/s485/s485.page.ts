@@ -18,7 +18,7 @@ export class S485Page implements OnInit {
   // moduleName=" Living with Peace"
   // sectionName= "Transform your life - I";
   // moduleId=63
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/45.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/45.webp"
  
   bg=""
   moduleLink="/adults/habit-addiction"

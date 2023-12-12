@@ -14,7 +14,7 @@ import { AdultsService } from './../../adults.service';
 })
 export class WisdomShortsIndexPage implements OnInit {
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.jpg"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp"
   tocColor = "white"
 
   path: string;

@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S51013Page implements OnInit {
   
   toc="guided-meditation/s51000"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/22.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/22.webp"
   
   bg=""
   moduleLink="/adults/meditation"

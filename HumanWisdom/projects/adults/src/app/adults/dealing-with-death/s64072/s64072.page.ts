@@ -20,7 +20,7 @@ export class S64072Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=76
   
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/47.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/47.webp"
  
   bg=""
   moduleLink="/adults/relationships"
@@ -53,7 +53,7 @@ export class S64072Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/18.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/18.webp"
     
       this.moduleLink = "/adults/emotional-needs"
       this.moduleName = " Emotional Needs"
