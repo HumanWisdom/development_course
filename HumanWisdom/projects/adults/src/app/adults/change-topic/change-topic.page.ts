@@ -95,7 +95,7 @@ export class ChangeTopicPage implements OnInit {
       if (res) {
         this.url = localStorage.getItem('lastRoute')?.toString();
         if (this.url == null) {
-          this.url = '/adult-dashboard';
+          this.url = '/adults/adult-dashboard';
         }
         localStorage.setItem('lastRoute', null);
         this.router.navigate([this.url]);
