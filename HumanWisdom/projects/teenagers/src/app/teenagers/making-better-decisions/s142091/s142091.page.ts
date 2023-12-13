@@ -14,7 +14,9 @@ export class S142091Page implements OnInit {
   bg = "light_blue_w1"
   hint = "For example you may have drunk some alcohol to deal with the problem of stress, but that may cause other problems later on"
   toc = "/making-better-decisions/s142001"
-  path = this.router.url
+ path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,7 @@ export class S138054Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind is easily influenced/conditioned"
+  title="#2 Our mind is easily influenced/conditioned"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.8.mp3'
   transcriptPage="social-media/s138054t"

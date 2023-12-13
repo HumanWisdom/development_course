@@ -3,13 +3,13 @@
   content="HappierMe apps can guide you to become the best person you can be, and discover life-changing wisdom through self-understanding. Learn the art of anger and stress management, get solutions for anxiety and depression.">
 
 <!-- header -->
-<app-tn-dashboard-v03 [enableplaystore]="true"  [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03>
+<!-- <app-tn-dashboard-v03 [enableplaystore]="true"  [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03> -->
 <!-- /header -->
 
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col dmain_container p0_important" role="main" [ngClass]="[enablebanner ? 'pt12rem' : 'pt6rem']">
+<div class="right_col dmain_container p0_important" role="main" [ngClass]="[getEnableBanner() ? 'pt12rem' : 'pt6rem']">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex safari_dflex">
@@ -1244,7 +1244,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
+<!-- <app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation> -->
 <!-- /footer -->
 
 <!-- popup modal -->
