@@ -15,7 +15,9 @@ export class S142052Page implements OnInit
   bg = "clight_blue_w6"
   hint = " It may be you are vaping, because everyone around you is doing the same."
   toc = "/making-better-decisions/s142001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

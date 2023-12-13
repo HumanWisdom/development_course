@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S20072Page implements OnInit {
   
   toc="pleasure/s20001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/60.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/60.webp"
  
   bg=""
   moduleLink="/adults/sorrow"
@@ -55,7 +55,7 @@ export class S20072Page implements OnInit {
     
     }
    else if (cur && cur === 'habits') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.webp"
       
       this.moduleLink = "/adults/conditioning"
       this.moduleName = "Conditioning"

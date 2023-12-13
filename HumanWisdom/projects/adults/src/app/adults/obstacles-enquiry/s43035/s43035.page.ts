@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S43035Page implements OnInit {
   
   toc="obstacles-enquiry/s43000"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/26.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/26.webp"
   
   bg=""
   moduleLink="/adults/benefits-of-enquiry/s26002"

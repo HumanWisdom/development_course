@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S60112Page implements OnInit {
   
   toc="sorrow/s60001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/61.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/61.webp"
   
   bg=""
   moduleLink="/adults/loneliness"
