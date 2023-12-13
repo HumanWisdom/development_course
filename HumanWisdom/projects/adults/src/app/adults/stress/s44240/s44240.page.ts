@@ -18,7 +18,7 @@ export class S44240Page implements OnInit {
   // moduleName=" Relationships"
   // sectionName= "Transform your life - I";
   // moduleId=47
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/17.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/17.webp"
   
   bg=""
   moduleLink="/adults/self-esteem"
@@ -51,7 +51,7 @@ export class S44240Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/19.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/19.webp"
      
       this.moduleLink = "/adults/fear-anxiety"
       this.moduleName = "Fear-Anxiety"
@@ -60,7 +60,7 @@ export class S44240Page implements OnInit {
     
     }
     else if (cur && cur === 'habits') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/46.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/46.webp"
      
       this.moduleLink = "/adults/food-health"
       this.moduleName = "Food and Health"

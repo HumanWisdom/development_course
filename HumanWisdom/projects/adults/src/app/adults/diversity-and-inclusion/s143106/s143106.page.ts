@@ -12,7 +12,7 @@ export class S143106Page implements OnInit
 {  
   
   toc="diversity-and-inclusion/s143001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/54.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/54.webp"
   bg=""
   moduleLink="/adults/reactive-mind"
   moduleName=" Reactive Mind"

@@ -29,7 +29,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmarkList = []
 
   gamR = sessionStorage.getItem("pgResume")
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.jpg"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
@@ -208,7 +208,7 @@ export class S51000Page implements OnInit, OnDestroy {
     this.router.navigate(['adults/guided-meditation/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 
-  routeGuided(active = false, url) {
+  routeGuided(url, active = false) {
     if(active || this.isLoggedIn) {
       this.router.navigate([url])
     }else {

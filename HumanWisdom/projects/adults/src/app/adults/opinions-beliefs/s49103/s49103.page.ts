@@ -19,7 +19,7 @@ export class S49103Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=17
 
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/48.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/48.webp"
  
   bg=""
   moduleLink="/adults/success-failure"
@@ -61,7 +61,7 @@ export class S49103Page implements OnInit {
     
     }
     else if (cur && cur === 'workplace') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/143.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/143.webp"
       
       this.moduleLink = "/adults/diversity-and-inclusion"
       console.log(this.moduleLink)
