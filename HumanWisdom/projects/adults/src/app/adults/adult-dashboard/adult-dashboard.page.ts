@@ -26,7 +26,7 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  public dasboardUrl = 'adult-dashboard';
+  public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
   public text = 2
   public video = 3
@@ -4005,7 +4005,7 @@ export class AdultDashboardPage implements OnInit {
   }
   changeTopic() {
     localStorage.setItem('lastRoute',this.dasboardUrl);
-    this.router.navigate(["/change-topic"], {
+    this.router.navigate(["/adults/change-topic"], {
       state: {
         routedFromLogin: false,
       }
