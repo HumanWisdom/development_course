@@ -180,15 +180,27 @@ export class ProfilePage implements OnInit {
     const accessObj: any = window;
     (accessObj)?.Moengage?.destroy_session();
     this.logeventservice.logEvent('click_logout_Hamburger');
+    if(this.platform.IOS || this.platform.ANDROID){
+        this.clickButtonById("liLogout");
+   }
     if (this.platform.isBrowser) {
       localStorage.setItem("isloggedin", "F");
       localStorage.setItem("guest", "T");
       localStorage.setItem("navigateToUpgradeToPremium", "false");
       localStorage.setItem("btnClickBecomePartner", "false");
       this.router.navigate(["/onboarding/login"]);
-    } else {
-      const event = new CustomEvent('logoutbtn');
-      window.dispatchEvent(event);
     }
+  
   }
+
+   clickButtonById(buttonId: string): void {
+    const buttonElement: HTMLButtonElement | null = document.getElementById(buttonId) as HTMLButtonElement;
+
+    if (buttonElement) {
+        buttonElement.click();
+    } else {
+        console.error(`Button with ID '${buttonId}' not found`);
+    }
+}
+
 }

@@ -15,7 +15,9 @@ export class S142066Page implements OnInit
   bg = "light_blue_w8"
   hint = " It may make you want to answer all the questions the teacher asks, or show off your new watch or phone."
   toc = "/making-better-decisions/s142001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

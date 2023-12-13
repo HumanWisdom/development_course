@@ -16,7 +16,9 @@ export class S140028Page implements OnInit {
   hint="For example, the divisions seen around the abortion debate in America, or between the Shias and Sunnis."
 
   toc = "/opinions-beliefs/s140001"
-  path = this.router.url
+ path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,7 @@ export class S138065Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind seeks external approval"
+  title="#5 Our mind seeks external approval"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.11.mp3'
   transcriptPage="social-media/s138065t"
