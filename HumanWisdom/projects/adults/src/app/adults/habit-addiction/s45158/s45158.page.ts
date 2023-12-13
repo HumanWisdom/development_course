@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S45158Page implements OnInit {
   
   toc="habit-addiction/s45001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/46.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/46.webp"
   
   bg=""
   moduleLink="/adults/food-health"
@@ -45,7 +45,7 @@ export class S45158Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.webp"
      
       this.moduleLink = "/adults/comparison"
       this.moduleName = "Comparison and Envy"

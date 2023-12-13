@@ -25,7 +25,7 @@ export class S73001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   moneyResume=sessionStorage.getItem("pgResume")
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/73.jpg"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/73.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []
