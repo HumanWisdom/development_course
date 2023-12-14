@@ -91,9 +91,11 @@ export class ChangeTopicPage implements OnInit {
   }
 
   update() {
+    console.log("update")
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
         this.url = localStorage.getItem('lastRoute')?.toString();
+        console.log(this.url)
         if (this.url == null) {
           this.url = '/adults/adult-dashboard';
         }
@@ -112,10 +114,11 @@ export class ChangeTopicPage implements OnInit {
   }
 
   next(){
+    console.log("next")
     window.history.state.routedFromLogin = false;
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
-        this.url = '/adult-dashboard';
+        this.url = '/adults/adult-dashboard';
         this.router.navigate([this.url]);
       }
     });
