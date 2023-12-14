@@ -31,6 +31,8 @@ export class S91001Page implements OnInit,OnDestroy {
   tocAlt=""
   lastvisited = false;
   stories = []
+  isLoggedIn = false;
+
   externalapprovalR=sessionStorage.getItem("externalapprovalR")
 
   constructor(
@@ -76,6 +78,9 @@ export class S91001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
 
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');

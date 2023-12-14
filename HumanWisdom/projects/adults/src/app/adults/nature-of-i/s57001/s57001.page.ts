@@ -29,6 +29,7 @@ export class S57001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = [];
+  isLoggedIn = false;
   modulename = "The Nature of the 'I'";
 
   constructor(
@@ -72,6 +73,9 @@ export class S57001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
 
