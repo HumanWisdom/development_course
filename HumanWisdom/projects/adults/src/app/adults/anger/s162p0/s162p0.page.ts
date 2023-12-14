@@ -30,6 +30,7 @@ export class S162p0Page implements OnInit, OnDestroy
   tocColor = "white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
 
   constructor
   (
@@ -67,6 +68,9 @@ export class S162p0Page implements OnInit, OnDestroy
 
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if (last === 'T') 

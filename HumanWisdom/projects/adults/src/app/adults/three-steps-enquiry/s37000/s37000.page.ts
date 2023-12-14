@@ -29,6 +29,8 @@ export class S37000Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
+
 
   constructor(
     private router: Router,
@@ -71,6 +73,9 @@ export class S37000Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-yourself');
 
     // continue where you left    
