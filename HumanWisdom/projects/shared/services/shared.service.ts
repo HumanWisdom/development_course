@@ -1,5 +1,6 @@
 
-  import {ProgramType} from './../models/program-model';
+  import { Platform } from '@angular/cdk/platform';
+import {ProgramType} from './../models/program-model';
 import { Constant } from './constant';
 
    export class  SharedService {
@@ -9,6 +10,7 @@ import { Constant } from './constant';
     public static UrlToRedirect:string= null;
     public static ClientUrl:string = 'https://staging.happierme.app/adults/';
     public static enablebanner = false;
+    public static isIos = false;
   constructor() {
   }
     
@@ -97,5 +99,26 @@ import { Constant } from './constant';
   public static DisabledComment(item){
     return parseInt(item.TagIds)==5 && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
   }
+
+  public static initializeIosCheck(platform:Platform){     
+   if(platform.IOS ||  this.iOS()){
+       return true;
+   }
+   return false;
+  }
+
+   private static iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+  
 
 }

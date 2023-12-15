@@ -18,7 +18,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-
+  isIos=false;
   searchResult = [];
   personalisedforyou = []
 
@@ -109,6 +109,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   ngOnInit() {
+    this.isIos = SharedService.isIos;
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
