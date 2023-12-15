@@ -21,7 +21,9 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   dataloaded = false;
   constructor(private router: Router,
     private onboardingService: OnboardingService,
-    private platform: Platform) { }
+    private platform: Platform) {
+      this.isIos= SharedService.isIos;
+     }
 
   ngOnInit() {
     this.pricingModel = {
@@ -42,7 +44,9 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   }
 
   SubscribeToPremium(){
-    this.router.navigate(['/subscription/start-your-free-trial']);
+    if(!SharedService.isIos){
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
   
   getCountry() {
