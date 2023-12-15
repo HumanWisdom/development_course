@@ -67,7 +67,7 @@ export class AppComponent implements OnDestroy {
       //   console.log('Web push permission:', permission);
       // });
     }
-
+    SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
@@ -84,7 +84,8 @@ export class AppComponent implements OnDestroy {
         this.UpdateMeta(event.url);
       }
     });
-
+   
+ 
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {

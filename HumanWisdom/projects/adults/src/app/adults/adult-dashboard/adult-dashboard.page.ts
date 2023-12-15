@@ -162,7 +162,7 @@ export class AdultDashboardPage implements OnInit {
   maxExceriseCount = "12;";
   public YourTopicofChoice = [];
   public registrationForm :any;
-
+  public isIos=false;
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -182,7 +182,7 @@ export class AdultDashboardPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(3)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
     }, { validator: this.PasswordValidator })
-
+    this.isIos = SharedService.isIos;
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')

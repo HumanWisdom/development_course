@@ -10,6 +10,7 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from "@angular/cdk/platform";
+import { SharedService } from "../../services/shared.service";
 
 @Component({
   selector: "app-hamburger",
@@ -75,9 +76,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if (this.platform.IOS) {
-      this.ios = true;
-    }
+     this.ios = SharedService.isIos;
      if(localStorage.getItem("isPartner")!=null){
            this.isPartner = localStorage.getItem("isPartner");
      }
