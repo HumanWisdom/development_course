@@ -16,7 +16,7 @@ export class S159068Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind seeks external approval"
+  title="#5 Our mind seeks external approval"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.11.mp3'
   transcriptPage="social-media/s159068t"
@@ -94,7 +94,7 @@ export class S159068Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/social-media/s159069'])
+    this.router.navigate(['/adults/social-media/s159069'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S159068Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/social-media/s159067'])
+    this.router.navigate(['/adults/social-media/s159067'])
   }
 
   ngOnDestroy()

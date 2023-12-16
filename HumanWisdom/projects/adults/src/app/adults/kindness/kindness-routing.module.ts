@@ -124,6 +124,7 @@ import { S158113Page } from './s158113/s158113.page';
 import { S158114Page } from './s158114/s158114.page';
 import { S158115Page } from './s158115/s158115.page';
 import { S158116Page } from './s158116/s158116.page';
+import { S158116p1Page } from './s158116p1/s158116p1.page';
 import { S158117Page } from './s158117/s158117.page';
 
 const routes: Routes = [
@@ -631,6 +632,10 @@ const routes: Routes = [
   {
     path: 's158116',   
     component: S158116Page,
+  },
+  {
+    path: 's158116p1',   
+    component: S158116p1Page,
   },
   {
     path: 's158117',   

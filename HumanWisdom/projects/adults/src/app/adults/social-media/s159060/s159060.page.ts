@@ -15,7 +15,7 @@ export class S159060Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind is restless needs to be constantly occupied"
+  title="#3 Our mind is restless needs to be constantly occupied"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.9.mp3'
   transcriptPage="social-media/s159060t"
@@ -93,7 +93,7 @@ export class S159060Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/social-media/s159061'])
+    this.router.navigate(['/adults/social-media/s159061'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S159060Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/social-media/s159059'])
+    this.router.navigate(['/adults/social-media/s159059'])
   }
 
   ngOnDestroy()

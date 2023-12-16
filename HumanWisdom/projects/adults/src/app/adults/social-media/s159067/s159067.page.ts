@@ -115,17 +115,17 @@ export class S159067Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/social-media/s159068'])
+        this.router.navigate(['/adults/social-media/s159068'])
 
       },
       () => {
-        this.router.navigate(['/social-media/s159068'])
+        this.router.navigate(['/adults/social-media/s159068'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/social-media/s159066'])
+    this.router.navigate(['/adults/social-media/s159066'])
   }
 
   ngOnDestroy() 

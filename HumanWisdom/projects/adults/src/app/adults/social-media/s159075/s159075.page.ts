@@ -106,7 +106,7 @@ export class S159075Page implements OnInit, OnDestroy {
   goNext() 
   {
     // this.router.navigate(['/adults/comparison/s2'])
-    this.router.navigate(['/social-media/s159076'])
+    this.router.navigate(['/adults/social-media/s159076'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

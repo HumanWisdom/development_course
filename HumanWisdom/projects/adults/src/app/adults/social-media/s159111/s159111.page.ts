@@ -216,7 +216,7 @@ export class S159111Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159112'])
+    this.router.navigate(['/adults/social-media/s159112'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -244,7 +244,7 @@ export class S159111Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159110'])
+    this.router.navigate(['/adults/social-media/s159110'])
 
 
   }

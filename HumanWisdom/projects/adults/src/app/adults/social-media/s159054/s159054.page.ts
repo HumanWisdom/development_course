@@ -15,7 +15,7 @@ export class S159054Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind compares all the time"
+  title="#1 Our mind compares all the time"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.7.mp3'
   transcriptPage="social-media/s159054t"
@@ -93,7 +93,7 @@ export class S159054Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/social-media/s159055'])
+    this.router.navigate(['/adults/social-media/s159055'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S159054Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/social-media/s159053'])
+    this.router.navigate(['/adults/social-media/s159053'])
   }
 
   ngOnDestroy()

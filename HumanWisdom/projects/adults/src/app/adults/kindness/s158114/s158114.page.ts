@@ -114,17 +114,17 @@ export class S158114Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/kindness/s158115'])
+        this.router.navigate(['/adults/kindness/s158115'])
 
       },
       () => {
-        this.router.navigate(['/kindness/s158115'])
+        this.router.navigate(['/adults/kindness/s158115'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/kindness/s158113'])
+    this.router.navigate(['/adults/kindness/s158113'])
   }
 
   ngOnDestroy() 

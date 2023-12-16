@@ -154,7 +154,7 @@ export class S159053Page implements OnInit {
 
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159054'])
+    this.router.navigate(['/adults/social-media/s159054'])
     if (this.userId === 563) return;
 
     
@@ -177,7 +177,7 @@ export class S159053Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159052'])
+    this.router.navigate(['/adults/social-media/s159052'])
 
 
   }
