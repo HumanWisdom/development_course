@@ -357,7 +357,7 @@ export class AppComponent implements OnDestroy {
       this.isShowHeader=true;
       return true;
     }
-    if (this.router.url == "/adults/adult-dashboard") {
+    if (this.router.url == "/adults/adult-dashboard" || this.router.url == "/adult-dashboard") {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -389,6 +389,7 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.journal = false;
       this.isEnableHam = false;
+      this.search = false;
       this.enableplaystore = false;
       this.isShowHeader=false;
       return true;
