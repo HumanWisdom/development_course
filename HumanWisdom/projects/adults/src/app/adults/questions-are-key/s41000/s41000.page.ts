@@ -25,10 +25,12 @@ export class S41000Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   qakResume=sessionStorage.getItem("pgResume")
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/41.jpg"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/41.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
+
 
   constructor(
     private router: Router,
@@ -71,6 +73,9 @@ export class S41000Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-yourself');
 

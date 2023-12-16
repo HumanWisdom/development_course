@@ -55,7 +55,7 @@ export class S29010Page implements OnInit {
     }
   
     else if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/60.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/60.webp"
       this.moduleLink = "/adults/sorrow"
       this.moduleName = "Sorrow"
       this.sectionName = "Manage your emotions";

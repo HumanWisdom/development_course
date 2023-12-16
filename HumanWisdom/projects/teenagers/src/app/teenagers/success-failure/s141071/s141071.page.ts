@@ -15,7 +15,9 @@ export class S141071Page implements OnInit {
   bg = "comparison_envy_w8"
   hint = ""
   toc = "/success-failure/s141001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

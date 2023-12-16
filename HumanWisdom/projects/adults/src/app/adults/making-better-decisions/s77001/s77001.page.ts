@@ -27,10 +27,11 @@ export class S77001Page implements OnInit, OnDestroy {
   bookmarkList = []
   making_better_decisionsResume = sessionStorage.getItem("pgResume")
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/77.jpg"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/77.webp"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
 
   constructor(
     private router: Router,
@@ -84,6 +85,9 @@ export class S77001Page implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
   

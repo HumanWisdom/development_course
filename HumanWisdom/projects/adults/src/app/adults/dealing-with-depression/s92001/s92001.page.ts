@@ -26,11 +26,13 @@ export class S92001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/92.jpg"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/92.webp"
   tocColor="white"
   tocAlt=""
   lastvisited = false;
   stories = []
+  isLoggedIn = false;
+
   dealingwithdepressionResume=sessionStorage.getItem("dealingwithdepressionResume")
 
   constructor(
@@ -76,6 +78,9 @@ export class S92001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/manage-your-emotions');
 

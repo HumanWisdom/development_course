@@ -15,7 +15,9 @@ export class S141049Page implements OnInit, OnDestroy {
   bg = "light_blue_w9"
   hint="What excites you? What do you love doing?"
   toc = "/success-failure/s141001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

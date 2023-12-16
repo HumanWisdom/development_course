@@ -125,7 +125,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   }
 
   Subscribe() {
-    if(!this.ios){
+    if(!(this.platform.IOS || this.platform.SAFARI)){
       this.router.navigate(['/subscription/start-your-free-trial']);
     }
   }

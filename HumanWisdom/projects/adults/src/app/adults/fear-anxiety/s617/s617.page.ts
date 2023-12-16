@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S617Page implements OnInit {
   
   toc="fear-anxiety/s486"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/92.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/92.webp"
   
   bg=""
   moduleLink="/adults/dealing-with-depression"
@@ -44,7 +44,7 @@ export class S617Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.jpg"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.webp"
      
       this.moduleLink = "/adults/conditioning"
       this.moduleName = "Conditioning"

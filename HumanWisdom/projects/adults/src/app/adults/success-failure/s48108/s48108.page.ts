@@ -19,7 +19,7 @@ export class S48108Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=45
 
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/77.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/77.webp"
   
   bg=""
   moduleLink="/adults/making-better-decisions"
