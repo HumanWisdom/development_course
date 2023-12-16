@@ -101,7 +101,7 @@ import { Constant } from './constant';
   }
 
   public static initializeIosCheck(platform:Platform){     
-   if(platform.IOS ||  this.iOS()){
+   if(platform.IOS || platform.SAFARI || this.iOS()){
        return true;
    }
    return false;

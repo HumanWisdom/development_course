@@ -76,7 +76,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-     this.ios = SharedService.isIos;
+     this.ios  = SharedService.initializeIosCheck(this.platform);
      if(localStorage.getItem("isPartner")!=null){
            this.isPartner = localStorage.getItem("isPartner");
      }
