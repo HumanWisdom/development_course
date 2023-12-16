@@ -516,6 +516,10 @@ const routes: Routes = [
   {
     path: 'kindness',
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
+  },
+  {
+    path: 'social-media',
+    loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
   }
 ];
 

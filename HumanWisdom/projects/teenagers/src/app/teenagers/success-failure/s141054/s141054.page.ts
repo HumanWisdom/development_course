@@ -16,7 +16,9 @@ export class S141054Page implements OnInit {
   hint=""
 
   toc = "/success-failure/s141001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

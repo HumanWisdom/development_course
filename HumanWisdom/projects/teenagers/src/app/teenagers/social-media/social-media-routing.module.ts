@@ -54,6 +54,7 @@ import { S138046Page } from './s138046/s138046.page';
 import { S138047Page } from './s138047/s138047.page';
 import { S138048Page } from './s138048/s138048.page';
 import { S138049Page } from './s138049/s138049.page';
+import { S138049tPage } from './s138049t/s138049t.page';
 import { S138050Page } from './s138050/s138050.page';
 import { S138051Page } from './s138051/s138051.page';
 import { S138051tPage } from './s138051t/s138051t.page';
@@ -338,6 +339,10 @@ const routes: Routes = [
   {
     path: 's138049',
     component: S138049Page,
+  },
+  {
+    path: 's138049t',
+    component: S138049tPage,
   },
   {
     path: 's138050',
