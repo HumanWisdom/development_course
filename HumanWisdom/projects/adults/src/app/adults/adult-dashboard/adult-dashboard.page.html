@@ -754,7 +754,7 @@
             <!-- /hr -->
 
             <!-- subscribe to premium -->
-            <div class="row">
+            <div class="row" *ngIf="!isIos">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
               </div>

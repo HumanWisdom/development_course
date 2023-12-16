@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { OnboardingService } from '../../services/onboarding.service';
-
+import {
+  Platform,
+} from "@angular/cdk/platform";
 @Component({
   selector: 'app-subscribe-to-premium-block',
   templateUrl: './subscribe-to-premium-block.component.html',
@@ -15,9 +17,13 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   defaultCountry:string = '';
   pricingModel:any;
   defaultCurrencySymbol='';
+  isIos = false;
   dataloaded = false;
   constructor(private router: Router,
-    private onboardingService: OnboardingService) { }
+    private onboardingService: OnboardingService,
+    private platform: Platform) {
+      this.isIos= SharedService.isIos;
+     }
 
   ngOnInit() {
     this.pricingModel = {
@@ -38,7 +44,9 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   }
 
   SubscribeToPremium(){
-    this.router.navigate(['/subscription/start-your-free-trial']);
+    if(!SharedService.isIos){
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
   
   getCountry() {

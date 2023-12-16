@@ -67,7 +67,7 @@ export class AppComponent implements OnDestroy {
       //   console.log('Web push permission:', permission);
       // });
     }
-
+    SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
@@ -84,7 +84,8 @@ export class AppComponent implements OnDestroy {
         this.UpdateMeta(event.url);
       }
     });
-
+   
+ 
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -356,7 +357,7 @@ export class AppComponent implements OnDestroy {
       this.isShowHeader=true;
       return true;
     }
-    if (this.router.url == "/adults/adult-dashboard") {
+    if (this.router.url == "/adults/adult-dashboard" || this.router.url == "/adult-dashboard") {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -388,6 +389,7 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.journal = false;
       this.isEnableHam = false;
+      this.search = false;
       this.enableplaystore = false;
       this.isShowHeader=false;
       return true;
