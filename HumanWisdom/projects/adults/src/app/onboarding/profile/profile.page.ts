@@ -187,7 +187,6 @@ export class ProfilePage implements OnInit {
       localStorage.setItem("btnClickBecomePartner", "false");
       this.router.navigate(["/onboarding/login"]);
     } else {
-      
      this.clickButtonById("liLogout");
     }
   }
