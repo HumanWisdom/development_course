@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S22060Page implements OnInit {
 
   toc="meditation/s22001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   
   bg=""
   moduleLink="/adults/guided-meditation"
@@ -22,7 +22,7 @@ export class S22060Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/42.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/42.webp"
     
       this.moduleLink = "/adults/without-language"
       this.moduleName = " Look Without Language"

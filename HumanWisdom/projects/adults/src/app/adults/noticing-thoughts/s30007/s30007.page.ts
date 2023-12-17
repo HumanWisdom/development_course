@@ -13,7 +13,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S30007Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc=""
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   
   bg=""
   moduleLink="/adults/guided-meditation"
@@ -45,7 +45,7 @@ export class S30007Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
       
       this.moduleLink = "/adults/guided-meditation"
       this.moduleName = "Guided Meditation"

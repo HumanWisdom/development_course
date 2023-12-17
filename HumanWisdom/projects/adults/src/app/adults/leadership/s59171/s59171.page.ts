@@ -12,7 +12,7 @@ import { AdultsService } from '../../adults.service';
 export class S59171Page implements OnInit {
   
   toc="leadership/s59001"
-  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/making_better_decisions.png"
+  // moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/73.webp"
   
   // bg=""
   // moduleLink="/adults/making-better-decisions"
@@ -20,7 +20,7 @@ export class S59171Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=77
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/73.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/73.webp"
  
   bg=""
   moduleLink="/adults/money"

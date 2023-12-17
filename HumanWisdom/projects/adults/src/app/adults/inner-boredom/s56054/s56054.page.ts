@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S56054Page implements OnInit {
   
   toc="inner-boredom/s56001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/57.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/57.webp"
   
   bg=""
   moduleLink="/adults/nature-of-i"
@@ -44,7 +44,7 @@ export class S56054Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'happier') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/comparison_envy.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.webp"
     
       this.moduleLink = "/adults/comparison"
       this.moduleName = "Comparison"

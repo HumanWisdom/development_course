@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S323Page implements OnInit {
   
   toc=""
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/07.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.webp"
  
   bg=""
   moduleLink="/adults/comparison/s0"
@@ -52,7 +52,7 @@ export class S323Page implements OnInit {
     
     }
     else if (cur && cur === 'habits') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/44.webp"
      
       this.moduleLink = "/adults/stress"
       this.moduleName = "Stress"

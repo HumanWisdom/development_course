@@ -19,7 +19,7 @@ export class S23183Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=53
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/62.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/62.webp"
   
   bg=""
   moduleLink="/adults/love/"
@@ -52,7 +52,7 @@ export class S23183Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'happier') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/63.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/63.webp"
     
       this.moduleLink = "/adults/living-with-peace"
       this.moduleName = "Living with Peace"

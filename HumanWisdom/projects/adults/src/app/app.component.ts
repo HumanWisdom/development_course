@@ -1,7 +1,7 @@
 import {
   Platform
 } from '@angular/cdk/platform';
-import { Component, HostListener, OnDestroy } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -36,31 +36,44 @@ export class AppComponent implements OnDestroy {
 
   public pageLoaded = false;
   navigationSubs = new Subscription();
-
+  dash = false;
+  programType: ProgramType = ProgramType.Adults;
+  journal = false
+  fourm = false
+  profile = true
+  isloggedIn = false
+  enableprofile = false
+  search = false;
+  enableplaystore = false;
+  routeid='search';
+  isEnableHam = true;
+  enablebanner = false;
+  isShowHeader = false;
+  @ViewChild('enablepopup') enablepopup: ElementRef;
   constructor(
     private platform: Platform,
     private router: Router,
     private meta: Meta,
     private title: Title,
     private services: AdultsService,
-    public moengageService:MoengageService
+    public moengageService: MoengageService
   ) {
-    if(platform.isBrowser){
-    //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',
-    //    debug_logs:1,
-    //   // swPath:'/course/serviceworker.js',
-    // });
+    if (platform.isBrowser) {
+      //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',
+      //    debug_logs:1,
+      //   // swPath:'/course/serviceworker.js',
+      // });
       // this.moengageService.requestWebPushPermission().then((permission) => {
       //   console.log('Web push permission:', permission);
       // });
     }
-
+    SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
     localStorage.setItem('curatedurl', 'F');
-    SharedService.ProgramId=ProgramType.Adults;
-    SharedService.ClientUrl = environment.clientUrl; 
+    SharedService.ProgramId = ProgramType.Adults;
+    SharedService.ClientUrl = environment.clientUrl;
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     if (this.platform.ANDROID || this.platform.IOS) {
@@ -71,6 +84,7 @@ export class AppComponent implements OnDestroy {
         this.UpdateMeta(event.url);
       }
     });
+
 
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
@@ -303,22 +317,121 @@ export class AppComponent implements OnDestroy {
     this.navigationSubs.unsubscribe();
   }
 
-  getFreeScreens(){
-    if(localStorage.getItem("freeScreens") == null ||  localStorage.getItem("freeScreens") == 'undefined'  || localStorage.getItem("freeScreens") == undefined ){
-       this.services.freeScreens().subscribe((res)=>{
-        if(res){
+  getFreeScreens() {
+    if (localStorage.getItem("freeScreens") == null || localStorage.getItem("freeScreens") == 'undefined' || localStorage.getItem("freeScreens") == undefined) {
+      this.services.freeScreens().subscribe((res) => {
+        if (res) {
           let x = []
           let result = res.map(a => a.FreeScrs);
           let arr;
           result = result.forEach(element => {
             if (element && element.length !== 0) {
-               x.push(element.map(a => a.ScrNo))
+              x.push(element.map(a => a.ScrNo))
               arr = Array.prototype.concat.apply([], x);
             }
           })
           localStorage.setItem("freeScreens", JSON.stringify(arr))
         }
-       });
+      });
     }
   }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  enableFooter() {
+    if (this.router.url == "/adults/search"
+      || this.router.url.includes('/adults/site-search/') ||
+      this.router.url.includes('/adults/search')) {
+      this.dash = false
+      this.journal = false
+      this.fourm = false;
+      this.search = true;
+      this.enableprofile = false;
+      this.routeid='search';
+      this.isEnableHam = true;
+      this.enableplaystore = false;
+      this.isShowHeader=true;
+      return true;
+    }
+    if (this.router.url == "/adults/adult-dashboard" || this.router.url == "/adult-dashboard") {
+      this.dash = true;
+      this.journal = false;
+      this.search = false;
+      this.fourm = false;
+      this.enableprofile = false;
+      this.isEnableHam = true;
+      let ban = localStorage.getItem('enablebanner');
+      if (ban === null || ban === 'T') {
+       this.enableplaystore = true;
+      } else {
+        this.enableplaystore = false;
+      }
+      this.isShowHeader=true;
+      return true;
+    }
+    if ((this.router.url == "/adults/journal") ||
+      this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
+      (this.router.url.indexOf('/adults/note') > -1)) {
+      this.dash = false
+      this.journal = true;
+      this.search = false;
+      this.fourm = false;
+      this.enableprofile = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader=false;
+      return true;
+    }
+    let reg = new RegExp('forum')
+    if ((reg.test(this.router.url))) {
+      this.dash = false
+      this.journal = false
+      this.fourm = true;
+      this.enableprofile = false;
+      this.journal = false;
+      this.isEnableHam = false;
+      this.search = false;
+      this.enableplaystore = false;
+      this.isShowHeader=false;
+      return true;
+    }
+    if (this.router.url == "/onboarding/user-profile"
+      || this.router.url.includes('/profile-edit')) {
+      this.dash = false
+      this.journal = false
+      this.fourm = false;
+      this.enableprofile = true;
+      this.search = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader=false;
+      return true;
+    }
+  if (this.router.url == "/adults/notification") {
+    this.dash = false
+    this.journal = false
+    this.fourm = false;
+    this.enableprofile = false;
+    this.search = false;
+    this.isEnableHam = false;
+    this.enableplaystore = false;
+    this.isShowHeader=true;
+    return true;
+  }
+    this.isShowHeader=false;
+    return false;
+  }
+
+
+  getplaystore(event) {
+    this.enableplaystore = false;
+    localStorage.setItem('enablebanner', 'F')
+    SharedService.enablebanner = false
+  }
+
 }
+

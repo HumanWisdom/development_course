@@ -72,6 +72,11 @@ export class WisdomForWorkplacePage implements OnInit {
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/60.mp3',
           title: 'How can we be successful?'
+        },
+        pc08: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/41.mp3',
+          title: 'The Art of People Management'
         }
       }
      }
