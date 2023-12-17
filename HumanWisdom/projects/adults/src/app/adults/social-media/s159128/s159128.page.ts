@@ -13,21 +13,17 @@ export class S159128Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+
   userId:any
-  userName:any
-  progressPercent:any
-  progressText="3/4"
-  link="/adults/social-media/s159090"
-  name="A short film"
-  progressImg=""
-  toc="social-media/s159001"
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
 
   constructor
   (
-    private router: Router, 
-    private location:Location,
-    private service: AdultsService
+    private router: Router,
+    private service:AdultsService,
+    private location:Location
   ) 
   { }
 
@@ -36,22 +32,32 @@ export class S159128Page implements OnInit {
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
-      this.userName=JSON.parse(sessionStorage.getItem("userName"))
     }
     else
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
-      this.userName=JSON.parse(localStorage.getItem("userName"))
     }
-    this.getProgress()
+    this.sessionPoints()
   }
 
-  getProgress()
+  sessionPoints()
   {
-    this.service.getPoints(this.userId)
-    .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==159).Percentage)
-     console.log(this.progressPercent)
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"})
+    .subscribe(res=>
+    {
+      console.log("points",res)
+      this.points=res
     })
+  }
+
+  submitProgress()
+  {
+    this.router.navigate(['/adults/social-media/s159129'])
+  }
+
+  prev()
+  {
+    this.router.navigate(['/adults/social-media/s159127'])
   }
 }

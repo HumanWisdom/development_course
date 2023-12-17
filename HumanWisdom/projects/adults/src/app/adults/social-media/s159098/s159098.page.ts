@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { AdultsService } from '../../adults.service';
 
+
 @Component({
   selector: 'app-s159098',
   templateUrl: './s159098.page.html',
@@ -13,7 +14,6 @@ export class S159098Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-
   toc="/social-media/s159001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -31,7 +31,7 @@ export class S159098Page implements OnInit {
   }, 1000);
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+  
   constructor(
     private router: Router,
     private service:AdultsService,
@@ -43,7 +43,7 @@ export class S159098Page implements OnInit {
   $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(206,206,206,1)";
+    var base_color = "rgba(196,196,196,1)";
       var active_color = "#E58D82";
 
     var i;
@@ -58,7 +58,7 @@ export class S159098Page implements OnInit {
     
     var svgWidth = length * 200 + 24;
     $("#svg_wrap").html(
-      '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/2099/xlink" x="0px" y="0px" viewBox="0 0 ' +
+      '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
         svgWidth +
         ' 24" xml:space="preserve"></svg>'
     );
@@ -98,7 +98,7 @@ export class S159098Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-    
+   
       
     
   });
