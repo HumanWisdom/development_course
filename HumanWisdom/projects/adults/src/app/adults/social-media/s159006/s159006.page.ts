@@ -14,6 +14,8 @@ export class S159006Page implements OnInit, OnDestroy {
   bg_cft=""
   bg=""
 
+  toc="social-media/s159001"
+
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")

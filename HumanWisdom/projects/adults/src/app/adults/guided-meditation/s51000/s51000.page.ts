@@ -29,7 +29,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmarkList = []
 
   gamR = sessionStorage.getItem("pgResume")
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
@@ -38,6 +38,7 @@ export class S51000Page implements OnInit, OnDestroy {
     return this.router.url;
   }, 1000);
   mediaUrl: any;
+  isLoggedIn = false;
 
   constructor(
     private router: Router,
@@ -47,6 +48,13 @@ export class S51000Page implements OnInit, OnDestroy {
   ) {
 
     this.service.setmoduleID(51);
+
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
+    }
 
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -88,10 +96,10 @@ export class S51000Page implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    if(!localStorage.getItem("NaviagtedFrom"))  
+    if(!localStorage.getItem("NaviagtedFrom"))
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
 
-    // continue where you left    
+    // continue where you left
     let last = localStorage.getItem('lastvisited');
     if (last === 'T') {
       this.lastvisited = true;
@@ -158,7 +166,7 @@ export class S51000Page implements OnInit, OnDestroy {
   routeJournal() {
     this.router.navigate(['/adults/journal'])
   }
-  
+
  /*  goBack() {
     this.location.back()
   } */
@@ -198,6 +206,14 @@ export class S51000Page implements OnInit, OnDestroy {
 
   audioevent(audioContent) {
     this.router.navigate(['adults/guided-meditation/audiopage/', audioContent.url,audioContent.title, Math.random()])
+  }
+
+  routeGuided(url, active = false) {
+    if(active || this.isLoggedIn) {
+      this.router.navigate([url])
+    }else {
+      this.router.navigate(['/subscription/start-your-free-trial'])
+    }
   }
 
 }

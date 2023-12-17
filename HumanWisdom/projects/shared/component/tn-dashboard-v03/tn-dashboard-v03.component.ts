@@ -7,6 +7,7 @@ import {
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'app-tn-dashboard-v03',
@@ -73,15 +74,12 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
         this.url = userdetail['UserImagePath'].split('\\')[1]
         this.name = localStorage.getItem('name');
       })
-
-    }, 9000);
-
-    setTimeout(()=>{
       this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-    }, 2000)
+    }, 2000);
+
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
-      if (this.platform.IOS || this.platform.SAFARI) {
+      if (this.platform.IOS || this.platform.SAFARI || SharedService.initializeIosCheck(this.platform)) {
         this.ios = true;
       } else if (this.platform.ANDROID) {
         this.android = true;
@@ -127,7 +125,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   }
 
   Subscribe() {
-    if(!this.ios){
+    if(!(this.platform.IOS || this.platform.SAFARI)){
       this.router.navigate(['/subscription/start-your-free-trial']);
     }
   }

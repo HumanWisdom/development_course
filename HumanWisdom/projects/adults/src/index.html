@@ -475,15 +475,12 @@
 
       $(document).on('click', '#liLogout', function () {
         console.log("internal logout clicked");
-        if ((localStorage.getItem('isloggedin') == 'T') == false) {
-
           if (window.AndroidHandler) {
             window.AndroidHandler.logout();
           }
           if (window.webkit) {
             window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
           }
-        }
       });
 
       $(document).on('click', '#liSubscribe', function () {
@@ -676,12 +673,16 @@
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
     });
 
-    $(document).on('click', '.hamburger_sociali a', function () {
+    /*$(document).on('click', '.hamburger_sociali a', function () {
       $('body').removeClass("overflow_hidden").addClass("overflow_auto");
-    });
+    });*/
 
     $(document).on('click', 'ul.dh_ul li a.hc_sfn', function () {
       $('body').removeClass("overflow_auto").addClass("overflow_hidden");
+    });
+
+    $(document).on('click', 'hamburger_sociali a', function () {
+      $('body').removeClass("overflow_auto").addClass("overflow_hiddeni");
     });
   </script>
 

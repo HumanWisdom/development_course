@@ -49,7 +49,7 @@ export class ProfilePage implements OnInit {
       }
     })
     this.isPartner = localStorage.getItem('IsPartner') == '1';
-    if (this.platform.IOS) {
+    if (this.platform.IOS || this.iOS()) {
       this.enablepayment = false;
     }
     this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
@@ -187,6 +187,7 @@ export class ProfilePage implements OnInit {
       localStorage.setItem("btnClickBecomePartner", "false");
       this.router.navigate(["/onboarding/login"]);
     } else {
+      
      this.clickButtonById("liLogout");
     }
   }
@@ -199,6 +200,19 @@ export class ProfilePage implements OnInit {
     } else {
         console.error(`Button with ID '${buttonId}' not found`);
     }
+}
+
+ iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
 
 }

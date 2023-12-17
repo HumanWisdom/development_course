@@ -26,7 +26,7 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  public dasboardUrl = 'adult-dashboard';
+  public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
   public text = 2
   public video = 3
@@ -162,7 +162,7 @@ export class AdultDashboardPage implements OnInit {
   maxExceriseCount = "12;";
   public YourTopicofChoice = [];
   public registrationForm :any;
-
+  public isIos=false;
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -175,14 +175,15 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
- this.registrationForm = this.fb.group({
+    this.isIos = SharedService.initializeIosCheck(this.platform);
+    this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
       lname: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(3)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
     }, { validator: this.PasswordValidator })
-
+  
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')
@@ -232,9 +233,9 @@ export class AdultDashboardPage implements OnInit {
 
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
-      this.enablebanner = true;
+      SharedService.enablebanner = true;
     } else {
-      this.enablebanner = false;
+      SharedService.enablebanner = false;
     }
 
 
@@ -513,7 +514,7 @@ export class AdultDashboardPage implements OnInit {
   // }
 
   getplaystore(event) {
-    this.enablebanner = false
+    SharedService.enablebanner = false
   }
 
   getUserPreference() {
@@ -1455,7 +1456,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   closeplaystore() {
-    this.enablebanner = false;
+    SharedService.enablebanner = false;
   }
 
   submitrefer() {
@@ -4005,7 +4006,7 @@ export class AdultDashboardPage implements OnInit {
   }
   changeTopic() {
     localStorage.setItem('lastRoute',this.dasboardUrl);
-    this.router.navigate(["/change-topic"], {
+    this.router.navigate(["/adults/change-topic"], {
       state: {
         routedFromLogin: false,
       }
@@ -4049,5 +4050,7 @@ export class AdultDashboardPage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
     this.router.navigate(['/adults/testimonials']);
   }
-
+  getEnableBanner(){
+    return SharedService.enablebanner;
+  }
 }

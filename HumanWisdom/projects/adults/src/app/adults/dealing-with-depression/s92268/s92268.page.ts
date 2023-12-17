@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S92268Page implements OnInit {
   
   toc="dealing-with-depression/s92001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/20.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/20.webp"
   
   bg=""
   moduleLink="/adults/pleasure"
@@ -44,7 +44,7 @@ export class S92268Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/91.webp"
      
       this.moduleLink = "/adults/external-approval"
       this.moduleName = "Need for approval"

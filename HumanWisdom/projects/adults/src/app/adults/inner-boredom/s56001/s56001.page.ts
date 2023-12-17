@@ -25,11 +25,11 @@ export class S56001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   ibR=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/56.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/56.webp"
   tocColor="grey"
   lastvisited = false;
   stories: any = []
-
+  isLoggedIn = false;
   constructor(
     private router: Router,
     private service:AdultsService,
@@ -71,6 +71,9 @@ export class S56001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
     // continue where you left    

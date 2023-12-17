@@ -30,11 +30,11 @@ export class S143001Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   diversityinclusionR=sessionStorage.getItem("diversityinclusionR")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/143.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/143.webp"
   tocColor="grey"
   lastvisited = false;
   stories: any = []
-
+  isLoggedIn = false;
   constructor
   (
     private router: Router,
@@ -90,6 +90,9 @@ continue(){
 
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
 
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
