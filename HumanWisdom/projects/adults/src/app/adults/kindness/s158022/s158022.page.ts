@@ -28,7 +28,7 @@ export class S158022Page implements OnInit,OnDestroy
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 2319
+  rId = 2060
   reflection: any
   reflectionA: any
   r158022 = JSON.parse(sessionStorage.getItem("r158022"))
@@ -113,17 +113,17 @@ export class S158022Page implements OnInit,OnDestroy
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/kindness/s158023'])
+        this.router.navigate(['/adults/kindness/s158023'])
 
       },
       () => {
-        this.router.navigate(['/kindness/s158023'])
+        this.router.navigate(['/adults/kindness/s158023'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/kindness/s158021'])
+    this.router.navigate(['/adults/kindness/s158021'])
   }
 
   ngOnDestroy() 

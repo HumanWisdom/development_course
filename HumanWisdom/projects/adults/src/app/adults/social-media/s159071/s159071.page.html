@@ -1,17 +1,28 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
-
+<app-quotation [bg]="bg">
   <form>
 
-    <h1 class="txt1">
-      Waking up to these #5 hidden drivers in our thinking, and just observing them at work and how they shape our lives allows us to respond with intelligence. Don’t judge them as right or wrong, but just be curious and explore how they impact you and how they serve you.
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 mb20px">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/quotation_01.svg" alt="">
+      </div>
+    </div>
+
+    <h1 class="mtb0px quotation_txt">
+      We are all half present for most of our day. I constantly catch myself walking while looking at an iPhone. We sit with people that we love, while we all live in a half-present, hypnotized state of social media consciousness.
     </h1>
+    <hr class="hr_style_v3_05 mtb20px">
+   <h1 class="mtb0px quotation_writer">
+      Eric Overby
 
-    <div class="clearfix"></div>
-
+    </h1>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
   </form>
+</app-quotation>
 
-</app-simple-text> 
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,51 +1,47 @@
-import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import * as jQuery from 'jquery';
 import { AdultsService } from '../../adults.service';
 
 @Component({
-  selector: 'app-s159060-audio',
+  selector: 'app-s159060',
   templateUrl: './s159060.page.html',
   styleUrls: ['./s159060.page.scss'],
 })
+export class S159060Page implements OnInit,OnDestroy {
 
-export class S159060Page implements OnInit,OnDestroy 
-{
   bg_tn=""
   bg_cft=""
   bg=""
-  title="Our mind is restless needs to be constantly occupied"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.9.mp3'
-  transcriptPage="social-media/s159060t"
-  toc="social-media/s159001"
-  bookmark=0
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
-  avDuration:any
+
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("audio")
+  screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=159060
   startTime:any
   endTime:any
   totalTime:any
+  bookmark=0
+  toc="social-media/s159001"
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName ="teenagers"
-  
+ 
   constructor
   (
     private router: Router,
     private service:AdultsService,
-    private location:Location
+    private location:Location,
   ) 
   { }
- 
+
   ngOnInit() 
   {
+    //localStorage.removeItem("bookmarkList")
+    this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -56,23 +52,13 @@ export class S159060Page implements OnInit,OnDestroy
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    this.createScreen()
+    
     if(JSON.parse(sessionStorage.getItem("bookmark159060"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark159060"))==1)
       this.bookmark=1
   }
- 
-  createScreen()
-  {
-    this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
-  }
- 
+
   receiveBookmark(e)
   {
     console.log(e)
@@ -82,42 +68,48 @@ export class S159060Page implements OnInit,OnDestroy
       this.bookmark=0
     sessionStorage.setItem("bookmark159060",JSON.stringify(this.bookmark))
   }
- 
-  receiveAvDuration(e)
+
+  createScreen()
   {
-    console.log(e)
-    this.avDuration=e
+    this.service.createScreen({
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>
+      { 
+      })
   }
- 
+
   submitProgress()
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/social-media/s159061'])
-    this.service.submitProgressAv({
+    this.router.navigate(['/adults/social-media/s159061'])
+    this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
+      "timeSpent":this.totalTime
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/adults/conditioning/s23159060'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/social-media/s159059'])
+    this.router.navigate(['/adults/social-media/s159059'])
   }
 
   ngOnDestroy()
-  {
-    localStorage.setItem("totalTime159060",this.totalTime)
-    localStorage.setItem("avDuration159060",this.avDuration)
-  }
+  {}
 
 }

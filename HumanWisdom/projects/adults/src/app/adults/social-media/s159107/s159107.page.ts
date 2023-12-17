@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { AdultsService } from '../../adults.service';
 
-
 @Component({
   selector: 'app-s159107',
   templateUrl: './s159107.page.html',
@@ -14,11 +13,11 @@ export class S159107Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-  toc="/social-media/s159001"
+  toc="social-media/s159001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
-  moduleId=localStorage.getItem("moduleId")
+  moduleId=localStorage.getItem("moduleIdexams")
 
   screenNumber=159107
   startTime:any
@@ -98,8 +97,166 @@ export class S159107Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-   
-      
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
     
   });
   // /multistep wizard
@@ -155,7 +312,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159108'])
+    this.router.navigate(['/adults/social-media/s159108'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -176,14 +333,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-      
+
       })
     
 
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159106'])
+    this.router.navigate(['/adults/social-media/s159106'])
 
 
   }
