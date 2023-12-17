@@ -13,7 +13,7 @@ export class S158022Page implements OnInit,OnDestroy
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w8"
-  hint = "What is your key takeaway from this session?"
+  hint = ""
   toc = "/kindness/s158001"
   path = setTimeout(() => {
     return this.router.url;
