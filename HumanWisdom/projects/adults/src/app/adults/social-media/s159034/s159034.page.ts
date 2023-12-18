@@ -100,7 +100,7 @@ export class S159034Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/social-media/s159033'])
+    this.router.navigate(['/adults/social-media/s159033'])
   }
 
   goNext() 
@@ -109,7 +109,7 @@ export class S159034Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/social-media/s159035'])
+    this.router.navigate(['/adults/social-media/s159035'])
   }
 
   ngOnDestroy() 

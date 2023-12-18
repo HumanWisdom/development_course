@@ -100,16 +100,16 @@ export class S158021Page implements OnInit,OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/kindness/s158020'])
+    this.router.navigate(['/adults/kindness/s158020'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/kindness/s158021'])
+    // this.router.navigate(['/adults/kindness/s158021'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/kindness/s158022'])
+    this.router.navigate(['/adults/kindness/s158022'])
   }
 
   ngOnDestroy() 

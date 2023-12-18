@@ -1,120 +1,57 @@
-import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Location } from '@angular/common';
 import { AdultsService } from '../../adults.service';
 
 @Component({
-  selector: 'app-s159129',
+  selector: 'HumanWisdom-s159129',
   templateUrl: './s159129.page.html',
   styleUrls: ['./s159129.page.scss'],
 })
-export class S159129Page implements OnInit, OnDestroy {
+export class S159129Page implements OnInit {
 
-  bg_tts = ""
   bg_tn=""
   bg_cft=""
   bg=""
-
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  screenType = localStorage.getItem("text")
-  moduleId = localStorage.getItem("moduleId")
-  screenNumber = 159129
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark = 0
-  toc = "social-media/s159001"
-   path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
-  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-
-
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  userId:any
+  userName:any
+  progressPercent:any
+  progressText="3/4"
+  link="/adults/social-media/s159130"
+  name="A short film"
+  progressImg=""
+  toc="social-media/s159001"
 
   constructor
   (
-    private router: Router,
-    private service: AdultsService,
-    private location: Location
+    private router: Router, 
+    private location:Location,
+    private service: AdultsService
   ) 
   { }
 
   ngOnInit() 
   {
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.userName=JSON.parse(sessionStorage.getItem("userName"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
-    }
-
-    this.startTime = Date.now();
-
-    if (JSON.parse(sessionStorage.getItem("bookmark159129")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark159129")) == 1)
-      this.bookmark = 1
-  }
-
-  receiveBookmark(e) 
-  {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 1
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark159129", JSON.stringify(this.bookmark))
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.userName=JSON.parse(localStorage.getItem("userName"))
+    }
+    this.getProgress()
   }
 
-  createScreen() 
+  getProgress()
   {
-    this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
+    this.service.getPoints(this.userId)
+    .subscribe(res=>{
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==159).Percentage)
+     console.log(this.progressPercent)
     })
   }
-
-  submitProgress() 
-  {
-    this.service.submitProgressText({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-    error => { console.log(error) },
-    () => {
-      //this.router.navigate(['/adults/conditioning/s234'])
-    })
-  }
-
-  goNext() 
-  {
-    // this.router.navigate(['/adults/comparison/s2'])
-    this.router.navigate(['/social-media/s159130'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
-
-  }
-
-  ngOnDestroy() 
-  {}
-
 }

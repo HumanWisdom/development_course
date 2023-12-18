@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { AdultsService } from '../../adults.service';
 
-
 @Component({
   selector: 'app-s159089',
   templateUrl: './s159089.page.html',
@@ -18,7 +17,7 @@ export class S159089Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
-  moduleId=localStorage.getItem("moduleId")
+  moduleId=localStorage.getItem("moduleIdexams")
 
   screenNumber=159089
   startTime:any
@@ -31,7 +30,7 @@ export class S159089Page implements OnInit {
   }, 1000);
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+  
   constructor(
     private router: Router,
     private service:AdultsService,
@@ -258,28 +257,6 @@ export class S159089Page implements OnInit {
       "fill",
       base_color
     );
-     // tb copied mul;tiple times
-     $("#svg_form_time rect").css("fill", active_color);
-     $("#svg_form_time circle").css("fill", active_color);
-     $("#prev").removeClass("disabled");
-       if (child >= length) {
-         $(this).addClass("disabled");
-         $('#submit').removeClass("disabled");
-       }
-       if (child <= length) {
-         child++;
-       }
-     var circle_child = child + 1;
-     $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-       "fill",
-       base_color
-     );
-     $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-       "fill",
-       base_color
-     );
-     
-      
     
   });
   // /multistep wizard
@@ -317,7 +294,7 @@ export class S159089Page implements OnInit {
       this.bookmark=0
     sessionStorage.setItem("bookmark159089",JSON.stringify(this.bookmark))
   }
- createScreen(){
+createScreen(){
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
@@ -335,7 +312,7 @@ export class S159089Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159090'])
+    this.router.navigate(['/adults/social-media/s159090'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -363,7 +340,7 @@ export class S159089Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159088'])
+    this.router.navigate(['/adults/social-media/s159088'])
 
 
   }

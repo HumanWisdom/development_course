@@ -334,7 +334,7 @@ export class S158063Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/kindness/s158064'])
+    this.router.navigate(['/adults/kindness/s158064'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -362,7 +362,7 @@ export class S158063Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/kindness/s158062'])
+    this.router.navigate(['/adults/kindness/s158062'])
 
 
   }
