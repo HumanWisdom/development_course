@@ -22,7 +22,9 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   constructor(private router: Router,
     private onboardingService: OnboardingService,
     private platform: Platform) {
-      this.isIos= SharedService.isIos;
+      if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
+        this.isIos = true; 
+       }
      }
 
   ngOnInit() {
@@ -44,7 +46,7 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   }
 
   SubscribeToPremium(){
-    if(!SharedService.isIos){
+    if(!this.isIos){
       this.router.navigate(['/subscription/start-your-free-trial']);
     }
   }
@@ -76,6 +78,19 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
       window.alert(err.error['Message'])
     }
     )
+  }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
   formatToDecimal(value) {
