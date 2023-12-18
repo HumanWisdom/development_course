@@ -39,6 +39,8 @@ export class S51000Page implements OnInit, OnDestroy {
   }, 1000);
   mediaUrl: any;
   isLoggedIn = false;
+  isSubscriber = false;
+
 
   constructor(
     private router: Router,

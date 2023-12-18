@@ -31,6 +31,8 @@ export class S162p0Page implements OnInit, OnDestroy
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+  isSubscriber = false;
+
 
   constructor
   (
@@ -70,6 +72,9 @@ export class S162p0Page implements OnInit, OnDestroy
   {
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
     }
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
