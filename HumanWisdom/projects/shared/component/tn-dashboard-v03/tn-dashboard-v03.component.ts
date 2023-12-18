@@ -101,6 +101,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
+  
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`])
   }
