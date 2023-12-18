@@ -36,6 +36,7 @@ export class S232Page implements OnInit,OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+  isSubscriber = false;
 
   constructor(
     private router: Router,
@@ -86,6 +87,10 @@ export class S232Page implements OnInit,OnDestroy {
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
     
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
