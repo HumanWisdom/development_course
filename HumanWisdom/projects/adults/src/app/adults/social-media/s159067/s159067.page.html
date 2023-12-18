@@ -1,1 +1,17 @@
-<app-reflection  [rid]="rId" [bg_tn]="bg_tn" [bg_cft]="bg_cft" [toc]="toc" [hint]="hint" [bg]="bg" [reflection]="reflection" [reflectionResponse]="r159067" (sendResponse)="submitProgress($event)" (goPrevious)="previous()"></app-reflection>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      A recent AXA Mental Health Report based on a survey done in 16 countries noted that 38% of young people aged 18-24 said that tech addiction and social media had a negative impact on their well being.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

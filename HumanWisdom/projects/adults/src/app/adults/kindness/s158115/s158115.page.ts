@@ -86,7 +86,7 @@ export class S158115Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/kindness/s137131'])
+    this.router.navigate(['/adults/kindness/s158116'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -101,13 +101,13 @@ export class S158115Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/kindness/s234'])
+        //this.router.navigate(['/adults/kindness/s234'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/kindness/s137129'])
+    this.router.navigate(['/adults/kindness/s158114'])
   }
 
   ngOnDestroy()
