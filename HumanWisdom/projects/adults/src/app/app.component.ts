@@ -84,8 +84,8 @@ export class AppComponent implements OnDestroy {
         this.UpdateMeta(event.url);
       }
     });
-   
- 
+
+
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -364,7 +364,12 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.enableprofile = false;
       this.isEnableHam = true;
-      this.enableplaystore = true;
+      let ban = localStorage.getItem('enablebanner');
+      if (ban === null || ban === 'T') {
+       this.enableplaystore = true;
+      } else {
+        this.enableplaystore = false;
+      }
       this.isShowHeader=true;
       return true;
     }
@@ -421,10 +426,12 @@ export class AppComponent implements OnDestroy {
     return false;
   }
 
-  
+
   getplaystore(event) {
+    this.enableplaystore = false;
+    localStorage.setItem('enablebanner', 'F')
     SharedService.enablebanner = false
   }
-  
+
 }
 

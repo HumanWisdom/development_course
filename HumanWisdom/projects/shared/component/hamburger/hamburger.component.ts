@@ -76,7 +76,9 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-     this.ios = SharedService.isIos;
+    if(platform.IOS || platform.SAFARI || this.iOS()){
+      this.ios = true; 
+     }
      if(localStorage.getItem("isPartner")!=null){
            this.isPartner = localStorage.getItem("isPartner");
      }
@@ -288,6 +290,20 @@ export class HamburgerComponent implements OnInit, OnChanges {
       }
     }
   }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
   GetSubscriptionText(){
     if(this.ios){
       return "Manage Subscriptions"
