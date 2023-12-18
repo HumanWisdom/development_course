@@ -1,5 +1,31 @@
-<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      We are going to explore 5 thinking patterns that influence our use of social media
+    </h1>
+    <div class="clearfix"></div>
 
-<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)></app-audio-content>
+    <h3 class="txt8 oneliner_txt_pointer">
+      1. Comparison
+      
+    </h3>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+    <h3 class="txt8 oneliner_txt_pointer">
+      2.Conditioning
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      3. Our need to be occupied
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      4. Our loneliness
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      5. Our need for external approval
+    </h3>
+   
+  </form>          
+</app-oneline-text>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

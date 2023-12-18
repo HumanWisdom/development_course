@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { AdultsService } from '../../adults.service';
 
-
 @Component({
   selector: 'app-s159121',
   templateUrl: './s159121.page.html',
@@ -14,7 +13,6 @@ export class S159121Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-
   toc="social-media/s159001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -32,7 +30,7 @@ export class S159121Page implements OnInit {
   }, 1000);
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+
   constructor(
     private router: Router,
     private service:AdultsService,
@@ -57,24 +55,24 @@ export class S159121Page implements OnInit {
     $("section").not("section:nth-of-type(1)").hide();
     $("section").not("section:nth-of-type(1)").css('transform','translateX(100px)');
     
-    var svgWidth = length * 200 + 24;
+    var svgWidth = length * 210 + 24;
     $("#svg_wrap").html(
-      '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
+      '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2100/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
         svgWidth +
         ' 24" xml:space="preserve"></svg>'
     );
     
     function makeSVG(tag, attrs) {
-      var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      var el = document.createElementNS("http://www.w3.org/2100/svg", tag);
       for (var k in attrs) el.setAttribute(k, attrs[k]);
       return el;
     }
     
     for (i = 0; i < length; i++) {
-      var positionX = 12 + i * 200;
+      var positionX = 12 + i * 210;
      var rect = makeSVG("rect", { x: positionX+12, y: 9, width: 176, height: 6 });
       document.getElementById("svg_form_time").appendChild(rect);
-      // <g><rect x="12" y="9" width="200" height="6"></rect></g>'
+      // <g><rect x="12" y="9" width="210" height="6"></rect></g>'
       var circle = makeSVG("circle", {
         cx: positionX,
         cy: 12,
@@ -86,7 +84,7 @@ export class S159121Page implements OnInit {
     }
     
     var circle = makeSVG("circle", {
-      cx: positionX + 200,
+      cx: positionX + 210,
       cy: 12,
       r: 12,
       width: positionX,
@@ -119,27 +117,8 @@ export class S159121Page implements OnInit {
       "fill",
       base_color
     );
-    // tb copied mul;tiple times
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-    
+      
+   
   });
   // /multistep wizard
 
@@ -194,7 +173,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159122'])
+    this.router.navigate(['/adults/social-media/s159122'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -209,20 +188,20 @@ createScreen(){
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-       
+        
        
      
       },
       error=>{console.log(error)},
       ()=>{
-      
+
       })
     
 
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159120'])
+    this.router.navigate(['/adults/social-media/s159120'])
 
 
   }

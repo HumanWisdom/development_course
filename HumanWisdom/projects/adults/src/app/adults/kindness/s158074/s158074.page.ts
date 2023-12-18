@@ -102,7 +102,7 @@ export class S158074Page implements OnInit,OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/kindness/s158073'])
+    this.router.navigate(['/adults/kindness/s158073'])
   }
 
   goNext() 
@@ -111,7 +111,7 @@ export class S158074Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/kindness/s158075'])
+    this.router.navigate(['/adults/kindness/s158075'])
   }
 
   ngOnDestroy() 
