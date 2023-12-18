@@ -107,9 +107,24 @@ export class PersonalisedForYouSearchPage implements OnInit {
       })
     }
   }
+  
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
 
   ngOnInit() {
-    this.isIos = SharedService.isIos;
+    if(platform.IOS || platform.SAFARI || this.iOS()){
+      this.isIos = true; 
+     }
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {

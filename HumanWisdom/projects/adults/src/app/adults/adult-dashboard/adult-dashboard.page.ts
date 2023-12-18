@@ -175,14 +175,14 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
- this.registrationForm = this.fb.group({
+    this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
       lname: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(3)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
     }, { validator: this.PasswordValidator })
-    this.isIos = SharedService.isIos;
+  
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')
@@ -366,7 +366,9 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
-
+   if(platform.IOS || platform.SAFARI || this.iOS()){
+     this.isIos = true; 
+    }
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
@@ -4051,5 +4053,18 @@ export class AdultDashboardPage implements OnInit {
   }
   getEnableBanner(){
     return SharedService.enablebanner;
+  }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 }
