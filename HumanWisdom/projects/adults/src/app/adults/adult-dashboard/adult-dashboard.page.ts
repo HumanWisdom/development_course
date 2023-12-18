@@ -366,7 +366,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
-   if(platform.IOS || platform.SAFARI || this.iOS()){
+   if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
      this.isIos = true; 
     }
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')

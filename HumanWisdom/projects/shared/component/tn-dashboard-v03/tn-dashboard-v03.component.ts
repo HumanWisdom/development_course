@@ -79,7 +79,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
 
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
-      if (this.platform.IOS || this.platform.SAFARI || SharedService.initializeIosCheck(this.platform)) {
+      if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
         this.ios = true;
       } else if (this.platform.ANDROID) {
         this.android = true;
@@ -89,6 +89,18 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     }
   }
 
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`])
   }
