@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
 import { ShareService } from 'ngx-sharebuttons';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { Platform } from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -82,6 +83,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     public cd: ChangeDetectorRef,
     private location: Location,
     private router: Router,
+    private platform: Platform
   ) {
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
@@ -107,7 +109,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       })
     }
   }
-  
+
   iOS() {
     return [
       'iPad Simulator',
@@ -122,7 +124,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   ngOnInit() {
-    if(platform.IOS || platform.SAFARI || this.iOS()){
+    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
       this.isIos = true; 
      }
     this.userId = JSON.parse(localStorage.getItem("userId"))

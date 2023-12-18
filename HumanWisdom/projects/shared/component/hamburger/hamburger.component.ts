@@ -76,7 +76,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if(platform.IOS || platform.SAFARI || this.iOS()){
+    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
       this.ios = true; 
      }
      if(localStorage.getItem("isPartner")!=null){
