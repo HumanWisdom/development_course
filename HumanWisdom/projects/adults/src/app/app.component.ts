@@ -67,7 +67,7 @@ export class AppComponent implements OnDestroy {
       //   console.log('Web push permission:', permission);
       // });
     }
-
+    SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
@@ -84,6 +84,7 @@ export class AppComponent implements OnDestroy {
         this.UpdateMeta(event.url);
       }
     });
+
 
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
@@ -356,14 +357,20 @@ export class AppComponent implements OnDestroy {
       this.isShowHeader=true;
       return true;
     }
-    if (this.router.url == "/adults/adult-dashboard") {
+    if ((this.router.url == "/adults/adult-dashboard") || (this.router.url == "/adult-dashboard")
+     || this.router.url.includes("/adults/adult-dashboard") || this.router.url.includes("adult-dashboard")) {
       this.dash = true;
       this.journal = false;
       this.search = false;
       this.fourm = false;
       this.enableprofile = false;
       this.isEnableHam = true;
-      this.enableplaystore = true;
+      let ban = localStorage.getItem('enablebanner');
+      if (ban === null || ban === 'T') {
+       this.enableplaystore = true;
+      } else {
+        this.enableplaystore = false;
+      }
       this.isShowHeader=true;
       return true;
     }
@@ -388,6 +395,7 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.journal = false;
       this.isEnableHam = false;
+      this.search = false;
       this.enableplaystore = false;
       this.isShowHeader=false;
       return true;
@@ -419,10 +427,12 @@ export class AppComponent implements OnDestroy {
     return false;
   }
 
-  
+
   getplaystore(event) {
+    this.enableplaystore = false;
+    localStorage.setItem('enablebanner', 'F')
     SharedService.enablebanner = false
   }
-  
+
 }
 

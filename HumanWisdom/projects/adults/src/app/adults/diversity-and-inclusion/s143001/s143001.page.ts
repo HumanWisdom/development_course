@@ -34,7 +34,8 @@ export class S143001Page implements OnInit,OnDestroy {
   tocColor="grey"
   lastvisited = false;
   stories: any = []
-
+  isLoggedIn = false;
+  isSubscriber = false;
   constructor
   (
     private router: Router,
@@ -90,6 +91,12 @@ continue(){
 
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
 
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');

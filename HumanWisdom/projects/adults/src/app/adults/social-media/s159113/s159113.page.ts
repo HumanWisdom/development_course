@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 import { AdultsService } from '../../adults.service';
-
 
 @Component({
   selector: 'app-s159113',
@@ -41,8 +40,8 @@ export class S159113Page implements OnInit {
 
   // multistep wizard
   $( document ).ready(function() {
-    // var base_color = "rgb(230,230,230)";
-    // var active_color = "rgb(237, 40, 70)";
+    // var base_color = "rgb(240,240,240)";
+    // var active_color = "rgb(247, 40, 70)";
     var base_color = "rgba(196,196,196,1)";
       var active_color = "#E58D82";
 
@@ -56,11 +55,11 @@ export class S159113Page implements OnInit {
     $("section").not("section:nth-of-type(1)").hide();
     $("section").not("section:nth-of-type(1)").css('transform','translateX(100px)');
     
-    var svgWidth = length * 200 + 25;
+    var svgWidth = length * 200 + 24;
     $("#svg_wrap").html(
       '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
         svgWidth +
-        ' 25" xml:space="preserve"></svg>'
+        ' 24" xml:space="preserve"></svg>'
     );
     
     function makeSVG(tag, attrs) {
@@ -178,27 +177,8 @@ export class S159113Page implements OnInit {
       "fill",
       base_color
     );
-    // tb copied mul;tiple times
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
-   
+    
+    
   });
   // /multistep wizard
 
@@ -253,7 +233,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s159114'])
+    this.router.navigate(['/adults/social-media/s159114'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -268,7 +248,7 @@ createScreen(){
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-       
+      
        
      
       },
@@ -281,7 +261,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s159112'])
+    this.router.navigate(['/adults/social-media/s159112'])
 
 
   }

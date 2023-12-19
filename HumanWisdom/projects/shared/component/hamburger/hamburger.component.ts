@@ -10,6 +10,7 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from "@angular/cdk/platform";
+import { SharedService } from "../../services/shared.service";
 
 @Component({
   selector: "app-hamburger",
@@ -75,9 +76,9 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if (this.platform.IOS) {
-      this.ios = true;
-    }
+    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
+      this.ios = true; 
+     }
      if(localStorage.getItem("isPartner")!=null){
            this.isPartner = localStorage.getItem("isPartner");
      }
@@ -289,6 +290,20 @@ export class HamburgerComponent implements OnInit, OnChanges {
       }
     }
   }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
   GetSubscriptionText(){
     if(this.ios){
       return "Manage Subscriptions"

@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
 import { ShareService } from 'ngx-sharebuttons';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { Platform } from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -18,7 +19,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-
+  isIos=false;
   searchResult = [];
   personalisedforyou = []
 
@@ -82,6 +83,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     public cd: ChangeDetectorRef,
     private location: Location,
     private router: Router,
+    private platform: Platform
   ) {
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
@@ -108,7 +110,23 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
   }
 
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
   ngOnInit() {
+    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
+      this.isIos = true; 
+     }
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {

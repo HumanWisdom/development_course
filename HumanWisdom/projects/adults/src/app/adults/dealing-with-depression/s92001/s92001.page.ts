@@ -31,6 +31,9 @@ export class S92001Page implements OnInit,OnDestroy {
   tocAlt=""
   lastvisited = false;
   stories = []
+  isLoggedIn = false;
+  isSubscriber = false;
+
   dealingwithdepressionResume=sessionStorage.getItem("dealingwithdepressionResume")
 
   constructor(
@@ -76,6 +79,12 @@ export class S92001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/manage-your-emotions');
 

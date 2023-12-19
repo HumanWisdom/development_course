@@ -7,6 +7,7 @@ import {
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'app-tn-dashboard-v03',
@@ -78,7 +79,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
 
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
-      if (this.platform.IOS || this.platform.SAFARI) {
+      if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
         this.ios = true;
       } else if (this.platform.ANDROID) {
         this.android = true;
@@ -88,6 +89,19 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     }
   }
 
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+  
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`])
   }
