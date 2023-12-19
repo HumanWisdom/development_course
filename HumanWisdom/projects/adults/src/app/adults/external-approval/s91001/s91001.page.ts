@@ -32,6 +32,8 @@ export class S91001Page implements OnInit,OnDestroy {
   lastvisited = false;
   stories = []
   isLoggedIn = false;
+  isSubscriber = false;
+
 
   externalapprovalR=sessionStorage.getItem("externalapprovalR")
 
@@ -80,6 +82,9 @@ export class S91001Page implements OnInit,OnDestroy {
   ngOnInit() {
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
     }
 
     if(!localStorage.getItem("NaviagtedFrom"))  
