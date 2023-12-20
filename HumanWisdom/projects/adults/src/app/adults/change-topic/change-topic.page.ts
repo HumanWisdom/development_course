@@ -51,7 +51,8 @@ export class ChangeTopicPage implements OnInit {
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           localStorage.setItem("userId", res['UserId'])
-          let namedata = localStorage.getItem('name').split(' ')
+          let namedata = localStorage.getItem('name').split(' ');
+          
           this.userId = res['UserId']
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
