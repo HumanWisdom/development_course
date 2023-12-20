@@ -11,7 +11,21 @@ export class AuthGuard implements CanActivate, OnInit {
   t: any
   x = []
   scrId: any
-  freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  freeScreens = JSON.parse(localStorage.getItem("freeScreens"));
+  public saveUsername :any;
+  public text = 2
+  public video = 3
+  public audio = 4
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public moduleId = 7
+  public userId = 100
+  public userName: any
+  public qrList: any
+  public goToPage: any
+  mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
+  mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService, private onboarding: OnboardingService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
   }
@@ -19,6 +33,11 @@ export class AuthGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
+    
+      if(localStorage.getItem("saveUsername") && localStorage.getItem("saveUsername")!=null){
+        this.saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
+      }
+      
     let ban = localStorage.getItem('enablebanner');
     if (!ban) {
       localStorage.setItem("enablebanner", 'T')
@@ -84,6 +103,33 @@ export class AuthGuard implements CanActivate, OnInit {
         localStorage.setItem('getalertdate', getalertdate)
       }
       localStorage.setItem("token", JSON.stringify(authtoken))
+      if (authtoken) {
+        localStorage.setItem('socialLogin', 'T');
+        this.service.verifytoken(authtoken).subscribe((res) => {
+          if (res) {
+            localStorage.setItem("email", res['Email'])
+            localStorage.setItem("name", res['Name'])
+            let namedata = localStorage.getItem('name').split(' ')
+            localStorage.setItem("FnName", namedata[0])
+            localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+            localStorage.setItem("Subscriber",res['Subscriber']);
+          } else {
+            localStorage.setItem("email", 'guest@humanwisdom.me');
+            localStorage.setItem("pswd", '12345');
+            localStorage.setItem('guest', 'T');
+            localStorage.setItem('isloggedin', 'F');
+          }
+        }, error => {
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
+  
+        },
+        )
+      }
+
+
       return true
     }
    /*  let pers = localStorage.getItem('personalised');
@@ -121,6 +167,55 @@ export class AuthGuard implements CanActivate, OnInit {
       localStorage.setItem('btnclick', 'F');
       localStorage.setItem('guest', 'T');
       return true
+    }
+  }
+
+  loginadult(res) {
+    this.loginResponse = res
+    this.userId = res.UserId
+    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+    else localStorage.setItem("guest", 'F')
+    sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    localStorage.setItem("token", JSON.stringify(res.access_token))
+    localStorage.setItem("Subscriber", res.Subscriber)
+    localStorage.setItem("userId", JSON.stringify(this.userId))
+    localStorage.setItem("email", res['Email'])
+    localStorage.setItem("name", res.Name)
+    localStorage.setItem("text", JSON.stringify(this.text))
+    localStorage.setItem("video", JSON.stringify(this.video))
+    localStorage.setItem("audio", JSON.stringify(this.audio))
+    localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+    localStorage.setItem("question", JSON.stringify(this.question))
+    localStorage.setItem("reflection", JSON.stringify(this.reflection))
+    localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    if (localStorage.getItem("token") && (this.saveUsername == true)) {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.userName = JSON.parse(localStorage.getItem("userName"))
+    }
+    else {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+      this.userName = JSON.parse(sessionStorage.getItem("userName"))
+    }
+    if (res.UserId == 0) {
+    }
+    else {
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("userId", JSON.stringify(res.UserId))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      if (this.saveUsername == true) {
+        localStorage.setItem("userId", JSON.stringify(res.UserId))
+        localStorage.setItem("userEmail", JSON.stringify(res.Email))
+        localStorage.setItem("userName", JSON.stringify(res.Name))
+
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(res.UserId))
+        sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
+        sessionStorage.setItem("userName", JSON.stringify(res.Name))
+      }
     }
   }
 }
