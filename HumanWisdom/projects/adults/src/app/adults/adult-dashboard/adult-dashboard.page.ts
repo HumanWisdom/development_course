@@ -333,7 +333,8 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getLastvisitedScr() {
-    this.service.GetLastVisitedScreen(this.userId)
+    this.userId= SharedService.getUserId();
+    this.service.GetLastVisitedScreen(this.userId);
       .subscribe(res => {
         console.log(res)
         this.resumeLastvisited = res;

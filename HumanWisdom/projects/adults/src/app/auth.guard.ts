@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate, OnInit {
   public reflection = 5
   public feedbackSurvey = 7
   public moduleId = 7
-  public userId = 100
+  public userId:any;
   public userName: any
   public qrList: any
   public goToPage: any
@@ -189,15 +189,12 @@ export class AuthGuard implements CanActivate, OnInit {
     localStorage.setItem("question", JSON.stringify(this.question))
     localStorage.setItem("reflection", JSON.stringify(this.reflection))
     localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
-    this.userId = JSON.parse(localStorage.getItem("userId"))
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
       this.userName = JSON.parse(localStorage.getItem("userName"))
     }
     else {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
       this.userName = JSON.parse(sessionStorage.getItem("userName"))
     }
     if (res.UserId == 0) {
