@@ -334,7 +334,7 @@ export class AdultDashboardPage implements OnInit {
 
   getLastvisitedScr() {
     this.userId= SharedService.getUserId();
-    this.service.GetLastVisitedScreen(this.userId);
+    this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
         console.log(res)
         this.resumeLastvisited = res;
