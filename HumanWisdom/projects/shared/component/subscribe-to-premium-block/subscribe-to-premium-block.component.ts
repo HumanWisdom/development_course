@@ -28,6 +28,16 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
      }
 
   ngOnInit() {
+
+    setTimeout(() => {
+      let sub: any = localStorage.getItem("Subscriber");
+      if (sub == '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
+      }
+    }, 2000);
+
     this.pricingModel = {
       "RateID": '',
       "ProgID": 0,

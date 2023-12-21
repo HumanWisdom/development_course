@@ -95,6 +95,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       localStorage.setItem('acceptcookie', 'T')
       this.aservice.verifytoken(authtoken).subscribe((res) => {
         if (res) {
+          localStorage.setItem("Subscriber", res['Subscriber']);
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           localStorage.setItem("userId", res['UserId'])
@@ -103,8 +104,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber", res['Subscriber'])
-
         }
       })
     }
