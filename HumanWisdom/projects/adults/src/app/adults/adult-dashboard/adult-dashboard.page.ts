@@ -199,35 +199,37 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
-    let authtoken = JSON.parse(localStorage.getItem("token"))
-    if (authtoken) {
-      this.isEnableHam=false;
-      localStorage.setItem('socialLogin', 'T');
-      this.service.verifytoken(authtoken).subscribe((res) => {
-        this.isEnableHam=true;
-        if (res) {
-          localStorage.setItem("email", res['Email'])
-          localStorage.setItem("name", res['Name'])
-          let namedata = localStorage.getItem('name').split(' ')
-          localStorage.setItem("FnName", namedata[0])
-          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          this.loginadult(res)
-        } else {
-          localStorage.setItem("email", 'guest@humanwisdom.me');
-          localStorage.setItem("pswd", '12345');
-          localStorage.setItem('guest', 'T');
-          localStorage.setItem('isloggedin', 'F');
-          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-        }
-      }, error => {
-        localStorage.setItem("email", 'guest@humanwisdom.me');
-        localStorage.setItem("pswd", '12345');
-        localStorage.setItem('guest', 'T');
-        localStorage.setItem('isloggedin', 'F');
+    // let authtoken = JSON.parse(localStorage.getItem("token"))
+    // if (authtoken) {
+    //   this.isEnableHam=false;
+    //   localStorage.setItem('socialLogin', 'T');
+    //   this.service.verifytoken(authtoken).subscribe((res) => {
+    //     this.isEnableHam=true;
+    //     if (res) {
+    //       localStorage.setItem("email", res['Email'])
+    //       localStorage.setItem("name", res['Name'])
+    //       let namedata = localStorage.getItem('name').split(' ')
+    //       localStorage.setItem("FnName", namedata[0])
+    //       localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+    //       localStorage.setItem("Subscriber",res['Subscriber']);
+    //       this.isSubscriber  = SharedService.isSubscriber();
+    //       this.loginadult(res)
+    //     } else {
+    //       localStorage.setItem("email", 'guest@humanwisdom.me');
+    //       localStorage.setItem("pswd", '12345');
+    //       localStorage.setItem('guest', 'T');
+    //       localStorage.setItem('isloggedin', 'F');
+    //       // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    //     }
+    //   }, error => {
+    //     localStorage.setItem("email", 'guest@humanwisdom.me');
+    //     localStorage.setItem("pswd", '12345');
+    //     localStorage.setItem('guest', 'T');
+    //     localStorage.setItem('isloggedin', 'F');
 
-      },
-      )
-    }
+    //   },
+    //   )
+    // }
 
 
     let ban = localStorage.getItem('enablebanner');
@@ -331,7 +333,8 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getLastvisitedScr() {
-    this.service.GetLastVisitedScreen(this.userId)
+    this.userId= SharedService.getUserId();
+    this.service.GetLastVisitedScreen(this.userId);
       .subscribe(res => {
         console.log(res)
         this.resumeLastvisited = res;
@@ -369,6 +372,8 @@ export class AdultDashboardPage implements OnInit {
    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
      this.isIos = true; 
     }
+
+    
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
