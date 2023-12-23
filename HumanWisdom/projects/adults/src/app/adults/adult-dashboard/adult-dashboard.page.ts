@@ -199,37 +199,37 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
-    // let authtoken = JSON.parse(localStorage.getItem("token"))
-    // if (authtoken) {
-    //   this.isEnableHam=false;
-    //   localStorage.setItem('socialLogin', 'T');
-    //   this.service.verifytoken(authtoken).subscribe((res) => {
-    //     this.isEnableHam=true;
-    //     if (res) {
-    //       localStorage.setItem("email", res['Email'])
-    //       localStorage.setItem("name", res['Name'])
-    //       let namedata = localStorage.getItem('name').split(' ')
-    //       localStorage.setItem("FnName", namedata[0])
-    //       localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-    //       localStorage.setItem("Subscriber",res['Subscriber']);
-    //       this.isSubscriber  = SharedService.isSubscriber();
-    //       this.loginadult(res)
-    //     } else {
-    //       localStorage.setItem("email", 'guest@humanwisdom.me');
-    //       localStorage.setItem("pswd", '12345');
-    //       localStorage.setItem('guest', 'T');
-    //       localStorage.setItem('isloggedin', 'F');
-    //       // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-    //     }
-    //   }, error => {
-    //     localStorage.setItem("email", 'guest@humanwisdom.me');
-    //     localStorage.setItem("pswd", '12345');
-    //     localStorage.setItem('guest', 'T');
-    //     localStorage.setItem('isloggedin', 'F');
+    let authtoken = JSON.parse(localStorage.getItem("token"))
+    if (authtoken) {
+      this.isEnableHam=false;
+      localStorage.setItem('socialLogin', 'T');
+      this.service.verifytoken(authtoken).subscribe((res) => {
+        this.isEnableHam=true;
+        if (res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber",res['Subscriber']);
+        this.isSubscriber  = SharedService.isSubscriber();
+          this.loginadult(res)
+        } else {
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
+          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+        }
+      }, error => {
+        localStorage.setItem("email", 'guest@humanwisdom.me');
+        localStorage.setItem("pswd", '12345');
+        localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
 
-    //   },
-    //   )
-    // }
+      },
+      )
+    }
 
 
     let ban = localStorage.getItem('enablebanner');
