@@ -20,6 +20,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   supportsScrollBehavior = supportsScrollBehavior();
   @Output() playstoreenable = new EventEmitter<boolean>();
   @Input() enableHamburger = false;
+  @Input() isShowHeader =  true;
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -50,6 +51,13 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
         if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
           console.log(changes.enableHamburger.currentValue);
           this.enableHamburger = changes.enableHamburger.currentValue;
+        }
+      }
+
+      if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
+        if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
+          console.log(changes.isShowHeader.currentValue);
+          this.isShowHeader = changes.isShowHeader.currentValue;
         }
       }
   }

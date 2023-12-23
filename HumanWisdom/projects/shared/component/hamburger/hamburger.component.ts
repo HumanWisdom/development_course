@@ -72,6 +72,11 @@ export class HamburgerComponent implements OnInit, OnChanges {
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.subscriberType = localStorage.getItem("SubscriberType");
+      let userres = JSON.parse(localStorage.getItem("loginResponse"));
+      this.subscriber = SharedService.isSubscriber();
+      if (userres) {
+        this.name = userres["Name"];
+      }
     }
   }
 
