@@ -357,7 +357,7 @@ export class AppComponent implements OnDestroy {
       this.isShowHeader=true;
       return true;
     }
-    if ((this.router.url == "/adults/adult-dashboard") || (this.router.url == "/adult-dashboard")
+    if ((this.router.url == "/adults" || this.router.url == "/adults/adult-dashboard") || (this.router.url == "/adult-dashboard")
      || this.router.url.includes("/adults/adult-dashboard") || this.router.url.includes("adult-dashboard")) {
       this.dash = true;
       this.journal = false;
