@@ -33930,8 +33930,6 @@ label.chkb_post_anonymously > input[type="checkbox"] + *::before
 {
   width: 20px;
   height: 20px;
-  min-width: 20px;
-  min-height: 20px;
   border-radius: 4px;
   /* background: #E58D82;
   border: 0; */
@@ -35790,68 +35788,4 @@ li ol > li:before {
   background: #fff ;
   color: #000;
 }
-
-/* cafe */
-.btn_old .btn
-{
-  height: 63px;
-  width: 100%;
-  margin: 0;
-  padding: 20px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.10);
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  color: rgba(255, 255, 255, 0.50);
-}
-
-.btn_old .btn:hover,
-.btn_old .btn:focus
-{
-  background: #120F40;
-  color: #E58D82;
-}
-
-.div_about_you
-{
-  border-radius: 12px;
-  border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
-  padding: 20px;
-}
-
-#cafe .panel 
-{
-  border: 0;
-  box-shadow: unset;
-  background: #120F40;
-  border-radius: 12px;
-  padding: 20px;
-}
-
-#cafe .panel-default>.panel-heading 
-{
-  border-radius: 12px;
-  background: #120F40;
-  box-shadow: unset;
-  padding: 0;
-}
-
-#cafe .panel-title > a[aria-expanded="true"]:after 
-{
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cafe_accordion_minus.svg);
-}
-
-#cafe .panel-title > a:after 
-{
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cafe_accordion_plus.svg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 0;
-  bottom: 0;
-}
-/* /cafe */
 /* /version - 03 */
