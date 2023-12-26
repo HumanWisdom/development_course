@@ -290,3 +290,14 @@
   z-index: 0; 
   min-height: 100vh; 
 }
+
+.am_bg_01
+{  
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/audio_meditation/am_bg_01.png) no-repeat center center!important;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  z-index: 0;
+  min-height: 100vh !important;
+  padding: 8rem 20px 20px 20px;
+}

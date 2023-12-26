@@ -34396,10 +34396,10 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   box-shadow: unset;
 }
 
-.sr_fc_01:focus.voucher_code
+/* .sr_fc_01:focus.voucher_code
 {
   text-transform: uppercase;
-}
+} */
 
 .btn_subscription_apply 
 {
@@ -35714,5 +35714,78 @@ li ol > li:before {
 .pr15pxi
 {
   padding-right: 15px !important;
+}
+
+.am_tn
+{
+  background: transparent;
+  box-shadow: unset;
+}
+
+.toc_adiv_02 a > .row 
+{
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
+  min-height: 88px;
+  margin-bottom: 10px;
+  padding: 20px;
+  /* margin: 0 10px 10px 10px; */
+}
+
+.toc_adiv_02 a:last-child > .row
+{
+  margin-bottom: 0;
+}
+
+.img_podcast_01
+{
+  border: 1px solid #FFF;
+  border-radius: 6px;
+}
+
+.img_podcast_02
+{
+  border-radius: 20px;
+  max-height: 251px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.img_podcast
+{
+  padding-top: 8rem !important;
+}
+
+.btn_podcast
+{
+  padding: 0 20px 10px 0;
+}
+
+.btn_podcast .btn 
+{
+  border-radius: 12px;
+  background: #424675;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #fff;
+  margin: 0 10px 0 0;
+  padding: 9px 10px;
+  height: 36px;
+  box-shadow: unset;
+}
+
+.btn_podcast .btn:last-child
+{
+  margin-right: 0;
+}
+
+.btn_podcast .btn:hover,
+.btn_podcast .btn:focus
+{
+  background: #fff ;
+  color: #000;
 }
 /* /version - 03 */
