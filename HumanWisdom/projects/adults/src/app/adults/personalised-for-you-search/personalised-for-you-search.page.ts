@@ -223,6 +223,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   searchEvent(module) {
+    this.logeventservice.logEvent("click_search");
+
     this.searchinp = module;
     this.searchResult = [];
     this.getinp(module);
@@ -1032,6 +1034,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
         });
   }
   navigateToPathway(url) {
+    this.logeventservice.logEvent("click_" + url.split("/")[3]);
+
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate([url]);
   }
