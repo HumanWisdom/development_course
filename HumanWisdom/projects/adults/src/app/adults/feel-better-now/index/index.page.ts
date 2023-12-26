@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
+
 
 @Component({
   selector: 'app-index',
@@ -13,7 +15,10 @@ export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location, private router: Router) {
+  constructor(private location: Location,
+    private router: Router,
+    private logeventservice:LogEventService
+    ) {
     localStorage.setItem('feelbetternow', 'T')
    }
 
@@ -33,6 +38,7 @@ export class IndexPage implements OnInit {
   }
 
   enableRoute(url) {
+     this.logeventservice.logEvent("click_"+ String(url).split("/")[2]);
     this.router.navigate([url])
   }
 

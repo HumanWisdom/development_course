@@ -10,6 +10,7 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from "@angular/cdk/platform";
+import { SharedService } from "../../services/shared.service";
 
 @Component({
   selector: "app-hamburger",
@@ -71,13 +72,18 @@ export class HamburgerComponent implements OnInit, OnChanges {
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.subscriberType = localStorage.getItem("SubscriberType");
+      let userres = JSON.parse(localStorage.getItem("loginResponse"));
+      this.subscriber = SharedService.isSubscriber();
+      if (userres) {
+        this.name = userres["Name"];
+      }
     }
   }
 
   ngOnInit() {
-    if (this.platform.IOS) {
+    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
       this.ios = true;
-    }
+     }
      if(localStorage.getItem("isPartner")!=null){
            this.isPartner = localStorage.getItem("isPartner");
      }
@@ -112,7 +118,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
       if (sub === "1" || sub === 1) {
         this.subscriber = true;
       }
-    },100);
+    },1000);
   }
 
   routeGuide() {
@@ -289,10 +295,28 @@ export class HamburgerComponent implements OnInit, OnChanges {
       }
     }
   }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
   GetSubscriptionText(){
     if(this.ios){
       return "Manage Subscriptions"
     }
     return "My Subscriptions"
+  }
+
+  setLogevent(evtName, param = '') {
+    this.logeventservice.logEvent(evtName);
   }
 }

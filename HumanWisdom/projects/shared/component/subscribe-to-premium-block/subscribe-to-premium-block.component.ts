@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { OnboardingService } from '../../services/onboarding.service';
-
+import {
+  Platform,
+} from "@angular/cdk/platform";
 @Component({
   selector: 'app-subscribe-to-premium-block',
   templateUrl: './subscribe-to-premium-block.component.html',
@@ -15,11 +17,27 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   defaultCountry:string = '';
   pricingModel:any;
   defaultCurrencySymbol='';
+  isIos = false;
   dataloaded = false;
   constructor(private router: Router,
-    private onboardingService: OnboardingService) { }
+    private onboardingService: OnboardingService,
+    private platform: Platform) {
+      if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
+        this.isIos = true; 
+       }
+     }
 
   ngOnInit() {
+
+    setTimeout(() => {
+      let sub: any = localStorage.getItem("Subscriber");
+      if (sub == '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
+      }
+    }, 2000);
+
     this.pricingModel = {
       "RateID": '',
       "ProgID": 0,
@@ -38,7 +56,9 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
   }
 
   SubscribeToPremium(){
-    this.router.navigate(['/subscription/start-your-free-trial']);
+    if(!this.isIos){
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    }
   }
   
   getCountry() {
@@ -68,6 +88,19 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
       window.alert(err.error['Message'])
     }
     )
+  }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
   formatToDecimal(value) {

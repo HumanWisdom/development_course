@@ -14,6 +14,8 @@ export class S159006Page implements OnInit, OnDestroy {
   bg_cft=""
   bg=""
 
+  toc="social-media/s159001"
+
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -26,6 +28,7 @@ export class S159006Page implements OnInit, OnDestroy {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+ 
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
@@ -82,7 +85,7 @@ export class S159006Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/social-media/s159007'])
+    this.router.navigate(['/adults/social-media/s159007'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -103,7 +106,7 @@ export class S159006Page implements OnInit, OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/social-media/s159005'])
+    this.router.navigate(['/adults/social-media/s159005'])
   }
 
   ngOnDestroy()

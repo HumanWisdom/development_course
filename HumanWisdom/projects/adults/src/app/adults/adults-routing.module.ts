@@ -518,9 +518,13 @@ const routes: Routes = [
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
   },
   {
+    path: 'social-media',
+    loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
+  },
+  {
     path: 'cafe',
     loadChildren: () => import('./cafe/cafe.module').then(m => m.CafeModule)
-  }
+  },
 ];
 
  @NgModule({
