@@ -110,6 +110,7 @@ export class PodcastTocPage implements OnInit {
     this.service.GetPodcastList().subscribe((res) => {
       if (res) {
         this.podcastList = res;
+        console.log(res);
         this.allpodcastList = res;
       }
     })
@@ -133,5 +134,11 @@ export class PodcastTocPage implements OnInit {
   searchPodcast(){
     let filterlist =this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
     this.podcastList=filterlist;
+}
+
+getimage(id) {
+  let Id = id <= 9 ? '0' + id : id;
+  console.log(Id)
+  return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_${Id}.svg`
 }
 }
