@@ -4,17 +4,18 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from '@angular/cdk/platform';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../../shared/services/shared.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tn-dashboard-v03',
   templateUrl: './tn-dashboard-v03.component.html',
   styleUrls: ['./tn-dashboard-v03.component.scss'],
 })
-export class TnDashboardV03Component implements OnInit,OnChanges {
+export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
@@ -37,14 +38,34 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
   countryCode: any;
   userDetails: any = [];
   loginResponse: any;
-
-  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
+  subscription: Subscription;
+  constructor(private router: Router, public Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
     }
 
+  }
+
+  getLoggedIn(){
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isloggedIn = true
+    }
+    return this.isloggedIn;
+  }
+
+  getIsSubscriber(){
+    let sub: any = localStorage.getItem("Subscriber");
+    if (sub == '1') {
+      this.subscriber = true;
+      this.isShowbookMark = true;
+    } else {
+      this.subscriber = false;
+      this.isShowbookMark = false;
+    }
+    return this.subscriber;
   }
   ngOnChanges(changes: SimpleChanges): void {
       if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
@@ -65,25 +86,29 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
 
 
   ngOnInit() {
-    setTimeout(() => {
-      let sub: any = localStorage.getItem("Subscriber");
-      if (sub == '1') {
-        this.subscriber = true;
-        this.isShowbookMark = true;
-      } else {
-        this.subscriber = false;
-        this.isShowbookMark = false;
+    this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
+      if(value){
+          let sub: any = localStorage.getItem("Subscriber");
+          if (sub == '1') {
+            this.subscriber = true;
+            this.isShowbookMark = true;
+          } else {
+            this.subscriber = false;
+            this.isShowbookMark = false;
+          }
+          let userId = JSON.parse(localStorage.getItem("userId"))
+    
+          this.Onboardingservice.getuser(userId).subscribe((res) => {
+            this.userDetails = res;
+            let userdetail = res[0];
+            this.url = userdetail['UserImagePath'].split('\\')[1]
+            this.name = localStorage.getItem('name');
+          });
+          this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
       }
-      let userId = JSON.parse(localStorage.getItem("userId"))
+    });
 
-      this.Onboardingservice.getuser(userId).subscribe((res) => {
-        this.userDetails = res;
-        let userdetail = res[0];
-        this.url = userdetail['UserImagePath'].split('\\')[1]
-        this.name = localStorage.getItem('name');
-      })
-      this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-    }, 2000);
+
 
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
@@ -95,6 +120,10 @@ export class TnDashboardV03Component implements OnInit,OnChanges {
     } else {
       this.enableplaystore = false;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   iOS() {
