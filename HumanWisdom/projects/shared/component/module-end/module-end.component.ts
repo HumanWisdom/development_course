@@ -34,11 +34,11 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   percentage: string;
   currentModuleName: string;
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
-  @Input() programType :ProgramType = ProgramType.Adults;
-  isShowDownload=false;
-  moduleData:Array<ProgramModel>;
+  @Input() programType: ProgramType = ProgramType.Adults;
+  isShowDownload = false;
+  moduleData: Array<ProgramModel>;
 
-  
+
   @Input() moduleList: any = [
     {
       name: 'Breathing',
@@ -77,40 +77,40 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   getDataForCertificate() {
-   var currentModuleName:any;
+    var currentModuleName: any;
     this.userId = JSON.parse(localStorage.getItem("userId"))
-    let  path = this.router.url.split("/");
-     currentModuleName = path[path.length - 2];
+    let path = this.router.url.split("/");
+    currentModuleName = path[path.length - 2];
     this.service.getPoints(this.userId).subscribe(res => {
-      let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().replace("&","").
-      replace(/\s+/g, '').
-      includes(currentModuleName.
-        replaceAll("-", " ").toLowerCase().
-        replace(/\s+/g, '')));
-      if(data && data != null){
+      let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().replace("&", "").
+        replace(/\s+/g, '').
+        includes(currentModuleName.
+          replaceAll("-", " ").toLowerCase().
+          replace(/\s+/g, '')));
+      if (data && data != null) {
         this.currentModuleName = data.Module;
         this.percentage = data.Percentage;
         if (this.percentage == "100.00") {
           this.isModuleCompleted = true;
           setTimeout(() => {
-            this.isShowDownload=true;
+            this.isShowDownload = true;
           }, 500);
         }
-      }else{
-        this.checkforExceptionCases(res,currentModuleName);
+      } else {
+        this.checkforExceptionCases(res, currentModuleName);
       }
     });
   }
 
-  private checkforExceptionCases(res,currentModuleName){
-    if(currentModuleName=='five-circles'){
-      var data = res?.ModUserScrPc?.find(e => e.Module=="5 Circles of Wisdom");
+  private checkforExceptionCases(res, currentModuleName) {
+    if (currentModuleName == 'five-circles') {
+      var data = res?.ModUserScrPc?.find(e => e.Module == "5 Circles of Wisdom");
       this.currentModuleName = data.Module;
       this.percentage = data.Percentage;
       if (this.percentage == "100.00") {
         this.isModuleCompleted = true;
         setTimeout(() => {
-          this.isShowDownload =true;
+          this.isShowDownload = true;
         }, 500);
       }
     }
@@ -143,14 +143,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeResume(r, link) {
-    if(ProgramType.Teenagers == this.programType){
+    if (ProgramType.Teenagers == this.programType) {
       console.log("moduledata1=" + this.moduleData)
       console.log("Link=" + link)
-      let moduleData=this.moduleData.filter(x=>x.moduleId==r)
-      if(moduleData && moduleData!=null && moduleData.length>0) {
-       this.RouteToModule(moduleData[0]);
+      let moduleData = this.moduleData.filter(x => x.moduleId == r)
+      if (moduleData && moduleData != null && moduleData.length > 0) {
+        this.RouteToModule(moduleData[0]);
       }
-    }else{
+    } else {
       switch (r.toString()) {
         case "0": {
           this.router.navigate([link])
@@ -374,9 +374,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           break
         }
         case "143": {
-           this.routeDiversityandInclusion(1)
+          this.routeDiversityandInclusion(1)
           break
         }
+        default:
+          let moduleData = this.moduleData.filter(x => x.moduleId == r)
+          if (moduleData && moduleData != null && moduleData.length > 0) {
+            this.RouteToModule(moduleData[0]);
+          }
       }
     }
   }
@@ -2565,7 +2570,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           console.log(error)
         },
         () => {
-             this.router.navigate([`/adults/external-approval/s91001`])
+          this.router.navigate([`/adults/external-approval/s91001`])
         })
   }
 
@@ -2600,7 +2605,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         })
   }
 
-  routeDiversityandInclusion (cont: any = 1) {
+  routeDiversityandInclusion(cont: any = 1) {
     var pgResume
     localStorage.setItem("moduleId", JSON.stringify(143))
     this.service.clickModule(143, this.userId)
@@ -2623,7 +2628,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           console.log(error)
         },
         () => {
-           this.router.navigate([`/adults/diversity-and-inclusion`])
+          this.router.navigate([`/adults/diversity-and-inclusion`])
         })
   }
 
@@ -2671,10 +2676,10 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
   routeJournal() {
 
-    if(ProgramType.Teenagers==this.programType ||
-         SharedService.ProgramId == ProgramType.Teenagers){
+    if (ProgramType.Teenagers == this.programType ||
+      SharedService.ProgramId == ProgramType.Teenagers) {
       this.router.navigate(['/journal/']);
-    }else{
+    } else {
       this.router.navigate(['/adults/journal']);
     }
 
@@ -2683,13 +2688,13 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/forum'])
   }
 
-  public saveAsPDF(isShare:boolean =false) {
+  public saveAsPDF(isShare: boolean = false) {
     const div = document.getElementById('myDiv');
     const content = div.innerHTML;
 
     // replace with the ID of your div
-    html2canvas(div, {scale: 3}
-      ).then(canvas => {
+    html2canvas(div, { scale: 3 }
+    ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       (window as any).myFileContentData = imgData;
       const event = new CustomEvent('downloadButtonClicked');
@@ -2697,24 +2702,24 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       const pdf = new jsPDF({
         orientation: 'portrait',
         format: 'a5',
-        compress:false,
+        compress: false,
       });
       let pdfWidth = pdf.internal.pageSize.getWidth();
-      let pdfHeight=pdf.internal.pageSize.getHeight();
+      let pdfHeight = pdf.internal.pageSize.getHeight();
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
       const blob = pdf.output('blob');
-    const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
-    //this.convertPdfToBase64(file);
-      localStorage.setItem('fileName',this.currentModuleName);
+      const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
+      //this.convertPdfToBase64(file);
+      localStorage.setItem('fileName', this.currentModuleName);
 
-      if(!isShare){
+      if (!isShare) {
         window.dispatchEvent(event);
         pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
-       }
-       else{
+      }
+      else {
         window.dispatchEvent(shareEvent);
         this.shareCertificate();
-       }
+      }
       // pdf.setDisplayMode("original", "single");
     });
   }
@@ -2723,11 +2728,11 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     const reader = new FileReader();
     reader.onloadend = () => {
       const base64String = reader.result as string;
-     //localStorage.setItem('myFileContent',base64String);
+      //localStorage.setItem('myFileContent',base64String);
       console.log(base64String);
-    (window as any).myFileContentData = base64String;
+      (window as any).myFileContentData = base64String;
       const event = new CustomEvent('downloadButtonClicked');
-     window.dispatchEvent(event);
+      window.dispatchEvent(event);
     };
     reader.readAsDataURL(file);
   }
@@ -2749,17 +2754,17 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-     const div = document.getElementById('myDiv'); // replace with the ID of your div
-     html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
+      const div = document.getElementById('myDiv'); // replace with the ID of your div
+      html2canvas(div, { scale: 3, y: 0, scrollY: 0 }
       ).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF({
           orientation: 'portrait',
           format: 'a5',
-          compress:false,
+          compress: false,
         });
         let pdfWidth = pdf.internal.pageSize.getWidth();
-        let pdfHeight=pdf.internal.pageSize.getHeight();
+        let pdfHeight = pdf.internal.pageSize.getHeight();
         pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
         this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
       });
@@ -2769,57 +2774,57 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
 
 
-    GetModuleDataBasedOnProgramType(){
-     this.moduleData= new Array<ProgramModel>();
-     this.service.getModules(this.programType).subscribe(res=>{
-      this.moduleData=res;
-     });
-    }
+  GetModuleDataBasedOnProgramType() {
+    this.moduleData = new Array<ProgramModel>();
+    this.service.getModules(this.programType).subscribe(res => {
+      this.moduleData = res;
+    });
+  }
 
 
-    ContinueToThisModule(){
-      console.log("moduledata=" + this.moduleData);
-      console.log("moduleId=" +this.moduleId);
+  ContinueToThisModule() {
+    console.log("moduledata=" + this.moduleData);
+    console.log("moduleId=" + this.moduleId);
 
-     let moduleData=this.moduleData.filter(x=>x.moduleId==this.moduleId);
-     if(moduleData && moduleData!=null && moduleData.length>0) {
+    let moduleData = this.moduleData.filter(x => x.moduleId == this.moduleId);
+    if (moduleData && moduleData != null && moduleData.length > 0) {
       this.RouteToModule(moduleData[0]);
-     }
     }
+  }
 
-    RouteToModule(moduleData:ProgramModel) {
-      var addictionResume
-      localStorage.setItem("moduleId",moduleData.moduleId)
-      this.service.clickModule(+moduleData.moduleId, this.userId)
-        .subscribe(res => {
-          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-          this.qrList = res
-          addictionResume = "s" + res.lastVisitedScreen
+  RouteToModule(moduleData: ProgramModel) {
+    var addictionResume
+    localStorage.setItem("moduleId", moduleData.moduleId)
+    this.service.clickModule(+moduleData.moduleId, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        addictionResume = "s" + res.lastVisitedScreen
 
-          // continue where you left
-          if (res.lastVisitedScreen === '') {
-            localStorage.setItem("lastvisited", 'F')
-          }
-          else {
-            localStorage.setItem("lastvisited", 'T')
-          }
-          // /continue where you left
-          sessionStorage.setItem(moduleData.moduleName.trim() , 's'+moduleData.lastScreen)
-          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem(moduleData.moduleName.trim(), 's' + moduleData.lastScreen)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
         },
-          error => {
-            console.log(error)
-          },
-          () => {
-            // const isLocalhost = window.location.hostname === 'localhost';
-            // if(isLocalhost){
-            //     moduleData.path=moduleData.path.replace('teenagers/#/','');
-            // }
-            moduleData.path=moduleData.path.replace('teenagers/#/','');
-            //this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
-            this.router.navigate([''+moduleData.path]);
-          })
-    }
+        () => {
+          // const isLocalhost = window.location.hostname === 'localhost';
+          // if(isLocalhost){
+          //     moduleData.path=moduleData.path.replace('teenagers/#/','');
+          // }
+          moduleData.path = moduleData.path.replace('teenagers/#/', '');
+          //this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
+          this.router.navigate(['' + moduleData.path]);
+        })
+  }
 
 
 }
