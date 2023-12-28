@@ -14,6 +14,7 @@ var carouselId: any = 1;
 export class IntroCarouselPage implements OnInit, AfterViewInit {
   public loading = false;
   nextBtnDis = false;
+  activeId = 1;
 
   constructor(private router: Router, private service: AdultsService,
     public logeventservice: LogEventService) { }
@@ -43,6 +44,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       let arr = data['relatedTarget']['classList'];
       let istrue = false;
       carouselId = parseFloat(arr[1]) + 1;
+      this.activeId = carouselId;
       arr.forEach((d) => {
         if (d === '2') {
           this.nextBtnDis = true;
