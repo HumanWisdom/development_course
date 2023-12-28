@@ -2,7 +2,8 @@
 <div class="right_col mc_03">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 div_intro">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01"
+      [ngClass]="[activeId > 1 ? 'div_intro_next' : 'div_intro']">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
