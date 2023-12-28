@@ -4009,21 +4009,26 @@ export class AdultDashboardPage implements OnInit {
   routeForUser(res) {
     let sid = '';
     if (res['FeatureType'] === "BLOG") {
+      this.logeventservice.logEvent("click_blog");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/blog-article'], { queryParams: { sId: `${sid}` } })
     } else if (res['FeatureType'] === "LIFE STORY") {
+      this.logeventservice.logEvent("click_life_stories");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
     }
     else if (res['FeatureType'] === "PODCAST") {
+      this.logeventservice.logEvent("click_podcasts");
        this.router.navigate([res['Url']]);
     }
     else {
+      this.logeventservice.logEvent("click_" + res['FeatureType']);
       localStorage.setItem('wisdomvideotitle', res['Title']);
       this.router.navigate([res['Url']]);
     }
   }
   changeTopic() {
+    this.logeventservice.logEvent("click_Change-your-Topic");
     localStorage.setItem('lastRoute',this.dasboardUrl);
     this.router.navigate(["/adults/change-topic"], {
       state: {

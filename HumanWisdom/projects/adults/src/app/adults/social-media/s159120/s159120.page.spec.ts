@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { S159120Page } from './s159120.page';
+import { S159120Page } from './s159119.page';
 
 describe('S159120Page', () => {
   // let  canActivate:[ActiveGuard],  

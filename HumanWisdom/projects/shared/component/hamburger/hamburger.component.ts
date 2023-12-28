@@ -88,7 +88,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
-      this.ios = true; 
+      this.ios = true;
      }
      if(localStorage.getItem("isPartner")!=null){
            this.isPartner = localStorage.getItem("isPartner");
@@ -356,7 +356,6 @@ export class HamburgerComponent implements OnInit, OnChanges {
     return "My Subscriptions"
   }
 
-
   initialize(){
   this.isPartner = "0";
   this.isloggedIn = false;
@@ -366,5 +365,9 @@ export class HamburgerComponent implements OnInit, OnChanges {
   this.subscriber = false;
   this.partnerOption= "";
   this.enableplaystore = true;
+  }
+
+  setLogevent(evtName, param = '') {
+    this.logeventservice.logEvent(evtName);
   }
 }

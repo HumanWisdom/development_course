@@ -102,7 +102,8 @@ export class LoginSignupPage implements OnInit {
 
   constructor(
     private fb: UntypedFormBuilder,
-    private router: Router,
+    private router: Router, 
+    public logeventservice: LogEventService,
     private activate: ActivatedRoute,
     private authService: SocialAuthService,
     private aservice: AdultsService,
@@ -117,7 +118,7 @@ export class LoginSignupPage implements OnInit {
       this.urlPassword = params["pwd"];
       let res = localStorage.getItem("isloggedin");
       if (res === "T") {
-        this.routedashboard();
+        this.router.navigate(['/adults/adult-dashboard'])
       } else {
         this.enableLogin = true;
       }
@@ -255,7 +256,11 @@ export class LoginSignupPage implements OnInit {
     this.agree = value;
   }
 
-  googleLogin() {
+  googleLogin(reqtype) {
+    if(reqtype=="signup")
+      this.logeventservice.logEvent('facebook_signup');
+    else
+      this.logeventservice.logEvent('facebook_login');
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe(
       (user) => {
@@ -431,7 +436,12 @@ export class LoginSignupPage implements OnInit {
     );
   }
 
-  fbLogin() {
+  fbLogin(reqtype) {
+    if(reqtype=="signup")
+        this.logeventservice.logEvent('facebook_signup');
+    else
+          this.logeventservice.logEvent('facebook_login');
+  
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       // this.user = user;
@@ -452,6 +462,8 @@ export class LoginSignupPage implements OnInit {
           })
           .subscribe((res) => {
             if (res) {
+              
+
               this.loginResponse = res;
               localStorage.setItem("socialLogin", "T");
               localStorage.setItem(
@@ -885,7 +897,11 @@ export class LoginSignupPage implements OnInit {
     });
   }
 
-  signInWithApple() {
+  signInWithApple(reqtype) {
+    if(reqtype=="signup")
+    this.logeventservice.logEvent('facebook_signup');
+  else
+    this.logeventservice.logEvent('facebook_login');
     const CLIENT_ID = "humanwisdom.web.service";
     const REDIRECT_API_URL =
       "https://www.humanwisdom.info/api/verifyAppleToken_html";
@@ -900,6 +916,7 @@ export class LoginSignupPage implements OnInit {
 
 
   routedashboard() {
+    this.logeventservice.logEvent('Guest_Login');
     this.router.navigate(['/adults/adult-dashboard'])
   }
 

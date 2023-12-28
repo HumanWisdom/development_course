@@ -1,5 +1,5 @@
 .bg_light_gray
-{  
+{
   background: #E5E5E5 !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/wave/module1/w10.jpg) no-repeat center center fixed !important; */
   -webkit-background-size: cover;
@@ -7,35 +7,35 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
 .bg_journal
-{  
+{
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/journal/journal_landing.svg) no-repeat center center fixed !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
 .bg_wisdom_stories
-{  
+{
   background: linear-gradient(180deg, #70C6BD 0%, #13547A 100%) !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
-.bg_green_yellow 
+.bg_green_yellow
 {
   background: #63A858;
 }
@@ -105,7 +105,7 @@
   background: #EBEBEB;
 }
 
-.bg_user_profile 
+.bg_user_profile
 {
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/profile/user_profile_landing.svg) no-repeat center center fixed !important;
   -webkit-background-size: cover;
@@ -113,8 +113,8 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
 .bg_profile_upload
@@ -125,11 +125,11 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
-.testimonials 
+.testimonials
 {
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/testimonials/testimonials.jpg) no-repeat center center fixed !important;
   -webkit-background-size: cover;
@@ -137,12 +137,12 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
 .bg_login_signup
-{  
+{
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/flat.svg) no-repeat center center fixed !important; */
   background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%) !important;
   -webkit-background-size: cover;
@@ -150,36 +150,36 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
 .bg_treesisters
-{  
+{
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/treesisters/treesisters.svg) no-repeat center center!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
 }
 
 .bg_splash
-{  
+{
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/splash.svg) no-repeat center center fixed !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
 }
 
 .bg_add_to_home_screen_ios
-{  
+{
   background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%) !important;
   /* mix-blend-mode: multiply; */
   -webkit-background-size: cover;
@@ -187,8 +187,8 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
   overflow: auto;
 }
 
@@ -200,8 +200,8 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -214,14 +214,14 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
   overflow: hidden;
   /* padding-top: 12rem !important; */
 }
 
 .bg_guided_questions
-{  
+{
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/flat.svg) no-repeat center center fixed !important; */
   /* background: #F5F5F5 !important; */
   background: #FFFFFF !important;
@@ -230,25 +230,25 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  /* z-index: 9; */ 
-  min-height: 100vh; 
+  /* z-index: 9; */
+  min-height: 100vh;
 }
 
-.bg_whitesmoke 
+.bg_whitesmoke
 {
   background: #F5F5F5;
 }
 
 .bg_gift_of_wisdom
-{  
+{
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/gift_of_wisdom/gift_of_wisdom.svg) no-repeat center center!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
 }
 
 .bg_video,
@@ -260,7 +260,7 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
+  z-index: 0;
   /* min-height: 100vh; */
   transition: none;
   /* background-color: none !important; */
@@ -279,7 +279,7 @@
 }
 
 .v1_3_bg_splash
-{  
+{
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/splash.svg) no-repeat center center fixed !important; */
   background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
   -webkit-background-size: cover;
@@ -287,6 +287,16 @@
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
+  z-index: 0;
+  min-height: 100vh;
+}
+
+.am_bg_01
+{
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  z-index: 0;
+  min-height: 100vh !important;
+  padding: 8rem 20px 20px 20px;
 }
