@@ -17,7 +17,7 @@ export class S159043Page implements OnInit,OnDestroy
   bg=""
   title="It can reinforces our prejudices and our divisions"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/social-media/1.1.mp3'
   transcriptPage="social-media/s159043t"
   toc="social-media/s159001"
   bookmark=0
