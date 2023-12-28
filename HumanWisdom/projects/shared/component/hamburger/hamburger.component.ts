@@ -11,6 +11,7 @@ import {
   supportsScrollBehavior
 } from "@angular/cdk/platform";
 import { SharedService } from "../../services/shared.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-hamburger",
@@ -41,7 +42,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
   enablebecomepartner = false;
   @Input()
   userDetails = [];
-
+  subscription: Subscription;
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
@@ -80,6 +81,11 @@ export class HamburgerComponent implements OnInit, OnChanges {
     }
   }
 
+
+  public getImageUrl(){
+    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + this.url;
+  }
+
   ngOnInit() {
     if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
       this.ios = true;
@@ -99,27 +105,51 @@ export class HamburgerComponent implements OnInit, OnChanges {
        this.subscriber = true;
      }
     }
+  
+    this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
+      if(value){
+        let sub: any = localStorage.getItem("Subscriber");
+        this.roleid = JSON.parse(localStorage.getItem("RoleID"));
+        let userid = localStorage.getItem("isloggedin");
+        let userres = JSON.parse(localStorage.getItem("loginResponse"));
+        let nameupdate = localStorage.getItem("nameupdate");
+        if (nameupdate) {
+          this.name = nameupdate;
+        } else if (userres) {
+          this.name = userres["Name"];
+        }
+        if (userid === "T") {
+          this.isloggedIn = true;
+        }
+  
+        if (sub === "1" || sub === 1) {
+          this.subscriber = true;
+        }
+      }})
+    }
+    
 
-    setTimeout(() => {
-      let sub: any = localStorage.getItem("Subscriber");
-      this.roleid = JSON.parse(localStorage.getItem("RoleID"));
-      let userid = localStorage.getItem("isloggedin");
-      let userres = JSON.parse(localStorage.getItem("loginResponse"));
-      let nameupdate = localStorage.getItem("nameupdate");
-      if (nameupdate) {
-        this.name = nameupdate;
-      } else if (userres) {
-        this.name = userres["Name"];
-      }
-      if (userid === "T") {
-        this.isloggedIn = true;
-      }
-
-      if (sub === "1" || sub === 1) {
-        this.subscriber = true;
-      }
-    },1000);
+  getSubscriber(){
+    let sub: any = localStorage.getItem("Subscriber");
+    if (sub === "1" || sub === 1) {
+     this.subscriber = true;
+   }
+   return this.subscriber;
   }
+
+  
+  getLoggedIn(){
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isloggedIn = true
+    }
+    return this.isloggedIn;
+  }
+
+  getName(){
+    return this.name;
+  }
+
 
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`]);
@@ -264,36 +294,46 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   getAlertcloseEvent(event) {
-    this.enableAlert = false;
-    this.content = '';
-    if(event === 'ok') {
-      const accessObj:any = window;
-      (accessObj)?.Moengage?.destroy_session();
-      if(this.enablebecomepartner) {
-        let res = localStorage.getItem("isloggedin");
-        if(!res || res === 'F') {
+    if(this.enableAlert){
+      this.enableAlert = false;
+      this.content = '';
+      if(event === 'ok') {
+        const accessObj:any = window;
+        (accessObj)?.Moengage?.destroy_session();
+        if(this.enablebecomepartner) {
+          let res = localStorage.getItem("isloggedin");
+          if(!res || res === 'F') {
+              this.closeLogoutmodal.nativeElement.click();
+              localStorage.setItem("isloggedin", "F");
+              localStorage.setItem("guest", "T");
+              localStorage.setItem("navigateToUpgradeToPremium", "true");
+              localStorage.setItem("btnClickBecomePartner", "true");
+              this.router.navigate(["/onboarding/login"]);
+          }else{
+            this.Onboardingservice.navigateToUpgradeToPremium = true;
+            this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+          }
+        }else {
+          this.logeventservice.logEvent('click_logout_Hamburger');
+          if (this.platform.isBrowser) {
+            this.closemenuevent();
             this.closeLogoutmodal.nativeElement.click();
+            this.isloggedIn=false;
+            this.isPartner = false;
+            this.initialize();
+            let acceptCookie = localStorage.getItem("acceptcookie");
+            localStorage.clear();
             localStorage.setItem("isloggedin", "F");
             localStorage.setItem("guest", "T");
-            localStorage.setItem("navigateToUpgradeToPremium", "true");
-            localStorage.setItem("btnClickBecomePartner", "true");
+            localStorage.setItem("acceptcookie", acceptCookie);
+            localStorage.setItem("navigateToUpgradeToPremium", "false");
+            localStorage.setItem("btnClickBecomePartner", "false");
             this.router.navigate(["/onboarding/login"]);
-        }else{
-          this.Onboardingservice.navigateToUpgradeToPremium = true;
-          this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
-        }
-      }else {
-        this.logeventservice.logEvent('click_logout_Hamburger');
-        if (this.platform.isBrowser) {
-          this.closeLogoutmodal.nativeElement.click();
-          localStorage.setItem("isloggedin", "F");
-          localStorage.setItem("guest", "T");
-          localStorage.setItem("navigateToUpgradeToPremium", "false");
-          localStorage.setItem("btnClickBecomePartner", "false");
-          this.router.navigate(["/onboarding/login"]);
+          }
         }
       }
     }
+ 
   }
 
   iOS() {
@@ -314,6 +354,17 @@ export class HamburgerComponent implements OnInit, OnChanges {
       return "Manage Subscriptions"
     }
     return "My Subscriptions"
+  }
+
+  initialize(){
+  this.isPartner = "0";
+  this.isloggedIn = false;
+  this.name = "guest";
+  this.roleid = 0;
+  this.url = "";
+  this.subscriber = false;
+  this.partnerOption= "";
+  this.enableplaystore = true;
   }
 
   setLogevent(evtName, param = '') {
