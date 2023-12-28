@@ -5,6 +5,7 @@ import { AdultsService } from 'src/app/adults/adults.service';
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 
 declare var $: any;
+var carouselId: any = 1;
 @Component({
   selector: 'app-intro-carousel',
   templateUrl: './intro-carousel.page.html',
@@ -13,6 +14,7 @@ declare var $: any;
 export class IntroCarouselPage implements OnInit, AfterViewInit {
   public loading = false;
   nextBtnDis = false;
+  activeId = 1;
 
   constructor(private router: Router, private service: AdultsService,
     public logeventservice: LogEventService) { }
@@ -41,6 +43,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     $('#ic_carousel').on('slid.bs.carousel',  (data) => {
       let arr = data['relatedTarget']['classList'];
       let istrue = false;
+      carouselId = parseFloat(arr[1]) + 1;
+      this.activeId = carouselId;
       arr.forEach((d) => {
         if (d === '2') {
           this.nextBtnDis = true;
@@ -67,7 +71,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     this.router.navigate(['/onboarding/login']);
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
-    this.logeventservice.logEvent('click_skip_onboarding');
+    this.logeventservice.logEvent('click_skip_onboarding' + ' ' + carouselId);
   }
 
   onLoad() {
@@ -75,7 +79,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   Logevent(route, params, evtName) {
-    this.logeventservice.logEvent(evtName);
+    this.logeventservice.logEvent(evtName + ' ' + carouselId);
     if(params !='' && route !='') {
       this.router.navigate([route, params]);
     }else if(route !='') {

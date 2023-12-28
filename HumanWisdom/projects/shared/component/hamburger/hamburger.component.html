@@ -11,7 +11,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-              <img src="{{url === '' || url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}" alt="" class="img_profile">
+              <img src="{{getImageUrl()}}" alt="" class="img_profile">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
               <a class="" (click)="closemenuevent()">
@@ -21,7 +21,7 @@
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px mb15px">
             <h4 class="mt0px mb5px fs_20px fw_600 lh_150p fc_ffffff">
-              {{name}}
+              {{getName()}}
             </h4>
             <a  (click)="Logevent('/onboarding/user-profile', '', 'click_profile')"  *ngIf="enableprofile">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 hc_profile" *ngIf="isloggedIn">
@@ -51,7 +51,7 @@
         </a>
       </li>
 
-      <li *ngIf="isloggedIn  && subscriber">
+      <li *ngIf="getLoggedIn()  && getSubscriber()">
         <a (click)="routeManageSubscriptiont('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -89,7 +89,7 @@
       <li>
         <label class="a-label__chevron title_p" for="item-partnership">
           <!-- Item 2 -->
-          <div class="row">
+          <div class="row" (click)="setLogevent('click_Partnership_Program')">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" class="img-responsive">
@@ -206,7 +206,7 @@
       <!-- /multilayer li for partnership -->
 
       <li *ngIf="!ios">
-        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe_Hamburger')"  class="p0 b0px">
+        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness')"  class="p0 b0px">
         <!-- <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px"> -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -278,7 +278,7 @@
         </a>
       </li>
 
-      <li *ngIf="!ios"> 
+      <li *ngIf="!ios">
         <a  (click)="Logevent('/adults/adverts-student', '', 'click_hwp_education_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -626,7 +626,7 @@
 
       <div class="row" *ngIf="isloggedIn">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" data-target="#modal_logout">
+          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="logout()" data-target="#modal_logout">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg" class="img-responsive mr5px">
             Logout
           </button>
@@ -644,9 +644,9 @@
 </app-modal> -->
 
 <!-- modal logout -->
-<div class="modal fade in" id="modal_logout" data-keyboard="false" data-backdrop="false">
+<div *ngIf="isloggedIn" class="modal fade in" id="modal_logout" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">

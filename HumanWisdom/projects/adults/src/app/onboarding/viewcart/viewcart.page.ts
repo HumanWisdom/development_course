@@ -564,6 +564,7 @@ export class ViewcartPage implements OnInit {
   closeApplycoupon() {
     this.couponCodeApplied = false;
     this.discount = 0;
+    this.couponCode = '';
     this.totalPrice();
   }
 

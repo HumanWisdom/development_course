@@ -38,7 +38,6 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   isShowDownload = false;
   moduleData: Array<ProgramModel>;
 
-
   @Input() moduleList: any = [
     {
       name: 'Breathing',
@@ -2737,12 +2736,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     reader.readAsDataURL(file);
   }
   shareCertificate() {
+    this.shareUrl = "https://happierme.app/adults/" + this.toc + `?t=${this.token}`
+
     //const url = URL.createObjectURL(this.pdfBlob.output('blob'));
     if (this.ngNavigatorShareService.canShareFile) {
       this.ngNavigatorShareService.share({
         title: this.moduleName + " Certificate",
         text: 'Certificate of Completion!',
-        files: [this.file]
+        url: this.shareUrl
       }).then((response) => {
         console.log(response);
       })

@@ -110,6 +110,7 @@ export class PodcastTocPage implements OnInit {
     this.service.GetPodcastList().subscribe((res) => {
       if (res) {
         this.podcastList = res;
+        console.log(res);
         this.allpodcastList = res;
       }
     })
@@ -124,7 +125,7 @@ export class PodcastTocPage implements OnInit {
         data['MediaUrl'] =  data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/','/');
        }
       let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/','~'));
-      this.router.navigate(['adults/audiopage/', concat, '1', 'T', data['Title']])
+      this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', data['Title']])
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
       // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
@@ -133,5 +134,10 @@ export class PodcastTocPage implements OnInit {
   searchPodcast(){
     let filterlist =this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
     this.podcastList=filterlist;
+}
+
+getimage(id) {
+  let Id = id <= 9 ? '0' + id : id;
+  return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_${Id}.svg`
 }
 }

@@ -53,11 +53,12 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("userId", res['UserId'])
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
+          localStorage.setItem("Subscriber", res['Subscriber'])
           this.name = res['Name'];
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber", res['Subscriber'])
+    
 
         }
       })
