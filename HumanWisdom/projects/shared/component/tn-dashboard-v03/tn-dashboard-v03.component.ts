@@ -39,6 +39,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   userDetails: any = [];
   loginResponse: any;
   subscription: Subscription;
+  @Input() isLoginPage:boolean=false;
   constructor(private router: Router, public Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -75,6 +76,13 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
         }
       }
 
+      if(changes && changes.isLoginPage && !changes.isLoginPage.firstChange){
+        if(changes.isLoginPage.currentValue != changes.isLoginPage.previousValue){
+          console.log(changes.isLoginPage.currentValue);
+          this.isLoginPage = changes.isLoginPage.currentValue;
+        }
+      }
+        
       if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
         if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
           console.log(changes.isShowHeader.currentValue);

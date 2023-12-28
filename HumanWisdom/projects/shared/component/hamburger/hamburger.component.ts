@@ -294,36 +294,46 @@ export class HamburgerComponent implements OnInit, OnChanges {
   }
 
   getAlertcloseEvent(event) {
-    this.enableAlert = false;
-    this.content = '';
-    if(event === 'ok') {
-      const accessObj:any = window;
-      (accessObj)?.Moengage?.destroy_session();
-      if(this.enablebecomepartner) {
-        let res = localStorage.getItem("isloggedin");
-        if(!res || res === 'F') {
+    if(this.enableAlert){
+      this.enableAlert = false;
+      this.content = '';
+      if(event === 'ok') {
+        const accessObj:any = window;
+        (accessObj)?.Moengage?.destroy_session();
+        if(this.enablebecomepartner) {
+          let res = localStorage.getItem("isloggedin");
+          if(!res || res === 'F') {
+              this.closeLogoutmodal.nativeElement.click();
+              localStorage.setItem("isloggedin", "F");
+              localStorage.setItem("guest", "T");
+              localStorage.setItem("navigateToUpgradeToPremium", "true");
+              localStorage.setItem("btnClickBecomePartner", "true");
+              this.router.navigate(["/onboarding/login"]);
+          }else{
+            this.Onboardingservice.navigateToUpgradeToPremium = true;
+            this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+          }
+        }else {
+          this.logeventservice.logEvent('click_logout_Hamburger');
+          if (this.platform.isBrowser) {
+            this.closemenuevent();
             this.closeLogoutmodal.nativeElement.click();
+            this.isloggedIn=false;
+            this.isPartner = false;
+            this.initialize();
+            let acceptCookie = localStorage.getItem("acceptcookie");
+            localStorage.clear();
             localStorage.setItem("isloggedin", "F");
             localStorage.setItem("guest", "T");
-            localStorage.setItem("navigateToUpgradeToPremium", "true");
-            localStorage.setItem("btnClickBecomePartner", "true");
+            localStorage.setItem("acceptcookie", acceptCookie);
+            localStorage.setItem("navigateToUpgradeToPremium", "false");
+            localStorage.setItem("btnClickBecomePartner", "false");
             this.router.navigate(["/onboarding/login"]);
-        }else{
-          this.Onboardingservice.navigateToUpgradeToPremium = true;
-          this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
-        }
-      }else {
-        this.logeventservice.logEvent('click_logout_Hamburger');
-        if (this.platform.isBrowser) {
-          this.closeLogoutmodal.nativeElement.click();
-          localStorage.setItem("isloggedin", "F");
-          localStorage.setItem("guest", "T");
-          localStorage.setItem("navigateToUpgradeToPremium", "false");
-          localStorage.setItem("btnClickBecomePartner", "false");
-          this.router.navigate(["/onboarding/login"]);
+          }
         }
       }
     }
+ 
   }
 
   iOS() {
@@ -344,5 +354,17 @@ export class HamburgerComponent implements OnInit, OnChanges {
       return "Manage Subscriptions"
     }
     return "My Subscriptions"
+  }
+
+
+  initialize(){
+  this.isPartner = "0";
+  this.isloggedIn = false;
+  this.name = "guest";
+  this.roleid = 0;
+  this.url = "";
+  this.subscriber = false;
+  this.partnerOption= "";
+  this.enableplaystore = true;
   }
 }
