@@ -21,7 +21,7 @@ export class SingleAudioContentComponent implements OnInit {
     let rowid:any = this.route.snapshot.paramMap.get('RowId');
     rowid = parseInt(rowid);
     let Id = rowid <= 9 ? '0' + rowid : rowid;
-    this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_${Id}.svg`
+    this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   ngOnInit() {
