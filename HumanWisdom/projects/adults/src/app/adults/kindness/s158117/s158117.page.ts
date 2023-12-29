@@ -23,7 +23,7 @@ export class S158117Page implements OnInit {
   moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.webp"
   
   bg=""
-  moduleLink="/social-media"
+  moduleLink="/adults/social-media"
   moduleName="Social Media"
   sectionName= "Transform your life - I";
   moduleId=159
