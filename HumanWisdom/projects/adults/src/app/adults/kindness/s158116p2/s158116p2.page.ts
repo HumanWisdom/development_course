@@ -4,28 +4,28 @@ import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
-  selector: 'app-s158116p1',
-  templateUrl: './s158116p1.page.html',
-  styleUrls: ['./s158116p1.page.scss'],
+  selector: 'app-s158116p2',
+  templateUrl: './s158116p2.page.html',
+  styleUrls: ['./s158116p2.page.scss'],
 })
-export class S158116p1Page implements OnInit {
+export class S158116p2Page implements OnInit {
 
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
   bg = "red_pink_w2"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
-  videoLink=this.mediaVideo+'/modules/kindness/videos/kindness4.1.mp4'
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/events'
+  videoLink=this.mediaVideo+'/42.mp4'
 
 
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
-  title = "A conversation with a teenager about kindness  "
+  title = "How can we be more Kind?"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/pleasure/pleasure_01.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "158116p1"
+  screenNumber = "158116p2"
   startTime: any
   endTime: any
   totalTime: any
@@ -56,9 +56,9 @@ export class S158116p1Page implements OnInit {
     this.startTime = Date.now();
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark158116p1")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark158116p2")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark158116p1")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark158116p2")) == 1)
       this.bookmark = 1
   }
 
@@ -68,7 +68,7 @@ export class S158116p1Page implements OnInit {
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark158116p1", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark158116p2", JSON.stringify(this.bookmark))
   }
 
   createScreen() {
@@ -84,7 +84,7 @@ export class S158116p1Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/kindness/s158116p2'])
+    this.router.navigate(['/adults/kindness/s158117'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
