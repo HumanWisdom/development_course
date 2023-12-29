@@ -26,7 +26,7 @@ export class S158117Page implements OnInit {
   moduleLink="/social-media"
   moduleName="Social Media"
   sectionName= "Transform your life - I";
-  moduleId=138
+  moduleId=159
   moduleList: any = [
     {
       name: 'Stress',
@@ -37,8 +37,8 @@ export class S158117Page implements OnInit {
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
-      link: '/anxiety',
-      id: 232
+      link: '/conditioning',
+      id: 15
     },
     {
       name: 'Relationships',
