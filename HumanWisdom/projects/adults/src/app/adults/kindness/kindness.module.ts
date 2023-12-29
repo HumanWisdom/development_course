@@ -134,6 +134,7 @@ import { S158116Page } from './s158116/s158116.page';
 import { S158117Page } from './s158117/s158117.page';
 import { AdultsService } from '../adults.service';
 import { S158116p1Page } from './s158116p1/s158116p1.page';
+import { S158116p2Page } from './s158116p2/s158116p2.page';
 
 @NgModule({
   declarations: [
@@ -262,7 +263,8 @@ import { S158116p1Page } from './s158116p1/s158116p1.page';
     S158115Page,
     S158116Page, 
     S158117Page,
-    S158116p1Page
+    S158116p1Page,
+    S158116p2Page
 
   ],
   imports: [

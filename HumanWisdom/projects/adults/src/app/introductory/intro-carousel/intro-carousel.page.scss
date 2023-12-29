@@ -1,3 +1,9 @@
 .div_intro_next {
    background: linear-gradient(180deg, #292D56 0%, #292D56 100%);
 }
+
+video::-webkit-media-controls-panel 
+{
+   display: none !important;
+   opacity: 1 !important;
+}

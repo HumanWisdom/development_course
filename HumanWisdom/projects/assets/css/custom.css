@@ -35967,4 +35967,9 @@ li ol > li:before {
 {
   width: 100% !important;
 }
+
+.br_0px
+{
+  border-radius: 0;
+}
 /* /version - 03 */
