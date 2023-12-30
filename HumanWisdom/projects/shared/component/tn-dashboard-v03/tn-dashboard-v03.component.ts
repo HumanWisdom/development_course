@@ -45,6 +45,8 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
+    }else{
+      this.isloggedIn = false;
     }
 
   }
@@ -53,6 +55,8 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
+    }else{
+      this.isloggedIn = false;
     }
     return this.isloggedIn;
   }
