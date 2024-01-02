@@ -190,6 +190,14 @@ continue(){
     this.router.navigate(['/adults/journal'])
   }
 
+  routeSession(url)
+  {
+    if(this.isLoggedIn && this.isSubscriber) {
+      this.router.navigate([url])
+    }else {
+      this.router.navigate(['adults/subscription/start-your-free-trial']);
+    }
+  }
 
 
 }
