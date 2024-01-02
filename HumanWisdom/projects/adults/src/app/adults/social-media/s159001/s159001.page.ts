@@ -1,8 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import {Location } from '@angular/common'
-import { ProgramModel } from '../../../../../../shared/models/program-model';
-import { AdultsService } from '../../adults.service';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { AdultsService } from "../../adults.service";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-s159001',
@@ -10,15 +9,12 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./s159001.page.scss'],
 })
 export class S159001Page implements OnInit,OnDestroy {
-
-  bg_tn=""
-  bg_cft=""
-  bg=""  
+  pgResume=sessionStorage.getItem("pgResume")
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=159001
+  screenNumber=0
   startTime:any
   endTime:any
   totalTime:any
@@ -29,20 +25,17 @@ export class S159001Page implements OnInit,OnDestroy {
   }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  localFreeScreens =localStorage.getItem("freeScreens");
-  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  addictionResume=sessionStorage.getItem("loveResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/159.webp"
-  tocColor="white"
+  socialmediaR=sessionStorage.getItem("socialmediaR")
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/159.webp"
+  tocColor="grey"
   lastvisited = false;
   stories: any = []
-  pgResume=sessionStorage.getItem("pgResume")
-  moduleData:ProgramModel;
-
-
+  isLoggedIn = false;
+  isSubscriber = false;
   constructor
   (
     private router: Router,
@@ -51,8 +44,8 @@ export class S159001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.getSetModuleData(159);
-    this.url.queryParams.subscribe(params => {
+    this.service.setmoduleID(159);
+      this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
      
@@ -89,8 +82,26 @@ export class S159001Page implements OnInit,OnDestroy {
     // this.stories = JSON.parse(this.stories)
   }
 
+continue(){
+  if(sessionStorage.getItem('pgResume')!= null){
+    this.pgResume=sessionStorage.getItem("pgResume")
+  }
+  this.router.navigate(['/adults/social-media/'+this.pgResume]);
+}
+
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+  
+    this.pgResume=sessionStorage.getItem("pgResume");
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -176,16 +187,18 @@ export class S159001Page implements OnInit,OnDestroy {
 
   routeJournal()
   {
-    this.router.navigate(['/teenagers/journal'])
+    this.router.navigate(['/adults/journal'])
   }
+  routeSession(url)
+  {
+    if(this.isLoggedIn && this.isSubscriber) {
+      this.router.navigate([url])
+    }else {
+      this.router.navigate(['adults/subscription/start-your-free-trial']);
+    }
+  }
+  
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-//     this.service.getModulebyId(moduleId).subscribe(res=>{
-//       this.moduleData=res;
-//       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-//       console.log(res[0].lastScreen)
-//      });
-  }
+
 
 }

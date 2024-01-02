@@ -15,7 +15,7 @@ export class S159061Page implements OnInit,OnDestroy
   bg_tn=""
   bg_cft=""
   bg=""
-  title="#3 Our mind is restless needs to be constantly occupied"
+  title="#3 Our mind is restless and needs to be constantly occupied"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.9.mp3'
   transcriptPage="social-media/s159061t"
