@@ -343,7 +343,7 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
-    if (this.router.url == "/adults/search"
+    if (this.router.url == "/adults/search" || this.router.url == "/search"
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {
       this.dash = false
