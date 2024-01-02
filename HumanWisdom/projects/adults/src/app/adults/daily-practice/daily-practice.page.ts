@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from '../adults.service';
@@ -13,6 +13,7 @@ declare var $: any;
   styleUrls: ['./daily-practice.page.scss'],
 })
 export class DailyPracticePage implements OnInit {
+  @ViewChild('videoPlayer') videoPlayer: ElementRef;
   enableVideo = true;
   yellow = "#FFC455"
   title = "Exploring anger"
@@ -136,6 +137,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   next(){
+
     this.enableVideo= false;
   setTimeout(() => {
     this.enableVideo =true;

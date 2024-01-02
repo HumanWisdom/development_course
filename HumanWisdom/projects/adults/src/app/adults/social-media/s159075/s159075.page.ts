@@ -18,7 +18,7 @@ export class S159075Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="2/5"
+  progressText="2/4"
   link="/adults/social-media/s159076"
   name="Using social media with intelligence"
   progressImg=""

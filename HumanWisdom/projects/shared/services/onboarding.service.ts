@@ -2,7 +2,7 @@ import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { environment} from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
@@ -18,8 +18,18 @@ export class OnboardingService {
   navigateToUpgradeToPremium: boolean = false;
   isActivationFlow: boolean = false;
   isAdvert_hwp: boolean = false;
+  private isEnableHam = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, handler: HttpBackend) {
     // this.http = new HttpClient(handler);
+  }
+
+
+  setDataRecievedState(value: boolean): void {
+    this.isEnableHam.next(value);
+  }
+
+  getDataRecivedState(): Observable<boolean> {
+    return this.isEnableHam.asObservable();
   }
 
   getPricing(id): Observable<any> {

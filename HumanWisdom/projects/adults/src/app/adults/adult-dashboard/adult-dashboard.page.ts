@@ -199,37 +199,41 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
-    // let authtoken = JSON.parse(localStorage.getItem("token"))
-    // if (authtoken) {
-    //   this.isEnableHam=false;
-    //   localStorage.setItem('socialLogin', 'T');
-    //   this.service.verifytoken(authtoken).subscribe((res) => {
-    //     this.isEnableHam=true;
-    //     if (res) {
-    //       localStorage.setItem("email", res['Email'])
-    //       localStorage.setItem("name", res['Name'])
-    //       let namedata = localStorage.getItem('name').split(' ')
-    //       localStorage.setItem("FnName", namedata[0])
-    //       localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-    //       localStorage.setItem("Subscriber",res['Subscriber']);
-    //       this.isSubscriber  = SharedService.isSubscriber();
-    //       this.loginadult(res)
-    //     } else {
-    //       localStorage.setItem("email", 'guest@humanwisdom.me');
-    //       localStorage.setItem("pswd", '12345');
-    //       localStorage.setItem('guest', 'T');
-    //       localStorage.setItem('isloggedin', 'F');
-    //       // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-    //     }
-    //   }, error => {
-    //     localStorage.setItem("email", 'guest@humanwisdom.me');
-    //     localStorage.setItem("pswd", '12345');
-    //     localStorage.setItem('guest', 'T');
-    //     localStorage.setItem('isloggedin', 'F');
+    let authtoken = JSON.parse(localStorage.getItem("token"))
+    if (authtoken) {
+      this.services.setDataRecievedState(false);
+      localStorage.setItem('socialLogin', 'T');
+      this.service.verifytoken(authtoken).subscribe((res) => {
+       
+        if (res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber",res['Subscriber']);
+          this.isSubscriber  = SharedService.isSubscriber();
+          this.loginadult(res);
+          this.services.setDataRecievedState(true);
+        } else {
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
+          this.services.setDataRecievedState(true);
+          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+        }
+      }, error => {
+        localStorage.setItem("email", 'guest@humanwisdom.me');
+        localStorage.setItem("pswd", '12345');
+        localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
 
-    //   },
-    //   )
-    // }
+      },
+      )
+    }else{
+      this.services.setDataRecievedState(true);
+    }
 
 
     let ban = localStorage.getItem('enablebanner');
@@ -1357,6 +1361,7 @@ export class AdultDashboardPage implements OnInit {
 
 
   fromapplogin(token) {
+    this.services.setDataRecievedState(false);
     this.service.verifytoken(token)
       .subscribe(
         res => {//
@@ -1376,6 +1381,14 @@ export class AdultDashboardPage implements OnInit {
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber",res['Subscriber']);
+          this.isSubscriber  = SharedService.isSubscriber();
+          this.services.setDataRecievedState(true);
           if (nameupdate) {
             this.name = nameupdate
           } else {

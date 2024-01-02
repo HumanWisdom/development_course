@@ -10,7 +10,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
   styleUrls: ['./s159133.page.scss'],
 })
 export class S159133Page implements OnInit {
-  programType : ProgramType = ProgramType.Teenagers;
+  programType : ProgramType = ProgramType.Adults;
   toc="social-media/s159001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
  
@@ -26,25 +26,25 @@ export class S159133Page implements OnInit {
   moduleLink="/communication"
   moduleName=" Communication"
   sectionName= "Transform your life - II";
-  moduleId=132
+  moduleId=53
   moduleList: any = [
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
-      id: 232
+      id: 15
     },
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
-      id: 486
+      id: 19
     },
     {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
       link: '/emotional-needs',
-      id: 180
+      id: 18
     },
   ]
 
