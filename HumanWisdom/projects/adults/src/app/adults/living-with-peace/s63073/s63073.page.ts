@@ -10,6 +10,7 @@ export class S63073Page implements OnInit {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_flat"
+  toc="/living-with-peace/s63001"
 
   constructor() { }
 
