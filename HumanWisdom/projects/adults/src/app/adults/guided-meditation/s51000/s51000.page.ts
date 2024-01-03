@@ -52,10 +52,19 @@ export class S51000Page implements OnInit, OnDestroy {
     this.service.setmoduleID(51);
 
     let userid = localStorage.getItem('isloggedin');
+
     if (userid === 'T') {
       this.isLoggedIn = true;
     } else {
       this.isLoggedIn = false;
+    }
+
+    let sub: any = localStorage.getItem('Subscriber');
+
+    if (sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
     }
 
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));

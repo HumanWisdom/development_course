@@ -1047,7 +1047,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
     if(journal) {
       this.logeventservice.logEvent("click_journal");
     }
-    this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+    if(journal) {
+      this.router.navigate(["/adults/journal"]);
+    }else {
+      this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+    }
    }
 
    logEvent(event, url){
