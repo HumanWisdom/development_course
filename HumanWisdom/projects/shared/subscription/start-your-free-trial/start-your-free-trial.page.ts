@@ -29,7 +29,7 @@ export class StartYourFreeTrialPage implements OnInit {
   back(){
     let curr = this.servive.previousUrl;
     let loggedin = localStorage.getItem("isloggedin")
-    if((!loggedin || loggedin === 'F') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
+    if((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
       window.history.go(-2)
     }else {
     this.location.back();
