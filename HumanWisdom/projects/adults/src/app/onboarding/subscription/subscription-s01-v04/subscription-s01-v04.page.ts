@@ -604,7 +604,7 @@ export class SubscriptionS01V04Page implements OnInit {
 
       });
       this.defaultCurrencySymbol = res[0]['ISOCode'];
-      let symbol = res[0][''];
+      let symbol = res[0]['CurSymbol'];
       this.getAmount();
       if(this.cartListResult && this.cartListResult.length !== 0) {
         this.cartListResult.forEach((d) => {
