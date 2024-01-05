@@ -36012,4 +36012,9 @@ section > .row
   height: 110px;
   padding: 30px 20px;
 }
+
+.v1_3_sfooter_sft
+{
+  height: auto !important;
+}
 /* /version - 03 */
