@@ -525,6 +525,10 @@ const routes: Routes = [
     path: 'cafe',
     loadChildren: () => import('./cafe/cafe.module').then(m => m.CafeModule)
   },
+  {
+    path: 'redeem-subscription-landing',
+    loadChildren: () => import('./redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  },
 ];
 
  @NgModule({
