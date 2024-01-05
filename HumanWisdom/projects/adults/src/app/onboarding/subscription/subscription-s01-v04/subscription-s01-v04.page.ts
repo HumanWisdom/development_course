@@ -306,9 +306,9 @@ export class SubscriptionS01V04Page implements OnInit {
           }
         })
 
-        this.cartListResult = obj
 
         if (res && res.length !== 0) {
+          this.cartListResult = obj
           this.cartitemList = res;
           if (res[0]['Plan'] === 'Annual') this.typeList.splice(1, 1);
           else this.typeList.splice(0, 1);
@@ -604,7 +604,18 @@ export class SubscriptionS01V04Page implements OnInit {
 
       });
       this.defaultCurrencySymbol = res[0]['ISOCode'];
+      let symbol = res[0]['CurSymbol'];
       this.getAmount();
+      if(this.cartListResult && this.cartListResult.length !== 0) {
+        this.cartListResult.forEach((d) => {
+          if(d['Symbol'] !== symbol) {
+            d['LearnerEmail'].forEach((m) => {
+              this.removeFromCart(m['CartId'], d['Program'], d['Plan'])
+            });
+          }
+        })
+      }
+
     }, (err) => {
       window.alert(err.error['Message'])
     }
