@@ -36005,4 +36005,10 @@ section > .row
   border-radius: 0px;
   object-fit: cover;
 }
+
+.v1_3_sfooter_rs 
+{
+  height: 110px;
+  padding: 30px 20px;
+}
 /* /version - 03 */
