@@ -104,7 +104,7 @@ export class ReflectionComponent implements OnInit {
 
   next() {
     if (this.reflectionData){
-      for (var i = 0; i < this.reflectionA.length; i++) {
+      for (var i = 0; i < this.reflectionA?.length; i++) {
         if (this.rid == this.reflectionA[i].ReflectionId) {
           this.reflectionA[i].Response = this.reflectionData;
         }
