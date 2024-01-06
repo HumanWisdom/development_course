@@ -35861,7 +35861,7 @@ li ol > li:before {
 .div_ct_01 button:hover
 {
   /* filter: brightness(90%); */
-  /* border: 1px solid #FFF; */
+  border: none !important;
   /* background-color: unset !important; */
 }
 
@@ -35885,6 +35885,7 @@ li ol > li:before {
   justify-content: center;
   padding: 20px;
   /* opacity: 0.5; */
+  pointer-events: none;
 }
 
 .div_ct_01 .col-lg-6:nth-child(even)
@@ -36004,5 +36005,16 @@ section > .row
   max-height: 100%;
   border-radius: 0px;
   object-fit: cover;
+}
+
+.v1_3_sfooter_rs 
+{
+  height: 110px;
+  padding: 30px 20px;
+}
+
+.v1_3_sfooter_sft
+{
+  height: auto !important;
 }
 /* /version - 03 */
