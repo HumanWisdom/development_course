@@ -113,7 +113,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="div_subscription_emails">
                   <div class="row" *ngFor="let c of cartListResult[0]?.LearnerEmail">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -564,7 +564,7 @@
           <button *ngIf="!isMonthlySelected" type="button" class="btn btn_tfas" (click)="getKey()">
             Checkout
           </button>
-          <button type="button" class="btn btn_tfas" *ngIf="isMonthlySelected" (click)="ProceedWithMonthly()">
+          <button type="button" class="btn btn_tfas" *ngIf="isMonthlySelected" (click)="getKey()">
             Checkout
           </button>
         </a>

@@ -115,14 +115,6 @@
                 </div>
               </div>
 
-              <div class="row mt10px" (click)="routeToDashboard()">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <a class="mtb0px fs_12px fw_400 lh_150p fc_e58d82 underline">
-                    I will do this later
-                  </a>
-                </div>
-              </div>
-
               <div class="pagebreak"></div>
 
             </form>
@@ -137,12 +129,26 @@
 <!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext col_cw">
-      <a>
-        <button type="button" class="btn btn_tfas" (click)="tryFreeSubscribe()">
-          Start your free trial
-        </button>
-      </a>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext v1_3_sfooter_sft col_cw">
+
+      <div class="row mb20px" (click)="routeToDashboard()">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <a class="mtb0px fs_12px fw_400 lh_150p fc_e58d82 underline">
+            I will do this later
+          </a>
+        </div>
+      </div>
+
+      <div class="row center_flex">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <a>
+            <button type="button" class="btn btn_tfas" (click)="tryFreeSubscribe()">
+              Start your free trial
+            </button>
+          </a>
+        </div>
+      </div>
+      
     </div>
   </div>
 </div>

@@ -20,13 +20,13 @@ export class S158117Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=44
 
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/15.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/159.webp"
   
   bg=""
-  moduleLink="/social-media"
+  moduleLink="/adults/social-media"
   moduleName="Social Media"
   sectionName= "Transform your life - I";
-  moduleId=138
+  moduleId=159
   moduleList: any = [
     {
       name: 'Stress',
@@ -37,8 +37,8 @@ export class S158117Page implements OnInit {
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
-      link: '/anxiety',
-      id: 232
+      link: '/conditioning',
+      id: 15
     },
     {
       name: 'Relationships',

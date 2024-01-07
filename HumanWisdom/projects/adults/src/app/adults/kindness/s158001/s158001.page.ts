@@ -1,9 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { AdultsService } from "../../adults.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { ProgramModel } from '../../../../../../shared/models/program-model';
-import { AdultsService } from '../../adults.service';
-
 
 @Component({
   selector: 'app-s158001',
@@ -11,16 +9,12 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./s158001.page.scss'],
 })
 export class S158001Page implements OnInit,OnDestroy {
-  
-  bg_tn = "bg_pink_orange"
-  bg_cft = "bg_pink_orange"
-  bg = "pink_orange_w1"
-
+  pgResume=sessionStorage.getItem("pgResume")
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=158001
+  screenNumber=0
   startTime:any
   endTime:any
   totalTime:any
@@ -31,19 +25,17 @@ export class S158001Page implements OnInit,OnDestroy {
   }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  localFreeScreens =localStorage.getItem("freeScreens");
-  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  kindnessResume=sessionStorage.getItem("kindnessResume")
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/159.webp.png"
-  tocColor="white"
+  kindnessR=sessionStorage.getItem("kindnessR")
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/158.webp"
+  tocColor="grey"
   lastvisited = false;
   stories: any = []
-  pgResume=sessionStorage.getItem("pgResume")
-  moduleData:ProgramModel;
-
+  isLoggedIn = false;
+  isSubscriber = false;
   constructor
   (
     private router: Router,
@@ -52,8 +44,8 @@ export class S158001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.getSetModuleData(158);
-    this.url.queryParams.subscribe(params => {
+    this.service.setmoduleID(158);
+      this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
      
@@ -90,8 +82,26 @@ export class S158001Page implements OnInit,OnDestroy {
     // this.stories = JSON.parse(this.stories)
   }
 
+continue(){
+  if(sessionStorage.getItem('pgResume')!= null){
+    this.pgResume=sessionStorage.getItem("pgResume")
+  }
+  this.router.navigate(['/adults/kindness/'+this.pgResume]);
+}
+
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+  
+    this.pgResume=sessionStorage.getItem("pgResume");
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -177,23 +187,17 @@ export class S158001Page implements OnInit,OnDestroy {
 
   routeJournal()
   {
-    this.router.navigate(['/teenagers/journal'])
+    this.router.navigate(['/adults/journal'])
   }
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-    // this.service.getModulebyId(moduleId).subscribe(res=>{
-    //   this.moduleData=res;
-    //   this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-    //   console.log(res[0].lastScreen)
-    //  });
-  }
-   youtube(link) 
+  routeSession(url)
   {
-    this.router.navigate(['/curated/youtubelink', link],{
-    state: {
-      class: this.bg,
-    }})
+    if(this.isLoggedIn && this.isSubscriber) {
+      this.router.navigate([url])
+    }else {
+      this.router.navigate(['adults/subscription/start-your-free-trial']);
+    }
   }
+
 
 }
