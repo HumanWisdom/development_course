@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { environment} from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,11 @@ export class OnboardingService {
   navigateToUpgradeToPremium: boolean = false;
   isActivationFlow: boolean = false;
   isAdvert_hwp: boolean = false;
+  public toastrService: ToastrService
   private isEnableHam = new BehaviorSubject<boolean>(false);
-  constructor(private http: HttpClient, handler: HttpBackend) {
+  constructor(private http: HttpClient, handler: HttpBackend,public toastr: ToastrService) {
     // this.http = new HttpClient(handler);
+    this.toastrService=this.toastr;
   }
 
 
