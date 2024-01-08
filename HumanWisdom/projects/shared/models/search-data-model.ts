@@ -55,6 +55,7 @@ export interface paymentIntentModel {
   RateID:string;
   UserID:string;
   DiscountCode:string;
+  AffReferralCode:string;
 }
 
 export interface StripeModel {

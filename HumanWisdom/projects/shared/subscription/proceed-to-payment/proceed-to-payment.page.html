@@ -210,9 +210,139 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+
+              <div class="row mb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                    Enter a voucher code (optional)
+                  </h4>
+                </div>
+              </div>
+
+              <!-- <div class="row mb15px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                  <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82 mr10px">
+                    Show available vouchers
+                  </h4>
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_orange.svg" class="img-responsive">
+                </div>
+              </div> -->
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pl0px">
+                    <input type="text" id="coupan" name="coupan" class="sr_fc_01 voucher_code" placeholder="Voucher code" [(ngModel)]="discountCode">
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
+                    <button type="button" class="btn btn_subscription_apply" (click)="couponValidation()">
+                      Apply
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_10 mtb30px">
+                </div>
+              </div>
+
+              <div class="row mb40px" *ngIf="couponCodeApplied">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount_cart.svg" class="img-responsive w100">
+                  </div>
+
+                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pr0px">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                      {{this.couponCode}}
+                    </h4>
+
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      {{percentage}}% discount applied
+                    </h4>
+                  </div>
+
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <button type="button" class="btn subscription_btn_mp" (click)="closeApplycoupon()">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_cross.svg" class="img-responsive">
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="couponCodeApplied">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                      Item Total
+                    </h4>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <hr class="hr_style_v3_04">
+                  </div>
+
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                      {{pricingModel.CurSymbol + totalCartValue}}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb15px" *ngIf="couponCodeApplied">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                      Discount
+                    </h4>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <hr class="hr_style_v3_04">
+                  </div>
+
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                      {{pricingModel.CurSymbol+ this.discount}}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="couponCodeApplied">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                      Subtotal
+                    </h4>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <hr class="hr_style_v3_04">
+                  </div>
+
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                      {{pricingModel.CurSymbol + totalCartValueDiscount}}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <hr class="hr_style_v3_02">
                 </div>
               </div>
+
+
+
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="buyGift()">
