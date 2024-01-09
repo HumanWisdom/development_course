@@ -194,4 +194,14 @@ export class SubscriptionS09V02Page implements OnInit {
     })
   }
 
+  getGifteeDetails(item){
+        if(item.MySelf=='0'){
+           if(item.ConsumerEmail== '' || item.CosumerEmail == null){
+               return 'Deleted User';
+           }
+           return item.ConsumerEmail;
+     }
+     return item.BoughtName;
+  }
+
 }

@@ -80,7 +80,8 @@ export class TryFreeAndSubscribePage implements OnInit {
       PlanID: "0",
       ProgID: "0",
       RateID: "0",
-      UserID: "0"
+      UserID: "0",
+      AffReferralCode: "0"
     } as paymentIntentModel
   }
 
@@ -170,12 +171,14 @@ export class TryFreeAndSubscribePage implements OnInit {
 
 
   SetPaymentIntentModel() {
+    const affref =localStorage.getItem('AffReferralCode');
     this.paymentIntentModel = {
       DiscountCode: "0",
       PlanID: this.selectedSubscription == Constant.MonthlyPlan ? SubscriptionType.Monthly.toString() : SubscriptionType.Annual.toString(),
       ProgID: SharedService.ProgramId.toString(),
       RateID: this.pricingModel?.RateID?.toString(),
-      UserID: this.userId.toString()
+      UserID: this.userId.toString(),
+      AffReferralCode: (affref == null || affref == undefined) ?  '' : affref
     } as paymentIntentModel
   }
 

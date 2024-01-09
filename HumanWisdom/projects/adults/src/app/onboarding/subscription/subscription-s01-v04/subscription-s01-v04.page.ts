@@ -108,7 +108,7 @@ export class SubscriptionS01V04Page implements OnInit {
       this.learnermail= cart.ConsumerEmail
       this.addToCart('Adults','Annual');
      }, 5000);
-      
+
     }
   }
 
@@ -306,9 +306,9 @@ export class SubscriptionS01V04Page implements OnInit {
           }
         })
 
-        this.cartListResult = obj
 
         if (res && res.length !== 0) {
+          this.cartListResult = obj
           this.cartitemList = res;
           if (res[0]['Plan'] === 'Annual') this.typeList.splice(1, 1);
           else this.typeList.splice(0, 1);
@@ -604,7 +604,18 @@ export class SubscriptionS01V04Page implements OnInit {
 
       });
       this.defaultCurrencySymbol = res[0]['ISOCode'];
+      let symbol = res[0]['CurSymbol'];
       this.getAmount();
+      if(this.cartListResult && this.cartListResult.length !== 0) {
+        this.cartListResult.forEach((d) => {
+          if(d['Symbol'] !== symbol) {
+            d['LearnerEmail'].forEach((m) => {
+              this.removeFromCart(m['CartId'], d['Program'], d['Plan'])
+            });
+          }
+        })
+      }
+
     }, (err) => {
       window.alert(err.error['Message'])
     }
@@ -616,7 +627,6 @@ export class SubscriptionS01V04Page implements OnInit {
       this.logeventservice.logEvent('click_done');
       this.loggedUser()
       let pid = this.cartList.filter((d) => d['Program'] === program)
-      let activecart = this.cartListResult.filter((d) => d['Program'] === program)
       let activeId = null;
       for (var i = 0; i < this.cartList.length; i++) {
         if (this.cartList[i].ProgID === pid[0]['ProgID']) {
@@ -639,17 +649,11 @@ export class SubscriptionS01V04Page implements OnInit {
             this.cartList[i].planId = 2
 
           }
-          if(plan ==='Annual') {
-            activecart[0].planId = 2
-          }else {
-            activecart[0].planId = 1
-          }
-          activecart[0].Qty += 1;
           this.service.addItem({
             "UserId": this.userId,
-            "RateId": activecart[0].RateId,
+            "RateId": pid[0].RateID,
             "Qty": 1,
-            "PlanId": activecart[0].planId,
+            "PlanId": pid[0].planId,
             "MySelf": 0,
             "LearnerEmail": this.learnermail,
             "LearnerMsg": this.learnermsg,

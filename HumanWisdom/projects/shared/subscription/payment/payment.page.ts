@@ -97,7 +97,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
       if (expiry) {
         expiry.setAttribute('autocomplete', 'off');
       }
-     
+
       const form = document.getElementById('payment-form');
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -105,7 +105,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: SharedService.ClientUrl+'adults/subscription/free-trial'
+            return_url: SharedService.ClientUrl + 'adults/subscription/free-trial'
           }
         });
 
@@ -124,5 +124,17 @@ export class PaymentPage implements OnInit, AfterViewInit {
     this.location.back();
   }
 
-
+  GetAmount() {
+    let isCoupanCode = JSON.parse(SharedService.getDataFromLocalStorage('IsCoupanApplied'));
+    if(isCoupanCode == true || isCoupanCode =='true'){
+      return JSON.parse(SharedService.getDataFromLocalStorage('subscribeToPremiumAfterDiscount'));
+    }
+    if (this.selectedSubscription == this.Monthly) 
+    {  
+      return this.pricingModel.Monthly
+    }
+    else { 
+      return this.pricingModel.Annual 
+    }
+  }
 }

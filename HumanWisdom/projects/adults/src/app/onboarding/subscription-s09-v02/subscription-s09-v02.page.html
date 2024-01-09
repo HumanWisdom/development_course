@@ -122,7 +122,6 @@
                                   {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                 </h4>
                               </div>
-
                             </div>
                           </div>
 
@@ -135,8 +134,7 @@
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg"
                                 class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
                               <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
-                                {{item['MySelf'] === '0' ? (item['ConsumerEmail'] == '' || item['CosumerEmail'] == null)
-                                ? 'Deleted User' : item['ConsumerEmail'] : item['BoughtName']}}
+                               {{getGifteeDetails(item)}}
                               </h4>
                             </div>
 
