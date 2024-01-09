@@ -20,8 +20,8 @@ export class ProceedToPaymentPage implements OnInit {
   couponCodeApplied = false;
   discountCode:any;
   percentage = 20.00;
-  totalCartValueDiscount:any;
-  totalCartValue:any;
+  totalCartValueDiscount:any=0.00;
+  totalCartValue:any=0.00;
   SelectedPlanModel: any;
   discount:any;
   pricingModel: any;
@@ -52,6 +52,11 @@ export class ProceedToPaymentPage implements OnInit {
       startingDate: this.GetCurrentDate(),
       selectedPlan: this.selectedSubscription
     }
+    if(this.selectedSubscription == Constant.MonthlyPlan){
+      this.totalCartAmount = this.pricingModel.Monthly;
+    }else{
+      this.totalCartAmount = this.pricingModel.Annual;
+    }
   }
 
   GetCurrentDate() {
@@ -76,6 +81,11 @@ export class ProceedToPaymentPage implements OnInit {
       this.pricingModel = JSON.parse(pricingData);
     } else {
       this.pricingModel = null;
+    }
+    if(this.selectedSubscription == Constant.MonthlyPlan){
+      this.totalCartAmount = this.pricingModel.Monthly;
+    }else{
+      this.totalCartAmount = this.pricingModel.Annual;
     }
   }
 

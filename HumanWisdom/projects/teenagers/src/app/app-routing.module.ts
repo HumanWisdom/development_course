@@ -248,6 +248,10 @@ const routes: Routes = [
     path: 'wisdom-exercise',
     loadChildren: () => import('./teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
   },
+  {
+    path: 'find-answers/:url',
+    loadChildren: () => import('./teenagers/find-answers/find-answers.module').then( m => m.FindAnswersModule)
+  },
 
 ];
   
