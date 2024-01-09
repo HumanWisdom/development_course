@@ -80,7 +80,8 @@ export class TryFreeAndSubscribePage implements OnInit {
       PlanID: "0",
       ProgID: "0",
       RateID: "0",
-      UserID: "0"
+      UserID: "0",
+      AffReferralCode: "0"
     } as paymentIntentModel
   }
 
@@ -177,7 +178,7 @@ export class TryFreeAndSubscribePage implements OnInit {
       ProgID: SharedService.ProgramId.toString(),
       RateID: this.pricingModel?.RateID?.toString(),
       UserID: this.userId.toString(),
-      AffReferralCode: (affref == null || affref == undefined || affref) ?  '' : affref
+      AffReferralCode: (affref == null || affref == undefined) ?  '' : affref
     } as paymentIntentModel
   }
 
