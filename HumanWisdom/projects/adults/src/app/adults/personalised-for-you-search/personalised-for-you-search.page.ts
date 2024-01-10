@@ -87,7 +87,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   ) {
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
-    this.logeventservice.logEvent('View_For_you');
+    this.logeventservice.logEvent('View_search');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
