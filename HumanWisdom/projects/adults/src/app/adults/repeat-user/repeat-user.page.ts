@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from '../adults.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 @Component({
   selector: 'app-repeat-user',
@@ -37,7 +38,7 @@ export class RepeatUserPage implements OnInit {
   public feedbackSurvey = 7
   public moduleId = 7
 
-  constructor(public service: AdultsService, public router: Router, private route: ActivatedRoute) {
+  constructor(public service: AdultsService, public router: Router, public logeventservice: LogEventService, private route: ActivatedRoute) {
     let authtoken;
     this.route.queryParams.subscribe(params => {
       authtoken = params?.authtoken
@@ -147,6 +148,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeResume() {
+    this.logeventservice.logEvent("click_continue_where_u_left");
     let r = this.resume[0]['screenno'].substring(0, 2);
     localStorage.setItem("pageaction", 'next')
     switch (r.toString()) {
@@ -2220,6 +2222,11 @@ export class RepeatUserPage implements OnInit {
   });
     
  
+   }
+
+   logEvent(event, url){
+    this.logeventservice.logEvent(event);
+    this.router.navigate([url]);
    }
 
 }
