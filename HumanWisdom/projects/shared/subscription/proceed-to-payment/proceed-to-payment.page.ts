@@ -19,6 +19,7 @@ export class ProceedToPaymentPage implements OnInit {
   AnnualPlanFreeTrial = 14;
   couponCodeApplied = false;
   discountCode:any;
+  couponCode:any='';
   percentage:any;
   totalCartValueDiscount:any=0.00;
   totalCartValue:any=0.00;
@@ -30,6 +31,7 @@ export class ProceedToPaymentPage implements OnInit {
   defaultCurrencySymbol: string;
   msg:any
   totalCartAmount='0.00';
+  trialStatus:string='';
   constructor(private datePipe: DatePipe,
     private router: Router,
     private logEventService: LogEventService,
@@ -44,6 +46,7 @@ export class ProceedToPaymentPage implements OnInit {
   ngOnInit() {
     localStorage.setItem("couponid", '0');
     this.GetDataFromLocalStorage();
+    this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
     this.InitializePlanModel();
   }
 
