@@ -226,6 +226,6 @@ export class S51000Page implements OnInit, OnDestroy {
 
   getimage(id) {
     let Id = id <= 9 ? '0' + id : id;
-    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/${Id}.webp`
   }
 }
