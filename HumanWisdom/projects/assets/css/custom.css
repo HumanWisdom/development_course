@@ -29957,9 +29957,9 @@ svg path
 
 .row_bp
 {
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
   /* box-shadow: 0px -1px 10px rgb(0 0 0 / 10%); */
-  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1); */
   margin: 0 -10px;
   padding: 20px !important;
   position: fixed;
@@ -29967,6 +29967,8 @@ svg path
   right: 0;
   left: 0;
   margin: 0 auto;
+  background: #424675;
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .btn_bp
@@ -30205,9 +30207,17 @@ svg path
 
 .erc
 {
-  margin: 50px -10px 30px -10px;
+  /* margin: 50px -10px 30px -10px;
   height: 163px;
   background: #70C6BD;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  margin: 32px 10px;
+  height: 147px;
+  background: #120F40;
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36016,5 +36026,58 @@ section > .row
 .v1_3_sfooter_sft
 {
   height: auto !important;
+}
+
+.partnership_boxes > [class^="col-"]
+{
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px; 
+  height: 150px;
+  display: flex;
+  align-items: baseline;
+}
+
+.partnership_boxes > [class^="col-"]:nth-child(even)
+{
+  border-right: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.partnership_boxes > [class^="col-"]:nth-child(5)
+{
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 0;
+}
+
+.partnership_boxes > [class^="col-"]:nth-child(6)
+{
+  border-bottom: 0;
+}
+
+.sp_fc_partnership
+{
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  border: 0;
+  background: #292D56;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  text-align: left;
+  padding: 12px 16px;
+}
+
+.sp_fc_partnership::-webkit-input-placeholder 
+{
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.sp_fc_partnership:focus
+{
+  text-transform: uppercase;
 }
 /* /version - 03 */
