@@ -308,7 +308,7 @@ export class TeenagersService {
   }
 
   getModuleList(): Observable<any> {
-    return this.http.get(this.path + '/modules');
+    return this.http.get(this.path + '/modules/11');
   }
 
   GetWisdomScreens(): Observable<any> {
