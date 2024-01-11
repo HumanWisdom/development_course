@@ -981,6 +981,11 @@
     {
         width: 30%;
     }
+
+    .blog_static .limit_characters
+    {
+        -webkit-line-clamp: 2;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)
@@ -1145,5 +1150,13 @@
     {
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 353px)
+{
+    .partnership_boxes h4.fs_15px
+    {
+      font-size: 10px;
     }
 }
