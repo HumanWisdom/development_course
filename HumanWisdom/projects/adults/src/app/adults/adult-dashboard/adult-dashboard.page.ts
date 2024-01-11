@@ -4039,6 +4039,7 @@ export class AdultDashboardPage implements OnInit {
 
   routeToFindAnswer(param){
     localStorage.setItem('lastRoute',param);
+    this.logeventservice.logEvent("click_find-answers-"+param);
     this.router.navigate(['/find-answers/'+param]);
   }
 
@@ -4071,6 +4072,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   readMore(str){
+    this.logeventservice.logEvent('click_testimonial_' + str);
     SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
     this.router.navigate(['/adults/testimonials']);
   }
@@ -4078,6 +4080,8 @@ export class AdultDashboardPage implements OnInit {
     return SharedService.enablebanner;
   }
 
+  
+  
   iOS() {
     return [
       'iPad Simulator',

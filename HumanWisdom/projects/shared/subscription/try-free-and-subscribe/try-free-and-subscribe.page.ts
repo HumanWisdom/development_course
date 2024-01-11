@@ -40,6 +40,7 @@ export class TryFreeAndSubscribePage implements OnInit {
           this.startDate = res[0].StartDate;
           this.expDate = res[0].ExpDate;
          }
+         SharedService.setDataInLocalStorage('trialStatus',this.trialStatus);
       }
     })
   }
@@ -80,7 +81,8 @@ export class TryFreeAndSubscribePage implements OnInit {
       PlanID: "0",
       ProgID: "0",
       RateID: "0",
-      UserID: "0"
+      UserID: "0",
+      AffReferralCode: "0"
     } as paymentIntentModel
   }
 
@@ -101,11 +103,12 @@ export class TryFreeAndSubscribePage implements OnInit {
         if(this.trialStatus == 'No Trial'){
           this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
         }else {
-          SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
-          var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
-          localStorage.setItem('totalAmount',amt);
-          SharedService.setDataInLocalStorage(Constant.Checkout,'T')
-          this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
+          this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+          // SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
+          // var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
+          // localStorage.setItem('totalAmount',amt);
+          // SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+          // this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
         }
       } else {
         //this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
@@ -177,7 +180,7 @@ export class TryFreeAndSubscribePage implements OnInit {
       ProgID: SharedService.ProgramId.toString(),
       RateID: this.pricingModel?.RateID?.toString(),
       UserID: this.userId.toString(),
-      AffReferralCode: (affref == null || affref == undefined || affref) ?  '' : affref
+      AffReferralCode: (affref == null || affref == undefined) ?  '' : affref
     } as paymentIntentModel
   }
 

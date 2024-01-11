@@ -39,7 +39,7 @@
             <div class="mt40px div_ct">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div  (click)="updateList(item.id)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of changeTopicList">
+                  <div  (click)="updateList(item.id,item.name)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of changeTopicList">
                     <button [ngClass]="item.id == selectedId ? 'topic-op-point-5': 'topic-op-one'">
                       <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
                         {{item.name}}
