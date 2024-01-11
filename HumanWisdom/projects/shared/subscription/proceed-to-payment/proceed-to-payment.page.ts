@@ -19,17 +19,19 @@ export class ProceedToPaymentPage implements OnInit {
   AnnualPlanFreeTrial = 14;
   couponCodeApplied = false;
   discountCode:any;
-  percentage = 20.00;
-  totalCartValueDiscount:any;
-  totalCartValue:any;
+  couponCode:any='';
+  percentage:any;
+  totalCartValueDiscount:any=0.00;
+  totalCartValue:any=0.00;
   SelectedPlanModel: any;
-  discount:any;
+  discount:any=0.00;
   pricingModel: any;
   countryCode: string;
   defaultCountry: string;
   defaultCurrencySymbol: string;
   msg:any
   totalCartAmount='0.00';
+  trialStatus:string='';
   constructor(private datePipe: DatePipe,
     private router: Router,
     private logEventService: LogEventService,
@@ -44,6 +46,7 @@ export class ProceedToPaymentPage implements OnInit {
   ngOnInit() {
     localStorage.setItem("couponid", '0');
     this.GetDataFromLocalStorage();
+    this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
     this.InitializePlanModel();
   }
 
@@ -51,6 +54,13 @@ export class ProceedToPaymentPage implements OnInit {
     this.SelectedPlanModel = {
       startingDate: this.GetCurrentDate(),
       selectedPlan: this.selectedSubscription
+    }
+    if(this.selectedSubscription == Constant.MonthlyPlan){
+      this.totalCartValueDiscount = this.pricingModel.Monthly;
+      this.totalCartValue = this.pricingModel.Monthly;
+    }else{
+      this.totalCartValueDiscount = this.pricingModel.Annual;
+      this.totalCartValue = this.pricingModel.Annual;
     }
   }
 
@@ -76,6 +86,11 @@ export class ProceedToPaymentPage implements OnInit {
       this.pricingModel = JSON.parse(pricingData);
     } else {
       this.pricingModel = null;
+    }
+    if(this.selectedSubscription == Constant.MonthlyPlan){
+      this.totalCartAmount = this.pricingModel.Monthly;
+    }else{
+      this.totalCartAmount = this.pricingModel.Annual;
     }
   }
 
@@ -109,6 +124,7 @@ export class ProceedToPaymentPage implements OnInit {
     this.couponCodeApplied = false;
     this.discount = 0;
     this.discountCode = '';
+    this.percentage=undefined;
     this.totalPrice();
     }
     
