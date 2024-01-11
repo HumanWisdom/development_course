@@ -529,6 +529,10 @@ const routes: Routes = [
     path: 'redeem-subscription-landing',
     loadChildren: () => import('./redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
   },
+  {
+    path: 'blog-static',
+    loadChildren: () => import('./blog-static/blog-static.module').then( m => m.BlogStaticPageModule)
+  },
 ];
 
  @NgModule({
