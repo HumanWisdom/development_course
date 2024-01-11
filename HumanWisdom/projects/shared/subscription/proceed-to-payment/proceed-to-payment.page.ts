@@ -32,6 +32,7 @@ export class ProceedToPaymentPage implements OnInit {
   msg:any
   totalCartAmount='0.00';
   trialStatus:string='';
+  cartList = [];
   constructor(private datePipe: DatePipe,
     private router: Router,
     private logEventService: LogEventService,
@@ -75,8 +76,15 @@ export class ProceedToPaymentPage implements OnInit {
   }
 
   proceedToPayment() {
-    this.logEventService.logEvent('click_proceed_to_pay');
-    this.createSetupIntent();
+    if(this.trialStatus!=Constant.NoTrial){
+      SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
+      localStorage.setItem('totalAmount',this.totalCartValueDiscount );
+      SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+      this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
+    }else{
+      this.logEventService.logEvent('click_proceed_to_pay');
+      this.createSetupIntent();
+    }
   }
 
   GetDataFromLocalStorage() {
