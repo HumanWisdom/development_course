@@ -24,8 +24,11 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!isLoggedIn || !isSubscriber">
                     You have been given a gift subscription to the app.
+                  </h4>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="isLoggedIn && isSubscriber">
+                    You are already subscribed. You can use this subscription code when your current subscription ends
                   </h4>
                 </div>
               </div>
@@ -79,6 +82,10 @@
 
         <button type="button" class="btn btn_tfas" *ngIf="!isLoggedIn" (click)="route('login')">
           Sign up/ Sign in
+        </button>
+
+        <button type="button" class="btn btn_tfas" *ngIf="isLoggedIn && isSubscriber" (click)="route('dash')">
+          Go to Dashboard
         </button>
       </a>
     </div>
