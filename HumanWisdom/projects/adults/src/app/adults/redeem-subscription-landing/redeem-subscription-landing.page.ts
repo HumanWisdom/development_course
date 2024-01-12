@@ -21,9 +21,12 @@ export class RedeemSubscriptionLandingPage implements OnInit {
 
   route(type) {
     if(type === 'redeem') {
+      localStorage.setItem('redeemlanding', 'T');
       this.router.navigate(['/adults/redeem-subscription']);
     }else if(type === 'login') {
       this.enabledModal = true;
+    }else if(type === 'dash') {
+      this.router.navigate(['/adults/adult-dashboard']);
     }
   }
 

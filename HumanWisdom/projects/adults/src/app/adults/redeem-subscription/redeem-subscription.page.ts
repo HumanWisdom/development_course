@@ -44,6 +44,7 @@ export class RedeemSubscriptionPage implements OnInit {
   enablecancel = false;
   public registrationForm : any;
   enabledModal = false;
+  landingpage = '';
 
   constructor(
     public platform: Platform,
@@ -51,10 +52,11 @@ export class RedeemSubscriptionPage implements OnInit {
     private services: OnboardingService,
     public service: AdultsService,
     public logeventservice: LogEventService,
-    private location: Location 
+    private location: Location
   ) {
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
+    this.landingpage = localStorage.getItem('redeemlanding');
     let firsttime = localStorage.getItem('first');
     if (firsttime === 'T' || !firsttime) {
       this.isFirsttime = true
