@@ -17,8 +17,8 @@ export class LogEventService {
         let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
         let device_info: any = this.deviceService.getDeviceInfo()
         const isMobile = this.deviceService.isMobile();
-        let deviceInfo = device_info;
-        let url = document.URL;
+        let deviceInfo = device_info.browser;
+        let url = device_info.browser_version;
         const isBrowser = (document.URL.indexOf('http') !== 0);
         const isDesktopDevice = this.deviceService.isDesktop();
         let eventName = isMobile && isBrowser && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web' + url + deviceInfo;
