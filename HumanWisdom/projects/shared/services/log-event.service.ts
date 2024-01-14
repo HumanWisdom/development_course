@@ -19,7 +19,7 @@ export class LogEventService {
         const isMobile = this.deviceService.isMobile();
         let deviceInfo = localStorage.getItem('isPWA') ? localStorage.getItem('isPWA') : 'Pandian-test';
         const isDesktopDevice = this.deviceService.isDesktop();
-        let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web' + deviceInfo;
+        let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os + '_' + deviceInfo : eventname + '_' + 'Web' + deviceInfo;
         // gtag('event', eventname + '_' + device_info.os, { UserName: name })
         // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })
         // gtag('event', eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser })
