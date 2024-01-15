@@ -53,7 +53,7 @@ export class SubscriptionPaymentPage implements OnInit {
         this.obj = {
           UserID: userId,
           ProgramID: '9',
-          PlanId:  plan === 'Annual' || 'Yearly' ? '2' : '1',
+          PlanId:  plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
           DiscountCode:  parseInt(couponid) ?? 0,
           Quantity: 1,
           AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
@@ -64,7 +64,7 @@ export class SubscriptionPaymentPage implements OnInit {
     this.obj = {
       UserID: userId,
       ProgramID: '9',
-      PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
+      PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
       AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
