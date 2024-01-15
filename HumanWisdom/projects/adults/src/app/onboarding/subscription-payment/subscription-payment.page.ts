@@ -54,7 +54,7 @@ export class SubscriptionPaymentPage implements OnInit {
           UserID: userId,
           ProgramID: '9',
           PlanId:  plan === 'Annual' || 'Yearly' ? '2' : '1',
-          DiscountCode:  0,
+          DiscountCode:  parseInt(couponid) ?? 0,
           Quantity: 1,
           AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
           MyselfSub: "1",
