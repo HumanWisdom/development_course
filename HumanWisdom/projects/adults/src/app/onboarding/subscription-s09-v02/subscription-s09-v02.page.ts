@@ -27,6 +27,7 @@ export class SubscriptionS09V02Page implements OnInit {
   public currentid = '';
   public previd = '';
   public isActiveSubscription = false;
+  public userId: any = '';
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
     private router: Router,
@@ -53,8 +54,8 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   getProgramData() {
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    this.service.myprogram(userId)
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.service.myprogram(this.userId)
       .subscribe(res => {
         if (this.platform.IOS) {
           this.myprograms = res.filter((d) => new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
@@ -168,7 +169,7 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   RouteToManageSubscription(item) {
-    if (item.canceled ==0) {
+    if (item.canceled == 0) {
       if ((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1) {
         SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData, JSON.stringify(item));
         this.router.navigate(["/myprogram/manage-subscription"]);
@@ -194,14 +195,22 @@ export class SubscriptionS09V02Page implements OnInit {
     })
   }
 
-  getGifteeDetails(item){
-        if(item.MySelf=='0'){
-           if(item.ConsumerEmail== '' || item.CosumerEmail == null){
-               return 'Deleted User';
-           }
-           return item.ConsumerEmail;
-     }
-     return item.BoughtName;
+  getGifteeDetails(item) {
+    if (item.MySelf == '0' && item.BoughtBy == this.userId) {
+      if (item.ConsumerEmail == '' || item.ConsumerEmail == null) {
+        return 'Giftee has deleted their data';
+      }
+      if (item.ConsumerName == '' || item.ConsumerName == null) {
+        return item.ConsumerEmail;
+      } else {
+        return item.ConsumerName
+      }
+    }
+    if (item.ConsumerName == '' || item.ConsumerName == null) {
+      return item.ConsumerEmail;
+    } else {
+      return item.ConsumerName
+    }
   }
 
 }
