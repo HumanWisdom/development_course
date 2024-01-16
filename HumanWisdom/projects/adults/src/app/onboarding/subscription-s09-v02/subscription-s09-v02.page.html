@@ -126,12 +126,16 @@
 
                           <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai" (click)="RouteToManageSubscription(item)">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
-                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
+                          
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg"
-                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0' && item.BoughtBy == userId">
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0' && item.BoughtBy == userId;else userIcon">
+
+                                <ng-template #userIcon>
+                                  <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
+                                  class="img-responsive mr10px">
+                                </ng-template>
                               <h4 class="mtb0px fw_500 fc_ffffff"  [style]="getFontSize(item)" >
                                {{getGifteeDetails(item)}}
                               </h4>
