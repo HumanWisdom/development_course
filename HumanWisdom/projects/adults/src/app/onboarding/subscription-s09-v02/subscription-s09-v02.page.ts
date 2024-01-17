@@ -213,4 +213,24 @@ export class SubscriptionS09V02Page implements OnInit {
     }
   }
 
+
+  getFontSize(item){
+    const font='font-size: 12px';
+    if (item.MySelf == '0' && item.BoughtBy == this.userId) {
+      if (item.ConsumerEmail == '' || item.ConsumerEmail == null) {
+        return font;
+      }
+      if (item.ConsumerName == '' || item.ConsumerName == null) {
+        return font;
+      } else {
+        return 'font-size: 15px';
+      }
+    }
+    if (item.ConsumerName == '' || item.ConsumerName == null) {
+      return font;
+    } else {
+      return 'font-size: 15px';
+    }
+  }
+
 }
