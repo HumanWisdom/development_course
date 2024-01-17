@@ -200,16 +200,16 @@ export class SubscriptionS09V02Page implements OnInit {
       if (item.ConsumerEmail == '' || item.ConsumerEmail == null) {
         return 'Giftee has deleted their data';
       }
-      if (item.ConsumerName == '' || item.ConsumerName == null) {
+      if (item.ConsumedName == '' || item.ConsumedName == null) {
         return item.ConsumerEmail;
       } else {
-        return item.ConsumerName
+        return item.ConsumedName
       }
     }
-    if (item.ConsumerName == '' || item.ConsumerName == null) {
+  else if (item.ConsumedName == '' || item.ConsumedName == null) {
       return item.ConsumerEmail;
     } else {
-      return item.ConsumerName
+      return item.ConsumedName
     }
   }
 
@@ -220,13 +220,13 @@ export class SubscriptionS09V02Page implements OnInit {
       if (item.ConsumerEmail == '' || item.ConsumerEmail == null) {
         return font;
       }
-      if (item.ConsumerName == '' || item.ConsumerName == null) {
+      if (item.ConsumedName == '' || item.ConsumedName == null) {
         return font;
       } else {
         return 'font-size: 15px';
       }
     }
-    if (item.ConsumerName == '' || item.ConsumerName == null) {
+    if (item.ConsumedName == '' || item.ConsumedName == null) {
       return font;
     } else {
       return 'font-size: 15px';
