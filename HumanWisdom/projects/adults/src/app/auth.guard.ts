@@ -33,11 +33,11 @@ export class AuthGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    
+
       if(localStorage.getItem("saveUsername") && localStorage.getItem("saveUsername")!=null){
         this.saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
       }
-      
+
     let ban = localStorage.getItem('enablebanner');
     if (!ban) {
       localStorage.setItem("enablebanner", 'T')
@@ -68,6 +68,9 @@ export class AuthGuard implements CanActivate, OnInit {
     let fromlanding = localStorage.getItem("fromlandingpage");
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
+      if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard')) {
+        localStorage.setItem("isPWA", 'APP')
+      }
       let persub = localStorage.getItem('personalised subscription');
       let pers = localStorage.getItem('personalised');
       let persdata = localStorage.getItem('personalisedlist');
