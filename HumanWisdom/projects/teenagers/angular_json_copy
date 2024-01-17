@@ -350,7 +350,7 @@
                 "inject": true
               },
               {
-                "input": "projects/teenagers/assets/css/custom.css",
+                "input": "projects/assets/css/custom.css",
                 "inject": true
               },
               {
@@ -358,7 +358,7 @@
                 "inject": true
               },
               {
-                "input": "projects/teenagers/assets/css/backgrounds.css",
+                "input": "projects/assets/css/backgrounds.css",
                 "inject": true
               },
               {
