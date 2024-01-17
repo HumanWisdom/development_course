@@ -30272,18 +30272,16 @@ svg path
   border: 0;
   margin: 0;
   box-shadow: unset;
-  background: #EBEBEB;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  background: transparent;
+  box-shadow: unset;
   border-radius: 5px;
 
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
   /* identical to box height */
   text-align: center;
-  color: #000000;
+  color: #ffffff;
 }
 
 .btn:hover,
@@ -30292,7 +30290,8 @@ svg path
 .btn_pt_cancel:hover,
 .btn_sub_unsubp:hover
 {
-  filter: invert(0.1);
+  /* filter: invert(0.1); */
+  filter: none;
 }
 
 .join_anyway
@@ -30310,21 +30309,23 @@ svg path
 
 .pp_box
 {
-  background: #F5F5F5;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
-  border-radius: 15px;
+  background: #120F40;
+  /* box-shadow: 0px 0px 10px rgb(0 0 0 / 20%); */
+  box-shadow: unset;
+  border-radius: 12px;
   padding: 20px;
   margin: 0 10px;
 }
 
 .ptreesisters_desc
 {
-  background: #FFFFFF;
-  opacity: 0.9;
-  border-radius: 10px;
-  padding: 40px;
-  margin: 0 10px;
-  height: 417px;
+  background: #120F40;
+  /* opacity: 0.9; */
+  border-radius: 16px;
+  padding: 24px;
+  margin: 0;
+  height: auto;
+  text-align: center;
 }
 
 .pradio
@@ -30384,20 +30385,12 @@ svg path
 
 .p_rc
 {
-  height: 60px;
-  background: #FFC455;
-  border-radius: 5px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 140%;
-  text-align: center;
+  min-height: 50px;
+  height: auto;
+  background: #120F40;
+  border-radius: 16px;
+  padding: 20px;
   letter-spacing: 0.1em;
-  color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn_jhwpp
@@ -36079,5 +36072,118 @@ section > .row
 .sp_fc_partnership:focus
 {
   text-transform: uppercase;
+}
+
+.div_pdollar
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 20px;
+}
+
+.chk_partnership_paytype
+{
+  border-radius: 12px;
+  background: #120F40;
+  height: 56px !important;
+  padding: 10px 16px;
+  overflow: auto;
+  border: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox_partnership {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  /* padding: 6px 8px; */
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: -webkit-inline-box !important;
+}
+
+.checkbox_partnership span {
+  float: left;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox_partnership span:first-child {
+  position: relative;
+  transform: scale(1);
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  box-shadow: unset;
+}
+
+.checkbox_partnership span:first-child svg {
+  position: absolute;
+  fill: none;
+  stroke: #000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+  top: 6px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.checkbox_partnership span:last-child 
+{
+  padding: 0;
+  line-height: 18px;
+  width: 24px;
+  height: 24px;
+}
+
+.inp-cbx 
+{
+  position: absolute;
+  visibility: hidden;
+}
+
+.inp-cbx:checked + .checkbox_partnership span:first-child 
+{
+  background: #e58d82;
+  border-color: unset;
+  animation: wave 0.4s ease;
+}
+
+.inp-cbx:checked + .checkbox_partnership span:first-child svg 
+{
+  stroke-dashoffset: 0;
+}
+
+.checkbox_partnership:hover span:first-child {
+  border-color: none !important;
+}
+
+.div_copy_rc 
+{
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.bs_unseti
+{
+  box-shadow: unset !important;
 }
 /* /version - 03 */

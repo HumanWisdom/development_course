@@ -1,43 +1,61 @@
 <!-- top navigation -->
-<app-tn-dashboard-v03></app-tn-dashboard-v03>
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
 
-<!-- tn-dashboard-v03 -->
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        HappierMe Premium
+      </h1>
+    </div>
 
-<!-- /tn-dashboard-v03 -->
-
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->
+<div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
-              <div class="row center_flex mt40px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  
-                  <div class="row mb30px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <p class="fw_400 fs_21px lh_140p fc_000000">
+              <div class="row center_flex">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                  <div class="row div_pdollar">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/star_hwp_premium.svg" alt="" class="img-responsive"/> 
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pl20px pr0px">
+                        <h4 class="fw_600 fs_18px lh_150p fc_ffffff mtb0px">
+                          HUMANWISDOM
+                        </h4>
+                        <h4 class="fw_400 fs_15px lh_150p fc_ffffff mtb0px">
+                          Premium
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt30px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <p class="fw_600 fs_24px lh_150p fc_ffffff">
                         Congratulations!
                       </p>
 
                       <!-- annual -->
-                      <p class="fw_400 fs_15px lh_140p fc_000000">
-                        You have successfully subscribed to HappierMe Premium. As part of your annual subscription, we invite you to join the HappierMe Partnership Program for no extra fee. Find out how it can help you, help others, make the world a better place, and perhaps deliver a secondary income for you.
-                      </p>
-  
-                      <p class="fw_400 fs_15px lh_140p fc_000000">
-                        For more information on the Partnership Program,
-                        <a  (click)="GoToIndex()">
-                          <span  class="fw_500 fs_15px lh_140p fc_1092a7 underline">
-                            click here.
-                          </span>
-                        </a>
+                      <p class="fw_400 fs_15px lh_150p fc_ffffff">
+                        You have successfully subscribed to HumanWisdom Premium. Your subscription is valid until Month xx, xxxx.
                       </p>
                       <!-- /annual -->
 
@@ -50,25 +68,7 @@
                   </div>
 
                   <!-- annual -->
-                  <div class="row mt60px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <a>
-                        <button type="button" (click)="JoinHumanWisdom()" class="btn mb0 btn_jhwpp">
-                          Join the HappierMe Partnership Program
-                        </button>
-                      </a>
-                    </div>
-                  </div> 
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" (click)="NotNow()" >
-                      <a>
-                        <button type="button" class="btn mb0 btn_sub_unsubp w100">
-                          Not now
-                        </button>
-                      </a>
-                    </div>
-                  </div> 
+                 
                   <!-- /annual -->
 
                   <!-- monthly -->
@@ -85,6 +85,20 @@
 
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw bg_292d56 bs_unseti">
+                  <div class="row center_flex">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <a>
+                        <button type="button" class="btn btn_tfas" (click)="Submit()" [ngClass]="getDisabled()">
+                          Proceed to Dashboard
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>   
               
               <div class="pagebreak"></div>
 
@@ -94,6 +108,5 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
 <!-- /page content -->
