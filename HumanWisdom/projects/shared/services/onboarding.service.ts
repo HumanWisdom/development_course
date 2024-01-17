@@ -2,10 +2,11 @@ import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { environment} from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,20 @@ export class OnboardingService {
   navigateToUpgradeToPremium: boolean = false;
   isActivationFlow: boolean = false;
   isAdvert_hwp: boolean = false;
-  constructor(private http: HttpClient, handler: HttpBackend) {
+  public toastrService: ToastrService
+  private isEnableHam = new BehaviorSubject<boolean>(false);
+  constructor(private http: HttpClient, handler: HttpBackend,public toastr: ToastrService) {
     // this.http = new HttpClient(handler);
+    this.toastrService=this.toastr;
+  }
+
+
+  setDataRecievedState(value: boolean): void {
+    this.isEnableHam.next(value);
+  }
+
+  getDataRecivedState(): Observable<boolean> {
+    return this.isEnableHam.asObservable();
   }
 
   getPricing(id): Observable<any> {

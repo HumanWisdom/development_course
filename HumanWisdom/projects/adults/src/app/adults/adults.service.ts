@@ -16,7 +16,6 @@ export class AdultsService {
   path = environment.apiURL;
   programId=ProgramType.Adults;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
-
   personalisedforyoulist = [
     {
       id: "1",
@@ -332,7 +331,7 @@ export class AdultsService {
   }
 
   getModuleList(): Observable<any> {
-    return this.http.get(this.path + '/modules');
+    return this.http.get(this.path + '/modules/9');
   }
 
   GetWisdomScreens(): Observable<any> {

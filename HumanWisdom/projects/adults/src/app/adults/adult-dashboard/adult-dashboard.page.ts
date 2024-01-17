@@ -201,22 +201,26 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
-      this.isEnableHam=false;
+      this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
-        this.isEnableHam=true;
+       
         if (res) {
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           let namedata = localStorage.getItem('name').split(' ')
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          this.loginadult(res)
+          localStorage.setItem("Subscriber",res['Subscriber']);
+          this.isSubscriber  = SharedService.isSubscriber();
+          this.loginadult(res);
+          this.services.setDataRecievedState(true);
         } else {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
           localStorage.setItem('isloggedin', 'F');
+          this.services.setDataRecievedState(true);
           // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
@@ -227,6 +231,8 @@ export class AdultDashboardPage implements OnInit {
 
       },
       )
+    }else{
+      this.services.setDataRecievedState(true);
     }
 
 
@@ -331,6 +337,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getLastvisitedScr() {
+    this.userId= SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
         console.log(res)
@@ -369,6 +376,8 @@ export class AdultDashboardPage implements OnInit {
    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
      this.isIos = true; 
     }
+
+    
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
@@ -1352,6 +1361,7 @@ export class AdultDashboardPage implements OnInit {
 
 
   fromapplogin(token) {
+    this.services.setDataRecievedState(false);
     this.service.verifytoken(token)
       .subscribe(
         res => {//
@@ -1371,6 +1381,14 @@ export class AdultDashboardPage implements OnInit {
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber",res['Subscriber']);
+          this.isSubscriber  = SharedService.isSubscriber();
+          this.services.setDataRecievedState(true);
           if (nameupdate) {
             this.name = nameupdate
           } else {
@@ -3991,21 +4009,26 @@ export class AdultDashboardPage implements OnInit {
   routeForUser(res) {
     let sid = '';
     if (res['FeatureType'] === "BLOG") {
+      this.logeventservice.logEvent("click_blog");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/blog-article'], { queryParams: { sId: `${sid}` } })
     } else if (res['FeatureType'] === "LIFE STORY") {
+      this.logeventservice.logEvent("click_life_stories");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
     }
     else if (res['FeatureType'] === "PODCAST") {
+      this.logeventservice.logEvent("click_podcasts");
        this.router.navigate([res['Url']]);
     }
     else {
+      this.logeventservice.logEvent("click_" + res['FeatureType']);
       localStorage.setItem('wisdomvideotitle', res['Title']);
       this.router.navigate([res['Url']]);
     }
   }
   changeTopic() {
+    this.logeventservice.logEvent("click_Change-your-Topic");
     localStorage.setItem('lastRoute',this.dasboardUrl);
     this.router.navigate(["/adults/change-topic"], {
       state: {
@@ -4016,6 +4039,7 @@ export class AdultDashboardPage implements OnInit {
 
   routeToFindAnswer(param){
     localStorage.setItem('lastRoute',param);
+    this.logeventservice.logEvent("click_find-answers-"+param);
     this.router.navigate(['/find-answers/'+param]);
   }
 
@@ -4048,6 +4072,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   readMore(str){
+    this.logeventservice.logEvent('click_testimonial_' + str);
     SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
     this.router.navigate(['/adults/testimonials']);
   }
@@ -4055,6 +4080,8 @@ export class AdultDashboardPage implements OnInit {
     return SharedService.enablebanner;
   }
 
+  
+  
   iOS() {
     return [
       'iPad Simulator',

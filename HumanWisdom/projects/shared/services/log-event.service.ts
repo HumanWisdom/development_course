@@ -14,20 +14,25 @@ export class LogEventService {
     ) { }
 
     logEvent(eventname: string, module = false, screenNo: any = 0) {
-        let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User'
+        let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
         let device_info: any = this.deviceService.getDeviceInfo()
-        gtag('event', eventname, { UserName: name })
-        gtag('event', eventname, { DeviceOS: device_info.os })
-        gtag('event', eventname, { DeviceBrowser: device_info.browser })
-        this.analytics.logEvent(eventname + '_' + device_info.os, { UserName: name });
-        this.analytics.logEvent(eventname + '_' + device_info.os, { DeviceOS: device_info.os });
-        this.analytics.logEvent(eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser });
+        const isMobile = this.deviceService.isMobile();
+        let deviceInfo = localStorage.getItem('isPWA') ? localStorage.getItem('isPWA') : 'APP';
+        const isDesktopDevice = this.deviceService.isDesktop();
+        let eventName = deviceInfo === 'APP' ? eventname + '_' + 'App' : eventname + '_' + 'Web';
+        // let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web';
+        // gtag('event', eventname + '_' + device_info.os, { UserName: name })
+        // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })
+        // gtag('event', eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser })
+        this.analytics.logEvent(eventName, { UserName: name });
+        this.analytics.logEvent(eventName, { DeviceOS: device_info.os });
+        this.analytics.logEvent(eventName, { DeviceBrowser: device_info.browser });
         if(module) {
-          this.analytics.logEvent(eventname + '_' + device_info.os, { ScreenNo: screenNo });
+          this.analytics.logEvent(eventName, { ScreenNo: screenNo });
         }
         if (typeof fbq === 'undefined'){}
         else{
-          fbq('track', eventname + '_' + device_info.os);
+          fbq('track', eventName);
         }
 
          setTimeout(() => {
@@ -40,7 +45,7 @@ export class LogEventService {
              }
 
              if(module) {
-              (accessObj)?.Moengage.track_event(eventname + '_' + device_info.os, {
+              (accessObj)?.Moengage.track_event(eventName, {
                 "UserName": name, // string value
                 "ScreenNo": screenNo,
                 "deviceOS": device_info.os, // numeric value
@@ -48,7 +53,7 @@ export class LogEventService {
                 "Date": new Date(), // datetime value. Example value represents 31 January, 2017.
                 });
              }else {
-               (accessObj)?.Moengage.track_event(eventname + '_' + device_info.os, {
+               (accessObj)?.Moengage.track_event(eventName, {
                 "UserName": name, // string value
                 "deviceOS": device_info.os, // numeric value
                 "DeviceBrowser":device_info.browser, // numeric value

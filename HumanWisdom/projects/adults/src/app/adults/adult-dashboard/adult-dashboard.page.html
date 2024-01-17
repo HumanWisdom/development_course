@@ -20,7 +20,7 @@
             <!-- feel better now -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a routerLink="/feel-better-now/">
+                <a (click)="DashboardLogevent('/feel-better-now/', '', 'click_feel-better-now')">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like.svg" class="img-responsive w100">
@@ -166,7 +166,7 @@
             <!-- explore a topic in depth-for guest user -->
             <div class="row" *ngIf="YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a class="prelative box_v3_01" routerLink="/adults/select-a-topic-to-explore">
+                <a class="prelative box_v3_01"   (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" >
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -218,7 +218,7 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn" routerLink="/change-topic">
+            <div class="row" *ngIf="isloggedIn"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
                   Change your topic of choice
@@ -300,7 +300,7 @@
                             </div> -->
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
-                              <a class="prelative" routerLink="/adults/intro-happierme">
+                              <a class="prelative" (click)="DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme')">
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
@@ -337,13 +337,15 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                              <a (click)="routeResume('23', true)" class="prelative">
+                              <!-- <a (click)="routeResume('23', true)" class="prelative"> -->
+                                <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_01.svg" alt="Happiness" class="ctimg_dash">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </div>
+
 
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -781,11 +783,11 @@
 
             <!-- testimonials -->
              <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+              <div class="col-md-12 col-sm-12 col-xs-12 odiv img_dtestimonials">
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_adam_beagley.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -821,7 +823,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_laura_toop.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_laura_toop.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -857,7 +859,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_julie_goodfellow.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -893,7 +895,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_carolyn_king.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_carolyn_king.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -930,7 +932,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_chandra_ramamurthy.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_chandra_ramamurthy.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -966,7 +968,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_suzanne_oades.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_suzanne_oades.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1002,7 +1004,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_tinamarie_rodriguez.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tinamarie_rodriguez.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1038,7 +1040,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_dominic_curran.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dominic_curran.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1074,7 +1076,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_anthony_seldon.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_anthony_seldon.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1110,7 +1112,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_tim_merrick.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tim_merrick.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1146,7 +1148,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_jo_thackwray.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jo_thackwray.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 
@@ -1182,7 +1184,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_testimonial_saakshi_singla.svg" alt="" class="img-responsive"/>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_saakshi_singla.webp" alt="" class="img-responsive"/>
                     </div>
                   </div>
 

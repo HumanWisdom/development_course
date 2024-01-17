@@ -11,6 +11,9 @@ import { LogEventService } from '../../services/log-event.service';
 export class TnAdvertComponent implements OnInit {
   login = 'Login';
   public isLoggedIn = false;
+  public enableAlert = false;
+  public content = '';
+  public enablecancel = false;
 
   constructor(
     private router: Router,
@@ -44,8 +47,23 @@ export class TnAdvertComponent implements OnInit {
 
   Logevent() {
     if (this.login === 'Logout') {
-      if (confirm("Are you sure you want to logout ?") === true) {
-        this.logeventservice.logEvent('click_logout_Hamburger')
+      this.content = "Are you sure you want to logout ?";
+      this.enablecancel = true;
+      this.enableAlert = true;
+    } else {
+      this.router.navigate(["/onboarding/login"]);
+    }
+  }
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    this.enablecancel = false;
+    this.content = '';
+    if(event === 'ok') {
+      this.logeventservice.logEvent('click_logout_Hamburger')
         if (this.platform.isBrowser) {
           localStorage.setItem("isloggedin", "F");
           localStorage.setItem("guest", "T");
@@ -53,12 +71,6 @@ export class TnAdvertComponent implements OnInit {
           localStorage.setItem("btnClickBecomePartner", "false");
           this.router.navigate(["/onboarding/login"]);
         }
-      }
-    } else {
-      this.router.navigate(["/onboarding/login"]);
     }
-  }
-  navigate(url){
-    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
   }
 }

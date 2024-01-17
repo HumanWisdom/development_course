@@ -202,7 +202,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/kindness/s137121'])
+    this.router.navigate(['/adults/kindness/s158106'])
 
 
   }

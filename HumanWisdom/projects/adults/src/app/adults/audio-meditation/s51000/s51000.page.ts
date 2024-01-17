@@ -223,4 +223,9 @@ export class S51000Page implements OnInit, OnDestroy {
     let filterlist = this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
     this.audiomeditation = filterlist;
   }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/${Id}.webp`
+  }
 }

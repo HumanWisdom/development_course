@@ -87,7 +87,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   ) {
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
-    this.logeventservice.logEvent('View_For_you');
+    this.logeventservice.logEvent('View_search');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
@@ -95,6 +95,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       localStorage.setItem('acceptcookie', 'T')
       this.aservice.verifytoken(authtoken).subscribe((res) => {
         if (res) {
+          localStorage.setItem("Subscriber", res['Subscriber']);
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           localStorage.setItem("userId", res['UserId'])
@@ -103,8 +104,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber", res['Subscriber'])
-
         }
       })
     }
@@ -125,7 +124,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   ngOnInit() {
     if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
-      this.isIos = true; 
+      this.isIos = true;
      }
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
@@ -224,6 +223,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   searchEvent(module) {
+    this.logeventservice.logEvent("click_search");
+
     this.searchinp = module;
     this.searchResult = [];
     this.getinp(module);
@@ -997,6 +998,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   RouteToWisdomExercise(exercise) {
+   
+      this.logeventservice.logEvent("click_Awareness_exercise");
+   /*  
     var weR = exercise?.ScreenNo;
     localStorage.setItem("moduleId", JSON.stringify(75))
     this.aservice.clickModule(75, this.userId)
@@ -1017,7 +1021,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
         localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList)) 
+   
+      },
+        error => {
+          console.log(error)
+        });  */
+
         if (exercise != null) {
           this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
             state: {
@@ -1027,18 +1037,27 @@ export class PersonalisedForYouSearchPage implements OnInit {
         } else {
           this.router.navigate(['adults/wisdom-exercise/']);
         }
-      },
-        error => {
-          console.log(error)
-        });
   }
   navigateToPathway(url) {
+    this.logeventservice.logEvent("click_" + url.split("/")[3]);
+
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate([url]);
   }
 
-  rightToJournal(){
-    this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+  rightToJournal(journal){
+    if(journal) {
+      this.router.navigate(["/adults/journal"]);
+      this.logeventservice.logEvent("click_journal");
+    }else {
+      this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+      this.logeventservice.logEvent("click_guided_questions");
+    }
+   }
+
+   logEvent(event, url){
+    this.logeventservice.logEvent(event);
+    this.router.navigate([url]);
    }
 
 }

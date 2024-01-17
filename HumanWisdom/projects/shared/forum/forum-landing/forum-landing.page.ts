@@ -248,9 +248,9 @@ export class ForumLandingPage implements OnInit {
 
   postnavigate(item) {
     this.serivce.postdataSource.next(item);
-    this.router.navigateByUrl('/forum/forum-thread/',item.PostID);
+    this.router.navigateByUrl('/forum/forum-thread/'+item.PostID);
   }
-
+ 
   onFocusOutEvent(){
     this.serivce.getposts(0,this.searchInput,null).subscribe((res) => {
       if (res) {

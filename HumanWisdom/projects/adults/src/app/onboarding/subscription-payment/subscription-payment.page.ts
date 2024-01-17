@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
+import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { Constant } from '../../../../../shared/services/constant';
-import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
+
 import { Location } from '@angular/common';
 @Component({
   selector: 'app-subscription-payment',
@@ -36,7 +37,8 @@ export class SubscriptionPaymentPage implements OnInit {
   content = '';
 
   constructor(private service: OnboardingService,
-    private location:Location,
+    private location:Location, 
+    public logeventservice: LogEventService,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount')
@@ -51,8 +53,8 @@ export class SubscriptionPaymentPage implements OnInit {
         this.obj = {
           UserID: userId,
           ProgramID: '9',
-          PlanId:  plan === 'Annual' || 'Yearly' ? '2' : '1',
-          DiscountCode:  0,
+          PlanId:  plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
+          DiscountCode:  parseInt(couponid) ?? 0,
           Quantity: 1,
           AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
           MyselfSub: "1",
@@ -62,7 +64,7 @@ export class SubscriptionPaymentPage implements OnInit {
     this.obj = {
       UserID: userId,
       ProgramID: '9',
-      PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
+      PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
       AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
@@ -173,6 +175,7 @@ export class SubscriptionPaymentPage implements OnInit {
             { handleActions: false }
           ).then(function (confirmResult) {
             if (confirmResult.error) {
+              this.logEventService.logEvent('Payment_Fail');
               // Report to the browser that the payment failed, prompting it to
               // re-show the payment interface, or show an error message and close
               // the payment interface.
@@ -188,9 +191,10 @@ export class SubscriptionPaymentPage implements OnInit {
                 // Let Stripe.js handle the rest of the payment flow.
                 stripe.confirmCardPayment(this.stripeId).then(function (result) {
                   if (result.error) {
+                    this.logEventService.logEvent('Payment_Error');
                     // The payment failed -- ask your customer for a new payment method.
                   } else {
-
+                    this.logEventService.logEvent('Payment_Complete');
                     // The payment has succeeded.
                     localStorage.setItem('personalised', 'F');
                     if (localStorage.getItem('ispartnershipClick') == 'T') {

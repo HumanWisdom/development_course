@@ -33,7 +33,7 @@ export class AppComponent implements OnDestroy {
     name: 'Example Web Site HumanWisdom',
     url: 'https://staging.humanwisdom.me/course'
   };
-
+  isLoginPage = false;
   public pageLoaded = false;
   navigationSubs = new Subscription();
   dash = false;
@@ -95,6 +95,11 @@ export class AppComponent implements OnDestroy {
 
     this.initializeApp();
     this.getFreeScreens();
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      localStorage.setItem("isPWA", 'APP')
+    } else {
+      localStorage.setItem("isPWA", 'ISNOTAPP')
+    }
   }
 
   prepareRoute(outlet: RouterOutlet) {
@@ -343,7 +348,7 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
-    if (this.router.url == "/adults/search"
+    if (this.router.url == "/adults/search" || this.router.url == "/search"
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {
       this.dash = false
@@ -355,9 +360,10 @@ export class AppComponent implements OnDestroy {
       this.isEnableHam = true;
       this.enableplaystore = false;
       this.isShowHeader=true;
+      this.isLoginPage = false;
       return true;
     }
-    if ((this.router.url == "/adults/adult-dashboard") || (this.router.url == "/adult-dashboard")
+    if ((this.router.url == "/adults" || this.router.url == "/adults/adult-dashboard") || (this.router.url == "/adult-dashboard")
      || this.router.url.includes("/adults/adult-dashboard") || this.router.url.includes("adult-dashboard")) {
       this.dash = true;
       this.journal = false;
@@ -372,6 +378,7 @@ export class AppComponent implements OnDestroy {
         this.enableplaystore = false;
       }
       this.isShowHeader=true;
+      this.isLoginPage = false;
       return true;
     }
     if ((this.router.url == "/adults/journal") ||
@@ -385,6 +392,7 @@ export class AppComponent implements OnDestroy {
       this.isEnableHam = false;
       this.enableplaystore = false;
       this.isShowHeader=false;
+      this.isLoginPage = false;
       return true;
     }
     let reg = new RegExp('forum')
@@ -398,6 +406,7 @@ export class AppComponent implements OnDestroy {
       this.search = false;
       this.enableplaystore = false;
       this.isShowHeader=false;
+      this.isLoginPage = false;
       return true;
     }
     if (this.router.url == "/onboarding/user-profile"
@@ -410,6 +419,7 @@ export class AppComponent implements OnDestroy {
       this.isEnableHam = false;
       this.enableplaystore = false;
       this.isShowHeader=false;
+      this.isLoginPage = false;
       return true;
     }
   if (this.router.url == "/adults/notification") {
@@ -421,7 +431,11 @@ export class AppComponent implements OnDestroy {
     this.isEnableHam = false;
     this.enableplaystore = false;
     this.isShowHeader=true;
+    this.isLoginPage = false;
     return true;
+  }
+  if (this.router.url == "/onboarding/login") {
+    this.isLoginPage = true;
   }
     this.isShowHeader=false;
     return false;

@@ -15,6 +15,7 @@ export class AdultsAudioMeditationComponent implements OnInit {
   @Input() audioLink = ""
   @Input() audioTitle = ''
   type = ''
+  rowId:any = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,11 @@ export class AdultsAudioMeditationComponent implements OnInit {
     this.audioLink = this.route.snapshot.paramMap.get('audiolink')
     this.audioTitle = this.route.snapshot.paramMap.get('title')
     this.type = this.route.snapshot.paramMap.get('type')
+    this.rowId = this.route.snapshot.paramMap.get('RowId');
+    this.rowId = this.rowId ? parseInt(this.rowId) : 0;
+    if(this.rowId <= 9) {
+      this.rowId = '0' + this.rowId;
+    }
   }
 
   ngOnInit() {

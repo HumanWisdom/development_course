@@ -11,12 +11,17 @@ export class SingleAudioContentComponent implements OnInit {
   @Input() audioLink = ""
   @Input() audioTitle = ''
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  imageUrl= '';
 
   constructor(private route: ActivatedRoute, private router: Router) {
     // debugger;
     const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
-    this.audioTitle = this.route.snapshot.paramMap.get('title')
+    this.audioTitle = this.route.snapshot.paramMap.get('title');
+    let rowid:any = this.route.snapshot.paramMap.get('RowId');
+    rowid = parseInt(rowid);
+    let Id = rowid <= 9 ? '0' + rowid : rowid;
+    this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   ngOnInit() {

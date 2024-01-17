@@ -19,12 +19,18 @@
                 </div>
               </div> -->
 
-              <h1 class="txt1">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <img [src]="imageUrl" class="img-responsive img_podcast_02">
+                </div>
+              </div>
+
+              <h1 class="txt1 mt40px mb30px">
                 {{audioTitle}}
               </h1>
 
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px"  *ngIf="audioLink !== ''">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0"  *ngIf="audioLink !== ''">
                   <audio id="aud1" controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
