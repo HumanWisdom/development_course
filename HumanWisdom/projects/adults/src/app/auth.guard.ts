@@ -69,7 +69,7 @@ export class AuthGuard implements CanActivate, OnInit {
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
       if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard')) {
-        localStorage.setItem("isPWA", 'APP')
+        localStorage.setItem("isPWA", 'NOTAPP')
       }
       let persub = localStorage.getItem('personalised subscription');
       let pers = localStorage.getItem('personalised');

@@ -18,7 +18,7 @@ export class IntroGuard implements CanActivate, OnInit {
     let token = m.split('authtoken')
     if (token[1] !== undefined && token[1] !== '') {
       if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard')) {
-        localStorage.setItem("isPWA", 'APP')
+        localStorage.setItem("isPWA", 'NOTAPP')
       }
       localStorage.setItem("enablebanner", 'F')
       localStorage.setItem("fromapp", 'T')
