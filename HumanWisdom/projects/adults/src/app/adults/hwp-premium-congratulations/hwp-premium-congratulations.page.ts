@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-hwp-premium-congratulations',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HwpPremiumCongratulationsPage implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public router:Router,private location: Location) { }
 
   ngOnInit() {
   }
@@ -21,5 +22,10 @@ export class HwpPremiumCongratulationsPage implements OnInit {
   }
   GoToIndex(){
     this.router.navigate(['adults/partnership-webpage/partnership-index']);
+  }
+
+  goBack() 
+  {
+    this.location.back();
   }
 }
