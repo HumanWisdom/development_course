@@ -36,71 +36,105 @@
       </div>
     </div>
 
-    <a routerLink="/reactive-mind/s113002">
-      <div class="row crow box bg_light_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #1
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              What is a reactive mind
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              11 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>                
+    <div class="toc_adiv">
+      <a routerLink="/reactive-mind/s113002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                What is a reactive mind
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                11:00
+              </h4>
+            </div>
 
-    <a routerLink="/reactive-mind/s113020">
-      <div class="row crow box bg_light_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #2
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Effects of a reactive mind
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              15 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
 
-    <a routerLink="/reactive-mind/s113047">
-      <div class="row crow box bg_light_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #3
-          </h6>                    
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+          </div>
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Learn to respond, not react
-            </h4>    
+      </a>
+
+      <a routerLink="/reactive-mind/s113020">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #2
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Effects of a reactive mind
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                15:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
           </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              17 mins
-            </h4>    
+        </div>
+      </a>
+
+      <a routerLink="/reactive-mind/s113047">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #3
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Learn to respond, not react
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                17:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
           </div>
-        </div>                    
+        </div>
+      </a>
+    </div>  
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
       </div>
-    </a>
+    </div>
+    <!-- /hr -->
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
     
