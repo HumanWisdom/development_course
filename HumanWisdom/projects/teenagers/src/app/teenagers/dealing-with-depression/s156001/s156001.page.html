@@ -33,8 +33,8 @@
         </h4>
       </div>
     </div>
+    
     <div class="toc_adiv">
-
       <a routerLink="/dealing-with-depression/s156002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -47,14 +47,19 @@
                 Symptoms and Causes of Depression
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
           </div>
         </div>
       </a>
@@ -68,21 +73,27 @@
                 Session #2
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              What is the impact of depression?
+                What is the impact of depression?
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
         </div>
       </a>
-    
+
       <a routerLink="/dealing-with-depression/s156100">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -92,15 +103,21 @@
                 Session #3
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              Phase 1 - Acceptance
+                Phase 1 - Acceptance
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -116,15 +133,21 @@
                 Session #4
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              Phase 2 - Feel better now
+                Phase 2 - Feel better now
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -140,17 +163,22 @@
                 Session #5
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              Phase 3 - Life-style changes
+                Phase 3 - Life-style changes
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
           </div>
         </div>
       </a>
@@ -164,15 +192,21 @@
                 Session #6
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-                  Phase 4 -Understand your mind
+                Phase 4 -Understand your mind
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -188,22 +222,27 @@
                 Session #7
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              As you recover
+                As you recover
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
         </div>
       </a>
 
-      
       <a routerLink="/dealing-with-depression/s156266">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -213,15 +252,21 @@
                 Session #8
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              A conversation wtih someone who has overcome thier depression
+                A conversation wtih someone who has overcome thier depression
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -237,51 +282,67 @@
                 Session #9
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
-              A conversation with a teenager about depression
+                A conversation with a teenager about depression
               </h4>
-              
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
         </div>
       </a>
 
-
-    <!-- video row -->
-    <a (click)="youtube('Liq_aj6jYd4')">
-      <div class="row box_01 bg_gallery p0">
-        <div  
-          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
-          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/33.svg);">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
-        </div>        
-
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
-              <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
-                Dealing with depression - a dialogue
-              </h4>    
+      <!-- video row -->
+      <a (click)="youtube('Liq_aj6jYd4')">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/33.svg" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #9
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Dealing with depression - a dialogue
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  60:00
+                </h4>
+              </div>
+              
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">   
-              <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px tright">
-                60 mins
-              </h4>    
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
-          </div> 
-        </div>                        
-      </div>
-    </a> 
-
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
     </div>
-    <!-- /video row -->
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
     
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
 
