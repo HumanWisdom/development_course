@@ -95,6 +95,11 @@ export class AppComponent implements OnDestroy {
 
     this.initializeApp();
     this.getFreeScreens();
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //   localStorage.setItem("isPWA", 'APP')
+    // } else {
+    //   localStorage.setItem("isPWA", 'ISNOTAPP')
+    // }
   }
 
   prepareRoute(outlet: RouterOutlet) {

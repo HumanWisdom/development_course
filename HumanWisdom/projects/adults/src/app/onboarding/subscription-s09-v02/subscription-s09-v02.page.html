@@ -67,7 +67,7 @@
                               </h4>
                             </div>
                           </div>
-                          <div class="row center_flex mt10px mb20px">
+                          <div style="cursor: grab ;" class="row mt10px mb20px">
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft" (click)="RouteToManageSubscription(item)">
                               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
                                 Monthly Subscription
@@ -80,11 +80,10 @@
                               </h4>
                             </div>
 
-                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            <div style="cursor: pointer ;" class="col-md-6 col-sm-6 col-xs-6 p0 tright">
 
-
-                              <div *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenewText">
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                              <div *ngIf="item.isTrial==1 && item.canceled == 0">
+                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
                                   Next Payment
                                 </h4>
 
@@ -93,8 +92,8 @@
                                 </h4>
                               </div>
 
-                              <ng-template #autoRenewText>
-                                <div *ngIf="item['AutoRenew'] === 1">
+                          
+                                <div style="cursor: pointer ;" *ngIf="item.canceled == 0 && item['AutoRenew'] == 1 && item.isTrial==0">
                                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
                                     Auto-renew
                                   </h4>
@@ -103,8 +102,8 @@
                                     {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                   </h4>
                                 </div>
-                                <div *ngIf="item['AutoRenew'] === 0">
-                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                <div *ngIf="item.canceled == 0 && item['AutoRenew'] == 0 && item.isTrial==0">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(it0em)">
                                     Expiry
                                   </h4>
 
@@ -112,8 +111,8 @@
                                     {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                   </h4>
                                 </div>
-                              </ng-template>
-                              <div *ngIf="(item.canceled === '1')" >
+                 
+                              <div *ngIf="(item.canceled == 1)" >
                                 <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
                                   Cancelled At
                                 </h4>
@@ -125,29 +124,33 @@
                             </div>
                           </div>
 
-                          <div class="row center_flex">
+                          <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai" (click)="RouteToManageSubscription(item)">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
-                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '1'">
+                          
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg"
-                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0'">
-                              <h4 class="mtb0px fs_15px fw_500 fc_ffffff">
+                                class="img-responsive mr10px" *ngIf="item['MySelf'] === '0' && item.BoughtBy == userId;else userIcon">
+
+                                <ng-template #userIcon>
+                                  <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg"
+                                  class="img-responsive mr10px">
+                                </ng-template>
+                              <h4 class="mtb0px fw_500 fc_ffffff"  [style]="getFontSize(item)" >
                                {{getGifteeDetails(item)}}
                               </h4>
                             </div>
 
-                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tright" *ngIf="item.BoughtBy==userId">
 
                               <button
-                                *ngIf="item.isTrial==1 && item['MySelf'] === '1'  && item.canceled == 0 ; else autoRenew"
+                                *ngIf="item.isTrial==1 && item.canceled == 0 ; else autoRenew"
                                 type="button" class="btn btn_ms" id="{{'Cancel' + item['ActKey']}}"
                                 (click)="RouteToManageSubscription(item)">
                                 Cancel Subscription
                               </button>
 
-                              <button *ngIf="item.canceled == 1;else autoRenew" type="button" class="btn btn_ms"
+                              <button *ngIf="item.canceled === '1'" type="button" class="btn btn_ms"
                                 id="{{'buyAgain' + item['ActKey']}}" (click)="ReviveSubscription(item)">
                                 Revive Subscription
                               </button>
@@ -157,12 +160,12 @@
                                 cancelled
                               </h4> -->
                                 <button type="button" class="btn btn_ms" id="{{'donotautorenew' + item['ActKey']}}"
-                                [ngStyle]="{'display': item['MySelf'] === '1' && item.canceled == 0 && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                [ngStyle]="{'display': ( item.isTrial==0 && item.canceled == 0 && item['AutoRenew'] === 1) ? 'block' : 'none'}"
                                 (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
                                 Do not auto-renew
                               </button>
                               <button type="button" class="btn btn_ms" id="{{'autorenew' + item['ActKey']}}"
-                                [ngStyle]="{'display': item['MySelf'] === '1' &&  item.canceled == 0 && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                [ngStyle]="{'display': ( item.isTrial==0 && item.canceled == 0 && item['AutoRenew'] === 0) ? 'block' : 'none'}"
                                 (click)="autorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'autorenew')">
                                 Activate Auto-Renew
                               </button>
@@ -374,7 +377,7 @@
 
                             </div>
                           </div>
-
+                
                           <div class="row center_flex">
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
                               <img
@@ -391,6 +394,13 @@
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                               <h4 *ngIf="item.canceled === 1" class="mtb0px fs_15px fw_500 fc_ffffff">
                                 cancelled
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row" style="margin-top: 5px;">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                Program Code: {{ item['ActKey'] }}
                               </h4>
                             </div>
                           </div>
