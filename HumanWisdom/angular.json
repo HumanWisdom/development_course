@@ -370,7 +370,7 @@
                 "inject": true
               },
               {
-                "input": "projects/assets/css/custom.css",
+                "input": "projects/teenagers/src/assets/css/custom.css",
                 "inject": true
               },
               {

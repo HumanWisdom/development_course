@@ -37,6 +37,7 @@ export class AppComponent implements OnDestroy {
   public pageLoaded = false;
   navigationSubs = new Subscription();
   dash = false;
+  adultsCss='assets/css/custom.css'
   programType: ProgramType = ProgramType.Adults;
   journal = false
   fourm = false
@@ -95,6 +96,7 @@ export class AppComponent implements OnDestroy {
 
     this.initializeApp();
     this.getFreeScreens();
+    // this.setDynamicCSS();
     // if (window.matchMedia('(display-mode: standalone)').matches) {
     //   localStorage.setItem("isPWA", 'APP')
     // } else {
@@ -103,7 +105,7 @@ export class AppComponent implements OnDestroy {
   }
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
 
@@ -448,5 +450,8 @@ export class AppComponent implements OnDestroy {
     SharedService.enablebanner = false
   }
 
+  setDynamicCSS(){
+     //   window.document.getElementById('adultsCss').setAttribute('href',this.adultsCss);
+ }
 }
 
