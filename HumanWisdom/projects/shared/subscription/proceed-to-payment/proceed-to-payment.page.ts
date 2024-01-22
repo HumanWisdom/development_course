@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
+import { SubscriptionType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -19,6 +20,7 @@ export class ProceedToPaymentPage implements OnInit {
   AnnualPlanFreeTrial = 14;
   couponCodeApplied = false;
   discountCode:any;
+  couponCode:any='';
   percentage:any;
   totalCartValueDiscount:any=0.00;
   totalCartValue:any=0.00;
@@ -30,6 +32,8 @@ export class ProceedToPaymentPage implements OnInit {
   defaultCurrencySymbol: string;
   msg:any
   totalCartAmount='0.00';
+  trialStatus:string='';
+  cartList = [];
   constructor(private datePipe: DatePipe,
     private router: Router,
     private logEventService: LogEventService,
@@ -44,6 +48,7 @@ export class ProceedToPaymentPage implements OnInit {
   ngOnInit() {
     localStorage.setItem("couponid", '0');
     this.GetDataFromLocalStorage();
+    this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
     this.InitializePlanModel();
   }
 
@@ -72,8 +77,15 @@ export class ProceedToPaymentPage implements OnInit {
   }
 
   proceedToPayment() {
-    this.logEventService.logEvent('click_proceed_to_pay');
-    this.createSetupIntent();
+    if(this.trialStatus!=Constant.NoTrial){
+      SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
+      localStorage.setItem('totalAmount',this.totalCartValueDiscount );
+      SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+      this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription , rateId:this.pricingModel.RateID }})
+    }else{
+      this.logEventService.logEvent('click_proceed_to_pay');
+      this.createSetupIntent();
+    }
   }
 
   GetDataFromLocalStorage() {
