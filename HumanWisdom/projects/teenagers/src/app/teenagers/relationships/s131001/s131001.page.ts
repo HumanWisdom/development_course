@@ -31,6 +31,8 @@ export class S131001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;
 
   path = setTimeout(() => {
     return this.router.url;
@@ -93,6 +95,16 @@ export class S131001Page implements OnInit,OnDestroy {
 
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
