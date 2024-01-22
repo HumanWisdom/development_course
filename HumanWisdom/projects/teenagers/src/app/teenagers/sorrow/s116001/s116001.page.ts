@@ -28,7 +28,9 @@ export class S116001Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/60.png"
   tocColor="white"
   lastvisited = false;
-  stories: any = [];
+  stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;;
 
  
   moduleData:ProgramModel;
@@ -74,7 +76,18 @@ export class S116001Page implements OnInit,OnDestroy {
     // this.stories = JSON.parse(this.stories)
   }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
