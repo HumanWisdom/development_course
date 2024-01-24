@@ -30,7 +30,9 @@ export class S95001Page implements OnInit, OnDestroy  {
   tocColor="white"
   tocAlt="User Guide - HappierMe apps for mental health and wellbeing"
   lastvisited = false;
-  stories = []
+  stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;
   resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");
   moduleData:ProgramModel;
   constructor(
@@ -75,7 +77,18 @@ export class S95001Page implements OnInit, OnDestroy  {
     // this.stories = JSON.parse(this.stories)
   }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/understand-yourself');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 

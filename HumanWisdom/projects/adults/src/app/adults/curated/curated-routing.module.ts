@@ -79,8 +79,8 @@ const routes: Routes = [
   },
   {
     path: 'audiopage/:audiolink/:title/:RowId',
-    // component: SingleAudioContentComponent
-    component: AdultsAudioMeditationComponent
+    component: SingleAudioContentComponent
+    // component: AdultsAudioMeditationComponent
   },
 
 ];
