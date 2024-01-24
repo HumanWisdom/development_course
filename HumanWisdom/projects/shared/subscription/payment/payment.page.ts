@@ -104,6 +104,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         console.log('production ' + this.isProduction);
         var url  =  'adults/subscription/free-trial';
         if (localStorage.getItem('ispartnershipClick') == 'T') {
+          localStorage.setItem('ispartnershipClick', 'F');
           url =  '/adults/hwp-premium-congratulations';
         }
         const { error } = await stripe.confirmSetup({
