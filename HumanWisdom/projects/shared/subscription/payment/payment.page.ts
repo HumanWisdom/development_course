@@ -101,11 +101,15 @@ export class PaymentPage implements OnInit, AfterViewInit {
       const form = document.getElementById('payment-form');
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        console.log('production ' + this.isProduction)
+        console.log('production ' + this.isProduction);
+        var url  =  'adults/subscription/free-trial';
+        if (localStorage.getItem('ispartnershipClick') == 'T') {
+          url =  '/adults/hwp-premium-congratulations';
+        }
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: SharedService.ClientUrl + 'adults/subscription/free-trial'
+            return_url: SharedService.ClientUrl + url
           }
         });
 
