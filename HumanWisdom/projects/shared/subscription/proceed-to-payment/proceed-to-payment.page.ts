@@ -81,7 +81,7 @@ export class ProceedToPaymentPage implements OnInit {
       SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
       localStorage.setItem('totalAmount',this.totalCartValueDiscount );
       SharedService.setDataInLocalStorage(Constant.Checkout,'T')
-       if(this.services.navigateToUpgradeToPremium){
+       if(this.onboardingService.navigateToUpgradeToPremium){
             localStorage.setItem('ispartnershipClick', 'T');
           }
       this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription , rateId:this.pricingModel.RateID }})
@@ -121,7 +121,7 @@ export class ProceedToPaymentPage implements OnInit {
           SharedService.setDataInLocalStorage("IsCoupanApplied", JSON.stringify(this.couponCodeApplied));
           SharedService.setDataInLocalStorage("subscribeToPremiumAfterDiscount", JSON.stringify(this.totalCartValueDiscount));
           SharedService.setDataInSessionStorage(Constant.ClientSecret, res.toString());
-          if(this.services.navigateToUpgradeToPremium){
+          if(this.onboardingService.navigateToUpgradeToPremium){
             localStorage.setItem('ispartnershipClick', 'T');
           }
           this.router.navigateByUrl('/adults/subscription/payment');
