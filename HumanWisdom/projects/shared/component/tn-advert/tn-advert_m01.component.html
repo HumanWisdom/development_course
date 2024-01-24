@@ -1,0 +1,87 @@
+<!-- top navigation -->
+<div class="dtn bg_nonei">
+
+  <!-- top navigation -->
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default_ext flex_ai plr20px onscrollbg col_cw">
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+        <a (click)="routedashboard()">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/logo/hwp_logo_01.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+      </div> -->
+
+      <!-- hamburger -->
+      <nav class="navbar navbar-default navbar-static-top">
+
+        <div class="row dtn_default_ext flex_ai">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+
+            <div class="mcflex_advertsh">
+
+              <button type="button" class="navbar-toggle collapsed m0px" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <button type="button" class="btn m0px mr20pxi fright btn_htry_free" (click)="routedashboard()">
+                {{isLoggedIn ? 'Go to App' : 'Try for free'}}
+              </button>
+
+              <a class="" (click)="route_adverts_hwp()">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hwp_logo_v3.svg" alt="HumanWisdom" class="img-responsive img_logo">
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div id="navbar" class="collapse">
+          <ul class="nav navbar-nav fw_400 fs_18px lh_21px fc_cb6171">
+            <li class="">
+              <a (click)="navigate('/adults/adverts-about/')">
+                Our Story
+              </a>
+            </li>
+            <li>
+              <a (click)="navigate('/adults/give-the-gift-of-wisdom')">
+                Give the gift of Happiness
+              </a>
+            </li>
+            <li>
+              <a  (click)="navigate('/adults/adverts-hwp-app')">
+                The HappierMe App
+              </a>
+            </li>
+            <li>
+              <a (click)="navigate('/adults/adverts-work/')">
+                HappierMe for Business
+              </a>
+            </li>
+            <li>
+              <a (click)="navigate('/adults/adverts-student/')">
+                HappierMe for Education
+              </a>
+            </li>
+            <li>
+              <a (click)="Logevent()">
+                {{login}}
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </nav>
+      <!-- /hamburger -->
+
+    </div>
+  </div>
+  <!-- /top navigation -->
+
+</div>
+<!-- /top navigation -->

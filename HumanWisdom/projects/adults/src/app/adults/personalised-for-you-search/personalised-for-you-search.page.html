@@ -170,7 +170,8 @@
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
                             <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
-                              Understand yourself
+                              <!-- Understand yourself -->
+                              Learn to question yourself
                             </h4>
                           </div>
                         </div>
@@ -266,7 +267,8 @@
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
                             <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
-                              Live your best life
+                              <!-- Live your best life -->
+                              Succeed in life
                             </h4>
                           </div>
                         </div>
@@ -298,7 +300,7 @@
             <!-- explore a topic of interest -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <a class="prelative box_v3_01" routerLink="/adults/select-a-topic-to-explore">
+                <a class="prelative box_v3_01" (click)="logEvent('click_select-a-topic-to-explore','/adults/select-a-topic-to-explore')" >
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -377,7 +379,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_Wisdom_Score', '/adults/wisdom-survey')">
+                    <button class="" (click)="logEvent('click_happiness_survey', '/adults/wisdom-survey')">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -533,7 +535,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_Event', '/adults/events')">
+                    <button class="" (click)="logEvent('click_Events', '/adults/events')">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -736,7 +738,7 @@
                             </div> -->
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72002">
+                              <a class=""   (click)="logEvent('click_climate_change','/adults/solving-global-problems/s72002')">
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -770,7 +772,7 @@
                             </div>
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72001">
+                              <a class=""  (click)="logEvent('click_Tackling_racism','/adults/solving-global-problems/s72001')">
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -804,7 +806,7 @@
                             </div>
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72006">
+                              <a class=""  (click)="logEvent('click_RootCause_Climatechange','/adults/solving-global-problems/s72006')" >
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -838,7 +840,7 @@
                             </div>
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72003">
+                              <a class=""  (click)="logEvent('click_Global_health_challenges','/adults/solving-global-problems/s72003')"  >
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -872,7 +874,7 @@
                             </div>
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72004">
+                              <a class=""  (click)="logEvent('click_Ending conflict','/adults/solving-global-problems/s72004')" >
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -906,7 +908,7 @@
                             </div>
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72005">
+                              <a class="" (click)="logEvent('click_Transforming_education','/adults/solving-global-problems/s72005')">
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -940,7 +942,7 @@
                             </div>
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a class="" routerLink="/adults/solving-global-problems/s72007">
+                              <a class=""  (click)="logEvent('click_Preventing_war','/adults/solving-global-problems/s72007')" routerLink="/adults/solving-global-problems/s72007">
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">

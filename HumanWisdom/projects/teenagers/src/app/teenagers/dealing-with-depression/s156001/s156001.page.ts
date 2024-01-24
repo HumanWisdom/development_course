@@ -31,7 +31,9 @@ export class S156001Page implements OnInit,OnDestroy {
   tocColor="white"
   tocAlt=""
   lastvisited = false;
-  stories = []
+  stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;
   dealingwithdepressionResume=sessionStorage.getItem("dealingwithdepressionResume")
   path = setTimeout(() => {
     return this.router.url;
@@ -92,6 +94,16 @@ export class S156001Page implements OnInit,OnDestroy {
 
   ngOnInit() 
   {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if(!localStorage.getItem("NaviagtedFrom"))  
+    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 

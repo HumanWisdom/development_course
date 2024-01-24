@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { AdultsService } from '../../adults.service';
 import { Router } from '@angular/router';
+import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
+
 
 @Component({
   selector: 'app-index',
@@ -12,7 +14,7 @@ export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location, private router: Router, private service: AdultsService) { }
+  constructor(private location: Location, private router: Router, private service: AdultsService,  public logeventservice: LogEventService) { }
 
   ngOnInit() {
   }
@@ -36,5 +38,11 @@ export class IndexPage implements OnInit {
   
     
   }
+
+  logEvent(event, url){
+    this.logeventservice.logEvent(event);
+    this.router.navigate([url]);
+   }
+
 
 }

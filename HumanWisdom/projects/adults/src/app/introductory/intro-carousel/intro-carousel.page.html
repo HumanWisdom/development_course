@@ -2,7 +2,7 @@
 <div class="right_col mc_03">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 div_intro">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 div_intro col_cw">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -11,7 +11,7 @@
               <div class="container">
                 <div id="ic_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
-                  <ol class="m0px">
+                  <ol class="m0px" *ngIf="!nextBtnDis">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext col_cw">
@@ -37,13 +37,13 @@
                               </button>
                             </a>
                           </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="nextBtnDis">
+                          <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="nextBtnDis">
                             <a data-slide="next" class="next" (click)="skip()">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
                             </a>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="item active 0" [hidden]="loading">
                       <!-- slide 1 -->
                       <div class="row mt40px center_flex">
-                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/intro_01.svg" class="img-responsive" (load)="onLoad()">
                         </div>
                       </div>
@@ -103,6 +103,8 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="pagebreak"></div>
                       <!-- /slide 1 -->
                     </div>
 
@@ -187,6 +189,8 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="pagebreak"></div>
                       <!-- /slide 2 -->
                     </div>
 
@@ -195,7 +199,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
-                          <video controls playinline class="cvideo br_0px"
+                          <video controls playinline class="cvideo_03 br_0px"
                             poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                             controlsList="nodownload">
                             <source
@@ -235,17 +239,17 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tleft pl0px">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google_01.svg" alt="" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google_01.svg" (click)="googleLogin('login')"  alt="" class="img-responsive">
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg" alt="" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg" (click)="fbLogin('login')" alt="" class="img-responsive">
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tright pr0px">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg" alt="" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg" (click)="signInWithApple('login')" alt="" class="img-responsive">
                             </button>
                           </div>
                         </div>
@@ -270,14 +274,14 @@
                       <div class="row center_flex mt15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 tcenter pl0px">
-                            <button type="submit" class="btn btn_login_signup tcenter w100pi">
+                            <button type="submit" class="btn btn_login_signup tcenter w100pi" (click)="login()">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                 Sign up with email
                               </h4>
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
-                            <button type="submit" class="btn btn_login_signup tcenter">
+                            <button type="submit" class="btn btn_login_signup tcenter" (click)="login()">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                 Login
                               </h4>
@@ -286,19 +290,21 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex mt15px">
+                      <div class="row center_flex mt20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px tright">
-                          <a class="">
-                            <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          <a class="" (click)="routedashboard()">
+                            <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
                               Continue as a guest
                             </h4>
                           </a>
                         </div>
                       </div>
+
+                      <div class="pagebreak"></div>
                       <!-- /slide 3 -->
                     </div>
 
-                    <div class="item 3">
+                    <!-- <div class="item 3"> -->
                       <!-- slide 4 -->
                       <!-- <div class="row mt70px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -326,7 +332,7 @@
                         </div>
                       </div> -->
                       <!-- /slide 4 -->
-                    </div>
+                    <!-- </div> -->
                   </div>
 
                 </div>

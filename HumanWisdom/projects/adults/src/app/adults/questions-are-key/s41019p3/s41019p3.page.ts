@@ -10,6 +10,7 @@ export class S41019p3Page implements OnInit {
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_flat"
+  toc="questions-are-key/s41000"
 
   constructor() { }
 

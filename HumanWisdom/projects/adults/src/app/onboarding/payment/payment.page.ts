@@ -139,7 +139,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               this.enableAlert = true;
               // alert('Your Payment Is Successfully Submitted');
               if (localStorage.getItem('ispartnershipClick') == 'T') {
-                this.router.navigate(['/adults/humanwisdom-premium']);
+                this.router.navigate(['/adults/hwp-premium-congratulations']);
               }
               this.router.navigate(['/onboarding/myprogram'])
               // Successful subscription payment

@@ -9,10 +9,19 @@ import moengage from "@moengage/web-sdk";
 })
 export class AppComponent {
   title = 'teenagers';
+  teenagerCss ='assets/css/custom.css';
   constructor(){
     SharedService.ProgramId=ProgramType.Teenagers;
     moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
     swPath:'/teenagers/serviceworker.js'
     });
+
+   //  this.setDynamicCSS();
   }
+
+
+   setDynamicCSS(){
+      window.document.getElementById('teenagersCss').setAttribute('href',this.teenagerCss);
+   }
+
 }

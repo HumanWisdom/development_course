@@ -56,6 +56,11 @@ export class BeHappierPage implements OnInit {
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/54.mp3',
           title: 'How can we be happier?'
+        },
+        pc06: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/62.mp3',
+          title: '3 obstacles to happiness'
         }
       }
     }
