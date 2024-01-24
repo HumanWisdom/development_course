@@ -81,6 +81,9 @@ export class ProceedToPaymentPage implements OnInit {
       SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
       localStorage.setItem('totalAmount',this.totalCartValueDiscount );
       SharedService.setDataInLocalStorage(Constant.Checkout,'T')
+       if(this.onboardingService.navigateToUpgradeToPremium){
+            localStorage.setItem('ispartnershipClick', 'T');
+          }
       this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription , rateId:this.pricingModel.RateID }})
     }else{
       this.logEventService.logEvent('click_proceed_to_pay');
@@ -118,6 +121,9 @@ export class ProceedToPaymentPage implements OnInit {
           SharedService.setDataInLocalStorage("IsCoupanApplied", JSON.stringify(this.couponCodeApplied));
           SharedService.setDataInLocalStorage("subscribeToPremiumAfterDiscount", JSON.stringify(this.totalCartValueDiscount));
           SharedService.setDataInSessionStorage(Constant.ClientSecret, res.toString());
+          if(this.onboardingService.navigateToUpgradeToPremium){
+            localStorage.setItem('ispartnershipClick', 'T');
+          }
           this.router.navigateByUrl('/adults/subscription/payment');
         }
       });
