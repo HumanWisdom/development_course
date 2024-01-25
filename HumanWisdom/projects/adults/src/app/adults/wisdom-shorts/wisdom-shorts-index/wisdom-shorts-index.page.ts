@@ -22,7 +22,7 @@ export class WisdomShortsIndexPage implements OnInit {
   wisdomshorts = [];
   allwisdomshorts = [];
   isSubscriber = false;
-  searchedText:any
+  searchedText:any='';
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: AdultsService, private meta: Meta, private title: Title) {
@@ -105,8 +105,14 @@ export class WisdomShortsIndexPage implements OnInit {
     })
   }
 
-  searchShorts() {
-    let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
-    this.wisdomshorts = filterlist;
+  searchShorts($event) {
+    if($event==''){
+      this.wisdomshorts = this.allwisdomshorts;
+    }else{
+      this.searchedText=$event;
+      let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      this.wisdomshorts = filterlist;
+    }
+   
   }
 }
