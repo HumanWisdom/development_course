@@ -86,29 +86,15 @@
               <!-- /search -->
 
               <!-- overflow buttons -->
-              <!-- <div class="row mr-20pxi mtb20px">
+              <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv btn_podcast">
-                  <button type="button" class="btn">
-                    All
-                  </button>
-
-                  <button type="button" class="btn">
-                    Work
-                  </button>
-
-                  <button type="button" class="btn">
-                    Happiness
-                  </button>
-
-                  <button type="button" class="btn">
-                    Relationships
-                  </button>
-
-                  <button type="button" class="btn">
-                    Mental Health
-                  </button>
+                  <ng-container *ngFor="let data of prefData">
+                    <button type="button" class="btn" *ngIf="data['active']" (click)="getUserPref(data)">
+                      {{data['name']}}
+                    </button>
+                  </ng-container>
                 </div>
-              </div> -->
+              </div>
               <!-- /overflow buttons -->
 
 
