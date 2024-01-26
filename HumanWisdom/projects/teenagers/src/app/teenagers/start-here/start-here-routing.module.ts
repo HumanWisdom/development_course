@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 import { S78001Page } from './s78001/s78001.page';
 import { S78002Page } from './s78002/s78002.page';
@@ -30,106 +31,132 @@ import { S78023Page } from './s78023/s78023.page';
 const routes: Routes = [
   {
     path: '',    
+    canActivate: [ActiveGuard],
     component: S78001Page,
   },  
   {
     path: 's78001',
+    canActivate: [ActiveGuard],
     component: S78001Page,
   },
   {
     path: 's78002',
+    canActivate: [ActiveGuard],
     component: S78002Page,
   },
   {
     path: 's78003',
+    canActivate: [ActiveGuard],
     component: S78003Page,
   },
   {
     path: 's78004',
+    canActivate: [ActiveGuard],
     component: S78004Page,
   },
   {
     path: 's78004t',
+    canActivate: [ActiveGuard],
     component: S78004tPage,
   },
   {
     path: 's78005',
+    canActivate: [ActiveGuard],
     component: S78005Page,
   },
   {
     path: 's78006',
+    canActivate: [ActiveGuard],
     component: S78006Page,
   },
   {
     path: 's78007',
+    canActivate: [ActiveGuard],
     component: S78007Page,
   },
   {
     path: 's78008',
+    canActivate: [ActiveGuard],
     component: S78008Page,
   },
   {
     path: 's78008t',
+    canActivate: [ActiveGuard],
     component: S78008tPage,
   },
   {
     path: 's78009',
+    canActivate: [ActiveGuard],
     component: S78009Page,
   },
   {
     path: 's78010',
+    canActivate: [ActiveGuard],
     component: S78010Page,
   },
   {
     path: 's78011',
+    canActivate: [ActiveGuard],
     component: S78011Page,
   },
   {
     path: 's78012',
+    canActivate: [ActiveGuard],
     component: S78012Page,
   },
   {
     path: 's78013',
+    canActivate: [ActiveGuard],
     component: S78013Page,
   },
   {
     path: 's78014',
+    canActivate: [ActiveGuard],
     component: S78014Page,
   },
   {
     path: 's78015',
+    canActivate: [ActiveGuard],
     component: S78015Page,
   },
   {
     path: 's78016',
+    canActivate: [ActiveGuard],
     component: S78016Page,
   },
   {
     path: 's78017',
+    canActivate: [ActiveGuard],
     component: S78017Page,
   },
   {
     path: 's78018',
+    canActivate: [ActiveGuard],
     component: S78018Page,
   },
   {
     path: 's78019',
+    canActivate: [ActiveGuard],
     component: S78019Page,
   },
   {
     path: 's78020',
+    canActivate: [ActiveGuard],
     component: S78020Page,
   },
   {
     path: 's78021',
+    canActivate: [ActiveGuard],
     component: S78021Page,
   },
   {
     path: 's78022',
+    canActivate: [ActiveGuard],
     component: S78022Page,
   },
   {
     path: 's78023',
+    canActivate: [ActiveGuard],
     component: S78023Page,
   },
 ];

@@ -87,7 +87,7 @@
 
               <!-- overflow buttons -->
               <div class="row mr-20pxi mtb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv btn_podcast">
+                <div class="col-md-12 col-sm-12 col-xs-12 odiv btn_podcast display-contents">
                   <ng-container *ngFor="let data of prefData">
                     <button type="button" class="btn" *ngIf="data['active']" (click)="getUserPref(data)">
                       {{data['name']}}

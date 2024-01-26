@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 import { S127001Page } from './s127001/s127001.page';
 import { S127002Page } from './s127002/s127002.page';
@@ -190,937 +191,938 @@ import { S127164Page } from './s127164/s127164.page';
 
 const routes: Routes = [
   {
-    path: '',    
-      component: S127001Page,
+    path: '',
+     canActivate: [ActiveGuard],
+    component: S127001Page,
   },  
   {
     path: 's127001',
-       
+    canActivate: [ActiveGuard],
     component: S127001Page,
   },
   {
     path: 's127002',
-       
+    canActivate: [ActiveGuard],
     component: S127002Page,
   },
   {
     path: 's127003',
-       
+    canActivate: [ActiveGuard],
     component: S127003Page,
   },
   {
     path: 's127003t',
-       
+    canActivate: [ActiveGuard],
     component: S127003tPage,
   },
   {
     path: 's127004',
-       
+    canActivate: [ActiveGuard],
     component: S127004Page,
   },  
   {
     path: 's127005',
-       
+    canActivate: [ActiveGuard],
     component: S127005Page,
   },
   {
     path: 's127006',
-       
+    canActivate: [ActiveGuard],
     component: S127006Page,
   },
   {
     path: 's127007',
-       
+    canActivate: [ActiveGuard],
     component: S127007Page,
   },
   {
     path: 's127008',
-       
+    canActivate: [ActiveGuard],
     component: S127008Page,
   },
   {
     path: 's127009',
-       
+    canActivate: [ActiveGuard],
     component: S127009Page,
   },
   {
     path: 's127009t',
-       
+    canActivate: [ActiveGuard],
     component: S127009tPage,
   },
   {
     path: 's127010',
-       
+    canActivate: [ActiveGuard],
     component: S127010Page,
   },
   {
     path: 's127011',
-       
+    canActivate: [ActiveGuard],
     component: S127011Page,
   },
   {
     path: 's127012',
-       
+    canActivate: [ActiveGuard],
     component: S127012Page,
   },
   {
     path: 's127013',
-       
+    canActivate: [ActiveGuard],
     component: S127013Page,
   },
   {
     path: 's127014',
-       
+    canActivate: [ActiveGuard],
     component: S127014Page,
   },
   {
     path: 's127015',
-       
+    canActivate: [ActiveGuard],
     component: S127015Page,
   },
   {
     path: 's127016',
-       
+    canActivate: [ActiveGuard],
     component: S127016Page,
   },
   {
     path: 's127016t',
-       
+    canActivate: [ActiveGuard],
     component: S127016tPage,
   }, 
   {
     path: 's127017',
-       
+    canActivate: [ActiveGuard],
     component: S127017Page,
   },
   {
     path: 's127018',
-       
+    canActivate: [ActiveGuard],
     component: S127018Page,
   },
   {
     path: 's127019',
-       
+    canActivate: [ActiveGuard],
     component: S127019Page,
   },
   {
     path: 's127020',
-       
+    canActivate: [ActiveGuard],
     component: S127020Page,
   },
   {
     path: 's127021',
-       
+    canActivate: [ActiveGuard],
     component: S127021Page,
   },
   {
     path: 's127022',
-       
+    canActivate: [ActiveGuard],
     component: S127022Page,
   },
   {
     path: 's127023',
-       
+    canActivate: [ActiveGuard],
     component: S127023Page,
   },
   {
     path: 's127024',
-       
+    canActivate: [ActiveGuard],
     component: S127024Page,
   },
   {
     path: 's127025',
-       
+    canActivate: [ActiveGuard],
     component: S127025Page,
   },
   {
     path: 's127026',
-       
+    canActivate: [ActiveGuard],
     component: S127026Page,
   },
   {
     path: 's127027',
-       
+    canActivate: [ActiveGuard],
     component: S127027Page,
   },
   {
     path: 's127028',
-       
+    canActivate: [ActiveGuard],
     component: S127028Page,
   },
   {
     path: 's127029',
-       
+    canActivate: [ActiveGuard],
     component: S127029Page,
   },
   {
     path: 's127030',
-       
+    canActivate: [ActiveGuard],
     component: S127030Page,
   },
   {
     path: 's127031',
-       
+    canActivate: [ActiveGuard],
     component: S127031Page,
   },
   {
     path: 's127032',
-       
+    canActivate: [ActiveGuard],
     component: S127032Page,
   },
   {
     path: 's127033',
-       
+    canActivate: [ActiveGuard],
     component: S127033Page,
   },
   {
     path: 's127034',
-       
+    canActivate: [ActiveGuard],
     component: S127034Page,
   },
   {
     path: 's127035',
-       
+    canActivate: [ActiveGuard],
     component: S127035Page,
   },
   {
     path: 's127036',
-       
+    canActivate: [ActiveGuard],
     component: S127036Page,
   },
   {
     path: 's127037',
-       
+    canActivate: [ActiveGuard],
     component: S127037Page,
   },
   {
     path: 's127038',
-       
+    canActivate: [ActiveGuard],
     component: S127038Page,
   },
   {
     path: 's127039',
-       
+    canActivate: [ActiveGuard],
     component: S127039Page,
   },
   {
     path: 's127039t',
-       
+    canActivate: [ActiveGuard],
     component: S127039tPage,
   },
   {
     path: 's127040',
-       
+    canActivate: [ActiveGuard],
     component: S127040Page,
   },
   {
     path: 's127041',
-       
+    canActivate: [ActiveGuard],
     component: S127041Page,
   },
   {
     path: 's127042',
-       
+    canActivate: [ActiveGuard],
     component: S127042Page,
   },
   {
     path: 's127043',
-       
+    canActivate: [ActiveGuard],
     component: S127043Page,
   },
   {
     path: 's127044',
-       
+    canActivate: [ActiveGuard],
     component: S127044Page,
   },
   {
     path: 's127045',
-       
+    canActivate: [ActiveGuard],
     component: S127045Page,
   },
   {
     path: 's127046',
-       
+    canActivate: [ActiveGuard],
     component: S127046Page,
   },
   {
     path: 's127047',
-       
+    canActivate: [ActiveGuard],
     component: S127047Page,
   },
   {
     path: 's127048',
-       
+    canActivate: [ActiveGuard],
     component: S127048Page,
   },
   {
     path: 's127049',
-       
+    canActivate: [ActiveGuard],
     component: S127049Page,
   },
   {
     path: 's127050',
-       
+    canActivate: [ActiveGuard],
     component: S127050Page,
   },
   {
     path: 's127051',
-       
+    canActivate: [ActiveGuard],
     component: S127051Page,
   },
   {
     path: 's127051t',
-       
+    canActivate: [ActiveGuard],
     component: S127051tPage,
   },
   {
     path: 's127052',
-       
+    canActivate: [ActiveGuard],
     component: S127052Page,
   },
   {
     path: 's127053',
-       
+    canActivate: [ActiveGuard],
     component: S127053Page,
   },
   {
     path: 's127054',
-       
+    canActivate: [ActiveGuard],
     component: S127054Page,
   },
   {
     path: 's127055',
-       
+    canActivate: [ActiveGuard],
     component: S127055Page,
   },
   {
     path: 's127056',
-       
+    canActivate: [ActiveGuard],
     component: S127056Page,
   },
   {
     path: 's127057',
-       
+    canActivate: [ActiveGuard],
     component: S127057Page,
   },
   {
     path: 's127058',
-       
+    canActivate: [ActiveGuard],
     component: S127058Page,
   },
   {
     path: 's127058t',
-       
+    canActivate: [ActiveGuard],
     component: S127058tPage,
   },
   {
     path: 's127059',
-       
+    canActivate: [ActiveGuard],
     component: S127059Page,
   },
   {
     path: 's127060',
-       
+    canActivate: [ActiveGuard],
     component: S127060Page,
   }, 
   {
     path: 's127061',
-       
+    canActivate: [ActiveGuard],
     component: S127061Page,
   },
   {
     path: 's127062',
-       
+    canActivate: [ActiveGuard],
     component: S127062Page,
   },
   {
     path: 's127062t',
-       
+    canActivate: [ActiveGuard],
     component: S127062tPage,
   },
   {
     path: 's127063',
-       
+    canActivate: [ActiveGuard],
     component: S127063Page,
   },
   {
     path: 's127064',
-       
+    canActivate: [ActiveGuard],
     component: S127064Page,
   },
   {
     path: 's127065',
-       
+    canActivate: [ActiveGuard],
     component: S127065Page,
   },
   {
     path: 's127065t',
-       
+    canActivate: [ActiveGuard],
     component: S127065tPage,
   },
   {
     path: 's127066',
-       
+    canActivate: [ActiveGuard],
     component: S127066Page,
   }, 
   {
     path: 's127067',
-       
+    canActivate: [ActiveGuard],
     component: S127067Page,
   }, 
   {
     path: 's127068',
-       
+    canActivate: [ActiveGuard],
     component: S127068Page,
   },
   {
     path: 's127068t',
-       
+    canActivate: [ActiveGuard],
     component: S127068tPage,
   },
   {
     path: 's127069',
-       
+    canActivate: [ActiveGuard],
     component: S127069Page,
   },
   {
     path: 's127069t',
-       
+    canActivate: [ActiveGuard],
     component: S127069tPage,
   },
   {
     path: 's127070',
-       
+    canActivate: [ActiveGuard],
     component: S127070Page,
   },
   {
     path: 's127071',
-       
+    canActivate: [ActiveGuard],
     component: S127071Page,
   },
   {
     path: 's127072',
-       
+    canActivate: [ActiveGuard],
     component: S127072Page,
   },
   {
     path: 's127073',
-       
+    canActivate: [ActiveGuard],
     component: S127073Page,
   },
   {
     path: 's127074',
-       
+    canActivate: [ActiveGuard],
     component: S127074Page,
   },
   {
     path: 's127075',
-       
+    canActivate: [ActiveGuard],
     component: S127075Page,
   },
   {
     path: 's127075t',
-       
+    canActivate: [ActiveGuard],
     component: S127075tPage,
   },
   {
     path: 's127076',
-       
+    canActivate: [ActiveGuard],
     component: S127076Page,
   },
   {
     path: 's127077',
-       
+    canActivate: [ActiveGuard],
     component: S127077Page,
   },
   {
     path: 's127078',
-       
+    canActivate: [ActiveGuard],
     component: S127078Page,
   },
   {
     path: 's127079',
-       
+    canActivate: [ActiveGuard],
     component: S127079Page,
   },
   {
     path: 's127079t',
-       
+    canActivate: [ActiveGuard],
     component: S127079tPage,
   },
   {
     path: 's127080',
-       
+    canActivate: [ActiveGuard],
     component: S127080Page,
   }, 
   {
     path: 's127081',
-       
+    canActivate: [ActiveGuard],
     component: S127081Page,
   },
   {
     path: 's127082',
-       
+    canActivate: [ActiveGuard],
     component: S127082Page,
   },
   {
     path: 's127082t',
-       
+    canActivate: [ActiveGuard],
     component: S127082tPage,
   },
   {
     path: 's127083',
-       
+    canActivate: [ActiveGuard],
     component: S127083Page,
   },
   {
     path: 's127084',
-       
+    canActivate: [ActiveGuard],
     component: S127084Page,
   },
   {
     path: 's127085',
-       
+    canActivate: [ActiveGuard],
     component: S127085Page,
   },
   {
     path: 's127086',
-       
+    canActivate: [ActiveGuard],
     component: S127086Page,
   },
   {
     path: 's127087',
-       
+    canActivate: [ActiveGuard],
     component: S127087Page,
   },  
   {
     path: 's127088',
-       
+    canActivate: [ActiveGuard],
     component: S127088Page,
   },
   {
     path: 's127089',
-       
+    canActivate: [ActiveGuard],
     component: S127089Page,
   },
   {
     path: 's127090',
-       
+    canActivate: [ActiveGuard],
     component: S127090Page,
   },
   {
     path: 's127091',
-       
+    canActivate: [ActiveGuard],
     component: S127091Page,
   },
   {
     path: 's127092',
-       
+    canActivate: [ActiveGuard],
     component: S127092Page,
   },
   {
     path: 's127093',
-       
+    canActivate: [ActiveGuard],
     component: S127093Page,
   },
   {
     path: 's127094',
-       
+    canActivate: [ActiveGuard],
     component: S127094Page,
   },
   {
     path: 's127095',
-       
+    canActivate: [ActiveGuard],
     component: S127095Page,
   },
   {
     path: 's127096',
-       
+    canActivate: [ActiveGuard],
     component: S127096Page,
   },  
   {
     path: 's127097',
-       
+    canActivate: [ActiveGuard],
     component: S127097Page,
   },
   {
     path: 's127098',
-       
+    canActivate: [ActiveGuard],
     component: S127098Page,
   },
   {
     path: 's127099',
-       
+    canActivate: [ActiveGuard],
     component: S127099Page,
   },
   {
     path: 's127100',
-       
+    canActivate: [ActiveGuard],
     component: S127100Page,
   },
   {
     path: 's127101',
-       
+    canActivate: [ActiveGuard],
     component: S127101Page,
   },
   {
     path: 's127102',
-       
+    canActivate: [ActiveGuard],
     component: S127102Page,
   },
   {
     path: 's127103',
-       
+    canActivate: [ActiveGuard],
     component: S127103Page,
   },
   {
     path: 's127103t',
-       
+    canActivate: [ActiveGuard],
     component: S127103tPage,
   },
   {
     path: 's127104',
-       
+    canActivate: [ActiveGuard],
     component: S127104Page,
   },
   {
     path: 's127104t',
-       
+    canActivate: [ActiveGuard],
     component: S127104tPage,
   },
   {
     path: 's127105',
-       
+    canActivate: [ActiveGuard],
     component: S127105Page,
   },
   {
     path: 's127106',
-       
+    canActivate: [ActiveGuard],
     component: S127106Page,
   },
   {
     path: 's127106t',
-       
+    canActivate: [ActiveGuard],
     component: S127106tPage,
   },
   {
     path: 's127107',
-       
+    canActivate: [ActiveGuard],
     component: S127107Page,
   },
   {
     path: 's127107t',
-       
+    canActivate: [ActiveGuard],
     component: S127107tPage,
   },
   {
     path: 's127108',
-       
+    canActivate: [ActiveGuard],
     component: S127108Page,
   },
   {
     path: 's127108t',
-       
+    canActivate: [ActiveGuard],
     component: S127108tPage,
   },
   {
     path: 's127109',
-       
+    canActivate: [ActiveGuard],
     component: S127109Page,
   },
   {
     path: 's127109t',
-       
+    canActivate: [ActiveGuard],
     component: S127109tPage,
   },
   {
     path: 's127110',
-       
+    canActivate: [ActiveGuard],
     component: S127110Page,
   },
   {
     path: 's127110t',
-       
+    canActivate: [ActiveGuard],
     component: S127110tPage,
   },
   {
     path: 's127111',
-       
+    canActivate: [ActiveGuard],
     component: S127111Page,
   },
   {
     path: 's127111t',
-       
+    canActivate: [ActiveGuard],
     component: S127111tPage,
   },
   {
     path: 's127112',
-       
+    canActivate: [ActiveGuard],
     component: S127112Page,
   },
   {
     path: 's127113',
-       
+    canActivate: [ActiveGuard],
     component: S127113Page,
   },
   {
     path: 's127114',
-       
+    canActivate: [ActiveGuard],
     component: S127114Page,
   },
   {
     path: 's127115',
-       
+    canActivate: [ActiveGuard],
     component: S127115Page,
   },
   {
     path: 's127116',
-       
+    canActivate: [ActiveGuard],
     component: S127116Page,
   },  
   {
     path: 's127117',
-       
+    canActivate: [ActiveGuard],
     component: S127117Page,
   },
   {
     path: 's127118',
-       
+    canActivate: [ActiveGuard],
     component: S127118Page,
   },
   {
     path: 's127119',
-       
+    canActivate: [ActiveGuard],
     component: S127119Page,
   },
   {
     path: 's127120',
-       
+    canActivate: [ActiveGuard],
     component: S127120Page,
   },
   {
     path: 's127121',
-       
+    canActivate: [ActiveGuard],
     component: S127121Page,
   },
   {
     path: 's127122',
-       
+    canActivate: [ActiveGuard],
     component: S127122Page,
   },
   {
     path: 's127123',
-       
+    canActivate: [ActiveGuard],
     component: S127123Page,
   },  
   {
     path: 's127124',
-       
+    canActivate: [ActiveGuard],
     component: S127124Page,
   },
   {
     path: 's127125',
-       
+    canActivate: [ActiveGuard],
     component: S127125Page,
   },
   {
     path: 's127126',
-       
+    canActivate: [ActiveGuard],
     component: S127126Page,
   },
   {
     path: 's127127',
-       
+    canActivate: [ActiveGuard],
     component: S127127Page,
   }, 
   {
     path: 's127128',
-       
+    canActivate: [ActiveGuard],
     component: S127128Page,
   },
   {
     path: 's127129',
-       
+    canActivate: [ActiveGuard],
     component: S127129Page,
   },
   {
     path: 's127130',
-       
+    canActivate: [ActiveGuard],
     component: S127130Page,
   },
   {
     path: 's127131',
-       
+    canActivate: [ActiveGuard],
     component: S127131Page,
   }, 
   {
     path: 's127132',
-       
+    canActivate: [ActiveGuard],
     component: S127132Page,
   },
   {
     path: 's127133',
-       
+    canActivate: [ActiveGuard],
     component: S127133Page,
   }, 
   {
     path: 's127134',
-       
+    canActivate: [ActiveGuard],
     component: S127134Page,
   },
   {
     path: 's127135',
-       
+    canActivate: [ActiveGuard],
     component: S127135Page,
   },
   {
     path: 's127136',
-       
+    canActivate: [ActiveGuard],
     component: S127136Page,
   }, 
   {
     path: 's127137',
-       
+    canActivate: [ActiveGuard],
     component: S127137Page,
   },
   {
     path: 's127138',
-       
+    canActivate: [ActiveGuard],
     component: S127138Page,
   },
   {
     path: 's127139',
-       
+    canActivate: [ActiveGuard],
     component: S127139Page,
   },
   {
     path: 's127140',
-       
+    canActivate: [ActiveGuard],
     component: S127140Page,
   }, 
   {
     path: 's127141',
-       
+    canActivate: [ActiveGuard],
     component: S127141Page,
   },
   {
     path: 's127142',
-       
+    canActivate: [ActiveGuard],
     component: S127142Page,
   },
   {
     path: 's127143',
-       
+    canActivate: [ActiveGuard],
     component: S127143Page,
   },
   {
     path: 's127144',
-       
+    canActivate: [ActiveGuard],
     component: S127144Page,
   },
   {
     path: 's127145',
-       
+    canActivate: [ActiveGuard],
     component: S127145Page,
   },  
   {
     path: 's127146',
-       
+    canActivate: [ActiveGuard],
     component: S127146Page,
   },
   {
     path: 's127147',
-       
+    canActivate: [ActiveGuard],
     component: S127147Page,
   },
   {
     path: 's127148',
-       
+    canActivate: [ActiveGuard],
     component: S127148Page,
   },
   {
     path: 's127148t',
-       
+    canActivate: [ActiveGuard],
     component: S127148tPage,
   },
   {
     path: 's127149',
-       
+    canActivate: [ActiveGuard],
     component: S127149Page,
   },
   {
     path: 's127150',
-       
+    canActivate: [ActiveGuard],
     component: S127150Page,
   },
   {
     path: 's127151',
-       
+    canActivate: [ActiveGuard],
     component: S127151Page,
   },
   {
     path: 's127152',
-       
+    canActivate: [ActiveGuard],
     component: S127152Page,
   },
   {
     path: 's127153',
-       
+    canActivate: [ActiveGuard],
     component: S127153Page,
   },  
   {
     path: 's127154',
-       
+    canActivate: [ActiveGuard],
     component: S127154Page,
   },
   {
     path: 's127155',
-       
+    canActivate: [ActiveGuard],
     component: S127155Page,
   },
   {
     path: 's127156',
-       
+    canActivate: [ActiveGuard],
     component: S127156Page,
   },
   {
     path: 's127157',
-       
+    canActivate: [ActiveGuard],
     component: S127157Page,
   },
   {
     path: 's127158',
-       
+    canActivate: [ActiveGuard],
     component: S127158Page,
   },
   {
     path: 's127159',
-       
+    canActivate: [ActiveGuard],
     component: S127159Page,
   },
   {
     path: 's127160',
-       
+    canActivate: [ActiveGuard],
     component: S127160Page,
   },
   {
     path: 's127161',
-       
+    canActivate: [ActiveGuard],
     component: S127161Page,
   },
   {
     path: 's127162',
-       
+    canActivate: [ActiveGuard],
     component: S127162Page,
   },
   {
     path: 's127163',
-       
+    canActivate: [ActiveGuard],
     component: S127163Page,
   },
   {
     path: 's127164',
-       
+    canActivate: [ActiveGuard],
     component: S127164Page,
   },
 ];
