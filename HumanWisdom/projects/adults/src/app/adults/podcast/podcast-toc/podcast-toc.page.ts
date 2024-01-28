@@ -53,7 +53,7 @@ export class PodcastTocPage implements OnInit {
     {
       id: "4",
       active: false,
-      name: 'Be happier'
+      name: 'Happiness'
     },
     {
       id: "5",
@@ -73,12 +73,12 @@ export class PodcastTocPage implements OnInit {
     {
       id: "8",
       active: false,
-      name: 'Manage your emotions',
+      name: 'Emotions',
     },
     {
       id: "",
       active: false,
-      name: 'wisdom',
+      name: 'Wisdom',
     }
   ];
 
@@ -149,8 +149,10 @@ export class PodcastTocPage implements OnInit {
         this.allpodcastList = res;
         this.allpodcastList.forEach((d) => {
           this.prefData.forEach((h) => {
-            if(d['PreferenceIDs'] === h.id) {
+            if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
                h.active = true;
+            }else if(!d['PreferenceIDs']) {
+              h.active = true;
             }
           })
         });
@@ -188,7 +190,11 @@ export class PodcastTocPage implements OnInit {
     if(type.name === 'All') {
       this.podcastList = this.allpodcastList;
     }else{
-       this.podcastList= this.podcastList.filter((d) => d['PreferenceIDs'] === type.id);
+      if(type.name === 'Wisdom') {
+        this.podcastList= this.podcastList.filter((d) => (!d['PreferenceIDs']));
+      }else {
+        this.podcastList= this.podcastList.filter((d) => d['PreferenceIDs'].includes(type.id));
+      }
     }
   }
 
