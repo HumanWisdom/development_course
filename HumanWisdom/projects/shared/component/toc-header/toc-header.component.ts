@@ -5,6 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-toc-header',
@@ -21,19 +22,23 @@ export class TocHeaderComponent implements OnInit {
   programName:'';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router ,
-    private location: Location) { }
+    private location: Location,
+    private navigationService: NavigationService) { }
 
   ngOnInit() {
     this.path = this.router.url;
   }
 
   goBack(){
-    var url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+    var url = this.navigationService.navigateToBackLink();
+   if(url==null){
+    url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
     if(url && url!=null && url != 'null'){
       this.router.navigate([url]);
     }else{
       this.location.back();
     }
+   }
   }
 
   share(){

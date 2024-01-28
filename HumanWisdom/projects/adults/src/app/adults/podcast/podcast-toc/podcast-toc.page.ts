@@ -9,6 +9,7 @@ import { LogEventService } from '../../../../../../shared/services/log-event.ser
 import { AdultsService } from '../../adults.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { ProgramType } from '../../../../../../shared/models/program-model';
+import { environment } from '../../../../../../environments/environment';
 
 
 @Component({
@@ -140,22 +141,6 @@ export class PodcastTocPage implements OnInit {
         this.path = SharedService.AdultsBaseUrl + this.address;
     }
   }
-  share() {
-    /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
-      alert(`This service/api is not supported in your Browser`);
-      return;
-    } */
-    this.ngNavigatorShareService.share({
-      title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
-      url: this.path
-    }).then((response) => {
-      console.log(response);
-    })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
   getPodcast() {
     this.service.GetPodcastList().subscribe((res) => {
@@ -211,5 +196,24 @@ export class PodcastTocPage implements OnInit {
         this.podcastList= this.podcastList.filter((d) => d['PreferenceIDs'].includes(type.id));
       }
     }
+  }
+
+  share() {
+    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
+       alert(`This service/api is not supported in your Browser`);
+       return;
+     } */
+    console.log("url")
+    this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 }
