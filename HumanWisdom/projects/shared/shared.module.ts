@@ -91,6 +91,7 @@ import { AdultsAudioMeditationComponent } from './component/adults-audio-meditat
 import { LoginRegisterModalComponent } from './component/login-register-modal/login-register-modal.component';
 import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premium-block/subscribe-to-premium-block.component';
 import { HwpSearchBarComponent } from './component/hwp-search-bar/hwp-search-bar.component';
+import { NavigationService } from './services/navigation.service';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -286,6 +287,7 @@ import { HwpSearchBarComponent } from './component/hwp-search-bar/hwp-search-bar
     LoginRegisterModalComponent,
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent
-  ]
+  ],
+  providers:[]
 })
 export class SharedModule { }
