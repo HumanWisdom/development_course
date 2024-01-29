@@ -24,7 +24,7 @@ export class StartYourFreeTrialPage implements OnInit {
         this.router.navigate(['/subscription/try-free-and-subscribe']);
       } else {
         SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-        this.router.navigateByUrl('/login');
+        this.router.navigate(['/onboarding/login']);
       }
   }
 
