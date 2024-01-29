@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
@@ -18,7 +18,6 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 
 export class PodcastTocPage implements OnInit {
-
   path: any;
   tag = 'all';
   iframeSrc: SafeResourceUrl;
@@ -80,6 +79,7 @@ export class PodcastTocPage implements OnInit {
       name: 'Wisdom',
     }
   ];
+  selectedPref = 'All'
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router, public platform: Platform,
@@ -201,6 +201,7 @@ export class PodcastTocPage implements OnInit {
   }
 
   getUserPref(type) {
+    this.selectedPref = '';
     this.podcastList = this.allpodcastList;
     if(type.name === 'All') {
       this.podcastList = this.allpodcastList;
