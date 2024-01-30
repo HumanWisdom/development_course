@@ -36,34 +36,34 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
       this.mediaUrl = {
-        pc01: 
+        pc01:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          url: 'podcasts/46.mp3',
           title: 'Understanding our own ego.'
         },
-        pc02: 
+        pc02:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          url: 'podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
-        pc03: 
+        pc03:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/5.mp3',
+          url: 'podcasts/5.mp3',
           title: 'Emotional Wellness in Relationships'
         },
-        pc04: 
+        pc04:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/9.mp3',
+          url: 'podcasts/9.mp3',
           title: 'Living with Compassion'
         },
-        pc05: 
+        pc05:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/57.mp3',
+          url: 'podcasts/57.mp3',
           title: 'Managing expectations'
         },
-        pc06: 
+        pc06:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/56.mp3',
+          url: 'podcasts/56.mp3',
           title: 'How can we be more kind?'
         }
       }
@@ -437,9 +437,9 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   }
 
   enableRoute(route) {
-    
+
       this.router.navigate([route]);
-   
+
   }
 
   getclcickevent(event) {
