@@ -38,32 +38,32 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.mediaUrl = {
         pc01:
         {
-          url: 'podcasts/46.mp3',
+          url: '/podcasts/46.mp3',
           title: 'Understanding our own ego.'
         },
         pc02:
         {
-          url: 'podcasts/42.mp3',
+          url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc03:
         {
-          url: 'podcasts/5.mp3',
+          url: '/podcasts/5.mp3',
           title: 'Emotional Wellness in Relationships'
         },
         pc04:
         {
-          url: 'podcasts/9.mp3',
+          url: '/podcasts/9.mp3',
           title: 'Living with Compassion'
         },
         pc05:
         {
-          url: 'podcasts/57.mp3',
+          url: '/podcasts/57.mp3',
           title: 'Managing expectations'
         },
         pc06:
         {
-          url: 'podcasts/56.mp3',
+          url: '/podcasts/56.mp3',
           title: 'How can we be more kind?'
         }
       }
