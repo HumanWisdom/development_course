@@ -37,6 +37,7 @@ import { AdultsService } from './adults/adults.service';
 import { initDependency } from './initdependency';
 import { AudioVideoGuard } from './audio-video.guard';
 import { EnableRouteGuard } from './enable-route.guard';
+import { NavigationService } from '../../../shared/services/navigation.service';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -80,6 +81,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         ReactiveFormsModule,
         SharedService,
         MoengageService,
+        NavigationService,
             { provide: APP_BASE_HREF, useValue: '/' } ,
         {
             provide: HTTP_INTERCEPTORS,

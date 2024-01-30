@@ -35,23 +35,27 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
       this.mediaUrl = {
-        pc01: 
+        pc01:
         {
+          id: 1,
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
-        pc02: 
+        pc02:
         {
+          id: 2,
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
           title: 'How can we overcome anxiety?'
         },
-        pc03: 
+        pc03:
         {
+          id: 3,
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/58.mp3',
           title: 'Overcoming loneliness'
         },
-        pc04: 
+        pc04:
         {
+          id: 4,
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         }
@@ -77,6 +81,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   toRead(obj) {
@@ -419,7 +428,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
         })
   }
 
-  
+
 
   getProgress() {
     this.service.getPoints(this.userId)
@@ -459,9 +468,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
   }
 
   enableRoute(route) {
-   
+
       this.router.navigate([route]);
-    
+
   }
 
   getAlertcloseEvent(event) {
@@ -483,6 +492,6 @@ export class OvercomeStressAnxietyPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id])
   }
 }

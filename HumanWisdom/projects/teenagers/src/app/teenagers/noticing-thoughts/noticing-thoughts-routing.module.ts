@@ -11,62 +11,64 @@ import { S108005Page } from './s108005/s108005.page';
 import { S108006Page } from './s108006/s108006.page';
 import { S108007Page } from './s108007/s108007.page';
 import { S108008Page } from './s108008/s108008.page';
+import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [ActiveGuard],
     component: S108001Page,
   },
   {
     path: 's108001',
-
+    canActivate: [ActiveGuard],
     component: S108001Page,
   },
   {
     path: 's108002',
-
+    canActivate: [ActiveGuard],
     component: S108002Page,
     // data: { animation: 0 }
   },
   {
     path: 's108003t',
-
+    canActivate: [ActiveGuard],
     component: S108003tPage,
     // data: { animation: 1 }
   },
   {
     path: 's108003',
-
+    canActivate: [ActiveGuard],
     component: S108003Page,
     // data: { animation: 2 }
   },
   {
     path: 's108004',
-
+    canActivate: [ActiveGuard],
     component: S108004Page,
     // data: { animation: 3 }
   },
   {
     path: 's108005',
-
+    canActivate: [ActiveGuard],
     component: S108005Page,
     // data: { animation: 4 }
   },
   {
     path: 's108006',
-
+    canActivate: [ActiveGuard],
     component: S108006Page,
     // data: { animation: 5 }
   },
   {
     path: 's108007',
-
+    canActivate: [ActiveGuard],
     component: S108007Page,
     // data: { animation: 6 }
   },
   {
     path: 's108008',
-
+    canActivate: [ActiveGuard],
     component: S108008Page,
     // data: { animation: 6 }
   },

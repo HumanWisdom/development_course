@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 import { S106001Page } from './s106001/s106001.page';
 import { S106002Page } from './s106002/s106002.page';
@@ -20,78 +21,94 @@ import { S106015Page } from './s106015/s106015.page';
 const routes: Routes = [
   {
     path: '',
+    canActivate: [ActiveGuard], 
     component: S106001Page,
   },
   {
     path: 's106001',
+    canActivate: [ActiveGuard], 
     component: S106001Page
   },
   {
     path: 's106002',
+    canActivate: [ActiveGuard], 
     component: S106002Page
   },
   {
     path: 's106003',
+    canActivate: [ActiveGuard], 
     component: S106003Page,
     // data: { animation: 0 }
   },
   {
     path: 's106004',
+    canActivate: [ActiveGuard], 
     component: S106004Page,
     // data: { animation: 1 }
   },
   {
     path: 's106005',
+    canActivate: [ActiveGuard], 
     component: S106005Page,
     // data: { animation: 2 }
   },
   {
     path: 's106006',
+    canActivate: [ActiveGuard], 
     component: S106006Page,
     // data: { animation: 3 }
   },
   {
     path: 's106007',
+    canActivate: [ActiveGuard], 
     component: S106007Page,
     // data: { animation: 4 }
   },
   {
     path: 's106008',
+    canActivate: [ActiveGuard], 
     component: S106008Page,
     // data: { animation: 5 }
   },
   {
     path: 's106009',
+    canActivate: [ActiveGuard], 
     component: S106009Page,
     // data: { animation: 6 }
   },
   {
     path: 's106010',
+    canActivate: [ActiveGuard], 
     component: S106010Page,
     // data: { animation: 7 }
   },
   {
     path: 's106011',
+    canActivate: [ActiveGuard], 
     component: S106011Page,
     // data: { animation: 8 }
   },
   {
     path: 's106012',
+    canActivate: [ActiveGuard], 
     component: S106012Page,
     // data: { animation: 9 }
   },
   {
     path: 's106013',
+    canActivate: [ActiveGuard], 
     component: S106013Page,
     // data: { animation: 10 }
   },
   {
     path: 's106014',
+    canActivate: [ActiveGuard], 
     component: S106014Page,
     // data: { animation: 11 }
   },
   {
     path: 's106015',
+    canActivate: [ActiveGuard], 
     component: S106015Page,
     // data: { animation: 12 }
   },

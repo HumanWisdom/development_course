@@ -185,6 +185,7 @@ export class BlogArticlePage implements OnInit {
   }
 
   getimg(data) {
+    console.log(data.split('UsersAvatar\\')[1])
     return data.split('UsersAvatar\\')[1]
   }
 

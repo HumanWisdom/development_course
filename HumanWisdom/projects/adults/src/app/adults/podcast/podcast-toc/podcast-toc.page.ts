@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
@@ -9,6 +9,7 @@ import { LogEventService } from '../../../../../../shared/services/log-event.ser
 import { AdultsService } from '../../adults.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { ProgramType } from '../../../../../../shared/models/program-model';
+import { environment } from '../../../../../../environments/environment';
 
 
 @Component({
@@ -18,7 +19,6 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 
 export class PodcastTocPage implements OnInit {
-
   path: any;
   tag = 'all';
   iframeSrc: SafeResourceUrl;
@@ -52,7 +52,7 @@ export class PodcastTocPage implements OnInit {
     {
       id: "4",
       active: false,
-      name: 'Be happier'
+      name: 'Happiness'
     },
     {
       id: "5",
@@ -72,14 +72,15 @@ export class PodcastTocPage implements OnInit {
     {
       id: "8",
       active: false,
-      name: 'Manage your emotions',
+      name: 'Emotions',
     },
     {
       id: "",
       active: false,
-      name: 'wisdom',
+      name: 'Wisdom',
     }
   ];
+  selectedPref = 'All'
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router, public platform: Platform,
@@ -140,22 +141,6 @@ export class PodcastTocPage implements OnInit {
         this.path = SharedService.AdultsBaseUrl + this.address;
     }
   }
-  share() {
-    /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
-      alert(`This service/api is not supported in your Browser`);
-      return;
-    } */
-    this.ngNavigatorShareService.share({
-      title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
-      url: this.path
-    }).then((response) => {
-      console.log(response);
-    })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
   getPodcast() {
     this.service.GetPodcastList().subscribe((res) => {
@@ -164,8 +149,10 @@ export class PodcastTocPage implements OnInit {
         this.allpodcastList = res;
         this.allpodcastList.forEach((d) => {
           this.prefData.forEach((h) => {
-            if(d['PreferenceIDs'] === h.id) {
+            if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
                h.active = true;
+            }else if(!d['PreferenceIDs']) {
+              h.active = true;
             }
           })
         });
@@ -199,11 +186,35 @@ export class PodcastTocPage implements OnInit {
   }
 
   getUserPref(type) {
+    this.selectedPref = '';
     this.podcastList = this.allpodcastList;
     if(type.name === 'All') {
       this.podcastList = this.allpodcastList;
     }else{
-       this.podcastList= this.podcastList.filter((d) => d['PreferenceIDs'] === type.id);
+      if(type.name === 'Wisdom') {
+        this.podcastList= this.podcastList.filter((d) => (!d['PreferenceIDs']));
+      }else {
+        this.podcastList= this.podcastList.filter((d) => d['PreferenceIDs'].includes(type.id));
+      }
     }
+  }
+
+  share() {
+    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
+       alert(`This service/api is not supported in your Browser`);
+       return;
+     } */
+    console.log("url")
+    this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 }
