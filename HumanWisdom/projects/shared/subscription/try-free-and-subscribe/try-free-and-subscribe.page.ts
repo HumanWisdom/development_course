@@ -152,7 +152,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     this.onboardingService.getPricing(this.countryCode).subscribe(res => {
       this.pricingModel = res.filter((d) => d[Constant.ProgID] === SharedService.ProgramId)[0];
       this.defaultCurrencySymbol = res[0][Constant.ISOCode]
-      this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
+      this.pricingModel.PerMonthAmountOnAnnual = SharedService.formatToDecimal((this.pricingModel.Annual / 12));
     }, (err) => {
       window.alert(err.error['Message'])
     }

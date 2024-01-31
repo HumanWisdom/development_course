@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-start-your-free-trial',
@@ -12,7 +13,8 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 })
 export class StartYourFreeTrialPage implements OnInit {
 
-  constructor(private router: Router,private location: Location, private servive: AdultsService) { }
+  constructor(private router: Router,private location: Location, private servive: AdultsService,
+    private navigateService:NavigationService) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,7 @@ export class StartYourFreeTrialPage implements OnInit {
         this.router.navigate(['/subscription/try-free-and-subscribe']);
       } else {
         SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-        this.router.navigateByUrl('/login');
+        this.router.navigate(['/onboarding/login']);
       }
   }
 
@@ -32,7 +34,10 @@ export class StartYourFreeTrialPage implements OnInit {
     if((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
       window.history.go(-2)
     }else {
-    this.location.back();
+    var url = this.navigateService.navigateToBackLink();
+    if(url==null){
+      this.location.back();
+    }   
     }
   }
 

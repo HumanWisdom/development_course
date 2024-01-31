@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 import { S102001Page } from './s102001/s102001.page';
 import { S102002Page } from './s102002/s102002.page';
@@ -29,132 +30,133 @@ import { S102022Page } from './s102022/s102022.page';
 
 const routes: Routes = [
   {
-    path: '',    
+    path: '', 
+    canActivate: [ActiveGuard],   
     component: S102001Page,
   },  
   {
     path: 's102001',
-      
+    canActivate: [ActiveGuard], 
     component: S102001Page,
   },
   {
     path: 's102002',
-      
+    canActivate: [ActiveGuard], 
     component: S102002Page,
   },
   {
     path: 's102003',
-      
+    canActivate: [ActiveGuard], 
     component: S102003Page,
   },
   {
     path: 's102004',
-      
+    canActivate: [ActiveGuard], 
     component: S102004Page,
   },
   {
     path: 's102004t',
-      
+    canActivate: [ActiveGuard],
     component: S102004tPage,
   },
   {
     path: 's102005',
-      
+    canActivate: [ActiveGuard],
     component: S102005Page,
   },
   {
     path: 's102005t',
-      
+    canActivate: [ActiveGuard],
     component: S102005tPage,
   },
   {
     path: 's102006',
-      
+    canActivate: [ActiveGuard], 
     component: S102006Page,
   }, 
   {
     path: 's102007',
-      
+    canActivate: [ActiveGuard], 
     component: S102007Page,
   }, 
   {
     path: 's102008',
-      
+    canActivate: [ActiveGuard], 
     component: S102008Page,
   },
   {
     path: 's102009',
-      
+    canActivate: [ActiveGuard], 
     component: S102009Page,
   },
   {
     path: 's102010',
-      
+    canActivate: [ActiveGuard],
     component: S102010Page,
   },
   {
     path: 's102011',
-      
+    canActivate: [ActiveGuard], 
     component: S102011Page,
   },
   {
     path: 's102012',
-      
+    canActivate: [ActiveGuard], 
     component: S102012Page,
   },
   {
     path: 's102013',
-      
+    canActivate: [ActiveGuard],
     component: S102013Page,
   },
   {
     path: 's102014',
-      
+    canActivate: [ActiveGuard],
     component: S102014Page,
   },
   {
     path: 's102015',
-      
+    canActivate: [ActiveGuard],
     component: S102015Page,
   },
   {
     path: 's102016',
-      
+    canActivate: [ActiveGuard], 
     component: S102016Page,
   },
   {
     path: 's102017',
-      
+    canActivate: [ActiveGuard], 
     component: S102017Page,
   },
   {
     path: 's102017t',
-      
+    canActivate: [ActiveGuard], 
     component: S102017tPage,
   },
   {
     path: 's102018',
-      
+    canActivate: [ActiveGuard],
     component: S102018Page,
   },
   {
     path: 's102019',
-      
+    canActivate: [ActiveGuard], 
     component: S102019Page,
   },
   {
     path: 's102020',
-      
+    canActivate: [ActiveGuard],  
     component: S102020Page,
   },
   {
     path: 's102021',
-      
+    canActivate: [ActiveGuard],  
     component: S102021Page,
   },
   {
     path: 's102022',
-      
+    canActivate: [ActiveGuard], 
     component: S102022Page,
   }
   

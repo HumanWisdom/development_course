@@ -83,7 +83,7 @@
                             <div style="cursor: pointer ;" class="col-md-6 col-sm-6 col-xs-6 p0 tright">
 
                               <div *ngIf="item.isTrial==1 && item.canceled == 0">
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
                                   Next Payment
                                 </h4>
 
@@ -377,7 +377,7 @@
 
                             </div>
                           </div>
-
+                
                           <div class="row center_flex">
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
                               <img
@@ -394,6 +394,13 @@
                             <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                               <h4 *ngIf="item.canceled === 1" class="mtb0px fs_15px fw_500 fc_ffffff">
                                 cancelled
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row" style="margin-top: 5px;">
+                            <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                Program Code: {{ item['ActKey'] }}
                               </h4>
                             </div>
                           </div>
