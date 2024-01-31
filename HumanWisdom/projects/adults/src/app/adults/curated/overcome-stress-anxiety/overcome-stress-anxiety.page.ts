@@ -38,25 +38,25 @@ export class OvercomeStressAnxietyPage implements OnInit {
         pc01:
         {
           id: 1,
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          url: '/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
         pc02:
         {
           id: 2,
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
+          url: '/podcasts/47.mp3',
           title: 'How can we overcome anxiety?'
         },
         pc03:
         {
           id: 3,
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/58.mp3',
+          url: '/podcasts/58.mp3',
           title: 'Overcoming loneliness'
         },
         pc04:
         {
           id: 4,
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
+          url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         }
       }
