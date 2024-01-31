@@ -30,9 +30,11 @@ export class SubscribedUnsubscribedPage implements OnInit {
   cartList = [];
   startDate:any;
   expDate:any;
+  isSubscriber:any;
   constructor(private router :Router,private services: OnboardingService,public location:Location) { }
 
   ngOnInit() {
+    this.isSubscriber  = SharedService.isSubscriber();
     this.userType = localStorage.getItem('SubscriberType');
     if(this.userType!='Annual'){
       this.services.checkTrial().subscribe(res=>{
@@ -172,12 +174,13 @@ export class SubscribedUnsubscribedPage implements OnInit {
 
       tryFreeSubscribe() {
         if (this.CheckIfUserIsLoggedIn()) {
-          this.SetPaymentIntentModel();
-          this.SetDataInLocalStorage();
+          // this.SetPaymentIntentModel();
+          // this.SetDataInLocalStorage();
           this.services.navigateToUpgradeToPremium=true;
-          this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+          this.router.navigate(['/subscription/try-free-and-subscribe']);
         } else {
-          this.router.navigateByUrl('/login');
+          SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
+          this.router.navigate(['/onboarding/login']);
         }
       }
 

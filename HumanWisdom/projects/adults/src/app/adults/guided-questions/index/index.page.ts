@@ -241,6 +241,10 @@ export class IndexPage implements OnInit, AfterViewInit {
           it?.TitleQue?.toLowerCase().includes(
             text.toLowerCase()
           )
+          ||
+          it?.ModuleName?.toLowerCase().includes(
+            text.toLowerCase()
+          )
       );
     }
   }
