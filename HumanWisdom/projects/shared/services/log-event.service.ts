@@ -30,11 +30,11 @@ export class LogEventService {
         if(module) {
           this.analytics.logEvent(eventName, { ScreenNo: screenNo });
         }
-        if (typeof fbq === 'undefined'){}
+       /*  if (typeof fbq === 'undefined'){}
         else{
           fbq('track', eventName);
         }
-
+ */
          setTimeout(() => {
             const accessObj:any = window;
             if(localStorage.getItem('isloggedin') == 'T'){
