@@ -19,6 +19,9 @@ export class SingleAudioContentComponent implements OnInit {
     const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
     this.audioTitle = this.route.snapshot.paramMap.get('title');
+    if(this.audioTitle){
+     this.audioTitle = this.audioTitle.replaceAll('-', ' ');
+    }
     let rowid:any = this.route.snapshot.paramMap.get('RowId');
     rowid = parseInt(rowid);
     let Id = rowid <= 9 ? '0' + rowid : rowid;

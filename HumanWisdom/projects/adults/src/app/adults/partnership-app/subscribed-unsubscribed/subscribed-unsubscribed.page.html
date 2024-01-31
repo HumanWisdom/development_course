@@ -156,7 +156,7 @@
               </div>
 
               <!-- unsubscribed -->
-              <div class="row" *ngIf="userType!='Annual'">
+              <div class="row" *ngIf="!isSubscriber">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
                   <a>
                     <button (click)="tryFreeSubscribe()" type="button" class="btn btn_tfas">
@@ -168,7 +168,7 @@
               <!-- /unsubscribed -->
 
               <!-- subscribed -->
-              <div class="row" *ngIf="userType=='Annual'">
+              <div class="row" *ngIf="isSubscriber">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
                   <a>
                     <button (click)="GetStarted()" type="button" class="btn btn_tfas">
