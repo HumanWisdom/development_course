@@ -35,13 +35,15 @@ export class SubscriptionPaymentPage implements OnInit {
   obj:any;
   enableAlert = false;
   content = '';
+  symbol: any
 
   constructor(private service: OnboardingService,
-    private location:Location, 
+    private location:Location,
     public logeventservice: LogEventService,
     private router: Router) {
     this.getCountry()
-    this.amount = localStorage.getItem('totalAmount')
+    this.amount = localStorage.getItem('totalAmount');
+    this.symbol = localStorage.getItem('Currsymbol');
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
