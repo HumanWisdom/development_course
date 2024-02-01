@@ -169,7 +169,9 @@ export class PodcastTocPage implements OnInit {
         data['MediaUrl'] = data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
       }
       let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/', '~'));
-      this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', data['Title']])
+      const title = data['Title']?.replaceAll(' ', '-')
+
+      this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', title])
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
       // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
