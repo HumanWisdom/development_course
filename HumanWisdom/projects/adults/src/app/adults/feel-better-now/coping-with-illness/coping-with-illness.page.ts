@@ -39,7 +39,8 @@ export class CopingWithIllnessPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    // this.location.back()
+    this.router.navigate(['/adults/feel-better-now'])
   }
 
   routeVideoaudio(type, url, title = '') {
