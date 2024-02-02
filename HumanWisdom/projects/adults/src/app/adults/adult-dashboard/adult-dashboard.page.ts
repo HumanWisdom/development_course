@@ -4041,7 +4041,7 @@ export class AdultDashboardPage implements OnInit {
   routeToFindAnswer(param){
     localStorage.setItem('lastRoute',param);
     this.logeventservice.logEvent("click_find-answers-"+param);
-    this.router.navigate(['/find-answers/'+param]);
+    this.router.navigate(['/adults/find-answers/'+param]);
   }
 
   activeTopicRoute(name) {
