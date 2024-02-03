@@ -105,6 +105,11 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     })
   }
 
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
+  }
+
   goBack() {
     this.location.back()
   }

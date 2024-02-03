@@ -31,7 +31,7 @@ export class ManageYourEmotionsPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
-
+  isSubscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -41,26 +41,38 @@ export class ManageYourEmotionsPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/46.mp3',
+          id: 1,
+          url: '/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
         pc02: 
         {
-          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/42.mp3',
+          id: 2,
+          url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc03: 
         {
-          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/37.mp3',
+          id: 3,
+          url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         },
         pc04: 
         {
-          url: 'https://d1tenzemoxuh75.cloudfront.net/podcasts/31.mp3',
+          id: 4,
+          url: '/podcasts/31.mp3',
           title: 'Cultivating Calm: Deal with Anger'
         }
       }
-     }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
+      }
+    }
 
   ngOnInit() {
 
@@ -98,6 +110,11 @@ export class ManageYourEmotionsPage implements OnInit {
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${this.sId}` } })
     }
 
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -423,7 +440,11 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 
   viewblog(id) {
