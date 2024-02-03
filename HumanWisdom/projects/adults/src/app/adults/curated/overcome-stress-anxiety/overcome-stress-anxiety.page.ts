@@ -26,6 +26,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  isSubscriber = false;
+
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -59,6 +61,14 @@ export class OvercomeStressAnxietyPage implements OnInit {
           url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
     }
 
@@ -492,6 +502,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 }

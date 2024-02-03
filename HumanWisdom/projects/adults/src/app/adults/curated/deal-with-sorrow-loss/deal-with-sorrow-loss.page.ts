@@ -26,7 +26,7 @@ export class DealWithSorrowLossPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
-
+  isSubscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
@@ -35,24 +35,32 @@ export class DealWithSorrowLossPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/44.mp3',
+          url: '/podcasts/44.mp3',
           title: 'Coping with an illness'
         },
         pc02: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc03: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/28.mp3',
+          url: '/podcasts/28.mp3',
           title: 'Healing Emotional Pain'
         },
         pc04: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/10.mp3',
+          url: '/podcasts/10.mp3',
           title: 'Overcome Grief and Find Meaning'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
   }
 
@@ -72,6 +80,11 @@ export class DealWithSorrowLossPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -369,7 +382,11 @@ export class DealWithSorrowLossPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 
 }
