@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-how-can-i-a03',
@@ -10,7 +11,7 @@ export class HowCanIA03Page implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,7 +26,9 @@ export class HowCanIA03Page implements OnInit {
 
   goBack() 
   {
-    this.location.back()
+    // this.location.back()
+    this.router.navigate(["/adults/find-answers/how-can-i"])
+
   }
 
 }
