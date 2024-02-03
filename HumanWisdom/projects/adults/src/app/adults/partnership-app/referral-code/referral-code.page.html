@@ -44,14 +44,18 @@
 
                       <div class="row center_flex">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <input name="coupon"type="text" [(ngModel)]="referralCode" class="form-control sp_fc_partnership mt0px" placeholder="Referral code">
+                          <input name="coupon"type="text" [(ngModel)]="referralCode"  
+                          (focusout)="Validate($event.target.value)"
+                          (keyup.enter)="Validate($event.target.value)"  
+                          class="form-control sp_fc_partnership mt0px" 
+                          placeholder="Referral code">
                         </div>
                       </div>
                       
                     </div>
                   </div>
   
-                  <div class="row center_flex">
+                  <div class="row center_flex" *ngIf="!isValidated">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" (click)="DontHaveCode()">
                       <a data-toggle="modal" data-target="#modal_join_anyway">
                         <h4 class="fw_600 fs_18px lh_150p fc_e58d82 mt0px mb10px tcenter">
@@ -68,7 +72,7 @@
                 </div>
               </div>
 
-              <div class="row center_flex ja_tickmark">
+              <div class="row center_flex ja_tickmark" *ngIf="isValidated">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/partnership_tick.svg" alt="" class="img-responsive">
                 </div>
@@ -124,4 +128,8 @@
     </div>
   </div>
 </div>
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>
+
 <!-- /modal join anyway -->
