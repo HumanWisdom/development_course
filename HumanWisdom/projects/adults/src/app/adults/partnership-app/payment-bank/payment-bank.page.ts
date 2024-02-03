@@ -19,6 +19,7 @@ export class PaymentBankPage implements OnInit {
   isUpdate: boolean = false;
   ByPaypal: number = 0;
   isPaypalChecked: boolean = false;
+  isBankAccount:boolean = false;
   constructor(
     private service: AdultsService,
     public router: Router,
@@ -43,9 +44,13 @@ export class PaymentBankPage implements OnInit {
     this.getCountry();
     if (this.isUpdate) {
       if (this.ByPaypal === 1) {
+        this.isPaypalChecked = true;
+        this.isBankAccount = false;
         // this.payPalbtn()
       }
       else {
+        this.isPaypalChecked = false;
+        this.isBankAccount = true;
         this.LinkbankAccountbtn()
       }
 
@@ -92,31 +97,22 @@ export class PaymentBankPage implements OnInit {
 
   payPalbtn(event:Event,mode) {
     this.isPaypalChecked = (event.target as HTMLInputElement).checked;
-    if(mode=='bank' &&  this.isPaypalChecked){
-      this.LinkBankAccount = "linkAccount";
-      this.paymentBank.ByPaypal = "0";
-      let checkboxElement = document.getElementById('chk_02');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = false;
-      }
-       checkboxElement = document.getElementById('chk_01');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = true;
-      }
-    }
-    if (this.isPaypalChecked && mode=='paypal') {
+    if(this.isPaypalChecked){
       this.paymentBank.ByPaypal = "1";
       this.LinkBankAccount = "Paypal";
-      let checkboxElement = document.getElementById('chk_01');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = false;
-      }
-       checkboxElement = document.getElementById('chk_02');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = true;
-      }
     }
+    this.isBankAccount = !this.isPaypalChecked;  
   }
+  bankChecked(event:Event,mode) {
+    this.isBankAccount  = (event.target as HTMLInputElement).checked;
+    if(this.isBankAccount){
+      this.LinkBankAccount = "linkAccount";
+      this.paymentBank.ByPaypal = "0";
+    }
+    this.isPaypalChecked = !this.isBankAccount;  
+  }
+
+ 
 
   getDisabled() {
     if (this.LinkBankAccount == "Paypal" && this.paymentBank.PayPalID == "") {

@@ -12,12 +12,30 @@ export class ReferralCodePage implements OnInit {
   isCode: boolean = false;
   referralCode:string='';
   responseMessage:any;
-  
+  enableAlert:boolean = false;
+  content='';
+  isValidated=false;
   constructor(public router: Router, public location: Location,public service:AdultsService) {}
 
   ngOnInit() {}
   goBack() {
     this.location.back();
+  }
+
+  Validate(input){
+    this.service.ValidateAffRefCode(input).subscribe((res:any)=>{
+      if(res){
+        if(res.length>5){
+          this.enableAlert =  true;
+          this.content = res;
+        }else{
+          this.isValidated = true;
+        }
+      }
+    },
+    error=>{
+
+    });
   }
 
   Cancel() {
