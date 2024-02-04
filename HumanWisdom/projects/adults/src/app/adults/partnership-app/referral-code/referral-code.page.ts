@@ -25,17 +25,19 @@ export class ReferralCodePage implements OnInit {
   Validate(input){
     this.service.ValidateAffRefCode(input).subscribe((res:any)=>{
       if(res){
-        if(res.length>5){
-          this.enableAlert =  true;
-          this.content = res;
-        }else{
           this.isValidated = true;
         }
-      }
     },
     error=>{
-
+      this.isValidated = false;
+      this.enableAlert =  true;
+      this.content = error.error.Message;
     });
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 
   Cancel() {
@@ -62,9 +64,11 @@ export class ReferralCodePage implements OnInit {
   DontHaveCode() {
     this.isCode = true;
   }
+
   getClass(){
-    if(this.referralCode==''){
+    if(this.referralCode=='' ||   this.isValidated == false){
       return 'disabled';
     }
   }
+
 }

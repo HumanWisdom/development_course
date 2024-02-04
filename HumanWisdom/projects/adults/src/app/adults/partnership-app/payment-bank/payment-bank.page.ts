@@ -43,19 +43,6 @@ export class PaymentBankPage implements OnInit {
   ngOnInit() {
     this.getCountry();
     if (this.isUpdate) {
-      if (this.ByPaypal === 1) {
-        this.isPaypalChecked = true;
-        this.isBankAccount = false;
-        // this.payPalbtn()
-      }
-      else {
-        this.isPaypalChecked = false;
-        this.isBankAccount = true;
-        this.LinkbankAccountbtn()
-      }
-
-
-
       this.service.getPartnerBankDetails().subscribe(res => {
         if (res) {
           this.updatePaymentModel(res[0])
@@ -89,6 +76,8 @@ export class PaymentBankPage implements OnInit {
       ByPaypal: paymentData.ByPaypal,
       PayPalID: paymentData.PaypalID,
     };
+
+    this.ByPaypal = paymentData.ByPaypal;
   }
 
   LinkbankAccountbtn() {
@@ -184,18 +173,15 @@ export class PaymentBankPage implements OnInit {
     setTimeout(() => {
       if (this.ByPaypal == 1) {
         this.isPaypalChecked = true;
-        const checkboxElement = document.getElementById('chk_02');
-        if (checkboxElement instanceof HTMLInputElement) {
-          checkboxElement.checked = true;
-        }
+        this.isBankAccount = false;
+        this.LinkBankAccount = 'Paypal';
       }
-       if(this.paymentBank.Acc_Number!=null){
-        const checkboxElement = document.getElementById('chk_01');
-        if (checkboxElement instanceof HTMLInputElement) {
-          checkboxElement.checked = true;
-        }
-       }
-    }, 200);
+      else {
+        this.isPaypalChecked = false;
+        this.isBankAccount = true;
+        this.LinkbankAccountbtn()
+      }
+    });
 
   }
 }
