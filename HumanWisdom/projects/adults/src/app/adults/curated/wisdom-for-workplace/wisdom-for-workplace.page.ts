@@ -41,49 +41,49 @@ export class WisdomForWorkplacePage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          id: 1,
+          id: 46,
           url: '/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
         pc02: 
         {
-          id: 2,
+          id: 47,
           url: '/podcasts/47.mp3',
           title: 'How can we overcome anxiety?'
         },
         pc03: 
         {
-          id: 3,
+          id: 45,
           url: '/podcasts/45.mp3',
           title: 'The Resilience Mindset'
         },
         pc04: 
         {
-          id: 4,
+          id: 42,
           url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc05: 
         {
-          id: 5,
+          id: 4,
           url: '/podcasts/4.mp3',
           title: 'The Wise Leader'
         },
         pc06: 
         {
-          id: 6,
+          id: 55,
           url: '/podcasts/55.mp3',
           title: 'Resilience podcast with Brad Hook'
         },
         pc07: 
         {
-          id: 7,
+          id: 60,
           url: '/podcasts/60.mp3',
           title: 'How can we be successful?'
         },
         pc08: 
         {
-          id: 8,
+          id: 41,
           url: '/podcasts/41.mp3',
           title: 'The Art of People Management'
         }

@@ -35,21 +35,25 @@ export class DealWithSorrowLossPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
+          id: 44,
           url: '/podcasts/44.mp3',
           title: 'Coping with an illness'
         },
         pc02: 
         {
+          id: 42,
           url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc03: 
         {
+          id: 28,
           url: '/podcasts/28.mp3',
           title: 'Healing Emotional Pain'
         },
         pc04: 
         {
+          id: 10,
           url: '/podcasts/10.mp3',
           title: 'Overcome Grief and Find Meaning'
         }
