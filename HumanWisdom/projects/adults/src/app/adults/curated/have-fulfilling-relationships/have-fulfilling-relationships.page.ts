@@ -41,19 +41,19 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           id: 46,
           url: '/podcasts/46.mp3',
-          title: 'Understanding our own ego.'
+          title: 'Understand your ego'
         },
         pc02:
         {
           id: 42,
           url: '/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          title: 'Exploring Mortality'
         },
         pc03:
         {
           id: 5,
           url: '/podcasts/5.mp3',
-          title: 'Emotional Wellness in Relationships'
+          title: 'Feeling hurt'
         },
         pc04:
         {
@@ -71,7 +71,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           id: 56,
           url: '/podcasts/56.mp3',
-          title: 'How can we be more kind?'
+          title: 'Exploring kindness'
         }
       }
 
