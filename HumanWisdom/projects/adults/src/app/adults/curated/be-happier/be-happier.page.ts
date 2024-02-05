@@ -35,37 +35,37 @@ export class BeHappierPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          id: 1,
+          id: 44,
           url: '/podcasts/44.mp3',
           title: 'Coping with an illness'
         },
         pc02: 
         {
-          id: 2,
+          id: 40,
           url: '/podcasts/40.mp3',
           title: 'Overcoming Depression'
         },
         pc03: 
         {
-          id: 3,
+          id: 45,
           url: '/podcasts/45.mp3',
           title: 'The Resilience Mindset'
         },
         pc04: 
         {
-          id: 4,
+          id: 42,
           url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc05: 
         {
-          id: 5,
+          id: 54,
           url: '/podcasts/54.mp3',
           title: 'How can we be happier?'
         },
         pc06: 
         {
-          id: 6,
+          id: 62,
           url: '/podcasts/62.mp3',
           title: '3 obstacles to happiness'
         }
