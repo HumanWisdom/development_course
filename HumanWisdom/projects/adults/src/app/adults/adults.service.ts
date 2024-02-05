@@ -136,6 +136,10 @@ export class AdultsService {
   CheckShortsIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
+  
+  ValidateAffRefCode(affrefcode){
+    return this.http.post(this.path+`/validatePartner/${affrefcode}`,null);
+  }
 
   readStories(): Observable<any> {
     return this.http.get(this.path + `/wisdomStories`)

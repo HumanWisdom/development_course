@@ -31,6 +31,7 @@ export class WisdomForWorkplacePage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  isSubscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -40,44 +41,60 @@ export class WisdomForWorkplacePage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          id: 1,
+          url: '/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
         pc02: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
+          id: 2,
+          url: '/podcasts/47.mp3',
           title: 'How can we overcome anxiety?'
         },
         pc03: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/45.mp3',
+          id: 3,
+          url: '/podcasts/45.mp3',
           title: 'The Resilience Mindset'
         },
         pc04: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          id: 4,
+          url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc05: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/4.mp3',
+          id: 5,
+          url: '/podcasts/4.mp3',
           title: 'The Wise Leader'
         },
         pc06: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/55.mp3',
+          id: 6,
+          url: '/podcasts/55.mp3',
           title: 'Resilience podcast with Brad Hook'
         },
         pc07: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/60.mp3',
+          id: 7,
+          url: '/podcasts/60.mp3',
           title: 'How can we be successful?'
         },
         pc08: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/41.mp3',
+          id: 8,
+          url: '/podcasts/41.mp3',
           title: 'The Art of People Management'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
      }
 
@@ -110,6 +127,11 @@ export class WisdomForWorkplacePage implements OnInit {
     }else{
         this.router.navigate(['/adults/curated/youtubelink', link])
     }
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   s3video(link) {
@@ -559,11 +581,10 @@ export class WisdomForWorkplacePage implements OnInit {
   }
 
   audioevent(audioContent) {
-    if (this.guest || !this.Subscriber) {
-      //this.enableAlert = true;
+    if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 }

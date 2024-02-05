@@ -29,6 +29,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  isSubscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -38,34 +39,48 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.mediaUrl = {
         pc01:
         {
+          id: 1,
           url: '/podcasts/46.mp3',
           title: 'Understanding our own ego.'
         },
         pc02:
         {
+          id: 2,
           url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc03:
         {
+          id: 3,
           url: '/podcasts/5.mp3',
           title: 'Emotional Wellness in Relationships'
         },
         pc04:
         {
+          id: 4,
           url: '/podcasts/9.mp3',
           title: 'Living with Compassion'
         },
         pc05:
         {
+          id: 5,
           url: '/podcasts/57.mp3',
           title: 'Managing expectations'
         },
         pc06:
         {
+          id: 6,
           url: '/podcasts/56.mp3',
           title: 'How can we be more kind?'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
      }
 
@@ -88,6 +103,11 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -449,6 +469,10 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 }
