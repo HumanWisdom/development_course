@@ -19,6 +19,7 @@ export class PaymentBankPage implements OnInit {
   isUpdate: boolean = false;
   ByPaypal: number = 0;
   isPaypalChecked: boolean = false;
+  isBankAccount:boolean = false;
   constructor(
     private service: AdultsService,
     public router: Router,
@@ -42,15 +43,6 @@ export class PaymentBankPage implements OnInit {
   ngOnInit() {
     this.getCountry();
     if (this.isUpdate) {
-      if (this.ByPaypal === 1) {
-        // this.payPalbtn()
-      }
-      else {
-        this.LinkbankAccountbtn()
-      }
-
-
-
       this.service.getPartnerBankDetails().subscribe(res => {
         if (res) {
           this.updatePaymentModel(res[0])
@@ -84,6 +76,8 @@ export class PaymentBankPage implements OnInit {
       ByPaypal: paymentData.ByPaypal,
       PayPalID: paymentData.PaypalID,
     };
+
+    this.ByPaypal = paymentData.ByPaypal;
   }
 
   LinkbankAccountbtn() {
@@ -92,31 +86,22 @@ export class PaymentBankPage implements OnInit {
 
   payPalbtn(event:Event,mode) {
     this.isPaypalChecked = (event.target as HTMLInputElement).checked;
-    if(mode=='bank' &&  this.isPaypalChecked){
-      this.LinkBankAccount = "linkAccount";
-      this.paymentBank.ByPaypal = "0";
-      let checkboxElement = document.getElementById('chk_02');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = false;
-      }
-       checkboxElement = document.getElementById('chk_01');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = true;
-      }
-    }
-    if (this.isPaypalChecked && mode=='paypal') {
+    if(this.isPaypalChecked){
       this.paymentBank.ByPaypal = "1";
       this.LinkBankAccount = "Paypal";
-      let checkboxElement = document.getElementById('chk_01');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = false;
-      }
-       checkboxElement = document.getElementById('chk_02');
-      if (checkboxElement instanceof HTMLInputElement) {
-        checkboxElement.checked = true;
-      }
     }
+    this.isBankAccount = !this.isPaypalChecked;  
   }
+  bankChecked(event:Event,mode) {
+    this.isBankAccount  = (event.target as HTMLInputElement).checked;
+    if(this.isBankAccount){
+      this.LinkBankAccount = "linkAccount";
+      this.paymentBank.ByPaypal = "0";
+    }
+    this.isPaypalChecked = !this.isBankAccount;  
+  }
+
+ 
 
   getDisabled() {
     if (this.LinkBankAccount == "Paypal" && this.paymentBank.PayPalID == "") {
@@ -188,18 +173,15 @@ export class PaymentBankPage implements OnInit {
     setTimeout(() => {
       if (this.ByPaypal == 1) {
         this.isPaypalChecked = true;
-        const checkboxElement = document.getElementById('chk_02');
-        if (checkboxElement instanceof HTMLInputElement) {
-          checkboxElement.checked = true;
-        }
+        this.isBankAccount = false;
+        this.LinkBankAccount = 'Paypal';
       }
-       if(this.paymentBank.Acc_Number!=null){
-        const checkboxElement = document.getElementById('chk_01');
-        if (checkboxElement instanceof HTMLInputElement) {
-          checkboxElement.checked = true;
-        }
-       }
-    }, 200);
+      else {
+        this.isPaypalChecked = false;
+        this.isBankAccount = true;
+        this.LinkbankAccountbtn()
+      }
+    });
 
   }
 }

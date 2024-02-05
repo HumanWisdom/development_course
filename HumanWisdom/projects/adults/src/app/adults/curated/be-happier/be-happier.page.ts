@@ -25,6 +25,7 @@ export class BeHappierPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  isSubscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -34,34 +35,48 @@ export class BeHappierPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/44.mp3',
+          id: 1,
+          url: '/podcasts/44.mp3',
           title: 'Coping with an illness'
         },
         pc02: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/40.mp3',
+          id: 2,
+          url: '/podcasts/40.mp3',
           title: 'Overcoming Depression'
         },
         pc03: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/45.mp3',
+          id: 3,
+          url: '/podcasts/45.mp3',
           title: 'The Resilience Mindset'
         },
         pc04: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          id: 4,
+          url: '/podcasts/42.mp3',
           title: 'The Art of Living and Dying'
         },
         pc05: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/54.mp3',
+          id: 5,
+          url: '/podcasts/54.mp3',
           title: 'How can we be happier?'
         },
         pc06: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/62.mp3',
+          id: 6,
+          url: '/podcasts/62.mp3',
           title: '3 obstacles to happiness'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
     }
 
@@ -79,6 +94,11 @@ export class BeHappierPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -382,6 +402,14 @@ export class BeHappierPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
+
+  // audioevent(audioContent) {
+  //   this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+  // }
 }
