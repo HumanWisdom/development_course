@@ -90,6 +90,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
 import { AdultsAudioMeditationComponent } from './component/adults-audio-meditation/adults-audio-meditation.component';
 import { LoginRegisterModalComponent } from './component/login-register-modal/login-register-modal.component';
 import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premium-block/subscribe-to-premium-block.component';
+import { HwpSearchBarComponent } from './component/hwp-search-bar/hwp-search-bar.component';
+import { NavigationService } from './services/navigation.service';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -173,7 +175,8 @@ import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premi
     ModalComponent,
     AdultsAudioMeditationComponent,
     LoginRegisterModalComponent,
-    SubscribeToPremiumBlockComponent
+    SubscribeToPremiumBlockComponent,
+    HwpSearchBarComponent
   ],
   imports: [
     CommonModule,
@@ -282,7 +285,9 @@ import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premi
     ModalComponent,
     AdultsAudioMeditationComponent,
     LoginRegisterModalComponent,
-    SubscribeToPremiumBlockComponent
-  ]
+    SubscribeToPremiumBlockComponent,
+    HwpSearchBarComponent
+  ],
+  providers:[]
 })
 export class SharedModule { }

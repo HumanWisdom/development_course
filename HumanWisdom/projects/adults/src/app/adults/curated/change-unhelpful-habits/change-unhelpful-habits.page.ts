@@ -33,18 +33,21 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          id: 42,
+          url: '/podcasts/42.mp3',
+          title: 'Exploring Mortality'
         },
         pc02: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/1.mp3',
-          title: 'Avoiding and overcoming addiction'
+          id: 1,
+          url: '/podcasts/1.mp3',
+          title: 'Introduction'
         },
         pc03: 
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/17.mp3',
-          title: 'Navigating Sorrow and Loss'
+          id: 17,
+          url: '/podcasts/17.mp3',
+          title: 'Sorrow and loss'
         }
       }
     }
@@ -63,6 +66,11 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -357,6 +365,6 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
   }
 }

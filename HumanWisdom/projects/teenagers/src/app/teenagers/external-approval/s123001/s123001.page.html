@@ -50,12 +50,18 @@
                 Seeking approval from others. A powerful driver that shapes our lives.
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
@@ -74,18 +80,24 @@
                 How can we respond with wisdom to our need for external approval?
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
         </div>
       </a>
-      
+
       <a routerLink="/external-approval/s123080">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -98,21 +110,25 @@
                 Our need for external validation
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                15 mins
+                15:00
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
 
           </div>
         </div>
       </a>
-
-
     </div>
-
+    
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
     
   </form>    

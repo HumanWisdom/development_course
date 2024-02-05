@@ -208,6 +208,7 @@ export class ViewcartPage implements OnInit {
 
         if (this.cartList.length > 0) {
           this.symbol = this.cartList[0].Symbol;
+          localStorage.setItem('Currsymbol', this.symbol);
           this.isMonthlySelected = this.cartList.filter(x => x.Plan == 'Annual').length == 0;
         }
 

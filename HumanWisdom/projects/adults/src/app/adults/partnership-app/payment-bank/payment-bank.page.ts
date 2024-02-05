@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faTheRedYeti } from '@fortawesome/free-brands-svg-icons';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
@@ -12,11 +12,14 @@ import { AdultsService } from '../../adults.service';
 })
 export class PaymentBankPage implements OnInit {
   LinkBankAccount: string = "linkAccount";
-  countryList:any;
+  countryList: any;
   paymentBank: any;
-  PlaceHolderRouter:string='IBAN / SWIFT';
-  isUpdate:boolean=false;
-  ByPaypal:number=0;
+  PlaceHolderRouter: string = 'IBAN / SWIFT';
+  isBankAccountChecked: boolean = false;
+  isUpdate: boolean = false;
+  ByPaypal: number = 0;
+  isPaypalChecked: boolean = false;
+  isBankAccount:boolean = false;
   constructor(
     private service: AdultsService,
     public router: Router,
@@ -24,33 +27,28 @@ export class PaymentBankPage implements OnInit {
     private location: Location,
   ) {
     this.initializePaymentBankModel();
-    if(this.router.getCurrentNavigation() && this.router.getCurrentNavigation().extras){
+    if (this.router.getCurrentNavigation() && this.router.getCurrentNavigation().extras) {
       this.isUpdate = this.router.getCurrentNavigation().extras?.state?.isUpdate;
-      this.ByPaypal=  this.router.getCurrentNavigation().extras?.state?.ByPaypal;
-     localStorage.setItem("ByPaypal",this.ByPaypal?.toString())
-     localStorage.setItem("isUpdate",this.isUpdate?.toString())
-    }else{
-      this.isUpdate = localStorage.getItem("isUpdate")=='true'?true:false;
-      this.ByPaypal =+localStorage.getItem("ByPaypal");
+      this.ByPaypal = this.router.getCurrentNavigation().extras?.state?.ByPaypal;
+
+      localStorage.setItem("ByPaypal", this.ByPaypal?.toString())
+      localStorage.setItem("isUpdate", this.isUpdate?.toString())
+    } else {
+      this.isUpdate = localStorage.getItem("isUpdate") == 'true' ? true : false;
+      this.ByPaypal = +localStorage.getItem("ByPaypal");
     }
 
-    
+
   }
   ngOnInit() {
     this.getCountry();
-    if(this.isUpdate){
-      if(this.ByPaypal===1){
-        this.payPalbtn()
-       }
-       else{
-        this.LinkbankAccountbtn()
-       }
-       
-       this.service.getPartnerBankDetails().subscribe(res=>{
-        if(res){
+    if (this.isUpdate) {
+      this.service.getPartnerBankDetails().subscribe(res => {
+        if (res) {
           this.updatePaymentModel(res[0])
+          this.setCheckbox();
         }
-       });
+      });
     }
   }
 
@@ -67,7 +65,7 @@ export class PaymentBankPage implements OnInit {
     };
   }
 
-  updatePaymentModel(paymentData:any){
+  updatePaymentModel(paymentData: any) {
     this.paymentBank = {
       Plant_Trees: 0,
       Receive_Income: 1,
@@ -78,16 +76,33 @@ export class PaymentBankPage implements OnInit {
       ByPaypal: paymentData.ByPaypal,
       PayPalID: paymentData.PaypalID,
     };
+
+    this.ByPaypal = paymentData.ByPaypal;
   }
 
   LinkbankAccountbtn() {
     this.LinkBankAccount = "linkAccount";
   }
 
-  payPalbtn() {
-    this.paymentBank.ByPaypal = "1";
-    this.LinkBankAccount = "Paypal";
+  payPalbtn(event:Event,mode) {
+    this.isPaypalChecked = (event.target as HTMLInputElement).checked;
+    if(this.isPaypalChecked){
+      this.paymentBank.ByPaypal = "1";
+      this.LinkBankAccount = "Paypal";
+    }
+    this.isBankAccount = !this.isPaypalChecked;  
   }
+  bankChecked(event:Event,mode) {
+    this.isBankAccount  = (event.target as HTMLInputElement).checked;
+    if(this.isBankAccount){
+      this.LinkBankAccount = "linkAccount";
+      this.paymentBank.ByPaypal = "0";
+    }
+    this.isPaypalChecked = !this.isBankAccount;  
+  }
+
+ 
+
   getDisabled() {
     if (this.LinkBankAccount == "Paypal" && this.paymentBank.PayPalID == "") {
       return "disabled";
@@ -95,9 +110,9 @@ export class PaymentBankPage implements OnInit {
     if (
       this.LinkBankAccount == "linkAccount" &&
       (this.paymentBank.CountryId == 0 ||
-      this.paymentBank.BankName == "" ||
-      this.paymentBank.Acc_Number == "" ||
-      this.paymentBank.IBAN_SWIFT_RoutingNo == "")
+        this.paymentBank.BankName == "" ||
+        this.paymentBank.Acc_Number == "" ||
+        this.paymentBank.IBAN_SWIFT_RoutingNo == "")
     ) {
       return "disabled";
     }
@@ -118,11 +133,11 @@ export class PaymentBankPage implements OnInit {
         localStorage.setItem("referralCode", res);
         localStorage.removeItem("ByPaypal");
         localStorage.removeItem("isUpdate");
-        if(this.isUpdate){
+        if (this.isUpdate) {
           this.location.back();
         }
-        else{
-        this.router.navigate(["adults/partnership-app/payment-income"]);
+        else {
+          this.router.navigate(["adults/partnership-app/payment-income"]);
         }
       }
     });
@@ -131,27 +146,43 @@ export class PaymentBankPage implements OnInit {
   getCountry() {
     this.service.GetCountry().subscribe(
       (res: any) => {
-        this.countryList=res;
+        this.countryList = res;
       },
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
   }
-  onChange($event){
-    this.paymentBank.CountryId=$event;
-    if($event==50){
-      this.PlaceHolderRouter="Routing Number"
-    }else{
-      this.PlaceHolderRouter="IBAN / SWIFT"
+  onChange($event) {
+    this.paymentBank.CountryId = $event;
+    if ($event == 50) {
+      this.PlaceHolderRouter = "Routing Number"
+    } else {
+      this.PlaceHolderRouter = "IBAN / SWIFT"
     }
   }
-  getPlaceHolder(){
+  getPlaceHolder() {
     return this.PlaceHolderRouter;
   }
-  back(){
+  back() {
     this.location.back();
+  }
+
+  setCheckbox() {
+    setTimeout(() => {
+      if (this.ByPaypal == 1) {
+        this.isPaypalChecked = true;
+        this.isBankAccount = false;
+        this.LinkBankAccount = 'Paypal';
+      }
+      else {
+        this.isPaypalChecked = false;
+        this.isBankAccount = true;
+        this.LinkbankAccountbtn()
+      }
+    });
+
   }
 }
 

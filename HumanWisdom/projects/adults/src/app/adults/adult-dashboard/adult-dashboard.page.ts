@@ -175,6 +175,7 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
+    localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
       lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -182,7 +183,7 @@ export class AdultDashboardPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(3)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
     }, { validator: this.PasswordValidator })
-  
+
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')
@@ -204,7 +205,7 @@ export class AdultDashboardPage implements OnInit {
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
-       
+
         if (res) {
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
@@ -374,10 +375,10 @@ export class AdultDashboardPage implements OnInit {
 
   ngOnInit() {
    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
-     this.isIos = true; 
+     this.isIos = true;
     }
 
-    
+
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
@@ -1887,7 +1888,7 @@ export class AdultDashboardPage implements OnInit {
         break
       }
       case "75": {
-        this.wisdomexercise();        
+        this.wisdomexercise();
         break
       }
 
@@ -3797,7 +3798,7 @@ export class AdultDashboardPage implements OnInit {
   */
 
   wisdomexercise() {
-   
+
    if( this.resumeLastvisited[0]['screenno'].length >=1)
    {
     this.router.navigate(['adults/wisdom-exercise/s' +  this.resumeLastvisited[0]['screenno'].substring(0, this.resumeLastvisited[0]['screenno'].length - 2)], {
@@ -3806,10 +3807,10 @@ export class AdultDashboardPage implements OnInit {
       }
     });
    }
-   else 
+   else
    this.router.navigate([`/adults/wisdom-exercise/s75001`])
 
-    
+
 
   }
 
@@ -4040,7 +4041,7 @@ export class AdultDashboardPage implements OnInit {
   routeToFindAnswer(param){
     localStorage.setItem('lastRoute',param);
     this.logeventservice.logEvent("click_find-answers-"+param);
-    this.router.navigate(['/find-answers/'+param]);
+    this.router.navigate(['/adults/find-answers/'+param]);
   }
 
   activeTopicRoute(name) {
@@ -4080,8 +4081,8 @@ export class AdultDashboardPage implements OnInit {
     return SharedService.enablebanner;
   }
 
-  
-  
+
+
   iOS() {
     return [
       'iPad Simulator',

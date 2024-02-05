@@ -107,6 +107,13 @@ import { Constant } from './constant';
    return false;
   }
 
+ public static formatToDecimal(value) {
+    if (Number.isInteger(value)) {
+      return `${value}.00`;
+    }
+    return value.toFixed(2);
+  }
+
    private static iOS() {
     return [
       'iPad Simulator',

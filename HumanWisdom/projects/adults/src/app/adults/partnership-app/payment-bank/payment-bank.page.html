@@ -51,7 +51,7 @@
                       </div>
                       
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright flex_end">
-                        <input class="inp-cbx" id="chk_01" type="checkbox" value="linkAccount" checked (click)="LinkbankAccountbtn()"  [(ngModel)]="LinkBankAccount" id="optionsRadios1" name="optionsRadios">
+                        <input class="inp-cbx" #bank id="chk_01" name="chk_01" type="checkbox" [value]="false" (change)="bankChecked($event,'bank')" [(ngModel)]="isBankAccount">
                         <label class="checkbox_partnership mt0px" for="chk_01">
                           <span>
                             <svg width="12px" height="10px">
@@ -87,7 +87,7 @@
                       </div>
                       
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright flex_end">
-                        <input class="inp-cbx" id="chk_02" type="checkbox" value="Paypal" (click)="payPalbtn()" [(ngModel)]="LinkBankAccount" id="optionsRadios2" name="optionsRadios2">
+                        <input class="inp-cbx" id="chk_02" name="chk_02" type="checkbox" [value]="isPaypalChecked" (change)="payPalbtn($event,'paypal')" [(ngModel)]="isPaypalChecked">
                         <label class="checkbox_partnership mt0px" for="chk_02">
                           <span>
                             <svg width="12px" height="10px">
@@ -146,7 +146,7 @@
                   <div class="row mb10px">                    
                     <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="LinkBankAccount!='Paypal'" >
                       <div>
-                        <select type="text" name="threadlist"  class="sp_fc" [(ngModel)]="paymentBank.CountryId" #mySelect (change)='onChange(mySelect.value)'>
+                        <select type="text" name="threadlist" id="threadlist" class="sp_fc" [(ngModel)]="paymentBank.CountryId" #mySelect (change)='onChange(mySelect.value)'>
                           <option [value]="0">Select Country</option>
                           <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
                         </select>

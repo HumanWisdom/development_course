@@ -26,6 +26,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  isSubscriber = false;
+
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -35,26 +37,38 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
       this.mediaUrl = {
-        pc01: 
+        pc01:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          id: 46,
+          url: '/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
-        pc02: 
+        pc02:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
+          id: 47,
+          url: '/podcasts/47.mp3',
           title: 'How can we overcome anxiety?'
         },
-        pc03: 
+        pc03:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/58.mp3',
+          id: 58,
+          url: '/podcasts/58.mp3',
           title: 'Overcoming loneliness'
         },
-        pc04: 
+        pc04:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
+          id: 37,
+          url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
     }
 
@@ -77,6 +91,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   toRead(obj) {
@@ -419,7 +438,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
         })
   }
 
-  
+
 
   getProgress() {
     this.service.getPoints(this.userId)
@@ -459,9 +478,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
   }
 
   enableRoute(route) {
-   
+
       this.router.navigate([route]);
-    
+
   }
 
   getAlertcloseEvent(event) {
@@ -483,6 +502,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 }

@@ -43,7 +43,9 @@ export class IndexPage implements OnInit {
 
   goBack() 
   {
-    this.location.back()
+    // this.location.back()
+    this.router.navigate(["/adults/adult-dashboard"])
+
   } 
 
   routeToTab(param){

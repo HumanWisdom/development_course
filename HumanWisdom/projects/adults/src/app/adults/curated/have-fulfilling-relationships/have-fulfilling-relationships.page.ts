@@ -29,6 +29,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  isSubscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -36,36 +37,50 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
       this.mediaUrl = {
-        pc01: 
+        pc01:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
-          title: 'Understanding our own ego.'
+          id: 46,
+          url: '/podcasts/46.mp3',
+          title: 'Understand your ego'
         },
-        pc02: 
+        pc02:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          id: 42,
+          url: '/podcasts/42.mp3',
+          title: 'Exploring Mortality'
         },
-        pc03: 
+        pc03:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/5.mp3',
-          title: 'Emotional Wellness in Relationships'
+          id: 5,
+          url: '/podcasts/5.mp3',
+          title: 'Feeling hurt'
         },
-        pc04: 
+        pc04:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/9.mp3',
+          id: 9,
+          url: '/podcasts/9.mp3',
           title: 'Living with Compassion'
         },
-        pc05: 
+        pc05:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/57.mp3',
+          id: 57,
+          url: '/podcasts/57.mp3',
           title: 'Managing expectations'
         },
-        pc06: 
+        pc06:
         {
-          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/56.mp3',
-          title: 'How can we be more kind?'
+          id: 56,
+          url: '/podcasts/56.mp3',
+          title: 'Exploring kindness'
         }
+      }
+
+      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem('Subscriber');
+      if (userid === 'T' && sub === '1') {
+        this.isSubscriber = true;
+      } else {
+        this.isSubscriber = false;
       }
      }
 
@@ -88,6 +103,11 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+  }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -437,9 +457,9 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   }
 
   enableRoute(route) {
-    
+
       this.router.navigate([route]);
-   
+
   }
 
   getclcickevent(event) {
@@ -449,6 +469,10 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.isSubscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 }

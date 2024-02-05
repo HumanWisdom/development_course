@@ -12,65 +12,74 @@ import { S107008Page } from './s107008/s107008.page';
 import { S107009Page } from './s107009/s107009.page';
 import { S107010Page } from './s107010/s107010.page';
 import { S107011Page } from './s107011/s107011.page';
+import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 const routes: Routes = [
   {
-    path: '',  
+    path: '', 
+    canActivate:[ActiveGuard], 
     component: S107001Page,
   }, 
   {
     
-    path: 's107001',    
+    path: 's107001', 
+    canActivate:[ActiveGuard],   
     component: S107001Page,
   }, 
   {
     
-    path: 's107002',    
+    path: 's107002', 
+    canActivate:[ActiveGuard],   
     component: S107002Page,
   }, 
   {
     
     path: 's107003',
+    canActivate:[ActiveGuard],
     component: S107003Page,
   },
   {
     
     path: 's107004',
+    canActivate:[ActiveGuard],
     component: S107004Page,
   },  
   {
     
     path: 's107005',
+    canActivate:[ActiveGuard],
     component: S107005Page,
   },
   {  
     
     path: 's107006',
+    canActivate:[ActiveGuard],
     component: S107006Page,
   },
   {
     
     path: 's107007',
+    canActivate:[ActiveGuard],
     component: S107007Page,
   },
   {
     path: 's107008',
-    
+    canActivate:[ActiveGuard],
     component: S107008Page,
   },
   {
     path: 's107009',
-    
+    canActivate:[ActiveGuard],
     component: S107009Page,
   },
   { 
     path: 's107010',
-    
+    canActivate:[ActiveGuard],
     component: S107010Page,
   },
   {
     path: 's107011',
-    
+    canActivate:[ActiveGuard],
     component: S107011Page,
   },
     
