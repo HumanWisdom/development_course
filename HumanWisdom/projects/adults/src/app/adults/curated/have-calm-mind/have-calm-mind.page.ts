@@ -36,19 +36,19 @@ export class HaveCalmMindPage implements OnInit {
     this.mediaUrl = {
       pc01: 
       {
-        id: 1,
+        id: 46,
         url: '/podcasts/46.mp3',
         title: 'Understanding our own ego'
       },
       pc02: 
       {
-        id: 2,
+        id: 47,
         url: '/podcasts/47.mp3',
         title: 'How can we overcome anxiety?'
       },
       pc03: 
       {
-        id: 3,
+        id: 24,
         url: '/podcasts/24.mp3',
         title: 'Journey to inner peace'
       }

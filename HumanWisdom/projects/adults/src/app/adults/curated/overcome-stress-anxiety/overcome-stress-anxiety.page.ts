@@ -39,25 +39,25 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.mediaUrl = {
         pc01:
         {
-          id: 1,
+          id: 46,
           url: '/podcasts/46.mp3',
           title: 'Understanding our own ego'
         },
         pc02:
         {
-          id: 2,
+          id: 47,
           url: '/podcasts/47.mp3',
           title: 'How can we overcome anxiety?'
         },
         pc03:
         {
-          id: 3,
+          id: 58,
           url: '/podcasts/58.mp3',
           title: 'Overcoming loneliness'
         },
         pc04:
         {
-          id: 4,
+          id: 37,
           url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         }
