@@ -43,7 +43,7 @@ export class DealWithSorrowLossPage implements OnInit {
         {
           id: 42,
           url: '/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          title: 'Exploring Mortality'
         },
         pc03: 
         {
@@ -55,7 +55,7 @@ export class DealWithSorrowLossPage implements OnInit {
         {
           id: 10,
           url: '/podcasts/10.mp3',
-          title: 'Overcome Grief and Find Meaning'
+          title: 'Overcoming grief'
         }
       }
 

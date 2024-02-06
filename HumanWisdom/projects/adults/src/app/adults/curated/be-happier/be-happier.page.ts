@@ -49,26 +49,9 @@ export class BeHappierPage implements OnInit {
         {
           id: 45,
           url: '/podcasts/45.mp3',
-          title: 'The Resilience Mindset'
-        },
-        pc04: 
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
-        },
-        pc05: 
-        {
-          id: 54,
-          url: '/podcasts/54.mp3',
-          title: 'How can we be happier?'
-        },
-        pc06: 
-        {
-          id: 62,
-          url: '/podcasts/62.mp3',
-          title: '3 obstacles to happiness'
+          title: 'The resilient mindset'
         }
+       
       }
 
       let userid = localStorage.getItem('isloggedin');
