@@ -33,21 +33,21 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          id: 1,
+          id: 42,
           url: '/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          title: 'Exploring Mortality'
         },
         pc02: 
         {
-          id: 2,
+          id: 1,
           url: '/podcasts/1.mp3',
-          title: 'Avoiding and overcoming addiction'
+          title: 'Introduction'
         },
         pc03: 
         {
-          id: 3,
+          id: 17,
           url: '/podcasts/17.mp3',
-          title: 'Navigating Sorrow and Loss'
+          title: 'Sorrow and loss'
         }
       }
     }

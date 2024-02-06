@@ -204,7 +204,7 @@ nav
         ~ .m-menu
         {
             @include transform(translate3d(0, 0, 0));
-            overflow-y: hidden;
+            overflow-y: auto;
             overflow-x: hidden;
         }
     }

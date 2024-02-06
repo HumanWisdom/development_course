@@ -968,13 +968,26 @@
                         <div class="panel-body">
                           
                           <div class="">
-                            <div class="toc_adiv">
+                            <div class="toc_adiv_02">
+                              
                               <!-- audio row -->
                               <a (click)="audioevent(mediaUrl.pc01)">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                      <div class="prelative">
+                                        <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="getimage(mediaUrl.pc01.id)"
+                                              class="img-responsive w100 img_podcast_01">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc01.title}}
                                       </h4>
@@ -983,8 +996,17 @@
                                       </h4>
                                     </div>
               
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                                    </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
                                     </div>
               
                                   </div>
@@ -992,12 +1014,25 @@
                               </a>
                               <!-- /audio row -->
 
+                             
                               <!-- audio row -->
                               <a (click)="audioevent(mediaUrl.pc02)">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                      <div class="prelative">
+                                        <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="getimage(mediaUrl.pc02.id)"
+                                              class="img-responsive w100 img_podcast_01">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc02.title}}
                                       </h4>
@@ -1006,63 +1041,28 @@
                                       </h4>
                                     </div>
               
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                                    </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
                                     </div>
               
                                   </div>
                                 </div>
                               </a>
                               <!-- /audio row -->
+
+                            
 
                               <!-- audio row -->
                               <a (click)="audioevent(mediaUrl.pc03)">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc03.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        47:57
-                                      </h4>
-                                    </div>
-              
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-              
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <!-- <a (click)="audioevent(mediaUrl.pc05)">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc05.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        40:54
-                                      </h4>
-                                    </div>
-              
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-              
-                                  </div>
-                                </div>
-                              </a> -->
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc06)">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -1070,7 +1070,7 @@
                                       <div class="prelative">
                                         <div class="row">
                                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc06.id)"
+                                            <img [src]="getimage(mediaUrl.pc03.id)"
                                               class="img-responsive w100 img_podcast_01">
                                           </div>
                                         </div>
@@ -1078,12 +1078,12 @@
                                     </div>
 
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc06.title}}
+                                        {{mediaUrl.pc03.title}}
                                       </h4>
                                       <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        04:09
+                                        47:57
                                       </h4>
                                     </div>
               

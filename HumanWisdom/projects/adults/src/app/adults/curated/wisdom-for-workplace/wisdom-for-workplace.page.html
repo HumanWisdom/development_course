@@ -1230,7 +1230,7 @@
                         <div class="panel-body">
                           
                           <div class="">
-                            <div class="toc_adiv">
+                            <div class="toc_adiv_02">
                               <!-- audio row -->
                               <a (click)="audioevent(mediaUrl.pc01)">
                                 <div class="row">
@@ -1247,7 +1247,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc01.title}}
                                       </h4>
@@ -1256,9 +1256,19 @@
                                       </h4>
                                     </div>
               
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
+                                    </div>
+
               
                                   </div>
                                 </div>
@@ -1281,7 +1291,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc02.title}}
                                       </h4>
@@ -1290,9 +1300,19 @@
                                       </h4>
                                     </div>
               
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
+                                    </div>
+
               
                                   </div>
                                 </div>
@@ -1315,7 +1335,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                           {{mediaUrl.pc03.title}}
                                       </h4>
@@ -1324,9 +1344,19 @@
                                       </h4>
                                     </div>
               
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
+                                    </div>
+
               
                                   </div>
                                 </div>
@@ -1349,7 +1379,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc04.title}}
                                       </h4>
@@ -1393,7 +1423,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc05.title}}
                                       </h4>
@@ -1437,7 +1467,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc06.title}}
                                       </h4>
@@ -1480,7 +1510,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc07.title}}
                                       </h4>
@@ -1523,7 +1553,7 @@
                                       </div>
                                     </div>
               
-                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                         {{mediaUrl.pc08.title}}
                                       </h4>

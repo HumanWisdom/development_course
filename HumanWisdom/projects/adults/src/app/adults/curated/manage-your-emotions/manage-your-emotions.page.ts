@@ -41,27 +41,27 @@ export class ManageYourEmotionsPage implements OnInit {
       this.mediaUrl = {
         pc01: 
         {
-          id: 1,
+          id: 46,
           url: '/podcasts/46.mp3',
-          title: 'Understanding our own ego'
+          title: 'Understand your ego'
         },
         pc02: 
         {
-          id: 2,
+          id: 42,
           url: '/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          title: 'Exploring Mortality'
         },
         pc03: 
         {
-          id: 3,
+          id: 37,
           url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
         },
         pc04: 
         {
-          id: 4,
+          id: 31,
           url: '/podcasts/31.mp3',
-          title: 'Cultivating Calm: Deal with Anger'
+          title: 'Dealing with anger'
         }
       }
 
