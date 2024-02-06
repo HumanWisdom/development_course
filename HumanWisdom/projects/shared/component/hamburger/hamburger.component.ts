@@ -105,7 +105,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
        this.subscriber = true;
      }
     }
-  
+
     this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
       if(value){
         let sub: any = localStorage.getItem("Subscriber");
@@ -121,13 +121,13 @@ export class HamburgerComponent implements OnInit, OnChanges {
         if (userid === "T") {
           this.isloggedIn = true;
         }
-  
+
         if (sub === "1" || sub === 1) {
           this.subscriber = true;
         }
       }})
     }
-    
+
 
   getSubscriber(){
     let sub: any = localStorage.getItem("Subscriber");
@@ -137,7 +137,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
    return this.subscriber;
   }
 
-  
+
   getLoggedIn(){
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
@@ -277,6 +277,9 @@ export class HamburgerComponent implements OnInit, OnChanges {
         this.router.navigate([route])
       }
     }
+
+    this.closemodal?.nativeElement?.click();
+
   }
 
   routeManageSubscriptiont(route, params, evtName) {
@@ -333,7 +336,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
         }
       }
     }
- 
+
   }
 
   iOS() {
