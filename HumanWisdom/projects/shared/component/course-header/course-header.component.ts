@@ -5,6 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { ProgramType } from "../../models/program-model";
 import { SharedService } from "../../services/shared.service";
+import { NavigationService } from "../../services/navigation.service";
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -48,6 +49,7 @@ export class CourseHeaderComponent implements OnInit {
     private ac: ActivatedRoute,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
+    private naviagtorService: NavigationService
   ) {
     if (this.router.getCurrentNavigation()) {
       this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
@@ -145,6 +147,7 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   goToToc() {
+    this.naviagtorService.getBackLink();
     if(this.toc.includes(this.programName))
      this .router.navigate(['/' + this.toc])
     else
