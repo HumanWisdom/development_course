@@ -34022,7 +34022,13 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border-radius: 50%;
 }
 
-.dropdown-menu::before 
+.dropdown-menu.dmf
+{
+  border: 0;
+  position: relative;
+}
+
+.dropdown-menu.dmf::before 
 {
   border-bottom: 9px solid rgba(0, 0, 0, 0.2);
   border-left: 9px solid rgba(0, 0, 0, 0);
@@ -34031,11 +34037,12 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   display: inline-block;
   /* left: 86px; */
   position: absolute;
-  top: -8px;
+  /* top: -8px; */
+  top: 0;
   right: 5%;
 }
 
-.dropdown-menu::after 
+.dropdown-menu.dmf::after 
 {
   border-bottom: 8px solid #120F40;
   border-left: 9px solid rgba(0, 0, 0, 0);
@@ -34044,7 +34051,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   display: inline-block;
   /* left: 86px; */
   position: absolute;
-  top: -7px;
+  /* top: -7px; */
+  top: 0;
   right: 5%;
 }
 
@@ -34055,7 +34063,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border: 0;
   padding: 16px 12px;
   width: 100%;
-  top: 150%;
+  /* top: 150%; */
+  top: 8px;
+  position: absolute;
 }
 
 .hr_style_v3_07
