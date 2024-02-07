@@ -40,7 +40,7 @@ export class S51000Page implements OnInit, OnDestroy {
   baseUrl: string;
   path: any;
 
-  searchedText: any
+  searchedText:'';
 
   isSubscriber = false;
 
@@ -219,10 +219,27 @@ export class S51000Page implements OnInit, OnDestroy {
     }
   }
 
+  searchAudio($event) 
+  {
+    if($event=='')
+    {
+      this.audiomeditation= this.allaudiomeditation;
+    }
+    else
+    {
+      this.searchedText=$event;
+      let filterlist =this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      this.audiomeditation=filterlist;
+      //this.secondstoryList=filterlist.slice(10);
+    }
+  }
+
+  /*
   searchAudio() {
     let filterlist = this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
     this.audiomeditation = filterlist;
   }
+  */
 
   getimage(id) {
     let Id = id <= 9 ? '0' + id : id;
