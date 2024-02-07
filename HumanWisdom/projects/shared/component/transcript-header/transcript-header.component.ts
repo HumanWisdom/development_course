@@ -5,6 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from "@angular/cdk/platform";
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
+import { NavigationService } from '../../services/navigation.service';
 
 
 @Component({
@@ -43,7 +44,8 @@ export class TranscriptHeaderComponent implements OnInit {
   constructor(private router: Router,
     private service:AdultsService,
     public platform: Platform,
-    private ngNavigatorShareService: NgNavigatorShareService ) {
+    private ngNavigatorShareService: NgNavigatorShareService,
+    private navigationService:NavigationService ) {
     this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
@@ -117,6 +119,7 @@ export class TranscriptHeaderComponent implements OnInit {
   }
 
   goToToc() {
+    this.navigationService.getBackLink();
     this.router.navigate(['/' + this.programName + '/' + this.toc])
   }
 
