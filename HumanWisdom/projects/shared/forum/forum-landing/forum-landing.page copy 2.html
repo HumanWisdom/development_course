@@ -134,48 +134,46 @@
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg"
                               class="img-responsive">
                           </button>
-                          <div class="dropdown-menu dmf" aria-labelledby="dropdownMenuButton">
-                            <div class="cfdm">
-                              <a class="dropdown-item">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost(item,index)">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                        Edit
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                      <img
-                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_edit.svg"
-                                        class="img-responsive">
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-
+                          <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <hr class="hr_style_v3_07 mtb10pxi">
-                                </div>
-                              </div>
-
-                              <a  class="dropdown-item" (click)="DeletePost(item)">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                        Delete
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                      <img
-                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_trash.svg"
-                                        class="img-responsive">
-                                    </div>
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost(item,index)">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Edit
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_edit.svg"
+                                      class="img-responsive">
                                   </div>
                                 </div>
-                              </a>
+                              </div>
+                            </a>
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <hr class="hr_style_v3_07 mtb10pxi">
+                              </div>
                             </div>
+
+                            <a  class="dropdown-item" (click)="DeletePost(item)">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Delete
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_trash.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>
