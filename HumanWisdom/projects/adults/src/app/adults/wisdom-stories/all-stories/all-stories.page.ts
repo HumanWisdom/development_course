@@ -14,8 +14,8 @@ export class AllStoriesPage implements OnInit {
   searchstoryList=[]
   secondstoryList=[]
   readStories=[]
-  searchedText:any
-  sId:any
+  searchedText='';
+  sId:any;
   enable_view_more_less = false;
   view_more_less="View More"
   isSubscriber = false;
@@ -101,11 +101,28 @@ export class AllStoriesPage implements OnInit {
     }
   }
 
-  searchStory(){
+  searchStory($event) 
+  {
+    if($event=='')
+    {
+      this.storyList= this.searchstoryList;
+    }
+    else
+    {
+      this.searchedText=$event;
       let filterlist =this.searchstoryList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.storyList=filterlist.slice(0, 10)
       this.secondstoryList=filterlist.slice(10);
+    }
   }
+
+  /*
+  searchStory(event){
+      let filterlist =this.searchstoryList.filter(it => it.Title.toLowerCase().includes(e.toLowerCase()));
+      this.storyList=filterlist.slice(0, 10)
+      this.secondstoryList=filterlist.slice(10);
+  }
+  */
 
   toggle_view_more_less()
   {

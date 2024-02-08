@@ -1,5 +1,5 @@
 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-  <input type="search" placeholder="Search video"
+  <input type="search" [placeholder]="placeholder"
     class="form-control has-feedback-left pfy_search hide_search" name="search-list"
     [(ngModel)]="searchinp" autocomplete="off"
     (focusout)="getSearchResult($event.target.value)"

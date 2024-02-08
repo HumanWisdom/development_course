@@ -13,7 +13,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class BlogIndexPage implements OnInit {
   blogList:any;
-  searchedTitle:any;
+  searchedTitle:'';
   path:any;
   
   constructor(private service: AdultsService, private router: Router, 
@@ -56,16 +56,16 @@ export class BlogIndexPage implements OnInit {
     this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
   }
 
-  searchTitle(){
+  searchTitle()
+  {
     if(this.searchedTitle=="")
-    this.getBlogs()
-  else{
-    this.blogList=this.blogList.filter(res=>{
-      return res.Title.toLocaleLowerCase().match(this.searchedTitle.toLocaleLowerCase())
-
-    })
-  }
-
+      this.getBlogs()
+    else
+    {
+      this.blogList=this.blogList.filter(res=>{
+        return res.Title.toLocaleLowerCase().match(this.searchedTitle.toLocaleLowerCase())
+      })
+    }
   }
 
   share(){
