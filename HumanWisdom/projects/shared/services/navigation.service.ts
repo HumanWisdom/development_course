@@ -9,12 +9,21 @@ export class NavigationService {
   constructor(private router: Router) { }
 
   addToHistory(url: string) {
-    this.history.push(url);
+    this.history.push(url);// Use a Set to keep track of unique values
+    if (this.history.length > 0) {
+      let uniqueSet = new Set(this.history);
+      if (uniqueSet.size > 0) {
+        this.history = JSON.parse(JSON.stringify(Array.from(uniqueSet)));
+      }
+    }
   }
 
   getBackLink(): string | null {
     if (this.history.length > 1) {
       this.history.pop();
+      const lastUrl = this.history[this.history.length - 1];
+      var urlsToRemoveForModule = this.history.filter(x=>x.includes(lastUrl.split('/')[2]));
+      this.history =  this.history.filter(item => !urlsToRemoveForModule.includes(item));
       return this.history[this.history.length - 1];
     }
     return null;

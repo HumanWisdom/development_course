@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class HwpSearchBarComponent implements OnInit {
   @Input() searchinp:string='';
   @Output() textBoxEvent = new EventEmitter<string>();
+  @Input() placeholder = 'Search for a topic';
   constructor() { }
 
   ngOnInit() {}
