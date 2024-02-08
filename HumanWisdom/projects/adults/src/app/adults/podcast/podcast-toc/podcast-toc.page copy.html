@@ -1,9 +1,14 @@
+<title>Podcasts | Mental Wellbeing Apps| HumanWisdom</title>
+
+
 <!-- top navigation -->
-<div class="tn_bv">
+<div class="tn_bv" *ngIf="!isdefaultShow">
 
   <div class="row center_flex bg_bv">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw bg_292d56">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" alt="" class="img-responsive w100 adults_index_img">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw bg_292d56 img_podcast">
+      <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" alt="" class="img-responsive w100"> -->
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/podcast.svg" alt=""
+        class="img-responsive w100">
     </div>
   </div>
 
@@ -18,31 +23,30 @@
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
         <a class="">
           <h4 class="mtb0px fs_18px fw_600 lh_130p fc_ffffff tcenter">
-            Audio meditation
+            Podcast
           </h4>
         </a>
       </div>
 
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
         <a id="btnShare" (click)="share()" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_round.svg" alt="" class="p0">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_round.svg" alt=""
+            class="p0">
         </a>
       </div>
     </div>
   </div>
 </div>
-<!-- /top navigation -->
 
-<!-- <app-toc-header [moduleName]="'Guided Audio Meditation'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header> -->
 
-<app-bg-video></app-bg-video>
+<app-bg-video *ngIf="!isdefaultShow"></app-bg-video>
 
 <!-- page content -->
-<div class="right_col imain_container mc_03">
+<div *ngIf="!isdefaultShow" class="right_col imain_container mc_03">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 bg_292d56 sc_01 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 bg_292d56 sc_01 col_cw pt20pxi">
         <div class="x_panel p0 c_zambezi ">
           <div class="x_content p0 tleft">
 
@@ -51,7 +55,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb15px fs_18px fw_600 lh_150p fc_ffffff">
-                    Audio Meditation
+                    HappierMe Podcast
                   </h4>
                 </div>
               </div>
@@ -59,39 +63,46 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="txt_comparison">
-                    In this module you will find a series of guided audio meditations. You can listen to them anywhere.
+                    Here you will find a library of engaging podcasts of a wide variety of topics, where we explore a
+                    subject in depth with guests from around the world. They offer fresh ways of dealing with the many
+                    challenges we face and living our best life.
                   </h4>
                 </div>
               </div>
 
-          <!--     <div class="row center_flex">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <a [routerLink]="['/adults/guided-meditation', gamR]" *ngIf="lastvisited">
-                    <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
-                  </a>
-                </div>
-              </div>  -->
-
 
               <!-- search -->
-              <!-- <div class="row prelative mt40px">
+              <div class="row prelative mt40px">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search searchtxt"
-                    placeholder="Search for a audio meditation" id="inputSuccess2" name="textSearch" [(ngModel)]="searchedText"
-                    (ngModelChange)="searchAudio()">
+                    placeholder="Search for a podcast" id="inputSuccess2" name="textSearch" [(ngModel)]="searchedText"
+                    (ngModelChange)="searchPodcast()">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 </div>
-              </div> -->
-
-              <div class="row prelative mt40px">
-                <app-hwp-search-bar [searchinp]="searchedText"  [placeholder]="'Search for a audio meditation'" (textBoxEvent)="searchAudio($event)" ></app-hwp-search-bar>
-
-                <div class="col-md-12 col-sm-12 col-xs-12 p0"></div>
               </div>
               <!-- /search -->
+
+              <!-- overflow buttons -->
+              <div class="row mr-20pxi mtb20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 odiv btn_podcast">
+                  <ng-container *ngFor="let data of prefData">
+                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] === 'All'"
+                     [ngStyle]="{'color': selectedPref === 'All' ? '#000' : '', 'background': selectedPref === 'All' ? '#fff' : '' }" (click)="getUserPref(data)">
+                      {{data['name']}}
+                    </button>
+
+                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] !== 'All'" (click)="getUserPref(data)">
+                     {{data['name']}}
+                   </button>
+
+                  </ng-container>
+                </div>
+              </div>
+              <!-- /overflow buttons -->
+
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -103,7 +114,7 @@
 
               <div class="toc_adiv_02">
                 <!-- audio row -->
-                <a *ngFor="let data of audiomeditation; let i=index" (click)="audioevent(data)">
+                <a *ngFor="let data of podcastList; let i=index" (click)="audioevent(data)">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -111,7 +122,7 @@
                         <div class="prelative">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img [src]="getimage(data['RowID'])" class="img-responsive w100 img_podcast_01">
+                              <img [src]="getimage(data['PodcastID'])" class="img-responsive w100 img_podcast_01">
                             </div>
                           </div>
 
@@ -125,7 +136,7 @@
 
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Meditation #{{data['RowID']}}
+                          Podcast #{{data['PodcastID']}}
                         </h4>
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           {{data['Title']}}
@@ -135,7 +146,8 @@
                         </h4>
                       </div>
 
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] <= 3">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                        *ngIf="!isSubscriber && data['PodcastID'] <= 3">
                         <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                       </div>
 
@@ -143,30 +155,21 @@
                         <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                       </div>
 
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] > 3">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                        *ngIf="!isSubscriber && data['PodcastID'] > 3">
                         <!-- lock -->
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
+
 
                     </div>
                   </div>
                 </a>
                 <!-- /audio row -->
               </div>
-
-              <!-- hr -->
-              <!-- <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v3_01">
-                </div>
-              </div> -->
-              <!-- /hr -->
-
-              <!-- <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles> -->
-
             </form>
-
           </div>
         </div>
       </div>
@@ -176,4 +179,40 @@
 </div>
 <!-- /page content -->
 
-<app-index-footer></app-index-footer>
+<div class="toc_adiv" *ngIf="isdefaultShow">
+  <!-- audio row -->
+  <a *ngFor="let data of podcastList; let i=index" (click)="audioevent(data)">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+          <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+            Podcast #{{data['PodcastID']}}
+          </h4>
+          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+            {{data['Title']}}
+          </h4>
+          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+            {{data['Timing']}} mins
+          </h4>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="data['PodcastID'] >= 4">
+          <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!data['PodcastID'] >= 4">
+          <!-- lock -->
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+          <!-- /lock -->
+        </div>
+
+      </div>
+    </div>
+  </a>
+  <!-- /audio row -->
+</div>
+
+<!-- footer  -->
+<app-bottom-navigation *ngIf="!isdefaultShow"></app-bottom-navigation>
+<!-- /footer -->
