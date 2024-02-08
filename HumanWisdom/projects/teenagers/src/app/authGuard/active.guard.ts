@@ -93,7 +93,7 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     }
-    else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
+    else if (this.freeScreens !== null && this.freeScreens.includes(parseInt(this.scrId))) {
       return true;
     }
     else {
