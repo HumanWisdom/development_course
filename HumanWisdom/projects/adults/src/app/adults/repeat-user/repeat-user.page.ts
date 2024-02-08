@@ -149,9 +149,15 @@ export class RepeatUserPage implements OnInit {
 
   routeResume() {
     this.logeventservice.logEvent("click_continue_where_u_left");
-    let r = this.resume[0]['screenno'].substring(0, 2);
+       //let r = this.resume[0]['screenno'].substring(0, 2);
+   
     localStorage.setItem("pageaction", 'next')
-    switch (r.toString()) {
+    let id = this.resume[0]['ModuleId'].toString();
+   
+    this.service.setmoduleID(id, this.resume[0]['ModuleUrl'].toString(), this.resume[0]['ModuleUrl'].toString()+'s'+this.resume[0]['screenno'].toString())
+
+  
+    /* switch (r.toString()) {
       case "07": {
         this.routeComparison(1)
         break
@@ -381,7 +387,7 @@ export class RepeatUserPage implements OnInit {
         break
       }
 
-    }
+    } */
   }
 
   // introduction
