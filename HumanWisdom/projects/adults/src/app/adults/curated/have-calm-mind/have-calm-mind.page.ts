@@ -51,6 +51,12 @@ export class HaveCalmMindPage implements OnInit {
         id: 24,
         url: '/podcasts/24.mp3',
         title: 'Living with peace'
+      },
+      pc04: 
+      {
+        id: 64,
+        url: '/podcasts/64.mp3',
+        title: 'Exploring our inner silence '
       }
     }
   }
