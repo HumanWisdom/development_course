@@ -780,10 +780,16 @@
   z-index: 2;
   mix-blend-mode: multiply; */
 
+  /*
   background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/art_of_enquiry/art_of_enquiry_mobile_01.jpg');
   background-color: #5d5d5d;
   background-blend-mode: multiply;
   background-size: cover !important;
+  */
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/art_of_enquiry/art_of_enquiry_mobile_01.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .without_language_overlay1_desktop
