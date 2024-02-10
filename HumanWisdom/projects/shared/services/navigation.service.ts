@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { HostListener, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -49,6 +49,10 @@ export class NavigationService {
     }
     return 'adults/search';
   }
+
+
+
+
 
 
 }
