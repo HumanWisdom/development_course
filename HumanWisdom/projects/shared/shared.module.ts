@@ -92,6 +92,7 @@ import { LoginRegisterModalComponent } from './component/login-register-modal/lo
 import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premium-block/subscribe-to-premium-block.component';
 import { HwpSearchBarComponent } from './component/hwp-search-bar/hwp-search-bar.component';
 import { NavigationService } from './services/navigation.service';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -176,7 +177,8 @@ import { NavigationService } from './services/navigation.service';
     AdultsAudioMeditationComponent,
     LoginRegisterModalComponent,
     SubscribeToPremiumBlockComponent,
-    HwpSearchBarComponent
+    HwpSearchBarComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -286,7 +288,8 @@ import { NavigationService } from './services/navigation.service';
     AdultsAudioMeditationComponent,
     LoginRegisterModalComponent,
     SubscribeToPremiumBlockComponent,
-    HwpSearchBarComponent
+    HwpSearchBarComponent,
+    SpinnerComponent
   ],
   providers:[]
 })
