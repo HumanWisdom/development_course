@@ -187,8 +187,11 @@ export class S51000Page implements OnInit, OnDestroy {
     if (sub == 0 && data['RowID'] >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
+      let url = data['Text_URL'].replaceAll(':', '_');
+       url = encodeURIComponent(url.replaceAll('/', '~'));
+      let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['RowID'], 'Audio'])
+      this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
     }
   }
 
@@ -197,8 +200,8 @@ export class S51000Page implements OnInit, OnDestroy {
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: 'Hey, check out the HappierMe Program',
-      url: this.baseUrl+this.path
-    }).then( (response) => {
+      url: this.baseUrl + this.path
+    }).then((response) => {
       console.log(response);
     })
       .catch((error) => {
