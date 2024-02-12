@@ -254,11 +254,15 @@ export class ForumLandingPage implements OnInit {
   }
  
   onFocusOutEvent(){
-    this.serivce.getposts(0,this.searchInput,null).subscribe((res) => {
-      if (res) {
-       this.posts = this.serivce.FormatForumPostData(res);
-      }
-    });
+    if(this.searchInput==''){
+       this.getAllRecords();
+    }else{
+      this.serivce.getposts(0,this.searchInput,null).subscribe((res) => {
+        if (res) {
+         this.posts = this.serivce.FormatForumPostData(res);
+        }
+      });
+    }
   }
 
   shareOnThread(item){
@@ -299,6 +303,7 @@ export class ForumLandingPage implements OnInit {
     this.startRecord=1;
     this.endRecord = 20;
     this.buttonText ="All threads";
+    this.searchInput ='';
     setTimeout(() => {
       this.closeCategoryModal();
     }, 100);
