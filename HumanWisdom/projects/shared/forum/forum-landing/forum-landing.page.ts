@@ -1,6 +1,6 @@
 import { Platform } from "@angular/cdk/platform";
 import { Location } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationStart, Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
@@ -42,6 +42,8 @@ export class ForumLandingPage implements OnInit {
   activeCommentPost;
   actionType: string = '';
   buttonText:string ="All threads"
+  startRecord=1;
+  endRecord=20;
   threadlist = [{
     value: 0, label: 'All threads'
   }, {
@@ -98,7 +100,7 @@ export class ForumLandingPage implements OnInit {
   public bookmarks = []
   public resume = []
   public bookmarkLength: any;
-  
+  public isLoading:boolean = false;
   public programType :ProgramType.Adults;
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,
@@ -127,7 +129,7 @@ export class ForumLandingPage implements OnInit {
     this.userName = localStorage.getItem('name');
     this.selectthread = this.threadlist[0].value;
     if(this.defaultShow){
-      this.getAllposts(0);
+      this.getLazyLoadedRecords();
     }else{
         this.getForumSearchData();
     }
@@ -287,8 +289,18 @@ export class ForumLandingPage implements OnInit {
   getAllposts(index) {
     this.serivce.getposts(this.selectthread, null, this.UserID).subscribe((res) => {
       if (res) {
-     this.posts=this.serivce.FormatForumPostData(res);
+       this.posts=this.serivce.FormatForumPostData(res);
+      
       }
+    });
+  }
+
+  getLazyLoadedRecords(){
+    this.serivce.getForumRecords(this.startRecord,this.endRecord).subscribe((res) => {
+      if (res) {
+        this.posts = [...this.posts, ...this.serivce.FormatForumPostData(res)];
+        this.isLoading = false;
+       }
     });
   }
 
@@ -641,5 +653,26 @@ export class ForumLandingPage implements OnInit {
     }else{
       this.enableAlert= true;
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    // Check if the user has scrolled to the bottom of the page
+    if (this.isScrolledToBottom()) {
+      this.isLoading=true;
+     this.startRecord = this.startRecord+20;
+     this.endRecord = this.startRecord+ 20;
+     this.getLazyLoadedRecords();
+    }
+  }
+
+  private isScrolledToBottom(): boolean {
+    const windowHeight = 'innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const body = document.body;
+    const html = document.documentElement;
+    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    const scrollTop = 'pageYOffset' in window ? window.pageYOffset : document.documentElement.scrollTop || body.scrollTop;
+
+    return docHeight - scrollTop - windowHeight < 1;
   }
 }
