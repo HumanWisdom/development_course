@@ -41,13 +41,13 @@ export class OvercomeStressAnxietyPage implements OnInit {
         {
           id: 46,
           url: '/podcasts/46.mp3',
-          title: 'Understanding our own ego'
+          title: 'Understand your ego'
         },
         pc02:
         {
           id: 47,
           url: '/podcasts/47.mp3',
-          title: 'How can we overcome anxiety?'
+          title: 'Overcome anxiety'
         },
         pc03:
         {
