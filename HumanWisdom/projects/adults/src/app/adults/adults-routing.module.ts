@@ -351,6 +351,11 @@ const routes: Routes = [
     component: S3VideoComponent
   },
   {
+    path: 'wisdom-shorts/:videolink/:title',
+    canActivate:[AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
     path: 'how-can-wisdom-help',
     loadChildren: () => import('./how-can-wisdom-help/how-can-wisdom-help.module').then(m => m.HowCanWisdomHelpModule)
   },

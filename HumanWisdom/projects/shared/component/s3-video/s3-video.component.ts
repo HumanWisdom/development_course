@@ -33,7 +33,7 @@ export class S3VideoComponent implements OnInit {
       this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
     }else {
       this.linkcode = this.route.snapshot.paramMap.get('videolink');
-      this.videoTitle = localStorage.getItem('wisdomvideotitle') ? localStorage.getItem('wisdomvideotitle') : '';
+      this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
     }
    }
 
@@ -54,7 +54,7 @@ export class S3VideoComponent implements OnInit {
 
   goBack(){
     if(this.services.currentUrl && this.services.currentUrl.includes('wisdom-shorts')) {
-    
+
       if(this.services.previousUrl.length ==0)
        { this.router.navigate(["/adults/wisdom-shorts"]);}
         else { this.location.back(); }
