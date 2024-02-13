@@ -23,16 +23,18 @@ export class ReferralCodePage implements OnInit {
   }
 
   Validate(input){
-    this.service.ValidateAffRefCode(input).subscribe((res:any)=>{
-      if(res){
-          this.isValidated = true;
-        }
-    },
-    error=>{
-      this.isValidated = false;
-      this.enableAlert =  true;
-      this.content = error.error.Message;
-    });
+    if(input!='' && input!=null){
+      this.service.ValidateAffRefCode(input).subscribe((res:any)=>{
+        if(res){
+            this.isValidated = true;
+          }
+      },
+      error=>{
+        this.isValidated = false;
+        this.enableAlert =  true;
+        this.content = error.error.Message;
+      });
+    }
   }
 
   getAlertcloseEvent(event) {

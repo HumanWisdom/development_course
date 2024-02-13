@@ -254,11 +254,15 @@ export class ForumLandingPage implements OnInit {
   }
  
   onFocusOutEvent(){
-    this.serivce.getposts(0,this.searchInput,null).subscribe((res) => {
-      if (res) {
-       this.posts = this.serivce.FormatForumPostData(res);
-      }
-    });
+    if(this.searchInput==''){
+       this.getAllRecords();
+    }else{
+      this.serivce.getposts(0,this.searchInput,null).subscribe((res) => {
+        if (res) {
+         this.posts = this.serivce.FormatForumPostData(res);
+        }
+      });
+    }
   }
 
   shareOnThread(item){
@@ -295,7 +299,22 @@ export class ForumLandingPage implements OnInit {
     });
   }
 
+  getAllRecords(){
+    this.startRecord=1;
+    this.endRecord = 20;
+    this.buttonText ="All threads";
+    this.searchInput ='';
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
+    this.posts= [];
+    this.getLazyLoadedRecords();
+  }
+
   getLazyLoadedRecords(){
+    if(this.posts.length==0){
+       this.isLoading =  true;
+    }
     this.serivce.getForumRecords(this.startRecord,this.endRecord).subscribe((res) => {
       if (res) {
         this.posts = [...this.posts, ...this.serivce.FormatForumPostData(res)];
@@ -658,7 +677,7 @@ export class ForumLandingPage implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
     // Check if the user has scrolled to the bottom of the page
-    if (this.isScrolledToBottom()) {
+    if (this.isScrolledToBottom() && this.searchInput == '' && this.buttonText == "All threads") {
       this.isLoading=true;
      this.startRecord = this.startRecord+20;
      this.endRecord = this.startRecord+ 20;

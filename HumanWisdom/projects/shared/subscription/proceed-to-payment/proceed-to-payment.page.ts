@@ -80,6 +80,7 @@ export class ProceedToPaymentPage implements OnInit {
     if(this.trialStatus!=Constant.NoTrial){
       SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
       localStorage.setItem('totalAmount',this.totalCartValueDiscount );
+      SharedService.setDataInLocalStorage("Currsymbol", this.pricingModel.CurSymbol);
       SharedService.setDataInLocalStorage(Constant.Checkout,'T')
        if(this.onboardingService.navigateToUpgradeToPremium){
             localStorage.setItem('ispartnershipClick', 'T');
