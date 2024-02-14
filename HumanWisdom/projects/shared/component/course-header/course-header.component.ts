@@ -26,7 +26,7 @@ export class CourseHeaderComponent implements OnInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   @Output() sendBookmark = new EventEmitter<boolean>();
   socialShare = false
-  token = JSON.parse(localStorage.getItem("token"))
+  token = localStorage.getItem("shareToken")
   urlT: any
   shared = false
   showheaderbar = true
