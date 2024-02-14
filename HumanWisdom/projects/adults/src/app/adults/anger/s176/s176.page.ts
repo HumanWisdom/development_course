@@ -25,6 +25,7 @@ export class S176Page implements OnInit, OnDestroy {
   reflection: any
   reflectionA: any
   r176 = JSON.parse(sessionStorage.getItem("r176"))
+  r176_1 = JSON.parse(sessionStorage.getItem("r176_1"))
   hint = "My son did not call on my birthday, My anger is caused by my own expectations";
    path = setTimeout(() => {
     return this.router.url;
@@ -96,6 +97,26 @@ export class S176Page implements OnInit, OnDestroy {
 
   }
 
+  submitProgress_1() {
+    sessionStorage.setItem("r176", JSON.stringify(this.r176))
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r176_1
+    }).subscribe(res => {},
+      error => {
+        this.submitProgress();
+      },
+      () => {
+       this.submitProgress();
+      })
+  }
+
   submitProgress() {
     sessionStorage.setItem("r176", JSON.stringify(this.r176))
     this.service.submitProgressReflection({
@@ -107,9 +128,14 @@ export class S176Page implements OnInit, OnDestroy {
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
       "Resp": this.r176
-    }).subscribe(res => {
-
-    })
+    }).subscribe(res => {},
+      error => {
+        console.log(error)
+        this.router.navigate(['/adults/anger/s177'])
+      },
+      () => {
+        this.router.navigate(['/adults/anger/s177'])
+      })
 
 
   }
@@ -137,5 +163,10 @@ export class S176Page implements OnInit, OnDestroy {
   }
   goToDash() {
     this.router.navigate(['/adults/adult-dashboard'])
+  }
+
+  prev()
+  {
+    this.router.navigate(['/adults/anger/s175'])
   }
 }

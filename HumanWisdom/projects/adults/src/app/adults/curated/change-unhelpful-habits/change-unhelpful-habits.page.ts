@@ -365,6 +365,10 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
 
   audioevent(audioContent) {
+    if (!this.Subscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
     this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
@@ -18,7 +18,7 @@ import { Subscription } from "rxjs";
   templateUrl: "./hamburger.component.html",
   styleUrls: ["./hamburger.component.scss"],
 })
-export class HamburgerComponent implements OnInit, OnChanges {
+export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closeLogoutmodal') closeLogoutmodal: ElementRef;
 
@@ -209,6 +209,8 @@ export class HamburgerComponent implements OnInit, OnChanges {
       replaceUrl: true,
       skipLocationChange: true
     });
+    this.closemodal?.nativeElement?.click();
+
   }
 
   // isShowDiv = false;
@@ -253,6 +255,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
     }
+    this.closemodal?.nativeElement?.click();
   }
 
   Logevent(route, params, evtName) {
@@ -277,9 +280,7 @@ export class HamburgerComponent implements OnInit, OnChanges {
         this.router.navigate([route])
       }
     }
-
     this.closemodal?.nativeElement?.click();
-
   }
 
   routeManageSubscriptiont(route, params, evtName) {
@@ -290,9 +291,11 @@ export class HamburgerComponent implements OnInit, OnChanges {
     }else{
       this.router.navigate([route]);
     }
+    this.closemodal?.nativeElement?.click();
   }
 
   navigate(url) {
+    this.closemodal?.nativeElement?.click();
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 
@@ -372,5 +375,9 @@ export class HamburgerComponent implements OnInit, OnChanges {
 
   setLogevent(evtName, param = '') {
     this.logeventservice.logEvent(evtName);
+  }
+
+  ngOnDestroy() {
+    this.closemodal?.nativeElement?.click();
   }
 }

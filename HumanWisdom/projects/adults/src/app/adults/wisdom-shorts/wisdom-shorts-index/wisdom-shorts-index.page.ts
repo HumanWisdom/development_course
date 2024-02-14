@@ -88,16 +88,16 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   wisdoshortsevent(val, video, title) {
-    localStorage.setItem('wisdomvideotitle', title);
+    // localStorage.setItem('wisdomvideotitle', title);
     let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
     let id = video.split("/")[3].split(".")[1]
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
-        this.router.navigate([video])
+        this.router.navigate([video, title])
       } else {
         if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          this.router.navigate([video])
+          this.router.navigate([video, title])
         } else {
           this.router.navigate(['/subscription/start-your-free-trial']);
         }
@@ -113,6 +113,6 @@ export class WisdomShortsIndexPage implements OnInit {
       let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.wisdomshorts = filterlist;
     }
-   
+
   }
 }

@@ -87,6 +87,11 @@ export class ForumService {
     }
     return this.http.get(url);
   }
+
+  getForumRecords(startRecord,endRecord){
+   const url=  this.path + `/GetAllPosts/${startRecord}/${endRecord}`;
+   return this.http.get(url);
+  }
   submitPost(data: any): Observable<any> {
     return this.http.post(this.path + '/AddPost', data)
   }
