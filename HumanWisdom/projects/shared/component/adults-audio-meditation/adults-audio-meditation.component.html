@@ -35,12 +35,18 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 am_bg_01 col_cw center_flex"
-       [style.background]="'url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/audio_meditation/am_bg_' + rowId + '.webp) no-repeat center center'">
+       [style.background]="'url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/' + rowId + '.webp) no-repeat center center'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
-              <div class="row mt20px">
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/01.webp" class="img-responsive img_podcast_02">
+                </div>
+              </div> -->
+
+              <div class="row mt40px mb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h1 class="txt1 ww_break_word mtb0px">
                     {{audioTitle}}
@@ -49,7 +55,7 @@
               </div>
 
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px" *ngIf="audioLink !== ''">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0" *ngIf="audioLink !== ''">
                   <audio id="aud1" controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>

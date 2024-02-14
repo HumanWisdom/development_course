@@ -13,6 +13,7 @@ import { ProgramType } from '../../../shared/models/program-model';
 import moengage from "@moengage/web-sdk";
 import { MoengageService } from './moengage.service';
 import { environment } from '../../../environments/environment';
+import { NavigationService } from '../../../shared/services/navigation.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -37,6 +38,7 @@ export class AppComponent implements OnDestroy {
   public pageLoaded = false;
   navigationSubs = new Subscription();
   dash = false;
+  adultsCss='assets/css/custom.css'
   programType: ProgramType = ProgramType.Adults;
   journal = false
   fourm = false
@@ -56,7 +58,8 @@ export class AppComponent implements OnDestroy {
     private meta: Meta,
     private title: Title,
     private services: AdultsService,
-    public moengageService: MoengageService
+    public moengageService: MoengageService,
+    private navigationService:NavigationService
   ) {
     if (platform.isBrowser) {
       //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',
@@ -89,16 +92,23 @@ export class AppComponent implements OnDestroy {
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+      this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
     });
 
     this.initializeApp();
     this.getFreeScreens();
+    // this.setDynamicCSS();
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //   localStorage.setItem("isPWA", 'APP')
+    // } else {
+    //   localStorage.setItem("isPWA", 'ISNOTAPP')
+    // }
   }
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
 
@@ -443,5 +453,8 @@ export class AppComponent implements OnDestroy {
     SharedService.enablebanner = false
   }
 
+  setDynamicCSS(){
+     //   window.document.getElementById('adultsCss').setAttribute('href',this.adultsCss);
+ }
 }
 

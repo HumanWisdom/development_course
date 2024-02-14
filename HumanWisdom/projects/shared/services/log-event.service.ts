@@ -17,8 +17,10 @@ export class LogEventService {
         let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
         let device_info: any = this.deviceService.getDeviceInfo()
         const isMobile = this.deviceService.isMobile();
+        let deviceInfo = localStorage.getItem('isPWA');
         const isDesktopDevice = this.deviceService.isDesktop();
-        let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web';
+        let eventName = (deviceInfo && deviceInfo === 'NOTAPP') ? eventname + '_' + 'Web' : eventname + '_' + 'App';
+        // let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web';
         // gtag('event', eventname + '_' + device_info.os, { UserName: name })
         // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })
         // gtag('event', eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser })
@@ -28,11 +30,11 @@ export class LogEventService {
         if(module) {
           this.analytics.logEvent(eventName, { ScreenNo: screenNo });
         }
-        if (typeof fbq === 'undefined'){}
+       /*  if (typeof fbq === 'undefined'){}
         else{
           fbq('track', eventName);
         }
-
+ */
          setTimeout(() => {
             const accessObj:any = window;
             if(localStorage.getItem('isloggedin') == 'T'){

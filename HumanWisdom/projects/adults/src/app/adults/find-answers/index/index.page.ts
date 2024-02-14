@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
+import { linkRadial } from 'd3-shape';
 
 @Component({
   selector: 'app-index',
@@ -13,7 +15,7 @@ export class IndexPage implements OnInit {
 
   defaultUrl = 'how-can-i';
   activeClass = 'active';
-  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute) {
+  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute,  public logeventservice: LogEventService) {
    var data = this.activatedRoute.snapshot.paramMap.get('url');
     if(data != null){
       this.defaultUrl= data;
@@ -41,7 +43,9 @@ export class IndexPage implements OnInit {
 
   goBack() 
   {
-    this.location.back()
+    // this.location.back()
+    this.router.navigate(["/adults/adult-dashboard"])
+
   } 
 
   routeToTab(param){
@@ -57,7 +61,15 @@ export class IndexPage implements OnInit {
   }
 
   youtube(link) {
+    this.logeventservice.logEvent('click_youtube_'+link);
     this.router.navigate(['/adults/curated/youtubelink', link])
   }
+
+  logEvent(event){
+   
+    this.logeventservice.logEvent(event);
+    // this.router.navigate(['/'+url], { replaceUrl: true, skipLocationChange: true });
+   }
+
 
 }

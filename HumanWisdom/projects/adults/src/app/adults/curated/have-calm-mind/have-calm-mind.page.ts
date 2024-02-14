@@ -36,18 +36,27 @@ export class HaveCalmMindPage implements OnInit {
     this.mediaUrl = {
       pc01: 
       {
-        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
-        title: 'Understanding our own ego'
+        id: 46,
+        url: '/podcasts/46.mp3',
+        title: 'Understand your ego'
       },
       pc02: 
       {
-        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
-        title: 'How can we overcome anxiety?'
+        id: 47,
+        url: '/podcasts/47.mp3',
+        title: 'Overcome anxiety'
       },
       pc03: 
       {
-        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/24.mp3',
-        title: 'Journey to inner peace'
+        id: 24,
+        url: '/podcasts/24.mp3',
+        title: 'Living with peace'
+      },
+      pc04: 
+      {
+        id: 64,
+        url: '/podcasts/64.mp3',
+        title: 'Exploring our inner silence '
       }
     }
   }
@@ -79,6 +88,12 @@ export class HaveCalmMindPage implements OnInit {
     this.router.navigate(['/adults/curated/youtubelink', link])
     }
   }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
+  }
+
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
@@ -435,7 +450,11 @@ export class HaveCalmMindPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+    if (!this.Subscriber && audioContent.id >= 4) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
   }
 
 }

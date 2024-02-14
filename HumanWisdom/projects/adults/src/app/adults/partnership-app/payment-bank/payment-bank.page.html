@@ -5,25 +5,24 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01" *ngIf="paymentBank">				
-  <!-- Class -->
+<div class="right_col mc_01" *ngIf="paymentBank">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
               <div class="row center_flex mt40px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                  <div class="row mb20px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <div class="row div_pdollar">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dollar_grey.svg" alt="" class="img-responsive"/> 
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/dollar.svg" alt="" class="img-responsive"/> 
                       </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pl0px">
-                        <h4 class="fw_400 fs_18px lh_130p fc_000000 mtb0px">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pl20px pr0px">
+                        <h4 class="fw_500 fs_12px lh_150p fc_ffffff mtb0px">
                           Receive an income from the partnership program
                         </h4>
                       </div>
@@ -32,28 +31,104 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <hr class="ws_hr mtb0px">
+                      <hr class="hr_style_v3_05 mtb20px">
                     </div>
                   </div>
 
-                  <div class="row mt60px mb30px">
+                  <!-- svg checkbox -->
+                  <div class="row chk_partnership_paytype">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/bank.svg" class="img-responsive">
+                        </div>
+
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff ellipsis">
+                            Link bank account
+                           </span>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright flex_end">
+                        <input class="inp-cbx" #bank id="chk_01" name="chk_01" type="checkbox" [value]="false" (change)="bankChecked($event,'bank')" [(ngModel)]="isBankAccount">
+                        <label class="checkbox_partnership mt0px" for="chk_01">
+                          <span>
+                            <svg width="12px" height="10px">
+                              <use xlink:href="#check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--SVG Sprites-->
+                  <svg class="inline-svg">
+                    <symbol id="check" viewbox="0 0 12 10">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </symbol>
+                  </svg>
+                  <!-- /svg checkbox -->
+
+                  <!-- svg checkbox -->
+                  <div class="row chk_partnership_paytype mt10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/paypal.svg" class="img-responsive">
+                        </div>
+
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff ellipsis">
+                            Paypal
+                           </span>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright flex_end">
+                        <input class="inp-cbx" id="chk_02" name="chk_02" type="checkbox" [value]="isPaypalChecked" (change)="payPalbtn($event,'paypal')" [(ngModel)]="isPaypalChecked">
+                        <label class="checkbox_partnership mt0px" for="chk_02">
+                          <span>
+                            <svg width="12px" height="10px">
+                              <use xlink:href="#check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--SVG Sprites-->
+                  <svg class="inline-svg">
+                    <symbol id="check" viewbox="0 0 12 10">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </symbol>
+                  </svg>
+                  <!-- /svg checkbox -->
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <hr class="hr_style_v3_05 mtb20px">
+                    </div>
+                  </div>
+
+                  <!-- <div class="row mb30px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-
                         <div class="radio pradio">
                           <label class="mt0px">
                             <input type="radio" value="linkAccount" checked (click)="LinkbankAccountbtn()"  [(ngModel)]="LinkBankAccount" id="optionsRadios1" name="optionsRadios"> 
                             <span class="">
-                              <span class="fw_400 fs_12px lh_14px fc_000000 ml5px va_middle">
+                              <span class="fw_400 fs_12px lh_14px fc_ffffff ml5px va_middle">
                                 Link your bank account
                               </span>                          
                             </span>
                           </label>
                         </div> 
-
                       </div>
+
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        
                         <div class="radio pradio">
                           <label class="mt0px">
                             <input type="radio" value="Paypal" (click)="payPalbtn()" [(ngModel)]="LinkBankAccount" id="optionsRadios2" name="optionsRadios2"> 
@@ -64,57 +139,42 @@
                             </span>
                           </label>
                         </div>  
-
                       </div>
                     </div>
-                  </div>
-                  <div class="row mb10px">                    
-                    <div  *ngIf="LinkBankAccount!='Paypal'"  class="col-md-12 col-sm-12 col-xs-12">
-                      <!-- <select class="form-control cfc15_select">
-                        <option value="Country">Country</option>
-                      </select> -->
-                      <!-- <select (change)="onChange($event)" type="text" name="threadlist"  class="form-control h60px" [(ngModel)]="paymentBank.CountryId" >
-                        <option value="0">Select Country</option>
-                        <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
-                      </select> -->
+                  </div> -->
 
+                  <div class="row mb10px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="LinkBankAccount!='Paypal'" >
                       <div>
-                        <select type="text"
-                         name="threadlist"  class="form-control h60px"
-                          [(ngModel)]="paymentBank.CountryId" 
-                          #mySelect
-                          (change)='onChange(mySelect.value)'
-                          >
-                          <option  [value]="0">Select Country</option>
+                        <select type="text" name="threadlist" id="threadlist" class="sp_fc" [(ngModel)]="paymentBank.CountryId" #mySelect (change)='onChange(mySelect.value)'>
+                          <option [value]="0">Select Country</option>
                           <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
                         </select>
                       </div>
                     </div>
                   </div>
 
-                  <div *ngIf="LinkBankAccount!='Paypal'"  class="row mb10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" id="BankName" name="BankName" [(ngModel)]="paymentBank.BankName" class="form-control cfc15" placeholder="Bank Name">
+                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <input type="text" class="sp_fc" id="BankName" name="BankName" [(ngModel)]="paymentBank.BankName" placeholder="Bank Name">
                     </div>
                   </div>
 
-                 
-
-                  <div *ngIf="LinkBankAccount!='Paypal'"   class="row mb10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" id="Acc_Number" name="Acc_Number"  [(ngModel)]="paymentBank.Acc_Number" placeholder="Bank Account number">
+                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <input type="text" class="sp_fc" id="Acc_Number" name="Acc_Number"  [(ngModel)]="paymentBank.Acc_Number" placeholder="Bank Account number">
                     </div>
                   </div>
 
-                  <div *ngIf="LinkBankAccount!='Paypal'" class="row mb10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" [placeholder]="getPlaceHolder()">
+                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <input type="text" class="sp_fc" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" [placeholder]="getPlaceHolder()">
                     </div>
                   </div>
                 
-                  <div *ngIf="LinkBankAccount=='Paypal'" class="row mb10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID" placeholder="PayPalId">
+                  <div class="row mb10px" *ngIf="LinkBankAccount=='Paypal'">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <input type="text" class="sp_fc" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID" placeholder="PayPalId">
                     </div>
                   </div>
          
@@ -124,7 +184,7 @@
               <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
                   <a>
-                    <button type="button" class="btn mb0 btn_sub_unsubp w100 bg_cyan" (click)="Submit()" [ngClass]="getDisabled()">
+                    <button type="button" class="btn btn_tfas" (click)="Submit()" [ngClass]="getDisabled()">
                       Submit
                     </button>
                   </a>
@@ -139,6 +199,5 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
 <!-- /page content -->

@@ -12,12 +12,34 @@ export class ReferralCodePage implements OnInit {
   isCode: boolean = false;
   referralCode:string='';
   responseMessage:any;
-  
+  enableAlert:boolean = false;
+  content='';
+  isValidated=false;
   constructor(public router: Router, public location: Location,public service:AdultsService) {}
 
   ngOnInit() {}
   goBack() {
     this.location.back();
+  }
+
+  Validate(input){
+    if(input!='' && input!=null){
+      this.service.ValidateAffRefCode(input).subscribe((res:any)=>{
+        if(res){
+            this.isValidated = true;
+          }
+      },
+      error=>{
+        this.isValidated = false;
+        this.enableAlert =  true;
+        this.content = error.error.Message;
+      });
+    }
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 
   Cancel() {
@@ -44,9 +66,11 @@ export class ReferralCodePage implements OnInit {
   DontHaveCode() {
     this.isCode = true;
   }
+
   getClass(){
-    if(this.referralCode==''){
+    if(this.referralCode=='' ||   this.isValidated == false){
       return 'disabled';
     }
   }
+
 }

@@ -5,6 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { ProgramType } from "../../models/program-model";
 import { SharedService } from "../../services/shared.service";
+import { NavigationService } from "../../services/navigation.service";
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -25,7 +26,7 @@ export class CourseHeaderComponent implements OnInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   @Output() sendBookmark = new EventEmitter<boolean>();
   socialShare = false
-  token = JSON.parse(localStorage.getItem("token"))
+  token = localStorage.getItem("shareToken")
   urlT: any
   shared = false
   showheaderbar = true
@@ -48,6 +49,7 @@ export class CourseHeaderComponent implements OnInit {
     private ac: ActivatedRoute,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
+    private naviagtorService: NavigationService
   ) {
     if (this.router.getCurrentNavigation()) {
       this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
@@ -145,6 +147,7 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   goToToc() {
+    this.naviagtorService.getBackLink();
     if(this.toc.includes(this.programName))
      this .router.navigate(['/' + this.toc])
     else
@@ -189,7 +192,7 @@ export class CourseHeaderComponent implements OnInit {
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);

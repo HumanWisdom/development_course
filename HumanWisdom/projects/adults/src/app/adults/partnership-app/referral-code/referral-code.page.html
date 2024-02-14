@@ -3,11 +3,10 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->
+<div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -17,14 +16,14 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <p class="fw_400 fs_15px lh_130p fc_000000">
+                      <p class="fw_400 fs_15px lh_150p fc_ffffff">
                         Enjoy the many benefits of being a HappierMe Partner and make a difference, to others and to the world. 
                       </p>
   
-                      <p class="fw_400 fs_15px lh_130p fc_000000">
+                      <p class="fw_400 fs_15px lh_150p fc_ffffff">
                         For more information on the Partnership Program,
                         <a>
-                          <span (click)="GoToIndex()" class="fw_500 fs_15px lh_130p fc_1092a7 underline">
+                          <span (click)="GoToIndex()" class="fw_600 fs_15px lh_150p fc_e58d82 underline">
                             click here.
                           </span>
                         </a>
@@ -33,19 +32,23 @@
                   </div>
   
                   <div class="row erc">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       
-                      <div class="row">
+                      <div class="row mb30px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="fw_500 fs_15px lh_18px fc_000000 mt0px mb15px tcenter">
+                          <h4 class="fw_500 fs_140p lh_18px fc_ffffff mtb0px tcenter">
                             Enter partnership referral code
                           </h4>
                         </div>
                       </div>
 
                       <div class="row center_flex">
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                          <input name="coupon"type="text" [(ngModel)]="referralCode" class="form-control fcinput3 mt0px" placeholder="Referral code">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <input name="coupon"type="text" [(ngModel)]="referralCode"  
+                          (focusout)="Validate($event.target.value)"
+                          (keyup.enter)="Validate($event.target.value)"  
+                          class="form-control sp_fc_partnership mt0px" 
+                          placeholder="Referral code">
                         </div>
                       </div>
                       
@@ -55,12 +58,12 @@
                   <div class="row center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" (click)="DontHaveCode()">
                       <a data-toggle="modal" data-target="#modal_join_anyway">
-                        <h4 class="fw_500 fs_18px lh_150p fc_1092a7 mt0px mb15px tcenter">
+                        <h4 class="fw_600 fs_18px lh_150p fc_e58d82 mt0px mb10px tcenter">
                           Don’t have a code? Join anyway
                         </h4>
                       </a>
   
-                      <h6 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px tcenter">
+                      <h6 class="fw_400 fs_12px lh_150p fc_ffffff mtb0px tcenter">
                         This does not change your partnership perks
                       </h6>
                     </div>
@@ -69,16 +72,16 @@
                 </div>
               </div>
 
-              <div class="row center_flex ja_tickmark">
+              <div class="row center_flex ja_tickmark" *ngIf="isValidated">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/tickmark_round_partnership.svg" alt="" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/partnership_tick.svg" alt="" class="img-responsive">
                 </div>
               </div>
                 
               <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
                   <a>
-                    <button type="button" (click)="Proceed(referralCode)" class="btn mb0 btn_sub_unsubp w100" [ngClass]="getClass()">
+                    <button type="button" (click)="Proceed(referralCode)" class="btn btn_tfas" [ngClass]="getClass()">
                       Submit
                     </button>
                   </a>
@@ -93,17 +96,16 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
 <!-- /page content -->
 
 <!-- modal join anyway -->
 <div class="modal fade" id="modal_join_anyway" *ngIf="isCode" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 modal_bottom_fixed join_anyway">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
       <div class="row mb40px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
             Are you sure you would like to proceed without a referral code?
           </h4>
         </div>
@@ -112,12 +114,12 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-            <button type="button" class="btn btn_ja_cancel" (click)="Cancel()" data-dismiss="modal">
+            <button type="button" class="btn btn_ctd" (click)="Cancel()" data-dismiss="modal">
               Cancel
             </button>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-            <button type="button" (click)="Proceed('')" class="btn btn_ja_confirm" data-dismiss="modal">
+            <button type="button" class="btn btn_ctd" (click)="Proceed('')" data-dismiss="modal">
               Confirm
             </button>
           </div>
@@ -126,4 +128,8 @@
     </div>
   </div>
 </div>
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>
+
 <!-- /modal join anyway -->

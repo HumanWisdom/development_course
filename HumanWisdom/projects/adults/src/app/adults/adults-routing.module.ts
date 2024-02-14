@@ -351,6 +351,11 @@ const routes: Routes = [
     component: S3VideoComponent
   },
   {
+    path: 'wisdom-shorts/:videolink/:title',
+    canActivate:[AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
     path: 'how-can-wisdom-help',
     loadChildren: () => import('./how-can-wisdom-help/how-can-wisdom-help.module').then(m => m.HowCanWisdomHelpModule)
   },
@@ -524,6 +529,14 @@ const routes: Routes = [
   {
     path: 'cafe',
     loadChildren: () => import('./cafe/cafe.module').then(m => m.CafeModule)
+  },
+  {
+    path: 'redeem-subscription-landing',
+    loadChildren: () => import('./redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  },
+  {
+    path: 'blog-static',
+    loadChildren: () => import('./blog-static/blog-static.module').then( m => m.BlogStaticPageModule)
   },
 ];
 

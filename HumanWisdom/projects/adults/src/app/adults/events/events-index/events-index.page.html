@@ -19,20 +19,29 @@
               <!-- search -->
               <div class="row prelative">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                  <input type="search" placeholder="Search video"
-                    class="form-control has-feedback-left pfy_search hide_search" name="search-list"
-                    [(ngModel)]="searchinp" autocomplete="off"
+                  <input 
+                    type="search"
+                    class="form-control has-feedback-left pfy_search hide_search" 
+                    placeholder="Search video"
+                    name="search-list"
+                    autocomplete="off"
+                    [(ngModel)]="searchinp" 
                     (focusout)="getSearchResult($event.target.value)"
-                    (keyup.enter)="getSearchResult($event.target.value)" [ngStyle]="{'border-radius':'100px'}">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                  <span *ngIf=" searchinp!=''" (click)="clearSearch()"
+                    (keyup.enter)="getSearchResult($event.target.value)" 
+                    [ngStyle]="{'border-radius':'100px'}">
+                  <span 
+                    class="fa fa-search form-control-feedback left pfy_search_icon" 
+                    aria-hidden="true">
+                  </span>
+                  <span *ngIf=" searchinp!=''" 
+                    (click)="clearSearch()"
                     class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
-                    aria-hidden="true"></span>
+                    aria-hidden="true">
+                  </span>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 </div>
               </div>
-
               <!-- /search -->
 
               <div class="row mtb30px">
@@ -53,7 +62,7 @@
                         <h4 class="panel-title mtb0px fs_18px fw_600 lh_24px fc_ffffff">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                             href="#collapse_01" aria-expanded="true">
-                            Upcoming Events
+                            Upcoming Free Events
                           </a>
                         </h4>
                       </div>

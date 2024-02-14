@@ -137,6 +137,10 @@ export class AdultsService {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
 
+  ValidateAffRefCode(affrefcode){
+    return this.http.post(this.path+`/validatePartner/${affrefcode}`,null);
+  }
+
   readStories(): Observable<any> {
     return this.http.get(this.path + `/wisdomStories`)
   }
@@ -331,7 +335,7 @@ export class AdultsService {
   }
 
   getModuleList(): Observable<any> {
-    return this.http.get(this.path + '/modules');
+    return this.http.get(this.path + '/modules/9');
   }
 
   GetWisdomScreens(): Observable<any> {
@@ -424,6 +428,11 @@ export class AdultsService {
         }
       })
   }
+
+  encryptUserId(id) {
+    return this.http.get(this.path + `/encryptURL?URL=${id}`)
+  }
+
 
   emaillogin(id = '') {
     let email = 'guest@humanwisdom.me';

@@ -35,13 +35,15 @@ export class SubscriptionPaymentPage implements OnInit {
   obj:any;
   enableAlert = false;
   content = '';
+  symbol: any
 
   constructor(private service: OnboardingService,
-    private location:Location, 
+    private location:Location,
     public logeventservice: LogEventService,
     private router: Router) {
     this.getCountry()
-    this.amount = localStorage.getItem('totalAmount')
+    this.amount = localStorage.getItem('totalAmount');
+    this.symbol = localStorage.getItem('Currsymbol');
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
@@ -53,8 +55,8 @@ export class SubscriptionPaymentPage implements OnInit {
         this.obj = {
           UserID: userId,
           ProgramID: '9',
-          PlanId:  plan === 'Annual' || 'Yearly' ? '2' : '1',
-          DiscountCode:  0,
+          PlanId:  plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
+          DiscountCode:  parseInt(couponid) ?? 0,
           Quantity: 1,
           AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
           MyselfSub: "1",
@@ -64,7 +66,7 @@ export class SubscriptionPaymentPage implements OnInit {
     this.obj = {
       UserID: userId,
       ProgramID: '9',
-      PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
+      PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
       AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',

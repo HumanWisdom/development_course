@@ -20,7 +20,7 @@
             <!-- feel better now -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a routerLink="/feel-better-now/">
+                <a (click)="DashboardLogevent('/feel-better-now/', '', 'click_feel-better-now')">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like.svg" class="img-responsive w100">
@@ -122,7 +122,7 @@
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Testimonials" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
-                                  Daily inspiration
+                                  Daily Quote
                                 </h4>
                               </a>
                             </div>
@@ -166,7 +166,7 @@
             <!-- explore a topic in depth-for guest user -->
             <div class="row" *ngIf="YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a class="prelative box_v3_01" routerLink="/adults/select-a-topic-to-explore">
+                <a class="prelative box_v3_01"   (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" >
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -218,7 +218,7 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn" routerLink="/change-topic">
+            <div class="row" *ngIf="isloggedIn"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
                   Change your topic of choice
@@ -300,7 +300,7 @@
                             </div> -->
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
-                              <a class="prelative" routerLink="/adults/intro-happierme">
+                              <a class="prelative" (click)="DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme')">
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
@@ -688,7 +688,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
-                        Find answers
+                        Find quick answers
                       </h4>
                     </div>
                   </div>

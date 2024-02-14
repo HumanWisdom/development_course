@@ -22,7 +22,7 @@ export class WisdomShortsIndexPage implements OnInit {
   wisdomshorts = [];
   allwisdomshorts = [];
   isSubscriber = false;
-  searchedText:any
+  searchedText:any='';
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: AdultsService, private meta: Meta, private title: Title) {
@@ -88,16 +88,16 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   wisdoshortsevent(val, video, title) {
-    localStorage.setItem('wisdomvideotitle', title);
+    // localStorage.setItem('wisdomvideotitle', title);
     let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
     let id = video.split("/")[3].split(".")[1]
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
-        this.router.navigate([video])
+        this.router.navigate([video, title])
       } else {
         if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          this.router.navigate([video])
+          this.router.navigate([video, title])
         } else {
           this.router.navigate(['/subscription/start-your-free-trial']);
         }
@@ -105,8 +105,14 @@ export class WisdomShortsIndexPage implements OnInit {
     })
   }
 
-  searchShorts() {
-    let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
-    this.wisdomshorts = filterlist;
+  searchShorts($event) {
+    if($event==''){
+      this.wisdomshorts = this.allwisdomshorts;
+    }else{
+      this.searchedText=$event;
+      let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      this.wisdomshorts = filterlist;
+    }
+
   }
 }

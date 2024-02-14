@@ -74,7 +74,7 @@
 
 
               <!-- search -->
-              <div class="row prelative mt40px">
+              <!-- <div class="row prelative mt40px">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search searchtxt"
                     placeholder="Search for a audio meditation" id="inputSuccess2" name="textSearch" [(ngModel)]="searchedText"
@@ -84,6 +84,12 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 </div>
+              </div> -->
+
+              <div class="row prelative mt40px">
+                <app-hwp-search-bar [searchinp]="searchedText"  [placeholder]="'Search for a audio meditation'" (textBoxEvent)="searchAudio($event)" ></app-hwp-search-bar>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 p0"></div>
               </div>
               <!-- /search -->
 
@@ -95,13 +101,29 @@
                 </div>
               </div>
 
-              <div class="toc_adiv">
+              <div class="toc_adiv_02">
                 <!-- audio row -->
                 <a *ngFor="let data of audiomeditation; let i=index" (click)="audioevent(data)">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                        <div class="prelative">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img [src]="getimage(data['RowID'])" class="img-responsive w100 img_podcast_01">
+                            </div>
+                          </div>
+
+                          <!-- <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                            </div>
+                          </div> -->
+                        </div>
+                      </div>
+
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                           Meditation #{{data['RowID']}}
                         </h4>
