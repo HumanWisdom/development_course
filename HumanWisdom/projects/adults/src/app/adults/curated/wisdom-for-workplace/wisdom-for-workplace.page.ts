@@ -43,25 +43,25 @@ export class WisdomForWorkplacePage implements OnInit {
         {
           id: 46,
           url: '/podcasts/46.mp3',
-          title: 'Understanding our own ego'
+          title: 'Understand your ego'
         },
         pc02: 
         {
           id: 47,
           url: '/podcasts/47.mp3',
-          title: 'How can we overcome anxiety?'
+          title: 'Overcome anxiety'
         },
         pc03: 
         {
           id: 45,
           url: '/podcasts/45.mp3',
-          title: 'The Resilience Mindset'
+          title: 'The resilient mindset'
         },
         pc04: 
         {
           id: 42,
           url: '/podcasts/42.mp3',
-          title: 'The Art of Living and Dying'
+          title: 'Exploring Mortality'
         },
         pc05: 
         {
@@ -85,7 +85,7 @@ export class WisdomForWorkplacePage implements OnInit {
         {
           id: 41,
           url: '/podcasts/41.mp3',
-          title: 'The Art of People Management'
+          title: 'People management'
         }
       }
 

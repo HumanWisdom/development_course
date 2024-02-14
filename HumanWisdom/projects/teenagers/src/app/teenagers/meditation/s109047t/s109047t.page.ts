@@ -17,12 +17,12 @@ export class S109047tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/meditation/s109046"
+  audioPage="/meditation/s109047"
   toc="meditation/s109001"  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=109046
+  screenNumber=109047
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

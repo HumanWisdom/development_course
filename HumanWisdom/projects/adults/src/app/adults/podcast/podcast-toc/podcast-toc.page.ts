@@ -27,7 +27,7 @@ export class PodcastTocPage implements OnInit {
   @Input() isdefaultShow = false;
   isSubscriber = false;
   address: any;
-  searchedText: any
+  searchedText:'';
   prefData = [
     {
       id: "999",
@@ -177,10 +177,27 @@ export class PodcastTocPage implements OnInit {
     }
   }
 
+  searchPodcast($event) 
+  {
+    if($event=='')
+    {
+      this.podcastList= this.allpodcastList;
+    }
+    else
+    {
+      this.searchedText=$event;
+      let filterlist =this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      this.podcastList=filterlist;
+      //this.secondstoryList=filterlist.slice(10);
+    }
+  }
+
+  /*
   searchPodcast() {
     let filterlist = this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
     this.podcastList = filterlist;
   }
+  */
 
   getimage(id) {
     let Id = id <= 9 ? '0' + id : id;

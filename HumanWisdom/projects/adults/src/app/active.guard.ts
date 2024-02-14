@@ -72,7 +72,8 @@ export class ActiveGuard implements CanActivate, OnInit {
           }
         })
       }
-    } else if (freeScreens !== null && freeScreens.includes(this.scrId.replace('t', ''))) {
+    } else if (freeScreens !== null &&
+      (!loggedin || loggedin !== 'T' ? freeScreens.includes(this.scrId.replace('t', '').toString()) : freeScreens.includes(parseInt(this.scrId.replace('t', ''))) )) {
       return true;
     } else {
       this.router.navigate(['adults/subscription/start-your-free-trial']);

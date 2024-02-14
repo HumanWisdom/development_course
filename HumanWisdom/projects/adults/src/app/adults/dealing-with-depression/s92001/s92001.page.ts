@@ -34,7 +34,6 @@ export class S92001Page implements OnInit,OnDestroy {
   isLoggedIn = false;
   isSubscriber = false;
 
-  dealingwithdepressionResume=sessionStorage.getItem("dealingwithdepressionResume")
 
   constructor(
     private router: Router,

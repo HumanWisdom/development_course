@@ -56,6 +56,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   signUser: any;
   video = 3;
   audio = 4;
+  carouselId = 1;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -126,6 +127,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   Logevent(route, params, evtName) {
+    this.carouselId += 1;
+    if(this.carouselId === 3) {
+      this.nextBtnDis = true;
+    }
     this.logeventservice.logEvent(evtName + ' ' + carouselId);
     if(params !='' && route !='') {
       this.router.navigate([route, params]);
