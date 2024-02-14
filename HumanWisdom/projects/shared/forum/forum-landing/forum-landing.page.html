@@ -14,7 +14,7 @@
         Forum
       </h1>
     </div>
-
+    <app-spinner [show]="isLoading"></app-spinner>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a id="btnShare" class="">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" (click)="shareLandingPage()" alt="" class="p0">
@@ -692,7 +692,7 @@
           </div>
         </div>
 
-        <a class="" (click)="onChange(0)">
+        <a class="" (click)="getAllRecords()">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
