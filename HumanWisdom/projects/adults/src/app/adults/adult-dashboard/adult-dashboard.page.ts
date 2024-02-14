@@ -290,7 +290,7 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("emailCode", 'F')
     localStorage.setItem('giftwisdom', 'F')
     if (userid === 'T') {
-      this.isloggedIn = true
+      this.isloggedIn = true;
     }
     if (rem === 'T' || guest === 'T') {
       if (guest === 'T') {
@@ -328,6 +328,17 @@ export class AdultDashboardPage implements OnInit {
       })
     }
 
+    if(this.isloggedIn) {
+      this.encryptUserId();
+    }
+
+
+  }
+
+  encryptUserId() {
+   this.service.encryptUserId(this.userId).subscribe((res: any) => {
+    localStorage.setItem("shareToken", res)
+   })
   }
 
   loginpage() {
