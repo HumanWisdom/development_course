@@ -65,7 +65,7 @@
 
               <!-- profile -->
               <div class="row mt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" *ngIf="partnershipReport.AffImgPath">
                   <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" alt="" class="img-responsive border_profile_img">
                 </div>
               </div>
@@ -420,7 +420,7 @@
               </ng-container>
               <!-- /income activity -->
 
-              <div class="row mt20px" *ngIf="!isPdfDownloading">
+              <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                     If you wish to switch your partnership benefits, and have a tree planted for every subscription instead of receiving an income , do write to us at
