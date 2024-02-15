@@ -63,6 +63,7 @@ import { S140055tPage } from './s140055t/s140055t.page';
 import { S140056Page } from './s140056/s140056.page';
 import { S140057Page } from './s140057/s140057.page';
 import { S140058Page } from './s140058/s140058.page';
+import { S140059tPage } from './s140059t/s140059t.page';
 import { S140059Page } from './s140059/s140059.page';
 import { S140060Page } from './s140060/s140060.page';
 import { S140061Page } from './s140061/s140061.page';
@@ -443,6 +444,11 @@ const routes: Routes = [
     path: 's140059',
     canActivate: [ActiveGuard],
     component: S140059Page,
+  },
+  {
+    path: 's140059t',
+    canActivate: [ActiveGuard],
+    component: S140059tPage,
   },
   {
     path: 's140060',

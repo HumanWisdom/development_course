@@ -26,7 +26,7 @@ export class CourseHeaderComponent implements OnInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   @Output() sendBookmark = new EventEmitter<boolean>();
   socialShare = false
-  token = JSON.parse(localStorage.getItem("token"))
+  token = localStorage.getItem("shareToken")
   urlT: any
   shared = false
   showheaderbar = true
@@ -192,7 +192,7 @@ export class CourseHeaderComponent implements OnInit {
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
