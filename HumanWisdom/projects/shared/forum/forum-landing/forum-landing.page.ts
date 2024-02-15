@@ -252,7 +252,7 @@ export class ForumLandingPage implements OnInit {
     this.serivce.postdataSource.next(item);
     this.router.navigateByUrl('/forum/forum-thread/'+item.PostID);
   }
- 
+
   onFocusOutEvent(){
     if(this.searchInput==''){
        this.getAllRecords();

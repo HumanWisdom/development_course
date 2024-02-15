@@ -33970,7 +33970,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v3_modal_posted_successfully
 {
   width: 335px;
-  height: 204px;
+  height: 275px;
   border-radius: 8px;
   background: #424675;
   padding: 24px;
