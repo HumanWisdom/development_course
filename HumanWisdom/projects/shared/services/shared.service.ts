@@ -97,7 +97,7 @@ import { Constant } from './constant';
   }
 
   public static DisabledComment(item){
-    return parseInt(item.TagIds)==5 && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
+    return (parseInt(item.TagIds)==5 || item.TagName == 'Ask a coach') && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
   }
 
   public static initializeIosCheck(platform:Platform){     
