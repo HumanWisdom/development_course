@@ -136,7 +136,7 @@ export class AdultsService {
   CheckShortsIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
-  
+
   ValidateAffRefCode(affrefcode){
     return this.http.post(this.path+`/validatePartner/${affrefcode}`,null);
   }
@@ -428,6 +428,11 @@ export class AdultsService {
         }
       })
   }
+
+  encryptUserId(id) {
+    return this.http.get(this.path + `/encryptURL?URL=${id}`)
+  }
+
 
   emaillogin(id = '') {
     let email = 'guest@humanwisdom.me';
