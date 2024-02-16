@@ -17,6 +17,7 @@ import { SharedService } from '../../services/shared.service';
 export class ForumThreadPage implements OnInit {
   @ViewChild(ToastContainerDirective, { static: true }) toastContainer!: ToastContainerDirective;
   @ViewChild('toastContainerRef', { static: true }) toastContainerRef!: ElementRef;
+  @ViewChild('postModal') postModal: any;
   list: any;
   isPostEditable: boolean = true;
   editCommentId: string = '';
@@ -363,6 +364,7 @@ export class ForumThreadPage implements OnInit {
         if (res) {
           this.isReportPost =  false;
           this.isEditComment = false;
+          this.postModal.nativeElement.click();
           this.getPostData();
           this.PostComment = '';
         }
@@ -370,10 +372,15 @@ export class ForumThreadPage implements OnInit {
     }
   }
 
+
+  closePost(){
+
+  }
   post(item) {
     if (this.isLoggedIn) {
       this.service.submitPost({ POST: this.posttext, UserId: item.userID, ParentPostID: item.ReplyPostID }).subscribe(res => {
         if (res) {
+          this.postModal.nativeElement.click();
           this.reploadpage();
         }
       })
@@ -431,6 +438,7 @@ export class ForumThreadPage implements OnInit {
       }
       this.service.submitPost({ POST: this.PostComment, UserId: this.userID, ParentPostID: parentPostId }).subscribe(res => {
         if (res) {
+          this.postModal.nativeElement.click();
           this.isEditComment = false;
           this.isReportPost = false;
           this.PostComment = '';
