@@ -353,8 +353,10 @@ export class AdultDashboardPage implements OnInit {
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
         console.log(res)
-        if(res[0]['ModuleId']=75) res[0]['screenno']= res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
-
+        if(res[0]['ModuleId']==75)
+        { 
+          res[0]['screenno']= res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
+        }
         this.resumeLastvisited = res;
       });
   }
