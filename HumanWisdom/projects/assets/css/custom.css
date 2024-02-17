@@ -29979,7 +29979,7 @@ svg path
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
   text-align: center;
   height: 50px;
   margin-right: 0;
@@ -36395,5 +36395,21 @@ section > .row
 .panel_levels .panel:last-child
 {
   margin-bottom: 0 !important;
+}
+
+a.fc_e58d82:focus, 
+a.fc_e58d82:hover 
+{
+  color: #e58d82;
+}
+
+.profile_pe_div_01
+{
+  text-align: center;
+  padding: 20px;
+  background: #120F40;
+  border: 0;
+  border-radius: 12px;
+  height: auto;
 }
 /* /version - 03 */
