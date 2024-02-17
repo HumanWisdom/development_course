@@ -9,7 +9,7 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col dmain_container p0_important" role="main" [ngClass]="[getEnableBanner() ? 'pt12rem' : 'pt6rem']">
+<div class="right_col dmain_container p0_important" role="main" [ngClass]="[getEnableBanner() ? 'cpt_rem_01' : 'pt6rem']">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex safari_dflex">
@@ -163,9 +163,17 @@
             <!-- /accordion -->
             <!-- /daily practice -->
 
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
             <!-- explore a topic in depth-for guest user -->
             <div class="row" *ngIf="YourTopicofChoice.length === 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="prelative box_v3_01"   (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" >
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
@@ -192,15 +200,15 @@
 
             <!-- your topic of choice -->
             <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="prelative box_v3_01" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                       <!--  <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
                           Your topic of choice:
-                        </h4> -->
+                        </h4>
 
                         <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
                           {{YourTopicofChoice[0]['name']}}
@@ -1219,8 +1227,23 @@
 
               </div>
             </div>
-
             <!-- /testimonials -->
+
+            <!-- partnership button -->
+            <div class="row mt30px" >
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="" routerLink="/partnership-webpage">
+                  <div class="row btn_tff">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        Explore the partnership program
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /partnership button -->
             <div class="pagebreak"></div>
 
           </div>
