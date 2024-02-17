@@ -29,7 +29,7 @@ export class AudioHeaderComponent implements OnInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   urlT: any
   shared = false
-  token = JSON.parse(localStorage.getItem("token"))
+  token = localStorage.getItem("shareToken")
   socialShare = false
   address: any;
   scrNumber: any
@@ -171,7 +171,7 @@ export class AudioHeaderComponent implements OnInit {
     }
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
     })

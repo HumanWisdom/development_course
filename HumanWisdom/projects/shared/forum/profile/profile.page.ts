@@ -25,7 +25,7 @@ export class ProfilePage implements OnInit {
   path = '';
   posts = [];
   selectIndex = 0;
-  token = '';
+  token = localStorage.getItem("shareToken");
   urlT: any
   address: any;
   isLoggedIn: boolean = false;
@@ -73,7 +73,7 @@ export class ProfilePage implements OnInit {
     this.getAllPosts(2, this.userId);
   }
 
-  
+
   shareOnThread(item){
     if(environment.production){
       this.path = "https://humanwisdom.me/forum/forum-thread/"+item.PostID;
@@ -82,7 +82,7 @@ export class ProfilePage implements OnInit {
     }
   this.ngNavigatorShareService.share({
     title: 'HappierMe Program',
-    text: 'Hey, check out the HappierMe Program',
+    text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
     url: this.path
   }).then((response) => {
     console.log(response);
@@ -105,7 +105,7 @@ export class ProfilePage implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -211,7 +211,7 @@ export class ProfilePage implements OnInit {
     }
   }
 
-  
+
   postnavigate(item) {
     this.forumService.postdataSource.next(item);
     this.router.navigateByUrl('/forum/forum-thread',{ state: { programType: this.programType }});
