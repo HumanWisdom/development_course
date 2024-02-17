@@ -214,6 +214,7 @@ export class ProfilePage implements OnInit {
 
   postnavigate(item) {
     this.forumService.postdataSource.next(item);
-    this.router.navigateByUrl('/forum/forum-thread',{ state: { programType: this.programType }});
+    this.router.navigateByUrl('/forum/forum-thread/'+item.PostID);
+    // this.router.navigateByUrl('/forum/forum-thread',{ state: { programType: this.programType }});
   }
 }

@@ -17,6 +17,8 @@ import { S28012Page } from './s28012/s28012.page';
 import { S28013Page } from './s28013/s28013.page';
 import { S28014Page } from './s28014/s28014.page';
 import { S28015Page } from './s28015/s28015.page';
+import { S28015p1Page } from './s28015p1/s28015p1.page';
+
 
 const routes: Routes = [
   {
@@ -110,6 +112,14 @@ const routes: Routes = [
     component: S28015Page,
     // data: { animation: 12 }
   },
+  {
+    path: 's28015p1',
+    canActivate: [ActiveGuard],
+    component: S28015p1Page,
+    // data: { animation: 12 }
+  },
+ 
+
 ];
 
 @NgModule({

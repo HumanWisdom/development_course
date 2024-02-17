@@ -42,6 +42,8 @@ export class AudioHeaderComponent implements OnInit {
   guest = false;
   Subscriber = false;
   enableAlert = false;
+  content = '';
+  enablecancel = false;
 
   constructor(private router: Router,
     private service: AdultsService, public platform: Platform,
@@ -147,12 +149,18 @@ export class AudioHeaderComponent implements OnInit {
       "Notes": this.note,
       "UserId": this.userId
 
-    }).subscribe((res) => { },
+    }).subscribe((res) => {
+      this.content = 'Note has been successfully saved to diary';
+      this.enablecancel = false;
+      this.enableAlert = true;
+     },
       error => {
         console.log(error)
       },
       () => {
-
+        this.content = 'Note has been successfully saved to diary';
+        this.enablecancel = false;
+        this.enableAlert = true;
       })
   }
 

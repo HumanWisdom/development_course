@@ -19645,19 +19645,18 @@ input{
 
 .subscribe_select1
 {
-  background: #EBEBEB;
+  background: #292D56;
   border-radius: 5px;
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
-  color: #5D5D5D;
+  line-height: 150%;
+  color: #FFF;
   border: 0;
   box-shadow: unset;
-  height: 25px;
-  padding: 2px 5px;
-  border-radius: 2px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  height: 26px;
+  width: 83px;
 }
 
 /* subscribe checkbox */
@@ -29980,7 +29979,7 @@ svg path
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
   text-align: center;
   height: 50px;
   margin-right: 0;
@@ -30411,12 +30410,17 @@ svg path
 
 .p_rc
 {
-  min-height: 50px;
+  min-height: 64px;
   height: auto;
   background: #120F40;
-  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
   padding: 20px;
-  letter-spacing: 0.1em;
+  letter-spacing: 2.4px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 150%;
+  color: #FFF;
 }
 
 .btn_jhwpp
@@ -30507,19 +30511,18 @@ svg path
 /* partnership report */
 .btn_pr_code
 {
-  height: 40px;
-  background: #FFC455;
-  border-radius: 5px;
-  margin: 0 10px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 140%;
-  /* identical to box height, or 21px */
+  box-shadow: unset;
+  border: 0;
+  margin: 0;
+  background: #FFF;
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #E58D82;
   text-align: center;
   letter-spacing: 0.1em;
-  color: #000000;
 }
 
 .pr_ab_wd
@@ -33996,7 +33999,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v3_modal_posted_successfully
 {
   width: 335px;
-  height: 204px;
+  height: 275px;
   border-radius: 8px;
   background: #424675;
   padding: 24px;
@@ -36307,5 +36310,106 @@ section > .row
   border-radius: 16px;
   background: #120F40;
   padding: 16px;
+}
+
+.box_blue_01
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 20px;
+}
+
+.vertical_line_01 
+{
+  border-right: 1px solid rgba(255,255,255,.1);
+  height: 50px;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.row_vp .row
+{
+  margin-bottom: 20px;
+}
+
+.row_vp .row:last-child
+{
+  margin-bottom: 0 !important;
+}
+
+.btn_pdownload_pdf 
+{
+  height: 43px;
+  width: 100%;
+  margin: 0;
+  box-shadow: unset;
+  border-radius: 100px;
+  background: #E58D82;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_rip 
+{
+  border: 0;
+  margin: 0;
+  box-shadow: unset;
+  border-radius: 8px;
+  background: #FFF;
+  padding: 5px 14px;
+  height: 32px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #E58D82;
+}
+
+.div_copy_01 
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  left: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.panel_levels .panel
+{
+  margin-bottom: 20px;
+}
+
+.panel_levels .panel:last-child
+{
+  margin-bottom: 0 !important;
+}
+
+a.fc_e58d82:focus, 
+a.fc_e58d82:hover 
+{
+  color: #e58d82;
+}
+
+.profile_pe_div_01
+{
+  text-align: center;
+  padding: 20px;
+  background: #120F40;
+  border: 0;
+  border-radius: 12px;
+  height: auto;
 }
 /* /version - 03 */
