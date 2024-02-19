@@ -31,7 +31,7 @@ export class ForumLandingPage implements OnInit {
   replyflag = false;
   selectthread;
   searchText = '';
-  
+
   path = '';
   posts = [];
   selectIndex = 0;
@@ -114,10 +114,10 @@ export class ForumLandingPage implements OnInit {
       });
     this.UserID = localStorage.getItem('userId');
     console.log(this.UserID);
-    this.token = JSON.parse(localStorage.getItem("token"));
+    this.token = localStorage.getItem("shareToken");
     this.address = this.router.url;
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
-    
+
     this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     this.categoryList = this.serivce.GetTagList();
   }
@@ -252,7 +252,7 @@ export class ForumLandingPage implements OnInit {
     this.serivce.postdataSource.next(item);
     this.router.navigateByUrl('/forum/forum-thread/'+item.PostID);
   }
- 
+
   onFocusOutEvent(){
     if(this.searchInput==''){
        this.getAllRecords();
@@ -273,7 +273,7 @@ export class ForumLandingPage implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -294,7 +294,7 @@ export class ForumLandingPage implements OnInit {
     this.serivce.getposts(this.selectthread, null, this.UserID).subscribe((res) => {
       if (res) {
        this.posts=this.serivce.FormatForumPostData(res);
-      
+
       }
     });
   }
@@ -326,7 +326,7 @@ export class ForumLandingPage implements OnInit {
   DisabledComment(item){
     return SharedService.DisabledComment(item);
   }
- 
+
 
   filterBasedOnTags(tagId){
     const data = this.categoryList.filter(x=>x.value==tagId);
@@ -340,7 +340,7 @@ export class ForumLandingPage implements OnInit {
       if (res) {
         const filteredData = res.filter(x=>parseInt(x.TagIds) == tagId);
       this.posts =  this.serivce.FormatForumPostData(filteredData);
-    
+
       }
     });
   }
@@ -359,7 +359,7 @@ export class ForumLandingPage implements OnInit {
       this.closeCategoryModal();
     }, 100);
   }
-  
+
 
   share() {
 
@@ -379,7 +379,7 @@ export class ForumLandingPage implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -389,7 +389,7 @@ export class ForumLandingPage implements OnInit {
       });
   }
   onEnterKey(event: Event): void {
-    event.preventDefault(); 
+    event.preventDefault();
     this.onFocusOutEvent();
   }
 
@@ -406,7 +406,7 @@ export class ForumLandingPage implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -630,7 +630,7 @@ export class ForumLandingPage implements OnInit {
     this.closepopup.nativeElement.click();
     this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
-  
+
   getAlertcloseEvent($event) {
     if ($event == 'cancel') {
       this.enableAlert = false;
@@ -664,7 +664,7 @@ export class ForumLandingPage implements OnInit {
   callEditPost(item,index){
     this.posts[index].isEditPost = true;
   }
- 
+
   startNewThread(tagId){
     if(this.isLoggedIn){
       localStorage.setItem('tagId',tagId);

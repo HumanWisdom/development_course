@@ -137,6 +137,7 @@ import { S61110Page } from './s61110/s61110.page'; 
 import { S61111Page } from './s61111/s61111.page';  
 import { S61112Page } from './s61112/s61112.page';  
 import { S61113Page } from './s61113/s61113.page';  
+import { S61113p1Page } from './s61113p1/s61113p1.page';  
 
 import { LonelinessRoutingModule } from './loneliness-routing.module';
 
@@ -274,6 +275,7 @@ import { LonelinessRoutingModule } from './loneliness-routing.module';
     S61111Page ,
     S61112Page ,
     S61113Page ,
+    S61113p1Page ,
   ],
   imports: [
     CommonModule,

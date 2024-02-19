@@ -94,10 +94,10 @@ export class WisdomShortsIndexPage implements OnInit {
     let id = video.split("/")[3].split(".")[1]
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
-        this.router.navigate([video, title])
+        this.router.navigate([video, 'T', title])
       } else {
         if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          this.router.navigate([video, title])
+          this.router.navigate([video, 'T',title])
         } else {
           this.router.navigate(['/subscription/start-your-free-trial']);
         }
