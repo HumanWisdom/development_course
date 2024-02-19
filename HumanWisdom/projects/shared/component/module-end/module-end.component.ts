@@ -26,7 +26,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   @Input() toc: string;
   @Input() moduleId: any;
   qrList: any
-  token = JSON.parse(localStorage.getItem("token"))
+  token = localStorage.getItem("shareToken")
   socialShare = false
   shareUrl: any
   userId: any
@@ -126,7 +126,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.shareUrl
     }).then((response) => {
       console.log(response);
