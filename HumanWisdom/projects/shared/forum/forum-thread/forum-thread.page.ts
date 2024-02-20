@@ -63,7 +63,7 @@ export class ForumThreadPage implements OnInit {
   isReportPost = false;
   constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService,) {
     this.userID = localStorage.getItem('userId');
-    this.token = JSON.parse(localStorage.getItem("token"));
+    this.token = localStorage.getItem("shareToken");
     this.sharedPostId = this.activateRoute.snapshot.paramMap.get('sharedPostId');
     this.address = this.router.url;
     this.UserName = localStorage.getItem('name');
@@ -337,7 +337,7 @@ export class ForumThreadPage implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -410,7 +410,7 @@ export class ForumThreadPage implements OnInit {
   }
 
 
-  
+
   follow(item) {
     if (this.isLoggedIn) {
       this.service.followPost({ PostID: item.PostID, UserID: this.userID }).subscribe(res => {

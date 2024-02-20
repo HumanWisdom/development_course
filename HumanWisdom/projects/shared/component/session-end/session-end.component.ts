@@ -17,7 +17,7 @@ export class SessionEndComponent implements OnInit {
   @Input() progressText: string;
   @Input() toc: string;
   @Input() bg: string;
-  token = JSON.parse(localStorage.getItem("token"))
+  token = localStorage.getItem("shareToken")
   socialShare = false
   shareUrl: any
 
@@ -45,7 +45,7 @@ export class SessionEndComponent implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.shareUrl
     }).then((response) => {
       console.log(response);

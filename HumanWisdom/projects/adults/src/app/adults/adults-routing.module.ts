@@ -351,7 +351,7 @@ const routes: Routes = [
     component: S3VideoComponent
   },
   {
-    path: 'wisdom-shorts/:videolink/:title',
+    path: 'wisdom-shorts/:videolink/:enable/:title',
     canActivate:[AudioVideoGuard],
     component: S3VideoComponent
   },
