@@ -251,6 +251,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       this.content = 'To become a Partner you will need to Complete Registration and login?';
       this.enablebecomepartner = true;
       this.enableAlert = true;
+      this.router.navigate(["/onboarding/login"]);
     } else {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
