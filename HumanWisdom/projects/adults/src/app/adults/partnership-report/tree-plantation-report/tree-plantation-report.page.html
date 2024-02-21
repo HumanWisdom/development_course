@@ -20,7 +20,7 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01"  id="TreeReport" *ngIf="partnershipReport">
+<div class="right_col mc_01"  id="TreeReport" *ngIf="partnershipReport && partnershipReport!=null">
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" id="partnershipReport" >
@@ -42,9 +42,9 @@
                             </h4>
                           </div>
 
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <button type="button" class="btn_pr_code">
-                              {{this.partnershipReport.AffRefCode}}
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="copyText(partnershipReport.AffRefCode)">
+                            <button type="button" class="btn_pr_code" title="{{getTittle()}}">
+                              {{this.partnershipReport?.AffRefCode}}
                             </button>
                           </div>
                         </div>
@@ -94,7 +94,7 @@
                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.AffReport.length>0">
+                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length>0">
                           Tree plantation report
                         </h4>
 
@@ -106,7 +106,7 @@
                   </div>
 
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                    <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                    <div class="row" *ngIf="partnershipReport?.PartnerCount>0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <a (click)="redirectToMyPartnership()" class="">
                           <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 tright">
@@ -121,10 +121,10 @@
               </div>
               <!-- /income activity -->
 
-              <ng-container *ngIf="partnershipReport.AffReport!=null">
+              <ng-container *ngIf="partnershipReport?.AffReport!=null">
                 <!-- trees -->
                 <div class="row_vp mt20px">
-                  <ng-container *ngFor="let item of partnershipReport.AffReport">
+                  <ng-container *ngFor="let item of partnershipReport?.AffReport">
                     <!-- partners -->
                     <div class="row box_blue_01">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -159,7 +159,7 @@
                 <!-- /trees -->
 
                 <!-- total trees planted -->
-                <div class="row mt20px" *ngIf="partnershipReport.AffReport.length>0">
+                <div class="row mt20px" *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length>0">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <a class="prelative">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
@@ -190,7 +190,7 @@
                 <!-- /total trees planted -->
 
                 <!-- download pdf -->
-                <div class="row mt20px" *ngIf="!isPdfDownloading && partnershipReport.AffReport.length>0">
+                <div class="row mt20px" *ngIf="!isPdfDownloading && partnershipReport.AffReport && partnershipReport.AffReport.length>0">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt="" class="img-responsive mr10px">
@@ -267,7 +267,7 @@
               <div class="row mt20px" *ngIf="!isPdfDownloading">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                    If you wish to switch your partnership benefits, and have a tree planted for every subscription instead of receiving an income , do write to us at
+                   If you wish to switch your partnership benefits, and received for every subscription instead of  a tree planted.
                     <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto: team@happierme.app">
                       team@happierme.app
                     </a>

@@ -15,7 +15,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class TreePlantationReportPage implements OnInit {
 
-  partnershipReport:any;
+  partnershipReport:{
+
+  };
   groupedDates = [];
   currentDate=new Date();
   years:any=[];
@@ -30,6 +32,14 @@ export class TreePlantationReportPage implements OnInit {
  
  constructor(  private sanitizer: DomSanitizer,public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location:Location) { 
  this.iframeSrc=this.sanitizer.bypassSecurityTrustUrl(this.value);
+}
+
+getTittle(){
+  if(this.isCopy){
+    return 'Copy';
+  }else{
+    return 'Copied';
+  }
 }
 
  ngOnInit() {
