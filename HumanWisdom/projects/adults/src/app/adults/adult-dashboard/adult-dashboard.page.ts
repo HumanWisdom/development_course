@@ -4110,4 +4110,59 @@ export class AdultDashboardPage implements OnInit {
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
+
+  clearSearch() {
+    this.searchinp = "";
+    this.searchResult = [];
+  }
+
+  getinp(event) {
+    let url = `/adults/site-search/${this.searchinp}`
+    this.router.navigate([url])
+  }
+
+  searchEvent(module) {
+    this.logeventservice.logEvent("click_search");
+    this.searchinp = module;
+    this.searchResult = [];
+    this.getinp(module);
+  }
+
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  getModuleList(isLoad?) {
+    this.service.getModuleList().subscribe(res => {
+      this.moduleList = res;
+      if (isLoad) {
+        if (this.searchinp == '') {
+          this.searchResult = this.moduleList;
+        } else {
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
+    })
+  }
 }
