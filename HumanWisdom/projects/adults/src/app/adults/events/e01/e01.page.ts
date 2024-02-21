@@ -20,6 +20,8 @@ export class E01Page implements OnInit {
   emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
   content = '';
   enableAlert = false;
+  isdcode:any = '';
+  phoneno:any = '';
 
   constructor(private service: AdultsService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -62,7 +64,9 @@ export class E01Page implements OnInit {
     let obj = {
       "EventsID": this.eventID,
       "Name": this.name,
-      "EmailID": this.email
+      "EmailID": this.email,
+      "ISD_Code": this.isdcode,
+      "Mobile_No": this.phoneno
     }
     this.service.registerevent(obj).subscribe((res) => {
       // alert(res);
@@ -70,6 +74,8 @@ export class E01Page implements OnInit {
       this.enableAlert = true;
       this.name = '';
       this.email = '';
+      this.phoneno = '';
+      this.isdcode = '';
     },
       (error) => {
         this.content = error;
