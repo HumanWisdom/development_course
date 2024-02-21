@@ -125,6 +125,20 @@ export class BeHappierPage implements OnInit {
     }
   }
 
+  enableViewLes(type) {
+    if(type==='pathway') {
+      this.enablepathwayViewMore = true;
+    }else if(type === 'lifestories'){
+      this.enablelifestoriesViewMore = true;
+    }else if(type === 'guidedQues') {
+      this.enableGuidedQuesViewMore = true
+    }else if(type === 'podcast') {
+      this.enablePodcastViewMore = true
+    }else if(type === 'guidedMedidation') {
+      this.enableGuidedMediViewMore = true
+    }
+  }
+
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);

@@ -420,6 +420,16 @@
                   </div>
                 </div>
               </a>
+
+              <a (click)="enableViewLes('pathway')" *ngIf="!enablepathwayViewMore">
+                <div class="row mt30px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                      View Less
+                    </h4>
+                  </div>
+                </div>
+              </a>
               <!-- /go to pathway -->
 
               <!-- hr -->
@@ -561,6 +571,16 @@
                             </div>
                           </a>
 
+                          <a (click)="enableViewLes('lifestories')" *ngIf="!enablelifestoriesViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  View Less
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
+
                         </div>
                       </div>
                     </div>
@@ -676,6 +696,17 @@
                             </div>
                           </div>
                         </a>
+
+                        <a (click)="enableViewLes('guidedQues')" *ngIf="!enableGuidedQuesViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                View Less
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
 
                       </div>
                     </div>
@@ -1169,6 +1200,17 @@
                           </div>
                         </a>
 
+
+                        <a (click)="enableViewLes('podcast')" *ngIf="!enablePodcastViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                View Less
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
                       </div>
                     </div>
                   </div>
@@ -1495,6 +1537,17 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
                                 View More
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
+
+                        <a (click)="enableViewLes('guidedMedidation')" *ngIf="!enableGuidedMediViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                View Less
                               </h4>
                             </div>
                           </div>
