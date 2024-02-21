@@ -11,11 +11,11 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ["./payment-bank.page.scss"],
 })
 export class PaymentBankPage implements OnInit {
-  LinkBankAccount: string = "linkAccount";
+  LinkBankAccount: string = "";
   countryList: any;
   paymentBank: any;
   PlaceHolderRouter: string = 'IBAN / SWIFT';
-  isBankAccountChecked: boolean = false;
+  isBankAccountChecked: boolean;
   isUpdate: boolean = false;
   ByPaypal: number = 0;
   isPaypalChecked: boolean = false;

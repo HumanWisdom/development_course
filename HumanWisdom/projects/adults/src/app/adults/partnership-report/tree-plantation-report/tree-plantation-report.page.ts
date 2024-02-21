@@ -67,7 +67,6 @@ getTittle(){
   setTimeout(() => {
     let DATA: any = document.getElementById("partnershipReport");
     html2canvas(DATA).then((canvas) => {
-
       const imgData = canvas.toDataURL("image/jpeg") 
       const pdf = new jsPDF("p","mm","a5");
       const imageProps = pdf.getImageProperties(imgData)
@@ -75,6 +74,7 @@ getTittle(){
       const test = pdf.internal.pageSize.getHeight()
       const pdfh = (imageProps.height * pdfw) / imageProps.width
       pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
+      pdf.addPage();
       pdf.save("tree-plantation-report.pdf");
     
     });
