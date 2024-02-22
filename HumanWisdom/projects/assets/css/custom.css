@@ -14657,7 +14657,8 @@ input[type="number"] {
 .progress-bar
 {
   /* background: linear-gradient(90deg, #FFC455 131.91%, #E69B5A 157.31%); */
-  background: #E8A880;
+  /* background: #E8A880; */
+  background: #E58D82;
   box-shadow: 1px 0px 2px rgb(0 0 0 / 25%);
   /* border-radius: 0 5px 5px 0; */
   border-radius: 0;
@@ -15878,11 +15879,13 @@ input[type="search"].dark::-webkit-search-cancel-button {
   bottom: 0px;
   right: 0px;
   left: 0px;
-  height: 10px;
+  /* height: 10px; */
+  height: 6px;
   margin-bottom: 0;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 6px 6px;
   box-shadow: unset;
-  background: rgba(255,255,255,0.1);
+  /* background: rgba(255,255,255,0.1); */
+  background: rgba(255,255,255,0.2);
 }
 
 .dprogress .progress-bar
