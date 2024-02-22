@@ -7,7 +7,7 @@ import { NgNavigatorShareService } from "ng-navigator-share";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
-import jspdf from "jspdf";
+
 @Component({
   selector: "app-income-report",
   templateUrl: "./income-report.page.html",
