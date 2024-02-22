@@ -176,4 +176,14 @@ export class IncomePartnerPage implements OnInit {
   alert(){
     window.alert('hi');
   }
+
+   
+  getTittle(){
+    if(this.isCopy){
+      return 'Copy';
+    }else{
+      return 'Copied';
+    }
+  }
+
 }

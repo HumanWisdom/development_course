@@ -2,10 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import html2pdf from "html2pdf.js";
 import { NgNavigatorShareService } from "ng-navigator-share";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
+import html2canvas from "html2canvas";
 @Component({
   selector: "app-income-activity",
   templateUrl: "./income-activity.page.html",
@@ -38,6 +39,14 @@ export class IncomeActivityPage implements OnInit {
       }
     });
   }
+  getTittle(){
+    if(this.isCopy){
+      return 'Copy';
+    }else{
+      return 'Copied';
+    }
+  }
+
   getMaskAccountDetails() {
     this.BankDet =
     "XXXXXXX " +
@@ -72,20 +81,34 @@ export class IncomeActivityPage implements OnInit {
 
   DownloadPdf() {
     this.isPdfDownloading=true;
+    const html = document.getElementById('partnershipReport');
      setTimeout(() => {
-       let DATA: any = document.getElementById("partnershipReport");
-       html2canvas(DATA).then((canvas) => {
-         const imgData = canvas.toDataURL("image/jpeg")
-    
-         const pdf = new jsPDF("p","mm","a5");
-         const imageProps = pdf.getImageProperties(imgData)
-         const pdfw = pdf.internal.pageSize.getWidth()
-         const pdfh = pdf.internal.pageSize.getHeight()
-         pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh)
-         pdf.save("partnership-report.pdf");
-       
-       });
-       this.isPdfDownloading=false;
+      html2canvas(html).then((canvas) => {
+        const imgData = canvas.toDataURL("image/jpeg") 
+        const pdf = new jsPDF("p","mm","a5");
+        const imageProps = pdf.getImageProperties(imgData)
+        const pdfw = pdf.internal.pageSize.getWidth()
+        const test = pdf.internal.pageSize.getHeight()
+        const pdfh = (imageProps.height * pdfw) / imageProps.width
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
+        pdf.save("tree-plantation-report.pdf");
+      
+      });
+    //     // Detect screen resolution
+    // const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    // const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    //   const options = {
+    //     margin: [0,0 , 0, 0],
+    //     filename: 'Partnership-report.pdf',
+    //     image: { type: 'jpeg', quality: 0.98 },
+    //     html2canvas: { scale:  2},
+    //     jsPDF: { unit: 'mm',format: [screenWidth*0.5, screenHeight *  0.5], orientation: 'portrait', }
+    //   };
+  
+    //   html2pdf(html, options);
+    //    this.isPdfDownloading=false;
      }, 500);
  }
 
