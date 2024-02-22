@@ -2,11 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import jsPDF from "jspdf";
-import html2pdf from "html2pdf.js";
 import { NgNavigatorShareService } from "ng-navigator-share";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
 import html2canvas from "html2canvas";
+
 @Component({
   selector: "app-income-activity",
   templateUrl: "./income-activity.page.html",
