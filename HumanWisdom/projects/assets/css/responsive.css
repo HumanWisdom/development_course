@@ -1113,6 +1113,11 @@
         top: 0;
         overflow: auto;
     }
+
+    #modal_cookie .lab-modal-body
+    {
+        top: unset !important;
+    }
 }
 
 @media (max-width: 300px)

@@ -27,6 +27,13 @@ export class OvercomeStressAnxietyPage implements OnInit {
   Subscriber = false;
   mediaUrl: any;
   isSubscriber = false;
+  enablepathwayViewMore = true;
+  enablelifestoriesViewMore = true;
+  enableGuidedQuesViewMore = true;
+  enablePodcastViewMore = true;
+  enableGuidedMediViewMore = true;
+  enablefbnViewMore = true;
+  enableblogViewMore = true;
 
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
@@ -98,6 +105,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
+  /*
   toRead(obj) {
     localStorage.setItem("story", JSON.stringify(obj))
     let res = localStorage.getItem("isloggedin");
@@ -111,6 +119,12 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${this.sId}` } })
     }
 
+  }
+  */
+
+  toRead(obj) {
+    let sId = obj;
+    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -506,6 +520,42 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
        this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    }
+  }
+
+  enableViewMore(type) {
+    if(type==='pathway') {
+      this.enablepathwayViewMore = false;
+    }else if(type === 'lifestories'){
+      this.enablelifestoriesViewMore = false;
+    }else if(type === 'guidedQues') {
+      this.enableGuidedQuesViewMore = false
+    }else if(type === 'podcast') {
+      this.enablePodcastViewMore = false
+    }else if(type === 'guidedMedidation') {
+      this.enableGuidedMediViewMore = false
+    }else if(type === 'fbn') {
+      this.enablefbnViewMore = false
+    }else if(type === 'blog') {
+      this.enableblogViewMore = false
+    }
+  }
+
+  enableViewLess(type) {
+    if(type==='pathway') {
+      this.enablepathwayViewMore = true;
+    }else if(type === 'lifestories'){
+      this.enablelifestoriesViewMore = true;
+    }else if(type === 'guidedQues') {
+      this.enableGuidedQuesViewMore = true
+    }else if(type === 'podcast') {
+      this.enablePodcastViewMore = true
+    }else if(type === 'guidedMedidation') {
+      this.enableGuidedMediViewMore = true
+    }else if(type === 'fbn') {
+      this.enablefbnViewMore = true
+    }else if(type === 'blog') {
+      this.enableblogViewMore = true
     }
   }
 }
