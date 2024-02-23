@@ -24,7 +24,10 @@ export class IncomePartnerPage implements OnInit {
    expandedUserId=0;
    footerOption:string='Receive Income';
    opositefooter:string ='planting trees';
+   hasIncome=false;
    partnerOption=localStorage.getItem('PartnerOption');
+ 
+
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -63,6 +66,11 @@ export class IncomePartnerPage implements OnInit {
   this.adultService.GetPartnerCommReport().subscribe((res) => {
     if (res) {
       this.partnershipReport = res;
+      if(this.partnershipReport.IncomeActivity.length>0)
+      {
+        this.hasIncome=true;
+
+      }
       this.getMaskAccountDetails();
       this.adultService.GetMyPartners().subscribe((res) => {
         if (res) {
@@ -165,6 +173,7 @@ export class IncomePartnerPage implements OnInit {
     if(this.partnershipReport.IncomeActivity.length>0){
       this.router.navigate(['adults/partnership-report/income-report'])
     }
+    
   }
   redirectToTreeReport(){
     this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
@@ -176,4 +185,14 @@ export class IncomePartnerPage implements OnInit {
   alert(){
     window.alert('hi');
   }
+
+   
+  getTittle(){
+    if(this.isCopy){
+      return 'Copy';
+    }else{
+      return 'Copied';
+    }
+  }
+
 }

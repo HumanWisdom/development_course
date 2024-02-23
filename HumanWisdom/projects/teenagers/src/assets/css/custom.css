@@ -11354,7 +11354,7 @@ body,
 {
   height: 100% !important;
   overflow: auto;
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 16px;
   border: 0 !important;
   padding: 16px !important;
@@ -15951,7 +15951,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   box-shadow: unset;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px !important;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
   font-size: 15px;
   font-weight: 500;
@@ -19200,7 +19200,7 @@ circle-progress circle
   bottom: 0;
   left: 10px;
   /* background: linear-gradient(180deg, rgba(36, 57, 73, 0) 0%, #243949 100%); */
-  background: linear-gradient(180deg, rgba(18, 15, 64, 0.00) 0%, #120F40 100%);
+  background: linear-gradient(180deg, rgba(18, 15, 64, 0.00) 0%, #0C2B5F 100%);
   mix-blend-mode: multiply;
   opacity: 0.75;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -19460,7 +19460,7 @@ share-buttons button
 .bluediv
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 12px;
 }
 
@@ -19796,7 +19796,7 @@ input{
 .active_programs
 {
   padding: 15px 20px;
-  background: #120F40;
+  background: #0C2B5F;
   height: 40px;
   display: flex;
   align-items: center;
@@ -21421,7 +21421,7 @@ and (orientation : portrait)
   /* background: #ffffff;
   border-bottom: 1px solid #ADADAD; */
   border-radius: 10px;
-  background: #120F40;
+  background: #0C2B5F;
 }
 
 .mb30px
@@ -21882,7 +21882,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
 
 .raf_div_01
 {
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 16px;
   padding: 20px;
 }
@@ -21993,7 +21993,7 @@ ul.dh_ul li:last-child
   margin: 0 -32px; */
   border: 0;
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
 }
 
 .login_signup_tab>li
@@ -22167,7 +22167,7 @@ ul.dh_ul li:last-child
   border: 0;
   margin: 0;
   height: 50px;
-  background: #120F40;
+  background: #0C2B5F;
   box-shadow: 1px 1px 2px #00000040;
   border-radius: 12px;
   width: 101px;
@@ -23759,7 +23759,7 @@ a
   line-height: 130%;
   color: #000000 !important;
   text-align: left; */
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -26277,7 +26277,7 @@ h1
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
@@ -27121,7 +27121,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 .pfy_search
 {
   /* background: #EBEBEB; */
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -28898,7 +28898,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   margin: 0 0 15px 0;
-  background: #120F40;
+  background: #0C2B5F;
   /* box-shadow: 4px 0px 10px 4px rgb(0 0 0 / 10%); */
   box-shadow: unset;
 }
@@ -29090,7 +29090,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   bottom: 0;
   /* background: rgba(255,255,255,1);
   box-shadow: 0px -1px 2px rgb(0 0 0 / 20%); */
-  background: #424675;
+  background: #4267A5;
   box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -29916,7 +29916,7 @@ svg path
 .pt1
 {
   /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   height: 289px;
@@ -30215,7 +30215,7 @@ svg path
   justify-content: center; */
   margin: 32px 10px;
   height: 147px;
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 16px;
   padding: 20px;
   display: flex;
@@ -30309,7 +30309,7 @@ svg path
 
 .pp_box
 {
-  background: #120F40;
+  background: #0C2B5F;
   /* box-shadow: 0px 0px 10px rgb(0 0 0 / 20%); */
   box-shadow: unset;
   border-radius: 12px;
@@ -30319,7 +30319,7 @@ svg path
 
 .ptreesisters_desc
 {
-  background: #120F40;
+  background: #0C2B5F;
   /* opacity: 0.9; */
   border-radius: 16px;
   padding: 24px;
@@ -30387,7 +30387,7 @@ svg path
 {
   min-height: 50px;
   height: auto;
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 16px;
   padding: 20px;
   letter-spacing: 0.1em;
@@ -31112,7 +31112,7 @@ svg path
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  color: #120F40;
+  color: #0C2B5F;
   margin-bottom:  20px;
 }
 
@@ -32466,7 +32466,7 @@ body *
 .box_v3_03
 {
   height: 412px;
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   padding: 15px !important;
@@ -32495,7 +32495,7 @@ body *
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body.aepanel
 {
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid #384079;
   border-radius: 12px;
   padding: 0 0 20px 0 !important;
@@ -32504,7 +32504,7 @@ body *
 
 .v3_btn_subscribe_premium
 {
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 5px;
   padding: 0;
@@ -32606,7 +32606,7 @@ body *
 .tn_title_back
 {
   height: 80px;
-  background: #292D56;
+  background: #183C79;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
@@ -32623,7 +32623,7 @@ body *
 .div_fbn a .row
 {
   height: 60px;
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   display: flex;
@@ -32804,7 +32804,7 @@ body *
   border: 0;
   box-shadow: unset;
   margin: 0;
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   display: flex;
@@ -32885,7 +32885,7 @@ body *
 .box_v3_04b
 {
   height: 210px;
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   padding: 15px !important;
@@ -32924,7 +32924,7 @@ body *
 
 .box_v3_05
 {
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   padding: 20px !important;
@@ -32994,7 +32994,7 @@ body *
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 15px !important;
   margin-bottom: 10px;
 }
@@ -33019,7 +33019,7 @@ body *
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
 }
 
 .box_v3_07 .div_gm
@@ -33125,7 +33125,7 @@ body *
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
   position: fixed; */
   height: 80px;
-  background: #292D56;
+  background: #183C79;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 0;
@@ -33159,7 +33159,7 @@ body *
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
   padding: 20px;
@@ -33174,7 +33174,7 @@ body *
 .box_v3_04a
 {
   height: 173px;
-  background: #120F40;
+  background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   padding: 15px !important;
@@ -33319,7 +33319,7 @@ body *
 .div_fq a .row
 {
   height: auto;
-  background: #120F40;
+  background: #0C2B5F;
   border: 0;
   border-radius: 12px;
   display: flex;
@@ -33343,7 +33343,7 @@ body *
 {
   border-radius: 12px;
   border: 0;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 15px !important;
   margin-bottom: 10px;
 }
@@ -33499,7 +33499,7 @@ body *
 {
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.10);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px 16px;
   margin: 0;
   margin: 0 5px;
@@ -33510,7 +33510,7 @@ body *
 {
   border-radius: 16px;
   border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
@@ -33525,7 +33525,7 @@ body *
 {
   border-radius: 12px;
   border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
@@ -33640,7 +33640,7 @@ body *
 {
   border-bottom: 0;
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 8px;
 }
 
@@ -33684,7 +33684,7 @@ body *
 .div_tv
 {
   border-radius: 10px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 15px;
 }
 
@@ -33697,7 +33697,7 @@ body *
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 24px;
   margin-top: 30px;
 }
@@ -33839,7 +33839,7 @@ body *
   color: #FFF;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   width: 100%;
 }
 
@@ -33874,7 +33874,7 @@ body *
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
@@ -33924,7 +33924,7 @@ label
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 18px;
 }
 
@@ -34037,7 +34037,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .dropdown-menu::after 
 {
-  border-bottom: 8px solid #120F40;
+  border-bottom: 8px solid #0C2B5F;
   border-left: 9px solid rgba(0, 0, 0, 0);
   border-right: 9px solid rgba(0, 0, 0, 0);
   content: "";
@@ -34051,7 +34051,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .cfdm 
 {
   border-radius: 8px 8px;
-  background: #120F40;
+  background: #0C2B5F;
   border: 0;
   padding: 16px 12px;
   width: 100%;
@@ -34083,7 +34083,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
@@ -34206,7 +34206,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_hwp_premium
 {
   border-radius: 16px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 30px 20px;
 }
 
@@ -34221,14 +34221,14 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_annual 
 {
   border-radius: 0px 0px 16px 16px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
 .div_monthly 
 {
   border-radius: 16px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
@@ -34277,7 +34277,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 16px;
   border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;
@@ -34333,7 +34333,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 101px;
   height: 52px;
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   margin: 0;
   padding: 0;
   display: flex;
@@ -34388,7 +34388,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .subscription_box 
 {
   border-radius: 16px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
@@ -34547,7 +34547,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 16px;
   border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 24px;
   margin-bottom: 15px;
 }
@@ -34717,7 +34717,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: #120F40;
+  background: #0C2B5F;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -34762,7 +34762,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_pi a .row 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 15px;
   margin-bottom: 15px;
 }
@@ -34802,7 +34802,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .div_intro 
 {
-   background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
+   background: linear-gradient(180deg, #834B66 0%, #0C2B5F 100%);
 }
 
 .mt70px
@@ -34944,14 +34944,14 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_ls_01 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 16px
 }
 
 .div_is_01 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 12px;
   margin-bottom: 10px;
 }
@@ -34991,7 +34991,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: auto;
   height: 34px;
   border-radius: 360px;
-  background: #120F40;
+  background: #0C2B5F;
   margin-right: 8px;
   margin-bottom: 8px;
   font-size: 12px;
@@ -35008,7 +35008,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_ls_comments .row
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 12px;
   margin-bottom: 16px;
 }
@@ -35024,7 +35024,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
@@ -35066,7 +35066,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .blog_bg
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 16px;
   margin-bottom: 16px;
 }
@@ -35095,7 +35095,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
   padding: 12px;
@@ -35117,7 +35117,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v3_events_box_ue 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 16px;
   margin-bottom: 30px;
 }
@@ -35157,7 +35157,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_testimonial .row
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 16px;
   margin-bottom: 15px;
 }
@@ -35297,7 +35297,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 12px;
   border: 0;
-  background: #120F40;
+  background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
   padding: 20px;
@@ -35376,7 +35376,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   text-align: center;
   border-radius: 16px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
@@ -35487,7 +35487,7 @@ li ol > li:before {
   width: 100%;
   border-radius: 16px !important;
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #120F40;
+  background: #0C2B5F;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;
@@ -35733,7 +35733,7 @@ li ol > li:before {
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
   padding: 20px;
@@ -35815,7 +35815,7 @@ li ol > li:before {
 .btn_old .btn:hover,
 .btn_old .btn:focus
 {
-  background: #120F40;
+  background: #0C2B5F;
   color: #E58D82;
 }
 
@@ -35823,7 +35823,7 @@ li ol > li:before {
 {
   border-radius: 12px;
   border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
@@ -35831,7 +35831,7 @@ li ol > li:before {
 {
   border: 0;
   box-shadow: unset;
-  background: #120F40;
+  background: #0C2B5F;
   border-radius: 12px;
   padding: 20px;
 }
@@ -35839,7 +35839,7 @@ li ol > li:before {
 #cafe .panel-default>.panel-heading 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   box-shadow: unset;
   padding: 0;
 }
@@ -36077,14 +36077,14 @@ section > .row
 .div_pdollar
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 20px;
 }
 
 .chk_partnership_paytype
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   height: 56px !important;
   padding: 10px 16px;
   overflow: auto;

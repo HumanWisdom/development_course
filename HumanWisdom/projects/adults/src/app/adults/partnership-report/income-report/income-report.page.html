@@ -22,131 +22,132 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01" >				
-  <!-- Class -->
+<div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form id="partnershipReport">
 
-              <div class="row center_flex mt40px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <!-- partnership referral code -->
+              <div class="row mt20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="prelative">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
+                            <h4 class="mtb0px fs_16px fw_600 lh_140p fc_ffffff">
+                              Partnership Referral Code
+                            </h4>
+                          </div>
 
-                  <div class="row mb20px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <h4 class="fw_400 fs_12px lh_140p fc_5d5d5d mtb0px">
-                        Partnership Referral Code
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <button type="button" class="btn_pr_code" title="{{getTittle()}}" (click)="copyText(partnershipReport.AffRefCode)">
+                              {{this.partnershipReport.AffRefCode}}
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                          <a class="" (click)="share(partnershipReport.AffRefCode)">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_share.svg" class="img-responsive">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- /partnership referral code -->
+
+              <!-- profile -->
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
+                  <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" alt="" class="img-responsive border_profile_img">
+                </div>
+              </div>
+
+              <div class="pt1 profile_pe_div">
+                <div class="row mt35px mb5px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                      {{partnershipReport.AffName}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                      Lifetime earnings: ${{totalRevenu| number}}
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft" *ngIf="partnershipReport.ByPaypal==0">
+                        A/c # {{BankDet}}
                       </h4>
-                      <button type="button" class="btn btn_pr_code">
-                        {{this.partnershipReport.AffRefCode}}
-                      </button>
-                      <a class="" (click)="share(partnershipReport.AffRefCode)">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey_02.svg" alt="" class="p0"/>
+                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft" *ngIf="partnershipReport.ByPaypal==1">
+                        Paypal # {{BankDet}}
+                      </h4>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                      <a class="" (click)="ChangeAccountDetais()">
+                        <h4 class="mtb0px fs_15px fw_600 lh_18px fc_e58d82 ws_nowrap tright">
+                          Change
+                        </h4>
                       </a>
                     </div>
                   </div>
+                </div>
+              </div>
+              <!-- /profile -->
 
-                  <div class="row cmlr-10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="ws_hr mtb0px">
-                    </div>
-                  </div>
+              <!-- balance -->
+              <div class="row mt20px box_blue_01">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                  <!-- <div class="row mtb30px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
-                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
-                      </div>
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                        <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px tleft">
-                          {{partnershipReport.AffName}}
-                        </h4>
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft">
-                          Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
-                        </h4>
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft" *ngIf="BankDet">
-                          A/c # {{BankDet }}
-                          </h4>
-                          <a>
-                            <h4 class="fw_400 fs_15px lh_140p fc_000000 tright underline" (click)="ChangeAccountDetais()" >
-                            Change
-                            </h4>
-                          </a>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <div class="row mtb30px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
-                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100 br50p">
-                      </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pr0px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px tleft">
-                            {{partnershipReport.AffName}}
-                          </h4>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft">
-                            Lifetime earnings: ${{totalRevenu| number}}
-                          </h4>
-                        </div>
-                        
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                            <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft" *ngIf="partnershipReport.ByPaypal==0 && BankDet!=null">
-                              A/c # {{BankDet}}
-                            </h4>
-                            <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft" *ngIf="partnershipReport.ByPaypal==1 && BankDet!=null">
-                              Paypal # {{BankDet}}
-                            </h4>
-                          </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                            <a class="" (click)="ChangeAccountDetais()">
-                              <h4 class="fw_400 fs_15px lh_140p fc_1092a7 underline ws_nowrap mtb0px tright">
-                                Change
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row pr_ab_wd">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr20px pl0px">
+                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_ffffff">
                           AVAILABLE BALANCE
                         </h4>
-                        <h4 class="fw_700 fs_15px lh_18px fc_1092a7 mtb0px">
+                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_ffffff">
                           USD {{partnershipReport.BalanceAmt}}
                         </h4>
-                        <a href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=100">
-                          <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mb0px mt5px underline ws_nowrap">
+
+                        <a id="mailto" href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=100">
+                          <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 underline ws_nowrap">
                             Request to withdraw
                           </h4>
                         </a>
-                        <h4 class="fw_400 fs_15px lh_22px fc_5d5d5d mb0pxi mt5px" *ngIf="partnershipReport.BalanceAmt<100">
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82" *ngIf="partnershipReport.BalanceAmt<100">
                           Reach $100 to get paid
                         </h4>
                       </div>
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 dinline_box tcenter">
-                        <hr class="vhr_02 mtb0px">
-                      </div>
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                          WITHDRAWN
+                    </div>
+                  </div>
+
+                  <div class="vertical_line_01"></div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl20px pr0px">
+                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_ffffff">
+                          RECEIVED
                         </h4>
-                        <h4 class="fw_500 fs_12px lh_14px fc_000000 mtb0px bold">
+                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_ffffff">
                           USD {{partnershipReport.WithdrawnAmt}}
                         </h4>
-                        <a class="" (click)="redirectToIncomeActivity()">
-                          <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mb0pxi mt5px underline ws_nowrap">
+                        <a (click)="redirectToIncomeActivity()">
+                          <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 underline ws_nowrap">
                             View income activity
                           </h4>
                         </a>
@@ -154,175 +155,250 @@
                     </div>
                   </div>
 
-                  <div class="row mt40px">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="fw_400 fs_12px lh_140p fc_000000 mtb0px tleft">
-                        {{currentDate | date:'dd MMMM y'}}
-                      </h4>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
-                      <a (click)="redirectToMyPartnership()" class="">
-                        <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px underline">
-                         View Partners
-                        </h4>
-                      </a>
-                    </div>
-                  </div> 
-                 
-                  
-                  <div class="row mt5px mb20px">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px tleft">
-                        Partnership Income Report
-                      </h4>
-                    </div>
-                    </div>  
-             
-                  <div class="row mt5px mb20px" *ngIf="years.length>0">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                      <select class="form-control subscribe_select1" name="drpSelectYear"  [(ngModel)]="selectedYear" 
-                      #mySelect
-                      (change)='onChange(mySelect.value)'>
-                      <option  [value]="'0'">Select Year</option>
-                        <option *ngFor="let titl of years" [value]="titl">{{titl}}</option>
-                      </select>
-                    </div>
-                 
-                  </div> 
-     
-                  <div class="row cmlr-10px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <!-- accordion -->
-                      <div class="panel-group panel_pr" id="accordion">
+                </div>
+              </div>
+              <!-- /balance -->
 
-                        <!-- level 1 -->
-                        <ng-container *ngFor="let item of partnershipReport.IncomeReport">
-                      
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#{{item.Level}}">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px">
-                                        Level {{item.Level}}
-                                        <span class="fw_400 fs_12px lh_140p fc_000000">
-                                          ( {{item.CommPercent}})
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="fw_700 fs_18px lh_140p fc_1092a7 mtb0px">
-                                        USD {{item.CommEarned}}
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="{{item.Level}}" class="panel-collapse collapse">
-                            <div class="panel-body">
+              <!-- income activity -->
+              <div class="row mt20px box_blue_01">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.IncomeActivity.length>0">
+                          Partnership Income Report
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <a (click)="redirectToMyPartnership()" class="">
+                          <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 tright">
+                           View Partners
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                          {{currentDate | date:'dd MMMM y'}}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tright p0">
+                        <select class="form-control subscribe_select1" name="drpSelectYear"  [(ngModel)]="selectedYear" #mySelect (change)='onChange(mySelect.value)'>
+                          <option  [value]="'0'">Select Year</option>
+                          <option *ngFor="let titl of years" [value]="titl">{{titl}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- /income activity -->
+
+              <!-- levels -->
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group panel_levels" id="obfaqs">
+                    <ng-container *ngFor="let item of partnershipReport.IncomeReport">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#{{item.Level}}">
                               <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="fw_700 fs_15px lh_140p fc_5d5d5d mtb0px" *ngIf="item.Level!='0'">
-                                    {{item.PartnersCnt}}
-                                      <span class="fw_400 fs_13px lh_140p fc_5d5d5d mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="fw_400 fs_13px lh_140p fc_5d5d5d mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
+                                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                    Level {{item.Level}}
+                                    <span class="fs_10px fw_400 lh_150p fc_ffffff">
+                                      ({{item.CommPercent}})%
+                                    </span>
+                                  </h4>
+
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                                    USD {{item.CommEarned}}
+                                  </h4>
                                 </div>
                               </div>
+                            </a>
+                          </h4>
+                        </div>
 
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="fw_700 fs_15px lh_140p fc_5d5d5d mtb0px">
+                        <div id="{{item.Level}}" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.Level!='0'">
+                                    {{item.PartnersCnt}}
+                                    <span class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                      Partners
+                                    </span>
+                                  </h4>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tright">
+                                    Total Revenue
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff mtb0px">
                                     {{item.SubscribersCnt}}
-                                      <span class="fw_400 fs_13px lh_140p fc_5d5d5d mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="fw_700 fs_15px lh_140p fc_5d5d5d mtb0px tright">
-                                      ${{item.RevenueEarned | number}}
-                                    </h4>
-                                  </div>
+                                    <span class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                      Subscribers
+                                    </span>
+                                  </h4>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tright">
+                                    ${{item.RevenueEarned | number}}
+                                  </h4>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </ng-container>
                       </div>
-                      <!-- /accordion -->
-                    </div>
-                  </div> 
+                    </ng-container>
+                  </div>
+                </div>
+              </div> 
+              <!-- /levels -->
 
-                  <div class="row pr_cnt" *ngIf="partnershipReport.IncomeReport && partnershipReport.IncomeReport.length>0">
-                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <div class="col-md-4 col-sm-4 col-xs-4">
-                        <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
-                          Total Partners
-                        </h4>
-                        <h4 class="fw_700 fs_18px lh_140p fc_000000 mb0px mt5px">
-                         {{totalPartners}}
-                        </h4>
-                      </div>
-
-                      <div class="col-md-4 col-sm-4 col-xs-4">
-                        <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
-                          Total Subscribers
-                        </h4>
-                        <h4 class="fw_700 fs_18px lh_140p fc_000000 mtb0px mt5px">
-                          {{totalSubscriber}}
-                        </h4>
-                      </div>
-
-                      <div class="col-md-4 col-sm-4 col-xs-4">
-                        <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
-                          Total Earnings
-                        </h4>
-                        <h4 class="fw_700 fs_18px lh_140p fc_000000 mtb0px mt5px">
-                          ${{totalRevenu| number}}
-                        </h4>
-                      </div>
-                    </div>
-                  </div> 
-
-                  <div class="row mt40px mb40px" *ngIf="!isPdfDownloading">
-                    <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <a class="flex_ai" (click)="DownloadPdf()">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
-                        <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px ml10px">
-                          Download PDF
-                        </h4>
-                      </a>
-                    </div>
+              <!-- total bar -->
+              <!-- <div class="row pr_cnt" *ngIf="partnershipReport.IncomeReport && partnershipReport.IncomeReport.length>0">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
+                      Total Partners
+                    </h4>
+                    <h4 class="fw_700 fs_18px lh_140p fc_000000 mb0px mt5px">
+                     {{totalPartners}}
+                    </h4>
                   </div>
 
-                  <div class="row" *ngIf="!isPdfDownloading">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_400 fs_12px lh_140p fc_5d5d5d mtb0px">
-                        If you wish to switch your partnership benefits,
-                        and have a tree planted for every subscription instead
-                         of receiving an income , do write to us at
-                        <a class="fw_400 fs_12px lh_140p fc_5d5d5d underline">
-                          partner@humanwisdom.me
-                        </a>
-                      </h4>
-                    </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
+                      Total Subscribers
+                    </h4>
+                    <h4 class="fw_700 fs_18px lh_140p fc_000000 mtb0px mt5px">
+                      {{totalSubscriber}}
+                    </h4>
                   </div>
 
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
+                      Total Earnings
+                    </h4>
+                    <h4 class="fw_700 fs_18px lh_140p fc_000000 mtb0px mt5px">
+                      ${{totalRevenu| number}}
+                    </h4>
+                  </div>
+                </div>
+              </div> -->
+
+
+              <div class="row mt20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="prelative">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                    <div class="row box_v3_02">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                              <h4 class="mtb0px fs_14px fw_700 lh_120p fc_ffffff">
+                               {{totalPartners}}
+                              </h4>
+                            </div>
+          
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                              <h4 class="mtb0px fs_14px fw_700 lh_120p fc_ffffff">
+                                {{totalSubscriber}}
+                              </h4>
+                            </div>
+          
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                              <h4 class="mtb0px fs_14px fw_700 lh_120p fc_ffffff">
+                                ${{totalRevenu| number}}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                              <h4 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
+                                Total <br> Partners
+                              </h4>
+                            </div>
+          
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                              <h4 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
+                                Total <br> Subscribers
+                              </h4>
+                            </div>
+          
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                              <h4 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
+                                Total <br> Earnings
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- /total bar -->
+
+              <!-- download pdf -->
+              <div class="row mt20px" *ngIf="!isPdfDownloading && partnershipReport.IncomeActivity.length>0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt="" class="img-responsive mr10px">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                      Download PDF
+                    </h4>
+                  </a>
+                </div>
+              </div>
+              <!-- /download pdf -->
+
+              <div class="row mt20px" *ngIf="!isPdfDownloading">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    If you wish to switch your partnership benefits, and have a tree planted for every subscription instead of receiving an income , do write to us at
+                    <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto: team@happierme.app">
+                      team@happierme.app
+                    </a>
+                  </h4>
                 </div>
               </div>
 
@@ -334,7 +410,6 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
 <!-- /page content -->
 

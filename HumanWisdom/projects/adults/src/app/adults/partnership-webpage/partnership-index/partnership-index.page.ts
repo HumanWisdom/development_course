@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from '@angular/cdk/platform';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 @Component({
   selector: 'HumanWisdom-partnership-index',
@@ -21,7 +24,7 @@ export class PartnershipIndexPage implements OnInit {
   isScroll = false;
 
   constructor(private router: Router, private services: OnboardingService,
-    private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform
+    private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform,public logeventservice: LogEventService
   ) {
     let login: any = localStorage.getItem("isloggedin");
     if (login && login === 'T') {
@@ -153,5 +156,11 @@ export class PartnershipIndexPage implements OnInit {
       localStorage.setItem("btnClickBecomePartner", "false");
       this.router.navigate(["/onboarding/login"]);
     }
+  }
+
+  readMore(str){
+    this.logeventservice.logEvent('click_testimonial_' + str);
+    SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
+    this.router.navigate(['/adults/testimonials']);
   }
 }

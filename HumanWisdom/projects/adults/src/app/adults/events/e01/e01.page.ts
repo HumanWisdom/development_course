@@ -20,6 +20,8 @@ export class E01Page implements OnInit {
   emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
   content = '';
   enableAlert = false;
+  isdcode: any = '';
+  phoneno: any = '';
 
   constructor(private service: AdultsService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -45,8 +47,8 @@ export class E01Page implements OnInit {
          let diff = a.diff(b, 'days'); */
 
       //if (split > new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1)) {
-        // if (diff > 0) {
-      if (this.eventData['futureEvent']==1){
+      // if (diff > 0) {
+      if (this.eventData['futureEvent'] == 1) {
 
         this.enableRegister = true;
       }
@@ -62,7 +64,9 @@ export class E01Page implements OnInit {
     let obj = {
       "EventsID": this.eventID,
       "Name": this.name,
-      "EmailID": this.email
+      "EmailID": this.email,
+      "ISD_Code": this.isdcode,
+      "Mobile_No": this.phoneno
     }
     this.service.registerevent(obj).subscribe((res) => {
       // alert(res);
@@ -70,6 +74,8 @@ export class E01Page implements OnInit {
       this.enableAlert = true;
       this.name = '';
       this.email = '';
+      this.phoneno = '';
+      this.isdcode = '';
     },
       (error) => {
         this.content = error;
@@ -79,6 +85,18 @@ export class E01Page implements OnInit {
       () => {
       }
     )
+  }
+
+  checkValidPhoneNo() {
+    if (this.phoneno != '' || this.isdcode != '') {
+      if (isNaN(this.phoneno) || (!this.isdcode.includes('+') && isNaN(this.isdcode))) {
+        return true;
+      }else if((this.phoneno.length < 7 || this.phoneno.length > 12)) {
+        return true;
+      }
+    }else {
+      return false;
+    }
   }
 
   namevalidation() {
@@ -102,7 +120,7 @@ export class E01Page implements OnInit {
   }
 
   disabled() {
-    if (this.emailElmtRegex.test(this.email) && this.name.length > 2) {
+    if (this.emailElmtRegex.test(this.email) && this.name.length > 2 && !this.checkValidPhoneNo()) {
       return false;
     } else {
       return true;

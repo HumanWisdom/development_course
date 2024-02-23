@@ -17,6 +17,7 @@ import { SharedService } from '../../services/shared.service';
 export class ForumThreadPage implements OnInit {
   @ViewChild(ToastContainerDirective, { static: true }) toastContainer!: ToastContainerDirective;
   @ViewChild('toastContainerRef', { static: true }) toastContainerRef!: ElementRef;
+  @ViewChild('postModal') postModal: any;
   list: any;
   isPostEditable: boolean = true;
   editCommentId: string = '';
@@ -31,7 +32,7 @@ export class ForumThreadPage implements OnInit {
   commenttext = '';
   isEditPost = false;
   activecomment;
-  isEditComment = false;
+  isEditComment = true;
   sub: Subscription;
   userID = '107';
   posttread = {
@@ -62,7 +63,7 @@ export class ForumThreadPage implements OnInit {
   isReportPost = false;
   constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService,) {
     this.userID = localStorage.getItem('userId');
-    this.token = JSON.parse(localStorage.getItem("token"));
+    this.token = localStorage.getItem("shareToken");
     this.sharedPostId = this.activateRoute.snapshot.paramMap.get('sharedPostId');
     this.address = this.router.url;
     this.UserName = localStorage.getItem('name');
@@ -83,11 +84,12 @@ export class ForumThreadPage implements OnInit {
     this.isReportPost = false;
     this.PostComment = "";
     if (this.isLoggedIn) {
-      if (this.isEditComment) {
+      /* if (this.isEditComment) {
         this.isEditComment = false;
-      } else {
+      } else {s
         this.isEditComment = true;
-      }
+      } */
+      this.isEditComment = true;
     }
   }
 
@@ -135,8 +137,13 @@ export class ForumThreadPage implements OnInit {
   }
 
   toggle(item) {
+    if (this.isLoggedIn) {
     this.replyflag = !this.replyflag;
     this.activereply = item;
+    }
+    else {
+      this.enableAlert = true;
+    }
   }
   navi() {
     localStorage.setItem('postid', this.posttread.PostID);
@@ -320,11 +327,17 @@ export class ForumThreadPage implements OnInit {
       this.sub.unsubscribe();
     }
   }
+
   reportpost() {
-    this.isEditComment = false;
-    this.PostComment = "";
     if (this.isLoggedIn) {
-      this.isReportPost = !this.isReportPost;
+          this.isEditComment = false;
+          this.PostComment = "";
+          if (this.isLoggedIn) {
+            this.isReportPost =true;
+          }
+    }
+    else {
+      this.enableAlert = true;
     }
   }
 
@@ -336,7 +349,7 @@ export class ForumThreadPage implements OnInit {
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -363,17 +376,27 @@ export class ForumThreadPage implements OnInit {
         if (res) {
           this.isReportPost =  false;
           this.isEditComment = false;
+          this.postModal.nativeElement.click();
           this.getPostData();
           this.PostComment = '';
         }
       })
     }
+    else {
+      this.enableAlert = true;
+    }
+    
   }
 
+
+  closePost(){
+
+  }
   post(item) {
     if (this.isLoggedIn) {
       this.service.submitPost({ POST: this.posttext, UserId: item.userID, ParentPostID: item.ReplyPostID }).subscribe(res => {
         if (res) {
+          this.postModal.nativeElement.click();
           this.reploadpage();
         }
       })
@@ -388,22 +411,29 @@ export class ForumThreadPage implements OnInit {
   }
 
   reportComment(item) {
-    this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.reportText }).subscribe(res => {
-      if (res) {
-        this.replyflag = !this.replyflag;
-        this.activereply = null;
-        this.reploadpage();
-        this.reportText = '';
+      if(this.isLoggedIn) 
+      {
+            this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.reportText }).subscribe(res => {
+              if (res) {
+                this.replyflag = !this.replyflag;
+                this.activereply = null;
+                this.reploadpage();
+                this.reportText = '';
+              }
+            });
       }
-    });
-  }
+      else 
+      {
+          this.enableAlert = true;
+      }
+    }
 
   callEditPost(){
     this.posttread.isEditPost =  true;
   }
 
 
-  
+
   follow(item) {
     if (this.isLoggedIn) {
       this.service.followPost({ PostID: item.PostID, UserID: this.userID }).subscribe(res => {
@@ -431,6 +461,7 @@ export class ForumThreadPage implements OnInit {
       }
       this.service.submitPost({ POST: this.PostComment, UserId: this.userID, ParentPostID: parentPostId }).subscribe(res => {
         if (res) {
+          this.postModal.nativeElement.click();
           this.isEditComment = false;
           this.isReportPost = false;
           this.PostComment = '';

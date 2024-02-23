@@ -26,6 +26,13 @@ export class BeHappierPage implements OnInit {
   Subscriber = false;
   mediaUrl: any;
   isSubscriber = false;
+  enablepathwayViewMore = true;
+  enablelifestoriesViewMore = true;
+  enableGuidedQuesViewMore = true;
+  enablePodcastViewMore = true;
+  enableGuidedMediViewMore = true;
+  enablefbnViewMore = true;
+  enableblogViewMore = true;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -33,25 +40,25 @@ export class BeHappierPage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
       this.mediaUrl = {
-        pc01: 
+        pc01:
         {
           id: 44,
           url: '/podcasts/44.mp3',
           title: 'Coping with an illness'
         },
-        pc02: 
+        pc02:
         {
           id: 40,
           url: '/podcasts/40.mp3',
           title: 'Overcoming Depression'
         },
-        pc03: 
+        pc03:
         {
           id: 45,
           url: '/podcasts/45.mp3',
           title: 'The resilient mindset'
         }
-       
+
       }
 
       let userid = localStorage.getItem('isloggedin');
@@ -103,6 +110,42 @@ export class BeHappierPage implements OnInit {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
+    }
+  }
+
+  enableViewMore(type) {
+    if(type==='pathway') {
+      this.enablepathwayViewMore = false;
+    }else if(type === 'lifestories'){
+      this.enablelifestoriesViewMore = false;
+    }else if(type === 'guidedQues') {
+      this.enableGuidedQuesViewMore = false
+    }else if(type === 'podcast') {
+      this.enablePodcastViewMore = false
+    }else if(type === 'guidedMedidation') {
+      this.enableGuidedMediViewMore = false
+    }else if(type === 'fbn') {
+      this.enablefbnViewMore = false
+    }else if(type === 'blog') {
+      this.enableblogViewMore = false
+    }
+  }
+
+  enableViewLess(type) {
+    if(type==='pathway') {
+      this.enablepathwayViewMore = true;
+    }else if(type === 'lifestories'){
+      this.enablelifestoriesViewMore = true;
+    }else if(type === 'guidedQues') {
+      this.enableGuidedQuesViewMore = true
+    }else if(type === 'podcast') {
+      this.enablePodcastViewMore = true
+    }else if(type === 'guidedMedidation') {
+      this.enableGuidedMediViewMore = true
+    }else if(type === 'fbn') {
+      this.enablefbnViewMore = true
+    }else if(type === 'blog') {
+      this.enableblogViewMore = true
     }
   }
 
@@ -375,7 +418,7 @@ export class BeHappierPage implements OnInit {
 
   enableRoute(route) {
         this.router.navigate([route]);
-   
+
   }
 
   getclcickevent(event) {

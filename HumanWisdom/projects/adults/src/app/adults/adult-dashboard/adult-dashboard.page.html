@@ -9,13 +9,32 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col dmain_container p0_important" role="main" [ngClass]="[getEnableBanner() ? 'pt12rem' : 'pt6rem']">
+<div class="right_col dmain_container p0_important" role="main" [ngClass]="[getEnableBanner() ? 'cpt_rem_01' : 'pt6rem']">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex safari_dflex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0 mt0px">
+
+            <!-- search -->
+            <div class="row prelative pt30px plr20px">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
+                <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
+              </div>
+
+              <div class="row adsearch adsearch_ext_01 plr20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                  <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                      class="is-search list-group-item">{{item.ModuleName}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /search -->
 
             <!-- feel better now -->
             <div class="row">
@@ -61,7 +80,8 @@
                   <div class="panel panel-default dpanel dpanel_01">
                     <div class="panel-heading">
                       <h4 class="panel-title dpaneltitle">
-                        <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true">
+                        <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
+                        <div (click)="DashboardLogevent('', '', 'click_daily_pratice')" aria-expanded="true">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
@@ -70,7 +90,7 @@
                                 </h2>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                <a>
+                                <!-- <a> -->
                                   <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
@@ -78,11 +98,11 @@
                                     </span>
                                     days
                                   </h2>
-                                </a>
+                                <!-- </a> -->
                               </div>
                             </div>
                           </div>
-                        </a>
+                        </div>
                       </h4>
                     </div>
                     <div id="ca_mdp" class="panel-collapse collapse in">
@@ -130,7 +150,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_audio_meditation')">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Audio meditation
@@ -141,7 +161,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge')">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily
@@ -163,9 +183,17 @@
             <!-- /accordion -->
             <!-- /daily practice -->
 
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
             <!-- explore a topic in depth-for guest user -->
             <div class="row" *ngIf="YourTopicofChoice.length === 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="prelative box_v3_01"   (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" >
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
@@ -192,15 +220,15 @@
 
             <!-- your topic of choice -->
             <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="prelative box_v3_01" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                       <!--  <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
                           Your topic of choice:
-                        </h4> -->
+                        </h4>
 
                         <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
                           {{YourTopicofChoice[0]['name']}}
@@ -1219,8 +1247,28 @@
 
               </div>
             </div>
-
             <!-- /testimonials -->
+
+            <!-- partnership button -->
+            <div class="row mt30px" >
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="" routerLink="/partnership-webpage">
+                  <div class="row btn_tff">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        Explore the partnership program
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /partnership button -->
+
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
+              Cookie Modal
+            </button> -->
+
             <div class="pagebreak"></div>
 
           </div>

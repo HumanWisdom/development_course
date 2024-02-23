@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Constant } from '../../../../../shared/services/constant';
 export class TestimonialsPage implements OnInit,OnDestroy {
   
   divId :any;
-  constructor(private location :Location,private meta: Meta, private title: Title) { 
+  constructor(private location :Location,private meta: Meta, public logeventservice: LogEventService, private title: Title) { 
    this.divId = SharedService.getDataFromLocalStorage(Constant.TestimonialId);
    if(this.divId && this.divId !=null && this.divId!='' && this.divId!='null' ){
     this.scroll_to_Testimonial();
@@ -21,6 +22,7 @@ export class TestimonialsPage implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    this.logeventservice.logEvent('view_testimonials');
     this.title.setTitle('Inspiring Words: Our Testimonials on Mindfulness and Fulfillment')
     this.meta.updateTag({ property: 'title', content: 'Inspiring Words: Our Testimonials on Mindfulness and Fulfillment'})
     this.meta.updateTag({ property: 'description', content: 'Discover inspiring words and stories of transformation with our testimonials on mindfulness and fulfillment. Read about the impact that our community has had on the lives of others.' })
