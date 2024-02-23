@@ -34,10 +34,10 @@ export class S109077Page implements OnInit {
     id: 106
   },
   {
-    name: 'Meditation',
+    name: ' Guided Meditation',
     image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
-    link: '/meditation',
-    id: 109
+    link: '/guided-meditation',
+    id: 110
   },
 ]
   constructor() {

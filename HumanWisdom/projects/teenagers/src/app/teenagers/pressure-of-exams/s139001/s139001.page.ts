@@ -37,7 +37,7 @@ export class S139001Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   kindnessResume=sessionStorage.getItem("kindnessResume")
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/70.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
