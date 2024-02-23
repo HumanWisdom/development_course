@@ -37,6 +37,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         const navigation = this.router.getCurrentNavigation();
         this.programType = navigation.extras.state ? navigation.extras.state.programType : ProgramType.Adults;
       });
+    this.categoryList = this.service.GetTagList();
     this.getuserDetails();
     let p = localStorage.getItem('postid');
     if (p !== 'null') {
@@ -44,6 +45,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       this.postID = p;
     }
     this.isSubscriber = SharedService.isSubscriber(); 
+    this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
   }
 
   ngOnInit() {
@@ -52,6 +54,10 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   ngOnDestroy(): void {
     localStorage.setItem('postid', null);
+  }
+
+  onChange($event){
+   this.isChecked=$event.target.checked;
   }
 
   getuserDetails() {
@@ -145,22 +151,18 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   ngAfterViewInit(){
     setTimeout(()=>{
-      this.categoryList = this.service.GetTagList();
-      this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
+     
       if (this.selectedOption == 5) {
       this.isChecked = true;
-  
-
       const data = this.categoryList.filter(x=>x.value== this.selectedOption);
       if(data!=null && data.length>0){
         this.buttonText =  data[0].label;
       }
-    }},1000);
-    setTimeout(()=>{
-    let el= document.getElementById('forum_post_checkbox') as any;
-    if(el){
-     el.checked = true;
-    }},4000);
+      let el= document.getElementById('forum_post_checkbox') as any;
+      if(el){
+       el.checked = true;
+      }
+    }},500);
   }
 
 }

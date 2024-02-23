@@ -31,6 +31,8 @@ export class BeHappierPage implements OnInit {
   enableGuidedQuesViewMore = true;
   enablePodcastViewMore = true;
   enableGuidedMediViewMore = true;
+  enablefbnViewMore = true;
+  enableblogViewMore = true;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -122,10 +124,14 @@ export class BeHappierPage implements OnInit {
       this.enablePodcastViewMore = false
     }else if(type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = false
+    }else if(type === 'fbn') {
+      this.enablefbnViewMore = false
+    }else if(type === 'blog') {
+      this.enableblogViewMore = false
     }
   }
 
-  enableViewLes(type) {
+  enableViewLess(type) {
     if(type==='pathway') {
       this.enablepathwayViewMore = true;
     }else if(type === 'lifestories'){
@@ -136,6 +142,10 @@ export class BeHappierPage implements OnInit {
       this.enablePodcastViewMore = true
     }else if(type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = true
+    }else if(type === 'fbn') {
+      this.enablefbnViewMore = true
+    }else if(type === 'blog') {
+      this.enableblogViewMore = true
     }
   }
 

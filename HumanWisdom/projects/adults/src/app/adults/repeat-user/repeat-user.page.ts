@@ -37,6 +37,8 @@ export class RepeatUserPage implements OnInit {
   public reflection = 5
   public feedbackSurvey = 7
   public moduleId = 7
+  searchinp = '';
+  public moduleList = [];
 
   constructor(public service: AdultsService, public router: Router, public logeventservice: LogEventService, private route: ActivatedRoute) {
     let authtoken;
@@ -2234,5 +2236,62 @@ export class RepeatUserPage implements OnInit {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
    }
+
+  //  search
+  clearSearch() {
+    this.searchinp = "";
+    this.searchResult = [];
+  }
+
+  getinp(event) {
+    let url = `/adults/site-search/${this.searchinp}`
+    this.router.navigate([url])
+  }
+
+  searchEvent(module) {
+    this.logeventservice.logEvent("click_search");
+    this.searchinp = module;
+    this.searchResult = [];
+    this.getinp(module);
+  }
+
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  getModuleList(isLoad?) {
+    this.service.getModuleList().subscribe(res => {
+      this.moduleList = res;
+      if (isLoad) {
+        if (this.searchinp == '') {
+          this.searchResult = this.moduleList;
+        } else {
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
+    })
+  }
+  // /search
 
 }
