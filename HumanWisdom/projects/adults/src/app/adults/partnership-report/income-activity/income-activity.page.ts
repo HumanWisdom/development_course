@@ -14,6 +14,7 @@ import html2canvas from "html2canvas";
 })
 export class IncomeActivityPage implements OnInit {
   partnershipReport: PartnershipReport;
+  hasIncome =false;
 
   isPdfDownloading=false;
   groupedDates = [];
@@ -34,6 +35,11 @@ export class IncomeActivityPage implements OnInit {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
         this.partnershipReport = res;
+        if(this.partnershipReport.IncomeActivity.length>0)
+        {
+          this.hasIncome=true;
+
+        }
         this.getMaskAccountDetails();
         this.groupDates();
       }
@@ -127,9 +133,9 @@ export class IncomeActivityPage implements OnInit {
       });
   }
   redirectToIncomeReport() {
-    if(this.partnershipReport.IncomeActivity.length>0){
+     if(this.partnershipReport.IncomeActivity.length>0){
       this.router.navigate(["adults/partnership-report/income-report"]);
-    }
+     }
   }
 
   groupDates() {
