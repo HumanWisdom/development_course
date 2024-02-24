@@ -31,6 +31,8 @@ export class BlogArticlePage implements OnInit {
   enablecancel = false;
   public isLoggedIn = false
   address:any;
+  token = localStorage.getItem("shareToken")
+
   constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
@@ -198,7 +200,7 @@ export class BlogArticlePage implements OnInit {
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
+      text:  "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
       console.log(response);
@@ -209,16 +211,15 @@ export class BlogArticlePage implements OnInit {
   }
 
   shareUrl(programType:ProgramType) {
-    const token= JSON.parse(localStorage.getItem("token"))
     switch (programType) {
       case ProgramType.Adults:
-          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${token}`
+          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
         break;
       case ProgramType.Teenagers:
-        this.path = SharedService.TeenagerBaseUrl + this.address + `?t=${token}`
+        this.path = SharedService.TeenagerBaseUrl + this.address + `?t=${this.token}`
         break;
       default:
-          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${token}`
+          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
     }
   }
 
