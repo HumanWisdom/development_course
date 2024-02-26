@@ -252,6 +252,10 @@ const routes: Routes = [
     path: 'find-answers/:url',
     loadChildren: () => import('./teenagers/find-answers/find-answers.module').then( m => m.FindAnswersModule)
   },
+  {
+    path: 'teen-talk',
+    loadChildren: () => import('./teenagers/teen-talk/teen-talk.module').then( m => m.TeenTalkPageModule)
+  },
 
 ];
   
