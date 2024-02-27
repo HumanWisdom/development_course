@@ -45,7 +45,7 @@
                           </div>
 
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <button type="button" class="btn_pr_code">
+                            <button type="button" class="btn_pr_code"  title="{{getTittle()}}" (click)="copyText(partnershipReport.AffRefCode)">
                               {{this.partnershipReport.AffRefCode}}
                             </button>
                           </div>
@@ -123,13 +123,13 @@
                           USD {{partnershipReport.BalanceAmt}}
                         </h4>
 
-                        <a id="mailto" href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=20">
+                        <a id="mailto" href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=100">
                           <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 underline ws_nowrap">
                             Request to withdraw
                           </h4>
                         </a>
-                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82" *ngIf="partnershipReport.BalanceAmt<20">
-                          Reach $20 to get paid
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82" *ngIf="partnershipReport.BalanceAmt<100">
+                          Reach $100 to get paid
                         </h4>
                       </div>
                     </div>
@@ -160,29 +160,30 @@
               <!-- /balance -->
 
               <!-- income activity -->
-              <ng-container *ngIf="partnersList.length>0">
+              <ng-container>
                 <div class="row mt20px box_blue_01">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.IncomeActivity.length>0">
-                            My Partners
-                          </h4>
-
+                          
                           <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
                             Level 1
                           </h4>
+                          <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " >
+                            My Partners
+                          </h4>
+
                         </div>
                       </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                       <!-- income -->
-                      <div class="row" *ngIf="isRecieveIncome">
+                      <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <a class="" (click)="redirectToIReport()" [ngClass]="{'fc_adadad': partnershipReport.IncomeActivity.length==0 }">
+                          <a *ngIf="hasIncome"   (click)="redirectToIReport()" [ngClass]="{'fc_adadad': partnershipReport.IncomeActivity.length==0 }">
                             <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 tright">
                               View Income Report
                             </h4>

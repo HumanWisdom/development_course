@@ -399,7 +399,7 @@ export class AdultDashboardPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
     this.meta.updateTag({ property: 'keywords', content: 'human wisdom, app, personal growth, self-help, daily inspiration, mindfulness practices, anger management, stress management, relationships, self-esteem, addiction, work, workplace, leadership, money, love, food and health, living with peace, dealing with death, criticism, success and failure, decision making, opinions and beliefs' })
 
-    this.logeventservice.logEvent('view_home_page');
+  
     this.dash = this.router.url.includes('adult-dashboard');
     // this.getuserDetail();
     setTimeout(() => {
@@ -4109,5 +4109,60 @@ export class AdultDashboardPage implements OnInit {
     ].includes(navigator.platform)
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
+  clearSearch() {
+    this.searchinp = "";
+    this.searchResult = [];
+  }
+
+  getinp(event) {
+    let url = `/adults/site-search/${this.searchinp}`
+    this.router.navigate([url])
+  }
+
+  searchEvent(module) {
+    this.logeventservice.logEvent("click_search");
+    this.searchinp = module;
+    this.searchResult = [];
+    this.getinp(module);
+  }
+
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  getModuleList(isLoad?) {
+    this.service.getModuleList().subscribe(res => {
+      this.moduleList = res;
+      if (isLoad) {
+        if (this.searchinp == '') {
+          this.searchResult = this.moduleList;
+        } else {
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
+    })
   }
 }

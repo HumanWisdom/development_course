@@ -32,7 +32,7 @@ export class ForumThreadPage implements OnInit {
   commenttext = '';
   isEditPost = false;
   activecomment;
-  isEditComment = false;
+  isEditComment = true;
   sub: Subscription;
   userID = '107';
   posttread = {
@@ -84,11 +84,12 @@ export class ForumThreadPage implements OnInit {
     this.isReportPost = false;
     this.PostComment = "";
     if (this.isLoggedIn) {
-      if (this.isEditComment) {
+      /* if (this.isEditComment) {
         this.isEditComment = false;
-      } else {
+      } else {s
         this.isEditComment = true;
-      }
+      } */
+      this.isEditComment = true;
     }
   }
 
@@ -136,8 +137,13 @@ export class ForumThreadPage implements OnInit {
   }
 
   toggle(item) {
+    if (this.isLoggedIn) {
     this.replyflag = !this.replyflag;
     this.activereply = item;
+    }
+    else {
+      this.enableAlert = true;
+    }
   }
   navi() {
     localStorage.setItem('postid', this.posttread.PostID);
@@ -321,11 +327,17 @@ export class ForumThreadPage implements OnInit {
       this.sub.unsubscribe();
     }
   }
+
   reportpost() {
-    this.isEditComment = false;
-    this.PostComment = "";
     if (this.isLoggedIn) {
-      this.isReportPost = !this.isReportPost;
+          this.isEditComment = false;
+          this.PostComment = "";
+          if (this.isLoggedIn) {
+            this.isReportPost =true;
+          }
+    }
+    else {
+      this.enableAlert = true;
     }
   }
 
@@ -370,6 +382,10 @@ export class ForumThreadPage implements OnInit {
         }
       })
     }
+    else {
+      this.enableAlert = true;
+    }
+    
   }
 
 
@@ -395,15 +411,22 @@ export class ForumThreadPage implements OnInit {
   }
 
   reportComment(item) {
-    this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.reportText }).subscribe(res => {
-      if (res) {
-        this.replyflag = !this.replyflag;
-        this.activereply = null;
-        this.reploadpage();
-        this.reportText = '';
+      if(this.isLoggedIn) 
+      {
+            this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.reportText }).subscribe(res => {
+              if (res) {
+                this.replyflag = !this.replyflag;
+                this.activereply = null;
+                this.reploadpage();
+                this.reportText = '';
+              }
+            });
       }
-    });
-  }
+      else 
+      {
+          this.enableAlert = true;
+      }
+    }
 
   callEditPost(){
     this.posttread.isEditPost =  true;

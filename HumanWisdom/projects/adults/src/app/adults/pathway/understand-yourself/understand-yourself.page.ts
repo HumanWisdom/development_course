@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../../shared/services/constant';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
 
 @Component({
   selector: 'app-understand-yourself',
@@ -15,10 +16,12 @@ export class UnderstandYourselfPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(public router: Router, public service: AdultsService, private location: Location,
+  constructor(public router: Router, public service: AdultsService,
+     private location: Location, public logeventservice: LogEventService,
     private navigationService:NavigationService) { }
 
   ngOnInit() {
+    this.logeventservice.logEvent('view_Learn-question-yourself');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
   }

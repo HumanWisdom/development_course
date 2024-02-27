@@ -155,7 +155,7 @@
                               </div>
                             </a>
               
-                            <a routerLink="/feel-better-now/anger">
+                            <a routerLink="/feel-better-now/anger" *ngIf="!enablefbnViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -173,6 +173,28 @@
                               </div>
                             </a>
                           </div>
+
+                          <a (click)="enableViewMore('fbn')" *ngIf="enablefbnViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                                  View More
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
+            
+                          <a (click)="enableViewLess('fbn')" *ngIf="!enablefbnViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                                  View Less
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
 
                         </div>
                       </div>
@@ -219,10 +241,19 @@
               <!-- /five dots -->
   
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px mb15px">
-                  <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
-                    PATHWAY
-                  </h4>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                    <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                      PATHWAY
+                    </h2>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <a routerLink="/adults/feel-better-now/">
+                      <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                        View all
+                      </h2>
+                    </a>
+                  </div>
                 </div>
               </div>
   
@@ -365,7 +396,7 @@
                     </a>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
                     <a (click)="routeMeditation(0)">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -397,7 +428,7 @@
                     </a>
                   </div>
   
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
                     <a (click)="routeLookWithoutLanguage(0)">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -429,7 +460,7 @@
                     </a>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
                     <a (click)="routeAwareness(0)">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -463,10 +494,32 @@
   
                 </div>
               </div>
+
+              <a (click)="enableViewMore('pathway')" *ngIf="enablepathwayViewMore">
+                <div class="row mt30px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                      View More
+                    </h4>
+                  </div>
+                </div>
+              </a>
+
+              <a (click)="enableViewLess('pathway')" *ngIf="!enablepathwayViewMore">
+                <div class="row mt30px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                      View Less
+                    </h4>
+                  </div>
+                </div>
+              </a>
               <!-- /pathway -->
 
               <!-- go to pathway -->
-              <a routerLink="/pathway">
+              <!-- <a routerLink="/pathway">
                 <div class="row mt30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -474,7 +527,7 @@
                     </h4>
                   </div>
                 </div>
-              </a>
+              </a> -->
               <!-- /go to pathway -->
 
               <!-- hr -->
@@ -1014,7 +1067,7 @@
                               <!-- /audio row --> 
 
                               <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc04)">
+                              <a (click)="audioevent(mediaUrl.pc04)" *ngIf="!enablePodcastViewMore">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -1057,6 +1110,28 @@
                           </div>
 
                         </div>
+
+                        <a (click)="enableViewMore('podcast')" *ngIf="enablePodcastViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                                View More
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
+                        <a (click)="enableViewLess('podcast')" *ngIf="!enablePodcastViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                                View Less
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1248,9 +1323,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
-
                             <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.1.mp3', 'Body scan', '2',1)">
+                              <hr class="hr_style_v3_03">
+
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1271,9 +1346,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
+                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.2.mp3', 'Noticing thoughts', '3',1)" *ngIf="!enableGuidedMediViewMore">
+                              <hr class="hr_style_v3_03">
 
-                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.2.mp3', 'Noticing thoughts', '3',1)">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1294,9 +1369,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
+                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.3.mp3', 'Tuning in', '4',1)" *ngIf="!enableGuidedMediViewMore">
+                              <hr class="hr_style_v3_03">
 
-                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.3.mp3', 'Tuning in', '4',1)">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1317,9 +1392,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
+                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.4.mp3', 'Voice Yoga', '5')" *ngIf="!enableGuidedMediViewMore">
+                              <hr class="hr_style_v3_03">
 
-                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.4.mp3', 'Voice Yoga', '5')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1340,9 +1415,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
+                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '6')" *ngIf="!enableGuidedMediViewMore">
+                              <hr class="hr_style_v3_03">
 
-                            <a  (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '6')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1363,9 +1438,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.16.mp3', 'Mindful eating', '7')" *ngIf="!enableGuidedMediViewMore">
+                              <hr class="hr_style_v3_03">
 
-                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.16.mp3', 'Mindful eating', '7')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1386,9 +1461,9 @@
                               </div>
                             </a>
 
-                            <hr class="hr_style_v3_03">
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.17.mp3', 'Mindful walking', '8')" *ngIf="!enableGuidedMediViewMore">
+                              <hr class="hr_style_v3_03">
 
-                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.17.mp3', 'Mindful walking', '8')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1409,8 +1484,30 @@
                               </div>
                             </a>
                           </div>
-
                         </div>
+
+                        <a (click)="enableViewMore('guidedMedidation')" *ngIf="enableGuidedMediViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                                View More
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
+                        <a (click)="enableViewLess('guidedMedidation')" *ngIf="!enableGuidedMediViewMore">
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                                View Less
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
                       </div>
                     </div>
                   </div>
@@ -1501,7 +1598,7 @@
                               </div>
                             </a>
 
-                            <a (click)="viewblog('46')">
+                            <a (click)="viewblog('46')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -1522,7 +1619,7 @@
                               </div>
                             </a>
 
-                            <a (click)="viewblog('38')">
+                            <a (click)="viewblog('38')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -1543,6 +1640,28 @@
                               </div>
                             </a>
                           </div>
+
+                          <a (click)="enableViewMore('blog')" *ngIf="enableblogViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                                  View More
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
+            
+                          <a (click)="enableViewLess('blog')" *ngIf="!enableblogViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                                  View Less
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
 
                         </div>
                       </div>

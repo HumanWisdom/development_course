@@ -15,7 +15,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class TreePlantationReportPage implements OnInit {
 
-  partnershipReport:any;
+  partnershipReport:{
+
+  };
   groupedDates = [];
   currentDate=new Date();
   years:any=[];
@@ -30,6 +32,14 @@ export class TreePlantationReportPage implements OnInit {
  
  constructor(  private sanitizer: DomSanitizer,public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location:Location) { 
  this.iframeSrc=this.sanitizer.bypassSecurityTrustUrl(this.value);
+}
+
+getTittle(){
+  if(this.isCopy){
+    return 'Copy';
+  }else{
+    return 'Copied';
+  }
 }
 
  ngOnInit() {
@@ -57,7 +67,6 @@ export class TreePlantationReportPage implements OnInit {
   setTimeout(() => {
     let DATA: any = document.getElementById("partnershipReport");
     html2canvas(DATA).then((canvas) => {
-
       const imgData = canvas.toDataURL("image/jpeg") 
       const pdf = new jsPDF("p","mm","a5");
       const imageProps = pdf.getImageProperties(imgData)
@@ -65,6 +74,7 @@ export class TreePlantationReportPage implements OnInit {
       const test = pdf.internal.pageSize.getHeight()
       const pdfh = (imageProps.height * pdfw) / imageProps.width
       pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
+      pdf.addPage();
       pdf.save("tree-plantation-report.pdf");
     
     });
