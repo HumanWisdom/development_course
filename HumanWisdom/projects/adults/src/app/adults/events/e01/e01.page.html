@@ -22,7 +22,8 @@
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5 flex_ai">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_date.svg" class="img-responsive mr5px">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_date.svg"
+          class="img-responsive mr5px">
         Date: {{eventData['Event_Date']}}
       </h4>
     </div>
@@ -31,7 +32,8 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5 flex_ai">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_time.svg" class="img-responsive mr5px">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_time.svg"
+          class="img-responsive mr5px">
         {{eventData['EventTiming']}}
       </h4>
     </div>
@@ -56,7 +58,8 @@
       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
         <input type="text" class="sp_fc" placeholder="Name" required [(ngModel)]="name">
         <div class="fc_img">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg"
+            class="img-responsive">
         </div>
       </div>
       <small class="text danger ml-10">{{namevalidation()}}</small>
@@ -66,7 +69,8 @@
       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
         <input type="text" class="sp_fc" placeholder="Email address" required [(ngModel)]="email">
         <div class="fc_img">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg"
+            class="img-responsive">
         </div>
       </div>
       <small class="text danger ml-10">{{emailvalidation()}}</small>
@@ -83,12 +87,16 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <div class="col-md-3 col-sm-3 col-xs-3 p0">
-          <input type="text" name="name" class="sp_fc" placeholder="+XX"  [(ngModel)]="isdcode">
+          <input type="text" maxlength="4" name="name" class="sp_fc" placeholder="+XX" [(ngModel)]="isdcode" maxlength="5" >
         </div>
         <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-          <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
+          <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno" maxlength="12" >
         </div>
       </div>
+    </div>
+
+    <div *ngIf="checkValidPhoneNo()" class="alert-danger w100 alerClass">
+      Please Enter Valid Phone No or ISD Code
     </div>
 
     <div class="row center_flex mt30px">
@@ -102,9 +110,8 @@
 
   <div class="pagebreak"></div>
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="content">
-</app-modal>
+  <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
+  </app-modal>
 
 </app-index-content>
 
