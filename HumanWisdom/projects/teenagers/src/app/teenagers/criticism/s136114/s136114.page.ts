@@ -32,7 +32,8 @@ export class S136114Page implements OnInit {
 
   shared: any
   confirmed: any
-
+  progName= "teenagers"
+  
   constructor(private router: Router,
     private service: TeenagersService,
     private location: Location) { }
