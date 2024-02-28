@@ -30,6 +30,9 @@ export class S3VideoComponent implements OnInit {
       let name = this.linkcode.split('-videos')[0]
       let link = this.linkcode.split('-videos')[1]
       this.linkcode = name + '/videos' + link.replaceAll('-', '/');
+      if(this.linkcode.includes('teenagers')) {
+        this.linkcode = this.linkcode.replaceAll('-', '/');
+      }
       this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
     }else {
       this.linkcode = this.route.snapshot.paramMap.get('videolink');

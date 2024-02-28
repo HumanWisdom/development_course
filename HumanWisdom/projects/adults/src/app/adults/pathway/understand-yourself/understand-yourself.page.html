@@ -142,13 +142,16 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
                   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/benefits-of-enquiry">
+                    <a (click)="this.logeventservice.logEvent('click_benefits-of-self-awareness')" routerLink="/adults/benefits-of-enquiry">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/26.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="benefitsSelfAwarenessP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -175,13 +178,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/how-to-begin">
+                    <a (click)="this.logeventservice.logEvent('click_begin-your-journey')" routerLink="/adults/how-to-begin">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/36.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="beginJourneyP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -207,13 +213,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/three-steps-enquiry">
+                    <a (click)="this.logeventservice.logEvent('click_three-steps-enquiry')" routerLink="/adults/three-steps-enquiry">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/37.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="threeStepsEnquiryP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -239,13 +248,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/insight">
+                    <a (click)="this.logeventservice.logEvent('click_insight')"  routerLink="/adults/insight">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/38.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="insightP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -271,13 +283,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/awareness">
+                    <a (click)="this.logeventservice.logEvent('click_awareness')"  routerLink="/adults/awareness">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/39.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="awarenessP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -303,13 +318,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/no-judgement">
+                    <a (click)="this.logeventservice.logEvent('click_no-judgement')" routerLink="/adults/no-judgement">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/40.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="noJudgementP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -335,13 +353,17 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/questions-are-key">
+                    <a (click)="this.logeventservice.logEvent('click_questions-are-key')" routerLink="/adults/questions-are-key">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/41.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="questionKeyP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            
                             </div>
                           </div>  
       
@@ -367,13 +389,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/without-language">
+                    <a (click)="this.logeventservice.logEvent('click_without-language')" routerLink="/adults/without-language">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/42.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="lookWithoutLanguageP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       
@@ -399,13 +424,16 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/obstacles-enquiry">
+                    <a (click)="this.logeventservice.logEvent('click_obstacles-enquiry')"  routerLink="/adults/obstacles-enquiry">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/43.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="obstaclesEnquiryP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>  
       

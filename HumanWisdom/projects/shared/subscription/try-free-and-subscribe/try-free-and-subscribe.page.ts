@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { DatePipe, Location } from '@angular/common';
 import { paymentIntentModel } from '../../models/search-data-model';
+import { LogEventService } from '../../services/log-event.service';
+
+
 @Component({
   selector: 'app-try-free-and-subscribe',
   templateUrl: './try-free-and-subscribe.page.html',
@@ -29,6 +32,7 @@ export class TryFreeAndSubscribePage implements OnInit {
   startDate:any;
   expDate:any;
   constructor(private router: Router, private onboardingService: OnboardingService,
+    public logeventservice: LogEventService,
     private location: Location) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
@@ -46,6 +50,7 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   ngOnInit() {
+    this.logeventservice.logEvent('view_try_free_subscribe');
     this.InitializeDefaultValues();
     this.getCountry();
   }
@@ -87,6 +92,8 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   SelectSubscriptionType(subscriptionType: string) {
+    this.logeventservice.logEvent("click_select_"+subscriptionType);
+
     if (subscriptionType != Constant.Redeem) {
       SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan, subscriptionType);
     }else if(subscriptionType == Constant.Redeem) {
@@ -96,6 +103,18 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   tryFreeSubscribe() {
+    if(this.trialStatus =="No Trial")
+    {
+
+      this.logeventservice.logEvent("click_try_free_subscribe");
+    }
+    else if(this.trialStatus =="ended")
+    {
+      this.logeventservice.logEvent("click_proceed_subscribe");
+      
+    }
+
+  
     if (this.CheckIfUserIsLoggedIn()) {
       this.SetPaymentIntentModel();
       this.SetDataInLocalStorage();

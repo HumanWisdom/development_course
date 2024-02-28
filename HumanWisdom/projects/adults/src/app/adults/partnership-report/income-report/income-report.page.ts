@@ -7,7 +7,7 @@ import { NgNavigatorShareService } from "ng-navigator-share";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
-import jspdf from "jspdf";
+
 @Component({
   selector: "app-income-report",
   templateUrl: "./income-report.page.html",
@@ -25,6 +25,7 @@ export class IncomeReportPage implements OnInit {
   totalRevenu: number;
   isPdfDownloading=false;
   BankDet: string = null;
+  isCopy:boolean =false;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -53,7 +54,13 @@ export class IncomeReportPage implements OnInit {
     } as PartnershipReport;
   }
  
-
+  getTittle(){
+    if(this.isCopy){
+      return 'Copy';
+    }else{
+      return 'Copied';
+    }
+  }
 
   DownloadPdf() {
    this.isPdfDownloading=true;
@@ -202,4 +209,15 @@ export class IncomeReportPage implements OnInit {
   {
   this.router.navigate(['adults/adult-dashboard'])
   }
+
+  copyText(referralCode): void {
+    navigator.clipboard.writeText(referralCode).catch(() => {
+      console.error("Unable to copy text");
+    });
+    this.isCopy=false;
+    setTimeout(() => {
+      this.isCopy=true;
+    }, 4000);
+  }
+  
 }
