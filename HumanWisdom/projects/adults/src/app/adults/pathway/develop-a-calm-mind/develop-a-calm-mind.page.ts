@@ -29,11 +29,11 @@ export class DevelopACalmMindPage implements OnInit {
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
-      this.natureP = d['ModUserScrPc'].find(e => e.Module == "Nature")?.Percentage;
-      this.breathingP = d['ModUserScrPc'].find(e => e.Module == "Breathing")?.Percentage;
-      this.meditationP = d['ModUserScrPc'].find(e => e.Module == "Meditation")?.Percentage;
-      this.ntP = d['ModUserScrPc'].find(e => e.Module == "Noticing Thoughts")?.Percentage;
-      this.gamP = d['ModUserScrPc'].find(e => e.Module == "Guided Audio Meditation")?.Percentage;
+      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 28)?.Percentage;
+      this.breathingP = d['ModUserScrPc'].find(e => e.ModuleId == 29)?.Percentage;
+      this.meditationP = d['ModUserScrPc'].find(e => e.ModuleId == 22)?.Percentage;
+      this.ntP = d['ModUserScrPc'].find(e => e.ModuleId == 30)?.Percentage;
+      this.gamP = d['ModUserScrPc'].find(e => e.ModuleId == 51)?.Percentage;
     });
     this.logeventservice.logEvent('view_develop_calm_mind');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
