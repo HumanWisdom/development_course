@@ -10844,7 +10844,7 @@ body,
   padding: 20px;
   height: auto;
   /* background-color: #5D5D5D; */
-  background: #292D56;
+  background: #183C79;
   color: #fff;
   border: 0;
   opacity: 0;
@@ -15216,7 +15216,7 @@ input[type="number"] {
 .dpanel>.panel-heading
 {
   /* background-color: white; */
-  background-color: #292D56;
+  background-color: #183C79;
   border-color: transparent;
 }
 
@@ -18634,7 +18634,7 @@ ngx-circular-player svg
 
 .circle-container .btn h6
 {
-  color: #292D56;
+  color: #183C79;
   /* font-weight: 600; */
 }
 
@@ -18649,7 +18649,7 @@ ngx-circular-player svg
 .circle-container .btn:hover h6,
 .circle-container .btn:focus h6 
 {
-  color: #292D56;
+  color: #183C79;
 }
 /* /circular btns */
 
@@ -22014,7 +22014,7 @@ ul.dh_ul li:last-child
   border: 0;
   border-bottom: 0;
   border-radius: 6px;
-  background: #292D56;
+  background: #183C79;
   padding: 10px;
   font-size: 15px;
   font-weight: 600;
@@ -29212,7 +29212,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   border: 0;
   /* box-shadow: 0 2px 2px rgb(0 0 0 / 10%); */
   /* background: #FFFFFF; */
-  background: #292D56;
+  background: #183C79;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -29348,7 +29348,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   padding: 0 20px;
   bottom: 0;
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.10);
-  background: #292D56 !important;
+  background: #183C79 !important;
 }
 /* /black background customisation */
 
@@ -30608,7 +30608,7 @@ svg path
   color: #ADADAD;
   border: 0; */
 
-  background: #292D56;
+  background: #183C79;
   color: #FFFFFF;
 }
 
@@ -30640,7 +30640,7 @@ svg path
 
 .btn_wec
 {
-  background: #292D56;
+  background: #183C79;
   /* border: 1px solid #1092A7;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   color: #1092A7;
@@ -30703,7 +30703,7 @@ svg path
   margin-top: 0 !important;
   height: 80px;
   border: 0;
-  background: #292D56;
+  background: #183C79;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
   transition: all 1s ease;
   display: flex;
@@ -32933,7 +32933,7 @@ body *
 
 .cpanel>.panel-heading
 {
-  background-color: #292D56;
+  background-color: #183C79;
   border-color: transparent;
   padding: 0 0 15px 0;
 }
@@ -33121,7 +33121,7 @@ body *
 .toc_nvmenu_v3 
 {
   /* height: 80px;
-  background: #292D56;
+  background: #183C79;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
   position: fixed; */
   height: 80px;
@@ -33738,7 +33738,7 @@ body *
   padding: 0 20px;
   bottom: 0;
   box-shadow: unset;
-  background: #292D56 !important;
+  background: #183C79 !important;
 }
 
 .cgqtns_sc 
@@ -34357,7 +34357,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #292D56;
+  background: #183C79;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   color: rgba(255, 255, 255, 0.50);
   font-size: 12px;
@@ -34455,7 +34455,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .we_carousel
 {
-  background: #292D56;
+  background: #183C79;
 }
 
 .br_blr_20px
@@ -34657,7 +34657,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .progress_profile
 {
   height: 6px;
-  background: #292D56;
+  background: #183C79;
   border-radius: 10px;
   margin: 0;
 }
@@ -34670,7 +34670,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .border_profile_img
 {
-  border: 10px solid #292D56 !important;
+  border: 10px solid #183C79 !important;
   border-radius: 50%;
   width: 82px;
   height: 82px;
@@ -34908,7 +34908,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   left: 0;
   margin: 0 auto;
   z-index: 999;
-  background: #292D56;
+  background: #183C79;
   height: 50px;
 }
 
@@ -35183,7 +35183,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .img_testimonial_user
 {
-  border: 5px solid #292D56;
+  border: 5px solid #183C79;
   border-radius: 50%;
   width: 100px;
 }
@@ -35325,7 +35325,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   /* background: #E58D82;
   color: #ffffff; */
   background: #FFF;
-  color: #292D56;
+  color: #183C79;
   filter: unset !important;
 }
 
@@ -35383,7 +35383,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_contact_mail
 {
   border-radius: 12px;
-  background: #292D56;
+  background: #183C79;
   padding: 10px !important;
 }
 
@@ -36054,7 +36054,7 @@ section > .row
   width: 100%;
   border-radius: 12px;
   border: 0;
-  background: #292D56;
+  background: #183C79;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;

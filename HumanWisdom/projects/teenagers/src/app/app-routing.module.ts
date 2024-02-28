@@ -256,6 +256,14 @@ const routes: Routes = [
     path: 'teen-talk',
     loadChildren: () => import('./teenagers/teen-talk/teen-talk.module').then( m => m.TeenTalkPageModule)
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./teenagers/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'explore',
+    loadChildren: () => import('./teenagers/explore/explore.module').then( m => m.ExplorePageModule)
+  },
 
 ];
   
