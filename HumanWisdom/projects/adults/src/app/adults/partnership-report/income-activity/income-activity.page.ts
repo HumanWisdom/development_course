@@ -6,7 +6,8 @@ import { NgNavigatorShareService } from "ng-navigator-share";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
 import html2canvas from "html2canvas";
-
+import jspdf from "jspdf";
+import html2pdf from "html2pdf.js";
 @Component({
   selector: "app-income-activity",
   templateUrl: "./income-activity.page.html",
