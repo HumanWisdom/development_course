@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { S3VideoComponent } from '../../../shared/component/s3-video/s3-video.component';
 
 const routes: Routes = [
   {
@@ -89,7 +90,7 @@ const routes: Routes = [
   {
     path: 'guided-meditation',
     loadChildren: () => import('./teenagers/guided-meditation/guided-meditation.module').then( m => m.GuidedMeditationModule)
-  },      
+  },
    {
     path: 'conditioning',
     loadChildren: () => import('./teenagers/conditioning/conditioning.module').then( m => m.ConditioningModule)
@@ -101,7 +102,7 @@ const routes: Routes = [
   {
     path: 'fear-anxiety',
     loadChildren: () => import('./teenagers/fear-anxiety/fear-anxiety.module').then( m => m.FearAnxietyModule)
-   
+
    },
    { path: 'reactive-mind',
     loadChildren: () => import('./teenagers/reactive-mind/reactive-mind.module').then( m => m.ReactiveMindModule)
@@ -121,7 +122,7 @@ const routes: Routes = [
   {
     path: 'loneliness',
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
-  }, 
+  },
   {
     path: 'anger',
     loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
@@ -132,7 +133,7 @@ const routes: Routes = [
   },
   {
     path: "forum",
-    loadChildren: () => import("./teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)  
+    loadChildren: () => import("./teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)
   },
   {
     path: 'search',
@@ -178,12 +179,12 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/food-health/food-health.module').then(m => m.FoodHealthModule)
   },
   {
-   
+
     path: 'habit-addiction',
     loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
   },
   {
-   
+
     path: 'living-with-peace',
     loadChildren: () => import('./teenagers/living-with-peace/living-with-peace.module').then(m => m.LivingWithPeaceModule)
   },
@@ -214,7 +215,7 @@ const routes: Routes = [
   {
     path: 'criticism',
     loadChildren: () => import('./teenagers/criticism/criticism.module').then(m => m.CriticismModule)
-  }, 
+  },
   {
     path: 'opinions-beliefs',
     loadChildren: () => import('./teenagers/opinions-beliefs/opinions-beliefs.module').then(m => m.OpinionsBeliefsModule)
@@ -252,9 +253,24 @@ const routes: Routes = [
     path: 'find-answers/:url',
     loadChildren: () => import('./teenagers/find-answers/find-answers.module').then( m => m.FindAnswersModule)
   },
-
+  {
+    path: 'teen-talk',
+    loadChildren: () => import('./teenagers/teen-talk/teen-talk.module').then( m => m.TeenTalkPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./teenagers/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'explore',
+    loadChildren: () => import('./teenagers/explore/explore.module').then( m => m.ExplorePageModule)
+  },
+  {
+    path: 'videopage/:videolink/:enable/:title',
+    component: S3VideoComponent
+  },
 ];
-  
+
 
 
 

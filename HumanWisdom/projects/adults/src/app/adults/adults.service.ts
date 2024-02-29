@@ -27,7 +27,7 @@ export class AdultsService {
     },
     {
       id: "3",
-      name: 'Have fulfilling relationships'
+      name: 'Relationships'
     },
     {
       id: "4",
@@ -39,7 +39,7 @@ export class AdultsService {
     },
     {
       id: "6",
-      name: 'Deal with sorrow and loss'
+      name: 'Deal with loss'
     },
     {
       id: "7",

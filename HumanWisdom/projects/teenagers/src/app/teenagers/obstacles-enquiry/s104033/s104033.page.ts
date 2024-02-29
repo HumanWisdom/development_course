@@ -28,7 +28,7 @@ export class S104033Page implements OnInit {
   reflection: any
   reflectionA: any
   r104033 = (sessionStorage.getItem("r104033"))
-  
+  progName="teenagers"
 
   shared: any
   confirmed: any

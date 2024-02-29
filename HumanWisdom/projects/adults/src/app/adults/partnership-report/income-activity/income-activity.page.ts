@@ -2,11 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import jsPDF from "jspdf";
-import html2pdf from "html2pdf.js";
 import { NgNavigatorShareService } from "ng-navigator-share";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
 import html2canvas from "html2canvas";
+
 @Component({
   selector: "app-income-activity",
   templateUrl: "./income-activity.page.html",
@@ -14,6 +14,7 @@ import html2canvas from "html2canvas";
 })
 export class IncomeActivityPage implements OnInit {
   partnershipReport: PartnershipReport;
+  hasIncome =false;
 
   isPdfDownloading=false;
   groupedDates = [];
@@ -34,6 +35,11 @@ export class IncomeActivityPage implements OnInit {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
         this.partnershipReport = res;
+        if(this.partnershipReport.IncomeActivity.length>0)
+        {
+          this.hasIncome=true;
+
+        }
         this.getMaskAccountDetails();
         this.groupDates();
       }
@@ -125,9 +131,9 @@ export class IncomeActivityPage implements OnInit {
       });
   }
   redirectToIncomeReport() {
-    if(this.partnershipReport.IncomeActivity.length>0){
+     if(this.partnershipReport.IncomeActivity.length>0){
       this.router.navigate(["adults/partnership-report/income-report"]);
-    }
+     }
   }
 
   groupDates() {

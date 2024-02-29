@@ -96,7 +96,8 @@ export class S120099Page implements OnInit
   rating4 = 0
   rating5 = 0
   rating6 = 0
-
+  progName= "teenagers"
+  
   constructor
   (
     private router: Router,

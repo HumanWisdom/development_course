@@ -29,7 +29,8 @@ export class S95026Page implements OnInit {
   reflection: any
   reflectionA: any
   r95026 = sessionStorage.getItem("r95026")
-
+  progName= "teenagers"
+  
   constructor(private router: Router,
     private service: TeenagersService,
     private location: Location) { }

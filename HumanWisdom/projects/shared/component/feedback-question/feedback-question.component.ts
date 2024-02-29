@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 })
 export class FeedbackQuestionComponent implements OnInit {
   @Input() skipToPage:string
+  @Input() progName:string
 
   pageaction = localStorage.getItem("pageaction");
   constructor(public router: Router,private location: Location) { }
@@ -20,7 +21,8 @@ export class FeedbackQuestionComponent implements OnInit {
 
   goToPage(){
     console.log("in page")
-    this.router.navigate([this.skipToPage])
+    let progNamePath = this.progName == "teenagers" ? "":"/adults";
+    this.router.navigate([progNamePath+this.skipToPage])
   }
 
   goBack() 

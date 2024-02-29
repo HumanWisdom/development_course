@@ -9,6 +9,7 @@ import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
 import jspdf from "jspdf";
 import html2pdf from "html2pdf.js";
+
 @Component({
   selector: "app-income-report",
   templateUrl: "./income-report.page.html",
