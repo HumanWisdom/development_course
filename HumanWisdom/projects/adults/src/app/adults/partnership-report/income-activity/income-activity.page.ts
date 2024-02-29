@@ -79,38 +79,36 @@ export class IncomeActivityPage implements OnInit {
     } as PartnershipReport;
   }
 
-  DownloadPdf() {
+  DownloadPdf1(){
+  
+
     this.isPdfDownloading=true;
     const html = document.getElementById('partnershipReport');
+    console.log("activity",html)
      setTimeout(() => {
-      html2canvas(html).then((canvas) => {
-        const imgData = canvas.toDataURL("image/jpeg") 
-        const pdf = new jsPDF("p","mm","a5");
-        const imageProps = pdf.getImageProperties(imgData)
-        const pdfw = pdf.internal.pageSize.getWidth()
-        const test = pdf.internal.pageSize.getHeight()
-        const pdfh = (imageProps.height * pdfw) / imageProps.width
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
-        pdf.save("tree-plantation-report.pdf");
-      
-      });
-    //     // Detect screen resolution
-    // const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    // const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      const htmlHeight = html.scrollHeight;
 
-    //   const options = {
-    //     margin: [0,0 , 0, 0],
-    //     filename: 'Partnership-report.pdf',
-    //     image: { type: 'jpeg', quality: 0.98 },
-    //     html2canvas: { scale:  2},
-    //     jsPDF: { unit: 'mm',format: [screenWidth*0.5, screenHeight *  0.5], orientation: 'portrait', }
-    //   };
-  
-    //   html2pdf(html, options);
-    //    this.isPdfDownloading=false;
+  // Create a canvas with the height equal to the total height of the HTML content
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  canvas.width = html.offsetWidth;
+  canvas.height = htmlHeight;
+
+  // Render the HTML content onto the canvas
+  html2canvas(html, { canvas: canvas }).then((canvas) => {
+    const fileWidth = 208;
+    const fileHeight = (canvas.height * fileWidth) / canvas.width;
+    const FILEURI = canvas.toDataURL('image/png');
+    const PDF = new jsPDF('p', 'mm', 'a4');
+    const position = 0;
+    PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+    PDF.save('angular-demo.pdf');
+    })
+     this.isPdfDownloading=false;
      }, 500);
- }
+  }
+
+
 
   share(refcode) {
     this.ngNavigatorShareService
@@ -166,6 +164,90 @@ export class IncomeActivityPage implements OnInit {
 
     return Object.values(this.groupedDates);
   }
+
+  constructTableHtml(): string {
+    
+    let htmlString =`<html><body>`
+     htmlString=`<div style="background-color: #2A3F54;min-height:100%">`
+    htmlString+=` <div style="background-color: #2A3F54;" ><img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hwp_logo_v3_white.svg" alt="HumanWisdom" class="img-responsive img_logo"> </div>`
+    htmlString+=`<h2 style="color:white;float: right;">Income Activity Report</h2>`
+    htmlString += '<table style="border: 1px solid black;width: 100%; color:white ;min-height:100%" >';
+    htmlString += '<thead>';
+    htmlString += '<tr>';
+    htmlString += '<th style="border: 1px solid black; color: fff;">Level</th>';
+    htmlString += '<th style="border: 1px solid black; color: fff;">Partner Count</th>';
+    htmlString += '<th style="border: 1px solid black; color: fff;">Subscriptions Count</th>';
+    htmlString += '<th style="border: 1px solid black; color: fff;">Revenue</th>';
+    htmlString += '</tr>';
+    htmlString += '</thead>';
+    htmlString += '<tbody style="height=1000px;" >';
+    for (const income of this.partnershipReport.IncomeReport) {
+      htmlString += '<tr>';
+      htmlString += `<td style="border: 1px solid black;margin-left='2px'; color: fff;margin-left:5px  ">${income.Level}</td>`;
+      htmlString += `<td style="border: 1px solid black;margin-left='2px'; color: fff;margin-left:5px ">${income.PartnersCnt}</td>`;
+      htmlString += `<td style="border: 1px solid black;margin-left='2px'; color: fff;margin-left:5px ">${income.SubscribersCnt}</td>`;
+      htmlString += `<td style="border: 1px solid black;margin-left='2px'; color: fff;margin-left:5px ">${income.RevenueEarned}</td>`;
+      htmlString += '</tr>';
+    }
+    htmlString += '</tbody>';
+    return htmlString;
+  }
+
+//   DownloadPdf() {
+//     this.isPdfDownloading=true;
+//      const html = document.getElementById('test');
+//      var options={
+//       margin:[0,0,0,0],
+//      }
+//     // let base64result:any;
+//     // html2canvas(html).then(canvas => {
+//     //   canvas.toBlob(blob => {
+//     //     const reader = new FileReader();
+//     //     reader.readAsDataURL(blob);
+//     //     reader.onload = (event: any) => {
+//     //       base64result = event.target.result.split(',').pop();
+//     //       this.DownLoadFile(base64result,'application/pdf','partnership')
+//     //     };
+//     //   });
+//     // });
+// setTimeout(() => {
+//   html2pdf()
+//   .from(html).set(options)
+//  .save();
+//   this.isPdfDownloading=false;
+// }, 500);
+// this.constructTableHtml();
+
+   
+//   }
+
+//   DownLoadFile(data: any, type: string, name: string) {
+//     const blob = new Blob([data], { type });
+//     const url = window.URL.createObjectURL(blob);
+//     const fileLink = document.createElement('a');
+//     fileLink.href = url;
+//     // it forces the name of the downloaded file
+//     fileLink.download = name + '.pdf';
+//     // triggers the click event
+//     fileLink.click();
+//   }
+  
+
+  DownloadPdf() {
+    this.isPdfDownloading = true;
+    const html = document.getElementById('partnershipReport');
+    var options = {
+      margin: [0, 0, 0, 0],
+    }
+    setTimeout(() => {
+      html2pdf()
+        .from(html).set(options)
+        .save();
+      this.isPdfDownloading = false;
+    }, 500);
+
+  }
+
 
   ChangeAccountDetais() {
     this.router.navigate(["adults/partnership-app/payment-bank"], {
