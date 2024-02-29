@@ -13,7 +13,8 @@ export class S104031Page implements OnInit {
   bg_tn = "bg_teal"
   bg_cft = "bg_teal"
   bg = "feedback_survey_footer"
-
+  progName="teenagers"
+  
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

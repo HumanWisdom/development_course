@@ -36443,7 +36443,8 @@ a.fc_e58d82:hover
 .div_fbn a:nth-child(1) .row,
 .div_fbn a:nth-child(4) .row,
 .div_fbn a:nth-child(7) .row,
-.div_fbn a:nth-child(10) .row
+.div_fbn a:nth-child(10) .row,
+.div_fbn a:nth-child(13) .row
 {
   background: #834B66;
 }
@@ -36460,7 +36461,8 @@ a.fc_e58d82:hover
 .div_fbn a:nth-child(2) .row,
 .div_fbn a:nth-child(5) .row,
 .div_fbn a:nth-child(8) .row,
-.div_fbn a:nth-child(11) .row
+.div_fbn a:nth-child(11) .row,
+.div_fbn a:nth-child(14) .row
 {
   background: #CB6171;
 }
@@ -36474,7 +36476,9 @@ a.fc_e58d82:hover
 .div_fq a:nth-child(15) .row,
 .div_fbn a:nth-child(3) .row,
 .div_fbn a:nth-child(6) .row,
-.div_fbn a:nth-child(9) .row
+.div_fbn a:nth-child(9) .row,
+.div_fbn a:nth-child(12) .row,
+.div_fbn a:nth-child(15) .row
 {
   background: #E58D82;
 }
@@ -36488,5 +36492,27 @@ a.fc_e58d82:hover
 .adsearch_ext_01
 {
   top: 80px;
+}
+
+.progress_box .row 
+{
+  border-radius: 12px;
+  background: #120F40;
+  height: auto;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.progress_box_score 
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 15px 20px;
+}
+
+.div_gm
+{
+  padding: 0;
 }
 /* /version - 03 */

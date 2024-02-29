@@ -30,7 +30,8 @@ export class S140108Page implements OnInit {
   reflectionA: any
   //r140108 = JSON.parse(sessionStorage.getItem("r140108"))
   r140108 = sessionStorage.getItem("r140108") !== 'null' ? sessionStorage.getItem("r140108") : '';
-
+  progName= "teenagers"
+  
   constructor(private router: Router,
     private service: TeenagersService,
     private location: Location) { }
