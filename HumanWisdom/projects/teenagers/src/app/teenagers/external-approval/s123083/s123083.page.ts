@@ -97,7 +97,7 @@ export class S123083Page implements OnInit
   rating5 = 0
   rating6 = 0
   toc="/external-approval/s123001"
-
+  progName= "teenagers"
 
   constructor
   (

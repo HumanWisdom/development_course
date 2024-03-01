@@ -91,13 +91,13 @@
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                 <!-- <a> -->
-                                  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
+                                 <!--  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
                                     </span>
                                     days
-                                  </h2>
+                                  </h2> -->
                                 <!-- </a> -->
                               </div>
                             </div>
@@ -193,7 +193,7 @@
 
             <!-- my progress -->
             <!-- accordion -->
-            <div class="row accordion_row">
+            <div class="row accordion_row" *ngIf="isloggedIn">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
@@ -208,12 +208,12 @@
                                   My progress
                                 </h2>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                <!-- <a> -->
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="viewDetails()">
+                                <a  (click)="viewDetails()">
                                   <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                                     View details
                                   </h2>
-                                <!-- </a> -->
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -234,7 +234,7 @@
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_points.svg" class="img-responsive mb10px">
 
                                       <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                        5,499
+                                        {{loginResponse.Points}}
                                       </h4>
 
                                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
@@ -249,8 +249,8 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_streak.svg" class="img-responsive mb10px">
 
-                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                        11 days
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff"> 
+                                          {{loginResponse.Streak}} {{(loginResponse.Streak>1)?'days':'day'}}
                                       </h4>
 
                                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
@@ -266,7 +266,7 @@
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_certificates.svg" class="img-responsive mb10px">
 
                                       <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                        0
+                                        {{loginResponse.Modules}}
                                       </h4>
 
                                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
@@ -283,7 +283,7 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
-                                      74%
+                                      {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
                                     </h4>
                                   </div>
                                 </div>
@@ -297,8 +297,8 @@
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                      <a class="">
-                                        <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 jc_flex_end">
+                                      <a class="" (click)="survey()"> 
+                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
                                           Take the survey
                                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
                                         </h4>
@@ -322,7 +322,7 @@
             <!-- /my progress -->
 
             <!-- hr -->
-            <div class="row">
+            <div class="row" *ngIf="isloggedIn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
@@ -332,7 +332,8 @@
             <!-- explore a topic in depth-for guest user -->
             <div class="row" *ngIf="YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01"   (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" >
+                <a class="prelative box_v3_01" (click)="changeTopic()"  >
+                  <!-- (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" -->
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -384,10 +385,10 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Change your topic of choice
+                  Explore a different topic
                 </button>
               </div>
             </div>
@@ -936,7 +937,7 @@
                   </h2>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                  <a class="prelative" routerLink="/adults/testimonials"> 
+                  <a class="prelative" routerLink="/adults/testimonials">
                     <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                       View all
                     </h2>
@@ -985,7 +986,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -1309,7 +1310,7 @@
                       </a>
                     </div>
                   </div>
-                </div> 
+                </div>
 
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
@@ -1381,7 +1382,7 @@
                       </a>
                     </div>
                   </div>
-                </div> 
+                </div>
 
               </div>
             </div>
@@ -1544,12 +1545,12 @@
             This website uses cookies
           </h4>
           <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
-            By continuing to browse you are agreeing to our use of cookies as explained in our 
+            By continuing to browse you are agreeing to our use of cookies as explained in our
             <a class="underline fs_15px fw_400 lh_150p fc_ffffff_0_5" (click)="opennewTab()">Cookie Policy</a>
           </h4>
         </div>
       </div>
-      
+
       <div class="row mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
           <button type="button" class="btn btn_ctd" (click)="acceptCookies()">

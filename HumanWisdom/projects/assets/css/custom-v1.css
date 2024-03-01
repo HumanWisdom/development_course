@@ -247,6 +247,9 @@ height: 250px;
 .img-forum{
 border-radius: 1rem;
 }
+.btn-confirm{
+  margin-top:-2rem;
+}
 
 /* /forum */
 

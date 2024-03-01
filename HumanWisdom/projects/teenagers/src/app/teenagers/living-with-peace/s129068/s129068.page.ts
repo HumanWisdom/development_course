@@ -35,6 +35,7 @@ export class S129068Page implements OnInit {
   endTime:any
   totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"));
+  progName= "teenagers";
 
   constructor(private router: Router,
     private service: TeenagersService,

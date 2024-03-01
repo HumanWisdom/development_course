@@ -15,7 +15,7 @@ export class S104003Page implements OnInit,OnDestroy {
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="teal_w1"
-  title=""
+  title="Introduction"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/art_of_enquiry/audios/enquiry+9.1.mp3'
   transcriptPage="/obstacles-enquiry/s104003t"

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 @Component({
@@ -6,7 +6,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './related-wisdom-stories-tiles.component.html',
   styleUrls: ['./related-wisdom-stories-tiles.component.scss'],
 })
-export class RelatedWisdomStoriesTilesComponent implements OnInit {
+export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
 
   @Input()
   wisdomstories = [];
@@ -17,8 +17,8 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
   enable_view_more_less = false;
   view_more_less="View More"
 
-  constructor(private router: Router,private service:AdultsService) { 
-    
+  constructor(private router: Router,private service:AdultsService) {
+
   }
 
   ngOnInit() {
@@ -37,20 +37,20 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
       this.enablewisdomstory = true
      }
      console.log(this.wisdomstories)
-     
+
   }
 
   viewstory(item){
     localStorage.setItem("story",JSON.stringify(item))
     let res = localStorage.getItem("isloggedin");
-    if(res && res === 'T') { 
+    if(res && res === 'T') {
       this.service.clickStory(item.ScenarioID).subscribe(res=>{
         this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
       })
     }else {
       this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
     }
-    
+
   }
 
   toggle_view_more_less()
@@ -65,6 +65,14 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
       this.enable_view_more_less = false;
       this.view_more_less = "View More";
     }
+  }
+
+  ngOnDestroy() {
+    this.wisdomstories = [];
+    this.wisdomstoriesbottom = [];
+    this.enablewisdomstory = false;
+    this.enable_view_more_less = false;
+    this.view_more_less="View More"
   }
 
 }
