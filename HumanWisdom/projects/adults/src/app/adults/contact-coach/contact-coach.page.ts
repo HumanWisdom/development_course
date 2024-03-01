@@ -30,9 +30,8 @@ export class ContactCoachPage implements OnInit {
     this.title.setTitle('Contact a Life Coach for Personal Growth')
     this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth'})
     this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
-    this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' })
-
-  }
+    this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' });
+}
 
   initializeForm(){
     this.form={
@@ -103,6 +102,8 @@ export class ContactCoachPage implements OnInit {
   clearSearch() {
     this.form.Country = '';
     this.searchResult = [];
+    this.phonecode ='';
+    this.countryFIPS = '';
   }
 
 
@@ -1516,7 +1517,7 @@ export class ContactCoachPage implements OnInit {
    "ISO Numeric": 214,
    "GeoNameID": 3508796,
    "E164": 1,
-   "PhoneCode": "1-809, 1-829, 1-849",
+   "PhoneCode": "1-809",
    "Continent": "North America",
    "Capital": "Santo Domingo",
    "Time Zone in Capital": "America/Santo_Domingo",
@@ -4069,7 +4070,7 @@ export class ContactCoachPage implements OnInit {
    "ISO Numeric": 630,
    "GeoNameID": 4566966,
    "E164": 1,
-   "PhoneCode": "1-787, 1-939",
+   "PhoneCode": "1-787",
    "Continent": "North America",
    "Capital": "San Juan",
    "Time Zone in Capital": "America/Puerto_Rico",

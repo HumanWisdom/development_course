@@ -4052,13 +4052,25 @@ export class AdultDashboardPage implements OnInit {
     }
   }
   changeTopic() {
-    this.logeventservice.logEvent("click_Change-your-Topic");
     localStorage.setItem('lastRoute',this.dasboardUrl);
-    this.router.navigate(["/adults/change-topic"], {
-      state: {
-        routedFromLogin: false,
-      }
-    });
+    if(!this.isloggedIn)
+    {
+      this.logeventservice.logEvent("click_Select-a-topic-to-Explore");
+      this.router.navigate(["/adults/select-a-topic-to-explore"], {
+        state: {
+          routedFromLogin: false,
+        }
+      });
+    }
+    else
+    {
+        this.logeventservice.logEvent("click_Change-your-Topic");        
+        this.router.navigate(["/adults/change-topic"], {
+          state: {
+            routedFromLogin: false,
+          }
+        });
+    }
   }
 
   routeToFindAnswer(param){
