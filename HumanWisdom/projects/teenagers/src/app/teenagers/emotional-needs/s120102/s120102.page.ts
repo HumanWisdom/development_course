@@ -29,7 +29,8 @@ export class S120102Page implements OnInit
   reflection: any
   reflectionA: any
   r120102 = JSON.parse(sessionStorage.getItem("r120102"))
-
+  progName= "teenagers"
+  
   constructor
   (
     private router: Router,
