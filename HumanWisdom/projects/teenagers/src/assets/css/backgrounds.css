@@ -268,9 +268,9 @@
   background: #f9e9df !important
 }
 
-.bg_292d56
+.bg_stake
 {
-  background: #292D56 !important;
+  background: #183C79 !important;
 }
 
 .bg_183c79
@@ -299,4 +299,16 @@
   z-index: 0;
   min-height: 100vh !important;
   padding: 8rem 20px 20px 20px;
+}
+
+.v1_3_bg_splash_teens
+{
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/splash.svg) no-repeat center center fixed !important; */
+  background: linear-gradient(180deg, #183C79 0%, #4267A5 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  z-index: 0;
+  min-height: 100vh;
 }

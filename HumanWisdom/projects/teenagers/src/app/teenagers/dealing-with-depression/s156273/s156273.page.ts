@@ -89,7 +89,8 @@ export class S156273Page implements OnInit {
   rating4 = 0
   rating5 = 0
   rating6 = 0
-
+  progName= "teenagers"
+  
   constructor(private router: Router,
     private service: TeenagersService,
     private location: Location) { }

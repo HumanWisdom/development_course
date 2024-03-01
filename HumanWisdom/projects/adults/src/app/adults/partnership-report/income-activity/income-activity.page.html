@@ -22,326 +22,386 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->
+<div class="right_col mc_01">	
   <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white col_cw" id="partnershipReport">
+    <div class="row center_flex" >
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" >
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form >
+            <form>
+              <!-- partnership referral code -->
+              <div class="row mt20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="prelative">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
+                            <h4 class="mtb0px fs_16px fw_600 lh_140p fc_ffffff">
+                              Partnership Referral Code
+                            </h4>
+                          </div>
 
-              <div class="row center_flex mt40px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <button type="button" class="btn_pr_code" title="{{getTittle()}}" (click)="copyText(partnershipReport.AffRefCode)">
+                              {{this.partnershipReport.AffRefCode}}
+                            </button>
+                          </div>
+                        </div>
 
-                  <div class="row mb20px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <h4 class="fw_400 fs_12px lh_140p fc_5d5d5d mtb0px">
-                        Partnership Referral Code
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                          <a class="" (click)="share(partnershipReport.AffRefCode)">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_share.svg" class="img-responsive">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- /partnership referral code -->
+
+              <!-- profile -->
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
+                  <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" alt="" class="img-responsive border_profile_img">
+                </div>
+              </div>
+
+              <div class="pt1 profile_pe_div">
+                <div class="row mt35px mb5px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                      {{partnershipReport.AffName}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                      Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft" *ngIf="partnershipReport.ByPaypal==0">
+                        A/c # {{BankDet}}
                       </h4>
-                      <button type="button"  class="btn btn_pr_code">
-                        {{this.partnershipReport.AffRefCode}}
-                      </button>
-                      <a class="" (click)="share(partnershipReport.AffRefCode)">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey_02.svg" alt="" class="p0"/>
+                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft" *ngIf="partnershipReport.ByPaypal==1">
+                        Paypal # {{BankDet}}
+                      </h4>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                      <a class="" (click)="ChangeAccountDetais()">
+                        <h4 class="mtb0px fs_15px fw_600 lh_18px fc_e58d82 ws_nowrap tright">
+                          Change
+                        </h4>
                       </a>
                     </div>
                   </div>
+                </div>
+              </div>
+              <!-- /profile -->
 
-                  <div class="row cmlr-10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="ws_hr mtb0px">
-                    </div>
-                  </div>
+              <!-- balance -->
+              <div class="row mt20px box_blue_01">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                  <!-- <div class="row mtb30px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai" >
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
-                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
-                      </div>
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                        <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px tleft">
-                         {{partnershipReport.AffName}}
-                        </h4> 
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft">
-                          Lifetime earnings: {{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr20px pl0px">
+                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_ffffff">
+                          AVAILABLE BALANCE
                         </h4>
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft" *ngIf="BankDet">
-                        A/c # {{ BankDet }}
+                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_ffffff">
+                          USD {{partnershipReport.BalanceAmt}}
                         </h4>
-                        <a>
-                          <h4 class="fw_400 fs_15px lh_140p fc_000000 tright underline" (click)="ChangeAccountDetais()" >
-                          Change
+
+                        <a id="mailto" href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=100">
+                          <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 underline ws_nowrap">
+                            Request to withdraw
                           </h4>
                         </a>
-                    
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <div class="row mtb30px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
-                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
-                      </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pr0px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px tleft">
-                            {{partnershipReport.AffName}}
-                          </h4>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft">
-                            Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
-                          </h4>
-                        </div>
-                        
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                            <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft" *ngIf="partnershipReport.ByPaypal==0">
-                              A/c # {{BankDet}}
-                            </h4>
-                            <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft" *ngIf="partnershipReport.ByPaypal==1">
-                              Paypal # {{BankDet}}
-                            </h4>
-                          </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0" *ngIf="!isPdfDownloading">
-                            <a class="" (click)="ChangeAccountDetais()">
-                              <h4 class="fw_400 fs_15px lh_140p fc_1092a7 underline ws_nowrap mtb0px tright">
-                                Change
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82" *ngIf="partnershipReport.BalanceAmt<100">
+                          Reach $100 to get paid
+                        </h4>
                       </div>
                     </div>
                   </div>
-                  
-                  <!-- if partner available -->
-                  <div>
-                    <div class="row pr_ab_wd">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                          <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                            AVAILABLE BALANCE
-                          </h4>
-                          <h4 class="fw_700 fs_15px lh_18px fc_1092a7 mtb0px">
-                            USD {{partnershipReport.BalanceAmt}}
-                          </h4>
 
-                          <a id="mailto" href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=100">
-                            <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mb0px mt5px underline ws_nowrap">
-                              Request to withdraw
-                            </h4>
-                          </a>
-                          <h4 class="fw_400 fs_15px lh_22px fc_5d5d5d mb0pxi mt5px" *ngIf="partnershipReport.BalanceAmt<100">
-                            Reach $100 to get paid
+                  <div class="vertical_line_01"></div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl20px pr0px">
+                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_ffffff">
+                          RECEIVED
+                        </h4>
+                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_ffffff">
+                          USD {{partnershipReport.WithdrawnAmt}}
+                        </h4>
+                        <a *ngIf="hasIncome"  (click)="redirectToIncomeReport()">
+                          <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 underline ws_nowrap" [ngClass]="{'fc_adadad': partnershipReport.IncomeActivity.length==0 }">
+                            View Income Report
                           </h4>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 dinline_box tcenter">
-                          <hr class="vhr_02 mtb0px">
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                          <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
-                            WITHDRAWN
-                          </h4>
-                          <h4 class="fw_500 fs_12px lh_14px fc_000000 mtb0px bold">
-                            USD {{partnershipReport.WithdrawnAmt}}
-                          </h4>
-                          <a (click)="redirectToIncomeReport()">
-                            <h4 [ngClass]="{'fc_adadad': partnershipReport.IncomeActivity.length==0 }"  class="fw_400 fs_15px lh_140p fc_1092a7 mb0pxi mt5px underline ws_nowrap">
-                              View income report
-                            </h4>
-                          </a>
-                        </div>
+                        </a>
                       </div>
                     </div>
-                  
-                    <div class="row mt40px">
-                      <div class="col-md-6 col-sm-6 col-xs-6">
-                        <h4 class="fw_400 fs_12px lh_140p fc_000000 mtb0px tleft">
-                      {{currentDate  | date: "longDate"}}
+                  </div>
+
+                </div>
+              </div>
+              <!-- /balance -->
+
+              <!-- income activity -->
+              <div class="row mt20px box_blue_01">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.IncomeActivity.length>0">
+                          Income Activity
+                        </h4>
+
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                          {{currentDate  | date: "longDate"}}
                         </h4>
                       </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
-                        <a (click)="redirectToMyPartnership()" class="" >
-                          <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px underline">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <a (click)="redirectToMyPartnership()" class="">
+                          <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 tright">
                            View Partners
                           </h4>
                         </a>
-                        </div>
-                    </div> 
-                    
-                    <div class="row mt5px mb20px" *ngIf="partnershipReport.IncomeActivity.length>0">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px tleft">
-                          Income Activity
-                        </h4>
                       </div>
-                    </div> 
+                    </div>
+                  </div>
 
-                    <ng-container *ngFor="let item of groupedDates| keyvalue"> 
-                      <div class="row pr_ia_title">
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                          <h4 class="fw_400 fs_12px lh_130p fc_000000 mtb0px tleft">
-                            {{item.key}}
-                          </h4>
-                        </div>
-                      </div> 
+                </div>
+              </div>
+              <!-- /income activity -->
 
-                      <ng-container *ngFor="let val of item.value.dates">
-                        <div class="row mtb15px">
-                          <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                            <div class="col-md-6 col-sm-6 col-xs-6 pl0px">
-                              <h4 class="fw_400 fs_15px lh_130p fc_000000 mtb0px">
+              <ng-container *ngFor="let item of groupedDates| keyvalue">
+                <!-- date heading -->
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                      {{item.key}}
+                    </h4>
+
+                    <hr class="hr_style_v3_12">
+                  </div>
+                </div>
+                <!-- /date heading -->
+
+                <div class="row_vp">
+                  <ng-container *ngFor="let val of item.value.dates">
+                    <!-- partners -->
+                    <div class="row box_blue_01">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
                                 {{val.date}} {{val.month}}
                               </h4>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px tright">
+
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
                                 USD {{val.Comm_Earned}} 
                               </h4>
                             </div>
                           </div>
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h4 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px">
-                              ID #{{val.SubscriptionId}} | Level {{val.Level}} 
-                            </h4>
-                            <h4 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px">
-                              Partner Name: {{val.PartnerName}}
-                            </h4>
-                          </div>
-                        </div> 
-                        <div class="row cmlr-10px">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <hr class="ws_hr mtb0px">
-                          </div>
                         </div>
-                      </ng-container>
-                    </ng-container>
-                    
-                    <div class="row mt40px mb40px" *ngIf="!isPdfDownloading && partnershipReport.IncomeActivity.length>0">
-                      <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                        <a class="flex_ai" (click)="DownloadPdf()">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
-                          <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px ml10px">
-                            Download PDF
-                          </h4>
-                        </a>
-                      </div>
-                     </div>
-   
-                  <ng-container *ngIf="partnershipReport.IncomeActivity.length==0">
-                    <div class="row mtb70px">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_no_partner.svg"
-                              alt=""
-                              class="img-responsive"
-                            />
+
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                          <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt0px mb5px fs_12px fw_400 lh_150p fc_ffffff">
+                                ID #{{val.SubscriptionId}} | Level {{val.Level}} 
+                              </h4>
+
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                Partner Name: {{val.PartnerName}}
+                              </h4>
+                            </div>
                           </div>
                         </div>
 
-                        <div class="row mt10px">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h4 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px tcenter">
-                              You have no active partners
-                            </h4>
-                          </div>
-                        </div>
-
-                        <div class="row mt10px" *ngIf="partnershipReport.PartnerCount>0">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px underline tcenter" (click)="redirectToMyPartnership()">
-                              Remind Inactive Partners
-                            </h4>
-                          </div>
-                        </div>
                       </div>
                     </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <hr class="ws_hr mtb0px" />
-                      </div>
-                    </div>
-
-                    <div class="row mtb30px">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
-                          To get started, share your partnership referral code
-                          with friends and organizations.
-                        </h4>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div
-                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex"
-                      >
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px p_rc fw_700">  {{this.partnershipReport.AffRefCode}}</h4>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tleft" (click)="share(partnershipReport.AffRefCode)">
-                          <a>
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_round.svg"
-                              alt=""
-                              class="img-responsive"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row mb40px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a>
-                          <h4 *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)" class="fw_500 fs_12px lh_140p fc_1092a7 mb0px underline tcenter">
-                            Copy code
-                          </h4>
-                          <h4 *ngIf="!isCopy"  class="fw_500 fs_12px lh_140p fc_1092a7 mb0px underline tcenter">
-                            Copied
-                          </h4>
-                        </a>
-                      </div>
-                    </div>
+                    <!-- /partners -->
                   </ng-container>
-                    <div class="row"  *ngIf="!isPdfDownloading">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_400 fs_12px lh_140p fc_5d5d5d mtb0px">
-                          If you wish to switch your partnership benefits,
-                           and have a tree planted for every subscription instead
-                            of receiving an income , do write to us at
-                          <a
-                            class="fw_400 fs_12px lh_140p fc_5d5d5d underline oh_fcblue"
-                            href="mailto: partner@humanwisdom.me"
-                          >
-                            partner@humanwisdom.me
-                          </a>
+                </div>
+              </ng-container>
+
+              <!-- download pdf -->
+              <div class="row mt20px" *ngIf="!isPdfDownloading && partnershipReport.IncomeActivity.length>0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt="" class="img-responsive mr10px">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                      Download PDF
+                    </h4>
+                  </a>
+                </div>
+              </div>
+              <!-- /download pdf -->
+
+              <div class="row mt20px" *ngIf="!isPdfDownloading">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    If you wish to switch your partnership benefits, and have a tree planted for every subscription instead of receiving an income , do write to us at
+                    <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto: team@happierme.app">
+                      team@happierme.app
+                    </a>
+                  </h4>
+                </div>
+              </div>
+   
+              <!-- no active partners -->
+              <ng-container *ngIf="partnershipReport.IncomeActivity.length==0">
+                <div class="row mtb40px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_no_partner.svg" alt="" class="img-responsive"/>
+                      </div>
+                    </div>
+
+                    <div class="row mt20px mb40px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                          You have no active partners
                         </h4>
                       </div>
                     </div>
+
+                    <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <button class="btn btn_rip" (click)="redirectToMyPartnership()">
+                          Remind Inactive Partners
+                        </button>
+                      </div>
                     </div>
                   </div>
-              </div>
+                </div>
 
+                <div class="row mb10px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                      To get started, share your partnership referral code with friends and organizations.
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 prelative">
+                      <div class="">
+                        <h4 class="mtb0px p_rc">  
+                          {{this.partnershipReport.AffRefCode}}
+                        </h4>
+                      </div>
+
+                      <div class="div_copy_01">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" class="img-responsive" *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" class="img-responsive" *ngIf="!isCopy">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pr0px tright" (click)="share(partnershipReport.AffRefCode)">
+                      <a>
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_peach_round.svg" alt="" class="img-responsive">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+              <!-- /no active partners -->
+            
               <div class="pagebreak"></div>
-
+              <div style="display: none;">
+                <body id="partnershipReport" style="font-family: Arial, sans-serif; background: white  !important; margin: 0; padding: 20px; min-height: 100%;height: 100%;">
+              
+                  <header style="text-align: center; padding: 10px;">
+                      <h1>Partnership Income Activity</h1>
+                  </header>
+                  
+                  <div style="margin-bottom: 20px;">
+                  <h4 style="margin-left: 4px;">Summary</h4> <p  style="float: right;font: bold;margin-right: 4px;">    {{currentDate | date:'dd MMMM y'}} </p>
+                  <p style="margin-left: 4px;"> Name: {{partnershipReport.AffName}} </p> 
+                  <p style="margin-left: 4px;"> Earnings : ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt | number}} </p>
+                  </div>
+                
+                  <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background-color: #f2f2f2;">
+                      <thead>
+                
+                          <tr>
+                              <th style="border: 1px solid #ddd; padding: 10px;">Date</th>
+                              <th style="border: 1px solid #ddd; padding: 10px; ">Partner Name</th>
+                              <th style="border: 1px solid #ddd; padding: 10px; ">Subscriber Id</th>
+                              <th style="border: 1px solid #ddd; padding: 10px;">Level</th>
+                              <th style="border: 1px solid #ddd; padding: 10px;">Earning</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <ng-container *ngFor="let item of groupedDates| keyvalue">
+                          <ng-container *ngFor="let val of item.value.dates">
+                          <tr>
+                              <td style="border: 1px solid #ddd; padding: 10px;">{{val.date}} {{val.month}}</td>
+                              <td style="border: 1px solid #ddd; padding: 10px;"> {{val.PartnerName}}</td>
+                              <td style="border: 1px solid #ddd; padding: 10px;">#{{val.SubscriptionId}}</td>
+                              <td style="border: 1px solid #ddd; padding: 10px;">{{val.Level | number}}</td>
+                              <td style="border: 1px solid #ddd; padding: 10px;">${{val.Comm_Earned}}</td>
+                            </tr>
+                          </ng-container>
+                        </ng-container>
+                      </tbody>
+                  
+                      <tfoot>
+                          <!-- <tr>
+                              <td colspan="1" style="border: 1px solid #ddd; padding: 10px; font-weight: bold; ">Total</td>
+                              <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">  {{totalPartners}}</td>
+                              <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold; ">{{totalSubscriber}}</td>
+                              <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;"></td>
+                          </tr> -->
+                           <!-- <tr>
+                          <td colspan="3" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;"></td>
+                          <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">Earnings : ${{totalRevenu| number}}</td>
+                      </tr> -->
+                      </tfoot>
+                  </table>
+                
+                  <!-- <footer style="margin-top: 20px; text-align: right;">
+                      <p><strong>Payment Information:</strong> Please make the payment to XYZ Company.</p>
+                  </footer> -->
+                
+                </body>
+               </div>
             </form>
           </div>
         </div>
       </div>
+    
     </div>
   </div>
-  <!--/Class --> 
 </div>
+
 <!-- /page content -->
 
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+

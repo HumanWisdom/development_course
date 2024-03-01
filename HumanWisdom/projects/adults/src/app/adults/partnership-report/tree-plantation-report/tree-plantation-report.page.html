@@ -20,222 +20,258 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01"  id="TreeReport" *ngIf="partnershipReport">				
-  <!-- Class -->
+<div class="right_col mc_01"  id="TreeReport" *ngIf="partnershipReport && partnershipReport!=null">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white col_cw" id="partnershipReport" >
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" id="partnershipReport" >
         <div class="x_panel p0" >
           <div class="x_content p0">
             <form>
 
-              <div class="row center_flex mt40px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <!-- partnership referral code -->
+              <div class="row mt20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="prelative">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
+                            <h4 class="mtb0px fs_16px fw_600 lh_140p fc_ffffff">
+                              Partnership Referral Code
+                            </h4>
+                          </div>
 
-                  <div class="row mb20px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <h4 class="fw_400 fs_12px lh_140p fc_5d5d5d mtb0px">
-                        Partnership Referral Code
-                      </h4>
-                      <button type="button" class="btn btn_pr_code">
-                        {{partnershipReport.AffRefCode}}
-                      </button>
-                      <a class="" (click)="share(partnershipReport.AffRefCode)">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey_02.svg" alt="" class="p0"/>
-                      </a>
-                    </div>
-                  </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="copyText(partnershipReport.AffRefCode)">
+                            <button type="button" class="btn_pr_code" title="{{getTittle()}}">
+                              {{this.partnershipReport?.AffRefCode}}
+                            </button>
+                          </div>
+                        </div>
 
-                  <!-- <div class="row cmlr-10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="ws_hr mtb0px">
-                    </div>
-                  </div> -->
-
-                  <div class="row mtb30px pr_tr">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
-                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100 br50p">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                          <a class="" (click)="share(partnershipReport.AffRefCode)">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_share.svg" class="img-responsive">
+                          </a>
+                        </div>
                       </div>
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                        <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px tleft">
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- /partnership referral code -->
+
+              <!-- profile -->
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
+                  <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" alt="" class="img-responsive border_profile_img">
+                </div>
+              </div>
+
+              <div class="pt1 profile_pe_div">
+                <div class="row mt35px mb5px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
                       {{partnershipReport.AffName}}
-                        </h4>
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px tleft">
-                         Trees Planted : {{partnershipReport.TreesCnt}}
-                        </h4>
-                      </div>
-                    </div>
+                    </h4>
                   </div>
-                  
+                </div>
 
-                  <div class="row mt40px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                      <div class="col-md-6 col-sm-6 col-xs-6">
-                        <h4 class="fw_400 fs_12px lh_140p fc_000000 mtb0px tleft">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                      Trees Planted : {{partnershipReport.TreesCnt}}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <!-- /profile -->
+
+              <!-- income activity -->
+              <div class="row mt20px box_blue_01">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length>0">
+                          Tree plantation report
+                        </h4>
+
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
                           {{currentDate | date:'dd MMMM y'}}
                         </h4>
                       </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                    <div class="row" *ngIf="partnershipReport?.PartnerCount>0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <a (click)="redirectToMyPartnership()" class="">
-                          <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px underline">
+                          <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 tright">
                            View Partners
                           </h4>
                         </a>
                       </div>
                     </div>
-                  </div> 
-           <ng-container *ngIf="partnershipReport.AffReport!=null">     
-                  <div class="row mt5px mb30px" *ngIf="partnershipReport.AffReport.length>0">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px tleft">
-                        Tree plantation report
-                      </h4>
-                    </div>
-                  </div> 
-                 <ng-container *ngFor="let item of partnershipReport.AffReport">
+                  </div>
 
-                  <div class="row mt20px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_400 fs_15px lh_130p fc_000000 mtb0px tleft">
-                        {{item.Month}} {{item.Year}}
-                      </h4>
-                    </div>
-                  </div> 
+                </div>
+              </div>
+              <!-- /income activity -->
 
-                  <div class="row mtb15px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-md-10 col-sm-10 col-xs-10 pl0px">
-                        <img [src]=iframeSrc alt="" class="mr5px" *ngFor="let item of getLoop(item.Trees)">
+              <ng-container *ngIf="partnershipReport?.AffReport!=null">
+                <!-- trees -->
+                <div class="row_vp mt20px">
+                  <ng-container *ngFor="let item of partnershipReport?.AffReport">
+                    <!-- partners -->
+                    <div class="row box_blue_01">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                                {{item.Month}} {{item.Year}}
+                              </h4>
+
+                              <img [src]=iframeSrc alt="" class="mr5px" *ngFor="let item of getLoop(item.Trees)">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                                {{item.Trees}}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
-                      <div class="col-md-2 col-sm-2 col-xs-2 pr0px">
-                        <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px tright">
-                       {{item.Trees}}
+                    </div>
+                    <!-- /partners -->
+                  </ng-container>
+                </div>
+                <!-- /trees -->
+
+                <!-- total trees planted -->
+                <div class="row mt20px" *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length>0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <a class="prelative">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                      <div class="row box_v3_02">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row mb10px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                              <h4 class="mtb0px fs_12px fw_500 lh_120p fc_ffffff">
+                                Total trees planted
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                              <h4 class="mtb0px fs_24px fw_700 lh_120p fc_ffffff">
+                                {{partnershipReport.TreesCnt}}
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- /total trees planted -->
+
+                <!-- download pdf -->
+                <div class="row mt20px" *ngIf="!isPdfDownloading && partnershipReport.AffReport && partnershipReport.AffReport.length>0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt="" class="img-responsive mr10px">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        Download PDF
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- /download pdf -->
+              </ng-container>
+
+              <!-- no active partners -->
+              <ng-container *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length==0 || partnershipReport.AffReport==null">
+                <div class="row mtb40px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_no_partner.svg" alt="" class="img-responsive"/>
+                      </div>
+                    </div>
+
+                    <div class="row mt20px mb40px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                          You have no active partners
                         </h4>
                       </div>
                     </div>
-                  </div> 
 
-                  <div class="row cmlr-10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="ws_hr mtb0px">
+                    <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <button class="btn btn_rip" (click)="redirectToMyPartnership()">
+                          Remind Inactive Partners
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </ng-container>
+                </div>
 
+                <div class="row mb10px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                      To get started, share your partnership referral code with friends and organizations.
+                    </h4>
+                  </div>
+                </div>
 
-                  <div *ngIf="partnershipReport.AffReport.length>0" class="row pr_cnt">
-                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <h4 class="fw_400 fs_12px lh_120p fc_000000 mtb0px">
-                        Total trees planted
-                      </h4>
-                      <h4 class="fw_700 fs_18px lh_140p fc_000000 mb0px mt5px">
-                        {{partnershipReport.TreesCnt}}
-                      </h4>
-                    </div>
-                  </div> 
-                  
-                  <div class="row mt40px mb40px"  *ngIf="!isPdfDownloading && partnershipReport.AffReport.length>0">
-                    <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <a class="flex_ai" (click)="DownloadPdf()" >
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
-                        <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px ml10px">
-                          Download PDF
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 prelative">
+                      <div class="">
+                        <h4 class="mtb0px p_rc">  
+                          {{this.partnershipReport.AffRefCode}}
                         </h4>
+                      </div>
+
+                      <div class="div_copy_01">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" class="img-responsive" *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" class="img-responsive" *ngIf="!isCopy">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pr0px tright" (click)="share(partnershipReport.AffRefCode)">
+                      <a>
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_peach_round.svg" alt="" class="img-responsive">
                       </a>
                     </div>
                   </div>
+                </div>
               </ng-container>
-                  <ng-container *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length==0 || partnershipReport.AffReport==null">
-                    <div class="row mtb70px">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_no_partner.svg"
-                              alt=""
-                              class="img-responsive"
-                            />
-                          </div>
-                        </div>
+              <!-- /no active partners -->
 
-                        <div class="row mt10px">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h4 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px tcenter">
-                              You have no active partners
-                            </h4>
-                          </div>
-                        </div>
-
-                        <div class="row mt10px" *ngIf="partnershipReport.PartnerCount>0">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h4 class="fw_400 fs_15px lh_140p fc_1092a7 mtb0px underline tcenter" (click)="redirectToMyPartnership()">
-                              Remind Inactive Partners
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <hr class="ws_hr mtb0px" />
-                      </div>
-                    </div>
-
-                    <div class="row mtb30px">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
-                          To get started, share your partnership referral code
-                          with friends and organizations.
-                        </h4>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div
-                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex"
-                      >
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px p_rc fw_700">  {{this.partnershipReport.AffRefCode}}</h4>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tleft" (click)="share(partnershipReport.AffRefCode)">
-                          <a>
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_round.svg"
-                              alt=""
-                              class="img-responsive"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row mb40px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a>
-                          <h4 *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)" class="fw_500 fs_12px lh_140p fc_1092a7 mb0px underline tcenter">
-                            Copy code
-                          </h4>
-                          <h4 *ngIf="!isCopy"  class="fw_500 fs_12px lh_140p fc_1092a7 mb0px underline tcenter">
-                            Copied
-                          </h4>
-                        </a>
-                      </div>
-                    </div>
-                  </ng-container>
-                  <div class="row" *ngIf="!isPdfDownloading">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="fw_400 fs_12px lh_140p fc_5d5d5d mtb0px">
-                        If you wish to switch your partnership benefits, and receive an income instead of planting trees, write to us at 
-                        <a class="fw_400 fs_12px lh_140p fc_5d5d5d underline"  href="mailto: partner@humanwisdom.me">
-                         partner@humanwisdom.me
-                        </a>
-                      </h4>
-                    </div>
-                  </div>
-
+              <div class="row mt20px" *ngIf="!isPdfDownloading">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                   If you wish to switch your partnership benefits, and receive an income instead of  planting trees.
+                    <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto: team@happierme.app">
+                      team@happierme.app
+                    </a>
+                  </h4>
                 </div>
               </div>
 
@@ -247,7 +283,6 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
 <!-- /page content -->
 

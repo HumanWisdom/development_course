@@ -56,6 +56,21 @@ export class BlogIndexPage implements OnInit {
     this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
   }
 
+  searchTitle($event) 
+  {
+    if($event=='')
+    {
+      this.blogList= this.blogList;
+    }
+    else
+    {
+      this.searchedTitle=$event;
+      let filterlist =this.blogList.filter(it => it.Title.toLowerCase().includes(this.searchedTitle.toLowerCase()));
+      this.blogList=filterlist.slice(0, 10);
+    }
+  }
+  
+  /*
   searchTitle()
   {
     if(this.searchedTitle=="")
@@ -67,6 +82,7 @@ export class BlogIndexPage implements OnInit {
       })
     }
   }
+  */
 
   share(){
     this.ngNavigatorShareService.share({

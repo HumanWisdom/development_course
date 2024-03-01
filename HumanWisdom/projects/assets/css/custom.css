@@ -14657,7 +14657,8 @@ input[type="number"] {
 .progress-bar
 {
   /* background: linear-gradient(90deg, #FFC455 131.91%, #E69B5A 157.31%); */
-  background: #E8A880;
+  /* background: #E8A880; */
+  background: #E58D82;
   box-shadow: 1px 0px 2px rgb(0 0 0 / 25%);
   /* border-radius: 0 5px 5px 0; */
   border-radius: 0;
@@ -15878,11 +15879,13 @@ input[type="search"].dark::-webkit-search-cancel-button {
   bottom: 0px;
   right: 0px;
   left: 0px;
-  height: 10px;
+  /* height: 10px; */
+  height: 6px;
   margin-bottom: 0;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 6px 6px;
   box-shadow: unset;
-  background: rgba(255,255,255,0.1);
+  /* background: rgba(255,255,255,0.1); */
+  background: rgba(255,255,255,0.2);
 }
 
 .dprogress .progress-bar
@@ -19645,19 +19648,18 @@ input{
 
 .subscribe_select1
 {
-  background: #EBEBEB;
+  background: #292D56;
   border-radius: 5px;
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
-  color: #5D5D5D;
+  line-height: 150%;
+  color: #FFF;
   border: 0;
   box-shadow: unset;
-  height: 25px;
-  padding: 2px 5px;
-  border-radius: 2px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  height: 26px;
+  width: 83px;
 }
 
 /* subscribe checkbox */
@@ -29485,6 +29487,11 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   padding: 12rem 0 0 0 !important;
 }
 
+.cpt_rem_01
+{
+  padding: 14rem 0 0 0 !important;
+}
+
 .cp20px
 {
   padding: 0 0 0 0;
@@ -29843,9 +29850,9 @@ svg path
 
 .box_02
 {
-  /* height: 95px; */
+  height: 125px;
   border: 0;
-  border-radius: 0;
+  border-radius: 16px;
   color: #fff;
   text-align: left;
   display: flex;
@@ -29855,7 +29862,7 @@ svg path
   flex-flow: wrap;
   /* padding: 20px 10px;
   margin: 0 -10px 2px -10px!important; */
-  padding: 0;
+  padding: 16px;
   margin: 0;
 }
 
@@ -29980,7 +29987,7 @@ svg path
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
   text-align: center;
   height: 50px;
   margin-right: 0;
@@ -30411,12 +30418,17 @@ svg path
 
 .p_rc
 {
-  min-height: 50px;
+  min-height: 64px;
   height: auto;
   background: #120F40;
-  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
   padding: 20px;
-  letter-spacing: 0.1em;
+  letter-spacing: 2.4px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 150%;
+  color: #FFF;
 }
 
 .btn_jhwpp
@@ -30507,19 +30519,18 @@ svg path
 /* partnership report */
 .btn_pr_code
 {
-  height: 40px;
-  background: #FFC455;
-  border-radius: 5px;
-  margin: 0 10px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 140%;
-  /* identical to box height, or 21px */
+  box-shadow: unset;
+  border: 0;
+  margin: 0;
+  background: #FFF;
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #E58D82;
   text-align: center;
   letter-spacing: 0.1em;
-  color: #000000;
 }
 
 .pr_ab_wd
@@ -33996,7 +34007,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v3_modal_posted_successfully
 {
   width: 335px;
-  height: 204px;
+  height: 275px;
   border-radius: 8px;
   background: #424675;
   padding: 24px;
@@ -34659,7 +34670,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
 }
 
 .profile_pe_div
@@ -36302,10 +36313,218 @@ section > .row
   margin: 16px 0;
 }
 
-.partnership_row 
+/* .partnership_row 
 {
   border-radius: 16px;
   background: #120F40;
   padding: 16px;
+} */
+
+.box_blue_01
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 20px;
+}
+
+.vertical_line_01 
+{
+  border-right: 1px solid rgba(255,255,255,.1);
+  height: 50px;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.row_vp .row
+{
+  margin-bottom: 20px;
+}
+
+.row_vp .row:last-child
+{
+  margin-bottom: 0 !important;
+}
+
+.btn_pdownload_pdf 
+{
+  height: 43px;
+  width: 100%;
+  margin: 0;
+  box-shadow: unset;
+  border-radius: 100px;
+  background: #E58D82;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_rip 
+{
+  border: 0;
+  margin: 0;
+  box-shadow: unset;
+  border-radius: 8px;
+  background: #FFF;
+  padding: 5px 14px;
+  height: 32px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #E58D82;
+}
+
+.div_copy_01 
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  left: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.panel_levels .panel
+{
+  margin-bottom: 20px;
+}
+
+.panel_levels .panel:last-child
+{
+  margin-bottom: 0 !important;
+}
+
+a.fc_e58d82:focus, 
+a.fc_e58d82:hover 
+{
+  color: #e58d82;
+}
+
+.profile_pe_div_01
+{
+  text-align: center;
+  padding: 20px;
+  background: #120F40;
+  border: 0;
+  border-radius: 12px;
+  height: auto;
+}
+
+.partnership_row a .box_02
+{
+  margin-bottom: 15px;
+}
+
+.partnership_row a:last-child .box_02
+{
+  margin-bottom: 0;
+}
+
+.partnership_row a:nth-child(1) .box_02,
+.partnership_row a:nth-child(4) .box_02,
+.partnership_row a:nth-child(7) .box_02,
+.div_fq a:nth-child(1) .row,
+.div_fq a:nth-child(4) .row,
+.div_fq a:nth-child(7) .row,
+.div_fq a:nth-child(10) .row,
+.div_fq a:nth-child(13) .row,
+.div_fq a:nth-child(16) .row,
+.div_fbn a:nth-child(1) .row,
+.div_fbn a:nth-child(4) .row,
+.div_fbn a:nth-child(7) .row,
+.div_fbn a:nth-child(10) .row,
+.div_fbn a:nth-child(13) .row
+{
+  background: #834B66;
+}
+
+.partnership_row a:nth-child(2) .box_02,
+.partnership_row a:nth-child(5) .box_02,
+.partnership_row a:nth-child(8) .box_02,
+.div_fq a:nth-child(2) .row,
+.div_fq a:nth-child(5) .row,
+.div_fq a:nth-child(8) .row,
+.div_fq a:nth-child(11) .row,
+.div_fq a:nth-child(14) .row,
+.div_fq a:nth-child(17) .row,
+.div_fbn a:nth-child(2) .row,
+.div_fbn a:nth-child(5) .row,
+.div_fbn a:nth-child(8) .row,
+.div_fbn a:nth-child(11) .row,
+.div_fbn a:nth-child(14) .row
+{
+  background: #CB6171;
+}
+
+.partnership_row a:nth-child(3) .box_02,
+.partnership_row a:nth-child(6) .box_02,
+.div_fq a:nth-child(3) .row,
+.div_fq a:nth-child(6) .row,
+.div_fq a:nth-child(9) .row,
+.div_fq a:nth-child(12) .row,
+.div_fq a:nth-child(15) .row,
+.div_fbn a:nth-child(3) .row,
+.div_fbn a:nth-child(6) .row,
+.div_fbn a:nth-child(9) .row,
+.div_fbn a:nth-child(12) .row,
+.div_fbn a:nth-child(15) .row
+{
+  background: #E58D82;
+}
+
+.div_fq h4,
+.div_fbn h4
+{
+  color: #fff !important;
+}
+
+.adsearch_ext_01
+{
+  top: 80px;
+}
+
+.progress_box .row 
+{
+  border-radius: 12px;
+  background: #120F40;
+  height: auto;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.progress_box_score 
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 15px 20px;
+}
+
+.div_gm
+{
+  padding: 0;
+}
+
+.btn_tas 
+{
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.div_fq .fa_vm:hover
+{
+  filter: unset !important;
 }
 /* /version - 03 */

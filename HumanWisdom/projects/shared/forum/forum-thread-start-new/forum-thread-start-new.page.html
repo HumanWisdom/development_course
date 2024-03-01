@@ -86,7 +86,7 @@
               <div class="row mtb20px" *ngIf="selectedOption == 5">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="forum_post_checkbox" class="tcenter chkb_post_anonymously mt0px">
-                    <input id="forum_post_checkbox" #checkboxSelect [(ngModel)]="isChecked" [value]="isChecked" type="checkbox" class="">
+                    <input id="forum_post_checkbox" #checkboxSelect [(ngModel)]="isChecked" (change)="onChange($event)" type="checkbox">
                     <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
                       <span class="ml10px">
                         Post anonymously
@@ -150,7 +150,7 @@
       <div class="row mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <h3 class="mtb0px fs_18px fw_600 lh_145p fc_ffffff tcenter">
-            Thread successfully posted
+            Thread successfully posted. All posts to the Forum will appear after they are moderated
           </h3>
         </div>
       </div>
@@ -282,7 +282,7 @@
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
-              Ask a coach
+              Ask our expert coaches
             </h3>
           </div>
         </div>

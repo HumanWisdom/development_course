@@ -68,6 +68,7 @@ import { S56051Page } from './s56051/s56051.page'; 
 import { S56052Page } from './s56052/s56052.page';  
 import { S56053Page } from './s56053/s56053.page';  
 import { S56054Page } from './s56054/s56054.page';  
+import { S56054p1Page } from './s56054p1/s56054p1.page';  
 
 import { InnerBoredomRoutingModule } from './inner-boredom-routing.module';
 
@@ -135,6 +136,8 @@ import { InnerBoredomRoutingModule } from './inner-boredom-routing.module';
     S56052Page ,
     S56053Page ,
     S56054Page ,
+    S56054p1Page ,
+
   ],
   imports: [
     CommonModule,

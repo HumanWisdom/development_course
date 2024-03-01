@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
+import { LogEventService } from '../../services/log-event.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { NavigationService } from '../../services/navigation.service';
 
@@ -14,13 +15,17 @@ import { NavigationService } from '../../services/navigation.service';
 export class StartYourFreeTrialPage implements OnInit {
 
   constructor(private router: Router,private location: Location, private servive: AdultsService,
+ public logeventservice: LogEventService,
     private navigateService:NavigationService) { }
 
   ngOnInit() {
+    this.logeventservice.logEvent('view_start_trial');
   }
 
   tryFreeSubscribe(){
+    this.logeventservice.logEvent('click_start_trial');
       if (this.CheckIfUserIsLoggedIn()) {
+        
         this.router.navigate(['/subscription/try-free-and-subscribe']);
       } else {
         SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
@@ -29,6 +34,7 @@ export class StartYourFreeTrialPage implements OnInit {
   }
 
   back(){
+    this.logeventservice.logEvent('click_back');
     let curr = this.servive.previousUrl;
     let loggedin = localStorage.getItem("isloggedin")
     if((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
@@ -50,6 +56,8 @@ export class StartYourFreeTrialPage implements OnInit {
   }
 
   routeToDashboard(){
+    this.logeventservice.logEvent('click_will_do_later');
+
     this.router.navigateByUrl('/adults/adult-dashboard');
   }
 }

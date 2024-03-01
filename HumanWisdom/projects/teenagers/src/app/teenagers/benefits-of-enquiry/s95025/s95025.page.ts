@@ -30,7 +30,8 @@ export class S95025Page implements OnInit {
   reflection: any
   reflectionA: any
   r95025 = sessionStorage.getItem("r95025")
-
+  progName= "teenagers"
+  
   constructor(private router: Router,
     private service: TeenagersService,
     private location: Location) { }

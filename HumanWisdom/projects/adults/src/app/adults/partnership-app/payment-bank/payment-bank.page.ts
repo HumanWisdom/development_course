@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component,ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faTheRedYeti } from '@fortawesome/free-brands-svg-icons';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
@@ -11,15 +11,16 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ["./payment-bank.page.scss"],
 })
 export class PaymentBankPage implements OnInit {
-  LinkBankAccount: string = "linkAccount";
+  LinkBankAccount: string = "";
   countryList: any;
   paymentBank: any;
   PlaceHolderRouter: string = 'IBAN / SWIFT';
-  isBankAccountChecked: boolean = false;
+  isBankAccountChecked: boolean;
   isUpdate: boolean = false;
   ByPaypal: number = 0;
   isPaypalChecked: boolean = false;
-  isBankAccount:boolean = false;
+  isBankAccount:boolean = true;
+  @ViewChild('postModal') postModal: any;
   constructor(
     private service: AdultsService,
     public router: Router,
@@ -123,25 +124,42 @@ export class PaymentBankPage implements OnInit {
       this.paymentBank.ByPaypal = "0";
       this.paymentBank.PayPalID = "";
     } else {
-      this.paymentBank.CountryId == 0;
-      this.paymentBank.BankName == "";
-      this.paymentBank.Acc_Number == "";
-      this.paymentBank.IBAN_SWIFT_RoutingNo == "";
+      this.paymentBank.CountryId =0;
+      this.paymentBank.BankName = "";
+      this.paymentBank.Acc_Number = "";
+      this.paymentBank.IBAN_SWIFT_RoutingNo = "";
     }
     this.service.UpdatePartner(this.paymentBank).subscribe((res) => {
       if (res != "") {
-        localStorage.setItem("referralCode", res);
-        localStorage.removeItem("ByPaypal");
-        localStorage.removeItem("isUpdate");
-        if (this.isUpdate) {
-          this.location.back();
+        if(this.paymentBank.PayPalID =='' && this.paymentBank.Acc_Number == ""){
+          localStorage.setItem("referralCode", res);
+          this.postModal.nativeElement.click();
+        }else{
+          localStorage.removeItem("ByPaypal");
+          localStorage.removeItem("isUpdate");
+          if (this.isUpdate) {
+            this.location.back();
+          }
+          else {
+            this.router.navigate(["adults/partnership-app/payment-income"]);
+          }
         }
-        else {
-          this.router.navigate(["adults/partnership-app/payment-income"]);
         }
-      }
     });
   }
+
+  closePost(){
+    localStorage.removeItem("ByPaypal");
+    localStorage.removeItem("isUpdate");
+    if (this.isUpdate) {
+      window.history.go(-2);
+    }
+    else {
+      this.router.navigate(["adults/partnership-app/payment-income"]);
+    }
+  }
+
+
 
   getCountry() {
     this.service.GetCountry().subscribe(

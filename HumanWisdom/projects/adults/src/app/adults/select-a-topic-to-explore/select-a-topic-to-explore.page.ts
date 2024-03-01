@@ -211,7 +211,7 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
         this.logeventservice.logEvent('click_workplace');
         this.route.navigate(['/adults/curated/wisdom-for-workplace'])
-      } else if (name === 'Have fulfilling relationships') {
+      } else if (name.includes('Relationship')) {
         localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
         this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
@@ -223,7 +223,7 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
         this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/change-unhelpful-habits'])
-      } else if (name === 'Deal with sorrow and loss') {
+      } else if (name.includes('loss')) {
         localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
         this.logeventservice.logEvent('click_sorrow_loss');
         this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
