@@ -36515,4 +36515,16 @@ a.fc_e58d82:hover
 {
   padding: 0;
 }
+
+.btn_tas 
+{
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.div_fq .fa_vm:hover
+{
+  filter: unset !important;
+}
 /* /version - 03 */
