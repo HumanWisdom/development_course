@@ -32568,27 +32568,27 @@ body *
 
 .div_ru a:nth-child(1) .row
 {
-  background: #834B66;
+  background: #A54265;
 }
 
 .div_ru a:nth-child(2) .row
 {
-  background: #9B526A;
+  background: #65BFC2;
 }
 
 .div_ru a:nth-child(3) .row
 {
-  background: #B35A6D;
+  background: #F1AC5E;
 }
 
 .div_ru a:nth-child(4) .row
 {
-  background: #CB6171;
+  background: #A54265;
 }
 
 .div_ru a:nth-child(5) .row
 {
-  background: #D47077;
+  background: #65BFC2;
   margin-bottom: 0;
 }
 
@@ -32669,49 +32669,49 @@ body *
 .div_sate .col-lg-6:nth-child(1) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_01.svg) no-repeat; */
-  background: #834B66;
+  background: #A54265;
 }
 
 .div_sate .col-lg-6:nth-child(2) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_02.svg) no-repeat; */
-  background: #CB6171;
+  background: #65BFC2;
 }
 
 .div_sate .col-lg-6:nth-child(3) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat; */
-  background: #E58D82;
+  background: #F1AC5E;
 }
 
 .div_sate .col-lg-6:nth-child(4) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_04.svg) no-repeat; */
-  background: #834B66;
+  background: #A54265;
 }
 
 .div_sate .col-lg-6:nth-child(5) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_05.svg) no-repeat; */
-  background: #CB6171;
+  background: #65BFC2;
 }
 
 .div_sate .col-lg-6:nth-child(6) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
-  background: #E58D82;
+  background: #F1AC5E;
 }
 
 .div_sate .col-lg-6:nth-child(7) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
-  background: #834B66;
+  background: #A54265;
 }
 
 .div_sate .col-lg-6:nth-child(8) button
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_08.svg) no-repeat; */
-  background: #CB6171;
+  background: #65BFC2;
 }
 
 .div_sate .col-lg-6,
@@ -36454,7 +36454,7 @@ a.fc_e58d82:hover
 .progress_box .row 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   height: auto;
   width: 100%;
   padding: 15px;
@@ -36464,7 +36464,7 @@ a.fc_e58d82:hover
 .progress_box_score 
 {
   border-radius: 12px;
-  background: #120F40;
+  background: #0C2B5F;
   padding: 15px 20px;
 }
 /* /version - 03 */
