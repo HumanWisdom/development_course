@@ -10,6 +10,8 @@ import { IndexPageRoutingModule } from './index-routing.module';
 
 import { IndexPage } from './index.page';
 
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { IndexPage } from './index.page';
     IonicModule,
     SharedModule,
     SharedModule,
+    NgxCircularPlayerModule,
     IndexPageRoutingModule
   ],
   declarations: [IndexPage]
