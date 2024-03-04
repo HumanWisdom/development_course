@@ -269,6 +269,18 @@ const routes: Routes = [
     path: 'videopage/:videolink/:enable/:title',
     component: S3VideoComponent
   },
+  {
+    path: 'repeat-user',
+    loadChildren: () => import('./teenagers/repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule)
+  },
+  {
+    path: 'select-a-topic-to-explore',
+    loadChildren: () => import('./teenagers/select-a-topic-to-explore/select-a-topic-to-explore.module').then( m => m.SelectATopicToExplorePageModule)
+  },
+  {
+    path: 'pathway',
+    loadChildren: () => import('./teenagers/pathway/pathway.module').then( m => m.PathwayModule)
+  },
 ];
 
 
