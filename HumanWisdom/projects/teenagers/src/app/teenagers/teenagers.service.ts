@@ -333,17 +333,23 @@ export class TeenagersService {
   getAllEvents(): Observable<any>{
     return this.http.get(this.path + '/Events');
   }
-  
+
   CheckStoryIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckStoryIsFree/${data}`)
   }
   CheckShortsIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
-   
+
   getModulebyId(id): Observable<any> {
     return this.http.get(this.path + `/GetModule/${id}`)
   }
+
+
+  getTeenagerTalk(): Observable<any> {
+    return this.http.get(this.path + '/GetTeenTalks')
+  }
+
 
   setmoduleID(id) {
     if (localStorage.getItem("isloggedin") === 'T') {
@@ -361,7 +367,7 @@ export class TeenagersService {
     localStorage.setItem("moduleId", JSON.stringify(id))
     this.clickModule(id, userId)
       .subscribe(res => {
-        
+
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
         discoveringWisdomResume = "s" + res.lastVisitedScreen
@@ -496,7 +502,7 @@ export class TeenagersService {
       )
   }
 
-  
+
   getBookmark(userid) {
     this.getBookmarks(userid)
       .subscribe(res => {
