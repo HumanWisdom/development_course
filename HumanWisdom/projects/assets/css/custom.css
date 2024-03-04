@@ -35711,6 +35711,7 @@ li ol > li:before {
   line-height: 150%;
   font-style: normal;
   color: #FFFFFF !important;
+  background-color: transparent !important;
 }
 
 .Body span.Hyperlink0 a span,
