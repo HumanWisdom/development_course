@@ -41,7 +41,14 @@ export class S61001Page implements OnInit,OnDestroy {
   )
   { 
     this.service.setmoduleID(61);
-    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    
+    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    // this.stories = JSON.parse(this.stories)
+  }
+
+  ngOnInit() {
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
@@ -70,11 +77,7 @@ export class S61001Page implements OnInit,OnDestroy {
       })
     }
     this.stories = splitarr
-    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    // this.stories = JSON.parse(this.stories)
-  }
-
-  ngOnInit() {
+    }, 2000)
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }
