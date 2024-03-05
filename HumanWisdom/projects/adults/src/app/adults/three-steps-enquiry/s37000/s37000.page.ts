@@ -75,6 +75,37 @@ export class S37000Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+      story = JSON.parse(story)
+      let splitarr = []
+      let arraythree = []
+      if(story?.length <= 2) 
+      {
+        story.forEach((e) => 
+        {
+          arraythree.push(e)
+        })
+        splitarr.push(arraythree)
+      }
+      else
+      {
+        story?.forEach((e) => 
+        {
+          if(arraythree.length < 2) 
+          {
+            arraythree.push(e)
+          }
+          else 
+          {
+            splitarr.push(arraythree)
+            arraythree = []
+            arraythree.push(e)
+          }
+        })
+      }
+      this.stories = splitarr
+    }, 2000)
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }
