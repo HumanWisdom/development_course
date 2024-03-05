@@ -1,1534 +1,1372 @@
-<!-- header -->
-<app-tn-dashboard-v03></app-tn-dashboard-v03>
-<!-- /header -->
+<title>Best Mental Health Apps|Stress, Anger & Depression Management|HappierMe</title>
+<meta name="description" content="HappierMe apps can guide you to become the best person you can be, and discover life-changing wisdom through self-understanding. Learn the art of anger and stress management, get solutions for anxiety and depression.">
+
+<app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col dmain_container p0_important pt12rem">
-  <!-- Class -->
+<div class="right_col dmain_container p0_important cpt_rem_01">
   <div class="cw100p">
-
     <div class="row center_flex safari_dflex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_white cp0_02">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_183c79 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0 mt0px">
-            <form>
 
-              <div class="row mt30px prelative">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px tsp">
-                  <input type="search" class="form-control has-feedback-left pfy_search" placeholder="Search">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon td_search_icon_ext" aria-hidden="true"></span>
-                </div>
+            <!-- search -->
+            <!-- <div class="row prelative pt30px plr20px">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
+                <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
               </div>
 
-              <!-- daily practice -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#adp" aria-expanded="true">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_500 fs_21px lh_25px fc_000000 mt0px mb5px">
-                                  Hi Nidhi!
-                                </h4>
+              <div class="row adsearch adsearch_ext_01 plr20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                  <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                      class="is-search list-group-item">{{item.ModuleName}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+            <!-- /search -->
+
+            <!-- feel better now -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+                <a>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like.svg" class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Feel better now
+                      </h4>
+
+                      <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        Quick tips to help you feel better right now
+                      </h4> -->
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /feel better now -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- daily practice -->
+            <!-- accordion -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading">
+                      <h4 class="panel-title dpaneltitle">
+                        <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
+                        <div aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  My daily practice
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                <!-- <a> -->
+                                 <!--  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
+                                    Streak:
+                                    <span class="fw_600">
+                                      {{streak}}
+                                    </span>
+                                    days
+                                  </h2> -->
+                                <!-- </a> -->
                               </div>
                             </div>
-              
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
-                                  Here’s your daily practice
+                          </div>
+                        </div>
+                      </h4>
+                    </div>
+                    <div id="ca_mdp" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_mdp">
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a>
+                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
+                                  alt="Wisdom Stories" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Breathing exercise
                                 </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a>
+                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3.svg"
+                                  alt="Journal" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Question
+                                  <br>
+                                  of the day
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a>
+                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  alt="Testimonials" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily Quote
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a>
+                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
+                                  alt="Forum" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily meditation
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a>
+                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3.svg"
+                                  alt="Forum" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily
+                                  <br>
+                                  challenge
+                                </h4>
+                              </a>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /daily practice -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- my progress -->
+            <!-- accordion -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading">
+                      <h4 class="panel-title dpaneltitle">
+                        <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
+                        <div aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  My progress
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                <a>
+                                  <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
+                                    View details
+                                  </h2>
+                                </a>
                               </div>
                             </div>
-                          </a>
+                          </div>
+                        </div>
+                      </h4>
+                    </div>
+                    <div id="ca_mdp" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0px pr5px progress_box">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_points.svg" class="img-responsive mb10px">
+
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                                        5,499
+                                      </h4>
+
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                        Points
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 plr5px progress_box">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_streak.svg" class="img-responsive mb10px">
+
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff"> 
+                                        11 days
+                                      </h4>
+
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                        Streak
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl5px pr0px progress_box">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_certificates.svg" class="img-responsive mb10px">
+
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                                        0
+                                      </h4>
+
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                        Certificates
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row mt10px progress_box_score">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
+                                      74%
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                        Happiness score
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                      <a class=""> 
+                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
+                                          Take the survey
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
+                                        </h4>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /my progress -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- explore a topic in depth-for guest user -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="prelative box_v3_01">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                          Explore a topic in depth
+                        </h4>
+
+                        <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
+                        </h4> -->
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /explore a topic in depth-for guest user -->
+
+            <!-- your topic of choice -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="prelative box_v3_01">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Your topic of choice:
+                        </h4>
+
+                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                          Manage your emotions 
                         </h4>
                       </div>
-                      <div id="adp" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m0px">
 
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /your topic of choice -->
+
+            <!-- change your topic of choice -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
+                <button type="button" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
+                  Explore a different topic in depth
+                </button>
+              </div>
+            </div>
+            <!-- /change your topic of choice -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- for nidhi -->
+            <!-- accordion -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading p0">
+                      <h4 class="panel-title dpaneltitle">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#ca_user" aria-expanded="true">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-
-                              <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_01.svg" alt="Wisdom Stories" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_14px fc_000000 mdpd_title">
-                                    Breathing exercise
-                                  </h4>
-                                </a>
+                              <div class="">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  For Human Wisdom 
+                                </h2>
                               </div>
-
-                              <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_01.svg" alt="Journal" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_14px fc_000000 mdpd_title">
-                                    Question of the day
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_01.svg" alt="Testimonials" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_14px fc_000000 mdpd_title">
-                                    Daily inspiration
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_01.svg" alt="Forum" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_14px fc_000000 mdpd_title">
-                                    Audio meditation
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise_01.svg" alt="Forum" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_14px fc_000000 mdpd_title">
-                                    Daily challenge
-                                  </h4>
-                                </a>
-                              </div>
-
                             </div>
                           </div>
-
-                        </div>
-                      </div>
+                        </a>
+                      </h4>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /daily practice -->
+                    <div id="ca_user" class="panel-collapse collapse in">
+                      <div class="panel-body">
 
-              <!-- tray -->
-              <div class="row mdpd_tray ">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_user">
 
-                  <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/life_stories.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Life Stories
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_meditation.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Audio Meditations
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_journaling.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Journal
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/forum.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Forum
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/blog.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Blog
-                        </span>
-                      </button>
-                    </a>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_shorts.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Short videos
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/podcasts.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Podcasts
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_score.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Happiness score
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/testimonials.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Testimonials
-                        </span>
-                      </button>
-                    </a>
-
-                    <a>
-                      <button type="submit" class="btn btn-default btn_mdpd_tray">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/events.svg" alt="" class="prelative">
-                        <span class="ml10px">
-                          Events
-                        </span>
-                      </button>
-                    </a>
-                  </div>
-
-                </div>
-              </div>
-              <!-- /tray -->
-
-              <!-- feel better now -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_ghn" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Feel better now!
-                                  </h2>
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_ghn" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg" alt="Stress Management" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Stress
-                                  </h4>
-                                </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg" alt="Solution for Anxiety" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Anxiety
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/03.svg" alt="Anger Management" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Anger
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/04.svg" alt="Anger Management" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Dealing with Loss
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/05.svg" alt="Anger Management" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Conflict in Relationships
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /feel better now -->
-
-              <!-- wisdom exercise -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Awareness exercises
-                                  </h2>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a>
-                                    <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
-                                      View all
-                                    </h2>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="" class="panel-collapse collapse in">
-                        <div class="panel-body p0 wepanel">
-
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 plr0px pb5px">
-                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px bold">
-                                Intro
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed active">
-                                    Intro
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 1
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 2
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 3
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 4
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 5
-                                  </button>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /wisdom exercise -->
-
-              <!-- life stories -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_ls" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Life stories
-                                  </h2>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/wisdom-stories">
-                                    <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
-                                      View all
-                                    </h2>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_ls" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
-
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
-
-                              <!-- story 1 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <a class="center_flex">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/luke-southern-gW7QRXDSvec-unsplash.jpg"  alt="" class="w100 c150px">
-                                  </div>
-                                  
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px">
-                                            The well-being of an alcoholic
-                                          </h6>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          When I was just 3 years old my parents, Elliot and Josephine split. They did ...
-                                        </h6>
-                                      </div>
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        INTRODUCTION
+                                      </h4>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <!-- /story 1 -->
+                                </div>
 
-                              <!-- story 2 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <a class="center_flex">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/kelly-sikkema-k0o-cw5Y_9s-unsplash.jpg"  alt="" class="w100 c150px">
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Introduction to HappierMe
+                                    </h4>
                                   </div>
-                                  
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px">
-                                            My stepmother humiliated me
-                                          </h6>
-                                        </div>
-                                      </div>
+                                </div>
 
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          Jeff does not know the full story behind what happened when he was just 11 ...
-                                        </h6>
-                                      </div>
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      Video tour and key ideas
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.webp" alt="Happiness" class="ctimg_dash">
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </div>
+
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        pathway
+                                      </h4>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <!-- /story 2 -->
+                                </div>
 
-                              <!-- story 3 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <a class="center_flex">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/gregory-pappas-rUc9hVE-L-E-unsplash.jpg"  alt="" class="w100 c150px">
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Continue where you left
+                                    </h4>
                                   </div>
-                                  
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px">
-                                            An apple a day is an eating disorder
-                                          </h6>
-                                        </div>
-                                      </div>
+                                </div>
 
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          I’m sure there were losses before, but one of the earliest ones I can recall ...
-                                        </h6>
-                                      </div>
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      Happiness • Session #5 : What can we do to be happier?
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/firmbee-com-SpVHcbuKi6E-unsplash.webp" alt="Happiness" class="ctimg_dash">
+                                  <!-- <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div> -->
+                                </div>
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_life_story.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        LIFE STORY 
+                                      </h4>
                                     </div>
                                   </div>
-                                </a>
-                              </div>
-                              <!-- /story 3 -->
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /life stories -->
-
-              <!-- short videos -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_ws" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Short videos
-                                  </h2>
                                 </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/wisdom-shorts">
-                                    <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
-                                      View all
-                                    </h2>
-                                  </a>
+
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Title
+                                    </h4>
+                                  </div>
                                 </div>
-                              </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      SubTitle
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
                             </div>
 
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_ws" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a (click)="routeHappiness(0)" class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_03.svg" alt="Happiness" class="ctimg">
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </div>
 
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn">
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="">
-                                  <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/wisdom_shorts/01.svg" alt="" class="crimg br10px">
-                                    <div class="play_black_ac">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="" class="img-responsive">
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        pathway
+                                      </h4>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Transform your life
-                                  </h4>
-                                </a>
-                              </div>
-                              
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="">
-                                  <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/wisdom_shorts/02.svg" alt="" class="crimg br10px">
-                                    <div class="play_black_ac">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="" class="img-responsive">
+                                </div>
+
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Living with peace
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      9 sessions • Approx. 2 hours
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a (click)="routeHappiness(0)" class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_04.svg" alt="Happiness" class="ctimg">
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </div>
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_blog.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        blog
+                                      </h4>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Achieve success
-                                  </h4>
-                                </a>
-                              </div>
+                                </div>
 
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="">
-                                  <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/wisdom_shorts/03.svg" alt="" class="crimg br10px">
-                                    <div class="play_black_ac">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="" class="img-responsive">
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      A positive attitude
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      HappierMe • 5 May 2023
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a (click)="routeHappiness(0)" class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_05.svg" alt="Happiness" class="ctimg">
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </div>
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_short_video.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        short video
+                                      </h4>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Overcome stress
-                                  </h4>
-                                </a>
-                              </div>
-                              
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /short videos -->
-
-              <!-- manage your emotions -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_mye" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Manage your emotions
-                                  </h2>
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_mye" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/01.svg" alt="" class="ctimg">
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      3 tips to be happy
+                                    </h4>
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Fear & Anxiety</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/02.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Pleasure</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/03.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Sorrow and Loss</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/04.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Loneliness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/05.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Anger</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/06.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Happiness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /manage your emotions -->
-
-              <!-- success at school -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_sas" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Success at school
-                                  </h2>
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_sas" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/07.svg" alt="" class="ctimg">
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      01:40
+                                    </h4>
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Stress</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/08.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Success & failure</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/09.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Criticism</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/10.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Self-esteem</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/11.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Exam pressure</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/12.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Choosing a career</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/13.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Critical thinking</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /success at school -->
-
-              <!-- relationships -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_r" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Relationships
-                                  </h2>
                                 </div>
-                              </div>
+                              </a>
                             </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_r" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/14.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Relationships</h4>
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a (click)="routeHappiness(0)" class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_06.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/15.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Communication</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/16.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Emotional needs</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/17.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Love</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/18.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Opinions & beliefs</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/19.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Kindness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/20.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Bullying</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /relationships -->
-
-              <!-- transform your life -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_lww" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Transform your life
-                                  </h2>
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_lww" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/21.svg" alt="" class="ctimg">
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_event.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        event
+                                      </h4>
+                                    </div>
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Food & health</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/22.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Addiction</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/23.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Social media</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/24.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Dealing with Death</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /transform your life -->
-
-              <!-- develop a calm mind -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_dacm" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Develop a calm mind
-                                  </h2>
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_dacm" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/25.svg" alt="" class="ctimg">
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Managing conflict with compassion
+                                    </h4>
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Nature</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/26.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Breathing</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/27.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Noticing Thoughts</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/28.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Meditation</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/29.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Guided Audio Meditation</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /develop a calm mind -->
-
-              <!-- explore how your mind works -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_ehymw" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Explore how your mind works
-                                  </h2>
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_ehymw" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/30.svg" alt="" class="ctimg">
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      May 15 • 10 AM EST
+                                    </h4>
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Past Influences</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/31.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Comparison & Envy</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/32.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Reactive Mind</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/33.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Self Image</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/34.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Self Interest</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/35.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Identity</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/36.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Inner Boredom & Empitness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/37.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">The Nature of the ‘I’</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /explore how your mind works -->
-
-              <!-- understand yourself -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_uy" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Understand yourself
-                                  </h2>
                                 </div>
-                              </div>
+                              </a>
                             </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_uy" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/38.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Benefits of self-awareness</h4>
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a (click)="routeHappiness(0)" class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_07.svg" alt="Happiness" class="ctimg">
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/39.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Begin your journey</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/40.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Three Steps to Enquiry</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/41.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Insight</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/42.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Awareness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/43.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">No Judgement</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/44.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Questions are Key</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/45.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Look without Language</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a>
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/tiles/modules/46.svg" alt="" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Obstacles to Enquiry</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /understand yourself -->
-
-              <!-- make the world a better place  -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_mtwabp" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Make the world a better place
-                                  </h2>
                                 </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_mtwabp" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
 
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/01.svg" alt="" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Tackling racism
-                                  </h4>
-                                </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/02.svg" alt="" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Climate change
-                                  </h4>
-                                </a>
-                              </div>
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_podcast.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        podcast
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
 
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a>
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/04.svg" alt="" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                    Ending conflict
-                                  </h4>
-                                </a>
-                              </div>
-                              
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                     The resilience mindset: lessons from HumanWisd...
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      56:48
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
                             </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                              <a (click)="routeHappiness(0)" class="prelative">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_08.svg" alt="Happiness" class="ctimg">
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </div>
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_guided_questions.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        guided questions
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Develop a positive mindset
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      Find a fresh way of dealing with life’s challenges
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div> -->
+
                           </div>
-
                         </div>
+
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- /accordion -->
-              <!-- /make the world a better place -->
+            </div>
+            <!-- /accordion -->
+            <!-- /for nidhi -->
 
-              <div class="pagebreak"></div>
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
 
-            </form>
+            <!-- find answers -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <div class="box_v3_05">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
+                        Find quick answers
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px">
+                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                        Make sense of what you think and feel, find fresh ways to deal with life’s many challenges, and grow as a person.
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="fas_div">
+                    <a>
+                      <div class="row fas_box">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                              Why do I ... ?
+                            </h4>
+
+                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                              Find answers to questions about why you feel the way you do
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a>
+                      <div class="row fas_box">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                              How can I ... ?
+                            </h4>
+
+                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                              Learn how to deal with challenges
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+
+            <!-- /find answers -->
+            <!-- subscribe to premium -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
+              </div>
+            </div>
+            <!-- /subscribe to premium -->
+
+            <!-- what people are saying -->
+            <div class="row mb30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
+                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                  <h2 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
+                    Testimonials
+                  </h2>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                  <a class="prelative">
+                    <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
+                      View all
+                    </h2>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <!-- /what people are saying -->
+
+            <!-- testimonials -->
+             <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 odiv img_dtestimonials">
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Adam Beagley
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        STUDENT, UK
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved ...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_laura_toop.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Laura Toop
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        LIFE LEADERSHIP COACH, UK
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        Oh how I wish I had had this app available to me when my life imploded many years ago. In fact, I wish I had had access as a child. It would have made a sign...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Julie Goodfellow
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        HEAD TEACHER, UK
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        I subscribed to the HappierMe app for all my staff because I have seen how enlightening and transformative it is to understand my reactions...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_carolyn_king.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Carolyn King
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        KINESIOLOGIST, Australia
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        "I absolutely love the HappierMe app.
+                        It has enabled me to really go on a journey of self-exploration. It covers so many different aspect...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_chandra_ramamurthy.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Chandra Ramamurthy
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        CLINICAL PSYCHOLOGIST, India
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        The past few months of using the app have been life affirming. I have only two words after using the app - GAME CHANGER! This app needs to be scaled up, to...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_suzanne_oades.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Suzanne Oades
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        PSYCHOTHERAPIST, UK
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        By knowing more about how my mind works, I have learned to make better choices in how I think, behave and act. The HappierMe app is a space...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tinamarie_rodriguez.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Tinamarie Rodriguez
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        LIFE COACH, USA
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        This app is exactly what each and every person in the world needs every day. It will give each person the tools to lead a purposeful and fulfilling life.
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dominic_curran.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Dominic Curran
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        TEACHER, England
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        The HappierMe app has helped me to look at what I think, and helped me to question why I think in certain ways. This understanding has transformed ...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_anthony_seldon.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Sir Anthony Seldon
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        EDUCATIONALIST & HISTORIAN, UK
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their rel...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tim_merrick.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Tim Merrick
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        EXECUTIVE COACH, USA
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        It’s so easy to get caught up in all the things we have to do, want to do, and should do. What we gain in productivity we lose in self-awareness, meaning, and satisf...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jo_thackwray.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Jo Thackwray
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        LIFE COACH, UK
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        This is a world changing project I am so pleased and privileged to be involved in. To inspire the next generation to be in tune with their own wisdom will truly be w...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_saakshi_singla.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Saakshi Singla
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        PSYCHOLOGIST & COUNSELLOR, India
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
+                        HappierMe is what today’s world, which is full of stress, needs so so desperately. I have been using the HappierMe app in my counseling practice a...
+                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a>
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- /testimonials -->
+
+            <!-- partnership button -->
+            <div class="row mt30px" >
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="">
+                  <div class="row btn_tff">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        Explore the partnership program
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /partnership button -->
+
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
+              Cookie Modal
+            </button> -->
+
+            <div class="pagebreak"></div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class -->
 </div>
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<!-- <app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation> -->
 <!-- /footer -->

@@ -2,7 +2,7 @@
 
 <app-index-content>
 
-  <form>   
+  <form>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
         <a [routerLink]="['/adults/conditioning', conditioningResume]" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
@@ -32,7 +32,7 @@
       <a routerLink="/adults/conditioning/s233">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #1
@@ -62,7 +62,7 @@
       <a routerLink="/adults/conditioning/s255">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #2
@@ -92,7 +92,7 @@
       <a routerLink="/adults/conditioning/s279">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #3
@@ -122,7 +122,7 @@
       <a routerLink="/adults/conditioning/s305">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #4
@@ -184,7 +184,7 @@
           </div>
         </div>
       </a>
-     
+
 
 
 
@@ -198,10 +198,10 @@
     </div>
     <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
-  </form>   
+  </form>
 
-</app-index-content> 
+</app-index-content>
 
 <app-index-footer></app-index-footer>
