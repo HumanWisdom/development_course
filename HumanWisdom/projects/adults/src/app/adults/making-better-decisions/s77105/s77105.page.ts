@@ -80,7 +80,7 @@ export class S77105Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/making-better-decisions/s77106'])
+    this.router.navigate(['/adults/making-better-decisions/s77111'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({

@@ -102,16 +102,16 @@ export class S425Page implements OnInit {
       },
         error => {
           console.log(error)
-          this.router.navigate(['/adults/criticism/s426'])
+          this.router.navigate(['/adults/criticism/s431'])
         },
         () => {
-          this.router.navigate(['/adults/criticism/s426'])
+          this.router.navigate(['/adults/criticism/s431'])
         })
 
 
     }
     else {
-      this.router.navigate(['/adults/criticism/s426'])
+      this.router.navigate(['/adults/criticism/s431'])
 
     }
 

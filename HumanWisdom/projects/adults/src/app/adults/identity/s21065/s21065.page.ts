@@ -116,11 +116,11 @@ export class S21065Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/identity/s21066'])
+        this.router.navigate(['/adults/identity/s21067'])
 
       },
       () => {
-        this.router.navigate(['/adults/identity/s21066'])
+        this.router.navigate(['/adults/identity/s21067'])
       })
 
   }

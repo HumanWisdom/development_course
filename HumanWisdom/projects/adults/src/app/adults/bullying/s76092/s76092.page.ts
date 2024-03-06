@@ -49,7 +49,7 @@ export class S76092Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/adults/bullying/s76087'])
+    this.router.navigate(['/adults/bullying/s76086'])
   }
 
 }
