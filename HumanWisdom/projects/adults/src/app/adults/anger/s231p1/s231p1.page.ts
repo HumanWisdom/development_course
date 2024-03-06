@@ -60,7 +60,7 @@ path = setTimeout(() => {
 
   }
   previous(){
-    this.router.navigate(['/adults/anger/s229'])
+    this.router.navigate(['/adults/anger/s228p3'])
 
   }
 
