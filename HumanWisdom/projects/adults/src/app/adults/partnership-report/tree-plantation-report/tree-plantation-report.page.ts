@@ -7,7 +7,7 @@ import { AdultsService } from '../../adults.service';
 import { PartnershipReport } from '../partnership-report.model';
 import { Location } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
+import html2pdf from "html2pdf.js";
 @Component({
   selector: 'app-tree-plantation-report',
   templateUrl: './tree-plantation-report.page.html',
@@ -59,10 +59,27 @@ getTittle(){
   return array;
  }
 
+ 
+ DownloadPdf() {
+  this.isPdfDownloading = true;
+  const html = document.getElementById('partnershipReport');
+  var options = {
+    margin: [0, 0, 0, 0],
+  }
+  setTimeout(() => {
+    html2pdf()
+      .from(html).set(options)
+      .save();
+    this.isPdfDownloading = false;
+  }, 500);
+
+}
+
+
  redirectToMyPartnership(){
   this.router.navigate(['adults/partnership-report/my-partner'])
 }
- DownloadPdf(){
+ DownloadPdf1(){
   this.isPdfDownloading=true;
   setTimeout(() => {
     let DATA: any = document.getElementById("partnershipReport");
