@@ -50,7 +50,7 @@ export class S139054Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/pressure-of-exams/s1399053'])
+    this.router.navigate(['/pressure-of-exams/s139053'])
   }
 
 }

@@ -37,14 +37,14 @@ export class S134004Page implements OnInit {
       endTime:any
       totalTime:any
       bookmark=0
-       path = setTimeout(() => {
+  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
       
       avDuration:any
       
       bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-      
+
       constructor(private router: Router,
         private service:TeenagersService,
         private location:Location) { }
