@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class ChangeUnhelpfulHabitsTranscriptPage implements OnInit {
 
-  constructor(private location:Location, private meta: Meta, private title: Title) { }
+  constructor(private location:Location, private meta: Meta, private title: Title,private navigationService:NavigationService) { }
 
   ngOnInit() {
     this.title.setTitle('Change Unhelpful Habits: Transform Your Life with Positive Behavior Change')
@@ -20,8 +21,11 @@ export class ChangeUnhelpfulHabitsTranscriptPage implements OnInit {
 
   }
 
-  goBack(){
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
 
 }
