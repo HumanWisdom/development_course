@@ -49,6 +49,7 @@ export class S22001Page implements OnInit,OnDestroy {
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
+    
 
    
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));

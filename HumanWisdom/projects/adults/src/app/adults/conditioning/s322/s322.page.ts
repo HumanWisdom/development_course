@@ -50,7 +50,7 @@ export class S322Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/adults/conditioning/s320'])
+    this.router.navigate(['/adults/conditioning/s319'])
 
   }
 

@@ -115,11 +115,11 @@ export class S46072Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/food-health/s46073'])
+        this.router.navigate(['/adults/food-health/s46078'])
 
       },
       () => {
-        this.router.navigate(['/adults/food-health/s46073'])
+        this.router.navigate(['/adults/food-health/s46078'])
       })
 
 

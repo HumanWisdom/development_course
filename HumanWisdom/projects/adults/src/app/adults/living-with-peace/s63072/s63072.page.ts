@@ -157,7 +157,7 @@ export class S63072Page implements OnInit {
   submitProgress(){
     //if(this.sendOption!=null)
     {
-      this.router.navigate(['/adults/living-with-peace/s63073'])
+      this.router.navigate(['/adults/living-with-peace/s63078'])
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
