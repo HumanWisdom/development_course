@@ -38,40 +38,43 @@ export class S26001Page implements OnInit,OnDestroy {
   )
   { 
     this.service.setmoduleID(26);
-    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    story = JSON.parse(story)
-    let splitarr = []
-    let arraythree = []
-    if(story?.length <= 2) 
-    {
-      story.forEach((e) => 
-      {
-        arraythree.push(e)
-      })
-      splitarr.push(arraythree)
-    }
-    else
-    {
-      story?.forEach((e) => 
-      {
-        if(arraythree.length < 2) 
-        {
-          arraythree.push(e)
-        }
-        else 
-        {
-          splitarr.push(arraythree)
-          arraythree = []
-          arraythree.push(e)
-        }
-      })
-    }
-    this.stories = splitarr
+   
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+      story = JSON.parse(story)
+      let splitarr = []
+      let arraythree = []
+      if(story?.length <= 2) 
+      {
+        story.forEach((e) => 
+        {
+          arraythree.push(e)
+        })
+        splitarr.push(arraythree)
+      }
+      else
+      {
+        story?.forEach((e) => 
+        {
+          if(arraythree.length < 2) 
+          {
+            arraythree.push(e)
+          }
+          else 
+          {
+            splitarr.push(arraythree)
+            arraythree = []
+            arraythree.push(e)
+          }
+        })
+      }
+      this.stories = splitarr
+    }, 2000)
     
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-yourself');
