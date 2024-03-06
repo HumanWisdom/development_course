@@ -504,8 +504,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                              <!-- <a (click)="routeResume('23', true)" class="prelative"> -->
-                                <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative">
+                              <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
+                                <!-- <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative"> -->
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
                                   <div class="progress dprogress">
