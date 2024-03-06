@@ -100,11 +100,11 @@ export class S44233Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/stress/s44234'])
+        this.router.navigate(['/adults/stress/s44239'])
 
       },
       () => {
-        this.router.navigate(['/adults/stress/s44234'])
+        this.router.navigate(['/adults/stress/s44239'])
       })
 
 

@@ -35711,6 +35711,7 @@ li ol > li:before {
   line-height: 150%;
   font-style: normal;
   color: #FFFFFF !important;
+  background-color: transparent !important;
 }
 
 .Body span.Hyperlink0 a span,
@@ -36514,5 +36515,17 @@ a.fc_e58d82:hover
 .div_gm
 {
   padding: 0;
+}
+
+.btn_tas 
+{
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.div_fq .fa_vm:hover
+{
+  filter: unset !important;
 }
 /* /version - 03 */

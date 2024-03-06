@@ -1646,7 +1646,7 @@ export class AdultDashboardPage implements OnInit {
   routeResume(r, enableLastVisited = false) {
     let id = '';
     if (enableLastVisited) {
-      id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['screenno'].substring(0, 2) : '23';
+      id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';
     }
     // else {
     //   id = r.ModuleId.toString();
