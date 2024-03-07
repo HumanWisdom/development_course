@@ -3,6 +3,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-deal-with-sorrow-loss',
@@ -35,7 +36,7 @@ export class DealWithSorrowLossPage implements OnInit {
   enablefbnViewMore = true;
   enableblogViewMore = true;
 
-  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) {
+  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title,private navigationService:NavigationService) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
@@ -99,7 +100,10 @@ export class DealWithSorrowLossPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
   routeGuided() {
   

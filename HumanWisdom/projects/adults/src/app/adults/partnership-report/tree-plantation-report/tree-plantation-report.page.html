@@ -23,7 +23,7 @@
 <div class="right_col mc_01"  id="TreeReport" *ngIf="partnershipReport && partnershipReport!=null">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" id="partnershipReport" >
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" >
         <div class="x_panel p0" >
           <div class="x_content p0">
             <form>
@@ -282,6 +282,52 @@
         </div>
       </div>
     </div>
+    <div style="display: none;">
+      <body id="partnershipReport" style="font-family: Arial, sans-serif; background: white  !important; margin: 0; padding: 20px; min-height: 100%;height: 100%;">
+
+        <header style="text-align: center; padding: 10px;">
+            <h1>Tree Plantation Report</h1>
+        </header>
+        
+        <div style="margin-bottom: 20px;">
+        <h4 style="margin-left: 4px;">Summary</h4> <p  style="float: right;font: bold;margin-right: 4px;">    {{currentDate | date:'dd MMMM y'}} </p>
+        <p style="margin-left: 4px;"> Name: {{partnershipReport.AffName}} </p> 
+        <p style="margin-left: 4px;"> Total Trees: {{partnershipReport.TreesCnt}} </p>
+        </div>
+      
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background-color: #f2f2f2;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 10px;">Date</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; ">Trees Planted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of partnershipReport?.AffReport">
+                    <td style="border: 1px solid #ddd; padding: 10px;">  {{item.Month}} {{item.Year}} </td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">  {{item.Trees}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <!-- <td colspan="1" style="border: 1px solid #ddd; padding: 10px; font-weight: bold; ">Total</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">  {{totalPartners}}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold; ">{{totalSubscriber}}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;"></td> -->
+                </tr>
+                 <!-- <tr>
+                <td colspan="3" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;"></td>
+                <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">Earnings : ${{totalRevenu| number}}</td>
+            </tr> -->
+            </tfoot>
+        </table>
+      
+        <!-- <footer style="margin-top: 20px; text-align: right;">
+            <p><strong>Payment Information:</strong> Please make the payment to XYZ Company.</p>
+        </footer> -->
+      
+      </body>
+     </div>
   </div>
 </div>
 <!-- /page content -->
