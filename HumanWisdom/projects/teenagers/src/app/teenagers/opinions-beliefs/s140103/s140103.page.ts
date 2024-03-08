@@ -117,11 +117,11 @@ export class S140103Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140104'])
+        this.router.navigate(['/opinions-beliefs/s140109'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140104'])
+        this.router.navigate(['/opinions-beliefs/s140109'])
       })
   }
 
