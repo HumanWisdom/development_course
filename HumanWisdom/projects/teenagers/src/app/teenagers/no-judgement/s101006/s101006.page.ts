@@ -16,7 +16,7 @@ export class S101006Page implements OnInit,OnDestroy {
   bg="dark_blue_w4"
   title=" Why does judgment block understanding?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/no-judgement/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/no-judgement/audios/1.2.mp3'
   transcriptPage="/no-judgement/s101006t"
   toc="/no-judgement/s101001"
   bookmark=0

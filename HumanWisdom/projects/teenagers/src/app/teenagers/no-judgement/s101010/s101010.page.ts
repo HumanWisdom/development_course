@@ -16,8 +16,8 @@ export class S101010Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w8"
   title="I don’t like myself because I don’t like how I look"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/no-judgement/audios/1.4.mp3'
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/teenagers/modules/no-judgement/audios/1.4.mp3'
   transcriptPage="/no-judgement/s101010t"
   toc="/no-judgement/s101001"
   bookmark=0

@@ -182,7 +182,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/communication/s133069'])
+    this.router.navigate(['/communication/s132069'])
 
 
   }
