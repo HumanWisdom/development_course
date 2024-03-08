@@ -57,6 +57,6 @@ export class S127163Page implements OnInit
 
   prev()
   {
-    this.router.navigate(['/habit-addiction/s127158'])
+    this.router.navigate(['/habit-addiction/s127157'])
   }
 }

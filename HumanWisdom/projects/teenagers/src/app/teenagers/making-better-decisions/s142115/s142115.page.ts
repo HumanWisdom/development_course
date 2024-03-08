@@ -58,6 +58,6 @@ export class S142115Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/making-better-decisions/s142110'])
+    this.router.navigate(['/making-better-decisions/s142109'])
   }
 }
