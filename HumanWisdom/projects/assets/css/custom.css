@@ -17946,8 +17946,8 @@ textarea:focus
 .arrow,
 .arrow:before,
 .arrow:after {
-	width:  1.6em!important;
-	height: 1.6em!important;
+	width:  1.6em;
+	height: 1.6em;
 	border-top-right-radius: 30%;
 }
 
@@ -36528,4 +36528,140 @@ a.fc_e58d82:hover
 {
   filter: unset !important;
 }
+
+.popover .arrow 
+{
+  transform: unset;
+  width: unset;
+  height: unset;
+  border-top-right-radius: unset;
+  background-color: unset;
+  text-align: unset;
+  border-top-width: unset;
+  border-bottom-width: unset;
+  border-left-width: unset;
+  margin-left: unset !important;
+}
+
+.popover .arrow:before 
+{
+	transform: unset;
+  width: unset;
+  height: unset;
+  border-top-right-radius: unset;
+}
+
+.popover .arrow:after 
+{
+	transform: unset;
+  width: unset;
+  height: unset;
+  border-top-right-radius: unset;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+/* prompts */
+.popover 
+{
+  background: #E58D82;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+  color: rgb(255, 255, 255);
+  max-width: 335px !important;
+  margin: 0 auto;
+  left: 0 !important;
+  right: 0;
+}
+
+.popover.top>.arrow:after
+{
+  border-top-color: #E58D82;
+}
+
+.popover.bottom>.arrow:after
+{
+  border-bottom-color: #E58D82;
+}
+
+.popover .popover-title 
+{
+  padding: 0px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 140%;
+  color: #fff;
+  background-color: transparent;
+  border-bottom: 0;
+  border-radius: 10px;
+  text-decoration: underline;
+}
+
+.popover .popover-content 
+{
+  padding: 20px 0 10px 0;
+}
+
+.popover[class*="tour-"] .popover-navigation 
+{
+  padding: 0;
+}
+
+.popover[class*="tour-"] .popover-navigation *[data-role="prev"]
+{
+  display: none;
+}
+
+.popover[class*="tour-"] .popover-navigation .btn-group
+{
+  float: right;
+  margin: 0;
+}
+
+.popover[class*="tour-"] .popover-navigation *[data-role="end"] 
+{
+  float: left;
+  height: 40px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  padding: 0;
+  text-align: left !important;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.popover[class*="tour-"] .popover-navigation *[data-role="next"] 
+{
+  width: 92px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #FFF;
+  background: transparent;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  color: #FFF;
+}
+
+.tour-backdrop
+{
+  background: unset !important;
+  opacity: unset !important;
+  backdrop-filter: blur(6px) !important;
+}
+/* /prompts */
 /* /version - 03 */

@@ -76,7 +76,7 @@
             <!-- accordion -->
             <div class="row accordion_row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="panel-group dpanelgroup tour_dp" id="accordion">
+                <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
                     <div class="panel-heading">
                       <h4 class="panel-title dpaneltitle">
@@ -1407,12 +1407,6 @@
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
               Cookie Modal
             </button> -->
-
-            <!-- tour -->
-            <button class="btn" onclick="startTour()">
-              Tour Button
-            </button>
-            <!-- /tour -->
 
             <div class="pagebreak"></div>
 
