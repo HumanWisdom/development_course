@@ -47,7 +47,7 @@ export class S616Page implements OnInit {
     this.router.navigate(['/adults/fear-anxiety/s617'])
   }
   prev(){
-    this.router.navigate(['/adults/fear-anxiety/s615'])
+    this.router.navigate(['/adults/fear-anxiety/s614p5'])
 
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-manage-your-emotions-transcript',
@@ -9,7 +10,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class ManageYourEmotionsTranscriptPage implements OnInit {
 
-  constructor(private location:Location, private meta: Meta, private title: Title) { }
+  constructor(private location:Location, private meta: Meta, private title: Title ,   private navigationService:NavigationService,) { }
 
   ngOnInit() {
     this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
@@ -19,8 +20,11 @@ export class ManageYourEmotionsTranscriptPage implements OnInit {
 
   }
 
-  goBack(){
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
 
 }

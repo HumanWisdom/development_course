@@ -85,7 +85,7 @@ export class S54077Page implements OnInit {
     console.log(e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/reactive-mind/s54078'])
+    this.router.navigate(['/adults/reactive-mind/s54083'])
     sessionStorage.setItem("r54077", JSON.stringify(e))
     this.r54077 = JSON.parse(sessionStorage.getItem("r54077"))
 
@@ -107,7 +107,7 @@ export class S54077Page implements OnInit {
 
       },
       () => {
-        this.router.navigate(['/adults/reactive-mind/s54078'])
+        this.router.navigate(['/adults/reactive-mind/s54083'])
       })
 
 

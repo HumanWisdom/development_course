@@ -69,6 +69,7 @@ export class IncomeReportPage implements OnInit {
     const html = document.getElementById('partnershipReport');
     var options = {
       margin: [0, 0, 0, 0],
+      filename:"PartnershipIncome"
     }
     setTimeout(() => {
       html2pdf()

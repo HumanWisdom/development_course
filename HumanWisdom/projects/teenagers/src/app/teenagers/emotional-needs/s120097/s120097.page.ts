@@ -115,11 +115,11 @@ export class S120097Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120098'])
+        this.router.navigate(['/emotional-needs/s120103'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120098'])
+        this.router.navigate(['/emotional-needs/s120103'])
       })
   }
 
