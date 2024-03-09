@@ -65,6 +65,7 @@ getTittle(){
   const html = document.getElementById('partnershipReport');
   var options = {
     margin: [0, 0, 0, 0],
+    filename:"PartnershipTreeReport"
   }
   setTimeout(() => {
     html2pdf()
