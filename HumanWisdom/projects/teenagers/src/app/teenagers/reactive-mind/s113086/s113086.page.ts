@@ -57,6 +57,6 @@ export class S113086Page implements OnInit
 
   prev()
   {
-    this.router.navigate(['/reactive-mind/s113081'])
+    this.router.navigate(['/reactive-mind/s113080'])
   }
 }

@@ -89,7 +89,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141106'])
+    this.router.navigate(['/success-failure/s141111'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({

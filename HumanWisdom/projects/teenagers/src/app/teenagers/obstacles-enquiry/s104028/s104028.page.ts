@@ -112,11 +112,11 @@ export class S104028Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/obstacles-enquiry/s104029'])
+        this.router.navigate(['/obstacles-enquiry/s104034'])
 
       },
       () => {
-        this.router.navigate(['/obstacles-enquiry/s104029'])
+        this.router.navigate(['/obstacles-enquiry/s104034'])
       })
   }
 
