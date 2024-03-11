@@ -59,8 +59,8 @@ export class AdultsService {
       private services: OnboardingService,
       private router: Router
      ) {
-        if(SharedService.ProgramId!=null){
-          this.programId=SharedService.ProgramId;
+        if(SharedService.ProgramId === 11){
+          this.programId=ProgramType.Teenagers;
         }else{
           this.programId=ProgramType.Adults;
         }

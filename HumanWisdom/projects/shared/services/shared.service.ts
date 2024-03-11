@@ -4,7 +4,7 @@ import {ProgramType} from './../models/program-model';
 import { Constant } from './constant';
 
    export class  SharedService {
-    public static ProgramId:ProgramType=ProgramType.Adults;
+    public static ProgramId:any=ProgramType.Adults;
     public static TeenagerBaseUrl:string='https://staging.humanwisdom.me/teenagers/#/';
     public static AdultsBaseUrl:string='https://happierme.app/';
     public static UrlToRedirect:string= null;
@@ -13,7 +13,7 @@ import { Constant } from './constant';
     public static isIos = false;
   constructor() {
   }
-    
+
   public static setDataInLocalStorage(key:string,value:string){
     if(key && key !=null){
       localStorage.setItem(key,value);
@@ -100,7 +100,7 @@ import { Constant } from './constant';
     return (parseInt(item.TagIds)==5 || item.TagName == 'Ask a coach') && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
   }
 
-  public static initializeIosCheck(platform:Platform){     
+  public static initializeIosCheck(platform:Platform){
    if(platform.IOS || platform.SAFARI || this.iOS()){
        return true;
    }
@@ -126,6 +126,11 @@ import { Constant } from './constant';
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
-  
+
+
+  public static setProgramId(value:string){
+    this.ProgramId = value;
+  }
+
 
 }

@@ -40,10 +40,6 @@ import { environment } from '../../../environments/environment';
   providers:
   [
     {
-      provide: LocationStrategy,
-       useClass: HashLocationStrategy,
-    },
-    {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
