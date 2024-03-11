@@ -111,6 +111,10 @@
               {
                 "input": "node_modules/ngx-sharebuttons/themes/circles/circles-dark-theme.scss",
                 "inject": true
+              },
+              {
+                "input": "node_modules/driver.js/dist/driver.css",
+                "inject": true
               }
             ],
             "scripts": [
@@ -121,7 +125,8 @@
               "node_modules/propellerkit-range-slider/node_modules/wnumb/wNumb.js",
               "node_modules/html2canvas/dist/html2canvas.min.js",
               "node_modules/bcswipe/dist/jquery.bcSwipe.min.js",
-              "node_modules/jspdf/dist/jspdf.umd.min.js"
+              "node_modules/jspdf/dist/jspdf.umd.min.js",
+              "node_modules/driver.js/dist/driver.js.iife.js"
             ],
             "aot": false,
             "vendorChunk": true,
