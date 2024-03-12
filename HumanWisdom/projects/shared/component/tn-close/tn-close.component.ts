@@ -19,7 +19,7 @@ export class TnCloseComponent implements OnInit {
     if (this.service.previousUrl !== '') {
       this.location.back()
     } else {
-      this.router.navigate(['/adults/adult-dashboard'])
+      this.router.navigate(['/adults/search'])
     }
   }
 

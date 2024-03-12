@@ -16,7 +16,7 @@ export class S125047Page implements OnInit,AfterViewInit
   yellow="#FFC455"
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
-  bg="stress_overlay3"
+  bg="dark_blue_overlay_footer"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/stress/audios/1.2.mp3';
   screenType=localStorage.getItem("audio")
