@@ -85,10 +85,18 @@
                   </div>
                 </div>
 
-                <div class="row">
+                <div class="row" *ngIf="isRecieveIncome">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
                       Lifetime earnings: ${{partnershipReport?.WithdrawnAmt+partnershipReport?.BalanceAmt}}
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="row" *ngIf="!isRecieveIncome">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                      Trees Planted: ${{partnershipReport?.WithdrawnAmt+partnershipReport?.BalanceAmt}}
                     </h6>
                   </div>
                 </div>
@@ -169,7 +177,6 @@
               <!-- /balance -->
 
               <!-- income activity -->
-              <ng-container>
                 <div class="row mt20px box_blue_01">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -206,7 +213,7 @@
                       <div class="row" *ngIf="!isRecieveIncome">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <a class="" (click)="redirectToTreeReport()"
-                            [ngClass]="{'fc_adadad': partnershipReport?.IncomeActivity.length==0 }">
+                            class="fc_adadad">
                             <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 tright">
                               Tree plantation report
                             </h4>
@@ -229,7 +236,6 @@
                     <hr class="hr_style_v3_12">
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="panel-group panel_levels" id="obfaqs">
@@ -337,7 +343,7 @@
                     <div class="panel-group panel_levels ppr" id="obfaqs">
                       <ng-container *ngFor="let item of inactivePartnerList">
                         <!-- income -->
-                        <div class="panel panel-default" *ngIf="item.Receive_income=='1'">
+                        <div class="panel panel-default" >
                           <div class="panel-heading">
                             <h4 class="panel-title">
                               <a [ngClass]="checkExpansion(item.UserID)" class="psaccordion" data-toggle="collapse"
@@ -382,57 +388,11 @@
                         </div>
                         <!-- /income -->
 
-                        <!-- tree plantation -->
-                        <div class="panel panel-default" *ngIf="item.Plant_Trees=='1'">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a class="psaccordion" data-toggle="collapse" data-parent="#obfaqs"
-                                href="#pr_{{item.UserID}}">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <a>
-                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                        {{item.Name}}
-                                      </h4>
-                                    </a>
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                            <a *ngIf="item.Email!=null"
-                              href="mailto:{{item.Email}}?subject=Remainder&body= Hi! Thank you for joining the partnership program at my invitation. I hope we can work together to spread this wisdom to the world, and recruit more people to help us do this. This can also help us plant more trees, or earn an income. Please let me know when you may be free for a chat so we can discuss how best we can do this.%0D%0D Thanks %0D {{partnershipReport.AffName}}">
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline">
-                                Send reminder
-                              </h4>
-                            </a>
-                          </div>
-                          <div id="pr_{{item.UserID}}" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                    {{item.Email}}
-                                  </h4>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                    Partner since {{item.DOJ}}
-                                  </h4>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /tree plantation -->
                       </ng-container>
                     </div>
                   </div>
                 </div>
                 <!-- /inactive -->
-              </ng-container>
               <!-- /income activity -->
 
               <div class="row mt20px">
