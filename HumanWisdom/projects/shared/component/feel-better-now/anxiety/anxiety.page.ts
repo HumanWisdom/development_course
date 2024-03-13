@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { SharedService } from "../../../services/shared.service";
+import { ProgramType } from "../../../models/program-model";
 
 @Component({
   selector: 'app-anxiety',
@@ -32,13 +34,36 @@ export class AnxietyPage implements OnInit {
     }
   }
 
-  routeVideoaudio(type, url, title = '') {
-    if(type === 'video') {
-     this.router.navigate([url, 'F', title])
-    }else{
-      let concat = encodeURIComponent(url.replaceAll('/','~'));
-     this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+
+routeVideoaudio(type, url, title = '') {
+  console.log(url)
+  if(type === 'video') {
+   this.router.navigate([url, 'F', title])
+  }else{
+    let concat = encodeURIComponent(url.replaceAll('/','~'));
+    if ( SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate(['audiopage/', concat, '1', 'F', title])
     }
- }
+    else{
+      this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+    }
+  }
+}
+
+determineVideoUrl(url): string {
+if (SharedService.ProgramId == ProgramType.Teenagers) {
+  return `/videopage/${url}`;
+} else {
+  return `/adults/videopage/${url}`;
+}
+}
+
+determineRouterLink(data){
+if (SharedService.ProgramId == ProgramType.Teenagers) {
+  return [`/${data}`];
+} else {
+  return [`/adults/${data}`];
+}
+}
 
 }
