@@ -1,0 +1,114 @@
+<title>Teen Talk | HappierMe</title>
+
+<!-- top navigation -->
+<app-feature-header title="Teen Talk"></app-feature-header>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_183c79 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- search -->
+              <!-- <div class="row prelative">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                  <input
+                    type="search"
+                    class="form-control has-feedback-left pfy_search hide_search"
+                    placeholder="Search video"
+                    name="search-list"
+                    autocomplete="off"
+                    [(ngModel)]="searchinp"
+                    (focusout)="getSearchResult($event.target.value)"
+                    (keyup.enter)="getSearchResult($event.target.value)"
+                    [ngStyle]="{'border-radius':'100px'}">
+                  <span
+                    class="fa fa-search form-control-feedback left pfy_search_icon"
+                    aria-hidden="true">
+                  </span>
+                  <span *ngIf=" searchinp!=''"
+                    (click)="clearSearch()"
+                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                    aria-hidden="true">
+                  </span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                </div>
+              </div> -->
+              <!-- /search -->
+
+              <div class="row mtb30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                    Welcome to Teen-Talk - a series of wonderful conversations with teenagers from around the world on
+                    different subjects. So much to learn from their wisdom!
+                  </h4>
+                </div>
+              </div>
+
+              <div class="toc_adiv_01">
+                <!-- video row -->
+                <a (click)="teentalkS3(data['RowID'] <= 9 ? '0' + data['RowID'] : data['RowID'], data['Title'])" *ngFor="let data of teenTalkList">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+                        <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                          <img [src]="data['ImgUrl']" alt=""
+                            class="p0 session_img">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+                            alt="" class="p0 session_img_play">
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                            {{data['Title']}}
+                          </h4>
+                          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                           {{data['Timing']}} min
+                          </h4>
+                        </div>
+
+                      </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+
+                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div> -->
+
+                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"> -->
+                      <!-- lock -->
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive"> -->
+                      <!-- /lock -->
+                      <!-- </div> -->
+
+                    </div>
+                  </div>
+                </a>
+                <!-- /video row -->
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

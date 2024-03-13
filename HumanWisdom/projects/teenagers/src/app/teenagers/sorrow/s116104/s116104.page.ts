@@ -116,11 +116,11 @@ export class S116104Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/sorrow/s116105'])
+        this.router.navigate(['/sorrow/s116110'])
 
       },
       () => {
-        this.router.navigate(['/sorrow/s116105'])
+        this.router.navigate(['/sorrow/s116110'])
       })
 
 

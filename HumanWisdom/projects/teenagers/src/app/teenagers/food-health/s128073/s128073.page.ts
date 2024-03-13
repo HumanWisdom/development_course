@@ -114,11 +114,11 @@ export class S128073Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/food-health/s128074'])
+        this.router.navigate(['/food-health/s128079'])
 
       },
       () => {
-        this.router.navigate(['/food-health/s128074'])
+        this.router.navigate(['/food-health/s128079'])
       })
   }
 

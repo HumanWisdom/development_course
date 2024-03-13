@@ -538,6 +538,10 @@ const routes: Routes = [
     path: 'blog-static',
     loadChildren: () => import('./blog-static/blog-static.module').then( m => m.BlogStaticPageModule)
   },
+  {
+    path: 'splash-options',
+    loadChildren: () => import('./splash-options/splash-options.module').then( m => m.SplashOptionsPageModule)
+  },
 ];
 
  @NgModule({

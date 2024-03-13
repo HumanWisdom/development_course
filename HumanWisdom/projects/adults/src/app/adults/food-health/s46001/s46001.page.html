@@ -1,4 +1,4 @@
-<app-toc-header [moduleName]="'Our Relationship to Food'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Food & Health'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
@@ -98,7 +98,7 @@
     </div>
     <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
   </form>    
 

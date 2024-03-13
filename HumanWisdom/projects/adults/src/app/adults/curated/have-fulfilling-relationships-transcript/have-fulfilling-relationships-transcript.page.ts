@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-have-fulfilling-relationships-transcript',
@@ -9,7 +10,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class HaveFulfillingRelationshipsTranscriptPage implements OnInit {
 
-  constructor(private location:Location,  private meta: Meta, private title: Title) { }
+  constructor(private location:Location,  private meta: Meta, private title: Title, private navigationService:NavigationService) { }
 
   ngOnInit() {
 
@@ -19,9 +20,11 @@ export class HaveFulfillingRelationshipsTranscriptPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'Healthy Relationships,Building Trust in Relationships,Communication in Relationships,Overcoming Relationship Challenges,Developing Intimacy in Relationships,Nurturing Relationships,Maintaining Positive Relationships' })
 
   }
-
-  goBack(){
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
 
 }

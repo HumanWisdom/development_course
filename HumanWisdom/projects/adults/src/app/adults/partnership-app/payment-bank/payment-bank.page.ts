@@ -19,7 +19,7 @@ export class PaymentBankPage implements OnInit {
   isUpdate: boolean = false;
   ByPaypal: number = 0;
   isPaypalChecked: boolean = false;
-  isBankAccount:boolean = false;
+  isBankAccount:boolean = true;
   @ViewChild('postModal') postModal: any;
   constructor(
     private service: AdultsService,

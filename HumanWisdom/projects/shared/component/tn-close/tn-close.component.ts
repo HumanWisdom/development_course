@@ -28,6 +28,7 @@ export class TnCloseComponent implements OnInit {
       else{
       this.router.navigate(['/adults/adult-dashboard'])
       }
+      this.router.navigate(['/adults/search'])
     }
   }
 

@@ -116,11 +116,11 @@ export class S57067Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/nature-of-i/s57068'])
+        this.router.navigate(['/adults/nature-of-i/s57073'])
 
       },
       () => {
-        this.router.navigate(['/adults/nature-of-i/s57068'])
+        this.router.navigate(['/adults/nature-of-i/s57073'])
       })
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-deal-with-sorrow-loss-transcript',
@@ -9,7 +10,8 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class DealWithSorrowLossTranscriptPage implements OnInit {
 
-  constructor(private location:Location, private meta: Meta, private title: Title) { }
+  constructor(private location:Location, private meta: Meta, private title: Title,
+    private navigationService:NavigationService) { }
 
   ngOnInit() {
     this.title.setTitle('Ways to Deal with Sorrow and Loss')
@@ -20,8 +22,11 @@ export class DealWithSorrowLossTranscriptPage implements OnInit {
    
   }
 
-  goBack(){
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
 
 }

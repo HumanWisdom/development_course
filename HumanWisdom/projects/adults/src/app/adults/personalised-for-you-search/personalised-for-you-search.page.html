@@ -14,7 +14,7 @@
             <!-- search -->
             <div class="row mt30px mb30px prelative">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
               </div>
@@ -31,7 +31,7 @@
             <!-- /search -->
 
             <!-- pathway -->
-            <div class="row box_v3_05">
+            <div class="row box_v3_05 tour_pathway">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <!-- five dots -->
                 <div class="row">
@@ -289,148 +289,7 @@
             </div>
             <!-- /pathway -->
 
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
 
-            <!-- explore a topic of interest -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <a class="prelative box_v3_01" (click)="logEvent('click_select-a-topic-to-explore','/adults/select-a-topic-to-explore')" >
-                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
-                      <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
-                        <h4 class="mt0px mb5px fw_600 fs_18px lh_24px fc_ffffff">
-                          Explore a topic of interest
-                        </h4>
-
-                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
-                        </h4>
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1 tright">
-                        <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- /explore a topic of interest -->
-
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
-
-            <!-- get more out of HappierMe -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
-                  Get more out of HappierMe
-                </h4>
-              </div>
-            </div>
-
-            <div class="mt30px div_fi_b">
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="rightToJournal(true)">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_journal.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Journal
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="rightToJournal(false)">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_guided_questions.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Guided questions
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_happiness_survey', '/adults/wisdom-survey')">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_wisdom_score.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Happiness score
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_Contact_a_Coach', '/adults/contact-coach')">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_contact_a_coach.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Contact a coach
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_Forum', '/forum')">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_forum.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Forum
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-            <!-- /get more out of HappierMe -->
 
             <!-- hr -->
             <div class="row">
@@ -441,7 +300,7 @@
             <!-- /hr -->
 
             <!-- find inspiration -->
-            <div class="row">
+            <div class="row tour_find_inspiration">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
                   Find inspiration
@@ -564,9 +423,10 @@
             </div>
             <!-- /hr -->
 
+            
             <!-- awareness exercises -->
             <!-- accordion -->
-            <div class="row accordion_row">
+            <div class="row accordion_row tour_exercises">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01 dpanel_01_ext">
@@ -578,7 +438,7 @@
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#ca_ae" aria-expanded="true">
                                   <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                    Awareness exercises
+                                    Exercises
                                   </h2>
                                 </a>
                               </div>
@@ -601,7 +461,7 @@
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="fw_400 fs_15px lh_140p fc_ffffff mtb0px">
-                                Do one of these short exercises daily to improve your self awareness.
+                                Do one of these short exercises daily to improve your self awareness and emotional intelligence.
                               </h4>
                             </div>
                           </div>
@@ -683,6 +543,154 @@
             <!-- /awareness exercises -->
 
             <!-- hr -->
+         <!--    <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div> -->
+            <!-- /hr -->
+
+            <!-- explore a topic of interest -->
+     <!--        <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a class="prelative box_v3_01" (click)="logEvent('click_select-a-topic-to-explore','/adults/select-a-topic-to-explore')" >
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
+                        <h4 class="mt0px mb5px fw_600 fs_18px lh_24px fc_ffffff">
+                          Explore a topic of interest
+                        </h4>
+
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1 tright">
+                        <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div> -->
+            <!-- /explore a topic of interest -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- get more out of HappierMe -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                  Get more out of HappierMe
+                </h4>
+              </div>
+            </div>
+
+            <div class="mt30px div_fi_b">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="rightToJournal(true)">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_journal.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Journal
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="rightToJournal(false)">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_guided_questions.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Guided questions
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+               <!--    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="logEvent('click_happiness_survey', '/adults/wisdom-survey')">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_wisdom_score.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Happiness score
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div> -->
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="logEvent('click_Contact_a_Coach', '/adults/contact-coach')">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_contact_a_coach.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Contact a coach
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="logEvent('click_Forum', '/forum')">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_forum.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Forum
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- /get more out of HappierMe -->
+
+
+
+      
+
+
+            <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_v3_01">
@@ -707,7 +715,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#ca_wfgi" aria-expanded="true">
-                          <div class="row">
+                          <div class="row btn_tff">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="">
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
@@ -720,7 +728,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="ca_wfgi" class="panel-collapse collapse in">
+                    <div id="ca_wfgi" class="panel-collapse collapse">
                       <div class="panel-body">
 
                         <div class="row cmr-20pxi">
@@ -986,6 +994,12 @@
             </div>
             <!-- /accordion -->
             <!-- /wisdom for global impact -->
+
+            <!-- tour -->
+            <button class="btn" onclick="call_tour_pathway()">
+              Tour Pathway Button
+            </button>
+            <!-- /tour -->
 
             <div class="pagebreak"></div>
 

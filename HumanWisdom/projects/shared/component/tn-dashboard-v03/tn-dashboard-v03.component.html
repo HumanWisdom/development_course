@@ -78,7 +78,7 @@
           <div class="mr10px">
             <a (click)="loginroute()">
               <button type="button" class="btn_login">
-                Login
+                Free Trial
               </button>
             </a>
           </div>
@@ -106,7 +106,7 @@
             </a>
           </div> -->
 
-          <div class="mlr10px">
+          <div class="mlr10px tour_notification">
             <a>
               <img *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_active.svg"
@@ -117,7 +117,7 @@
             </a>
           </div>
 
-          <div *ngIf="enableHamburger">
+          <div *ngIf="enableHamburger" class="tour_hamburger">
             <app-hamburger [userDetails]="userDetails"></app-hamburger>
           </div>
 

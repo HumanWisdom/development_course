@@ -114,14 +114,14 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
 
                   <div class="col-md-2 col-sm-2 col-xs-2 circular-player-container">
-                    <ngx-circular-player 
-                      id="aud5" 
+                    <ngx-circular-player
+                      id="aud5"
                       strokeColor="#FFFFFF"
                       source="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_develop_a_calm_mind.mp3"
                       progressStrokeColor=rgba(229,141,130,1)>
                     </ngx-circular-player>
                   </div>
-                  
+
                   <div class="col-md-8 col-sm-8 col-xs-8 p0">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
@@ -129,7 +129,7 @@
                       </h4>
                     </div>
                   </div>
-                  
+
                   <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
                     <a routerLink="/adults/pathway/develop-a-calm-mind-transcript">
                       <button class="btn flex_ai btn_pn">
@@ -154,7 +154,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/28.webp" class="img-responsive">
                               <div class="progress dprogress">
-                                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar" role="progressbar" [style.width]="natureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
                             </div>
                           </div>
@@ -174,7 +174,6 @@
                               </h4>
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </a>
@@ -188,6 +187,9 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/29.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="breathingP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>
 
@@ -220,6 +222,9 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="ntP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>
 
@@ -252,6 +257,9 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/22.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="meditationP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>
 
@@ -285,6 +293,9 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="gamP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
                             </div>
                           </div>
 

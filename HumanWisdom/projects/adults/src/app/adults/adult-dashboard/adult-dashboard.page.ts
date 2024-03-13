@@ -341,6 +341,14 @@ export class AdultDashboardPage implements OnInit {
    })
   }
 
+  survey() {
+    this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
+  }
+
+  viewDetails() {
+    this.router.navigate(["/onboarding/user-profile"]);
+  }
+
   loginpage() {
     // $("#signuplogin").modal("hide");
     this.closepopup.nativeElement.click();
@@ -354,7 +362,7 @@ export class AdultDashboardPage implements OnInit {
       .subscribe(res => {
         console.log(res)
         if(res[0]['ModuleId']==75)
-        { 
+        {
           res[0]['screenno']= res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
         this.resumeLastvisited = res;
@@ -399,7 +407,7 @@ export class AdultDashboardPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
     this.meta.updateTag({ property: 'keywords', content: 'human wisdom, app, personal growth, self-help, daily inspiration, mindfulness practices, anger management, stress management, relationships, self-esteem, addiction, work, workplace, leadership, money, love, food and health, living with peace, dealing with death, criticism, success and failure, decision making, opinions and beliefs' })
 
-  
+
     this.dash = this.router.url.includes('adult-dashboard');
     // this.getuserDetail();
     setTimeout(() => {
@@ -1638,7 +1646,7 @@ export class AdultDashboardPage implements OnInit {
   routeResume(r, enableLastVisited = false) {
     let id = '';
     if (enableLastVisited) {
-      id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['screenno'].substring(0, 2) : '23';
+      id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';
     }
     // else {
     //   id = r.ModuleId.toString();
@@ -4044,13 +4052,25 @@ export class AdultDashboardPage implements OnInit {
     }
   }
   changeTopic() {
-    this.logeventservice.logEvent("click_Change-your-Topic");
     localStorage.setItem('lastRoute',this.dasboardUrl);
-    this.router.navigate(["/adults/change-topic"], {
-      state: {
-        routedFromLogin: false,
-      }
-    });
+    if(!this.isloggedIn)
+    {
+      this.logeventservice.logEvent("click_Select-a-topic-to-Explore");
+      this.router.navigate(["/adults/select-a-topic-to-explore"], {
+        state: {
+          routedFromLogin: false,
+        }
+      });
+    }
+    else
+    {
+        this.logeventservice.logEvent("click_Change-your-Topic");        
+        this.router.navigate(["/adults/change-topic"], {
+          state: {
+            routedFromLogin: false,
+          }
+        });
+    }
   }
 
   routeToFindAnswer(param){
@@ -4069,7 +4089,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Work and Leadership') {
       this.logeventservice.logEvent('click_workplace');
       this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-    } else if (name === 'Have fulfilling relationships') {
+    } else if (name === 'Relationships') {
       this.logeventservice.logEvent('click_relationships');
       this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
     } else if (name === 'Be happier') {
@@ -4078,7 +4098,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Habits and Addiction') {
       this.logeventservice.logEvent('click_be_happier');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    } else if (name === 'Deal with sorrow and loss') {
+    } else if (name === 'Deal with  loss') {
       this.logeventservice.logEvent('click_sorrow_loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     } else if (name === 'Meditation') {

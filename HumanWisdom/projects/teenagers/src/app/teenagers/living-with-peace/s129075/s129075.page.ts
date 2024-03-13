@@ -156,7 +156,7 @@ export class S129075Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/living-with-peace/s129076'])
+    this.router.navigate(['/living-with-peace/s129081'])
   }
 
   prev()

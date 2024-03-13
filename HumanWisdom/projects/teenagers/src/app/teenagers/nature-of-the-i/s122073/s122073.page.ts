@@ -114,11 +114,11 @@ export class S122073Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/nature-of-the-i/s122074'])
+        this.router.navigate(['/nature-of-the-i/s122079'])
 
       },
       () => {
-        this.router.navigate(['/nature-of-the-i/s122074'])
+        this.router.navigate(['/nature-of-the-i/s122079'])
       })
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-be-happier-transcript',
@@ -9,7 +10,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class BeHappierTranscriptPage implements OnInit {
 
-  constructor(private location:Location,private meta: Meta, private title: Title) { }
+  constructor(private location:Location,private meta: Meta, private title: Title ,   private navigationService:NavigationService) { }
 
   ngOnInit() {
     this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
@@ -18,9 +19,12 @@ export class BeHappierTranscriptPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'Tips for Happiness,Developing a Positive Mindset,Practices for Happiness,Overcoming Negativity,Building Resilience,Mindfulness for Happiness,Increasing Joy and Fulfillment,Pursuing Happiness,Finding Happiness in Life' })
 
   }
-
-  goBack(){
-    this.location.back()
+  
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
 
 }

@@ -1110,14 +1110,15 @@
 {
     .lab-modal-body
     {
-        top: 0;
+        /* top: 0; */
+        top: unset !important;
         overflow: auto;
     }
 
-    #modal_cookie .lab-modal-body
+    /* #modal_cookie .lab-modal-body
     {
         top: unset !important;
-    }
+    } */
 }
 
 @media (max-width: 300px)

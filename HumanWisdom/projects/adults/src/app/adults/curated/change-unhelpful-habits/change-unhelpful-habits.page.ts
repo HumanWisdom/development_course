@@ -3,6 +3,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-change-unhelpful-habits',
@@ -34,6 +35,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   enableblogViewMore = true;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
+    private navigationService:NavigationService,
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
@@ -81,8 +83,12 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
+
   routeGuided() {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }

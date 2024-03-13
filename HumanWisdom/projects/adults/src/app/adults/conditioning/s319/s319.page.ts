@@ -101,15 +101,15 @@ export class S319Page implements OnInit {
       },
         error => {
           console.log(error)
-          this.router.navigate(['/adults/conditioning/s320'])
+          this.router.navigate(['/adults/conditioning/s322'])
         },
         () => {
-          this.router.navigate(['/adults/conditioning/s320'])
+          this.router.navigate(['/adults/conditioning/s322'])
         })
 
     }
     else {
-      this.router.navigate(['/adults/conditioning/s320'])
+      this.router.navigate(['/adults/conditioning/s322'])
 
     }
 

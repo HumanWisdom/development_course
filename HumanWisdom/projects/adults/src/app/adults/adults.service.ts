@@ -27,7 +27,7 @@ export class AdultsService {
     },
     {
       id: "3",
-      name: 'Have fulfilling relationships'
+      name: 'Relationships'
     },
     {
       id: "4",
@@ -39,7 +39,7 @@ export class AdultsService {
     },
     {
       id: "6",
-      name: 'Deal with sorrow and loss'
+      name: 'Deal with loss'
     },
     {
       id: "7",
@@ -59,8 +59,8 @@ export class AdultsService {
       private services: OnboardingService,
       private router: Router
      ) {
-        if(SharedService.ProgramId!=null){
-          this.programId=SharedService.ProgramId;
+        if(SharedService.ProgramId === 11){
+          this.programId=ProgramType.Teenagers;
         }else{
           this.programId=ProgramType.Adults;
         }

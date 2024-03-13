@@ -20,7 +20,7 @@
             <!-- search -->
             <div class="row prelative pt30px plr20px">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
               </div>
@@ -76,7 +76,7 @@
             <!-- accordion -->
             <div class="row accordion_row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="panel-group dpanelgroup" id="accordion">
+                <div class="panel-group dpanelgroup tour_dp" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
                     <div class="panel-heading">
                       <h4 class="panel-title dpaneltitle">
@@ -91,13 +91,13 @@
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                 <!-- <a> -->
-                                  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
+                                 <!--  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
                                     </span>
                                     days
-                                  </h2>
+                                  </h2> -->
                                 <!-- </a> -->
                               </div>
                             </div>
@@ -148,12 +148,12 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_audio_meditation')">
+                              <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_daily_meditation')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
-                                  Audio meditation
+                                  Daily meditation
                                 </h4>
                               </a>
                             </div>
@@ -191,10 +191,149 @@
             </div>
             <!-- /hr -->
 
-            <!-- explore a topic in depth-for guest user -->
-            <div class="row" *ngIf="YourTopicofChoice.length === 0">
+            <!-- my progress -->
+            <!-- accordion -->
+            <div class="row accordion_row" *ngIf="isloggedIn">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading">
+                      <h4 class="panel-title dpaneltitle">
+                        <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
+                        <div (click)="DashboardLogevent('', '', 'click_daily_pratice')" aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  My progress
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="viewDetails()">
+                                <a  (click)="viewDetails()">
+                                  <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
+                                    View details
+                                  </h2>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h4>
+                    </div>
+                    <div id="ca_mdp" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0px pr5px progress_box">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_points.svg" class="img-responsive mb10px">
+
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                                        {{loginResponse.Points}}
+                                      </h4>
+
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                        Points
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 plr5px progress_box">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_streak.svg" class="img-responsive mb10px">
+
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff"> 
+                                          {{loginResponse.Streak}} {{(loginResponse.Streak>1)?'days':'day'}}
+                                      </h4>
+
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                        Streak
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl5px pr0px progress_box">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_certificates.svg" class="img-responsive mb10px">
+
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                                        {{loginResponse.Modules}}
+                                      </h4>
+
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                        Certificates
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row mt10px progress_box_score">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
+                                      {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                        Happiness score
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                      <a class="" (click)="survey()"> 
+                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
+                                          Take the survey
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
+                                        </h4>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /my progress -->
+
+            <!-- hr -->
+            <div class="row" *ngIf="isloggedIn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01"   (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" >
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- explore a topic in depth-for guest user -->
+            <div class="row tour_eatid" *ngIf="YourTopicofChoice.length === 0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="prelative box_v3_01" (click)="changeTopic()"  >
+                  <!-- (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" -->
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
@@ -246,10 +385,10 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Change your topic of choice
+                  Explore a different topic in depth
                 </button>
               </div>
             </div>
@@ -327,7 +466,7 @@
                               </a>
                             </div> -->
 
-                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
                               <a class="prelative" (click)="DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme')">
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
@@ -365,8 +504,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                              <!-- <a (click)="routeResume('23', true)" class="prelative"> -->
-                                <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative">
+                              <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
+                                <!-- <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative"> -->
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
                                   <div class="progress dprogress">
@@ -790,7 +929,7 @@
             <!-- /subscribe to premium -->
 
             <!-- what people are saying -->
-            <div class="row mb30px" >
+            <div class="row mb30px" *ngIf="!isSubscriber"    >
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
                   <h2 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
@@ -798,7 +937,7 @@
                   </h2>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                  <a class="prelative" routerLink="/adults/testimonials"> 
+                  <a class="prelative" routerLink="/adults/testimonials">
                     <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                       View all
                     </h2>
@@ -810,7 +949,7 @@
             <!-- /what people are saying -->
 
             <!-- testimonials -->
-             <div class="row">
+             <div class="row" *ngIf="!isSubscriber" >
               <div class="col-md-12 col-sm-12 col-xs-12 odiv img_dtestimonials">
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
@@ -847,7 +986,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -1171,7 +1310,7 @@
                       </a>
                     </div>
                   </div>
-                </div> 
+                </div>
 
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                   <div class="row">
@@ -1243,7 +1382,7 @@
                       </a>
                     </div>
                   </div>
-                </div> 
+                </div>
 
               </div>
             </div>
@@ -1268,6 +1407,79 @@
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
               Cookie Modal
             </button> -->
+            
+            <!-- tour -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button class="btn" onclick="startTour()">
+                  Tour Dashboard Button
+                </button>
+    
+                <button class="btn" onclick="call_tour_topnav()">
+                  Tour Topnav Button
+                </button>
+
+                <button type="button" class="btn" data-toggle="modal" data-target="#modal_welcome">
+                  Welcome Modal
+                </button>
+              </div>
+            </div>
+            <!-- /tour -->
+
+            <div class="modal fade" id="modal_welcome"> 
+              <div class="row center_flex mlr20px">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw height_100vh">
+
+                  <div class="modal-dialog modal-dialog-centered modal_cvc"> 
+                    <div class="modal-content"> 
+                      <div class="modal-body"> 
+    
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/prompt_welcome.svg" class="img-responsive">
+                          </div>
+                        </div>
+    
+                        <div class="row mt30px mb40px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                              Hi Nidhi,
+                            </h4>
+                            
+                            <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                              Welcome to HappierMe!
+                            </h4>
+    
+                            <h4 class="mtb0px fs_18px fw_400 lh_140p fc_ffffff">
+                              We are here to support you to live your best life everyday. Here is a short tour to get you started.
+                            </h4>
+                          </div>
+                        </div>
+    
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                              <button type="submit" class="btn_prompt_skip" data-dismiss="modal">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hide_tips.svg" class="img-responsive mr5px">
+                                Skip
+                              </button>
+                            </div>
+    
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <button type="submit" class="btn_prompt_continue">
+                                Continue
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+    
+                      </div>
+                    </div> 
+                  </div> 
+
+                </div>
+              </div>
+            </div>
 
             <div class="pagebreak"></div>
 
@@ -1406,12 +1618,12 @@
             This website uses cookies
           </h4>
           <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
-            By continuing to browse you are agreeing to our use of cookies as explained in our 
+            By continuing to browse you are agreeing to our use of cookies as explained in our
             <a class="underline fs_15px fw_400 lh_150p fc_ffffff_0_5" (click)="opennewTab()">Cookie Policy</a>
           </h4>
         </div>
       </div>
-      
+
       <div class="row mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
           <button type="button" class="btn btn_ctd" (click)="acceptCookies()">
@@ -2001,3 +2213,42 @@
   <!-- /modal-body -->
 </div>
 <!-- /signup_login modal -->
+
+<!-- welcome modal  -->
+<div class="modal fade in" id="modal_welcome" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="modal_welcome_title" aria-hidden="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
+      <!-- <div class="modal-header b0">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="row center_flex">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+            This website uses cookies
+          </h4>
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+            By continuing to browse you are agreeing to our use of cookies as explained in our
+            <a class="underline fs_15px fw_400 lh_150p fc_ffffff_0_5" (click)="opennewTab()">Cookie Policy</a>
+          </h4>
+        </div>
+      </div>
+
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
+          <button type="button" class="btn btn_ctd" (click)="acceptCookies()">
+            Accept all cookies
+          </button>
+          <button type="button" class="btn btn_ctd" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /welcome modal -->

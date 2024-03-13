@@ -60,7 +60,7 @@ export class S104034Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s104029'])
+    this.router.navigate(['/obstacles-enquiry/s104028'])
 
   }
 

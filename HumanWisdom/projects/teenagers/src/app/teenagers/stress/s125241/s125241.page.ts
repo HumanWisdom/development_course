@@ -114,11 +114,11 @@ export class S125241Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125242'])
+        this.router.navigate(['/stress/s125247'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125242'])
+        this.router.navigate(['/stress/s125247'])
       })
   }
 
