@@ -4089,7 +4089,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Work and Leadership') {
       this.logeventservice.logEvent('click_workplace');
       this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-    } else if (name === 'Have fulfilling relationships') {
+    } else if (name === 'Relationships') {
       this.logeventservice.logEvent('click_relationships');
       this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
     } else if (name === 'Be happier') {
@@ -4098,7 +4098,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Habits and Addiction') {
       this.logeventservice.logEvent('click_be_happier');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    } else if (name === 'Deal with sorrow and loss') {
+    } else if (name === 'Deal with  loss') {
       this.logeventservice.logEvent('click_sorrow_loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     } else if (name === 'Meditation') {
