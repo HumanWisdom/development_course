@@ -295,7 +295,7 @@ const routes: Routes = [
     canActivate:[AudioVideoGuard],
     component: S3VideoComponent
   },
-
+  {
     path: 'teen-talk',
     loadChildren: () => import('./teenagers/teen-talk/teen-talk.module').then( m => m.TeenTalkPageModule)
   },
