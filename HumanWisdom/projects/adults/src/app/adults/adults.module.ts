@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
     //ComparisonModule,
     AdultsRoutingModule,  
     HttpClientModule,
-    ShareButtonsModule.withConfig(
+    ShareButtonsModule.withConfig({
         debug:true
        }),
   ],
