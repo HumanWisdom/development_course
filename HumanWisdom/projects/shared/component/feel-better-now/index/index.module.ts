@@ -8,14 +8,14 @@ import { IndexPageRoutingModule } from './index-routing.module';
 
 import { IndexPage } from './index.page';
 
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     IndexPageRoutingModule
   ],
   declarations: [IndexPage]

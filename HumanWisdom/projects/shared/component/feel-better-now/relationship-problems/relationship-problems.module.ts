@@ -8,14 +8,14 @@ import { RelationshipProblemsPageRoutingModule } from './relationship-problems-r
 
 import { RelationshipProblemsPage } from './relationship-problems.page';
 
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     RelationshipProblemsPageRoutingModule
   ],
   declarations: [RelationshipProblemsPage]
