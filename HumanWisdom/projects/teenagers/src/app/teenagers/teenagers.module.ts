@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //import {ComparisonModule} from './comparison/comparison.module'
-import { AdultsRoutingModule } from './adults-routing.module';
-import { TokenInterceptorService} from '../token-interceptor.service'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons'
 import { BrowserModule } from '@angular/platform-browser';
+import { TeenagersRoutingModule } from './teenagers-routing.module';
+import { TokenInterceptorService } from '../teenagerOnboarding/token-interceptor.service';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    //ComparisonModule,
-    AdultsRoutingModule,  
+    TeenagersRoutingModule,  
     HttpClientModule,
-    ShareButtonsModule.withConfig(
+    ShareButtonsModule.withConfig({
         debug:true
        }),
   ],
@@ -27,4 +26,4 @@ import { BrowserModule } from '@angular/platform-browser';
   ]
  
 })
-export class AdultsModule { }
+export class TeenagersModule { }
