@@ -249,7 +249,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_streak.svg" class="img-responsive mb10px">
 
-                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff"> 
+                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
                                           {{loginResponse.Streak}} {{(loginResponse.Streak>1)?'days':'day'}}
                                       </h4>
 
@@ -297,7 +297,7 @@
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                      <a class="" (click)="survey()"> 
+                                      <a class="" (click)="survey()">
                                         <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
                                           Take the survey
                                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
@@ -385,7 +385,7 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
+            <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
                   Explore a different topic in depth
@@ -1407,55 +1407,37 @@
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
               Cookie Modal
             </button> -->
-            
-            <!-- tour -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <button class="btn" onclick="startTour()">
-                  Tour Dashboard Button
-                </button>
-    
-                <button class="btn" onclick="call_tour_topnav()">
-                  Tour Topnav Button
-                </button>
 
-                <button type="button" class="btn" data-toggle="modal" data-target="#modal_welcome">
-                  Welcome Modal
-                </button>
-              </div>
-            </div>
-            <!-- /tour -->
-
-            <div class="modal fade" id="modal_welcome"> 
+            <div class="modal fade" id="modal_welcome">
               <div class="row center_flex mlr20px">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw height_100vh">
 
-                  <div class="modal-dialog modal-dialog-centered modal_cvc"> 
-                    <div class="modal-content"> 
-                      <div class="modal-body"> 
-    
+                  <div class="modal-dialog modal-dialog-centered modal_cvc">
+                    <div class="modal-content">
+                      <div class="modal-body">
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/prompt_welcome.svg" class="img-responsive">
                           </div>
                         </div>
-    
+
                         <div class="row mt30px mb40px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
                               Hi Nidhi,
                             </h4>
-                            
+
                             <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
                               Welcome to HappierMe!
                             </h4>
-    
+
                             <h4 class="mtb0px fs_18px fw_400 lh_140p fc_ffffff">
                               We are here to support you to live your best life everyday. Here is a short tour to get you started.
                             </h4>
                           </div>
                         </div>
-    
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
@@ -1464,7 +1446,7 @@
                                 Skip
                               </button>
                             </div>
-    
+
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                               <button type="submit" class="btn_prompt_continue">
                                 Continue
@@ -1472,10 +1454,10 @@
                             </div>
                           </div>
                         </div>
-    
+
                       </div>
-                    </div> 
-                  </div> 
+                    </div>
+                  </div>
 
                 </div>
               </div>
