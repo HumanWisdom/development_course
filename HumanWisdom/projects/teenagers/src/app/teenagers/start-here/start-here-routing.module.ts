@@ -31,77 +31,62 @@ import { S78023Page } from './s78023/s78023.page';
 const routes: Routes = [
   {
     path: '',    
-    canActivate: [ActiveGuard],
     component: S78001Page,
   },  
   {
     path: 's78001',
-    canActivate: [ActiveGuard],
     component: S78001Page,
   },
   {
     path: 's78002',
-    canActivate: [ActiveGuard],
     component: S78002Page,
   },
   {
     path: 's78003',
-    canActivate: [ActiveGuard],
     component: S78003Page,
   },
   {
     path: 's78004',
-    canActivate: [ActiveGuard],
     component: S78004Page,
   },
   {
     path: 's78004t',
-    canActivate: [ActiveGuard],
     component: S78004tPage,
   },
   {
     path: 's78005',
-    canActivate: [ActiveGuard],
     component: S78005Page,
   },
   {
     path: 's78006',
-    canActivate: [ActiveGuard],
     component: S78006Page,
   },
   {
     path: 's78007',
-    canActivate: [ActiveGuard],
     component: S78007Page,
   },
   {
     path: 's78008',
-    canActivate: [ActiveGuard],
     component: S78008Page,
   },
   {
     path: 's78008t',
-    canActivate: [ActiveGuard],
     component: S78008tPage,
   },
   {
     path: 's78009',
-    canActivate: [ActiveGuard],
     component: S78009Page,
   },
   {
     path: 's78010',
-    canActivate: [ActiveGuard],
     component: S78010Page,
   },
   {
     path: 's78011',
-    canActivate: [ActiveGuard],
     component: S78011Page,
   },
   {
     path: 's78012',
-    canActivate: [ActiveGuard],
     component: S78012Page,
   },
   {
