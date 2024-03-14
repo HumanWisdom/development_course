@@ -15,7 +15,7 @@ import { SharedModule } from '../../../shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     BoredomPageRoutingModule
   ],
   declarations: [BoredomPage]
