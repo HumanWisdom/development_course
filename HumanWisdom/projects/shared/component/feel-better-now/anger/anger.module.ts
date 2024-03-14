@@ -8,14 +8,14 @@ import { AngerPageRoutingModule } from './anger-routing.module';
 
 import { AngerPage } from './anger.page';
 
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     AngerPageRoutingModule
   ],
   declarations: [AngerPage]
