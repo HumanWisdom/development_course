@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { S3VideoComponent } from '../../../shared/component/s3-video/s3-video.component';
+import { SingleAudioContentComponent } from '../../../shared/component/single-audio-content/single-audio-content.component';
+import { AudioVideoGuard } from './audio-video.guard';
+import { ActiveGuard } from './authGuard/active.guard';
 
 const routes: Routes = [
   {
@@ -254,6 +257,45 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/find-answers/find-answers.module').then( m => m.FindAnswersModule)
   },
   {
+    path: 'feel-better-now',
+    loadChildren: () => import('../../../shared/component/feel-better-now/feel-better-now.module').then( m => m.FeelBetterNowModule),
+  },
+  {
+    path: 'videopage/:videolink/:enable',
+    canActivate: [AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'videopage/:videolink/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 'wisdom-shorts/:videolink',
+    canActivate:[ActiveGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'wisdom-shorts/:videolink/:enable',
+    canActivate:[AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'wisdom-shorts/:videolink/:enable/:title',
+    canActivate:[AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
     path: 'teen-talk',
     loadChildren: () => import('./teenagers/teen-talk/teen-talk.module').then( m => m.TeenTalkPageModule)
   },
@@ -282,7 +324,6 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/pathway/pathway.module').then( m => m.PathwayModule)
   },
 ];
-
 
 
 
