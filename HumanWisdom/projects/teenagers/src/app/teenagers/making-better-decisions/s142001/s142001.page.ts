@@ -41,7 +41,7 @@ export class S142001Page implements OnInit, OnDestroy {
 
   pgResume = sessionStorage.getItem("pgResume")
 
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.png"
+  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/142.webp"
   tocColor = "white"
   lastvisited = false;
   stories: any = []

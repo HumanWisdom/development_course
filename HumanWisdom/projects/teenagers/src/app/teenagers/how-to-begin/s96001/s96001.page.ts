@@ -28,7 +28,7 @@ export class S96001Page implements OnInit,OnDestroy {
   moduleData:ProgramModel;
   bookmarkList=[]
   beginResume=sessionStorage.getItem("beginResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/36.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/96.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []
