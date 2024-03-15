@@ -7,15 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { LonelinessPageRoutingModule } from './loneliness-routing.module';
 
 import { LonelinessPage } from './loneliness.page';
-
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-   // SharedModule,
+    SharedModule,
     LonelinessPageRoutingModule
   ],
   declarations: [LonelinessPage]

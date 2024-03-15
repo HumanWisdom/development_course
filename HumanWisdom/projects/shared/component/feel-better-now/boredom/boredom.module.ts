@@ -8,14 +8,14 @@ import { BoredomPageRoutingModule } from './boredom-routing.module';
 
 import { BoredomPage } from './boredom.page';
 
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     BoredomPageRoutingModule
   ],
   declarations: [BoredomPage]

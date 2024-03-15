@@ -8,14 +8,14 @@ import { DepressionPageRoutingModule } from './depression-routing.module';
 
 import { DepressionPage } from './depression.page';
 
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     DepressionPageRoutingModule
   ],
   declarations: [DepressionPage]
