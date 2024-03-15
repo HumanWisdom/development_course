@@ -33,11 +33,12 @@ export class RelationshipProblemsPage implements OnInit {
   goBack() {
     // this.location.back()
     if (window.location.href.includes('teenagers')) {
-      this.router.navigate(['/feel-better-now']);
+      this.router.navigate(['/teenagers/feel-better-now']);
     } else {
       this.router.navigate(['/adults/feel-better-now']);
     }
   }
+
 
   routeVideoaudio(type, url, title = '') {
     console.log(url)
@@ -46,7 +47,7 @@ export class RelationshipProblemsPage implements OnInit {
     }else{
       let concat = encodeURIComponent(url.replaceAll('/','~'));
       if ( SharedService.ProgramId == ProgramType.Teenagers) {
-        this.router.navigate(['audiopage/', concat, '1', 'F', title])
+        this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title])
       }
       else{
         this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
@@ -56,7 +57,7 @@ export class RelationshipProblemsPage implements OnInit {
 
  determineVideoUrl(url): string {
   if (SharedService.ProgramId == ProgramType.Teenagers) {
-    return `/videopage/${url}`;
+    return `/teenagers/videopage/${url}`;
   } else {
     return `/adults/videopage/${url}`;
   }
@@ -64,9 +65,9 @@ export class RelationshipProblemsPage implements OnInit {
 
 determineRouterLink(data){
   if (SharedService.ProgramId == ProgramType.Teenagers) {
-    return [`/${data}`];
+    this.router.navigateByUrl(`/teenagers/${data}`);
   } else {
-    return [`/adults/${data}`];
+    this.router.navigateByUrl(`/adults/${data}`);
   }
 }
 }
