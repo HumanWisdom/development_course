@@ -26,7 +26,7 @@ export class S100001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   awarenessResume=sessionStorage.getItem("awarenessResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/39.png"
+  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []

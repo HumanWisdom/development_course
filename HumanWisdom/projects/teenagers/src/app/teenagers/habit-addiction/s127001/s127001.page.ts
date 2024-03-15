@@ -33,7 +33,7 @@ export class S127001Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   addictionResume=sessionStorage.getItem("addictionResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/45.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/127.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []
