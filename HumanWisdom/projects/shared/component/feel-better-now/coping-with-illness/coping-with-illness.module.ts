@@ -7,15 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { CopingWithIllnessPageRoutingModule } from './coping-with-illness-routing.module';
 
 import { CopingWithIllnessPage } from './coping-with-illness.page';
-
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     CopingWithIllnessPageRoutingModule
   ],
   declarations: [CopingWithIllnessPage]

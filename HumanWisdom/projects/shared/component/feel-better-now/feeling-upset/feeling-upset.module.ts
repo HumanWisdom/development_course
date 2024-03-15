@@ -7,15 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { FeelingUpsetPageRoutingModule } from './feeling-upset-routing.module';
 
 import { FeelingUpsetPage } from './feeling-upset.page';
-
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     FeelingUpsetPageRoutingModule
   ],
   declarations: [FeelingUpsetPage]

@@ -8,14 +8,14 @@ import { AnxietyPageRoutingModule } from './anxiety-routing.module';
 
 import { AnxietyPage } from './anxiety.page';
 
-//import { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-   // SharedModule,
+    SharedModule,
     AnxietyPageRoutingModule
   ],
   declarations: [AnxietyPage]

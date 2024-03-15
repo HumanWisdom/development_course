@@ -8,14 +8,14 @@ import { StressPageRoutingModule } from './stress-routing.module';
 
 import { StressPage } from './stress.page';
 
-// { SharedModule } from '../../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    //SharedModule,
+    SharedModule,
     StressPageRoutingModule
   ],
   declarations: [StressPage]
