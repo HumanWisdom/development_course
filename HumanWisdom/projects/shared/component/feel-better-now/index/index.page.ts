@@ -37,16 +37,18 @@ export class IndexPage implements OnInit {
   goBack() {
     // this.location.back()
     if (SharedService.ProgramId == ProgramType.Teenagers) {
-      this.router.navigate(['/teenager-dashboard']);
+      this.router.navigate(['teenagers/teenager-dashboard']);
     } else {
       this.router.navigate(["/adults/adult-dashboard"])
     }
-   
-  }
+     }
 
   enableRoute(url) {
      this.logeventservice.logEvent("click_"+ String(url).split("/")[2]);
-    this.router.navigate([url])
+     if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate([`teenagers/${url}`]);
+    } else {
+      this.router.navigate([url]) 
+    }
   }
-
 }
