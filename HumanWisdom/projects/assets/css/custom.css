@@ -36725,6 +36725,15 @@ a.fc_e58d82:hover
   align-items: center;
   justify-content: center;
 }
+
+.tour-backdrop.top,
+.tour-backdrop.bottom
+{
+  position: absolute;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 auto;
+}
 /* /welcome prompt */
 
 .height_100vh 
