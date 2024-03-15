@@ -1404,29 +1404,82 @@
             </div>
             <!-- /partnership button -->
 
-            <!-- test buttons -->
-            <!-- <div class="row">
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
+              Cookie Modal
+            </button> -->
+            
+            <!-- tour -->
+            <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cookie">
-                  Cookie Modal
-                </button>
-
-                <br>
-
                 <button class="btn" onclick="startTour()">
-                  Tour Dashboard
+                  Tour Dashboard Button
                 </button>
     
                 <button class="btn" onclick="call_tour_topnav()">
-                  Tour Topnav
+                  Tour Topnav Button
                 </button>
 
                 <button type="button" class="btn" data-toggle="modal" data-target="#modal_welcome">
-                  Modal Welcome
+                  Welcome Modal
                 </button>
               </div>
-            </div> -->
-            <!-- /test buttons -->
+            </div>
+            <!-- /tour -->
+
+            <div class="modal fade" id="modal_welcome"> 
+              <div class="row center_flex mlr20px">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw height_100vh">
+
+                  <div class="modal-dialog modal-dialog-centered modal_cvc"> 
+                    <div class="modal-content"> 
+                      <div class="modal-body"> 
+    
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/prompt_welcome.svg" class="img-responsive">
+                          </div>
+                        </div>
+    
+                        <div class="row mt30px mb40px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                              Hi Nidhi,
+                            </h4>
+                            
+                            <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                              Welcome to HappierMe!
+                            </h4>
+    
+                            <h4 class="mtb0px fs_18px fw_400 lh_140p fc_ffffff">
+                              We are here to support you to live your best life everyday. Here is a short tour to get you started.
+                            </h4>
+                          </div>
+                        </div>
+    
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                              <button type="submit" class="btn_prompt_skip" data-dismiss="modal">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hide_tips.svg" class="img-responsive mr5px">
+                                Skip
+                              </button>
+                            </div>
+    
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                              <button type="submit" class="btn_prompt_continue">
+                                Continue
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+    
+                      </div>
+                    </div> 
+                  </div> 
+
+                </div>
+              </div>
+            </div>
 
             <div class="pagebreak"></div>
 
@@ -2199,60 +2252,3 @@
   </div>
 </div>
 <!-- /welcome modal -->
-
-<!-- modal-tour -->
-<div class="modal fade" id="modal_welcome"> 
-  <div class="row center_flex mlr20px">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw height_100vh">
-
-      <div class="modal-dialog modal-dialog-centered modal_cvc"> 
-        <div class="modal-content"> 
-          <div class="modal-body"> 
-
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/prompt_welcome.svg" class="img-responsive">
-              </div>
-            </div>
-
-            <div class="row mt30px mb40px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
-                  Hi Nidhi,
-                </h4>
-                
-                <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
-                  Welcome to HappierMe!
-                </h4>
-
-                <h4 class="mtb0px fs_18px fw_400 lh_140p fc_ffffff">
-                  We are here to support you to live your best life everyday. Here is a short tour to get you started.
-                </h4>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <button type="submit" class="btn_prompt_skip" data-dismiss="modal">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hide_tips.svg" class="img-responsive mr5px">
-                    Skip
-                  </button>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                  <button type="submit" class="btn_prompt_continue">
-                    Continue
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div> 
-      </div> 
-
-    </div>
-  </div>
-</div>
-<!-- /modal-tour -->
