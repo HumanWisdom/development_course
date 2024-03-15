@@ -35673,7 +35673,8 @@ li ol > li:before {
 
 .img_logo
 {
-  max-width: 150px;
+  /* max-width: 150px; */
+  max-width: 125px;
 }
 
 .img_parent 
