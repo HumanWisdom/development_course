@@ -1,6 +1,6 @@
 <app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
 
-<app-image-text base="stress_base3" overlay="stress_overlay3_mobile">
+<app-image-text base="anger_base2" overlay="anger_overlay2">
 
   <form>
 
@@ -10,7 +10,7 @@
 
     <!-- angular audio player plugin  -->
       <div class="row tcenter">
-        <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container">
+        <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px">
           <audio id="aud1" controls controlsList="nodownload" #audio>
             <source [src]="audioLink" type="audio/mpeg">
           </audio>
