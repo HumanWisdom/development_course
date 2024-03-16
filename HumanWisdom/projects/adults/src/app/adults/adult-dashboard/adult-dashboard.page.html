@@ -37,9 +37,9 @@
             <!-- /search -->
 
             <!-- feel better now -->
-            <div class="row">
+            <div class="row tour_fbn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a (click)="DashboardLogevent('/feel-better-now/', '', 'click_feel-better-now')">
+                <a (click)="tourIndex === 1 ? DashboardLogevent('/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like.svg" class="img-responsive w100">
@@ -112,7 +112,7 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_mdp">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise')">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
                                   alt="Wisdom Stories" class="crimg">
@@ -124,7 +124,7 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a
-                                (click)="DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day')">
+                                (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3.svg"
                                   alt="Journal" class="crimg">
@@ -137,7 +137,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration')">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Testimonials" class="crimg">
@@ -148,7 +148,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_daily_meditation')">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3', 'click_daily_meditation') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
                                   alt="Forum" class="crimg">
@@ -159,7 +159,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge')">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3.svg"
                                   alt="Forum" class="crimg">
@@ -332,7 +332,7 @@
             <!-- explore a topic in depth-for guest user -->
             <div class="row tour_eatid" *ngIf="YourTopicofChoice.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01" (click)="changeTopic()"  >
+                <a class="prelative box_v3_01" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()"  >
                   <!-- (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" -->
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
@@ -385,9 +385,9 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="DashboardLogevent('/change-topic', '','click_change-topic')">
+            <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
-                <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
+                <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
                   Explore a different topic in depth
                 </button>
               </div>
@@ -467,7 +467,7 @@
                             </div> -->
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
-                              <a class="prelative" (click)="DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme')">
+                              <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
@@ -1416,7 +1416,7 @@
                 <button class="btn" onclick="startTour()">
                   Tour Dashboard
                 </button>
-    
+
                 <button class="btn" onclick="call_tour_topnav()">
                   Tour Topnav
                 </button>
@@ -2201,13 +2201,13 @@
 <!-- /welcome modal -->
 
 <!-- modal-tour -->
-<div class="modal fade" id="modal_welcome"> 
+<div class="modal fade" id="tour_modal_welcome">
   <div class="row center_flex mlr20px">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw height_100vh">
 
-      <div class="modal-dialog modal-dialog-centered modal_cvc"> 
-        <div class="modal-content"> 
-          <div class="modal-body"> 
+      <div class="modal-dialog modal-dialog-centered modal_cvc">
+        <div class="modal-content">
+          <div class="modal-body">
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -2220,7 +2220,7 @@
                 <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
                   Hi Nidhi,
                 </h4>
-                
+
                 <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
                   Welcome to HappierMe!
                 </h4>
@@ -2234,13 +2234,13 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <button type="submit" class="btn_prompt_skip" data-dismiss="modal">
+                  <button #closetourmodal type="submit" class="btn_prompt_skip" data-dismiss="modal">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hide_tips.svg" class="img-responsive mr5px">
                     Skip
                   </button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright" (click)="continueTour()">
                   <button type="submit" class="btn_prompt_continue">
                     Continue
                   </button>
@@ -2249,10 +2249,12 @@
             </div>
 
           </div>
-        </div> 
-      </div> 
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
 <!-- /modal-tour -->
+
+<span #enabletourmodal data-toggle="modal" data-target="#tour_modal_welcome"></span>
