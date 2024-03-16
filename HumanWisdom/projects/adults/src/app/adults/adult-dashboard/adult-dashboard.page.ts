@@ -10,7 +10,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
-import { driver } from "driver.js";
+// import { driver } from "driver.js";
 // import "driver.js/dist/driver.css";
 
 @Component({
@@ -165,6 +165,8 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
+  public tourTotalIndex = 8;
+  public tourIndex = 1;
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -397,6 +399,8 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    const driver = window['driver'].js.driver;
+
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
@@ -522,8 +526,21 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("pageaction", 'next');
 
     setTimeout(() => {
-      if (localStorage.getItem("first") && localStorage.getItem("first") === 'T') {
+      if (localStorage.getItem("first") && localStorage.getItem("first") === 'F') {
+
         const driverObj = driver({
+          onNextClick:() => {
+            this.tourIndex++;
+            if(this.tourIndex === this.tourTotalIndex) {
+              document.body.classList.remove('overflow_hidden');
+              document.body.classList.add('overflow_auto');
+            }
+            driverObj.moveNext();
+          },
+          onPrevClick:() => {
+            this.tourIndex--;
+            driverObj.movePrevious();
+          },
           allowClose: false,
           showButtons: [
             'next',
@@ -531,6 +548,22 @@ export class AdultDashboardPage implements OnInit {
             'close'
           ],
           steps: [
+            {
+              element: ".tour_hamburger",
+              popover: {
+                title: 'Menu',
+                description: 'Explore our menu for more options.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_notification",
+              popover: {
+                title: 'Notifications',
+                description: 'Find all your notifications here.',
+                side: "bottom"
+              }
+            },
             {
               element: ".tour_dp",
               popover: {
@@ -584,6 +617,10 @@ export class AdultDashboardPage implements OnInit {
         });
 
         driverObj.drive();
+
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
+
       };
       localStorage.setItem("first", 'F');
 

@@ -227,3 +227,7 @@ nav
   .invisible {
     visibility: hidden;
   }
+
+  .stopClick {
+    pointer-events: none;
+  }
