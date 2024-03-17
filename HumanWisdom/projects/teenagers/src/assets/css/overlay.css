@@ -208,10 +208,14 @@
   z-index: 2;
   mix-blend-mode: multiply; */
 
-  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_02.jpg');
+  /* background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_02.jpg');
   background-color: #5d5d5d;
   background-blend-mode: multiply;
-  background-size: cover !important;
+  background-size: cover !important; */
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_03.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .anger_overlay_w11
