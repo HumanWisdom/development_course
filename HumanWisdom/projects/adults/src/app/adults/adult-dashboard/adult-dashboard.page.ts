@@ -427,7 +427,11 @@ export class AdultDashboardPage implements OnInit {
         this.enablecookiemodal.nativeElement.click();
       }, 1000)
     } else {
-      // this.enableDailypopup();
+      if(!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 100)
+      }
     }
 
 
@@ -585,6 +589,7 @@ export class AdultDashboardPage implements OnInit {
     setTimeout(() => {
         const driverObj = driver({
           onNextClick:() => {
+            localStorage.setItem('firstTimeTour', 'T');
             this.tourIndex++;
             if(this.tourIndex === this.tourTotalIndex) {
               document.body.classList.remove('overflow_hidden');
