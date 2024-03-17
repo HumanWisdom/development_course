@@ -4,7 +4,7 @@ on:
     branches: [main]
     
 jobs:
-    build-teenagers:
+  build-teenagers:
      runs-on: ubuntu-latest
      steps:
      - name: Checkout code
