@@ -526,9 +526,9 @@ export class AdultDashboardPage implements OnInit {
     }, 3000)
     localStorage.setItem("pageaction", 'next');
 
-    setTimeout(() =>{
-      this.enabletourmodal.nativeElement.click();
-    }, 100)
+    // setTimeout(() =>{
+    //   this.enabletourmodal.nativeElement.click();
+    // }, 100)
     // const driverObj = driver({
     //   showProgress: true,
     //   steps: [
