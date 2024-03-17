@@ -10,7 +10,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
-import { driver } from "driver.js";
+// import { driver } from "driver.js";
 // import "driver.js/dist/driver.css";
 
 @Component({
@@ -27,6 +27,8 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  @ViewChild('closetourmodal') closetourmodal: ElementRef;
+  @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
   public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
@@ -165,6 +167,8 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
+  public tourTotalIndex = 9;
+  public tourIndex = 1;
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -397,6 +401,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
@@ -422,7 +427,11 @@ export class AdultDashboardPage implements OnInit {
         this.enablecookiemodal.nativeElement.click();
       }, 1000)
     } else {
-      // this.enableDailypopup();
+      if(!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 100)
+      }
     }
 
 
@@ -521,9 +530,79 @@ export class AdultDashboardPage implements OnInit {
     }, 3000)
     localStorage.setItem("pageaction", 'next');
 
+    // setTimeout(() =>{
+    //   this.enabletourmodal.nativeElement.click();
+    // }, 100)
+    // const driverObj = driver({
+    //   showProgress: true,
+    //   steps: [
+    //     { element: '#tour-example', popover: { title: 'Animated Tour Example', description: 'Here is the code example showing animated tour. Let\'s walk you through it.', side: "left", align: 'start' }},
+    //     { element: 'code .line:nth-child(1)', popover: { title: 'Import the Library', description: 'It works the same in vanilla JavaScript as well as frameworks.', side: "bottom", align: 'start' }},
+    //     { element: 'code .line:nth-child(2)', popover: { title: 'Importing CSS', description: 'Import the CSS which gives you the default styling for popover and overlay.', side: "bottom", align: 'start' }},
+    //     { element: 'code .line:nth-child(4) span:nth-child(7)', popover: { title: 'Create Driver', description: 'Simply call the driver function to create a driver.js instance', side: "left", align: 'start' }},
+    //     { element: 'code .line:nth-child(18)', popover: { title: 'Start Tour', description: 'Call the drive method to start the tour and your tour will be started.', side: "top", align: 'start' }},
+    //     { element: 'a[href="/docs/configuration"]', popover: { title: 'More Configuration', description: 'Look at this page for all the configuration options you can pass.', side: "right", align: 'start' }},
+    //     { popover: { title: 'Happy Coding', description: 'And that is all, go ahead and start adding tours to your applications.' } }
+    //   ]
+    // });
+
+    // driverObj.drive();
+
+  }
+
+  // curatedDash(name: any) {
+  //   if (name === 'Manage your emotions') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
+  //     this.router.navigate(['/adults/curated/manage-your-emotions'])
+  //   } else if (name === 'Overcome stress and anxiety') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
+  //     this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+  //   } else if (name === 'Wisdom for the workplace') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
+  //     this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+  //   } else if (name === 'Have fulfilling relationships') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
+  //     this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+  //   } else if (name === 'Be happier') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/be-happier');
+  //     this.router.navigate(['/adults/curated/be-happier'])
+  //   } else if (name === 'Change unhelpful habits') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
+  //     this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+  //   } else if (name === 'Deal with sorrow and loss') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
+  //     this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+  //   } else if (name === 'Mindfulness') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
+  //     this.router.navigate(['/adults/curated/have-calm-mind'])
+  //   }
+  // }
+
+  getplaystore(event) {
+    SharedService.enablebanner = false
+  }
+
+  continueTour() {
+    this.closetourmodal.nativeElement.click();
+    const driver = window['driver'].js.driver;
+
     setTimeout(() => {
-      if (localStorage.getItem("first") && localStorage.getItem("first") === 'T') {
         const driverObj = driver({
+          onNextClick:() => {
+            localStorage.setItem('firstTimeTour', 'T');
+            this.tourIndex++;
+            if(this.tourIndex === this.tourTotalIndex) {
+              document.body.classList.remove('overflow_hidden');
+              document.body.classList.add('overflow_auto');
+              this.services.setEnableTour(false);
+            }
+            driverObj.moveNext();
+          },
+          onPrevClick:() => {
+            this.tourIndex--;
+            driverObj.movePrevious();
+            this.services.setEnableTour(true);
+          },
           allowClose: false,
           showButtons: [
             'next',
@@ -531,6 +610,30 @@ export class AdultDashboardPage implements OnInit {
             'close'
           ],
           steps: [
+            {
+              element: ".tour_hamburger",
+              popover: {
+                title: 'Menu',
+                description: 'Explore our menu for more options.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_notification",
+              popover: {
+                title: 'Notifications',
+                description: 'Find all your notifications here.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_fbn",
+              popover: {
+                title: 'Feel better now',
+                description: 'Find breathing exercises, meditations and videos to feel better now.',
+                side: "bottom"
+              }
+            },
             {
               element: ".tour_dp",
               popover: {
@@ -584,58 +687,13 @@ export class AdultDashboardPage implements OnInit {
         });
 
         driverObj.drive();
-      };
-      localStorage.setItem("first", 'F');
 
-    }, 1000)
+        this.services.setEnableTour(true);
 
-    // const driverObj = driver({
-    //   showProgress: true,
-    //   steps: [
-    //     { element: '#tour-example', popover: { title: 'Animated Tour Example', description: 'Here is the code example showing animated tour. Let\'s walk you through it.', side: "left", align: 'start' }},
-    //     { element: 'code .line:nth-child(1)', popover: { title: 'Import the Library', description: 'It works the same in vanilla JavaScript as well as frameworks.', side: "bottom", align: 'start' }},
-    //     { element: 'code .line:nth-child(2)', popover: { title: 'Importing CSS', description: 'Import the CSS which gives you the default styling for popover and overlay.', side: "bottom", align: 'start' }},
-    //     { element: 'code .line:nth-child(4) span:nth-child(7)', popover: { title: 'Create Driver', description: 'Simply call the driver function to create a driver.js instance', side: "left", align: 'start' }},
-    //     { element: 'code .line:nth-child(18)', popover: { title: 'Start Tour', description: 'Call the drive method to start the tour and your tour will be started.', side: "top", align: 'start' }},
-    //     { element: 'a[href="/docs/configuration"]', popover: { title: 'More Configuration', description: 'Look at this page for all the configuration options you can pass.', side: "right", align: 'start' }},
-    //     { popover: { title: 'Happy Coding', description: 'And that is all, go ahead and start adding tours to your applications.' } }
-    //   ]
-    // });
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
 
-    // driverObj.drive();
-
-  }
-
-  // curatedDash(name: any) {
-  //   if (name === 'Manage your emotions') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
-  //     this.router.navigate(['/adults/curated/manage-your-emotions'])
-  //   } else if (name === 'Overcome stress and anxiety') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
-  //     this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
-  //   } else if (name === 'Wisdom for the workplace') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
-  //     this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-  //   } else if (name === 'Have fulfilling relationships') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
-  //     this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
-  //   } else if (name === 'Be happier') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/be-happier');
-  //     this.router.navigate(['/adults/curated/be-happier'])
-  //   } else if (name === 'Change unhelpful habits') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
-  //     this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-  //   } else if (name === 'Deal with sorrow and loss') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
-  //     this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
-  //   } else if (name === 'Mindfulness') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
-  //     this.router.navigate(['/adults/curated/have-calm-mind'])
-  //   }
-  // }
-
-  getplaystore(event) {
-    SharedService.enablebanner = false
+    }, 100)
   }
 
   getUserPreference() {
@@ -751,6 +809,9 @@ export class AdultDashboardPage implements OnInit {
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
     this.closecookiemodal.nativeElement.click();
+    setTimeout(() =>{
+      this.enabletourmodal.nativeElement.click();
+    }, 100);
     // this.enableDailypopup();
   }
 
