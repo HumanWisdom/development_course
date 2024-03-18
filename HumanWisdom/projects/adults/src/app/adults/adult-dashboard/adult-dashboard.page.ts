@@ -641,7 +641,6 @@ export class AdultDashboardPage implements OnInit {
           description: 'Explore more resources for personal growth and inspiration.',
           side: "top"
         }
-
       },
       {
         element: ".tour_journal",
@@ -660,6 +659,7 @@ export class AdultDashboardPage implements OnInit {
         },
       }
     ];
+
 
 
     if(!this.isloggedIn) {
