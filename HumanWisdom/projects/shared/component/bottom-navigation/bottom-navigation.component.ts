@@ -1,15 +1,16 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-bottom-navigation',
   templateUrl: './bottom-navigation.component.html',
   styleUrls: ['./bottom-navigation.component.scss'],
 })
-export class BottomNavigationComponent implements OnInit {
+export class BottomNavigationComponent implements OnInit,OnDestroy {
   @Input() dash = false;
   @Input() programType :ProgramType = ProgramType.Adults;
   @Input() journal = false
@@ -26,9 +27,13 @@ export class BottomNavigationComponent implements OnInit {
   @Input() isGuidedQuestion?: boolean = false;
   @Output() saveQuestion = new EventEmitter();
   @Output() journalclick = new EventEmitter();
+  toursubscription: Subscription;
+  disableClick = false;
+
   constructor(private router: Router,private onboardingService: OnboardingService) { }
 
   ngOnInit() {
+
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
@@ -51,7 +56,7 @@ export class BottomNavigationComponent implements OnInit {
         this.profile = true;
       }
     }
-   
+
     if (this.router.url == "/adults/search"
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {
@@ -93,12 +98,15 @@ export class BottomNavigationComponent implements OnInit {
       this.enableprofile = true;
       this.search = false;
     }
-  
-    
+
+
+    this.toursubscription = this.onboardingService.getEnableTour().subscribe((value) => {
+      this.disableClick = value;
+    });
   }
 
   routeDash() {
-    if(ProgramType.Teenagers==this.programType || 
+    if(ProgramType.Teenagers==this.programType ||
       SharedService.ProgramId == ProgramType.Teenagers){
       this.router.navigate(['/teenager-dashboard/']);
     }else{
@@ -108,17 +116,17 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   routeJournal() {
-    if(ProgramType.Teenagers==this.programType || 
+    if(ProgramType.Teenagers==this.programType ||
       SharedService.ProgramId == ProgramType.Teenagers){
       this.router.navigate(['/journal/']);
     }else{
       this.router.navigate(['/adults/journal']);
     }
   }
-  
+
 
   routeSearch() {
-    if(ProgramType.Teenagers==this.programType || 
+    if(ProgramType.Teenagers==this.programType ||
       SharedService.ProgramId == ProgramType.Teenagers){
       this.router.navigate(['/search/']);
     }else{
@@ -148,5 +156,9 @@ export class BottomNavigationComponent implements OnInit {
 
   saveQuestionButton() {
     this.saveQuestion.emit();
+  }
+
+  ngOnDestroy(): void {
+    this.toursubscription.unsubscribe();
   }
 }
