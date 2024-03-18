@@ -15,7 +15,7 @@ export class S118094Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w7"
   hint = "There are so many ways you can do that now. Think of at least 3."
-  toc = "/anger/s118001"
+  toc = "/teenagers/anger/s118001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S118094Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/anger/s118095'])
+        this.router.navigate(['/teenagers/anger/s118095'])
 
       },
       () => {
-        this.router.navigate(['/anger/s118095'])
+        this.router.navigate(['/teenagers/anger/s118095'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/anger/s118093'])
+    this.router.navigate(['/teenagers/anger/s118093'])
   }
 
   ngOnDestroy() 
