@@ -663,7 +663,7 @@ export class AdultDashboardPage implements OnInit {
               popover: {
                 title: 'Explore',
                 description: 'Explore more resources for personal growth and inspiration.',
-                side: "bottom"
+                side: "top"
               }
 
             },
@@ -672,7 +672,7 @@ export class AdultDashboardPage implements OnInit {
               popover: {
                 title: 'Journal',
                 description: 'Your private journal with guided questions (visible only to you)',
-                side: "bottom"
+                side: "top"
               }
             },
             {
