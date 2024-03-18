@@ -585,6 +585,63 @@ export class AdultDashboardPage implements OnInit {
   continueTour() {
     this.closetourmodal.nativeElement.click();
     const driver = window['driver'].js.driver;
+    let stepList = [
+      {
+        element: ".tour_hamburger",
+        popover: {
+          title: 'Menu',
+          description: 'Explore our menu for more options.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_notification",
+        popover: {
+          title: 'Notifications',
+          description: 'Find all your notifications here.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_fbn",
+        popover: {
+          title: 'Feel better now',
+          description: 'Find breathing exercises, meditations and videos to feel better now.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_dp",
+        popover: {
+          title: 'Daily practice',
+          description: 'Begin with short exercises to set you up for the day. Come back for new exercises everyday.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_eatid",
+        popover: {
+          title: 'Change your topic of choice',
+          description: 'Choose from 8 broad topics to explore in depth.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_intro",
+        popover: {
+          title: 'Introduction',
+          description: 'Learn how to make the most of the app and explore the key ideas',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_explore",
+        popover: {
+          title: 'Explore',
+          description: 'Explore more resources for personal growth and inspiration.',
+          side: "bottom"
+        }
+
 
     setTimeout(() => {
         const driverObj = driver({
@@ -686,14 +743,47 @@ export class AdultDashboardPage implements OnInit {
           ]
         });
 
-        driverObj.drive();
 
-        this.services.setEnableTour(true);
 
+    if(!this.isloggedIn) {
+      this.tourTotalIndex = 8;
+      stepList.splice(1, 1);
+    }
+
+    const driverObj = driver({
+      onNextClick:() => {
+        localStorage.setItem('firstTimeTour', 'T');
+        this.tourIndex++;
+        if(this.tourIndex > this.tourTotalIndex) {
+          document.body.classList.remove('overflow_hidden');
+          document.body.classList.add('overflow_auto');
+          this.services.setEnableTour(false);
+        }
+        driverObj.moveNext();
+      },
+      onPrevClick:() => {
+        this.tourIndex--;
+        driverObj.movePrevious();
         document.body.classList.remove('overflow_auto');
         document.body.classList.add('overflow_hidden');
+        this.services.setEnableTour(true);
+      },
+      allowClose: false,
+      showButtons: [
+        'next',
+        'previous',
+        'close'
+      ],
+      steps: stepList
+    });
 
-    }, 100)
+    driverObj.drive();
+
+    this.services.setEnableTour(true);
+
+    document.body.classList.remove('overflow_auto');
+    document.body.classList.add('overflow_hidden');
+
   }
 
   getUserPreference() {
