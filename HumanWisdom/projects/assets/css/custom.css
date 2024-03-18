@@ -27259,7 +27259,7 @@ body
   font-family: 'Roboto';
 	height: 100vh;
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	overflow-x: hidden;
 }
 
@@ -36758,8 +36758,7 @@ a.fc_e58d82:hover
 }
 
 .driver-popover-arrow-side-top,
-.driver-popover-arrow-side-right,
-.driver-popover-arrow-side-left
+.driver-popover-arrow-side-right
 {
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
