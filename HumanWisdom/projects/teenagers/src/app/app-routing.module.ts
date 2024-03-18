@@ -281,6 +281,14 @@ const routes: Routes = [
     path: 'pathway',
     loadChildren: () => import('./teenagers/pathway/pathway.module').then( m => m.PathwayModule)
   },
+  {
+    path: 'change-topic',
+    loadChildren: () => import('./teenagers/change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
+  },
+  {
+    path: 'testimonials',
+    loadChildren: () => import('./teenagers/testimonials/testimonials.module').then( m => m.TestimonialsPageModule)
+  },
 ];
 
 
