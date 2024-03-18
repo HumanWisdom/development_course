@@ -78,12 +78,12 @@
           <div class="mr10px">
             <a (click)="loginroute()">
               <button type="button" class="btn_login">
-                Login
+                Free Trial
               </button>
             </a>
           </div>
 
-          <div *ngIf="!isLoginPage">
+          <div *ngIf="!isLoginPage" class="tour_hamburger">
             <app-hamburger></app-hamburger>
           </div>
         </div>
@@ -110,10 +110,10 @@
             <a>
               <img *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_active.svg"
-                (click)="goToNotification()" class="" alt="">
+                (click)="disableClick ? $event.preventDefault() : goToNotification()" class="" alt="">
               <img *ngIf="!loginResponse || !loginResponse?.NewNotifications || loginResponse?.NewNotifications === 0"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_inactive.svg"
-                (click)="goToNotification()" class="" alt="">
+                (click)="disableClick ? $event.preventDefault() : goToNotification()" class="" alt="">
             </a>
           </div>
 

@@ -43,6 +43,9 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   @Input()
   userDetails = [];
   subscription: Subscription;
+  toursubscription: Subscription;
+  disableClick = false;
+
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
@@ -105,6 +108,10 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
        this.subscriber = true;
      }
     }
+
+    this.toursubscription = this.Onboardingservice.getEnableTour().subscribe((value) => {
+      this.disableClick = value;
+    });
 
     this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
       if(value){
@@ -329,7 +336,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
             this.isPartner = false;
             this.initialize();
             let acceptCookie = localStorage.getItem("acceptcookie");
+            let firstTimeTour = localStorage.getItem("firstTimeTour");
             localStorage.clear();
+            if(firstTimeTour === 'T') {
+              localStorage.setItem('firstTimeTour', 'T');
+            }
             localStorage.setItem("isloggedin", "F");
             localStorage.setItem("guest", "T");
             localStorage.setItem("acceptcookie", acceptCookie);
@@ -380,5 +391,6 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy() {
     this.closemodal?.nativeElement?.click();
+    this.toursubscription.unsubscribe();
   }
 }

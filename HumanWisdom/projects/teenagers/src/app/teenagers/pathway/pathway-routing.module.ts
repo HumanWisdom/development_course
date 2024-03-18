@@ -50,6 +50,26 @@ const routes: Routes = [
     path: 'succeed-in-life-transcript',
     loadChildren: () => import('./succeed-in-life-transcript/succeed-in-life-transcript.module').then( m => m.SucceedInLifeTranscriptPageModule)
   },
+  {
+    path: 'nature',
+    loadChildren: () => import('../nature/nature.module').then( m => m.NatureModule)
+  },
+  {
+    path: 'breathing',
+    loadChildren: () => import('../breathing/breathing.module').then( m => m.BreathingModule)
+  },
+  {
+    path: 'noticing-thoughts',
+    loadChildren: () => import('../noticing-thoughts/noticing-thoughts.module').then( m => m.NoticingThoughtsModule)
+  },
+  {
+    path: 'meditation',
+    loadChildren: () => import('../meditation/meditation.module').then( m => m.MeditationModule)
+  } ,
+  {
+    path: 'guided-meditation',
+    loadChildren: () => import('../guided-meditation/guided-meditation.module').then( m => m.GuidedMeditationModule)
+  },
 ];
 
 @NgModule({

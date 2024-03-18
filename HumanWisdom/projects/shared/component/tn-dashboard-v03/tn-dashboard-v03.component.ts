@@ -40,6 +40,9 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   loginResponse: any;
   subscription: Subscription;
   @Input() isLoginPage:boolean=false;
+  toursubscription: Subscription;
+  disableClick = false;
+
   constructor(private router: Router, public Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -86,7 +89,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
           this.isLoginPage = changes.isLoginPage.currentValue;
         }
       }
-        
+
       if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
         if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
           console.log(changes.isShowHeader.currentValue);
@@ -98,6 +101,10 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
 
 
   ngOnInit() {
+    this.toursubscription = this.Onboardingservice.getEnableTour().subscribe((value) => {
+      this.disableClick = value;
+    });
+
     this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
       if(value){
           let sub: any = localStorage.getItem("Subscriber");
@@ -109,7 +116,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
             this.isShowbookMark = false;
           }
           let userId = JSON.parse(localStorage.getItem("userId"))
-    
+
           this.Onboardingservice.getuser(userId).subscribe((res) => {
             this.userDetails = res;
             let userdetail = res[0];
@@ -136,6 +143,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+    this.toursubscription.unsubscribe();
   }
 
   iOS() {
@@ -150,7 +158,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
-  
+
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`])
   }

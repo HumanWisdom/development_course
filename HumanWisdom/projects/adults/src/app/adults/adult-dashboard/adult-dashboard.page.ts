@@ -10,6 +10,8 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
+// import { driver } from "driver.js";
+// import "driver.js/dist/driver.css";
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -25,6 +27,8 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  @ViewChild('closetourmodal') closetourmodal: ElementRef;
+  @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
   public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
@@ -104,7 +108,7 @@ export class AdultDashboardPage implements OnInit {
   // public addictionP: any
   // public foodP: any
   // public moneyP: any
-  isEnableHam=true;
+  isEnableHam = true;
   public Subscriber: any
   public alertMsg: any
   public friendemail = ''
@@ -161,8 +165,10 @@ export class AdultDashboardPage implements OnInit {
   currentList = [];
   maxExceriseCount = "12;";
   public YourTopicofChoice = [];
-  public registrationForm :any;
-  public isIos=false;
+  public registrationForm: any;
+  public isIos = false;
+  public tourTotalIndex = 9;
+  public tourIndex = 1;
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -212,8 +218,8 @@ export class AdultDashboardPage implements OnInit {
           let namedata = localStorage.getItem('name').split(' ')
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber",res['Subscriber']);
-          this.isSubscriber  = SharedService.isSubscriber();
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          this.isSubscriber = SharedService.isSubscriber();
           this.loginadult(res);
           this.services.setDataRecievedState(true);
         } else {
@@ -232,7 +238,7 @@ export class AdultDashboardPage implements OnInit {
 
       },
       )
-    }else{
+    } else {
       this.services.setDataRecievedState(true);
     }
 
@@ -286,7 +292,6 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-    localStorage.setItem("first", 'F')
     localStorage.setItem("emailCode", 'F')
     localStorage.setItem('giftwisdom', 'F')
     if (userid === 'T') {
@@ -328,7 +333,7 @@ export class AdultDashboardPage implements OnInit {
       })
     }
 
-    if(this.isloggedIn) {
+    if (this.isloggedIn) {
       this.encryptUserId();
     }
 
@@ -336,9 +341,9 @@ export class AdultDashboardPage implements OnInit {
   }
 
   encryptUserId() {
-   this.service.encryptUserId(this.userId).subscribe((res: any) => {
-    localStorage.setItem("shareToken", res)
-   })
+    this.service.encryptUserId(this.userId).subscribe((res: any) => {
+      localStorage.setItem("shareToken", res)
+    })
   }
 
   survey() {
@@ -357,13 +362,12 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getLastvisitedScr() {
-    this.userId= SharedService.getUserId();
+    this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
         console.log(res)
-        if(res[0]['ModuleId']==75)
-        {
-          res[0]['screenno']= res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
+        if (res[0]['ModuleId'] == 75) {
+          res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
         this.resumeLastvisited = res;
       });
@@ -397,8 +401,9 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
-   if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
-     this.isIos = true;
+
+    if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
+      this.isIos = true;
     }
 
 
@@ -414,7 +419,7 @@ export class AdultDashboardPage implements OnInit {
       // this.getUsershorts()
       // this.getUserstories()
       this.GetDashboardFeatures();
-      this.isSubscriber  = SharedService.isSubscriber();
+      this.isSubscriber = SharedService.isSubscriber();
     }, 1000)
 
     if (localStorage.getItem('acceptcookie') === null) {
@@ -422,8 +427,14 @@ export class AdultDashboardPage implements OnInit {
         this.enablecookiemodal.nativeElement.click();
       }, 1000)
     } else {
-      // this.enableDailypopup();
+      if(!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 100)
+      }
     }
+
+
 
     setTimeout(() => {
       let sub: any = localStorage.getItem('Subscriber');
@@ -515,8 +526,28 @@ export class AdultDashboardPage implements OnInit {
             .appendTo($(this));
         }
       });
+
     }, 3000)
-    localStorage.setItem("pageaction", 'next')
+    localStorage.setItem("pageaction", 'next');
+
+    // setTimeout(() =>{
+    //   this.enabletourmodal.nativeElement.click();
+    // }, 100)
+    // const driverObj = driver({
+    //   showProgress: true,
+    //   steps: [
+    //     { element: '#tour-example', popover: { title: 'Animated Tour Example', description: 'Here is the code example showing animated tour. Let\'s walk you through it.', side: "left", align: 'start' }},
+    //     { element: 'code .line:nth-child(1)', popover: { title: 'Import the Library', description: 'It works the same in vanilla JavaScript as well as frameworks.', side: "bottom", align: 'start' }},
+    //     { element: 'code .line:nth-child(2)', popover: { title: 'Importing CSS', description: 'Import the CSS which gives you the default styling for popover and overlay.', side: "bottom", align: 'start' }},
+    //     { element: 'code .line:nth-child(4) span:nth-child(7)', popover: { title: 'Create Driver', description: 'Simply call the driver function to create a driver.js instance', side: "left", align: 'start' }},
+    //     { element: 'code .line:nth-child(18)', popover: { title: 'Start Tour', description: 'Call the drive method to start the tour and your tour will be started.', side: "top", align: 'start' }},
+    //     { element: 'a[href="/docs/configuration"]', popover: { title: 'More Configuration', description: 'Look at this page for all the configuration options you can pass.', side: "right", align: 'start' }},
+    //     { popover: { title: 'Happy Coding', description: 'And that is all, go ahead and start adding tours to your applications.' } }
+    //   ]
+    // });
+
+    // driverObj.drive();
+
   }
 
   // curatedDash(name: any) {
@@ -551,6 +582,127 @@ export class AdultDashboardPage implements OnInit {
     SharedService.enablebanner = false
   }
 
+  continueTour() {
+    this.closetourmodal.nativeElement.click();
+    const driver = window['driver'].js.driver;
+    let stepList = [
+      {
+        element: ".tour_hamburger",
+        popover: {
+          title: 'Menu',
+          description: 'Explore our menu for more options.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_notification",
+        popover: {
+          title: 'Notifications',
+          description: 'Find all your notifications here.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_fbn",
+        popover: {
+          title: 'Feel better now',
+          description: 'Find breathing exercises, meditations and videos to feel better now.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_dp",
+        popover: {
+          title: 'Daily practice',
+          description: 'Begin with short exercises to set you up for the day. Come back for new exercises everyday.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_eatid",
+        popover: {
+          title: 'Change your topic of choice',
+          description: 'Choose from 8 broad topics to explore in depth.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_intro",
+        popover: {
+          title: 'Introduction',
+          description: 'Learn how to make the most of the app and explore the key ideas',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_explore",
+        popover: {
+          title: 'Explore',
+          description: 'Explore more resources for personal growth and inspiration.',
+          side: "bottom"
+        }
+
+      },
+      {
+        element: ".tour_journal",
+        popover: {
+          title: 'Journal',
+          description: 'Your private journal with guided questions (visible only to you)',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_forum",
+        popover: {
+          title: 'Forum',
+          description: 'Join our community discussions. Ask a coach a question',
+          side: "top"
+        },
+      }
+    ];
+
+
+    if(!this.isloggedIn) {
+      this.tourTotalIndex = 8;
+      stepList.splice(1, 1);
+    }
+
+    const driverObj = driver({
+      onNextClick:() => {
+        localStorage.setItem('firstTimeTour', 'T');
+        this.tourIndex++;
+        if(this.tourIndex > this.tourTotalIndex) {
+          document.body.classList.remove('overflow_hidden');
+          document.body.classList.add('overflow_auto');
+          this.services.setEnableTour(false);
+        }
+        driverObj.moveNext();
+      },
+      onPrevClick:() => {
+        this.tourIndex--;
+        driverObj.movePrevious();
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
+        this.services.setEnableTour(true);
+      },
+      allowClose: false,
+      showButtons: [
+        'next',
+        'previous',
+        'close'
+      ],
+      steps: stepList
+    });
+
+    driverObj.drive();
+
+    this.services.setEnableTour(true);
+
+    document.body.classList.remove('overflow_auto');
+    document.body.classList.add('overflow_hidden');
+
+  }
+
   getUserPreference() {
     this.service.getUserpreference().subscribe((res) => {
       let perd = this.service.getperList();
@@ -573,7 +725,7 @@ export class AdultDashboardPage implements OnInit {
             this.personalisedList.push(r);
           }
         })
-      this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
       }
     })
   }
@@ -664,6 +816,9 @@ export class AdultDashboardPage implements OnInit {
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
     this.closecookiemodal.nativeElement.click();
+    setTimeout(() =>{
+      this.enabletourmodal.nativeElement.click();
+    }, 100);
     // this.enableDailypopup();
   }
 
@@ -1410,8 +1565,8 @@ export class AdultDashboardPage implements OnInit {
           let namedata = localStorage.getItem('name').split(' ')
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber",res['Subscriber']);
-          this.isSubscriber  = SharedService.isSubscriber();
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          this.isSubscriber = SharedService.isSubscriber();
           this.services.setDataRecievedState(true);
           if (nameupdate) {
             this.name = nameupdate
@@ -1548,85 +1703,85 @@ export class AdultDashboardPage implements OnInit {
   //   this.service.getPoints(this.userId)
   //     .subscribe(res => {
 
-        // this.points = parseInt(res.PointsScored)
-        // this.goToPage = res.LastScrNo
-        // this.daysVisited = res.noOfDaysVisited
-        // this.timeSpent = res.noOfDaysVisited
-        // this.percentage = parseInt(res.overallPercentage)
-        // this.guideP = this.percentage;
-        // this.resume = []
-        // localStorage.setItem("overallPercentage", this.percentage)
-        //resume section
-        // res.ModUserScrPc.filter(x => {
-        //   if (parseFloat(x.Percentage) < 100) {
-        //     if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
-        //       if (x.ModuleId < 10) {
-        //         x.ModuleId = "0" + x.ModuleId
-        //       }
-        //       x.imgPath = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
-        //       this.resume.push(x)
-        //       this.resume.sort((val1, val2) => { return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn) })
-        //     }
-        //   }
-        // })
+  // this.points = parseInt(res.PointsScored)
+  // this.goToPage = res.LastScrNo
+  // this.daysVisited = res.noOfDaysVisited
+  // this.timeSpent = res.noOfDaysVisited
+  // this.percentage = parseInt(res.overallPercentage)
+  // this.guideP = this.percentage;
+  // this.resume = []
+  // localStorage.setItem("overallPercentage", this.percentage)
+  //resume section
+  // res.ModUserScrPc.filter(x => {
+  //   if (parseFloat(x.Percentage) < 100) {
+  //     if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
+  //       if (x.ModuleId < 10) {
+  //         x.ModuleId = "0" + x.ModuleId
+  //       }
+  //       x.imgPath = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
+  //       this.resume.push(x)
+  //       this.resume.sort((val1, val2) => { return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn) })
+  //     }
+  //   }
+  // })
 
-        //static progress
-        // this.angerP = res.ModUserScrPc.find(e => e.Module == "Anger")?.Percentage
-        // this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison & Envy")?.Percentage
-        // this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
-        // this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
-        // this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
-        // this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        // this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
-        // this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
-        // this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of self-awareness")?.Percentage
-        // this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
-        // this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
-        // this.keyP = res.ModUserScrPc.find(e => e.Module == "Key Ideas")?.Percentage
-        // this.selfEsteemP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
-        // this.conditioningP = res.ModUserScrPc.find(e => e.Module == "Conditioning")?.Percentage
-        // this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
-        // this.happinessP = res.ModUserScrPc.find(e => e.Module == "Happiness")?.Percentage
-        // this.threeStepsP = res.ModUserScrPc.find(e => e.Module == "Three Steps to Enquiry")?.Percentage
-        // this.noJudgementP = res.ModUserScrPc.find(e => e.Module == "No Judgement")?.Percentage
-        // this.discoveringP = res.ModUserScrPc.find(e => e.Module == "Discovering Wisdom")?.Percentage
-        // this.beginP = res.ModUserScrPc.find(e => e.Module == "How to Begin?")?.Percentage
-        // this.insightP = res.ModUserScrPc.find(e => e.Module == "Insight")?.Percentage
-        // this.pleasureP = res.ModUserScrPc.find(e => e.Module == "Pleasure")?.Percentage
-        // this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
-        // this.criticismP = res.ModUserScrPc.find(e => e.Module == "Criticism")?.Percentage
-        // this.stressP = res.ModUserScrPc.find(e => e.Module == "Stress")?.Percentage
-        // this.relationshipsP = res.ModUserScrPc.find(e => e.Module == "Relationships")?.Percentage
-        // this.natureP = res.ModUserScrPc.find(e => e.Module == "Nature")?.Percentage
-        // this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
-        // this.ntP = res.ModUserScrPc.find(e => e.Module == "Noticing Thoughts")?.Percentage
-        // this.gamP = res.ModUserScrPc.find(e => e.Module == "Guided Audio Meditation")?.Percentage
-        // this.communicationP = res.ModUserScrPc.find(e => e.Module == "Communication")?.Percentage
-        // this.siP = res.ModUserScrPc.find(e => e.Module == "Self Image")?.Percentage
-        // this.rmP = res.ModUserScrPc.find(e => e.Module == "Reactive Mind")?.Percentage
-        // this.sinP = res.ModUserScrPc.find(e => e.Module == "Self Interest")?.Percentage
-        // this.enP = res.ModUserScrPc.find(e => e.Module == "Emotional Needs")?.Percentage
-        // this.ibP = res.ModUserScrPc.find(e => e.Module == "Inner Boredom")?.Percentage
-        // this.wP = res.ModUserScrPc.find(e => e.Module == "Work")?.Percentage
-        // this.lP = res.ModUserScrPc.find(e => e.Module == "Leadership")?.Percentage
-        // this.niP = res.ModUserScrPc.find(e => e.Module == "The Nature of the I")?.Percentage
-        // this.seP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
-        // this.lonelinessP = res.ModUserScrPc.find(e => e.Module == "Loneliness")?.Percentage
-        // this.livingwithpeaceP = res.ModUserScrPc.find(e => e.Module == "Living With Peace")?.Percentage
-        // this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
-        // this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing with Death")?.Percentage
-        // this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
-        // this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
-        // this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
-        // this.foodP = res.ModUserScrPc.find(e => e.Module == "Food and Health")?.Percentage
-        // this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
-        // this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
-        // this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
-        // this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
-        // this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
-        // this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
-        // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
-        // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+  //static progress
+  // this.angerP = res.ModUserScrPc.find(e => e.Module == "Anger")?.Percentage
+  // this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison & Envy")?.Percentage
+  // this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
+  // this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
+  // this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
+  // this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
+  // this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
+  // this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
+  // this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of self-awareness")?.Percentage
+  // this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
+  // this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
+  // this.keyP = res.ModUserScrPc.find(e => e.Module == "Key Ideas")?.Percentage
+  // this.selfEsteemP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
+  // this.conditioningP = res.ModUserScrPc.find(e => e.Module == "Conditioning")?.Percentage
+  // this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
+  // this.happinessP = res.ModUserScrPc.find(e => e.Module == "Happiness")?.Percentage
+  // this.threeStepsP = res.ModUserScrPc.find(e => e.Module == "Three Steps to Enquiry")?.Percentage
+  // this.noJudgementP = res.ModUserScrPc.find(e => e.Module == "No Judgement")?.Percentage
+  // this.discoveringP = res.ModUserScrPc.find(e => e.Module == "Discovering Wisdom")?.Percentage
+  // this.beginP = res.ModUserScrPc.find(e => e.Module == "How to Begin?")?.Percentage
+  // this.insightP = res.ModUserScrPc.find(e => e.Module == "Insight")?.Percentage
+  // this.pleasureP = res.ModUserScrPc.find(e => e.Module == "Pleasure")?.Percentage
+  // this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
+  // this.criticismP = res.ModUserScrPc.find(e => e.Module == "Criticism")?.Percentage
+  // this.stressP = res.ModUserScrPc.find(e => e.Module == "Stress")?.Percentage
+  // this.relationshipsP = res.ModUserScrPc.find(e => e.Module == "Relationships")?.Percentage
+  // this.natureP = res.ModUserScrPc.find(e => e.Module == "Nature")?.Percentage
+  // this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
+  // this.ntP = res.ModUserScrPc.find(e => e.Module == "Noticing Thoughts")?.Percentage
+  // this.gamP = res.ModUserScrPc.find(e => e.Module == "Guided Audio Meditation")?.Percentage
+  // this.communicationP = res.ModUserScrPc.find(e => e.Module == "Communication")?.Percentage
+  // this.siP = res.ModUserScrPc.find(e => e.Module == "Self Image")?.Percentage
+  // this.rmP = res.ModUserScrPc.find(e => e.Module == "Reactive Mind")?.Percentage
+  // this.sinP = res.ModUserScrPc.find(e => e.Module == "Self Interest")?.Percentage
+  // this.enP = res.ModUserScrPc.find(e => e.Module == "Emotional Needs")?.Percentage
+  // this.ibP = res.ModUserScrPc.find(e => e.Module == "Inner Boredom")?.Percentage
+  // this.wP = res.ModUserScrPc.find(e => e.Module == "Work")?.Percentage
+  // this.lP = res.ModUserScrPc.find(e => e.Module == "Leadership")?.Percentage
+  // this.niP = res.ModUserScrPc.find(e => e.Module == "The Nature of the I")?.Percentage
+  // this.seP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
+  // this.lonelinessP = res.ModUserScrPc.find(e => e.Module == "Loneliness")?.Percentage
+  // this.livingwithpeaceP = res.ModUserScrPc.find(e => e.Module == "Living With Peace")?.Percentage
+  // this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
+  // this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing with Death")?.Percentage
+  // this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
+  // this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
+  // this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
+  // this.foodP = res.ModUserScrPc.find(e => e.Module == "Food and Health")?.Percentage
+  // this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
+  // this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
+  // this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+  // this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
+  // this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
+  // this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
+  // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
+  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
 
   //     })
 
@@ -1946,37 +2101,37 @@ export class AdultDashboardPage implements OnInit {
 
   // introduction
   // routeDiscoveringWisdom(cont: any = 1) {
-    // var discoveringWisdomResume
-    // localStorage.setItem("moduleId", JSON.stringify(27))
-    // this.service.clickModule(27, this.userId)
-    //   .subscribe(res => {
-    //     localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-    //     this.qrList = res
-    //     discoveringWisdomResume = "s" + res.lastVisitedScreen
-    //     this.goToPage = res.lastVisitedScreen
-        // continue where you left
-      //   if (res.lastVisitedScreen === '') {
-      //     localStorage.setItem("lastvisited", 'F')
-      //   }
-      //   else {
-      //     localStorage.setItem("lastvisited", 'T')
-      //   }
-      //   sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
-      //   this.mediaPercent = parseInt(res.MediaPercent)
-      //   localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
-      //   localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-      //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      // },
-      //   error => {
-      //     console.log(error)
-      //   },
-      //   () => {
-      //     if (cont == "1") {
-      //       this.router.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
-      //     }
-      //     else
-      //       this.router.navigate([`/adults/discovering-wisdom/s27001`])
-      //   })
+  // var discoveringWisdomResume
+  // localStorage.setItem("moduleId", JSON.stringify(27))
+  // this.service.clickModule(27, this.userId)
+  //   .subscribe(res => {
+  //     localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+  //     this.qrList = res
+  //     discoveringWisdomResume = "s" + res.lastVisitedScreen
+  //     this.goToPage = res.lastVisitedScreen
+  // continue where you left
+  //   if (res.lastVisitedScreen === '') {
+  //     localStorage.setItem("lastvisited", 'F')
+  //   }
+  //   else {
+  //     localStorage.setItem("lastvisited", 'T')
+  //   }
+  //   sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
+  //   this.mediaPercent = parseInt(res.MediaPercent)
+  //   localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+  //   localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+  //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
+  // },
+  //   error => {
+  //     console.log(error)
+  //   },
+  //   () => {
+  //     if (cont == "1") {
+  //       this.router.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
+  //     }
+  //     else
+  //       this.router.navigate([`/adults/discovering-wisdom/s27001`])
+  //   })
   // }
 
   // routeBenefits(cont: any = 1) {
@@ -1988,14 +2143,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       benefitsWisdomResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("benefitsWisdomResume", benefitsWisdomResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2020,14 +2175,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       fiveCirclesResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("fiveCirclesResume", fiveCirclesResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2054,33 +2209,33 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       keyIdeasResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-      //   sessionStorage.setItem("keyIdeasResume", keyIdeasResume)
-      //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      // },
-      //   error => {
-      //     console.log(error)
-      //   },
-      //   () => {
-      //     if (cont == "1") {
-      //       this.router.navigate([`/adults/key-ideas/${keyIdeasResume}`])
-      //     }
-      //     else
-      //       this.router.navigate([`/adults/key-ideas/s34001`])
-          /*if(!this.goToPage)
-          {
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  //   sessionStorage.setItem("keyIdeasResume", keyIdeasResume)
+  //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
+  // },
+  //   error => {
+  //     console.log(error)
+  //   },
+  //   () => {
+  //     if (cont == "1") {
+  //       this.router.navigate([`/adults/key-ideas/${keyIdeasResume}`])
+  //     }
+  //     else
+  //       this.router.navigate([`/adults/key-ideas/s34001`])
+  /*if(!this.goToPage)
+  {
 
-            this.router.navigate([`/adults/key-ideas`])
-          }
-          else
-            this.router.navigate([`/adults/key-ideas/s${keyIdeasResume}`])*/
+    this.router.navigate([`/adults/key-ideas`])
+  }
+  else
+    this.router.navigate([`/adults/key-ideas/s${keyIdeasResume}`])*/
 
   //       })
 
@@ -2095,28 +2250,28 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       pgResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-      //   sessionStorage.setItem("pgResume", pgResume)
-      //   pgResume = "s" + res.lastVisitedScreen
-      //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      // },
-      //   error => {
-      //     console.log(error)
-      //   },
-      //   () => {
-      //     if (cont == "1") {
-      //       this.router.navigate([`/adults/program-guide/${pgResume}`])
-      //     }
-      //     else
-      //       this.router.navigate([`/adults/program-guide/s35001`])
-      //   })
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  //   sessionStorage.setItem("pgResume", pgResume)
+  //   pgResume = "s" + res.lastVisitedScreen
+  //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
+  // },
+  //   error => {
+  //     console.log(error)
+  //   },
+  //   () => {
+  //     if (cont == "1") {
+  //       this.router.navigate([`/adults/program-guide/${pgResume}`])
+  //     }
+  //     else
+  //       this.router.navigate([`/adults/program-guide/s35001`])
+  //   })
   // }
   // /introduction
 
@@ -2130,14 +2285,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       natureR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("natureR", natureR)
 
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -2165,27 +2320,27 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       breathingR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-      //   sessionStorage.setItem("breathingR", breathingR)
-      //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      // },
-      //   error => {
-      //     console.log(error)
-      //   },
-      //   () => {
-      //     if (cont == "1") {
-      //       this.router.navigate([`/adults/breathing/${breathingR}`])
-      //     }
-      //     else
-      //       this.router.navigate([`/adults/breathing/s29000`])
-      //   })
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  //   sessionStorage.setItem("breathingR", breathingR)
+  //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
+  // },
+  //   error => {
+  //     console.log(error)
+  //   },
+  //   () => {
+  //     if (cont == "1") {
+  //       this.router.navigate([`/adults/breathing/${breathingR}`])
+  //     }
+  //     else
+  //       this.router.navigate([`/adults/breathing/s29000`])
+  //   })
   // }
 
   // routeNoticingThoughts(cont: any = 1) {
@@ -2221,14 +2376,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       gamR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("gamR", gamR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2253,14 +2408,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       meditationResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("meditationResume", meditationResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2287,17 +2442,17 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       resumeBenefitsEnquiry = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-        // sessionStorage.setItem("resumeBenefitsEnquiry", resumeBenefitsEnquiry)
-        // this.mediaPercent = parseInt(res.MediaPercent)
-        //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  // sessionStorage.setItem("resumeBenefitsEnquiry", resumeBenefitsEnquiry)
+  // this.mediaPercent = parseInt(res.MediaPercent)
+  //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
   //       localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
   //       localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -2323,14 +2478,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       beginResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("beginResume", beginResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2355,14 +2510,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       threeStepsResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("threeStepsResume", threeStepsResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2387,14 +2542,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       insightResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("insightResume", insightResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2419,14 +2574,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       awarenessResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("awarenessResume", awarenessResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2451,14 +2606,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       njResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("njResume", njResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2483,14 +2638,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       qakResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("qakResume", qakResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2515,14 +2670,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       lwlResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("lwlResume", lwlResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2547,14 +2702,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       obstaclesResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("obstaclesResume", obstaclesResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2581,14 +2736,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       conditioningResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("conditioningResume", conditioningResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2612,14 +2767,14 @@ export class AdultDashboardPage implements OnInit {
   //       localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
   //       this.qrList = res
   //       comparisonR = "s" + res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("comparisonR", comparisonR)
   //       this.mediaPercent = parseInt(res.MediaPercent)
   //       this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
@@ -2648,14 +2803,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       rmR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("rmR", rmR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2681,17 +2836,17 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       siR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-        // sessionStorage.setItem("siR", siR)
-        // this.mediaPercent = parseInt(res.MediaPercent)
-        //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  // sessionStorage.setItem("siR", siR)
+  // this.mediaPercent = parseInt(res.MediaPercent)
+  //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
   //       localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
   //       localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -2717,14 +2872,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       sinR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("sinR", sinR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2749,14 +2904,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       identityResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("identityResume", identityResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2781,14 +2936,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       enR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("enR", enR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2813,14 +2968,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       ibR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("ibR", ibR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2845,14 +3000,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       niR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("niR", niR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2877,14 +3032,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       externalapprovalR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("externalapprovalR", externalapprovalR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2911,14 +3066,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       fearResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("fearResume", fearResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2943,14 +3098,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       dealingwithdepressionResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("dealingwithdepressionResume", dealingwithdepressionResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -2975,17 +3130,17 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       pleasureResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-        // sessionStorage.setItem("pleasureResume", pleasureResume)
-        // this.mediaPercent = parseInt(res.MediaPercent)
-        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  // sessionStorage.setItem("pleasureResume", pleasureResume)
+  // this.mediaPercent = parseInt(res.MediaPercent)
+  // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
   //       localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
   //       localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -3012,14 +3167,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       sorrowandlossResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("sorrowandlossResume", sorrowandlossResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3045,14 +3200,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       lonelinessResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("lonelinessResume", lonelinessResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3077,14 +3232,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       angerResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("angerResume", angerResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3111,27 +3266,27 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       stressResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
-      //   sessionStorage.setItem("stressResume", stressResume)
-      //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      // },
-      //   error => {
-      //     console.log(error)
-      //   },
-      //   () => {
-      //     if (cont == "1") {
-      //       this.router.navigate([`/adults/stress/${stressResume}`])
-      //     }
-      //     else
-      //       this.router.navigate([`/adults/stress/s44001`])
-          //this.router.navigate([`/adults/wisdom-exercise/s75001`])
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
+  //   sessionStorage.setItem("stressResume", stressResume)
+  //   localStorage.setItem("qrList", JSON.stringify(this.qrList))
+  // },
+  //   error => {
+  //     console.log(error)
+  //   },
+  //   () => {
+  //     if (cont == "1") {
+  //       this.router.navigate([`/adults/stress/${stressResume}`])
+  //     }
+  //     else
+  //       this.router.navigate([`/adults/stress/s44001`])
+  //this.router.navigate([`/adults/wisdom-exercise/s75001`])
   //       })
   // }
 
@@ -3147,14 +3302,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       relationshipResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("relationshipResume", relationshipResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3179,14 +3334,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       loveResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("loveResume", loveResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3211,14 +3366,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       criticismResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("criticismResume", criticismResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3243,14 +3398,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       sR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("sR", sR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3275,14 +3430,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       livingwithpeaceResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("livingwithpeaceResume", livingwithpeaceResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3307,14 +3462,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       dealingwithdeathResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("dealingwithdeathResume", dealingwithdeathResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3340,14 +3495,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       bullyingResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("bullyingResume", bullyingResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3373,14 +3528,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       making_better_decisionsResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("making_better_decisionsResume", making_better_decisionsResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3406,14 +3561,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       diversity_and_inclusionResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("diversity_and_inclusionResume", diversity_and_inclusionResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3440,15 +3595,15 @@ export class AdultDashboardPage implements OnInit {
   //     .subscribe(res => {
   //       localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
   //       this.qrList = res
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // } else {
-        //   hR = "s" + res.lastVisitedScreen
-        //   this.goToPage = res.lastVisitedScreen
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // } else {
+  //   hR = "s" + res.lastVisitedScreen
+  //   this.goToPage = res.lastVisitedScreen
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("hR", hR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3473,14 +3628,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       communicationR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("communicationR", communicationR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3505,14 +3660,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       opinionsandbeliefsResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("opinionsandbeliefsResume", opinionsandbeliefsResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3537,14 +3692,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       successandfailureResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("successandfailureResume", successandfailureResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3569,14 +3724,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       addictionResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("addictionResume", addictionResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3601,14 +3756,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       foodResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("foodResume", foodResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3633,14 +3788,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       moneyResume = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("moneyResume", moneyResume)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3665,14 +3820,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       wR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("wR", wR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3697,14 +3852,14 @@ export class AdultDashboardPage implements OnInit {
   //       this.qrList = res
   //       lR = "s" + res.lastVisitedScreen
   //       this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("lR", lR)
   //       localStorage.setItem("qrList", JSON.stringify(this.qrList))
   //     },
@@ -3746,14 +3901,14 @@ export class AdultDashboardPage implements OnInit {
   //       localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
   //       this.qrList = res
   //       hcwhR = "s" + res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("hcwhR", hcwhR)
   //       this.mediaPercent = parseInt(res.MediaPercent)
   //       this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
@@ -3822,16 +3977,15 @@ export class AdultDashboardPage implements OnInit {
 
   wisdomexercise() {
 
-   if( this.resumeLastvisited[0]['screenno'].length >=1)
-   {
-    this.router.navigate(['adults/wisdom-exercise/s' +  this.resumeLastvisited[0]['screenno'].substring(0, this.resumeLastvisited[0]['screenno'].length - 2)], {
-      state: {
-        day: 2,
-      }
-    });
-   }
-   else
-   this.router.navigate([`/adults/wisdom-exercise/s75001`])
+    if (this.resumeLastvisited[0]['screenno'].length >= 1) {
+      this.router.navigate(['adults/wisdom-exercise/s' + this.resumeLastvisited[0]['screenno'].substring(0, this.resumeLastvisited[0]['screenno'].length - 2)], {
+        state: {
+          day: 2,
+        }
+      });
+    }
+    else
+      this.router.navigate([`/adults/wisdom-exercise/s75001`])
 
 
 
@@ -3883,65 +4037,65 @@ export class AdultDashboardPage implements OnInit {
   //     let exercise: any
   //     let emptyList = false;
   //     let increaseExcercise = false;
-      // Any of the exercise is not completed
-      // if (data.length == 0) {
-      //   emptyList = true;
-      //   data = this.wisdomExerciseList;
-      //   exercise = data[0];
-      // }
-      // else {
-      //   var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
-      //   if (incomppletedExercise.length > 0) {
-      //     exercise = incomppletedExercise[0];
-      //   } else {
-      //     exercise = data[data.length - 1];
-      //   }
-        // It contains data may be some exercise is completed
-      //   var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
-      //   if (completed.length == 0) {
-      //     increaseExcercise = true;
-      //     emptyList = true;
-      //   }
-      // }
-      //Setting final title and Exercise no
-      // this.Title = exercise.Title;
+  // Any of the exercise is not completed
+  // if (data.length == 0) {
+  //   emptyList = true;
+  //   data = this.wisdomExerciseList;
+  //   exercise = data[0];
+  // }
+  // else {
+  //   var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+  //   if (incomppletedExercise.length > 0) {
+  //     exercise = incomppletedExercise[0];
+  //   } else {
+  //     exercise = data[data.length - 1];
+  //   }
+  // It contains data may be some exercise is completed
+  //   var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+  //   if (completed.length == 0) {
+  //     increaseExcercise = true;
+  //     emptyList = true;
+  //   }
+  // }
+  //Setting final title and Exercise no
+  // this.Title = exercise.Title;
 
-      // this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
-      //   : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+  // this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+  //   : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
 
-      // if (allCompletedScreen) {
-      //   this.exerciseNo = "1";
-      // }
-      // if (this.exerciseNo == "13") {
-      //   this.exerciseNo = "1";
-      // }
-      //Checking the length if its less than 10  to append for current session number
-      // if (this.exerciseNo.length == 1) {
-      //   this.exerciseNo = "0" + this.exerciseNo;
-      // }
-      // if (incomppletedExercise && incomppletedExercise.length > 0) {
-      //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
-      // } else {
-      //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
-      // }
-      // var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+  // if (allCompletedScreen) {
+  //   this.exerciseNo = "1";
+  // }
+  // if (this.exerciseNo == "13") {
+  //   this.exerciseNo = "1";
+  // }
+  //Checking the length if its less than 10  to append for current session number
+  // if (this.exerciseNo.length == 1) {
+  //   this.exerciseNo = "0" + this.exerciseNo;
+  // }
+  // if (incomppletedExercise && incomppletedExercise.length > 0) {
+  //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+  // } else {
+  //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+  // }
+  // var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
 
 
-      //Pushing final list for display
-      // for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
-      //   let obj = {
-      //     " SessionNo": item.SessionNo,
-      //     "ScreenNo": item.ScreenNo,
-      //     "completed": item.completed,
-      //     "day": item.ScreenNo.substring(6, item.ScreenNo.length),
-      //     "Title": item.Title
-      //   }
-      //   this.currentList.push(obj);
-      // }
-      // if (this.currentList.length > 0) {
-      //   this.Title = this.currentList[0].Title;
-      // }
-      //Dynamic Scroll
+  //Pushing final list for display
+  // for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+  //   let obj = {
+  //     " SessionNo": item.SessionNo,
+  //     "ScreenNo": item.ScreenNo,
+  //     "completed": item.completed,
+  //     "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+  //     "Title": item.Title
+  //   }
+  //   this.currentList.push(obj);
+  // }
+  // if (this.currentList.length > 0) {
+  //   this.Title = this.currentList[0].Title;
+  // }
+  //Dynamic Scroll
   //     setTimeout(() => {
   //       var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
   //       var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
@@ -3989,7 +4143,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  SubscribeToPremium(){
+  SubscribeToPremium() {
     this.router.navigate(['/subscription/start-your-free-trial']);
   }
 
@@ -4001,14 +4155,14 @@ export class AdultDashboardPage implements OnInit {
   //       console.log(res)
   //       this.qrList = res
   //       weR = "s" + res.lastVisitedScreen
-        // continue where you left
-        // if (res.lastVisitedScreen === '') {
-        //   localStorage.setItem("lastvisited", 'F')
-        // }
-        // else {
-        //   localStorage.setItem("lastvisited", 'T')
-        // }
-        // /continue where you left
+  // continue where you left
+  // if (res.lastVisitedScreen === '') {
+  //   localStorage.setItem("lastvisited", 'F')
+  // }
+  // else {
+  //   localStorage.setItem("lastvisited", 'T')
+  // }
+  // /continue where you left
   //       sessionStorage.setItem("weR", weR)
   //       this.mediaPercent = parseInt(res.MediaPercent)
   //       this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
@@ -4043,7 +4197,7 @@ export class AdultDashboardPage implements OnInit {
     }
     else if (res['FeatureType'] === "PODCAST") {
       this.logeventservice.logEvent("click_podcasts");
-       this.router.navigate([res['Url']]);
+      this.router.navigate([res['Url']]);
     }
     else {
       this.logeventservice.logEvent("click_" + res['FeatureType']);
@@ -4052,9 +4206,8 @@ export class AdultDashboardPage implements OnInit {
     }
   }
   changeTopic() {
-    localStorage.setItem('lastRoute',this.dasboardUrl);
-    if(!this.isloggedIn)
-    {
+    localStorage.setItem('lastRoute', this.dasboardUrl);
+    if (!this.isloggedIn) {
       this.logeventservice.logEvent("click_Select-a-topic-to-Explore");
       this.router.navigate(["/adults/select-a-topic-to-explore"], {
         state: {
@@ -4062,21 +4215,20 @@ export class AdultDashboardPage implements OnInit {
         }
       });
     }
-    else
-    {
-        this.logeventservice.logEvent("click_Change-your-Topic");        
-        this.router.navigate(["/adults/change-topic"], {
-          state: {
-            routedFromLogin: false,
-          }
-        });
+    else {
+      this.logeventservice.logEvent("click_Change-your-Topic");
+      this.router.navigate(["/adults/change-topic"], {
+        state: {
+          routedFromLogin: false,
+        }
+      });
     }
   }
 
-  routeToFindAnswer(param){
-    localStorage.setItem('lastRoute',param);
-    this.logeventservice.logEvent("click_find-answers-"+param);
-    this.router.navigate(['/adults/find-answers/'+param]);
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/adults/find-answers/' + param]);
   }
 
   activeTopicRoute(name) {
@@ -4089,7 +4241,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Work and Leadership') {
       this.logeventservice.logEvent('click_workplace');
       this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-    } else if (name === 'Have fulfilling relationships') {
+    } else if (name === 'Relationships') {
       this.logeventservice.logEvent('click_relationships');
       this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
     } else if (name === 'Be happier') {
@@ -4098,7 +4250,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Habits and Addiction') {
       this.logeventservice.logEvent('click_be_happier');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    } else if (name === 'Deal with sorrow and loss') {
+    } else if (name === 'Deal with  loss') {
       this.logeventservice.logEvent('click_sorrow_loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     } else if (name === 'Meditation') {
@@ -4107,12 +4259,12 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  readMore(str){
+  readMore(str) {
     this.logeventservice.logEvent('click_testimonial_' + str);
-    SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
+    SharedService.setDataInLocalStorage(Constant.TestimonialId, str);
     this.router.navigate(['/adults/testimonials']);
   }
-  getEnableBanner(){
+  getEnableBanner() {
     return SharedService.enablebanner;
   }
 
@@ -4127,8 +4279,8 @@ export class AdultDashboardPage implements OnInit {
       'iPhone',
       'iPod'
     ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
   clearSearch() {

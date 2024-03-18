@@ -67,6 +67,7 @@ export class AuthGuard implements CanActivate, OnInit {
     let getalertdate = localStorage.getItem('getalertdate');
     let fromlanding = localStorage.getItem("fromlandingpage");
     let cookie = localStorage.getItem('acceptcookie')
+    let firstTimeTour = localStorage.getItem("firstTimeTour");
     if (token[1] !== undefined && token[1] !== '') {
       if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard')) {
         localStorage.setItem("isPWA", 'NOTAPP')
@@ -76,6 +77,9 @@ export class AuthGuard implements CanActivate, OnInit {
       let persdata = localStorage.getItem('personalisedlist');
       localStorage.clear()
       localStorage.setItem('personalised', 'T');
+      if(firstTimeTour === 'T') {
+        localStorage.setItem('firstTimeTour', 'T');
+      }
       pers = localStorage.getItem('personalised');
       if (affrefcode !== '') {
         localStorage.setItem("AffReferralCode", affrefcode)
