@@ -362,7 +362,7 @@
                 <!-- /inactive -->
               <!-- /income activity -->
 
-              <div class="row mt20px">
+              <div class="row mt20px" *ngIf="isRecieveIncome">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                     If you wish to switch your partnership benefits, and have a tree planted for every subscription
@@ -374,6 +374,31 @@
                 </div>
               </div>
 
+              <div class="row mt20px" *ngIf="isRecieveIncome">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    If you wish to switch your partnership benefits, and have a tree planted for every subscription
+                    instead of receiving an income , do write to us at
+                    <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto:team@happierme.app">
+                      team@happierme.app
+                    </a>
+                  </h4>
+                </div>
+              </div>
+
+              
+              <div class="row mt20px" *ngIf="!isRecieveIncome">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                   If you wish to switch your partnership benefits, and receive an income instead of  planting trees.
+                    <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto: team@happierme.app">
+                      team@happierme.app
+                    </a>
+                  </h4>
+                </div>
+              </div>
+
+                 
               <div class="pagebreak"></div>
             </form>
           </div>
