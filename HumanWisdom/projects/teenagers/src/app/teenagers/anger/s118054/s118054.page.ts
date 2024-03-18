@@ -15,7 +15,7 @@ export class S118054Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w12"
   hint = "You may feel angry in return, or go quiet, or say sorry"
-  toc = "/anger/s118001"
+  toc = "/teenagers/anger/s118001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S118054Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/anger/s118055'])
+        this.router.navigate(['/teenagers/anger/s118055'])
 
       },
       () => {
-        this.router.navigate(['/anger/s118055'])
+        this.router.navigate(['/teenagers/anger/s118055'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/anger/s118053'])
+    this.router.navigate(['/teenagers/anger/s118053'])
   }
 
   ngOnDestroy() 
