@@ -642,24 +642,107 @@ export class AdultDashboardPage implements OnInit {
           side: "bottom"
         }
 
-      },
-      {
-        element: ".tour_journal",
-        popover: {
-          title: 'Journal',
-          description: 'Your private journal with guided questions (visible only to you)',
-          side: "bottom"
-        }
-      },
-      {
-        element: ".tour_forum",
-        popover: {
-          title: 'Forum',
-          description: 'Join our community discussions. Ask a coach a question',
-          side: "top"
-        },
-      }
-    ];
+
+    setTimeout(() => {
+        const driverObj = driver({
+          onNextClick:() => {
+            localStorage.setItem('firstTimeTour', 'T');
+            this.tourIndex++;
+            if(this.tourIndex === this.tourTotalIndex) {
+              document.body.classList.remove('overflow_hidden');
+              document.body.classList.add('overflow_auto');
+              this.services.setEnableTour(false);
+            }
+            driverObj.moveNext();
+          },
+          onPrevClick:() => {
+            this.tourIndex--;
+            driverObj.movePrevious();
+            this.services.setEnableTour(true);
+          },
+          allowClose: false,
+          showButtons: [
+            'next',
+            'previous',
+            'close'
+          ],
+          steps: [
+            {
+              element: ".tour_hamburger",
+              popover: {
+                title: 'Menu',
+                description: 'Explore our menu for more options.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_notification",
+              popover: {
+                title: 'Notifications',
+                description: 'Find all your notifications here.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_fbn",
+              popover: {
+                title: 'Feel better now',
+                description: 'Find breathing exercises, meditations and videos to feel better now.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_dp",
+              popover: {
+                title: 'Daily practice',
+                description: 'Begin with short exercises to set you up for the day. Come back for new exercises everyday.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_eatid",
+              popover: {
+                title: 'Change your topic of choice',
+                description: 'Choose from 8 broad topics to explore in depth.',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_intro",
+              popover: {
+                title: 'Introduction',
+                description: 'Learn how to make the most of the app and explore the key ideas',
+                side: "bottom"
+              }
+            },
+            {
+              element: ".tour_explore",
+              popover: {
+                title: 'Explore',
+                description: 'Explore more resources for personal growth and inspiration.',
+                side: "top"
+              }
+
+            },
+            {
+              element: ".tour_journal",
+              popover: {
+                title: 'Journal',
+                description: 'Your private journal with guided questions (visible only to you)',
+                side: "top"
+              }
+            },
+            {
+              element: ".tour_forum",
+              popover: {
+                title: 'Forum',
+                description: 'Join our community discussions. Ask a coach a question',
+                side: "top"
+              },
+            }
+          ]
+        });
+
 
 
     if(!this.isloggedIn) {
