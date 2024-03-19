@@ -14,7 +14,7 @@ export class S135044Page implements OnInit {
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w12"
   hint = " If people have been mean to you, you may think its normal to be mean to others "
-  toc = "/bullying/s135001"
+  toc = "teenagers/bullying/s135001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S135044Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/bullying/s135045'])
+        this.router.navigate(['/teenagers/bullying/s135045'])
 
       },
       () => {
-        this.router.navigate(['/bullying/s135045'])
+        this.router.navigate(['/teenagers/bullying/s135045'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/bullying/s135043'])
+    this.router.navigate(['/teenagers/bullying/s135043'])
   }
 
   ngOnDestroy() 
