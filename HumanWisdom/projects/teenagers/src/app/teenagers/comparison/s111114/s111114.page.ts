@@ -15,7 +15,7 @@ export class S111114Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w3"
   hint = "I notice I am stressed when I am talking to a friend who has different political views to mine. I realise that I am just comparing his views with my idea of normal, and that is causing my stress."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111114Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111115'])
+        this.router.navigate(['/teenagers/comparison/s111115'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111115'])
+        this.router.navigate(['/teenagers/comparison/s111115'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111113'])
+    this.router.navigate(['/teenagers/comparison/s111113'])
   }
 
   ngOnDestroy() 

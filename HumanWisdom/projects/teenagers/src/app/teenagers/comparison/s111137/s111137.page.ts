@@ -15,7 +15,7 @@ export class S111137Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w6"
   hint = "That is the way our mind works - we assume others are responsible for how we feel and think. Long term, it could affect their friendship."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111137Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111138'])
+        this.router.navigate(['/teenagers/comparison/s111138'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111138'])
+        this.router.navigate(['/teenagers/comparison/s111138'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111136'])
+    this.router.navigate(['/teenagers/comparison/s111136'])
   }
 
   ngOnDestroy() 

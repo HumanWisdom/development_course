@@ -15,7 +15,7 @@ export class S111098Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w4"
   hint = "This is not easy. Its just helps us to explore and learn about ourselves. Its not about you being right or wrong."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111098Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111099'])
+        this.router.navigate(['/teenagers/comparison/s111099'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111099'])
+        this.router.navigate(['/teenagers/comparison/s111099'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111097'])
+    this.router.navigate(['/teenagers/comparison/s111097'])
   }
 
   ngOnDestroy() 

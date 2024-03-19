@@ -15,7 +15,7 @@ export class S111025Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w7"
   hint = "It is okay to feel envious. It’s only human. How did it affect you and how did you respond?"
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111025Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111026'])
+        this.router.navigate(['/teenagers/comparison/s111026'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111026'])
+        this.router.navigate(['/teenagers/comparison/s111026'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111024'])
+    this.router.navigate(['/teenagers/comparison/s111024'])
   }
 
   ngOnDestroy() 
