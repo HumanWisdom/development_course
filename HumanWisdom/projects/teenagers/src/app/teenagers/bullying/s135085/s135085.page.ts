@@ -20,7 +20,7 @@ export class S135085Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/teenagers/modules/bullying/audios/3.5.mp3'
 
   transcriptPage="bullying/s135085t"
-  toc="bullying/s135001"
+  toc="teenagers/bullying/s135001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -95,7 +95,7 @@ export class S135085Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/bullying/s135086'])
+    this.router.navigate(['/teenagers/bullying/s135086'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S135085Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/bullying/s135084'])
+    this.router.navigate(['/teenagers/bullying/s135084'])
   }
 
   ngOnDestroy()

@@ -11,12 +11,12 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 })
 export class S135091Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
-  toc="bullying/s135001"
+  toc="teenagers/bullying/s135001"
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/16.png"
   
   bg=""
-  moduleLink="/criticism"
+  moduleLink="teenagers/criticism"
   moduleName=" Criticism"
   sectionName= "Transform your life - I";
   moduleId=136

@@ -30,7 +30,7 @@ export class S107007Page implements OnInit {
   totalTime:any  
  
   
-  toc="/breathing/s107001"
+  toc="teenagers/breathing/s107001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -97,7 +97,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/breathing/s107008'])
+     this.router.navigate(['/teenagers/breathing/s107008'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -119,7 +119,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/breathing/s107006'])
+     this.router.navigate(['/teenagers/breathing/s107006'])
 
 
   }
