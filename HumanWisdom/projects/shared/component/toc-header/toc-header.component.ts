@@ -39,6 +39,7 @@ export class TocHeaderComponent implements OnInit {
       this.location.back();
     }
    }
+   this.location.back();
   }
 
   share(){
