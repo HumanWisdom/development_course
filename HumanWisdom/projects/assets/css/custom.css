@@ -36761,12 +36761,25 @@ a.fc_e58d82:hover
   border: 10px solid #E58D82 !important;
 }
 
-.driver-popover-arrow-side-top,
-.driver-popover-arrow-side-right
+.driver-popover-arrow-side-top
 {
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
   border-left-color: transparent !important;
+}
+
+.driver-popover-arrow-side-bottom
+{
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+.driver-popover-arrow-side-right
+{
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
 }
 
 .driver-popover-arrow-side-left
@@ -36774,14 +36787,6 @@ a.fc_e58d82:hover
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
   border-top-color: transparent !important;
-}
-
-
-.driver-popover-arrow-side-bottom
-{
-  border-left-color: transparent !important;
-  border-top-color: transparent !important;
-  border-right-color: transparent !important;
 }
 
 .driver-popover-title[style*=block]+.driver-popover-description
