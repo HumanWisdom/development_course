@@ -212,16 +212,16 @@ export class S95026Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/benefits-of-enquiry/s95027'])
+        this.router.navigate(['/teenagers/benefits-of-enquiry/s95027'])
       },
       () => {
-        this.router.navigate(['/benefits-of-enquiry/s95027'])
+        this.router.navigate(['/teenagers/benefits-of-enquiry/s95027'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/benefits-of-enquiry/s95025'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95025'])
   }
 
   ngOnDestroy() {}

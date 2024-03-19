@@ -31,7 +31,7 @@ export class S95019Page implements OnInit,OnDestroy {
   totalTime:any  
  
   
-  toc="benefits-of-enquiry/s95001"
+  toc="teenagers/benefits-of-enquiry/s95001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -101,7 +101,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     
-    this.router.navigate(['/benefits-of-enquiry/s95020'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95020'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -122,7 +122,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s95018'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95018'])
 
 
   }

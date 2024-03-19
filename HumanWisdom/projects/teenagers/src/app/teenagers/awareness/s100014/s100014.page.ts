@@ -15,7 +15,7 @@ export class S100014Page implements OnInit {
   bg = "red_pink_w12"
   hint = "You may realise that your mind is comparing all the time, and thats why you are feeling hurt, angry, and jealous."
 
-  toc = "awareness/s100001"
+  toc="teenagers/awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -88,7 +88,7 @@ export class S100014Page implements OnInit {
     sessionStorage.setItem("r100014", JSON.stringify(e))
     this.r100014 = JSON.parse(sessionStorage.getItem("r100014"))
 
-    this.router.navigate(['/awareness/s100015'])
+    this.router.navigate(['/teenagers/awareness/s100015'])
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -104,7 +104,7 @@ export class S100014Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/awareness/s100015'])
+        this.router.navigate(['/teenagers/awareness/s100015'])
 
       },
       () => {
@@ -118,7 +118,7 @@ export class S100014Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/awareness/s100013'])
+    this.router.navigate(['/teenagers/awareness/s100013'])
   }
 
   ngOnDestroy() {

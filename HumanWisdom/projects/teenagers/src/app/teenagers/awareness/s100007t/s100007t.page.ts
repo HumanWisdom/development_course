@@ -19,7 +19,7 @@ export class S100007tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/awareness/s100007"
-  toc="awareness/s100001"
+ toc="teenagers/awareness/s100001"
 
   avDuration=localStorage.getItem("avDuration100007")
   totalTime=localStorage.getItem("totalTime100007")
@@ -74,9 +74,9 @@ export class S100007tPage implements OnInit {
         
       })
  
-    this.router.navigate(['/awareness/s100008'])
+    this.router.navigate(['/teenagers/awareness/s100008'])
   }
   prev(){
-    this.router.navigate(['/awareness/s100006'])
+    this.router.navigate(['/teenagers/awareness/s100006'])
   }
 }

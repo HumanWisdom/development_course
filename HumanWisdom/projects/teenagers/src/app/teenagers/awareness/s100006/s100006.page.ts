@@ -18,7 +18,7 @@ export class S100006Page implements OnInit {
   title=""
   progName="teenagers"
 
-  toc="awareness/s100001"
+ toc="teenagers/awareness/s100001"
   transcriptPage="awareness/s100006t"
 
   userId:any
@@ -110,12 +110,12 @@ export class S100006Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-      this.router.navigate(['/awareness/s100007'])
+      this.router.navigate(['/teenagers/awareness/s100007'])
    
  
   }
   prev(){
-    this.router.navigate(['/awareness/s100005'])
+    this.router.navigate(['/teenagers/awareness/s100005'])
  
  
   }

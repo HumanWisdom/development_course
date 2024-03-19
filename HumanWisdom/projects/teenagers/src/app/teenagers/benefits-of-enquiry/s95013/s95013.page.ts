@@ -20,7 +20,7 @@ export class S95013Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/modules/benefits-of-enquiry/audios/1.4.mp3'
 
   transcriptPage="benefits-of-enquiry/s95013t"
-  toc="benefits-of-enquiry/s95001"
+  toc="teenagers/benefits-of-enquiry/s95001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S95013Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/benefits-of-enquiry/s95014'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95014'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S95013Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s95012'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95012'])
  
  
   }
