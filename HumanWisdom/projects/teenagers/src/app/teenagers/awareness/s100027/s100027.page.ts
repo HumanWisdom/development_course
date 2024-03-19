@@ -49,11 +49,11 @@ export class S100027Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/awareness/s100028'])
+    this.router.navigate(['/teenagers/awareness/s100028'])
 
   }
   prev(){
-    this.router.navigate(['/awareness/s100026'])
+    this.router.navigate(['/teenagers/awareness/s100026'])
 
 
 

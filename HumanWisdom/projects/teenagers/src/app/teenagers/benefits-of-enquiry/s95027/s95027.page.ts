@@ -48,11 +48,11 @@ export class S95027Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/benefits-of-enquiry/s95028'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95028'])
 
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s95021'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95021'])
 
   }
 

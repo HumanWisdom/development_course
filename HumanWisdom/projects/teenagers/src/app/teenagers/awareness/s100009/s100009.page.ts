@@ -24,7 +24,7 @@ export class S100009Page implements OnInit,OnDestroy {
   totalTime:any
   
   bookmark=0
-  toc="awareness/s100001"
+ toc="teenagers/awareness/s100001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -105,12 +105,12 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       })
-      this.router.navigate(['/awareness/s100010'])
+      this.router.navigate(['/teenagers/awareness/s100010'])
     
 
   }
   prev(){
-    this.router.navigate(['/awareness/s100008'])
+    this.router.navigate(['/teenagers/awareness/s100008'])
 
   }
   

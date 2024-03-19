@@ -15,7 +15,7 @@ export class S100002Page implements OnInit {
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
   bg = "red_pink_flat"
-  toc = "awareness/s100001"
+  toc="teenagers/awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -101,7 +101,7 @@ export class S100002Page implements OnInit {
   }
 
   goNext() {
-    this.router.navigate(['/awareness/s100003'])
+    this.router.navigate(['/teenagers/awareness/s100003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
