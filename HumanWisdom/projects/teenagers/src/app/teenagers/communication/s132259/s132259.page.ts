@@ -232,16 +232,16 @@ export class S132259Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/communication/s132260'])
+        this.router.navigate(['/teenagers/communication/s132260'])
       },
       () => {
-        this.router.navigate(['/communication/s132260'])
+        this.router.navigate(['/teenagers/communication/s132260'])
       })
   }
 
 
   prev() {
-    this.router.navigate(['/communication/s132258'])
+    this.router.navigate(['/teenagers/communication/s132258'])
 
   }
   ngOnDestroy() {

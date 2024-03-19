@@ -18,10 +18,10 @@ export class S118058Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="2/3"
-  link="/anger/s118059"
+  link="/teenagers/anger/s118059"
   name="#3  Responding to anger with wisdom"
   progressImg=""
-  toc="anger/s118001"
+  toc = "teenagers/anger/s118001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 
@@ -45,7 +45,7 @@ export class S118058Page implements OnInit {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
       
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Anger").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==118).Percentage)
      console.log(this.progressPercent)
     
     })

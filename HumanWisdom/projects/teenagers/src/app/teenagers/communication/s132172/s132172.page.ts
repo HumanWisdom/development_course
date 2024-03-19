@@ -20,7 +20,7 @@ export class S132172Page implements OnInit {
   imageLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/diagram/communication/diagram_01.svg"
 
   transcriptPage="communication/s132172t"
-  toc="communication/s132001"
+  toc="teenagers/communication/s132001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -97,7 +97,7 @@ export class S132172Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/communication/s132173'])
+        this.router.navigate(['/teenagers/communication/s132173'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -117,7 +117,7 @@ export class S132172Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/communication/s132171'])
+        this.router.navigate(['/teenagers/communication/s132171'])
      
      
       }

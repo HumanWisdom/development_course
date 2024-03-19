@@ -15,7 +15,7 @@ export class S111134Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w3"
   hint = "Annie was already frustrated with money being tight and being busy. If I am already frustrated, I am quicker to get angry and irritated."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111134Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111135'])
+        this.router.navigate(['/teenagers/comparison/s111135'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111135'])
+        this.router.navigate(['/teenagers/comparison/s111135'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111133'])
+    this.router.navigate(['/teenagers/comparison/s111133'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S111149Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w4"
   hint = "I’m more conscious of how my mind works, my understanding of envy, judgement, and stress has expanded. I hope understanding my feelings will transform my life."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111149Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111150'])
+        this.router.navigate(['/teenagers/comparison/s111150'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111150'])
+        this.router.navigate(['/teenagers/comparison/s111150'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111148'])
+    this.router.navigate(['/teenagers/comparison/s111148'])
   }
 
   ngOnDestroy() 

@@ -56,8 +56,8 @@ export class S135064Page implements OnInit {
     }
 
     this.questionA=this.qrList?.ListOfQueOpts
-    this.question=this.findQuestion(304).Question
-    this.optionList=this.findQuestion(304).optionList
+    this.question=this.findQuestion(628).Question
+    this.optionList=this.findQuestion(628).optionList
     console.log(this.optionList,this.question)
 
     if(this.saveUsername==false)
@@ -150,12 +150,12 @@ export class S135064Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/bullying/s135065'])
+    this.router.navigate(['/teenagers/bullying/s135065'])
   }
 
   prev()
   {
-    this.router.navigate(['/bullying/s135063'])
+    this.router.navigate(['/teenagers/bullying/s135063'])
   }
 
   sessionFetch(id, divid)

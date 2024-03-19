@@ -22,11 +22,20 @@ export class OnboardingService {
   isAdvert_hwp: boolean = false;
   public toastrService: ToastrService
   private isEnableHam = new BehaviorSubject<boolean>(false);
+  private isEnableTour = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient, handler: HttpBackend,public toastr: ToastrService) {
     // this.http = new HttpClient(handler);
     this.toastrService=this.toastr;
   }
 
+  setEnableTour(value: boolean): void {
+    this.isEnableTour.next(value);
+  }
+
+  getEnableTour(): Observable<boolean> {
+    return this.isEnableTour.asObservable();
+  }
 
   setDataRecievedState(value: boolean): void {
     this.isEnableHam.next(value);

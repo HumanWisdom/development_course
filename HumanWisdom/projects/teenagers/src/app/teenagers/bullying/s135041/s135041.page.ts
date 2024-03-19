@@ -14,7 +14,7 @@ export class S135041Page implements OnInit {
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w9"
   hint = " It may be in the playground where you do not want your friend to talk to others"
-  toc = "/bullying/s135001"
+  toc = "teenagers/bullying/s135001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S135041Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/bullying/s135042'])
+        this.router.navigate(['/teenagers/bullying/s135042'])
 
       },
       () => {
-        this.router.navigate(['/bullying/s135042'])
+        this.router.navigate(['/teenagers/bullying/s135042'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/bullying/s135040'])
+    this.router.navigate(['/teenagers/bullying/s135040'])
   }
 
   ngOnDestroy() 

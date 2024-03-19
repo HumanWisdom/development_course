@@ -32900,6 +32900,7 @@ body *
   height: 100px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 6px;
+  object-fit: cover;
 }
 
 .box_v3_04b img
@@ -32908,6 +32909,7 @@ body *
   height: 100px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 6px;
+  object-fit: cover;
 }
 
 .msrow > [class^="col-"]:nth-child(odd)

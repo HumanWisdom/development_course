@@ -95,7 +95,7 @@ export class S136025Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/bullying/s234'])
+        //this.router.navigate(['/teenagers/bullying/s234'])
       })
   }
 

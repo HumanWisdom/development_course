@@ -30,7 +30,7 @@ export class S95003Page implements OnInit,OnDestroy {
       ]
 
   transcriptPage="benefits-of-enquiry/s95003t"
-  toc="benefits-of-enquiry/s95001"
+  toc="teenagers/benefits-of-enquiry/s95001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -108,7 +108,7 @@ export class S95003Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/benefits-of-enquiry/s95004'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95004'])
  
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -130,7 +130,7 @@ export class S95003Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s95002'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95002'])
  
  
   }

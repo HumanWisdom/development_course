@@ -10,7 +10,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
-import { driver } from "driver.js";
+// import { driver } from "driver.js";
 // import "driver.js/dist/driver.css";
 
 @Component({
@@ -27,6 +27,8 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  @ViewChild('closetourmodal') closetourmodal: ElementRef;
+  @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
   public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
@@ -165,6 +167,8 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
+  public tourTotalIndex = 9;
+  public tourIndex = 1;
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -397,6 +401,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
@@ -422,7 +427,11 @@ export class AdultDashboardPage implements OnInit {
         this.enablecookiemodal.nativeElement.click();
       }, 1000)
     } else {
-      // this.enableDailypopup();
+      if(!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 100)
+      }
     }
 
 
@@ -521,74 +530,9 @@ export class AdultDashboardPage implements OnInit {
     }, 3000)
     localStorage.setItem("pageaction", 'next');
 
-    setTimeout(() => {
-      if (localStorage.getItem("first") && localStorage.getItem("first") === 'T') {
-        const driverObj = driver({
-          allowClose: false,
-          showButtons: [
-            'next',
-            'previous',
-            'close'
-          ],
-          steps: [
-            {
-              element: ".tour_dp",
-              popover: {
-                title: 'Daily practice',
-                description: 'Begin with short exercises to set you up for the day. Come back for new exercises everyday.',
-                side: "bottom"
-              }
-            },
-            {
-              element: ".tour_eatid",
-              popover: {
-                title: 'Change your topic of choice',
-                description: 'Choose from 8 broad topics to explore in depth.',
-                side: "bottom"
-              }
-            },
-            {
-              element: ".tour_intro",
-              popover: {
-                title: 'Introduction',
-                description: 'Learn how to make the most of the app and explore the key ideas',
-                side: "bottom"
-              }
-            },
-            {
-              element: ".tour_explore",
-              popover: {
-                title: 'Explore',
-                description: 'Explore more resources for personal growth and inspiration.',
-                side: "bottom"
-              }
-
-            },
-            {
-              element: ".tour_journal",
-              popover: {
-                title: 'Journal',
-                description: 'Your private journal with guided questions (visible only to you)',
-                side: "bottom"
-              }
-            },
-            {
-              element: ".tour_forum",
-              popover: {
-                title: 'Forum',
-                description: 'Join our community discussions. Ask a coach a question',
-                side: "top"
-              },
-            }
-          ]
-        });
-
-        driverObj.drive();
-      };
-      localStorage.setItem("first", 'F');
-
-    }, 1000)
-
+    // setTimeout(() =>{
+    //   this.enabletourmodal.nativeElement.click();
+    // }, 100)
     // const driverObj = driver({
     //   showProgress: true,
     //   steps: [
@@ -636,6 +580,131 @@ export class AdultDashboardPage implements OnInit {
 
   getplaystore(event) {
     SharedService.enablebanner = false
+  }
+
+  continueTour() {
+    this.closetourmodal.nativeElement.click();
+    const driver = window['driver'].js.driver;
+    let stepList = [
+      {
+        element: ".tour_hamburger",
+        popover: {
+          title: 'Menu',
+          description: 'Explore our menu for more options.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_notification",
+        popover: {
+          title: 'Notifications',
+          description: 'Find all your notifications here.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_fbn",
+        popover: {
+          title: 'Feel better now',
+          description: 'Find breathing exercises, meditations and videos to feel better now.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_dp",
+        popover: {
+          title: 'Daily practice',
+          description: 'Short exercises for better everyday living. Come back for new exercises everyday.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_eatid",
+        popover: {
+          title: 'Change your topic of choice',
+          description: 'Choose from 8 broad topics to explore in depth.',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_intro",
+        popover: {
+          title: 'Introduction',
+          description: 'Learn how to make the most of the app and explore the key ideas',
+          side: "bottom"
+        }
+      },
+      {
+        element: ".tour_explore",
+        popover: {
+          title: 'Explore',
+          description: 'Explore more resources for personal growth and inspiration.',
+          side: "top"
+        }
+      },
+      {
+        element: ".tour_journal",
+        popover: {
+          title: 'Journal',
+          description: 'Your private journal with guided questions (visible only to you)',
+          side: "top"
+        }
+      },
+      {
+        element: ".tour_forum",
+        popover: {
+          title: 'Forum',
+          description: 'Join our community discussions. Ask a coach a question',
+          side: "top"
+        },
+      }
+    ];
+
+
+
+    if(!this.isloggedIn) {
+      this.tourTotalIndex = 8;
+      stepList.splice(1, 1);
+    }
+
+    const driverObj = driver({
+      onNextClick:() => {
+        localStorage.setItem('firstTimeTour', 'T');
+        this.tourIndex++;
+        if(this.tourIndex > this.tourTotalIndex) {
+          document.body.classList.remove('overflow_hidden');
+          document.body.classList.add('overflow_auto');
+          this.services.setEnableTour(false);
+        }
+        driverObj.moveNext();
+      },
+      onPrevClick:() => {
+        this.tourIndex--;
+        driverObj.movePrevious();
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
+        this.services.setEnableTour(true);
+      },
+      allowClose: false,
+      showButtons: [
+        'next',
+        //'previous',
+        'close',
+      ],
+      nextBtnText: 'Next',
+      //prevBtnText: 'Prev',
+      doneBtnText: 'Done',
+      showProgress: true,
+      steps: stepList
+    });
+
+    driverObj.drive();
+
+    this.services.setEnableTour(true);
+
+    document.body.classList.remove('overflow_auto');
+    document.body.classList.add('overflow_hidden');
+
   }
 
   getUserPreference() {
@@ -751,6 +820,9 @@ export class AdultDashboardPage implements OnInit {
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
     this.closecookiemodal.nativeElement.click();
+    setTimeout(() =>{
+      this.enabletourmodal.nativeElement.click();
+    }, 100);
     // this.enableDailypopup();
   }
 

@@ -19,7 +19,7 @@ export class S100008tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/awareness/s100008"
-  toc="awareness/s100001"
+ toc="teenagers/awareness/s100001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -77,10 +77,10 @@ export class S100008tPage implements OnInit {
         
       })
  
-    this.router.navigate(['/awareness/s100009'])
+    this.router.navigate(['/teenagers/awareness/s100009'])
   }
   prev(){
-    this.router.navigate(['/awareness/s100006'])
+    this.router.navigate(['/teenagers/awareness/s100006'])
   }
 
 

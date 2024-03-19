@@ -104,7 +104,7 @@ export class S104015Page implements OnInit {
 
   goNext() 
   {
-    // this.router.navigate(['/comparison/s2'])
+    // this.router.navigate(['/teenagers/comparison/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
