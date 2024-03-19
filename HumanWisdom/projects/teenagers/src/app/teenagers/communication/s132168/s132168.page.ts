@@ -18,10 +18,10 @@ export class S132168Page implements OnInit
   userName:any
   progressPercent:any
   progressText="4/7"
-  link="/communication/s132169"
+  link="teenagers/communication/s132169"
   name="#5  Thinking patterns that affect communication"
   progressImg=""
-  toc="communication/s132001"
+  toc="teenagers/communication/s132001"
 
   constructor
   (
