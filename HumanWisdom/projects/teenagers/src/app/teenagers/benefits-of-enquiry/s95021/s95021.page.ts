@@ -15,7 +15,7 @@ export class S95021Page implements OnInit {
   bg = "green_yellow_w5"
   hint = ""
 
-  toc = "benefits-of-enquiry/s95001"
+  toc = "teenagers/benefits-of-enquiry/s95001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S95021Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/benefits-of-enquiry/s95027'])
+        this.router.navigate(['/teenagers/benefits-of-enquiry/s95027'])
 
       },
       () => {
-        this.router.navigate(['/benefits-of-enquiry/s95027'])
+        this.router.navigate(['/teenagers/benefits-of-enquiry/s95027'])
       })
 
 
@@ -116,7 +116,7 @@ export class S95021Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/benefits-of-enquiry/s95020'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95020'])
   }
 
   ngOnDestroy() {

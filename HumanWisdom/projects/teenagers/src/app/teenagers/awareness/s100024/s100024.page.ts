@@ -15,7 +15,7 @@ export class S100024Page implements OnInit {
   bg = "red_pink_w4"
   hint = ""
 
-  toc = "awareness/s100001"
+  toc="teenagers/awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S100024Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/awareness/s100025'])
+        this.router.navigate(['/teenagers/awareness/s100025'])
 
       },
       () => {
-        this.router.navigate(['/awareness/s100025'])
+        this.router.navigate(['/teenagers/awareness/s100025'])
       })
 
 
@@ -116,7 +116,7 @@ export class S100024Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/awareness/s100023'])
+    this.router.navigate(['/teenagers/awareness/s100023'])
   }
 
   ngOnDestroy() {

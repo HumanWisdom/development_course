@@ -8,7 +8,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 })
 export class S95028Page implements OnInit {
   
-  toc="benefits-of-enquiry/s95001"
+  toc="teenagers/benefits-of-enquiry/s95001"
   bg=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/37.png"
   moduleLink="/three-steps-enquiry"
