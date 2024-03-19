@@ -15,7 +15,7 @@ export class S118048Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w6"
   hint = "You could become quiet, or shout, or become violent"
-  toc = "/anger/s118001"
+  toc = "/teenagers/anger/s118001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S118048Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/anger/s118049'])
+        this.router.navigate(['/teenagers/anger/s118049'])
 
       },
       () => {
-        this.router.navigate(['/anger/s118049'])
+        this.router.navigate(['/teenagers/anger/s118049'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/anger/s118047'])
+    this.router.navigate(['/teenagers/anger/s118047'])
   }
 
   ngOnDestroy() 

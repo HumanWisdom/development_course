@@ -15,7 +15,7 @@ export class S118028Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w12"
   hint = "Usually we are not aware of them."
-  toc = "/anger/s118001"
+  toc = "/teenagers/anger/s118001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S118028Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/anger/s118029'])
+        this.router.navigate(['/teenagers/anger/s118029'])
 
       },
       () => {
-        this.router.navigate(['/anger/s118029'])
+        this.router.navigate(['/teenagers/anger/s118029'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/anger/s118027'])
+    this.router.navigate(['/teenagers/anger/s118027'])
   }
 
   ngOnDestroy() 

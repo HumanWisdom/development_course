@@ -13,7 +13,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S118104Page implements OnInit 
 {  
   
-  toc="anger/s118001"
+  toc="/teenagers/anger/s118001"
   moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/19.png"
   bg=""
   programType : ProgramType = ProgramType.Teenagers;

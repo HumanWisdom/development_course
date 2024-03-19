@@ -40,8 +40,8 @@ export class NavigationService {
   }
 
   navigateToBackLink() {
-    this.history?.pop();
     const url = this.getBackLink();
+    this.history?.pop();
     this.backClicked = true;
     if (url != null) {
       this.router.navigate([url]);
