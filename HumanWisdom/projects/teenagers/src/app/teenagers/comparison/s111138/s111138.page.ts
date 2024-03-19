@@ -15,7 +15,7 @@ export class S111138Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w7"
   hint = "Learn about the automatic process of comparison that operates in the background."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111138Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111139'])
+        this.router.navigate(['/teenagers/comparison/s111139'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111139'])
+        this.router.navigate(['/teenagers/comparison/s111139'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111137'])
+    this.router.navigate(['/teenagers/comparison/s111137'])
   }
 
   ngOnDestroy() 

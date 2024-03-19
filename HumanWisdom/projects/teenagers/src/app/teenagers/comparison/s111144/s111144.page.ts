@@ -17,10 +17,10 @@ export class S111144Page implements OnInit
   userName:any
   progressPercent:any
   progressText="7/8"
-  link="/comparison/s111145"
+  link="teenagers/comparison/s111145"
   name="#8 What’s your takeaway?"
   progressImg=""
-  toc="comparison/s111001"
+  toc="teenagers/comparison/s111001"
 
   constructor
   (

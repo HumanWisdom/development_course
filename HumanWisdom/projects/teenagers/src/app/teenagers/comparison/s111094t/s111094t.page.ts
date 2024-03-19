@@ -68,7 +68,7 @@ export class S111094tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/comparison/s111095'])
+    this.router.navigate(['/teenagers/comparison/s111095'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S111094tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/comparison/s111093'])
+    this.router.navigate(['/teenagers/comparison/s111093'])
   }
 
 }

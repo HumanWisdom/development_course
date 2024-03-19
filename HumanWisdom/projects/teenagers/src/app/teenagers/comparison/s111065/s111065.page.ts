@@ -15,7 +15,7 @@ export class S111065Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w8"
   hint = "It could make you feel vain, or bitter, and that’s okay - it’s just human. Explore the process of comparison that operates in the background."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111065Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111066'])
+        this.router.navigate(['/teenagers/comparison/s111066'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111066'])
+        this.router.navigate(['/teenagers/comparison/s111066'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111064'])
+    this.router.navigate(['/teenagers/comparison/s111064'])
   }
 
   ngOnDestroy() 
