@@ -17,7 +17,7 @@ export class S100012Page implements OnInit {
   audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.6.mp3'
   title=""
 
-  toc="awareness/s100001"
+ toc="teenagers/awareness/s100001"
   transcriptPage="awareness/s100012t"
 
   userId:any
@@ -110,12 +110,12 @@ export class S100012Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-      this.router.navigate(['/awareness/s100013'])
+      this.router.navigate(['/teenagers/awareness/s100013'])
    
  
   }
   prev(){
-    this.router.navigate(['/awareness/s100011'])
+    this.router.navigate(['/teenagers/awareness/s100011'])
  
  
   }

@@ -15,7 +15,7 @@ export class S95011Page implements OnInit {
   bg = "green_yellow_w5"
   hint = "This could include problems like stress, anxiety, mental health problems, relationship conflict, addiction, war and climate change."
 
-  toc = "benefits-of-enquiry/s95001"
+  toc = "teenagers/benefits-of-enquiry/s95001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -88,7 +88,7 @@ export class S95011Page implements OnInit {
     sessionStorage.setItem("r95011", JSON.stringify(e))
     this.r95011 = JSON.parse(sessionStorage.getItem("r95011"))
 
-    this.router.navigate(['/benefits-of-enquiry/s95012'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95012'])
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -103,7 +103,7 @@ export class S95011Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/benefits-of-enquiry/s95012'])
+        this.router.navigate(['/teenagers/benefits-of-enquiry/s95012'])
 
       },
       () => {
@@ -117,7 +117,7 @@ export class S95011Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/benefits-of-enquiry/s95010'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95010'])
   }
 
   ngOnDestroy() {

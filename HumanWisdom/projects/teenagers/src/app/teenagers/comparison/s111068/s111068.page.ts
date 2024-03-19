@@ -15,7 +15,7 @@ export class S111068Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w11"
   hint = "First- notice the different ways it works in your relationship, and then ask what is the intelligent way to respond"
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111068Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111069'])
+        this.router.navigate(['/teenagers/comparison/s111069'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111069'])
+        this.router.navigate(['/teenagers/comparison/s111069'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111067'])
+    this.router.navigate(['/teenagers/comparison/s111067'])
   }
 
   ngOnDestroy() 

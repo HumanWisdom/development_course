@@ -16,7 +16,7 @@ export class S95002Page implements OnInit, OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_flat"  
-  toc="benefits-of-enquiry/s95001"
+  toc="teenagers/benefits-of-enquiry/s95001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -85,7 +85,7 @@ export class S95002Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/benefits-of-enquiry/s95003'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95003'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -106,7 +106,7 @@ export class S95002Page implements OnInit, OnDestroy {
 
   
   goNext() {
-    this.router.navigate(['/benefits-of-enquiry/s95003'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

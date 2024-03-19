@@ -614,7 +614,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_dp",
         popover: {
           title: 'Daily practice',
-          description: 'Short exercises for better everyday living. Come back for new exercises everyday.',
+          description: 'Begin with short exercises to set you up for the day. Come back for new exercises everyday.',
           side: "bottom"
         }
       },
@@ -639,15 +639,16 @@ export class AdultDashboardPage implements OnInit {
         popover: {
           title: 'Explore',
           description: 'Explore more resources for personal growth and inspiration.',
-          side: "top"
+          side: "bottom"
         }
+
       },
       {
         element: ".tour_journal",
         popover: {
           title: 'Journal',
           description: 'Your private journal with guided questions (visible only to you)',
-          side: "top"
+          side: "bottom"
         }
       },
       {
@@ -659,7 +660,6 @@ export class AdultDashboardPage implements OnInit {
         },
       }
     ];
-
 
 
     if(!this.isloggedIn) {
@@ -689,12 +689,8 @@ export class AdultDashboardPage implements OnInit {
       showButtons: [
         'next',
         'previous',
-        'close',
+        'close'
       ],
-      nextBtnText: 'Next',
-      prevBtnText: 'Prev',
-      doneBtnText: 'Done',
-      showProgress: true,
       steps: stepList
     });
 

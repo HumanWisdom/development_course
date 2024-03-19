@@ -52,11 +52,11 @@ export class S111156Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/comparison/s111157'])
+    this.router.navigate(['/teenagers/comparison/s111157'])
   }
 
   prev()
   {
-    this.router.navigate(['/comparison/s111150'])
+    this.router.navigate(['/teenagers/comparison/s111150'])
   }
 }
