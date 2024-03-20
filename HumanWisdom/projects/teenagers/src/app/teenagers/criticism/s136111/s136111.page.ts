@@ -396,7 +396,7 @@ export class S136111Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136112'])
+    this.router.navigate(['/teenagers/criticism/s136112'])
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
@@ -426,7 +426,7 @@ export class S136111Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/criticism/s136110'])
+    this.router.navigate(['/teenagers/criticism/s136110'])
   }
 
 }

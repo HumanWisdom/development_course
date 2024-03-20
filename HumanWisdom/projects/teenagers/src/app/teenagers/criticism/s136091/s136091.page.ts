@@ -14,7 +14,7 @@ export class S136091Page implements OnInit {
   bg_cft = "bg_green"
   bg = "criticism_w3"
   hint = "You may feel you are not good enough, for example"
-  toc = "criticism/s136001"
+  toc = "teenagers/criticism/s136001"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -112,17 +112,17 @@ export class S136091Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136092'])
+        this.router.navigate(['/teenagers/criticism/s136092'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136092'])
+        this.router.navigate(['/teenagers/criticism/s136092'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136090'])
+    this.router.navigate(['/teenagers/criticism/s136090'])
   }
 
   ngOnDestroy() 
