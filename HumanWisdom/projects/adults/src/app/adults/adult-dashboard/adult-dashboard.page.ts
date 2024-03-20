@@ -685,6 +685,13 @@ export class AdultDashboardPage implements OnInit {
         document.body.classList.add('overflow_hidden');
         this.services.setEnableTour(true);
       },
+      onCloseClick:() => {
+        this.tourIndex = 1;
+        document.body.classList.remove('overflow_hidden');
+        document.body.classList.add('overflow_auto');
+        this.services.setEnableTour(false);
+        driverObj.destroy();
+      },
       allowClose: false,
       showButtons: [
         'next',
