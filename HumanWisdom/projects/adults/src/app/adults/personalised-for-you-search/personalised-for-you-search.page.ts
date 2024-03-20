@@ -162,21 +162,21 @@ export class PersonalisedForYouSearchPage implements OnInit {
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
-          side: "top"
+          side: "right"
         }
       }, {
         element: ".tour_find_inspiration",
         popover: {
           title: 'Find Inspiration',
           description: 'Explore our rich library of motivational content.',
-          side: "top"
+          side: "right"
         }
       }, {
         element: ".tour_exercises",
         popover: {
           title: 'Exercises',
           description: 'Tiny, guided exercises to improve your self-awareness',
-          side: "top"
+          side: "right"
         }
       }
     ];
@@ -200,9 +200,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
       allowClose: false,
       showButtons: [
         'next',
-        'previous',
+        //'previous',
         'close'
       ],
+      nextBtnText: 'Next',
+      //prevBtnText: 'Prev',
+      doneBtnText: 'Done',
+      showProgress: true,
       steps: stepList
     });
 
