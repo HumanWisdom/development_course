@@ -262,21 +262,21 @@ export class S130069Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/dealing-with-death/s130070'])
+          this.router.navigate(['/teenagers/dealing-with-death/s130070'])
         },
         () => {
-          this.router.navigate(['/dealing-with-death/s130070'])
+          this.router.navigate(['/teenagers/dealing-with-death/s130070'])
         })
     }
     else 
     {
-      this.router.navigate(['/dealing-with-death/s130070'])
+      this.router.navigate(['/teenagers/dealing-with-death/s130070'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/dealing-with-death/s130068'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130068'])
   }
 
   ngOnDestroy() 

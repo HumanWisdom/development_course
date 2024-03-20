@@ -19,7 +19,7 @@ export class S130024tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/dealing-with-death/s130024"
-  toc="/dealing-with-death/s130001"
+  toc="teenagers/dealing-with-death/s130001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -68,7 +68,7 @@ export class S130024tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/dealing-with-death/s130025'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130025'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S130024tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/dealing-with-death/s130023'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130023'])
   }
 
 }
