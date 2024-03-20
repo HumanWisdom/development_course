@@ -713,7 +713,11 @@ export class LoginSignupPage implements OnInit {
           let option = localStorage.getItem("introoption");
           let giftwisdom = localStorage.getItem("giftwisdom");
           const url = SharedService.UrlToRedirect;
-          if (url != null) {
+          if(url == '/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+            this.router.navigate(['adults/adult-dashboard']);
+            return;
+          }
+         else if (url != null) {
             SharedService.UrlToRedirect = null;
             this.router.navigate([url]);
           }
@@ -724,7 +728,7 @@ export class LoginSignupPage implements OnInit {
           } else {
             if (pers && persub && pers === "T") {
               localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/onboarding/payment"], {
+              this.router.navigate(["/onboarding/payment"],{
                 state: { quan: "1", plan: persub },
               });
             }

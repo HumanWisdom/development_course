@@ -31,15 +31,14 @@ export class TocHeaderComponent implements OnInit {
 
   goBack(){
     var url = this.navigationService.navigateToBackLink();
-   if(url==null){
-    url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
-    if(url && url!=null && url != 'null'){
-      this.router.navigate([url]);
-    }else{
-      this.location.back();
-    }
-   }
-   this.location.back();
+    if(url==null){
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if(url && url!=null && url != 'null'){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+     }
   }
 
   share(){
