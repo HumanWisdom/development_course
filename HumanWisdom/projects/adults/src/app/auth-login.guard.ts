@@ -32,6 +32,7 @@ export class authLoginGuard implements CanActivate, OnInit {
     let subscribepage = localStorage.getItem('subscribepage');
     let giftwisdom = localStorage.getItem("giftwisdom");
     let fromlanding = localStorage.getItem("fromlandingpage");
+    let firstTimeTour = localStorage.getItem("firstTimeTour");
     if (localStorage.getItem('acceptcookie') === 'T') {
       cookie = true;
     }
@@ -49,6 +50,10 @@ export class authLoginGuard implements CanActivate, OnInit {
     }
     else {
       localStorage.clear()
+    }
+
+    if(firstTimeTour === 'T') {
+      localStorage.setItem('firstTimeTour', 'T');
     }
 
     if (getalertdate !== null) {

@@ -14,7 +14,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S105137Page implements OnInit 
 {  
   
-  toc="conditioning/s105001"
+   toc = "teenagers/conditioning/s105001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/07.png"
   bg=""
   moduleLink="/comparison"

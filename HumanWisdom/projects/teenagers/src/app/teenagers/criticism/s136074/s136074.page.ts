@@ -15,7 +15,7 @@ export class S136074Page implements OnInit {
   bg = "criticism_w3"
 
   hint = "Because my life is not going the way I want, and I blame myself for that "
-  toc = "criticism/s136001"
+  toc = "teenagers/criticism/s136001"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -113,17 +113,17 @@ export class S136074Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136075'])
+        this.router.navigate(['/teenagers/criticism/s136075'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136075'])
+        this.router.navigate(['/teenagers/criticism/s136075'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136073'])
+    this.router.navigate(['/teenagers/criticism/s136073'])
   }
 
   ngOnDestroy() 

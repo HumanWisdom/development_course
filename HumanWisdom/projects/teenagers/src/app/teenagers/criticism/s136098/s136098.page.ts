@@ -18,7 +18,7 @@ export class S136098Page implements OnInit {
   audioLink=this.mediaAudio+'/Criticism/audios/criticism+5.1.mp3'  
   transcriptPage="/criticism/s136098t"
 
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
@@ -85,7 +85,7 @@ export class S136098Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136099'])
+    this.router.navigate(['/teenagers/criticism/s136099'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -101,7 +101,7 @@ export class S136098Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/criticism/s136097'])
+    this.router.navigate(['/teenagers/criticism/s136097'])
   }
 
   ngOnDestroy() {

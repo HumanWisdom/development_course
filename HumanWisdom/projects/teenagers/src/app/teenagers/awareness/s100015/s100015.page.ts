@@ -20,7 +20,7 @@ export class S100015Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.7.mp3'
 
   transcriptPage="awareness/s100015t"
-  toc="awareness/s100001"
+ toc="teenagers/awareness/s100001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -93,7 +93,7 @@ export class S100015Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/awareness/s100016'])
+    this.router.navigate(['/teenagers/awareness/s100016'])
  
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -115,7 +115,7 @@ export class S100015Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/awareness/s100014'])
+    this.router.navigate(['/teenagers/awareness/s100014'])
  
  
   }

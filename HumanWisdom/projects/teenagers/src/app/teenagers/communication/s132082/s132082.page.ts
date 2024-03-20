@@ -15,7 +15,7 @@ export class S132082Page implements OnInit {
   bg = "blue_w3"
   hint = " This happens all the time when we are having an argument, for example "
 
-  toc = "communication/s132001"
+  toc = "teenagers/communication/s132001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S132082Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/communication/s132083'])
+        this.router.navigate(['/teenagers/communication/s132083'])
 
       },
       () => {
-        this.router.navigate(['/communication/s132083'])
+        this.router.navigate(['/teenagers/communication/s132083'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/communication/s132081'])
+    this.router.navigate(['/teenagers/communication/s132081'])
   }
 
   ngOnDestroy() 

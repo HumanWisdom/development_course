@@ -150,12 +150,12 @@ export class S135059Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/bullying/s135060'])
+    this.router.navigate(['/teenagers/bullying/s135060'])
   }
 
   prev()
   {
-    this.router.navigate(['/bullying/s135058'])
+    this.router.navigate(['/teenagers/bullying/s135058'])
   }
 
   sessionFetch(id, divid)

@@ -15,7 +15,7 @@ export class S132206Page implements OnInit {
   bg = "blue_w3"
   hint = " It could be you don’t like something about a person, but you are afraid you may lose your friendship, so you say nothing, but you grow apart."
 
-  toc = "communication/s132001"
+  toc = "teenagers/communication/s132001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S132206Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/communication/s132207'])
+        this.router.navigate(['/teenagers/communication/s132207'])
 
       },
       () => {
-        this.router.navigate(['/communication/s132207'])
+        this.router.navigate(['/teenagers/communication/s132207'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/communication/s132205'])
+    this.router.navigate(['/teenagers/communication/s132205'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S111122Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w11"
   hint = "Just as I can look at a tree without naming it, I can look at a feeling in the same way. For example, I notice the feeling of envy and then all my thoughts that arise until they quieten down, and I am just left with that feeling. I stay with it and find it goes away."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111122Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111123'])
+        this.router.navigate(['/teenagers/comparison/s111123'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111123'])
+        this.router.navigate(['/teenagers/comparison/s111123'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111121'])
+    this.router.navigate(['/teenagers/comparison/s111121'])
   }
 
   ngOnDestroy() 

@@ -18,10 +18,10 @@ export class S135031Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/3"
-  link="/bullying/s135032"
+  link="teenagers/bullying/s135032"
   name="#2  Why do people bully others?"
   progressImg=""
-  toc="bullying/s135001"
+  toc="teenagers/bullying/s135001"
 
   constructor
   (

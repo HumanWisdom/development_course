@@ -241,21 +241,21 @@ export class S111154Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/comparison/s111155'])
+          this.router.navigate(['/teenagers/comparison/s111155'])
         },
         () => {
-          this.router.navigate(['/comparison/s111155'])
+          this.router.navigate(['/teenagers/comparison/s111155'])
         })
     }
     else 
     {
-      this.router.navigate(['/comparison/s111155'])
+      this.router.navigate(['/teenagers/comparison/s111155'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/comparison/s111153'])
+    this.router.navigate(['/teenagers/comparison/s111153'])
   }
 
   ngOnDestroy() 

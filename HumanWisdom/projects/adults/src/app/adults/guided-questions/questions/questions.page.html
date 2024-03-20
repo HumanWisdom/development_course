@@ -114,7 +114,7 @@
                           required="required" 
                           class="cta1 form-control" 
                           [(ngModel)]="item.Response"
-                          placeholder="Tap to answer" 
+                          placeholder="{{item.hint}}"
                           (blur)="SaveAnswers(item)" 
                           maxlength="256"
                           rows="10">

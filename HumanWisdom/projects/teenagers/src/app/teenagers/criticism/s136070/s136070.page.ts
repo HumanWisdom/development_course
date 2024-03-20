@@ -18,10 +18,10 @@ export class S136070Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="3/6"
-  link="/criticism/s136071"
+  link="teenagers/criticism/s136071"
   name="#4  Why are we critical of ourselves?"
   progressImg=""
-  toc="criticism/s136001"
+  toc="teenagers/criticism/s136001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 

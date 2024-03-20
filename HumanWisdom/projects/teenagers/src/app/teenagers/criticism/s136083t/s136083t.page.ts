@@ -19,7 +19,7 @@ export class S136083tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/criticism/s136083"
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -70,7 +70,7 @@ export class S136083tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/criticism/s136084'])
+    this.router.navigate(['/teenagers/criticism/s136084'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -84,7 +84,7 @@ export class S136083tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/criticism/s136082'])
+    this.router.navigate(['/teenagers/criticism/s136082'])
   }
 
 }

@@ -14,7 +14,7 @@ export class S100013Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w11"
 
-  toc = "awareness/s100001"
+  toc="teenagers/awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -87,7 +87,7 @@ export class S100013Page implements OnInit {
     sessionStorage.setItem("r100013", JSON.stringify(e))
     this.r100013 = JSON.parse(sessionStorage.getItem("r100013"))
 
-    this.router.navigate(['/awareness/s100014'])
+    this.router.navigate(['/teenagers/awareness/s100014'])
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -103,7 +103,7 @@ export class S100013Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/awareness/s100014'])
+        this.router.navigate(['/teenagers/awareness/s100014'])
 
       },
       () => {
@@ -117,7 +117,7 @@ export class S100013Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/awareness/s100012'])
+    this.router.navigate(['/teenagers/awareness/s100012'])
   }
 
   ngOnDestroy() {

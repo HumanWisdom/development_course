@@ -17,7 +17,7 @@ export class S136063Page implements OnInit {
   mediaAudio = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/Criticism/audios/criticism+3.8.mp3'  
 
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
@@ -88,7 +88,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136064'])
+    this.router.navigate(['/teenagers/criticism/s136064'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/criticism/s136062'])
+    this.router.navigate(['/teenagers/criticism/s136062'])
 
 
   }
