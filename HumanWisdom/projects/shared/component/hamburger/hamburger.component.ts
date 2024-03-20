@@ -337,9 +337,13 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
             this.initialize();
             let acceptCookie = localStorage.getItem("acceptcookie");
             let firstTimeTour = localStorage.getItem("firstTimeTour");
+            let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
             localStorage.clear();
             if(firstTimeTour === 'T') {
               localStorage.setItem('firstTimeTour', 'T');
+            }
+            if(firstTimeSearchTour === 'T') {
+              localStorage.setItem('firstTimeSearchTour', 'T');
             }
             localStorage.setItem("isloggedin", "F");
             localStorage.setItem("guest", "T");

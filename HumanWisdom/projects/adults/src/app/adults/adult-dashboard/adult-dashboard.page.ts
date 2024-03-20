@@ -688,11 +688,11 @@ export class AdultDashboardPage implements OnInit {
       allowClose: false,
       showButtons: [
         'next',
-        'previous',
+        //'previous',
         'close',
       ],
       nextBtnText: 'Next',
-      prevBtnText: 'Prev',
+      //prevBtnText: 'Prev',
       doneBtnText: 'Done',
       showProgress: true,
       steps: stepList

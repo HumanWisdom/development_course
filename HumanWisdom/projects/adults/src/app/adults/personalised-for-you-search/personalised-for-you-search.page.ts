@@ -19,12 +19,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-  isIos=false;
+  isIos = false;
   searchResult = [];
   personalisedforyou = []
 
   indList = []
-  isEnableHam=true;
+  isEnableHam = true;
   isloggedIn = false;
   searchinp = '';
   public user: any
@@ -77,6 +77,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bullyingP: any
   public externalapprovalP: any;
   public exerciseNo: any;
+  public tourTotalIndex = 3;
+  public tourIndex = 1;
+
   //static progress mapping
   constructor(private route: Router, private aservice: AdultsService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
@@ -118,14 +121,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
       'iPhone',
       'iPod'
     ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
   ngOnInit() {
-    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
+    if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
-     }
+    }
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
@@ -144,8 +147,76 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.GetWisdomScreens();
     this.getUserPreference();
-    this.isSubscribe=SharedService.isSubscriber();
+    this.isSubscribe = SharedService.isSubscriber();
+
+    if(!localStorage.getItem('firstTimeSearchTour')) {
+      this.continueTour();
+    }
   }
+
+  continueTour() {
+    const driver = window['driver'].js.driver;
+    let stepList = [
+      {
+        element: ".tour_pathway",
+        popover: {
+          title: 'PATHWAY',
+          description: 'A step-by-step guide for a happier life',
+          side: "right"
+        }
+      }, {
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
+        }
+      }, {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
+        }
+      }
+    ];
+
+    const driverObj = driver({
+      onNextClick: () => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+        this.tourIndex++;
+        if (this.tourIndex > this.tourTotalIndex) {
+          document.body.classList.remove('overflow_hidden');
+          document.body.classList.add('overflow_auto');
+        }
+        driverObj.moveNext();
+      },
+      onPrevClick: () => {
+        this.tourIndex--;
+        driverObj.movePrevious();
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
+      },
+      allowClose: false,
+      showButtons: [
+        'next',
+        //'previous',
+        'close'
+      ],
+      nextBtnText: 'Next',
+      //prevBtnText: 'Prev',
+      doneBtnText: 'Done',
+      showProgress: true,
+      steps: stepList
+    });
+
+    driverObj.drive();
+
+    document.body.classList.remove('overflow_auto');
+    document.body.classList.add('overflow_hidden');
+
+  }
+
 
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
@@ -998,45 +1069,45 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   RouteToWisdomExercise(exercise) {
-   
-      this.logeventservice.logEvent("click_Awareness_exercise");
-   /*  
-    var weR = exercise?.ScreenNo;
-    localStorage.setItem("moduleId", JSON.stringify(75))
-    this.aservice.clickModule(75, this.userId)
-      .subscribe(res => {
-        console.log(res)
-        this.qrList = res
-        weR = "s" + res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("weR", weR)
-        this.mediaPercent = parseInt(res.MediaPercent)
-        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
-        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(this.qrList)) 
-   
-      },
-        error => {
-          console.log(error)
-        });  */
 
-        if (exercise != null) {
-          this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
-            state: {
-              day: exercise.day,
-            }
-          });
-        } else {
-          this.router.navigate(['adults/wisdom-exercise/']);
+    this.logeventservice.logEvent("click_Awareness_exercise");
+    /*
+     var weR = exercise?.ScreenNo;
+     localStorage.setItem("moduleId", JSON.stringify(75))
+     this.aservice.clickModule(75, this.userId)
+       .subscribe(res => {
+         console.log(res)
+         this.qrList = res
+         weR = "s" + res.lastVisitedScreen
+         // continue where you left
+         if (res.lastVisitedScreen === '') {
+           localStorage.setItem("lastvisited", 'F')
+         }
+         else {
+           localStorage.setItem("lastvisited", 'T')
+         }
+         // /continue where you left
+         sessionStorage.setItem("weR", weR)
+         this.mediaPercent = parseInt(res.MediaPercent)
+         this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+         localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+         localStorage.setItem("qrList", JSON.stringify(this.qrList))
+
+       },
+         error => {
+           console.log(error)
+         });  */
+
+    if (exercise != null) {
+      this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+        state: {
+          day: exercise.day,
         }
+      });
+    } else {
+      this.router.navigate(['adults/wisdom-exercise/']);
+    }
   }
   navigateToPathway(url) {
     this.logeventservice.logEvent("click_" + url.split("/")[3]);
@@ -1045,19 +1116,19 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.router.navigate([url]);
   }
 
-  rightToJournal(journal){
-    if(journal) {
+  rightToJournal(journal) {
+    if (journal) {
       this.router.navigate(["/adults/journal"]);
       this.logeventservice.logEvent("click_journal");
-    }else {
-      this.router.navigate(["/adults/journal"], { queryParams: {isGuided: true}});
+    } else {
+      this.router.navigate(["/adults/journal"], { queryParams: { isGuided: true } });
       this.logeventservice.logEvent("click_guided_questions");
     }
-   }
+  }
 
-   logEvent(event, url){
+  logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
-   }
+  }
 
 }

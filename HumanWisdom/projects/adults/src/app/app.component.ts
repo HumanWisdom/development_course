@@ -306,7 +306,8 @@ export class AppComponent implements OnDestroy {
 
     let remember = localStorage.getItem("remember")
     let first = localStorage.getItem("firsttime")
-    let firstTimeTour = localStorage.getItem("firstTimeTour")
+    let firstTimeTour = localStorage.getItem("firstTimeTour");
+    let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
     if (remember === 'F' && first === 'T') {
       localStorage.clear()
       localStorage.setItem('guest', 'T');
@@ -314,6 +315,9 @@ export class AppComponent implements OnDestroy {
       localStorage.setItem('acceptcookie', 'T');
       if(firstTimeTour === 'T') {
         localStorage.setItem('firstTimeTour', 'T');
+      }
+      if(firstTimeSearchTour === 'T') {
+        localStorage.setItem('firstTimeSearchTour', 'T');
       }
       this.router.navigate(['/adults/adult-dashboard'])
     }
