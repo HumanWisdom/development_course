@@ -15,7 +15,7 @@ export class S136026Page implements OnInit {
   bg = "criticism_w2"
   hint = "What is going on in your thinking when you are critical of others?"
 
-  toc = "/criticism/s136001"
+  toc = "teenagers/criticism/s136001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S136026Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136027'])
+        this.router.navigate(['/teenagers/criticism/s136027'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136027'])
+        this.router.navigate(['/teenagers/criticism/s136027'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136025'])
+    this.router.navigate(['/teenagers/criticism/s136025'])
   }
 
   ngOnDestroy() 

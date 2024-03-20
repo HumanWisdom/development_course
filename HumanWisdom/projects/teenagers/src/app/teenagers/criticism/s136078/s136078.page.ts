@@ -13,7 +13,7 @@ export class S136078Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="criticism_w7" 
-  toc="criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -85,7 +85,7 @@ export class S136078Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136079'])
+    this.router.navigate(['/teenagers/criticism/s136079'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -105,7 +105,7 @@ export class S136078Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/criticism/s136077'])
+    this.router.navigate(['/teenagers/criticism/s136077'])
   }
 
   ngOnDestroy()

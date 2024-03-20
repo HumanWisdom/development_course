@@ -19,7 +19,7 @@ export class S136010Page implements OnInit {
   title="Impact of long term criticism"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/criticism/criticism_02.jpg"
 
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   
@@ -92,7 +92,7 @@ export class S136010Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136011'])
+    this.router.navigate(['/teenagers/criticism/s136011'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S136010Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/criticism/s136009'])
+    this.router.navigate(['/teenagers/criticism/s136009'])
   }
 
   ngOnDestroy()

@@ -246,15 +246,15 @@ export class S136112Page implements OnInit {
       },
         error => {
           console.log(error)
-          this.router.navigate(['/criticism/s136113'])
+          this.router.navigate(['/teenagers/criticism/s136113'])
         },
         () => {
-          this.router.navigate(['/criticism/s136113'])
+          this.router.navigate(['/teenagers/criticism/s136113'])
         })
     }
 
     else {
-      this.router.navigate(['/criticism/s136113'])
+      this.router.navigate(['/teenagers/criticism/s136113'])
 
     }
 
@@ -264,7 +264,7 @@ export class S136112Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/criticism/s136111'])
+    this.router.navigate(['/teenagers/criticism/s136111'])
   }
 
   ngOnDestroy() {
