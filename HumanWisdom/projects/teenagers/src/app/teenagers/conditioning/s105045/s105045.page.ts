@@ -18,10 +18,10 @@ export class S105045Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/4"
-  link="/conditioning/s105046"
+  link="teenagers/conditioning/s105046"
   name="#2  Effects of conditioning"
   progressImg=""
-  toc="conditioning/s105001"
+   toc = "teenagers/conditioning/s105001"
 
   constructor
   (
