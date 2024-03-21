@@ -16,7 +16,7 @@ export class S120057Page implements OnInit
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
   hint = " It may be you want someone to think you are special to them, or you want to be the head of your school team, or want others to praise you.  "
-  toc = "/emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S120057Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120058'])
+        this.router.navigate(['/teenagers/emotional-needs/s120058'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120058'])
+        this.router.navigate(['/teenagers/emotional-needs/s120058'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120056'])
+    this.router.navigate(['/teenagers/emotional-needs/s120056'])
   }
 
   ngOnDestroy() 

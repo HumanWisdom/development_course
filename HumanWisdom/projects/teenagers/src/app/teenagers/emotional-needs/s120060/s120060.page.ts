@@ -16,7 +16,7 @@ export class S120060Page implements OnInit
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
   hint = "  It could make you want to earn more money, or be tied to a belief system. "
-  toc = "/emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S120060Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120061'])
+        this.router.navigate(['/teenagers/emotional-needs/s120061'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120061'])
+        this.router.navigate(['/teenagers/emotional-needs/s120061'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120059'])
+    this.router.navigate(['/teenagers/emotional-needs/s120059'])
   }
 
   ngOnDestroy() 
