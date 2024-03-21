@@ -4206,6 +4206,11 @@ export class AdultDashboardPage implements OnInit {
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
     }
+    else if (res['FeatureType'] === "UPCOMING EVENT") {
+      this.logeventservice.logEvent("click_upcoming_event");
+      sid = res['Url'].split('eid=')[1];
+      this.router.navigate(['/events/event'], { queryParams: { eid: `${sid}` } })
+    }
     else if (res['FeatureType'] === "PODCAST") {
       this.logeventservice.logEvent("click_podcasts");
       this.router.navigate([res['Url']]);
