@@ -14,7 +14,7 @@ export class S156017Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w2"
   hint = "you may not know any, or you may think they are weak, or just sad."
-  toc = "/dealing-with-depression/s156001"
+  toc = "teenagers/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -108,17 +108,17 @@ export class S156017Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-depression/s156018'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156018'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-depression/s156018'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156018'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-depression/s156016'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156016'])
   }
 
   ngOnDestroy() 

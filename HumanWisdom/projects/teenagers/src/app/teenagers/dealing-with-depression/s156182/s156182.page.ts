@@ -18,10 +18,10 @@ export class S156182Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="5/9"
-  link="/dealing-with-depression/s156183"
+  link="/teenagers/dealing-with-depression/s156183"
   name="#6 Phase 4 -Understand your mind"
   progressImg=""
-  toc="dealing-with-depression/s156001"
+  toc="teenagers/dealing-with-depression/s156001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 
