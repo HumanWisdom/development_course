@@ -586,4 +586,8 @@ export class AdultsService {
   GetPodcastList(): Observable<any> {
     return this.http.get(this.path + '/GetPodcastsListing');
   }
+  GetUsedAffDiscCode(){
+    return this.http.get(this.path + '/GetUsedAffDiscCode');
+  }
+
 }
