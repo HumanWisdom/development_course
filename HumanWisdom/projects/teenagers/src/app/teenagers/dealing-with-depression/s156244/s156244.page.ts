@@ -44,12 +44,12 @@ export class S156244Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/dealing-with-depression/s156245'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156245'])
   }
 
   prev()
   {
-    this.router.navigate(['/dealing-with-depression/s156243'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156243'])
   }
 
 }
