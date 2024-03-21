@@ -102,14 +102,14 @@ export class S118016Page implements OnInit
     console.log(this.reflection)
   }
 
-  submitProgress(e) 
+  submitProgress() 
   {
-    console.log("returned response", e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r118016", JSON.stringify(e))
+   // sessionStorage.setItem("r118016", this.r118016)
     this.r118016 = sessionStorage.getItem("r118016")
-    console.log(this.r118016)
+ //   console.log(this.r118016)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
