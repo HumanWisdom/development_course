@@ -14,7 +14,7 @@ export class S136100Page implements OnInit {
   bg_cft = "bg_green"
   bg = "criticism_w3"
   hint = " Because Beth was critical of her role as a chef "
-  toc = "/criticism/s136001"
+  toc = "teenagers/criticism/s136001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -111,17 +111,17 @@ export class S136100Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136101'])
+        this.router.navigate(['/teenagers/criticism/s136101'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136101'])
+        this.router.navigate(['/teenagers/criticism/s136101'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136099'])
+    this.router.navigate(['/teenagers/criticism/s136099'])
   }
 
   ngOnDestroy() 

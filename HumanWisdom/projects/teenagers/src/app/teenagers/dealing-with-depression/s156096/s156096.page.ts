@@ -19,7 +19,7 @@ export class S156096Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/teenagers/modules/dealing-with-depression/audios/1.8.mp3'
 
   transcriptPage="dealing-with-depression/s156096t"
-  toc="dealing-with-depression/s156001"
+  toc="teenagers/dealing-with-depression/s156001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -90,7 +90,7 @@ export class S156096Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/dealing-with-depression/s156097'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156097'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +108,7 @@ export class S156096Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/dealing-with-depression/s156095'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156095'])
   }
 
   ngOnDestroy()

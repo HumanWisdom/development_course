@@ -14,7 +14,7 @@ export class S136044Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="criticism_flat" 
-  toc="criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -86,7 +86,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime
-    this.router.navigate(['/criticism/s136045'])
+    this.router.navigate(['/teenagers/criticism/s136045'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

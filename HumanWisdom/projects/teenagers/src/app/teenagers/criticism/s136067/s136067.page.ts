@@ -13,7 +13,7 @@ export class S136067Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="criticism_w10" 
-  toc="criticism/s136001"
+  toc="teenagers/criticism/s136001"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -100,16 +100,16 @@ export class S136067Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/criticism/s136066'])
+    this.router.navigate(['/teenagers/criticism/s136066'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/criticism/s136067'])
+    // this.router.navigate(['/teenagers/criticism/s136067'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/criticism/s136068'])
+    this.router.navigate(['/teenagers/criticism/s136068'])
   }
 
   ngOnDestroy() 

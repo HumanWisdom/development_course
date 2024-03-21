@@ -23,12 +23,12 @@ export class TnCloseComponent implements OnInit {
       this.location.back()
     } else {
       if (SharedService.ProgramId == ProgramType.Teenagers) {
-        this.router.navigate(['/teenager-dashboard'])
+        this.router.navigate(['/teenagers/teenager-dashboard'])
       }
       else{
       this.router.navigate(['/adults/adult-dashboard'])
       }
-      this.router.navigate(['/adults/search'])
+      this.location.back()
     }
   }
 

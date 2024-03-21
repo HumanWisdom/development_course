@@ -14,7 +14,7 @@ export class S136031Page implements OnInit {
   bg = "criticism_w7"
   hint = "It's the nature of the conditioned mind to always think its right"
 
-  toc = "/criticism/s136001"
+  toc = "teenagers/criticism/s136001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -111,17 +111,17 @@ export class S136031Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136032'])
+        this.router.navigate(['/teenagers/criticism/s136032'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136032'])
+        this.router.navigate(['/teenagers/criticism/s136032'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136030'])
+    this.router.navigate(['/teenagers/criticism/s136030'])
   }
 
   ngOnDestroy() 

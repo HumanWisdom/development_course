@@ -18,10 +18,10 @@ export class S130037Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/dealing-with-death/s130038"
+  link="teenagers/dealing-with-death/s130038"
   name="#2  Living with an awareness of death, helps us celebrate life"
   progressImg=""
-  toc="dealing-with-death/s130001"
+  toc="teenagers/dealing-with-death/s130001"
 
   constructor
   (

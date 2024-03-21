@@ -27,7 +27,7 @@ export class S105136p1Page implements OnInit {
   startTime: any
   endTime: any
   totalTime: any
-  toc = "/conditioning/s105001"
+  toc = "teenagers/conditioning/s105001"
   bookmark = 0
    path = setTimeout(() => {
     return this.router.url;
@@ -82,7 +82,7 @@ export class S105136p1Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/conditioning/s105137'])
+    this.router.navigate(['/teenagers/conditioning/s105137'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -101,7 +101,7 @@ export class S105136p1Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/conditioning/s105001'])
+    this.router.navigate(['/teenagers/conditioning/s105001'])
   }
 
   ngOnDestroy() {

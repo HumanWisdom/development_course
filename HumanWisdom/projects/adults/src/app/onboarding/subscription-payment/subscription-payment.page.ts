@@ -213,7 +213,9 @@ export class SubscriptionPaymentPage implements OnInit {
                       this.content = 'Your Payment Is Successfully Submitted';
                       this.enableAlert = true;
                       // alert('Your Payment Is Successfully Submitted');
-                      this.router.navigate(['/onboarding/myprogram'])
+                      setTimeout(() => {
+                        this.router.navigate(['/onboarding/myprogram'])
+                      }, 800);
                     }
                   }
                 });
@@ -235,7 +237,9 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.content = 'Your Payment Is Successfully Submitted';
                   this.enableAlert = true;
                   // alert('Your Payment Is Successfully Submitted');
-                  this.router.navigate(['/onboarding/myprogram'])
+                  setTimeout(() => {
+                    this.router.navigate(['/onboarding/myprogram'])
+                  }, 800);
                 }
 
               }
@@ -308,8 +312,10 @@ export class SubscriptionPaymentPage implements OnInit {
               } else {
                 this.content = 'Your Payment Is Successfully Submitted';
                 this.enableAlert = true;
+                setTimeout(() => {
+                  this.router.navigate(['/onboarding/myprogram'])
+                }, 800);
                 // alert('Your Payment Is Successfully Submitted');
-                this.router.navigate(['/onboarding/myprogram'])
               }
             }
           });

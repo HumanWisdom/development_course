@@ -25,18 +25,8 @@ export class IndexPage implements OnInit {
   }
 
   goBack() {
-    if((this.service.previousUrl.length>0 && this.service.previousUrl.includes("/pathway/")) || (this.service.previousUrl.length==0))
-    {
-      this.router.navigate(['/adults/search'])
-    }
-      else
-    {
       this.location.back()
-
-    }
-
-
-  }
+   }
 
   logEvent(event, url){
     this.logeventservice.logEvent(event);
