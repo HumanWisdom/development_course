@@ -114,11 +114,11 @@ export class S126062Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-esteem/s126063'])
+        this.router.navigate(['/self-esteem/s126068'])
 
       },
       () => {
-        this.router.navigate(['/self-esteem/s126063'])
+        this.router.navigate(['/self-esteem/s126068'])
       })
   }
 

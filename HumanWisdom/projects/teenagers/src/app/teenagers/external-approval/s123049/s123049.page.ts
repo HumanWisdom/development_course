@@ -18,10 +18,10 @@ export class S123049Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/3"
-  link="/external-approval/s123050"
+  link="/teenagers/external-approval/s123050"
   name="#2 Four ways external-approval impacts our life"
   progressImg=""
-  toc="external-approval/s123001"
+  toc="teenagers/external-approval/s123001"
 
   constructor
   (

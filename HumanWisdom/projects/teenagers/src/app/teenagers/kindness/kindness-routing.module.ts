@@ -140,6 +140,7 @@ import { S137128Page } from './s137128/s137128.page';
 import { S137129Page } from './s137129/s137129.page';
 import { S137130Page } from './s137130/s137130.page';
 import { S137131Page } from './s137131/s137131.page';
+import { S137131p1Page } from './s137131p1/s137131p1.page';
 import { S137132Page } from './s137132/s137132.page';
 
 
@@ -849,6 +850,11 @@ const routes: Routes = [
     path: 's137131',   
     canActivate: [ActiveGuard],
     component: S137131Page,
+  },
+  {
+    path: 's137131p1',   
+    canActivate: [ActiveGuard],
+    component: S137131p1Page,
   },
   {
     path: 's137132',   

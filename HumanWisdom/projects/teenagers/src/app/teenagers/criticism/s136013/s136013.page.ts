@@ -20,7 +20,7 @@ export class S136013Page implements OnInit {
   title="Impact of criticism on relationships"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/criticism/criticism_03.jpg"
 
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   
@@ -92,7 +92,7 @@ export class S136013Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136014'])
+    this.router.navigate(['/teenagers/criticism/s136014'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S136013Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/criticism/s136012'])
+    this.router.navigate(['/teenagers/criticism/s136012'])
   }
 
   ngOnDestroy()

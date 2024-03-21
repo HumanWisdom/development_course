@@ -15,7 +15,7 @@ export class S111126Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w3"
   hint = "I am feeling jealous as my sister tells me about her amazing holiday which I cannot afford to go on. An alternative way is to feel happy for her, ask to see her photos and share her joy. My wisdom allows me to do this."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111126Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111127'])
+        this.router.navigate(['/teenagers/comparison/s111127'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111127'])
+        this.router.navigate(['/teenagers/comparison/s111127'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111125'])
+    this.router.navigate(['/teenagers/comparison/s111125'])
   }
 
   ngOnDestroy() 

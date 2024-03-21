@@ -116,11 +116,11 @@ export class S49096Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/opinions-beliefs/s49097'])
+        this.router.navigate(['/adults/opinions-beliefs/s49102'])
 
       },
       () => {
-        this.router.navigate(['/adults/opinions-beliefs/s49097'])
+        this.router.navigate(['/adults/opinions-beliefs/s49102'])
       })
 
 

@@ -1,6 +1,6 @@
 <nav class="lh0">
   <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main">
-  <label class="m-menu__toggle m0px ihamburger" for="menu">
+  <label class="m-menu__toggle m0px ihamburger" for="menu" (click)="disableClick ? $event.preventDefault() : null">
     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/tn_hamburger.svg" class="" alt="" (click)="getmenuevent()">
   </label>
   <label class="m-menu__overlay" #closemodal for="menu"></label>
@@ -68,7 +68,7 @@
         </a>
       </li>
 
-      <li>
+      <!-- <li>
         <a (click)="Logevent('/adults/wisdom-survey', '', 'click_survey')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -78,6 +78,23 @@
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Happiness Survey
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
+
+      <li>
+        <a (click)="Logevent('/adults/testimonials', '', 'click_testimonials')"  class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/03.svg" class="img-responsive">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                 Testimonials
                 </h4>
               </div>
             </div>

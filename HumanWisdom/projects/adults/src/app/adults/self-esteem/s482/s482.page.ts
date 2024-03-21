@@ -100,10 +100,10 @@ export class S482Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/self-esteem/s483'])
+        this.router.navigate(['/adults/self-esteem/s484'])
       },
       () => {
-        this.router.navigate(['/adults/self-esteem/s483'])
+        this.router.navigate(['/adults/self-esteem/s484'])
       })
 
 

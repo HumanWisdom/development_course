@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TeenagersService } from '../teenagers.service';
 
 @Component({
   selector: 'app-teen-talk',
@@ -8,9 +9,15 @@ import { Router } from '@angular/router';
 })
 export class TeenTalkPage implements OnInit {
 
-  constructor(private router: Router) { }
+  public teenTalkList = [];
+
+  constructor(private router: Router, private service: TeenagersService) { }
 
   ngOnInit() {
+    this.service.getTeenagerTalk().subscribe(res => {
+       this.teenTalkList = res;
+       console.log(res)
+    })
   }
 
   teentalkS3(id, title) {

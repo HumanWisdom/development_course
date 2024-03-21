@@ -55,12 +55,12 @@
 
               <div class="toc_adiv_01">
                 <!-- video row -->
-                <a (click)="teentalkS3('01', 'A Talk on Stress')">
+                <a (click)="teentalkS3(data['RowID'] <= 9 ? '0' + data['RowID'] : data['RowID'], data['Title'])" *ngFor="let data of teenTalkList">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
                         <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/01.webp" alt=""
+                          <img [src]="data['ImgUrl']" alt=""
                             class="p0 session_img">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
                             alt="" class="p0 session_img_play">
@@ -68,10 +68,10 @@
 
                         <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                           <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
-                            A Talk on Stress
+                            {{data['Title']}}
                           </h4>
                           <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                            00:30:49 min
+                           {{data['Timing']}} min
                           </h4>
                         </div>
 

@@ -116,11 +116,11 @@ export class S60105Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/sorrow/s60106'])
+        this.router.navigate(['/adults/sorrow/s60111'])
 
       },
       () => {
-        this.router.navigate(['/adults/sorrow/s60106'])
+        this.router.navigate(['/adults/sorrow/s60111'])
       })
 
 

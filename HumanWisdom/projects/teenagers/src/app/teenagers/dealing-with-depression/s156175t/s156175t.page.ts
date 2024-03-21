@@ -18,7 +18,7 @@ export class S156175tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/dealing-with-depression/s156175"
-  toc="/dealing-with-depression/s156001"
+  toc="teenagers/dealing-with-depression/s156001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -61,7 +61,7 @@ export class S156175tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/dealing-with-depression/s156176'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156176'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -78,7 +78,7 @@ export class S156175tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/dealing-with-depression/s156174'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156174'])
   }
 
 }

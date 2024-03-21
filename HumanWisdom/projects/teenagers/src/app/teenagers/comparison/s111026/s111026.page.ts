@@ -13,7 +13,7 @@ export class S111026Page implements OnInit
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bookmark=0
-  toc="comparison/s111001"
+  toc="teenagers/comparison/s111001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -282,7 +282,7 @@ export class S111026Page implements OnInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/comparison/s111027'])
+    this.router.navigate(['/teenagers/comparison/s111027'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -303,7 +303,7 @@ export class S111026Page implements OnInit
 
   prev()
   {
-    this.router.navigate(['/comparison/s111025'])
+    this.router.navigate(['/teenagers/comparison/s111025'])
   }
 
   receiveBookmark(e)

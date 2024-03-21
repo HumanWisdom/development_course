@@ -13,7 +13,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S111157Page implements OnInit 
 {  
   
-  toc="comparison/s111001"
+  toc="teenagers/comparison/s111001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
   bg=""
   moduleLink="/reactive-mind"

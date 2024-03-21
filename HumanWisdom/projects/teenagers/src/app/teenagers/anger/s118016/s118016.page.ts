@@ -15,7 +15,7 @@ export class S118016Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w2"
   hint = "My son did not call on my birthday, My anger is caused by my own expectations";
-  toc = "/anger/s118001"
+  toc = "/teenagers/anger/s118001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -102,14 +102,14 @@ export class S118016Page implements OnInit
     console.log(this.reflection)
   }
 
-  submitProgress(e) 
+  submitProgress() 
   {
-    console.log("returned response", e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r118016", JSON.stringify(e))
+   // sessionStorage.setItem("r118016", this.r118016)
     this.r118016 = sessionStorage.getItem("r118016")
-    console.log(this.r118016)
+ //   console.log(this.r118016)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -122,17 +122,17 @@ export class S118016Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/anger/s118017'])
+        this.router.navigate(['/teenagers/anger/s118017'])
 
       },
       () => {
-        this.router.navigate(['/anger/s118017'])
+        this.router.navigate(['/teenagers/anger/s118017'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/anger/s118015'])
+    this.router.navigate(['/teenagers/anger/s118015'])
   }
 
   ngOnDestroy() 

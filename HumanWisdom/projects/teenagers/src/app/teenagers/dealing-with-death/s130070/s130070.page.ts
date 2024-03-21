@@ -52,11 +52,11 @@ export class S130070Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/dealing-with-death/s130071'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130071'])
   }
 
   prev()
   {
-    this.router.navigate(['/dealing-with-death/s130065'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130064'])
   }
 }

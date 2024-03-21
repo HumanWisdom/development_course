@@ -15,7 +15,7 @@ export class S111047Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w5"
   hint = "For example parents sometimes say ‘ Why cant you be like your brother or sister or cousin or friend who is…’, or something similar."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111047Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111048'])
+        this.router.navigate(['/teenagers/comparison/s111048'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111048'])
+        this.router.navigate(['/teenagers/comparison/s111048'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111046'])
+    this.router.navigate(['/teenagers/comparison/s111046'])
   }
 
   ngOnDestroy() 

@@ -18,7 +18,7 @@ export class S111156p1Page implements OnInit {
   title="Comparison"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   
-  toc="/comparison/s112001"
+  toc="/comparison/s111001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   
@@ -94,7 +94,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/comparison/s111157'])
+    this.router.navigate(['/teenagers/comparison/s111157'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -118,7 +118,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/comparison/s111001'])
+    this.router.navigate(['/teenagers/comparison/s111001'])
   }
 
 

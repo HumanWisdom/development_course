@@ -108,11 +108,11 @@ export class S76086Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/bullying/s76087'])
+        this.router.navigate(['/adults/bullying/s76092'])
 
       },
       () => {
-        this.router.navigate(['/adults/bullying/s76087'])
+        this.router.navigate(['/adults/bullying/s76092'])
       })
   }
 

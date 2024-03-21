@@ -114,11 +114,11 @@ export class S113080Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113081'])
+        this.router.navigate(['/reactive-mind/s113086'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113081'])
+        this.router.navigate(['/reactive-mind/s113086'])
       })
   }
 

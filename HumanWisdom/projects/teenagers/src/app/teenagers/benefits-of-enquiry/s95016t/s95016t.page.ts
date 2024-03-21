@@ -19,7 +19,7 @@ export class S95016tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/benefits-of-enquiry/s95016"
-  toc="benefits-of-enquiry/s95001"
+  toc="teenagers/benefits-of-enquiry/s95001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -65,7 +65,7 @@ export class S95016tPage implements OnInit {
   }
   submitProgress(){
 
-    this.router.navigate(['/benefits-of-enquiry/s95017'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95017'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S95016tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s95014'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95014'])
   }
 
 

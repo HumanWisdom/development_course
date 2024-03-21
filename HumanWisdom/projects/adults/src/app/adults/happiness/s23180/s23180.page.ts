@@ -116,11 +116,11 @@ export class S23180Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/happiness/s23181'])
+        this.router.navigate(['/adults/happiness/s23182'])
 
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23181'])
+        this.router.navigate(['/adults/happiness/s23182'])
       })
 
   }

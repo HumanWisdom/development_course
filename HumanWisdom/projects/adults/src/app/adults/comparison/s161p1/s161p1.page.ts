@@ -50,7 +50,7 @@ export class S161p1Page implements OnInit {
     this.router.navigate(['/adults/comparison/s161p2'])
   }
   prev(){
-    this.router.navigate(['/adults/comparison/s159'])
+    this.router.navigate(['/adults/comparison/s158'])
 
   }
 

@@ -14,7 +14,7 @@ export class S136015Page implements OnInit {
   bg = "criticism_w12"
   hint = "It may make you dislike them, or withdraw from them, or get angry with them"
 
-  toc = "/criticism/s136001"
+  toc = "teenagers/criticism/s136001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -111,17 +111,17 @@ export class S136015Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136016'])
+        this.router.navigate(['/teenagers/criticism/s136016'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136016'])
+        this.router.navigate(['/teenagers/criticism/s136016'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136014'])
+    this.router.navigate(['/teenagers/criticism/s136014'])
   }
 
   ngOnDestroy() 

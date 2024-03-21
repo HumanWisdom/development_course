@@ -33,7 +33,7 @@ export class S156103Page implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/dealing-with-depression/s156001"
+  toc="teenagers/dealing-with-depression/s156001"
 
   constructor(private router: Router,
     private service:TeenagersService,
@@ -150,12 +150,12 @@ export class S156103Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/dealing-with-depression/s156104'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156104'])
   }
 
   prev()
   {
-    this.router.navigate(['/dealing-with-depression/s156102'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156102'])
   }
 
   sessionFetch(id, divid)

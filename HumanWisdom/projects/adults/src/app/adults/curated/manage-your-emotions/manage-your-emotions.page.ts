@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../../shared/services/constant';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 
 @Component({
@@ -41,6 +42,7 @@ export class ManageYourEmotionsPage implements OnInit {
   enableblogViewMore = true;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
+    private navigationService:NavigationService,
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
@@ -132,7 +134,10 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
   routeGuided() {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })

@@ -16,7 +16,7 @@ export class S120019Page implements OnInit
   audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+1.2.mp3'
 
   title="Understanding emotional needs "
-  toc="/emotional-needs/s120001"
+  toc="teenagers/emotional-needs/s120001"
   transcriptPage="emotional-needs/s120019t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S120019Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/emotional-needs/s120019p1'])
+    this.router.navigate(['/teenagers/emotional-needs/s120019p1'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S120019Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/emotional-needs/s120018'])
+    this.router.navigate(['/teenagers/emotional-needs/s120018'])
   }
 
   ngOnDestroy()

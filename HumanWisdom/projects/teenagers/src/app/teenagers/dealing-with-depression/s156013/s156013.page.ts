@@ -14,7 +14,7 @@ export class S156013Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w10"
   hint = "Often when you are depressed you lose the motivation to help yourself - so it's important to ask that question and find the right answer for yourself"
-  toc = "/dealing-with-depression/s156001"
+  toc = "teenagers/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -109,17 +109,17 @@ export class S156013Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-depression/s156014'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156014'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-depression/s156014'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156014'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-depression/s156012'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156012'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S132100Page implements OnInit {
   bg = "blue_w3"
   hint = "Our mind does this automatically. But why?"
 
-  toc = "communication/s132001"
+  toc = "teenagers/communication/s132001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S132100Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/communication/s132101'])
+        this.router.navigate(['/teenagers/communication/s132101'])
 
       },
       () => {
-        this.router.navigate(['/communication/s132101'])
+        this.router.navigate(['/teenagers/communication/s132101'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/communication/s132099'])
+    this.router.navigate(['/teenagers/communication/s132099'])
   }
 
   ngOnDestroy() 

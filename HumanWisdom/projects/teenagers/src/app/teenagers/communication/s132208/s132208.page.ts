@@ -17,7 +17,7 @@ export class S132208Page implements OnInit {
   audioLink=this.mediaAudio+'/teenagers/modules/communication/audios/6.2.mp3'
   title="Difficult conversations - what's going on in our thinking?"
 
-  toc="communication/s132001"
+  toc="teenagers/communication/s132001"
   transcriptPage="communication/s132208t"
 
   userId:any
@@ -93,7 +93,7 @@ export class S132208Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/communication/s132209'])
+    this.router.navigate(['/teenagers/communication/s132209'])
     if (this.userId === 563) return;
     
     this.service.submitProgressAv({
@@ -117,7 +117,7 @@ export class S132208Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/communication/s132207'])
+    this.router.navigate(['/teenagers/communication/s132207'])
  
  
   }

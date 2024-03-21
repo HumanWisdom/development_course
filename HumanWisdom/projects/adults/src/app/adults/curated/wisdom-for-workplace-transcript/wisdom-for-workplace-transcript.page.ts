@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-wisdom-for-workplace-transcript',
@@ -9,7 +10,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class WisdomForWorkplaceTranscriptPage implements OnInit {
 
-  constructor(private location:Location, private meta: Meta, private title: Title) { }
+  constructor(private location:Location, private meta: Meta, private title: Title,private navigationService:NavigationService) { }
 
   ngOnInit() {
     this.title.setTitle('Wisdom at Work: Strategies for Career Growth and Development')
@@ -19,8 +20,11 @@ export class WisdomForWorkplaceTranscriptPage implements OnInit {
 
   }
 
-  goBack(){
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }
   }
 
 }

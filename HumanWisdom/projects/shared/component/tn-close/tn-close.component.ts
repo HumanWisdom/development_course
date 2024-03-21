@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { SharedService } from "../../services/shared.service";
+import { ProgramType } from "../../models/program-model";
+
 
 @Component({
   selector: 'app-tn-close',
@@ -19,7 +22,13 @@ export class TnCloseComponent implements OnInit {
     if (this.service.previousUrl !== '') {
       this.location.back()
     } else {
+      if (SharedService.ProgramId == ProgramType.Teenagers) {
+        this.router.navigate(['/teenagers/teenager-dashboard'])
+      }
+      else{
       this.router.navigate(['/adults/adult-dashboard'])
+      }
+      this.location.back()
     }
   }
 

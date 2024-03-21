@@ -32,7 +32,7 @@ export class S118001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.png"
+   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/118.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []

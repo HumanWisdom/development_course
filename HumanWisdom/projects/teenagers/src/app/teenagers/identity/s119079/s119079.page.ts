@@ -114,11 +114,11 @@ export class S119079Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119080'])
+        this.router.navigate(['/identity/s119085'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119080'])
+        this.router.navigate(['/identity/s119085'])
       })
   }
 

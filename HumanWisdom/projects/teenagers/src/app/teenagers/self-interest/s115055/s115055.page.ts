@@ -81,7 +81,7 @@ export class S115055Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/self-interest/s115056'])
+    this.router.navigate(['/self-interest/s115061'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

@@ -50,7 +50,7 @@ export class S38019p8Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/adults/insight/s38019p7'])
+    this.router.navigate(['/adults/insight/s38019p2'])
 
   }
 

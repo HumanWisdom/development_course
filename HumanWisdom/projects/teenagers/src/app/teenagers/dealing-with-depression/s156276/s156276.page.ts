@@ -212,16 +212,16 @@ export class S156276Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-depression/s156277'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156277'])
       },
       () => {
-        this.router.navigate(['/dealing-with-depression/s156277'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156277'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/dealing-with-depression/s156275'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156275'])
   }
 
   ngOnDestroy() {}

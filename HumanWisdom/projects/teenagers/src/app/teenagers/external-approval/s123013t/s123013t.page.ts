@@ -18,7 +18,7 @@ export class S123013tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/external-approval/s123013"
-  toc="/external-approval/s123001"
+  toc="teenagers/external-approval/s123001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -67,7 +67,7 @@ export class S123013tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/external-approval/s123014'])
+ this.router.navigate(['/teenagers/external-approval/s123014'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -81,7 +81,7 @@ export class S123013tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123012'])
+ this.router.navigate(['/teenagers/external-approval/s123012'])
   }
 
 }

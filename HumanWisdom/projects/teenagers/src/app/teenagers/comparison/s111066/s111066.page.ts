@@ -15,7 +15,7 @@ export class S111066Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w9"
   hint = "Does it really matter? You are unique with your own gifts."
-  toc = "/comparison/s111001"
+  toc = "teenagers/comparison/s111001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S111066Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/comparison/s111067'])
+        this.router.navigate(['/teenagers/comparison/s111067'])
 
       },
       () => {
-        this.router.navigate(['/comparison/s111067'])
+        this.router.navigate(['/teenagers/comparison/s111067'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/comparison/s111065'])
+    this.router.navigate(['/teenagers/comparison/s111065'])
   }
 
   ngOnDestroy() 

@@ -245,6 +245,7 @@ export class IncomeActivityPage implements OnInit {
     const html = document.getElementById('partnershipReport');
     var options = {
       margin: [0, 0, 0, 0],
+      filename:"PartnershipIncomeActivity"
     }
     setTimeout(() => {
       html2pdf()

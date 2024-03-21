@@ -13,7 +13,7 @@ export class S95014Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w7"
 
-  toc = "benefits-of-enquiry/s95001"
+  toc = "teenagers/benefits-of-enquiry/s95001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -150,7 +150,7 @@ export class S95014Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/benefits-of-enquiry/s95016'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95016'])
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
@@ -166,7 +166,7 @@ export class S95014Page implements OnInit {
 
   }
   prev() {
-    this.router.navigate(['/benefits-of-enquiry/s95013'])
+    this.router.navigate(['/teenagers/benefits-of-enquiry/s95013'])
   }
 
   ngOnDestroy() {

@@ -19,12 +19,12 @@ export class NavigationService {
         if (!this.backClicked) {
           this.history.push(url);
           // Use a Set to keep track of unique values
-          if (this.history.length > 0) {
-            let uniqueSet = new Set(this.history);
-            if (uniqueSet.size > 0) {
-              this.history = JSON.parse(JSON.stringify(Array.from(uniqueSet)));
-            }
-          }
+          // if (this.history.length > 0) {
+          //   let uniqueSet = new Set(this.history);
+          //   if (uniqueSet.size > 0) {
+          //     this.history = JSON.parse(JSON.stringify(Array.from(uniqueSet)));
+          //   }
+          // }
 
         }
       }

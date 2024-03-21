@@ -309,14 +309,22 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   goBack() {
-    this.location.back();
+    if(this.isGuidedQueestionsTab){
+        this.isGuidedQueestionsTab = false;
+        this.isDiary=true;
+        this.viewJournalAndReflections();
+        this.getDailyQuestion();
+    }else{
+         this.router.navigate(['adults/adult-dashboard']);
+    }
+
   }
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(['/subscription/start-your-free-trial']);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
         this.router.navigate(["/onboarding/login"]);
