@@ -347,7 +347,7 @@ export class S130066Page implements OnInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/dealing-with-death/s130067'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130067'])
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
@@ -364,12 +364,12 @@ export class S130066Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/dealing-with-death/s130065'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130065'])
   }
 
   routeNext() 
   {
-    this.router.navigate(['/dealing-with-death/s130067'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130067'])
   }
 
   ngOnDestroy() {}

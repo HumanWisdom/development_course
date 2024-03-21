@@ -66,4 +66,12 @@ determineRouterLink(data){
   }
 }
 
+determinePathway(data){
+  if (SharedService.ProgramId == ProgramType.Teenagers) {
+    this.router.navigate([`/teenagers/${data}`]);
+  } else {
+    this.router.navigate([`/adults/${data}`]);
+  }
+}
+
 }
