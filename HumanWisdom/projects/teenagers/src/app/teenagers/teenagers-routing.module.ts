@@ -325,6 +325,10 @@ const routes: Routes = [
         path: 'pathway',
         loadChildren: () => import('../teenagers/pathway/pathway.module').then(m => m.PathwayModule)
     },
+    {
+        path: 'curated',
+        loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
+      },
 ];
 
 
