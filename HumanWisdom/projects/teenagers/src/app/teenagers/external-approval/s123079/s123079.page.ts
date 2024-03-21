@@ -18,10 +18,10 @@ export class S123079Page implements OnInit
   userName:any
   progressPercent:any
   progressText="2/3"
-  link="/external-approval/s123080"
+  link="/teenagers/external-approval/s123080"
   name="#3  Our need for external validation"
   progressImg=""
-  toc="external-approval/s123001"
+  toc="teenagers/external-approval/s123001"
 
   constructor
   (
