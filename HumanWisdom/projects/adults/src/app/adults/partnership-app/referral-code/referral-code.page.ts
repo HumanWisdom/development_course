@@ -17,7 +17,18 @@ export class ReferralCodePage implements OnInit {
   isValidated=false;
   constructor(public router: Router, public location: Location,public service:AdultsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(localStorage.getItem('AffReferalCode')==null || localStorage.getItem('AffReferalCode')==''){
+      this.service.GetUsedAffDiscCode().subscribe((res:any)=>{
+        if(res){
+           this.referralCode = res;
+        }
+     });
+    }else{
+      this.referralCode = localStorage.getItem('AffReferalCode');
+    }
+ 
+  }
   goBack() {
     this.location.back();
   }
