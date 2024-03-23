@@ -23,7 +23,7 @@ export class S123005Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "external-approval/s123001"
+  toc = "teenagers/external-approval/s123001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -83,7 +83,7 @@ export class S123005Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/external-approval/s123006'])
+ this.router.navigate(['/teenagers/external-approval/s123006'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -103,12 +103,12 @@ export class S123005Page implements OnInit, OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s123004'])
+this.router.navigate(['/teenagers/external-approval /s123004'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/external-approval/s2'])
+    ///s2'])
     if (this.userId !== 563) this.submitProgress()
   }
 

@@ -241,21 +241,21 @@ export class S120101Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/emotional-needs/s120102'])
+          this.router.navigate(['/teenagers/emotional-needs/s120102'])
         },
         () => {
-          this.router.navigate(['/emotional-needs/s120102'])
+          this.router.navigate(['/teenagers/emotional-needs/s120102'])
         })
     }
     else 
     {
-      this.router.navigate(['/emotional-needs/s120102'])
+      this.router.navigate(['/teenagers/emotional-needs/s120102'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/emotional-needs/s120100'])
+    this.router.navigate(['/teenagers/emotional-needs/s120100'])
   }
 
   ngOnDestroy() 

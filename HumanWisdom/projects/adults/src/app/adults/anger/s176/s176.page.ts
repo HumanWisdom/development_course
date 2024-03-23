@@ -22,6 +22,8 @@ export class S176Page implements OnInit, OnDestroy {
   totalTime: any
   bookmark: any
   rId = 64
+  rId_1 = 2348
+
   reflection: any
   reflectionA: any
   r176 = JSON.parse(sessionStorage.getItem("r176"))
@@ -98,7 +100,7 @@ export class S176Page implements OnInit, OnDestroy {
   }
 
   submitProgress_1() {
-    sessionStorage.setItem("r176", JSON.stringify(this.r176))
+    sessionStorage.setItem("r176_1", JSON.stringify(this.r176_1))
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -106,7 +108,7 @@ export class S176Page implements OnInit, OnDestroy {
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
+      "ReflectionId": this.rId_1,
       "Resp": this.r176_1
     }).subscribe(res => {},
       error => {

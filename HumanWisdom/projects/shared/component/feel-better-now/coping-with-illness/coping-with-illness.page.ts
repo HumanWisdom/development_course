@@ -25,13 +25,24 @@ export class CopingWithIllnessPage implements OnInit {
 
   ngOnInit() {}
 
+
   audioevent(url) {
-      this.router.navigate(['feel-better-now/coping-with-illness/audiopage/', url ,"Dealing with an illness",Math.random() ])
+    if (SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/teenagers/feel-better-now/coping-with-illness/audiopage/', url ,"Dealing with an illness",Math.random() ])
+    }
+    else{
+      this.router.navigate(['/adults/feel-better-now/coping-with-illness/audiopage/', url ,"Dealing with an illness",Math.random() ])
+    }
   }
 
   routeToYoutube(url) {
-    this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
+    if (SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/teenagers/feel-better-now/feeling-upset/youtubelink/',url]);
+    } else {
+      this.router.navigate(['/adults/feel-better-now/feeling-upset/youtubelink/',url]);
+    }
   }
+
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
@@ -79,4 +90,12 @@ determineRouterLink(data){
     this.router.navigateByUrl(`/adults/${data}`);
   }
 }
+determinePathway(data){
+  if (SharedService.ProgramId == ProgramType.Teenagers) {
+    this.router.navigate([`/teenagers/${data}`]);
+  } else {
+    this.router.navigate([`/adults/${data}`]);
+  }
+}
+
 }

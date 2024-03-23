@@ -33,7 +33,7 @@ export class S123046Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/external-approval/s123001"
+  toc="teenagers/external-approval/s123001"
 
   constructor
   (
@@ -156,12 +156,12 @@ export class S123046Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/external-approval/s123047'])
+ this.router.navigate(['/teenagers/external-approval/s123047'])
   }
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123045'])
+ this.router.navigate(['/teenagers/external-approval/s123045'])
   }
 
   sessionFetch(id, divid)

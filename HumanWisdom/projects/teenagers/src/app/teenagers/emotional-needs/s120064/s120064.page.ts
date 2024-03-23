@@ -16,7 +16,7 @@ export class S120064Page implements OnInit
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
   hint = " You could be on your phone all the time, for example and that could affect your relationships.  "
-  toc = "/emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S120064Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120065'])
+        this.router.navigate(['/teenagers/emotional-needs/s120065'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120065'])
+        this.router.navigate(['/teenagers/emotional-needs/s120065'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120063'])
+    this.router.navigate(['/teenagers/emotional-needs/s120063'])
   }
 
   ngOnDestroy() 

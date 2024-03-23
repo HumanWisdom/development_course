@@ -23,7 +23,7 @@ export class S156019Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "dealing-with-depression/s156001"
+  toc = "teenagers/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -94,12 +94,12 @@ export class S156019Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/dealing-with-depression/s156018'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156018'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/dealing-with-depression/s156020'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156020'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

@@ -18,10 +18,10 @@ export class S120037Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/3"
-  link="/emotional-needs/s120038"
+  link="/teenagers/emotional-needs/s120038"
   name="#2 Four ways emotional-needs impacts our life"
   progressImg=""
-  toc="emotional-needs/s120001"
+  toc="teenagers/emotional-needs/s120001"
 
   constructor
   (
