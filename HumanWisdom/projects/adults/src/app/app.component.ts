@@ -92,6 +92,7 @@ export class AppComponent implements OnDestroy {
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+    //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
