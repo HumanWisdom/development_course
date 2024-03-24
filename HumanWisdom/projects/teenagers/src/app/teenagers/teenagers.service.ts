@@ -16,11 +16,11 @@ export class TeenagersService {
   personalisedforyoulist = [
     {
       id: "1",
-      name: 'Wisdom for the workplace'
+      name: 'Succeed in Life'
     },
     {
       id: "2",
-      name: 'Overcome stress and anxiety'
+      name: 'Mental Health'
     },
     {
       id: "3",
@@ -32,15 +32,15 @@ export class TeenagersService {
     },
     {
       id: "5",
-      name: 'Change unhelpful habits'
+      name: 'Overcome unhelpful habits'
     },
     {
       id: "6",
-      name: 'Deal with sorrow and loss'
-    },
+      name: 'Understand yourself'
+       },
     {
       id: "7",
-      name: 'Mindfulness',
+      name: 'Feel calm',
     },
     {
       id: "8",

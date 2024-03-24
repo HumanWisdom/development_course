@@ -74,6 +74,14 @@ const routes: Routes = [
     loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then( m => m.ManageYourEmotionsTranscriptPageModule)
   },
   {
+    path: 'succeed-in-life',
+    loadChildren: () => import('./succeed-in-life/succeed-in-life.module').then( m => m.SucceedInLifePageModule)
+  },
+  {
+    path: 'succeed-in-life-transcript',
+    loadChildren: () => import('./succeed-in-life-transcript/succeed-in-life-transcript.module').then( m => m.SucceedInLifeTranscriptPageModule)
+  },
+  {
     path: 'youtubelink/:videolink',
     component: YoutubeContentComponent
   },

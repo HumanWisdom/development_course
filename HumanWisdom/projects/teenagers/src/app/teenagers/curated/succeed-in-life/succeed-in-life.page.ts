@@ -43,22 +43,29 @@ export class SucceedInLifePage implements OnInit {
       this.mediaUrl = {
         pc01:
         {
-          id: 44,
-          url: '/podcasts/44.mp3',
-          title: 'Coping with an illness'
+          id: 46,
+          url: '/podcasts/46.mp3',
+          title: 'Understanding our own ego '
         },
         pc02:
         {
-          id: 40,
-          url: '/podcasts/40.mp3',
-          title: 'Overcoming Depression'
+          id: 47,
+          url: '/podcasts/47.mp3',
+          title: 'How can we overcome anxiety?'
         },
         pc03:
         {
           id: 45,
           url: '/podcasts/45.mp3',
-          title: 'The resilient mindset'
+          title: 'The Resilient Mindset'
+        },
+        pc04:
+        {
+          id: 60,
+          url: '/podcasts/60.mp3',
+          title: ' How can we be successful?'
         }
+
 
       }
 
@@ -72,7 +79,7 @@ export class SucceedInLifePage implements OnInit {
     }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/be-happier');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/be-happier');
 
     this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
     this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
@@ -99,13 +106,13 @@ export class SucceedInLifePage implements OnInit {
     }
   }
   routeGuided() {
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -113,7 +120,7 @@ export class SucceedInLifePage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
@@ -159,7 +166,7 @@ export class SucceedInLifePage implements OnInit {
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
   }
 
@@ -170,7 +177,7 @@ export class SucceedInLifePage implements OnInit {
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -211,17 +218,17 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/happiness/${hR}`])
+            this.router.navigate([`/teenagers/happiness/${hR}`])
           }
           else
-            this.router.navigate([`/adults/happiness/s23001`])
+            this.router.navigate([`/teenagers/happiness/s23001`])
           /* if(!identityResume)
            {
 
-             this.router.navigate([`/adults/identity`])
+             this.router.navigate([`/teenagers/identity`])
            }
            else
-             this.router.navigate([`/adults/identity/s${identityResume}`])*/
+             this.router.navigate([`/teenagers/identity/s${identityResume}`])*/
         })
   }
 
@@ -250,17 +257,17 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/living-with-peace/${livingwithpeaceResume}`])
+            this.router.navigate([`/teenagers/living-with-peace/${livingwithpeaceResume}`])
           }
           else
-            this.router.navigate([`/adults/living-with-peace/s63001`])
+            this.router.navigate([`/teenagers/living-with-peace/s63001`])
           /* if(!lonelinessResume)
             {
 
-              this.router.navigate([`/adults/loneliness/s162p0`])
+              this.router.navigate([`/teenagers/loneliness/s162p0`])
             }
             else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+              this.router.navigate([`/teenagers/loneliness/s${lonelinessResume}`])*/
         })
   }
 
@@ -293,10 +300,10 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/pleasure/${pleasureResume}`])
+            this.router.navigate([`/teenagers/pleasure/${pleasureResume}`])
           }
           else
-            this.router.navigate([`/adults/pleasure/s20001`])
+            this.router.navigate([`/teenagers/pleasure/s20001`])
         })
   }
 
@@ -325,18 +332,18 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/inner-boredom/${ibR}`])
+            this.router.navigate([`/teenagers/inner-boredom/${ibR}`])
           }
           else
-            this.router.navigate([`/adults/inner-boredom/s56001`])
+            this.router.navigate([`/teenagers/inner-boredom/s56001`])
 
           /*if(!sinR)
           {
 
-            this.router.navigate([`/adults/self-interest`])
+            this.router.navigate([`/teenagers/self-interest`])
           }
           else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
+            this.router.navigate([`/teenagers/self-interest/s${sinR}`])*/
         })
   }
 
@@ -368,10 +375,10 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/comparison/${comparisonR}`])
+            this.router.navigate([`/teenagers/comparison/${comparisonR}`])
           }
           else
-            this.router.navigate([`/adults/comparison/s0`])
+            this.router.navigate([`/teenagers/comparison/s0`])
         })
   }
 
@@ -435,11 +442,11 @@ export class SucceedInLifePage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 
   // audioevent(audioContent) {
-  //   this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+  //   this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
 }
