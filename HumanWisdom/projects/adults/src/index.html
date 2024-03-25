@@ -781,6 +781,52 @@
     });
     </script>
 
+    <!-- view more & less -->
+    <script>
+    function onchange_rm() 
+    { 
+      const content = document.getElementById('ca_wdi'); 
+      const btn_rm = document.getElementById('btn_rm'); 
+      const vm = document.getElementById('vm');
+      const vl = document.getElementById('vl');
+    
+      if (content.style.display === 'none'|| content.style.display === '') 
+      { 
+        content.style.display = 'inline'; 
+        vm.style.display = "none";
+        vl.style.display = "inline";
+      } 
+      else 
+      { 
+        content.style.display = 'none'; 
+        vm.style.display = "inline";
+        vl.style.display = "none";
+      } 
+    } 
+
+    function onchange_rm_hdi() 
+    { 
+      const content = document.getElementById('ca_hdi'); 
+      const btn_rm = document.getElementsByClassName('btn_rm_hdi'); 
+      const vm = document.getElementById('vm_hdi');
+      const vl = document.getElementById('vl_hdi');
+    
+      if (content.style.display === 'none'|| content.style.display === '') 
+      { 
+        content.style.display = 'inline'; 
+        vm.style.display = "none";
+        vl.style.display = "inline";
+      } 
+      else 
+      { 
+        content.style.display = 'none'; 
+        vm.style.display = "inline";
+        vl.style.display = "none";
+      } 
+    } 
+    </script>
+    <!-- /view more & less -->
+
   </body>
 
 </html>
