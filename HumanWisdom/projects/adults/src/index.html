@@ -591,10 +591,10 @@
       });
     });
     window.addEventListener('profileEditClicked', function () {
-      debugger;
+      var fileName = localStorage.getItem('userId')+"_Profile";
       console.log("ProfileEvenClicked--------------------");
       if (window.AndroidHandler) {
-        window.AndroidHandler.profileEditClicked();
+        window.AndroidHandler.profileEditClicked(fileName);
       }
       // Perform the download action here
     });
