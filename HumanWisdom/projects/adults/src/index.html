@@ -590,8 +590,9 @@
         // Perform the download action here
       });
     });
-    profileEditClicked
     window.addEventListener('profileEditClicked', function () {
+      debugger;
+      console.log("ProfileEvenClicked--------------------");
       if (window.AndroidHandler) {
         window.AndroidHandler.profileEditClicked();
       }
