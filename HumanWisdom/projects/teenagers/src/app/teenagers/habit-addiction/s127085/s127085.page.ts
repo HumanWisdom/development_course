@@ -15,7 +15,7 @@ export class S127085Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w10"
   hint = "Someone may have a bigger house than you, or get better grades in school - and this can make you feel less than them, and not good about yourself."
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127085Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127086'])
+        this.router.navigate(['/teenagers/habit-addiction/s127086'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127086'])
+        this.router.navigate(['/teenagers/habit-addiction/s127086'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127084'])
+    this.router.navigate(['/teenagers/habit-addiction/s127084'])
   }
 
   ngOnDestroy() 
