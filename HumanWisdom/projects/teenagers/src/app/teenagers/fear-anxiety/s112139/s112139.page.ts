@@ -28,7 +28,7 @@ export class S112139Page implements OnInit, AfterViewInit
   totalTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   transcriptPage="/fear-anxiety/s112139t"
-  toc="fear-anxiety/s112001"  
+  toc="teenagers/fear-anxiety/s112001"  
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -114,7 +114,7 @@ export class S112139Page implements OnInit, AfterViewInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/fear-anxiety/s112140'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112140'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -132,7 +132,7 @@ export class S112139Page implements OnInit, AfterViewInit
 
   prev()
   {
-    this.router.navigate(['/fear-anxiety/s112138'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112138'])
   }
 
   ngOnDestroy()

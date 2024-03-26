@@ -82,7 +82,7 @@ export class S112167p2Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/fear-anxiety/s112168'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112168'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -101,7 +101,7 @@ export class S112167p2Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/fear-anxiety/s112001'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112001'])
   }
 
   ngOnDestroy() {

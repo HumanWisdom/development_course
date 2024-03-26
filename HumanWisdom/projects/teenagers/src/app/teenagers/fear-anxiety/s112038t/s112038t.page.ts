@@ -19,7 +19,7 @@ export class S112038tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/fear-anxiety/s112038"
-  toc="/fear-anxiety/s112001"  
+  toc="teenagers/fear-anxiety/s112001"  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -61,7 +61,7 @@ export class S112038tPage implements OnInit {
     sessionStorage.setItem("bookmark112038",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/fear-anxiety/s112039'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112039'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -78,7 +78,7 @@ export class S112038tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112037'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112037'])
   }
   
 

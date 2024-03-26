@@ -15,7 +15,7 @@ export class S128068Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = " It could be that we need to have 4 meals a day, or that every meal needs to include something sweet, or that fizzy drinks are good for health.  "
-  toc = "/food-health/s128001"
+  toc = "teenagers/food-health/s128001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S128068Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/food-health/s128069'])
+        this.router.navigate(['/teenagers/food-health/s128069'])
 
       },
       () => {
-        this.router.navigate(['/food-health/s128069'])
+        this.router.navigate(['/teenagers/food-health/s128069'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/food-health/s128067'])
+    this.router.navigate(['/teenagers/food-health/s128067'])
   }
 
   ngOnDestroy() 
