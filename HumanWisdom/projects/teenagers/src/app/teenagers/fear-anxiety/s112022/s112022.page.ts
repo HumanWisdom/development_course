@@ -18,7 +18,7 @@ export class S112022Page implements OnInit {
   title="What are the common causes of fear?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/fear_anxiety/fear_anxiety_01.jpg"
   
-  toc="/fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   
@@ -94,7 +94,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/fear-anxiety/s112023'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112023'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -118,7 +118,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112021'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112021'])
   }
 
 

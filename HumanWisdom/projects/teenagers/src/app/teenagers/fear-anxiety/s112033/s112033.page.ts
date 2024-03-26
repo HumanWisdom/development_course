@@ -15,7 +15,7 @@ export class S112033Page implements OnInit {
   bg = "purple_red_w5"
   hint = "It could be a fear of being poor, that makes us chase money for example, or a fear of being alone that makes us keep busy from morning to night "
 
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -126,17 +126,17 @@ export class S112033Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112036'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112036'])
 
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112034'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112034'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/fear-anxiety/s112032'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112032'])
   }
 
    ngOnDestroy() 

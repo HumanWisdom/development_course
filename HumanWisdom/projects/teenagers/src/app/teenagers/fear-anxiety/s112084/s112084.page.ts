@@ -17,7 +17,7 @@ export class S112084Page implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.13.mp3'
   transcriptPage="/fear-anxiety/s112084t"
-  toc="fear-anxiety/s112001"  
+  toc="teenagers/fear-anxiety/s112001"  
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -91,7 +91,7 @@ export class S112084Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
-    this.router.navigate(['/fear-anxiety/s112085'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112085'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S112084Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112083'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112083'])
  
  
   }

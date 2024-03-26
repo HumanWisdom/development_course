@@ -220,21 +220,21 @@ export class S112164Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s112165'])
+          this.router.navigate(['/teenagers/fear-anxiety/s112165'])
         },
         () => {
-          this.router.navigate(['/fear-anxiety/s112165'])
+          this.router.navigate(['/teenagers/fear-anxiety/s112165'])
         })
     }
     else 
     {
-      this.router.navigate(['/fear-anxiety/s112165'])
+      this.router.navigate(['/teenagers/fear-anxiety/s112165'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/fear-anxiety/s112163'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112163'])
   }
 
   ngOnDestroy() 

@@ -14,7 +14,7 @@ export class S112018Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w10"
   title="Causes of fear"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/fear-anxiety/audios/1.3.mp3'
   transcriptPage="/fear-anxiety/s112018t"
@@ -93,7 +93,7 @@ export class S112018Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/fear-anxiety/s112019'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112019'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S112018Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/fear-anxiety/s112017'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112017'])
   }
 
   ngOnDestroy()
