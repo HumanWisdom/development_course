@@ -241,21 +241,21 @@ export class S128077Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/food-health/s128078'])
+          this.router.navigate(['/teenagers/food-health/s128078'])
         },
         () => {
-          this.router.navigate(['/food-health/s128078'])
+          this.router.navigate(['/teenagers/food-health/s128078'])
         })
     }
     else 
     {
-      this.router.navigate(['/food-health/s128078'])
+      this.router.navigate(['/teenagers/food-health/s128078'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/food-health/s128076'])
+    this.router.navigate(['/teenagers/food-health/s128076'])
   }
 
   ngOnDestroy() 

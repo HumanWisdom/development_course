@@ -24,7 +24,7 @@ export class S128058Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -86,7 +86,7 @@ export class S128058Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s128059'])
+    this.router.navigate(['/teenagers/food-health/s128059'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,7 +107,7 @@ export class S128058Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/food-health/s128057'])
+    this.router.navigate(['/teenagers/food-health/s128057'])
   }
 
   ngOnDestroy()

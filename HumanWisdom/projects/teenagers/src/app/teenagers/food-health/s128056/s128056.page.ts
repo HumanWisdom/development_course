@@ -15,7 +15,7 @@ export class S128056Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = ""
-  toc = "/food-health/s128001"
+  toc = "teenagers/food-health/s128001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S128056Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/food-health/s128057'])
+        this.router.navigate(['/teenagers/food-health/s128057'])
 
       },
       () => {
-        this.router.navigate(['/food-health/s128057'])
+        this.router.navigate(['/teenagers/food-health/s128057'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/food-health/s128055'])
+    this.router.navigate(['/teenagers/food-health/s128055'])
   }
 
   ngOnDestroy() 

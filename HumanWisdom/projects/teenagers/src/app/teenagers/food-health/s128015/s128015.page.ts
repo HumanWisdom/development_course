@@ -13,7 +13,7 @@ export class S128015Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -195,7 +195,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s128016'])
+    this.router.navigate(['/teenagers/food-health/s128016'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -221,7 +221,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/food-health/s128014'])
+    this.router.navigate(['/teenagers/food-health/s128014'])
 
 
   }
