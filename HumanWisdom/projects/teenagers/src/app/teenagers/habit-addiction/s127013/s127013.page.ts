@@ -15,7 +15,7 @@ export class S127013Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w11"
   hint = " It could be you exercise regularly, or think before you speak."
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127013Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127014'])
+        this.router.navigate(['/teenagers/habit-addiction/s127014'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127014'])
+        this.router.navigate(['/teenagers/habit-addiction/s127014'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127012'])
+    this.router.navigate(['/teenagers/habit-addiction/s127012'])
   }
 
   ngOnDestroy() 

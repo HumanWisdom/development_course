@@ -16,7 +16,7 @@ export class S127069Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+2.5.mp3'
   title="Why do we constantly seek pleasure?  "
-  toc="/habit-addiction/s127001"
+  toc="teenagers/habit-addiction/s127001"
   transcriptPage="habit-addiction/s127069t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S127069Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/habit-addiction/s127070'])
+    this.router.navigate(['/teenagers/habit-addiction/s127070'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S127069Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/habit-addiction/s127068'])
+    this.router.navigate(['/teenagers/habit-addiction/s127068'])
   }
 
   ngOnDestroy()
