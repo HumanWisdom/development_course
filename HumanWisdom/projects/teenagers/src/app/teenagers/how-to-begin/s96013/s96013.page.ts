@@ -28,7 +28,7 @@ export class S96013Page implements OnInit, OnDestroy {
 
 
   bookmark = 0
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -84,7 +84,7 @@ export class S96013Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/how-to-begin/s96014'])
+    this.router.navigate(['/teenagers/how-to-begin/s96014'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -106,7 +106,7 @@ export class S96013Page implements OnInit, OnDestroy {
 
   }
   prev() {
-    this.router.navigate(['/how-to-begin/s96012'])
+    this.router.navigate(['/teenagers/how-to-begin/s96012'])
 
   }
 
@@ -115,7 +115,7 @@ export class S96013Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/how-to-begin/s96014'])
+    this.router.navigate(['/teenagers/how-to-begin/s96014'])
   }
 
   ngOnDestroy() {
