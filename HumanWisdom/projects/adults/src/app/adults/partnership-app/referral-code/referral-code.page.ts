@@ -18,7 +18,7 @@ export class ReferralCodePage implements OnInit {
   constructor(public router: Router, public location: Location,public service:AdultsService) {}
 
   ngOnInit() {
-    if(localStorage.getItem('AffReferalCode')==null || localStorage.getItem('AffReferalCode')==''){
+    if(!localStorage.getItem('AffReferalCode') || localStorage.getItem('AffReferalCode')==null || localStorage.getItem('AffReferalCode')==''){
       this.service.GetUsedAffDiscCode().subscribe((res:any)=>{
         if(res){
            this.referralCode = res;

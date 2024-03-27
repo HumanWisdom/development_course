@@ -284,6 +284,9 @@
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
                                       {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
+                                      <!-- dash -->
+                                      <!-- -- -->
+                                      <!-- /dash -->
                                     </h4>
                                   </div>
                                 </div>
@@ -308,6 +311,52 @@
                                 </div>
                               </div>
                             </div>
+
+                            <!-- happy points -->
+                            <div class="row progress_box_score tcenter pt30px pb30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
+                                  Happy points for a happier life
+                                </h4>
+
+                                <h4 class="mt10px mb0px fs_12px fw_500 lh_150p fc_e58d82">
+                                  <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline">Login</a>
+                                  to view your progress
+                                </h4>
+                              </div>
+                            </div>
+
+                            <!-- <div class="row mt10px progress_box_score">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
+                                      --
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                        Happiness score
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                      <a class="" (click)="survey()">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
+                                          Take the survey
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
+                                        </h4>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+                            <!-- /happy points -->
 
                           </div>
                         </div>
@@ -477,10 +526,17 @@
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
                                     </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <div class="col-md-7 col-sm-7 col-xs-7 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
                                         INTRODUCTION
                                       </h4>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
+                                      <a>
+                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
+                                          View all
+                                        </h4>
+                                      </a>
                                     </div>
                                   </div>
                                 </div>
@@ -519,10 +575,17 @@
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
                                     </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <div class="col-md-7 col-sm-7 col-xs-7 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
                                         pathway
                                       </h4>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
+                                      <a> 
+                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
+                                          View all
+                                        </h4>
+                                      </a>
                                     </div>
                                   </div>
                                 </div>
@@ -562,10 +625,17 @@
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
                                       <img src="{{res['IconUrl']}}" class="img-responsive w100">
                                     </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <div class="col-md-7 col-sm-7 col-xs-7 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
                                         {{res['FeatureType']}}
                                       </h4>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
+                                      <a href="{{res['ViewLink']}}">
+                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
+                                          View all
+                                        </h4>
+                                      </a>
                                     </div>
                                   </div>
                                 </div>

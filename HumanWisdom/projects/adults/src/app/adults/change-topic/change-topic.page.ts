@@ -5,6 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { NavigationStart, Router } from '@angular/router';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { NavigationService } from '../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 
 @Component({
@@ -41,7 +44,7 @@ export class ChangeTopicPage implements OnInit {
   public userId = 100;
 
   constructor(private location: Location, private service: AdultsService, public logeventservice: LogEventService,
-    public router: Router, public activatedRoute: ActivatedRoute) {
+    public router: Router, public activatedRoute: ActivatedRoute,private navigation:NavigationService) {
     let authtoken;
     this.activatedRoute.queryParams.subscribe(params => {
       authtoken = params?.authtoken
@@ -92,8 +95,16 @@ export class ChangeTopicPage implements OnInit {
     }
   }
 
-  goBack() {
-    this.location.back();
+  goBack(){
+    var url = this.navigation.navigateToBackLink();
+    if(url==null){
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if(url && url!=null && url != 'null'){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+     }
   }
 
   update() {

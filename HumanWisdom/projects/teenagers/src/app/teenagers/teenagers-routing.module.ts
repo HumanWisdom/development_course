@@ -11,6 +11,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
     },
+  {
+    path: 'change-topic',
+    loadChildren: () => import('../teenagers/change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
+  },
     {
         path: 'start-here',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
