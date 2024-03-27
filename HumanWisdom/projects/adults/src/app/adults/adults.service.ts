@@ -590,4 +590,12 @@ export class AdultsService {
     return this.http.get(this.path + '/GetUsedAffDiscCode');
   }
 
+  GetAllCoachList(): Observable<any> {
+    return this.http.get(this.path + `/GetAllCoachesList`)
+  }
+
+  GetCoachBio(data): Observable<any> {
+    return this.http.get(this.path + `/GetCoachBio/${data}`)
+  }
+
 }

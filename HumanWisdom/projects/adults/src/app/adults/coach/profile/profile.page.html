@@ -9,9 +9,9 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Kennith Matty, 
+         {{coachBio[0]['CoachName']}},
         <span class="fs_15px fw_400 lh_140p fc_ffffff">
-          USA
+          {{coachBio[0]['Country']}}
         </span>
       </h1>
     </div>
@@ -33,7 +33,7 @@
           <div class="x_content p0">
             <form>
 
-              <div class="row">
+              <div class="row" (click)="backRoute()">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_left_orange.svg" class="img-responsive">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_e58d82 ml10px">
@@ -45,7 +45,7 @@
               <div class="row mtb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <video controls playinline class="cvideo_coach" poster="" controlsList="nodownload">
-                    <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/videos/carolyn_king.MP4" type="video/mp4">
+                    <source src="{{coachBio[0]['VideoURL']}}" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -53,14 +53,14 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                    Nullam eget varius lectus, vel lobortis nunc. Donec in felis sit amet massa efficitur dictum eu ac nisl. Maecenas blandit tortor id lectus pretium, vel aliquam dui mollis. Donec ut fringilla velit. Cras malesuada egestas accumsan. In hac habitasse platea dictumst. Curabitur commodo pulvinar nisi, quis tincidunt neque pharetra eu. Integer dictum sed nulla laoreet dignissim. Sed est leo, aliquam in eleifend id, convallis nec tellus. Quisque ut hendrerit ex, sodales egestas elit. Vivamus efficitur feugiat interdum. Aenean id tristique dolor. Quisque tortor nisl, placerat eu lectus eu, luctus imperdiet tellus. Vivamus condimentum tempor neque et feugiat. Class aptent taciti.
+                    {{coachBio[0]['Description']}}
                   </h4>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
-                  <a>
+                  <a (click)="contactCoach()">
                     <button type="button" class="btn btn_tfas">
                       Contact a coach
                     </button>
