@@ -17,7 +17,7 @@ export class S127111Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.8.mp3'
   transcriptPage="habit-addiction/s127111t"
-  toc="habit-addiction/s127001"
+  toc="teenagers/habit-addiction/s127001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -91,7 +91,7 @@ export class S127111Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/habit-addiction/s127112'])
+    this.router.navigate(['/teenagers/habit-addiction/s127112'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S127111Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/habit-addiction/s127110'])
+    this.router.navigate(['/teenagers/habit-addiction/s127110'])
   }
 
   ngOnDestroy()

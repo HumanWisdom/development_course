@@ -25,7 +25,7 @@ export class S127003Page implements OnInit {
         "Habits and addictions"
       ]
       transcriptPage="habit-addiction/s127003t"
-      toc="habit-addiction/s127001"
+      toc="teenagers/habit-addiction/s127001"
       progName = "teenagers";
       userId:any
       saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -99,7 +99,7 @@ export class S127003Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/habit-addiction/s127004'])
+        this.router.navigate(['/teenagers/habit-addiction/s127004'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -120,7 +120,7 @@ export class S127003Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/habit-addiction/s127002'])
+        this.router.navigate(['/teenagers/habit-addiction/s127002'])
      
      
       }
