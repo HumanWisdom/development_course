@@ -14,7 +14,7 @@ export class S133167Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w11"
   hint = "It means seeing the best in people and situations, asking what we can learn, always looking for the bright side of any situation.  "
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S133167Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/happiness/s133168'])
+        this.router.navigate(['/teenagers/happiness/s133168'])
 
       },
       () => {
-        this.router.navigate(['/happiness/s133168'])
+        this.router.navigate(['/teenagers/happiness/s133168'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/happiness/s133166'])
+    this.router.navigate(['/teenagers/happiness/s133166'])
   }
 
   ngOnDestroy() 

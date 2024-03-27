@@ -28,7 +28,7 @@ export class S133005Page implements OnInit, OnDestroy {
   ]
 
   transcriptPage = "happiness/s133005t"
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
   bookmark = 0
    path = setTimeout(() => {
     return this.router.url;
@@ -96,7 +96,7 @@ export class S133005Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/happiness/s133006'])
+    this.router.navigate(['/teenagers/happiness/s133006'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -116,7 +116,7 @@ export class S133005Page implements OnInit, OnDestroy {
 
   }
   prev() {
-    this.router.navigate(['/happiness/s133004'])
+    this.router.navigate(['/teenagers/happiness/s133004'])
 
 
   }

@@ -16,7 +16,7 @@ export class S96008Page implements OnInit {
   bg = "teal_w5"
   hint = "Think of a feeling like a fear of exams. What lies behind it? Is your fear coming from the exam, or your thoughts about failure?  "
 
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -103,11 +103,11 @@ export class S96008Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/how-to-begin/s96009'])
+        this.router.navigate(['/teenagers/how-to-begin/s96009'])
 
       },
       () => {
-        this.router.navigate(['/how-to-begin/s96009'])
+        this.router.navigate(['/teenagers/how-to-begin/s96009'])
       })
 
 
@@ -117,7 +117,7 @@ export class S96008Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/how-to-begin/s96007'])
+    this.router.navigate(['/teenagers/how-to-begin/s96007'])
   }
 
   ngOnDestroy() {

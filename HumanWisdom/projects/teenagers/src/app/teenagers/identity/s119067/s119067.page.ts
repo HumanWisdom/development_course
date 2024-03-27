@@ -15,7 +15,7 @@ export class S119067Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = "  With a deeper understanding of how you acquired them and their roots in your thinking, it may happen naturally  "
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119067Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119068'])
+        this.router.navigate(['/teenagers/identity/s119068'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119068'])
+        this.router.navigate(['/teenagers/identity/s119068'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119066'])
+    this.router.navigate(['/teenagers/identity/s119066'])
   }
 
   ngOnDestroy() 

@@ -14,7 +14,7 @@ export class S96002Page implements OnInit {
   bg_tn = "bg_teal"
   bg_cft = "bg_teal"
   bg = "teal_flat"
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -85,7 +85,7 @@ export class S96002Page implements OnInit {
   }
 
   goNext() {
-    this.router.navigate(['/how-to-begin/s96003'])
+    this.router.navigate(['/teenagers/how-to-begin/s96003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

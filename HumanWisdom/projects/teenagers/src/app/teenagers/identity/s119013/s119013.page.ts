@@ -15,7 +15,7 @@ export class S119013Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = " Your religion may be the same as your parents, for example  "
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119013Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119014'])
+        this.router.navigate(['/teenagers/identity/s119014'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119014'])
+        this.router.navigate(['/teenagers/identity/s119014'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119012'])
+    this.router.navigate(['/teenagers/identity/s119012'])
   }
 
   ngOnDestroy() 

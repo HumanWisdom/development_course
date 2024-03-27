@@ -15,7 +15,7 @@ export class S119032Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = " It could be based on national or religious identity  "
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119032Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119033'])
+        this.router.navigate(['/teenagers/identity/s119033'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119033'])
+        this.router.navigate(['/teenagers/identity/s119033'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119031'])
+    this.router.navigate(['/teenagers/identity/s119031'])
   }
 
   ngOnDestroy() 

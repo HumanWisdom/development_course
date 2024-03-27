@@ -15,7 +15,7 @@ export class S96012Page implements OnInit {
   bg = "teal_w5"
   hint = "We can begin by noticing that when we come across an idea that is different to what we know, we have this feeling of resistance and are critical of it."
 
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S96012Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/how-to-begin/s96013'])
+        this.router.navigate(['/teenagers/how-to-begin/s96013'])
 
       },
       () => {
-        this.router.navigate(['/how-to-begin/s96013'])
+        this.router.navigate(['/teenagers/how-to-begin/s96013'])
       })
 
 
@@ -116,7 +116,7 @@ export class S96012Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/how-to-begin/s96011'])
+    this.router.navigate(['/teenagers/how-to-begin/s96011'])
   }
 
   ngOnDestroy() {

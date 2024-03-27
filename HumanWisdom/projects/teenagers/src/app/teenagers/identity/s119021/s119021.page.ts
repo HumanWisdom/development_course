@@ -15,7 +15,7 @@ export class S119021Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = "You could dislike people with different identities or think ill of them, for example"
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119021Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119022'])
+        this.router.navigate(['/teenagers/identity/s119022'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119022'])
+        this.router.navigate(['/teenagers/identity/s119022'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119020'])
+    this.router.navigate(['/teenagers/identity/s119020'])
   }
 
   ngOnDestroy() 

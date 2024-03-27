@@ -22,7 +22,7 @@ export class S96006Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/modules/how-to-begin/audios/1.1.mp3'
 
   transcriptPage="how-to-begin/s96006t"
-  toc="how-to-begin/s96001"
+  toc="teenagers/how-to-begin/s96001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -94,7 +94,7 @@ export class S96006Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/how-to-begin/s96007'])
+    this.router.navigate(['/teenagers/how-to-begin/s96007'])
    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -115,7 +115,7 @@ export class S96006Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/how-to-begin/s96005'])
+    this.router.navigate(['/teenagers/how-to-begin/s96005'])
  
  
   }

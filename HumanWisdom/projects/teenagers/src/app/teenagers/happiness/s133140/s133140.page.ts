@@ -17,7 +17,7 @@ export class S133140Page implements OnInit {
   audioLink=this.mediaAudio+'/happiness/audios/4.4.mp3'
   title="How can I make peace with my inner boredom?"
 
-  toc="/happiness/s133001"
+  toc="teenagers/happiness/s133001"
   transcriptPage="happiness/s133140t"
 
   userId:any
@@ -94,7 +94,7 @@ export class S133140Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/happiness/s133141'])
+    this.router.navigate(['/teenagers/happiness/s133141'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S133140Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/happiness/s133139'])
+    this.router.navigate(['/teenagers/happiness/s133139'])
   }
 
   ngOnDestroy()
