@@ -13,7 +13,7 @@ export class S133047Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w3"
   hint = "It could be being praised, or winning a race, or buying something."
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S133047Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/happiness/s133048'])
+        this.router.navigate(['/teenagers/happiness/s133048'])
 
       },
       () => {
-        this.router.navigate(['/happiness/s133048'])
+        this.router.navigate(['/teenagers/happiness/s133048'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/happiness/s133046'])
+    this.router.navigate(['/teenagers/happiness/s133046'])
   }
 
   ngOnDestroy() 
