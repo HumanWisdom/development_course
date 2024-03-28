@@ -18,7 +18,7 @@ export class S137071Page implements OnInit {
   audioLink=this.mediaAudio+'/teenagers/modules/kindness/audios/1.8.mp3'
 
   transcriptPage="kindness/s137071t"
-  toc="kindness/s137001"
+  toc="teenagers/kindness/s137001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -93,7 +93,7 @@ export class S137071Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/kindness/s137072'])
+    this.router.navigate(['/teenagers/kindness/s137072'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S137071Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/kindness/s137070'])
+    this.router.navigate(['/teenagers/kindness/s137070'])
   }
 
   ngOnDestroy()

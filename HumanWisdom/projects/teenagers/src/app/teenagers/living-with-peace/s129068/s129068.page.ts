@@ -20,7 +20,7 @@ export class S129068Page implements OnInit {
 
   transcriptPage="living-with-peace/s129068t"
   yellow="#FFC455"
-  toc="living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -95,7 +95,7 @@ export class S129068Page implements OnInit {
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/living-with-peace/s129069'])
+    this.router.navigate(['/teenagers/living-with-peace/s129069'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -116,7 +116,7 @@ export class S129068Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s129067'])
+    this.router.navigate(['/teenagers/living-with-peace/s129067'])
 
 
   }

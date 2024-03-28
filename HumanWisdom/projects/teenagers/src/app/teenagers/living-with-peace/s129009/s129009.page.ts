@@ -16,7 +16,7 @@ export class S129009Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+1.3.mp3'
   title="An example  "
-  toc="/living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
   transcriptPage="living-with-peace/s129009t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S129009Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/living-with-peace/s129010'])
+    this.router.navigate(['/teenagers/living-with-peace/s129010'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S129009Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/living-with-peace/s129008p1'])
+    this.router.navigate(['/teenagers/living-with-peace/s129008p1'])
   }
 
   ngOnDestroy()

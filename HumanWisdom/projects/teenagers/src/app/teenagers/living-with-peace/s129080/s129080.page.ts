@@ -262,21 +262,21 @@ export class S129080Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/living-with-peace/s129081'])
+          this.router.navigate(['/teenagers/living-with-peace/s129081'])
         },
         () => {
-          this.router.navigate(['/living-with-peace/s129081'])
+          this.router.navigate(['/teenagers/living-with-peace/s129081'])
         })
     }
     else 
     {
-      this.router.navigate(['/living-with-peace/s129081'])
+      this.router.navigate(['/teenagers/living-with-peace/s129081'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/living-with-peace/s129079'])
+    this.router.navigate(['/teenagers/living-with-peace/s129079'])
   }
 
   ngOnDestroy() 

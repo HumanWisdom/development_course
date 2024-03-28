@@ -17,7 +17,7 @@ export class S129007Page implements OnInit
 
   hint = "it could be you don’t like others, because you think they are different."
 
-  toc = "/living-with-peace/s129001"
+  toc = "teenagers/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -116,17 +116,17 @@ export class S129007Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/living-with-peace/s129008'])
+        this.router.navigate(['/teenagers/living-with-peace/s129008'])
 
       },
       () => {
-        this.router.navigate(['/living-with-peace/s129008'])
+        this.router.navigate(['/teenagers/living-with-peace/s129008'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129006'])
+    this.router.navigate(['/teenagers/living-with-peace/s129006'])
   }
 
   ngOnDestroy() 

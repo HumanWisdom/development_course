@@ -18,10 +18,10 @@ export class S129032Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/living-with-peace/s129033"
+  link="teenagers/living-with-peace/s129033"
   name="#2 Four ways living-with-peace impacts our life"
   progressImg=""
-  toc="living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
 
   constructor
   (

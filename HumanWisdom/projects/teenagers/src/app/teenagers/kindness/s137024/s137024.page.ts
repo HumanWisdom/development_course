@@ -18,10 +18,10 @@ export class S137024Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/3"
-  link="/kindness/s137025"
+  link="teenagers/kindness/s137025"
   name="#2  What gets in the way of being kind?"
   progressImg=""
-  toc="kindness/s137001"
+  toc="teenagers/kindness/s137001"
 
   constructor
   (
