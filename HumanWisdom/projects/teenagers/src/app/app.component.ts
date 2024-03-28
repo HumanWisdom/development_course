@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'teenagers';
   teenagerCss ='assets/css/custom.css';
   constructor(){
-    SharedService.ProgramId=ProgramType.Teenagers;
+    SharedService.ProgramId=11;
     moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
     swPath:'/teenagers/serviceworker.js'
     });
