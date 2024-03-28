@@ -15,7 +15,7 @@ export class S117084Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/loneliness/audios/3.4.mp3'
   title="To get over our loneliness, we have to understand its origins  "
-  toc="/loneliness/s117001"
+  toc="teenagers/loneliness/s117001"
   transcriptPage="loneliness/s117084t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -91,7 +91,7 @@ export class S117084Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/loneliness/s117085'])
+    this.router.navigate(['/teenagers/loneliness/s117085'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -111,7 +111,7 @@ export class S117084Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/loneliness/s117083'])
+    this.router.navigate(['/teenagers/loneliness/s117083'])
   }
 
   ngOnDestroy()

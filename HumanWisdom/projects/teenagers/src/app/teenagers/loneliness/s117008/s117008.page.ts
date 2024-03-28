@@ -15,7 +15,7 @@ export class S117008Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w6"
   hint = "Are you aware of it? Are you afraid of it? How does it influence your life?"
-  toc = "/loneliness/s117001"
+  toc = "teenagers/loneliness/s117001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S117008Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/loneliness/s117009'])
+        this.router.navigate(['/teenagers/loneliness/s117009'])
 
       },
       () => {
-        this.router.navigate(['/loneliness/s117009'])
+        this.router.navigate(['/teenagers/loneliness/s117009'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/loneliness/s117007'])
+    this.router.navigate(['/teenagers/loneliness/s117007'])
   }
 
   ngOnDestroy() 

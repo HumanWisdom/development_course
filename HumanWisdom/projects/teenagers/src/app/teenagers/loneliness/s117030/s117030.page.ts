@@ -17,7 +17,7 @@ export class S117030Page implements OnInit {
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+1.4.mp3'
   title=" What is going on in our thinking, when we feel lonely?  "
 
-  toc="loneliness/s117001"
+  toc="teenagers/loneliness/s117001"
   transcriptPage="loneliness/s117030t"
 
   userId:any
@@ -91,7 +91,7 @@ export class S117030Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/loneliness/s117031'])
+    this.router.navigate(['/teenagers/loneliness/s117031'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S117030Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/loneliness/s117029'])
+    this.router.navigate(['/teenagers/loneliness/s117029'])
  
  
   }
