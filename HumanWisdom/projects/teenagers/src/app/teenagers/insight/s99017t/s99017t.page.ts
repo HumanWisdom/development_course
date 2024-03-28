@@ -19,7 +19,7 @@ export class S99017tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/insight/s99017"
-  toc="insight/s99001"
+  toc="teenagers/insight/s99001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -65,7 +65,7 @@ export class S99017tPage implements OnInit {
     sessionStorage.setItem("bookmark99017",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/insight/s99018'])
+    this.router.navigate(['/teenagers/insight/s99018'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S99017tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/insight/s99016'])
+    this.router.navigate(['/teenagers/insight/s99016'])
   }
 
 

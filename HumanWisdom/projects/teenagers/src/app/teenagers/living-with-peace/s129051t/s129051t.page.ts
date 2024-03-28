@@ -18,7 +18,7 @@ export class S129051tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/living-with-peace/s129051"
-  toc="/living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -67,7 +67,7 @@ export class S129051tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/living-with-peace/s129052'])
+    this.router.navigate(['/teenagers/living-with-peace/s129052'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -81,7 +81,7 @@ export class S129051tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/living-with-peace/s129050'])
+    this.router.navigate(['/teenagers/living-with-peace/s129050'])
   }
 
 }

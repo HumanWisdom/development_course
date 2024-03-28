@@ -15,7 +15,7 @@ export class S129050Page implements OnInit
   bg_cft="bg_blue"
   bg="blue_w6"
   hint = "  For example, accept things that cannot be changed, like the past.  "
-  toc = "/living-with-peace/s129001"
+  toc = "teenagers/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S129050Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/living-with-peace/s129051'])
+        this.router.navigate(['/teenagers/living-with-peace/s129051'])
 
       },
       () => {
-        this.router.navigate(['/living-with-peace/s129051'])
+        this.router.navigate(['/teenagers/living-with-peace/s129051'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129049'])
+    this.router.navigate(['/teenagers/living-with-peace/s129049'])
   }
 
   ngOnDestroy() 

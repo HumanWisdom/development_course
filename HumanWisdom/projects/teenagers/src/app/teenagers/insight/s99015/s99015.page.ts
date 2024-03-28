@@ -28,7 +28,7 @@ export class S99015Page implements OnInit, OnDestroy {
 
 
   bookmark = 0
-  toc = "insight/s99001"
+  toc = "teenagers/insight/s99001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -105,7 +105,7 @@ export class S99015Page implements OnInit, OnDestroy {
 
   }
   prev() {
-    this.router.navigate(['/insight/s99014'])
+    this.router.navigate(['/teenagers/insight/s99014'])
 
   }
 
@@ -114,7 +114,7 @@ export class S99015Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/insight/s99016'])
+    this.router.navigate(['/teenagers/insight/s99016'])
   }
 
   ngOnDestroy() {
