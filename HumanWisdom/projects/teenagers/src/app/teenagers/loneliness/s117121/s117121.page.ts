@@ -210,16 +210,16 @@ export class S117121Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/loneliness/s117122'])
+        this.router.navigate(['/teenagers/loneliness/s117122'])
       },
       () => {
-        this.router.navigate(['/loneliness/s117122'])
+        this.router.navigate(['/teenagers/loneliness/s117122'])
       })
   }
 
 
   prev() {
-    this.router.navigate(['/loneliness/s117120'])
+    this.router.navigate(['/teenagers/loneliness/s117120'])
 
   }
   ngOnDestroy() {
