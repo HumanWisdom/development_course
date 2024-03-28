@@ -29,6 +29,10 @@ export class IndexPage implements OnInit {
     )
   }
 
+  backRoute() {
+    this.router.navigate(["/adults/adult-dashboard"]);
+  }
+
   routeCoach(data) {
     localStorage.setItem("coachId", data['UserID']);
     this.router.navigate(["/adults/coach/profile"]);
