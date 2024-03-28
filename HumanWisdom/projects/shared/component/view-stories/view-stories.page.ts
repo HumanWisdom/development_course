@@ -25,24 +25,21 @@ export class ViewStoriesPage implements OnInit {
   sId: any
   storyList = []
   token = localStorage.getItem("shareToken")
-
+  isAdults=true;
   constructor(private router: Router,
     private service: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService,
     private location: Location, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.sId = params?.sId
     });
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+   this.isAdults = true;
+     } else {
+      this.isAdults = false;
+     }
     //this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
 
-
-  }
-
-  getClass(){
-    if (SharedService.ProgramId == ProgramType.Adults) {
-     return 'bg_292d56d';
-    } else {
-     return 'bg_stake';
-    }
 
   }
 

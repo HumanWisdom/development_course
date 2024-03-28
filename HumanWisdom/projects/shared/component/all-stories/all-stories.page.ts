@@ -21,7 +21,7 @@ export class AllStoriesPage implements OnInit {
   enable_view_more_less = false;
   view_more_less="View More"
   isSubscriber = false;
-
+  isAdults = true;
   constructor(private router: Router,
     private service:OnboardingService,
     private location:Location,
@@ -40,6 +40,11 @@ export class AllStoriesPage implements OnInit {
     } else {
       this.isSubscriber = false;
     }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
   goBack(){
     this.location.back()
