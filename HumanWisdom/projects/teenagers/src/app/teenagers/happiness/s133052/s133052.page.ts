@@ -14,7 +14,7 @@ export class S133052Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w8"
   hint = ""
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -100,7 +100,7 @@ export class S133052Page implements OnInit {
     sessionStorage.setItem("r133052", JSON.stringify(e))
     this.r133052 = sessionStorage.getItem("r133052")
     localStorage.setItem("pageaction", 'next')
-     this.router.navigate(['/happiness/s133053'])
+     this.router.navigate(['/teenagers/happiness/s133053'])
     if (this.userId === 563) return;
 
 
@@ -129,7 +129,7 @@ export class S133052Page implements OnInit {
 
   previous() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/happiness/s133051'])
+    this.router.navigate(['/teenagers/happiness/s133051'])
   }
 
   ngOnDestroy() {
