@@ -52,11 +52,11 @@ export class S121032Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/inner-boredom/s121033'])
+    this.router.navigate(['/teenagers/inner-boredom/s121033'])
   }
 
   prev()
   {
-    this.router.navigate(['/inner-boredom/s121030'])
+    this.router.navigate(['/teenagers/inner-boredom/s121030'])
   }
 }

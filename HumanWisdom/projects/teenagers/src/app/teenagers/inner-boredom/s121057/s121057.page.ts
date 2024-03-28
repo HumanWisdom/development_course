@@ -241,21 +241,21 @@ export class S121057Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/inner-boredom/s121058'])
+          this.router.navigate(['/teenagers/inner-boredom/s121058'])
         },
         () => {
-          this.router.navigate(['/inner-boredom/s121058'])
+          this.router.navigate(['/teenagers/inner-boredom/s121058'])
         })
     }
     else 
     {
-      this.router.navigate(['/inner-boredom/s121058'])
+      this.router.navigate(['/teenagers/inner-boredom/s121058'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/inner-boredom/s121056'])
+    this.router.navigate(['/teenagers/inner-boredom/s121056'])
   }
 
   ngOnDestroy() 
