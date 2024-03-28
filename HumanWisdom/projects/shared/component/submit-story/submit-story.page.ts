@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
@@ -11,7 +10,6 @@ import {Location } from '@angular/common'
 export class SubmitStoryPage implements OnInit {
 
   constructor(private router: Router,
-    private service:AdultsService,
     private location:Location) { }
 
   ngOnInit() {

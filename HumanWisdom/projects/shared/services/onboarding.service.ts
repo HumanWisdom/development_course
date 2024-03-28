@@ -219,4 +219,24 @@ export class OnboardingService {
     return this.http.post(this.path + `/ReviveSubscription/${key}`,{});
   }
 
+  getScenarios(): Observable<any> {
+    return this.http.get(this.path + `/Scenarios`)
+  }
+  getScenarioswithId(data: any): Observable<any> {
+    return this.http.get(this.path + `/Scenarios/${data}`)
+  }
+
+  CheckStoryIsFree(data: any): Observable<any> {
+    return this.http.get(this.path + `/CheckStoryIsFree/${data}`)
+  }
+  clickStory(data: any): Observable<any> {
+    return this.http.post(this.path + `/clickStory/${data}`, null)
+  }
+  clickModule(data: any, userId: any): Observable<any> {
+    return this.http.get(this.path + `/clickModule/${data}/${userId}`)
+  }
+  readStories(): Observable<any> {
+    return this.http.get(this.path + `/wisdomStories`)
+  }
+
 }

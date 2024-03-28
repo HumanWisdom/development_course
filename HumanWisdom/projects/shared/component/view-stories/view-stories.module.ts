@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { ViewStoriesPageRoutingModule } from './view-stories-routing.module';
 
 import { ViewStoriesPage } from './view-stories.page';
-import {SharedModule} from '../../../../../../shared/shared.module'
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import {ShareIconsModule} from 'ngx-sharebuttons/icons'
+import { SharedModule } from '../../shared.module';
 
 @NgModule({
   imports: [
