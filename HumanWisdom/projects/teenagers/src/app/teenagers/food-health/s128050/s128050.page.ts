@@ -15,7 +15,7 @@ export class S128050Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = "The diet you follow could be the one you grew up with, for example."
-  toc = "/food-health/s128001"
+  toc = "teenagers/food-health/s128001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S128050Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/food-health/s128051'])
+        this.router.navigate(['/teenagers/food-health/s128051'])
 
       },
       () => {
-        this.router.navigate(['/food-health/s128051'])
+        this.router.navigate(['/teenagers/food-health/s128051'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/food-health/s128049'])
+    this.router.navigate(['/teenagers/food-health/s128049'])
   }
 
   ngOnDestroy() 

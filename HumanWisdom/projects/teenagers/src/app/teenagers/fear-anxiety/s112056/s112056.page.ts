@@ -14,7 +14,7 @@ export class S112056Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w11"
   hint = "It may make you hate school, or study harder"
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -94,16 +94,16 @@ export class S112056Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112057'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112057'])
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112057'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112057'])
       })
 
   }
 
   previous() {
-    this.router.navigate(['/fear-anxiety/s112055'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112055'])
   }
 
   ngOnDestroy() {

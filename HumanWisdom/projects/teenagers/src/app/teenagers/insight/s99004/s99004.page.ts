@@ -19,7 +19,7 @@ export class S99004Page implements OnInit,OnDestroy {
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/insight/audios/1.1.mp3'
   transcriptPage="insight/s99004t"
-  toc="insight/s99001"
+  toc="teenagers/insight/s99001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -91,7 +91,7 @@ export class S99004Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/insight/s99005'])
+    this.router.navigate(['/teenagers/insight/s99005'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S99004Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/insight/s99003'])
+    this.router.navigate(['/teenagers/insight/s99003'])
  
  
   }

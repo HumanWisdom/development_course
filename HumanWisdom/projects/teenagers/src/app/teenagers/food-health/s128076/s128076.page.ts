@@ -220,21 +220,21 @@ export class S128076Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/food-health/s128077'])
+          this.router.navigate(['/teenagers/food-health/s128077'])
         },
         () => {
-          this.router.navigate(['/food-health/s128077'])
+          this.router.navigate(['/teenagers/food-health/s128077'])
         })
     }
     else 
     {
-      this.router.navigate(['/food-health/s128077'])
+      this.router.navigate(['/teenagers/food-health/s128077'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/food-health/s128075'])
+    this.router.navigate(['/teenagers/food-health/s128075'])
   }
 
   ngOnDestroy() 

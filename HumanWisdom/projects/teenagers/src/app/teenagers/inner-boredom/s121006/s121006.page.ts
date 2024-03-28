@@ -15,7 +15,7 @@ export class S121006Page implements OnInit
   bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
   hint = "You may surf the internet constantly, or watch TV, or eat too much.  "
-  toc = "/inner-boredom/s121001"
+  toc = "teenagers/inner-boredom/s121001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S121006Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/inner-boredom/s121007'])
+        this.router.navigate(['/teenagers/inner-boredom/s121007'])
 
       },
       () => {
-        this.router.navigate(['/inner-boredom/s121007'])
+        this.router.navigate(['/teenagers/inner-boredom/s121007'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/inner-boredom/s121005'])
+    this.router.navigate(['/teenagers/inner-boredom/s121005'])
   }
 
   ngOnDestroy() 

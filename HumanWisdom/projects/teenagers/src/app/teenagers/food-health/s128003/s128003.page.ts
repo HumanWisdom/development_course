@@ -26,7 +26,7 @@ export class S128003Page implements OnInit,OnDestroy
         "Living with wisdom"
       ]
   transcriptPage="food-health/s128003t"
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -102,7 +102,7 @@ export class S128003Page implements OnInit,OnDestroy
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/food-health/s128004'])
+    this.router.navigate(['/teenagers/food-health/s128004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -121,7 +121,7 @@ export class S128003Page implements OnInit,OnDestroy
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/food-health/s128002'])
+    this.router.navigate(['/teenagers/food-health/s128002'])
   }
 
   ngOnDestroy()

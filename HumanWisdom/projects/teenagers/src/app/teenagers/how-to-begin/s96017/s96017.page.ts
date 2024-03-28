@@ -15,7 +15,7 @@ export class S96017Page implements OnInit {
   bg = "teal_w5"
   hint = "See where your curiosity takes you. We seem to lose this as we get older. We had it as very young children and need to discover it again.  "
 
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S96017Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/how-to-begin/s96018'])
+        this.router.navigate(['/teenagers/how-to-begin/s96018'])
 
       },
       () => {
-        this.router.navigate(['/how-to-begin/s96018'])
+        this.router.navigate(['/teenagers/how-to-begin/s96018'])
       })
 
 
@@ -116,7 +116,7 @@ export class S96017Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/how-to-begin/s96016'])
+    this.router.navigate(['/teenagers/how-to-begin/s96016'])
   }
 
   ngOnDestroy() {

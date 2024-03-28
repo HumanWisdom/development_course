@@ -15,7 +15,7 @@ export class S123038Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w7"
   hint = "This can happen without our awareness  "
-  toc = "/external-approval/s123001"
+  toc = "teenagers/external-approval/s123001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S123038Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/external-approval/s123039'])
+     this.router.navigate(['/teenagers/external-approval/s123039'])
 
       },
       () => {
-        this.router.navigate(['/external-approval/s123039'])
+     this.router.navigate(['/teenagers/external-approval/s123039'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/external-approval/s123037'])
+ this.router.navigate(['/teenagers/external-approval/s123037'])
   }
 
   ngOnDestroy() 

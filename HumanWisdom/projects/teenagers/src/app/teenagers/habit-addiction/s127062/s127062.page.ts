@@ -16,7 +16,7 @@ export class S127062Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+2.2.mp3'
   title="What drives addiction?"  
-  toc="/habit-addiction/s127001"
+  toc="teenagers/habit-addiction/s127001"
   transcriptPage="habit-addiction/s127062t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S127062Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/habit-addiction/s127063'])
+    this.router.navigate(['/teenagers/habit-addiction/s127063'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S127062Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/habit-addiction/s127061'])
+    this.router.navigate(['/teenagers/habit-addiction/s127061'])
   }
 
   ngOnDestroy()

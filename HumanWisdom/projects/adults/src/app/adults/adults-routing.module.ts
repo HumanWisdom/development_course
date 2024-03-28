@@ -542,6 +542,10 @@ const routes: Routes = [
     path: 'splash-options',
     loadChildren: () => import('./splash-options/splash-options.module').then( m => m.SplashOptionsPageModule)
   },
+  {
+    path: 'coach',
+    loadChildren: () => import('./coach/coach.module').then( m => m.CoachModule)
+  },
 ];
 
  @NgModule({

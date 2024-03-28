@@ -15,7 +15,7 @@ export class S123042Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w7"
   hint = " It could be you said you liked someone, so they could like you back"
-  toc = "/external-approval/s123001"
+  toc = "teenagers/external-approval/s123001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S123042Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/external-approval/s123043'])
+     this.router.navigate(['/teenagers/external-approval/s123043'])
 
       },
       () => {
-        this.router.navigate(['/external-approval/s123043'])
+     this.router.navigate(['/teenagers/external-approval/s123043'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/external-approval/s123041'])
+ this.router.navigate(['/teenagers/external-approval/s123041'])
   }
 
   ngOnDestroy() 

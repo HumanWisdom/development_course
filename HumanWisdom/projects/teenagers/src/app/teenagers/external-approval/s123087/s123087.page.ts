@@ -52,11 +52,11 @@ export class S123087Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/external-approval/s123088'])
+  this.router.navigate(['/teenagers/external-approval/s123088'])
   }
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123081'])
+  this.router.navigate(['/teenagers/external-approval/s123081'])
   }
 }

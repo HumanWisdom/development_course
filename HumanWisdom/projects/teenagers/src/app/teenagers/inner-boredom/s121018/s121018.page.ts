@@ -15,7 +15,7 @@ export class S121018Page implements OnInit
   bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
   hint = ""
-  toc = "/inner-boredom/s121001"
+  toc = "teenagers/inner-boredom/s121001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S121018Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/inner-boredom/s121019'])
+        this.router.navigate(['/teenagers/inner-boredom/s121019'])
 
       },
       () => {
-        this.router.navigate(['/inner-boredom/s121019'])
+        this.router.navigate(['/teenagers/inner-boredom/s121019'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/inner-boredom/s121017'])
+    this.router.navigate(['/teenagers/inner-boredom/s121017'])
   }
 
   ngOnDestroy() 

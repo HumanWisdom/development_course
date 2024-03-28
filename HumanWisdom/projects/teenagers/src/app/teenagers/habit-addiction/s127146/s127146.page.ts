@@ -15,7 +15,7 @@ export class S127146Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w5"
   hint = "For me, it's my health, the love of friends, and my love for poetry."
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127146Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127147'])
+        this.router.navigate(['/teenagers/habit-addiction/s127147'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127147'])
+        this.router.navigate(['/teenagers/habit-addiction/s127147'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127145'])
+    this.router.navigate(['/teenagers/habit-addiction/s127145'])
   }
 
   ngOnDestroy() 

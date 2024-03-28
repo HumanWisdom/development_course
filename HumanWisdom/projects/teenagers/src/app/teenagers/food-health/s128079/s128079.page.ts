@@ -52,11 +52,11 @@ export class S128079Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/food-health/s128080'])
+    this.router.navigate(['/teenagers/food-health/s128080'])
   }
 
   prev()
   {
-    this.router.navigate(['/food-health/s128073'])
+    this.router.navigate(['/teenagers/food-health/s128073'])
   }
 }

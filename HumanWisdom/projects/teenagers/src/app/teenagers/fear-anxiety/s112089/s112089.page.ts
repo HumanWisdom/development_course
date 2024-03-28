@@ -13,7 +13,7 @@ export class S112089Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w6"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -85,7 +85,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/fear-anxiety/s112090'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112090'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +108,7 @@ createScreen(){
   }
  
   prev(){
-    this.router.navigate(['/fear-anxiety/s112088'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112088'])
   }
  
   ngOnDestroy(){

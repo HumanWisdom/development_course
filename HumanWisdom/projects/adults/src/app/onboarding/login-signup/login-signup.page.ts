@@ -102,7 +102,7 @@ export class LoginSignupPage implements OnInit {
 
   constructor(
     private fb: UntypedFormBuilder,
-    private router: Router, 
+    private router: Router,
     public logeventservice: LogEventService,
     private activate: ActivatedRoute,
     private authService: SocialAuthService,
@@ -405,13 +405,30 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
+                        if(SharedService.ProgramId === 9) {
+                          this.router.navigate(["/adults/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }else if(SharedService.ProgramId === 11) {
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }
+
                       } else {
-                        this.router.navigate(["/adults/repeat-user"]);
+                        if(SharedService.ProgramId === 9) {
+                          this.router.navigate(["/adults/repeat-user"]);
+                        }else if(SharedService.ProgramId === 11) {
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }
                       }
                     }
                   }
@@ -441,7 +458,7 @@ export class LoginSignupPage implements OnInit {
         this.logeventservice.logEvent('facebook_signup');
     else
           this.logeventservice.logEvent('facebook_login');
-  
+
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       // this.user = user;
@@ -462,7 +479,7 @@ export class LoginSignupPage implements OnInit {
           })
           .subscribe((res) => {
             if (res) {
-              
+
 
               this.loginResponse = res;
               localStorage.setItem("socialLogin", "T");
@@ -588,13 +605,29 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
+                        if(SharedService.ProgramId === 9) {
+                          this.router.navigate(["/adults/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }else if(SharedService.ProgramId === 11) {
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }
                       } else {
-                        this.router.navigate(["/adults/repeat-user"]);
+                        if(SharedService.ProgramId === 9) {
+                          this.router.navigate(["/adults/repeat-user"]);
+                        }else if(SharedService.ProgramId === 11) {
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }
                       }
                     }
                   }
@@ -810,13 +843,30 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
+                        if(SharedService.ProgramId === 9) {
+                          this.router.navigate(["/adults/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }else if(SharedService.ProgramId === 11) {
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }
+
                       } else {
-                        this.router.navigate(["/adults/repeat-user"]);
+                        if(SharedService.ProgramId === 9) {
+                          this.router.navigate(["/adults/repeat-user"]);
+                        }else if(SharedService.ProgramId === 11) {
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
+                        }
                       }
                     }
                   }

@@ -15,7 +15,7 @@ export class S133110Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w12"
   hint = "This is explored fully in the module on stress."
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S133110Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/happiness/s133111'])
+        this.router.navigate(['/teenagers/happiness/s133111'])
 
       },
       () => {
-        this.router.navigate(['/happiness/s133111'])
+        this.router.navigate(['/teenagers/happiness/s133111'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/happiness/s133109'])
+    this.router.navigate(['/teenagers/happiness/s133109'])
   }
 
   ngOnDestroy() 

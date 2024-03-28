@@ -19,7 +19,7 @@ export class S121044Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+2.4.mp3'
   transcriptPage="inner-boredom/s121044t"
-  toc="inner-boredom/s121001"
+  toc="teenagers/inner-boredom/s121001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -93,7 +93,7 @@ export class S121044Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/inner-boredom/s121045'])
+    this.router.navigate(['/teenagers/inner-boredom/s121045'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S121044Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/inner-boredom/s121043'])
+    this.router.navigate(['/teenagers/inner-boredom/s121043'])
   }
 
   ngOnDestroy()

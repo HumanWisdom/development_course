@@ -14,7 +14,7 @@ export class S112104Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w7"
   title="Is my fear caused by the event, or my reaction to it?"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
 
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+4.2.mp3'
@@ -95,7 +95,7 @@ export class S112104Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/fear-anxiety/s112105'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112105'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S112104Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/fear-anxiety/s112103'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112103'])
   }
 
   ngOnDestroy()

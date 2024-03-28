@@ -20,7 +20,7 @@ export class S128010Page implements OnInit {
 
   transcriptPage="food-health/s128010t"
   yellow="#FFC455"
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -95,7 +95,7 @@ export class S128010Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s128011'])
+    this.router.navigate(['/teenagers/food-health/s128011'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -116,7 +116,7 @@ export class S128010Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/food-health/s128009'])
+    this.router.navigate(['/teenagers/food-health/s128009'])
  
  
   }

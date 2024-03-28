@@ -15,7 +15,7 @@ export class S129074Page implements OnInit
   bg_cft="bg_blue"
   bg="blue_w6"
   hint = ""
-  toc = "/living-with-peace/s129001"
+  toc = "teenagers/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S129074Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/living-with-peace/s129075'])
+        this.router.navigate(['/teenagers/living-with-peace/s129075'])
 
       },
       () => {
-        this.router.navigate(['/living-with-peace/s129075'])
+        this.router.navigate(['/teenagers/living-with-peace/s129075'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129073'])
+    this.router.navigate(['/teenagers/living-with-peace/s129073'])
   }
 
   ngOnDestroy() 

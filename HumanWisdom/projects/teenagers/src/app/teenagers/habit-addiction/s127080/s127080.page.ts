@@ -15,7 +15,7 @@ export class S127080Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w5"
   hint = "It could make you work all day, or want to be on your phone, or be with people. It is not wrong, but operates in the background."
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127080Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127081'])
+        this.router.navigate(['/teenagers/habit-addiction/s127081'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127081'])
+        this.router.navigate(['/teenagers/habit-addiction/s127081'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127079'])
+    this.router.navigate(['/teenagers/habit-addiction/s127079'])
   }
 
   ngOnDestroy() 

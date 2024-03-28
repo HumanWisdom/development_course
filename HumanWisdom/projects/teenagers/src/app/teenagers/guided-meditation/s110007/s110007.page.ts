@@ -17,7 +17,7 @@ export class S110007Page implements OnInit {
   audioLink=this.mediaAudio+'/guided-meditation/audios/guided-meditation+1.5.mp3'
 
   transcriptPage=""
-  toc="guided-meditation/s110001"
+  toc="teenagers/guided-meditation/s110001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -88,7 +88,7 @@ export class S110007Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/guided-meditation/s110008'])
+    this.router.navigate(['/teenagers/guided-meditation/s110008'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S110007Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/guided-meditation/s110006'])
+    this.router.navigate(['/teenagers/guided-meditation/s110006'])
  
  
   }

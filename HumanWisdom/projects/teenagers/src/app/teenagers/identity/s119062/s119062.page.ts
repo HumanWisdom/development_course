@@ -15,7 +15,7 @@ export class S119062Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = "  It may make you feel less divided from others who have a different identity, for example.  "
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119062Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119063'])
+        this.router.navigate(['/teenagers/identity/s119063'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119063'])
+        this.router.navigate(['/teenagers/identity/s119063'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119061'])
+    this.router.navigate(['/teenagers/identity/s119061'])
   }
 
   ngOnDestroy() 

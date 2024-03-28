@@ -14,7 +14,7 @@ export class S99002Page implements OnInit {
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_flat"
-  toc = "insight/s99001"
+  toc = "teenagers/insight/s99001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -100,7 +100,7 @@ export class S99002Page implements OnInit {
   }
 
   goNext() {
-    this.router.navigate(['/insight/s99003'])
+    this.router.navigate(['/teenagers/insight/s99003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

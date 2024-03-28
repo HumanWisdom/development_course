@@ -33,7 +33,7 @@ export class S129075Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
 
   constructor
   (
@@ -156,12 +156,12 @@ export class S129075Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/living-with-peace/s129081'])
+    this.router.navigate(['/teenagers/living-with-peace/s129081'])
   }
 
   prev()
   {
-    this.router.navigate(['/living-with-peace/s129074'])
+    this.router.navigate(['/teenagers/living-with-peace/s129074'])
   }
 
   sessionFetch(id, divid)

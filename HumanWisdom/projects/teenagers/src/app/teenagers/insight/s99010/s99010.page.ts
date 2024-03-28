@@ -14,7 +14,7 @@ export class S99010Page implements OnInit {
   bg = "dark_blue_w5"
   hint = "This could be that you are a poor listener for example."
 
-  toc = "insight/s99001"
+  toc = "teenagers/insight/s99001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -101,11 +101,11 @@ export class S99010Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/insight/s99011'])
+        this.router.navigate(['/teenagers/insight/s99011'])
 
       },
       () => {
-        this.router.navigate(['/insight/s99011'])
+        this.router.navigate(['/teenagers/insight/s99011'])
       })
 
 
@@ -115,7 +115,7 @@ export class S99010Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/insight/s99009'])
+    this.router.navigate(['/teenagers/insight/s99009'])
   }
 
   ngOnDestroy() {

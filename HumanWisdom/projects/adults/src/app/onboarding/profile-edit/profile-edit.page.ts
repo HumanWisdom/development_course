@@ -61,6 +61,11 @@ export class ProfileEditPage implements OnInit {
     }, 1000)
   }
 
+   clickEventForProfile(){
+    const customEvent = new CustomEvent('profileEditClicked');
+    window.dispatchEvent(customEvent);
+  }
+
   getFileUpload(event) {
     const files = event.target.files;
     if (files.length === 0)

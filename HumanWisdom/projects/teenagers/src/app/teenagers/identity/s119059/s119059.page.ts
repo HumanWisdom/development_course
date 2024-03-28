@@ -15,7 +15,7 @@ export class S119059Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = " It may make you want to be with only people like you, for example  "
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119059Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119060'])
+        this.router.navigate(['/teenagers/identity/s119060'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119060'])
+        this.router.navigate(['/teenagers/identity/s119060'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119058'])
+    this.router.navigate(['/teenagers/identity/s119058'])
   }
 
   ngOnDestroy() 

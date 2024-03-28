@@ -23,7 +23,7 @@ export class S137050Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "kindness/s137001"
+  toc = "teenagers/kindness/s137001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -94,22 +94,22 @@ export class S137050Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/kindness/s234'])
+        //this.router.navigate(['/teenagers/kindness/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/kindness/s137049'])
+    this.router.navigate(['/teenagers/kindness/s137049'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/kindness/s137050'])
+    // this.router.navigate(['/teenagers/kindness/s137050'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/kindness/s137051'])
+    this.router.navigate(['/teenagers/kindness/s137051'])
   }
 
   ngOnDestroy() 

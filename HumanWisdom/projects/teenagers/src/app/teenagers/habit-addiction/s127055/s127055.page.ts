@@ -18,10 +18,10 @@ export class S127055Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/6"
-  link="/habit-addiction/s127056"
+  link="teenagers/habit-addiction/s127056"
   name="#2  The hidden causes of addiction"
   progressImg=""
-  toc="habit-addiction/s127001"
+  toc="teenagers/habit-addiction/s127001"
 
   constructor
   (
