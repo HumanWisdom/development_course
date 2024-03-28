@@ -160,4 +160,8 @@ export class ContactPage implements OnInit {
   getCountriesList() {
     this.countryList = this.adultService.getCountryList();
   }
+
+  backRoute() {
+    this.router.navigate(["/adults/coach/profile"]);
+  }
 }
