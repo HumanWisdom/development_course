@@ -211,7 +211,7 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
         this.logeventservice.logEvent('click_workplace');
         this.route.navigate(['/teenagers/curated/succeed-in-life'])
-      } else if (name.includes('Relationship')) {
+      } else if (name ==='Relationships') {
         localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
         this.route.navigate(['/teenagers/curated/have-fulfilling-relationships'])

@@ -24,7 +24,7 @@ export class TeenagersService {
     },
     {
       id: "3",
-      name: 'Have fulfilling relationships'
+      name: 'Relationships'
     },
     {
       id: "4",

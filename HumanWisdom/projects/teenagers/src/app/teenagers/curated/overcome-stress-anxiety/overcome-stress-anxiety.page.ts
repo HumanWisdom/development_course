@@ -50,7 +50,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
         {
           id: 46,
           url: '/podcasts/46.mp3',
-          title: 'Understand your ego'
+          title: 'Understand your own ego'
         },
         pc02:
         {
@@ -69,7 +69,44 @@ export class OvercomeStressAnxietyPage implements OnInit {
           id: 37,
           url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
-        }
+        },
+        pc05:
+        {
+          id: 15,
+          url: '/podcasts/15.mp3',
+          title: 'Why do we follow trends'
+        },
+        pc06:
+        {
+          id: 28,
+          url: '/podcasts/28.mp3',
+          title: 'Healing emotional pain'
+        },
+        pc07:
+        {
+          id: 33,
+          url: '/podcasts/33.mp3',
+          title: 'Preventing suicide'
+        },
+        pc08:
+        {
+          id: 38,
+          url: '/podcasts/38.mp3',
+          title: 'Deal with bullying'
+        },
+        pc09:
+        {
+          id: 40,
+          url: '/podcasts/40.mp3',
+          title: 'Overcoming depression'
+        },
+        pc10:
+        {
+          id: 45,
+          url: '/podcasts/45.mp3',
+          title: 'The resilient mindset,'
+        },
+    
       }
 
       let userid = localStorage.getItem('isloggedin');
@@ -82,7 +119,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/overcome-stress-anxiety');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/overcome-stress-anxiety');
 
     this.title.setTitle('Stress Relief Tips for Improved Mental Health')
     this.meta.updateTag({ property: 'title', content: 'Stress Relief Tips for Improved Mental Health' })
@@ -131,7 +168,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -154,13 +191,13 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }
   }
   routeGuided() {
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -168,7 +205,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-      this.router.navigate(['/adults/wisdom-shorts', link])
+      this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
@@ -178,7 +215,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }else{
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
-      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+      this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
   }
 
@@ -186,8 +223,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
     var breathingR
 
-    localStorage.setItem("moduleId", JSON.stringify(29))
-    this.service.clickModule(29, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(107))
+    this.service.clickModule(107, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -209,19 +246,19 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/breathing/${breathingR}`])
+            this.router.navigate([`/teenagers/breathing/${breathingR}`])
           }
           else
-            this.router.navigate([`/adults/breathing/s29000`])
+            this.router.navigate([`/teenagers/breathing/s107001`])
 
           /* if(!breathingR)
            {
 
-             this.router.navigate([`/adults/breathing`])
+             this.router.navigate([`/teenagers/breathing`])
 
            }
            else
-             this.router.navigate([`/adults/breathing/s${breathingR}`])*/
+             this.router.navigate([`/teenagers/breathing/s${breathingR}`])*/
 
         })
 
@@ -229,8 +266,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   routeStress(cont: any = 1) {
     var stressResume
-    localStorage.setItem("moduleId", JSON.stringify(44))
-    this.service.clickModule(44, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(125))
+    this.service.clickModule(125, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -252,17 +289,17 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/stress/${stressResume}`])
+            this.router.navigate([`/teenagers/stress/${stressResume}`])
           }
           else
-            this.router.navigate([`/adults/stress/s44001`])
+            this.router.navigate([`/teenagers/stress/s125001`])
           /* if(!this.goToPage)
            {
 
-             this.router.navigate([`/adults/stress`])
+             this.router.navigate([`/teenagers/stress`])
            }
            else
-             this.router.navigate([`/adults/stress/s${stressResume}`])*/
+             this.router.navigate([`/teenagers/stress/s${stressResume}`])*/
 
         })
 
@@ -271,8 +308,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
   // understand emotions
   routeFearAnxiety(cont: any = 1) {
     var fearResume
-    localStorage.setItem("moduleId", JSON.stringify(19))
-    this.service.clickModule(19, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(112))
+    this.service.clickModule(112, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -294,17 +331,17 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/fear-anxiety/${fearResume}`])
+            this.router.navigate([`/teenagers/fear-anxiety/${fearResume}`])
           }
           else
-            this.router.navigate([`/adults/fear-anxiety/s486`])
+            this.router.navigate([`/teenagers/fear-anxiety/s112001`])
           /* if(!fearResume)
            {
 
-             this.router.navigate([`/adults/fear-anxiety`])
+             this.router.navigate([`/teenagers/fear-anxiety`])
            }
            else
-             this.router.navigate([`/adults/fear-anxiety/s${fearResume}`])*/
+             this.router.navigate([`/teenagers/fear-anxiety/s${fearResume}`])*/
 
         })
   }
@@ -312,8 +349,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
   // how the mind works
   routeConditioning(cont: any = 1) {
     var conditioningResume
-    localStorage.setItem("moduleId", JSON.stringify(15))
-    this.service.clickModule(15, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(105))
+    this.service.clickModule(105, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -335,17 +372,17 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/conditioning/${conditioningResume}`])
+            this.router.navigate([`/teenagers/conditioning/${conditioningResume}`])
           }
           else
-            this.router.navigate([`/adults/conditioning/s232`])
+            this.router.navigate([`/teenagers/conditioning/s105001`])
           /*if(!conditioningResume)
           {
 
-            this.router.navigate([`/adults/conditioning`])
+            this.router.navigate([`/teenagers/conditioning`])
           }
           else
-            this.router.navigate([`/adults/conditioning/s${conditioningResume}`])*/
+            this.router.navigate([`/teenagers/conditioning/s${conditioningResume}`])*/
 
         })
 
@@ -354,8 +391,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   routeReactiveMind(cont: any = 1) {
     var rmR
-    localStorage.setItem("moduleId", JSON.stringify(54))
-    this.service.clickModule(54, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(113))
+    this.service.clickModule(113, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -377,17 +414,17 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/reactive-mind/${rmR}`])
+            this.router.navigate([`/teenagers/reactive-mind/${rmR}`])
           }
           else
-            this.router.navigate([`/adults/reactive-mind/s54001`])
+            this.router.navigate([`/teenagers/reactive-mind/s113001`])
           /* if(!rmR)
            {
 
-             this.router.navigate([`/adults/reactive-mind`])
+             this.router.navigate([`/teenagers/reactive-mind`])
            }
            else
-             this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
+             this.router.navigate([`/teenagers/reactive-mind/s${rmR}`])*/
 
         })
 
@@ -395,8 +432,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   routeDealingWithDepression(cont: any = 1) {
     var dealingwithdepressionResume
-    localStorage.setItem("moduleId", JSON.stringify(92))
-    this.service.clickModule(92, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(156))
+    this.service.clickModule(156, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -418,17 +455,17 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
+            this.router.navigate([`/teenagers/dealing-with-depression/${dealingwithdepressionResume}`])
           }
           else
-            this.router.navigate([`/adults/dealing-with-depression/s92001`])
+            this.router.navigate([`/teenagers/dealing-with-depression/s156001`])
         })
   }
 
   routeExternalApproval(cont: any = 1) {
     var externalapprovalR
-    localStorage.setItem("moduleId", JSON.stringify(91))
-    this.service.clickModule(91, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(123))
+    this.service.clickModule(123, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -450,10 +487,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/external-approval/${externalapprovalR}`])
+            this.router.navigate([`/teenagers/external-approval/${externalapprovalR}`])
           }
           else
-            this.router.navigate([`/adults/external-approval/s91001`])
+            this.router.navigate([`/teenagers/external-approval/s123001`])
         })
   }
 
@@ -524,7 +561,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 

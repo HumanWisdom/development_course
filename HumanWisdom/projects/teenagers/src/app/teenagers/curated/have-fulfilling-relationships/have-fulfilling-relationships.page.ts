@@ -60,23 +60,17 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         pc03:
         {
-          id: 5,
-          url: '/podcasts/5.mp3',
-          title: 'Feeling hurt'
-        },
-        pc04:
-        {
           id: 9,
           url: '/podcasts/9.mp3',
           title: 'Living with Compassion'
         },
-        pc05:
+        pc04:
         {
           id: 57,
           url: '/podcasts/57.mp3',
           title: 'Managing expectations'
         },
-        pc06:
+        pc05:
         {
           id: 56,
           url: '/podcasts/56.mp3',
@@ -94,7 +88,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
      }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-fulfilling-relationships');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/have-fulfilling-relationships');
 
     this.title.setTitle('Building Healthy Relationships')
     this.meta.updateTag({ property: 'title', content: 'Building Healthy Relationships' })
@@ -127,13 +121,13 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   }
 
   routeGuided() {
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -141,7 +135,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
@@ -151,7 +145,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
   }
 
@@ -179,7 +173,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -197,8 +191,8 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
   routeRelationships(cont: any = 1) {
     var relationshipResume
-    localStorage.setItem("moduleId", JSON.stringify(47))
-    this.service.clickModule(47, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(131))
+    this.service.clickModule(131, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -220,26 +214,26 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/relationships/${relationshipResume}`])
+            this.router.navigate([`/teenagers/relationships/${relationshipResume}`])
           }
           else
-            this.router.navigate([`/adults/relationships/s47000`])
+            this.router.navigate([`/teenagers/relationships/s131001`])
 
           /*if(!relationshipResume)
             {
 
-              this.router.navigate([`/adults/relationships`])
+              this.router.navigate([`/teenagers/relationships`])
             }
             else
-              this.router.navigate([`/adults/relationships/s${relationshipResume}`])*/
+              this.router.navigate([`/teenagers/relationships/s${relationshipResume}`])*/
 
         })
   }
 
   routeEmotionalNeeds(cont: any = 1) {
     var enR
-    localStorage.setItem("moduleId", JSON.stringify(18))
-    this.service.clickModule(18, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(120))
+    this.service.clickModule(120, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -261,26 +255,26 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/emotional-needs/${enR}`])
+            this.router.navigate([`/teenagers/emotional-needs/${enR}`])
           }
           else
-            this.router.navigate([`/adults/emotional-needs/s18001`])
+            this.router.navigate([`/teenagers/emotional-needs/s120001`])
 
           /*if(!sinR)
           {
 
-            this.router.navigate([`/adults/self-interest`])
+            this.router.navigate([`/teenagers/self-interest`])
           }
           else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
+            this.router.navigate([`/teenagers/self-interest/s${sinR}`])*/
 
         })
   }
 
   routeReactiveMind(cont: any = 1) {
     var rmR
-    localStorage.setItem("moduleId", JSON.stringify(54))
-    this.service.clickModule(54, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(113))
+    this.service.clickModule(113, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -302,25 +296,25 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/reactive-mind/${rmR}`])
+            this.router.navigate([`/teenagers/reactive-mind/${rmR}`])
           }
           else
-            this.router.navigate([`/adults/reactive-mind/s54001`])
+            this.router.navigate([`/teenagers/reactive-mind/s113001`])
           /* if(!rmR)
            {
 
-             this.router.navigate([`/adults/reactive-mind`])
+             this.router.navigate([`/teenagers/reactive-mind`])
            }
            else
-             this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
+             this.router.navigate([`/teenagers/reactive-mind/s${rmR}`])*/
 
         })
   }
 
   routeCommunication(cont: any = 1) {
     var communicationR
-    localStorage.setItem("moduleId", JSON.stringify(53))
-    this.service.clickModule(53, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(132))
+    this.service.clickModule(132, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -342,26 +336,26 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/communication/${communicationR}`])
+            this.router.navigate([`/teenagers/communication/${communicationR}`])
           }
           else
-            this.router.navigate([`/adults/communication/s53001`])
+            this.router.navigate([`/teenagers/communication/s132001`])
 
           /* if(!communicationR)
            {
 
-             this.router.navigate([`/adults/communication`])
+             this.router.navigate([`/teenagers/communication`])
            }
            else
-             this.router.navigate([`/adults/communication/s${communicationR}`])*/
+             this.router.navigate([`/teenagers/communication/s${communicationR}`])*/
 
         })
   }
 
   routeLove(cont: any = 1) {
     var loveResume
-    localStorage.setItem("moduleId", JSON.stringify(62))
-    this.service.clickModule(62, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(134))
+    this.service.clickModule(134, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -383,25 +377,25 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/love/${loveResume}`])
+            this.router.navigate([`/teenagers/love/${loveResume}`])
           }
           else
-            this.router.navigate([`/adults/love/s62001`])
+            this.router.navigate([`/teenagers/love/s134001`])
           /* if(!lonelinessResume)
             {
 
-              this.router.navigate([`/adults/loneliness/s162p0`])
+              this.router.navigate([`/teenagers/loneliness/s162p0`])
             }
             else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+              this.router.navigate([`/teenagers/loneliness/s${lonelinessResume}`])*/
 
         })
   }
 
   routeOpinionsAndBeliefs(cont: any = 1) {
     var opinionsandbeliefsResume
-    localStorage.setItem("moduleId", JSON.stringify(49))
-    this.service.clickModule(49, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(140))
+    this.service.clickModule(140, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -423,10 +417,10 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/opinions-beliefs/${opinionsandbeliefsResume}`])
+            this.router.navigate([`/teenagers/opinions-beliefs/${opinionsandbeliefsResume}`])
           }
           else
-            this.router.navigate([`/adults/opinions-beliefs/s49001`])
+            this.router.navigate([`/teenagers/opinions-beliefs/s140001`])
         })
   }
 
@@ -492,7 +486,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 
