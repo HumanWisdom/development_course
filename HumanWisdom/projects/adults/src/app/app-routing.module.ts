@@ -2,9 +2,10 @@ import { IntroGuard } from './intro.guard';
 import { Component, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
-import { authLoginGuard } from './auth-login.guard';
-import { BlogIndexPage } from './adults/blog/blog-index/blog-index.page';
-import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
+import { authLoginGuard } from './auth-login.guard'
+
+import{BlogIndexPage}  from './../../../shared/component/blogs/blog-index/blog-index.page';
+import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
 
 const routes: Routes = [
   /*{
