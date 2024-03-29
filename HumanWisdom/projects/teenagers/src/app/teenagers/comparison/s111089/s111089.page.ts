@@ -156,12 +156,12 @@ export class S111089Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/comparison/s111090'])
+    this.router.navigate(['/teenagers/comparison/s111090'])
   }
 
   prev()
   {
-    this.router.navigate(['/comparison/s111088'])
+    this.router.navigate(['/teenagers/comparison/s111088'])
   }
 
   sessionFetch(id, divid)

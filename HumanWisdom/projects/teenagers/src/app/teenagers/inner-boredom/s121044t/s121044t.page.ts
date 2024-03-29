@@ -20,7 +20,7 @@ export class S121044tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/inner-boredom/s121044"
-  toc="/inner-boredom/s121001"
+  toc="teenagers/inner-boredom/s121001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -69,7 +69,7 @@ export class S121044tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/inner-boredom/s121045'])
+    this.router.navigate(['/teenagers/inner-boredom/s121045'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -83,7 +83,7 @@ export class S121044tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/inner-boredom/s121043'])
+    this.router.navigate(['/teenagers/inner-boredom/s121043'])
   }
 
 }

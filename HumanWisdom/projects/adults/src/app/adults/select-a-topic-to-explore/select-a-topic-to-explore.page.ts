@@ -5,6 +5,9 @@ import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 @Component({
   selector: 'app-select-a-topic-to-explore',
@@ -71,6 +74,7 @@ export class SelectATopicToExplorePage implements OnInit {
     public cd: ChangeDetectorRef,
     private location: Location,
     private router: Router,
+    private navigation:NavigationService
   ) {
 
     this.logeventservice.logEvent('View_For_you');
@@ -839,10 +843,17 @@ export class SelectATopicToExplorePage implements OnInit {
     }
   }
 
-  goBack() {
-    this.location.back()
+  goBack(){
+    var url = this.navigation.navigateToBackLink();
+    if(url==null){
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if(url && url!=null && url != 'null'){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+     }
   }
-
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
 

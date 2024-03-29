@@ -61,7 +61,7 @@ export class S109041tPage implements OnInit {
   }
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/meditation/s109042'])
+    this.router.navigate(['/teenagers/meditation/s109042'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -79,7 +79,7 @@ export class S109041tPage implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/meditation/s109040'])
+    this.router.navigate(['/teenagers/meditation/s109040'])
   }
 
 

@@ -10,7 +10,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S117124Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
-  toc="loneliness/s117001"
+  toc="teenagers/loneliness/s117001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/14.png"
  
   bg=""

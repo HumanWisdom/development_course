@@ -14,7 +14,7 @@ export class S112080Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w9"
   hint = "It is difficult ‘not to be afraid’ as our fear comes from the same mind as the thought which does not want to be afraid"
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -94,16 +94,16 @@ export class S112080Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112081'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112081'])
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112081'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112081'])
       })
 
   }
 
   previous() {
-    this.router.navigate(['/fear-anxiety/s112079'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112079'])
   }
 
   ngOnDestroy() {

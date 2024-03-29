@@ -12,7 +12,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S129082Page implements OnInit 
 {  
   
-  toc="living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/64.png"
   bg=""
   moduleLink="/dealing-with-death"

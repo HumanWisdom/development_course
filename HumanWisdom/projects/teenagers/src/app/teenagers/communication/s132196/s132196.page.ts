@@ -43,11 +43,11 @@ export class S132196Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/communication/s132197'])
+    this.router.navigate(['/teenagers/communication/s132197'])
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/communication/s132195'])
+    this.router.navigate(['/teenagers/communication/s132195'])
 
   }
 

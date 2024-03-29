@@ -18,7 +18,7 @@ export class S128010tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/food-health/s128010"
-  toc="/food-health/s128001"
+  toc="teenagers/food-health/s128001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -67,7 +67,7 @@ export class S128010tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/food-health/s128011'])
+    this.router.navigate(['/teenagers/food-health/s128011'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -81,7 +81,7 @@ export class S128010tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/food-health/s128009'])
+    this.router.navigate(['/teenagers/food-health/s128009'])
   }
 
 

@@ -15,7 +15,7 @@ export class S128009Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = "  you may overeat when stressed, for example  "
-  toc = "/food-health/s128001"
+  toc = "teenagers/food-health/s128001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S128009Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/food-health/s128010'])
+        this.router.navigate(['/teenagers/food-health/s128010'])
 
       },
       () => {
-        this.router.navigate(['/food-health/s128010'])
+        this.router.navigate(['/teenagers/food-health/s128010'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/food-health/s128008'])
+    this.router.navigate(['/teenagers/food-health/s128008'])
   }
 
   ngOnDestroy() 

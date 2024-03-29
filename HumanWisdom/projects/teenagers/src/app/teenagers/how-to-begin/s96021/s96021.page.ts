@@ -15,7 +15,7 @@ export class S96021Page implements OnInit {
   bg = "teal_w5"
   hint = ""
 
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S96021Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/how-to-begin/s96022'])
+        this.router.navigate(['/teenagers/how-to-begin/s96022'])
 
       },
       () => {
-        this.router.navigate(['/how-to-begin/s96022'])
+        this.router.navigate(['/teenagers/how-to-begin/s96022'])
       })
 
 
@@ -116,7 +116,7 @@ export class S96021Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/how-to-begin/s96020'])
+    this.router.navigate(['/teenagers/how-to-begin/s96020'])
   }
 
   ngOnDestroy() {

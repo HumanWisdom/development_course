@@ -44,11 +44,11 @@ export class S132140Page implements OnInit {
 
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/communication/s132141'])
+    this.router.navigate(['/teenagers/communication/s132141'])
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/communication/s132135'])
+    this.router.navigate(['/teenagers/communication/s132135'])
 
   }
 

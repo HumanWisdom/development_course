@@ -14,7 +14,7 @@ export class S132110Page implements OnInit {
   bg = "blue_w3"
   hint = "Do you pause and reflect before speaking? Do you consider what may be the right thing to say?"
 
-  toc = "communication/s132001"
+  toc = "teenagers/communication/s132001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -111,17 +111,17 @@ export class S132110Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/communication/s132111'])
+        this.router.navigate(['/teenagers/communication/s132111'])
 
       },
       () => {
-        this.router.navigate(['/communication/s132111'])
+        this.router.navigate(['/teenagers/communication/s132111'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/communication/s132109'])
+    this.router.navigate(['/teenagers/communication/s132109'])
   }
 
   ngOnDestroy() 

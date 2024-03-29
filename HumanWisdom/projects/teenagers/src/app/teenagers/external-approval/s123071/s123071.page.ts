@@ -13,7 +13,7 @@ export class S123071Page implements OnInit
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_w5"
-  toc = "external-approval/s123001"
+  toc = "teenagers/external-approval/s123001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -252,12 +252,12 @@ $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s123070'])
+  this.router.navigate(['/teenagers/external-approval/s123070'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/external-approval/s123072'])
+  this.router.navigate(['/teenagers/external-approval/s123072'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

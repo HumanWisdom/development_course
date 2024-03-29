@@ -26,7 +26,7 @@ export class S99014Page implements OnInit,OnDestroy {
   totalTime:any
   
   bookmark=0
-  toc="insight/s99001"
+  toc="teenagers/insight/s99001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -91,7 +91,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/insight/s99015'])
+    this.router.navigate(['/teenagers/insight/s99015'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -114,7 +114,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/insight/s99013'])
+    this.router.navigate(['/teenagers/insight/s99013'])
 
   }
   

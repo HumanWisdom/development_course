@@ -16,7 +16,7 @@ export class S120093Page implements OnInit
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
   hint = "   There may be less conflict, for example.  "
-  toc = "/emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S120093Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120094'])
+        this.router.navigate(['/teenagers/emotional-needs/s120094'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120094'])
+        this.router.navigate(['/teenagers/emotional-needs/s120094'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120092p1'])
+    this.router.navigate(['/teenagers/emotional-needs/s120092p1'])
   }
 
   ngOnDestroy() 

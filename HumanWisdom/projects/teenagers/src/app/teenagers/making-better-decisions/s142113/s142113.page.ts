@@ -178,7 +178,7 @@ export class S142113Page implements OnInit {
     sessionStorage.setItem("r142113", this.r142113)
     this.r142113 = sessionStorage.getItem("r142113")
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/making-better-decisions/s142114'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142114'])
     if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
@@ -204,7 +204,7 @@ export class S142113Page implements OnInit {
   prev() 
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142112'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142112'])
   }
 
   ngOnDestroy() {}

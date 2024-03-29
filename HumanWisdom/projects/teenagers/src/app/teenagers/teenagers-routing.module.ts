@@ -11,6 +11,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
     },
+  {
+    path: 'change-topic',
+    loadChildren: () => import('../teenagers/change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
+  },
     {
         path: 'start-here',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
@@ -337,6 +341,10 @@ const routes: Routes = [
         path: 'testimonials',
         loadChildren: () => import('../teenagers/testimonials/testimonials.module').then(m => m.TestimonialsPageModule)
     },
+    {
+        path: 'wisdom-stories',
+        loadChildren: () => import('./wisdom-stories/wisdom-stories.module').then(m => m.WisdomStoriesModule)
+      },
 ];
 
 

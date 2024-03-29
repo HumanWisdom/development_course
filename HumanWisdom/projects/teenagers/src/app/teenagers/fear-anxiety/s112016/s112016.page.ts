@@ -15,7 +15,7 @@ export class S112016Page implements OnInit {
   bg = "purple_red_w8"
   hint = ""
 
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -115,17 +115,17 @@ export class S112016Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112017'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112017'])
 
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112017'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112017'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/fear-anxiety/s112015'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112015'])
   }
 
   ngOnDestroy() 

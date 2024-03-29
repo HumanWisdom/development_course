@@ -16,7 +16,7 @@ export class S136041Page implements OnInit {
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -156,7 +156,7 @@ export class S136041Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-this.router.navigate(['/criticism/s136042'])
+this.router.navigate(['/teenagers/criticism/s136042'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -172,7 +172,7 @@ this.router.navigate(['/criticism/s136042'])
 
 }
 prev(){
-  this.router.navigate(['/criticism/s136040'])
+  this.router.navigate(['/teenagers/criticism/s136040'])
 
 
 }

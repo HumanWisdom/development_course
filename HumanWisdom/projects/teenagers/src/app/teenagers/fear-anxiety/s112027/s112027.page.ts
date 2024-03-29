@@ -18,10 +18,10 @@ export class S112027Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/5"
-  link="/fear-anxiety/s112028"
+  link="/teenagers/fear-anxiety/s112028"
   name="#2  10 ways fear shapes our lives"
   progressImg=""
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 

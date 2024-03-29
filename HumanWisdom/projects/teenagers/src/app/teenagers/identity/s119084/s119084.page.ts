@@ -262,21 +262,21 @@ export class S119084Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/identity/s119085'])
+          this.router.navigate(['/teenagers/identity/s119085'])
         },
         () => {
-          this.router.navigate(['/identity/s119085'])
+          this.router.navigate(['/teenagers/identity/s119085'])
         })
     }
     else 
     {
-      this.router.navigate(['/identity/s119085'])
+      this.router.navigate(['/teenagers/identity/s119085'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/identity/s119083'])
+    this.router.navigate(['/teenagers/identity/s119083'])
   }
 
   ngOnDestroy() 

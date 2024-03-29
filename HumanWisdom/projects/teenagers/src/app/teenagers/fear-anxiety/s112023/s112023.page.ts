@@ -13,7 +13,7 @@ export class S112023Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w3"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   title="Chronic anxiety can damage our health"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/fear-anxiety/audios/1.5.mp3'
@@ -91,7 +91,7 @@ export class S112023Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
-    this.router.navigate(['/fear-anxiety/s112024'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112024'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S112023Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112022'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112022'])
  
  
   }

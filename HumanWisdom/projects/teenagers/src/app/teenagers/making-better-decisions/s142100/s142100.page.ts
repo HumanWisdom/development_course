@@ -34,7 +34,7 @@ export class S142100Page implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/making-better-decisions/s142001"
+  toc="teenagers/making-better-decisions/s142001"
 
   constructor(private router: Router,
     private service:TeenagersService,
@@ -142,7 +142,7 @@ export class S142100Page implements OnInit {
   {
     localStorage.setItem("pageaction", 'next')
 
-    this.router.navigate(['/making-better-decisions/s142101'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142101'])
     if (this.userId === 563) return;
     
     {
@@ -162,7 +162,7 @@ export class S142100Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142099'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142099'])
   }
 
   sessionFetch(id, divid)

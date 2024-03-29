@@ -19,7 +19,7 @@ export class S136061Page implements OnInit {
   title="Responding to criticism with intelligence"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/criticism/criticism_03.jpg"
 
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
@@ -83,7 +83,7 @@ export class S136061Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/criticism/s136062'])
+    this.router.navigate(['/teenagers/criticism/s136062'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -99,7 +99,7 @@ export class S136061Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/criticism/s136060'])
+    this.router.navigate(['/teenagers/criticism/s136060'])
   }
 
   ngOnDestroy() { }

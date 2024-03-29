@@ -14,7 +14,7 @@ export class S135063Page implements OnInit {
   bg_tn="bg_pink_orange"
   bg_cft="bg_rpink_orange"
   bg="pink_orange_flat"  
-  toc="bullying/s135001"
+  toc="teenagers/bullying/s135001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -96,17 +96,17 @@ export class S135063Page implements OnInit {
     },
     error => { console.log(error) },
     () => {
-      this.router.navigate(['/bullying/s135064'])
+      this.router.navigate(['/teenagers/bullying/s135064'])
     })
   }
 
   goNext() 
   {
-    // this.router.navigate(['/bullying/s2'])
+    // this.router.navigate(['/teenagers/bullying/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/bullying/s135064'])
+    this.router.navigate(['/teenagers/bullying/s135064'])
   }
 
   ngOnDestroy() 

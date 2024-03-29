@@ -590,6 +590,20 @@
         // Perform the download action here
       });
     });
+    window.addEventListener('profileEditClicked', function () {
+      var fileName = localStorage.getItem('userId')+"_Profile";
+      console.log("ProfileEvenClicked--------------------");
+      if (window.AndroidHandler) {
+        window.AndroidHandler.profileEditClicked(fileName);
+      }
+      // Perform the download action here
+    });
+
+
+    window.addEventListener('ProfileEventReceived', function (obj) {
+      console.log(obj);
+      // Perform the download action here
+    });
 
     window.addEventListener('downloadButtonClicked', function () {
       console.log('fileName1:' + localStorage.getItem('fileName'));

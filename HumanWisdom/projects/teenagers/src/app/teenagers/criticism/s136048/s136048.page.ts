@@ -20,7 +20,7 @@ export class S136048Page implements OnInit {
   title="Why is criticism painful?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/criticism/criticism_01.jpg"
 
-  toc="/criticism/s136001"
+  toc="teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
    
@@ -91,7 +91,7 @@ export class S136048Page implements OnInit {
  {
    this.endTime = Date.now();
    this.totalTime = this.endTime - this.startTime;
-   this.router.navigate(['/criticism/s136049'])
+   this.router.navigate(['/teenagers/criticism/s136049'])
    this.service.submitProgressAv({
      "ScrNumber":this.screenNumber,
      "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S136048Page implements OnInit {
 
  prev()
  {
-   this.router.navigate(['/criticism/s136047'])
+   this.router.navigate(['/teenagers/criticism/s136047'])
  }
 
  ngOnDestroy()

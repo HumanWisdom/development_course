@@ -15,7 +15,7 @@ export class S130062Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w6"
   hint = "You may make peace with all your loved ones, and say thank you for all they have given you, for example.  "
-  toc = "/dealing-with-death/s130001"
+  toc = "teenagers/dealing-with-death/s130001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S130062Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-death/s130063'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130063'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-death/s130063'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130063'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-death/s130061'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130061'])
   }
 
   ngOnDestroy() 

@@ -16,7 +16,7 @@ export class S112090Page implements OnInit {
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  toc="/fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -172,7 +172,7 @@ this.router.navigate(['/fear-anxiety/s112091'])
 
 }
 prev(){
-  this.router.navigate(['/fear-anxiety/s112089'])
+  this.router.navigate(['/teenagers/fear-anxiety/s112089'])
 
 
 }

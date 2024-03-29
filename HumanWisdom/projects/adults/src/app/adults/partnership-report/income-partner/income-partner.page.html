@@ -71,7 +71,7 @@
               <div class="row mt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <img
-                    src="{{!partnershipReport?.AffImgPath ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}"
+                    src="{{partnershipReport?.AffImgPath=='' ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}"
                     alt="" class="img-responsive border_profile_img">
                 </div>
               </div>

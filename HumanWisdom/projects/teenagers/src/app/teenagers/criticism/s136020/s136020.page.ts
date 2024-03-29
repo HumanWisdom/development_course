@@ -16,7 +16,7 @@ export class S136020Page implements OnInit {
 
   hint = "It may make you avoid some people, and want to be with those who praise you, for example. Are you aware of this? "
 
-  toc = "/criticism/s136001"
+  toc = "teenagers/criticism/s136001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -113,17 +113,17 @@ export class S136020Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/criticism/s136021'])
+        this.router.navigate(['/teenagers/criticism/s136021'])
 
       },
       () => {
-        this.router.navigate(['/criticism/s136021'])
+        this.router.navigate(['/teenagers/criticism/s136021'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136019'])
+    this.router.navigate(['/teenagers/criticism/s136019'])
   }
 
   ngOnDestroy() 

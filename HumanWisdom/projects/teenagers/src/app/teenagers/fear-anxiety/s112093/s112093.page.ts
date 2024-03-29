@@ -14,7 +14,7 @@ export class S112093Page implements OnInit {
   bg_tn = "bg_purple_red"
   bg_cft = "bg_purple_red"
   bg = "fear_anxiety_flat"
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -81,7 +81,7 @@ export class S112093Page implements OnInit {
   }
 
   goNext() {
-    this.router.navigate(['/fear-anxiety/s112094'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112094'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

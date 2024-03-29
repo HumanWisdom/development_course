@@ -16,7 +16,7 @@ export class S120032Page implements OnInit
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
   hint = " You may feel uncomfortable, or under pressure, or resentful, or happy to oblige if your needs are being met  "
-  toc = "/emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S120032Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120033'])
+        this.router.navigate(['/teenagers/emotional-needs/s120033'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120033'])
+        this.router.navigate(['/teenagers/emotional-needs/s120033'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120031'])
+    this.router.navigate(['/teenagers/emotional-needs/s120031'])
   }
 
   ngOnDestroy() 

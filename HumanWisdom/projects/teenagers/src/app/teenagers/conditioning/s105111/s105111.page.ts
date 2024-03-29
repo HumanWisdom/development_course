@@ -33,7 +33,7 @@ export class S105111Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/conditioning/s105001"
+  toc="teenagers/conditioning/s105001"
 
   constructor
   (
@@ -156,12 +156,12 @@ export class S105111Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/conditioning/s105113'])
+    this.router.navigate(['/teenagers/conditioning/s105113'])
   }
 
   prev()
   {
-    this.router.navigate(['/conditioning/s105110'])
+    this.router.navigate(['/teenagers/conditioning/s105110'])
   }
 
   sessionFetch(id, divid)

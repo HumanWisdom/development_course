@@ -13,7 +13,7 @@ export class S136106Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w9"
-  toc = "/criticism/s136001"
+  toc = "teenagers/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   points:any
@@ -51,11 +51,11 @@ export class S136106Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/criticism/s136107'])
+    this.router.navigate(['/teenagers/criticism/s136107'])
 
   }
   prev(){
-    this.router.navigate(['/criticism/s136105'])
+    this.router.navigate(['/teenagers/criticism/s136105'])
   }
 
 

@@ -15,7 +15,7 @@ export class S128053Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = "It could be you need to eat more salads and drink more water. Habits stop change. "
-  toc = "/food-health/s128001"
+  toc = "teenagers/food-health/s128001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S128053Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/food-health/s128054'])
+        this.router.navigate(['/teenagers/food-health/s128054'])
 
       },
       () => {
-        this.router.navigate(['/food-health/s128054'])
+        this.router.navigate(['/teenagers/food-health/s128054'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/food-health/s128052'])
+    this.router.navigate(['/teenagers/food-health/s128052'])
   }
 
   ngOnDestroy() 

@@ -685,6 +685,13 @@ export class AdultDashboardPage implements OnInit {
         document.body.classList.add('overflow_hidden');
         this.services.setEnableTour(true);
       },
+      onCloseClick:() => {
+        this.tourIndex = 1;
+        document.body.classList.remove('overflow_hidden');
+        document.body.classList.add('overflow_auto');
+        this.services.setEnableTour(false);
+        driverObj.destroy();
+      },
       allowClose: false,
       showButtons: [
         'next',
@@ -4198,6 +4205,11 @@ export class AdultDashboardPage implements OnInit {
       this.logeventservice.logEvent("click_life_stories");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
+    }
+    else if (res['FeatureType'] === "UPCOMING EVENT") {
+      this.logeventservice.logEvent("click_upcoming_event");
+      sid = res['Url'].split('eid=')[1];
+      this.router.navigate(['/events/event'], { queryParams: { eid: `${sid}` } })
     }
     else if (res['FeatureType'] === "PODCAST") {
       this.logeventservice.logEvent("click_podcasts");

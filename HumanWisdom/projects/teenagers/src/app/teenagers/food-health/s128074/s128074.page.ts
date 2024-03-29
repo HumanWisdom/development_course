@@ -13,7 +13,7 @@ export class S128074Page implements OnInit, OnDestroy
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")

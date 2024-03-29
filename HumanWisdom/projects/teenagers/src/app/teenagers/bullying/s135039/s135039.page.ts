@@ -23,7 +23,7 @@ export class S135039Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "bullying/s135001"
+  toc = "teenagers/bullying/s135001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -94,22 +94,22 @@ export class S135039Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/bullying/s234'])
+        //this.router.navigate(['/teenagers/bullying/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/bullying/s135038'])
+    this.router.navigate(['/teenagers/bullying/s135038'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/bullying/s135039'])
+    // this.router.navigate(['/teenagers/bullying/s135039'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/bullying/s135040'])
+    this.router.navigate(['/teenagers/bullying/s135040'])
   }
 
   ngOnDestroy() 

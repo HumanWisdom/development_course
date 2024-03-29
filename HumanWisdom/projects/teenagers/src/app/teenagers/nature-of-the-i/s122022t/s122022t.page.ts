@@ -67,7 +67,7 @@ export class S122022tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/nature-of-the-i/s122023'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122023'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -81,7 +81,7 @@ export class S122022tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122021'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122021'])
   }
 
 }
