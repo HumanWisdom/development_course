@@ -19,7 +19,7 @@ export class S109011Page implements OnInit,OnDestroy {
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/meditation/audios/1.2.mp3'
   transcriptPage="meditation/s109011t"
-  toc="meditation/s109001"
+  toc="teenagers/meditation/s109001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -93,7 +93,7 @@ export class S109011Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/meditation/s109012'])
+    this.router.navigate(['/teenagers/meditation/s109012'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

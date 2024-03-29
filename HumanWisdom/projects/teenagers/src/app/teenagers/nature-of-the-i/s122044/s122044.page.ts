@@ -52,11 +52,11 @@ export class S122044Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/nature-of-the-i/s122045'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122045'])
   }
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122043'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122043'])
   }
 }

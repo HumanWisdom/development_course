@@ -188,16 +188,16 @@ export class S109073Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/meditation/s109074'])
+        this.router.navigate(['/teenagers/meditation/s109074'])
       },
       () => {
-        this.router.navigate(['/meditation/s109074'])
+        this.router.navigate(['/teenagers/meditation/s109074'])
       })
   }
 
 
   prev() {
-    this.router.navigate(['/meditation/s109072'])
+    this.router.navigate(['/teenagers/meditation/s109072'])
 
   }
   ngOnDestroy() {

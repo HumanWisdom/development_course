@@ -13,7 +13,7 @@ export class S109008Page implements OnInit {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"   
-  toc="meditation/s109001"
+  toc="teenagers/meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -99,7 +99,7 @@ export class S109008Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/meditation/s109007'])
+    this.router.navigate(['/teenagers/meditation/s109007'])
   }
 
   goNext() 
@@ -108,7 +108,7 @@ export class S109008Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/meditation/s109009'])
+    this.router.navigate(['/teenagers/meditation/s109009'])
   }
 
   ngOnDestroy() 
