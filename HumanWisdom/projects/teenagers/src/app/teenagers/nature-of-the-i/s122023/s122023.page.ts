@@ -15,7 +15,7 @@ export class S122023Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = "Sometimes we may avoid trying to make new friends because we are afraid of being rejected  "
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);

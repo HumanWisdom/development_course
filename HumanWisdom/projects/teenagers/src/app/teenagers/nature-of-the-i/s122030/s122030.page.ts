@@ -25,7 +25,7 @@ export class S122030Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;

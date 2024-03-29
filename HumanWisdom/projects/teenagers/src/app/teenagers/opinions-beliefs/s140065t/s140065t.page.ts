@@ -19,7 +19,7 @@ export class S140065tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/opinions-beliefs/s140065"
-  toc="/opinions-beliefs/s140001"
+  toc="teenagers/opinions-beliefs/s140001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -63,7 +63,7 @@ export class S140065tPage implements OnInit {
   }
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/opinions-beliefs/s140066'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140066'])
     if (this.userId === 563) return;
     
     this.service.submitProgressAv({
@@ -83,6 +83,6 @@ export class S140065tPage implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/opinions-beliefs/s140064'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140064'])
   }
 }

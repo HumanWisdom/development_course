@@ -15,7 +15,7 @@ export class S140070Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w3"
   hint = " You may believe that you don’t know how to cook, for example,  without even trying. "
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -117,17 +117,17 @@ export class S140070Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140071'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140071'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140071'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140071'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140069'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140069'])
   }
 
   ngOnDestroy() 

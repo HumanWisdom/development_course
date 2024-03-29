@@ -14,7 +14,7 @@ export class S140032Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w8"
   hint = "Do you get defensive? Or angry? Or try and convince the other person of your point of view? "
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S140032Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140033'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140033'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140033'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140033'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140031'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140031'])
   }
 
   ngOnDestroy() 

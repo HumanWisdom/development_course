@@ -15,7 +15,7 @@ export class S122034Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = " It could be a need to feel accepted, or understood, or listened to, which may lead you to join a group"
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);

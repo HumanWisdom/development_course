@@ -15,7 +15,7 @@ export class S122031Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = " It could be for more money, or fame.  "
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);

@@ -16,7 +16,7 @@ export class S122061Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+2.2.mp3' 
   title="How can understanding the ‘I’ bring peace?  "
-  toc="/nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   transcriptPage="nature-of-the-i/s122061t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

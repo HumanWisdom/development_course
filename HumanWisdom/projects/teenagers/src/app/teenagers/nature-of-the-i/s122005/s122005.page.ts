@@ -16,7 +16,7 @@ export class S122005Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+1.2.mp3'
   title="The ‘I’ operates hidden from our awareness"
-  toc="/nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   transcriptPage="nature-of-the-i/s122005t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

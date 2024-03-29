@@ -23,7 +23,7 @@ export class S122033Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);

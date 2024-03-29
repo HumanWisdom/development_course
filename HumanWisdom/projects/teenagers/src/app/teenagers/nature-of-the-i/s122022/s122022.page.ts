@@ -17,7 +17,7 @@ export class S122022Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+1.7.mp3'
   transcriptPage="nature-of-the-i/s122022t"
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;

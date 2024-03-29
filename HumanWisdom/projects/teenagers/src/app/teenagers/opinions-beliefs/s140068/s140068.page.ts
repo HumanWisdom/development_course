@@ -14,7 +14,7 @@ export class S140068Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w1"
   hint = "Perhaps because they become part of our identity"
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -116,17 +116,17 @@ export class S140068Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140069'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140069'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140069'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140069'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140067'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140067'])
   }
 
   ngOnDestroy() 
