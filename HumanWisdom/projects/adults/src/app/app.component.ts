@@ -75,7 +75,7 @@ export class AppComponent implements OnDestroy {
       this.services.emaillogin();
     }
     localStorage.setItem('curatedurl', 'F');
-    SharedService.ProgramId = ProgramType.Adults;
+    SharedService.ProgramId = 9;
     SharedService.ClientUrl = environment.clientUrl;
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
