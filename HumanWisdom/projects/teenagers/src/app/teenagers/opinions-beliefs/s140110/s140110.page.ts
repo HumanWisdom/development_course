@@ -11,7 +11,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 })
 export class S140110Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
-  toc="opinions-beliefs/s140001"
+  toc="teenagers/opinions-beliefs/s140001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_esteem.jpg"
   
   // bg=""

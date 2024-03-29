@@ -13,7 +13,7 @@ export class S104028Page implements OnInit {
   bg_cft = "bg_teal"
   bg = "teal_w2"
   hint = "What resonated for you in this module?"
-  toc = "/obstacles-enquiry/s104001"
+  toc = "teenagers/obstacles-enquiry/s104001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -112,17 +112,17 @@ export class S104028Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/obstacles-enquiry/s104034'])
+        this.router.navigate(['/teenagers/obstacles-enquiry/s104034'])
 
       },
       () => {
-        this.router.navigate(['/obstacles-enquiry/s104034'])
+        this.router.navigate(['/teenagers/obstacles-enquiry/s104034'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/obstacles-enquiry/s104027'])
+    this.router.navigate(['/teenagers/obstacles-enquiry/s104027'])
   }
 
   ngOnDestroy() 

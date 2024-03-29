@@ -114,7 +114,7 @@ export class S108002Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/noticing-thoughts/s108003'])
+    this.router.navigate(['/teenagers/noticing-thoughts/s108003'])
   }
 
   ngOnDestroy() 
