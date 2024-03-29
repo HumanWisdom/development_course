@@ -33,7 +33,7 @@ export class S142073Page implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/making-better-decisions/s142001"
+  toc="teenagers/making-better-decisions/s142001"
 
   constructor(private router: Router,
     private service:TeenagersService,
@@ -140,7 +140,7 @@ export class S142073Page implements OnInit {
   submitProgress()
   {
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/making-better-decisions/s142074'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142074'])
     if (this.userId === 563) return;
 
     //if(this.sendOption!=null)
@@ -160,7 +160,7 @@ export class S142073Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142072'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142072'])
   }
 
   sessionFetch(id, divid)

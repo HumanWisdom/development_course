@@ -101,7 +101,7 @@ export class S142064Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/making-better-decisions/s142063'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142063'])
   }
 
   goNext() 
@@ -110,7 +110,7 @@ export class S142064Page implements OnInit, OnDestroy
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/making-better-decisions/s142065'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142065'])
   }
 
   ngOnDestroy() 

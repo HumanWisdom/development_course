@@ -18,7 +18,7 @@ export class S109062tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/meditation/s109062"
-  toc="meditation/s109001"  
+  toc="teenagers/meditation/s109001"  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -60,7 +60,7 @@ export class S109062tPage implements OnInit {
   }
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/meditation/s109063'])
+    this.router.navigate(['/teenagers/meditation/s109063'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -78,7 +78,7 @@ export class S109062tPage implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/meditation/s109061'])
+    this.router.navigate(['/teenagers/meditation/s109061'])
   }
 
 

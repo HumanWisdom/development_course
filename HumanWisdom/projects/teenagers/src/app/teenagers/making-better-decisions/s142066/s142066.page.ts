@@ -14,7 +14,7 @@ export class S142066Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w8"
   hint = " It may make you want to answer all the questions the teacher asks, or show off your new watch or phone."
-  toc = "/making-better-decisions/s142001"
+  toc = "teenagers/making-better-decisions/s142001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S142066Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/making-better-decisions/s142067'])
+        this.router.navigate(['/teenagers/making-better-decisions/s142067'])
 
       },
       () => {
-        this.router.navigate(['/making-better-decisions/s142067'])
+        this.router.navigate(['/teenagers/making-better-decisions/s142067'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/making-better-decisions/s142065'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142065'])
   }
 
   ngOnDestroy() 

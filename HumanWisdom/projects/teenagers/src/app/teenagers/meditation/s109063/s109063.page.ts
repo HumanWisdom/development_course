@@ -14,7 +14,7 @@ export class S109063Page implements OnInit {
   bg_cft = "bg_blue"
   bg = "blue_w11"
   hint = " You typically go through a phase where you are aware of your breathing, and another where you are not and are thinking something, and then become aware of breathing again."
-  toc = "/meditation/s109001"
+  toc = "teenagers/meditation/s109001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S109063Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/meditation/s109064'])
+        this.router.navigate(['/teenagers/meditation/s109064'])
 
       },
       () => {
-        this.router.navigate(['/meditation/s109064'])
+        this.router.navigate(['/teenagers/meditation/s109064'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/meditation/s109062'])
+    this.router.navigate(['/teenagers/meditation/s109062'])
   }
 
   ngOnDestroy() 

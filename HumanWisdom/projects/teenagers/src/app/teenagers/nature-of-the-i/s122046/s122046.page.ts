@@ -103,11 +103,11 @@ export class S122046Page implements OnInit, OnDestroy {
 
   goNext() 
   {
-    // this.router.navigate(['/nature-of-the-i/s2'])
+    // this.router.navigate(['/teenagers/nature-of-the-i/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/nature-of-the-i/s122047'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122047'])
   }
 
   ngOnDestroy() 
