@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HaveCalmMindPageRoutingModule } from './have-calm-mind-routing.module';
+import { OvercomeUnhelpfulHabitsPageRoutingModule } from './overcome-unhelpful-habits-routing.module';
 
-import { HaveCalmMindPage } from './have-calm-mind.page';
+import { OvercomeUnhelpfulHabitsPage } from './overcome-unhelpful-habits.page';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
@@ -16,10 +16,10 @@ import { NgxCircularPlayerModule } from 'ngx-circular-player';
     CommonModule,
     FormsModule,
     IonicModule,
-    HaveCalmMindPageRoutingModule,
+    OvercomeUnhelpfulHabitsPageRoutingModule,
     SharedModule,
     NgxCircularPlayerModule
   ],
-  declarations: [HaveCalmMindPage]
+  declarations: [OvercomeUnhelpfulHabitsPage]
 })
 export class HaveCalmMindPageModule {}

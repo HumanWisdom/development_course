@@ -4,11 +4,11 @@ import { Meta, Title } from '@angular/platform-browser';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
-  selector: 'HumanWisdom-have-calm-mind-transcript',
-  templateUrl: './have-calm-mind-transcript.page.html',
-  styleUrls: ['./have-calm-mind-transcript.page.scss'],
+  selector: 'HumanWisdom-overcome-unhelpful-habits-transcript',
+  templateUrl: './overcome-unhelpful-habits-transcript.page.html',
+  styleUrls: ['./overcome-unhelpful-habits-transcript.page.scss'],
 })
-export class HaveCalmMindTranscriptPage implements OnInit {
+export class OvercomeUnhelpfulHabitsTranscriptPage implements OnInit {
 
   constructor(private location:Location, private meta: Meta, private title: Title,
         private navigationService:NavigationService) { }

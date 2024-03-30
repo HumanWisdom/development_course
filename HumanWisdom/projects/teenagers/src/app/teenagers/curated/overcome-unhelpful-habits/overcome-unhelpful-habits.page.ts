@@ -6,12 +6,12 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'HumanWisdom-have-calm-mind',
-  templateUrl: './have-calm-mind.page.html',
-  styleUrls: ['./have-calm-mind.page.scss'],
+  selector: 'HumanWisdom-overcome-unhelpful-habits',
+  templateUrl: './overcome-unhelpful-habits.page.html',
+  styleUrls: ['./overcome-unhelpful-habits.page.scss'],
 })
 
-export class HaveCalmMindPage implements OnInit {
+export class OvercomeUnhelpfulHabitsPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -71,7 +71,7 @@ export class HaveCalmMindPage implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-calm-mind');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/have-calm-mind');
 
     this.title.setTitle('Mindfulness Practices for a Calm Mind')
     this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })
@@ -97,7 +97,7 @@ export class HaveCalmMindPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -111,7 +111,7 @@ export class HaveCalmMindPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
@@ -121,13 +121,13 @@ export class HaveCalmMindPage implements OnInit {
     }else{
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
-      this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+      this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
   }
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -143,7 +143,7 @@ export class HaveCalmMindPage implements OnInit {
         })
   }
 
-  routeNature(cont: any = 1) {
+  routeAddiction(cont: any = 1) {
     var natureR
     localStorage.setItem("moduleId", JSON.stringify(28))
     this.service.clickModule(28, this.userId)
@@ -169,18 +169,18 @@ export class HaveCalmMindPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/nature/${natureR}`])
+            this.router.navigate([`/teenagers/nature/${natureR}`])
           }
           else
-            this.router.navigate([`/adults/nature/s28001`])
+            this.router.navigate([`/teenagers/nature/s28001`])
 
           /*if(!natureR)
            {
 
-             this.router.navigate([`/adults/nature`])
+             this.router.navigate([`/teenagers/nature`])
            }
            else
-             this.router.navigate([`/adults/nature/s${natureR}`])*/
+             this.router.navigate([`/teenagers/nature/s${natureR}`])*/
         })
   }
 
@@ -211,19 +211,19 @@ export class HaveCalmMindPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/breathing/${breathingR}`])
+            this.router.navigate([`/teenagers/breathing/${breathingR}`])
           }
           else
-            this.router.navigate([`/adults/breathing/s29000`])
+            this.router.navigate([`/teenagers/breathing/s29000`])
 
           /* if(!breathingR)
            {
 
-             this.router.navigate([`/adults/breathing`])
+             this.router.navigate([`/teenagers/breathing`])
 
            }
            else
-             this.router.navigate([`/adults/breathing/s${breathingR}`])*/
+             this.router.navigate([`/teenagers/breathing/s${breathingR}`])*/
         })
   }
 
@@ -254,17 +254,17 @@ export class HaveCalmMindPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/noticing-thoughts/${ntR}`])
+            this.router.navigate([`/teenagers/noticing-thoughts/${ntR}`])
           }
           else
-            this.router.navigate([`/adults/noticing-thoughts/s30001`])
+            this.router.navigate([`/teenagers/noticing-thoughts/s30001`])
           /*if(!ntR)
           {
 
-            this.router.navigate([`/adults/noticing-thoughts`])
+            this.router.navigate([`/teenagers/noticing-thoughts`])
           }
           else
-            this.router.navigate([`/adults/noticing-thoughts/s${ntR}`])*/
+            this.router.navigate([`/teenagers/noticing-thoughts/s${ntR}`])*/
         })
   }
 
@@ -293,19 +293,19 @@ export class HaveCalmMindPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/guided-meditation/${gamR}`])
+            this.router.navigate([`/teenagers/guided-meditation/${gamR}`])
           }
           else
-            this.router.navigate([`/adults/guided-meditation/s51000`])
+            this.router.navigate([`/teenagers/guided-meditation/s51000`])
 
           /* if(!gamR)
            {
 
-             this.router.navigate([`/adults/guided-meditation`])
+             this.router.navigate([`/teenagers/guided-meditation`])
 
            }
            else
-             this.router.navigate([`/adults/guided-meditation/s${gamR}`])*/
+             this.router.navigate([`/teenagers/guided-meditation/s${gamR}`])*/
         })
   }
 
@@ -334,17 +334,17 @@ export class HaveCalmMindPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/meditation/${meditationResume}`])
+            this.router.navigate([`/teenagers/meditation/${meditationResume}`])
           }
           else
-            this.router.navigate([`/adults/meditation/s22001`])
+            this.router.navigate([`/teenagers/meditation/s22001`])
           /*if(!meditationResume)
           {
 
-            this.router.navigate([`/adults/meditation`])
+            this.router.navigate([`/teenagers/meditation`])
           }
           else
-            this.router.navigate([`/adults/meditation/s${meditationResume}`])*/
+            this.router.navigate([`/teenagers/meditation/s${meditationResume}`])*/
         })
   }
 
@@ -373,17 +373,17 @@ export class HaveCalmMindPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/without-language/${lwlResume}`])
+            this.router.navigate([`/teenagers/without-language/${lwlResume}`])
           }
           else
-            this.router.navigate([`/adults/without-language/s42000`])
+            this.router.navigate([`/teenagers/without-language/s42000`])
           /* if(!lwlResume)
            {
 
-             this.router.navigate([`/adults/without-language`])
+             this.router.navigate([`/teenagers/without-language`])
            }
            else
-             this.router.navigate([`/adults/without-language/s${lwlResume}`])*/
+             this.router.navigate([`/teenagers/without-language/s${lwlResume}`])*/
         })
   }
 
@@ -413,10 +413,10 @@ export class HaveCalmMindPage implements OnInit {
       },
       () => {
       if (cont == "1") {
-            this.router.navigate([`/adults/awareness/${awarenessResume}`])
+            this.router.navigate([`/teenagers/awareness/${awarenessResume}`])
       }
       else
-            this.router.navigate([`/adults/awareness/s39000`])
+            this.router.navigate([`/teenagers/awareness/s39000`])
       })
 }
 
@@ -465,7 +465,7 @@ export class HaveCalmMindPage implements OnInit {
     if (!this.Subscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 

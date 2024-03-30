@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HaveCalmMindTranscriptPage } from './have-calm-mind-transcript.page';
+import { OvercomeUnhelpfulHabitsPage } from './overcome-unhelpful-habits.page';
 
-describe('HaveCalmMindTranscriptPage', () => {
-  let component: HaveCalmMindTranscriptPage;
-  let fixture: ComponentFixture<HaveCalmMindTranscriptPage>;
+describe('OvercomeUnhelpfulHabitsPage', () => {
+  let component: OvercomeUnhelpfulHabitsPage;
+  let fixture: ComponentFixture<OvercomeUnhelpfulHabitsPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HaveCalmMindTranscriptPage ],
+      declarations: [ OvercomeUnhelpfulHabitsPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HaveCalmMindTranscriptPage);
+    fixture = TestBed.createComponent(OvercomeUnhelpfulHabitsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

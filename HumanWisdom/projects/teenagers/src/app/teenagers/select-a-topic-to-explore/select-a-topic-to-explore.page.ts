@@ -228,9 +228,9 @@ export class SelectATopicToExplorePage implements OnInit {
         this.logeventservice.logEvent('click_sorrow_loss');
         this.route.navigate(['/teenagers/curated/feel-calm'])
       } else if (name === 'Overcome unhelpful habits') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/have-calm-mind');
+        localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
         this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/teenagers/curated/have-calm-mind'])
+        this.route.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
       }
     }else {
       if (this.isloggedIn) {
