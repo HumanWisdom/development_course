@@ -22,6 +22,14 @@ const routes: Routes = [
     path: "submitted",
     loadChildren: () => import("./submitted/submitted.module").then(m => m.SubmittedPageModule)
   },
+  {
+    path: "contact/:id",
+    loadChildren: () => import("./contact/contact.module").then(m => m.ContactPageModule)
+  },
+  {
+    path: "profile/:id",
+    loadChildren: () => import("./profile/profile.module").then(m => m.ProfilePageModule)
+  }
 ];
 
 @NgModule({
