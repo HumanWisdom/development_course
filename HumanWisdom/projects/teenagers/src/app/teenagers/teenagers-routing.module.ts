@@ -345,6 +345,10 @@ const routes: Routes = [
         path: 'wisdom-stories',
         loadChildren: () => import('./wisdom-stories/wisdom-stories.module').then(m => m.WisdomStoriesModule)
       },
+      {
+        path: 'blogs',
+        loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+      },
 ];
 
 

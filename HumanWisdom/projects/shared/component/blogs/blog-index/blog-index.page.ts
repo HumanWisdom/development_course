@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import { AdultsService } from '../../adults.service';
 import { Meta, Title } from '@angular/platform-browser';
-
+import { OnboardingService } from '../../../services/onboarding.service';
+import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from '../../../models/program-model';
 
 @Component({
   selector: 'HumanWisdom-blog-index',
@@ -15,11 +16,11 @@ export class BlogIndexPage implements OnInit {
   blogList:any;
   searchedTitle:'';
   path:any;
-  
-  constructor(private service: AdultsService, private router: Router, 
+  isAdults= true;
+  constructor(private service: OnboardingService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
     public meta: Meta, private title: Title) { 
-      this.path='#' + this.router.url
+      this.path=this.router.url
     }
 
   ngOnInit() {
@@ -28,7 +29,11 @@ export class BlogIndexPage implements OnInit {
     this.meta.addTag({ property: 'description', content: 'Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.' })
     this.meta.addTag({ property: 'keywords', content: 'Personal growth blog,Self-improvement blog,Inspirational blog,Life lessons blog,Mindfulness blog,Adult development blog,Wisdom-based blog,Personal development articles,Self-discovery blog,Reflection blog' })
     this.meta.addTag({ property: 'url', content: 'http://staging.humanwisdom.me/adults/blogs' });
-   
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
     this.getBlogs()
   }
 
@@ -53,7 +58,12 @@ export class BlogIndexPage implements OnInit {
   viewblog(item){
     localStorage.setItem("blogdata",JSON.stringify(item))
     localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+
+    if(this.isAdults){
+      this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+    }else{
+      this.router.navigate(['/teenagers/blogs/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+    }
   }
 
   searchTitle($event) 
