@@ -17,7 +17,7 @@ export class S140065Page implements OnInit {
   audioLink=this.mediaAudio+'/opinions-beliefs/audios/opinions-beliefs+2.4.mp3'
   title="How do our beliefs form?  "
 
-  toc="opinions-beliefs/s140001"
+  toc="teenagers/opinions-beliefs/s140001"
   transcriptPage="opinions-beliefs/s140065t"
 
   userId:any
@@ -95,7 +95,7 @@ export class S140065Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/opinions-beliefs/s140066'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140066'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -115,7 +115,7 @@ export class S140065Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/opinions-beliefs/s140064'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140064'])
   }
 
   ngOnDestroy()

@@ -19,7 +19,7 @@ export class S142004Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/making-better-decisions/audios/making-better-decisions+1.1.mp3'
 
   transcriptPage="making-better-decisions/s142004t"
-  toc="making-better-decisions/s142001"
+  toc="teenagers/making-better-decisions/s142001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S142004Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/making-better-decisions/s142005'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142005'])
     if (this.userId === 563) return;
 
     this.service.submitProgressAv({
@@ -113,7 +113,7 @@ export class S142004Page implements OnInit,OnDestroy {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142003'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142003'])
   }
 
   ngOnDestroy()

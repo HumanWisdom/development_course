@@ -13,7 +13,7 @@ export class S122058Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w11"
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -283,7 +283,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/nature-of-the-i/s122059'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122059'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -309,7 +309,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/nature-of-the-i/s122057'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122057'])
 
 
   }

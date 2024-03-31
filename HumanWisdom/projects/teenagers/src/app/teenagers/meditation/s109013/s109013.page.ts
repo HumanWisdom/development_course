@@ -16,7 +16,7 @@ export class S109013Page implements OnInit {
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/meditation/audios/meditation+1.3.mp3'
   title="Understanding the role of meditation"
-  toc="meditation/s109001"
+  toc="teenagers/meditation/s109001"
   transcriptPage="meditation/s109013t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S109013Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/meditation/s109014'])
+    this.router.navigate(['/teenagers/meditation/s109014'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S109013Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/meditation/s109012'])
+    this.router.navigate(['/teenagers/meditation/s109012'])
   }
 
   ngOnDestroy()

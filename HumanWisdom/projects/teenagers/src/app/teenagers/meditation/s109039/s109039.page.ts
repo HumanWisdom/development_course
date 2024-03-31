@@ -14,7 +14,7 @@ export class S109039Page implements OnInit {
   bg_cft = "bg_blue"
   bg = "blue_w10"
   hint = "Some thoughts are loud. Others, really quiet, subtle and fleeting. Notice those.  "
-  toc = "/meditation/s109001"
+  toc = "teenagers/meditation/s109001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S109039Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/meditation/s109040'])
+        this.router.navigate(['/teenagers/meditation/s109040'])
 
       },
       () => {
-        this.router.navigate(['/meditation/s109040'])
+        this.router.navigate(['/teenagers/meditation/s109040'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/meditation/s109038'])
+    this.router.navigate(['/teenagers/meditation/s109038'])
   }
 
   ngOnDestroy() 

@@ -14,7 +14,7 @@ export class S140063Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w9"
   hint = "Our religious and political beliefs may come from our family or culture, for example"
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -116,17 +116,17 @@ export class S140063Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140064'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140064'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140064'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140064'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140062'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140062'])
   }
 
   ngOnDestroy() 

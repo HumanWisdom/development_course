@@ -14,7 +14,7 @@ export class S140014Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w11"
   hint = "Why are you attached to your opinions, which are not yours anyway?"
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S140014Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140015'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140015'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140015'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140015'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140013'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140013'])
   }
 
   ngOnDestroy() 

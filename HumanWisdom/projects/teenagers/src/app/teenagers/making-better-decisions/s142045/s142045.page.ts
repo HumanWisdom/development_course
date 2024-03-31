@@ -18,10 +18,10 @@ export class S142045Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/3"
-  link="/making-better-decisions/s142046"
+  link="teenagers/making-better-decisions/s142046"
   name="#2  Drivers behind decision making"
   progressImg=""
-  toc="making-better-decisions/s142001"
+  toc="teenagers/making-better-decisions/s142001"
 
   constructor
   (

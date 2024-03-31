@@ -13,7 +13,7 @@ export class S142050Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w4"
   hint = " It could make you want to be a builder, if your Dad is a builder"
-  toc = "/making-better-decisions/s142001"
+  toc = "teenagers/making-better-decisions/s142001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S142050Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/making-better-decisions/s142051'])
+        this.router.navigate(['/teenagers/making-better-decisions/s142051'])
 
       },
       () => {
-        this.router.navigate(['/making-better-decisions/s142051'])
+        this.router.navigate(['/teenagers/making-better-decisions/s142051'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/making-better-decisions/s142049'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142049'])
   }
 
   ngOnDestroy() 

@@ -22,7 +22,7 @@ export class S122043Page implements OnInit,OnDestroy
   endTime:any
   totalTime:any
   bookmark=0
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -81,7 +81,7 @@ export class S122043Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/nature-of-the-i/s122044'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122044'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +102,7 @@ export class S122043Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122042'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122042'])
   }
 
   ngOnDestroy()

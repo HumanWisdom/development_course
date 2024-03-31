@@ -15,7 +15,7 @@ export class S122009Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = "It may be because you now have a new set of memories you identify with as ‘you’."
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S122009Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/nature-of-the-i/s122010'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122010'])
 
       },
       () => {
-        this.router.navigate(['/nature-of-the-i/s122010'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122010'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/nature-of-the-i/s122008'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122008'])
   }
 
   ngOnDestroy() 
