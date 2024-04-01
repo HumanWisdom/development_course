@@ -18,7 +18,7 @@ export class S104021tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/obstacles-enquiry/s104021"
-  toc="obstacles-enquiry/s104001"  
+  toc="teenagers/obstacles-enquiry/s104001"  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -60,7 +60,7 @@ export class S104021tPage implements OnInit {
     sessionStorage.setItem("bookmark104021",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/obstacles-enquiry/s104022'])
+    this.router.navigate(['/teenagers/obstacles-enquiry/s104022'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -77,7 +77,7 @@ export class S104021tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s104020'])
+    this.router.navigate(['/teenagers/obstacles-enquiry/s104020'])
   }
 
 

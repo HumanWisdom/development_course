@@ -27,7 +27,7 @@ export class S122004Page implements OnInit,OnDestroy
         "Living with wisdom"
       ]
   transcriptPage="nature-of-the-i/s122004t"
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -21,13 +21,40 @@ export class ContactPage implements OnInit {
   coachList = [];
 
   constructor(private location: Location, private adultService: AdultsService,
-    private meta: Meta, private title: Title, private router: Router) {
+    private meta: Meta, private title: Title, private router: Router,private route: ActivatedRoute) {
     this.initializeForm();
     this.getCountriesList();
   }
 
   ngOnInit() {
-    this.getAllCoachList();
+    if(this.route.snapshot.paramMap.get('id')) {
+      this.form = {
+        Title: '',
+        Name: '',
+        Country: '',
+        EmailID: '',
+        ContactNo: '',
+        CoachID: this.route.snapshot.paramMap.get('id'),
+        Details: ''
+      };
+
+      this.coachId = this.route.snapshot.paramMap.get('id');
+
+      this.adultService.GetCoachBio(this.coachId).subscribe(res=>
+        {
+          console.log(res);
+          if(res) {
+            this.coachList = res;
+          }
+        },
+        error=>console.log(error),
+        ()=>{
+        }
+      )
+
+    }else {
+      this.getAllCoachList();
+    }
     this.title.setTitle('Contact a Life Coach for Personal Growth')
     this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth' })
     this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
@@ -162,6 +189,6 @@ export class ContactPage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/adults/coach/profile"]);
+    this.router.navigate(["/adults/coach/profile", this.coachId]);
   }
 }

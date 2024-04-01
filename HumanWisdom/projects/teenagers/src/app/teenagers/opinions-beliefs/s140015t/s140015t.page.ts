@@ -19,7 +19,7 @@ export class S140015tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/opinions-beliefs/s140015"
-  toc="/opinions-beliefs/s140001"
+  toc="teenagers/opinions-beliefs/s140001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -62,7 +62,7 @@ export class S140015tPage implements OnInit {
     sessionStorage.setItem("bookmark140015",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/opinions-beliefs/s140016'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140016'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -79,7 +79,7 @@ export class S140015tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/opinions-beliefs/s140014'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140014'])
   }
 
 

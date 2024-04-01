@@ -14,7 +14,7 @@ export class S140033Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w8"
   hint = " How can you build bridges, instead of walls?"
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S140033Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140034'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140034'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140034'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140034'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140032'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140032'])
   }
 
   ngOnDestroy() 

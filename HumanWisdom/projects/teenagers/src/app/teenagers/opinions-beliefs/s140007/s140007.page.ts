@@ -14,7 +14,7 @@ export class S140007Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w8"
   hint = "What are the factors that influenced you to have this opinion?"
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S140007Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140008'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140008'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140008'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140008'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140006'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140006'])
   }
 
   ngOnDestroy() 

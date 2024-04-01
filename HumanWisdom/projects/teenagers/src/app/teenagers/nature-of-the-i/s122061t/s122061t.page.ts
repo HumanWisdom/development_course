@@ -19,7 +19,7 @@ export class S122061tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/nature-of-the-i/s122061"
-  toc="/nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
