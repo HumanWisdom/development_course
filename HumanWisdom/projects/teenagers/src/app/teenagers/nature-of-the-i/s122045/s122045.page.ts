@@ -21,7 +21,7 @@ export class S122045Page implements OnInit
   link="/nature-of-the-i/s122046"
   name="#2 Four ways nature-of-the-i impacts our life"
   progressImg=""
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
 
   constructor
   (

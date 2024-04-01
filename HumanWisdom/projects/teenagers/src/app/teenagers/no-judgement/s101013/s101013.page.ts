@@ -15,7 +15,7 @@ export class S101013Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w11"
   hint = "Usually when we are critical of ourselves we do often know why, and the real reason may be how we have been influenced in the past by our parents, or social media, or by friends."
-  toc = "/no-judgement/s101001"
+  toc = "teenagers/no-judgement/s101001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S101013Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/no-judgement/s101014'])
+        this.router.navigate(['/teenagers/no-judgement/s101014'])
 
       },
       () => {
-        this.router.navigate(['/no-judgement/s101014'])
+        this.router.navigate(['/teenagers/no-judgement/s101014'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/no-judgement/s101012'])
+    this.router.navigate(['/teenagers/no-judgement/s101012'])
   }
 
   ngOnDestroy() 

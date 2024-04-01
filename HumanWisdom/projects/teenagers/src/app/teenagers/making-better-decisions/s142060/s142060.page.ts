@@ -113,17 +113,17 @@ export class S142060Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/making-better-decisions/s142061'])
+        this.router.navigate(['/teenagers/making-better-decisions/s142061'])
 
       },
       () => {
-        this.router.navigate(['/making-better-decisions/s142061'])
+        this.router.navigate(['/teenagers/making-better-decisions/s142061'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/making-better-decisions/s142059'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142059'])
   }
 
   ngOnDestroy() 

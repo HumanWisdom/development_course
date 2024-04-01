@@ -5,11 +5,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import { AdultsService } from '../../adults.service';
 import { Meta, Title } from '@angular/platform-browser';
 import {  Renderer2 } from '@angular/core';
-import { SharedService } from '../../../../../../shared/services/shared.service';
-import { ProgramType } from '../../../../../../shared/models/program-model';
+import { ProgramType } from '../../../models/program-model';
+import { SharedService } from '../../../services/shared.service';
+import { OnboardingService } from '../../../services/onboarding.service';
 
 @Component({
   selector: 'HumanWisdom-blog-article',
@@ -32,8 +32,8 @@ export class BlogArticlePage implements OnInit {
   public isLoggedIn = false
   address:any;
   token = localStorage.getItem("shareToken")
-
-  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2,
+  isAdults =  true;
+  constructor(private sanitizer: DomSanitizer, private service: OnboardingService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
       let login: any = localStorage.getItem("isloggedin");
@@ -52,6 +52,12 @@ export class BlogArticlePage implements OnInit {
         this.getblog();
       }
     });
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
     // this.blogid=JSON.parse(localStorage.getItem("blogId"))
   }
 

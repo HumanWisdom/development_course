@@ -5,7 +5,7 @@ import { Constant } from './constant';
 
    export class  SharedService {
     public static ProgramId:any=ProgramType.Adults;
-    public static TeenagerBaseUrl:string='https://staging.humanwisdom.me/teenagers/#/';
+    public static TeenagerBaseUrl:string='https://happierme.app/';
     public static AdultsBaseUrl:string='https://happierme.app/';
     public static UrlToRedirect:string= null;
     public static ClientUrl:string = 'https://staging.happierme.app/adults/';

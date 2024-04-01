@@ -25,7 +25,7 @@ export class S140002Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -101,7 +101,7 @@ export class S140002Page implements OnInit, OnDestroy {
   }
 
   goNext() {
-    this.router.navigate(['/opinions-beliefs/s140003'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

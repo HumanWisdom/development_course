@@ -17,7 +17,7 @@ export class S109041Page implements OnInit {
   audioLink=this.mediaAudio+'/meditation/audios/meditation+2.2.mp3'
   title="Understanding meditation and silence"
 
-  toc="meditation/s109001"
+  toc="teenagers/meditation/s109001"
   transcriptPage="meditation/s109041t"
 
   userId:any
@@ -93,7 +93,7 @@ export class S109041Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/meditation/s109042'])
+    this.router.navigate(['/teenagers/meditation/s109042'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -114,7 +114,7 @@ export class S109041Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/meditation/s109040'])
+    this.router.navigate(['/teenagers/meditation/s109040'])
  
  
   }

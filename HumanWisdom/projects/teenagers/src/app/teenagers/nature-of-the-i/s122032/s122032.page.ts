@@ -17,7 +17,7 @@ export class S122032Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+1.10.mp3' 
   transcriptPage="nature-of-the-i/s122032t"
-  toc="nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -91,7 +91,7 @@ export class S122032Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/nature-of-the-i/s122033'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122033'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S122032Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122031'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122031'])
   }
 
   ngOnDestroy()

@@ -18,7 +18,7 @@ export class S122017tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/nature-of-the-i/s122017"
-  toc="/nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -67,7 +67,7 @@ export class S122017tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/nature-of-the-i/s122018'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122018'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -81,7 +81,7 @@ export class S122017tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122016'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122016'])
   }
 
 }

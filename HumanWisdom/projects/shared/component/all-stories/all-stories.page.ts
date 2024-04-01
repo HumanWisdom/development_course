@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { Meta, Title } from '@angular/platform-browser';
+import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-all-stories',
@@ -19,9 +21,9 @@ export class AllStoriesPage implements OnInit {
   enable_view_more_less = false;
   view_more_less="View More"
   isSubscriber = false;
-
+  isAdults = true;
   constructor(private router: Router,
-    private service:AdultsService,
+    private service:OnboardingService,
     private location:Location,
     private meta: Meta, private title: Title) { }
 
@@ -38,6 +40,11 @@ export class AllStoriesPage implements OnInit {
     } else {
       this.isSubscriber = false;
     }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
   goBack(){
     this.location.back()
@@ -48,7 +55,7 @@ export class AllStoriesPage implements OnInit {
         if(res)
         {
           let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
-
+          dateres = dateres.filter(x=>x.ProgIDs.includes(SharedService.ProgramId));
 
           // if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
 
@@ -89,10 +96,10 @@ export class AllStoriesPage implements OnInit {
       this.sId=obj.ScenarioID
       if(res && res === 'T') {
         this.service.clickStory(obj.ScenarioID).subscribe(res=>{
-            this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+                 this.routeToViewStories();
         })
       } else {
-        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+        this.routeToViewStories();
       }
     }else{
       if(!this.isSubscriber) {
@@ -100,7 +107,14 @@ export class AllStoriesPage implements OnInit {
       }
     }
   }
-
+  
+  Submit(){
+    if(SharedService.ProgramId == ProgramType.Adults){
+      this.router.navigate(['/adults/wisdom-stories/submit-story']);
+    }else{
+      this.router.navigate(['/teenagers/wisdom-stories/submit-story']);
+  }
+}
   searchStory($event) 
   {
     if($event=='')
@@ -135,6 +149,14 @@ export class AllStoriesPage implements OnInit {
     {
       this.enable_view_more_less = false;
       this.view_more_less = "View More";
+    }
+  }
+
+  routeToViewStories(){
+    if(SharedService.ProgramId == ProgramType.Adults){
+      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+    }else{
+      this.router.navigate(['/teenagers/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
     }
   }
 

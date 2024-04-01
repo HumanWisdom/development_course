@@ -14,7 +14,7 @@ export class S117057Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w7"
   hint = "   Loneliness is not wrong - a fact for us all. It acts from behind the scenes to shape the course of our lives  "
-  toc = "/loneliness/s117001"
+  toc = "teenagers/loneliness/s117001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S117057Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/loneliness/s117058'])
+        this.router.navigate(['/teenagers/loneliness/s117058'])
 
       },
       () => {
-        this.router.navigate(['/loneliness/s117058'])
+        this.router.navigate(['/teenagers/loneliness/s117058'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/loneliness/s117056'])
+    this.router.navigate(['/teenagers/loneliness/s117056'])
   }
 
   ngOnDestroy() 

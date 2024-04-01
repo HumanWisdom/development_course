@@ -33,7 +33,7 @@ export class S122041Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/nature-of-the-i/s122001"
+  toc="teenagers/nature-of-the-i/s122001"
 
   constructor
   (
@@ -156,12 +156,12 @@ export class S122041Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/nature-of-the-i/s122042'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122042'])
   }
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122040'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122040'])
   }
 
   sessionFetch(id, divid)

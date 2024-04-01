@@ -26,8 +26,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import * as Hammer from 'hammerjs';
 import{ SharedModule } from './../../../shared/shared.module'
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
-import { BlogIndexPage } from './adults/blog/blog-index/blog-index.page';
-import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
+import{BlogIndexPage}  from './../../../shared/component/blogs/blog-index/blog-index.page';
+import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
 // Import library module
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
