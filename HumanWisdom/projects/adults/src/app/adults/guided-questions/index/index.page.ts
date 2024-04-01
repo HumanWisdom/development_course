@@ -308,8 +308,8 @@ export class IndexPage implements OnInit, AfterViewInit {
 
   GetGuidedQs_Topics() {
     this.service.GetGuidedQs_Topics().subscribe((res) => {
-      this.viewMore = res.filter((d, i) => i < 4);
-      this.viewLess = res.filter((d, i) => i > 4);
+      this.viewMore = res.filter((d, i) => i < 5);
+      this.viewLess = res.filter((d, i) => i > 5);
       this.topic = this.viewMore;
     });
   }

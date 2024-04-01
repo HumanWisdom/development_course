@@ -37,4 +37,8 @@ export class IndexPage implements OnInit {
     localStorage.setItem("coachId", data['UserID']);
     this.router.navigate(["/adults/coach/profile", data['UserID']]);
   }
+
+  contactCoach() {
+    this.router.navigate(["/adults/coach/contact"]);
+  }
 }
