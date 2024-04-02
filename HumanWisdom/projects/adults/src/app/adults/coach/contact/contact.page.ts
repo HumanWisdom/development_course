@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-contact',
@@ -19,19 +20,67 @@ export class ContactPage implements OnInit {
   coachId = '';
   detail = '';
   coachList = [];
+  userId;
+  userdetail = 'tset';
 
-  constructor(private location: Location, private adultService: AdultsService,
-    private meta: Meta, private title: Title, private router: Router) {
+  constructor(private onboardingService: OnboardingService, private location: Location, private adultService: AdultsService,
+    private meta: Meta, private title: Title, private router: Router,private route: ActivatedRoute) {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
     this.initializeForm();
     this.getCountriesList();
   }
 
   ngOnInit() {
-    this.getAllCoachList();
+    if(this.route.snapshot.paramMap.get('id')) {
+      this.form = {
+        Title: '',
+        Name: '',
+        Country: '',
+        EmailID: '',
+        ContactNo: '',
+        CoachID: this.route.snapshot.paramMap.get('id'),
+        Details: '',
+        isdcode: ''
+      };
+
+      this.coachId = this.route.snapshot.paramMap.get('id');
+
+      this.adultService.GetCoachBio(this.coachId).subscribe(res=>
+        {
+          console.log(res);
+          if(res) {
+            this.coachList = res;
+          }
+        },
+        error=>console.log(error),
+        ()=>{
+        }
+      )
+
+    }else {
+      this.getAllCoachList();
+    }
     this.title.setTitle('Contact a Life Coach for Personal Growth')
     this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth' })
     this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
     this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' });
+
+
+
+    this.onboardingService.getuser(this.userId).subscribe((res) => {
+      this.userdetail = res[0];
+      this.form.EmailID = this.userdetail['Email']
+      this.form.Title = !this.userdetail['Title'] ? 'Title' : this.userdetail['Title']
+      let userres = JSON.parse(localStorage.getItem("loginResponse"));
+      let nameupdate = localStorage.getItem(
+        "nameupdate"
+      );
+      if (nameupdate) {
+        this.form.Name = nameupdate
+      } else {
+        this.form.Name = userres['Name']
+      }
+    })
   }
 
 
@@ -55,7 +104,8 @@ export class ContactPage implements OnInit {
       EmailID: '',
       ContactNo: '',
       CoachID: '',
-      Details: ''
+      Details: '',
+      isdcode: ''
     }
   }
 
@@ -88,6 +138,7 @@ export class ContactPage implements OnInit {
     let fil = this.countryList.filter((d) => d['CountryName'] === event);
     if (fil.length > 0) {
       this.phonecode = fil[0]['PhoneCode'].toString() ? '+' + fil[0]['PhoneCode'].toString() : '';
+      this.form.isdcode = fil[0]['PhoneCode'].toString() ? '+' + fil[0]['PhoneCode'].toString() : '';
       this.countryFIPS = fil[0]['FIPS'].toString();
     }
   }
@@ -115,6 +166,7 @@ export class ContactPage implements OnInit {
     this.searchResult = [];
     this.phonecode = '';
     this.countryFIPS = '';
+    this.form.isdcode = '';
   }
 
 
@@ -162,6 +214,6 @@ export class ContactPage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/adults/coach/profile"]);
+    this.router.navigate(["/adults/coach/profile", this.coachId]);
   }
 }
