@@ -138,6 +138,7 @@ export class ManageYourEmotionsPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
+    this.location.back();
   }
   routeGuided() {
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })

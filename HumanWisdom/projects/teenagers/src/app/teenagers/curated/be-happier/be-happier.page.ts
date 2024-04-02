@@ -97,6 +97,7 @@ export class BeHappierPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
+    this.location.back();
   }
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })

@@ -118,6 +118,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
+    this.location.back();
   }
 
   routeGuided() {

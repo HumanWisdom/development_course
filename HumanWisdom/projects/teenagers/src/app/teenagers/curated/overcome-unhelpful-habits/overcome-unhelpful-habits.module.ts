@@ -22,4 +22,4 @@ import { NgxCircularPlayerModule } from 'ngx-circular-player';
   ],
   declarations: [OvercomeUnhelpfulHabitsPage]
 })
-export class HaveCalmMindPageModule {}
+export class OvercomeUnhelpfulHabitsPageModule {}

@@ -100,10 +100,11 @@ export class SucceedInLifePage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    }
+    // var url = this.navigationService.navigateToBackLink();
+    // if (url == null) {
+    //   this.location.back();
+    // }
+    this.location.back();
   }
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })

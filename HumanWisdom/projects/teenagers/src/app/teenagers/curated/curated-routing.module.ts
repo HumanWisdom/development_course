@@ -50,12 +50,12 @@ const routes: Routes = [
     loadChildren: () => import('./change-unhelpful-habits-transcript/change-unhelpful-habits-transcript.module').then( m => m.ChangeUnhelpfulHabitsTranscriptPageModule)
   },
   {
-    path: 'have-calm-mind',
-    loadChildren: () => import('./have-calm-mind/have-calm-mind.module').then( m => m.HaveCalmMindPageModule)
+    path: 'overcome-unhelpful-habits',
+    loadChildren: () => import('./overcome-unhelpful-habits/overcome-unhelpful-habits.module').then( m => m.OvercomeUnhelpfulHabitsPageModule)
   },
   {
-    path: 'have-calm-mind-transcript',
-    loadChildren: () => import('./have-calm-mind-transcript/have-calm-mind-transcript.module').then( m => m.HaveCalmMindTranscriptPageModule)
+    path: 'overcome-unhelpful-habits-transcript',
+    loadChildren: () => import('./overcome-unhelpful-habits-transcript/overcome-unhelpful-habits-transcript.module').then( m => m.OvercomeUnhelpfulHabitsTranscriptPageModule)
   },
   {
     path: 'feel-calm',
@@ -80,6 +80,14 @@ const routes: Routes = [
   {
     path: 'succeed-in-life-transcript',
     loadChildren: () => import('./succeed-in-life-transcript/succeed-in-life-transcript.module').then( m => m.SucceedInLifeTranscriptPageModule)
+  },
+   {
+    path: 'understand-yourself',
+    loadChildren: () => import('./understand-yourself/understand-yourself.module').then( m => m.UnderstandYourselfPageModule)
+  },
+  {
+    path: 'understand-yourself-transcript',
+    loadChildren: () => import('./understand-yourself-transcript/understand-yourself-transcript.module').then( m => m.UnderstandYourselfTranscriptPageModule)
   },
   {
     path: 'youtubelink/:videolink',

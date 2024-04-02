@@ -43,22 +43,35 @@ export class UnderstandYourselfPage implements OnInit {
       this.mediaUrl = {
         pc01:
         {
-          id: 44,
-          url: '/podcasts/44.mp3',
-          title: 'Coping with an illness'
+          id: 18,
+          url: '/podcasts/18.mp3',
+          title: 'Asking questions'
         },
         pc02:
         {
-          id: 40,
-          url: '/podcasts/40.mp3',
-          title: 'Overcoming Depression'
+          id: 27,
+          url: '/podcasts/27.mp3',
+          title: 'Living with peace'
         },
         pc03:
         {
-          id: 45,
-          url: '/podcasts/45.mp3',
-          title: 'The resilient mindset'
-        }
+          id: 64,
+          url: '/podcasts/64.mp3',
+          title: 'Exploring our inner silence'
+        },
+        pc04:
+        {
+          id: 52,
+          url: '/podcasts/52.mp3',
+          title: 'Emotional intelligence - how to begin'
+        },
+        pc05:
+        {
+          id: 3,
+          url: '/podcasts/3.mp3',
+          title: 'Social media addiction'
+        },
+        
 
       }
 
@@ -72,7 +85,7 @@ export class UnderstandYourselfPage implements OnInit {
     }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/be-happier');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/be-happier');
 
     this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
     this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
@@ -97,15 +110,16 @@ export class UnderstandYourselfPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
+    this.location.back();
   }
   routeGuided() {
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -113,7 +127,7 @@ export class UnderstandYourselfPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
@@ -159,7 +173,7 @@ export class UnderstandYourselfPage implements OnInit {
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
   }
 
@@ -170,7 +184,7 @@ export class UnderstandYourselfPage implements OnInit {
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -186,10 +200,10 @@ export class UnderstandYourselfPage implements OnInit {
         })
   }
 
-  routeHappiness(cont: any = 1) {
+  routeBenefits(cont: any = 1) {
     var hR
-    localStorage.setItem("moduleId", JSON.stringify(23))
-    this.service.clickModule(23, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(100))
+    this.service.clickModule(100, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -211,24 +225,24 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/happiness/${hR}`])
+            this.router.navigate([`/teenagers/awareness/${hR}`])
           }
           else
-            this.router.navigate([`/adults/happiness/s23001`])
+            this.router.navigate([`/teenagers/awareness/s100001`])
           /* if(!identityResume)
            {
 
-             this.router.navigate([`/adults/identity`])
+             this.router.navigate([`/teenagers/identity`])
            }
            else
-             this.router.navigate([`/adults/identity/s${identityResume}`])*/
+             this.router.navigate([`/teenagers/identity/s${identityResume}`])*/
         })
   }
 
-  routeLivingWithPeace(cont: any = 1) {
+  routeThreeStepOfEnquiry(cont: any = 1) {
     var livingwithpeaceResume
-    localStorage.setItem("moduleId", JSON.stringify(63))
-    this.service.clickModule(63, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(97))
+    this.service.clickModule(97, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -250,24 +264,24 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/living-with-peace/${livingwithpeaceResume}`])
+            this.router.navigate([`/teenagers/living-with-peace/${livingwithpeaceResume}`])
           }
           else
-            this.router.navigate([`/adults/living-with-peace/s63001`])
+            this.router.navigate([`/teenagers/living-with-peace/s97001`])
           /* if(!lonelinessResume)
             {
 
-              this.router.navigate([`/adults/loneliness/s162p0`])
+              this.router.navigate([`/teenagers/loneliness/s162p0`])
             }
             else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+              this.router.navigate([`/teenagers/loneliness/s${lonelinessResume}`])*/
         })
   }
 
-  routePleasure(cont: any = 1) {
+  routeNoJudgement(cont: any = 1) {
     var pleasureResume
-    localStorage.setItem("moduleId", JSON.stringify(20))
-    this.service.clickModule(20, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(101))
+    this.service.clickModule(101, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -293,17 +307,17 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/pleasure/${pleasureResume}`])
+            this.router.navigate([`/teenagers/no-judgement/${pleasureResume}`])
           }
           else
-            this.router.navigate([`/adults/pleasure/s20001`])
+            this.router.navigate([`/teenagers/no-judgement/s101001`])
         })
   }
 
-  routeInnerBoredom(cont: any = 1) {
+  routeQuestionsKey(cont: any = 1) {
     var ibR
-    localStorage.setItem("moduleId", JSON.stringify(56))
-    this.service.clickModule(56, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(102))
+    this.service.clickModule(102, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -325,25 +339,25 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/inner-boredom/${ibR}`])
+            this.router.navigate([`/teenagers/questions-are-key/${ibR}`])
           }
           else
-            this.router.navigate([`/adults/inner-boredom/s56001`])
+            this.router.navigate([`/teenagers/questions-are-key/s102001`])
 
           /*if(!sinR)
           {
 
-            this.router.navigate([`/adults/self-interest`])
+            this.router.navigate([`/teenagers/self-interest`])
           }
           else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
+            this.router.navigate([`/teenagers/self-interest/s${sinR}`])*/
         })
   }
 
-  routeComparison(cont: any = 1) {
+  routelookWithoutLanguage(cont: any = 1) {
     var comparisonR
-    localStorage.setItem("moduleId", JSON.stringify(7))
-    this.service.clickModule(7, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(103))
+    this.service.clickModule(103, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -368,10 +382,150 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/comparison/${comparisonR}`])
+            this.router.navigate([`/teenagers/comparison/${comparisonR}`])
           }
           else
-            this.router.navigate([`/adults/comparison/s0`])
+            this.router.navigate([`/teenagers/comparison/s103001`])
+        })
+  }
+
+  routeConditioning(cont: any = 1) {
+    var conditioning
+    localStorage.setItem("moduleId", JSON.stringify(105))
+    this.service.clickModule(105, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        conditioning = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you conditioning
+        sessionStorage.setItem("conditioning", conditioning)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/conditioning/${conditioning}`])
+          }
+          else
+            this.router.navigate([`/teenagers/conditioning/s105001`])
+        })
+  }
+
+  routeComparison(cont: any = 1) {
+    var comparison
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparison = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you conditioning
+        sessionStorage.setItem("comparison", comparison)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/comparison/${comparison}`])
+          }
+          else
+            this.router.navigate([`/teenagers/comparison/s111001`])
+        })
+  }
+
+  routeApproval(cont: any = 1) {
+    var externalapproval
+    localStorage.setItem("moduleId", JSON.stringify(123))
+    this.service.clickModule(123, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        externalapproval = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you conditioning
+        sessionStorage.setItem("external-approval", externalapproval)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/external-approval/${externalapproval}`])
+          }
+          else
+            this.router.navigate([`/teenagers/external-approval/s123001`])
+        })
+  }
+
+  routeReactiveMind(cont: any = 1) {
+    var externalapproval
+    localStorage.setItem("moduleId", JSON.stringify(113))
+    this.service.clickModule(113, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        externalapproval = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you conditioning
+        sessionStorage.setItem("external-approval", externalapproval)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/reactive-mind/${externalapproval}`])
+          }
+          else
+            this.router.navigate([`/teenagers/reactive-mind/s113001`])
         })
   }
 
@@ -435,11 +589,11 @@ export class UnderstandYourselfPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 
   // audioevent(audioContent) {
-  //   this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
+  //   this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
 }
