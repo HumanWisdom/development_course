@@ -10,6 +10,7 @@ import { AdultsService } from "src/app/adults/adults.service";
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from "../../../../../shared/services/shared.service";
+import { environment } from "../../../../../environments/environment";
 
 declare var $: any;
 @Component({
@@ -412,22 +413,24 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
 
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       }
                     }
@@ -612,21 +615,23 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       }
                     }
@@ -850,22 +855,24 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
 
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       }
                     }
