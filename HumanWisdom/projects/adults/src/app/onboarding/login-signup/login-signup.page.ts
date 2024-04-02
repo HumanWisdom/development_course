@@ -412,22 +412,24 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = "https://staging.happierme.app/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
 
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = "https://staging.happierme.app/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       }
                     }
@@ -612,21 +614,23 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = "https://staging.happierme.app/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = "https://staging.happierme.app/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       }
                     }
@@ -850,22 +854,24 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = "https://staging.happierme.app/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
 
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          window.location.href = "https://staging.happierme.app/teenagers/change-topic";
+                          // this.router.navigate(["/teenagers/change-topic"], {
+                          //   state: {
+                          //     routedFromLogin: true,
+                          //   }
+                          // });
                         }
                       }
                     }
