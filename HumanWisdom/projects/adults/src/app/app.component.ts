@@ -303,8 +303,14 @@ export class AppComponent implements OnDestroy {
 
 
   initializeApp() {
-
-
+    const UserId = localStorage.getItem("userId");
+    const email = localStorage.getItem("email");
+    const name = localStorage.getItem("name");
+    const accessObj: any = window;
+    (accessObj)?.Moengage.add_unique_user_id(UserId).then(() => {
+      (accessObj)?.Moengage.add_email(email);
+      (accessObj)?.Moengage.add_first_name(name);
+    })
     let remember = localStorage.getItem("remember")
     let first = localStorage.getItem("firsttime")
     let firstTimeTour = localStorage.getItem("firstTimeTour");

@@ -566,6 +566,246 @@
           "builder": "@angular-devkit/build-angular:browser"
         }
       }
+    },
+    "onboarding": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/onboarding",
+      "sourceRoot": "projects/onboarding/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "onboarding",
+            "index": "projects/onboarding/src/index.html",
+            "main": "projects/onboarding/src/main.ts",
+            "polyfills": "projects/onboarding/src/polyfills.ts",
+            "tsConfig": "projects/onboarding/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/onboarding/src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              },
+              "projects/onboarding/src/manifest.webmanifest",
+              "projects/onboarding/src/manifest.webmanifest",
+              "projects/onboarding/src/.htaccess"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/font-awesome/css/font-awesome.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_arrows.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_circles.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_dots.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ngx-toastr/toastr.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/css/custom.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/css/custom-v1.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/css/backgrounds.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/css/backgrounds.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/css/wave.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/css/overlay.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.min.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/css/responsive.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/font/font_weight.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/font/font_size.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/font/font_colour.css",
+                "inject": true
+              },
+              {
+                "input": "projects/onboarding/src/assets/font/line_height.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ngx-sharebuttons/themes/circles/circles-dark-theme.scss",
+                "inject": true
+              }
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.js",
+              "node_modules/propellerkit-range-slider/node_modules/wnumb/wNumb.js",
+              "node_modules/html2canvas/dist/html2canvas.min.js",
+              "node_modules/bcswipe/dist/jquery.bcSwipe.min.js",
+              "node_modules/jspdf/dist/jspdf.umd.min.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                  },
+                "fonts": true
+              },
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "ci": {
+              "progress": false
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "onboarding:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "onboarding:build:production"
+            },
+            
+            "ci": {
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "onboarding:build"
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "onboarding:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "onboarding:build:production"
+            }
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "onboarding:ionic-cordova-build",
+            "devServerTarget": "onboarding:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "onboarding:ionic-cordova-build:production",
+              "devServerTarget": "onboarding:serve:production"
+            }
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
+        }
+      }
     }
   },
   "cli": {

@@ -11,6 +11,8 @@ import { Constant } from './constant';
     public static ClientUrl:string = 'https://staging.happierme.app/adults/';
     public static enablebanner = false;
     public static isIos = false;
+    public static previousUrl = '';
+    public static currentUrl = '';
   constructor() {
   }
 

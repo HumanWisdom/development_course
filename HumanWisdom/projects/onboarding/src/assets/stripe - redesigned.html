@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Subscription prices</title>
+  <script src="https://js.stripe.com/v3/"></script>
+
+
+
+</head>
+<body>
+  <form id="payment-form">
+    <div id="card-element" width="50%">
+<div id="card-number">
+
+</div>
+
+<div id="card-expiry">
+
+</div>
+
+<div id="card-cvc">
+
+</div>
+
+<input id="postal-code" type="text" placeholder="Postal-code" />
+
+
+
+      <!-- Elements will create input elements here -->
+    </div>
+
+    <!-- We'll put the error messages in this element -->
+    <div id="card-element-errors" role="alert"></div>
+<input id="name" type="text" placeholder="Card Owner" />
+
+    <button id="btnsubmit" type="submit">Subscribe</button>
+  </form>
+
+<script >
+ <!--  let stripe = Stripe('pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a'); -->
+let stripe = Stripe('pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl');
+
+
+let elements = stripe.elements();
+
+    
+
+
+var cardNumberElement = elements.create('cardNumber',{placeholder:'Card Number'});
+var cardExpiryElement = elements.create('cardExpiry');
+var cardCvcElement = elements.create('cardCvc');
+
+
+
+cardNumberElement.mount('#card-number');
+cardExpiryElement.mount('#card-expiry');
+cardCvcElement.mount('#card-cvc');
+
+cardNumberElement.on('change', function (event) {
+  displayError(event);
+});
+cardExpiryElement.on('change', function (event) {
+  displayError(event);
+});
+cardCvcElement.on('change', function (event) {
+  displayError(event);
+});
+function displayError(event) {
+ 
+  let displayError = document.getElementById('card-element-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+}
+
+const btn = document.querySelector('#btnsubmit');
+btn.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const nameInput = document.getElementById('name');
+ const postalcode= document.getElementById('postal-code');
+  // Create payment method and confirm payment intent.
+  stripe.confirmCardPayment('pi_3Jh8w7LodCYBgHN80b0vRxtE_secret_SMhr6RWXtquDvxyDmD08ZvUWb', {
+    payment_method: {
+      card: cardNumberElement,
+      billing_details: {
+        name: nameInput.value,
+	address: { postal_code: postalcode.value,
+		}
+      }
+    }
+  }).then((result) => {
+    if(result.error) {
+      alert(result.error.message);
+    } else {
+      // Successful subscription payment
+    }
+  });
+});
+
+
+
+</script>
+
+</body>
+</html>
