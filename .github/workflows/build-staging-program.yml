@@ -39,7 +39,7 @@ jobs:
         cd HumanWisdom
         npm install --force
 
-     - name: Build the Adult project
+     - name: Build the Onboarding project
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
@@ -49,7 +49,7 @@ jobs:
        run: |
         cd HumanWisdom
         mkdir -p builds/compressed
-        tar -czf builds/compressed/program.tgz www/
+        tar -czf builds/compressed/program.tgz onboarding/
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2
