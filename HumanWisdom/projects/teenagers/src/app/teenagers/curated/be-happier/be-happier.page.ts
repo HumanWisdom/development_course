@@ -189,8 +189,8 @@ export class BeHappierPage implements OnInit {
 
   routeHappiness(cont: any = 1) {
     var hR
-    localStorage.setItem("moduleId", JSON.stringify(23))
-    this.service.clickModule(23, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(133))
+    this.service.clickModule(133, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -215,7 +215,7 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/teenagers/happiness/${hR}`])
           }
           else
-            this.router.navigate([`/teenagers/happiness/s23001`])
+            this.router.navigate([`/teenagers/happiness/s133001`])
           /* if(!identityResume)
            {
 
@@ -228,8 +228,8 @@ export class BeHappierPage implements OnInit {
 
   routeLivingWithPeace(cont: any = 1) {
     var livingwithpeaceResume
-    localStorage.setItem("moduleId", JSON.stringify(63))
-    this.service.clickModule(63, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(129))
+    this.service.clickModule(129, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -254,7 +254,7 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/teenagers/living-with-peace/${livingwithpeaceResume}`])
           }
           else
-            this.router.navigate([`/teenagers/living-with-peace/s63001`])
+            this.router.navigate([`/teenagers/living-with-peace/s129001`])
           /* if(!lonelinessResume)
             {
 
@@ -267,8 +267,8 @@ export class BeHappierPage implements OnInit {
 
   routePleasure(cont: any = 1) {
     var pleasureResume
-    localStorage.setItem("moduleId", JSON.stringify(20))
-    this.service.clickModule(20, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(124))
+    this.service.clickModule(124, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -297,14 +297,14 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/teenagers/pleasure/${pleasureResume}`])
           }
           else
-            this.router.navigate([`/teenagers/pleasure/s20001`])
+            this.router.navigate([`/teenagers/pleasure/s124001`])
         })
   }
 
   routeInnerBoredom(cont: any = 1) {
     var ibR
-    localStorage.setItem("moduleId", JSON.stringify(56))
-    this.service.clickModule(56, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(121))
+    this.service.clickModule(121, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -329,7 +329,7 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/teenagers/inner-boredom/${ibR}`])
           }
           else
-            this.router.navigate([`/teenagers/inner-boredom/s56001`])
+            this.router.navigate([`/teenagers/inner-boredom/s121001`])
 
           /*if(!sinR)
           {
@@ -343,8 +343,8 @@ export class BeHappierPage implements OnInit {
 
   routeComparison(cont: any = 1) {
     var comparisonR
-    localStorage.setItem("moduleId", JSON.stringify(7))
-    this.service.clickModule(7, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -372,7 +372,7 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/teenagers/comparison/${comparisonR}`])
           }
           else
-            this.router.navigate([`/teenagers/comparison/s0`])
+            this.router.navigate([`/teenagers/comparison/s111001`])
         })
   }
 

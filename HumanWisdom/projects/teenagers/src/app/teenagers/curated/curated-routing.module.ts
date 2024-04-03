@@ -18,14 +18,6 @@ const routes: Routes = [
     loadChildren: () => import('./overcome-stress-anxiety-transcript/overcome-stress-anxiety-transcript.module').then( m => m.OvercomeStressAnxietyTranscriptPageModule)
   },
   {
-    path: 'wisdom-for-workplace',
-    loadChildren: () => import('./wisdom-for-workplace/wisdom-for-workplace.module').then( m => m.WisdomForWorkplacePageModule)
-  },
-  {
-    path: 'wisdom-for-workplace-transcript',
-    loadChildren: () => import('./wisdom-for-workplace-transcript/wisdom-for-workplace-transcript.module').then( m => m.WisdomForWorkplaceTranscriptPageModule)
-  },
-  {
     path: 'have-fulfilling-relationships',
     loadChildren: () => import('./have-fulfilling-relationships/have-fulfilling-relationships.module').then( m => m.HaveFulfillingRelationshipsPageModule)
   },
@@ -40,14 +32,6 @@ const routes: Routes = [
   {
     path: 'be-happier-transcript',
     loadChildren: () => import('./be-happier-transcript/be-happier-transcript.module').then( m => m.BeHappierTranscriptPageModule)
-  },
-  {
-    path: 'change-unhelpful-habits',
-    loadChildren: () => import('./change-unhelpful-habits/change-unhelpful-habits.module').then( m => m.ChangeUnhelpfulHabitsPageModule)
-  },
-  {
-    path: 'change-unhelpful-habits-transcript',
-    loadChildren: () => import('./change-unhelpful-habits-transcript/change-unhelpful-habits-transcript.module').then( m => m.ChangeUnhelpfulHabitsTranscriptPageModule)
   },
   {
     path: 'overcome-unhelpful-habits',
