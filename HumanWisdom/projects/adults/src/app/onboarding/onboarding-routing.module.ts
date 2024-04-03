@@ -23,25 +23,8 @@ const routes: Routes = [
     loadChildren: () => import('./subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
   },
   {
-    path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then(m => m.SignupPageModule)
-  },
-  {
-    path: 'login',
-    canActivate: [authLoginGuard],
-    loadChildren: () => import('./login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
-  },
-  {
     path: 'activationkey',
     loadChildren: () => import('./activationkey/activationkey.module').then(m => m.ActivationkeyPageModule)
-  },
-  {
-    path: 'forgotpassword',
-    loadChildren: () => import('./forget-password/forget-password.module').then(m => m.ForgetPasswordPageModule)
-  },
-  {
-    path: 'password-link',
-    loadChildren: () => import('./set-password/set-password.module').then(m => m.SetPasswordPageModule)
   },
   {
     path: 'assign-key',
@@ -73,16 +56,8 @@ const routes: Routes = [
     canActivate:[EnableRouteGuard]
   },
   {
-    path: 'set-password',
-    loadChildren: () => import('./set-password/set-password.module').then(m => m.SetPasswordPageModule)
-  },
-  {
     path: 'profile-edit',
     loadChildren: () => import('./profile-edit/profile-edit.module').then(m => m.ProfileEditPageModule)
-  },
-  {
-    path: 'change-password',
-    loadChildren: () => import('./change-password/change-password.module').then(m => m.ChangePasswordPageModule)
   },
   {
     path: 'free-limit',

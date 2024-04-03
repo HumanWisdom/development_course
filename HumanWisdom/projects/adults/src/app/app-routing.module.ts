@@ -129,11 +129,6 @@ const routes: Routes = [
     loadChildren: () => import('./adults/adverts-student/adverts-student.module').then(m => m.AdvertsStudentPageModule)
   },
   {
-    path: 'log-in',
-    canActivate: [authLoginGuard],
-    loadChildren: () => import('./onboarding/login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
-  },
-  {
     path: 'partnership-app',
     canActivate: [AuthGuard],
     loadChildren: () => import('./adults/partnership-app/partnership-app.module').then(m => m.PartnershipAppModule)

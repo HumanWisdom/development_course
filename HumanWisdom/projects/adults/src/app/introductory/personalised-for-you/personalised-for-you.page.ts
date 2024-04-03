@@ -4,7 +4,7 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from 'src/app/adults/adults.service';
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-
+import { environment } from '../../../../../environments/environment';
 
 declare var $: any;
 @Component({

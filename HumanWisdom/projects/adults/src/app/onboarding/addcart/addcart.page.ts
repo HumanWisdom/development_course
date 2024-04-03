@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 import { AdultsModule } from 'src/app/adults/adults.module';
-
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'app-addcart',
   templateUrl: './addcart.page.html',

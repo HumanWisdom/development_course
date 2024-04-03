@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-
+import {environment} from '../../../../projects/environments/environment';
 @Injectable({
   providedIn: 'root'
 })

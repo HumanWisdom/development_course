@@ -6,6 +6,7 @@ import { Constant } from '../../services/constant';
 import { LogEventService } from '../../services/log-event.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { NavigationService } from '../../services/navigation.service';
+import {environment} from '../../../../projects/environments/environment';
 
 @Component({
   selector: 'app-start-your-free-trial',
