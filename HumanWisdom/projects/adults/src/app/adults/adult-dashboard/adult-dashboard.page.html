@@ -193,7 +193,7 @@
 
             <!-- my progress -->
             <!-- accordion -->
-            <div class="row accordion_row" *ngIf="isloggedIn">
+            <div class="row accordion_row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
@@ -208,7 +208,7 @@
                                   My progress
                                 </h2>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="viewDetails()">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
                                 <a  (click)="viewDetails()">
                                   <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                                     View details
@@ -226,7 +226,7 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
 
-                            <div class="row">
+                            <div class="row" *ngIf="isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0px pr5px progress_box">
                                   <div class="row">
@@ -278,7 +278,7 @@
                               </div>
                             </div>
 
-                            <div class="row mt10px progress_box_score">
+                            <div class="row mt10px progress_box_score" *ngIf="isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -313,20 +313,20 @@
                             </div>
 
                             <!-- happy points -->
-                            <div class="row progress_box_score tcenter pt30px pb30px">
+                            <div class="row progress_box_score tcenter pt30px pb30px" *ngIf="!isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
                                   Happy points for a happier life
                                 </h4>
 
                                 <h4 class="mt10px mb0px fs_12px fw_500 lh_150p fc_e58d82">
-                                  <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline">Login</a>
+                                  <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline" (click)="getLogin()">Login</a>
                                   to view your progress
                                 </h4>
                               </div>
                             </div>
 
-                            <!-- <div class="row mt10px progress_box_score">
+                            <div class="row mt10px progress_box_score" *ngIf="!isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -355,7 +355,7 @@
                                   </div>
                                 </div>
                               </div>
-                            </div> -->
+                            </div>
                             <!-- /happy points -->
 
                           </div>
@@ -371,7 +371,7 @@
             <!-- /my progress -->
 
             <!-- hr -->
-            <div class="row" *ngIf="isloggedIn">
+            <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
@@ -583,7 +583,7 @@
                                       </h4>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
-                                      <a routerLink="/adults/pathway"> 
+                                      <a routerLink="/adults/pathway">
                                         <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
                                           View all
                                         </h4>
