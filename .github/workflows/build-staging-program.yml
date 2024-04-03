@@ -86,7 +86,7 @@ jobs:
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/onboarding
-          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/onboarding          
+          sudo mv builds/uncompressed/${{ github.run_id }}/onboarding /var/www/html/onboarding          
           sudo chown ubuntu:ubuntu /var/www/html/onboarding 
 
   build-adults:
