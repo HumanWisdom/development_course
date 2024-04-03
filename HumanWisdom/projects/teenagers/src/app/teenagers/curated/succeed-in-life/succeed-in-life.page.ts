@@ -272,6 +272,23 @@ export class SucceedInLifePage implements OnInit {
         })
   }
 
+
+  routeWork(id){
+
+  }
+
+  routeLeadership(cont){
+
+  }
+
+  routeCommunication(cont){
+
+  }
+
+  routeSuccessAndFailure(count){
+    
+  }
+
   routePleasure(cont: any = 1) {
     var pleasureResume
     localStorage.setItem("moduleId", JSON.stringify(124))

@@ -10,6 +10,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
+import { environment } from '../../../../../environments/environment';
 // import { driver } from "driver.js";
 // import "driver.js/dist/driver.css";
 
@@ -1685,7 +1686,7 @@ export class AdultDashboardPage implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-   window.location.href = environment.clientUrl+"/onboarding/login";
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   friendName(value) {
@@ -1698,7 +1699,7 @@ export class AdultDashboardPage implements OnInit {
 
   getLogin() {
     localStorage.setItem('btnclick', 'T')
-    this.router.navigate(['/onboarding/login', { queryParams: { email: '' } }])
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   friendEmail(value) {

@@ -8,7 +8,7 @@ import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { SubscriptionType } from '../../../../../shared/models/program-model';
 import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
-
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
   templateUrl: './adverts-hwp.page.html',

@@ -5,6 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { Meta , Title} from '@angular/platform-browser';
 import { LogEventService } from "../../../../../shared/services/log-event.service";
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'app-give-the-gift-of-wisdom',
   templateUrl: './give-the-gift-of-wisdom.page.html',
