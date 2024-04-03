@@ -162,8 +162,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
-          side: "top",
-          align: 'start'
+          side: "right"
+          // side: "top",
+          // align: 'start'
         }
       }, {
         element: ".tour_find_inspiration",
