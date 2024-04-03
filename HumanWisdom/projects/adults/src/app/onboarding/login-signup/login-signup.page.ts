@@ -243,7 +243,7 @@ export class LoginSignupPage implements OnInit {
               "signupfirst",
               'T'
             );
-            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+            // window.location.href = environment.clientUrl+"/onboarding/login";
           }
         },
         (err) => {

@@ -144,13 +144,13 @@ export class AdvertsHwpPage implements OnInit {
         if(!(localStorage.getItem('fromlandingpage'))){
           localStorage.setItem("fromlandingpage", 'T')
         }
-        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+        window.location.href = environment.clientUrl+"/onboarding/login";
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
     } else if (val === 'dashboard') {
       if (!this.isLoggedIn) {
-        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+        window.location.href = environment.clientUrl+"/onboarding/login";
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
@@ -177,13 +177,13 @@ export class AdvertsHwpPage implements OnInit {
       }
     } else if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+      window.location.href = environment.clientUrl+"/onboarding/login";
     } else if (this.isLoggedIn && !this.isSubscriber) {
       localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
       localStorage.setItem('personalised subscription', val);
       this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: val } })
     } else if (this.isGuestuser) {
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+      window.location.href = environment.clientUrl+"/onboarding/login";
     }
   }
 

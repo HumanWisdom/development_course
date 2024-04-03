@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../services/shared.service';
-
+import { environment } from '../../../../projects/environments/environment';
 @Component({
   selector: 'app-index-footer',
   templateUrl: './index-footer.component.html',
@@ -103,7 +103,7 @@ export class IndexFooterComponent implements OnInit {
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
         localStorage.setItem('btnclick', 'T')
-        this.router.navigate(['/onboarding/login'])
+       window.location.href = environment.clientUrl+"/onboarding/login";
       // }
       
     }

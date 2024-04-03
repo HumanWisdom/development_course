@@ -139,9 +139,9 @@ export class AuthGuard implements CanActivate, OnInit {
     } else if (adult === 'T' && rem !== 'T') {
       return true;
     } else if (btnclick !== null && btnclick === 'T') {
-      window.location.href = environment.clientUrl+"/onboarding/login";
-      // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+
+      // window.location.href = environment.clientUrl+"/onboarding/login";
+     // window.location.href = environment.clientUrl+"/onboarding/login";
       return false
     } else {
       if (this.onboarding.navigateToUpgradeToPremium
@@ -150,7 +150,7 @@ export class AuthGuard implements CanActivate, OnInit {
         localStorage.setItem('btnclick', 'F');
         localStorage.setItem('guest', 'T');
         window.location.href = environment.clientUrl+"/onboarding/login";
-        //this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+        //window.location.href = environment.clientUrl+"/onboarding/login";
         return false;
       }
       // localStorage.clear()

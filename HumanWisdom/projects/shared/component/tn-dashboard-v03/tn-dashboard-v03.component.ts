@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
-
+import { environment } from '../../../../projects/environments/environment';
 @Component({
   selector: 'app-tn-dashboard-v03',
   templateUrl: './tn-dashboard-v03.component.html',
@@ -177,11 +177,11 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+   window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+   window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   giftwisdom() {

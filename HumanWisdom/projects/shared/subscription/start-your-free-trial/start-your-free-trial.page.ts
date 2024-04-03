@@ -29,7 +29,7 @@ export class StartYourFreeTrialPage implements OnInit {
         this.router.navigate(['/subscription/try-free-and-subscribe']);
       } else {
         SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-        this.router.navigate(['/onboarding/login']);
+       window.location.href = environment.clientUrl+"/onboarding/login";;
       }
   }
 

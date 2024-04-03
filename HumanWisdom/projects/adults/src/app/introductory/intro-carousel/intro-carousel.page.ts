@@ -116,7 +116,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   skip() {
-    this.router.navigate(['/onboarding/login']);
+   window.location.href = environment.clientUrl+"/onboarding/login";;
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
     this.logeventservice.logEvent('click_skip_onboarding' + ' ' + carouselId);
@@ -140,7 +140,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
     login() {
-      this.router.navigate(['/onboarding/login']);
+     window.location.href = environment.clientUrl+"/onboarding/login";;
       localStorage.setItem('personalised', 'F');
       localStorage.setItem('fromlandingpage', 'F');
     }

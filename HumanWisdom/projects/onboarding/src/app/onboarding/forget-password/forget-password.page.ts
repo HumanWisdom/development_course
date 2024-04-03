@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-
+import { environment } from "../../../../../environments/environment";
 @Component({
   selector: 'app-forget-password',
   templateUrl: './forget-password.page.html',
@@ -187,7 +187,7 @@ export class ForgetPasswordPage implements OnInit {
   }
 
   loginpage() {
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   getAlertcloseEvent(event) {

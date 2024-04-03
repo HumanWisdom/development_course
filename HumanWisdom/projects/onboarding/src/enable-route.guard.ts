@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-
+import { environment } from '../../../projects/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +13,7 @@ export class EnableRouteGuard implements CanActivate {
     if (userid === 'T') {
       return true;
     } else {
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true});
+            window.location.href = environment.clientUrl+"/onboarding/login";
       return false;
     }
   }
