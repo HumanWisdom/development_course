@@ -51,14 +51,14 @@ const routes: Routes = [
     redirectTo:"adults",
     //canActivate:[AuthGuard]
   },
-  {
-    path: "course/onboarding",
-    redirectTo:"onboarding"
-  },
-  {
-    path: "onboarding",
-    loadChildren: () => import("./onboarding/onboarding.module").then(m => m.OnboardingModule)    
-  },
+  // {
+  //   path: "course/onboarding",
+  //   redirectTo:"onboarding"
+  // },
+  // {
+  //   path: "onboarding",
+  //   loadChildren: () => import("./onboarding/onboarding.module").then(m => m.OnboardingModule)    
+  // },
   {
     path: "course/forum",
     redirectTo:"forum"
