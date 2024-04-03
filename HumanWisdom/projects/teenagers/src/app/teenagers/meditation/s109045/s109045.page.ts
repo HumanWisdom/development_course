@@ -17,10 +17,10 @@ export class S109045Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="2/3"
-  link="/meditation/s109046"
+  link="teenagers/meditation/s109046"
   name="#3  Tips for a mediation practice"
   progressImg=""
-  toc="meditation/s109001"
+  toc="teenagers/meditation/s109001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 

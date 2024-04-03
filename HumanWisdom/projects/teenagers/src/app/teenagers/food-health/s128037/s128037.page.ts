@@ -18,10 +18,10 @@ export class S128037Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/food-health/s128038"
+  link="teenagers/food-health/s128038"
   name="#2 How can we respond with wisdom?"
   progressImg=""
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
 
   constructor
   (

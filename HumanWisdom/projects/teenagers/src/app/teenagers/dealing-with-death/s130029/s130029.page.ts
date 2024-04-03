@@ -15,7 +15,7 @@ export class S130029Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w9"
   hint = "you may think people go to heaven, or not be sure."
-  toc = "/dealing-with-death/s130001"
+  toc = "teenagers/dealing-with-death/s130001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S130029Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-death/s130030'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130030'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-death/s130030'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130030'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-death/s130028'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130028'])
   }
 
   ngOnDestroy() 

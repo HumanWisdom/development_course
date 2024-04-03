@@ -13,7 +13,7 @@ export class S128080Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
 
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/63.png"
   bg=""
   moduleLink="/living-with-peace"

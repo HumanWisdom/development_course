@@ -14,7 +14,7 @@ export class S112070Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w11"
   hint = "For example, regarding exams"
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -94,16 +94,16 @@ export class S112070Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112071'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112071'])
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112071'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112071'])
       })
 
   }
 
   previous() {
-    this.router.navigate(['/fear-anxiety/s112069'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112069'])
   }
 
   ngOnDestroy() {

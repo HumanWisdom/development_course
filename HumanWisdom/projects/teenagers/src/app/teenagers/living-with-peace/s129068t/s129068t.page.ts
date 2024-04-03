@@ -20,7 +20,7 @@ export class S129068tPage implements OnInit {
   
 
   audioPage="/living-with-peace/s129068"
-  toc="living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -67,7 +67,7 @@ export class S129068tPage implements OnInit {
     sessionStorage.setItem("bookmark129068",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/living-with-peace/s129069'])
+    this.router.navigate(['/teenagers/living-with-peace/s129069'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -84,7 +84,7 @@ export class S129068tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s129067'])
+    this.router.navigate(['/teenagers/living-with-peace/s129067'])
   }
 
 

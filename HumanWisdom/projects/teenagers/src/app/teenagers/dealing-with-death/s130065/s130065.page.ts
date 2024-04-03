@@ -22,7 +22,7 @@ export class S130065Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark: any
-  toc="dealing-with-death/s130001"
+  toc="teenagers/dealing-with-death/s130001"
 
   constructor
   (

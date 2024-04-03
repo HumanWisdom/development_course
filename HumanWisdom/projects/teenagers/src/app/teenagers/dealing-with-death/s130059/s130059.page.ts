@@ -15,7 +15,7 @@ export class S130059Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w3"
   hint = " It may be you value your close relationships, but do not put enough energy into them "
-  toc = "/dealing-with-death/s130001"
+  toc = "teenagers/dealing-with-death/s130001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S130059Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-death/s130060'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130060'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-death/s130060'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130060'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-death/s130058'])
+    this.router.navigate(['/teenagers/dealing-with-death/s130058'])
   }
 
   ngOnDestroy() 

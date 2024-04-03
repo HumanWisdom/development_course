@@ -15,7 +15,7 @@ export class S140028Page implements OnInit {
   bg = "purple_red_w4"
   hint="For example, the divisions seen around the abortion debate in America, or between the Shias and Sunnis."
 
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -117,17 +117,17 @@ export class S140028Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140029'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140029'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140029'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140029'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140027'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140027'])
   }
 
   ngOnDestroy() 

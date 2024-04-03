@@ -163,6 +163,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
           side: "right"
+          // side: "top",
+          // align: 'start'
         }
       }, {
         element: ".tour_find_inspiration",
@@ -196,6 +198,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
         driverObj.movePrevious();
         document.body.classList.remove('overflow_auto');
         document.body.classList.add('overflow_hidden');
+      },
+      onCloseClick:() => {
+        this.tourIndex = 1;
+        document.body.classList.remove('overflow_hidden');
+        document.body.classList.add('overflow_auto');
+        console.log('Close Button Clicked');
+        driverObj.destroy();
       },
       allowClose: false,
       showButtons: [

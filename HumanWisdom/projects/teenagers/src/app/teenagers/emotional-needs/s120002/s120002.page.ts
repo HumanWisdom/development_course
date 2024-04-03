@@ -24,7 +24,7 @@ export class S120002Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -97,17 +97,17 @@ export class S120002Page implements OnInit, OnDestroy {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['/emotional-needs/s234'])
+      //this.router.navigate(['/teenagers/emotional-needs/s234'])
     })
   }
 
   goNext() 
   {
-    // this.router.navigate(['/emotional-needs/s2'])
+    // this.router.navigate(['/teenagers/emotional-needs/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/emotional-needs/s120003'])
+    this.router.navigate(['/teenagers/emotional-needs/s120003'])
   }
 
   ngOnDestroy() 

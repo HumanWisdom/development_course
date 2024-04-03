@@ -15,7 +15,7 @@ export class S122035p1Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = " It could be letting go of a painful memory, or your attachment to an opinion you have "
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S122035p1Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/nature-of-the-i/s122036'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122036'])
 
       },
       () => {
-        this.router.navigate(['/nature-of-the-i/s122036'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122036'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/nature-of-the-i/s122035'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122035'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S122014p1Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = "When you can stay with the feeling without labeling it - it can dissolve into peace"
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S122014p1Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/nature-of-the-i/s122015'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122015'])
 
       },
       () => {
-        this.router.navigate(['/nature-of-the-i/s122015'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122015'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/nature-of-the-i/s122014'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122014'])
   }
 
   ngOnDestroy() 

@@ -107,7 +107,7 @@ export class S131239Page implements OnInit {
 
   goNext() 
   {
-    // this.router.navigate(['/dealing-with-death/s131239'])
+    // this.router.navigate(['/teenagers/dealing-with-death/s131239'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

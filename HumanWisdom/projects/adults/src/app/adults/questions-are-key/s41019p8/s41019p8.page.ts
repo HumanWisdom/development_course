@@ -50,7 +50,7 @@ export class S41019p8Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/adults/questions-are-key/s41019p7'])
+    this.router.navigate(['/adults/questions-are-key/s41019p2'])
 
   }
 

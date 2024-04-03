@@ -14,7 +14,7 @@ export class S142109Page implements OnInit {
   bg_cft="bg_light_blue"
   bg="light_blue_w12" 
   
-  toc="making-better-decisions/s142001"
+  toc="teenagers/making-better-decisions/s142001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -80,7 +80,7 @@ export class S142109Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/making-better-decisions/s142115'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142115'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({
@@ -105,7 +105,7 @@ export class S142109Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142109'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142109'])
   }
 
   ngOnDestroy()

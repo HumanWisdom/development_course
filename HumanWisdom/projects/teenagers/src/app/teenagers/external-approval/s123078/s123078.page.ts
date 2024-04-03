@@ -14,7 +14,7 @@ export class S123078Page implements OnInit
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_flat"
-  toc="external-approval/s123001"
+  toc="teenagers/external-approval/s123001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   points:any
@@ -60,11 +60,11 @@ export class S123078Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/external-approval/s123079'])
+  this.router.navigate(['/teenagers/external-approval/s123079'])
   }
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123077'])
+  this.router.navigate(['/teenagers/external-approval/s123077'])
   }
 }

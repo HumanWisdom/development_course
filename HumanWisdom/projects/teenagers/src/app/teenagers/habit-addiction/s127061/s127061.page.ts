@@ -15,7 +15,7 @@ export class S127061Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w10"
   hint = "Escaping usually does not take the pain away. It just distracts us for a while."
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127061Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127062'])
+        this.router.navigate(['/teenagers/habit-addiction/s127062'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127012'])
+        this.router.navigate(['/teenagers/habit-addiction/s127012'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127060'])
+    this.router.navigate(['/teenagers/habit-addiction/s127060'])
   }
 
   ngOnDestroy() 

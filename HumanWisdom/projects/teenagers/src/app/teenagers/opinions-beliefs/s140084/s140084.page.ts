@@ -14,7 +14,7 @@ export class S140084Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w9"
   hint = " It may make you feel hurt or angry if that belief is challenged. "
-  toc = "/opinions-beliefs/s140001"
+  toc = "teenagers/opinions-beliefs/s140001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -116,17 +116,17 @@ export class S140084Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/opinions-beliefs/s140085'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140085'])
 
       },
       () => {
-        this.router.navigate(['/opinions-beliefs/s140085'])
+        this.router.navigate(['/teenagers/opinions-beliefs/s140085'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/opinions-beliefs/s140083'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140083'])
   }
 
   ngOnDestroy() 

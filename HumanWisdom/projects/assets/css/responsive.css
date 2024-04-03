@@ -659,7 +659,8 @@
 
     .odiv_user > [class^="col-"]
     {
-        width: 60%;
+        /* width: 60%; */
+        width: 70%;
     }
 
     .oli_tray 
@@ -1081,6 +1082,11 @@
     .col-lg-4 
     {
         width: 10.333333%;
+    }
+
+    .cvideo_coach
+    {
+        height: 50vh;
     }
 }
 

@@ -13,7 +13,7 @@ export class S104010Page implements OnInit {
   bg_cft = "bg_teal"
   bg = "teal_w5"
   hint = "This anxiety is real, but the danger it is pointing to may not be real.Understanding yourself can bring freedom. You just have to take the first step."
-  toc = "/obstacles-enquiry/s104001"
+  toc = "teenagers/obstacles-enquiry/s104001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -112,17 +112,17 @@ export class S104010Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/obstacles-enquiry/s104011'])
+        this.router.navigate(['/teenagers/obstacles-enquiry/s104011'])
 
       },
       () => {
-        this.router.navigate(['/obstacles-enquiry/s104011'])
+        this.router.navigate(['/teenagers/obstacles-enquiry/s104011'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/obstacles-enquiry/s104009'])
+    this.router.navigate(['/teenagers/obstacles-enquiry/s104009'])
   }
 
   ngOnDestroy() 

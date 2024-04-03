@@ -15,7 +15,7 @@ export class S129066Page implements OnInit
   bg_cft="bg_blue"
   bg="blue_w6"
   hint = "  You could stop expecting others to make you feel important, for example.  "
-  toc = "/living-with-peace/s129001"
+  toc = "teenagers/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S129066Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/living-with-peace/s129067'])
+        this.router.navigate(['/teenagers/living-with-peace/s129067'])
 
       },
       () => {
-        this.router.navigate(['/living-with-peace/s129067'])
+        this.router.navigate(['/teenagers/living-with-peace/s129067'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129065'])
+    this.router.navigate(['/teenagers/living-with-peace/s129065'])
   }
 
   ngOnDestroy() 

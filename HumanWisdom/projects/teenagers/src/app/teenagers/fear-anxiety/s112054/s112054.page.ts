@@ -14,7 +14,7 @@ export class S112054Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w9"
   hint = "It may make you conform to be how others want  you to be."
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -94,16 +94,16 @@ export class S112054Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112055'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112055'])
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112055'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112055'])
       })
 
   }
 
   previous() {
-    this.router.navigate(['/fear-anxiety/s112053'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112053'])
   }
 
   ngOnDestroy() {

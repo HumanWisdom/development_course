@@ -13,7 +13,7 @@ export class S129076Page implements OnInit, OnDestroy
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
-  toc="living-with-peace/s129001"
+  toc="teenagers/living-with-peace/s129001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")

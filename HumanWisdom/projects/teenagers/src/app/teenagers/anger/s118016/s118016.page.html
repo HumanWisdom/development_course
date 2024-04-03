@@ -26,7 +26,7 @@
 
               <div class="row pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                  <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" [(ngModel)]="r118016" placeholder="Write your answer here"></textarea>
                 </div>
               </div>
 
@@ -39,7 +39,7 @@
 
               <div class="row pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                  <textarea id="message1" required="required" class="rtextarea v3_reflection_ta" name="message1" rows="12" [(ngModel)]="r118016_1" placeholder="Write your answer here"></textarea>
                 </div>
               </div>
 
@@ -165,7 +165,7 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_stake col_cw" [ngClass]="bg_cft">
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-        <a routerLink="/anger/s118015">
+        <a (click)="previous()">
           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
             Previous
@@ -174,7 +174,7 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"></div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-        <a routerLink="/anger/s118017">
+        <a (click)="submitProgress()">
           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
             Next
             <i class="fa fa-angle-right fs_16px ml10px"></i>

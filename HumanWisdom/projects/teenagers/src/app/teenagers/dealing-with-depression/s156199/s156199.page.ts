@@ -14,7 +14,7 @@ export class S156199Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w6"
   hint = "It is normal for our mind to assume others or our situation is responsible for how we feel"
-  toc = "/dealing-with-depression/s156001"
+  toc = "teenagers/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -108,17 +108,17 @@ export class S156199Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-depression/s156200'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156200'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-depression/s156200'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156200'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-depression/s156198'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156198'])
   }
 
   ngOnDestroy() 

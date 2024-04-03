@@ -13,7 +13,7 @@ export class S112049Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w6"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   title="#9 Fear of the future and the unknown"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.7.mp3'
@@ -92,7 +92,7 @@ export class S112049Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
-    this.router.navigate(['/fear-anxiety/s112050'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112050'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S112049Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112048'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112048'])
  
  
   }

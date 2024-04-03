@@ -15,7 +15,7 @@ export class S117087Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w12"
   hint = " Maybe realise that despite our mind that pushes us to be unique, we need to stay closely connected with others"
-  toc = "/loneliness/s117001"
+  toc = "teenagers/loneliness/s117001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S117087Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/loneliness/s117088'])
+        this.router.navigate(['/teenagers/loneliness/s117088'])
 
       },
       () => {
-        this.router.navigate(['/loneliness/s117088'])
+        this.router.navigate(['/teenagers/loneliness/s117088'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/loneliness/s117086'])
+    this.router.navigate(['/teenagers/loneliness/s117086'])
   }
 
   ngOnDestroy() 

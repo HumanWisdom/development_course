@@ -14,7 +14,7 @@ export class S156200Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w7"
   hint = "it is normal for our mind to feel like we have been a victim of all that has happened to us"
-  toc = "/dealing-with-depression/s156001"
+  toc = "teenagers/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -108,17 +108,17 @@ export class S156200Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/dealing-with-depression/s156201'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156201'])
 
       },
       () => {
-        this.router.navigate(['/dealing-with-depression/s156201'])
+        this.router.navigate(['/teenagers/dealing-with-depression/s156201'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/dealing-with-depression/s156199'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156199'])
   }
 
   ngOnDestroy() 

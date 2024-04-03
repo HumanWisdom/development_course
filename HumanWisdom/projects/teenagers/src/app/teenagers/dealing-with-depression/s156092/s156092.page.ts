@@ -23,7 +23,7 @@ export class S156092Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "dealing-with-depression/s156001"
+  toc = "teenagers/dealing-with-depression/s156001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -77,7 +77,7 @@ export class S156092Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/dealing-with-depression/s156093'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156093'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -98,12 +98,12 @@ export class S156092Page implements OnInit, OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/dealing-with-depression/s156091'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156091'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/dealing-with-depression/s2'])
+    // this.router.navigate(['/teenagers/dealing-with-depression/s2'])
     if (this.userId !== 563) this.submitProgress()
   }
 

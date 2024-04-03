@@ -25,7 +25,7 @@ export class S130004Page implements OnInit {
         "Dealing with death"
       ]
       transcriptPage="dealing-with-death/s130004t"
-      toc="dealing-with-death/s130001"
+      toc="teenagers/dealing-with-death/s130001"
       progName = "teenagers";
       userId:any
       saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -99,7 +99,7 @@ export class S130004Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/dealing-with-death/s130005'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130005'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -120,7 +120,7 @@ export class S130004Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/dealing-with-death/s130003'])
+        this.router.navigate(['/teenagers/dealing-with-death/s130003'])
      
      
       }

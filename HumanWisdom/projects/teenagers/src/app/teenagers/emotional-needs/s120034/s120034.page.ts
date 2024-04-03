@@ -33,7 +33,7 @@ export class S120034Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/emotional-needs/s120001"
+  toc="teenagers/emotional-needs/s120001"
 
   constructor
   (
@@ -156,12 +156,12 @@ export class S120034Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/emotional-needs/s120035'])
+    this.router.navigate(['/teenagers/emotional-needs/s120035'])
   }
 
   prev()
   {
-    this.router.navigate(['/emotional-needs/s120033'])
+    this.router.navigate(['/teenagers/emotional-needs/s120033'])
   }
 
   sessionFetch(id, divid)

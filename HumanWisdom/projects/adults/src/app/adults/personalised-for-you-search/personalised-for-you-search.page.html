@@ -30,8 +30,44 @@
             </div>
             <!-- /search -->
 
+            <!-- contact a coach button -->
+            <div class="row tour_fbn">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a routerLink="/adults/coach/">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach.svg" class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Contact a Coach
+                      </h4>
+
+                      <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        Quick tips to help you feel better right now
+                      </h4> -->
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /contact a coach button -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
             <!-- pathway -->
-            <div class="row box_v3_05 ">
+            <div class="row box_v3_05">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="tour_pathway">
                   <!-- five dots -->
@@ -291,8 +327,6 @@
             </div>
             <!-- /pathway -->
 
-
-
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -308,7 +342,7 @@
                   Find inspiration
                 </h4>
               </div>
-            
+
 
             <div class="mt30px div_fi_a">
 
@@ -316,7 +350,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('Click_life_stories', '/adults/wisdom-stories')">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('Click_life_stories', '/adults/wisdom-stories') : $event.preventDefault()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -332,7 +366,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_audio_meditation', '/adults/audio-meditation')">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_audio_meditation', '/adults/audio-meditation') : $event.preventDefault()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -348,7 +382,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_blog', '/blogs')">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_blog', '/blogs') : $event.preventDefault()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -364,7 +398,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_podcast', '/adults/podcast')">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_podcast', '/adults/podcast') : $event.preventDefault()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -380,7 +414,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_short_video', '/adults/wisdom-shorts')">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_short_video', '/adults/wisdom-shorts') : $event.preventDefault()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -396,7 +430,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_Events', '/adults/events')">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_Events', '/adults/events') : $event.preventDefault()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -426,7 +460,7 @@
             </div>
             <!-- /hr -->
 
-            
+
             <!-- awareness exercises -->
             <!-- accordion -->
             <div class="row accordion_row tour_exercises">
@@ -439,13 +473,18 @@
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#ca_ae" aria-expanded="true">
+                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex === 1" href="#ca_ae" aria-expanded="true">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    Exercises
+                                  </h2>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex !== 1" aria-expanded="true">
                                   <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                     Exercises
                                   </h2>
                                 </a>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="RouteToWisdomExercise(null)">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="tourIndex === 1 ? RouteToWisdomExercise(null) : $event.preventDefault()">
                                 <a>
                                   <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                     View all
@@ -495,7 +534,13 @@
                               </div>
 
                               <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                <a routerLink="/adults/awareness-exercises-transcript">
+                                <a routerLink="/adults/awareness-exercises-transcript" *ngIf="tourIndex === 1">
+                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
+                                  </button>
+                                </a>
+
+                                <a *ngIf="tourIndex !== 1">
                                   <button type="button" class="mb0px mr0px p0 bg_transparent">
                                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
                                   </button>
@@ -517,14 +562,14 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
                             <ng-container *ngFor="let item of currentList">
                               <div class="col-md-3 col-sm-3 col-xs-4">
-                                <a *ngIf="item.day =='0';else notIntro" (click)="RouteToWisdomExercise(item)">
+                                <a *ngIf="item.day =='0';else notIntro" (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
                                   <button type="button" [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
                                     Intro
                                   </button>
                                 </a>
 
                                 <ng-template #notIntro>
-                                  <a (click)="RouteToWisdomExercise(item)">
+                                  <a (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
                                     <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
                                     Day  {{item.day}}
                                     </button>
@@ -651,7 +696,8 @@
                   </div> -->
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="logEvent('click_Contact_a_Coach', '/adults/contact-coach')">
+                    <!-- <button class="" (click)="logEvent('click_Contact_a_Coach', '/adults/contact-coach')"> -->
+                    <button class="" routerLink="/adults/coach/">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px tcenter">
@@ -690,7 +736,7 @@
 
 
 
-      
+
 
 
             <!-- hr -->

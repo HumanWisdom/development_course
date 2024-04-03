@@ -12,7 +12,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S127164Page implements OnInit 
 {  
   
-  toc="habit-addiction/s127001"
+  toc="teenagers/habit-addiction/s127001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/46.png"
  
   bg=""

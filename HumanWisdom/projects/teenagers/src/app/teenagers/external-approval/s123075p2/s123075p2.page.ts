@@ -23,7 +23,7 @@ export class S123075p2Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="external-approval/s123001"
+  toc="teenagers/external-approval/s123001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -85,7 +85,7 @@ export class S123075p2Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/external-approval/s123076'])
+  this.router.navigate(['/teenagers/external-approval/s123076'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -106,7 +106,7 @@ export class S123075p2Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123075p1'])
+  this.router.navigate(['/teenagers/external-approval/s123075p1'])
   }
 
   ngOnDestroy()

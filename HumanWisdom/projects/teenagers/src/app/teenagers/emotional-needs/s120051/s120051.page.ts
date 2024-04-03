@@ -16,7 +16,7 @@ export class S120051Page implements OnInit
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
   hint = "It may make us love shopping, or make us seek new relationships to get the same thrill of falling in love again.  "
-  toc = "/emotional-needs/s120001"
+  toc = "teenagers/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S120051Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120052'])
+        this.router.navigate(['/teenagers/emotional-needs/s120052'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120052'])
+        this.router.navigate(['/teenagers/emotional-needs/s120052'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120050'])
+    this.router.navigate(['/teenagers/emotional-needs/s120050'])
   }
 
   ngOnDestroy() 

@@ -13,7 +13,7 @@ export class S156196Page implements OnInit {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w4"
-  toc="dealing-with-depression/s156001"
+  toc="teenagers/dealing-with-depression/s156001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -314,7 +314,7 @@ export class S156196Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/dealing-with-depression/s156197'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156197'])
     if (this.userId === 563) return;
 
     
@@ -339,7 +339,7 @@ export class S156196Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/dealing-with-depression/s156195'])
+    this.router.navigate(['/teenagers/dealing-with-depression/s156195'])
   }
 
   ngOnDestroy()

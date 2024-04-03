@@ -20,7 +20,7 @@ export class S99016Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/modules/insight/audios/1.6.mp3'
  
   transcriptPage="insight/s99016t"
-  toc="insight/s99001"
+  toc="teenagers/insight/s99001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S99016Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/insight/s99017'])
+    this.router.navigate(['/teenagers/insight/s99017'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S99016Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/insight/s99015'])
+    this.router.navigate(['/teenagers/insight/s99015'])
  
  
   }

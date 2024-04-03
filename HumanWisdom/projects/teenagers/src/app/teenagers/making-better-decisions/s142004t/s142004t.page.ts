@@ -62,7 +62,7 @@ export class S142004tPage implements OnInit {
   submitProgress()
   {
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/making-better-decisions/s142005'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142005'])
     if (this.userId === 563) return;
 
     this.service.submitProgressAv({
@@ -82,7 +82,7 @@ export class S142004tPage implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142003'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142003'])
   }
 
 }

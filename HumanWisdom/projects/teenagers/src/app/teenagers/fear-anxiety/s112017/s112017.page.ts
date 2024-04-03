@@ -16,7 +16,7 @@ export class S112017Page implements OnInit {
   bg = "purple_red_w9"
   hint = "The feeling of anxiety is an automatic reaction from our thinking, and we can neither help it, or stop it if we want to "
 
-  toc = "fear-anxiety/s112001"
+  toc = "teenagers/fear-anxiety/s112001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -114,17 +114,17 @@ export class S112017Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s112018'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112018'])
 
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112018'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112018'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/fear-anxiety/s112016'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112016'])
   }
 
   ngOnDestroy() 

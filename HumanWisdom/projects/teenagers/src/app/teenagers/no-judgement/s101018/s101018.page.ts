@@ -15,7 +15,7 @@ export class S101018Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w4"
   hint = ""
-  toc = "/no-judgement/s101001"
+  toc = "teenagers/no-judgement/s101001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S101018Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/no-judgement/s101019'])
+        this.router.navigate(['/teenagers/no-judgement/s101019'])
 
       },
       () => {
-        this.router.navigate(['/no-judgement/s101019'])
+        this.router.navigate(['/teenagers/no-judgement/s101019'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/no-judgement/s101017'])
+    this.router.navigate(['/teenagers/no-judgement/s101017'])
   }
 
   ngOnDestroy() 

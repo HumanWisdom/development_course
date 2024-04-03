@@ -23,7 +23,7 @@ export class S142009Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "making-better-decisions/s142001"
+  toc = "teenagers/making-better-decisions/s142001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -100,7 +100,7 @@ export class S142009Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/making-better-decisions/s142008'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142008'])
   }
 
   goNext() 
@@ -109,7 +109,7 @@ export class S142009Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/making-better-decisions/s142010'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142010'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S119036Page implements OnInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint = " I can think of Scottish devolution, for example, but there are others.  "
-  toc = "/identity/s119001"
+  toc = "teenagers/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S119036Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/identity/s119037'])
+        this.router.navigate(['/teenagers/identity/s119037'])
 
       },
       () => {
-        this.router.navigate(['/identity/s119037'])
+        this.router.navigate(['/teenagers/identity/s119037'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/identity/s119035'])
+    this.router.navigate(['/teenagers/identity/s119035'])
   }
 
   ngOnDestroy() 

@@ -262,21 +262,21 @@ export class S123086Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/external-approval/s123087'])
+        this.router.navigate(['/teenagers/external-approval/s123087'])
         },
         () => {
-          this.router.navigate(['/external-approval/s123087'])
+        this.router.navigate(['/teenagers/external-approval/s123087'])
         })
     }
     else 
     {
-      this.router.navigate(['/external-approval/s123085'])
+    this.router.navigate(['/teenagers/external-approval/s123085'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s123081'])
+  this.router.navigate(['/teenagers/external-approval/s123081'])
   }
 
   ngOnDestroy() 

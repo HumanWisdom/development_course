@@ -1,0 +1,68 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Submit your own story
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright"></div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'" >
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>                                
+              
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <p class="mt0px mb15px fs_15px fw_400 lh_150p fc_ffffff">
+                    Share a true story that you learned something from. Please change the names of the characters. All stories are subject to approval and may be edited.
+                  </p>
+          
+                  <p class="mt0px mb15px fs_15px fw_400 lh_150p fc_ffffff">
+                    Keep your wisdom story under 600 words (.doc/.pdf/.txt). Submit a picture (.jpg/.png) of max 4MB to go along with your story (optional). Let us know if you wish to keep it anonymous.
+                  </p>
+                  
+                  <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                    Email us at 
+                    <a id="mailto" href="mailto:info@humanwisdom.me" class="mtb0px fs_15px fw_400 lh_150p fc_e58d82">
+                      team@happierme.app
+                    </a>
+                  </p>
+                  
+                </div>
+              </div>
+                     
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
+
+
+

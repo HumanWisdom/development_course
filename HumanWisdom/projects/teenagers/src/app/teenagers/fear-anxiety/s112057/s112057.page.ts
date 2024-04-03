@@ -18,7 +18,7 @@ export class S112057Page implements OnInit {
   title="How does fear impact our lives?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/fear_anxiety/fear_anxiety_02.jpg"
   
-  toc="/fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path = setTimeout(() => {
@@ -91,7 +91,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/fear-anxiety/s112058'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112058'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -115,7 +115,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112056'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112056'])
   }
 
 

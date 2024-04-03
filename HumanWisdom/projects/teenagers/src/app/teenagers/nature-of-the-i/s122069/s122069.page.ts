@@ -23,7 +23,7 @@ export class S122069Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -100,16 +100,16 @@ export class S122069Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/nature-of-the-i/s122068'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122068'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/nature-of-the-i/s122069'])
+    // this.router.navigate(['/teenagers/nature-of-the-i/s122069'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/nature-of-the-i/s122071'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122071'])
   }
 
   ngOnDestroy() 

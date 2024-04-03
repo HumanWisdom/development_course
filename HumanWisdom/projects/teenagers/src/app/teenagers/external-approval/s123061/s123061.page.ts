@@ -15,7 +15,7 @@ export class S123061Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w7"
   hint = "Likes on social media can make you glow with pride, or feel sad if others get more  "
-  toc = "/external-approval/s123001"
+  toc = "teenagers/external-approval/s123001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S123061Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/external-approval/s123062'])
+     this.router.navigate(['/teenagers/external-approval/s123062'])
 
       },
       () => {
-        this.router.navigate(['/external-approval/s123062'])
+     this.router.navigate(['/teenagers/external-approval/s123062'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/external-approval/s123060'])
+ this.router.navigate(['/teenagers/external-approval/s123060'])
   }
 
   ngOnDestroy() 

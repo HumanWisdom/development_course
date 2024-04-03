@@ -16,7 +16,7 @@ export class S133028Page implements OnInit {
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -146,7 +146,7 @@ export class S133028Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/happiness/s133029'])
+    this.router.navigate(['/teenagers/happiness/s133029'])
     if (this.userId === 563) return;
 
     this.service.submitProgressQuestion({
@@ -166,7 +166,7 @@ export class S133028Page implements OnInit {
   }
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/happiness/s133027'])
+    this.router.navigate(['/teenagers/happiness/s133027'])
 
 
   }

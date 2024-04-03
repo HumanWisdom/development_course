@@ -19,7 +19,7 @@ export class S133062tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/happiness/s133062"
-  toc="/happiness/s133001"
+  toc="teenagers/happiness/s133001"
 
   avDuration=localStorage.getItem("avDuration133062")
   totalTime=localStorage.getItem("totalTime133062")
@@ -62,7 +62,7 @@ export class S133062tPage implements OnInit {
   }
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/happiness/s133063'])
+    this.router.navigate(['/teenagers/happiness/s133063'])
     if (this.userId === 563) return;
     
     this.service.submitProgressAv({
@@ -82,6 +82,6 @@ export class S133062tPage implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/happiness/s133061'])
+    this.router.navigate(['/teenagers/happiness/s133061'])
   }
 }

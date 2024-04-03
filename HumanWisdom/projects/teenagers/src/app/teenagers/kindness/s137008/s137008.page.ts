@@ -14,7 +14,7 @@ export class S137008Page implements OnInit,OnDestroy {
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w2"
   hint = "Is it what you do for others, or what they do for you?"
-  toc = "/kindness/s137001"
+  toc = "teenagers/kindness/s137001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S137008Page implements OnInit,OnDestroy {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/kindness/s137009'])
+        this.router.navigate(['/teenagers/kindness/s137009'])
 
       },
       () => {
-        this.router.navigate(['/kindness/s137009'])
+        this.router.navigate(['/teenagers/kindness/s137009'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/kindness/s137007'])
+    this.router.navigate(['/teenagers/kindness/s137007'])
   }
 
   ngOnDestroy() 

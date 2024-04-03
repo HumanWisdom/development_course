@@ -20,7 +20,7 @@ export class S109021Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/meditation/audios/meditation+2.1.mp3'
 
   transcriptPage="meditation/s109021t"
-  toc="meditation/s109001"
+  toc="teenagers/meditation/s109001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -94,7 +94,7 @@ export class S109021Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/meditation/s109022'])
+    this.router.navigate(['/teenagers/meditation/s109022'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

@@ -15,7 +15,7 @@ export class S127083Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w8"
   hint = "It may be you want to be with people who like you, and if you don’t have that, you feel lonely"
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127083Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127084'])
+        this.router.navigate(['/teenagers/habit-addiction/s127084'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127084'])
+        this.router.navigate(['/teenagers/habit-addiction/s127084'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127082'])
+    this.router.navigate(['/teenagers/habit-addiction/s127082'])
   }
 
   ngOnDestroy() 

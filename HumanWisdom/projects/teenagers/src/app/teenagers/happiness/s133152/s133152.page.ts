@@ -14,7 +14,7 @@ export class S133152Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w8"
   hint = "Be sensitive. Notice the beauty in small things. A tree, the smell of a tomato, the extraordinary sky. What will you notice?  "
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S133152Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/happiness/s133153'])
+        this.router.navigate(['/teenagers/happiness/s133153'])
 
       },
       () => {
-        this.router.navigate(['/happiness/s133153'])
+        this.router.navigate(['/teenagers/happiness/s133153'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/happiness/s133151'])
+    this.router.navigate(['/teenagers/happiness/s133151'])
   }
 
   ngOnDestroy() 
