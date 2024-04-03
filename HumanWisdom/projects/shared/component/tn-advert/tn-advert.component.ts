@@ -2,7 +2,7 @@ import { Platform } from "@angular/cdk/platform";
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
-
+import { environment } from '../../../../projects/environments/environment';
 @Component({
   selector: 'app-tn-advert',
   templateUrl: './tn-advert.component.html',
@@ -34,7 +34,7 @@ export class TnAdvertComponent implements OnInit {
       if(!(localStorage.getItem('fromlandingpage'))){
         localStorage.setItem("fromlandingpage", 'T')
       }
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+      window.location.href = environment.clientUrl+"/onboarding/login";
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }

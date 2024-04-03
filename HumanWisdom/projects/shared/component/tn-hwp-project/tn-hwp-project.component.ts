@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
+import { environment } from '../../../../projects/environments/environment';
 @Component({
   selector: 'app-tn-hwp-project',
   templateUrl: './tn-hwp-project.component.html',
@@ -55,11 +56,11 @@ export class TnHwpProjectComponent implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   giftwisdom() {

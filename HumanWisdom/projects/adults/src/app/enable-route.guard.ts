@@ -13,7 +13,7 @@ export class EnableRouteGuard implements CanActivate {
     if (userid === 'T') {
       return true;
     } else {
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true});
+            window.location.href = environment.clientUrl+"/onboarding/login";
       return false;
     }
   }

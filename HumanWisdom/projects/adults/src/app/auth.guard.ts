@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -138,8 +139,9 @@ export class AuthGuard implements CanActivate, OnInit {
     } else if (adult === 'T' && rem !== 'T') {
       return true;
     } else if (btnclick !== null && btnclick === 'T') {
-      // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+
+      // window.location.href = environment.clientUrl+"/onboarding/login";
+     // window.location.href = environment.clientUrl+"/onboarding/login";
       return false
     } else {
       if (this.onboarding.navigateToUpgradeToPremium
@@ -147,7 +149,8 @@ export class AuthGuard implements CanActivate, OnInit {
       ) {
         localStorage.setItem('btnclick', 'F');
         localStorage.setItem('guest', 'T');
-        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+        window.location.href = environment.clientUrl+"/onboarding/login";
+        //window.location.href = environment.clientUrl+"/onboarding/login";
         return false;
       }
       // localStorage.clear()

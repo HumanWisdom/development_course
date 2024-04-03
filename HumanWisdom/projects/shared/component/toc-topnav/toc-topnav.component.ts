@@ -7,7 +7,7 @@ import {
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
-
+import { environment } from '../../../../projects/environments/environment';
 @Component({
   selector: 'app-toc-topnav',
   templateUrl: './toc-topnav.component.html',
@@ -70,11 +70,11 @@ export class TocTopnavComponent implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   giftwisdom() {

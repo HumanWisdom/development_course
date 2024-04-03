@@ -16,6 +16,6 @@ export class SplashOptionsPage implements OnInit {
 
   enableProgram(val) {
    SharedService.setProgramId(val);
-   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+   window.location.href = environment.clientUrl+"/onboarding/login";
   }
 }

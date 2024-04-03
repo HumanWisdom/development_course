@@ -77,7 +77,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T');
       localStorage.setItem('giftwisdom', 'T');
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+      window.location.href = environment.clientUrl+"/onboarding/login";
     } else if (this.isLoggedIn) {
       this.router.navigate(["/onboarding/add-to-cart"]);
     }

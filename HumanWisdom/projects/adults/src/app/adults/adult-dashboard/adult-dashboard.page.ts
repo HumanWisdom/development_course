@@ -179,7 +179,7 @@ export class AdultDashboardPage implements OnInit {
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
     //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    //   window.location.href = environment.clientUrl+"/onboarding/login";
     // }
     localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
@@ -228,7 +228,7 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem('guest', 'T');
           localStorage.setItem('isloggedin', 'F');
           this.services.setDataRecievedState(true);
-          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+          // window.location.href = environment.clientUrl+"/onboarding/login";
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
@@ -358,7 +358,7 @@ export class AdultDashboardPage implements OnInit {
     // $("#signuplogin").modal("hide");
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'])
+   window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   getLastvisitedScr() {
@@ -856,7 +856,7 @@ export class AdultDashboardPage implements OnInit {
   subscribenow() {
     // if(localStorage.getItem("email") === 'guest@humanwisdom.me'){
     //   localStorage.setItem("subscribepage", 'T')
-    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    //   window.location.href = environment.clientUrl+"/onboarding/login";
     // } else {
     //   this.router.navigate(['/onboarding/add-to-cart'])
     // }
@@ -1685,7 +1685,7 @@ export class AdultDashboardPage implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+   window.location.href = environment.clientUrl+"/onboarding/login";
   }
 
   friendName(value) {

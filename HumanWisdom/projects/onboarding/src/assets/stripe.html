@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Subscription prices</title>
+  <script src="https://js.stripe.com/v3/"></script>
+
+
+
+
+</head>
+<body>
+  <form id="payment-form">
+    <div id="card-element">
+      <!-- Elements will create input elements here -->
+    </div>
+
+    <!-- We'll put the error messages in this element -->
+    <div id="card-element-errors" role="alert"></div>
+<input id="name" type="text" />
+    <button id="btnsubmit" type="submit">Subscribe</button>
+  </form>
+
+<script >
+let stripe = Stripe('pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl');
+let elements = stripe.elements();
+let card = elements.create('card');
+card.mount('#card-element');
+
+card.on('change', function (event) {
+  displayError(event);
+});
+function displayError(event) {
+ 
+  let displayError = document.getElementById('card-element-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+}
+
+const btn = document.querySelector('#btnsubmit');
+btn.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const nameInput = document.getElementById('name');
+
+  // Create payment method and confirm payment intent.
+  stripe.confirmCardPayment('pi_3JTRsvLodCYBgHN80ozCCFl8_secret_j7PXmWSqpRnCWNM71o2aDgM16', {
+    payment_method: {
+      card: card,
+      billing_details: {
+        name: nameInput.value,
+      }
+    }
+  }).then((result) => {
+    if(result.error) {
+      alert(result.error.message);
+    } else {
+      // Successful subscription payment
+    }
+  });
+});
+</script>
+
+</body>
+</html>
