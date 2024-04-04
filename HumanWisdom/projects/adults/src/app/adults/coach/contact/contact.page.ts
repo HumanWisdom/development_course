@@ -65,22 +65,23 @@ export class ContactPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
     this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' });
 
-
-
-    this.onboardingService.getuser(this.userId).subscribe((res) => {
-      this.userdetail = res[0];
-      this.form.EmailID = this.userdetail['Email']
-      this.form.Title = !this.userdetail['Title'] ? 'Title' : this.userdetail['Title']
-      let userres = JSON.parse(localStorage.getItem("loginResponse"));
-      let nameupdate = localStorage.getItem(
-        "nameupdate"
-      );
-      if (nameupdate) {
-        this.form.Name = nameupdate
-      } else {
-        this.form.Name = userres['Name']
-      }
-    })
+    let loggedin = localStorage.getItem("isloggedin");
+    if(loggedin && loggedin === 'T') {
+      this.onboardingService.getuser(this.userId).subscribe((res) => {
+        this.userdetail = res[0];
+        this.form.EmailID = this.userdetail['Email']
+        this.form.Title = !this.userdetail['Title'] ? 'Title' : this.userdetail['Title']
+        let userres = JSON.parse(localStorage.getItem("loginResponse"));
+        let nameupdate = localStorage.getItem(
+          "nameupdate"
+        );
+        if (nameupdate) {
+          this.form.Name = nameupdate
+        } else {
+          this.form.Name = userres['Name']
+        }
+      })
+    }
   }
 
 
