@@ -16,7 +16,7 @@ export class S124061Page implements OnInit
   audioLink=this.mediaAudio+'/pleasure/audios/pleasure+4.3.mp3'
   title="The pleasure of food"
 
-  toc="/pleasure/s124001"
+  toc="teenagers/pleasure/s124001"
   transcriptPage="pleasure/s124061t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S124061Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/pleasure/s124062'])
+    this.router.navigate(['/teenagers/pleasure/s124062'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S124061Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/pleasure/s124060'])
+    this.router.navigate(['/teenagers/pleasure/s124060'])
   }
 
   ngOnDestroy()

@@ -43,6 +43,7 @@ export class BlogIndexPage implements OnInit {
       {
         if(res) {
           this.blogList=res
+          this.blogList =  this.blogList.filter(x=>x.ProgIDs.includes(SharedService.ProgramId));
         }
       },
       error=>console.log(error),

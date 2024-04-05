@@ -21,7 +21,7 @@ export class S124016Page implements OnInit
   link="/pleasure/s124017"
   name="#2  The Nature of pleasure"
   progressImg=""
-  toc="pleasure/s124001"
+  toc="teenagers/pleasure/s124001"
 
   constructor
   (

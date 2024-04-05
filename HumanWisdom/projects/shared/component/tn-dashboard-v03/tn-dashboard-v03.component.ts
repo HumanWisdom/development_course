@@ -220,4 +220,13 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   }
 
 
+  getNotifi(notifi) {
+    if(notifi) {
+       return parseInt(notifi) > 9 ? notifi + '+' : notifi;
+    }else {
+      return '';
+    }
+  }
+
+
 }

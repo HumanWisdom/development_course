@@ -15,7 +15,7 @@ export class S124031Page implements OnInit
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w3"
   hint = "It could be picking up your phone, or buying a sweet from a shop"
-  toc = "/pleasure/s124001"
+  toc = "teenagers/pleasure/s124001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S124031Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/pleasure/s124032'])
+        this.router.navigate(['/teenagers/pleasure/s124032'])
 
       },
       () => {
-        this.router.navigate(['/pleasure/s124032'])
+        this.router.navigate(['/teenagers/pleasure/s124032'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/pleasure/s124030'])
+    this.router.navigate(['/teenagers/pleasure/s124030'])
   }
 
   ngOnDestroy() 

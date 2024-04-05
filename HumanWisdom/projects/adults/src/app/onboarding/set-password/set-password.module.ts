@@ -13,6 +13,7 @@ import { SharedModule } from '../../../../../shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     IonicModule,
     SetPasswordPageRoutingModule
   ],
