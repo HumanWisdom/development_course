@@ -88,8 +88,8 @@ jobs:
           sudo rm -rf /var/www/html/course
           sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
           sudo chown ubuntu:ubuntu /var/www/html/course 
-          sudo mv /var/www/html/course/home /var/www/html/
-          sudo chown ubuntu:ubuntu /var/www/html/home
+          sudo mv /var/www/html/course/getStarted /var/www/html/
+          sudo chown ubuntu:ubuntu /var/www/html/getStarted
   
   build-teenagers:
      runs-on: ubuntu-latest
