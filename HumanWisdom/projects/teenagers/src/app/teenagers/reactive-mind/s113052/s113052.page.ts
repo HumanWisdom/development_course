@@ -15,7 +15,7 @@ export class S113052Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w2"
   hint = "For example, you could consider other points of view"
-  toc = "/reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S113052Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113053'])
+        this.router.navigate(['/teenagers/reactive-mind/s113053'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113053'])
+        this.router.navigate(['/teenagers/reactive-mind/s113053'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/reactive-mind/s113051'])
+    this.router.navigate(['/teenagers/reactive-mind/s113051'])
   }
 
   ngOnDestroy() 

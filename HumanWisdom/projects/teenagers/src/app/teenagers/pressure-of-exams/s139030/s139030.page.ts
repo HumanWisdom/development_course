@@ -113,17 +113,17 @@ export class S139030Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/pressure-of-exams/s139031'])
+        this.router.navigate(['/teenagers/pressure-of-exams/s139031'])
 
       },
       () => {
-        this.router.navigate(['/pressure-of-exams/s139031'])
+        this.router.navigate(['/teenagers/pressure-of-exams/s139031'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/pressure-of-exams/s139029'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139029'])
   }
 
   ngOnDestroy() 

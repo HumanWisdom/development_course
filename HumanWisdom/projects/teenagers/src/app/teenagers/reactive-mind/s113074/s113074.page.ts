@@ -15,7 +15,7 @@ export class S113074Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w1"
   hint = "Our mind is most reactive in conversations. This allows you to slow your reactions down."
-  toc = "/reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S113074Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113075'])
+        this.router.navigate(['/teenagers/reactive-mind/s113075'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113075'])
+        this.router.navigate(['/teenagers/reactive-mind/s113075'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/reactive-mind/s113073'])
+    this.router.navigate(['/teenagers/reactive-mind/s113073'])
   }
 
   ngOnDestroy() 

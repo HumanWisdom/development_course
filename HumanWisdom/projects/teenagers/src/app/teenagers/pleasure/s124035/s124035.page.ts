@@ -18,7 +18,7 @@ export class S124035Page implements OnInit
   userName:any
   progressPercent:any
   progressText="2/4"
-  link="/pleasure/s124036"
+  link="teenagers/pleasure/s124036"
   name="#3  How does pleasure affect our relationships"
   progressImg=""
   toc="teenagers/pleasure/s124001"
