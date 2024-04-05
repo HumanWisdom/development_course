@@ -26,8 +26,8 @@
               },
               {
                 "glob": "**/*",
-                "input": "projects/home",
-                "output": "/home"
+                "input": "projects/getStarted",
+                "output": "/getStarted"
               },
               "projects/adults/src/web.config",
               "projects/adults/src/serviceworker.js",
