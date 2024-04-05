@@ -10,7 +10,7 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S139055Page implements OnInit {
 
-  toc="pressure-of-exams/s139001"
+  toc="teenagers/pressure-of-exams/s139001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
  
   // bg=""

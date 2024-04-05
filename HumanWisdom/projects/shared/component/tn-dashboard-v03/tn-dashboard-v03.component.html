@@ -117,7 +117,7 @@
                 (click)="disableClick ? $event.preventDefault() : goToNotification()" class="prelative" alt="">
               <span class="bell_badge"
               *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0">
-                {{parseInt(loginResponse?.NewNotifications) > 9 ? loginResponse?.NewNotifications + '+' : loginResponse?.NewNotifications}}
+                {{getNotifi(loginResponse?.NewNotifications)}}
               </span>
             </a>
           </div>

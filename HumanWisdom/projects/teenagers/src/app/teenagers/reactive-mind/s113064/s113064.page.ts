@@ -15,7 +15,7 @@ export class S113064Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w9"
   hint = "What would help you to slow your reactions down?"
-  toc = "/reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S113064Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113065'])
+        this.router.navigate(['/teenagers/reactive-mind/s113065'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113065'])
+        this.router.navigate(['/teenagers/reactive-mind/s113065'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/reactive-mind/s113063'])
+    this.router.navigate(['/teenagers/reactive-mind/s113063'])
   }
 
   ngOnDestroy() 

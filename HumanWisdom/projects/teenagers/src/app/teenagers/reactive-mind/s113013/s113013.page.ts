@@ -16,7 +16,7 @@ export class S113013Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/reactive-mind/audios/1.3.mp3'
   title="The reactive mind"
-  toc="/reactive-mind/s113001"
+  toc="teenagers/reactive-mind/s113001"
   transcriptPage="reactive-mind/s113013t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -92,7 +92,7 @@ export class S113013Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/reactive-mind/s113014'])
+    this.router.navigate(['/teenagers/reactive-mind/s113014'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +112,7 @@ export class S113013Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/reactive-mind/s113012'])
+    this.router.navigate(['/teenagers/reactive-mind/s113012'])
   }
 
   ngOnDestroy()

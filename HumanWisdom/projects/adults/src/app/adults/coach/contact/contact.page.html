@@ -122,6 +122,7 @@
                       <label class="select_label m0px w100">
 
                         <select name="Title" id="test" [(ngModel)]="form.CoachID" class="sp_fc btn_select">
+                          <option id="selectCoach" [value]="activecoachId" selected>{{coachName}}</option>
                           <option *ngFor="let item of coachList" [value]="item['UserID']">{{item['CoachName']}}</option>
                         </select>
                       </label>

@@ -52,11 +52,11 @@ export class S113018Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/reactive-mind/s113019'])
+    this.router.navigate(['/teenagers/reactive-mind/s113019'])
   }
 
   prev()
   {
-    this.router.navigate(['/reactive-mind/s113017'])
+    this.router.navigate(['/teenagers/reactive-mind/s113017'])
   }
 }
