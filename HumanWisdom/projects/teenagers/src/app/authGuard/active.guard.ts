@@ -26,7 +26,13 @@ export class ActiveGuard implements CanActivate, OnInit {
     // let m: any = window.location.href;
     let m: any = state.url;
     let sub: any = localStorage.getItem("Subscriber")
-
+    let loggedin = localStorage.getItem("isloggedin")
+    if(loggedin === 'T') {
+      return true;
+    }else {
+      this.router.navigate(['teenagers/onboarding/login']);
+      return false;
+    }
     m = m.split('?')
 
 

@@ -193,7 +193,7 @@
 
             <!-- my progress -->
             <!-- accordion -->
-            <div class="row accordion_row" *ngIf="isloggedIn">
+            <div class="row accordion_row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
@@ -208,7 +208,7 @@
                                   My progress
                                 </h2>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="viewDetails()">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
                                 <a  (click)="viewDetails()">
                                   <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
                                     View details
@@ -226,7 +226,7 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
 
-                            <div class="row">
+                            <div class="row" *ngIf="isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0px pr5px progress_box">
                                   <div class="row">
@@ -278,7 +278,7 @@
                               </div>
                             </div>
 
-                            <div class="row mt10px progress_box_score">
+                            <div class="row mt10px progress_box_score" *ngIf="isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -313,20 +313,20 @@
                             </div>
 
                             <!-- happy points -->
-                            <div class="row progress_box_score tcenter pt30px pb30px">
+                            <div class="row progress_box_score tcenter pt30px pb30px" *ngIf="!isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
                                   Happy points for a happier life
                                 </h4>
 
                                 <h4 class="mt10px mb0px fs_12px fw_500 lh_150p fc_e58d82">
-                                  <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline">Login</a>
+                                  <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline" (click)="getLogin()">Login</a>
                                   to view your progress
                                 </h4>
                               </div>
                             </div>
 
-                            <!-- <div class="row mt10px progress_box_score">
+                            <div class="row mt10px progress_box_score" *ngIf="!isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -355,7 +355,7 @@
                                   </div>
                                 </div>
                               </div>
-                            </div> -->
+                            </div>
                             <!-- /happy points -->
 
                           </div>
@@ -371,7 +371,7 @@
             <!-- /my progress -->
 
             <!-- hr -->
-            <div class="row" *ngIf="isloggedIn">
+            <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
@@ -459,7 +459,7 @@
                   <div class="panel panel-default dpanel dpanel_01">
                     <div class="panel-heading p0">
                       <h4 class="panel-title dpaneltitle">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#ca_user" aria-expanded="true">
+                        <!-- <a data-toggle="collapse" data-parent="#accordion" href="#ca_user" aria-expanded="true"> -->
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="">
@@ -469,7 +469,7 @@
                               </div>
                             </div>
                           </div>
-                        </a>
+                        <!-- </a> -->
                       </h4>
                     </div>
                     <div id="ca_user" class="panel-collapse collapse in">
@@ -516,7 +516,7 @@
                             </div> -->
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
-                              <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
+                              <!-- <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()"> -->
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
@@ -532,7 +532,7 @@
                                       </h4>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
-                                      <a>
+                                      <a routerLink="/adults/intro-happierme">
                                         <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
                                           View all
                                         </h4>
@@ -541,26 +541,28 @@
                                   </div>
                                 </div>
 
-                                <div class="row mb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
-                                      Introduction to HappierMe
-                                    </h4>
+                                <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
+                                  <div class="row mb15px">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                      <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                        Introduction to HappierMe
+                                      </h4>
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
-                                      Video tour and key ideas
-                                    </h4>
+                                  <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                      <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                        Video tour and key ideas
+                                      </h4>
+                                    </div>
                                   </div>
-                                </div>
-                              </a>
+                                </a>
+                              <!-- </a> -->
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                              <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
+                              <!-- <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative"> -->
                                 <!-- <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative"> -->
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
@@ -581,7 +583,7 @@
                                       </h4>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
-                                      <a> 
+                                      <a routerLink="/adults/pathway">
                                         <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
                                           View all
                                         </h4>
@@ -590,29 +592,31 @@
                                   </div>
                                 </div>
 
-                                <div class="row mb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
-                                      Continue where you left
-                                    </h4>
+                                <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
+                                  <div class="row mb15px">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                      <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                        Continue where you left
+                                      </h4>
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length !== 0">
-                                      {{resumeLastvisited[0]['ModuleName']}} • Session #{{resumeLastvisited[0]['SessionCnt']}} : {{resumeLastvisited[0]['SessionName']}}
-                                    </h4>
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length === 0">
-                                      Happiness • Session #5 : What can we do to be happier?
-                                    </h4>
+                                  <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                      <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length !== 0">
+                                        {{resumeLastvisited[0]['ModuleName']}} • Session #{{resumeLastvisited[0]['SessionCnt']}} : {{resumeLastvisited[0]['SessionName']}}
+                                      </h4>
+                                      <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length === 0">
+                                        Happiness • Session #5 : What can we do to be happier?
+                                      </h4>
+                                    </div>
                                   </div>
-                                </div>
-                              </a>
+                                </a>
+                              <!-- </a> -->
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
-                              <a (click)="routeForUser(res)" class="prelative">
+                              <!-- <a (click)="routeForUser(res)" class="prelative"> -->
                                 <div class="prelative">
                                   <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash">
                                   <!-- <div class="progress dprogress">
@@ -640,22 +644,24 @@
                                   </div>
                                 </div>
 
-                                <div class="row mb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
-                                     {{res['Title']}}
-                                    </h4>
+                                <a (click)="routeForUser(res)" class="prelative">
+                                  <div class="row mb15px">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                      <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      {{res['Title']}}
+                                      </h4>
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
-                                      {{res['SubTitle']}}
-                                    </h4>
+                                  <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                      <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                        {{res['SubTitle']}}
+                                      </h4>
+                                    </div>
                                   </div>
-                                </div>
-                              </a>
+                                </a>
+                              <!-- </a> -->
                             </div>
 
                             <!-- <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">

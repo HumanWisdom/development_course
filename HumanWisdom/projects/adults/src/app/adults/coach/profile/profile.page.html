@@ -7,7 +7,7 @@
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" *ngIf="coachBio && coachBio.length !== 0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
          {{coachBio[0]['CoachName']}},
         <span class="fs_15px fw_400 lh_140p fc_ffffff">
@@ -44,15 +44,15 @@
 
               <div class="row mtb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <video controls playinline class="cvideo_coach" poster="" controlsList="nodownload">
-                    <source src="{{coachBio[0]['VideoURL']}}" type="video/mp4">
+                  <video controls playinline class="cvideo_coach" controlsList="nodownload" *ngIf="coachBio && coachBio.length !== 0" preload="metadata">
+                    <source src="{{coachBio[0]['VideoURL']}}#t=0.5" type="video/mp4">
                   </video>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="coachBio && coachBio.length !== 0">
                     {{coachBio[0]['Description']}}
                   </h4>
                 </div>
@@ -62,7 +62,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
                   <a (click)="contactCoach()">
                     <button type="button" class="btn btn_tfas">
-                      Contact a coach
+                      Contact this coach
                     </button>
                   </a>
                 </div>

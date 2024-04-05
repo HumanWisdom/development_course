@@ -31,7 +31,10 @@ export class IndexPage implements OnInit, AfterViewInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
-  enableTab = 'All'
+  enableTab = 'All';
+  viewMore = [];
+  viewLess = [];
+  isViewMore = true;
 
   constructor(
     private router: Router,
@@ -305,7 +308,9 @@ export class IndexPage implements OnInit, AfterViewInit {
 
   GetGuidedQs_Topics() {
     this.service.GetGuidedQs_Topics().subscribe((res) => {
-      this.topic = res;
+      this.viewMore = res.filter((d, i) => i < 6);
+      this.viewLess = res.filter((d, i) => i > 6);
+      this.topic = this.viewMore;
     });
   }
   goBack() {
@@ -329,6 +334,16 @@ export class IndexPage implements OnInit, AfterViewInit {
         localStorage.setItem("subscribepage", 'T');
         this.router.navigate(["/onboarding/login"]);
       }
+    }
+  }
+
+  viewMoreAndLess(data) {
+    this.isViewMore = data;
+
+    if(this.isViewMore) {
+      this.topic = this.viewMore;
+    }else {
+      this.topic = [...this.viewMore, ...this.viewLess];
     }
   }
 

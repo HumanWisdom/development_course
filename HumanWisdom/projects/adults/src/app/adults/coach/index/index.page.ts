@@ -35,6 +35,10 @@ export class IndexPage implements OnInit {
 
   routeCoach(data) {
     localStorage.setItem("coachId", data['UserID']);
-    this.router.navigate(["/adults/coach/profile"]);
+    this.router.navigate(["/adults/coach/profile", data['UserID']]);
+  }
+
+  contactCoach() {
+    this.router.navigate(["/adults/coach/contact"]);
   }
 }
