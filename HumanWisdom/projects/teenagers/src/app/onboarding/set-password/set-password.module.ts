@@ -14,6 +14,7 @@ import { SharedModule } from '../../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     SetPasswordPageRoutingModule
   ],
   declarations: [SetPasswordPage]
