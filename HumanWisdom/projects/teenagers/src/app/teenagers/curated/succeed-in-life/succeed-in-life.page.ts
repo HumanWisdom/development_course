@@ -194,7 +194,7 @@ export class SucceedInLifePage implements OnInit {
         })
   }
 
-  routeHappiness(cont: any = 1) {
+  routeWork(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(133))
     this.service.clickModule(133, this.userId)
@@ -233,7 +233,7 @@ export class SucceedInLifePage implements OnInit {
         })
   }
 
-  routeLivingWithPeace(cont: any = 1) {
+  routeLeadership(cont: any = 1) {
     var livingwithpeaceResume
     localStorage.setItem("moduleId", JSON.stringify(129))
     this.service.clickModule(129, this.userId)
@@ -272,10 +272,10 @@ export class SucceedInLifePage implements OnInit {
         })
   }
 
-  routePleasure(cont: any = 1) {
+  routeCommunication(cont: any = 1) {
     var pleasureResume
-    localStorage.setItem("moduleId", JSON.stringify(124))
-    this.service.clickModule(124, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(132))
+    this.service.clickModule(132, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -301,17 +301,17 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/teenagers/pleasure/${pleasureResume}`])
+            this.router.navigate([`/teenagers/communication/${pleasureResume}`])
           }
           else
-            this.router.navigate([`/teenagers/pleasure/s124001`])
+            this.router.navigate([`/teenagers/communication/s132001`])
         })
   }
 
-  routeInnerBoredom(cont: any = 1) {
+  routeSuccessAndFailure(cont: any = 1) {
     var ibR
-    localStorage.setItem("moduleId", JSON.stringify(121))
-    this.service.clickModule(121, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(141))
+    this.service.clickModule(141, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -333,10 +333,10 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/teenagers/inner-boredom/${ibR}`])
+            this.router.navigate([`/teenagers/success-failure/${ibR}`])
           }
           else
-          this.router.navigate([`/teenagers/inner-boredom/s121001`])
+          this.router.navigate([`/teenagers/success-failure/s141001`])
 
           /*if(!sinR)
           {
