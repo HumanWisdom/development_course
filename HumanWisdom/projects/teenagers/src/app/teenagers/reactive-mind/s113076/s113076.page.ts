@@ -18,7 +18,7 @@ export class S113076Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/reactive-mind/audios/3.2.mp3'
   transcriptPage="reactive-mind/s113076t"
-  toc="reactive-mind/s113001"
+  toc="teenagers/reactive-mind/s113001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S113076Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/reactive-mind/s113077'])
+    this.router.navigate(['/teenagers/reactive-mind/s113077'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S113076Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/reactive-mind/s113075'])
+    this.router.navigate(['/teenagers/reactive-mind/s113075'])
   }
 
   ngOnDestroy()

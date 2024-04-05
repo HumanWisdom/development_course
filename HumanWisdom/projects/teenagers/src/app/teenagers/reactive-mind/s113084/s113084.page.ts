@@ -243,21 +243,21 @@ export class S113084Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/reactive-mind/s113085'])
+          this.router.navigate(['/teenagers/reactive-mind/s113085'])
         },
         () => {
-          this.router.navigate(['/reactive-mind/s113085'])
+          this.router.navigate(['/teenagers/reactive-mind/s113085'])
         })
     }
     else 
     {
-      this.router.navigate(['/reactive-mind/s113085'])
+      this.router.navigate(['/teenagers/reactive-mind/s113085'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/reactive-mind/s113083'])
+    this.router.navigate(['/teenagers/reactive-mind/s113083'])
   }
 
   ngOnDestroy() 

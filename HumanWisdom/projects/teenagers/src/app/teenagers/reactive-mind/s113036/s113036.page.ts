@@ -15,7 +15,7 @@ export class S113036Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w6"
   hint = "For example, when you ended a friendship because you were disappointed with someone"
-  toc = "/reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S113036Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113037'])
+        this.router.navigate(['/teenagers/reactive-mind/s113037'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113037'])
+        this.router.navigate(['/teenagers/reactive-mind/s113037'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/reactive-mind/s113035'])
+    this.router.navigate(['/teenagers/reactive-mind/s113035'])
   }
 
   ngOnDestroy() 

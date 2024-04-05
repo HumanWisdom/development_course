@@ -14,7 +14,7 @@ export class S102012Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w10"
   hint = "Here is mine: Is it possible to live without expectations so I never get hurt and angry?"
-  toc = "questions-are-key/s102001"
+  toc = "teenagers/questions-are-key/s102001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -110,17 +110,17 @@ export class S102012Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['questions-are-key/s102013'])
+        this.router.navigate(['/teenagers/questions-are-key/s102013'])
 
       },
       () => {
-        this.router.navigate(['questions-are-key/s102013'])
+        this.router.navigate(['/teenagers/questions-are-key/s102013'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['questions-are-key/s102011'])
+    this.router.navigate(['/teenagers/questions-are-key/s102011'])
   }
 
   ngOnDestroy() 
