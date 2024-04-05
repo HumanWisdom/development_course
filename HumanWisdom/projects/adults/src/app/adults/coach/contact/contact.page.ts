@@ -22,6 +22,8 @@ export class ContactPage implements OnInit {
   coachList = [];
   userId;
   userdetail = 'tset';
+  coachName = '';
+  activecoachId = '';
 
   constructor(private onboardingService: OnboardingService, private location: Location, private adultService: AdultsService,
     private meta: Meta, private title: Title, private router: Router,private route: ActivatedRoute) {
@@ -49,7 +51,9 @@ export class ContactPage implements OnInit {
         {
           console.log(res);
           if(res) {
-            this.coachList = res;
+            let coachList = res;
+            this.activecoachId = coachList[0]['UserID'];
+            this.coachName = coachList[0]['CoachName'];
           }
         },
         error=>console.log(error),
@@ -57,9 +61,11 @@ export class ContactPage implements OnInit {
         }
       )
 
-    }else {
-      this.getAllCoachList();
     }
+      
+    this.getAllCoachList();
+    
+  
     this.title.setTitle('Contact a Life Coach for Personal Growth')
     this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth' })
     this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
@@ -88,7 +94,7 @@ export class ContactPage implements OnInit {
   getAllCoachList() {
     this.adultService.GetAllCoachList().subscribe(res => {
       if (res) {
-        this.coachList = res;
+        this.coachList = res.filter((d) => d['UserID'] !== this.activecoachId);
       }
     },
       error => console.log(error),
