@@ -22,7 +22,7 @@ export class S128034Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "food-health/s128001"
+  toc = "teenagers/food-health/s128001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -99,16 +99,16 @@ export class S128034Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/food-health/s128033'])
+    this.router.navigate(['/teenagers/food-health/s128033'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/food-health/s128034'])
+    // this.router.navigate(['/teenagers/food-health/s128034'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/food-health/s128035'])
+    this.router.navigate(['/teenagers/food-health/s128035'])
   }
 
   ngOnDestroy() 

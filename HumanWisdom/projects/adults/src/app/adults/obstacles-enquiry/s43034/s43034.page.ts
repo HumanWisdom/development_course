@@ -60,7 +60,7 @@ export class S43034Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/adults/obstacles-enquiry/s43029'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43028'])
 
   }
 

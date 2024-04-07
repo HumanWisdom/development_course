@@ -22,7 +22,7 @@ export class S129003Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "living-with-peace/s129001"
+  toc = "teenagers/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -99,16 +99,16 @@ export class S129003Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/living-with-peace/s129002'])
+    this.router.navigate(['/teenagers/living-with-peace/s129002'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/living-with-peace/s129003'])
+    // this.router.navigate(['/teenagers/living-with-peace/s129003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/living-with-peace/s129004'])
+    this.router.navigate(['/teenagers/living-with-peace/s129004'])
   }
 
   ngOnDestroy() 

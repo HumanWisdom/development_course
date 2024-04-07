@@ -15,7 +15,7 @@ export class S133109Page implements OnInit
   bg_cft = "bg_red_pink"
   bg = "red_pink_w11"
   hint = "We explore this more fully in the module on relationships. "
-  toc = "/happiness/s133001"
+  toc = "teenagers/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S133109Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/happiness/s133110'])
+        this.router.navigate(['/teenagers/happiness/s133110'])
 
       },
       () => {
-        this.router.navigate(['/happiness/s133110'])
+        this.router.navigate(['/teenagers/happiness/s133110'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/happiness/s133108'])
+    this.router.navigate(['/teenagers/happiness/s133108'])
   }
 
   ngOnDestroy() 

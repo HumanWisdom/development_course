@@ -14,7 +14,7 @@ export class S133003Page implements OnInit {
   bg_cft="bg_red_pink"
   bg="red_pink_w1" 
   
-  toc="happiness/s133001"
+  toc="teenagers/happiness/s133001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -100,7 +100,7 @@ export class S133003Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/happiness/s133002'])
+    this.router.navigate(['/teenagers/happiness/s133002'])
   }
 
   goNext() 
@@ -108,7 +108,7 @@ export class S133003Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/happiness/s133004'])
+    this.router.navigate(['/teenagers/happiness/s133004'])
   }
 
   ngOnDestroy() 

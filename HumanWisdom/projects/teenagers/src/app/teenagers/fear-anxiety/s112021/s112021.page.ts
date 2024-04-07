@@ -14,7 +14,7 @@ export class S112021Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w1"
   title="The anxious mind"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/fear-anxiety/audios/1.4.mp3'
   transcriptPage="/fear-anxiety/s112021t" 
@@ -93,7 +93,7 @@ export class S112021Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/fear-anxiety/s112022'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112022'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S112021Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/fear-anxiety/s112020'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112020'])
   }
 
   ngOnDestroy()

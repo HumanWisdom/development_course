@@ -15,7 +15,7 @@ export class S122073Page implements OnInit
   bg_cft="bg_green"
   bg="green_w6"
   hint = ""
-  toc = "/nature-of-the-i/s122001"
+  toc = "teenagers/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S122073Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/nature-of-the-i/s122079'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122079'])
 
       },
       () => {
-        this.router.navigate(['/nature-of-the-i/s122079'])
+        this.router.navigate(['/teenagers/nature-of-the-i/s122079'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/nature-of-the-i/s122072'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122072'])
   }
 
   ngOnDestroy() 

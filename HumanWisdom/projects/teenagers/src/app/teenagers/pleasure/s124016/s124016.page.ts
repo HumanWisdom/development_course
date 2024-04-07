@@ -18,10 +18,10 @@ export class S124016Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/4"
-  link="/pleasure/s124017"
+  link="teenagers/pleasure/s124017"
   name="#2  The Nature of pleasure"
   progressImg=""
-  toc="pleasure/s124001"
+  toc="teenagers/pleasure/s124001"
 
   constructor
   (

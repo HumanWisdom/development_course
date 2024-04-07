@@ -24,7 +24,7 @@ export class S117040Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "loneliness/s117001"
+  toc = "teenagers/loneliness/s117001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -74,7 +74,7 @@ export class S117040Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/loneliness/s117041'])
+    this.router.navigate(['/teenagers/loneliness/s117041'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

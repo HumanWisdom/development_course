@@ -18,7 +18,7 @@ export class S128032Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/food-health/audios/food-health+1.3.mp3'
   transcriptPage="food-health/s128032t"
-  toc="food-health/s128001"
+  toc="teenagers/food-health/s128001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S128032Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s128033'])
+    this.router.navigate(['/teenagers/food-health/s128033'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S128032Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/food-health/s128031'])
+    this.router.navigate(['/teenagers/food-health/s128031'])
   }
 
   ngOnDestroy()

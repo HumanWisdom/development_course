@@ -17,7 +17,7 @@ export class S112107Page implements OnInit {
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+4.4.mp3'
   transcriptPage="/fear-anxiety/s112107t"
-  toc="fear-anxiety/s112001"  
+  toc="teenagers/fear-anxiety/s112001"  
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -91,7 +91,7 @@ export class S112107Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
-    this.router.navigate(['/fear-anxiety/s112108'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112108'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S112107Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s112106'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112106'])
  
  
   }

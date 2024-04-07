@@ -262,21 +262,21 @@ export class S127162Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/habit-addiction/s127163'])
+          this.router.navigate(['/teenagers/habit-addiction/s127163'])
         },
         () => {
-          this.router.navigate(['/habit-addiction/s127163'])
+          this.router.navigate(['/teenagers/habit-addiction/s127163'])
         })
     }
     else 
     {
-      this.router.navigate(['/habit-addiction/s127163'])
+      this.router.navigate(['/teenagers/habit-addiction/s127163'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/habit-addiction/s127161'])
+    this.router.navigate(['/teenagers/habit-addiction/s127161'])
   }
 
   ngOnDestroy() 

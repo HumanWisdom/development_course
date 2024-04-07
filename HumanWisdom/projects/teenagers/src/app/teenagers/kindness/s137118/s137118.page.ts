@@ -23,7 +23,7 @@ export class S137118Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="kindness/s137001"
+  toc="teenagers/kindness/s137001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -85,7 +85,7 @@ export class S137118Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/kindness/s137119'])
+    this.router.navigate(['/teenagers/kindness/s137119'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,13 +100,13 @@ export class S137118Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/kindness/s234'])
+        //this.router.navigate(['/teenagers/kindness/s234'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/kindness/s137117'])
+    this.router.navigate(['/teenagers/kindness/s137117'])
   }
 
   ngOnDestroy()

@@ -14,7 +14,7 @@ export class S112004Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w1"
   title="Introduction"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.1.mp3'
   transcriptPage="/fear-anxiety/s112004t"
@@ -100,7 +100,7 @@ export class S112004Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/fear-anxiety/s112005'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112005'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -121,7 +121,7 @@ export class S112004Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/fear-anxiety/s112003'])
+        this.router.navigate(['/teenagers/fear-anxiety/s112003'])
      
      
       }

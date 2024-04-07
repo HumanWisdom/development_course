@@ -24,7 +24,7 @@ export class S96004Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "how-to-begin/s96001"
+  toc = "teenagers/how-to-begin/s96001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -85,7 +85,7 @@ export class S96004Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/how-to-begin/s96005'])
+    this.router.navigate(['/teenagers/how-to-begin/s96005'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -107,7 +107,7 @@ export class S96004Page implements OnInit {
 
   }
   prev() {
-    this.router.navigate(['/how-to-begin/s96003'])
+    this.router.navigate(['/teenagers/how-to-begin/s96003'])
 
   }
 

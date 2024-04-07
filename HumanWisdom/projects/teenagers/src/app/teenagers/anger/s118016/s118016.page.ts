@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
@@ -16,9 +16,7 @@ export class S118016Page implements OnInit
   bg = "red_pink_w2"
   hint = "My son did not call on my birthday, My anger is caused by my own expectations";
   toc = "/teenagers/anger/s118001"
-   path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -30,9 +28,16 @@ export class S118016Page implements OnInit
   totalTime: any
   bookmark: any
   rId = 1405
+  rId_1 = 2349
   reflection: any
   reflectionA: any
-  r118016 = JSON.parse(sessionStorage.getItem("r118016"))
+  r118016 = sessionStorage.getItem("r118016") 
+  r118016_1 = sessionStorage.getItem("r118016_1") 
+
+
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   shared: any
   confirmed: any
 
@@ -47,6 +52,9 @@ export class S118016Page implements OnInit
   ngOnInit() 
   {
     this.createScreen()
+    console.log(this.r118016);
+    console.log(this.r118016_1);
+
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
     if (this.saveUsername == false) 
@@ -107,9 +115,12 @@ export class S118016Page implements OnInit
     
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-   // sessionStorage.setItem("r118016", this.r118016)
+    sessionStorage.setItem("r118016", this.r118016)
+    sessionStorage.setItem("r118016_1", this.r118016_1)
     this.r118016 = sessionStorage.getItem("r118016")
- //   console.log(this.r118016)
+    this.r118016_1 = sessionStorage.getItem("r118016_1")
+ //   console.log(this.r118016) 
+ if(this.r118016 !=''){
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -119,6 +130,19 @@ export class S118016Page implements OnInit
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
       "Resp": this.r118016
+    }).subscribe();
+  }
+if(this.r118016_1 !='')
+{ 
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId_1,
+      "Resp": this.r118016_1
     }).subscribe(res => {},
       error => {
         console.log(error)
@@ -127,7 +151,9 @@ export class S118016Page implements OnInit
       },
       () => {
         this.router.navigate(['/teenagers/anger/s118017'])
+        
       })
+    }
   }
 
   previous() 

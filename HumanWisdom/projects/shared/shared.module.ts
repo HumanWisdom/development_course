@@ -93,6 +93,11 @@ import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premi
 import { HwpSearchBarComponent } from './component/hwp-search-bar/hwp-search-bar.component';
 import { NavigationService } from './services/navigation.service';
 import { SpinnerComponent } from './component/spinner/spinner.component';
+import { LoginSignupPage } from './component/login-signup/login-signup.page';
+import { SignupPage } from './component/signup/signup.page';
+import { ForgetPasswordPage } from './component/forget-password/forget-password.page';
+import { ChangePasswordPage } from './component/change-password/change-password.page';
+import { SetPasswordPage } from './component/set-password/set-password.page';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -178,7 +183,12 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
     LoginRegisterModalComponent,
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    LoginSignupPage,
+    SignupPage,
+    ForgetPasswordPage,
+    ChangePasswordPage,
+    SetPasswordPage
   ],
   imports: [
     CommonModule,
@@ -289,7 +299,12 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
     LoginRegisterModalComponent,
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    LoginSignupPage,
+    SignupPage,
+    ForgetPasswordPage,
+    ChangePasswordPage,
+    SetPasswordPage
   ],
   providers:[]
 })

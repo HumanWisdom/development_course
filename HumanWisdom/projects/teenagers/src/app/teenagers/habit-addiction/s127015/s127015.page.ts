@@ -14,7 +14,7 @@ export class S127015Page implements OnInit {
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
   bg = "purple_w1"
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -118,7 +118,7 @@ export class S127015Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/habit-addiction/s127016'])
+    this.router.navigate(['/teenagers/habit-addiction/s127016'])
     var optionT = [this.s1]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
@@ -139,7 +139,7 @@ export class S127015Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/habit-addiction/s127014'])
+    this.router.navigate(['/teenagers/habit-addiction/s127014'])
   }
 
   ngOnDestroy() {}

@@ -156,7 +156,7 @@ export class S142112Page implements OnInit {
     sessionStorage.setItem("r142112", this.r142112)
     this.r142112 = sessionStorage.getItem("r142112")
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/making-better-decisions/s142113'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142113'])
     if (this.userId === 563) return;
 
 
@@ -182,7 +182,7 @@ export class S142112Page implements OnInit {
   prev() 
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/making-better-decisions/s142111'])
+    this.router.navigate(['/teenagers/making-better-decisions/s142111'])
   }
 
   ngOnDestroy() {}

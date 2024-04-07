@@ -17,7 +17,7 @@ export class S121007Page implements OnInit
   audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+1.2.mp3'
 
   title="Understanding emptiness  "
-  toc="/inner-boredom/s121001"
+  toc="teenagers/inner-boredom/s121001"
   transcriptPage="inner-boredom/s121007t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -93,7 +93,7 @@ export class S121007Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/inner-boredom/s121008'])
+    this.router.navigate(['/teenagers/inner-boredom/s121008'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -113,7 +113,7 @@ export class S121007Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/inner-boredom/s121006'])
+    this.router.navigate(['/teenagers/inner-boredom/s121006'])
   }
 
   ngOnDestroy()

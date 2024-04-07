@@ -19,7 +19,7 @@ export class S113015tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/reactive-mind/s113015"
-  toc="/reactive-mind/s113001"
+  toc="teenagers/reactive-mind/s113001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -68,7 +68,7 @@ export class S113015tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/reactive-mind/s113016'])
+    this.router.navigate(['/teenagers/reactive-mind/s113016'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S113015tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/reactive-mind/s113014'])
+    this.router.navigate(['/teenagers/reactive-mind/s113014'])
   }
 
 }

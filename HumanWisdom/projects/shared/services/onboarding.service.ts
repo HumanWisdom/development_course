@@ -78,7 +78,10 @@ export class OnboardingService {
   forgotPassword(data: any): Observable<any> {
     return this.http.post(this.path + '/forgotPassword', data)
   }
-
+  freeScreens(): Observable<any> {
+    return this.http.get(this.path + `/AllModulesFreeScrs`)
+  }
+  
   setPassword(data: any): Observable<any> {
     return this.http.post(this.path + '/SetPassword', data)
   }
@@ -218,5 +221,43 @@ export class OnboardingService {
   ReviveSubscription(key): Observable<any>{
     return this.http.post(this.path + `/ReviveSubscription/${key}`,{});
   }
+
+  getScenarios(): Observable<any> {
+    return this.http.get(this.path + `/Scenarios`)
+  }
+  getScenarioswithId(data: any): Observable<any> {
+    return this.http.get(this.path + `/Scenarios/${data}`)
+  }
+
+  CheckStoryIsFree(data: any): Observable<any> {
+    return this.http.get(this.path + `/CheckStoryIsFree/${data}`)
+  }
+  clickStory(data: any): Observable<any> {
+    return this.http.post(this.path + `/clickStory/${data}`, null)
+  }
+  clickModule(data: any, userId: any): Observable<any> {
+    return this.http.get(this.path + `/clickModule/${data}/${userId}`)
+  }
+  readStories(): Observable<any> {
+    return this.http.get(this.path + `/wisdomStories`)
+  }
+
+
+  getBlog(): Observable<any> {
+    return this.http.get(this.path + `/GetBlogs`)
+  }
+
+  getBlogId(BlogID): Observable<any> {
+    return this.http.get(this.path + `/GetBlogs/${BlogID}`)
+  }
+
+  likeblog(BlogID): Observable<any> {
+    return this.http.post(this.path + `/AddBlogLikes/${BlogID}`, {})
+  }
+
+  commentblog(data): Observable<any> {
+    return this.http.post(this.path + '/AddBlogComments', data)
+  }
+
 
 }

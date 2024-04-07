@@ -15,7 +15,7 @@ export class S127076Page implements OnInit
   bg_cft = "bg_purple"
   bg = "purple_w1"
   hint = " It could be drinking with the ‘gang’, or smoking, or taking drugs, or bullying others."
-  toc = "/habit-addiction/s127001"
+  toc = "teenagers/habit-addiction/s127001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S127076Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/habit-addiction/s127077'])
+        this.router.navigate(['/teenagers/habit-addiction/s127077'])
 
       },
       () => {
-        this.router.navigate(['/habit-addiction/s127077'])
+        this.router.navigate(['/teenagers/habit-addiction/s127077'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/habit-addiction/s127075'])
+    this.router.navigate(['/teenagers/habit-addiction/s127075'])
   }
 
   ngOnDestroy() 

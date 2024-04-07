@@ -35,7 +35,7 @@ export class S140046Page implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/opinions-beliefs/s140001"
+  toc="teenagers/opinions-beliefs/s140001"
  
  
   
@@ -155,7 +155,7 @@ export class S140046Page implements OnInit {
  
 
   submitProgress(){
-    this.router.navigate(['/opinions-beliefs/s140047'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140047'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -175,7 +175,7 @@ export class S140046Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/opinions-beliefs/s140045'])
+    this.router.navigate(['/teenagers/opinions-beliefs/s140045'])
 
 
   }

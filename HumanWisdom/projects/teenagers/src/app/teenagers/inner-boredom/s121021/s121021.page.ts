@@ -15,7 +15,7 @@ export class S121021Page implements OnInit
   bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
   hint = "You may feel bored, or lonely, for example  "
-  toc = "/inner-boredom/s121001"
+  toc = "teenagers/inner-boredom/s121001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S121021Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/inner-boredom/s121022'])
+        this.router.navigate(['/teenagers/inner-boredom/s121022'])
 
       },
       () => {
-        this.router.navigate(['/inner-boredom/s121022'])
+        this.router.navigate(['/teenagers/inner-boredom/s121022'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/inner-boredom/s121020'])
+    this.router.navigate(['/teenagers/inner-boredom/s121020'])
   }
 
   ngOnDestroy() 

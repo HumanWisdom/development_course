@@ -14,7 +14,7 @@ export class S112095Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w10"
   title="What is the mechanism behind fear?"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+4.1.mp3'
   transcriptPage="/fear-anxiety/s112095t"
@@ -94,7 +94,7 @@ export class S112095Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/fear-anxiety/s112096'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112096'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S112095Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/fear-anxiety/s112094'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112094'])
   }
 
   ngOnDestroy()

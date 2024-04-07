@@ -219,21 +219,21 @@ export class S122076Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/nature-of-the-i/s122077'])
+          this.router.navigate(['/teenagers/nature-of-the-i/s122077'])
         },
         () => {
-          this.router.navigate(['/nature-of-the-i/s122077'])
+          this.router.navigate(['/teenagers/nature-of-the-i/s122077'])
         })
     }
     else 
     {
-      this.router.navigate(['/nature-of-the-i/s122077'])
+      this.router.navigate(['/teenagers/nature-of-the-i/s122077'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/nature-of-the-i/s122075'])
+    this.router.navigate(['/teenagers/nature-of-the-i/s122075'])
   }
 
   ngOnDestroy() 

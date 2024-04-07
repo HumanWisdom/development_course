@@ -18,10 +18,10 @@ export class S121033Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/inner-boredom/s121034"
+  link="teenagers/inner-boredom/s121034"
   name="#2 Four ways inner-boredom impacts our life"
   progressImg=""
-  toc="inner-boredom/s121001"
+  toc="teenagers/inner-boredom/s121001"
 
   constructor
   (

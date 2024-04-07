@@ -13,7 +13,7 @@ export class S112087Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w4"
-  toc="fear-anxiety/s112001"
+  toc="teenagers/fear-anxiety/s112001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -101,7 +101,7 @@ export class S112087Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/fear-anxiety/s112086'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112086'])
   }
 
   goNext() 
@@ -110,7 +110,7 @@ export class S112087Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/fear-anxiety/s112088'])
+    this.router.navigate(['/teenagers/fear-anxiety/s112088'])
   }
 
   ngOnDestroy() 

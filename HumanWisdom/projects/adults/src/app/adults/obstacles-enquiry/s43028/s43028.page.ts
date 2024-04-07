@@ -101,11 +101,11 @@ export class S43028Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/obstacles-enquiry/s43029'])
+        this.router.navigate(['/adults/obstacles-enquiry/s43034'])
 
       },
       () => {
-        this.router.navigate(['/adults/obstacles-enquiry/s43029'])
+        this.router.navigate(['/adults/obstacles-enquiry/s43034'])
       })
 
 

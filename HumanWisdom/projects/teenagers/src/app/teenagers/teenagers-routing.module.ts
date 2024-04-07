@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
     },
     {
+        path: 'change-topic',
+        loadChildren: () => import('../teenagers/change-topic/change-topic.module').then(m => m.ChangeTopicPageModule)
+    },
+    {
         path: 'start-here',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
     },
@@ -324,6 +328,35 @@ const routes: Routes = [
     {
         path: 'pathway',
         loadChildren: () => import('../teenagers/pathway/pathway.module').then(m => m.PathwayModule)
+    },
+    {
+        path: 'intro-carousel',
+        loadChildren: () => import('./intro-carousel/intro-carousel.module').then(m => m.IntroCarouselPageModule)
+    },
+    {
+        path: 'change-topic',
+        loadChildren: () => import('../teenagers/change-topic/change-topic.module').then(m => m.ChangeTopicPageModule)
+    },
+    {
+        path: 'testimonials',
+        loadChildren: () => import('../teenagers/testimonials/testimonials.module').then(m => m.TestimonialsPageModule)
+    },
+    {
+        path: 'wisdom-stories',
+        loadChildren: () => import('./wisdom-stories/wisdom-stories.module').then(m => m.WisdomStoriesModule)
+    },
+    {
+        path: 'blogs',
+        loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+    },
+
+    {
+        path: 'curated',
+        loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
+    },
+    {
+        path: 'onboarding',
+        loadChildren: () => import('../onboarding/onboarding.module').then(m => m.OnboardingModule)
     },
 ];
 

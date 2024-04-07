@@ -273,10 +273,10 @@ export class S104033Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/obstacles-enquiry/s104034'])
+        this.router.navigate(['/teenagers/obstacles-enquiry/s104034'])
       },
       () => {
-        this.router.navigate(['/obstacles-enquiry/s104034'])
+        this.router.navigate(['/teenagers/obstacles-enquiry/s104034'])
       })
   }
 
@@ -287,7 +287,7 @@ export class S104033Page implements OnInit {
 
 
   prev() {
-    this.router.navigate(['/obstacles-enquiry/s104032'])
+    this.router.navigate(['/teenagers/obstacles-enquiry/s104032'])
 
   }
 

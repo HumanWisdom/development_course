@@ -21,7 +21,7 @@ export class S124052Page implements OnInit
   link="/pleasure/s124053"
   name="#4  Responding to pleasure with wisdom"
   progressImg=""
-  toc="pleasure/s124001"
+  toc="teenagers/pleasure/s124001"
 
   constructor
   (

@@ -14,7 +14,7 @@ export class S139047Page implements OnInit {
   bg_cft=""
   bg=""
 
-  toc="pressure-of-exams/s139001"
+  toc="teenagers/pressure-of-exams/s139001"
   hint = ""
 
   path = setTimeout(() => {
@@ -115,17 +115,17 @@ export class S139047Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/pressure-of-exams/s139048'])
+        this.router.navigate(['/teenagers/pressure-of-exams/s139048'])
 
       },
       () => {
-        this.router.navigate(['/pressure-of-exams/s139048'])
+        this.router.navigate(['/teenagers/pressure-of-exams/s139048'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/pressure-of-exams/s139046'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139046'])
   }
 
   ngOnDestroy() 
