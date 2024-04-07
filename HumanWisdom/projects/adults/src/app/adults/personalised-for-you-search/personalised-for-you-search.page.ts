@@ -154,6 +154,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
   }
 
+  closeTour(){
+    localStorage.setItem('firstTimeTour', 'T');
+  }
+
   continueTour() {
     const driver = window['driver'].js.driver;
     let stepList = [
@@ -200,6 +204,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         document.body.classList.add('overflow_hidden');
       },
       onCloseClick:() => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');
         document.body.classList.add('overflow_auto');
