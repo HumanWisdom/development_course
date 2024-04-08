@@ -24,6 +24,11 @@
                 "input": "projects/adults/src/assets",
                 "output": "assets"
               },
+              {
+                "glob": "**/*",
+                "input": "projects/getStarted",
+                "output": "/getStarted"
+              },
               "projects/adults/src/web.config",
               "projects/adults/src/serviceworker.js",
               {

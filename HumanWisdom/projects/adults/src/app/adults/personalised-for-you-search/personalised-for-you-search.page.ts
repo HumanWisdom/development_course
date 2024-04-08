@@ -154,6 +154,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
   }
 
+  closeTour(){
+    localStorage.setItem('firstTimeTour', 'T');
+  }
+
   continueTour() {
     const driver = window['driver'].js.driver;
     let stepList = [
@@ -162,8 +166,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
-          side: "top",
-          align: 'start'
+          // side: "right"
+          side: "right",
+          align: 'end'
         }
       }, {
         element: ".tour_find_inspiration",
@@ -199,6 +204,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         document.body.classList.add('overflow_hidden');
       },
       onCloseClick:() => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');
         document.body.classList.add('overflow_auto');

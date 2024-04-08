@@ -13,7 +13,7 @@
       </h1>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-      <a class="">
+      <a class="" (click)="share()">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0">
       </a>
     </div>
@@ -84,7 +84,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <a>
                     <button type="button" class="btn btn_rip">
@@ -92,7 +92,7 @@
                     </button>
                   </a>
                 </div>
-              </div>
+              </div> -->
 
               <div class="row mt15px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -104,7 +104,7 @@
 
               <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
-                  <a>
+                  <a (click)="contactCoach()">
                     <button type="button" class="btn btn_tfas">
                       Contact a coach
                     </button>

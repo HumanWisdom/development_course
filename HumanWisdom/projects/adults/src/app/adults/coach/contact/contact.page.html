@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="backRoute()">
+      <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -21,7 +21,6 @@
 
 <!-- page content -->
 <div class="right_col mc_01">
-  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 sc_01 bg_292d56 col_cw">
@@ -44,7 +43,7 @@
               <div class="row mt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                    We have trained HappierMe coaches around the world who are available to guide you through the app and provide extra support to help you live your best life. To help us connect you with the right coach please fill in the form below.
+                    Fill your details below and we will contact you with booking details and costs involved for a session.
                   </h4>
                 </div>
               </div>
@@ -82,13 +81,12 @@
                 </div>
 
                 <div class="row prelative">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback zi0 p0 mb0px div_pe">
+                    <input type="search" class="form-control hide_search pe_search" name="search-list"
                       [(ngModel)]="form.Country" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
                       (focus)="onFocus()"
                       [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}"
-                      placeholder="Your country">
-                    <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                      placeholder="Select country">
                     <span *ngIf="form.Country!=''" (click)="clearSearch()"
                       class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
                       aria-hidden="true"></span>
@@ -105,14 +103,13 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-md-2 col-sm-2 col-xs-3 p0">
-                    <div class="dropdown dropdown_outer">
-                      <button class="dropdown-toggle sp_fc" type="button" data-stoggle="dropdown" data-toggle="dropdown" id="code">{{countryFIPS}}</button>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                      <input type="text" name="isdcode" class="sp_fc" placeholder="+XX" [(ngModel)]="form.isdcode">
                     </div>
-                  </div>
-                  <div class="col-md-10 col-sm-10 col-xs-9 pr0px">
-                    <input type="text"  maxlength="12" required="required" name="ContactNo" class="sp_fc feedback_left cfc10_fl_p" [(ngModel)]="form.ContactNo" placeholder="">
-                    <span id="phoneCode"  class="form-control-feedback left cfc10_fl" aria-hidden="true"></span>
+                    <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
+                      <input type="text" name="contact" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="form.ContactNo">
+                    </div>
                   </div>
                 </div>
                 <div *ngIf="form.ContactNo==null ||   checkValidPhoneNo()" class="white alert alert-danger w100">
@@ -124,7 +121,8 @@
                     <div class="dropdown dropdown_outer">
                       <label class="select_label m0px w100">
 
-                        <select name="Title" id="test" [(ngModel)]="form.CoachID" class="sp_fc btn_select">
+                        <select name="CoachSelct" id="test" [(ngModel)]="form.CoachID" class="sp_fc btn_select">
+                          <option [value]="activecoachId" selected>{{coachName}}</option>
                           <option *ngFor="let item of coachList" [value]="item['UserID']">{{item['CoachName']}}</option>
                         </select>
                       </label>
@@ -152,7 +150,7 @@
                   <a>
                     <button type="submit" (click)="submit()" [disabled]="form.Name==''
                     || form.Country=='0' || form.ContactNo=='' || form.CoachID =='' ||
-                    form.Details =='' || form.ContactNo==null || !ValidateEmail()  || form.Title=='1'" class="btn btn_ctd">
+                    form.Details =='' || form.isdcode === '' || form.ContactNo==null || !ValidateEmail()  || form.Title=='1'" class="btn btn_ctd">
                      Submit
                    </button>
                   </a>
@@ -166,10 +164,5 @@
       </div>
     </div>
   </div>
-  <!--/Class -->
 </div>
 <!-- /page content -->
-
-<!-- footer  -->
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
-<!-- /footer -->

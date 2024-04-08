@@ -32,10 +32,10 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of personalisedforyou; let i = index">
+                    <button class="" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'], '', $event, i, item['id']);">
                       <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
-                        Work and Leadership 
+                        {{item['name']}}
                       </h4>
                     </button>
                   </div>

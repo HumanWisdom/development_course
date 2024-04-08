@@ -14,7 +14,7 @@ export class S102010Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w8"
   hint = "Do you notice this in yourself?"
-  toc = "questions-are-key/s102001"
+  toc = "teenagers/questions-are-key/s102001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -110,17 +110,17 @@ export class S102010Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['questions-are-key/s102011'])
+        this.router.navigate(['/teenagers/questions-are-key/s102011'])
 
       },
       () => {
-        this.router.navigate(['questions-are-key/s102011'])
+        this.router.navigate(['/teenagers/questions-are-key/s102011'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['questions-are-key/s102009'])
+    this.router.navigate(['/teenagers/questions-are-key/s102009'])
   }
 
   ngOnDestroy() 

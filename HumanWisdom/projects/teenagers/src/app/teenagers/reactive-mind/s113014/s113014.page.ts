@@ -15,7 +15,7 @@ export class S113014Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w12"
   hint = "It could be a situation at school"
-  toc = "/reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S113014Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113015'])
+        this.router.navigate(['/teenagers/reactive-mind/s113015'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113015'])
+        this.router.navigate(['/teenagers/reactive-mind/s113015'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/reactive-mind/s113013'])
+    this.router.navigate(['/teenagers/reactive-mind/s113013'])
   }
 
   ngOnDestroy() 

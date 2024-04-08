@@ -18,10 +18,10 @@ export class S113019Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/3"
-  link="/reactive-mind/s113020"
+  link="teenagers/reactive-mind/s113020"
   name="#2 Effects of a reactive mind"
   progressImg=""
-  toc="reactive-mind/s113001"
+  toc="teenagers/reactive-mind/s113001"
 
   constructor
   (

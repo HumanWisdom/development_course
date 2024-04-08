@@ -22,7 +22,7 @@ export class S113017Page implements OnInit,OnDestroy
   endTime:any
   totalTime:any
   bookmark=0
-  toc="reactive-mind/s113001"
+  toc="teenagers/reactive-mind/s113001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -81,7 +81,7 @@ export class S113017Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/reactive-mind/s113018'])
+    this.router.navigate(['/teenagers/reactive-mind/s113018'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +102,7 @@ export class S113017Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/reactive-mind/s113016'])
+    this.router.navigate(['/teenagers/reactive-mind/s113016'])
   }
 
   ngOnDestroy()

@@ -19,7 +19,7 @@ export class S139003tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/pressure-of-exams/s139003"
-  toc="pressure-of-exams/s139001"
+  toc="teenagers/pressure-of-exams/s139001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -68,7 +68,7 @@ export class S139003tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/pressure-of-exams/s139004'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S139003tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/pressure-of-exams/s139002'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139002'])
   }
 
 }
