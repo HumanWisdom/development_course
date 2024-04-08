@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-profile',
@@ -10,8 +13,12 @@ import { AdultsService } from '../../adults.service';
 export class ProfilePage implements OnInit {
   coachBio = [];
   id = '';
+  baseUrl: string;
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
-  constructor(private service: AdultsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private service: AdultsService, private router: Router, private route: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
     this.getCoachBio();
@@ -31,7 +38,7 @@ export class ProfilePage implements OnInit {
         ()=>{
         }
       )
-    }    
+    }
   }
 
   backRoute() {
@@ -40,5 +47,32 @@ export class ProfilePage implements OnInit {
 
   contactCoach() {
     this.router.navigate(["/adults/coach/contact", this.id]);
+  }
+
+  share() {
+    this.shareUrl(SharedService.ProgramId);
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.baseUrl + this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  shareUrl(programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl = SharedService.AdultsBaseUrl;
+        break;
+      case ProgramType.Teenagers:
+        this.baseUrl = SharedService.TeenagerBaseUrl;
+        break;
+      default:
+        this.baseUrl = SharedService.TeenagerBaseUrl;
+    }
   }
 }
