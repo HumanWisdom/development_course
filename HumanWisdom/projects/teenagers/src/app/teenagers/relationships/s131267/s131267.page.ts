@@ -15,7 +15,7 @@ export class S131267Page implements OnInit {
   bg = "purple_w12"
   hint = "This is not easy to answer because we often think of ourselves as ‘self-less’, but seeing the fact awakens our own intelligence"
 
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -99,18 +99,18 @@ export class S131267Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131268'])
+        this.router.navigate(['/teenagers/relationships/s131268'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131268'])
+        this.router.navigate(['/teenagers/relationships/s131268'])
       })
 
 
   }
 
   previous() {
-    this.router.navigate(['/relationships/s131266'])
+    this.router.navigate(['/teenagers/relationships/s131266'])
   }
 
   ngOnDestroy() {

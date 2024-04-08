@@ -15,7 +15,7 @@ export class S131254Page implements OnInit {
   bg = "purple_w3"
   hint = "I could accept someone is a vegan, even if I am a meat eater, for example and this could leave me with less stress, and make them feel more accepted and loved"
 
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S131254Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131255'])
+        this.router.navigate(['/teenagers/relationships/s131255'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131255'])
+        this.router.navigate(['/teenagers/relationships/s131255'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/relationships/s131253'])
+    this.router.navigate(['/teenagers/relationships/s131253'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S131049Page implements OnInit {
   bg = "purple_w1"
   hint = "It could be one of attachment because they are part of your identity and bring pleasure."
 
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S131049Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131050'])
+        this.router.navigate(['/teenagers/relationships/s131050'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131050'])
+        this.router.navigate(['/teenagers/relationships/s131050'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/relationships/s131048'])
+    this.router.navigate(['/teenagers/relationships/s131048'])
   }
 
   ngOnDestroy() 

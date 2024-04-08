@@ -16,7 +16,7 @@ export class S131056Page implements OnInit {
   bg = "purple_w8"
   hint = "Perhaps we would consume less, not kill animals for fun, or not cut down trees unless we absolutely had to"
 
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -113,17 +113,17 @@ export class S131056Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131057'])
+        this.router.navigate(['/teenagers/relationships/s131057'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131057'])
+        this.router.navigate(['/teenagers/relationships/s131057'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/relationships/s131055'])
+    this.router.navigate(['/teenagers/relationships/s131055'])
   }
 
   ngOnDestroy() 

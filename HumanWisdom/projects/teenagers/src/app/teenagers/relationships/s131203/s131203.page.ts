@@ -21,7 +21,7 @@ export class S131203Page implements OnInit
   link="/relationships/s131204"
   name="#7  What is our relationship with ourselves?"
   progressImg=""
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
 
   constructor
   (
