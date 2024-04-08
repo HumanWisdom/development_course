@@ -62,10 +62,10 @@ export class ContactPage implements OnInit {
       )
 
     }
-      
+
     this.getAllCoachList();
-    
-  
+
+
     this.title.setTitle('Contact a Life Coach for Personal Growth')
     this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth' })
     this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
@@ -95,6 +95,7 @@ export class ContactPage implements OnInit {
     this.adultService.GetAllCoachList().subscribe(res => {
       if (res) {
         this.coachList = res.filter((d) => d['UserID'] !== this.activecoachId);
+        // this.coachList = res;
       }
     },
       error => console.log(error),

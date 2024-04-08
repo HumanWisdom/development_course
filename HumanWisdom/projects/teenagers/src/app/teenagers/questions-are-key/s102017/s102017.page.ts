@@ -19,7 +19,7 @@ export class S102017Page implements OnInit,OnDestroy {
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/questions-are-key/audios/1.3.mp3'
   transcriptPage="questions-are-key/s102017t"
-  toc="questions-are-key/s102001"
+  toc="teenagers/questions-are-key/s102001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -93,7 +93,7 @@ export class S102017Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/questions-are-key/s102018'])
+    this.router.navigate(['/teenagers/questions-are-key/s102018'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S102017Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/questions-are-key/s102016'])
+    this.router.navigate(['/teenagers/questions-are-key/s102016'])
   }
 
   ngOnDestroy()

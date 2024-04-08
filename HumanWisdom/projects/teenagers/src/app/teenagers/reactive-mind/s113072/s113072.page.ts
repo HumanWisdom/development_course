@@ -13,7 +13,7 @@ export class S113072Page implements OnInit
   bg_tn = "bg_light_blue"
   bg_cft = "bg_light_blue"
   bg = "light_blue_w11"
-  toc = "reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -258,12 +258,12 @@ export class S113072Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/reactive-mind/s113071'])
+    this.router.navigate(['/teenagers/reactive-mind/s113071'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/reactive-mind/s113073'])
+    this.router.navigate(['/teenagers/reactive-mind/s113073'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

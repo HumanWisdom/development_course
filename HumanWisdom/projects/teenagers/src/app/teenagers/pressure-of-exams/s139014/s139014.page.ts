@@ -15,7 +15,7 @@ export class S139014Page implements OnInit,OnDestroy
   bg_cft = ""
   bg = ""
   hint = ""
-  toc="pressure-of-exams/s139001"
+  toc="teenagers/pressure-of-exams/s139001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S139014Page implements OnInit,OnDestroy
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/pressure-of-exams/s139015'])
+        this.router.navigate(['/teenagers/pressure-of-exams/s139015'])
 
       },
       () => {
-        this.router.navigate(['/pressure-of-exams/s139015'])
+        this.router.navigate(['/teenagers/pressure-of-exams/s139015'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/pressure-of-exams/s139013'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139013'])
   }
 
   ngOnDestroy() 
