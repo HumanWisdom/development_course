@@ -14,7 +14,7 @@ export class S131007Page implements OnInit {
   bg_cft="bg_purple"
 
   userId:any
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -120,7 +120,7 @@ export class S131007Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
    this.totalTime = this.endTime - this.startTime;
-   this.router.navigate(['/relationships/s131008'])
+   this.router.navigate(['/teenagers/relationships/s131008'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -134,7 +134,7 @@ export class S131007Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/relationships/s131006'])
+    this.router.navigate(['/teenagers/relationships/s131006'])
 
   }
  

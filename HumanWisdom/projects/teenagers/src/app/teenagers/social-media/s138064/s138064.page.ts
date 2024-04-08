@@ -15,7 +15,7 @@ export class S138064Page implements OnInit
   bg_cft=""
   bg=""
   hint = "It makes us accumulate online friends"
-  toc = "/social-media/s138001"
+  toc = "teenagers/social-media/s138001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S138064Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/social-media/s138065'])
+        this.router.navigate(['/teenagers/social-media/s138065'])
 
       },
       () => {
-        this.router.navigate(['/social-media/s138065'])
+        this.router.navigate(['/teenagers/social-media/s138065'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/social-media/s138063'])
+    this.router.navigate(['/teenagers/social-media/s138063'])
   }
 
   ngOnDestroy() 

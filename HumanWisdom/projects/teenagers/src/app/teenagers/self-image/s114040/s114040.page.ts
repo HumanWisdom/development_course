@@ -14,7 +14,7 @@ export class S114040Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w9"
   hint = " It could be that someone ignores you and you assume they don’t like you,but they could just be thinking about something else"
-  toc = "/self-image/s114001"
+  toc = "teenagers/self-image/s114001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S114040Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-image/s114041'])
+        this.router.navigate(['/teenagers/self-image/s114041'])
 
       },
       () => {
-        this.router.navigate(['/self-image/s114041'])
+        this.router.navigate(['/teenagers/self-image/s114041'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-image/s114039'])
+    this.router.navigate(['/teenagers/self-image/s114039'])
   }
 
   ngOnDestroy() 

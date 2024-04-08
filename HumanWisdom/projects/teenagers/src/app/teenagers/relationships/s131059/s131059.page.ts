@@ -20,7 +20,7 @@ export class S131059Page implements OnInit {
   link="/relationships/s131060"
   name="#3  How does our thinking impact relationships?"
   progressImg=""
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 
