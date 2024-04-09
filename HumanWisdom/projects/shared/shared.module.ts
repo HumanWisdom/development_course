@@ -98,6 +98,7 @@ import { SignupPage } from './component/signup/signup.page';
 import { ForgetPasswordPage } from './component/forget-password/forget-password.page';
 import { ChangePasswordPage } from './component/change-password/change-password.page';
 import { SetPasswordPage } from './component/set-password/set-password.page';
+import { CommonService } from './services/common.service';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -306,6 +307,8 @@ import { SetPasswordPage } from './component/set-password/set-password.page';
     ChangePasswordPage,
     SetPasswordPage
   ],
-  providers:[]
+  providers:[
+    CommonService
+  ]
 })
 export class SharedModule { }
