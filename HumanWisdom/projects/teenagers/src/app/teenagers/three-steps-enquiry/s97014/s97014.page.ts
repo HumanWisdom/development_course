@@ -31,7 +31,7 @@ export class S97014Page implements OnInit,OnDestroy {
   totalTime:any  
  
   
-  toc="three-steps-enquiry/s97001"
+  toc="teenagers/three-steps-enquiry/s97001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -100,7 +100,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/three-steps-enquiry/s97015'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97015'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -121,7 +121,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s97013'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97013'])
 
 
   }

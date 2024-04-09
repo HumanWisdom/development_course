@@ -16,7 +16,7 @@ export class S97005Page implements OnInit {
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  toc="three-steps-enquiry/s97001"
+  toc="teenagers/three-steps-enquiry/s97001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -156,7 +156,7 @@ export class S97005Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-this.router.navigate(['/three-steps-enquiry/s97006'])
+this.router.navigate(['/teenagers/three-steps-enquiry/s97006'])
 if (this.userId !== 563){
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -172,7 +172,7 @@ if (this.userId !== 563){
 
 }
 prev(){
-  this.router.navigate(['/three-steps-enquiry/s97004'])
+  this.router.navigate(['/teenagers/three-steps-enquiry/s97004'])
 
 
 }

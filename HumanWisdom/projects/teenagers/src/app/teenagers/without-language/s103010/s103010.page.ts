@@ -15,7 +15,7 @@ export class S103010Page implements OnInit {
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w5"
   hint = ""
-  toc = "without-language/s103001"
+  toc = "teenagers/without-language/s103001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -114,17 +114,20 @@ export class S103010Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/without-language/s103011'])
+        
+this.router.navigate(['/teenagers/without-language/s103011'])
 
       },
       () => {
-        this.router.navigate(['/without-language/s103011'])
+        
+this.router.navigate(['/teenagers/without-language/s103011'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/without-language/s103009'])
+    
+this.router.navigate(['/teenagers/without-language/s103009'])
   }
 
   ngOnDestroy() 

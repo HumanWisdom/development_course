@@ -14,7 +14,7 @@ export class S97002Page implements OnInit {
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_flat"
-  toc = "three-steps-enquiry/s97001"
+  toc = "teenagers/three-steps-enquiry/s97001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -100,7 +100,7 @@ export class S97002Page implements OnInit {
   }
 
   goNext() {
-    this.router.navigate(['/three-steps-enquiry/s97003'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
