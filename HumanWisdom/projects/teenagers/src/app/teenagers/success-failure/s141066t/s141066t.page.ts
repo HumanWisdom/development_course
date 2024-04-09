@@ -19,7 +19,7 @@ export class S141066tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/success-failure/s141066"
-  toc="/success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -63,7 +63,7 @@ export class S141066tPage implements OnInit {
   }
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141067'])
+    this.router.navigate(['/teenagers/success-failure/s141067'])
     if (this.userId === 563) return;
 
     
@@ -84,7 +84,7 @@ export class S141066tPage implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141065'])
+    this.router.navigate(['/teenagers/success-failure/s141065'])
   }
 
 

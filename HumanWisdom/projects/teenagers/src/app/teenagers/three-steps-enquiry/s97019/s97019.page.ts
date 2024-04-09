@@ -10,7 +10,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S97019Page implements OnInit {
   programType:ProgramType=ProgramType.Teenagers;
-  toc="three-steps-enquiry/s97001"
+  toc="teenagers/three-steps-enquiry/s97001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/38.png"
   
   bg=""

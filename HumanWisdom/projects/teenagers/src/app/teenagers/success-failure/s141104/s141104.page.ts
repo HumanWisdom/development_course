@@ -14,7 +14,7 @@ export class S141104Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w8"
   hint = "This could be when you wanted something someone had and felt jealous, or were better than someone, and felt really good"
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S141104Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/success-failure/s141105'])
+        this.router.navigate(['/teenagers/success-failure/s141105'])
 
       },
       () => {
-        this.router.navigate(['/success-failure/s141105'])
+        this.router.navigate(['/teenagers/success-failure/s141105'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/success-failure/s141103'])
+    this.router.navigate(['/teenagers/success-failure/s141103'])
   }
 
   ngOnDestroy() 

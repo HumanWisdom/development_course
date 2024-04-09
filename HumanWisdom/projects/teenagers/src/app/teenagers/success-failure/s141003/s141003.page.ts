@@ -28,7 +28,7 @@ export class S141003Page implements OnInit,OnDestroy {
       ]
 
   transcriptPage="success-failure/s141003t"
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -102,7 +102,7 @@ export class S141003Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141004'])
+    this.router.navigate(['/teenagers/success-failure/s141004'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -125,7 +125,7 @@ export class S141003Page implements OnInit,OnDestroy {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141002'])
+    this.router.navigate(['/teenagers/success-failure/s141002'])
  
  
   }

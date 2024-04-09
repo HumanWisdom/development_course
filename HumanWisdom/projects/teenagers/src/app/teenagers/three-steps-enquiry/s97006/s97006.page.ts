@@ -20,7 +20,7 @@ export class S97006Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/modules/three-steps-enquiry/audios/1.2.mp3'
 
   transcriptPage="three-steps-enquiry/s97006t"
-  toc="three-steps-enquiry/s97001"
+  toc="teenagers/three-steps-enquiry/s97001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S97006Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/three-steps-enquiry/s97007'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97007'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S97006Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s97005'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97005'])
  
  
   }

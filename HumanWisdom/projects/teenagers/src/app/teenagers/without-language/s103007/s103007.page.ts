@@ -15,7 +15,7 @@ export class S103007Page implements OnInit {
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w5"
   hint = "You can notice so much more when you do not call it a rose. You notice the play of light and shadow and can soak in the beauty of this flower."
-  toc = "without-language/s103001"
+  toc = "teenagers/without-language/s103001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -114,17 +114,20 @@ export class S103007Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/without-language/s103008'])
+        
+this.router.navigate(['/teenagers/without-language/s103008'])
 
       },
       () => {
-        this.router.navigate(['/without-language/s103008'])
+        
+this.router.navigate(['/teenagers/without-language/s103008'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/without-language/s103006'])
+    
+this.router.navigate(['/teenagers/without-language/s103006'])
   }
 
   ngOnDestroy() 
