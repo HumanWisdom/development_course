@@ -13,7 +13,7 @@ export class S115025Page implements OnInit
   bg_tn = "bg_purple_red"
   bg_cft = "bg_purple_red"
   bg = "purple_red_w5"
-  toc = "self-interest/s115001"
+  toc = "teenagers/self-interest/s115001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -258,12 +258,12 @@ export class S115025Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/self-interest/s115024'])
+    this.router.navigate(['/teenagers/self-interest/s115024'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/self-interest/s115026'])
+    this.router.navigate(['/teenagers/self-interest/s115026'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

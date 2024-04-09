@@ -23,7 +23,7 @@ export class S125004Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="stress/s125001"
+  toc="teenagers/stress/s125001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -85,7 +85,7 @@ export class S125004Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/stress/s125005'])
+    this.router.navigate(['/teenagers/stress/s125005'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,13 +100,13 @@ export class S125004Page implements OnInit,OnDestroy {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/stress/s234'])
+        //this.router.navigate(['/teenagers/stress/s234'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/stress/s125003'])
+    this.router.navigate(['/teenagers/stress/s125003'])
   }
 
   ngOnDestroy()
