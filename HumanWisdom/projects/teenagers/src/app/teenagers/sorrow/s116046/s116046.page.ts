@@ -14,7 +14,7 @@ export class S116046Page implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w3"
   hint = "  It may make you feel lonely, for example.  "
-  toc = "/sorrow/s116001"
+  toc = "teenagers/sorrow/s116001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S116046Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/sorrow/s116047'])
+        this.router.navigate(['/teenagers/sorrow/s116047'])
 
       },
       () => {
-        this.router.navigate(['/sorrow/s116047'])
+        this.router.navigate(['/teenagers/sorrow/s116047'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/sorrow/s116045'])
+    this.router.navigate(['/teenagers/sorrow/s116045'])
   }
 
   ngOnDestroy() 

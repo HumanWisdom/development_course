@@ -18,10 +18,10 @@ export class S115033Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/self-interest/s115034"
+  link="teenagers/self-interest/s115034"
   name="#2 Overcoming Self Interest"
   progressImg=""
-  toc="self-interest/s115001"
+  toc="teenagers/self-interest/s115001"
 
   constructor
   (
