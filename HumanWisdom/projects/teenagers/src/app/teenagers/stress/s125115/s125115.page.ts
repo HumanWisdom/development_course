@@ -15,7 +15,7 @@ export class S125115Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w12"
   hint = "Anger is neither good or bad - just something to be understood so it does not harm us and others."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125115Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125116'])
+        this.router.navigate(['/teenagers/stress/s125116'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125116'])
+        this.router.navigate(['/teenagers/stress/s125116'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125114'])
+    this.router.navigate(['/teenagers/stress/s125114'])
   }
 
   ngOnDestroy() 

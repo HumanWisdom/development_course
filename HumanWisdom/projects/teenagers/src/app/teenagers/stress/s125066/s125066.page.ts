@@ -15,7 +15,7 @@ export class S125066Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w1"
   hint = "I may feel a bit down, or have a headache, or feel upset, or not be sleeping well."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125066Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125067'])
+        this.router.navigate(['/teenagers/stress/s125067'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125067'])
+        this.router.navigate(['/teenagers/stress/s125067'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125065'])
+    this.router.navigate(['/teenagers/stress/s125065'])
   }
 
   ngOnDestroy() 
