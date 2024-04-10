@@ -24,7 +24,7 @@ export class S141102Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -91,7 +91,7 @@ createScreen(){
     this.totalTime = this.endTime - this.startTime
     
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141103'])
+    this.router.navigate(['/teenagers/success-failure/s141103'])
     if (this.userId === 563) return;
 
     
@@ -118,7 +118,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141101'])
+    this.router.navigate(['/teenagers/success-failure/s141101'])
 
   }
   

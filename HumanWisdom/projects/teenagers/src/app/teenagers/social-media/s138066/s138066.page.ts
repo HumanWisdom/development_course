@@ -15,7 +15,7 @@ export class S138066Page implements OnInit
   bg_cft=""
   bg=""
   hint = "It may make you feel bad if you don’t get enough likes on your phone."
-  toc = "/social-media/s138001"
+  toc = "teenagers/social-media/s138001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S138066Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/social-media/s138067'])
+        this.router.navigate(['/teenagers/social-media/s138067'])
 
       },
       () => {
-        this.router.navigate(['/social-media/s138067'])
+        this.router.navigate(['/teenagers/social-media/s138067'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/social-media/s138065'])
+    this.router.navigate(['/teenagers/social-media/s138065'])
   }
 
   ngOnDestroy() 

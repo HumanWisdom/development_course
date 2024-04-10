@@ -25,7 +25,7 @@ export class S138094Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "social-media/s138001"
+  toc = "teenagers/social-media/s138001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -107,7 +107,7 @@ export class S138094Page implements OnInit, OnDestroy {
   goNext() 
   {
     // this.router.navigate(['/adults/comparison/s2'])
-    this.router.navigate(['/social-media/s138095'])
+    this.router.navigate(['/teenagers/social-media/s138095'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

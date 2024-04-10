@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="backRoute()">
+      <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -121,7 +121,8 @@
                     <div class="dropdown dropdown_outer">
                       <label class="select_label m0px w100">
 
-                        <select name="Title" id="test" [(ngModel)]="form.CoachID" class="sp_fc btn_select">
+                        <select name="CoachSelct" id="test" [(ngModel)]="form.CoachID" class="sp_fc btn_select">
+                          <option [value]="activecoachId" selected>{{coachName}}</option>
                           <option *ngFor="let item of coachList" [value]="item['UserID']">{{item['CoachName']}}</option>
                         </select>
                       </label>

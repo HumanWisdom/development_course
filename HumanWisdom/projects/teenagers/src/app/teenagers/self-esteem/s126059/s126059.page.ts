@@ -15,7 +15,7 @@ export class S126059Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w12"
   hint = "If we are not important, it affects our self-esteem. Important people are no happier than others. The more important you are, the more envy you attract."
-  toc = "/self-esteem/s126001"
+  toc = "teenagers/self-esteem/s126001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S126059Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-esteem/s126060'])
+        this.router.navigate(['/teenagers/self-esteem/s126060'])
 
       },
       () => {
-        this.router.navigate(['/self-esteem/s126060'])
+        this.router.navigate(['/teenagers/self-esteem/s126060'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-esteem/s126058'])
+    this.router.navigate(['/teenagers/self-esteem/s126058'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S97012Page implements OnInit {
   bg = "pink_orange_w10"
   hint = "Step 2 – Accept, be curious, and explore the feeling you experience. Accept the feeling of anxiety without judgement."
 
-  toc = "three-steps-enquiry/s97001"
+  toc = "teenagers/three-steps-enquiry/s97001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S97012Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/three-steps-enquiry/s97013'])
+        this.router.navigate(['/teenagers/three-steps-enquiry/s97013'])
 
       },
       () => {
-        this.router.navigate(['/three-steps-enquiry/s97013'])
+        this.router.navigate(['/teenagers/three-steps-enquiry/s97013'])
       })
 
 
@@ -116,7 +116,7 @@ export class S97012Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/three-steps-enquiry/s97011'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97011'])
   }
 
   ngOnDestroy() {

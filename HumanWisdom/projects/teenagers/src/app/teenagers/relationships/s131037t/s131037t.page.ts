@@ -14,7 +14,7 @@ export class S131037tPage implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w6"
  
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   moduleId = localStorage.getItem("moduleId")
@@ -70,7 +70,7 @@ export class S131037tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/relationships/s131038'])
+    this.router.navigate(['/teenagers/relationships/s131038'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -84,7 +84,7 @@ export class S131037tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/relationships/s131036'])
+    this.router.navigate(['/teenagers/relationships/s131036'])
   }
 
 }

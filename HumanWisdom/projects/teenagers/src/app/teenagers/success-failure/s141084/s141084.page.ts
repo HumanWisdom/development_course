@@ -17,10 +17,10 @@ export class S141084Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="3/4"
-  link="/success-failure/s141085"
+  link="teenagers/success-failure/s141085"
   name="#2  Four ways comparison impacts our life"
   progressImg=""
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
 
   constructor
   (

@@ -6,6 +6,7 @@ import { AdultsService } from "../../adults.service";
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ProgramType } from '../../../../../../shared/models/program-model';
+import { CommonService } from '../../../../../../shared/services/common.service';
 
 @Component({
   selector: 'app-s51000',
@@ -46,9 +47,9 @@ export class S51000Page implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private service: AdultsService,
     private location: Location,
     private meta: Meta, private title: Title, private ngNavigatorShareService: NgNavigatorShareService,
+    public service:CommonService
   ) {
     this.service.setmoduleID(51);
     this.getaudiomeditation()

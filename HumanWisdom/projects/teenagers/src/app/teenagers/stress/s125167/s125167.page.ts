@@ -14,7 +14,7 @@ export class S125167Page implements OnInit
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w12"
-  toc = "stress/s125001"
+  toc = "teenagers/stress/s125001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -154,18 +154,18 @@ export class S125167Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/stress/s234'])
+        //this.router.navigate(['/teenagers/stress/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/stress/s125166'])
+    this.router.navigate(['/teenagers/stress/s125166'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/stress/s125168'])
+    this.router.navigate(['/teenagers/stress/s125168'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

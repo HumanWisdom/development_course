@@ -266,7 +266,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141042'])
+    this.router.navigate(['/teenagers/success-failure/s141042'])
     if (this.userId === 563) return;
 
     
@@ -296,7 +296,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141040'])
+    this.router.navigate(['/teenagers/success-failure/s141040'])
 
 
   }

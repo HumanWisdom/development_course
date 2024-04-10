@@ -15,7 +15,7 @@ export class S126028Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w7"
   hint = "What impact does our past have on our self-esteem?"
-  toc = "/self-esteem/s126001"
+  toc = "teenagers/self-esteem/s126001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S126028Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-esteem/s126029'])
+        this.router.navigate(['/teenagers/self-esteem/s126029'])
 
       },
       () => {
-        this.router.navigate(['/self-esteem/s126029'])
+        this.router.navigate(['/teenagers/self-esteem/s126029'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-esteem/s126027'])
+    this.router.navigate(['/teenagers/self-esteem/s126027'])
   }
 
   ngOnDestroy() 

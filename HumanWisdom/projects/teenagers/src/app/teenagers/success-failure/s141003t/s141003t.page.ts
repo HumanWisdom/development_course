@@ -20,7 +20,7 @@ export class S141003tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/success-failure/s141003"
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -75,7 +75,7 @@ export class S141003tPage implements OnInit {
   }
   previous(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141002'])
+    this.router.navigate(['/teenagers/success-failure/s141002'])
   }
 
 }

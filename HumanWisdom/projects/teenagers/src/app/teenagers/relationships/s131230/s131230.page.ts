@@ -21,7 +21,7 @@ export class S131230Page implements OnInit
   link="/relationships/s131231"
   name="#8  The art of successful relationships"
   progressImg=""
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
 
   constructor
   (

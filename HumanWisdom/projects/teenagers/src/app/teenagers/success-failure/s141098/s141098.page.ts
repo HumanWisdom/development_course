@@ -14,7 +14,7 @@ export class S141098Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w8"
   hint = " It may have made you more resilient, for example  "
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S141098Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/success-failure/s141099'])
+        this.router.navigate(['/teenagers/success-failure/s141099'])
 
       },
       () => {
-        this.router.navigate(['/success-failure/s141099'])
+        this.router.navigate(['/teenagers/success-failure/s141099'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/success-failure/s141097'])
+    this.router.navigate(['/teenagers/success-failure/s141097'])
   }
 
   ngOnDestroy() 

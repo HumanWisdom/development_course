@@ -221,21 +221,21 @@ export class S115058Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/self-interest/s115059'])
+          this.router.navigate(['/teenagers/self-interest/s115059'])
         },
         () => {
-          this.router.navigate(['/self-interest/s115059'])
+          this.router.navigate(['/teenagers/self-interest/s115059'])
         })
     }
     else 
     {
-      this.router.navigate(['/self-interest/s115059'])
+      this.router.navigate(['/teenagers/self-interest/s115059'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/self-interest/s115057'])
+    this.router.navigate(['/teenagers/self-interest/s115057'])
   }
 
   ngOnDestroy() 

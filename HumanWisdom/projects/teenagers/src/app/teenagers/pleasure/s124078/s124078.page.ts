@@ -261,21 +261,21 @@ export class S124078Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/pleasure/s124079'])
+          this.router.navigate(['/teenagers/pleasure/s124079'])
         },
         () => {
-          this.router.navigate(['/pleasure/s124079'])
+          this.router.navigate(['/teenagers/pleasure/s124079'])
         })
     }
     else 
     {
-      this.router.navigate(['/pleasure/s124079'])
+      this.router.navigate(['/teenagers/pleasure/s124079'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/pleasure/s124077'])
+    this.router.navigate(['/teenagers/pleasure/s124077'])
   }
 
   ngOnDestroy() 

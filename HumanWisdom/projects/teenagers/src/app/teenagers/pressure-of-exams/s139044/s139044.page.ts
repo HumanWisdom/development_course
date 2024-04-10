@@ -18,7 +18,7 @@ export class S139044Page implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/pressure-of-exams/audios/1.6.mp3'
   transcriptPage="pressure-of-exams/s139044t"
-  toc="pressure-of-exams/s139001"
+  toc="teenagers/pressure-of-exams/s139001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S139044Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/pressure-of-exams/s139045'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139045'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S139044Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/pressure-of-exams/s139043'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139043'])
   }
 
   ngOnDestroy()

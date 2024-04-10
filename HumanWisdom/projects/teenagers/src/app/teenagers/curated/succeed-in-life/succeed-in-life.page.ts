@@ -383,6 +383,217 @@ export class SucceedInLifePage implements OnInit {
         })
   }
 
+  routeRelationships(cont: any = 1) {
+    var comparisonR
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparisonR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("comparisonR", comparisonR)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/relationships/${comparisonR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/relationships/s131001`])
+        })
+  }
+
+  routeBullying(cont: any = 1) {
+    var comparisonR
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparisonR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("comparisonR", comparisonR)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/bullying/${comparisonR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/bullying/s76001`])
+        })
+  }
+
+  routeMakingBetterDecisions(cont: any = 1) {
+    var comparisonR
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparisonR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("comparisonR", comparisonR)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/making-better-decision/${comparisonR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/making-better-decision/s142001`])
+        })
+  }
+
+  routeCriticism(cont: any = 1) {
+    var comparisonR
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparisonR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("comparisonR", comparisonR)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/criticism/${comparisonR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/criticism/s136001`])
+        })
+  }
+
+  routeOpinionsAndBeliefs(cont: any = 1) {
+    var comparisonR
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparisonR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("comparisonR", comparisonR)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/opinions-beliefs/${comparisonR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/opinions-beliefs/s140001`])
+        })
+  }
+
+  routeDiversityandInclusion(cont: any = 1) {
+    var comparisonR
+    localStorage.setItem("moduleId", JSON.stringify(111))
+    this.service.clickModule(111, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        comparisonR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("comparisonR", comparisonR)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/relationships/${comparisonR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/relationships/s131001`])
+        })
+  }
+ 
+
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {

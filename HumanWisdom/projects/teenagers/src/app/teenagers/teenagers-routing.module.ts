@@ -11,10 +11,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
     },
-  {
-    path: 'change-topic',
-    loadChildren: () => import('../teenagers/change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
-  },
+    {
+        path: 'change-topic',
+        loadChildren: () => import('../teenagers/change-topic/change-topic.module').then(m => m.ChangeTopicPageModule)
+    },
     {
         path: 'start-here',
         loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
@@ -331,7 +331,7 @@ const routes: Routes = [
     },
     {
         path: 'intro-carousel',
-        loadChildren: () => import('./intro-carousel/intro-carousel.module').then( m => m.IntroCarouselPageModule)
+        loadChildren: () => import('./intro-carousel/intro-carousel.module').then(m => m.IntroCarouselPageModule)
     },
     {
         path: 'change-topic',
@@ -349,10 +349,19 @@ const routes: Routes = [
         path: 'blogs',
         loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
     },
-  
-    {  path: 'curated',
+
+    {
+        path: 'curated',
         loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
     },
+    {
+        path: 'onboarding',
+        loadChildren: () => import('../onboarding/onboarding.module').then(m => m.OnboardingModule)
+    },
+    {
+        path: 'audio-meditation',
+        loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
+   },
 ];
 
 

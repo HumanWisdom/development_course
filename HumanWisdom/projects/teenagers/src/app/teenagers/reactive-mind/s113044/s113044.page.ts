@@ -24,7 +24,7 @@ export class S113044Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -101,16 +101,16 @@ export class S113044Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/reactive-mind/s113043'])
+    this.router.navigate(['/teenagers/reactive-mind/s113043'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/reactive-mind/s2'])
+    // this.router.navigate(['/teenagers/reactive-mind/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/reactive-mind/s113045'])
+    this.router.navigate(['/teenagers/reactive-mind/s113045'])
   }
 
   ngOnDestroy() 

@@ -17,7 +17,7 @@ export class S102005tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/questions-are-key/s102005"
-  toc="questions-are-key/s102001"
+  toc="teenagers/questions-are-key/s102001"
   avDuration=localStorage.getItem("avDuration102005")
   totalTime=localStorage.getItem("totalTime102005")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
@@ -65,7 +65,7 @@ export class S102005tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/questions-are-key/s102006'])
+    this.router.navigate(['/teenagers/questions-are-key/s102006'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -79,7 +79,7 @@ export class S102005tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/questions-are-key/s102004'])
+    this.router.navigate(['/teenagers/questions-are-key/s102004'])
   }
 
 }

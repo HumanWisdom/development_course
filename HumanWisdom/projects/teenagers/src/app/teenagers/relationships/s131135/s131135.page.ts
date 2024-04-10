@@ -17,7 +17,7 @@ export class S131135Page implements OnInit,OnDestroy
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+5.1.mp3'
   transcriptPage="relationships/s131135t"
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -91,7 +91,7 @@ export class S131135Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s131136'])
+    this.router.navigate(['/teenagers/relationships/s131136'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S131135Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/relationships/s131134'])
+    this.router.navigate(['/teenagers/relationships/s131134'])
   }
 
   ngOnDestroy()

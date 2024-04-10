@@ -272,10 +272,10 @@ export class S116109Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/sorrow/s116110'])
+        this.router.navigate(['/teenagers/sorrow/s116110'])
       },
       () => {
-        this.router.navigate(['/sorrow/s116110'])
+        this.router.navigate(['/teenagers/sorrow/s116110'])
       })
 
 
@@ -286,7 +286,7 @@ export class S116109Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/sorrow/s116108'])
+    this.router.navigate(['/teenagers/sorrow/s116108'])
 
   }
   ngOnDestroy() {

@@ -15,7 +15,7 @@ export class S113041Page implements OnInit
   bg_cft = "bg_light_blue"
   bg = "light_blue_w11"
   hint = "You get angry in the same way with the same trigger each time - for example if a person calls you a ‘Fatso’ or a ‘A Nerd’"
-  toc = "/reactive-mind/s113001"
+  toc = "teenagers/reactive-mind/s113001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S113041Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s113042'])
+        this.router.navigate(['/teenagers/reactive-mind/s113042'])
 
       },
       () => {
-        this.router.navigate(['/reactive-mind/s113042'])
+        this.router.navigate(['/teenagers/reactive-mind/s113042'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/reactive-mind/s113040'])
+    this.router.navigate(['/teenagers/reactive-mind/s113040'])
   }
 
   ngOnDestroy() 

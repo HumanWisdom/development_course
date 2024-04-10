@@ -15,7 +15,7 @@ export class S125144Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w3"
   hint = "For example, I can change my own thoughts and actions, or go to the dentist for my toothache, but I cannot solve global warming, or the wars in the world, so I stop stressing about them - and do whatever little I can."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125144Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125145'])
+        this.router.navigate(['/teenagers/stress/s125145'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125145'])
+        this.router.navigate(['/teenagers/stress/s125145'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125143'])
+    this.router.navigate(['/teenagers/stress/s125143'])
   }
 
   ngOnDestroy() 

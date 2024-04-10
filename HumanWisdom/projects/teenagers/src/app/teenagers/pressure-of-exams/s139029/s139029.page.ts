@@ -13,7 +13,7 @@ export class S139029Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-  toc="pressure-of-exams/s139001"
+  toc="teenagers/pressure-of-exams/s139001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -334,7 +334,7 @@ export class S139029Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/pressure-of-exams/s139030'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139030'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -362,7 +362,7 @@ export class S139029Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/pressure-of-exams/s139028'])
+    this.router.navigate(['/teenagers/pressure-of-exams/s139028'])
 
 
   }
