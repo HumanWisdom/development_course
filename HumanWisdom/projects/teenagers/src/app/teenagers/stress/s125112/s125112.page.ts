@@ -15,7 +15,7 @@ export class S125112Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w9"
   hint = "For example, I may not like myself for who I am as a person. The root of that could be an ideal I have of who I should be, and that comes from my unconscious conditioning."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125112Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125113'])
+        this.router.navigate(['/teenagers/stress/s125113'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125113'])
+        this.router.navigate(['/teenagers/stress/s125113'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125111'])
+    this.router.navigate(['/teenagers/stress/s125111'])
   }
 
   ngOnDestroy() 

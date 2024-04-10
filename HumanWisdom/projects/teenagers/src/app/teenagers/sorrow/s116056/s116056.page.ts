@@ -14,7 +14,7 @@ export class S116056Page implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w12"
   hint = " This is a personal question, only you can answer. It could be any kind of loss - even the loss of a friendship or a pet."
-  toc = "/sorrow/s116001"
+  toc = "teenagers/sorrow/s116001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S116056Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/sorrow/s116057'])
+        this.router.navigate(['/teenagers/sorrow/s116057'])
 
       },
       () => {
-        this.router.navigate(['/sorrow/s116057'])
+        this.router.navigate(['/teenagers/sorrow/s116057'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/sorrow/s116055'])
+    this.router.navigate(['/teenagers/sorrow/s116055'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S103022Page implements OnInit {
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w8"
   hint = " If you can do this, and it takes some practise, your mind goes quiet, and the feeling dissolves into a sense of peace. The quietness you experience is beautiful."
-  toc = "without-language/s103001"
+  toc = "teenagers/without-language/s103001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -114,17 +114,20 @@ export class S103022Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/without-language/s103023'])
+        
+this.router.navigate(['/teenagers/without-language/s103023'])
 
       },
       () => {
-        this.router.navigate(['/without-language/s103023'])
+        
+this.router.navigate(['/teenagers/without-language/s103023'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/without-language/s103021'])
+    
+this.router.navigate(['/teenagers/without-language/s103021'])
   }
 
   ngOnDestroy() 

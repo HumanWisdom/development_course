@@ -21,7 +21,7 @@ export class S125085Page implements OnInit
   link="/stress/s125086"
   name="#4  Causes of stress"
   progressImg=""
-  toc="stress/s125001"
+  toc="teenagers/stress/s125001"
 
   constructor
   (

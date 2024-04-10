@@ -15,7 +15,7 @@ export class S126057Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w8"
   hint = "You may feel you are not attractive. Why do you think that? Where does that thought come from? Who decided the rules of what ‘attractive’ is?"
-  toc = "/self-esteem/s126001"
+  toc = "teenagers/self-esteem/s126001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S126057Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-esteem/s126058'])
+        this.router.navigate(['/teenagers/self-esteem/s126058'])
 
       },
       () => {
-        this.router.navigate(['/self-esteem/s126058'])
+        this.router.navigate(['/teenagers/self-esteem/s126058'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-esteem/s126056'])
+    this.router.navigate(['/teenagers/self-esteem/s126056'])
   }
 
   ngOnDestroy() 

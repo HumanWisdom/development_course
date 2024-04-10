@@ -14,7 +14,7 @@ export class S141049Page implements OnInit, OnDestroy {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w9"
   hint="What excites you? What do you love doing?"
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -103,7 +103,7 @@ export class S141049Page implements OnInit, OnDestroy {
     sessionStorage.setItem("r141049", JSON.stringify(e))
     this.r141049 = sessionStorage.getItem("r141049")
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141050'])
+    this.router.navigate(['/teenagers/success-failure/s141050'])
     if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
@@ -130,7 +130,7 @@ export class S141049Page implements OnInit, OnDestroy {
 
   previous(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141048'])
+    this.router.navigate(['/teenagers/success-failure/s141048'])
   }
 
   ngOnDestroy() 

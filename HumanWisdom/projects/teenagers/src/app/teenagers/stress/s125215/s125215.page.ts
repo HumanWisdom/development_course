@@ -15,7 +15,7 @@ export class S125215Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w7"
   hint = "If you can do something about it, just do it. If you can’t, and it's not in your zone of control, what is the point of stressing about it - for example, your parents splitting up"
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125215Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125216'])
+        this.router.navigate(['/teenagers/stress/s125216'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125200'])
+        this.router.navigate(['/teenagers/stress/s125200'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125214'])
+    this.router.navigate(['/teenagers/stress/s125214'])
   }
 
   ngOnDestroy() 

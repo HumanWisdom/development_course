@@ -15,7 +15,7 @@ export class S125205Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w9"
   hint = " It could be that you decide to ask a question, or stay silent and just listen."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125205Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125206'])
+        this.router.navigate(['/teenagers/stress/s125206'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125200'])
+        this.router.navigate(['/teenagers/stress/s125200'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125204'])
+    this.router.navigate(['/teenagers/stress/s125204'])
   }
 
   ngOnDestroy() 

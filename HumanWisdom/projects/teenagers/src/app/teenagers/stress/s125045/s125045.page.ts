@@ -15,7 +15,7 @@ export class S125045Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w6"
   hint = "It always feels like it's the event or the other person that is causing our stress doesn’t it? That’s okay - it's the way the mind works. Think a little longer and see what you feel."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125045Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125046'])
+        this.router.navigate(['/teenagers/stress/s125046'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125046'])
+        this.router.navigate(['/teenagers/stress/s125046'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125044'])
+    this.router.navigate(['/teenagers/stress/s125044'])
   }
 
   ngOnDestroy() 

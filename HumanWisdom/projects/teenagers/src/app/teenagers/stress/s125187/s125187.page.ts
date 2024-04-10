@@ -15,7 +15,7 @@ export class S125187Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w5"
   hint = "No one can do this for you, but a feeling that you have the gift of life flowing through you and appreciating that, and understanding how conditioning and comparison work, may help."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125187Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125188'])
+        this.router.navigate(['/teenagers/stress/s125188'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125188'])
+        this.router.navigate(['/teenagers/stress/s125188'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125186'])
+    this.router.navigate(['/teenagers/stress/s125186'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S116020Page implements OnInit
   bg_cft="bg_purple"
   bg="purple_w12"
   hint = "It could be that you withdraw and don’t want to talk to anyone"
-  toc="sorrow/s116001"
+  toc="teenagers/sorrow/s116001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S116020Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/sorrow/s116021'])
+        this.router.navigate(['/teenagers/sorrow/s116021'])
 
       },
       () => {
-        this.router.navigate(['/sorrow/s116021'])
+        this.router.navigate(['/teenagers/sorrow/s116021'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/sorrow/s116019'])
+    this.router.navigate(['/teenagers/sorrow/s116019'])
   }
 
   ngOnDestroy() 

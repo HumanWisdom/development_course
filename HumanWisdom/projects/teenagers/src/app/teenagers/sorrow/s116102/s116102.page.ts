@@ -13,7 +13,7 @@ export class S116102Page implements OnInit {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w9"
-  toc="sorrow/s116001"
+  toc="teenagers/sorrow/s116001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -236,7 +236,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/sorrow/s116103'])
+    this.router.navigate(['/teenagers/sorrow/s116103'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -256,13 +256,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/sorrow/s116102'])
+       // this.router.navigate(['/teenagers/sorrow/s116102'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/sorrow/s116101'])
+    this.router.navigate(['/teenagers/sorrow/s116101'])
 
 
   }
