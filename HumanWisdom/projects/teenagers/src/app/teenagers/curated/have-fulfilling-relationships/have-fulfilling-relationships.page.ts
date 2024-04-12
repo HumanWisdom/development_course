@@ -56,7 +56,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           id: 42,
           url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
+          title: 'Emotional Wellness in Relationships'
         },
         pc03:
         {
@@ -68,13 +68,13 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           id: 57,
           url: '/podcasts/57.mp3',
-          title: 'Managing expectations'
+          title: 'Understanding expectations for happier relationships'
         },
         pc05:
         {
           id: 56,
           url: '/podcasts/56.mp3',
-          title: 'Exploring kindness'
+          title: 'How can we be more kind'
         }
       }
 

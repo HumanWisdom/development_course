@@ -45,27 +45,15 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     this.mediaUrl = {
       pc01: 
       {
-        id: 46,
-        url: '/podcasts/46.mp3',
-        title: 'Understand your ego'
+        id: 11,
+        url: '/podcasts/11.mp3',
+        title: 'Avoiding and overcoming addiction'
       },
       pc02: 
       {
-        id: 47,
-        url: '/podcasts/47.mp3',
-        title: 'Overcome anxiety'
-      },
-      pc03: 
-      {
-        id: 24,
-        url: '/podcasts/24.mp3',
-        title: 'Living with peace'
-      },
-      pc04: 
-      {
-        id: 64,
-        url: '/podcasts/64.mp3',
-        title: 'Exploring our inner silence '
+        id: 17,
+        url: '/podcasts/17.mp3',
+        title: 'Navigating Sorrow and Loss'
       }
     }
   }
@@ -225,6 +213,198 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
            }
            else
              this.router.navigate([`/teenagers/breathing/s${breathingR}`])*/
+        })
+  }
+
+  routePleasure(cont: any = 1) {
+    var pleasureResume
+    localStorage.setItem("moduleId", JSON.stringify(20))
+    this.service.clickModule(20, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        pleasureResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("pleasureResume", pleasureResume)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/pleasure/${pleasureResume}`])
+          }
+          else
+            this.router.navigate([`/teenagers/pleasure/s124001`])
+        })
+  }
+
+  routeConditioning(cont: any = 1) {
+    var conditioning
+    localStorage.setItem("moduleId", JSON.stringify(105))
+    this.service.clickModule(105, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        conditioning = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you conditioning
+        sessionStorage.setItem("conditioning", conditioning)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/conditioning/${conditioning}`])
+          }
+          else
+            this.router.navigate([`/teenagers/conditioning/s105001`])
+        })
+  }
+  routeStress(cont: any = 1) {
+    var stressResume
+    localStorage.setItem("moduleId", JSON.stringify(125))
+    this.service.clickModule(125, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        stressResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("stressResume", stressResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/stress/${stressResume}`])
+          }
+          else
+            this.router.navigate([`/teenagers/stress/s125001`])
+          /* if(!this.goToPage)
+           {
+
+             this.router.navigate([`/teenagers/stress`])
+           }
+           else
+             this.router.navigate([`/teenagers/stress/s${stressResume}`])*/
+
+        })
+
+  }
+
+  routeFoodHealth(cont: any = 1) {
+    var stressResume
+    localStorage.setItem("moduleId", JSON.stringify(128))
+    this.service.clickModule(128, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        stressResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("stressResume", stressResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/food-health/${stressResume}`])
+          }
+          else
+            this.router.navigate([`/teenagers/food-health/s128001`])
+          /* if(!this.goToPage)
+           {
+
+             this.router.navigate([`/teenagers/stress`])
+           }
+           else
+             this.router.navigate([`/teenagers/stress/s${stressResume}`])*/
+
+        })
+
+  }
+
+  routeInnerBoredom(cont: any = 1) {
+    var ibR
+    localStorage.setItem("moduleId", JSON.stringify(121))
+    this.service.clickModule(121, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        ibR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("ibR", ibR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/inner-boredom/${ibR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/inner-boredom/s121001`])
+
+          /*if(!sinR)
+          {
+
+            this.router.navigate([`/teenagers/self-interest`])
+          }
+          else
+            this.router.navigate([`/teenagers/self-interest/s${sinR}`])*/
         })
   }
 

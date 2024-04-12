@@ -43,23 +43,29 @@ export class BeHappierPage implements OnInit {
       this.mediaUrl = {
         pc01:
         {
-          id: 44,
-          url: '/podcasts/44.mp3',
-          title: 'Coping with an illness'
+          id: 7,
+          url: '/podcasts/7.mp3',
+          title: 'The positive mindset'
         },
         pc02:
         {
-          id: 40,
-          url: '/podcasts/40.mp3',
-          title: 'Overcoming Depression'
+          id: 27,
+          url: '/podcasts/27.mp3',
+          title: 'Living with compassion'
         },
         pc03:
         {
-          id: 45,
-          url: '/podcasts/45.mp3',
-          title: 'The resilient mindset'
-        }
-
+          id: 14,
+          url: '/podcasts/14.mp3',
+          title: 'Conversation with an 8 year old'
+        },
+        pc04:
+        {
+          id: 54,
+          url: '/podcasts/54.mp3',
+          title: 'How can we be happier'
+        },
+       
       }
 
       let userid = localStorage.getItem('isloggedin');
