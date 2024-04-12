@@ -18,16 +18,16 @@ export class FeelCalmPage implements OnInit {
   userId = 100
   qrList: any
   goToPage: any
-  sorrowandlossP: any
-  dealingwithdeathP: any
-  enP: any
-  withoutLanguageP: any
+  natureP: any
   breathingP: any
-  enableAlert = false;
+  ntP: any
+  gamP: any
+  meditationP: any
+  withoutLanguageP: any
+  awarenessP: any
   guest = false;
   Subscriber = false;
   mediaUrl: any;
-  isSubscriber = false;
   enablepathwayViewMore = true;
   enablelifestoriesViewMore = true;
   enableGuidedQuesViewMore = true;
@@ -36,67 +36,54 @@ export class FeelCalmPage implements OnInit {
   enablefbnViewMore = true;
   enableblogViewMore = true;
 
-  constructor(private service: TeenagersService, private router: Router, private location: Location, private meta: Meta, private title: Title,private navigationService:NavigationService) {
+  constructor(private service: TeenagersService, private router: Router, private location: Location, private meta: Meta, private title: Title,
+    private navigationService:NavigationService) 
+  { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01: 
-        {
-          id: 44,
-          url: '/podcasts/44.mp3',
-          title: 'Coping with an illness'
-        },
-        pc02: 
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
-        },
-        pc03: 
-        {
-          id: 28,
-          url: '/podcasts/28.mp3',
-          title: 'Healing Emotional Pain'
-        },
-        pc04: 
-        {
-          id: 10,
-          url: '/podcasts/10.mp3',
-          title: 'Overcoming grief'
-        }
+    this.mediaUrl = {
+      pc01: 
+      {
+        id: 46,
+        url: '/podcasts/46.mp3',
+        title: 'Understand your ego'
+      },
+      pc02: 
+      {
+        id: 47,
+        url: '/podcasts/47.mp3',
+        title: 'Overcome anxiety'
+      },
+      pc03: 
+      {
+        id: 24,
+        url: '/podcasts/24.mp3',
+        title: 'Living with peace'
+      },
+      pc04: 
+      {
+        id: 64,
+        url: '/podcasts/64.mp3',
+        title: 'Exploring our inner silence '
       }
-
-      let userid = localStorage.getItem('isloggedin');
-      let sub: any = localStorage.getItem('Subscriber');
-      if (userid === 'T' && sub === '1') {
-        this.isSubscriber = true;
-      } else {
-        this.isSubscriber = false;
-      }
+    }
   }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/feel-calm');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/have-calm-mind');
+
+    this.title.setTitle('Mindfulness Practices for a Calm Mind')
+    this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })
+    this.meta.updateTag({ property: 'description', content: 'Learn effective mindfulness practices for calming the mind and reducing stress. Discover relaxation techniques and self-care tips for anxiety and mental clarity.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Mindfulness practices,Calming techniques,Mental clarity,Meditation for calmness,Stress-free living,Inner peace tips,Relaxation techniques' })
 
 
-    this.title.setTitle('Ways to Deal with Sorrow and Loss')
-    this.meta.updateTag({ property: 'title', content: 'Ways to Deal with Sorrow and Loss' })
-    this.meta.updateTag({ property: 'description', content: 'Explore effective ways to deal with sorrow and overcome the grief of losing a loved one. Find healing after loss with these helpful tips for self-care and coping with death.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Support for grief,Healing after loss,Comfort for bereavement,Coping with death,Overcoming sadness,Ways to deal with sorrow,Self-care during grieving,Loss and recovery' })
-
-
-
-    localStorage.setItem('curated', 'sorrow');
+    localStorage.setItem('curated', 'mind');
     let rem = localStorage.getItem('remember');
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
-  }
-
-  getimage(id) {
-    let Id = id <= 9 ? '0' + id : id;
-    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
   goBack() {
@@ -106,45 +93,42 @@ export class FeelCalmPage implements OnInit {
     }
     this.location.back();
   }
-  routeGuided() {
-  
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
-   
-  }
+
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
+
+  getimage(id) {
+    let Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
+  }
+
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
-  audiopage(audiofile, title, id) {
-    if (this.guest || !this.Subscriber) {
+  audiopage(audiofile, title, id, isfree=0) {
+    if ((isfree==0) && (this.guest || !this.Subscriber)) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
-  }
-
-  toRead(obj) {
-    let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -160,14 +144,14 @@ export class FeelCalmPage implements OnInit {
         })
   }
 
-  routeSorrowandLoss(cont: any = 1) {
-    var sorrowandlossResume
-    localStorage.setItem("moduleId", JSON.stringify(60))
-    this.service.clickModule(60, this.userId)
+  routeAddiction(cont: any = 1) {
+    var natureR
+    localStorage.setItem("moduleId", JSON.stringify(106))
+    this.service.clickModule(106, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
-        sorrowandlossResume = "s" + res.lastVisitedScreen
+        natureR = "s" + res.lastVisitedScreen
         this.goToPage = res.lastVisitedScreen
         // continue where you left
         if (res.lastVisitedScreen === '') {
@@ -177,7 +161,8 @@ export class FeelCalmPage implements OnInit {
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
-        sessionStorage.setItem("sorrowandlossResume", sorrowandlossResume)
+        sessionStorage.setItem("natureR", natureR)
+
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
         error => {
@@ -185,121 +170,18 @@ export class FeelCalmPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/sorrow/${sorrowandlossResume}`])
+            this.router.navigate([`/teenagers/nature/${natureR}`])
           }
           else
-            this.router.navigate([`/adults/sorrow/s60001`])
-        })
-  }
+            this.router.navigate([`/teenagers/nature/s106001`])
 
-  routeDealingWithDeath(cont: any = 1) {
-    var dealingwithdeathResume
-    localStorage.setItem("moduleId", JSON.stringify(64))
-    this.service.clickModule(64, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        dealingwithdeathResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("dealingwithdeathResume", dealingwithdeathResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/dealing-with-death/${dealingwithdeathResume}`])
-          }
-          else
-            this.router.navigate([`/adults/dealing-with-death/s64001`])
-        })
-  }
-
-  routeEmotionalNeeds(cont: any = 1) {
-    var enR
-    localStorage.setItem("moduleId", JSON.stringify(18))
-    this.service.clickModule(18, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        enR = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("enR", enR)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/emotional-needs/${enR}`])
-          }
-          else
-            this.router.navigate([`/adults/emotional-needs/s18001`])
-
-          /*if(!sinR)
-          {
-
-            this.router.navigate([`/adults/self-interest`])
-          }
-          else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
-        })
-  }
-
-  routeLookWithoutLanguage(cont: any = 1) {
-    var lwlResume
-    localStorage.setItem("moduleId", JSON.stringify(42))
-    this.service.clickModule(42, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        lwlResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("lwlResume", lwlResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/without-language/${lwlResume}`])
-          }
-          else
-            this.router.navigate([`/adults/without-language/s42000`])
-          /* if(!lwlResume)
+          /*if(!natureR)
            {
 
-             this.router.navigate([`/adults/without-language`])
+             this.router.navigate([`/teenagers/nature`])
            }
            else
-             this.router.navigate([`/adults/without-language/s${lwlResume}`])*/
+             this.router.navigate([`/teenagers/nature/s${natureR}`])*/
         })
   }
 
@@ -307,8 +189,8 @@ export class FeelCalmPage implements OnInit {
 
     var breathingR
 
-    localStorage.setItem("moduleId", JSON.stringify(29))
-    this.service.clickModule(29, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(107))
+    this.service.clickModule(107, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -330,21 +212,214 @@ export class FeelCalmPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/breathing/${breathingR}`])
+            this.router.navigate([`/teenagers/breathing/${breathingR}`])
           }
           else
-            this.router.navigate([`/adults/breathing/s29000`])
+            this.router.navigate([`/teenagers/breathing/s107001`])
 
           /* if(!breathingR)
            {
 
-             this.router.navigate([`/adults/breathing`])
+             this.router.navigate([`/teenagers/breathing`])
 
            }
            else
-             this.router.navigate([`/adults/breathing/s${breathingR}`])*/
+             this.router.navigate([`/teenagers/breathing/s${breathingR}`])*/
         })
   }
+
+  routeNoticingThoughts(cont: any = 1) {
+    var ntR
+
+    localStorage.setItem("moduleId", JSON.stringify(108))
+    this.service.clickModule(108, this.userId)
+      .subscribe(res => {
+        this.qrList = res
+        ntR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        /*if(res.lastVisitedScreen ==='')
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }*/
+        // /continue where you left
+        sessionStorage.setItem("ntR", ntR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/noticing-thoughts/${ntR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/noticing-thoughts/s108001`])
+          /*if(!ntR)
+          {
+
+            this.router.navigate([`/teenagers/noticing-thoughts`])
+          }
+          else
+            this.router.navigate([`/teenagers/noticing-thoughts/s${ntR}`])*/
+        })
+  }
+
+  routeGuidedMeditation(cont: any = 1) {
+    var gamR
+    localStorage.setItem("moduleId", JSON.stringify(110))
+    this.service.clickModule(110, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        gamR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("gamR", gamR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/guided-meditation/${gamR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/guided-meditation/s110001`])
+
+          /* if(!gamR)
+           {
+
+             this.router.navigate([`/teenagers/guided-meditation`])
+
+           }
+           else
+             this.router.navigate([`/teenagers/guided-meditation/s${gamR}`])*/
+        })
+  }
+
+  routeMeditation(cont: any = 1) {
+    var meditationResume
+    localStorage.setItem("moduleId", JSON.stringify(109))
+    this.service.clickModule(109, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        meditationResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("meditationResume", meditationResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/meditation/${meditationResume}`])
+          }
+          else
+            this.router.navigate([`/teenagers/meditation/s109001`])
+          /*if(!meditationResume)
+          {
+
+            this.router.navigate([`/teenagers/meditation`])
+          }
+          else
+            this.router.navigate([`/teenagers/meditation/s${meditationResume}`])*/
+        })
+  }
+
+  routeLookWithoutLanguage(cont: any = 1) {
+    var lwlResume
+    localStorage.setItem("moduleId", JSON.stringify(103))
+    this.service.clickModule(103, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        lwlResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("lwlResume", lwlResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/without-language/${lwlResume}`])
+          }
+          else
+            this.router.navigate([`/teenagers/without-language/s103001`])
+          /* if(!lwlResume)
+           {
+
+             this.router.navigate([`/teenagers/without-language`])
+           }
+           else
+             this.router.navigate([`/teenagers/without-language/s${lwlResume}`])*/
+        })
+  }
+
+  routeAwareness(cont: any = 1) 
+{
+      var awarenessResume
+      localStorage.setItem("moduleId", JSON.stringify(100))
+      this.service.clickModule(100, this.userId)
+            .subscribe(res => {
+            localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+            this.qrList = res
+            awarenessResume = "s" + res.lastVisitedScreen
+            this.goToPage = res.lastVisitedScreen
+            // continue where you left
+            if (res.lastVisitedScreen === '') {
+                  localStorage.setItem("lastvisited", 'F')
+            }
+            else {
+                  localStorage.setItem("lastvisited", 'T')
+            }
+            // /continue where you left
+            sessionStorage.setItem("awarenessResume", awarenessResume)
+            localStorage.setItem("qrList", JSON.stringify(this.qrList))
+       },
+      error => {
+            console.log(error)
+      },
+      () => {
+      if (cont == "1") {
+            this.router.navigate([`/teenagers/awareness/${awarenessResume}`])
+      }
+      else
+            this.router.navigate([`/teenagers/awareness/s100001`])
+      })
+}
 
   getProgress() {
     this.service.getPoints(this.userId)
@@ -365,30 +440,20 @@ export class FeelCalmPage implements OnInit {
         })
 
         //static progress
-        this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
-        this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing With Death")?.Percentage
-        this.enP = res.ModUserScrPc.find(e => e.Module == "Emotional Needs")?.Percentage
-        this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
+        this.natureP = res.ModUserScrPc.find(e => e.Module == "Nature")?.Percentage
         this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
+        this.ntP = res.ModUserScrPc.find(e => e.Module == "Noticing Thoughts")?.Percentage
+        this.gamP = res.ModUserScrPc.find(e => e.Module == "Guided Audio Meditation")?.Percentage
+        this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
+        this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
+        this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
       })
   }
 
-  getAlertcloseEvent(event) {
-    this.enableAlert = false;
-    if (event === 'ok') {
-      if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
-      } else if (this.guest) {
-        localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
-      }
-    }
-  }
-
-  enableRoute(route) {
-  
-      this.router.navigate([route]);
-   
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getclcickevent(event) {
@@ -398,10 +463,10 @@ export class FeelCalmPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    if (!this.isSubscriber && audioContent.id >= 4) {
+    if (!this.Subscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 
