@@ -91,7 +91,7 @@ export class ManageYourEmotionsPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Gain mastery over your emotions with our expert-guided coping strategies for anger management, stress management, and mood regulation. Learn how to practice emotional self-regulation and self-awareness techniques that promote mindfulness and positive psychology.' })
     this.meta.updateTag({ property: 'keywords', content: 'Emotional intelligence,Coping with emotions,Anger management,Emotional self-regulation,Self-awareness techniques,Mindfulness practices,Positive psychology,Mood regulation,Anger management,Self-control techniques,Stress management' })
 
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/manage-your-emotions');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/curated/manage-your-emotions');
 
     localStorage.setItem('curated', 'emotions');
     let rem = localStorage.getItem('remember');
@@ -141,13 +141,13 @@ export class ManageYourEmotionsPage implements OnInit {
     this.location.back();
   }
   routeGuided() {
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -155,7 +155,7 @@ export class ManageYourEmotionsPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
@@ -165,13 +165,13 @@ export class ManageYourEmotionsPage implements OnInit {
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
     }
   }
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+    url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         localStorage.setItem('activemoduleid', id);
@@ -212,17 +212,17 @@ export class ManageYourEmotionsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/anger/${angerResume}`])
+            this.router.navigate([`/teenagers/anger/${angerResume}`])
           }
           else
-            this.router.navigate([`/adults/anger/s162p0`])
+            this.router.navigate([`/teenagers/anger/s162p0`])
           /* if(!angerResume)
             {
 
-              this.router.navigate([`/adults/anger/s162p0`])
+              this.router.navigate([`/teenagers/anger/s162p0`])
             }
             else
-              this.router.navigate([`/adults/anger/s${angerResume}`])*/
+              this.router.navigate([`/teenagers/anger/s${angerResume}`])*/
         })
   }
 
@@ -251,17 +251,17 @@ export class ManageYourEmotionsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/reactive-mind/${rmR}`])
+            this.router.navigate([`/teenagers/reactive-mind/${rmR}`])
           }
           else
-            this.router.navigate([`/adults/reactive-mind/s54001`])
+            this.router.navigate([`/teenagers/reactive-mind/s54001`])
           /* if(!rmR)
            {
 
-             this.router.navigate([`/adults/reactive-mind`])
+             this.router.navigate([`/teenagers/reactive-mind`])
            }
            else
-             this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
+             this.router.navigate([`/teenagers/reactive-mind/s${rmR}`])*/
         })
   }
 
@@ -294,10 +294,10 @@ export class ManageYourEmotionsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/pleasure/${pleasureResume}`])
+            this.router.navigate([`/teenagers/pleasure/${pleasureResume}`])
           }
           else
-            this.router.navigate([`/adults/pleasure/s20001`])
+            this.router.navigate([`/teenagers/pleasure/s20001`])
         })
   }
 
@@ -326,10 +326,10 @@ export class ManageYourEmotionsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/habit-addiction/${addictionResume}`])
+            this.router.navigate([`/teenagers/habit-addiction/${addictionResume}`])
           }
           else
-            this.router.navigate([`/adults/habit-addiction/s45001`])
+            this.router.navigate([`/teenagers/habit-addiction/s45001`])
         })
   }
 
@@ -361,10 +361,10 @@ export class ManageYourEmotionsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/comparison/${comparisonR}`])
+            this.router.navigate([`/teenagers/comparison/${comparisonR}`])
           }
           else
-            this.router.navigate([`/adults/comparison/s0`])
+            this.router.navigate([`/teenagers/comparison/s0`])
         })
   }
 
@@ -393,17 +393,17 @@ export class ManageYourEmotionsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/adults/loneliness/${lonelinessResume}`])
+            this.router.navigate([`/teenagers/loneliness/${lonelinessResume}`])
           }
           else
-            this.router.navigate([`/adults/loneliness/s61001`])
+            this.router.navigate([`/teenagers/loneliness/s61001`])
           /* if(!lonelinessResume)
             {
 
-              this.router.navigate([`/adults/loneliness/s162p0`])
+              this.router.navigate([`/teenagers/loneliness/s162p0`])
             }
             else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+              this.router.navigate([`/teenagers/loneliness/s${lonelinessResume}`])*/
         })
   }
 
@@ -463,7 +463,7 @@ export class ManageYourEmotionsPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 
