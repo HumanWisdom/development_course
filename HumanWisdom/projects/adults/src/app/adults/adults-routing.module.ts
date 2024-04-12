@@ -414,7 +414,7 @@ const routes: Routes = [
   },
   {
     path: 'audio-meditation',
-    loadChildren: () => import('./audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
+    loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
   },
   {
     path: 'bullying',
