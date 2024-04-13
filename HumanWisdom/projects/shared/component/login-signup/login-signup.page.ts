@@ -28,7 +28,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild("enabletab") enabletab: ElementRef;
   @ViewChild("enableotpmodal") enableotpmodal: ElementRef;
   @ViewChild("closeotpmodal") closeotpmodal: ElementRef;
-
+  isAdults:boolean =true;
   user: any;
   userId: any;
   idToken: any;
@@ -139,7 +139,7 @@ export class LoginSignupPage implements OnInit {
     // if (!this.router.url.includes('/log-in')) {
     //   window.history.pushState('', '', '/log-in');
     // }
-
+    this.isAdults = SharedService.ProgramId === 9;
   }
   forbiddenNameValidator(
     control: AbstractControl
@@ -977,7 +977,12 @@ export class LoginSignupPage implements OnInit {
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
-    this.router.navigate(['/adults/adult-dashboard'])
+    if(this.isAdults){
+      this.router.navigate(['/adults/adult-dashboard'])
+    }else{
+      this.router.navigate(['/teenagers/teenager-dashboard'])
+    }
+   
   }
 
   navigate(url) {
@@ -988,6 +993,16 @@ export class LoginSignupPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
+  
+  routeForgotPassword(){
+    if(this.isAdults){
+      this.router.navigate(['/onboarding/forgotpassword'])
+    }else{
+      this.router.navigate(['/teenagers/onboarding/forgotpassword'])
+    }
+  }
+
+
 
   getLoginTab() {
     this.isSignUp = false;
