@@ -18,10 +18,10 @@ export class S138089Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="3/5"
-  link="/social-media/s138090"
+  link="teenagers/social-media/s138090"
   name="A short film"
   progressImg=""
-  toc="social-media/s138001"
+  toc="teenagers/social-media/s138001"
 
   constructor
   (

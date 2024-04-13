@@ -10,7 +10,7 @@ export class S134208Page implements OnInit {
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_flat"
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor() { }
 

@@ -13,7 +13,7 @@ export class S141038Page implements OnInit {
   bg_tn="bg_light_blue"
   bg_cft="bg_light_blue"
   bg="light_blue_w3"
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -199,7 +199,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141039'])
+    this.router.navigate(['/teenagers/success-failure/s141039'])
     if (this.userId === 563) return;
 
     
@@ -229,7 +229,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141037'])
+    this.router.navigate(['/teenagers/success-failure/s141037'])
 
 
   }

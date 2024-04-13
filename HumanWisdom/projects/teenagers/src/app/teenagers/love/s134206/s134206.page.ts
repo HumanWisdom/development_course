@@ -15,9 +15,13 @@ export class S134206Page implements OnInit {
   bg = "blue_pink_w9"
 
   toc = "teenagers/love/s134001"
+<<<<<<< HEAD
     path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+=======
+  path = this.router.url
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   hint=""
 
   userId: any
@@ -116,17 +120,29 @@ export class S134206Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
+<<<<<<< HEAD
         this.router.navigate(['teenagers/love/s134207'])
 
       },
       () => {
         this.router.navigate(['teenagers/love/s134207'])
+=======
+        this.router.navigate(['/teenagers/love/s134207'])
+
+      },
+      () => {
+        this.router.navigate(['/teenagers/love/s134207'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
       })
   }
 
   previous() 
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134205'])
+=======
+    this.router.navigate(['/teenagers/love/s134205'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

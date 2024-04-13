@@ -18,10 +18,10 @@ export class S138047Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/5"
-  link="/social-media/s138048"
+  link="teenagers/social-media/s138048"
   name="Hidden thinking patterns that influence our use of social media"
   progressImg=""
-  toc="social-media/s138001"
+  toc="teenagers/social-media/s138001"
 
   constructor
   (

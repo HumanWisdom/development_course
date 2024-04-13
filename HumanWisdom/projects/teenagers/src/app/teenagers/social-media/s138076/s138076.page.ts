@@ -35,7 +35,7 @@ export class S138076Page implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/social-media/s138001" 
+  toc="teenagers/social-media/s138001" 
   
   constructor(
 
@@ -154,7 +154,7 @@ export class S138076Page implements OnInit {
 
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s138077'])
+    this.router.navigate(['/teenagers/social-media/s138077'])
     if (this.userId === 563) return;
 
     
@@ -177,7 +177,7 @@ export class S138076Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s138075'])
+    this.router.navigate(['/teenagers/social-media/s138075'])
 
 
   }

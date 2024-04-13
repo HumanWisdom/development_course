@@ -26,7 +26,10 @@ export class S115003Page implements OnInit,OnDestroy
         "Living with wisdom"
       ]
   transcriptPage="self-interest/s115003t"
-  toc="self-interest/s115001"
+  toc="teenagers/self-interest/s115001"
+
+
+
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -102,7 +105,7 @@ export class S115003Page implements OnInit,OnDestroy
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/self-interest/s115004'])
+    this.router.navigate(['/teenagers/self-interest/s115004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -121,7 +124,7 @@ export class S115003Page implements OnInit,OnDestroy
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/self-interest/s115002'])
+    this.router.navigate(['/teenagers/self-interest/s115002'])
   }
 
   ngOnDestroy()

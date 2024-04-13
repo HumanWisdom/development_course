@@ -44,10 +44,17 @@ export class S134180Page implements OnInit {
   }
 
   submitProgress() {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134181'])
   }
   prev() {
     this.router.navigate(['teenagers/love/s134179'])
+=======
+    this.router.navigate(['/teenagers/love/s134181'])
+  }
+  prev() {
+    this.router.navigate(['/teenagers/love/s134179'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
 
   }
 

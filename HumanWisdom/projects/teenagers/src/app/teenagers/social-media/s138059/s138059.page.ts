@@ -15,7 +15,7 @@ export class S138059Page implements OnInit
   bg_cft=""
   bg=""
   hint = "it makes you browse your phone endlessly"
-  toc = "/social-media/s138001"
+  toc = "teenagers/social-media/s138001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S138059Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/social-media/s138060'])
+        this.router.navigate(['/teenagers/social-media/s138060'])
 
       },
       () => {
-        this.router.navigate(['/social-media/s138060'])
+        this.router.navigate(['/teenagers/social-media/s138060'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/social-media/s138058'])
+    this.router.navigate(['/teenagers/social-media/s138058'])
   }
 
   ngOnDestroy() 

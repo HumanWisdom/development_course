@@ -21,7 +21,7 @@ export class S134154Page implements OnInit
   link="teenagers/love/s134155"
   name="#5  How Can We Learn to Love Ourselves?"
   progressImg=""
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor
   (

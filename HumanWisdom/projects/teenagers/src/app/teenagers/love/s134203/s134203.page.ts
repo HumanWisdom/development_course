@@ -147,7 +147,11 @@ export class S134203Page implements OnInit {
  
 
   submitProgress(){
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134204'])
+=======
+    this.router.navigate(['/teenagers/love/s134204'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     if (this.userId === 563) return;
     
     //if(this.sendOption!=null)
@@ -169,7 +173,11 @@ export class S134203Page implements OnInit {
 
   }
   prev(){
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134202'])
+=======
+    this.router.navigate(['/teenagers/love/s134202'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
 
 
   }

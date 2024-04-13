@@ -84,7 +84,11 @@ export class S134190Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134191'])
+=======
+    this.router.navigate(['/teenagers/love/s134191'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -103,7 +107,11 @@ export class S134190Page implements OnInit,OnDestroy {
 
   }
   prev(){
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s13189'])
+=======
+    this.router.navigate(['/teenagers/love/s13189'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     
   }
 

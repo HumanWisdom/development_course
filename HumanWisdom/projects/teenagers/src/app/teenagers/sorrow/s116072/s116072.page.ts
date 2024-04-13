@@ -20,7 +20,7 @@ export class S116072Page implements OnInit,OnDestroy {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/sorrow/audios/1.1.mp3'
   transcriptPage="sorrow/s116072t"
-  toc="sorrow/s116001"
+  toc="teenagers/sorrow/s116001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -92,7 +92,7 @@ export class S116072Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/sorrow/s116073'])
+    this.router.navigate(['/teenagers/sorrow/s116073'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,7 +113,7 @@ export class S116072Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/sorrow/s116071'])
+    this.router.navigate(['/teenagers/sorrow/s116071'])
  
  
   }

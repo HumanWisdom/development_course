@@ -52,11 +52,19 @@ export class S125084Page implements OnInit
 
   submitProgress()
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/stress/s125085'])
+=======
+    this.router.navigate(['/teenagers/stress/s125085'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   prev()
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/stress/s125083'])
+=======
+    this.router.navigate(['/teenagers/stress/s125083'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 }

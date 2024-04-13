@@ -13,7 +13,7 @@ export class S138009Page implements OnInit
   bg_tn=""
   bg_cft=""
   bg=""
-  toc = "social-media/s138001"
+  toc = "teenagers/social-media/s138001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -156,7 +156,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s138010'])
+    this.router.navigate(['/teenagers/social-media/s138010'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -184,7 +184,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s138008'])
+    this.router.navigate(['/teenagers/social-media/s138008'])
 
 
   }

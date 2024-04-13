@@ -30,7 +30,11 @@ export class S125047Page implements OnInit,AfterViewInit
   @ViewChild('playerContainer',{static:false})
   public playerContainer:ElementRef
   toc="teenagers/stress/s125001"
+<<<<<<< HEAD
   transcriptPage="teenagers/stress/s125047t"
+=======
+  transcriptPage="/stress/s125047t"
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -94,7 +98,11 @@ export class S125047Page implements OnInit,AfterViewInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+<<<<<<< HEAD
     this.router.navigate(['teenagers/stress/s125048'])
+=======
+    this.router.navigate(['/teenagers/stress/s125048'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +116,11 @@ export class S125047Page implements OnInit,AfterViewInit
 
   previous()
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/stress/s125046'])
+=======
+    this.router.navigate(['/teenagers/stress/s125046'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngAfterViewInit()

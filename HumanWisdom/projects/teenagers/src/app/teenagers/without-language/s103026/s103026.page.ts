@@ -12,7 +12,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S103026Page implements OnInit {
 
-  toc="without-language/s103001"
+  toc="teenagers/without-language/s103001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/43.png"
   
   bg=""

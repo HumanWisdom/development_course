@@ -81,7 +81,7 @@ export class S125040Page implements OnInit,OnDestroy
 
   submitProgress()
   {
-    this.router.navigate(['teenagers/stress/s125041'])
+    this.router.navigate(['/teenagers/stress/s125041'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -90,12 +90,12 @@ export class S125040Page implements OnInit,OnDestroy
       "screenType":this.screenType,
       "timeSpent":this.totalTime
     }).subscribe(res=>{})
-    // this.router.navigate(['teenagers/stress/s125041'])
+    // this.router.navigate(['/teenagers/stress/s125041'])
   }
 
   previous()
   {
-    this.router.navigate(['teenagers/stress/s125039'])
+    this.router.navigate(['/teenagers/stress/s125039'])
   }
 
   ngOnDestroy()

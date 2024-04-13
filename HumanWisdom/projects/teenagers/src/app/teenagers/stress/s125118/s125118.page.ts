@@ -114,17 +114,29 @@ export class S125118Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
+<<<<<<< HEAD
         this.router.navigate(['teenagers/stress/s125119'])
 
       },
       () => {
         this.router.navigate(['teenagers/stress/s125118'])
+=======
+        this.router.navigate(['/teenagers/stress/s125119'])
+
+      },
+      () => {
+        this.router.navigate(['/teenagers/stress/s125118'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
       })
   }
 
   previous() 
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/stress/s125117'])
+=======
+    this.router.navigate(['/teenagers/stress/s125117'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

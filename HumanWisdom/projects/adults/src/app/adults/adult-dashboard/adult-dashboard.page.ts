@@ -582,6 +582,11 @@ export class AdultDashboardPage implements OnInit {
     SharedService.enablebanner = false
   }
 
+
+  closeTour(){
+    localStorage.setItem('firstTimeTour', 'T');
+  }
+
   continueTour() {
     this.closetourmodal.nativeElement.click();
     const driver = window['driver'].js.driver;
@@ -686,6 +691,7 @@ export class AdultDashboardPage implements OnInit {
         this.services.setEnableTour(true);
       },
       onCloseClick:() => {
+        localStorage.setItem('firstTimeTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');
         document.body.classList.add('overflow_auto');

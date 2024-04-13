@@ -172,7 +172,11 @@ this.router.navigate(['teenagers/love/s134121'])
 
 }
 prev(){
+<<<<<<< HEAD
   this.router.navigate(['teenagers/love/s134119'])
+=======
+  this.router.navigate(['/teenagers/love/s134119'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
 
 
 }

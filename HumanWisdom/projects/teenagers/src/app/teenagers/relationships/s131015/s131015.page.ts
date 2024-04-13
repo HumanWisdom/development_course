@@ -17,7 +17,7 @@ export class S131015Page implements OnInit {
   audioLink=this.mediaAudio+'/relationships/audios/relationships+1.3.mp3'
   title="Relationships can help us learn about ourselves"
 
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
   transcriptPage="relationships/s131015t"
 
   userId:any
@@ -91,7 +91,7 @@ export class S131015Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s131016'])
+    this.router.navigate(['/teenagers/relationships/s131016'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,7 +112,7 @@ export class S131015Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/relationships/s131014'])
+    this.router.navigate(['/teenagers/relationships/s131014'])
  
  
   }

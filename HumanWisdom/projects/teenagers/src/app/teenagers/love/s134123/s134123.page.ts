@@ -16,9 +16,13 @@ export class S134123Page implements OnInit
   bg = "blue_pink_w5"
   hint = "It could be because you reap what you sow, and because loving others enriches your spirit."
   toc = "teenagers/love/s134001"
+<<<<<<< HEAD
     path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+=======
+  path = this.router.url
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -114,17 +118,29 @@ export class S134123Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
+<<<<<<< HEAD
         this.router.navigate(['teenagers/love/s134124'])
 
       },
       () => {
         this.router.navigate(['teenagers/love/s134124'])
+=======
+        this.router.navigate(['/teenagers/love/s134124'])
+
+      },
+      () => {
+        this.router.navigate(['/teenagers/love/s134124'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
       })
   }
 
   previous() 
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134122'])
+=======
+    this.router.navigate(['/teenagers/love/s134122'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

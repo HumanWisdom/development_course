@@ -15,7 +15,7 @@ export class S118010Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/anger/audios/anger+1.3.mp3'
   title="Understanding religious rage"
-  toc="/anger/s118001"
+  toc="teenagers/anger/s118001"
   transcriptPage="anger/s118010t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

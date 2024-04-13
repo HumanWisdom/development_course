@@ -17,7 +17,7 @@ export class S134068Page implements OnInit {
   audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+2.2.mp3'
   title="We are looking for love  "
 
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
   transcriptPage="love/s134068t"
 
   userId:any
@@ -81,7 +81,11 @@ export class S134068Page implements OnInit {
 
   submitProgress()
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134069'])
+=======
+    this.router.navigate(['/teenagers/love/s134069'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -95,7 +99,11 @@ export class S134068Page implements OnInit {
 
   prev()
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134067'])
+=======
+    this.router.navigate(['/teenagers/love/s134067'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
 }

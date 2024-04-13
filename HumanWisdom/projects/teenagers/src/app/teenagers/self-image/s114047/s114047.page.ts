@@ -51,11 +51,11 @@ export class S114047Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/self-image/s114048'])
+    this.router.navigate(['/teenagers/self-image/s114048'])
   }
 
   prev()
   {
-    this.router.navigate(['/self-image/s114041'])
+    this.router.navigate(['/teenagers/self-image/s114041'])
   }
 }

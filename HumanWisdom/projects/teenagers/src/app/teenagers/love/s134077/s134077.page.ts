@@ -16,9 +16,13 @@ export class S134077Page implements OnInit {
   hint=""
 
   toc = "teenagers/love/s134001"
+<<<<<<< HEAD
     path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+=======
+  path = this.router.url
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -116,17 +120,29 @@ export class S134077Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
+<<<<<<< HEAD
         this.router.navigate(['teenagers/love/s134078'])
 
       },
       () => {
         this.router.navigate(['teenagers/love/s134078'])
+=======
+        this.router.navigate(['/teenagers/love/s134078'])
+
+      },
+      () => {
+        this.router.navigate(['/teenagers/love/s134078'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
       })
   }
 
   previous() 
   {
+<<<<<<< HEAD
     this.router.navigate(['teenagers/love/s134076'])
+=======
+    this.router.navigate(['/teenagers/love/s134076'])
+>>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

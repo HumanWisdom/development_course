@@ -22,7 +22,7 @@ export class S141051Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/success-failure/audios/success-failure+2.2.mp3'
 
   transcriptPage="success-failure/s141051t"
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
   bookmark=0
    path = setTimeout(() => {
     return this.router.url;
@@ -95,7 +95,7 @@ export class S141051Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141052'])
+    this.router.navigate(['/teenagers/success-failure/s141052'])
     if (this.userId === 563) return;
 
     this.service.submitProgressAv({
@@ -119,7 +119,7 @@ export class S141051Page implements OnInit,OnDestroy {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141050'])
+    this.router.navigate(['/teenagers/success-failure/s141050'])
  
  
   }

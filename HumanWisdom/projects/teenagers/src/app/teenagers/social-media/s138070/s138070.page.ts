@@ -53,11 +53,11 @@ export class S138070Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/social-media/s138071'])
+    this.router.navigate(['/teenagers/social-media/s138071'])
   }
 
   prev()
   {
-    this.router.navigate(['/social-media/s138069'])
+    this.router.navigate(['/teenagers/social-media/s138069'])
   }
 }
