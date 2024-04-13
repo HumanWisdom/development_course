@@ -15,7 +15,7 @@ export class S134012Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w6"
   hint = ""
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = this.router.url
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -112,17 +112,17 @@ export class S134012Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134013'])
+        this.router.navigate(['/teenagers/love/s134013'])
 
       },
       () => {
-        this.router.navigate(['/love/s134013'])
+        this.router.navigate(['/teenagers/love/s134013'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134011'])
+    this.router.navigate(['/teenagers/love/s134011'])
   }
 
   ngOnDestroy() 

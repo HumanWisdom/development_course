@@ -21,7 +21,7 @@ export class S134047Page implements OnInit
   link="/love/s134048"
   name="#2  Why Do We Look For Love?"
   progressImg=""
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor
   (

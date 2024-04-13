@@ -15,7 +15,7 @@ export class S134123Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w5"
   hint = "It could be because you reap what you sow, and because loving others enriches your spirit."
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = this.router.url
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -112,17 +112,17 @@ export class S134123Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134124'])
+        this.router.navigate(['/teenagers/love/s134124'])
 
       },
       () => {
-        this.router.navigate(['/love/s134124'])
+        this.router.navigate(['/teenagers/love/s134124'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134122'])
+    this.router.navigate(['/teenagers/love/s134122'])
   }
 
   ngOnDestroy() 

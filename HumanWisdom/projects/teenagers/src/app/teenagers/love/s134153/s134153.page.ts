@@ -52,11 +52,11 @@ export class S134153Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/love/s134154'])
+    this.router.navigate(['/teenagers/love/s134154'])
   }
 
   prev()
   {
-    this.router.navigate(['/love/s134152'])
+    this.router.navigate(['/teenagers/love/s134152'])
   }
 }
