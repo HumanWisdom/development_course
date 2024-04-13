@@ -14,9 +14,9 @@ export class S125135Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w8"
   mediaVideo="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-  videoLink=this.mediaVideo+'teenagers/stress/videos/4.1.mp4'  
+  videoLink=this.mediaVideo+'/stress/videos/4.1.mp4'  
   title="Exploring the common causes of stress"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/stressteenagers/stress_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/stress/stress_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
@@ -86,11 +86,7 @@ export class S125135Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125136'])
-=======
     this.router.navigate(['/teenagers/stress/s125136'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,11 +104,7 @@ export class S125135Page implements OnInit,OnDestroy {
 
   prev()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125134'])
-=======
     this.router.navigate(['/teenagers/stress/s125134'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy()

@@ -15,7 +15,7 @@ export class S134004Page implements OnInit {
   bg="blue_pink_w2"
   title="Introduction"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+1.1.mp3'
+  audioLink=this.mediaAudio+'/love/audios/love+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 "]
   text=[
         "Nurture a quiet mind",

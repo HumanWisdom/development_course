@@ -85,11 +85,7 @@ export class S134121Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134122'])
-=======
     this.router.navigate(['/teenagers/love/s134122'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,17 +100,13 @@ export class S134121Page implements OnInit,OnDestroy {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['teenagers/love/s234'])
+        //this.router.navigate(['/love/s234'])
       })
   }
 
   prev()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134120'])
-=======
     this.router.navigate(['/teenagers/love/s134120'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy()

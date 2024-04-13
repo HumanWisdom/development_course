@@ -24,15 +24,10 @@ export class S134048Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-<<<<<<< HEAD
-  toc = "love/s134001"
+  toc = "teenagers/love/s134001"
     path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-=======
-  toc = "teenagers/love/s134001"
-  path = this.router.url
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
 
@@ -103,11 +98,7 @@ export class S134048Page implements OnInit, OnDestroy {
 
   goNext() {
     localStorage.setItem("pageaction", 'next')
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134049'])
-=======
     this.router.navigate(['/teenagers/love/s134049'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

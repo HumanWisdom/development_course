@@ -16,7 +16,7 @@ export class S125043Page implements OnInit,OnDestroy
   title="A story  "
 
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
-  audioLink=this.mediaAudio+'/modulesteenagers/stress/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/modules/stress/audios/1.1.mp3'
 
  
   transcriptPage="stress/s125043t"

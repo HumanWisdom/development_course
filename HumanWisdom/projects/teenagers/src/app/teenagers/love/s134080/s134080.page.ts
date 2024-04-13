@@ -24,15 +24,10 @@ export class S134080Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-<<<<<<< HEAD
-  toc = "love/s134001"
+  toc = "teenagers/love/s134001"
     path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-=======
-  toc = "teenagers/love/s134001"
-  path = this.router.url
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
@@ -102,25 +97,17 @@ export class S134080Page implements OnInit, OnDestroy {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['teenagers/love/s234'])
+      //this.router.navigate(['/love/s234'])
     })
   }
 
   goNext() 
   {
-<<<<<<< HEAD
-    // this.router.navigate(['teenagers/love/s2'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['teenagers/love/s134081'])
-=======
     // this.router.navigate(['/teenagers/love/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
     this.router.navigate(['/teenagers/love/s134081'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

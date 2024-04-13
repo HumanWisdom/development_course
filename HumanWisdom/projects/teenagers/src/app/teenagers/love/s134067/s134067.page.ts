@@ -14,9 +14,9 @@ export class S134067Page implements OnInit,OnDestroy {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w11"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'teenagers/love/videos/2.3.mp4'  
+  videoLink=this.mediaVideo+'/love/videos/2.3.mp4'  
   title="Love meets our emotional needs  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/loveteenagers/love_03.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/love/love_03.jpg"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -29,7 +29,7 @@ export class S134067Page implements OnInit,OnDestroy {
   totalTime:any  
  
   
-  toc="teenagers/love/s134001"
+  toc="/love/s134001"
   bookmark=0
    path = setTimeout(() => {
     return this.router.url;
@@ -91,11 +91,7 @@ export class S134067Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134068'])
-=======
     this.router.navigate(['/teenagers/love/s134068'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,11 +109,7 @@ export class S134067Page implements OnInit,OnDestroy {
 
   prev()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134066'])
-=======
     this.router.navigate(['/teenagers/love/s134066'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy()

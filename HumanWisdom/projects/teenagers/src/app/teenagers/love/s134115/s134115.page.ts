@@ -16,13 +16,9 @@ export class S134115Page implements OnInit
   bg = "blue_pink_w11"
   hint = ""
   toc = "teenagers/love/s134001"
-<<<<<<< HEAD
     path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-=======
-  path = this.router.url
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -118,29 +114,17 @@ export class S134115Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-<<<<<<< HEAD
-        this.router.navigate(['teenagers/love/s134116'])
-
-      },
-      () => {
-        this.router.navigate(['teenagers/love/s134116'])
-=======
         this.router.navigate(['/teenagers/love/s134116'])
 
       },
       () => {
         this.router.navigate(['/teenagers/love/s134116'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
       })
   }
 
   previous() 
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134114'])
-=======
     this.router.navigate(['/teenagers/love/s134114'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

@@ -14,9 +14,9 @@ export class S134041Page implements OnInit,OnDestroy {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w12"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'teenagers/love/videos/1.5.mp4'  
+  videoLink=this.mediaVideo+'/love/videos/1.5.mp4'  
   title="We get attached to whatever we love  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/loveteenagers/love_05.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/love/love_05.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
@@ -25,7 +25,7 @@ export class S134041Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="teenagers/love/s134001"
+  toc="/love/s134001"
   bookmark=0
    path = setTimeout(() => {
     return this.router.url;
@@ -86,11 +86,7 @@ export class S134041Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134042'])
-=======
     this.router.navigate(['/teenagers/love/s134042'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,11 +104,7 @@ export class S134041Page implements OnInit,OnDestroy {
 
   prev()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134040'])
-=======
     this.router.navigate(['/teenagers/love/s134040'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy()

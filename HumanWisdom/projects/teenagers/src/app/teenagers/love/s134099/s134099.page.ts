@@ -15,7 +15,7 @@ export class S134099Page implements OnInit,OnDestroy
   bg="blue_pink_w10"
   title="Listen to your inner voice  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+3.2.mp3'
+  audioLink=this.mediaAudio+'/love/audios/love+3.2.mp3'
   transcriptPage="love/s134099t"
   toc="teenagers/love/s134001"
   bookmark=0
@@ -91,11 +91,7 @@ export class S134099Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134100'])
-=======
     this.router.navigate(['/teenagers/love/s134100'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,11 +109,7 @@ export class S134099Page implements OnInit,OnDestroy
 
   prev()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134098'])
-=======
     this.router.navigate(['/teenagers/love/s134098'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy()

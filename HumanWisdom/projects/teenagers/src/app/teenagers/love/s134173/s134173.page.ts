@@ -18,7 +18,7 @@ export class S134173Page implements OnInit,OnDestroy {
   title=" #4 Let go of the need for external approval  "
     
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modulesteenagers/love/audios/5.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/love/audios/5.1.mp3'
 
   transcriptPage="love/s134173t"
   toc="teenagers/love/s134001"
@@ -96,11 +96,7 @@ export class S134173Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134174'])
-=======
     this.router.navigate(['/teenagers/love/s134174'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -118,11 +114,7 @@ export class S134173Page implements OnInit,OnDestroy {
 
   prev()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134172'])
-=======
     this.router.navigate(['/teenagers/love/s134172'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy()

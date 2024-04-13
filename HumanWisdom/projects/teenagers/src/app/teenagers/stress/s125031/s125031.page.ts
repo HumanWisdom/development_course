@@ -156,20 +156,12 @@ export class S125031Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125032'])
-=======
     this.router.navigate(['/teenagers/stress/s125032'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   previous()
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125030'])
-=======
     this.router.navigate(['/teenagers/stress/s125030'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   sessionFetch(id, divid)

@@ -154,26 +154,18 @@ export class S134032Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['teenagers/love/s234'])
+        //this.router.navigate(['/love/s234'])
       })
   }
 
   prev() 
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134031'])
-=======
     this.router.navigate(['/teenagers/love/s134031'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   goNext() 
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134033'])
-=======
     this.router.navigate(['/teenagers/love/s134033'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

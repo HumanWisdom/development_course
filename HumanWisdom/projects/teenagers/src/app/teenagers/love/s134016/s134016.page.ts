@@ -100,7 +100,7 @@ export class S134016Page implements OnInit,OnDestroy {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['teenagers/love/s234'])
+        //this.router.navigate(['/love/s234'])
       })
   }
 

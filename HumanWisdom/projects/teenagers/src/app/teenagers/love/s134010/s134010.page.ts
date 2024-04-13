@@ -214,20 +214,12 @@ export class S134010Page implements OnInit
 
   prev() 
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134009'])
-=======
     this.router.navigate(['/teenagers/love/s134009'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   goNext() 
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/love/s134011'])
-=======
     this.router.navigate(['/teenagers/love/s134011'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

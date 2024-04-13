@@ -94,38 +94,22 @@ export class S125160Page implements OnInit, OnDestroy
     },
       error => { console.log(error) },
       () => {
-<<<<<<< HEAD
-        //this.router.navigate(['teenagers/stress/s234'])
-=======
         //this.router.navigate(['/teenagers/stress/s234'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
       })
   }
 
   prev() 
   {
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125159'])
-=======
     this.router.navigate(['/teenagers/stress/s125159'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   goNext() 
   {
-<<<<<<< HEAD
-    // this.router.navigate(['teenagers/stress/s125160'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['teenagers/stress/s125161'])
-=======
     // this.router.navigate(['/teenagers/stress/s125160'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
     this.router.navigate(['/teenagers/stress/s125161'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() 

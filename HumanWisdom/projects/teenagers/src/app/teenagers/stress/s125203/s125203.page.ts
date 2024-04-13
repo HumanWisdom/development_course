@@ -15,7 +15,7 @@ export class S125203Page implements OnInit,OnDestroy
   bg="dark_blue_w7"
   title="#4 Is there another way to respond?"
   mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-  audioLink=this.mediaAudio+'teenagers/stress/audiosteenagers/stress+7.5.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/stress+7.5.mp3'
   transcriptPage="stress/s125203t"
   toc="teenagers/stress/s125001"
   bookmark=0

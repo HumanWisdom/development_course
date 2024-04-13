@@ -14,9 +14,9 @@ export class S134015Page implements OnInit,OnDestroy {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w9"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'teenagers/love/videos/1.2.mp4'  
+  videoLink=this.mediaVideo+'/love/videos/1.2.mp4'  
   title="Love follows our identity  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/loveteenagers/love_02.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/love/love_02.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
@@ -25,7 +25,7 @@ export class S134015Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="teenagers/love/s134001"
+  toc="/love/s134001"
   bookmark=0
    path = setTimeout(() => {
     return this.router.url;

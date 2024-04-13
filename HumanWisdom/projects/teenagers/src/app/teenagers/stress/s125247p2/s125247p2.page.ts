@@ -18,7 +18,7 @@ export class S125247p2Page implements OnInit {
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "A Talk on Stress"
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/stressteenagers/stress_02.jpg"
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/stress/stress_02.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")
@@ -82,11 +82,7 @@ export class S125247p2Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125248'])
-=======
     this.router.navigate(['/teenagers/stress/s125248'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -105,11 +101,7 @@ export class S125247p2Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-<<<<<<< HEAD
-    this.router.navigate(['teenagers/stress/s125001'])
-=======
     this.router.navigate(['/teenagers/stress/s125001'])
->>>>>>> 5bf63073094facf5d8a4d68631859365156c688e
   }
 
   ngOnDestroy() {

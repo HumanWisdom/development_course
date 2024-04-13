@@ -154,7 +154,7 @@ export class S134019Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['teenagers/love/s234'])
+        //this.router.navigate(['/love/s234'])
       })
   }
 
