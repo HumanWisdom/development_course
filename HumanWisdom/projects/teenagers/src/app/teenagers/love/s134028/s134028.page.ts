@@ -16,7 +16,9 @@ export class S134028Page implements OnInit
   bg = "blue_pink_w8"
   hint = "It could be a friend or a sibling or even your parents. The real test of love is acceptance."
   toc = "teenagers/love/s134001"
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

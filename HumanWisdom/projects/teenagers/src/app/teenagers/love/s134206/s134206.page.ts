@@ -15,7 +15,9 @@ export class S134206Page implements OnInit {
   bg = "blue_pink_w9"
 
   toc = "teenagers/love/s134001"
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   hint=""
 
   userId: any

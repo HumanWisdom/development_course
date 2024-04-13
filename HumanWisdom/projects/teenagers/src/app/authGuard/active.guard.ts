@@ -11,11 +11,15 @@ export class ActiveGuard implements CanActivate, OnInit {
   x = []
   scrId: any
   public canGoBack: boolean;
-  freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  freeScreens:any;
   constructor(public router: Router, private url: ActivatedRoute, private service: TeenagersService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.canGoBack = !!(this.router.getCurrentNavigation()?.previousNavigation);
     console.log("this.canGoBack", this.canGoBack)
+    const screens =  localStorage.getItem("freeScreens");
+    if(screens){
+      this.freeScreens = JSON.parse(screens);
+    }
   }
   ngOnInit() {
 

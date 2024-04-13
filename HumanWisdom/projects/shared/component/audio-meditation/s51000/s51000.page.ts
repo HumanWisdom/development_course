@@ -190,8 +190,13 @@ export class S51000Page implements OnInit, OnDestroy {
       let url = data['Text_URL'].replaceAll(':', '_');
        url = encodeURIComponent(url.replaceAll('/', '~'));
       let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
+      const prgType=SharedService.ProgramId;
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      if(prgType == 9){
+        this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      }else{
+        this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      }
     }
   }
 

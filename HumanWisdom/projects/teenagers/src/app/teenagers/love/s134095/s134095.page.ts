@@ -16,7 +16,9 @@ export class S134095Page implements OnInit
   bg = "blue_pink_w3"
   hint = "  It may have come from your various influences including social media."
   toc = "teenagers/love/s134001"
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
