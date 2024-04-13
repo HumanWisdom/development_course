@@ -14,7 +14,7 @@ export class S134066Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w10"
   hint = "  We may not be aware we have these needs.  "
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = this.router.url
 
   userId: any
@@ -113,17 +113,17 @@ export class S134066Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134067'])
+        this.router.navigate(['/teenagers/love/s134067'])
 
       },
       () => {
-        this.router.navigate(['/love/s134067'])
+        this.router.navigate(['/teenagers/love/s134067'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134065'])
+    this.router.navigate(['/teenagers/love/s134065'])
   }
 
   ngOnDestroy() 

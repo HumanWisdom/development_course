@@ -15,7 +15,7 @@ export class S134028Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w8"
   hint = "It could be a friend or a sibling or even your parents. The real test of love is acceptance."
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = this.router.url
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -112,17 +112,17 @@ export class S134028Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134029'])
+        this.router.navigate(['/teenagers/love/s134029'])
 
       },
       () => {
-        this.router.navigate(['/love/s134029'])
+        this.router.navigate(['/teenagers/love/s134029'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134027'])
+    this.router.navigate(['/teenagers/love/s134027'])
   }
 
   ngOnDestroy() 

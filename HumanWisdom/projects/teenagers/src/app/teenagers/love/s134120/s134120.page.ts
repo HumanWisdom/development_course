@@ -172,7 +172,7 @@ this.router.navigate(['/love/s134121'])
 
 }
 prev(){
-  this.router.navigate(['/love/s134119'])
+  this.router.navigate(['/teenagers/love/s134119'])
 
 
 }

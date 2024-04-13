@@ -84,7 +84,7 @@ export class S134190Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
-    this.router.navigate(['/love/s134191'])
+    this.router.navigate(['/teenagers/love/s134191'])
     if (this.userId === 563) return;
     
     this.service.submitProgressText({
@@ -103,7 +103,7 @@ export class S134190Page implements OnInit,OnDestroy {
 
   }
   prev(){
-    this.router.navigate(['/love/s13189'])
+    this.router.navigate(['/teenagers/love/s13189'])
     
   }
 

@@ -24,7 +24,7 @@ export class S134048Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "love/s134001"
+  toc = "teenagers/love/s134001"
   path = this.router.url
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
@@ -96,7 +96,7 @@ export class S134048Page implements OnInit, OnDestroy {
 
   goNext() {
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/love/s134049'])
+    this.router.navigate(['/teenagers/love/s134049'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
