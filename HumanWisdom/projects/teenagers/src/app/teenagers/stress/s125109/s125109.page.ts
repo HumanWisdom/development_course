@@ -15,7 +15,7 @@ export class S125109Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w6"
   hint = "Most people who are addicted to their phones, would not recognize that they have an addiction, even if they did."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125109Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125110'])
+        this.router.navigate(['teenagers/stress/s125110'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125110'])
+        this.router.navigate(['teenagers/stress/s125110'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125108'])
+    this.router.navigate(['teenagers/stress/s125108'])
   }
 
   ngOnDestroy() 

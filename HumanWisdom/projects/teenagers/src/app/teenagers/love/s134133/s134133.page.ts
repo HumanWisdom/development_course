@@ -15,7 +15,7 @@ export class S134133Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w3"
   hint = " It may make your love conditional on them being met, or you may get angry if they are not met"
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S134133Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134134'])
+        this.router.navigate(['teenagers/love/s134134'])
 
       },
       () => {
-        this.router.navigate(['/love/s134134'])
+        this.router.navigate(['teenagers/love/s134134'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134132'])
+    this.router.navigate(['teenagers/love/s134132'])
   }
 
   ngOnDestroy() 

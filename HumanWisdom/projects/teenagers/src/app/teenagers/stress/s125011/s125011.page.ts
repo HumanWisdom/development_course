@@ -16,9 +16,9 @@ export class S125011Page implements OnInit {
   toc="stress/s125001"
   title="Understanding desire & stress"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  transcriptPage="/stress/s125011t"
+  transcriptPage="teenagers/stress/s125011t"
   progName = "teenagers"
-  audioLink=this.mediaAudio+'/stress/audios/stress+1.1.mp3'
+  audioLink=this.mediaAudio+'teenagers/stress/audiosteenagers/stress+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05"]
   text=[
         "Nurture a quiet mind",
@@ -100,7 +100,7 @@ export class S125011Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/stress/s125012'])
+        this.router.navigate(['teenagers/stress/s125012'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -121,7 +121,7 @@ export class S125011Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/stress/s125010'])
+        this.router.navigate(['teenagers/stress/s125010'])
      
      
       }

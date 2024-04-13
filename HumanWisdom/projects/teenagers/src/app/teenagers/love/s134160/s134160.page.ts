@@ -14,7 +14,7 @@ export class S134160Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w5"
   hint = " Most people are, and do not live with a sense of inner peace. "
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S134160Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134161'])
+        this.router.navigate(['teenagers/love/s134161'])
 
       },
       () => {
-        this.router.navigate(['/love/s134161'])
+        this.router.navigate(['teenagers/love/s134161'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134159'])
+    this.router.navigate(['teenagers/love/s134159'])
   }
 
   ngOnDestroy() 

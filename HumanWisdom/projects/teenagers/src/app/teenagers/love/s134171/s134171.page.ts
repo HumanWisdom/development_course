@@ -14,7 +14,7 @@ export class S134171Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w4"
   hint = "  If you are human, you’ve made mistakes. You are in good company.  "
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S134171Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134172'])
+        this.router.navigate(['teenagers/love/s134172'])
 
       },
       () => {
-        this.router.navigate(['/love/s134172'])
+        this.router.navigate(['teenagers/love/s134172'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134170'])
+    this.router.navigate(['teenagers/love/s134170'])
   }
 
   ngOnDestroy() 

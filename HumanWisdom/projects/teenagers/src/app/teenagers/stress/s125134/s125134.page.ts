@@ -15,7 +15,7 @@ export class S125134Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w7"
   hint = "You may notice an anxiety to be liked, or notice that it has become a habit. How often are you correct anyway?"
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125134Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125135'])
+        this.router.navigate(['teenagers/stress/s125135'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125135'])
+        this.router.navigate(['teenagers/stress/s125135'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125133'])
+    this.router.navigate(['teenagers/stress/s125133'])
   }
 
   ngOnDestroy() 

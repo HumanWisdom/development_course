@@ -98,17 +98,17 @@ export class S134182Page implements OnInit, OnDestroy {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['/love/s234'])
+      //this.router.navigate(['teenagers/love/s234'])
     })
   }
 
   goNext() 
   {
-    // this.router.navigate(['/love/s2'])
+    // this.router.navigate(['teenagers/love/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/love/s134183'])
+    this.router.navigate(['teenagers/love/s134183'])
   }
 
   ngOnDestroy() 

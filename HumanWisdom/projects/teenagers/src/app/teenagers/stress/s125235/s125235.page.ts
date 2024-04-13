@@ -15,7 +15,7 @@ export class S125235Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w3"
   hint = " Forgiveness does not come easily to us, because we carry the pain with us for a long time, but through self-enquiry it is much easier. Try it and see. You’ll find a burden lifted from your heart."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125235Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125236'])
+        this.router.navigate(['teenagers/stress/s125236'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125200'])
+        this.router.navigate(['teenagers/stress/s125200'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125234'])
+    this.router.navigate(['teenagers/stress/s125234'])
   }
 
   ngOnDestroy() 

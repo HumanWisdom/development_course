@@ -18,7 +18,7 @@ export class S134047Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/6"
-  link="/love/s134048"
+  link="teenagers/love/s134048"
   name="#2  Why Do We Look For Love?"
   progressImg=""
   toc="love/s134001"

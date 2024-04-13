@@ -15,7 +15,7 @@ export class S134004Page implements OnInit {
   bg="blue_pink_w2"
   title="Introduction"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/love/audios/love+1.1.mp3'
+  audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 "]
   text=[
         "Nurture a quiet mind",
@@ -100,7 +100,7 @@ export class S134004Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/love/s134005'])
+        this.router.navigate(['teenagers/love/s134005'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -121,7 +121,7 @@ export class S134004Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/love/s134003'])
+        this.router.navigate(['teenagers/love/s134003'])
      
      
       }

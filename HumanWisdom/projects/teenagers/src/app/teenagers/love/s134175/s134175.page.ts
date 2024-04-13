@@ -18,7 +18,7 @@ export class S134175Page implements OnInit,OnDestroy {
   title=" #5 Let go of painful memories  "
     
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/love/audios/love+5.6.mp3'
+  audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+5.6.mp3'
 
   transcriptPage="love/s134175t"
   toc="love/s134001"
@@ -96,7 +96,7 @@ export class S134175Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/love/s134176'])
+    this.router.navigate(['teenagers/love/s134176'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -114,7 +114,7 @@ export class S134175Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/love/s134174'])
+    this.router.navigate(['teenagers/love/s134174'])
   }
 
   ngOnDestroy()

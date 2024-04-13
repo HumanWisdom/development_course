@@ -18,7 +18,7 @@ export class S125060Page implements OnInit
   userName:any
   progressPercent:any
   progressText="2/7"
-  link="/stress/s125061"
+  link="teenagers/stress/s125061"
   name="#3  The nature of stress"
   progressImg=""
   toc="stress/s125001"

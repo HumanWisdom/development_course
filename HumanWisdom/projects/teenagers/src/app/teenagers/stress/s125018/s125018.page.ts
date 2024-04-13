@@ -154,18 +154,18 @@ export class S125018Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/stress/s234'])
+        //this.router.navigate(['teenagers/stress/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/stress/s125017'])
+    this.router.navigate(['teenagers/stress/s125017'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/stress/s125019'])
+    this.router.navigate(['teenagers/stress/s125019'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

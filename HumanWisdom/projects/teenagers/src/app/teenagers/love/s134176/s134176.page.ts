@@ -86,7 +86,7 @@ export class S134176Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/love/s134177'])
+    this.router.navigate(['teenagers/love/s134177'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,7 +107,7 @@ export class S134176Page implements OnInit, OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/love/s134175'])
+    this.router.navigate(['teenagers/love/s134175'])
   }
 
   ngOnDestroy()

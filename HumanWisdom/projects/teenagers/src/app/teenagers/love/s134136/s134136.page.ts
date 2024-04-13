@@ -15,7 +15,7 @@ export class S134136Page implements OnInit,OnDestroy
   bg="blue_pink_w6"
   title="#4 Question your conditioning  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/love/audios/love+4.5.mp3'
+  audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+4.5.mp3'
   transcriptPage="love/s134136t"
   toc="love/s134001"
   bookmark=0
@@ -91,7 +91,7 @@ export class S134136Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/love/s134137'])
+    this.router.navigate(['teenagers/love/s134137'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S134136Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/love/s134135'])
+    this.router.navigate(['teenagers/love/s134135'])
   }
 
   ngOnDestroy()

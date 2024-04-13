@@ -23,7 +23,9 @@ export class S134020Page implements OnInit
   endTime: any
   totalTime: any
   bookmark = 0
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   constructor
   (
@@ -186,12 +188,12 @@ export class S134020Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/love/s134019'])
+    this.router.navigate(['teenagers/love/s134019'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/love/s134021'])
+    this.router.navigate(['teenagers/love/s134021'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

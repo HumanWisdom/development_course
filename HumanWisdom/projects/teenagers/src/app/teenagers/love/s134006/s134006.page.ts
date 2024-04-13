@@ -24,7 +24,9 @@ export class S134006Page implements OnInit
   endTime: any
   totalTime: any
   bookmark = 0
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor
@@ -152,18 +154,18 @@ export class S134006Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/love/s234'])
+        //this.router.navigate(['teenagers/love/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/love/s134005'])
+    this.router.navigate(['teenagers/love/s134005'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/love/s134007'])
+    this.router.navigate(['teenagers/love/s134007'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

@@ -236,12 +236,12 @@ export class S125028Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/stress/s125027'])
+    this.router.navigate(['teenagers/stress/s125027'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/stress/s125029'])
+    this.router.navigate(['teenagers/stress/s125029'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

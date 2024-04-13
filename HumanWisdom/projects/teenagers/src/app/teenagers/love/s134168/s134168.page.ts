@@ -14,7 +14,7 @@ export class S134168Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w1"
   hint = "  This is not unique to you and is not wrong, but just needs to be understood, and questioned. "
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S134168Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134169'])
+        this.router.navigate(['teenagers/love/s134169'])
 
       },
       () => {
-        this.router.navigate(['/love/s134169'])
+        this.router.navigate(['teenagers/love/s134169'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134167'])
+    this.router.navigate(['teenagers/love/s134167'])
   }
 
   ngOnDestroy() 

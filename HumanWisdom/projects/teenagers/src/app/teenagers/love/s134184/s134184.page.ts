@@ -14,7 +14,7 @@ export class S134184Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w2"
   hint = "I don't mean just an intellectual idea, but a real feeling of care. "
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S134184Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134185'])
+        this.router.navigate(['teenagers/love/s134185'])
 
       },
       () => {
-        this.router.navigate(['/love/s134185'])
+        this.router.navigate(['teenagers/love/s134185'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134183'])
+    this.router.navigate(['teenagers/love/s134183'])
   }
 
   ngOnDestroy() 

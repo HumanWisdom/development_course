@@ -15,7 +15,7 @@ export class S125074Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w9"
   hint = "It could be that when you were angry with your friend you said you wouldn’t talk to them again, or if you lost a loved one, you drank too much alcohol."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125074Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125075'])
+        this.router.navigate(['teenagers/stress/s125075'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125075'])
+        this.router.navigate(['teenagers/stress/s125075'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125073'])
+    this.router.navigate(['teenagers/stress/s125073'])
   }
 
   ngOnDestroy() 

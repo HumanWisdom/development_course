@@ -14,7 +14,7 @@ export class S134070Page implements OnInit {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w2"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/love/audios/love+2.4.mp3'
+  audioLink=this.mediaAudio+'teenagers/love/audiosteenagers/love+2.4.mp3'
   title="What happens when love ends?  "
 
   toc="love/s134001"
@@ -80,7 +80,7 @@ export class S134070Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/love/s134071'])
+    this.router.navigate(['teenagers/love/s134071'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -94,7 +94,7 @@ export class S134070Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/love/s134069'])
+    this.router.navigate(['teenagers/love/s134069'])
   }
 
 }

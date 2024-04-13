@@ -15,7 +15,7 @@ export class S125122Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w7"
   hint = "For example I may have been hurt by bullying in the past. By exploring the nature of stress, and discovering forgiveness, I could be free."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125122Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125123'])
+        this.router.navigate(['teenagers/stress/s125123'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125123'])
+        this.router.navigate(['teenagers/stress/s125123'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125121'])
+    this.router.navigate(['teenagers/stress/s125121'])
   }
 
   ngOnDestroy() 

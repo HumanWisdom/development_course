@@ -15,7 +15,7 @@ export class S125228Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w8"
   hint = " For example, I may have failed an exam. A positive attitude could be to say I can sit it again and failure does not matter in the long term. "
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125228Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125229'])
+        this.router.navigate(['teenagers/stress/s125229'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125200'])
+        this.router.navigate(['teenagers/stress/s125200'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125227'])
+    this.router.navigate(['teenagers/stress/s125227'])
   }
 
   ngOnDestroy() 

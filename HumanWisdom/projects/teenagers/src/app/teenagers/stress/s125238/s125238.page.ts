@@ -15,7 +15,7 @@ export class S125238Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w6"
   hint = "Most of us are not aware of this. It is not wrong and happens behind the scenes. Reflect on how this has affected you."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125238Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125241'])
+        this.router.navigate(['teenagers/stress/s125241'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125241'])
+        this.router.navigate(['teenagers/stress/s125241'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125237'])
+    this.router.navigate(['teenagers/stress/s125237'])
   }
 
   ngOnDestroy() 

@@ -85,7 +85,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/love/s134128'])
+    this.router.navigate(['teenagers/love/s134128'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +108,7 @@ createScreen(){
   }
  
   prev(){
-    this.router.navigate(['/love/s134126'])
+    this.router.navigate(['teenagers/love/s134126'])
   }
  
   ngOnDestroy(){

@@ -14,9 +14,9 @@ export class S134064Page implements OnInit,OnDestroy {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w8"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/love/videos/2.2.mp4'  
+  videoLink=this.mediaVideo+'teenagers/love/videos/2.2.mp4'  
   title="Ideal vs. reality of love  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/love/love_02.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/loveteenagers/love_02.jpg"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -29,7 +29,7 @@ export class S134064Page implements OnInit,OnDestroy {
   totalTime:any  
  
   
-  toc="/love/s134001"
+  toc="teenagers/love/s134001"
   bookmark=0
    path = setTimeout(() => {
     return this.router.url;
@@ -91,7 +91,7 @@ export class S134064Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/love/s134065'])
+    this.router.navigate(['teenagers/love/s134065'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S134064Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/love/s134063'])
+    this.router.navigate(['teenagers/love/s134063'])
   }
 
   ngOnDestroy()

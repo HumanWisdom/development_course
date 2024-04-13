@@ -97,17 +97,17 @@ export class S125061Page implements OnInit, OnDestroy {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['/stress/s234'])
+      //this.router.navigate(['teenagers/stress/s234'])
     })
   }
 
   goNext() 
   {
-    // this.router.navigate(['/stress/s2'])
+    // this.router.navigate(['teenagers/stress/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/stress/s125062'])
+    this.router.navigate(['teenagers/stress/s125062'])
   }
 
   ngOnDestroy() 

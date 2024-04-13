@@ -35,7 +35,7 @@ export class S134203Page implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor(private router: Router,
     private service:TeenagersService,
@@ -147,7 +147,7 @@ export class S134203Page implements OnInit {
  
 
   submitProgress(){
-    this.router.navigate(['/love/s134204'])
+    this.router.navigate(['teenagers/love/s134204'])
     if (this.userId === 563) return;
     
     //if(this.sendOption!=null)
@@ -169,7 +169,7 @@ export class S134203Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/love/s134202'])
+    this.router.navigate(['teenagers/love/s134202'])
 
 
   }

@@ -14,9 +14,9 @@ export class S125042Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w3"
   mediaVideo="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-  videoLink=this.mediaVideo+'/stress/videos/2.1.mp4'  
+  videoLink=this.mediaVideo+'teenagers/stress/videos/2.1.mp4'  
   title="Why do people react differently to the same event?"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/stress/stress_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_postersteenagers/stressteenagers/stress_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
@@ -25,7 +25,7 @@ export class S125042Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/stress/s125001"
+  toc="teenagers/stress/s125001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -86,7 +86,7 @@ export class S125042Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/stress/s125043'])
+    this.router.navigate(['teenagers/stress/s125043'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +104,7 @@ export class S125042Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/stress/s125041'])
+    this.router.navigate(['teenagers/stress/s125041'])
   }
 
   ngOnDestroy()

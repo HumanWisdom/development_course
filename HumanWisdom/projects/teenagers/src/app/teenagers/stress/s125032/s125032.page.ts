@@ -15,7 +15,7 @@ export class S125032Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w7"
   hint = "Look at all the symptoms of stress, and see how many of them apply to you"
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125032Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125033'])
+        this.router.navigate(['teenagers/stress/s125033'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125033'])
+        this.router.navigate(['teenagers/stress/s125033'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125031'])
+    this.router.navigate(['teenagers/stress/s125031'])
   }
 
   ngOnDestroy() 

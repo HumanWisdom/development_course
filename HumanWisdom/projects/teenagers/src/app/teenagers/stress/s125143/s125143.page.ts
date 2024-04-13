@@ -16,10 +16,10 @@ export class S125143Page implements OnInit,OnDestroy
   title="#1 We try to fix the problem"
 
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
-  audioLink=this.mediaAudio+'/modules/stress/audios/1.15.mp3'
+  audioLink=this.mediaAudio+'/modulesteenagers/stress/audios/1.15.mp3'
 
-  transcriptPage="/stress/s125143t"
-  toc="/stress/s125001"
+  transcriptPage="teenagers/stress/s125143t"
+  toc="teenagers/stress/s125001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -93,7 +93,7 @@ export class S125143Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/stress/s125144'])
+    this.router.navigate(['teenagers/stress/s125144'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,7 +111,7 @@ export class S125143Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/stress/s125142'])
+    this.router.navigate(['teenagers/stress/s125142'])
   }
 
   ngOnDestroy()

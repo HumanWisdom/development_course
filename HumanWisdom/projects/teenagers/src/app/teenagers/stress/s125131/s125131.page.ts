@@ -15,7 +15,7 @@ export class S125131Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w4"
   hint = "If we stop, turn around and face up to being alone, and just be with the feelings that rise, they can transform into solitude."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125131Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125132'])
+        this.router.navigate(['teenagers/stress/s125132'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125132'])
+        this.router.navigate(['teenagers/stress/s125132'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125130'])
+    this.router.navigate(['teenagers/stress/s125130'])
   }
 
   ngOnDestroy() 

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActiveGuard } from 'src/app/authGuard/active.guard';
-
+import { ActiveGuard } from '../../active.guard';
 import { S134001Page } from './s134001/s134001.page';
 import { S134002Page } from './s134002/s134002.page';
 import { S134003Page } from './s134003/s134003.page';

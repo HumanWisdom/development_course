@@ -18,7 +18,7 @@ export class S125047Page implements OnInit,AfterViewInit
   bg_cft="bg_dark_blue"
   bg="dark_blue_overlay_footer"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/stress/audios/1.2.mp3';
+  audioLink=this.mediaAudio+'/teenagers/modulesteenagers/stress/audios/1.2.mp3';
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -29,8 +29,8 @@ export class S125047Page implements OnInit,AfterViewInit
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   @ViewChild('playerContainer',{static:false})
   public playerContainer:ElementRef
-  toc="/stress/s125001"
-  transcriptPage="/stress/s125047t"
+  toc="teenagers/stress/s125001"
+  transcriptPage="teenagers/stress/s125047t"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -94,7 +94,7 @@ export class S125047Page implements OnInit,AfterViewInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/stress/s125048'])
+    this.router.navigate(['teenagers/stress/s125048'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +108,7 @@ export class S125047Page implements OnInit,AfterViewInit
 
   previous()
   {
-    this.router.navigate(['/stress/s125046'])
+    this.router.navigate(['teenagers/stress/s125046'])
   }
 
   ngAfterViewInit()

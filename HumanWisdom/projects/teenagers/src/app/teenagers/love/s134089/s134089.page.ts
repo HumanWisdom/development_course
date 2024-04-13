@@ -15,8 +15,10 @@ export class S134089Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w9"
   hint = " What role does your conditioning play?"
-  toc = "/love/s134001"
-  path = this.router.url
+  toc = "teenagers/love/s134001"
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +114,17 @@ export class S134089Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134090'])
+        this.router.navigate(['teenagers/love/s134090'])
 
       },
       () => {
-        this.router.navigate(['/love/s134090'])
+        this.router.navigate(['teenagers/love/s134090'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134088'])
+    this.router.navigate(['teenagers/love/s134088'])
   }
 
   ngOnDestroy() 
