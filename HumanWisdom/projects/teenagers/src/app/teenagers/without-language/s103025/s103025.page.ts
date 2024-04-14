@@ -49,11 +49,13 @@ export class S103025Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/without-language/s103026'])
+    
+this.router.navigate(['/teenagers/without-language/s103026'])
 
   }
   prev(){
-    this.router.navigate(['/without-language/s103024'])
+    
+this.router.navigate(['/teenagers/without-language/s103024'])
 }
 
 }

@@ -358,6 +358,10 @@ const routes: Routes = [
         path: 'onboarding',
         loadChildren: () => import('../onboarding/onboarding.module').then(m => m.OnboardingModule)
     },
+    {
+        path: 'audio-meditation',
+        loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
+   },
 ];
 
 

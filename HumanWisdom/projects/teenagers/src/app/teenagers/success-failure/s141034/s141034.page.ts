@@ -14,7 +14,7 @@ export class S141034Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w2"
   hint = " It could make you neglect your relationships, for example"
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -100,7 +100,7 @@ export class S141034Page implements OnInit {
     sessionStorage.setItem("r141033", JSON.stringify(e))
     this.r141034 = sessionStorage.getItem("r141034")
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141035'])
+    this.router.navigate(['/teenagers/success-failure/s141035'])
     if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
@@ -127,7 +127,7 @@ export class S141034Page implements OnInit {
 
   previous() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141033'])
+    this.router.navigate(['/teenagers/success-failure/s141033'])
   }
 
   ngOnDestroy() {

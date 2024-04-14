@@ -15,7 +15,7 @@ export class S126053Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w6"
   hint = "For example, success for me could have meant being wealthy. Now success could mean having really happy relationships."
-  toc = "/self-esteem/s126001"
+  toc = "teenagers/self-esteem/s126001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S126053Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-esteem/s126054'])
+        this.router.navigate(['/teenagers/self-esteem/s126054'])
 
       },
       () => {
-        this.router.navigate(['/self-esteem/s126054'])
+        this.router.navigate(['/teenagers/self-esteem/s126054'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-esteem/s126052'])
+    this.router.navigate(['/teenagers/self-esteem/s126052'])
   }
 
   ngOnDestroy() 

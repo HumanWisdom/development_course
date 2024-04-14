@@ -21,7 +21,7 @@ export class S131175Page implements OnInit
   link="/relationships/s131176"
   name="#6  Feeling hurt. Responding with intelligence."
   progressImg=""
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
 
   constructor
   (

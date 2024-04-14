@@ -22,7 +22,7 @@ export class S134079Page implements OnInit {
   link="/love/s134080"
   name="#3  Exploring Romantic Love"
   progressImg=""
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 

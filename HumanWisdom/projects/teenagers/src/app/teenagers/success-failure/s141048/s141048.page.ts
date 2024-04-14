@@ -14,7 +14,7 @@ export class S141048Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w8"
   hint = "  What excites you? What do you love doing?  "
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -108,7 +108,7 @@ export class S141048Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/success-failure/s141047'])
+    this.router.navigate(['/teenagers/success-failure/s141047'])
   }
 
   goNext() 
@@ -117,7 +117,7 @@ export class S141048Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/success-failure/s141049'])
+    this.router.navigate(['/teenagers/success-failure/s141049'])
   }
 
   ngOnDestroy() 

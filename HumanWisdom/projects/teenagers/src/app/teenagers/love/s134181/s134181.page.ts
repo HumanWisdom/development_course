@@ -20,7 +20,7 @@ export class S134181Page implements OnInit {
   link="/love/s134182"
   name="#6  Loving The Earth"
   progressImg=""
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 

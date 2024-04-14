@@ -23,7 +23,7 @@ export class S131006Page implements OnInit {
   totalTime:any
   
   bookmark=0
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);  
@@ -81,7 +81,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s131007'])
+    this.router.navigate(['/teenagers/relationships/s131007'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +104,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/relationships/s131005'])
+    this.router.navigate(['/teenagers/relationships/s131005'])
 
   }
   

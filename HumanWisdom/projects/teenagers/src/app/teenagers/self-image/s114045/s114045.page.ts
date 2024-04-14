@@ -241,21 +241,21 @@ export class S114045Page implements OnInit
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/self-image/s114046'])
+          this.router.navigate(['/teenagers/self-image/s114046'])
         },
         () => {
-          this.router.navigate(['/self-image/s114046'])
+          this.router.navigate(['/teenagers/self-image/s114046'])
         })
     }
     else 
     {
-      this.router.navigate(['/self-image/s114046'])
+      this.router.navigate(['/teenagers/self-image/s114046'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/self-image/s114044'])
+    this.router.navigate(['/teenagers/self-image/s114044'])
   }
 
   ngOnDestroy() 

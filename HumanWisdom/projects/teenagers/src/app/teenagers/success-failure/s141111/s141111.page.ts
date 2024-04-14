@@ -45,11 +45,11 @@ export class S141111Page implements OnInit {
   
     submitProgress(){
       localStorage.setItem("pageaction", 'next')
-      this.router.navigate(['/success-failure/s141112'])
+      this.router.navigate(['/teenagers/success-failure/s141112'])
     }
     prev(){
       localStorage.setItem("pageaction", 'prev')
-      this.router.navigate(['/success-failure/s141105'])
+      this.router.navigate(['/teenagers/success-failure/s141105'])
   
     }
   

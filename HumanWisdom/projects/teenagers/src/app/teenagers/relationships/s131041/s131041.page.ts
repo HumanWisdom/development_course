@@ -27,7 +27,7 @@ export class S131041Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any  
   
-  toc="/relationships/s131001"
+  toc="teenagers/relationships/s131001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -89,7 +89,7 @@ export class S131041Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s131042'])
+    this.router.navigate(['/teenagers/relationships/s131042'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,7 +107,7 @@ export class S131041Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/relationships/s131040'])
+    this.router.navigate(['/teenagers/relationships/s131040'])
   }
 
   ngOnDestroy()

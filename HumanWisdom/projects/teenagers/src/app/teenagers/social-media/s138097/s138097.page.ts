@@ -328,7 +328,7 @@ export class S138097Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/social-media/s138098'])
+    this.router.navigate(['/teenagers/social-media/s138098'])
     if (this.userId === 563) return;
 
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
@@ -348,7 +348,7 @@ export class S138097Page implements OnInit {
   prev() 
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/social-media/s138096'])
+    this.router.navigate(['/teenagers/social-media/s138096'])
   }
 
   ngOnDestroy() {}

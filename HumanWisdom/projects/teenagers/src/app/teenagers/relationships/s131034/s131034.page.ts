@@ -15,7 +15,7 @@ export class S131034Page implements OnInit {
   bg = "purple_w3"
   hint = "Our parents are our most powerful conditioning influences. It's good to understand how that relationship shaped our life."
 
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +112,17 @@ export class S131034Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131035'])
+        this.router.navigate(['/teenagers/relationships/s131035'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131035'])
+        this.router.navigate(['/teenagers/relationships/s131035'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/relationships/s131033'])
+    this.router.navigate(['/teenagers/relationships/s131033'])
   }
 
   ngOnDestroy() 

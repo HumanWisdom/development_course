@@ -24,7 +24,7 @@ export class S141022Page implements OnInit, OnDestroy {
   totalTime: any
 
   bookmark = 0
-  toc = "success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -97,14 +97,14 @@ export class S141022Page implements OnInit, OnDestroy {
   }
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s141021'])
+    this.router.navigate(['/teenagers/success-failure/s141021'])
 
   }
 
 
   goNext() {
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/success-failure/s141023'])
+    this.router.navigate(['/teenagers/success-failure/s141023'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

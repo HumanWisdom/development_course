@@ -16,7 +16,7 @@ export class S116053Page implements OnInit {
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+2.3.mp3'
   title=" Understanding the pain of loss  "
-  toc="sorrow/s116001"
+  toc="teenagers/sorrow/s116001"
   transcriptPage="sorrow/s116053t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -89,7 +89,7 @@ export class S116053Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/sorrow/s116054'])
+    this.router.navigate(['/teenagers/sorrow/s116054'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S116053Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/sorrow/s116052'])
+    this.router.navigate(['/teenagers/sorrow/s116052'])
  
  
   }

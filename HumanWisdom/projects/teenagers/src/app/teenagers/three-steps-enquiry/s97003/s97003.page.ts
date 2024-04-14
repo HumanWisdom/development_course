@@ -27,7 +27,7 @@ export class S97003Page implements OnInit, OnDestroy {
 
 
   bookmark = 0
-  toc = "three-steps-enquiry/s97001"
+  toc = "teenagers/three-steps-enquiry/s97001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -105,7 +105,7 @@ export class S97003Page implements OnInit, OnDestroy {
 
   }
   prev() {
-    this.router.navigate(['/three-steps-enquiry/s97002'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97002'])
 
   }
 
@@ -114,7 +114,7 @@ export class S97003Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/three-steps-enquiry/s97004'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97004'])
   }
 
   ngOnDestroy() {

@@ -14,7 +14,7 @@ export class S114028Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w9"
   hint = "This anxiety may make you take protein shakes to build up your muscles or spend a lot of money on clothes."
-  toc = "/self-image/s114001"
+  toc = "teenagers/self-image/s114001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S114028Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-image/s114029'])
+        this.router.navigate(['/teenagers/self-image/s114029'])
 
       },
       () => {
-        this.router.navigate(['/self-image/s114029'])
+        this.router.navigate(['/teenagers/self-image/s114029'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-image/s114027'])
+    this.router.navigate(['/teenagers/self-image/s114027'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S126044Page implements OnInit
   bg_cft = "bg_teal"
   bg = "teal_w9"
   hint = "We often misjudge what others think about us, and give it more importance than it deserves."
-  toc = "/self-esteem/s126001"
+  toc = "teenagers/self-esteem/s126001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S126044Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-esteem/s126045'])
+        this.router.navigate(['/teenagers/self-esteem/s126045'])
 
       },
       () => {
-        this.router.navigate(['/self-esteem/s126045'])
+        this.router.navigate(['/teenagers/self-esteem/s126045'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-esteem/s126043'])
+    this.router.navigate(['/teenagers/self-esteem/s126043'])
   }
 
   ngOnDestroy() 

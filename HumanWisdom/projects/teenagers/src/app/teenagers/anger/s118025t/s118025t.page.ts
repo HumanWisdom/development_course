@@ -19,7 +19,7 @@ export class S118025tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/anger/s118025"
-  toc="/anger/s118001"
+  toc="teenagers/anger/s118001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")

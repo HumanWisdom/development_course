@@ -13,7 +13,7 @@ export class S134023Page implements OnInit
   bg_tn = "bg_blue_pink"
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w1"
-  toc = "love/s134001"
+  toc = "teenagers/love/s134001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -23,7 +23,9 @@ export class S134023Page implements OnInit
   endTime: any
   totalTime: any
   bookmark = 0
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   constructor
   (
@@ -212,12 +214,12 @@ export class S134023Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/love/s134022'])
+    this.router.navigate(['/teenagers/love/s134022'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/love/s134024'])
+    this.router.navigate(['/teenagers/love/s134024'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

@@ -21,7 +21,7 @@ export class S141019Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/success-failure/audios/success-failure+1.3.mp3'
 
   transcriptPage="success-failure/s48019t"
-  toc="success-failure/s141001"
+  toc="teenagers/success-failure/s141001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -96,7 +96,7 @@ export class S141019Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/success-failure/s141020'])
+    this.router.navigate(['/teenagers/success-failure/s141020'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -114,7 +114,7 @@ export class S141019Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/success-failure/s141018'])
+    this.router.navigate(['/teenagers/success-failure/s141018'])
   }
 
   ngOnDestroy()

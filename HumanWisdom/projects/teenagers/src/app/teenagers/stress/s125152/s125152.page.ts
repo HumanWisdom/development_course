@@ -15,7 +15,7 @@ export class S125152Page implements OnInit
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w11"
   hint = "Anxiety can make us avoid people or situations, if we feel we cannot cope with the stress we will feel."
-  toc = "/stress/s125001"
+  toc = "teenagers/stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S125152Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125153'])
+        this.router.navigate(['/teenagers/stress/s125153'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125153'])
+        this.router.navigate(['/teenagers/stress/s125153'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/stress/s125151'])
+    this.router.navigate(['/teenagers/stress/s125151'])
   }
 
   ngOnDestroy() 

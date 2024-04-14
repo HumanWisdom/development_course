@@ -15,7 +15,7 @@ export class S138055Page implements OnInit
   bg_cft=""
   bg=""
   hint = " It could have shaped your opinions, or beliefs about yourself."
-  toc = "/social-media/s138001"
+  toc = "teenagers/social-media/s138001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S138055Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/social-media/s138056'])
+        this.router.navigate(['/teenagers/social-media/s138056'])
 
       },
       () => {
-        this.router.navigate(['/social-media/s138056'])
+        this.router.navigate(['/teenagers/social-media/s138056'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/social-media/s138054'])
+    this.router.navigate(['/teenagers/social-media/s138054'])
   }
 
   ngOnDestroy() 
