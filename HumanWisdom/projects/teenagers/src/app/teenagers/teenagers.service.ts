@@ -5,45 +5,47 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { TeenagerOnboardingService } from "../teenagerOnboarding/teenager-onboarding.service";
 import { environment} from '../../../../environments/environment'
+import { ProgramType } from "../../../../shared/models/program-model";
 @Injectable({
   providedIn: 'root'
 })
 export class TeenagersService {
   //path="http://18.132.47.231/api";
   path = environment.apiURL;
+  programId = ProgramType.Adults;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
 
   personalisedforyoulist = [
     {
-      id: "1",
+      id: "17",
       name: 'Succeed in Life'
     },
     {
-      id: "2",
+      id: "10",
       name: 'Mental Health'
     },
     {
-      id: "3",
+      id: "11",
       name: 'Relationships'
     },
     {
-      id: "4",
+      id: "13",
       name: 'Be happier'
     },
     {
-      id: "5",
+      id: "15",
       name: 'Overcome unhelpful habits'
     },
     {
-      id: "6",
+      id: "16",
       name: 'Understand yourself'
        },
     {
-      id: "7",
+      id: "12",
       name: 'Feel calm',
     },
     {
-      id: "8",
+      id: "14",
       name: 'Manage your emotions',
     }
   ]
@@ -57,6 +59,10 @@ export class TeenagersService {
 
   submitProgressAv(data: any): Observable<any> {
     return this.http.post(this.path + '/UserProgressAv', data)
+  }
+
+  GetLastVisitedScreen(data: any): Observable<any> {
+    return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${this.programId}`)
   }
 
   submitProgressQuestion(data: any): Observable<any> {
@@ -80,6 +86,15 @@ export class TeenagersService {
   }
   submitJournal(data: any): Observable<any> {
     return this.http.post(this.path + '/AddJournal', data)
+  }
+
+  setmoduleID(id, lastVisitedurl = '', indexUrl = '') {
+    if (localStorage.getItem("isloggedin") === 'T') {
+      this.activateModule(id, lastVisitedurl, indexUrl);
+    } else {
+      this.emaillogin(id);
+    }
+
   }
 
   getDailyQuestion(data: any): Observable<any> {
@@ -350,17 +365,25 @@ export class TeenagersService {
     return this.http.get(this.path + '/GetTeenTalks')
   }
 
-
-  setmoduleID(id) {
-    if (localStorage.getItem("isloggedin") === 'T') {
-      this.activateModule(id);
-    } else {
-      this.emaillogin(id);
-    }
-
+  GetDashboardFeature(data: any): Observable<any> {
+    return this.http.get(this.path + `/GetDashboard_Features/${data}`)
   }
 
-  activateModule(id) {
+
+  encryptUserId(id) {
+    return this.http.get(this.path + `/encryptURL?URL=${id}`)
+  }
+
+  // setmoduleID(id) {
+  //   if (localStorage.getItem("isloggedin") === 'T') {
+  //     this.activateModule(id);
+  //   } else {
+  //     this.emaillogin(id);
+  //   }
+
+  // }
+
+  activateModule(id, lastVisitedurl = '', indexUrl = '') {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
     let discoveringWisdomResume;
     let mediaPercent;
@@ -384,6 +407,11 @@ export class TeenagersService {
         }
         localStorage.setItem("qrList", JSON.stringify(qrList))
       })
+  }
+
+
+  AddUserPreference(data: any): Observable<any> {
+    return this.http.post(this.path + `/AddUserPreference/${data}`, null)
   }
 
   emaillogin(id = '') {

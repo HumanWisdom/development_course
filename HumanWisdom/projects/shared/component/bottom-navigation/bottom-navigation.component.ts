@@ -108,7 +108,7 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
   routeDash() {
     if(ProgramType.Teenagers==this.programType ||
       SharedService.ProgramId == ProgramType.Teenagers){
-      this.router.navigate(['/teenager-dashboard/']);
+      this.router.navigate(['teenagers/teenager-dashboard']);
     }else{
       this.router.navigate(['/adults/adult-dashboard'])
     }
