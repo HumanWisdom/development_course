@@ -16,7 +16,9 @@ export class S134106Page implements OnInit
   bg = "blue_pink_w2"
   hint = " It may stop you getting close to someone, or being the authentic you "
   toc = "teenagers/love/s134001"
-  path = this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

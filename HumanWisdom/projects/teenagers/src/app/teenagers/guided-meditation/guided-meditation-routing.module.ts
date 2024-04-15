@@ -13,6 +13,7 @@ import { S110008Page } from './s110008/s110008.page';
 import { S110009Page } from './s110009/s110009.page';
 import { S110010Page } from './s110010/s110010.page';
 import { S110011Page } from './s110011/s110011.page';
+import { AdultsAudioMeditationComponent } from '../../../../../shared/component/adults-audio-meditation/adults-audio-meditation.component';
 
 const routes: Routes = [
   {
@@ -74,6 +75,10 @@ const routes: Routes = [
     path: 's110011',
     canActivate: [ActiveGuard],
     component: S110011Page,
+  },
+  {
+    path: 'audiopage/:audiolink/:title/:RowId/:type',
+    component: AdultsAudioMeditationComponent
   },
 ];
 

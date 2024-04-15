@@ -1,0 +1,7 @@
+@media (max-width: 820px)
+{
+    header .logo img 
+    {
+        max-height: 40px;
+    }
+}
