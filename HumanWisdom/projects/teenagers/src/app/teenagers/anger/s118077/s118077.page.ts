@@ -15,7 +15,7 @@ export class S118077Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/anger/audios/anger+3.6.mp3'
   title="The unconscious thinking patterns behind anger"
-  toc="/anger/s118001"
+  toc="teenagers/anger/s118001"
   transcriptPage="anger/s118077t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

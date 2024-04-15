@@ -26,7 +26,7 @@ export class S134004Page implements OnInit {
       ]
 
       transcriptPage="love/s134004t"
-      toc="love/s134001"
+      toc="teenagers/love/s134001"
       progName = "teenagers";
       userId:any
       saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -100,7 +100,7 @@ export class S134004Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/love/s134005'])
+        this.router.navigate(['/teenagers/love/s134005'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -121,7 +121,7 @@ export class S134004Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/love/s134003'])
+        this.router.navigate(['/teenagers/love/s134003'])
      
      
       }

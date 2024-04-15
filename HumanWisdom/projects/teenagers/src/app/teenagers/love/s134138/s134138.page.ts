@@ -15,7 +15,7 @@ export class S134138Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w8"
   hint = "It could be you want others to agree with you, and when they don’t, you get angry with them"
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S134138Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134139'])
+        this.router.navigate(['/teenagers/love/s134139'])
 
       },
       () => {
-        this.router.navigate(['/love/s134139'])
+        this.router.navigate(['/teenagers/love/s134139'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134137'])
+    this.router.navigate(['/teenagers/love/s134137'])
   }
 
   ngOnDestroy() 
