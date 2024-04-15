@@ -35,7 +35,7 @@ export class S134203Page implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/love/s134001"
+  toc="teenagers/love/s134001"
 
   constructor(private router: Router,
     private service:TeenagersService,
