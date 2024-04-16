@@ -82,6 +82,11 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     this.location.back();
   }
 
+  toRead(obj) {
+    let sId = obj;
+    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+  }
+
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
@@ -95,7 +100,14 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
+  routeGuided() {
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
+  }
+  
+  enableRoute(route) {
+    this.router.navigate([route]);
 
+}
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
