@@ -27,7 +27,7 @@ export class DashboardPage implements OnInit {
   @ViewChild('closetourmodal') closetourmodal: ElementRef;
   @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
-  public dasboardUrl = '/adults/adult-dashboard';
+  public dasboardUrl = '/teenagers/adult-dashboard';
   //get global settings here
   public text = 2
   public video = 3
@@ -344,7 +344,7 @@ export class DashboardPage implements OnInit {
   }
 
   survey() {
-    this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
+    this.router.navigate(["/teenagers/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
   viewDetails() {
@@ -704,7 +704,7 @@ export class DashboardPage implements OnInit {
 
 
   youtube(link) {
-    this.router.navigate(['/adults/curated/youtubelink', link])
+    this.router.navigate(['/teenagers/curated/youtubelink', link])
   }
 
 
@@ -966,7 +966,7 @@ export class DashboardPage implements OnInit {
                   if (d === 'journal') {
                     window.location.reload();
                   } else {
-                    this.router.navigate(['/adults/adult-dashboard'])
+                    this.router.navigate(['/teenagers/adult-dashboard'])
                   }
                 }
 
@@ -1570,143 +1570,143 @@ export class DashboardPage implements OnInit {
     localStorage.setItem("pageaction", 'next');
     switch (id) {
       case "07": {
-        this.service.setmoduleID(id, '/adults/comparison', '/adults/comparison/s0');
+        this.service.setmoduleID(id, '/teenagers/comparison', '/teenagers/comparison/s111001');
         break
       }
       case "14": {
-        this.service.setmoduleID(id, '/adults/anger', '/adults/anger/s162p0');
+        this.service.setmoduleID(id, '/teenagers/anger', '/teenagers/anger/s118001');
         break
       }
       case "15": {
-        this.service.setmoduleID(id, '/adults/conditioning', '/adults/conditioning/s232');
+        this.service.setmoduleID(id, '/teenagers/conditioning', '/teenagers/conditioning/s105001');
         break
       }
       case "16": {
-        this.service.setmoduleID(id, '/adults/criticism', '/adults/criticism/s324');
+        this.service.setmoduleID(id, '/teenagers/criticism', '/teenagers/criticism/s136001');
         break
       }
       case "17": {
-        this.service.setmoduleID(id, '/adults/self-esteem', '/adults/self-esteem/s433');
+        this.service.setmoduleID(id, '/teenagers/self-esteem', '/teenagers/self-esteem/s126001');
         break
       }
       case "18": {
-        this.service.setmoduleID(id, '/adults/emotional-needs', '/adults/emotional-needs/s18001');
+        this.service.setmoduleID(id, '/teenagers/emotional-needs', '/teenagers/emotional-needs/s120001');
         break
       }
       case "19": {
-        this.service.setmoduleID(id, '/adults/fear-anxiety', '/adults/fear-anxiety/s486');
+        this.service.setmoduleID(id, '/teenagers/fear-anxiety', '/teenagers/fear-anxiety/s112001');
         break
       }
       case "20": {
-        this.service.setmoduleID(id, '/adults/pleasure', '/adults/pleasure/s20001');
+        this.service.setmoduleID(id, '/teenagers/pleasure', '/teenagers/pleasure/s124001');
         break
       }
       case "21": {
-        this.service.setmoduleID(id, '/adults/identity', '/adults/identity/s21001');
+        this.service.setmoduleID(id, '/teenagers/identity', '/teenagers/identity/s119001');
         break
       }
       case "22": {
-        this.service.setmoduleID(id, '/adults/meditation', '/adults/meditation/s22001');
+        this.service.setmoduleID(id, '/teenagers/meditation', '/teenagers/meditation/s109001');
         break
       }
       case "23": {
-        this.service.setmoduleID(id, '/adults/happiness', '/adults/happiness/s23001');
+        this.service.setmoduleID(id, '/teenagers/happiness', '/teenagers/happiness/s23001');
         break
       }
       case "25": {
-        this.service.setmoduleID(id, '/adults/self-image', '/adults/self-image/s25001');
+        this.service.setmoduleID(id, '/teenagers/self-image', '/teenagers/self-image/s25001');
         break
       }
       case "26": {
-        this.service.setmoduleID(id, '/adults/benefits-of-enquiry', '/adults/benefits-of-enquiry/s26001');
+        this.service.setmoduleID(id, '/teenagers/benefits-of-enquiry', '/teenagers/benefits-of-enquiry/s26001');
         break
       }
       case "27": {
-        this.service.setmoduleID(id, '/adults/discovering-wisdom', '/adults/discovering-wisdom/s27001');
+        this.service.setmoduleID(id, '/teenagers/discovering-wisdom', '/teenagers/discovering-wisdom/s27001');
         break
       }
       case "28": {
-        this.service.setmoduleID(id, '/adults/nature', '/adults/nature/s28001');
+        this.service.setmoduleID(id, '/teenagers/nature', '/teenagers/nature/s28001');
         break
       }
       case "29": {
-        this.service.setmoduleID(id, '/adults/breathing', '/adults/breathing/s29000');
+        this.service.setmoduleID(id, '/teenagers/breathing', '/teenagers/breathing/s29000');
         break
       }
       case "30": {
-        this.service.setmoduleID(id, '/adults/noticing-thoughts', '/adults/noticing-thoughts/s30001');
+        this.service.setmoduleID(id, '/teenagers/noticing-thoughts', '/teenagers/noticing-thoughts/s30001');
         break
       }
       case "32": {
-        this.service.setmoduleID(id, '/adults/benefits-of-wisdom', '/adults/benefits-of-wisdom/s32001');
+        this.service.setmoduleID(id, '/teenagers/benefits-of-wisdom', '/teenagers/benefits-of-wisdom/s32001');
         break
       }
       case "33": {
-        this.service.setmoduleID(id, '/adults/five-circles', '/adults/five-circles/s33001');
+        this.service.setmoduleID(id, '/teenagers/five-circles', '/teenagers/five-circles/s33001');
         break
       }
       case "34": {
-        this.service.setmoduleID(id, '/adults/key-ideas', '/adults/key-ideas/s34001');
+        this.service.setmoduleID(id, '/teenagers/key-ideas', '/teenagers/key-ideas/s34001');
         break
       }
       case "35": {
-        this.service.setmoduleID(id, '/adults/program-guide', '/adults/program-guide/s35001');
+        this.service.setmoduleID(id, '/teenagers/program-guide', '/teenagers/program-guide/s35001');
         break
       }
       case "36": {
-        this.service.setmoduleID(id, '/adults/how-to-begin', '/adults/how-to-begin/s36000');
+        this.service.setmoduleID(id, '/teenagers/how-to-begin', '/teenagers/how-to-begin/s36000');
         break
       }
       case "37": {
-        this.service.setmoduleID(id, '/adults/three-steps-enquiry', '/adults/three-steps-enquiry/s37000');
+        this.service.setmoduleID(id, '/teenagers/three-steps-enquiry', '/teenagers/three-steps-enquiry/s37000');
         break
       }
       case "38": {
-        this.service.setmoduleID(id, '/adults/insight', '/adults/insight/s38000');
+        this.service.setmoduleID(id, '/teenagers/insight', '/teenagers/insight/s38000');
         break
       }
       case "39": {
-        this.service.setmoduleID(id, '/adults/awareness', '/adults/awareness/s39000');
+        this.service.setmoduleID(id, '/teenagers/awareness', '/teenagers/awareness/s39000');
         break
       }
       case "40": {
-        this.service.setmoduleID(id, '/adults/no-judgement', '/adults/no-judgement/s40000');
+        this.service.setmoduleID(id, '/teenagers/no-judgement', '/teenagers/no-judgement/s40000');
         break
       }
       case "41": {
-        this.service.setmoduleID(id, '/adults/questions-are-key', '/adults/questions-are-key/s41000');
+        this.service.setmoduleID(id, '/teenagers/questions-are-key', '/teenagers/questions-are-key/s41000');
         break
       }
       case "42": {
-        this.service.setmoduleID(id, '/adults/without-language', '/adults/without-language/s42000');
+        this.service.setmoduleID(id, '/teenagers/without-language', '/teenagers/without-language/s42000');
         break
       }
       case "43": {
-        this.service.setmoduleID(id, '/adults/obstacles-enquiry', '/adults/obstacles-enquiry/s43000');
+        this.service.setmoduleID(id, '/teenagers/obstacles-enquiry', '/teenagers/obstacles-enquiry/s43000');
         break
       }
       case "44": {
-        this.service.setmoduleID(id, '/adults/stress', '/adults/stress/s44001');
+        this.service.setmoduleID(id, '/teenagers/stress', '/teenagers/stress/s44001');
         break
       }
       case "45": {
-        this.service.setmoduleID(id, '/adults/habit-addiction', '/adults/habit-addiction/s45001');
+        this.service.setmoduleID(id, '/teenagers/habit-addiction', '/teenagers/habit-addiction/s45001');
         break
       }
       case "46": {
-        this.service.setmoduleID(id, '/adults/food-health', '/adults/food-health/s46001');
+        this.service.setmoduleID(id, '/teenagers/food-health', '/teenagers/food-health/s46001');
         break
       }
       case "47": {
-        this.service.setmoduleID(id, '/adults/relationships', '/adults/relationships/s47000');
+        this.service.setmoduleID(id, '/teenagers/relationships', '/teenagers/relationships/s47000');
         break
       }
       case "48": {
-        this.service.setmoduleID(id, '/adults/success-failure', '/adults/success-failure/s48001');
+        this.service.setmoduleID(id, '/teenagers/success-failure', '/teenagers/success-failure/s48001');
         break
       }
       case "49": {
-        this.service.setmoduleID(id, '/adults/opinions-beliefs', '/adults/opinions-beliefs/s49001');
+        this.service.setmoduleID(id, '/teenagers/opinions-beliefs', '/teenagers/opinions-beliefs/s49001');
         break
       }
       case "50": {
@@ -1714,63 +1714,63 @@ export class DashboardPage implements OnInit {
         break
       }
       case "51": {
-        this.service.setmoduleID(id, '/adults/guided-meditation', '/adults/guided-meditation/s51000');
+        this.service.setmoduleID(id, '/teenagers/guided-meditation', '/teenagers/guided-meditation/s51000');
         break
       }
       case "53": {
-        this.service.setmoduleID(id, '/adults/communication', '/adults/communication/s53001');
+        this.service.setmoduleID(id, '/teenagers/communication', '/teenagers/communication/s53001');
         break
       }
       case "54": {
-        this.service.setmoduleID(id, '/adults/reactive-mind', '/adults/reactive-mind/s54001');
+        this.service.setmoduleID(id, '/teenagers/reactive-mind', '/teenagers/reactive-mind/s54001');
         break
       }
       case "55": {
-        this.service.setmoduleID(id, '/adults/self-interest', '/adults/self-interest/s55001');
+        this.service.setmoduleID(id, '/teenagers/self-interest', '/teenagers/self-interest/s55001');
         break
       }
       case "56": {
-        this.service.setmoduleID(id, '/adults/inner-boredom', '/adults/inner-boredom/s56001');
+        this.service.setmoduleID(id, '/teenagers/inner-boredom', '/teenagers/inner-boredom/s56001');
         break
       }
       case "57": {
-        this.service.setmoduleID(id, '/adults/nature-of-i', '/adults/nature-of-i/s57001');
+        this.service.setmoduleID(id, '/teenagers/nature-of-i', '/teenagers/nature-of-i/s57001');
         break
       }
       case "58": {
-        this.service.setmoduleID(id, '/adults/work', '/adults/work/s58001');
+        this.service.setmoduleID(id, '/teenagers/work', '/teenagers/work/s58001');
         break
       }
       case "59": {
-        this.service.setmoduleID(id, '/adults/leadership', '/adults/leadership/s59001');
+        this.service.setmoduleID(id, '/teenagers/leadership', '/teenagers/leadership/s59001');
         break
       }
       case "60": {
-        this.service.setmoduleID(id, '/adults/sorrow', '/adults/sorrow/s60001');
+        this.service.setmoduleID(id, '/teenagers/sorrow', '/teenagers/sorrow/s60001');
         break
       }
       case "61": {
-        this.service.setmoduleID(id, '/adults/loneliness', '/adults/loneliness/s61001');
+        this.service.setmoduleID(id, '/teenagers/loneliness', '/teenagers/loneliness/s61001');
         break
       }
       case "62": {
-        this.service.setmoduleID(id, '/adults/love', '/adults/love/s62001');
+        this.service.setmoduleID(id, '/teenagers/love', '/teenagers/love/s62001');
         break
       }
       case "63": {
-        this.service.setmoduleID(id, '/adults/living-with-peace', '/adults/living-with-peace/s63001');
+        this.service.setmoduleID(id, '/teenagers/living-with-peace', '/teenagers/living-with-peace/s63001');
         break
       }
       case "64": {
-        this.service.setmoduleID(id, '/adults/dealing-with-death', '/adults/dealing-with-death/s64001');
+        this.service.setmoduleID(id, '/teenagers/dealing-with-death', '/teenagers/dealing-with-death/s64001');
         break
       }
       case "73": {
-        this.service.setmoduleID(id, '/adults/money', '/adults/money/s73001');
+        this.service.setmoduleID(id, '/teenagers/money', '/teenagers/money/s73001');
         break
       }
       case "74": {
-        this.service.setmoduleID(id, '/adults/how-can-wisdom-help', '/adults/how-can-wisdom-help/s74001');
+        this.service.setmoduleID(id, '/teenagers/how-can-wisdom-help', '/teenagers/how-can-wisdom-help/s74001');
         break
       }
       case "75": {
@@ -1779,23 +1779,23 @@ export class DashboardPage implements OnInit {
       }
 
       case "76": {
-        this.service.setmoduleID(id, '/adults/bullying', '/adults/bullying/s76001');
+        this.service.setmoduleID(id, '/teenagers/bullying', '/teenagers/bullying/s76001');
         break
       }
       case "77": {
-        this.service.setmoduleID(id, '/adults/making-better-decisions', '/adults/making-better-decisions/s77001');
+        this.service.setmoduleID(id, '/teenagers/making-better-decisions', '/teenagers/making-better-decisions/s77001');
         break
       }
       case "92": {
-        this.service.setmoduleID(id, '/adults/dealing-with-depression', '/adults/dealing-with-depression/s92001');
+        this.service.setmoduleID(id, '/teenagers/dealing-with-depression', '/teenagers/dealing-with-depression/s92001');
         break
       }
       case "91": {
-        this.service.setmoduleID(id, '/adults/external-approval', '/adults/external-approval/s91001');
+        this.service.setmoduleID(id, '/teenagers/external-approval', '/teenagers/external-approval/s91001');
         break
       }
       case "143": {
-        this.service.setmoduleID(id, '/adults/diversity-and-inclusion', '/adults/diversity-and-inclusion/s143001');
+        this.service.setmoduleID(id, '/teenagers/diversity-and-inclusion', '/teenagers/diversity-and-inclusion/s143001');
         break
       }
 
@@ -1805,14 +1805,14 @@ export class DashboardPage implements OnInit {
   wisdomexercise() {
 
     if (this.resumeLastvisited[0]['screenno'].length >= 1) {
-      this.router.navigate(['adults/wisdom-exercise/s' + this.resumeLastvisited[0]['screenno'].substring(0, this.resumeLastvisited[0]['screenno'].length - 2)], {
+      this.router.navigate(['teenagers/wisdom-exercise/s' + this.resumeLastvisited[0]['screenno'].substring(0, this.resumeLastvisited[0]['screenno'].length - 2)], {
         state: {
           day: 2,
         }
       });
     }
     else
-      this.router.navigate([`/adults/wisdom-exercise/s75001`])
+      this.router.navigate([`/teenagers/wisdom-exercise/s75001`])
 
 
 
@@ -1820,19 +1820,19 @@ export class DashboardPage implements OnInit {
 
 
   routeJournal() {
-    this.router.navigate(['/adults/journal'])
+    this.router.navigate(['/teenagers/journal'])
   }
 
   goToYourWisdomScoreComponent() {
     this.logeventservice.logEvent('click_wisdom_score');
-    this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
+    this.router.navigate(['/teenagers/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
 
 
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
     if (evtName === 'click_journal') {
-      this.router.navigate(['/adults/journal'])
+      this.router.navigate(['/teenagers/journal'])
     } else if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {
@@ -1874,7 +1874,7 @@ export class DashboardPage implements OnInit {
     localStorage.setItem('lastRoute', this.dasboardUrl);
     if (!this.isloggedIn) {
       this.logeventservice.logEvent("click_Select-a-topic-to-Explore");
-      this.router.navigate(["/adults/select-a-topic-to-explore"], {
+      this.router.navigate(["/teenagers/select-a-topic-to-explore"], {
         state: {
           routedFromLogin: false,
         }
@@ -1882,7 +1882,7 @@ export class DashboardPage implements OnInit {
     }
     else {
       this.logeventservice.logEvent("click_Change-your-Topic");
-      this.router.navigate(["/adults/change-topic"], {
+      this.router.navigate(["/teenagers/change-topic"], {
         state: {
           routedFromLogin: false,
         }
@@ -1893,41 +1893,41 @@ export class DashboardPage implements OnInit {
   routeToFindAnswer(param) {
     localStorage.setItem('lastRoute', param);
     this.logeventservice.logEvent("click_find-answers-" + param);
-    this.router.navigate(['/adults/find-answers/' + param]);
+    this.router.navigate(['/teenagers/find-answers/' + param]);
   }
 
   activeTopicRoute(name) {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
-      this.router.navigate(['/adults/curated/manage-your-emotions'])
+      this.router.navigate(['/teenagers/curated/manage-your-emotions'])
     } else if (name === 'Mental Health') {
       this.logeventservice.logEvent('click_stress_anxiety');
-      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+      this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
     } else if (name === 'Work and Leadership') {
       this.logeventservice.logEvent('click_workplace');
-      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+      this.router.navigate(['/teenagers/curated/wisdom-for-workplace'])
     } else if (name === 'Relationships') {
       this.logeventservice.logEvent('click_relationships');
-      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+      this.router.navigate(['/teenagers/curated/have-fulfilling-relationships'])
     } else if (name === 'Be happier') {
       this.logeventservice.logEvent('click_be_happier');
-      this.router.navigate(['/adults/curated/be-happier'])
+      this.router.navigate(['/teenagers/curated/be-happier'])
     } else if (name === 'Habits and Addiction') {
       this.logeventservice.logEvent('click_be_happier');
-      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+      this.router.navigate(['/teenagers/curated/change-unhelpful-habits'])
     } else if (name === 'Deal with  loss') {
       this.logeventservice.logEvent('click_sorrow_loss');
-      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+      this.router.navigate(['/teenagers/curated/deal-with-sorrow-loss'])
     } else if (name === 'Meditation') {
       this.logeventservice.logEvent('click_calm_mind');
-      this.router.navigate(['/adults/curated/have-calm-mind'])
+      this.router.navigate(['/teenagers/curated/have-calm-mind'])
     }
   }
 
   readMore(str) {
     this.logeventservice.logEvent('click_testimonial_' + str);
     SharedService.setDataInLocalStorage(Constant.TestimonialId, str);
-    this.router.navigate(['/adults/testimonials']);
+    this.router.navigate(['/teenagers/testimonials']);
   }
   getEnableBanner() {
     return SharedService.enablebanner;
@@ -1954,7 +1954,7 @@ export class DashboardPage implements OnInit {
   }
 
   getinp(event) {
-    let url = `/adults/site-search/${this.searchinp}`
+    let url = `/teenagers/site-search/${this.searchinp}`
     this.router.navigate([url])
   }
 

@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 import { TeenagerOnboardingService } from "../teenagerOnboarding/teenager-onboarding.service";
 import { environment} from '../../../../environments/environment'
 import { ProgramType } from "../../../../shared/models/program-model";
+import { Router } from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
@@ -51,7 +52,7 @@ export class TeenagersService {
   ]
 
 
-  constructor(private http: HttpClient, handler: HttpBackend,public services:TeenagerOnboardingService) { }
+  constructor(private http: HttpClient, handler: HttpBackend,public services:TeenagerOnboardingService,private router: Router) { }
 
   submitProgressText(data: any): Observable<any> {
     return this.http.post(this.path + '/UserProgress', data)
@@ -406,7 +407,18 @@ export class TeenagersService {
           localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         }
         localStorage.setItem("qrList", JSON.stringify(qrList))
-      })
+      }, error => {
+        console.log(error)
+      },
+        () => {
+          if (lastVisitedurl !== '' && indexUrl !== '') {
+            if (discoveringWisdomResume && discoveringWisdomResume !== '') {
+              this.router.navigate([`${lastVisitedurl}/${discoveringWisdomResume}`])
+            } else {
+              this.router.navigate([`${indexUrl}`])
+            }
+          }
+        })
   }
 
 
