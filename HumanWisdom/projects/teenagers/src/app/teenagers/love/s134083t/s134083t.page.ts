@@ -19,7 +19,7 @@ export class S134083tPage implements OnInit
     return this.router.url;
   }, 1000);
   audioPage="/love/s134083"
-  toc="/love/s134001"
+  toc="teenagers/love/s134001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
