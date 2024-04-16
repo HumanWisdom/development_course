@@ -189,7 +189,7 @@ export class ManageYourEmotionsPage implements OnInit {
 
   routeAnger(cont: any = 1) {
     var angerResume
-    localStorage.setItem("moduleId", JSON.stringify(14))
+    localStorage.setItem("moduleId", JSON.stringify(118))
     this.service.clickModule(14, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
@@ -215,7 +215,7 @@ export class ManageYourEmotionsPage implements OnInit {
             this.router.navigate([`/teenagers/anger/${angerResume}`])
           }
           else
-            this.router.navigate([`/teenagers/anger/s162p0`])
+            this.router.navigate([`/teenagers/anger/s118001`])
           /* if(!angerResume)
             {
 
@@ -226,9 +226,86 @@ export class ManageYourEmotionsPage implements OnInit {
         })
   }
 
+  routeAnxiety(cont: any = 1) {
+    var rmR
+    localStorage.setItem("moduleId", JSON.stringify(112))
+    this.service.clickModule(54, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        rmR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("rmR", rmR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/fear-anxiety/${rmR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/fear-anxiety/s112001`])
+          /* if(!rmR)
+           {
+
+             this.router.navigate([`/teenagers/reactive-mind`])
+           }
+           else
+             this.router.navigate([`/teenagers/reactive-mind/s${rmR}`])*/
+        })
+  }
+  routeDealingWithDepression(cont: any = 1) {
+    var rmR
+    localStorage.setItem("moduleId", JSON.stringify(156))
+    this.service.clickModule(54, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        rmR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("rmR", rmR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/dealing-with-depression/${rmR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/dealing-with-depression/s156001`])
+          /* if(!rmR)
+           {
+
+             this.router.navigate([`/teenagers/reactive-mind`])
+           }
+           else
+             this.router.navigate([`/teenagers/reactive-mind/s${rmR}`])*/
+        })
+  }
+
   routeReactiveMind(cont: any = 1) {
     var rmR
-    localStorage.setItem("moduleId", JSON.stringify(54))
+    localStorage.setItem("moduleId", JSON.stringify(113))
     this.service.clickModule(54, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
@@ -254,7 +331,7 @@ export class ManageYourEmotionsPage implements OnInit {
             this.router.navigate([`/teenagers/reactive-mind/${rmR}`])
           }
           else
-            this.router.navigate([`/teenagers/reactive-mind/s54001`])
+            this.router.navigate([`/teenagers/reactive-mind/s113001`])
           /* if(!rmR)
            {
 
@@ -267,7 +344,7 @@ export class ManageYourEmotionsPage implements OnInit {
 
   routePleasure(cont: any = 1) {
     var pleasureResume
-    localStorage.setItem("moduleId", JSON.stringify(20))
+    localStorage.setItem("moduleId", JSON.stringify(124))
     this.service.clickModule(20, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
@@ -297,13 +374,13 @@ export class ManageYourEmotionsPage implements OnInit {
             this.router.navigate([`/teenagers/pleasure/${pleasureResume}`])
           }
           else
-            this.router.navigate([`/teenagers/pleasure/s20001`])
+            this.router.navigate([`/teenagers/pleasure/s124001`])
         })
   }
 
   routeAddiction(cont: any = 1) {
     var addictionResume
-    localStorage.setItem("moduleId", JSON.stringify(45))
+    localStorage.setItem("moduleId", JSON.stringify(127))
     this.service.clickModule(45, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
@@ -329,13 +406,13 @@ export class ManageYourEmotionsPage implements OnInit {
             this.router.navigate([`/teenagers/habit-addiction/${addictionResume}`])
           }
           else
-            this.router.navigate([`/teenagers/habit-addiction/s45001`])
+            this.router.navigate([`/teenagers/habit-addiction/s127001`])
         })
   }
 
   routeComparison(cont: any = 1) {
     var comparisonR
-    localStorage.setItem("moduleId", JSON.stringify(7))
+    localStorage.setItem("moduleId", JSON.stringify(111))
     this.service.clickModule(7, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
@@ -364,13 +441,13 @@ export class ManageYourEmotionsPage implements OnInit {
             this.router.navigate([`/teenagers/comparison/${comparisonR}`])
           }
           else
-            this.router.navigate([`/teenagers/comparison/s0`])
+            this.router.navigate([`/teenagers/comparison/s111001`])
         })
   }
 
   routeLoneliness(cont: any = 1) {
     var lonelinessResume
-    localStorage.setItem("moduleId", JSON.stringify(61))
+    localStorage.setItem("moduleId", JSON.stringify(117))
     this.service.clickModule(61, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
@@ -396,7 +473,7 @@ export class ManageYourEmotionsPage implements OnInit {
             this.router.navigate([`/teenagers/loneliness/${lonelinessResume}`])
           }
           else
-            this.router.navigate([`/teenagers/loneliness/s61001`])
+            this.router.navigate([`/teenagers/loneliness/s117001`])
           /* if(!lonelinessResume)
             {
 

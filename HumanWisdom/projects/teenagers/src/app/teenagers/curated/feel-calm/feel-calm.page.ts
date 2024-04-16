@@ -126,6 +126,16 @@ export class FeelCalmPage implements OnInit {
     }
   }
 
+  enableRoute(route) {
+   
+    this.router.navigate([route]);
+  
+}
+
+routeGuided() {
+  this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
+}
+
   getsupport(url, id, ind = 0) {
     let index = ind + 1
     url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
@@ -144,7 +154,7 @@ export class FeelCalmPage implements OnInit {
         })
   }
 
-  routeAddiction(cont: any = 1) {
+  routeNature(cont: any = 1) {
     var natureR
     localStorage.setItem("moduleId", JSON.stringify(106))
     this.service.clickModule(106, this.userId)
