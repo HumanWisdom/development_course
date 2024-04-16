@@ -180,7 +180,7 @@ export class SubscribedUnsubscribedPage implements OnInit {
           this.router.navigate(['/subscription/try-free-and-subscribe']);
         } else {
           SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-          this.router.navigate(['/onboarding/login']);
+          this.router.navigate(['/adults/onboarding/login']);
         }
       }
 

@@ -630,7 +630,7 @@ const routes: Routes = [
   {
     path: 'log-in',
     canActivate: [authLoginGuard],
-    loadChildren: () => import('../onboarding/login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
+    loadChildren: () => import('../adults/onboarding/login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
   },
   {
     path: 'partnership-app',

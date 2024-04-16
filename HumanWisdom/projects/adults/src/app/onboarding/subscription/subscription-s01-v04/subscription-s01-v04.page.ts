@@ -80,9 +80,9 @@ export class SubscriptionS01V04Page implements OnInit {
     private forumservice: ForumService
   ) {
     let res = localStorage.getItem("isloggedin")
-    if (res !== 'T') this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    if (res !== 'T') this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
     if (localStorage.getItem('subscribepage') === 'T') {
-      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
     }
     if (localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
@@ -335,7 +335,7 @@ export class SubscriptionS01V04Page implements OnInit {
 
   getActivationCode() {
     localStorage.setItem("activeCode", 'T')
-    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
 
@@ -349,7 +349,7 @@ export class SubscriptionS01V04Page implements OnInit {
     if (value === 'home') {
       this.router.navigate(['/adults/adult-dashboard'])
     } else {
-      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
     }
   }
 
@@ -573,7 +573,7 @@ export class SubscriptionS01V04Page implements OnInit {
   loggedUser() {
     if (!this.userId) {
       console.log("login first")
-      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
 
     }
 
