@@ -72,39 +72,51 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         pc05:
         {
+          id: 32,
+          url: '/podcasts/32.mp3',
+          title: ' Overcoming grief'
+        },
+        pc06:
+        {
           id: 15,
           url: '/podcasts/15.mp3',
           title: 'Why do we follow trends'
         },
-        pc06:
+        pc07:
         {
           id: 28,
           url: '/podcasts/28.mp3',
           title: 'Healing emotional pain'
         },
-        pc07:
+        pc08:
         {
           id: 33,
           url: '/podcasts/33.mp3',
           title: 'Preventing suicide'
         },
-        pc08:
+        pc09:
         {
           id: 38,
           url: '/podcasts/38.mp3',
           title: 'Deal with bullying'
         },
-        pc09:
+        pc10:
         {
           id: 40,
           url: '/podcasts/40.mp3',
           title: 'Overcoming depression'
         },
-        pc10:
+        pc11:
         {
           id: 45,
           url: '/podcasts/45.mp3',
-          title: 'The resilient mindset,'
+          title: 'The resilient mindset'
+        },
+        pc12:
+        {
+          id: 58,
+          url: '/podcasts/58.mp3',
+          title: 'Overcoming loneliness'
         },
     
       }
