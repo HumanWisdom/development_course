@@ -14,11 +14,11 @@ export class IntroductionPage implements OnInit {
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
     private location:Location, private service:TeenagersService ) {
-      
+      let url = this.route.snapshot.paramMap.get('TopicName');
+      this.GetGuidedQs_Topics(url);
   }
 
   ngOnInit() {
-  this.GetGuidedQs_Topics(this.router.url);
   }
 
   goBack() {

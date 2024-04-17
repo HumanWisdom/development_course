@@ -4,7 +4,7 @@ import { AudioVideoGuard } from '../audio-video.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { ActiveGuard } from '../authGuard/active.guard';
-
+import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/blog-article.page';
 
 const routes: Routes = [
     {
