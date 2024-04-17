@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { CommonService } from '../../services/common.service';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.page.html',
@@ -28,9 +30,14 @@ export class ProfileEditPage implements OnInit {
   title:any = '';
   titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
   searchResult = [];
-
+  isAdults = true;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   ngOnInit() {
