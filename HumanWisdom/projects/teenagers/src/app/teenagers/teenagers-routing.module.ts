@@ -137,6 +137,11 @@ const routes: Routes = [
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
     {
+        path: "journal/:TopicName",
+        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+      },
+    {
         path: 'journal',
         loadChildren: () => import('../teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
     },
@@ -362,6 +367,12 @@ const routes: Routes = [
         path: 'audio-meditation',
         loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
    },
+   {
+    path: 'blog-article',
+    // canActivate:[ActiveGuard],  
+    component:BlogArticlePage
+  },
+
 ];
 
 
