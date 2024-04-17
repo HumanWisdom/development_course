@@ -13,7 +13,7 @@ export class EnableRouteGuard implements CanActivate {
     if (userid === 'T') {
       return true;
     } else {
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true});
+      this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true});
       return false;
     }
   }

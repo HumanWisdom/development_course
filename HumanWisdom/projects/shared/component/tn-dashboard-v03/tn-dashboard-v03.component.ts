@@ -177,11 +177,11 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/adults/onboarding/login'])
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/adults/onboarding/login'])
   }
 
   giftwisdom() {

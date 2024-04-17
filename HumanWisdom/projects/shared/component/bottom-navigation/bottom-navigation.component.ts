@@ -138,12 +138,12 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
 
     if (localStorage.getItem('isloggedin') === 'T') {
       //this.logeventservice.logEvent('click_profile')
-      this.router.navigate(['/onboarding/user-profile'])
+      this.router.navigate(['adults/onboarding/user-profile'])
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
       //this.logeventservice.logEvent('click_login')
       localStorage.setItem('btnclick', 'T')
-      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate(['/adults/onboarding/login']);
       // }
 
     }
@@ -151,7 +151,7 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
 
   routeForum() {
     // if(localStorage.getItem('isloggedin') === 'T')
-    this.router.navigate(['/forum'],{ state: { programType: this.programType } })
+    this.router.navigate(['/adults/forum'],{ state: { programType: this.programType } })
   }
 
   saveQuestionButton() {
