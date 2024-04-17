@@ -3,8 +3,10 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from "@angular/cdk/platform";
-import { AdultsService } from '../../adults.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { CommonService } from '../../../services/common.service';
+import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from '../../../models/program-model';
 
 @Component({
   selector: 'HumanWisdom-events-index',
@@ -19,13 +21,18 @@ export class EventsIndexPage implements OnInit {
   searchinp="";
   backupList:any=[];
   isSubscriber = false;
-
+  isAdults =  true;
   constructor(private location: Location, private router: Router,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
-    public adult: AdultsService, private meta: Meta, private title: Title) {
+    public service: CommonService, private meta: Meta, private title: Title) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getSearchResult(value){
@@ -52,7 +59,7 @@ export class EventsIndexPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'Personal development events,Self-improvement events,Mindfulness events,Wisdom-based events,Inspirational events,Adult learning events,Life lessons events,Meditation events,Mental health events,Mindful events' })
 
 
-    this.adult.getAllEvents().subscribe(x => {
+    this.service.getAllEvents().subscribe(x => {
       console.log(x)
       this.futureeventList= x.FutureEvents;
       this.eventList=x.PastEvents;

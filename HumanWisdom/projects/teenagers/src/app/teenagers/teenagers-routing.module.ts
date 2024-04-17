@@ -362,6 +362,18 @@ const routes: Routes = [
         path: 'audio-meditation',
         loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
    },
+   {
+    path: 'events',
+    loadChildren: () => import('../../../../shared/component/events/events.module').then(m => m.EventsModule)
+  },
+  {
+    path: 'podcast/:tag',
+    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule),
+  },
+  {
+    path: 'podcast',
+    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
+  },
 ];
 
 
