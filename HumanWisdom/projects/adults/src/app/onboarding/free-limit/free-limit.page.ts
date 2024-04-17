@@ -61,7 +61,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
     if (issub && this.isloggedIn) {
       this.router.navigate(['/adults/subscription/start-your-free-trial'])
     } else {
-      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
     }
   }
 

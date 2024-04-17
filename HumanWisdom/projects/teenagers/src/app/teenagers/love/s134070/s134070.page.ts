@@ -17,7 +17,7 @@ export class S134070Page implements OnInit {
   audioLink=this.mediaAudio+'/love/audios/love+2.4.mp3'
   title="What happens when love ends?  "
 
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
   transcriptPage="love/s134070t"
 
   userId:any
@@ -80,7 +80,7 @@ export class S134070Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/love/s134071'])
+    this.router.navigate(['/teenagers/love/s134071'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -94,7 +94,7 @@ export class S134070Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/love/s134069'])
+    this.router.navigate(['/teenagers/love/s134069'])
   }
 
 }

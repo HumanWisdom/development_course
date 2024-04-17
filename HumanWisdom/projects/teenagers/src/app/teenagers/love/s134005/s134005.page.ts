@@ -15,8 +15,10 @@ export class S134005Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w3"
   hint = " Is it a feeling you have? Or something you do? "
-  toc = "/love/s134001"
-  path = this.router.url
+  toc = "teenagers/love/s134001"
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +114,17 @@ export class S134005Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134006'])
+        this.router.navigate(['/teenagers/love/s134006'])
 
       },
       () => {
-        this.router.navigate(['/love/s134006'])
+        this.router.navigate(['/teenagers/love/s134006'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134004'])
+    this.router.navigate(['/teenagers/love/s134004'])
   }
 
   ngOnDestroy() 

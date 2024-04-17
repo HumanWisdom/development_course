@@ -15,7 +15,7 @@ export class S118009Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/anger/audios/anger+1.2.mp3'
   title="What is the root cause of anger?"
-  toc="/anger/s118001"
+  toc="teenagers/anger/s118001"
   transcriptPage="anger/s118009t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

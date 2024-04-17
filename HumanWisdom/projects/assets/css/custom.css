@@ -32518,7 +32518,7 @@ body *
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  word-break: break-word;
+  /* word-break: break-word; */
 }
 
 .ls_0_1em
@@ -35709,7 +35709,9 @@ li ol > li:before {
 .h4_blogs p span,
 .h4_blogs h2 font,
 .h4_blogs p font,
-.h4_blogs
+.h4_blogs,
+.h4_blogs p,
+.h4_blogs h2
 {
   font-size: 16px !important;
   font-weight: 400;
@@ -35735,6 +35737,11 @@ li ol > li:before {
 .h4_blogs p
 {
   background: transparent !important;
+}
+
+.nh 
+{
+  color: #FFFFFF !important;
 }
 
 .btn_am
