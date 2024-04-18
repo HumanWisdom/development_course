@@ -4,7 +4,7 @@ import { AudioVideoGuard } from '../audio-video.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { ActiveGuard } from '../authGuard/active.guard';
-
+import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/blog-article.page';
 
 const routes: Routes = [
     {
@@ -136,6 +136,11 @@ const routes: Routes = [
         path: 'anger',
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
+    {
+        path: "journal/:TopicName",
+        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+      },
     {
         path: 'journal',
         loadChildren: () => import('../teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
@@ -363,6 +368,12 @@ const routes: Routes = [
         loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
    },
    {
+
+    path: 'blog-article',
+    // canActivate:[ActiveGuard],  
+    component:BlogArticlePage
+  },
+  {
     path: 'events',
     loadChildren: () => import('../../../../shared/component/events/events.module').then(m => m.EventsModule)
   },
@@ -374,6 +385,7 @@ const routes: Routes = [
     path: 'podcast',
     loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
   },
+
 ];
 
 
