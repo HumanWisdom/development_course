@@ -76,6 +76,11 @@ export class CommonService {
           })
       }
 
+
+      GetPodcastList(): Observable<any> {
+        return this.http.get(this.path + '/GetPodcastsListing');
+      }
+
       emaillogin(id = '') {
         let email = 'guest@humanwisdom.me';
         let password = '12345';
@@ -229,4 +234,21 @@ export class CommonService {
     clickModule(data: any, userId: any): Observable<any> {
         return this.http.get(this.path + `/clickModule/${data}/${userId}`)
     }
+
+    
+  getAllEvents(): Observable<any> {
+    // return this.http.get(this.path + '/Events');
+    return this.http.get(this.path + '/AllEvents');
+  }
+
+  getEventbyId(eventID): Observable<any> {
+    return this.http.get(this.path + `/Events/${eventID}`)
+  }
+
+  registerevent(data): Observable<any> {
+    return this.http.post(this.path + '/RegisterEvents', data);
+  }
+  GetCountry() {
+    return this.http.get(this.path + `/Countries`);
+  }
 }

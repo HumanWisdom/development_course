@@ -302,7 +302,7 @@ const routes: Routes = [
   },
   {
     path: 'podcast',
-    loadChildren: () => import('./podcast/podcast.module').then(m => m.PodcastModule)
+    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
   },
   {
     path: 'subscription',
@@ -310,7 +310,7 @@ const routes: Routes = [
   },
   {
     path: 'podcast/:tag',
-    loadChildren: () => import('./podcast/podcast.module').then(m => m.PodcastModule),
+    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule),
   },
   {
     path: 'refer-friend',
@@ -342,7 +342,7 @@ const routes: Routes = [
   },
   {
     path: 'events',
-    loadChildren: () => import('./events/events.module').then(m => m.EventsModule)
+    loadChildren: () => import('../../../../shared/component/events/events.module').then(m => m.EventsModule)
   },
   {
     path: 'wisdom-shorts/:videolink',
