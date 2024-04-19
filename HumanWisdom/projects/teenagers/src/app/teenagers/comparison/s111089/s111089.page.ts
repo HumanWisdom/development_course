@@ -33,7 +33,7 @@ export class S111089Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/comparison/s111001"
+  toc="/teenagers/comparison/s111001"
 
   constructor
   (
