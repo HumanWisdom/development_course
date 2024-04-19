@@ -69,7 +69,7 @@ const routes: Routes = [
   },
   {
     path: 'user-profile',
-    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule),
+    loadChildren: () => import('../../../../shared/component/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate:[EnableRouteGuard]
   },
   {
@@ -78,7 +78,7 @@ const routes: Routes = [
   },
   {
     path: 'profile-edit',
-    loadChildren: () => import('./profile-edit/profile-edit.module').then(m => m.ProfileEditPageModule)
+    loadChildren: () => import('../../../../shared/component/profile-edit/profile-edit.module').then(m=>m.ProfileEditPageModule)
   },
   {
     path: 'change-password',

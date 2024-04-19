@@ -35709,7 +35709,9 @@ li ol > li:before {
 .h4_blogs p span,
 .h4_blogs h2 font,
 .h4_blogs p font,
-.h4_blogs
+.h4_blogs,
+.h4_blogs p,
+.h4_blogs h2
 {
   font-size: 16px !important;
   font-weight: 400;
@@ -35737,6 +35739,11 @@ li ol > li:before {
   background: transparent !important;
 }
 
+.nh 
+{
+  color: #FFFFFF !important;
+}
+
 .btn_am
 {
   background: transparent;
@@ -35751,6 +35758,7 @@ li ol > li:before {
 .h4_blogs ol li
 {
   color: #FFF !important;
+  background-color: transparent !important;
 }
 
 .h4_blogs p

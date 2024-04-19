@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { AdultsService } from "../../adults.service";
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'app-e01',
@@ -23,7 +22,7 @@ export class E01Page implements OnInit {
   isdcode: any = '';
   phoneno: any = '';
 
-  constructor(private service: AdultsService, private route: ActivatedRoute) {
+  constructor(private service: CommonService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.eventID = params?.eid
     });
