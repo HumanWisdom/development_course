@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety',
@@ -35,7 +37,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
-
+  isAdults = true;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -149,6 +151,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getimage(id) {
