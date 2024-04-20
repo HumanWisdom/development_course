@@ -19,7 +19,7 @@ export class S96022tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/how-to-begin/s96022"
+  audioPage="/teenagers/how-to-begin/s96022"
   toc="teenagers/how-to-begin/s96001"
   progName="teenagers"
   
