@@ -148,8 +148,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.GetWisdomScreens();
     this.getUserPreference();
     this.isSubscribe = SharedService.isSubscriber();
+    let closetour = localStorage.getItem('closeTour');
 
-    if(!localStorage.getItem('firstTimeSearchTour')) {
+    if((!closetour || closetour !== 'T') && !localStorage.getItem('firstTimeSearchTour')) {
       this.continueTour();
     }
   }

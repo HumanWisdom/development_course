@@ -584,6 +584,7 @@ export class AdultDashboardPage implements OnInit {
 
 
   closeTour(){
+    localStorage.setItem('closeTour', 'T');
     localStorage.setItem('firstTimeTour', 'T');
   }
 
@@ -690,7 +691,9 @@ export class AdultDashboardPage implements OnInit {
         document.body.classList.add('overflow_hidden');
         this.services.setEnableTour(true);
       },
-      onCloseClick:() => {
+      onCloseClick:(event) => {
+        console.log(event)
+        localStorage.setItem('closeTour', 'T');
         localStorage.setItem('firstTimeTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');
