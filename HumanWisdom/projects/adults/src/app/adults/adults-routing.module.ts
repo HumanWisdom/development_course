@@ -546,6 +546,10 @@ const routes: Routes = [
     path: 'coach',
     loadChildren: () => import('./coach/coach.module').then( m => m.CoachModule)
   },
+  {
+    path: 'wisdom-points',
+    loadChildren: () => import('./wisdom-points/wisdom-points.module').then( m => m.WisdomPointsModule)
+  },
 ];
 
  @NgModule({
