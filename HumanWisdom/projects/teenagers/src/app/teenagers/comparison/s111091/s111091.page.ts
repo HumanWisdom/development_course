@@ -16,7 +16,7 @@ export class S111091Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/comparison/audios/6.4.mp3'
   title="The 4 levels of awareness"
-  toc="/comparison/s111001"
+  toc="/teenagers/comparison/s111001"
   transcriptPage="comparison/s111091t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -18,7 +18,7 @@ export class S97004tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/three-steps-enquiry/s97004"
+  audioPage="/teenagers/three-steps-enquiry/s97004"
   toc="teenagers/three-steps-enquiry/s97001"
   progName="teenagers"
   

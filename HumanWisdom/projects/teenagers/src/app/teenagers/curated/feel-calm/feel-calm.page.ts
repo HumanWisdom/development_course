@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-feel-calm',
@@ -35,7 +37,8 @@ export class FeelCalmPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
-
+  isAdults = true;
+  
   constructor(private service: TeenagersService, private router: Router, private location: Location, private meta: Meta, private title: Title,
     private navigationService:NavigationService) 
   { 
@@ -84,6 +87,11 @@ export class FeelCalmPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   goBack() {
@@ -126,6 +134,16 @@ export class FeelCalmPage implements OnInit {
     }
   }
 
+  enableRoute(route) {
+   
+    this.router.navigate([route]);
+  
+}
+
+routeGuided() {
+  this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
+}
+
   getsupport(url, id, ind = 0) {
     let index = ind + 1
     url = url === '/teenagers/get-support-now/s7100' ? '/teenagers/get-support-now/s7100' + index : url
@@ -144,7 +162,7 @@ export class FeelCalmPage implements OnInit {
         })
   }
 
-  routeAddiction(cont: any = 1) {
+  routeNature(cont: any = 1) {
     var natureR
     localStorage.setItem("moduleId", JSON.stringify(106))
     this.service.clickModule(106, this.userId)
@@ -453,7 +471,7 @@ export class FeelCalmPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getclcickevent(event) {

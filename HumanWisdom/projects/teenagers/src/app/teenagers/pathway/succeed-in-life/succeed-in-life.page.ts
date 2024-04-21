@@ -37,7 +37,7 @@ export class SucceedInLifePage implements OnInit {
   public decisionsP: any
   public peaceP: any
   public diversityP: any
-  
+
 
   constructor(public router: Router, public service: TeenagersService,
     public logeventservice: LogEventService,
@@ -70,8 +70,8 @@ export class SucceedInLifePage implements OnInit {
       this.decisionsP = d['ModUserScrPc'].find(e => e.ModuleId == 142)?.Percentage;
       this.peaceP = d['ModUserScrPc'].find(e => e.ModuleId == 129)?.Percentage;
       //this.diversityP = d['ModUserScrPc'].find(e => e.ModuleId == 143)?.Percentage;
-     
-     
+
+
     });
     this.logeventservice.logEvent('view_develop_calm_mind');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
@@ -88,10 +88,10 @@ export class SucceedInLifePage implements OnInit {
   }
 
   goBack() {
-    this.logeventservice.logEvent('click_back');
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
+    // this.logeventservice.logEvent('click_back');
+    // var url = this.navigationService.navigateToBackLink();
+    // if (url == null) {
       this.location.back();
-    }
+    // }
   }
 }

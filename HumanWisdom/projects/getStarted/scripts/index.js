@@ -3,7 +3,7 @@ var adults = document.getElementById("adults");
 // Add a click event listener to the button
 adults.addEventListener("click", function() {
     // This function will be executed when the button is clicked
-window.location.href = "https://staging.happierme.app/onboarding/login";
+window.location.href = "https://staging.happierme.app/adults/onboarding/login";
 });
 
 // Get the button element by its id
