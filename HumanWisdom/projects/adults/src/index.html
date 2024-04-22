@@ -652,6 +652,9 @@
       }
     })
 
+    function ProfileEventReceived(p1) {
+      alert(p1);
+    }
     window.addEventListener('manage_subscr', function () {
       if (window.webkit) {
         window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
