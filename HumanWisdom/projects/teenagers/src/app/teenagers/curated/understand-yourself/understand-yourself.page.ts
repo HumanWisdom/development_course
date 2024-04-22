@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-understand-yourself',
@@ -34,6 +36,7 @@ export class UnderstandYourselfPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
+  isAdults = true;
 
   constructor(private service: TeenagersService, private router: Router, private location: Location,
     private meta: Meta, private title: Title,private navigationService:NavigationService) {
@@ -98,6 +101,12 @@ export class UnderstandYourselfPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getimage(id) {
@@ -179,7 +188,7 @@ export class UnderstandYourselfPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -559,17 +568,17 @@ export class UnderstandYourselfPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/teenagers/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/teenagers/onboarding/login"]);
       }
     }
   }

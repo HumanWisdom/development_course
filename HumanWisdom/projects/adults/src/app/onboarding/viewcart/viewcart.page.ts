@@ -61,7 +61,7 @@ export class ViewcartPage implements OnInit {
     private forumservice: ForumService
   ) {
     let res = localStorage.getItem("isloggedin")
-    if (res !== 'T') this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    if (res !== 'T') this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
     if (localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
     } else {

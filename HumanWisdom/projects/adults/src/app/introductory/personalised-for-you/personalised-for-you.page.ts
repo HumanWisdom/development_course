@@ -58,7 +58,7 @@ export class PersonalisedForYouPage implements OnInit {
     this.logeventservice.logEvent('click_unlock_signup');
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   getselect(value, ind) {
@@ -103,7 +103,7 @@ export class PersonalisedForYouPage implements OnInit {
         }
       } else {
         localStorage.setItem('personalisedlist', JSON.stringify(this.selectList));
-        this.router.navigate(['/onboarding/login'])
+        this.router.navigate(['/adults/onboarding/login'])
       }
     }
   }

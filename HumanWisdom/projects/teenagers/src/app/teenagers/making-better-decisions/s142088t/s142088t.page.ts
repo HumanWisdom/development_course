@@ -18,7 +18,7 @@ export class S142088tPage implements OnInit {
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/making-better-decisions/s142088"
+  audioPage="/teenagers/making-better-decisions/s142088"
   toc="/making-better-decisions/s142001"
   screenType=localStorage.getItem("audio")
   userId:any

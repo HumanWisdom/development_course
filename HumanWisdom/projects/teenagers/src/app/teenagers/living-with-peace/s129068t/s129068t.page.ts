@@ -19,7 +19,7 @@ export class S129068tPage implements OnInit {
   }, 1000);
   
 
-  audioPage="/living-with-peace/s129068"
+  audioPage="/teenagers/living-with-peace/s129068"
   toc="teenagers/living-with-peace/s129001"
   
   screenType=localStorage.getItem("audio")

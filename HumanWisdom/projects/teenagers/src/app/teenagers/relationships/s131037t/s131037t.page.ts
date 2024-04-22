@@ -29,7 +29,7 @@ export class S131037tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/relationships/s131037"
+  audioPage="/teenagers/relationships/s131037"
   avDuration=localStorage.getItem("avDuration131037")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers"

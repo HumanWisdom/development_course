@@ -1,4 +1,4 @@
-#/var/www/html/course/.htaccess
+#/var/www/html/adults/.htaccess
 RewriteEngine On
 
 # Serve existing files and directories directly
@@ -6,9 +6,9 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Prevent internal redirects for /course/index.html
+# Prevent internal redirects for /adults/index.html
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
-RewriteRule ^course/index\.html - [L]
+RewriteRule ^adults/index\.html - [L]
 
-# Redirect all requests within the "course" project to index.html
-RewriteRule ^(.*)$ /course/index.html [NC,L,QSA]
+# Redirect all requests within the "adults" project to index.html
+RewriteRule ^(.*)$ /adults/index.html [NC,L,QSA]

@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-succeed-in-life',
@@ -34,6 +36,7 @@ export class SucceedInLifePage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
+  isAdults = true;
 
   constructor(private service: TeenagersService, private router: Router, private location: Location,
     private meta: Meta, private title: Title,private navigationService:NavigationService) {
@@ -92,6 +95,11 @@ export class SucceedInLifePage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getimage(id) {
@@ -173,7 +181,7 @@ export class SucceedInLifePage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -194,83 +202,6 @@ export class SucceedInLifePage implements OnInit {
         })
   }
 
-  routeWork(cont: any = 1) {
-    var hR
-    localStorage.setItem("moduleId", JSON.stringify(133))
-    this.service.clickModule(133, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        hR = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("hR", hR)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/teenagers/happiness/${hR}`])
-          }
-          else
-            this.router.navigate([`/teenagers/happiness/s133001`])
-          /* if(!identityResume)
-           {
-
-             this.router.navigate([`/teenagers/identity`])
-           }
-           else
-             this.router.navigate([`/teenagers/identity/s${identityResume}`])*/
-        })
-  }
-
-  routeLeadership(cont: any = 1) {
-    var livingwithpeaceResume
-    localStorage.setItem("moduleId", JSON.stringify(129))
-    this.service.clickModule(129, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        livingwithpeaceResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("livingwithpeaceResume", livingwithpeaceResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/teenagers/living-with-peace/${livingwithpeaceResume}`])
-          }
-          else
-            this.router.navigate([`/teenagers/living-with-peace/s129001`])
-          /* if(!lonelinessResume)
-            {
-
-              this.router.navigate([`/teenagers/loneliness/s162p0`])
-            }
-            else
-              this.router.navigate([`/teenagers/loneliness/s${lonelinessResume}`])*/
-        })
-  }
 
   routeCommunication(cont: any = 1) {
     var pleasureResume
@@ -557,41 +488,6 @@ export class SucceedInLifePage implements OnInit {
             this.router.navigate([`/teenagers/opinions-beliefs/s140001`])
         })
   }
-
-  routeDiversityandInclusion(cont: any = 1) {
-    var comparisonR
-    localStorage.setItem("moduleId", JSON.stringify(111))
-    this.service.clickModule(111, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        comparisonR = "s" + res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("comparisonR", comparisonR)
-        // this.mediaPercent=parseInt(res.MediaPercent)
-        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
-        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
-        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/teenagers/relationships/${comparisonR}`])
-          }
-          else
-            this.router.navigate([`/teenagers/relationships/s131001`])
-        })
-  }
  
 
   getProgress() {
@@ -624,17 +520,17 @@ export class SucceedInLifePage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/teenagers/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/teenagers/onboarding/login"]);
       }
     }
   }

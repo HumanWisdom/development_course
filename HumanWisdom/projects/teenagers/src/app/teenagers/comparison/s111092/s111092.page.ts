@@ -16,7 +16,7 @@ export class S111092Page implements OnInit
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/comparison/audios/6.5.mp3'
   title="Benefits of understanding this pyramid of awareness"
-  toc="/comparison/s111001"
+  toc="/teenagers/comparison/s111001"
   transcriptPage="comparison/s111092t"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
