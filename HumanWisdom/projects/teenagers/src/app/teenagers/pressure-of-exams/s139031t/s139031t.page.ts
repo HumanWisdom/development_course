@@ -19,7 +19,7 @@ export class S139031tPage implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  audioPage="/pressure-of-exams/s139031"
+  audioPage="/teenagers/pressure-of-exams/s139031"
 
   screenNumber=139031
   startTime:any

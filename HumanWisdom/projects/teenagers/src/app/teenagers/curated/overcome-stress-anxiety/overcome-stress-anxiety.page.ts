@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety',
@@ -35,7 +37,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
-
+  isAdults = true;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -149,6 +151,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getimage(id) {
@@ -175,7 +182,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -543,7 +550,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   enableRoute(route) {
@@ -556,10 +563,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/teenagers/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/teenagers/onboarding/login"]);
       }
     }
   }

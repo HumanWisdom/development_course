@@ -24245,17 +24245,19 @@ a
 /* wisdom points tabs */
 .wisdom_points_nav_tabs
 {
-  border-bottom: 1px solid #ADADAD;
   margin-bottom: 20px;
+  color: #FFF;
+  border: 0;
 }
 
 .wisdom_points_nav_tabs>li.active>a,
 .wisdom_points_nav_tabs>li.active>a:focus,
 .wisdom_points_nav_tabs>li.active>a:hover
 {
+  border-bottom: 2px solid #E58D82 !important;
   border: 0;
-  border-bottom: 3px solid #1092A7;
-  color: #1092A7;
+  background: transparent;
+  color: #E58D82;
 }
 
 .wisdom_points_nav_tabs>li
@@ -24263,6 +24265,7 @@ a
   margin-bottom: 0px;
   width: 50%;
   margin-bottom: -2px;
+  border: 0 !important;
 }
 
 .wisdom_points_nav_tabs>li>a
@@ -24270,6 +24273,9 @@ a
   border: 0;
   padding: 0 0 15px 0;
   text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
 }
 /* /wisdom points tabs */
 
@@ -24333,7 +24339,8 @@ a
 
 .rwpts_panel .panel-body
 {
-  background: white;
+  /* background: white; */
+  background: #120F40;
   padding: 16px 18px 17px 18px !important;
   border-radius: 0 0 20px 20px;
 }
@@ -24362,7 +24369,7 @@ a
 
 .brwpts
 {
-  border-right: 1px solid #EBEBEB;
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .highlights
@@ -33654,7 +33661,7 @@ body *
   border-radius: 100px;
   background: #E58D82;
   font-size: 15px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
   line-height: 150%;
 }
@@ -33664,12 +33671,12 @@ body *
   /* height: 50px; */
   width: 100%;
   border: 0;
-  box-shadow: unset;
+  box-shadow: unset !important;
   margin: 0;
   border-radius: 100px;
   background: transparent;
   font-size: 15px;
-  color: #E58D82;
+  color: #E58D82 !important;
   font-weight: 600;
   line-height: 150%;
   padding: 0;
@@ -35709,7 +35716,9 @@ li ol > li:before {
 .h4_blogs p span,
 .h4_blogs h2 font,
 .h4_blogs p font,
-.h4_blogs
+.h4_blogs,
+.h4_blogs p,
+.h4_blogs h2
 {
   font-size: 16px !important;
   font-weight: 400;
@@ -35735,6 +35744,11 @@ li ol > li:before {
 .h4_blogs p
 {
   background: transparent !important;
+}
+
+.nh 
+{
+  color: #FFFFFF !important;
 }
 
 .btn_am
@@ -36972,5 +36986,81 @@ a.fc_e58d82:hover
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.div_blue_sections .row 
+{
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.div_blue_sections .row:last-child 
+{
+  margin-bottom: 0;
+}
+
+.mt-20px
+{
+  margin-top: -20px;
+}
+
+.div_redeem_pts
+{
+  margin: 0 -20px;
+  padding: 20px;
+  background: #120F40;
+}
+
+.tandc_ul li::marker
+{
+  /* list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='9' viewBox='0 0 8 9' fill='none'><circle cx='4' cy='4.28125' r='4' fill='#424675'/></svg>");
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/list_item.svg'); */
+  font-size: 20px;
+  color: #424675;
+}
+
+.wp_share_absolute
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wp_disc_absolute
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp_rc
+{
+  height: 48px;
+  width: 100%;
+  background: transparent;
+  border: 1px dotted #FFF;
+  border-radius: 12px;
+  padding: 20px;
+  letter-spacing: 2.4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #E58D82;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+span 
+{
+  cursor: unset;
 }
 /* /version - 03 */

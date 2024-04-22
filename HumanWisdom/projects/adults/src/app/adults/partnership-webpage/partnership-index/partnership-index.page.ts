@@ -154,7 +154,7 @@ export class PartnershipIndexPage implements OnInit {
       localStorage.setItem("guest", "T");
       localStorage.setItem("navigateToUpgradeToPremium", "false");
       localStorage.setItem("btnClickBecomePartner", "false");
-      this.router.navigate(["/onboarding/login"]);
+      this.router.navigate(["/adults/onboarding/login"]);
     }
   }
 

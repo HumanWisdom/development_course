@@ -4,20 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { E01PageRoutingModule } from './e01-routing.module'; 
+import { RedeemPageRoutingModule } from './redeem-routing.module';
 
-import { E01Page } from './e01.page'; 
-
-import {SharedModule} from '../../../../../../shared/shared.module';
+import { RedeemPage } from './redeem.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    E01PageRoutingModule,
-    SharedModule
+    RedeemPageRoutingModule
   ],
-  declarations: [E01Page]
+  declarations: [RedeemPage]
 })
-export class E01PageModule {}
+export class RedeemPageModule {}

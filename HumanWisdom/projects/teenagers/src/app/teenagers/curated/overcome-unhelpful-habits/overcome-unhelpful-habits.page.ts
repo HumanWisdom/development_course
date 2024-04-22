@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-overcome-unhelpful-habits',
@@ -35,7 +37,8 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
-
+  isAdults = true;
+  
   constructor(private service: TeenagersService, private router: Router, private location: Location, private meta: Meta, private title: Title,
     private navigationService:NavigationService) 
   { 
@@ -72,6 +75,12 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+    
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   goBack() {
@@ -84,7 +93,7 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   youtube(link) {
@@ -645,7 +654,7 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getclcickevent(event) {
