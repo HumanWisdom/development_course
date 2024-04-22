@@ -472,7 +472,9 @@
           $(".rm_txt_01").slideUp();
         }
       });
-
+      function ProfileEventReceived(p1) {
+      alert(p1);
+    }
       $(document).on('click', '.rmd_01', function () {
         var elem = $(".rmd_01").text();
         if (elem == "read more") {
