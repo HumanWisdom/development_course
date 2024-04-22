@@ -104,7 +104,7 @@ export class S136011Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['criticism/s136010'])
+    this.router.navigate(['/teenagers/criticism/s136010'])
   }
 
   ngOnDestroy()

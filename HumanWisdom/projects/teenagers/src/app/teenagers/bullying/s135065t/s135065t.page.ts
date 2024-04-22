@@ -19,7 +19,7 @@ export class S135065tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/teenagers/bullying/s135065"
-  toc="/bullying/s135001"
+  toc="teenagers/bullying/s135001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
