@@ -103,7 +103,7 @@ export class S134183Page implements OnInit, OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/teenagers/love/s134183'])
+    this.router.navigate(['/teenagers/love/s134182'])
   }
 
   goNext() 
