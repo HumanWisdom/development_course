@@ -669,6 +669,16 @@
       }
     })
 
+    window.addEventListener('nativeEvent', function(event) {
+    // Handle the event data received from native Android
+    
+    if (window.AndroidHandler) {
+         AndroidHandler.showToast("Hello from JavaScript!");
+      }
+      
+    console.log('Received event data:');
+});
+
 
     // $(document).on('click', '#rm_01', function(){
     //   $('#rm_txt_01').slideToggle();
