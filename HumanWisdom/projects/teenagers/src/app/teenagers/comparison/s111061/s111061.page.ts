@@ -25,7 +25,7 @@ export class S111061Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/comparison/s111001"
+  toc="/teenagers/comparison/s111001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;

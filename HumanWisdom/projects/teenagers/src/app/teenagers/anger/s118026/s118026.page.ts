@@ -19,7 +19,7 @@ export class S118026Page implements OnInit,OnDestroy {
   title="Anger comes from conditioning"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/anger/audios/anger+2.3.mp3'
-  transcriptPage="anger/s118026t"
+  transcriptPage="teenagers/anger/s118026t"
   toc = "teenagers/anger/s118001"
   bookmark=0
   path = setTimeout(() => {
@@ -112,7 +112,7 @@ export class S118026Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['anger/s118025'])
+    this.router.navigate(['/teenagers/anger/s118025'])
   }
 
   ngOnDestroy()
