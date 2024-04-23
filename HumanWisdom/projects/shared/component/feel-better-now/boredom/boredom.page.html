@@ -282,8 +282,11 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                         <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/56.webp" class="img-responsive">
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/121.webp" class="img-responsive">
                           </div>
                         </div>
 
@@ -314,8 +317,11 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                         <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isAdults">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/20.webp" class="img-responsive">
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/124.webp" class="img-responsive">
                           </div>
                         </div>
 
