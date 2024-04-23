@@ -13,7 +13,7 @@ export class LonelinessPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-
+  isAdults = true;
   mediaUrl: any;
 
   constructor(private router: Router, private location: Location)
@@ -24,7 +24,13 @@ export class LonelinessPage implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
+  }
 
   routeToYoutube(url) {
     if (SharedService.ProgramId == ProgramType.Teenagers){

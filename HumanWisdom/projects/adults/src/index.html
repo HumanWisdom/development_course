@@ -469,7 +469,9 @@
           $(".rm_txt_01").slideUp();
         }
       });
-
+      function ProfileEventReceived(p1) {
+      alert(p1);
+    }
       $(document).on('click', '.rmd_01', function () {
         var elem = $(".rmd_01").text();
         if (elem == "read more") {
@@ -511,6 +513,18 @@
           $(".rmd_txt_02").slideUp();
         }
       });
+
+
+      function test(){
+        alert("Hello")
+      }
+
+      
+      function test1(str){
+        alert(str)
+      }
+
+
 
       $(document).on('click', '.rm_03', function () {
         var elem = $(".rm_03").text();

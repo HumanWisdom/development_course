@@ -17,8 +17,8 @@ export class S135065Page implements OnInit,OnDestroy {
   title="Become aware of your actions.Could they be considered bullying?"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/bullying/audios/bullying+3.1.mp3'
-
-  transcriptPage="bullying/s135065t"
+ 
+  transcriptPage="teenagers/bullying/s135065t"
   toc="teenagers/bullying/s135001"
   bookmark=0
   path = setTimeout(() => {
