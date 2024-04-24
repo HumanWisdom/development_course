@@ -4122,6 +4122,15 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate(['/subscription/start-your-free-trial']);
   }
 
+  routeToUrl(url){
+    if(url.includes('isGuided')){
+      SharedService.isFromAdults = true;
+      this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    }else{
+      window.location = url;
+    }
+  }
+
   // RouteToWisdomExercise(exercise) {
   //   var weR = exercise?.ScreenNo;
   //   localStorage.setItem("moduleId", JSON.stringify(75))

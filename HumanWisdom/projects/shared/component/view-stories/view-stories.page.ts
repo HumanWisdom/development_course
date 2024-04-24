@@ -51,6 +51,25 @@ export class ViewStoriesPage implements OnInit {
     this.getStories(this.sId)
 
   }
+
+  routeToUrl(url,story){
+    if (SharedService.ProgramId == ProgramType.Adults) { 
+      if(story.ProgIDs.includes(SharedService.ProgramId)){
+        this.router.navigate([url]);
+      }else{
+        this.router.navigate(['/adults/wisdom-stories']);
+      }
+    } else {
+      url = url.replace('adults','teenagers');
+      this.router.navigate(url);
+      if(story.ProgIDs.includes(SharedService.ProgramId)){
+        this.router.navigate([url]);
+      }else{
+        this.router.navigate(['/teenagers/wisdom-stories']);
+      }
+    }
+  }
+
   assignLinks() {
 
     this.links = []
