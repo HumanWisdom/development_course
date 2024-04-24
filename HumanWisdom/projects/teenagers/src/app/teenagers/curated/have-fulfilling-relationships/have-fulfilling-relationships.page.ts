@@ -370,7 +370,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
         loveResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen     
         // continue where you left
         if (res.lastVisitedScreen === '') {
           localStorage.setItem("lastvisited", 'F')

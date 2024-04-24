@@ -14,25 +14,24 @@
     <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
     <meta property="og:type" content="website" />
     <!-- <meta property="og:url" content="https://happierme.app/" /> -->
-    <!-- <meta property="og:description" content="Master your mind and be happier" />
-    <meta property="og:image"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.png" />
-    <meta property="og:image:alt"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.png" />
+    <meta property="og:description" content="Master your mind and be happier" />
+    <meta property="og:image"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
+    <!-- <meta property="og:image:alt"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.png" /> -->
+       <meta property="og:image:alt"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
+
     <meta property="og:image:width" content="414" />
-    <meta property="og:image:height" content="276" /> -->
+    <meta property="og:image:height" content="232" /> 
 
     
     <meta property="fb:app_id" content="806018844533100">
-    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@HumanWisdom_me">
     <meta name="twitter:creator" content="@HumanWisdom_me">
     <meta name="twitter:title" content="HumanWisdom: Mental Well-being">
     <meta name="twitter:description" property="twitter:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom">
-    <meta name="twitter:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg">
-
+    <meta name="twitter:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg"> 
     <title>HappierMe: For a happier life </title>
-    <!-- <meta  property="og:image" content="https://miro.medium.com/max/940/1*VPvVZJsM1SYAMr8JME3z8Q.jpeg" />
-    <meta property="og:image:width" content="375" />
-    <meta property="og:image:height" content="314" /> -->
+    
     <!-- <meta property="fb:app_id" content="124024574287414"> -->
     <!-- <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@HumanWisdom_me">
@@ -470,7 +469,9 @@
           $(".rm_txt_01").slideUp();
         }
       });
-
+      function ProfileEventReceived(p1) {
+      alert(p1);
+    }
       $(document).on('click', '.rmd_01', function () {
         var elem = $(".rmd_01").text();
         if (elem == "read more") {
@@ -512,6 +513,18 @@
           $(".rmd_txt_02").slideUp();
         }
       });
+
+
+      function test(){
+        alert("Hello")
+      }
+
+      
+      function test1(str){
+        alert(str)
+      }
+
+
 
       $(document).on('click', '.rm_03', function () {
         var elem = $(".rm_03").text();
@@ -610,6 +623,8 @@
 
     window.addEventListener('ProfileEventReceived', function (obj) {
       console.log(obj);
+      alert(obj);
+
       // Perform the download action here
     });
 
@@ -653,6 +668,16 @@
         window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
       }
     })
+
+    window.addEventListener('nativeEvent', function(event) {
+    // Handle the event data received from native Android
+    
+    if (window.AndroidHandler) {
+      window.AndroidHandler.showToast("Hello from JavaScript!");
+      }
+      
+    console.log('Received event data:');
+});
 
 
     // $(document).on('click', '#rm_01', function(){

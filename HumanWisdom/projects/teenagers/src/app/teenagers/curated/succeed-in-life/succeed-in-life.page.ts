@@ -351,8 +351,8 @@ export class SucceedInLifePage implements OnInit {
 
   routeBullying(cont: any = 1) {
     var comparisonR
-    localStorage.setItem("moduleId", JSON.stringify(111))
-    this.service.clickModule(111, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(135))
+    this.service.clickModule(135, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -380,14 +380,14 @@ export class SucceedInLifePage implements OnInit {
             this.router.navigate([`/teenagers/bullying/${comparisonR}`])
           }
           else
-            this.router.navigate([`/teenagers/bullying/s76001`])
+            this.router.navigate([`/teenagers/bullying/s135001`])
         })
   }
 
   routeMakingBetterDecisions(cont: any = 1) {
     var comparisonR
-    localStorage.setItem("moduleId", JSON.stringify(111))
-    this.service.clickModule(111, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(142))
+    this.service.clickModule(142, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -412,10 +412,10 @@ export class SucceedInLifePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/teenagers/making-better-decision/${comparisonR}`])
+            this.router.navigate([`/teenagers/making-better-decisions/${comparisonR}`])
           }
           else
-            this.router.navigate([`/teenagers/making-better-decision/s142001`])
+            this.router.navigate([`/teenagers/making-better-decisions/s142001`])
         })
   }
 

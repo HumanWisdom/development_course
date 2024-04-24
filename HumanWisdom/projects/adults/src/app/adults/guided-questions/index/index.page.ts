@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
+import { SharedService } from "../../../../../../shared/services/shared.service";
 
 @Component({
   selector: "app-index",
@@ -314,12 +315,13 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   goBack() {
-    if(this.isGuidedQueestionsTab){
+    if(this.isGuidedQueestionsTab && !SharedService.isFromAdults){
         this.isGuidedQueestionsTab = false;
         this.isDiary=true;
         this.viewJournalAndReflections();
         this.getDailyQuestion();
     }else{
+      SharedService.isFromAdults =  false;
          this.router.navigate(['adults/adult-dashboard']);
     }
 
