@@ -57,57 +57,8 @@ export class AdultDashboardPage implements OnInit {
   searchinp = '';
   public dash = false;
   public isSubscriber = false;
-  //static progress mapping
-  // public angerP: any
-  // public comparisonP: any
-  // public awarenessP: any
-  // public obstaclesP: any
-  // public meditationP: any
-  // public benefitsWisdomP: any
   public guideP = '50';
-  // public fearP: any
-  // public benefitsEnquiryP: any
-  // public questionsP: any
-  // public identityP: any
-  // public keyP: any
-  // public selfEsteemP: any
-  // public conditioningP: any
-  // public fiveCirclesP: any
-  // public happinessP: any
-  // public threeStepsP: any
-  // public noJudgementP: any
-  // public discoveringP: any
-  // public beginP: any
-  // public insightP: any
-  // public pleasureP: any
-  // public withoutLanguageP: any
-  // public criticismP: any
-  // public stressP: any
-  // public relationshipsP: any
-  // public natureP: any
-  // public breathingP: any
-  // public ntP: any
-  // public gamP: any
   searchResult = [];
-  // public communicationP: any
-  // public rmP: any
-  // public siP: any
-  // public sinP: any
-  // public enP: any
-  // public ibP: any
-  // public wP: any
-  // public lP: any
-  // public seP: any
-  // public niP: any
-  // public lonelinessP: any
-  // public livingwithpeaceP: any
-  // public loveP: any
-  // public dealingwithdeathP: any
-  // public opinionsandbeliefsP: any
-  // public successandfailureP: any
-  // public addictionP: any
-  // public foodP: any
-  // public moneyP: any
   isEnableHam = true;
   public Subscriber: any
   public alertMsg: any
@@ -115,7 +66,6 @@ export class AdultDashboardPage implements OnInit {
   public friendname = ''
   public name = ''
   public streak = ''
-  // public sorrowandlossP
   public isloggedIn = false
   public x = []
   public isSubscribe = false
@@ -169,6 +119,8 @@ export class AdultDashboardPage implements OnInit {
   public isIos = false;
   public tourTotalIndex = 9;
   public tourIndex = 1;
+  public isSkip = false;
+
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -584,10 +536,14 @@ export class AdultDashboardPage implements OnInit {
 
 
   closeTour(){
+    if(!this.isSkip) {
+      localStorage.setItem('closeTour', 'T');
+    }
     localStorage.setItem('firstTimeTour', 'T');
   }
 
   continueTour() {
+    this.isSkip = true;
     this.closetourmodal.nativeElement.click();
     const driver = window['driver'].js.driver;
     let stepList = [
@@ -690,7 +646,9 @@ export class AdultDashboardPage implements OnInit {
         document.body.classList.add('overflow_hidden');
         this.services.setEnableTour(true);
       },
-      onCloseClick:() => {
+      onCloseClick:(event) => {
+        console.log(event)
+        localStorage.setItem('closeTour', 'T');
         localStorage.setItem('firstTimeTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');

@@ -164,10 +164,10 @@ export class S109001Page implements OnInit,OnDestroy {
     this.router.navigate(['/journal'])
   }
 
-  goBack()
-  {
-    this.location.back()
-  }
+  // goBack()
+  // {
+  //   this.location.back()
+  // }
 
   getSetModuleData(moduleId){
     this.service.setmoduleID(moduleId);
