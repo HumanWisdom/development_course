@@ -525,22 +525,6 @@
         }
       });
 
-
-      function test() {
-        if (window.AndroidHandler) {
-          window.AndroidHandler.showToast("Hello from JavaScript!");
-        }
-      }
-
-
-      function test1(str) {
-        if (window.AndroidHandler) {
-          window.AndroidHandler.showToast(str);
-        }
-      }
-
-
-
       $(document).on('click', '.rm_03', function () {
         var elem = $(".rm_03").text();
         if (elem == "read more") {
