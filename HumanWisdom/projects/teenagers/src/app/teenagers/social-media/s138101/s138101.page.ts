@@ -58,6 +58,6 @@ export class S138101Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/teenagers/social-media/s138096'])
+    this.router.navigate(['/teenagers/social-media/s138095'])
   }
 }
