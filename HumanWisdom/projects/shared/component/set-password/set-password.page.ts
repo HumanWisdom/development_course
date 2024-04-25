@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from "../../services/shared.service";
+import { ProgramType } from "../../models/program-model";
 
 @Component({
   selector: 'app-common-set-password',
@@ -28,6 +30,7 @@ export class SetPasswordPage implements OnInit {
   content = '';
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
+  isAdults = true;
 
   constructor(private router:Router,
     private service: OnboardingService,
@@ -41,6 +44,11 @@ export class SetPasswordPage implements OnInit {
    }
 
   ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   forgotPassword(){
