@@ -41,7 +41,7 @@ export class NavigationService {
 
 
    isExceptionUrl(urltoCheck){
-    if(urltoCheck.includes('guidedquestions')){
+    if(urltoCheck.includes('guidedquestions') || urltoCheck.includes('why-do-i') ||  urltoCheck.includes('how-can-i')){
       return true;
     }
    }
@@ -57,8 +57,7 @@ export class NavigationService {
   navigateToBackLink() {
     const url = this.goBack();
     if (url != null) {
-      this.router.navigate([url]);
-      return 'DONOROUTE';
+      return url;
     }
     return 'adults/search';
   }

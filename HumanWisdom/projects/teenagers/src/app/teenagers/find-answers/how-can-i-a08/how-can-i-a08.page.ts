@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-how-can-i-a08',
   templateUrl: './how-can-i-a08.page.html',
@@ -10,7 +11,7 @@ export class HowCanIA08Page implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }
 
   ngOnInit() {
   }
@@ -23,9 +24,13 @@ export class HowCanIA08Page implements OnInit {
     }
   }
 
-  goBack() 
-  {
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
 }
