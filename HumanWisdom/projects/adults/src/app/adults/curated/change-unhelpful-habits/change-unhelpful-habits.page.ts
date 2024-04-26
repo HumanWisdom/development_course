@@ -86,6 +86,8 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
   }
 
