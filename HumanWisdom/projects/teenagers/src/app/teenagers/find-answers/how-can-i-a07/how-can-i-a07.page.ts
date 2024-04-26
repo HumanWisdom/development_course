@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-how-can-i-a07',
