@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'HumanWisdom-deal-with-sorrow-loss-transcript',
@@ -11,7 +12,7 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 export class DealWithSorrowLossTranscriptPage implements OnInit {
 
   constructor(private location:Location, private meta: Meta, private title: Title,
-    private navigationService:NavigationService) { }
+    private navigationService:NavigationService,private router:Router) { }
 
   ngOnInit() {
     this.title.setTitle('Ways to Deal with Sorrow and Loss')
@@ -26,6 +27,8 @@ export class DealWithSorrowLossTranscriptPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
   }
 

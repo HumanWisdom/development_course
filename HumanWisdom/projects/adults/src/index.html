@@ -851,8 +851,23 @@
         vl.style.display = "none";
       }
     } 
-  </script>
-  <!-- /view more & less -->
+
+
+    function test(){
+      if(window.AndroidHandler){
+        window.AndroidHandler.showToast("Hell From Angular");
+      }
+   }
+
+
+   function test1(str){
+    if(window.AndroidHandler){
+      window.AndroidHandler.showToast(str)
+    }
+   }
+
+    </script>
+    <!-- /view more & less -->
 
 </body>
 
