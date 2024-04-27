@@ -61,7 +61,7 @@ export class ViewStoriesPage implements OnInit {
       }
     } else {
       url = url.replace('adults','teenagers');
-      this.router.navigate(url);
+      this.router.navigate([url]);
       if(story.ProgIDs.includes(SharedService.ProgramId)){
         this.router.navigate([url]);
       }else{
@@ -373,11 +373,12 @@ export class ViewStoriesPage implements OnInit {
     )
   }
 
-  loadReflections(id) {
+  loadReflections(id,url,story) {
 
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         this.qrList = res
+        this.routeToUrl(url,story)
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       })
   }
