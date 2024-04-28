@@ -5,7 +5,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
-
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-all-stories',
   templateUrl: './all-stories.page.html',
@@ -25,7 +25,7 @@ export class AllStoriesPage implements OnInit {
   constructor(private router: Router,
     private service:OnboardingService,
     private location:Location,
-    private meta: Meta, private title: Title) { }
+    private meta: Meta, private title: Title,private navigationService:NavigationService) { }
 
   ngOnInit() {
     this.getStories()
@@ -46,9 +46,16 @@ export class AllStoriesPage implements OnInit {
          this.isAdults = false;
         }
   }
-  goBack(){
-    this.location.back()
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+     this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
+
   getStories(){
     this.service.getScenarios().subscribe(res=>
       {
