@@ -5,7 +5,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
-
+import { NavigationService } from '../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-feeling-upset',
   templateUrl: './feeling-upset.page.html',
@@ -18,7 +18,7 @@ export class FeelingUpsetPage implements OnInit {
   isAdults = true;
   mediaUrl: any;
 
-  constructor(private router: Router, private location: Location)
+  constructor(private router: Router, private location: Location,private navigationService:NavigationService)
   {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3',
@@ -48,12 +48,21 @@ export class FeelingUpsetPage implements OnInit {
     }
   }
 
-  goBack() {
+ defaultGoBack() {
     // this.location.back()
     if (window.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);
     } else {
       this.router.navigate(['/adults/feel-better-now']);
+    }
+  }
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
     }
   }
 
