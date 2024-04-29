@@ -150,8 +150,9 @@ export class PodcastTocPage implements OnInit {
   getPodcast() {
     this.service.GetPodcastList().subscribe((res) => {
       if (res) {
-        this.podcastList = res;
-        this.allpodcastList = res;
+        var filteredData = res.filter(x=>x.ProgIDs.includes(SharedService.ProgramId.toString()));
+        this.podcastList = filteredData;
+        this.allpodcastList = filteredData;
         this.allpodcastList.forEach((d) => {
           this.prefData.forEach((h) => {
             if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
