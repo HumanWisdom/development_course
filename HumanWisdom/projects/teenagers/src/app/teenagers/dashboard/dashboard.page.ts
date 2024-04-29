@@ -1853,12 +1853,12 @@ export class DashboardPage implements OnInit {
     } else if (res['FeatureType'] === "LIFE STORY") {
       this.logeventservice.logEvent("click_life_stories");
       sid = res['Url'].split('sId=')[1];
-      this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
+      this.router.navigate(['teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
     }
     else if (res['FeatureType'] === "UPCOMING EVENT") {
       this.logeventservice.logEvent("click_upcoming_event");
       sid = res['Url'].split('eid=')[1];
-      this.router.navigate(['/events/event'], { queryParams: { eid: `${sid}` } })
+      this.router.navigate(['teenagers/events/event'], { queryParams: { eid: `${sid}` } })
     }
     else if (res['FeatureType'] === "PODCAST") {
       this.logeventservice.logEvent("click_podcasts");

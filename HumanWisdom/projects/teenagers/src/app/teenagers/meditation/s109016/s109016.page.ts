@@ -49,7 +49,7 @@ export class S109016Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/meditation/s109016'])
+    this.router.navigate(['/teenagers/meditation/s109015'])
 
   }
 

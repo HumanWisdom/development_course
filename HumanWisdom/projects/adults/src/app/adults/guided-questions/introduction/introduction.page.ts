@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-introduction',
@@ -13,7 +14,7 @@ export class IntroductionPage implements OnInit {
   private currentUrl:string='';
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
-    private service: AdultsService, private location:Location) {
+    private service: AdultsService, private location:Location,private navigationService:NavigationService) {
       let url = this.route.snapshot.paramMap.get('TopicName');
       this.GetGuidedQs_Topics(url);
       if(this.router.getCurrentNavigation()!=null &&  this.router.getCurrentNavigation().extras && this.router.getCurrentNavigation().extras.state){
@@ -29,7 +30,13 @@ export class IntroductionPage implements OnInit {
   if(this.isByPass==true){
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }else{
-    this.location.back();
+    var url = this.navigationService.navigateToBackLink();
+    if(url == 'adults/search'){
+     this.location.back();
+    }
+    if(url == 'DONOROUTE'){
+      this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    }
   }
     // this.router.navigate(['/adults/journal'])
   }

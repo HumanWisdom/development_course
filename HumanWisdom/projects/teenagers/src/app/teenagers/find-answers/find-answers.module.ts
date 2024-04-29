@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../../../shared/shared.module';
 
 import { FindAnswersRoutingModule } from './find-answers-routing.module';
+import { NavigationService } from '../../../../../shared/services/navigation.service';
 
 
 @NgModule({
@@ -11,6 +12,9 @@ import { FindAnswersRoutingModule } from './find-answers-routing.module';
     CommonModule,
     SharedModule,
     FindAnswersRoutingModule
+  ],
+  providers:[
+    NavigationService
   ]
 })
 export class FindAnswersModule { }
