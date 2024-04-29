@@ -7,6 +7,8 @@ import { TeenagerOnboardingService } from "../teenagerOnboarding/teenager-onboar
 import { environment} from '../../../../environments/environment'
 import { ProgramType } from "../../../../shared/models/program-model";
 import { Router } from "@angular/router";
+import { SharedService } from "../../../../shared/services/shared.service";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -369,7 +371,7 @@ export class TeenagersService {
   }
 
   GetDashboardFeature(data: any): Observable<any> {
-    return this.http.get(this.path + `/GetDashboard_Features/${data}`)
+    return this.http.get(this.path + `/GetDashboard_Features/${data}/${SharedService.ProgramId}`)
   }
 
 
