@@ -11,6 +11,9 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 export class WhyDoIA08Page implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  
+  audioLink='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/find_answers/why_do_i/audio/1.1.mp3'
+
 
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }
 
