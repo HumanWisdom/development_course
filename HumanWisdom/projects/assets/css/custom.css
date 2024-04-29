@@ -35731,13 +35731,15 @@ li ol > li:before {
 .Body span.Hyperlink0 a span,
 .Body span.Hyperlink1 a span,
 .h4_blogs a span,
-.h4_blogs p a font
+.h4_blogs p a font,
+.h4_blogs p a
 {
   font-size: 16px !important;
   font-weight: 600 !important;
   line-height: 150%;
   font-style: normal;
   color: #E58D82 !important;
+  word-wrap: break-word;
 }
 
 #docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p,
@@ -35754,6 +35756,12 @@ li ol > li:before {
 .btn_am
 {
   background: transparent;
+}
+
+.blog_title
+{
+  padding: 0;
+  font-style: normal !important;
 }
 
 .h4_blogs ol 
@@ -35782,6 +35790,18 @@ li ol > li:before {
 .h4_blogs a span
 {
   word-break: break-word;
+}
+
+.h4_blogs p a,
+.h4_blogs span div a
+{
+  background: transparent !important;
+}
+
+.h4_blogs img
+{
+  width: 100%;
+  max-height: 100%;
 }
 
 .pr15pxi
