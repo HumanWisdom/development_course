@@ -866,7 +866,8 @@ export class LoginSignupPage implements OnInit {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          this.router.navigate(["/teenagers/repeat-user"]);
+                         // window.location.href = environment.clientUrl+"/teenagers/repeat-user";
                           // this.router.navigate(["/teenagers/change-topic"], {
                           //   state: {
                           //     routedFromLogin: true,

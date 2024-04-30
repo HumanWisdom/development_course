@@ -177,7 +177,10 @@ export class PodcastTocPage implements OnInit {
       let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/', '~'));
       const title = data['Title']?.replaceAll(' ', '-')
 
+     if( this.isAdults == true)      
       this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', title])
+    else
+      this.router.navigate(['teenagers/audiopage/', concat, data['PodcastID'], 'T', title])
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
       // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
