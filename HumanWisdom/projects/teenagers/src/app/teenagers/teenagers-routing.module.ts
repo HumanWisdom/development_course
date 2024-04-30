@@ -354,7 +354,10 @@ const routes: Routes = [
         path: 'blogs',
         loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
     },
-
+    {
+        path: 'wisdom-shorts',
+        loadChildren: () => import('../../../../shared/component/wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
+      },
     {
         path: 'curated',
         loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
