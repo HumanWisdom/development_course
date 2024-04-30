@@ -71,6 +71,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public exerciseNo: any;
   public tourTotalIndex = 3;
   public tourIndex = 1;
+  public Title: string = '';
+  currentList = [];
 
   constructor(private route: Router, private aservice: TeenagersService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
@@ -854,6 +856,22 @@ export class PersonalisedForYouSearchPage implements OnInit {
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.route.navigate([url]);
+  }
+
+
+  RouteToWisdomExercise(exercise) {
+
+    this.logeventservice.logEvent("click_Awareness_exercise");
+
+    if (exercise != null) {
+      this.route.navigate(['teenagers/wisdom-exercise/' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+        state: {
+          day: exercise.day,
+        }
+      });
+    } else {
+      this.route.navigate(['teenagers/wisdom-exercise/']);
+    }
   }
 
 }
