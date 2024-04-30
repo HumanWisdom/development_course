@@ -41,7 +41,7 @@ export class S51000Page implements OnInit, OnDestroy {
   path: any;
 
   searchedText:'';
-
+  isAdults = true;
   isSubscriber = false;
 
   constructor(
@@ -101,7 +101,11 @@ export class S51000Page implements OnInit, OnDestroy {
     this.meta.updateTag({ property: 'description', content: 'Enhance your sleep and find inner peace with our relaxation meditation sessions. Guided audio meditations for a calm mind and body.' })
     this.meta.updateTag({ property: 'keywords', content: 'Audio Meditation,Guided Meditation,Mindfulness Meditation,Relaxation Meditation,Stress Relief Meditation,Sleep Meditation,Calmness Meditation,Peaceful Meditation,Focus Meditation' })
 
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
 
 
     // continue where you left

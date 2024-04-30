@@ -13,7 +13,8 @@ import { ProgramType } from "../../../models/program-model";
 export class IndexPage implements OnInit {
   public isSubscriber = false;
   public isLoggedIn = false;
-
+  isAdults = true;
+  
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location,
@@ -26,6 +27,12 @@ export class IndexPage implements OnInit {
   ngOnInit() {
     this.isSubscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
     this.isLoggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getclcickevent(event) {

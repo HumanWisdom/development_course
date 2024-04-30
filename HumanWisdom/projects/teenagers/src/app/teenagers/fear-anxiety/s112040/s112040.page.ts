@@ -16,7 +16,7 @@ export class S112040Page implements OnInit {
   toc="teenagers/fear-anxiety/s112001"
   title="#5 Fear of being a nobody"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/modules/fear_anxiety/audios/fear+2.5.mp3'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.5.mp3'
   transcriptPage="/fear-anxiety/s112040t"
 
   userId:any

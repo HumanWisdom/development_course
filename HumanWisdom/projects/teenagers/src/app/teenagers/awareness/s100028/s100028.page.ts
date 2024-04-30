@@ -21,13 +21,13 @@ export class S100028Page implements OnInit {
   moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp',
       link: '/breathing',
       id: 107
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/108.webp',
       link: '/noticing-thoughts',
       id: 108
     },

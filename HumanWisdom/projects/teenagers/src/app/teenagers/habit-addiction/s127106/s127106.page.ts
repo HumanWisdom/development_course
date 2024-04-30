@@ -15,7 +15,7 @@ export class S127106Page implements OnInit,OnDestroy
   bg="purple_w10"
   title="#3 Realise that emotional pain is a reaction from our thinking (see Stress Module)  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/habit-addiction/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/habit-addiction/audios/1.3.mp3'
   transcriptPage="habit-addiction/s127106t"
   toc="teenagers/habit-addiction/s127001"
   bookmark=0
