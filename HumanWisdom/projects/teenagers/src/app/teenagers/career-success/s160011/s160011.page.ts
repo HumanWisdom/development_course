@@ -4,21 +4,21 @@ import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s156031',
-  templateUrl: './s156031.page.html',
-  styleUrls: ['./s156031.page.scss'],
+  selector: 'app-s160011',
+  templateUrl: './s160011.page.html',
+  styleUrls: ['./s160011.page.scss'],
 })
-export class S156031Page implements OnInit {
+export class S160011Page implements OnInit {
 
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w12"
-  toc="teenagers/dealing-with-depression/s156001"
+  toc="teenagers/career-success/s160001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=156031
+  screenNumber=160011
   startTime:any
   endTime:any
   totalTime:any
@@ -169,9 +169,9 @@ export class S156031Page implements OnInit {
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
 
-    if(JSON.parse(sessionStorage.getItem("bookmark156031"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark160011"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark156031"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark160011"))==1)
       this.bookmark=1
   }
 
@@ -183,7 +183,7 @@ export class S156031Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark156031",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark160011",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -204,7 +204,7 @@ export class S156031Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/teenagers/dealing-with-depression/s156032'])
+    this.router.navigate(['/teenagers/career-success/s160012'])
     if (this.userId === 563) return;
 
     
@@ -222,14 +222,14 @@ export class S156031Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/dealing-with-depression/s156031'])
+        //this.router.navigate(['/adults/career-success/s160011'])
       })
   }
 
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/dealing-with-depression/s156030'])
+    this.router.navigate(['/teenagers/career-success/s160010'])
   }
 
   ngOnDestroy()

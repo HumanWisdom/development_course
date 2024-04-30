@@ -4,21 +4,21 @@ import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s156029',
-  templateUrl: './s156029.page.html',
-  styleUrls: ['./s156029.page.scss'],
+  selector: 'app-s160008',
+  templateUrl: './s160008.page.html',
+  styleUrls: ['./s160008.page.scss'],
 })
-export class S156029Page implements OnInit {
+export class S160008Page implements OnInit {
 
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w12"
-  toc="teenagers/dealing-with-depression/s156001"
+  toc="teenagers/career-success/s160001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=156029
+  screenNumber=160008
   startTime:any
   endTime:any
   totalTime:any
@@ -91,28 +91,6 @@ export class S156029Page implements OnInit {
       $('#svg_form_time rect').css('fill',base_color);
       $('#svg_form_time circle').css('fill',base_color);
       $("circle:nth-of-type(1)").css("fill", active_color);
-
-      // to be copied
-      $("#svg_form_time rect").css("fill", active_color);
-      $("#svg_form_time circle").css("fill", active_color);
-      $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-      var circle_child = child + 1;
-      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-        "fill",
-        base_color
-      );
-      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-        "fill",
-        base_color
-      );
-      // /to be copied
     });
     // /multistep wizard
 
@@ -125,9 +103,9 @@ export class S156029Page implements OnInit {
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
 
-    if(JSON.parse(sessionStorage.getItem("bookmark156029"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark160008"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark156029"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark160008"))==1)
       this.bookmark=1
   }
 
@@ -139,7 +117,7 @@ export class S156029Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark156029",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark160008",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -160,7 +138,7 @@ export class S156029Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/teenagers/dealing-with-depression/s156030'])
+    this.router.navigate(['/teenagers/career-success/s160009'])
     if (this.userId === 563) return;
 
     
@@ -178,14 +156,14 @@ export class S156029Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/dealing-with-depression/s156029'])
+        //this.router.navigate(['/adults/career-success/s160008'])
       })
   }
 
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/dealing-with-depression/s156028'])
+    this.router.navigate(['/teenagers/career-success/s160007'])
   }
 
   ngOnDestroy()

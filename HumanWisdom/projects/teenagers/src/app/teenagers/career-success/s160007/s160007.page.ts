@@ -13,7 +13,7 @@ export class S160007Page implements OnInit {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w12"
-  toc="teenagers/dealing-with-depression/s160001"
+  toc="teenagers/career-success/s160001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
