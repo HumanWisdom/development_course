@@ -15,7 +15,7 @@ export class S127110Page implements OnInit,OnDestroy
   bg="purple_w2"
   title="#7 Nurture a quiet mind  (Explore the section on Develop a calm mind)"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/habit-addiction/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/habit-addiction/audios/1.5.mp3'
   transcriptPage="habit-addiction/s127110t"
   toc="teenagers/habit-addiction/s127001"
   bookmark=0

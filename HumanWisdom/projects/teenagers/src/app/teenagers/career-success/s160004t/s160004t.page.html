@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Being young is a beautiful time in your life - and you will perhaps only realize this fully when you get older. It can also be a confusing time - to decide on a career choice for the future. You may have to choose a path at 16, but are not sure what you want to do. You may feel it is too early to decide, when you haven’t had the life exposure to know what choices are open to you.
+
+          </p>
+
+          <p>
+            The first thing to realise is that it's okay to not know what you want to do. You will get advice from your parents, your teachers, and there are many online resources to help you decide.
+          </p> 
+
+          <p>
+            In this module we go through some of the challenges you will face when choosing a career, and how you can learn to think clearly, weigh up your choices, and decide for yourself what career to work towards. We will also explore the skills you need to develop which will be useful in your career, no matter what you decide to do.
+          </p>
+          <p>
+            One thing is certain - whatever career you choose now will change and you may have several careers over a working life. You will need to learn to be adaptable, keep learning new skills and manage the transition from one career to the next. The jobs you will do in 20 years have probably not been created yet.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
