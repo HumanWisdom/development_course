@@ -41,7 +41,6 @@ export class S51000Page implements OnInit, OnDestroy {
   path: any;
 
   searchedText:'';
-  isAdults = true;
   isSubscriber = false;
 
   constructor(
