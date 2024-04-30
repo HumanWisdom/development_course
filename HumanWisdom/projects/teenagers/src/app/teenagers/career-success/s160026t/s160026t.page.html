@@ -1,0 +1,40 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When thinking about the future, begin by getting to know yourself.
+            What are you really good at, what are the areas you are not good at, what are your interests?
+            A good career choice combines your interests with your strengths but it is not an exact science.
+          </p>
+
+          <p>
+            Just because you get good marks in biology doesn’t mean you should choose to be a nurse, or vet, or a doctor. And just because you get good marks in maths doesn’t make you suited for a career in finance. Each career has so many other facets to it, and the best way to find out is to talk to people who are already doing that.
+          </p> 
+
+          <p>
+            Go and talk to other doctors, for example, or even get some work experience to find out what that is really like. Be proactive. People are very willing to give their time and help. Use your initiative. There is no better way to find out about a potential career than to talk to someone.
+
+          </p>
+          <p>
+            Your lack of confidence may hold you back from doing so, but confidence is built up by getting out of your comfort zone and talking to people. It's a skill that will be very useful in life.
+
+          </p>
+          <p>
+            You can work hard and accomplish most things you set your heart on.
+
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
