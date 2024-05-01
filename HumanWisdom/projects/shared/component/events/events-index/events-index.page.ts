@@ -61,9 +61,8 @@ export class EventsIndexPage implements OnInit {
 
     this.service.getAllEvents().subscribe(x => {
       console.log(x)
-      var filteredData = x.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
-      this.futureeventList= filteredData.FutureEvents;
-      this.eventList=filteredData.PastEvents;
+      this.futureeventList= x.FutureEvents.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
+      this.eventList=x.PastEvents.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
        this.backupList=JSON.parse(JSON.stringify(this.eventList));
     });
 
