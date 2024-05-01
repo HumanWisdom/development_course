@@ -45,10 +45,10 @@ export class NavigationService {
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-      '/adults/comparison/s0', 's162p0','s51000','s39000'
+     , 's162p0','s51000','s39000'
   ];
 
-  return exceptions.some(exception => urltoCheck.includes(exception));
+  return exceptions.some(exception => urltoCheck.includes(exception)) || urltoCheck == 's0';
 }
 
 
