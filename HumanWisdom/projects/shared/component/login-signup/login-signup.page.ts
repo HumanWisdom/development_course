@@ -986,7 +986,7 @@ export class LoginSignupPage implements OnInit {
   }
 
   navigate(url) {
-    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+    this.router.navigate([url]);
   }
 
   getAlertcloseEvent(event) {

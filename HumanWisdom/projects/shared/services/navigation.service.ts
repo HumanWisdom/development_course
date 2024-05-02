@@ -45,7 +45,7 @@ export class NavigationService {
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-     , 's162p0','s51000','s39000'
+     , 's162p0','s51000','s39000','s47000','s324','s47000'
   ];
 
   return exceptions.some(exception => urltoCheck.includes(exception)) || urltoCheck == 's0';
