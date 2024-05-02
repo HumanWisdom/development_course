@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from '../../services/onboarding.service';
-
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-common-set-password',
   templateUrl: './set-password.page.html',
@@ -28,7 +28,7 @@ export class SetPasswordPage implements OnInit {
   content = '';
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
-
+  isAdults:boolean = true;
   constructor(private router:Router,
     private service: OnboardingService,
     private authService: SocialAuthService,
@@ -41,6 +41,7 @@ export class SetPasswordPage implements OnInit {
    }
 
   ngOnInit() {
+    this.isAdults = SharedService.ProgramId === 9;
   }
 
   forgotPassword(){
@@ -154,7 +155,7 @@ export class SetPasswordPage implements OnInit {
       this.socialFirstName=user.firstName
       this.socialLastName=user.lastName
       this.socialEmail=user.email
-
+      
 
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
