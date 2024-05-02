@@ -21,6 +21,7 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
+import { StripeModule } from "stripe-angular";
 @NgModule({
   declarations: [
     AppComponent
@@ -34,6 +35,7 @@ import { environment } from '../../../environments/environment';
     NgxCaptureModule,
     BrowserAnimationsModule,
     PlatformModule,
+    StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
   ],

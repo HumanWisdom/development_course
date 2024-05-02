@@ -388,6 +388,10 @@ const routes: Routes = [
     path: 'podcast',
     loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
   },
+  {
+    path: 'subscription',
+    loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
+  },
 
 ];
 
