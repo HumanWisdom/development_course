@@ -24,19 +24,19 @@ export class S118104Page implements OnInit
   moduleList: any = [
     {
       name: 'Reactive mind',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/54.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp',
       link: '/reactive-mind',
       id: 113
     },
     {
       name: 'Stress',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
     },
     {
       name: 'Relationships',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/47.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
       link: '/relationships',
       id: 131
     },

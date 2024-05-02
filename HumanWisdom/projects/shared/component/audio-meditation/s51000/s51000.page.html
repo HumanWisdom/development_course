@@ -2,13 +2,13 @@
 <div class="tn_bv">
 
   <div class="row center_flex bg_bv">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw bg_292d56">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw " [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" alt="" class="img-responsive w100 adults_index_img">
     </div>
   </div>
 
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3 col_cw">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
         <a (click)="goBack()" class="">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0">
