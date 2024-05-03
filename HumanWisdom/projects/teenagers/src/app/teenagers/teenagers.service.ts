@@ -15,7 +15,7 @@ import { SharedService } from "../../../../shared/services/shared.service";
 export class TeenagersService {
   //path="http://18.132.47.231/api";
   path = environment.apiURL;
-  programId = ProgramType.Adults;
+  programId = ProgramType.Teenagers;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
   currentUrl: string = '';
   previousUrl: string = '';
