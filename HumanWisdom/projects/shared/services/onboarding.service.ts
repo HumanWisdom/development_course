@@ -119,8 +119,7 @@ export class OnboardingService {
   }
 
   sendPasswordLink(data: any): Observable<any> {
-    let param1 = new HttpParams().set("email", data)
-
+    let param1 = new HttpParams().set("email", data).set("ProgramId", SharedService.ProgramId)
     return this.http.get(this.path + `/PasswordLink`, { params: param1 })
   }
   assignKey(data: any): Observable<any> {

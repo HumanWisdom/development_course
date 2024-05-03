@@ -8,6 +8,7 @@ import { LogEventService } from '../../services/log-event.service';
 import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -82,9 +83,6 @@ export class PaymentPage implements OnInit, AfterViewInit {
       const options = {
         clientSecret: this.stripeModel.clientSecretId
       };
-
-
-
       const elements = stripe.elements(options);
       const paymentElement = elements.create('payment', options);
       paymentElement.mount('#payment-element');

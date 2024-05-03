@@ -162,7 +162,7 @@ export class SetPasswordPage implements OnInit {
       this.socialFirstName=user.firstName
       this.socialLastName=user.lastName
       this.socialEmail=user.email
-
+      
 
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
