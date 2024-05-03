@@ -596,6 +596,14 @@ export class AdultDashboardPage implements OnInit {
         }
       },
       {
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
+        }
+      },
+      {
         element: ".tour_explore",
         popover: {
           title: 'Explore',
@@ -4214,13 +4222,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  routeToFindAnswer(param) {
-    localStorage.setItem('lastRoute', param);
-    this.logeventservice.logEvent("click_find-answers-" + param);
-    this.router.navigate(['/adults/find-answers/' + param]);
-  }
-
-  activeTopicRoute(name) {
+    activeTopicRoute(name) {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
@@ -4326,4 +4328,10 @@ export class AdultDashboardPage implements OnInit {
       }
     })
   }
+
+  logEvent(event, url) {
+    this.logeventservice.logEvent(event);
+    this.router.navigate([url]);
+  }
+
 }
