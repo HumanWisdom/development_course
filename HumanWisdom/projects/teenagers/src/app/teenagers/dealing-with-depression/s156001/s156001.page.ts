@@ -202,7 +202,7 @@ export class S156001Page implements OnInit,OnDestroy {
   }
    youtube(link) 
   {
-    this.router.navigate(['/curated/youtubelink', link],{
+    this.router.navigate(['/teenagers/curated/youtubelink', link],{
     state: {
       class: this.bg,
     }})

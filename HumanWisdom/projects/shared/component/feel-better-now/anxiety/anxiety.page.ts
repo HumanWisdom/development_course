@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
-
+import { NavigationService } from '../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-anxiety',
   templateUrl: './anxiety.page.html',
@@ -13,10 +13,16 @@ export class AnxietyPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-
-  constructor(private location: Location, private router: Router ) { }
+  isAdults = true;
+  
+  constructor(private location: Location, private router: Router,private navigationService:NavigationService){ }
 
   ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getclcickevent(event) {
@@ -25,7 +31,7 @@ export class AnxietyPage implements OnInit {
     }
   }
 
-  goBack() {
+  defaultGoBack() {
     // this.location.back()
     if (window.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);
@@ -34,6 +40,14 @@ export class AnxietyPage implements OnInit {
     }
   }
 
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
 
   routeVideoaudio(type, url, title = '') {
     console.log(url)

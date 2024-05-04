@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are many risks of browsing the internet and social media.
+          Being aware of them can help you avoid them and deal with them better.
+          There are risks of cyberbullying which impacts 1 in 3 teenagers. You should know your own boundaries and be able to exit a site or a conversation, or report it if needed.
+          You may stumble upon sites that are inappropriate for teenagers - sites that promote self-harm, pornography, or gambling. Don’t be tempted to browse them. Exit them straight away as they can harm you.
+          There are adults who may make friends with you and then try and meet you offline - their intentions should always be suspect - and you should never meet someone offline, that you met online - at least on your own.
+          If you get an email from someone you don’t know with an attachment - don’t open it as it could contain a virus.
+          There are other risks to be aware of. Read about them and be vigilant when online
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

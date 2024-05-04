@@ -240,6 +240,45 @@ export class BeHappierPage implements OnInit {
         })
   }
 
+  routeSocialMedia(cont: any = 1) {
+    var hR
+    localStorage.setItem("moduleId", JSON.stringify(138))
+    this.service.clickModule(138, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        hR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("hR", hR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/teenagers/social-media/${hR}`])
+          }
+          else
+            this.router.navigate([`/teenagers/social-media/s138001`])
+          /* if(!identityResume)
+           {
+
+             this.router.navigate([`/teenagers/identity`])
+           }
+           else
+             this.router.navigate([`/teenagers/identity/s${identityResume}`])*/
+        })
+  }
+
   routeLivingWithPeace(cont: any = 1) {
     var livingwithpeaceResume
     localStorage.setItem("moduleId", JSON.stringify(129))

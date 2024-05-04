@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety-transcript',
@@ -10,7 +11,7 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 })
 export class OvercomeStressAnxietyTranscriptPage implements OnInit {
 
-  constructor(private location:Location,  private meta: Meta, private title: Title,private navigationService:NavigationService) { }
+  constructor(private location:Location,  private meta: Meta, private title: Title,private navigationService:NavigationService,private  router :Router) { }
 
   ngOnInit() {
     this.title.setTitle('Stress Relief Tips for Improved Mental Health')
@@ -23,6 +24,8 @@ export class OvercomeStressAnxietyTranscriptPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
   }
 

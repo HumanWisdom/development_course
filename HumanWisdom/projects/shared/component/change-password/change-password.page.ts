@@ -3,6 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from '../../services/onboarding.service';
 import { LogEventService } from '../../services/log-event.service';
+import { SharedService } from "../../services/shared.service";
+import { ProgramType } from "../../models/program-model";
+
 @Component({
   selector: 'app-common-change-password',
   templateUrl: './change-password.page.html',
@@ -30,6 +33,7 @@ export class ChangePasswordPage implements OnInit {
   passwordhide : boolean = true;
   confirmpasswordhide : boolean = true;
   oldpasswordhide : boolean = true;
+  isAdults = true;
 
   constructor(private router: Router,
     private service: OnboardingService,
@@ -44,6 +48,11 @@ export class ChangePasswordPage implements OnInit {
   }
 
   ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   forgotPassword() {

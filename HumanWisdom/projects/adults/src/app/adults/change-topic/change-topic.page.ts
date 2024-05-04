@@ -104,7 +104,9 @@ export class ChangeTopicPage implements OnInit {
       }else{
         this.location.back();
       }
-     }
+     }else{
+      this.router.navigate([url]);
+    }
   }
 
   update() {

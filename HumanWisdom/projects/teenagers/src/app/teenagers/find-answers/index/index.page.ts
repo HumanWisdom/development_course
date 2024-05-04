@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-index',
@@ -13,7 +14,7 @@ export class IndexPage implements OnInit {
 
   defaultUrl = 'how-can-i';
   activeClass = 'active';
-  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute) {
+  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute,private navigationService:NavigationService) {
    var data = this.activatedRoute.snapshot.paramMap.get('url');
     if(data != null){
       this.defaultUrl= data;
@@ -41,7 +42,12 @@ export class IndexPage implements OnInit {
 
   goBack() 
   {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   } 
 
   routeToTab(param){
