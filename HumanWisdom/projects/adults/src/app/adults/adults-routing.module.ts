@@ -265,7 +265,7 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-shorts',
-    loadChildren: () => import('./wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
+    loadChildren: () => import('../../../../shared/component/wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
   },
   // {
   //   path: 'blog',

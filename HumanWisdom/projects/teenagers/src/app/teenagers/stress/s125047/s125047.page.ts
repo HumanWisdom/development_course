@@ -75,6 +75,11 @@ export class S125047Page implements OnInit,AfterViewInit
     }).subscribe(res=>{})
   }
 
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
+  }
+
   receiveBookmark(e)
   {
     console.log(e)

@@ -148,8 +148,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.GetWisdomScreens();
     this.getUserPreference();
     this.isSubscribe = SharedService.isSubscriber();
+    let closetour = localStorage.getItem('closeTour');
 
-    if(!localStorage.getItem('firstTimeSearchTour')) {
+    if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
       this.continueTour();
     }
   }
@@ -170,14 +171,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: 'end'
         }
-      }, {
-        element: ".tour_find_inspiration",
-        popover: {
-          title: 'Find Inspiration',
-          description: 'Explore our rich library of motivational content.',
-          side: "right"
-        }
-      }, {
+      }, 
+       {
         element: ".tour_exercises",
         popover: {
           title: 'Exercises',
@@ -1143,6 +1138,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
+  }
+
+
+ 
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/adults/find-answers/' + param]);
   }
 
 }

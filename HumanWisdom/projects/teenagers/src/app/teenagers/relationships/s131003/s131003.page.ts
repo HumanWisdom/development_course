@@ -25,7 +25,7 @@ export class S131003Page implements OnInit {
         "Relationships"
       ]
 
-  transcriptPage="relationships/s131003t"
+  transcriptPage="/teenagers/relationships/s131003t"
   toc="teenagers/relationships/s131001"
   bookmark=0
   path = setTimeout(() => {

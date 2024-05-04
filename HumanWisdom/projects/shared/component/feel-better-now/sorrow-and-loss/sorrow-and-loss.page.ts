@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
-
+import { NavigationService } from '../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-sorrow-and-loss',
   templateUrl: './sorrow-and-loss.page.html',
@@ -14,15 +14,20 @@ export class SorrowAndLossPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-
+  isAdults = true;
   audioData:any;
 
-  constructor(private router: Router, private location: Location){}
+  constructor(private router: Router, private location: Location,private navigationService:NavigationService){}
 
   ngOnInit() {
     this.audioData={
       url:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.27.mp3'
     }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
 
@@ -33,6 +38,15 @@ export class SorrowAndLossPage implements OnInit {
   }
 
   goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
+
+  defaultGoBack() {
     // this.location.back()
     if (window.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);
@@ -40,7 +54,6 @@ export class SorrowAndLossPage implements OnInit {
       this.router.navigate(['/adults/feel-better-now']);
     }
   }
-
 
   routeVideoaudio(type, url, title = '') {
     console.log(url)

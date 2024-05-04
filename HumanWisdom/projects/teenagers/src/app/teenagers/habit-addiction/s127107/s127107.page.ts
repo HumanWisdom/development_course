@@ -15,7 +15,7 @@ export class S127107Page implements OnInit,OnDestroy
   bg="purple_w11"
   title="#4 Meet the feeling fully, without resistance  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/habit-addiction/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/habit-addiction/audios/1.4.mp3'
   transcriptPage="habit-addiction/s127107t"
   toc="teenagers/habit-addiction/s127001"
   bookmark=0

@@ -15,7 +15,7 @@ export class S127103Page implements OnInit,OnDestroy
   bg="purple_w7"
   title="#1 Change what you can  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/habit-addiction/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/habit-addiction/audios/1.1.mp3'
   transcriptPage="habit-addiction/s127103t"
   toc="teenagers/habit-addiction/s127001"
   bookmark=0

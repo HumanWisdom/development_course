@@ -179,10 +179,10 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/teenagers/nature/${natureR}`])
+            this.router.navigate([`/teenagers/habit-addiction/${natureR}`])
           }
           else
-            this.router.navigate([`/teenagers/nature/s28001`])
+            this.router.navigate([`/teenagers/habit-addiction/s127001`])
 
           /*if(!natureR)
            {
