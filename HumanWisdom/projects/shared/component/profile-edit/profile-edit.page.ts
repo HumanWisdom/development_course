@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef,Renderer2, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { CommonService } from '../../services/common.service';
@@ -31,14 +31,30 @@ export class ProfileEditPage implements OnInit {
   titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
   searchResult = [];
   isAdults = true;
-  constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService) {
+  constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
+  ) {
+    // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
+    //   console.log('Received custom event from index.html');
+    // });
     this.userId = JSON.parse(localStorage.getItem("userId"))
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
         } else {
          this.isAdults = false;
         }
+        this.exposeFunction();
   }
+
+  handleEvent(payload: any) {
+    console.log('Received event in Angular:', payload);
+    alert(payload);
+  }
+  
+  // Expose function to global window object
+  exposeFunction() {
+    window['handleAngularEvent'] = this.handleEvent.bind(this);
+  }
+
 
   ngOnInit() {
     this.getCountry();

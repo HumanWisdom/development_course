@@ -16,20 +16,21 @@
   <!-- <meta property="og:url" content="https://happierme.app/" /> -->
   <meta property="og:description" content="Master your mind and be happier" />
   <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
+  <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
   <!-- <meta property="og:image:alt"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.png" /> -->
-  <meta property="og:image:alt"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
+  <meta property="og:image:alt"
+    content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+  <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
 
   <meta property="og:image:width" content="414" />
   <meta property="og:image:height" content="232" />
 
 
   <meta property="fb:app_id" content="806018844533100">
- 
+
   <title>HappierMe: For a happier life </title>
 
- <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable = no" />
   <!-- <script type="application/ld+json">
@@ -599,11 +600,14 @@
       // Perform the download action here
     });
 
+    function triggerAngularEvent() {
+      // Call the function exposed by Angular
+      window['handleAngularEvent']('YourEventPayload');
+    }
 
     window.addEventListener('ProfileEventReceived', function (obj) {
       console.log(obj);
       alert(obj);
-
       // Perform the download action here
     });
 
@@ -830,24 +834,25 @@
         vm.style.display = "inline";
         vl.style.display = "none";
       }
-    } 
+    }
 
 
-    function test(){
-      if(window.AndroidHandler){
+    function test() {
+      if (window.AndroidHandler) {
         window.AndroidHandler.showToast("Hell From Angular");
       }
-   }
-
-
-   function test1(str){
-    if(window.AndroidHandler){
-      window.AndroidHandler.showToast(str)
     }
-   }
 
-    </script>
-    <!-- /view more & less -->
+
+    function test1(str) {
+      triggerAngularEvent(str);
+      if (window.AndroidHandler) {
+        window.AndroidHandler.showToast(str)
+      }
+    }
+
+  </script>
+  <!-- /view more & less -->
 
 </body>
 
