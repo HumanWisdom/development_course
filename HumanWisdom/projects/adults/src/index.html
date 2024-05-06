@@ -15,40 +15,21 @@
   <meta property="og:type" content="website" />
   <!-- <meta property="og:url" content="https://happierme.app/" /> -->
   <meta property="og:description" content="Master your mind and be happier" />
-  <meta property="og:image"
-    content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
+  <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+  <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
   <!-- <meta property="og:image:alt"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.png" /> -->
   <meta property="og:image:alt"
-    content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
+    content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+  <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
 
   <meta property="og:image:width" content="414" />
   <meta property="og:image:height" content="232" />
 
 
   <meta property="fb:app_id" content="806018844533100">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@HumanWisdom_me">
-  <meta name="twitter:creator" content="@HumanWisdom_me">
-  <meta name="twitter:title" content="HumanWisdom: Mental Well-being">
-  <meta name="twitter:description" property="twitter:description"
-    content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom">
-  <meta name="twitter:image"
-    content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg">
+
   <title>HappierMe: For a happier life </title>
 
-  <!-- <meta property="fb:app_id" content="124024574287414"> -->
-  <!-- <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@HumanWisdom_me">
-    <meta name="twitter:creator" content="@HumanWisdom_me">
-    <meta name="twitter:title" content="HumanWisdom: Mental Well-being">
-    <meta name="twitter:description" property="twitter:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom">
-    <meta name="twitter:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent.png">
-    <meta name="title" property="title" content="Human Wisdom App: Personal Growth & Self-Help">
-    <meta name="description" property="description" content="Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.">
-    <meta name="keywords" property="keywords" content="human wisdom, app, personal growth, self-help, daily inspiration, mindfulness practices, anger management, stress management, relationships, self-esteem, addiction, work, workplace, leadership, money, love, food and health, living with peace, dealing with death, criticism, success and failure, decision making, opinions and beliefs">
-    <meta name="author" content="The Human Wisdom Team">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable = no" />  -->
   <meta name="robots" content="index, follow">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable = no" />
@@ -613,17 +594,21 @@
     window.addEventListener('profileEditClicked', function () {
       var fileName = localStorage.getItem('userId') + "_Profile";
       console.log("ProfileEvenClicked--------------------");
+     // this.triggerAngularEvent('{"byteArray":"222222","fileName":"FileName"}');
       if (window.AndroidHandler) {
         window.AndroidHandler.profileEditClicked(fileName);
       }
       // Perform the download action here
     });
 
+    function triggerAngularEvent(data) {
+      // Call the function exposed by Angular
+      window['handleAngularEvent'](data);
+    }
 
     window.addEventListener('ProfileEventReceived', function (obj) {
       console.log(obj);
       alert(obj);
-
       // Perform the download action here
     });
 
@@ -668,11 +653,11 @@
       }
     })
 
-    window.addEventListener('nativeEvent', function (event) {
+    window.addEventListener('nativeEvent', function () {
       // Handle the event data received from native Android
-
+      var item = localStorage.getItem('filenameofProfile');
       if (window.AndroidHandler) {
-        window.AndroidHandler.showToast("Hello from JavaScript!");
+        window.AndroidHandler.showToast(item);
       }
 
       console.log('Received event data:');
@@ -850,7 +835,23 @@
         vm.style.display = "inline";
         vl.style.display = "none";
       }
-    } 
+    }
+
+
+    function test() {
+      if (window.AndroidHandler) {
+        window.AndroidHandler.showToast("Hell From Angular");
+      }
+    }
+
+
+    function test1(str) {
+      if (window.AndroidHandler) {
+        triggerAngularEvent(str);
+        window.AndroidHandler.showToast(str);
+      }
+    }
+
   </script>
   <!-- /view more & less -->
 

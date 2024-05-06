@@ -40,11 +40,16 @@ export class NavigationService {
 }
 
 
-   isExceptionUrl(urltoCheck){
-    if(urltoCheck.includes('guidedquestions')){
-      return true;
-    }
-   }
+ isExceptionUrl(urltoCheck) {
+  const exceptions = [
+      'guidedquestions', 'why-do-i', 'how-can-i',
+      's29000', 's44001', 's486', 's232',
+      's54001', 's92001', 'view-stories', 's42000',
+     , 's162p0','s51000','s39000','s47000','s324','s47000'
+  ];
+
+  return exceptions.some(exception => urltoCheck.includes(exception)) || urltoCheck == 's0';
+}
 
 
   getBackLink(): string | null {
@@ -57,8 +62,7 @@ export class NavigationService {
   navigateToBackLink() {
     const url = this.goBack();
     if (url != null) {
-      this.router.navigate([url]);
-      return 'DONOROUTE';
+      return url;
     }
     return 'adults/search';
   }

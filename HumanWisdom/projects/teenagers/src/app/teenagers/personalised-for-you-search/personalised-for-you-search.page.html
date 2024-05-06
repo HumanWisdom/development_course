@@ -6,6 +6,1065 @@
 
 <!-- page content -->
 
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <!-- search -->
+            <div class="row mt30px mb30px prelative">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
+                <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
+              </div>
+
+              <div class="row adsearch">
+                <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                  <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                      class="is-search list-group-item">{{item.ModuleName}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /search -->
+
+            <!-- contact a coach button -->
+            <div class="row tour_fbn">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a routerLink="/teenagers/coach/">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach.svg" class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Contact a Coach
+                      </h4>
+
+                      <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        Quick tips to help you feel better right now
+                      </h4> -->
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /contact a coach button -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- pathway -->
+            <div class="row box_v3_05">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="tour_pathway">
+                  <!-- five dots -->
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
+                      <a>
+                        <button type="button" class="btn"></button>
+                      </a>
+
+                      <a>
+                        <button type="button" class="btn"></button>
+                      </a>
+
+                      <a>
+                        <button type="button" class="btn"></button>
+                      </a>
+
+                      <a>
+                        <button type="button" class="btn"></button>
+                      </a>
+
+                      <a>
+                        <button type="button" class="btn"></button>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- /five dots -->
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
+                      <h4 class="mtb0px fw_700 fs_24px lh_140p fc_ffffff">
+                        PATHWAY
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                        Explore our 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- hr -->
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <!-- <hr class="hr_style_v3_01 mtb10pxi"> -->
+                    <hr class="hr_style_v3_02">
+                  </div>
+                </div>
+                <!-- /hr -->
+
+                <!-- audio player -->
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+
+                    <div class="col-md-2 col-sm-2 col-xs-2 circular-player-container">
+                      <ngx-circular-player
+                        id="aud5"
+                        strokeColor="#FFFFFF"
+                        source="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3"
+                        progressStrokeColor=rgba(229,141,130,1)
+                        class="">
+                      </ngx-circular-player>
+                    </div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                          01:30
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <a routerLink="/teenagers/pathway/index-transcript">
+                        <button class="btn flex_ai btn_pn">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/transcript_left.svg" alt="" class="img-responsive">
+                        </button>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- /audio player -->
+
+                <div class="row mr-20pxi mt40px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" (click)="navigateToPathway('/teenagers/pathway/develop-a-calm-mind')">
+                        <div class="prelative">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_01.webp" alt="Happiness" class="ctimg">
+
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            01
+                          </h4>
+
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            5 modules
+                          </h4>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Develop a calm mind
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Breathing • Nature • Meditation
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative"  (click)="navigateToPathway('/teenagers/pathway/understand-yourself')">
+                        <div class="prelative">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_02.webp" alt="Happiness" class="ctimg">
+
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            02
+                          </h4>
+
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            9 modules
+                          </h4>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              <!-- Understand yourself -->
+                              Learn to question yourself
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Enquiry • Insight • Awareness
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" (click)="navigateToPathway('/teenagers/pathway/understand-how-your-mind-works')">
+                        <div class="prelative">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_03.webp" alt="Happiness" class="ctimg">
+
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            03
+                          </h4>
+
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            10 modules
+                          </h4>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Understand how your mind works
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Conditioning • Comparison & envy • Awareness
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" (click)="navigateToPathway('/teenagers/pathway/manage-your-emotions')">
+                        <div class="prelative">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_04.webp" alt="Happiness" class="ctimg">
+
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            04
+                          </h4>
+
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            6 modules
+                          </h4>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Manage your emotions
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Anger • Loneliness • Pleasure
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" (click)="navigateToPathway('/teenagers/pathway/live-your-best-life')">
+                        <div class="prelative">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_05.webp" alt="Happiness" class="ctimg">
+
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            05
+                          </h4>
+
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            20 modules
+                          </h4>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              <!-- Live your best life -->
+                              Succeed in life
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Happiness • Relationships • Stress
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /pathway -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- find inspiration -->
+            <div class="row tour_find_inspiration">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                  Find inspiration
+                </h4>
+              </div>
+
+
+            <div class="mt30px div_fi_a">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('Click_life_stories', '/teenagers/wisdom-stories') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Life stories
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_audio_meditation', '/teenagers/audio-meditation') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_audio_meditation.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Audio meditation
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_blog', '/teenagers/blogs') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Blog
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_podcast', '/teenagers/podcast') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_podcast.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Podcast
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_short_video', '/teenagers/wisdom-shorts') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Short videos
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_Events', '/teenagers/events') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Events
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            </div>
+            <!-- /find inspiration -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+
+            <!-- awareness exercises -->
+            <!-- accordion -->
+            <div class="row accordion_row tour_exercises">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01 dpanel_01_ext">
+                    <div class="panel-heading p0">
+                      <h4 class="panel-title dpaneltitle">
+                        <a>
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex === 1" href="#ca_ae" aria-expanded="true">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    Exercises
+                                  </h2>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex !== 1" aria-expanded="true">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    Exercises
+                                  </h2>
+                                </a>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="tourIndex === 1 ? RouteToWisdomExercise(null) : $event.preventDefault()">
+                                <a>
+                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                                    View all
+                                  </h2>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="ca_ae" class="panel-collapse collapse in">
+                      <div class="panel-body aepanel">
+
+                        <div class="p20px">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mtb0px">
+                                Do one of these short exercises daily to improve your self awareness and emotional intelligence.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <hr class="hr_style_v3_02">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-md-6 col-sm-6 col-xs-6 p0 center_flex">
+                                <div class="col-md-3 col-sm-3 col-xs-3 p0 circular-player-container">
+                                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_play.svg" class="w100"> -->
+                                  <ngx-circular-player
+                                    id="aud5"
+                                    strokeColor="#FFFFFF"
+                                    source="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/awareness_exercises.mp3"
+                                    progressStrokeColor=rgba(229,141,130,1)>
+                                  </ngx-circular-player>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                  <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                                    01:30
+                                  </h4>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                <a routerLink="/teenagers/awareness-exercises-transcript" *ngIf="tourIndex === 1">
+                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
+                                  </button>
+                                </a>
+
+                                <a *ngIf="tourIndex !== 1">
+                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
+                                  </button>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row pt20px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="fw_500 fs_15px lh_140p fc_ffffff mtb0px">
+                                #{{exerciseNo}} {{Title}}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row ml20px">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
+                            <ng-container *ngFor="let item of currentList">
+                              <div class="col-md-3 col-sm-3 col-xs-4">
+                                <a *ngIf="item.day =='0';else notIntro" (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
+                                  <button type="button" [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
+                                    Intro
+                                  </button>
+                                </a>
+
+                                <ng-template #notIntro>
+                                  <a (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
+                                    <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
+                                    Day  {{item.day}}
+                                    </button>
+                                  </a>
+                                </ng-template>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /awareness exercises -->
+
+            <!-- hr -->
+         <!--    <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div> -->
+            <!-- /hr -->
+
+            <!-- explore a topic of interest -->
+     <!--        <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a class="prelative box_v3_01" (click)="logEvent('click_select-a-topic-to-explore','/teenagers/select-a-topic-to-explore')" >
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
+                        <h4 class="mt0px mb5px fw_600 fs_18px lh_24px fc_ffffff">
+                          Explore a topic of interest
+                        </h4>
+
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1 tright">
+                        <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div> -->
+            <!-- /explore a topic of interest -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- get more out of HappierMe -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                  Get more out of HappierMe
+                </h4>
+              </div>
+            </div>
+
+            <div class="mt30px div_fi_b">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="rightToJournal(true)">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_journal.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Journal
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="rightToJournal(false)">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_guided_questions.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Guided questions
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+               <!--    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="logEvent('click_happiness_survey', '/teenagers/wisdom-survey')">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_wisdom_score.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Happiness score
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div> -->
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <!-- <button class="" (click)="logEvent('click_Contact_a_Coach', '/teenagers/contact-coach')"> -->
+                    <button class="" routerLink="/teenagers/coach/">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_contact_a_coach.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Contact a coach
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="logEvent('click_Forum', '/teenagers/forum')">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_forum.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Forum
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- /get more out of HappierMe -->
+
+
+
+
+
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+            <!-- <ng-container *ngIf="!isSubscribe"> -->
+            <!-- subscribe to premium -->
+            <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
+            <!-- /subscribe to premium -->
+           <!-- </ng-container> -->
+            <!-- hr -->
+
+            <!-- /hr -->
+
+            <!-- wisdom for global impact -->
+            <!-- accordion -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default cpanel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#ca_wfgi" aria-expanded="true">
+                          <div class="row btn_tff">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  <!-- Wisdom for global impact -->
+                                  Make the world a better place
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="ca_wfgi" class="panel-collapse collapse">
+                      <div class="panel-body">
+
+                        <div class="row cmr-20pxi">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
+
+                            <!-- <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a>
+                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/01.svg"
+                                  alt="Stress Management" class="crimg">
+                                <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
+                                  Tackling racism
+                                </h4>
+                              </a>
+                            </div> -->
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""   (click)="logEvent('click_climate_change','/teenagers/solving-global-problems/s72002')">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/02a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Climate change
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        06:27
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""  (click)="logEvent('click_Tackling_racism','/teenagers/solving-global-problems/s72001')">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/01a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Tackling racism
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        10:17
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""  (click)="logEvent('click_RootCause_Climatechange','/teenagers/solving-global-problems/s72006')" >
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/06a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Root cause of climate change
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        02:01
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""  (click)="logEvent('click_Global_health_challenges','/teenagers/solving-global-problems/s72003')"  >
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/03a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Global health challenges
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        07:19
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""  (click)="logEvent('click_Ending conflict','/teenagers/solving-global-problems/s72004')" >
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/04a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Ending conflict
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        12:15
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" (click)="logEvent('click_Transforming_education','/teenagers/solving-global-problems/s72005')">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/05a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Transforming education
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        10:23
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""  (click)="logEvent('click_Preventing_war','/teenagers/solving-global-problems/s72007')" routerLink="/teenagers/solving-global-problems/s72007">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/07a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                       Preventing war
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        01:01:39
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /wisdom for global impact -->
+
+            <!-- tour -->
+            <!-- <button class="btn" onclick="call_tour_pathway()">
+              Tour Pathway Button
+            </button> -->
+            <!-- /tour -->
+
+            <div class="pagebreak"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
 <!-- /page content -->
 
 <!-- footer  -->

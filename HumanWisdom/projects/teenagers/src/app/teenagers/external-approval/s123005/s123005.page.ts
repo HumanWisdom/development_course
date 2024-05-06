@@ -103,7 +103,7 @@ export class S123005Page implements OnInit, OnDestroy {
 
   prev() 
   {
-this.router.navigate(['/teenagers/external-approval /s123004'])
+this.router.navigate(['/teenagers/external-approval/s123004'])
   }
 
   goNext() 

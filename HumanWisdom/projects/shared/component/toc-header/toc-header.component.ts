@@ -39,7 +39,7 @@ export class TocHeaderComponent implements OnInit {
         this.location.back();
       }
      }else{
-      this.router.navigate(['adults/adult-dashboard']);
+      this.router.navigate([url]);
      }
       
   }

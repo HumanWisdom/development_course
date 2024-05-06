@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
+import { NavigationService } from '../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-anger',
@@ -15,7 +16,7 @@ export class AngerPage implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   isAdults = true;
 
-  constructor(private location: Location, private router: Router) { }
+  constructor(private location: Location, private router: Router,private navigationService:NavigationService){ }
 
   ngOnInit() {
      if (SharedService.ProgramId == ProgramType.Adults) {
@@ -31,14 +32,22 @@ export class AngerPage implements OnInit {
     }
   }
 
+
   goBack() {
-    // this.location.back()
-    if (SharedService.ProgramId == ProgramType.Teenagers) {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
+
+  defaultGoBack() {
+    if (window.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);
     } else {
       this.router.navigate(['/adults/feel-better-now']);
     }
-    
   }
 
   routeVideoaudio(type, url, title = '') {

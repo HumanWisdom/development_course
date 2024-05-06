@@ -1,0 +1,29 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Cyberbullying
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      1. Posting hurtful comments about others, or embarrassing them
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      2. Affects 1 in 3 teenagers
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      3. Tell an adult - or ask someone to take their post down
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      4. 60% of teens have witnessed cyberbullying - but most do nothing about it
+    </h3>
+
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

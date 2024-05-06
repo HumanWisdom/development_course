@@ -30,7 +30,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmarkList = []
   audiomeditation = []
   allaudiomeditation = []
-
+  isAdults= true;
   gamR = sessionStorage.getItem("gamR")
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/guided_audio_meditation.jpg"
   tocColor = "white"
@@ -41,7 +41,6 @@ export class S51000Page implements OnInit, OnDestroy {
   path: any;
 
   searchedText:'';
-
   isSubscriber = false;
 
   constructor(
@@ -86,6 +85,12 @@ export class S51000Page implements OnInit, OnDestroy {
     } else {
       this.isSubscriber = false;
     }
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   ngOnInit() {
@@ -95,7 +100,11 @@ export class S51000Page implements OnInit, OnDestroy {
     this.meta.updateTag({ property: 'description', content: 'Enhance your sleep and find inner peace with our relaxation meditation sessions. Guided audio meditations for a calm mind and body.' })
     this.meta.updateTag({ property: 'keywords', content: 'Audio Meditation,Guided Meditation,Mindfulness Meditation,Relaxation Meditation,Stress Relief Meditation,Sleep Meditation,Calmness Meditation,Peaceful Meditation,Focus Meditation' })
 
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
 
 
     // continue where you left
@@ -120,8 +129,9 @@ export class S51000Page implements OnInit, OnDestroy {
   getaudiomeditation() {
     this.service.GetAudioMeditation().subscribe((res) => {
       if (res) {
-        this.audiomeditation = res;
-        this.allaudiomeditation = res;
+        var filteredData = res.filter(x=>x.ProgIDs.includes(SharedService.ProgramId.toString()));
+        this.audiomeditation = filteredData;
+        this.allaudiomeditation = filteredData;
       }
     })
   }

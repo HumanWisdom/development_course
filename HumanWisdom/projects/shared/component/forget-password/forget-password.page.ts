@@ -187,7 +187,7 @@ export class ForgetPasswordPage implements OnInit {
   }
 
   loginpage() {
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    this.router.navigate(['/onboarding/login'])
   }
 
   getAlertcloseEvent(event) {

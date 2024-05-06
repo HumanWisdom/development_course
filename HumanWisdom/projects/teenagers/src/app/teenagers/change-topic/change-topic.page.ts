@@ -102,6 +102,8 @@ export class ChangeTopicPage implements OnInit {
       } else {
         this.location.back();
       }
+    }else{
+      this.router.navigate([url]);
     }
   }
 
@@ -111,7 +113,7 @@ export class ChangeTopicPage implements OnInit {
       if (res) {
         if (this.isRoutedFromLogin == true) {
           this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
-          this.url = "/subscription/start-your-free-trial"
+          this.url = "/teenagers/subscription/start-your-free-trial"
 
         }
         else {
