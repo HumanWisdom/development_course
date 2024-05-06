@@ -1,0 +1,28 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+            There are many skills that you need to develop which will contribute to your future success. These are perhaps as important as your academic grades but that may not be taught as part of our education.
+
+         </p>
+         <p>
+            These include your ability to communicate with confidence, have a positive attitude, cope with the pressure of work, and have good working relationships with people who are very different to you. It also includes being emotionally intelligent, knowing how to manage your own emotions in a constructive way.
+         </p>
+         <p>
+            In this session we will go over these skills, and point you to areas in the app where you can get more detailed information about each of these areas
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
