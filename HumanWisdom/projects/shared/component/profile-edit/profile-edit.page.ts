@@ -51,13 +51,13 @@ export class ProfileEditPage implements OnInit {
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
-    this.objString = payload;
-    const jsonObject = JSON.parse(payload);
-    this.fileName = jsonObject.fileName;
-    this.byteArray = jsonObject.byteArray;
+ //  this.objString = payload;
+   // const jsonObject = JSON.parse(payload);
+    this.fileName ="fileName";
+    this.byteArray = "byteArray";
     this.isShow = true;
-    const decodedString = atob(jsonObject.byteArray)
-    this.imageupload=decodedString;
+    // const decodedString = atob(jsonObject.byteArray)
+   // this.imageupload=decodedString;
   }
   
   // Expose function to global window object
