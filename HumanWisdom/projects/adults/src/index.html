@@ -656,7 +656,7 @@
       // Handle the event data received from native Android
 
       if (window.AndroidHandler) {
-        window.AndroidHandler.showToast("Hello from JavaScript!");
+        window.AndroidHandler.showToast(event.detail);
       }
 
       console.log('Received event data:');
