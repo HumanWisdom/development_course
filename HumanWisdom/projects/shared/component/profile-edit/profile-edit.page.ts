@@ -47,7 +47,11 @@ export class ProfileEditPage implements OnInit {
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
-    alert(payload);
+    const jsonObject = JSON.parse(payload);
+    this.clickNativeElement(jsonObject.fileName);
+    this.clickNativeElement(jsonObject.byteArray);
+    const decodedString = atob(jsonObject.byteArray)
+    this.imageupload=decodedString;
   }
   
   // Expose function to global window object
@@ -87,6 +91,14 @@ export class ProfileEditPage implements OnInit {
     const customEvent = new CustomEvent('profileEditClicked');
     window.dispatchEvent(customEvent);
   }
+
+  clickNativeElement(data){
+    setTimeout(() => {
+      const customEvent = new CustomEvent('nativeEvent',{ detail: data });
+      window.dispatchEvent(customEvent);
+    }, 500);
+  }
+
 
   getFileUpload(event) {
     const files = event.target.files;
