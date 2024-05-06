@@ -54,7 +54,7 @@ export class ProfileEditPage implements OnInit {
  //  this.objString = payload;
    // const jsonObject = JSON.parse(payload);
     this.fileName ="fileName";
-    this.byteArray = "byteArray";
+    this.byteArray = payload;
     this.isShow = true;
     // const decodedString = atob(jsonObject.byteArray)
    // this.imageupload=decodedString;
