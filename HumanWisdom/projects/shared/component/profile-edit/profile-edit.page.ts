@@ -55,7 +55,7 @@ export class ProfileEditPage implements OnInit {
     const jsonObject = JSON.parse(payload);
     this.fileName = jsonObject.fileName;
     // Assume base64Image is the URL-encoded and Base64-encoded string
-    this.byteArray= 'data:;base64',+jsonObject.byteArray;
+    this.byteArray= 'data:;base64,'+jsonObject.byteArray;
     this.imageupload = this.byteArray;
     this.isShow = true;
   }
