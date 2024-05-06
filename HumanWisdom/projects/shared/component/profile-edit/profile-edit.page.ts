@@ -34,6 +34,7 @@ export class ProfileEditPage implements OnInit {
   isShow = false;
   byteArray:any;
   fileName ='';
+  objString:any;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
@@ -50,13 +51,11 @@ export class ProfileEditPage implements OnInit {
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
+    this.objString = payload;
     const jsonObject = JSON.parse(payload);
-    localStorage.setItem('filenameofProfile',jsonObject.fileName);
-    localStorage.setItem('byteArray',jsonObject.byteArray);
     this.fileName = jsonObject.fileName;
     this.byteArray = jsonObject.byteArray;
     this.isShow = true;
-    this.clickNativeElement();
     const decodedString = atob(jsonObject.byteArray)
     this.imageupload=decodedString;
   }
