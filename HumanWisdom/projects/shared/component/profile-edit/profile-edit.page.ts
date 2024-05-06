@@ -1,4 +1,4 @@
-import { Component, OnInit,ElementRef,Renderer2, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { CommonService } from '../../services/common.service';
@@ -21,20 +21,20 @@ export class ProfileEditPage implements OnInit {
   content = '';
   enableAlert = false;
   countryCode: any = '';
-  countryList:any = [];
-  isdcode:any = '';
-  country:any = '';
-  phoneno:any = '';
-  age:any = '';
-  profession:any = '';
-  title:any = '';
-  titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
+  countryList: any = [];
+  isdcode: any = '';
+  country: any = '';
+  phoneno: any = '';
+  age: any = '';
+  profession: any = '';
+  title: any = '';
+  titleList: any = ['Title', 'Ms', 'Mr.', 'Mrs.', 'Others'];
   searchResult = [];
   isAdults = true;
   isShow = false;
-  byteArray:any;
-  fileName ='';
-  objString:any;
+  byteArray: any;
+  fileName = '';
+  objString: any;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
@@ -43,23 +43,28 @@ export class ProfileEditPage implements OnInit {
     this.userId = JSON.parse(localStorage.getItem("userId"))
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
-        this.exposeFunction();
+    } else {
+      this.isAdults = false;
+    }
+    this.exposeFunction();
   }
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
- //  this.objString = payload;
-    const jsonObject = JSON.parse(payload);
-    this.fileName =jsonObject.fileName;
-    this.byteArray = jsonObject.byteArray;
-    this.isShow = true;
-    // const decodedString = atob(jsonObject.byteArray)
-    this.imageupload=this.byteArray;
+    //  this.objString = payload;
+
+    try {
+      const jsonObject = JSON.parse(payload);
+      this.fileName = "fileName;"
+      this.byteArray = "byteArray";
+      this.isShow = true;
+    } catch (error) {
+      this.fileName = "fileName;"
+      this.byteArray = error;
+      this.isShow = true;
+    }
   }
-  
+
   // Expose function to global window object
   exposeFunction() {
     window['handleAngularEvent'] = this.handleEvent.bind(this);
@@ -74,7 +79,7 @@ export class ProfileEditPage implements OnInit {
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
         this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.email = this.userdetail['Email']
-        this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0'  ? '' : this.userdetail['Age']
+        this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0' ? '' : this.userdetail['Age']
         this.country = this.userdetail['Country']
         this.isdcode = this.userdetail['ISD_Code'] ? this.userdetail['ISD_Code'].toString().includes('+') ? this.userdetail['ISD_Code'] : '+' + this.userdetail['ISD_Code'] : ''
         this.profession = this.userdetail['Profession']
@@ -93,12 +98,12 @@ export class ProfileEditPage implements OnInit {
     }, 1000)
   }
 
-   clickEventForProfile(){
+  clickEventForProfile() {
     const customEvent = new CustomEvent('profileEditClicked');
     window.dispatchEvent(customEvent);
   }
 
-  clickNativeElement(){
+  clickNativeElement() {
     setTimeout(() => {
       const customEvent = new CustomEvent('nativeEvent');
       window.dispatchEvent(customEvent);
@@ -195,8 +200,8 @@ export class ProfileEditPage implements OnInit {
     this.searchResult = [];
     this.country = event;
     let fil = this.countryList.filter((d) => d['Country'] === event);
-    if(fil.length > 0) {
-       this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
+    if (fil.length > 0) {
+      this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
     }
   }
 
