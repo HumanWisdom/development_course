@@ -594,15 +594,16 @@
     window.addEventListener('profileEditClicked', function () {
       var fileName = localStorage.getItem('userId') + "_Profile";
       console.log("ProfileEvenClicked--------------------");
+     // this.triggerAngularEvent('{"byteArray":"222222","fileName":"FileName"}');
       if (window.AndroidHandler) {
         window.AndroidHandler.profileEditClicked(fileName);
       }
       // Perform the download action here
     });
 
-    function triggerAngularEvent() {
+    function triggerAngularEvent(data) {
       // Call the function exposed by Angular
-      window['handleAngularEvent']('YourEventPayload');
+      window['handleAngularEvent'](data);
     }
 
     window.addEventListener('ProfileEventReceived', function (obj) {
@@ -652,11 +653,11 @@
       }
     })
 
-    window.addEventListener('nativeEvent', function (event) {
+    window.addEventListener('nativeEvent', function () {
       // Handle the event data received from native Android
-
+      var item = localStorage.getItem('filenameofProfile');
       if (window.AndroidHandler) {
-        window.AndroidHandler.showToast(event.detail);
+        window.AndroidHandler.showToast(item);
       }
 
       console.log('Received event data:');
@@ -845,9 +846,9 @@
 
 
     function test1(str) {
-      triggerAngularEvent(str);
       if (window.AndroidHandler) {
-        window.AndroidHandler.showToast(str)
+        window.AndroidHandler.showToast(str);
+        triggerAngularEvent(str);
       }
     }
 

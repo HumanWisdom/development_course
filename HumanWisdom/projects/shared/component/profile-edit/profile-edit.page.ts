@@ -31,6 +31,9 @@ export class ProfileEditPage implements OnInit {
   titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
   searchResult = [];
   isAdults = true;
+  isShow = false;
+  byteArray:any;
+  fileName ='';
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
@@ -48,8 +51,12 @@ export class ProfileEditPage implements OnInit {
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
     const jsonObject = JSON.parse(payload);
-    this.clickNativeElement(jsonObject.fileName);
-    this.clickNativeElement(jsonObject.byteArray);
+    localStorage.setItem('filenameofProfile',jsonObject.fileName);
+    localStorage.setItem('byteArray',jsonObject.byteArray);
+    this.fileName = jsonObject.fileName;
+    this.byteArray = jsonObject.byteArray;
+    this.isShow = true;
+    this.clickNativeElement();
     const decodedString = atob(jsonObject.byteArray)
     this.imageupload=decodedString;
   }
@@ -92,9 +99,9 @@ export class ProfileEditPage implements OnInit {
     window.dispatchEvent(customEvent);
   }
 
-  clickNativeElement(data){
+  clickNativeElement(){
     setTimeout(() => {
-      const customEvent = new CustomEvent('nativeEvent',{ detail: data });
+      const customEvent = new CustomEvent('nativeEvent');
       window.dispatchEvent(customEvent);
     }, 500);
   }
