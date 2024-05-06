@@ -52,17 +52,18 @@ export class ProfileEditPage implements OnInit {
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
     //  this.objString = payload;
-
-    try {
-      const jsonObject = JSON.parse(payload);
-      this.fileName = "fileName;"
-      this.byteArray = "byteArray";
-      this.isShow = true;
-    } catch (error) {
-      this.fileName = "fileName;"
-      this.byteArray = error;
-      this.isShow = true;
-    }
+    const jsonObject = JSON.parse(payload);
+    this.fileName = jsonObject.fileName;
+    // Assume base64Image is the URL-encoded and Base64-encoded string
+    const base64Image: string = jsonObject.byteArray;
+    // Step 1: Decode the URL-encoded string
+    const decodedUrlEncodedString: string = decodeURIComponent(base64Image);
+    // Step 2: Decode the Base64-encoded string
+    const decodedBase64String: string = Buffer.from(decodedUrlEncodedString, 'base64').toString('utf-8');
+    this.byteArray = decodedBase64String;
+    this.isShow = true;
+    // const decodedString = atob(jsonObject.byteArray)
+    this.imageupload = this.byteArray;
   }
 
   // Expose function to global window object
