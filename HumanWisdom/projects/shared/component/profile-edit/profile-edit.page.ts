@@ -35,12 +35,13 @@ export class ProfileEditPage implements OnInit {
   byteArray: any;
   fileName = '';
   objString: any;
+  object:any;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
     //   console.log('Received custom event from index.html');
     // });
-    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = JSON.parse(localStorage.getItem("userId"));
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -58,6 +59,10 @@ export class ProfileEditPage implements OnInit {
     this.byteArray= 'data:;base64,'+jsonObject.byteArray;
     this.imageupload = this.byteArray;
     this.isShow = true;
+    this.object = {
+      "UserID": this.userId,
+      "byteArray": this.imageupload
+    };
   }
 
   // Expose function to global window object
@@ -123,15 +128,11 @@ export class ProfileEditPage implements OnInit {
       let byte: any = reader.result;
       byte = byte.split('base64,')
       if (byte[1] !== undefined && byte[1] !== '') {
-        let obj = {
+       this.object= {
           "UserID": this.userId,
           "byteArray": byte[1]
         }
-        this.onboardingService.uploaderAvatar(obj).subscribe((r) => {
-          if (r) {
-            this.imageupload = reader.result;
-          }
-        })
+        this.imageupload = reader.result;
       }
     }
   }
@@ -158,6 +159,10 @@ export class ProfileEditPage implements OnInit {
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
       if (r) {
+        this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
+          if (r) {
+           console.log("image uplodaed successfully");
+          }})
         localStorage.setItem(
           "nameupdate",
           this.fullname
