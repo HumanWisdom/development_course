@@ -8,6 +8,7 @@ import { LogEventService } from '../../services/log-event.service';
 import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
+import { AUTO_STYLE } from '@angular/animations';
 
 @Component({
   selector: 'app-payment',
@@ -78,19 +79,51 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
+       setTimeout(() => {
       let stripe = Stripe(environment.stripeKey) as any;
+      
+      const appearance = {
+        theme: 'flat',  
+        rules: {
+          '.Label': {
+            fontSize: '0'
+          },
+          /* '.Input::placeholder': {
+            color: '#000000'
+          },  */        
+        },            
+        variables: {
+          colorBackground: '#120F40',
+          colorDanger: '#df1b41',
+          fontFamily: 'Poppins,sans-serif !important;',
+          spacingUnit: '4px',
+          borderRadius: '16px',
+          colorText: '#ffffff',
+          colorTextPlaceholder: "rgba(255, 255, 255, 0.50)"
+        }
+      };
+      
+
+     
       const options = {
-        clientSecret: this.stripeModel.clientSecretId
+        clientSecret: this.stripeModel.clientSecretId,
+        appearance: appearance,
+        loader: 'auto',              
       };
       const elements = stripe.elements(options);
       const paymentElement = elements.create('payment', options);
       paymentElement.mount('#payment-element');
       // Access the underlying input element and set autocomplete to "off"
+     
+      
+
+     
       const cardInput = document.getElementById('Field-numberInput');
       if (cardInput) {
+        cardInput.setAttribute('::placeholder', "Card number");
         cardInput.setAttribute('autocomplete', 'off');
       }
+
       const expiry = document.getElementById('Field-expiryInput');
       if (expiry) {
         expiry.setAttribute('autocomplete', 'off');
@@ -108,7 +141,17 @@ export class PaymentPage implements OnInit, AfterViewInit {
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: SharedService.ClientUrl + url
+            return_url: SharedService.ClientUrl + url,
+            payment_method: {             
+              billing_details: {
+                name: (<HTMLInputElement>document.getElementById('name')).value,
+                address: {
+                  postal_code: (<HTMLInputElement>document.getElementById('postal-code')).value,
+                }
+              }
+            }
+          
+          
           }
         });
 
