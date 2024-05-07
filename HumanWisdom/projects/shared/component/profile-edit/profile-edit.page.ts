@@ -77,7 +77,8 @@ export class ProfileEditPage implements OnInit {
       this.onboardingService.getuser(this.userId).subscribe((res) => {
         this.userdetail = res[0];
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
-        this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
+        let img = this.userdetail['UserImagePath'].split('\\');
+        this.url = img[0]+"/"+img[1];
         this.email = this.userdetail['Email']
         this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0' ? '' : this.userdetail['Age']
         this.country = this.userdetail['Country']
