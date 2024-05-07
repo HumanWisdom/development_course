@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { CommonService } from '../../services/common.service';
@@ -21,24 +21,50 @@ export class ProfileEditPage implements OnInit {
   content = '';
   enableAlert = false;
   countryCode: any = '';
-  countryList:any = [];
-  isdcode:any = '';
-  country:any = '';
-  phoneno:any = '';
-  age:any = '';
-  profession:any = '';
-  title:any = '';
-  titleList:any = ['Title','Ms','Mr.','Mrs.','Others'];
+  countryList: any = [];
+  isdcode: any = '';
+  country: any = '';
+  phoneno: any = '';
+  age: any = '';
+  profession: any = '';
+  title: any = '';
+  titleList: any = ['Title', 'Ms', 'Mr.', 'Mrs.', 'Others'];
   searchResult = [];
   isAdults = true;
-  constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService) {
+  isShow = false;
+  byteArray: any;
+  fileName = '';
+  objString: any;
+  constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
+  ) {
+    // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
+    //   console.log('Received custom event from index.html');
+    // });
     this.userId = JSON.parse(localStorage.getItem("userId"))
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
+    this.exposeFunction();
   }
+
+  handleEvent(payload: any) {
+    console.log('Received event in Angular:', payload);
+    //  this.objString = payload;
+    const jsonObject = JSON.parse(payload);
+    this.fileName = jsonObject.fileName;
+    // Assume base64Image is the URL-encoded and Base64-encoded string
+    this.byteArray= 'data:;base64,'+jsonObject.byteArray;
+    this.imageupload = this.byteArray;
+    this.isShow = true;
+  }
+
+  // Expose function to global window object
+  exposeFunction() {
+    window['handleAngularEvent'] = this.handleEvent.bind(this);
+  }
+
 
   ngOnInit() {
     this.getCountry();
@@ -48,7 +74,7 @@ export class ProfileEditPage implements OnInit {
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
         this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.email = this.userdetail['Email']
-        this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0'  ? '' : this.userdetail['Age']
+        this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0' ? '' : this.userdetail['Age']
         this.country = this.userdetail['Country']
         this.isdcode = this.userdetail['ISD_Code'] ? this.userdetail['ISD_Code'].toString().includes('+') ? this.userdetail['ISD_Code'] : '+' + this.userdetail['ISD_Code'] : ''
         this.profession = this.userdetail['Profession']
@@ -67,10 +93,18 @@ export class ProfileEditPage implements OnInit {
     }, 1000)
   }
 
-   clickEventForProfile(){
+  clickEventForProfile() {
     const customEvent = new CustomEvent('profileEditClicked');
     window.dispatchEvent(customEvent);
   }
+
+  clickNativeElement() {
+    setTimeout(() => {
+      const customEvent = new CustomEvent('nativeEvent');
+      window.dispatchEvent(customEvent);
+    }, 500);
+  }
+
 
   getFileUpload(event) {
     const files = event.target.files;
@@ -161,8 +195,8 @@ export class ProfileEditPage implements OnInit {
     this.searchResult = [];
     this.country = event;
     let fil = this.countryList.filter((d) => d['Country'] === event);
-    if(fil.length > 0) {
-       this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
+    if (fil.length > 0) {
+      this.isdcode = fil[0]['ISD_Code'] ? '+' + fil[0]['ISD_Code'] : ''
     }
   }
 

@@ -125,6 +125,11 @@ export class SubscriptionPaymentPage implements OnInit {
             iconColor: '#c4f0ff',
              color: '#fff',
             '::placeholder': {
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: '15px',
+              fontWeight: 400,
+              lineHeight: "14px",
+              color: "rgba(255, 255, 255, 0.50)"
 
             },
             ':-webkit-autofill': {
