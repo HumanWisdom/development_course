@@ -157,7 +157,7 @@ export class BeHappierPage implements OnInit {
 
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
@@ -167,7 +167,7 @@ export class BeHappierPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/adults/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
