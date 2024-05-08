@@ -1,88 +1,133 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 @Component({
-  selector: 'app-s160058t',
-  templateUrl: './s160058t.page.html',
-  styleUrls: ['./s160058t.page.scss'],
+  selector: 'app-s160058',
+  templateUrl: './s160058.page.html',
+  styleUrls: ['./s160058.page.scss'],
 })
 
-export class S160058tPage implements OnInit 
+export class S160058Page implements OnInit 
 {
 
   bg_tn=""
   bg_cft=""
   bg=""
-  bookmark=0
+  hint = ""
+  toc = "teenagers/career-success/s160001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/teenagers/career-success/s160058"
-  toc="/teenagers/career-success/s160001"
-  screenType=localStorage.getItem("audio")
-  userId:any
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=160058
-  startTime:any
-  endTime:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  avDuration=localStorage.getItem("avDuration160058")
-  totalTime=localStorage.getItem("totalTime160058")
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName ="teenagers"
-  
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+  moduleId = localStorage.getItem("moduleId")
+  screenType = localStorage.getItem("reflection")
+  screenNumber = 160058
+  startTime: any
+endTime: any
+  totalTime: any
+  bookmark: any
+  rId = 2358
+  reflection: any
+  reflectionA: any
+  r160058 = JSON.parse(sessionStorage.getItem("r160058"))
+  shared: any
+  confirmed: any
+
   constructor
   (
     private router: Router,
     private service:TeenagersService,
-    private location:Location
+    private location: Location
   ) 
   { }
- 
+
   ngOnInit() 
   {
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    this.createScreen()
+    this.reflectionA = this.qrList.ListOfReflection
+    this.findReflection()
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
     }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
     }
-    if(JSON.parse(sessionStorage.getItem("bookmark160058"))==0)
-    this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark160058"))==1)
-      this.bookmark=1
+    this.startTime = Date.now();
   }
 
-  receiveBookmark(e)
+  sharedForum(e) 
   {
     console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark160058",JSON.stringify(this.bookmark))
+    this.shared = e
   }
 
-  submitProgress()
+  confirmShare() 
   {
-    this.router.navigate(['/teenagers/career-success/s160059'])
-    this.service.submitProgressAv({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
-    }).subscribe(res=>{})
+    this.confirmed = true
   }
 
-  prev()
+  createScreen() 
+  {
+    this.service.createScreen({
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {})
+  }
+
+  findReflection() 
+  {
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
+      }
+    }
+    console.log(this.reflection)
+  }
+
+  submitProgress(e) 
+  {
+    console.log("returned response", e)
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    sessionStorage.setItem("r160058", JSON.stringify(e))
+    this.r160058 = sessionStorage.getItem("r160058")
+    console.log(this.r160058)
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r160058
+    }).subscribe(res => {},
+      error => {
+        console.log(error)
+        this.router.navigate(['/teenagers/career-success/s160059'])
+
+      },
+      () => {
+        this.router.navigate(['/teenagers/career-success/s160059'])
+      })
+  }
+
+  previous() 
   {
     this.router.navigate(['/teenagers/career-success/s160057'])
   }
+
+  ngOnDestroy() 
+  {}
 
 }

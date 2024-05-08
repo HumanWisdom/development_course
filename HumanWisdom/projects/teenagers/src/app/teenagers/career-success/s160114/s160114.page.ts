@@ -17,7 +17,7 @@ export class S160114Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="2/9"
+  progressText="3/9"
   link="/teenagers/career-success/s160115"
   name="#3 Developing life skills - Part 1"
   progressImg=""
