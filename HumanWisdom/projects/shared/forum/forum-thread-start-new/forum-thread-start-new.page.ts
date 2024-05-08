@@ -23,7 +23,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
-  fileToUpload: File = null;
+  fileToUpload: any = null;
   @ViewChild('postModal') postModal: any;
   @ViewChild('checkboxSelect') checkboxSelect: any;
   @ViewChild('closeCategory') closeCategory: any;
@@ -49,7 +49,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   ngOnInit() {
-   
+   this.exposeFunction();
   }
 
   ngOnDestroy(): void {
@@ -109,6 +109,25 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   closePost() {
     this.router.navigateByUrl('/forum', { state: { programType: this.programType } });
+  }
+
+  handleEvent(payload: any) {
+    console.log('Received event in Angular:', payload);
+    //  this.objString = payload;
+    const jsonObject = JSON.parse(payload);
+    // Assume base64Image is the URL-encoded and Base64-encoded string
+    this.imageUrl= 'data:;base64,'+jsonObject.byteArray;
+    this.fileToUpload = jsonObject.byteArray;
+  }
+
+  // Expose function to global window object
+  exposeFunction() {
+    window['handleAngularEvent'] = this.handleEvent.bind(this);
+  }
+
+  clickEventForProfile() {
+    const customEvent = new CustomEvent('profileEditClicked');
+    window.dispatchEvent(customEvent);
   }
 
   getFileUpload(event) {

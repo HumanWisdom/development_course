@@ -35,12 +35,13 @@ export class ProfileEditPage implements OnInit {
   byteArray: any;
   fileName = '';
   objString: any;
+  object:any;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
     //   console.log('Received custom event from index.html');
     // });
-    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = JSON.parse(localStorage.getItem("userId"));
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -58,6 +59,10 @@ export class ProfileEditPage implements OnInit {
     this.byteArray= 'data:;base64,'+jsonObject.byteArray;
     this.imageupload = this.byteArray;
     this.isShow = true;
+    this.object = {
+      "UserID": this.userId,
+      "byteArray": this.imageupload
+    };
   }
 
   // Expose function to global window object
@@ -72,7 +77,8 @@ export class ProfileEditPage implements OnInit {
       this.onboardingService.getuser(this.userId).subscribe((res) => {
         this.userdetail = res[0];
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
-        this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
+        let img = this.userdetail['UserImagePath'].split('\\');
+        this.url = img[0]+"/"+img[1];
         this.email = this.userdetail['Email']
         this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0' ? '' : this.userdetail['Age']
         this.country = this.userdetail['Country']
@@ -123,15 +129,11 @@ export class ProfileEditPage implements OnInit {
       let byte: any = reader.result;
       byte = byte.split('base64,')
       if (byte[1] !== undefined && byte[1] !== '') {
-        let obj = {
+       this.object= {
           "UserID": this.userId,
           "byteArray": byte[1]
         }
-        this.onboardingService.uploaderAvatar(obj).subscribe((r) => {
-          if (r) {
-            this.imageupload = reader.result;
-          }
-        })
+        this.imageupload = reader.result;
       }
     }
   }
@@ -158,6 +160,10 @@ export class ProfileEditPage implements OnInit {
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
       if (r) {
+        this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
+          if (r) {
+           console.log("image uplodaed successfully");
+          }})
         localStorage.setItem(
           "nameupdate",
           this.fullname
