@@ -61,9 +61,11 @@ export class BlogIndexPage implements OnInit {
     localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
 
     if(this.isAdults){
-      this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+      //this.router.navigate(['/adults/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+      this.router.navigate(['/adults/blog-article'], { queryParams: { sId: `${item['BlogID']}` } })
     }else{
-      this.router.navigate(['/teenagers/blogs/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+      //this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
+      this.router.navigate(['/teenagers/blog-article'], { queryParams: { sId: `${item['BlogID']}` } })
     }
   }
 

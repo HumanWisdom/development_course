@@ -58,7 +58,11 @@ export class IndexPage implements OnInit {
      this.logeventservice.logEvent("click_"+ String(url).split("/")[2]);
      if (SharedService.ProgramId == ProgramType.Teenagers) {
       this.router.navigate([`teenagers/${url}`]);
-    } else {
+    }
+    else if (SharedService.ProgramId == ProgramType.Adults) {
+      this.router.navigate([`adults/${url}`]);
+    }
+    else {
       this.router.navigate([url]) 
     }
   }
