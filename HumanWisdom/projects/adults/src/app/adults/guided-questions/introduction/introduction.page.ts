@@ -37,9 +37,13 @@ export class IntroductionPage implements OnInit {
     if(url == 'DONOROUTE'){
       this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
     }
+    this.router.navigate([url]);
   }
     // this.router.navigate(['/adults/journal'])
   }
+
+  
+
 
   NavigateToQuestions() {
     let log = localStorage.getItem("isloggedin");
