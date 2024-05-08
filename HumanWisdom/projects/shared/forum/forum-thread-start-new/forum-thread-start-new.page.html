@@ -68,7 +68,7 @@
                     <h4 class="mb0px mt15px fs_12px fw_500 lh_150p fc_e58d82">
                       Upload image (max 2MB)
                     </h4>
-                    <input id="forum_thread_img" (change)="getFileUpload($event)" type="file">
+                    <input id="forum_thread_img" (click)="clickEventForProfile()" (change)="getFileUpload($event)" type="file">
                   </label>
                 </div>
               </div>
