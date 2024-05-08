@@ -111,7 +111,7 @@ export class HaveCalmMindPage implements OnInit {
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
     }
@@ -119,7 +119,7 @@ export class HaveCalmMindPage implements OnInit {
 
   audiopage(audiofile, title, id, isfree=0) {
     if ((isfree==0) && (this.guest || !this.Subscriber)) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
@@ -454,7 +454,9 @@ export class HaveCalmMindPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/adults/blog-article'], { queryParams: { sId: `${id}` } })
+
+    // this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getclcickevent(event) {
@@ -465,9 +467,9 @@ export class HaveCalmMindPage implements OnInit {
 
   audioevent(audioContent) {
     if (!this.Subscriber && audioContent.id >= 4) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+    this.router.navigate(['/adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 

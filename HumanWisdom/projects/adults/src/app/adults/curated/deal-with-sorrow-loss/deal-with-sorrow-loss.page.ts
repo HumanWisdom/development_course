@@ -114,7 +114,7 @@ export class DealWithSorrowLossPage implements OnInit {
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
     this.router.navigate(['/adults/curated/youtubelink', link])
     }
@@ -122,7 +122,7 @@ export class DealWithSorrowLossPage implements OnInit {
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
     this.router.navigate(['/adults/wisdom-shorts', link])
     }
@@ -130,7 +130,7 @@ export class DealWithSorrowLossPage implements OnInit {
 
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
@@ -140,7 +140,7 @@ export class DealWithSorrowLossPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/adults/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -378,10 +378,10 @@ export class DealWithSorrowLossPage implements OnInit {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/adults/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/adults/onboarding/login"]);
       }
     }
   }
@@ -400,9 +400,9 @@ export class DealWithSorrowLossPage implements OnInit {
 
   audioevent(audioContent) {
     if (!this.isSubscriber && audioContent.id >= 4) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+       this.router.navigate(['/adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 
