@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+// import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { NavigationService } from '../../services/navigation.service';
 import { SharedService } from "../../services/shared.service";
 import { ProgramType } from "../../models/program-model";
 
@@ -13,12 +14,12 @@ import { ProgramType } from "../../models/program-model";
 })
 export class TnCloseComponent implements OnInit {
 
-  constructor(private location:Location, private service: AdultsService,  private router: Router) { }
+  constructor(private location:Location, private navigationService: NavigationService,  private router: Router) { }
 
   ngOnInit() {
   }
 
-  goBack(){
+ /*  goBack(){
     if (this.service.previousUrl !== '') {
       this.location.back()
     } else {
@@ -29,6 +30,15 @@ export class TnCloseComponent implements OnInit {
       this.router.navigate(['/adults/adult-dashboard'])
       }
       this.location.back()
+    }
+  } */
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
   }
 
