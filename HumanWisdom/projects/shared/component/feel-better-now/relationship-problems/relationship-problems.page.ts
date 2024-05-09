@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
-
+import { NavigationService } from '../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-relationship-problems',
   templateUrl: './relationship-problems.page.html',
@@ -17,7 +17,7 @@ export class RelationshipProblemsPage implements OnInit {
   isAdults = true;
 
 
-  constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location) { }
+  constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location,private navigationService:NavigationService) { }
 
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -35,11 +35,11 @@ export class RelationshipProblemsPage implements OnInit {
   }
 
   goBack() {
-    // this.location.back()
-    if (window.location.href.includes('teenagers')) {
-      this.router.navigate(['/teenagers/feel-better-now']);
-    } else {
-      this.router.navigate(['/adults/feel-better-now']);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
   }
 

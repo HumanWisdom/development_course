@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
-
+import { NavigationService } from '../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-stress',
   templateUrl: './stress.page.html',
@@ -15,7 +15,7 @@ export class StressPage implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   isAdults = true;
   
-  constructor(private location: Location, private router: Router) { }
+  constructor(private location: Location, private router: Router,private navigationService: NavigationService) { }
 
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -32,6 +32,15 @@ export class StressPage implements OnInit {
   }
 
   goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
+
+  defaultGoBack() {
     // this.location.back()
     if (window.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);

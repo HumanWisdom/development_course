@@ -5,6 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-view-stories',
   templateUrl: './view-stories.page.html',
@@ -28,6 +29,7 @@ export class ViewStoriesPage implements OnInit {
   isAdults=true;
   constructor(private router: Router,
     private service: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService,
+    private navigationService:NavigationService,
     private location: Location, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.sId = params?.sId
@@ -348,9 +350,17 @@ export class ViewStoriesPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
+  defaultGoBack() {
+      this.location.back();
+  }
   getStories(id) {
     this.service.getScenarioswithId(id).subscribe(res => {
 

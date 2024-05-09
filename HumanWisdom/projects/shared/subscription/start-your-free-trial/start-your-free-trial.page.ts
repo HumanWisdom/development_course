@@ -40,10 +40,15 @@ export class StartYourFreeTrialPage implements OnInit {
     if((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
       window.history.go(-2)
     }else {
-    var url = this.navigateService.navigateToBackLink();
-    if(url==null){
-      this.location.back();
-    }   
+     
+
+    var url = this.navigateService.goBack();
+
+       console.log(url);
+
+      if(url==null){
+        this.router.navigateByUrl('/adults/adult-dashboard');
+      }   
     }
   }
 

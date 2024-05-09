@@ -30,7 +30,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmarkList = []
   audiomeditation = []
   allaudiomeditation = []
-
+  isAdults= true;
   gamR = sessionStorage.getItem("gamR")
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/guided_audio_meditation.jpg"
   tocColor = "white"
@@ -41,7 +41,6 @@ export class S51000Page implements OnInit, OnDestroy {
   path: any;
 
   searchedText:'';
-  isAdults = true;
   isSubscriber = false;
 
   constructor(
@@ -86,6 +85,12 @@ export class S51000Page implements OnInit, OnDestroy {
     } else {
       this.isSubscriber = false;
     }
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   ngOnInit() {
@@ -124,8 +129,9 @@ export class S51000Page implements OnInit, OnDestroy {
   getaudiomeditation() {
     this.service.GetAudioMeditation().subscribe((res) => {
       if (res) {
-        this.audiomeditation = res;
-        this.allaudiomeditation = res;
+        var filteredData = res.filter(x=>x.ProgIDs.includes(SharedService.ProgramId.toString()));
+        this.audiomeditation = filteredData;
+        this.allaudiomeditation = filteredData;
       }
     })
   }

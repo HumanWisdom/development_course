@@ -358,7 +358,10 @@ const routes: Routes = [
         path: 'blogs',
         loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
     },
-
+    {
+        path: 'wisdom-shorts',
+        loadChildren: () => import('../../../../shared/component/wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
+      },
     {
         path: 'curated',
         loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
@@ -388,6 +391,10 @@ const routes: Routes = [
   {
     path: 'podcast',
     loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
+  },
+  {
+    path: 'subscription',
+    loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
   },
 
 ];
