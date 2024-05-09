@@ -1,0 +1,36 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+            Our mind reacts automatically to our circumstances and this can create a feeling of stress. It is the difference between how things are and how we want them to be. We seem to have no control over this stress reaction.
+
+
+         </p>
+         <p>
+            By doing regular breathing exercises we can gradually regain control of how our mind reacts, and then by studying the module on stress, we can learn to avoid it and manage it better.
+            Just as confidence comes from doing the things we are afraid of, resilience comes from facing up to our challenges and believing that we have the inner resources to deal with them. That belief is 50% of the solution. Don’t be afraid of challenges or of failure - each time we fail and pick ourselves up again, we build our resilience.
+            
+
+         </p>
+         <p>
+            You won’t become resilient in a day but if you apply yourself, you can. It's a valuable skill to carry to work and will contribute to your success. One thing is sure, life is going to keep on throwing challenges your way. How you react to those challenges is up to you, and a skill you can learn. That's resilience.
+
+
+         </p>
+        
+        
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

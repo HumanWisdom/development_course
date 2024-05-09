@@ -1,0 +1,32 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          You may notice in yourself the tendency to be automatically critical of yourself and others,
+          or to react to situations in a negative way. Our mind can naturally focus on the negative, ignoring the positive. This is just the way the mind is wired, but it does not always serve us. It can make you dislike yourself or others, impact your friendships and contribute to a feeling of stress.
+          
+         </p>
+         <p>
+          By noticing this tendency in yourself and asking yourself a simple question - How can I see this person or situation in a more positive way - you can develop a positive attitude. This can help you be less critical of yourself, have healthy friendships and be less stressed by situations.
+
+         </p>
+         <p>
+          For example, if someone has more money than you you could be envious and feel less than others. With a positive attitude you could be grateful for what you do have and appreciate your life as it is.
+         </p>
+        
+        
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

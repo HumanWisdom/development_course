@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+        
+          <p>
+            Your conditioning influences will probably play the biggest role in deciding your choice of career. Conditioning is not right or wrong, but we are not aware we are conditioned and it can make us pursue choices that are not aligned with our values or strengths. It operates from behind the curtain of your awareness shaping the choices you make. If your parents are musicians or actors you are more likely to pick that as a career, or if they are lawyers you may become one yourself. A lot of young people want to be youtube influencers now because of what they see on social media, or join the AI industry based on the current hype about it as the next big thing.
+
+
+          </p>
+          <p>
+            Understanding and questioning our conditioning helps us make better informed choices about what we want to do in the future.
+
+          </p>
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
