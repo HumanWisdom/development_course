@@ -61,7 +61,7 @@ export class ProfileEditPage implements OnInit {
     this.isShow = true;
     this.object = {
       "UserID": this.userId,
-      "byteArray": this.imageupload
+      "byteArray": jsonObject.byteArray
     };
   }
 

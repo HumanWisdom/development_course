@@ -16,7 +16,7 @@ export class S160004Page implements OnInit,OnDestroy
   bg=""
   title="How can a device cause so many problems?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.1.mp3'
   transcriptPage="career-success/s160004t"
   toc="teenagers/career-success/s160001"
   bookmark=0

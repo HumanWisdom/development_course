@@ -1,0 +1,55 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      #10 Life skills to develop for a successful career:
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      1. Communication
+
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      2. Confidence
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      3. Emotional intelligence (self-awareness)
+
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">
+      4. Relationships
+
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">
+      5. Resilience
+
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">
+        6. Critical feedback
+  
+      </h3>
+      <h3 class="txt2 lengthy_txt_pointer">
+        7. A positive attitude
+  
+      </h3>
+      <h3 class="txt2 lengthy_txt_pointer">
+        8. Being flexible
+  
+      </h3>
+      <h3 class="txt2 lengthy_txt_pointer">
+        9. Creativity - solving problems
+ 
+      </h3>
+      <h3 class="txt2 lengthy_txt_pointer">
+        10. Manage your own mental health
+ 
+      </h3>
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
