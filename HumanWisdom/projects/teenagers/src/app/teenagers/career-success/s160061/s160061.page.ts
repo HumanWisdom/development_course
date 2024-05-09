@@ -16,7 +16,7 @@ export class S160061Page implements OnInit,OnDestroy
   bg=""
   title="#4 How does your need for external approval shape your career choices? "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.8.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.7.mp3'
   transcriptPage="career-success/s160061t"
   toc="teenagers/career-success/s160001"
   bookmark=0

@@ -16,7 +16,7 @@ export class S160123Page implements OnInit,OnDestroy
   bg=""
   title="#7 Have a positive attitude"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.17.mp3'
   transcriptPage="career-success/s160123t"
   toc="teenagers/career-success/s160001"
   bookmark=0

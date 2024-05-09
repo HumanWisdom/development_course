@@ -16,7 +16,7 @@ export class S160088Page implements OnInit,OnDestroy
   bg=""
   title="#2 Develop your confidence"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.12.mp3'
   transcriptPage="career-success/s160088t"
   toc="teenagers/career-success/s160001"
   bookmark=0

@@ -16,7 +16,7 @@ export class S160101Page implements OnInit,OnDestroy
   bg=""
   title="#4 Have successful relationships"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.14.mp3'
   transcriptPage="career-success/s160101t"
   toc="teenagers/career-success/s160001"
   bookmark=0

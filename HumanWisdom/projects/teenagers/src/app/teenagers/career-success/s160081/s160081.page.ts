@@ -16,7 +16,7 @@ export class S160081Page implements OnInit,OnDestroy
   bg=""
   title="#10 Skills to develop for a successful career "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.10.mp3'
   transcriptPage="career-success/s160081t"
   toc="teenagers/career-success/s160001"
   bookmark=0

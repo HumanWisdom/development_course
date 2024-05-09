@@ -4,11 +4,11 @@ import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s160049',
-  templateUrl: './s160049.page.html',
-  styleUrls: ['./s160049.page.scss'],
+  selector: 'app-s160052',
+  templateUrl: './s160052.page.html',
+  styleUrls: ['./s160052.page.scss'],
 })
-export class S160049Page implements OnInit,OnDestroy {
+export class S160052Page implements OnInit,OnDestroy {
 
   bg_tn=""
   bg_cft=""
@@ -18,7 +18,7 @@ export class S160049Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=160049
+  screenNumber=160052
   startTime:any
   endTime:any
   totalTime:any
@@ -53,9 +53,9 @@ export class S160049Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark160049"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark160052"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark160049"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark160052"))==1)
       this.bookmark=1
   }
 
@@ -66,7 +66,7 @@ export class S160049Page implements OnInit,OnDestroy {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark160049",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark160052",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -100,7 +100,7 @@ export class S160049Page implements OnInit,OnDestroy {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/conditioning/s23160049'])
+        //this.router.navigate(['/adults/conditioning/s23160052'])
       })
   }
 

@@ -16,7 +16,7 @@ export class S160096Page implements OnInit,OnDestroy
   bg=""
   title="#3 Be emotionally intelligent "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.13.mp3'
   transcriptPage="career-success/s160096t"
   toc="teenagers/career-success/s160001"
   bookmark=0
