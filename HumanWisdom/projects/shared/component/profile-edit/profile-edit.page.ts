@@ -62,6 +62,13 @@ export class ProfileEditPage implements OnInit {
       "UserID": this.userId,
       "byteArray": jsonObject.byteArray
     };
+
+    this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
+      if (r) {
+       console.log("image uplodaed successfully");
+       this.content = 'image uploaded successfully';
+       this.enableAlert = true;
+      }})
   }
 
   // Expose function to global window object
@@ -134,6 +141,13 @@ export class ProfileEditPage implements OnInit {
         }
         this.imageupload = reader.result;
       }
+
+      this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
+        if (r) {
+         console.log("image uplodaed successfully");
+         this.content = 'image uploaded successfully';
+         this.enableAlert = true;
+        }})
     }
   }
 
