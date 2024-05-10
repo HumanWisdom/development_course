@@ -52,23 +52,16 @@ export class ProfileEditPage implements OnInit {
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
-    //  this.objString = payload;
+    this.objString = payload;
     const jsonObject = JSON.parse(payload);
-    // this.fileName = jsonObject.fileName;
-    // Assume base64Image is the URL-encoded and Base64-encoded string
     const byteArray= 'data:;base64,'+jsonObject.byteArray;
+    this.isShow = true;
     this.imageupload = byteArray;
+    this.byteArray = jsonObject.byteArray;
     this.object = {
       "UserID": this.userId,
       "byteArray": jsonObject.byteArray
     };
-
-    this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
-      if (r) {
-       console.log("image uplodaed successfully");
-       this.content = 'image uploaded successfully';
-       this.enableAlert = true;
-      }})
   }
 
   // Expose function to global window object
@@ -141,13 +134,6 @@ export class ProfileEditPage implements OnInit {
         }
         this.imageupload = reader.result;
       }
-
-      this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
-        if (r) {
-         console.log("image uplodaed successfully");
-         this.content = 'image uploaded successfully';
-         this.enableAlert = true;
-        }})
     }
   }
 
@@ -173,10 +159,6 @@ export class ProfileEditPage implements OnInit {
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
       if (r) {
-        this.objString = "save clicked";
-        this.byteArray = this.object.byteArray;
-        this.fileName = this.userId;
-        this.isShow = true;
         this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
           if (r) {
            console.log("image uplodaed successfully");
