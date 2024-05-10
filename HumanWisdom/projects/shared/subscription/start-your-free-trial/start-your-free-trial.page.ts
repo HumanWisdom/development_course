@@ -14,7 +14,7 @@ import { NavigationService } from '../../services/navigation.service';
 })
 export class StartYourFreeTrialPage implements OnInit {
 
-  constructor(private router: Router,private location: Location, private servive: AdultsService,
+constructor(private router: Router,private location: Location, private servive: AdultsService,
  public logeventservice: LogEventService,
     private navigateService:NavigationService) { }
 
@@ -25,11 +25,10 @@ export class StartYourFreeTrialPage implements OnInit {
   tryFreeSubscribe(){
     this.logeventservice.logEvent('click_start_trial');
       if (this.CheckIfUserIsLoggedIn()) {
-        
-        this.router.navigate(['/subscription/try-free-and-subscribe']);
+        this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
       } else {
-        SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-        this.router.navigate(['/onboarding/login']);
+        SharedService.UrlToRedirect=`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+        this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
       }
   }
 
@@ -47,7 +46,7 @@ export class StartYourFreeTrialPage implements OnInit {
        console.log(url);
 
       if(url==null){
-        this.router.navigateByUrl('/adults/adult-dashboard');
+        this.router.navigateByUrl(SharedService.getDashboardUrls());
       }   
     }
   }
@@ -63,6 +62,6 @@ export class StartYourFreeTrialPage implements OnInit {
   routeToDashboard(){
     this.logeventservice.logEvent('click_will_do_later');
 
-    this.router.navigateByUrl('/adults/adult-dashboard');
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 }

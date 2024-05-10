@@ -18,10 +18,10 @@ export class PaymentFailedPage implements OnInit {
     SharedService.setDataInSessionStorage(Constant.ClientSecret, null);
   }
   routeToIndex(){
-    this.router.navigateByUrl('/adults/subscription/index');
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/index`);
   }
 
   routeToDashboard(){
-    this.router.navigateByUrl('/adults/adult-dashboard');
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 }

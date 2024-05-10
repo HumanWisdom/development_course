@@ -28,12 +28,12 @@ export class FreeTrialPage implements OnInit {
   }
   routeToDashboard(){
     this.clearData();
-    this.router.navigateByUrl('/adults/adult-dashboard');
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 
   manageSubscription(){
     this.clearData();
-    this.router.navigateByUrl('/onboarding/myprogram');
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/myprogram`);
   }
 
   clearData(){

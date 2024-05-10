@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { DatePipe } from '@angular/common';
@@ -8,7 +7,6 @@ import { LogEventService } from '../../services/log-event.service';
 import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
-import { AUTO_STYLE } from '@angular/animations';
 
 @Component({
   selector: 'app-payment',
@@ -133,10 +131,10 @@ export class PaymentPage implements OnInit, AfterViewInit {
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         console.log('production ' + this.isProduction);
-        var url  =  'adults/subscription/free-trial';
+        var url  = `/${SharedService.getprogramName()}/subscription/free-trial`;
         if (localStorage.getItem('ispartnershipClick') == 'T') {
           localStorage.setItem('ispartnershipClick', 'F');
-          url =  '/adults/hwp-premium-congratulations';
+          url = `/${SharedService.getprogramName()}/hwp-premium-congratulations`;
         }
         const { error } = await stripe.confirmSetup({
           elements,
@@ -158,9 +156,9 @@ export class PaymentPage implements OnInit, AfterViewInit {
         if (error) {
           const messageContainer = document.querySelector('#error-message');
           messageContainer.textContent = error.message;
-          this.router.navigateByUrl('/adults/subscription/payment-failed');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
         } else {
-          this.router.navigateByUrl('/adults/subscription/free-trial');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
         }
       });
     }, 4000)
