@@ -54,11 +54,10 @@ export class ProfileEditPage implements OnInit {
     console.log('Received event in Angular:', payload);
     //  this.objString = payload;
     const jsonObject = JSON.parse(payload);
-    this.fileName = jsonObject.fileName;
+    // this.fileName = jsonObject.fileName;
     // Assume base64Image is the URL-encoded and Base64-encoded string
-    this.byteArray= 'data:;base64,'+jsonObject.byteArray;
-    this.imageupload = this.byteArray;
-    this.isShow = true;
+    const byteArray= 'data:;base64,'+jsonObject.byteArray;
+    this.imageupload = byteArray;
     this.object = {
       "UserID": this.userId,
       "byteArray": jsonObject.byteArray
@@ -160,6 +159,10 @@ export class ProfileEditPage implements OnInit {
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
       if (r) {
+        this.objString = "save clicked";
+        this.byteArray = this.object.byteArray;
+        this.fileName = this.userId;
+        this.isShow = true;
         this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
           if (r) {
            console.log("image uplodaed successfully");
