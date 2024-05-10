@@ -160,6 +160,10 @@ export class ProfileEditPage implements OnInit {
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
       if (r) {
+        this.objString = "save clicked";
+        this.byteArray = this.object.byteArray;
+        this.fileName = this.userId;
+        this.isShow = true;
         this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
           if (r) {
            console.log("image uplodaed successfully");
