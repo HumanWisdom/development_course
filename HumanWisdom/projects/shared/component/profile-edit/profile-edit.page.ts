@@ -60,7 +60,8 @@ export class ProfileEditPage implements OnInit {
     this.byteArray = jsonObject.byteArray;
     this.object = {
       "UserID": this.userId,
-      "byteArray": jsonObject.byteArray
+      "byteArray": "",
+      "byteStringAndroid":jsonObject.byteArray
     };
   }
 
@@ -130,7 +131,8 @@ export class ProfileEditPage implements OnInit {
       if (byte[1] !== undefined && byte[1] !== '') {
        this.object= {
           "UserID": this.userId,
-          "byteArray": byte[1]
+          "byteArray": byte[1],
+          "byteStringAndroid":""
         }
         this.imageupload = reader.result;
       }
