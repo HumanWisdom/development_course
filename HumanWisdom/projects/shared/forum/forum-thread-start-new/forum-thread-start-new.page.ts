@@ -29,6 +29,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   @ViewChild('closeCategory') closeCategory: any;
   programType: ProgramType.Adults;
   isSubscriber:boolean;
+  PostImgAndroid='';
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
     this.router.events
@@ -94,7 +95,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         ReflectionID: '0',
         TagIds: this.selectedOption.toString(),
         Anonymous: this.isChecked ? "1" : "0",
-        PostImg: this.fileToUpload
+        PostImg: this.fileToUpload,
+        PostImgAndroid: this.PostImgAndroid
       }
     ).subscribe(res => {
       if (res) {
@@ -117,7 +119,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     const jsonObject = JSON.parse(payload);
     // Assume base64Image is the URL-encoded and Base64-encoded string
     this.imageUrl= 'data:;base64,'+jsonObject.byteArray;
-    this.fileToUpload = jsonObject.byteArray;
+    this.fileToUpload = '';
+    this.PostImgAndroid = jsonObject.byteArray;
   }
 
   // Expose function to global window object

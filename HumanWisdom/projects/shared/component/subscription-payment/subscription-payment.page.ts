@@ -1,11 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../../../environments/environment';
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-import { SharedService } from '../../../../../shared/services/shared.service';
-import { LogEventService } from "../../../../../shared/services/log-event.service";
-import { Constant } from '../../../../../shared/services/constant';
+import { environment } from '../../../environments/environment';
+import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from '../../services/shared.service';
+import { LogEventService } from "../../services/log-event.service";
+import { Constant } from '../../services/constant';
 
 import { Location } from '@angular/common';
 @Component({
@@ -208,18 +208,18 @@ export class SubscriptionPaymentPage implements OnInit {
                       if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                         localStorage.setItem('ispartnershipClick', 'F');
                         localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                        this.router.navigate(['/adults/humanwisdom-premium']);
+                        this.router.navigate([`${SharedService.getprogramName()}/humanwisdom-premium`]);
                       } else {
                         localStorage.setItem('ispartnershipClick', 'F');
                         localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                        this.router.navigate(['/adults/hwp-premium-congratulations']);
+                        this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                       }
                     } else {
                       this.content = 'Your Payment Is Successfully Submitted';
                       this.enableAlert = true;
                       // alert('Your Payment Is Successfully Submitted');
                       setTimeout(() => {
-                        this.router.navigate(['/onboarding/myprogram'])
+                        this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
                       }, 800);
                     }
                   }
@@ -232,18 +232,18 @@ export class SubscriptionPaymentPage implements OnInit {
                   if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                     localStorage.setItem('ispartnershipClick', 'F');
                     localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                    this.router.navigate(['/adults/humanwisdom-premium']);
+                    this.router.navigate([`${SharedService.getprogramName()}/humanwisdom-premium`]);
                   } else {
                     localStorage.setItem('ispartnershipClick', 'F');
                     localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                    this.router.navigate(['/adults/hwp-premium-congratulations']);
+                    this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                   }
                 } else {
                   this.content = 'Your Payment Is Successfully Submitted';
                   this.enableAlert = true;
                   // alert('Your Payment Is Successfully Submitted');
                   setTimeout(() => {
-                    this.router.navigate(['/onboarding/myprogram'])
+                    this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
                   }, 800);
                 }
 

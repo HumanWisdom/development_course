@@ -97,7 +97,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     if (subscriptionType != Constant.Redeem) {
       SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan, subscriptionType);
     }else if(subscriptionType == Constant.Redeem) {
-      this.router.navigate(['/adults/redeem-subscription'])
+      this.router.navigate([`/${SharedService.getprogramName()}/redeem-subscription`])
     }
     this.selectedSubscription = subscriptionType;
   }
@@ -120,9 +120,9 @@ export class TryFreeAndSubscribePage implements OnInit {
       this.SetDataInLocalStorage();
       if (this.selectedSubscription != this.Redeem) {
         if(this.trialStatus == 'No Trial'){
-          this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/proceed-to-payment`);
         }else {
-          this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/proceed-to-payment`);
           // SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
           // var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
           // localStorage.setItem('totalAmount',amt);
@@ -130,8 +130,9 @@ export class TryFreeAndSubscribePage implements OnInit {
           // this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
         }
       } else {
+        // `/${SharedService.getprogramName()}/redeem-subscription`
         //this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
-        this.router.navigateByUrl('/adults/redeem-subscription');
+        this.router.navigateByUrl(`/${SharedService.getprogramName()}/redeem-subscription`);
       }
     } else {
       this.router.navigateByUrl('/login');
@@ -140,7 +141,7 @@ export class TryFreeAndSubscribePage implements OnInit {
 
 
   dashboard(){
-    this.router.navigateByUrl('/adults/adult-dashboard');
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 
   checkout(){
@@ -148,7 +149,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
     localStorage.setItem('totalAmount',amt);
     SharedService.setDataInLocalStorage(Constant.Checkout,'T')
-    this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/payment`], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
   }
   getCountry() {
     this.onboardingService.getCountry().subscribe((res: any) => {
@@ -214,11 +215,11 @@ export class TryFreeAndSubscribePage implements OnInit {
     this.location.back();
   }
   routeToDashboard() {
-    this.router.navigateByUrl('/adults/adult-dashboard');
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 
   buyGift(){
-    this.router.navigateByUrl('/adults/give-the-gift-of-wisdom');
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/give-the-gift-of-wisdom`);
   }
 
   terms(){

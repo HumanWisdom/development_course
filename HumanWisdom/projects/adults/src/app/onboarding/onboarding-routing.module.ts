@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   {
     path: 'payment',
-    loadChildren: () => import('./subscription-payment/subscription-payment.module').then(m => m.SubscriptionPaymentPageModule)
+    loadChildren: () => import('../../../../shared/component/subscription-payment/subscription-payment.module').then(m => m.SubscriptionPaymentPageModule)
   },
   {
     path: 'home',
