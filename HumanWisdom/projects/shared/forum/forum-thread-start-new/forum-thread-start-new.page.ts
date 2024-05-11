@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild,AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
@@ -27,6 +27,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   @ViewChild('postModal') postModal: any;
   @ViewChild('checkboxSelect') checkboxSelect: any;
   @ViewChild('closeCategory') closeCategory: any;
+  @ViewChild('myTextarea') myTextarea: ElementRef;
   programType: ProgramType.Adults;
   isSubscriber:boolean;
   PostImgAndroid='';
@@ -45,6 +46,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       console.log(p);
       this.postID = p;
     }
+  
     this.isSubscriber = SharedService.isSubscriber(); 
     this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
   }
@@ -121,6 +123,9 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     this.imageUrl= 'data:;base64,'+jsonObject.byteArray;
     this.fileToUpload = '';
     this.PostImgAndroid = jsonObject.byteArray;
+    setTimeout(() => {
+      this.myTextarea.nativeElement.focus();
+    }, 200);
   }
 
   // Expose function to global window object
