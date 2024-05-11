@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
-import { SubscriptionType } from '../../models/program-model';
+import { ProgramType, SubscriptionType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -34,6 +34,7 @@ export class ProceedToPaymentPage implements OnInit {
   totalCartAmount = '0.00';
   trialStatus: string = '';
   cartList = [];
+  isAdults:boolean = false;
   constructor(private datePipe: DatePipe,
     private router: Router,
     private logEventService: LogEventService,
@@ -50,6 +51,11 @@ export class ProceedToPaymentPage implements OnInit {
     this.GetDataFromLocalStorage();
     this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
     this.InitializePlanModel();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   InitializePlanModel() {

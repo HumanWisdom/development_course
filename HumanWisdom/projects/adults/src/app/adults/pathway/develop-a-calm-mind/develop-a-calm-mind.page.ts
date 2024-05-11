@@ -55,5 +55,6 @@ export class DevelopACalmMindPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
+    this.router.navigate([url]);
   }
 }
