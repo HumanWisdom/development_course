@@ -373,7 +373,7 @@ const routes: Routes = [
    {
 
     path: 'blog-article',
-    // canActivate:[ActiveGuard],  
+    // canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
   {
@@ -388,6 +388,10 @@ const routes: Routes = [
     path: 'podcast',
     loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
   },
+  {
+    path: 'site-search/:word',
+    loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
+  }
 
 ];
 
