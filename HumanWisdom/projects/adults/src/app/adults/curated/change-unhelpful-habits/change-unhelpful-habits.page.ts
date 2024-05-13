@@ -117,7 +117,9 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
 
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    let url = audioLink.replaceAll(':', '_');
+    url = encodeURIComponent(url.replaceAll('/', '~'));
+    this.router.navigate(['/adults/guided-meditation/audiopage/', url, title, id,'Audio'])
     }
   }
 
