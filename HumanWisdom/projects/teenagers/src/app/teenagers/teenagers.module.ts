@@ -11,7 +11,7 @@ import { TokenInterceptorService } from '../teenagerOnboarding/token-interceptor
   declarations: [],
   imports: [
     CommonModule,
-    TeenagersRoutingModule,  
+    TeenagersRoutingModule,
     HttpClientModule,
     ShareButtonsModule.withConfig({
         debug:true
@@ -24,6 +24,6 @@ import { TokenInterceptorService } from '../teenagerOnboarding/token-interceptor
       multi: true
     }
   ]
- 
+
 })
 export class TeenagersModule { }

@@ -7,7 +7,7 @@ import { LogEventService } from '../../services/log-event.service';
 import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
-
+import { ProgramType, SubscriptionType } from '../../models/program-model';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -22,6 +22,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   cardCaptureReady = false;
   selectedPlanModel: any;
   isProduction: boolean = true;
+  isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
   constructor(private datePipe: DatePipe, private router: Router, private logEventService: LogEventService,
     private location: Location) {
@@ -29,6 +30,11 @@ export class PaymentPage implements OnInit, AfterViewInit {
       this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     this.initializeModel();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     this.GetDataFromLocalStorage();
   }
 

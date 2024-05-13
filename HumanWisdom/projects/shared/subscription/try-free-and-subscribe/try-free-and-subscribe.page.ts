@@ -7,7 +7,7 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { DatePipe, Location } from '@angular/common';
 import { paymentIntentModel } from '../../models/search-data-model';
 import { LogEventService } from '../../services/log-event.service';
-
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-try-free-and-subscribe',
@@ -31,6 +31,7 @@ export class TryFreeAndSubscribePage implements OnInit {
   cartList = [];
   startDate:any;
   expDate:any;
+  isAdults = true;
   constructor(private router: Router, private onboardingService: OnboardingService,
     public logeventservice: LogEventService,
     private location: Location) {
@@ -47,6 +48,11 @@ export class TryFreeAndSubscribePage implements OnInit {
          SharedService.setDataInLocalStorage('trialStatus',this.trialStatus);
       }
     })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   ngOnInit() {

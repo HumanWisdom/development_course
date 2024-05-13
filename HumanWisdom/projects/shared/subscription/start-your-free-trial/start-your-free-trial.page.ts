@@ -6,6 +6,7 @@ import { Constant } from '../../services/constant';
 import { LogEventService } from '../../services/log-event.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { NavigationService } from '../../services/navigation.service';
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-start-your-free-trial',
@@ -13,12 +14,17 @@ import { NavigationService } from '../../services/navigation.service';
   styleUrls: ['./start-your-free-trial.page.scss'],
 })
 export class StartYourFreeTrialPage implements OnInit {
-
+  isAdults = false;
 constructor(private router: Router,private location: Location, private servive: AdultsService,
  public logeventservice: LogEventService,
     private navigateService:NavigationService) { }
 
   ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     this.logeventservice.logEvent('view_start_trial');
   }
 
