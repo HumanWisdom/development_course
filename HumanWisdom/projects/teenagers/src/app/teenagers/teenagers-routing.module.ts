@@ -9,7 +9,7 @@ import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/b
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
     },
     {
         path: 'change-topic',
@@ -41,7 +41,7 @@ const routes: Routes = [
     },
     {
         path: 'teenager-dashboard',
-        loadChildren: () => import('../teenagers/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
     },
     {
         path: 'benefits-of-enquiry',
