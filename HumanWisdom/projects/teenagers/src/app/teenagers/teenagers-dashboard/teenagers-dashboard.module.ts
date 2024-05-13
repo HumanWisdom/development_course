@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { TeenagersDashboardPageRoutingModule } from './teenagers-dashboard-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { TeenagersDashboardPage } from './teenagers-dashboard.page';
 
 import { SharedModule } from '../../../../../shared/shared.module';
 
@@ -16,8 +16,8 @@ import { SharedModule } from '../../../../../shared/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
-    DashboardPageRoutingModule
+    TeenagersDashboardPageRoutingModule
   ],
-  declarations: [DashboardPage]
+  declarations: [TeenagersDashboardPage]
 })
-export class DashboardPageModule {}
+export class TeenagersDashboardPageModule { }

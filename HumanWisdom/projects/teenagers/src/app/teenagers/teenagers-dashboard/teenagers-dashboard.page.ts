@@ -12,10 +12,10 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.page.html',
-  styleUrls: ['./dashboard.page.scss'],
+  templateUrl: './teenagers-dashboard.page.html',
+  styleUrls: ['./teenagers-dashboard.page.scss'],
 })
-export class DashboardPage implements OnInit {
+export class TeenagersDashboardPage implements OnInit {
   @ViewChild('enablemodal') enablemodal: ElementRef;
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closerefermodal') closerefermodal: ElementRef;
@@ -27,7 +27,7 @@ export class DashboardPage implements OnInit {
   @ViewChild('closetourmodal') closetourmodal: ElementRef;
   @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
-  public dasboardUrl = '/teenagers/adult-dashboard';
+  public dasboardUrl = '/teenagers/teenager-dashboard';
   //get global settings here
   public text = 2
   public video = 3
