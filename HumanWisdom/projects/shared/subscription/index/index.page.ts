@@ -80,9 +80,9 @@ export class IndexPage implements OnInit {
       this.SetPaymentIntentModel();
       this.SetDataInLocalStorage();
       if (this.selectedSubscription != this.Redeem) {
-        this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
+        this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/proceed-to-payment`);
       } else {
-        this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
+        this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/redeem-activate-now`);
       }
     } else {
       // this.router.navigateByUrl('/login');

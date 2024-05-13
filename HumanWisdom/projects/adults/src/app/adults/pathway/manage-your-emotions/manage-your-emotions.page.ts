@@ -55,6 +55,7 @@ export class ManageYourEmotionsPage implements OnInit {
     if(url==null){
       this.location.back();
     }
+    this.router.navigate([url]);
   }
 
 }

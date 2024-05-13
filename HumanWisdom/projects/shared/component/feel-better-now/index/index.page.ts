@@ -41,6 +41,10 @@ export class IndexPage implements OnInit {
     }
   }
 
+  routeToBlog(){
+    this.router.navigateByUrl('/adults/blog-article?sId=Difficult-emotions:-a-guide-to-freedom')
+  }
+
   goBack() {
     // this.location.back()
     if (SharedService.ProgramId == ProgramType.Teenagers) {
@@ -54,7 +58,11 @@ export class IndexPage implements OnInit {
      this.logeventservice.logEvent("click_"+ String(url).split("/")[2]);
      if (SharedService.ProgramId == ProgramType.Teenagers) {
       this.router.navigate([`teenagers/${url}`]);
-    } else {
+    }
+    else if (SharedService.ProgramId == ProgramType.Adults) {
+      this.router.navigate([`adults/${url}`]);
+    }
+    else {
       this.router.navigate([url]) 
     }
   }

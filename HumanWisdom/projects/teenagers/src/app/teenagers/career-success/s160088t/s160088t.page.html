@@ -1,0 +1,47 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+            It is normal to be shy when young, and lack the confidence to speak to others. It is easy for others to say ‘Be more confident’ - but how can we do that?
+
+
+         </p>
+         <p>
+            We can worry what people will think of us, and even worse, if they will make fun of us. We want to fit into the group and sometimes this makes us say and do things we don’t like, just to fit in. All this is normal. 
+         </p>
+
+         <p>
+            The first thing to realise is that others are also worried about what you think of them, and are often not thinking of you but of themselves. It doesn’t matter what people think of you - those who love you will continue to do so.
+
+
+         </p>
+         <p>
+           
+            The best way to overcome any fear is to face it and do it anyway. You will realise that your fear was not real - and just a creation of your imagination. 
+
+         </p>
+         <p>
+            Accept the possibility that you may not succeed the first time you try a new activity. That's okay. You will learn something and get better. Pour your energy into doing whatever you do really well - whether it is studying, playing a sport or pursuing a hobby. Doing something well gives you confidence.
+
+
+         </p>
+         <p>
+            Confidence also comes from accepting yourself as you are - how you look, your academic ability, the size of your home, what others think about you, and so on. Accept the things you cannot change, and work on the things you can - like being happy and confident.
+
+         </p>
+      
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

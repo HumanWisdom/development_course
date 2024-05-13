@@ -68,10 +68,12 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       let userdetail = this.userDetails[0];
       localStorage.setItem("isPartner", this.userDetails[0].IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails[0].PartnerOption);
-      this.url =
+    /*   this.url =
         userdetail["UserImagePath"].split("\\")[1] +
         "?" +
-        new Date().getTime();
+        new Date().getTime(); */
+        this.url = userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.partnerOption = localStorage.getItem("PartnerOption");
@@ -86,7 +88,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
 
   public getImageUrl(){
-    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + this.url;
+    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
   }
 
   ngOnInit() {
