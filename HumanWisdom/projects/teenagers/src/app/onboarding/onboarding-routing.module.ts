@@ -35,6 +35,10 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate:[EnableRouteGuard]
   },
+  {
+    path: 'payment',
+    loadChildren: () => import('../../../../shared/component/subscription-payment/subscription-payment.module').then(m => m.SubscriptionPaymentPageModule)
+  },
 
 ];
 

@@ -96,7 +96,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
        this.router.navigate(['/adults/curated/youtubelink', link])
     }
@@ -104,7 +104,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
      this.router.navigate(['/adults/wisdom-shorts', link])
     }
@@ -112,18 +112,20 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
 
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
 
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+    let url = audioLink.replaceAll(':', '_');
+    url = encodeURIComponent(url.replaceAll('/', '~'));
+    this.router.navigate(['/adults/guided-meditation/audiopage/', url, title, id,'Audio'])
     }
   }
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/adults/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -352,17 +354,18 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/adults/blog-article'], { queryParams: { sId: `${id}` } })
+    // this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/adults/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/adults/onboarding/login"]);
       }
     }
   }
@@ -381,7 +384,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
 
   audioevent(audioContent) {
     if (!this.Subscriber && audioContent.id >= 4) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
     this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }

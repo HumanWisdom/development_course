@@ -750,8 +750,12 @@ export class LoginSignupPage implements OnInit {
           let option = localStorage.getItem("introoption");
           let giftwisdom = localStorage.getItem("giftwisdom");
           const url = SharedService.UrlToRedirect;
-          if(url == '/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+          if(url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
             this.router.navigate(['adults/adult-dashboard']);
+            return;
+          }
+          else if(url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+            this.router.navigate(['/teenagers/teenager-dashboard']);
             return;
           }
          else if (url != null) {
@@ -987,7 +991,7 @@ export class LoginSignupPage implements OnInit {
   }
 
   navigate(url) {
-    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+    this.router.navigate([url]);
   }
 
   getAlertcloseEvent(event) {

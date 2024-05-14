@@ -48,7 +48,10 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
           this.userdetail = res[0];
           if(this.userdetail['UserImagePath'] !='')
           {
-            this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+            // this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+            this.url = this.userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+
+          
           }
           this.profile = true;
         });

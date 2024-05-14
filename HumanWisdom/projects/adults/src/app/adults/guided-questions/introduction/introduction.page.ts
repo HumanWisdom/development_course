@@ -37,16 +37,20 @@ export class IntroductionPage implements OnInit {
     if(url == 'DONOROUTE'){
       this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
     }
+    this.router.navigate([url]);
   }
     // this.router.navigate(['/adults/journal'])
   }
 
+  
+
+
   NavigateToQuestions() {
     let log = localStorage.getItem("isloggedin");
     if (log === 'T') {
-      this.router.navigate(['/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+      this.router.navigate(['/adults/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
     }else{
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }
   }
 

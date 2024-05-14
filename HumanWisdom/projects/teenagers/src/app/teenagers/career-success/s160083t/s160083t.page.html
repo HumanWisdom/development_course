@@ -1,0 +1,45 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+            Communication is a critical skill to learn and the best way to begin is to practise it with your friends, teachers and family members.
+
+         </p>
+         <p>
+            Employers say many young people have not learned how to communicate with care. One manager told me how four young people sitting across a table were messaging each other rather than getting up and talking to each other. 
+         </p>
+
+         <p>
+            The secret to great communication is curiosity. Take a real interest in people - in what they are thinking, feeling, and saying, or not saying.  You can’t fake this. 
+
+         </p>
+         <p>
+            Begin with being able to listen well, and not interrupt the person who is speaking. When they finish talking, be curious and ask a question rather than jumping in with your comments.
+         </p>
+         <p>
+            Before speaking, ask yourself how it is going to be received.
+
+         </p>
+         <p>
+            Try and understand what the other person is feeling, beyond the words being spoken.
+
+         </p>
+         <p>
+            And always try to be kind - in how you speak and listen. People will always remember your kindness
+
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,36 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          A lot of our education is based on learning information and then repeating it in exams. Few subjects help us to learn the art of solving problems, except perhaps maths.
+
+         </p>
+         <p>
+          In real life you will need to work with other people to solve problems. You may not know these people well, and may not even like them but your success will depend on it.
+
+
+         </p>
+         <p>
+          How can we develop this skill for ourselves?
+
+         </p>
+         <p>
+          There are some things you can do now. To solve any problem we need to begin with curiosity and an open mind. And then we need to study the problem from many different angles. You can be curious now about things you notice every day - people, nature, or your own mind. Try and look at situations from different points of view.
+         </p>
+        
+        
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

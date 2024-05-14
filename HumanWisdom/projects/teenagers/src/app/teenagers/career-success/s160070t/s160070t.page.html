@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          We have many limiting beliefs and stories we tell ourselves about our own abilities, and we believe them to be true, but they may not be. Nobody in your network may have become a doctor so you may think its not for you because you are not clever enough. Or if you love singing you may think you are not good enough to pursue a career as a singer. Or you may be good looking enough to be a model, and so on. We repeat these stories to ourselves again and again so they become our living truth and can shape our lives in ways we are not aware of. 
+
+         </p>
+         <p>
+          Find out what your limiting beliefs are, put them to one side and follow your dreams.
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

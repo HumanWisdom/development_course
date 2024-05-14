@@ -35521,9 +35521,19 @@ li ol > li:before {
 
 .absolute_checkmark 
 {
-  position: absolute;
+  /* position: absolute;
   top: 10px;
-  right: 20px;
+  right: 20px; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #E58D82;
+  bottom: 0;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 16px 16px 0;
 }
 
 .img_close_delete
@@ -37083,5 +37093,11 @@ a.fc_e58d82:hover
 span 
 {
   cursor: unset;
+}
+
+.plr20pxi
+{
+  padding-right:20px !important;
+  padding-left: 20px !important;
 }
 /* /version - 03 */

@@ -1,0 +1,36 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          Many scientists say that being emotionally intelligent contribute up to 80% of our success in life, but this is often not taught anywhere - we have to learn that for ourselves. Being emotionally intelligent means being able to understand and master our emotions and understand the emotions others may be experiencing. 
+
+         </p>
+         <p>
+          We experience so many emotions - some have a name - like fear, loneliness, anger, sadness, pleasure, and sorrow. Some emotions we experience are difficult to name, and others are a mix of different emotions all at one.
+         </p>
+         <p>
+          These emotions are powerful and can arise quickly pushing us to react to them. We can struggle to make sense of them, cope with them, and respond in an intelligent manner.
+
+         </p>
+         <p>
+          For example, if someone says something about our appearance it can hurt us, triggering a reaction which can make us withdraw and go quiet. The other person may not understand why our behavior has changed and react as well, and that can strain that relationship.
+
+         </p>
+         <p>
+          Learning about our emotions can help us be in charge of them and this can contribute to our success in the world.
+         </p>
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
