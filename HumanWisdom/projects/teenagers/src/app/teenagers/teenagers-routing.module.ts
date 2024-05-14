@@ -395,7 +395,7 @@ const routes: Routes = [
   {
     path: 'site-search/:word',
     loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
-  }.
+  },
   {
     path: 'subscription',
     loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
