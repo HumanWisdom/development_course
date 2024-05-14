@@ -57,7 +57,7 @@ export class AppComponent implements OnDestroy   {
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
-      this.enablepopup.nativeElement.click();
+   //   this.enablepopup.nativeElement.click();
     }
   }
 
