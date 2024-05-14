@@ -16,7 +16,7 @@ export class NavigationService {
     if(!this.backClicked){
       if (urltoCheck) {
         let isNan = isNaN(urltoCheck[urltoCheck.length - 1]);
-        if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck)) {
+        if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
           if (this.history.length>0 && this.history[this.history.length-1] != url) {
             console.log("----------------PUSHED -----------: "+url);
             this.history.push(url);
@@ -40,15 +40,25 @@ export class NavigationService {
 }
 
 
- isExceptionUrl(urltoCheck) {
+ isExceptionUrl(urltoCheck,url) {
   const exceptions = [
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-     , 's162p0','s51000','s39000','s47000','s324','s47000'
+     , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4'
   ];
 
-  return exceptions.some(exception => urltoCheck.includes(exception)) || urltoCheck == 's0';
+  const wholeUrlCheckKeywords = [
+     'mp3'
+  ]
+  var isValid = false;
+  for(var item of wholeUrlCheckKeywords){
+     if(url.includes(item)){
+      isValid = true;
+     }
+  }
+  
+  return exceptions.some(exception => urltoCheck.includes(exception)) || urltoCheck == 's0' || isValid ;
 }
 
 

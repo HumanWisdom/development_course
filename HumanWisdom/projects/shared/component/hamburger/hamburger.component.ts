@@ -88,7 +88,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
 
   public getImageUrl(){
-    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + this.url;
+    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
   }
 
   ngOnInit() {

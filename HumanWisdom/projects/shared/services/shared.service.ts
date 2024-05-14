@@ -12,8 +12,12 @@ export class SharedService {
   public static enablebanner = false;
   public static isIos = false;
   public static isFromAdults = false;
+  
   constructor() {
   }
+
+
+   
 
   public static setDataInLocalStorage(key: string, value: string) {
     if (key && key != null) {
@@ -159,4 +163,28 @@ export class SharedService {
     }
   }
 
+  public static getUrlfromFeatureName(name:UrlConstant){
+    switch (this.ProgramId) {
+      case ProgramType.Adults:
+        return `/adults/${name}`;
+      case ProgramType.Teenagers:
+        return `/teenagers/${name}`;
+      case ProgramType.Young_Adults:
+        return '/adults/journal';
+      default:
+        return `/adults/${name}`;
+    }
+  }
+
+}
+
+export class UrlConstant {
+ public static journal="journal";
+ public static search='search';
+ public static login='onboarding/login';
+ public static userProfile='onboarding/user-profile';
+ public static forum ='forum';
+ public static sitesearch='site-search';
+ public static notification ='notification';
+ public static startFreeTrial ='/subscription/start-your-free-trial';
 }

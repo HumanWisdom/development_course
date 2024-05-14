@@ -46,13 +46,15 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       console.log(p);
       this.postID = p;
     }
-  
     this.isSubscriber = SharedService.isSubscriber(); 
     this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
   }
 
   ngOnInit() {
    this.exposeFunction();
+   setTimeout(() => {
+    this.myTextarea.nativeElement.focus();
+  }, 2000);
   }
 
   ngOnDestroy(): void {
@@ -125,7 +127,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     this.PostImgAndroid = jsonObject.byteArray;
     setTimeout(() => {
       this.myTextarea.nativeElement.focus();
-    }, 200);
+    }, 1000);
   }
 
   // Expose function to global window object
