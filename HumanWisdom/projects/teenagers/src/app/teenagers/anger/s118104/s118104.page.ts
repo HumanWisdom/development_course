@@ -14,7 +14,7 @@ export class S118104Page implements OnInit
 {  
   
   toc="/teenagers/anger/s118001"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/19.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp"
   bg=""
   programType : ProgramType = ProgramType.Teenagers;
   moduleLink="/comparison"

@@ -14,7 +14,7 @@ export class S107011Page implements OnInit {
   
   toc="teenagers/breathing/s107001"
   bg=""
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/30.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/108.webp"
   moduleLink="/noticing-thoughts"
   moduleName="Noticing Thoughts"
   sectionName= "Develop a calm mind";
@@ -23,20 +23,20 @@ export class S107011Page implements OnInit {
   moduleList: any = [
     {
       name: 'Nature',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp',
       link: '/nature',
       id: 106
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/108.webp',
       link: '/noticing-thoughts',
       id: 108
  
     },
     {
       name: 'Guided Audio Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp',
       link: '/guided-meditation',
       id: 110
   

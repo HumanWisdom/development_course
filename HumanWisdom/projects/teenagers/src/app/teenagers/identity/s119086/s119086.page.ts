@@ -14,7 +14,7 @@ export class S119086Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/identity/s119001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/18.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp"
   bg=""
   moduleLink="/emotional-needs"
   moduleName=" Emotional Needs"
@@ -23,19 +23,19 @@ export class S119086Page implements OnInit
   moduleList: any = [
     {
       name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
       link: '/emotional-needs',
       id: 120
     },
     {
       name: 'Self Image',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/25.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/114.webp',
       link: '/teenagers/self-image',
       id: 114
     },
     {
       name: 'The Nature of the ‘I’',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/57.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/122.webp',
       link: '/nature-of-i',
       id: 122
  
