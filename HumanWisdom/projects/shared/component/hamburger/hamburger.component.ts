@@ -181,7 +181,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   loginroute() {
-    this.router.navigate(["adults/onboarding/login"], {
+    this.router.navigate([SharedService.getprogramName()+ "/onboarding/login"], {
       replaceUrl: true,
       skipLocationChange: true
     });
@@ -260,7 +260,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       this.content = 'To become a Partner you will need to Complete Registration and login?';
       this.enablebecomepartner = true;
       this.enableAlert = true;
-      this.router.navigate(["adults/onboarding/login"]);
+      this.router.navigate([SharedService.getprogramName()+  "/onboarding/login"]);
     } else {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -284,9 +284,9 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
         this.navigate(route);
         return;
       }
-      if(!this.ios && route == '/subscription/start-your-free-trial'){
+      if(!this.ios && route == '/'+ SharedService.getprogramName()+ '/subscription/start-your-free-trial'){
          this.router.navigate([route])
-      } else if(route != '/subscription/start-your-free-trial'){
+      } else if(route != '/'+ SharedService.getprogramName()+ '/subscription/start-your-free-trial'){
         this.router.navigate([route])
       }
     }
@@ -324,7 +324,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
               localStorage.setItem("guest", "T");
               localStorage.setItem("navigateToUpgradeToPremium", "true");
               localStorage.setItem("btnClickBecomePartner", "true");
-              this.router.navigate(["/onboarding/login"]);
+              this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
           }else{
             this.Onboardingservice.navigateToUpgradeToPremium = true;
             this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -352,7 +352,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
-            this.router.navigate(["/onboarding/login"]);
+            this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
           }
         }
       }
