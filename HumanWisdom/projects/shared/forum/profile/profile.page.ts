@@ -63,7 +63,8 @@ export class ProfilePage implements OnInit {
     if (this.userId != null) {
       setTimeout(() => {
         this.onboardingService.getuser(this.userId).subscribe((res) => {
-          this.profileImage = res[0]['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+          // this.profileImage = res[0]['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+          this.profileImage = res[0]['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
         })
       }, 100);
     }
