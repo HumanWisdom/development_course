@@ -77,8 +77,8 @@ export class AppComponent implements OnDestroy   {
       this.isLoginPage = false;
       return true;
     }
-    if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/adult-dashboard") || (this.router.url == "/adult-dashboard")
-     || this.router.url.includes("/teenagers/adult-dashboard") || this.router.url.includes("adult-dashboard")) {
+    if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
+     || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard")) {
       this.dash = true;
       this.journal = false;
       this.search = false;
