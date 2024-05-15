@@ -36,6 +36,7 @@ export class ProfileEditPage implements OnInit {
   fileName = '';
   objString: any;
   object:any;
+  @ViewChild('myText') myTextarea: ElementRef;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
@@ -52,17 +53,21 @@ export class ProfileEditPage implements OnInit {
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
-    //  this.objString = payload;
+    this.objString = payload;
     const jsonObject = JSON.parse(payload);
-    this.fileName = jsonObject.fileName;
-    // Assume base64Image is the URL-encoded and Base64-encoded string
-    this.byteArray= 'data:;base64,'+jsonObject.byteArray;
-    this.imageupload = this.byteArray;
+    const byteArray= 'data:;base64,'+jsonObject.byteArray;
     this.isShow = true;
+    this.imageupload = byteArray;
+    this.byteArray = jsonObject.byteArray;
     this.object = {
       "UserID": this.userId,
-      "byteArray": jsonObject.byteArray
+      "byteArray": "",
+      "byteStringAndroid":jsonObject.byteArray
     };
+
+    setTimeout(() => {
+      this.myTextarea.nativeElement.focus();
+    }, 500);
   }
 
   // Expose function to global window object
@@ -131,7 +136,8 @@ export class ProfileEditPage implements OnInit {
       if (byte[1] !== undefined && byte[1] !== '') {
        this.object= {
           "UserID": this.userId,
-          "byteArray": byte[1]
+          "byteArray": byte[1],
+          "byteStringAndroid":""
         }
         this.imageupload = reader.result;
       }

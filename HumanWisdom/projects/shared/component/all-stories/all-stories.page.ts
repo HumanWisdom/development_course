@@ -161,7 +161,7 @@ export class AllStoriesPage implements OnInit {
 
   routeToViewStories(){
     if(SharedService.ProgramId == ProgramType.Adults){
-      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      this.router.navigate(['/adults/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
     }else{
       this.router.navigate(['/teenagers/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
     }

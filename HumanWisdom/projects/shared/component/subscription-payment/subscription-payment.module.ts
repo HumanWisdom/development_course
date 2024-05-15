@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { SubscriptionPaymentPageRoutingModule } from './subscription-payment-routing.module';
 
 import { SubscriptionPaymentPage } from './subscription-payment.page';
+import { SharedModule } from '../../shared.module';
 
-import { SharedModule } from '../../../../../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,

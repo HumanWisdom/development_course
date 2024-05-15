@@ -68,10 +68,12 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       let userdetail = this.userDetails[0];
       localStorage.setItem("isPartner", this.userDetails[0].IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails[0].PartnerOption);
-      this.url =
+    /*   this.url =
         userdetail["UserImagePath"].split("\\")[1] +
         "?" +
-        new Date().getTime();
+        new Date().getTime(); */
+        this.url = userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.partnerOption = localStorage.getItem("PartnerOption");
@@ -86,7 +88,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
 
   public getImageUrl(){
-    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + this.url;
+    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
   }
 
   ngOnInit() {
@@ -179,7 +181,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   loginroute() {
-    this.router.navigate(["adults/onboarding/login"], {
+    this.router.navigate([SharedService.getprogramName()+ "/onboarding/login"], {
       replaceUrl: true,
       skipLocationChange: true
     });
@@ -258,7 +260,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       this.content = 'To become a Partner you will need to Complete Registration and login?';
       this.enablebecomepartner = true;
       this.enableAlert = true;
-      this.router.navigate(["adults/onboarding/login"]);
+      this.router.navigate([SharedService.getprogramName()+  "/onboarding/login"]);
     } else {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -282,9 +284,9 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
         this.navigate(route);
         return;
       }
-      if(!this.ios && route == '/subscription/start-your-free-trial'){
+      if(!this.ios && route == '/'+ SharedService.getprogramName()+ '/subscription/start-your-free-trial'){
          this.router.navigate([route])
-      } else if(route != '/subscription/start-your-free-trial'){
+      } else if(route != '/'+ SharedService.getprogramName()+ '/subscription/start-your-free-trial'){
         this.router.navigate([route])
       }
     }
@@ -322,7 +324,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
               localStorage.setItem("guest", "T");
               localStorage.setItem("navigateToUpgradeToPremium", "true");
               localStorage.setItem("btnClickBecomePartner", "true");
-              this.router.navigate(["/onboarding/login"]);
+              this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
           }else{
             this.Onboardingservice.navigateToUpgradeToPremium = true;
             this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -350,7 +352,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
-            this.router.navigate(["/onboarding/login"]);
+            this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
           }
         }
       }

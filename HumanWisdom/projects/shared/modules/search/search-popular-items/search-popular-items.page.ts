@@ -2,10 +2,10 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchDataModel } from '../../../../../../shared/models/search-data-model';
-import { AdultsService } from '../../adults.service';
-import { ForumService } from '../../../../../../shared/forum/forum.service';
 import * as moment from 'moment';
+import { AdultsService } from '../../../../adults/src/app/adults/adults.service';
+import { ForumService } from '../../../forum/forum.service';
+import { SearchDataModel } from '../../../models/search-data-model';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -224,6 +224,6 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   stripTags(story){
-    // 
+    //
   }
 }

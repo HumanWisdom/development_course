@@ -44,7 +44,7 @@
                     Change Photo
                   </h4> -->
                 <label for="files"class="mt0px fs_15px fw_600 lh_150p fc_e58d82">Change Photo</label>
-                <input id="files"  (click)="clickEventForProfile()"  style="visibility:hidden;" (change)="getFileUpload($event)" type="file">
+                <input id="files"  (click)="clickEventForProfile()"  style="visibility:hidden;"  (change)="getFileUpload($event)"  type="file">
               </div>
             </div>
             
@@ -57,7 +57,7 @@
                     </select>
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <input type="text" id="name" class="sp_fc active" placeholder="Full Name" [(ngModel)]="fullname">
+                    <input type="text" id="name" class="sp_fc active" #myText placeholder="Full Name" [(ngModel)]="fullname">
                   </div>
                 </div>
               </div>
@@ -168,13 +168,10 @@
               </div>
             </div>
             <!-- <div *ngIf="isShow"> 
-              <div>
-                {{objString }}
-              </div>
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h6 class="mtb0px fw_700 fs_12px lh_14px fc_ffffff">
-                    FileName : {{fileName}}
+                    string  : {{objString}}
                   </h6>
                 </div>
               </div>

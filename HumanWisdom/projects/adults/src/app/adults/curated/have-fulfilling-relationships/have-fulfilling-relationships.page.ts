@@ -151,9 +151,11 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, id])
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      let url = audioLink.replaceAll(':', '_');
+      url = encodeURIComponent(url.replaceAll('/', '~'));
+      this.router.navigate(['/adults/guided-meditation/audiopage/', url, title, id,'Audio'])
     }
   }
 

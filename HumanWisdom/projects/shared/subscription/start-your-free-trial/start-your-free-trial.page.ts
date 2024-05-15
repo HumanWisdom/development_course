@@ -6,6 +6,7 @@ import { Constant } from '../../services/constant';
 import { LogEventService } from '../../services/log-event.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { NavigationService } from '../../services/navigation.service';
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-start-your-free-trial',
@@ -13,23 +14,27 @@ import { NavigationService } from '../../services/navigation.service';
   styleUrls: ['./start-your-free-trial.page.scss'],
 })
 export class StartYourFreeTrialPage implements OnInit {
-
-  constructor(private router: Router,private location: Location, private servive: AdultsService,
+  isAdults = false;
+constructor(private router: Router,private location: Location, private servive: AdultsService,
  public logeventservice: LogEventService,
     private navigateService:NavigationService) { }
 
   ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     this.logeventservice.logEvent('view_start_trial');
   }
 
   tryFreeSubscribe(){
     this.logeventservice.logEvent('click_start_trial');
       if (this.CheckIfUserIsLoggedIn()) {
-        
-        this.router.navigate(['/subscription/try-free-and-subscribe']);
+        this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
       } else {
-        SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-        this.router.navigate(['/onboarding/login']);
+        SharedService.UrlToRedirect=`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+        this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
       }
   }
 
@@ -47,7 +52,7 @@ export class StartYourFreeTrialPage implements OnInit {
        console.log(url);
 
       if(url==null){
-        this.router.navigateByUrl('/adults/adult-dashboard');
+        this.router.navigateByUrl(SharedService.getDashboardUrls());
       }   
     }
   }
@@ -63,6 +68,6 @@ export class StartYourFreeTrialPage implements OnInit {
   routeToDashboard(){
     this.logeventservice.logEvent('click_will_do_later');
 
-    this.router.navigateByUrl('/adults/adult-dashboard');
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 }

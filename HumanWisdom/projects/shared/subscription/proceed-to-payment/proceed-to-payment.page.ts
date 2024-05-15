@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
-import { SubscriptionType } from '../../models/program-model';
+import { ProgramType, SubscriptionType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -19,27 +19,28 @@ export class ProceedToPaymentPage implements OnInit {
   MonthPlanFreeTrial = 7;
   AnnualPlanFreeTrial = 14;
   couponCodeApplied = false;
-  discountCode:any;
-  couponCode:any='';
-  percentage:any;
-  totalCartValueDiscount:any=0.00;
-  totalCartValue:any=0.00;
+  discountCode: any;
+  couponCode: any = '';
+  percentage: any;
+  totalCartValueDiscount: any = 0.00;
+  totalCartValue: any = 0.00;
   SelectedPlanModel: any;
-  discount:any=0.00;
+  discount: any = 0.00;
   pricingModel: any;
   countryCode: string;
   defaultCountry: string;
   defaultCurrencySymbol: string;
-  msg:any
-  totalCartAmount='0.00';
-  trialStatus:string='';
+  msg: any
+  totalCartAmount = '0.00';
+  trialStatus: string = '';
   cartList = [];
+  isAdults:boolean = false;
   constructor(private datePipe: DatePipe,
     private router: Router,
     private logEventService: LogEventService,
     private location: Location,
     private onboardingService: OnboardingService,
-    ) {
+  ) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
 
@@ -50,6 +51,11 @@ export class ProceedToPaymentPage implements OnInit {
     this.GetDataFromLocalStorage();
     this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
     this.InitializePlanModel();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   InitializePlanModel() {
@@ -57,10 +63,10 @@ export class ProceedToPaymentPage implements OnInit {
       startingDate: this.GetCurrentDate(),
       selectedPlan: this.selectedSubscription
     }
-    if(this.selectedSubscription == Constant.MonthlyPlan){
+    if (this.selectedSubscription == Constant.MonthlyPlan) {
       this.totalCartValueDiscount = this.pricingModel.Monthly;
       this.totalCartValue = this.pricingModel.Monthly;
-    }else{
+    } else {
       this.totalCartValueDiscount = this.pricingModel.Annual;
       this.totalCartValue = this.pricingModel.Annual;
     }
@@ -77,16 +83,16 @@ export class ProceedToPaymentPage implements OnInit {
   }
 
   proceedToPayment() {
-    if(this.trialStatus!=Constant.NoTrial){
-      SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
-      localStorage.setItem('totalAmount',this.totalCartValueDiscount );
+    if (this.trialStatus != Constant.NoTrial) {
+      SharedService.setDataInLocalStorage(Constant.isFromCancelled, '');
+      localStorage.setItem('totalAmount', this.totalCartValueDiscount);
       SharedService.setDataInLocalStorage("Currsymbol", this.pricingModel.CurSymbol);
-      SharedService.setDataInLocalStorage(Constant.Checkout,'T')
-       if(this.onboardingService.navigateToUpgradeToPremium){
-            localStorage.setItem('ispartnershipClick', 'T');
-          }
-      this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription , rateId:this.pricingModel.RateID }})
-    }else{
+      SharedService.setDataInLocalStorage(Constant.Checkout, 'T')
+      if (this.onboardingService.navigateToUpgradeToPremium) {
+        localStorage.setItem('ispartnershipClick', 'T');
+      }
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/payment`], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId: this.pricingModel.RateID } })
+    } else {
       this.logEventService.logEvent('click_proceed_to_pay');
       this.createSetupIntent();
     }
@@ -100,9 +106,9 @@ export class ProceedToPaymentPage implements OnInit {
     } else {
       this.pricingModel = null;
     }
-    if(this.selectedSubscription == Constant.MonthlyPlan){
+    if (this.selectedSubscription == Constant.MonthlyPlan) {
       this.totalCartAmount = this.pricingModel.Monthly;
-    }else{
+    } else {
       this.totalCartAmount = this.pricingModel.Annual;
     }
   }
@@ -122,69 +128,69 @@ export class ProceedToPaymentPage implements OnInit {
           SharedService.setDataInLocalStorage("IsCoupanApplied", JSON.stringify(this.couponCodeApplied));
           SharedService.setDataInLocalStorage("subscribeToPremiumAfterDiscount", JSON.stringify(this.totalCartValueDiscount));
           SharedService.setDataInSessionStorage(Constant.ClientSecret, res.toString());
-          if(this.onboardingService.navigateToUpgradeToPremium){
+          if (this.onboardingService.navigateToUpgradeToPremium) {
             localStorage.setItem('ispartnershipClick', 'T');
           }
-          this.router.navigateByUrl('/adults/subscription/payment');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment`);
         }
       });
     }
   }
-    
 
-    buyGift(){
-      this.router.navigateByUrl('/adults/give-the-gift-of-wisdom');
-    }
 
-    closeApplycoupon(){
+  buyGift() {
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/give-the-gift-of-wisdom`);
+  }
+
+  closeApplycoupon() {
     this.couponCodeApplied = false;
     this.discount = 0;
     this.discountCode = '';
-    this.percentage=undefined;
+    this.percentage = undefined;
     this.totalPrice();
+  }
+
+
+
+  totalPrice() {
+    if (this.couponCodeApplied) {
+      this.totalCartValueDiscount = this.totalCartValue - this.discount
+    } else {
+      this.totalCartValueDiscount = this.totalCartValue
     }
-    
+  }
 
-
-    totalPrice() {
-      if(this.couponCodeApplied) {
-        this.totalCartValueDiscount = this.totalCartValue - this.discount
-      }else {
-        this.totalCartValueDiscount = this.totalCartValue
-      }
+  couponValidation() {
+    if (this.selectedSubscription == Constant.MonthlyPlan) {
+      this.totalCartValue = this.pricingModel.Monthly;
+    } else {
+      this.totalCartValue = this.pricingModel.Annual;
     }
-  
-    couponValidation() {
-    if(this.selectedSubscription == Constant.MonthlyPlan){
-        this.totalCartValue = this.pricingModel.Monthly;
-     } else{
-        this.totalCartValue = this.pricingModel.Annual;
-     }
 
-      this.onboardingService.couponValidation({
-        "CouponCode": this.discountCode,
-        "CartAmt": this.totalCartValue
-      }).subscribe(
-        res => {
-          if (res.length !== 0) {
-            this.couponCodeApplied = true;
-            this.onboardingService.toastrService.success('', 'Coupon applied successfully');
-            this.msg = 'Coupon applied successfully'
-            this.discount = parseFloat(res[0].Discount)
-            localStorage.setItem("couponid", res[0]['CouponID'])
-            this.totalCartValueDiscount = this.totalCartValue - this.discount;
-            this.percentage = res[0].Percentage
-          }
-  
-          else {
-            this.onboardingService.toastrService.error('', 'Please enter a valid coupon code. ');
-            this.msg = 'Please enter a valid coupon code. '
-          }
-  
-          setTimeout(() => {
-            this.msg = ''
-          }, 3000)
+    this.onboardingService.couponValidation({
+      "CouponCode": this.discountCode,
+      "CartAmt": this.totalCartValue
+    }).subscribe(
+      res => {
+        if (res.length !== 0) {
+          this.couponCodeApplied = true;
+          this.onboardingService.toastrService.success('', 'Coupon applied successfully');
+          this.msg = 'Coupon applied successfully'
+          this.discount = parseFloat(res[0].Discount)
+          localStorage.setItem("couponid", res[0]['CouponID'])
+          this.totalCartValueDiscount = this.totalCartValue - this.discount;
+          this.percentage = res[0].Percentage
         }
-      )
-    }
+
+        else {
+          this.onboardingService.toastrService.error('', 'Please enter a valid coupon code. ');
+          this.msg = 'Please enter a valid coupon code. '
+        }
+
+        setTimeout(() => {
+          this.msg = ''
+        }, 3000)
+      }
+    )
+  }
 }
