@@ -36,6 +36,7 @@ export class ProfileEditPage implements OnInit {
   fileName = '';
   objString: any;
   object:any;
+  @ViewChild('myText') myTextarea: ElementRef;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
@@ -63,6 +64,10 @@ export class ProfileEditPage implements OnInit {
       "byteArray": "",
       "byteStringAndroid":jsonObject.byteArray
     };
+
+    setTimeout(() => {
+      this.myTextarea.nativeElement.focus();
+    }, 500);
   }
 
   // Expose function to global window object
