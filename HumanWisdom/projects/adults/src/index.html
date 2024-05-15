@@ -591,12 +591,12 @@
         // Perform the download action here
       });
     });
-    window.addEventListener('profileEditClicked', function () {
+    window.addEventListener('ImageEditClicked', function () {
       var fileName = localStorage.getItem('userId') + "_Profile";
       console.log("ProfileEvenClicked--------------------");
       // this.triggerAngularEvent('{"byteArray":"iVBORw0KGgoAAAANSUhEUgAAAFYAAABMCAIAAAB4edddAAAAAXNSR0IArs4c6QAAAANzQklUCAgI","fileName":"FileName"}');
       if (window.AndroidHandler) {
-        window.AndroidHandler.profileEditClicked(fileName);
+        window.AndroidHandler.imageEditClicked(fileName);
       }
       // Perform the download action here
     });
@@ -845,7 +845,7 @@
     }
 
 
-    function test1(str) {
+    function ImageSelectedEventFromAndroid(str) {
       if (window.AndroidHandler) {
         triggerAngularEvent(str);
        //  window.AndroidHandler.showToast(str);

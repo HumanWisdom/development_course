@@ -20,7 +20,7 @@ export class S137132Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=44
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/159.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/138.webp"
   
   bg=""
   moduleLink="/social-media"
@@ -30,33 +30,26 @@ export class S137132Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
     },
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
       link: '/anxiety',
       id: 105
     },
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
       link: '/relationships',
       id: 131
     },
   ]
 
   constructor() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'leadership') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
-      this.moduleLink = "/leadership"
-      this.moduleName = "Leadership"
-      this.sectionName = "Transform your life";
-      this.moduleId = 59
-    }
+   
   }
 
   ngOnInit() {}

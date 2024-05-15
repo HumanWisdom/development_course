@@ -20,7 +20,7 @@ export class S140110Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=17
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/48.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp"
  
   bg=""
   moduleLink="/success-failure"
@@ -30,20 +30,20 @@ export class S140110Page implements OnInit {
   moduleList: any = [
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
       link: '/conditioning',
       id: 105
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
  
     },
     {
       name: 'Identity',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/21.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp',
       link: '/identity',
       id: 119
     },
@@ -53,9 +53,9 @@ export class S140110Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'relationships') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/49.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/140.webp"
       
-      this.moduleLink = "/opinions-beliefs"
+      this.moduleLink = "/teenagers/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"
       this.sectionName = "Transform your life";
       this.moduleId = 140

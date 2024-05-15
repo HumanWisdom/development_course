@@ -13,7 +13,7 @@ export class S115062Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/self-interest/s115001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/21.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp"
   bg=""
   moduleLink="/identity"
   moduleName=" Identity"
@@ -22,20 +22,20 @@ export class S115062Page implements OnInit
   moduleList: any = [
     {
       name: 'Love',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/62.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/134.webp',
       link: '/love',
       id: 134
     },
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
       link: '/relationships',
       id: 131
  
     },
     {
       name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
       link: '/emotional-needs',
       id: 120
   

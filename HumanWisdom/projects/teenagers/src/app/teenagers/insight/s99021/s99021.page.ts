@@ -12,7 +12,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S99021Page implements OnInit {
   programType:ProgramType=ProgramType.Teenagers;
   toc="teenagers/insight/s99001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/39.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/100.png"
   
   bg=""
   moduleLink="/awareness/s100001"  
@@ -21,20 +21,20 @@ export class S99021Page implements OnInit {
   moduleId=100
   moduleList: any = [
     {
-      name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
-      link: '/awareness',
-      id:100
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
+      link: '/anxiety',
+      id: 105
     },
     {
       name: 'Look without Language',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/42.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/103.webp',
       link: '/without-language',
       id:103
     },
     {
       name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/109.webp',
       link: '/meditation',
       id:109
     },

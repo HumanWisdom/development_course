@@ -11,31 +11,31 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S131327Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/relationships/s131001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp"
   
   bg=""
   moduleLink="/stress"
   moduleName="Stress"
   sectionName= "Transform your life - II";
-  moduleId=132
+  moduleId=125
 
   moduleList: any = [
     {
       name: 'Communication',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/53.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/132.webp',
       link: '/communication',
       id: 132
     },
     {
       name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
       link: '/emotional-needs',
       id: 120
  
     },
     {
       name: 'Self Interest',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/126.webp',
       link: '/self-interest',
       id: 126
   
@@ -45,22 +45,13 @@ export class S131327Page implements OnInit {
   constructor() {
    
     let cur = localStorage.getItem('curated');
-    if (cur && cur === 'workplace') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/work.jpg"
+   if (cur && cur === 'relationships') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp"
      
-      this.moduleLink = "/adults/work"
-      this.moduleName = "Work"
-      this.sectionName = "Transform your life";
-      this.moduleId = 58
-    
-    }
-   else if (cur && cur === 'relationships') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/18.png"
-     
-      this.moduleLink = "/adults/emotional-needs"
+      this.moduleLink = "/teenagers/emotional-needs"
       this.moduleName = "Emotional Needs"
       this.sectionName = "Explore How Your Mind Works";
-      this.moduleId = 18
+      this.moduleId = 120
      
     }
  }
