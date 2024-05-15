@@ -146,7 +146,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           elements,
           confirmParams: {
             return_url: SharedService.ClientUrl + url,
-            payment_method: {             
+            payment_method_data: {             
               billing_details: {
                 name: (<HTMLInputElement>document.getElementById('name')).value,
                 address: {
