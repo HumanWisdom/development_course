@@ -55,14 +55,14 @@ export class ProfileEditPage implements OnInit {
     console.log('Received event in Angular:', payload);
     this.objString = payload;
     const jsonObject = JSON.parse(payload);
-    const byteArray= 'data:;base64,'+jsonObject.byteArray;
+    const byteArray= 'data:;base64,'+jsonObject.base64String;
     this.isShow = true;
     this.imageupload = byteArray;
-    this.byteArray = jsonObject.byteArray;
+    this.byteArray = jsonObject.base64String;
     this.object = {
       "UserID": this.userId,
       "byteArray": "",
-      "byteStringAndroid":jsonObject.byteArray
+      "byteStringAndroid":jsonObject.base64String
     };
 
     setTimeout(() => {
@@ -105,7 +105,7 @@ export class ProfileEditPage implements OnInit {
   }
 
   clickEventForProfile() {
-    const customEvent = new CustomEvent('profileEditClicked');
+    const customEvent = new CustomEvent('ImageEditClicked');
     window.dispatchEvent(customEvent);
   }
 
