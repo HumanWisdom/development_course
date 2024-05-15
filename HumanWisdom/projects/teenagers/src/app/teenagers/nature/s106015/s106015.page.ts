@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S106015Page implements OnInit {
 
   toc="nature/s106001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp"
  
   bg=""
   moduleLink="/breathing/s107001"
@@ -22,20 +22,20 @@ export class S106015Page implements OnInit {
   moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp',
       link: '/breathing',
       id: 107
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/108.webp',
       link: '/noticing-thoughts',
       id: 108
  
     },
     {
       name: 'Guided Audio Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp',
       link: '/guided-meditation',
       id: 110
   
@@ -47,12 +47,12 @@ export class S106015Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp"
       
       this.moduleLink = "/breathing"
       this.moduleName = "Breathing"
       this.sectionName = "Develop a Calm Mind";
-      this.moduleId = 29
+      this.moduleId = 107
     
     }
    }

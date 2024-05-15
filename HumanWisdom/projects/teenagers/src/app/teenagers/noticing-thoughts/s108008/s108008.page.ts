@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S108008Page implements OnInit {
   
   toc="teenagers/noticing-thoughts/s108001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp"
   bg=""
   moduleLink="/guided-meditation"
   moduleName=" Guided Audio Meditation"
@@ -21,19 +21,19 @@ export class S108008Page implements OnInit {
   moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp',
       link: '/breathing',
       id: 107
     },
     {
       name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/109.webp',
       link: '/meditation',
       id: 109
     },
     {
       name: 'Nature',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp',
       link: '/nature',
       id: 106
     },
@@ -43,12 +43,12 @@ export class S108008Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp"
       
-      this.moduleLink = "/adults/guided-meditation"
+      this.moduleLink = "/teenagers/guided-meditation"
       this.moduleName = "Guided Meditation"
       this.sectionName = "Develop a Calm Mind";
-      this.moduleId = 51
+      this.moduleId = 110
     
     }
    }

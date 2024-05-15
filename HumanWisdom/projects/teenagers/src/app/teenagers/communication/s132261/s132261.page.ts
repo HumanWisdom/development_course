@@ -45,21 +45,21 @@ export class S132261Page implements OnInit {
    
       let cur = localStorage.getItem('curated');
       if (cur && cur === 'workplace') {
-        this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/success_&_failure.jpg"
+        this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/141.webp"
        
         this.moduleLink = "/success-failure"
         this.moduleName = "Success and Failure"
         this.sectionName = "Transform your life";
-        this.moduleId = 48
+        this.moduleId = 141
       
       }
      else if (cur && cur === 'relationships') {
-        this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/love.jpg"
+        this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/134.webp"
        
         this.moduleLink = "/love"
         this.moduleName = "Love"
         this.sectionName = "Transform your life";
-        this.moduleId = 62
+        this.moduleId = 134
        
       }
    }

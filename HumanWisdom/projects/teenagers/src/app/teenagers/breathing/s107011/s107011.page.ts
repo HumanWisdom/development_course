@@ -47,20 +47,20 @@ export class S107011Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp"
       this.moduleLink = "/stress"
       this.moduleName = "stress"
       this.sectionName = "Transform your life";
-      this.moduleId = 44
+      this.moduleId = 125
     
     }
   
     else if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sorrow.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/116.webp"
       this.moduleLink = "/sorrow"
       this.moduleName = "Sorrow"
       this.sectionName = "Manage your emotions";
-      this.moduleId = 60
+      this.moduleId = 116
      
     }
 

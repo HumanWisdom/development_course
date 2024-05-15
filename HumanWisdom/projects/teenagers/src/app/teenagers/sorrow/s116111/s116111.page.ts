@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S116111Page implements OnInit {
   
   toc="sorrow/s112001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/61.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/117.webp"
   programType : ProgramType = ProgramType.Teenagers;
   bg=""
   moduleLink="/loneliness"
@@ -21,19 +21,19 @@ export class S116111Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
     },
     {
       name: 'Identity',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/21.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp',
       link: '/identity',
       id: 119
     },
     {
       name: 'Love',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/62.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/134.webp',
       link: '/love',
       id: 134
     },
@@ -42,9 +42,9 @@ export class S116111Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/dealing_with_death.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/130.jpg"
     
-      this.moduleLink = "/adults/dealing-with-deathe"
+      this.moduleLink = "/teenagers/dealing-with-death"
       this.moduleName = " Dealing with Death"
       this.sectionName = "Transform your life";
       this.moduleId = 130

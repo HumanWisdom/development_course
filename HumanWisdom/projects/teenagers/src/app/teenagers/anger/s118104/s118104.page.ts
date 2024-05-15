@@ -46,8 +46,8 @@ export class S118104Page implements OnInit
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
-      this.moduleLink = "/adults/reactive-mind"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp"
+      this.moduleLink = "/teenagers/reactive-mind"
       this.moduleName = "Reactive Mind"
       this.sectionName = "Explore how your mind works";
       this.moduleId = 113

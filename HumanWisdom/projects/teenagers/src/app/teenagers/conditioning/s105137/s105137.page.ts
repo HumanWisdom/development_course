@@ -47,15 +47,15 @@ export class S105137Page implements OnInit
   {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
-      this.moduleLink = "/adults/reactive-mind"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp"
+      this.moduleLink = "/teenagers/reactive-mind"
       this.moduleName = "Reactive Mind"
       this.sectionName = "Explore How Your Mind Works";
-      this.moduleId = 125
+      this.moduleId = 113
     }
     else if (cur && cur === 'habits') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
-      this.moduleLink = "/adults/stress"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp"
+      this.moduleLink = "/teenagers/stress"
       this.moduleName = "Stress"
       this.sectionName = "Transform your life";
       this.moduleId = 125

@@ -49,14 +49,7 @@ export class S137132Page implements OnInit {
   ]
 
   constructor() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'leadership') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
-      this.moduleLink = "/leadership"
-      this.moduleName = "Leadership"
-      this.sectionName = "Transform your life";
-      this.moduleId = 59
-    }
+   
   }
 
   ngOnInit() {}

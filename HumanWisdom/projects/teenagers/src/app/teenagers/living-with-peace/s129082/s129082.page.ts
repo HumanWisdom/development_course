@@ -13,7 +13,7 @@ export class S129082Page implements OnInit
 {  
   
   toc="teenagers/living-with-peace/s129001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/64.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/130.webp"
   bg=""
   moduleLink="/dealing-with-death"
   moduleName=" Fear of Death"
@@ -25,21 +25,21 @@ export class S129082Page implements OnInit
   moduleList: any = [
     {
       name: 'Pleasure',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/20.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/124.webp',
       link: '/pleasure',
       id: 124
  
     },
     {
       name: 'Comparison & Envy',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/111.webp',
       link: '/comparison',
       id: 111
 
     },
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp',
       link: '/breathing',
       id: 107
     },
@@ -49,14 +49,14 @@ export class S129082Page implements OnInit
   {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/loneliness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/117.webp"
       this.moduleLink = "/loneliness"
       this.moduleName = "Loneliness"
       this.sectionName = "Manage Your Emotions";
       this.moduleId = 117
     }
     else if (cur && cur === 'happier') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/133.webp"
       this.moduleLink = "/happiness"
       this.moduleName = "Happiness"
       this.sectionName = "Transform your life";

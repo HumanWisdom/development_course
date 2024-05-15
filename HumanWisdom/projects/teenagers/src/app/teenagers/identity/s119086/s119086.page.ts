@@ -22,10 +22,10 @@ export class S119086Page implements OnInit
   moduleId=120
   moduleList: any = [
     {
-      name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
-      link: '/emotional-needs',
-      id: 120
+      name: 'No Judgemnet',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/101.webp',
+      link: '/no-judgement',
+      id: 101
     },
     {
       name: 'Self Image',
@@ -46,14 +46,14 @@ export class S119086Page implements OnInit
   {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/loneliness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/117.webp"
       this.moduleLink = "/loneliness"
       this.moduleName = "Loneliness"
       this.sectionName = "Manage Your Emotions";
       this.moduleId = 117
     }
     else if (cur && cur === 'happier') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/133.webp"
       this.moduleLink = "/happiness"
       this.moduleName = "Happiness"
       this.sectionName = "Transform your life";
