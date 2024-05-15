@@ -235,7 +235,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }else{
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
-      this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
+      let url = audioLink.replaceAll(':', '_');
+      url = encodeURIComponent(url.replaceAll('/', '~'));
+      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
     }
   }
 
