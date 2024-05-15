@@ -10,8 +10,8 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S109077Page implements OnInit {
  
-  toc="teenagers/noticing-thoughts/s108001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
+  toc="teenagers/meditation/s109001"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp"
   
   bg=""
   moduleLink="/nature/s106001"
@@ -23,19 +23,19 @@ export class S109077Page implements OnInit {
  moduleList: any = [
   {
     name: 'Breathing',
-    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp',
     link: '/breathing',
     id: 107
   },
   {
     name: 'Nature',
-    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp',
     link: '/nature',
     id: 106
   },
   {
     name: ' Guided Meditation',
-    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp',
     link: '/guided-meditation',
     id: 110
   },
@@ -43,7 +43,7 @@ export class S109077Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/look_without_language.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/103.webp"
     
       this.moduleLink = "/without-language"
       this.moduleName = " Look Without Language"

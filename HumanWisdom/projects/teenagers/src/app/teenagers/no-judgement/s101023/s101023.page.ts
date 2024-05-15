@@ -9,7 +9,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S101023Page implements OnInit {
   
   toc="no-judgement//s100001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/41.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/102.webp"
   bg=""
   moduleLink="/questions-are-key/s102001"
   moduleName="Questions are key"
@@ -19,19 +19,19 @@ export class S101023Page implements OnInit {
   moduleList: any = [
     {
       name: 'Three Steps to Enquiry',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/37.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp',
       link: '/three-steps-enquiry',
       id: 97
     },
     {
       name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp',
       link: '/insight',
       id: 99
     },
     {
       name: 'KeyIdeas',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/83.webp',
       link: '/keyideas',
       id: 83
     },

@@ -14,7 +14,7 @@ export class S134214Page implements OnInit {
 
   toc="teenagers/love/s134001"
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/76.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/135.webp"
   
   bg=""
   moduleLink="/bullying"
@@ -24,13 +24,13 @@ export class S134214Page implements OnInit {
   moduleList: any = [
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
       link: '/relationships',
       id: 131
     },
     {
       name: 'Living with Peace',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/129.webp',
       link: '/living-with-peace',
       id: 129
  
@@ -38,7 +38,7 @@ export class S134214Page implements OnInit {
     },
     {
       name: 'Self Interest',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
+      image: 'ttps://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/115.webp',
       link: '/self-interest',
       id: 115
   
@@ -49,7 +49,7 @@ export class S134214Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'relationships') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/49.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/140.webp"
       
       this.moduleLink = "/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"

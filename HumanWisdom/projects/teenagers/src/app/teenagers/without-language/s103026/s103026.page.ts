@@ -13,7 +13,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S103026Page implements OnInit {
 
   toc="teenagers/without-language/s103001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/43.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/104.webp"
   
   bg=""
   moduleLink="/obstacles-enquiry/s104001"
@@ -24,20 +24,20 @@ export class S103026Page implements OnInit {
   moduleList: any = [
     {
       name: 'Three Steps to Enquiry',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/37.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp',
       link: '/three-steps-enquiry',
       id: 97
     },
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/100.webp',
       link: '/awareness',
       id: 100
  
     },
     {
       name: 'Nature',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp',
       link: '/nature',
       id: 106
   
@@ -48,7 +48,7 @@ export class S103026Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/nature.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp"
      
       this.moduleLink = "/nature"
       this.moduleName = "Nature"
@@ -57,7 +57,7 @@ export class S103026Page implements OnInit {
     
     }
     else if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp"
      
       this.moduleLink = "/breathing"
       this.moduleName = "Breathing"

@@ -20,7 +20,7 @@ export class S141112Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=45
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/142.webp"
   
   bg=""
   moduleLink="/adults/making-better-decisions"
@@ -32,23 +32,22 @@ export class S141112Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
     },
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp',
       link: '/fear-anxiety',
       id: 112
  
     },
     {
-      name: 'Money',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/73.png',
-      link: '/money',
-      id: 73
-  
+      name: 'Identity',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp',
+      link: '/identity',
+      id: 119
     },
   ]
 
@@ -56,12 +55,12 @@ export class S141112Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'relationships') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/49.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/140.webp"
       
       this.moduleLink = "/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"
       this.sectionName = "Transform your life";
-      this.moduleId = 49
+      this.moduleId = 140
     
     }
    }

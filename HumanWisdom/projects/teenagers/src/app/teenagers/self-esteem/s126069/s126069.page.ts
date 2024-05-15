@@ -13,7 +13,7 @@ export class S126069Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/self-esteem/s126001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/45.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/127.webp"
  
   bg=""
   moduleLink="/habit-addiction"
@@ -23,20 +23,20 @@ export class S126069Page implements OnInit
   moduleList: any = [
     {
       name: 'Self Image',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/25.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/114.webp',
       link: '/teenagers/self-image',
       id: 114
     },
     {
       name: 'Criticisms',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/16.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/136.webp',
       link: '/criticism',
       id: 136
  
     },
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
       link: '/teenagers/conditioning',
       id: 105
   

@@ -11,7 +11,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S156278Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/dealing-with-depression/s156001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/20.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/124.webp"
   
   bg=""
   moduleLink="/teenagers/pleasure"
@@ -21,20 +21,20 @@ export class S156278Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
     },
     {
       name: 'Living with Peace',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/129.webp',
       link: '/living-with-peace',
       id: 129
  
     },
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/133.webp',
       link: '/happiness',
       id: 133
   
@@ -44,7 +44,7 @@ export class S156278Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp"
      
       this.moduleLink = "/external-approval"
       this.moduleName = "Need for approval"

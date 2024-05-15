@@ -14,7 +14,7 @@ export class S122080Page implements OnInit
   programType : ProgramType = ProgramType.Teenagers;
   
   toc="nature-of-the-i/s120001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp"
   bg=""
   moduleLink="/external-approval"
   moduleName="Need For Approval"
@@ -23,20 +23,20 @@ export class S122080Page implements OnInit
   moduleList: any = [
     {
       name: 'Identity',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/21.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp',
       link: '/identity',
       id: 119
     },
     {
       name: 'Self Interest',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/115.webp',
       link: '/self-interest',
       id: 115
   
     },
     {
       name: 'Self Image',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/25.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/114.webp',
       link: '/teenagers/self-image',
       id: 114
     },
@@ -46,18 +46,18 @@ export class S122080Page implements OnInit
   {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/loneliness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/117.webp"
       this.moduleLink = "/loneliness"
       this.moduleName = "Loneliness"
       this.sectionName = "Manage Your Emotions";
-      this.moduleId = 61
+      this.moduleId = 117
     }
     else if (cur && cur === 'happier') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/133.webp"
       this.moduleLink = "/happiness"
       this.moduleName = "Happiness"
       this.sectionName = "Transform your life";
-      this.moduleId = 23
+      this.moduleId = 133
     }
   }
 
