@@ -185,7 +185,7 @@ export class TeenagersService {
   }
 
   verifytoken(encrypt) {
-    this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
+    return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
   }
 
   verifyactkey(data): Observable<any> {
