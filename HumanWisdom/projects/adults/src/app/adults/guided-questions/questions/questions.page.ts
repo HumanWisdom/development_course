@@ -67,12 +67,21 @@ export class QuestionsPage implements OnInit {
     });
   }
 
-  Backward() {
+  goback() {
    var url = this.navigationService.navigateToBackLink();
    if(url == 'adults/search'){
     this.route.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
    }
   };
+
+  Backward() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.goback();
+    }else{
+      this.route.navigate([url]);
+    }
+  }
 
   getClass(questionNo) {
     if (+questionNo == this.counter) {

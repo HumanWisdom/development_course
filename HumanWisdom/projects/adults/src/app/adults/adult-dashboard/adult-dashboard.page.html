@@ -39,7 +39,7 @@
             <!-- feel better now -->
             <div class="row tour_fbn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a (click)="tourIndex === 1 ? DashboardLogevent('/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
+                <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like.svg" class="img-responsive w100">
@@ -931,7 +931,7 @@
                   Find inspiration
                 </h4>
               </div>
-              
+
               <div class="mt30px div_fi_a">
 
                 <div class="row">
@@ -1045,7 +1045,7 @@
                 <hr class="hr_style_v3_01">
               </div>
             </div>
-  
+
             <!-- subscribe to premium -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -1511,11 +1511,16 @@
                 </div>
 
               </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
             </div>
             <!-- /testimonials -->
 
             <!-- partnership button -->
-            <div class="row mt30px" >
+         <!--    <div class="row mt30px" >
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="" routerLink="/partnership-webpage">
                   <div class="row btn_tff">
@@ -1527,7 +1532,7 @@
                   </div>
                 </a>
               </div>
-            </div>
+            </div> -->
             <!-- /partnership button -->
 
             <!-- test buttons -->
@@ -2344,7 +2349,7 @@
             <div class="row mt30px mb40px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
-                  Hi  {{name?.trim() === 'guest' ? 'Guest' : name + ','}}
+                  Hi  {{!isloggedIn ? 'Guest' : name + ','}}
                 </h4>
 
                 <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">

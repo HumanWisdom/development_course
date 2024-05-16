@@ -19,7 +19,7 @@ export class S139055Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=44
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/115.webp"
   
   bg=""
   moduleLink="/self-interest"
@@ -29,33 +29,26 @@ export class S139055Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
-      link: '/stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
+      link: '/teenagers/stress',
       id: 125
     },
     {
       name: 'Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
-      link: '/anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
+      link: '/teenagers/anxiety',
       id: 105
     },
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
-      link: '/relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
+      link: '/teenagers/relationships',
       id: 131
     },
   ]
 
   constructor() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'leadership') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
-      this.moduleLink = "/leadership"
-      this.moduleName = "Leadership"
-      this.sectionName = "Transform your life";
-      this.moduleId = 59
-    }
+    
   }
 
   ngOnInit() {}

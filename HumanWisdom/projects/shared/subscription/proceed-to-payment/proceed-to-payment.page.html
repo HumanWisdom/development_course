@@ -9,7 +9,7 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Subscribe
+        HappierMe Premium
       </h1>
     </div>
 
@@ -23,7 +23,7 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -107,7 +107,7 @@
               <div class="row mtb20px" *ngIf="selectedSubscription == Annual">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0" *ngIf="trialStatus != 'ended'">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg" class="img-responsive">
                   </div>
 
@@ -158,7 +158,7 @@
               <div class="row mtb20px" *ngIf="selectedSubscription == Monthly">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0" *ngIf="trialStatus != 'ended'">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg" class="img-responsive">
                   </div>
 
@@ -231,7 +231,7 @@
 
 
 
-              <div class="row">
+          <!--     <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="buyGift()">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                     Buying this for someone else?
@@ -240,7 +240,7 @@
                     </a>
                   </h4>
                 </div>
-              </div>
+              </div> -->
 
               <div class="row mb10px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -382,7 +382,7 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw">
       <a>
         <button type="button" (click)="proceedToPayment()" class="btn btn_tfas">
-          Proceed to payment
+          Proceed 
         </button>
       </a>
     </div>

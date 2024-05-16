@@ -1,0 +1,34 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+        
+          <p>
+            Fear is a normal part of being human and protects us from harm. Many of our fears are imaginary though and created by our thinking, but we think they are real. We are not aware of many of them and they can operate in the background, shaping our choice of careers.
+
+          </p>
+          <p>
+            A fear of not having enough money can make us pick careers that we may not enjoy but which can earn us more money. A fear of competition and uncertainty can push to avoid career choices that feel more risky, like acting, or being a musician, or doing a degree in a subject which does not lead to a clear career path. A fear of failure may stop us from pursuing a less trodden path in life, from following our passion and our dreams. A fear of what others will say can make us pick a career to please others, but it may not be what we really want to do.
+
+
+          </p>
+          <p>
+            Understanding our fears helps us confront them and make better choices for our lives.
+
+
+          </p>
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

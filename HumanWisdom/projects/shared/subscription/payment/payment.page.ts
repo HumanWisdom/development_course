@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { DatePipe } from '@angular/common';
@@ -8,7 +7,7 @@ import { LogEventService } from '../../services/log-event.service';
 import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
-
+import { ProgramType, SubscriptionType } from '../../models/program-model';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -23,6 +22,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   cardCaptureReady = false;
   selectedPlanModel: any;
   isProduction: boolean = true;
+  isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
   constructor(private datePipe: DatePipe, private router: Router, private logEventService: LogEventService,
     private location: Location) {
@@ -30,6 +30,11 @@ export class PaymentPage implements OnInit, AfterViewInit {
       this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     this.initializeModel();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     this.GetDataFromLocalStorage();
   }
 
@@ -78,19 +83,51 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
+       setTimeout(() => {
       let stripe = Stripe(environment.stripeKey) as any;
+      
+      const appearance = {
+        theme: 'flat',  
+        rules: {
+          '.Label': {
+            fontSize: '0'
+          },
+          /* '.Input::placeholder': {
+            color: '#000000'
+          },  */        
+        },            
+        variables: {
+          colorBackground: '#120F40',
+          colorDanger: '#df1b41',
+          fontFamily: 'Poppins,sans-serif !important;',
+          spacingUnit: '4px',
+          borderRadius: '16px',
+          colorText: '#ffffff',
+          colorTextPlaceholder: "rgba(255, 255, 255, 0.50)"
+        }
+      };
+      
+
+     
       const options = {
-        clientSecret: this.stripeModel.clientSecretId
+        clientSecret: this.stripeModel.clientSecretId,
+        appearance: appearance,
+        loader: 'auto',              
       };
       const elements = stripe.elements(options);
       const paymentElement = elements.create('payment', options);
       paymentElement.mount('#payment-element');
       // Access the underlying input element and set autocomplete to "off"
+     
+      
+
+     
       const cardInput = document.getElementById('Field-numberInput');
       if (cardInput) {
+        cardInput.setAttribute('::placeholder', "Card number");
         cardInput.setAttribute('autocomplete', 'off');
       }
+
       const expiry = document.getElementById('Field-expiryInput');
       if (expiry) {
         expiry.setAttribute('autocomplete', 'off');
@@ -100,24 +137,34 @@ export class PaymentPage implements OnInit, AfterViewInit {
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         console.log('production ' + this.isProduction);
-        var url  =  'adults/subscription/free-trial';
+        var url  = `/${SharedService.getprogramName()}/subscription/free-trial`;
         if (localStorage.getItem('ispartnershipClick') == 'T') {
           localStorage.setItem('ispartnershipClick', 'F');
-          url =  '/adults/hwp-premium-congratulations';
+          url = `/${SharedService.getprogramName()}/hwp-premium-congratulations`;
         }
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: SharedService.ClientUrl + url
+            return_url: SharedService.ClientUrl + url,
+            payment_method_data: {             
+              billing_details: {
+                name: (<HTMLInputElement>document.getElementById('name')).value,
+                address: {
+                  postal_code: (<HTMLInputElement>document.getElementById('postal-code')).value,
+                }
+              }
+            }
+          
+          
           }
         });
 
         if (error) {
           const messageContainer = document.querySelector('#error-message');
           messageContainer.textContent = error.message;
-          this.router.navigateByUrl('/adults/subscription/payment-failed');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
         } else {
-          this.router.navigateByUrl('/adults/subscription/free-trial');
+          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
         }
       });
     }, 4000)

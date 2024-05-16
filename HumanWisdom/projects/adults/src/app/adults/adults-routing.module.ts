@@ -330,7 +330,7 @@ const routes: Routes = [
   },
   {
     path: 'site-search/:word',
-    loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
+    loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
   },
   {
     path: 'newsletter-subscribe',
@@ -560,7 +560,7 @@ const routes: Routes = [
   },
   {
     path: "onboarding",
-    loadChildren: () => import("../onboarding/onboarding.module").then(m => m.OnboardingModule)    
+    loadChildren: () => import("../onboarding/onboarding.module").then(m => m.OnboardingModule)
   },
   {
     path: "course/forum",
@@ -568,7 +568,7 @@ const routes: Routes = [
   },
   {
     path: "forum",
-    loadChildren: () => import("../forum/framework-v1.module").then(m => m.FrameworkV1Module)  
+    loadChildren: () => import("../forum/framework-v1.module").then(m => m.FrameworkV1Module)
   },
   {
     path: "course/coach",
@@ -576,7 +576,7 @@ const routes: Routes = [
   },
   {
     path: "coach",
-    loadChildren: () => import("./coach/coach.module").then(m => m.CoachModule)  
+    loadChildren: () => import("./coach/coach.module").then(m => m.CoachModule)
   },
   {
     path: "course/intro",
@@ -585,7 +585,7 @@ const routes: Routes = [
   {
     path: "intro",
     canActivate:[IntroGuard],
-    loadChildren: () => import("../introductory/introductory.module").then(m => m.IntroductoryModule)  
+    loadChildren: () => import("../introductory/introductory.module").then(m => m.IntroductoryModule)
   },
   {
     path: 'applications',
@@ -647,7 +647,7 @@ const routes: Routes = [
   },
   {
     path: 'blog-article',
-    // canActivate:[ActiveGuard],  
+    // canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
 ];

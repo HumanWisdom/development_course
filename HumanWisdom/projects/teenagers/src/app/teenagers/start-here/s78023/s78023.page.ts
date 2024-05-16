@@ -12,7 +12,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S78023Page implements OnInit {
   programType:ProgramType=ProgramType.Teenagers;
   toc="start-here/s78001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/27.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/79.webp"
   bg=""
   moduleLink="/what-is-wisdom/"
   moduleName="What is Wisdom?"

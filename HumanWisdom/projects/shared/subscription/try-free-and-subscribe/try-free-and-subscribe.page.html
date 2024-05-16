@@ -9,7 +9,7 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Subscribe
+        HappierMe Premium
       </h1>
     </div>
 
@@ -26,7 +26,7 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -183,10 +183,10 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw">
       <a>
         <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'No Trial'">
-          Try free and subscribe
+          Try for free
         </button>
         <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'ended'">
-          Proceed to subscribe
+          Proceed 
         </button>
         <button type="button" (click)="dashboard()" class="btn btn_tfas" *ngIf="trialStatus == 'underway'">
           Continue to dashboard

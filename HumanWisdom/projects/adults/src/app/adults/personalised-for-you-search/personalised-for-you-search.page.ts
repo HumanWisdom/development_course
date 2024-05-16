@@ -171,7 +171,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: 'end'
         }
-      }, 
+      },
        {
         element: ".tour_exercises",
         popover: {
@@ -186,7 +186,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       onNextClick: () => {
         localStorage.setItem('firstTimeSearchTour', 'T');
         this.tourIndex++;
-        if (this.tourIndex > this.tourTotalIndex) {
+        if (this.tourIndex >= this.tourTotalIndex) {
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
         }
@@ -1141,7 +1141,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
 
- 
+
   routeToFindAnswer(param) {
     localStorage.setItem('lastRoute', param);
     this.logeventservice.logEvent("click_find-answers-" + param);

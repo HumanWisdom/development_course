@@ -192,7 +192,7 @@ export class AdultsService {
   }
 
   verifytoken(encrypt) {
-    return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}`)
+  return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
   }
 
   verifyactkey(data): Observable<any> {
@@ -250,7 +250,7 @@ export class AdultsService {
 
 
   getSearchDataForSearchSite(data): Observable<any> {
-    return this.http.post(this.path + `/SiteSearch/${data}`, {})
+    return this.http.post(this.path + `/SiteSearch/${data}${SharedService.ProgramId}`, {})
   }
   getForumSearchDataSite(data): Observable<any> {
     return this.http.get(this.path + `/GetAllPosts/${data}`);

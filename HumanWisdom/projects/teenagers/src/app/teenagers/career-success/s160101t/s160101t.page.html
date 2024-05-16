@@ -1,0 +1,39 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+            The art of having successful relationships is probably one of the most important skills to learn in life, but it is never taught to us in school.
+
+
+         </p>
+         <p>
+            Not only does your long term happiness depend on the success of your relationships - with friends, and family, but this will help you flourish at work.
+
+         </p>
+         <p>
+            In school you can pick your friends who are like you and you feel comfortable with them. At work you are going to have to build healthy working relationships with people who may look different, think differently, have different opinions and beliefs and who may not like you. Its good to start early.
+
+
+         </p>
+         <p>
+            When you meet people, rather than focus on your differences, try to find things you may have in common. You are after all the same human being.
+
+         </p>
+         <p>
+            You will also need to learn how to avoid conflict and manage it better when it occurs.
+         </p>
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

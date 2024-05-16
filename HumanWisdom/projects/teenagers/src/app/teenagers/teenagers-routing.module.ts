@@ -9,7 +9,7 @@ import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/b
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
     },
     {
         path: 'change-topic',
@@ -41,7 +41,7 @@ const routes: Routes = [
     },
     {
         path: 'teenager-dashboard',
-        loadChildren: () => import('../teenagers/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
     },
     {
         path: 'benefits-of-enquiry',
@@ -255,6 +255,10 @@ const routes: Routes = [
         loadChildren: () => import('../teenagers/pressure-of-exams/pressure-of-exams.module').then(m => m.PressureOfExamsModule)
     },
     {
+        path: 'career-success',
+        loadChildren: () => import('../teenagers/career-success/career-success.module').then(m => m.CareerSuccessModule)
+    },
+    {
         path: 'dealing-with-depression',
         loadChildren: () => import('../teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
     },
@@ -373,7 +377,7 @@ const routes: Routes = [
    {
 
     path: 'blog-article',
-    // canActivate:[ActiveGuard],  
+    // canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
   {
@@ -389,10 +393,13 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
   },
   {
+    path: 'site-search/:word',
+    loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
+  },
+  {
     path: 'subscription',
     loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
-  },
-
+  }
 ];
 
 

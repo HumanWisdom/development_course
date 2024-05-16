@@ -152,43 +152,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.personalisedforyou.push(r);
       }
     })
-
-
-
-    //  /*  this.aservice.getUserpreference().subscribe((res) => {
-    //     let perd = this.aservice.getperList();
-    //    // let perd = []
-    //     this.personalisedforyou = []
-    //     this.indList = []
-    //     if (res && res !== "") {
-    //       let arr = res.split('').filter((d) => d !== ',');
-    //       arr.forEach((d) => {
-    //         perd.forEach((r) => {
-    //           if (d === r['id']) {
-    //             r['active'] = true;
-    //             this.personalisedforyou.push(r);
-    //           }
-    //         })
-    //       })
-    //       perd.forEach((r) => {
-    //         let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
-    //         if (!find) {
-    //           r['active'] = false;
-    //           this.personalisedforyou.push(r);
-    //         }
-    //       })
-    //       this.personalisedforyou.forEach((d) => {
-    //         if (d['active']) {
-    //           this.indList.push(d['id'])
-    //         }
-    //       })
-    //     } else {
-    //       perd.forEach((r) => {
-    //         r['active'] = false;
-    //         this.personalisedforyou.push(r);
-    //       })
-    //     }
-    //   }) */
   }
 
   getinp(event) {

@@ -88,6 +88,7 @@ jobs:
           sudo rm -rf /var/www/html/adults
           sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/adults          
           sudo chown ubuntu:ubuntu /var/www/html/adults 
+          sudo rm -rf /var/www/html/getStarted/*
           sudo mv /var/www/html/adults/getStarted /var/www/html/
           sudo chown ubuntu:ubuntu /var/www/html/getStarted
   

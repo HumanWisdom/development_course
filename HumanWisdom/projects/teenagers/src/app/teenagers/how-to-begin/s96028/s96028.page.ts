@@ -14,7 +14,7 @@ export class S96028Page implements OnInit
 {
   
   toc="teenagers/how-to-begin/s96001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/37.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp"
   bg=""
   moduleLink="/three-steps-enquiry/s97001"
   moduleName=" Three Steps to Enquiry"
@@ -24,20 +24,20 @@ export class S96028Page implements OnInit
   moduleList: any = [
     {
       name: 'Begin your journey',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/36.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/96.webp',
       link: '/how-to-begin',
       id: 96
     },
     {
       name: 'Three Steps to Enquiry',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/37.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp',
       link: '/three-steps-enquiry',
       id: 97
  
     },
     {
       name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp',
       link: '/insight',
       id: 99
   

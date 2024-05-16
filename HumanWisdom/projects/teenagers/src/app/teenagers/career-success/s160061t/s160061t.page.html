@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The need for external approval is powerful in all of us and can influence our choice of career.
+          When asked what they want from their life many say they want to make their parents feel proud of them. When we are children we are praised for every little thing we do - when we take our first step, take part in the school play, get good grades in school, and so on. It is natural then for us to want to please our loved ones in the career choices we make. There is nothing wrong in this, but what happens if what we want for ourselves is different to what our parents want for us? How can we manage the conflict that follows? There is no right answer but the best way is for everyone involved to listen to each other with care, and carefully consider what the other is saying?
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

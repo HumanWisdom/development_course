@@ -33,7 +33,7 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                 <img
-                  src="{{imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
+                  [src]="imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url)"
                   alt="" class="img-responsive border_profile_img" />
               </div>
             </div>
@@ -44,7 +44,7 @@
                     Change Photo
                   </h4> -->
                 <label for="files"class="mt0px fs_15px fw_600 lh_150p fc_e58d82">Change Photo</label>
-                <input id="files"  (click)="clickEventForProfile()"  style="visibility:hidden;" (change)="getFileUpload($event)" type="file">
+                <input id="files"  (click)="clickEventForProfile()"  style="visibility:hidden;"  (change)="getFileUpload($event)"  type="file">
               </div>
             </div>
             
@@ -57,7 +57,7 @@
                     </select>
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <input type="text" id="name" class="sp_fc active" placeholder="Full Name" [(ngModel)]="fullname">
+                    <input type="text" id="name" class="sp_fc active" #myText placeholder="Full Name" [(ngModel)]="fullname">
                   </div>
                 </div>
               </div>
@@ -167,7 +167,23 @@
                 </button>
               </div>
             </div>
+            <!-- <div *ngIf="isShow"> 
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h6 class="mtb0px fw_700 fs_12px lh_14px fc_ffffff">
+                    string  : {{objString}}
+                  </h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h6 class="mtb0px fw_700 fs_12px lh_14px fc_ffffff">
+                    byteArray : {{ byteArray}}
+                  </h6>
+                </div>
+              </div>
 
+            </div> -->
             <div class="pagebreak"></div>
 
           </div>
@@ -175,7 +191,8 @@
       </div>
     </div>
   </div>
-  <!--/Class -->
+
+
 </div>
 <!-- /page content -->
 

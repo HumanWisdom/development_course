@@ -130,7 +130,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
-      let url = `/journal${item.Landing_URL}`;
+      let url = `/adults/journal${item.Landing_URL}`;
       this.router.navigate([url], { state: { "isBypass": true } });
     }
 
@@ -177,7 +177,7 @@ export class IndexPage implements OnInit, AfterViewInit {
       );
   }
   NavigateToQuestions(data) {
-    this.router.navigate(["/guidedquestions"], {
+    this.router.navigate(["/adults/guidedquestions"], {
       queryParams: { Qid: data.ProgId, Attempt: data.UserReflectionID },
     });
   }
@@ -322,7 +322,7 @@ export class IndexPage implements OnInit, AfterViewInit {
         this.getDailyQuestion();
     }else{
       SharedService.isFromAdults =  false;
-         this.router.navigate(['adults/adult-dashboard']);
+         this.router.navigate(['/adults/adult-dashboard']);
     }
 
   }
@@ -331,10 +331,10 @@ export class IndexPage implements OnInit, AfterViewInit {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(['/subscription/start-your-free-trial']);
+        this.router.navigate(['/adults/subscription/start-your-free-trial']);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/adults/onboarding/login"]);
       }
     }
   }

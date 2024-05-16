@@ -303,7 +303,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   viewDetails() {
-    this.router.navigate(["/onboarding/user-profile"]);
+    this.router.navigate(["/adults/onboarding/user-profile"]);
   }
 
   loginpage() {
@@ -4241,7 +4241,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Habits and Addiction') {
       this.logeventservice.logEvent('click_be_happier');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    } else if (name === 'Deal with  loss') {
+    } else if (name === 'Deal with loss') {
       this.logeventservice.logEvent('click_sorrow_loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     } else if (name === 'Meditation') {
@@ -4328,7 +4328,7 @@ export class AdultDashboardPage implements OnInit {
       }
     })
   }
-
+ro
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);

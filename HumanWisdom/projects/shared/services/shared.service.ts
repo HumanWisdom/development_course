@@ -1,84 +1,88 @@
 
-  import { Platform } from '@angular/cdk/platform';
-import {ProgramType} from './../models/program-model';
+import { Platform } from '@angular/cdk/platform';
+import { ProgramType } from './../models/program-model';
 import { Constant } from './constant';
 
-   export class  SharedService {
-    public static ProgramId:any=ProgramType.Adults;
-    public static TeenagerBaseUrl:string='https://happierme.app/';
-    public static AdultsBaseUrl:string='https://happierme.app/';
-    public static UrlToRedirect:string= null;
-    public static ClientUrl:string = 'https://staging.happierme.app/adults/';
-    public static enablebanner = false;
-    public static isIos = false;
-    public static isFromAdults = false;
+export class SharedService {
+  public static ProgramId: any = ProgramType.Adults;
+  public static TeenagerBaseUrl: string = 'https://happierme.app/';
+  public static AdultsBaseUrl: string = 'https://happierme.app/';
+  public static UrlToRedirect: string = null;
+  public static ClientUrl: string = 'https://staging.happierme.app/adults/';
+  public static enablebanner = false;
+  public static isIos = false;
+  public static isFromAdults = false;
+  
   constructor() {
   }
 
-  public static setDataInLocalStorage(key:string,value:string){
-    if(key && key !=null){
-      localStorage.setItem(key,value);
+
+   
+
+  public static setDataInLocalStorage(key: string, value: string) {
+    if (key && key != null) {
+      localStorage.setItem(key, value);
     }
   }
 
-  public static getDataFromLocalStorage(key:string) : string{
-     if(key && key!=null ){
+  public static getDataFromLocalStorage(key: string): string {
+    if (key && key != null) {
       return localStorage.getItem(key);
-     }
-     return  null;
+    }
+    return null;
   }
 
-  public static setDataInSessionStorage(key:string,value:string){
-    if(key && key !=null){
-      sessionStorage.setItem(key,value);
+  public static setDataInSessionStorage(key: string, value: string) {
+    if (key && key != null) {
+      sessionStorage.setItem(key, value);
     }
   }
 
-  public static getDataFromSessionStorage(key:string) : string{
-    if(key && key!=null){
-     return sessionStorage.getItem(key);
+  public static getDataFromSessionStorage(key: string): string {
+    if (key && key != null) {
+      return sessionStorage.getItem(key);
     }
-    return  null;
- }
+    return null;
+  }
 
-  public static isSubscriber() :boolean {
+  public static isSubscriber(): boolean {
     return this.getDataFromLocalStorage(Constant.subscriber) == Constant.One.toString();
   }
 
-  public static getUserId(){
-    let userId= this.getDataFromLocalStorage(Constant.userId);
-    if(userId && userId!=null){
+  public static getUserId() {
+    let userId = this.getDataFromLocalStorage(Constant.userId);
+    if (userId && userId != null) {
       return parseInt(userId);
     }
     return 0
   }
 
-  public static GetExerciseClassName(day,currentDay,vistedScreens,nextDay){
+  public static GetExerciseClassName(day, currentDay, vistedScreens, nextDay) {
     var dayclass = "";
     var className = "";
     if (day.includes("p0")) {
       dayclass = "0";
     } else if (day.includes("p1")) {
       dayclass = "1";
-    } else if(day.includes("p2")) {
+    } else if (day.includes("p2")) {
       dayclass = "2";
-    } else if(day.includes("p3")) {
+    } else if (day.includes("p3")) {
       dayclass = "3";
-    } else if(day.includes("p4")) {
+    } else if (day.includes("p4")) {
       dayclass = "4";
-    } else if(day.includes("p5")) {
+    } else if (day.includes("p5")) {
       dayclass = "5";
-    } else if(day.includes("p6")) {
+    } else if (day.includes("p6")) {
       dayclass = "6";
-    } else if(day.includes("p7")) {
+    } else if (day.includes("p7")) {
       dayclass = "7";
-    } else if(day.includes("p8")) {
+    } else if (day.includes("p8")) {
       dayclass = "8";
-    } else if(day.includes("p9")) {
+    } else if (day.includes("p9")) {
       dayclass = "9";
-    } else if(day.includes("p10")) {
+    } else if (day.includes("p10")) {
       dayclass = "10";
-    } else if(day.includes("p11")) {
+    } else if (day.includes("p11")) {
       dayclass = "11";
     }
 
@@ -97,25 +101,25 @@ import { Constant } from './constant';
     return className;
   }
 
-  public static DisabledComment(item){
-    return (parseInt(item.TagIds)==5 || item.TagName == 'Ask a coach') && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
+  public static DisabledComment(item) {
+    return (parseInt(item.TagIds) == 5 || item.TagName == 'Ask a coach') && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
   }
 
-  public static initializeIosCheck(platform:Platform){
-   if(platform.IOS || platform.SAFARI || this.iOS()){
-       return true;
-   }
-   return false;
+  public static initializeIosCheck(platform: Platform) {
+    if (platform.IOS || platform.SAFARI || this.iOS()) {
+      return true;
+    }
+    return false;
   }
 
- public static formatToDecimal(value) {
+  public static formatToDecimal(value) {
     if (Number.isInteger(value)) {
       return `${value}.00`;
     }
     return value.toFixed(2);
   }
 
-   private static iOS() {
+  private static iOS() {
     return [
       'iPad Simulator',
       'iPhone Simulator',
@@ -124,14 +128,63 @@ import { Constant } from './constant';
       'iPhone',
       'iPod'
     ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
 
-  public static setProgramId(value:string){
+  public static setProgramId(value: string) {
     this.ProgramId = value;
   }
 
+  public static getprogramName() {
+    switch (this.ProgramId) {
+      case ProgramType.Adults:
+        return 'adults';
+      case ProgramType.Teenagers:
+        return 'teenagers';
+      case ProgramType.Young_Adults:
+        return 'youngadults';
+      default:
+        return 'adults';
+    }
+  }
 
+  public static getDashboardUrls(){
+    switch (this.ProgramId) {
+      case ProgramType.Adults:
+        return '/adults/adult-dashboard';
+      case ProgramType.Teenagers:
+        return '/teenagers/teenager-dashboard';
+      case ProgramType.Young_Adults:
+        return '/teenagers/teenager-dashboard';
+      default:
+        return '/adults/adult-dashboard';
+    }
+  }
+
+  public static getUrlfromFeatureName(name:UrlConstant){
+    switch (this.ProgramId) {
+      case ProgramType.Adults:
+        return `/adults/${name}`;
+      case ProgramType.Teenagers:
+        return `/teenagers/${name}`;
+      case ProgramType.Young_Adults:
+        return '/adults/journal';
+      default:
+        return `/adults/${name}`;
+    }
+  }
+
+}
+
+export class UrlConstant {
+ public static journal="journal";
+ public static search='search';
+ public static login='onboarding/login';
+ public static userProfile='onboarding/user-profile';
+ public static forum ='forum';
+ public static sitesearch='site-search';
+ public static notification ='notification';
+ public static startFreeTrial ='/subscription/start-your-free-trial';
 }
