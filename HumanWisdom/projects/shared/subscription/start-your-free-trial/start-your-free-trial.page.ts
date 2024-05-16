@@ -53,7 +53,9 @@ constructor(private router: Router,private location: Location, private servive: 
 
       if(url==null){
         this.router.navigateByUrl(SharedService.getDashboardUrls());
-      }   
+      }  
+      else
+      this.router.navigateByUrl(url);
     }
   }
 
