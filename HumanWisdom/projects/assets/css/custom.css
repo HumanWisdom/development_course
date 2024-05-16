@@ -34537,8 +34537,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .btn_ms 
 {
-  height: 40px;
-  width: 148px;
+  /* height: 40px;
+  width: 148px; */
+  min-height: 40px;
+  min-width: 128px;
+  /* width: 100%; */
   margin: 0;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -34548,6 +34551,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-weight: 600;
   line-height: 150%;
   color: #FFF;
+  white-space: pre-line;
 }
 
 .panel-body .ms_program 
