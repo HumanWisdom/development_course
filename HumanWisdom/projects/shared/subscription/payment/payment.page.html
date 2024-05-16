@@ -85,7 +85,7 @@
                   <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
                     Total due today
                     <span class="fs_16px fw_700 lh_140p fc_ffffff">
-                      {{pricingModel.CurSymbol}}0.00
+                      {{pricingModel.CurSymbol}}0.00 {{getIsoCode()}}
                     </span>
                   </h4>
                 </div>
@@ -96,7 +96,7 @@
                   <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
                     Payable on {{selectedPlanModel.startingDate}}
                     <span class="fs_16px fw_700 lh_140p fc_ffffff">
-                      {{pricingModel.CurSymbol}}{{GetAmount()}}
+                      {{pricingModel.CurSymbol}}{{GetAmount()}}{{getIsoCode()}}
                     </span>
                   </h4>
                 </div>
