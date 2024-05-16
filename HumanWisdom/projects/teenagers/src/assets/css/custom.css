@@ -29488,6 +29488,11 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   padding: 12rem 0 0 0 !important;
 }
 
+.cpt_rem_01
+{
+  padding: 14rem 0 0 0 !important;
+}
+
 .cp20px
 {
   padding: 0 0 0 0;
@@ -35633,7 +35638,7 @@ li ol > li:before {
 
 .img_logo
 {
-  max-width: 150px;
+  max-width: 125px;
 }
 
 .img_parent 
@@ -36474,5 +36479,24 @@ a.fc_e58d82:hover
   border-radius: 12px;
   background: #0C2B5F;
   padding: 15px 20px;
+}
+
+.bell_badge
+{
+  color: #FFF;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 150%;
+  position: absolute;
+  right: 2px;
+  margin: 0 auto;
+  background: #E58D82;
+  padding: 10px;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* /version - 03 */
