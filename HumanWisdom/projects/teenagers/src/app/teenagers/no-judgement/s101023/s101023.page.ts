@@ -30,10 +30,10 @@ export class S101023Page implements OnInit {
       id: 99
     },
     {
-      name: 'KeyIdeas',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/83.webp',
-      link: '/keyideas',
-      id: 83
+      name: 'Awareness',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
+      link: '/awareness',
+      id: 100
     },
   ]
   

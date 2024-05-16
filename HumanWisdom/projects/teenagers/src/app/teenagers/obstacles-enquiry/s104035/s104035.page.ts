@@ -11,13 +11,13 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S104035Page implements OnInit {
   
   toc="obstacles-enquiry/s43000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/104.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp"
   programType : ProgramType = ProgramType.Teenagers;
   bg=""
-  moduleLink="/obstacles-enquiry/s104002"
-  moduleName="Obstacles Enquiry"
+  moduleLink="/conditioning/s105002"
+  moduleName="Conditioning"
   sectionName= "Art of Enquiry";
-  moduleId=104
+  moduleId=105
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
@@ -32,10 +32,10 @@ export class S104035Page implements OnInit {
       id: 101
     },
     {
-      name: 'Key Ideas',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/83.webp',
-      link: '/key-ideas',
-      id: 83
+      name: 'Awareness',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
+      link: '/awareness',
+      id: 100
     },
   ]
 

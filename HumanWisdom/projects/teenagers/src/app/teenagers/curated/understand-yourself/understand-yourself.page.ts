@@ -573,6 +573,7 @@ export class UnderstandYourselfPage implements OnInit {
     this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
+
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {
