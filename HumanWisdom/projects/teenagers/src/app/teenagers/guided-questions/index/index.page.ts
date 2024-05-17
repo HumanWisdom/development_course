@@ -68,7 +68,7 @@ export class IndexPage implements OnInit, AfterViewInit {
         this.enableAlert = true;
       } else {
         this.router.navigate([
-          "/adults/note",
+          "/teenagers/note",
           { title: jTitle, jId: jId, jNotes: jNotes, type: type },
         ]);
       }
@@ -77,7 +77,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     return false;
   }
   note() {
-    this.router.navigate(["/adults/note"]);
+    this.router.navigate(["/teenagers/note"]);
   }
 
   ngAfterViewInit() {

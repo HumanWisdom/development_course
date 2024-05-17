@@ -88,7 +88,7 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
-    this.location.back();
+    this.router.navigate([url]);
   }
 
   toRead(obj) {

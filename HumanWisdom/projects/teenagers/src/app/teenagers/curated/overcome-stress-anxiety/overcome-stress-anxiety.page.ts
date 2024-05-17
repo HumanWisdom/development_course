@@ -207,15 +207,16 @@ export class OvercomeStressAnxietyPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
-    this.location.back();
   }
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
     }else{
     this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
