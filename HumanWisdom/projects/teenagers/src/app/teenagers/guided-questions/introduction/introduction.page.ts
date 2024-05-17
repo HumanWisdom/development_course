@@ -14,7 +14,7 @@ export class IntroductionPage implements OnInit {
   private currentUrl:string='';
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
-    private location:Location, private service:TeenagersService,navigationService:NavigationService ) {
+    private location:Location, private service:TeenagersService,public navigationService:NavigationService ) {
       let url = this.route.snapshot.paramMap.get('TopicName');
       this.GetGuidedQs_Topics(url);
   }
