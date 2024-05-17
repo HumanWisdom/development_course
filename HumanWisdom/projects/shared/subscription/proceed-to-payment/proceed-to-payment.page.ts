@@ -87,6 +87,7 @@ export class ProceedToPaymentPage implements OnInit {
       SharedService.setDataInLocalStorage(Constant.isFromCancelled, '');
       localStorage.setItem('totalAmount', this.totalCartValueDiscount);
       SharedService.setDataInLocalStorage("Currsymbol", this.pricingModel.CurSymbol);
+      SharedService.setDataInLocalStorage("ISOCode", this.pricingModel.ISOCode);
       SharedService.setDataInLocalStorage(Constant.Checkout, 'T')
       if (this.onboardingService.navigateToUpgradeToPremium) {
         localStorage.setItem('ispartnershipClick', 'T');
@@ -192,5 +193,12 @@ export class ProceedToPaymentPage implements OnInit {
         }, 3000)
       }
     )
+  }
+
+  getIsoCode(){
+    if(this.pricingModel.CurSymbol == '$'){
+      return ` (${this.pricingModel.ISOCode})`;
+    }
+    return '';
   }
 }

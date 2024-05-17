@@ -187,4 +187,11 @@ export class PaymentPage implements OnInit, AfterViewInit {
       return this.pricingModel.Annual 
     }
   }
+  getIsoCode(){
+    if(this.pricingModel.CurSymbol == '$'){
+      return ` (${this.pricingModel.ISOCode})`;
+    }
+    return '';
+  }
+
 }
