@@ -30,10 +30,10 @@ export class S101023Page implements OnInit {
       id: 99
     },
     {
-      name: 'Awareness',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
-      link: '/awareness',
-      id: 100
+      name: 'Obstacles To Enquiry',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/104.webp',
+      link: '/obstacles-enquiry',
+      id: 104
     },
   ]
   

@@ -21,9 +21,9 @@ export class S99021Page implements OnInit {
   moduleId=100
   moduleList: any = [
     {
-      name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
-      link: '/conditioning',
+      name: 'Awareness',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
+      link: '/awareness',
       id: 105
     },
     {

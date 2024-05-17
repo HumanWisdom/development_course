@@ -23,7 +23,7 @@ export class S141112Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/142.webp"
   
   bg=""
-  moduleLink="/adults/making-better-decisions"
+  moduleLink="/teenagers/making-better-decisions"
   moduleName=" Making better decisions"
   sectionName= "Transform your life - I";
   moduleId=142
@@ -44,10 +44,10 @@ export class S141112Page implements OnInit {
  
     },
     {
-      name: 'Identity',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp',
-      link: '/identity',
-      id: 119
+      name: 'Need For External approval',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp',
+      link: '/external-approval',
+      id: 123
     },
   ]
 

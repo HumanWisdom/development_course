@@ -20,10 +20,10 @@ export class S102022Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
-      name: 'Awareness',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
-      link: '/awareness',
-      id: 100
+      name: 'Three Steps to Enquiry',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp',
+      link: '/three-steps-enquiry',
+      id: 97
     },
     {
       name: 'The Nature of the ‘I’',

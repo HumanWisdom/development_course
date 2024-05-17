@@ -22,10 +22,10 @@ export class S133186Page implements OnInit {
   moduleId=134
   moduleList: any = [
     {
-      name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp',
-      link: '/insight',
-      id: 99
+      name: 'Love',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/134.webp',
+      link: '/love',
+      id: 134
     },
     {
       name: 'Pleasure',

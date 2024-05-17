@@ -38,7 +38,7 @@ export class S134214Page implements OnInit {
     },
     {
       name: 'Self Interest',
-      image: 'ttps://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/115.webp',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/115.webp',
       link: '/self-interest',
       id: 115
   
