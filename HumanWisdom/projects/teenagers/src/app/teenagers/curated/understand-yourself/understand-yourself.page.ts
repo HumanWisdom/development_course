@@ -119,8 +119,9 @@ export class UnderstandYourselfPage implements OnInit {
     if (url == null) {
       this.location.back();
     }
-    this.location.back();
+    this.router.navigate([url]);
   }
+
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }

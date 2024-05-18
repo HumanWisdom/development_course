@@ -45,7 +45,7 @@ export class ActiveGuard implements CanActivate, OnInit {
         if (res === true) {
           return true;
         } else {
-          this.router.navigate(['adults/subscription/start-your-free-trial']);
+          this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           return false;
         }
       })
@@ -54,7 +54,7 @@ export class ActiveGuard implements CanActivate, OnInit {
           if(loggedin === 'T') {
             return true;
           }else {
-            this.router.navigate(['adults/subscription/start-your-free-trial']);
+            this.router.navigate(['teenagers/subscription/start-your-free-trial']);
             return false;
           }
       }else {
@@ -66,7 +66,7 @@ export class ActiveGuard implements CanActivate, OnInit {
             if(loggedin && loggedin === 'T' && sub && sub === '1') {
               return true;
             }else {
-              this.router.navigate(['adults/subscription/start-your-free-trial']);
+              this.router.navigate(['teenagers/subscription/start-your-free-trial']);
               return false;
             }
           }
@@ -76,7 +76,7 @@ export class ActiveGuard implements CanActivate, OnInit {
       (!loggedin || loggedin !== 'T' ? freeScreens.includes(this.scrId.replace('t', '').toString()) : freeScreens.includes(parseInt(this.scrId.replace('t', ''))) )) {
       return true;
     } else {
-      this.router.navigate(['adults/subscription/start-your-free-trial']);
+      this.router.navigate(['teenagers/subscription/start-your-free-trial']);
       return false
     }
   }
