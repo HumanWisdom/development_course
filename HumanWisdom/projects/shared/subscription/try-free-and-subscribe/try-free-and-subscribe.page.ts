@@ -76,7 +76,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     this.userId = SharedService.getDataFromLocalStorage('userId') != null ? parseInt(SharedService.getDataFromLocalStorage('userId')) : 0;
     this.pricingModel = {
       "RateID": '',
-      "ProgID": 0,
+      "ProgID": "",
       "Country": "",
       "CurSymbol": "",
       "Program": "",
@@ -230,5 +230,12 @@ export class TryFreeAndSubscribePage implements OnInit {
 
   terms(){
     this.router.navigateByUrl('/terms-and-conditions');
+  }
+
+  getIsoCode(){
+    if(this.pricingModel.CurSymbol == '$'){
+      return ` (${this.pricingModel.ISOCode})`;
+    }
+    return '';
   }
 }
