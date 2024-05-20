@@ -14,18 +14,18 @@ export class S119086Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/identity/s119001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/121.webp"
   bg=""
-  moduleLink="/emotional-needs"
-  moduleName=" Emotional Needs"
+  moduleLink="/inner-boredom"
+  moduleName=" Inner Boredom"
   sectionName= "How the Mind Works";
-  moduleId=120
+  moduleId=121
   moduleList: any = [
     {
-      name: 'No Judgemnet',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/101.webp',
-      link: '/no-judgement',
-      id: 101
+      name: 'Emotional Needs',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
+      link: '/emotional-needs',
+      id: 120
     },
     {
       name: 'Self Image',

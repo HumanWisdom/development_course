@@ -20,10 +20,10 @@ export class S41020Page implements OnInit {
   moduleId=42
   moduleList: any = [
     {
-      name: 'Key Ideas',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/34.png',
-      link: '/key-ideas',
-      id: 34
+      name: 'Three Steps To Enquiry',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/37.webp',
+      link: '/three-steps-enquiry',
+      id: 37
     },
     {
       name: 'The Nature of the ‘I’',
