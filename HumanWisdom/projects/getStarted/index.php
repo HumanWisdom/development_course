@@ -75,11 +75,11 @@
                 </ul>
               </li> -->
               <!-- <li><a href="#events">Partnership</a></li> -->
-              <li><a href="https://staging.happierme.app/adults/onboarding/login">Login</a></li>
+              <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
             </ul>
           </nav>
 
-          <a class="btn_tff" href="https://onelink.to/qsptex">Try for free</a>
+          <a class="btn_tff" href="https://happierme.app/adults/intro/intro-carousel">Try for free</a>
           <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
           <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         </div>
@@ -111,7 +111,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
-              <a href="https://onelink.to/qsptex">
+              <a href="https://happierme.app/adults/intro/intro-carousel">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                   Try HappierMe for free
                 </button>
@@ -164,7 +164,7 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://staging.happierme.app/adults/curated/overcome-stress-anxiety">
+                  <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -198,7 +198,7 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://staging.happierme.app/adults/curated/have-fulfilling-relationships">
+                  <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -232,7 +232,7 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://staging.happierme.app/adults/curated/wisdom-for-workplace">
+                  <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -1411,7 +1411,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://staging.happierme.app/adults/coach">
+                    <a class="sap" href="https://happierme.app/adults/coach">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all coaches
                       </h4>
@@ -1537,7 +1537,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://staging.happierme.app/adults/blogs">
+                    <a class="sap" href="https://happierme.app/adults/blogs">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>
@@ -1568,8 +1568,8 @@
           <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
 
             <ul class="nav nav-tabs flex_ai m0px tool_tabs">
-              <li>
-                <a data-toggle="tab" href="#fbn" class="active">
+              <li class="active">
+                <a data-toggle="tab" href="#fbn">
                   Feel better now
                 </a>
               </li>
@@ -1625,7 +1625,7 @@
                         No matter what the challenge you face, we have breathing exercises, mediations and videos to help you feel better now.
                       </h4>
 
-                      <a href="https://happierme.app/feel-better-now">
+                      <a href="https://happierme.app/adults/feel-better-now">
                         <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                           Explore on app
                         </h4>
@@ -1749,7 +1749,7 @@
                         Interact with other users and our coaches. Ask questions, share your answers, be part of the HappierMe community.
                       </h4>
 
-                      <a href="https://happierme.app/forum">
+                      <a href="https://happierme.app/adults/forum">
                         <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                           Explore on app
                         </h4>
