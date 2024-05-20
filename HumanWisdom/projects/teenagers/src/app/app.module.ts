@@ -1,7 +1,7 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeenagersService } from './teenagers/teenagers.service';
@@ -23,12 +23,18 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
 import { StripeModule } from "stripe-angular";
+import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-index.page';
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    BlogIndexPage
+],
+    exports:[
+        BlogIndexPage,
+    ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
