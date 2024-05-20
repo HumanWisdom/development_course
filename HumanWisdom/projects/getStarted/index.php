@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Happier Me</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta property="title" content="">
+    <meta property="description" content="Discover how to reduce suffering & build a better world at Happier Me. Find wisdom through self-understanding, & live a more fulfilling life.">
+    <meta property="keyword" content="">
 
     <!-- Favicons -->
     <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -42,7 +43,49 @@
   <body>
 
     <!-- header -->
-    <?php include('reusable/header.php'); ?>
+    <div class="row header_fixed">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
+          <a class="" href="https://happierme.app/index.php">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive">
+          </a>
+        </div>
+
+        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
+          <nav id="navbar" class="navbar m0pxi">
+            <ul>
+              <!-- <li><a href="#about">About us</a></li> -->
+              <li><a href="blogs/blog_index.php">Blog</a></li>
+              <!-- <li class="dropdown"><a href="#"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li> -->
+              <!-- <li><a href="#events">Partnership</a></li> -->
+              <li><a href="https://staging.happierme.app/adults/onboarding/login">Login</a></li>
+            </ul>
+          </nav>
+
+          <a class="btn_tff" href="https://onelink.to/qsptex">Try for free</a>
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+
+      </div>
+    </div>
     <!-- /header -->
 
     <section class="hpt120px">
@@ -1370,7 +1413,7 @@
                   <div class="owl-nav">
                     <a class="sap" href="https://staging.happierme.app/adults/coach">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        See all posts
+                        View all coaches
                       </h4>
                     </a>
                   </div>
@@ -1496,7 +1539,7 @@
                   <div class="owl-nav">
                     <a class="sap" href="https://staging.happierme.app/adults/blogs">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        See all posts
+                        View all blogs
                       </h4>
                     </a>
                   </div>
@@ -1582,9 +1625,11 @@
                         No matter what the challenge you face, we have breathing exercises, mediations and videos to help you feel better now.
                       </h4>
 
-                      <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        Explore on app
-                      </h4>
+                      <a href="https://happierme.app/feel-better-now">
+                        <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                          Explore on app
+                        </h4>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1612,10 +1657,11 @@
 
                       </div>
 
-
-                      <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        Explore on app
-                      </h4>
+                      <a href="https://happierme.app/adults/pathway/">
+                        <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                          Explore on app
+                        </h4>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1639,9 +1685,11 @@
                         Journal your thoughts and feelings. Explore our guided questions to understand yourself, and find fresh ways of dealing with life’s challenges.
                       </h4>
 
-                      <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        Explore on app
-                      </h4>
+                      <a href="https://happierme.app/adults/journal">
+                        <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                          Explore on app
+                        </h4>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1673,9 +1721,11 @@
                         </div>
                       </div>
 
-                      <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        Explore on app
-                      </h4>
+                      <a href="https://happierme.app/adults/podcast">
+                        <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                          Explore on app
+                        </h4>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1699,9 +1749,11 @@
                         Interact with other users and our coaches. Ask questions, share your answers, be part of the HappierMe community.
                       </h4>
 
-                      <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        Explore on app
-                      </h4>
+                      <a href="https://happierme.app/forum">
+                        <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                          Explore on app
+                        </h4>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1727,9 +1779,11 @@
 
                       <div class="row mtb15px">
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p0">
-                          <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                            Check your happiness score
-                          </button>
+                          <a href="https://happierme.app/adults/wisdom-survey">
+                            <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                              Check your happiness score
+                            </button>
+                          </a>
                         </div>
                       </div>
                     </div>
