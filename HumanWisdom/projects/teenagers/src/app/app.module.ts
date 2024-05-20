@@ -24,13 +24,17 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
 import { StripeModule } from "stripe-angular";
 import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-index.page';
+import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    BlogIndexPage
+    BlogIndexPage,
+    BlogArticlePage,
 ],
     exports:[
         BlogIndexPage,
+        BlogArticlePage
     ],
   imports: [
     BrowserModule,
@@ -43,6 +47,7 @@ import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-i
     BrowserAnimationsModule,
     PlatformModule,
     SharedModule,
+    FormsModule,
     StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
@@ -55,6 +60,7 @@ import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-i
       useClass: TokenInterceptorService,
       multi: true
   },
+  FormsModule,
     TeenagersService,
     AdultsService,
     SharedService,

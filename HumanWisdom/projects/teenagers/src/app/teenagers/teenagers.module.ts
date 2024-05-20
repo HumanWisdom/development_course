@@ -17,6 +17,7 @@ import { SharedModule } from '../../../../shared/shared.module';
     ShareButtonsModule.withConfig({
         debug:true
        }),
+       SharedModule
   ],
   providers: [
     {
