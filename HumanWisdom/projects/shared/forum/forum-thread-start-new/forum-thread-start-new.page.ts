@@ -122,9 +122,9 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     //  this.objString = payload;
     const jsonObject = JSON.parse(payload);
     // Assume base64Image is the URL-encoded and Base64-encoded string
-    this.imageUrl= 'data:;base64,'+jsonObject.byteArray;
+    this.imageUrl= 'data:;base64,'+jsonObject.base64String;
     this.fileToUpload = '';
-    this.PostImgAndroid = jsonObject.byteArray;
+    this.PostImgAndroid = jsonObject.base64String;
     setTimeout(() => {
       this.myTextarea.nativeElement.focus();
     }, 1000);
@@ -136,7 +136,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   clickEventForProfile() {
-    const customEvent = new CustomEvent('profileEditClicked');
+    const customEvent = new CustomEvent('ImageEditClicked');
     window.dispatchEvent(customEvent);
   }
 

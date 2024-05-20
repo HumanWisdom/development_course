@@ -36,7 +36,7 @@ export class SubscriptionPaymentPage implements OnInit {
   enableAlert = false;
   content = '';
   symbol: any
-
+  isoCode:any;
   constructor(private service: OnboardingService,
     private location:Location,
     public logeventservice: LogEventService,
@@ -44,6 +44,7 @@ export class SubscriptionPaymentPage implements OnInit {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount');
     this.symbol = localStorage.getItem('Currsymbol');
+    this.isoCode = localStorage.getItem('ISOCode');
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
@@ -342,6 +343,11 @@ export class SubscriptionPaymentPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
-
+  getIsoCode(){
+    if(this.symbol == '$'){
+      return ` (${this.isoCode})`;
+    }
+    return '';
+  }
 
 }

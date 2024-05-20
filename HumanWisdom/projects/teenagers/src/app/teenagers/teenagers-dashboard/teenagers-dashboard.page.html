@@ -4,7 +4,7 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col dmain_container p0_important pt6rem">
+<div class="right_col dmain_container p0_important" [ngClass]="[getEnableBanner() ? 'cpt_rem_01' : 'pt6rem']">
   <div class="cw100p">
     <div class="row center_flex safari_dflex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_183c79 col_cw">

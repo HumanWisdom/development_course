@@ -2183,6 +2183,7 @@ a
 {
   max-width: 100%;
   width: auto;
+  object-fit: cover;
 }
 
 .owl-carousel .owl-stage 
@@ -2772,7 +2773,7 @@ audio::-webkit-media-controls-enclosure
   margin-bottom: 20px;
 }
 
-.blog_highlight_white
+.blog_highlight_black
 {
   font-size: 18px;
   font-weight: 600;
