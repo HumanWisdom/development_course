@@ -28,11 +28,11 @@ export class DevelopACalmMindPage implements OnInit {
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
-      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 28)?.Percentage;
-      this.breathingP = d['ModUserScrPc'].find(e => e.ModuleId == 29)?.Percentage;
-      this.meditationP = d['ModUserScrPc'].find(e => e.ModuleId == 22)?.Percentage;
-      this.ntP = d['ModUserScrPc'].find(e => e.ModuleId == 30)?.Percentage;
-      this.gamP = d['ModUserScrPc'].find(e => e.ModuleId == 51)?.Percentage;
+      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 106)?.Percentage;
+      this.breathingP = d['ModUserScrPc'].find(e => e.ModuleId == 107)?.Percentage;
+      this.meditationP = d['ModUserScrPc'].find(e => e.ModuleId == 109)?.Percentage;
+      this.ntP = d['ModUserScrPc'].find(e => e.ModuleId == 108)?.Percentage;
+      this.gamP = d['ModUserScrPc'].find(e => e.ModuleId == 110)?.Percentage;
     });
     this.logeventservice.logEvent('view_develop_calm_mind');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
@@ -50,9 +50,9 @@ export class DevelopACalmMindPage implements OnInit {
 
   goBack() {
     this.logeventservice.logEvent('click_back');
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
+    // var url = this.navigationService.navigateToBackLink();
+    // if (url == null) {
       this.location.back();
-    }
+    // }
   }
 }

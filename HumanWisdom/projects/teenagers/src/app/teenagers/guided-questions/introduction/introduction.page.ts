@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { TeenagersService } from '../../teenagers.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-introduction',
@@ -12,32 +14,38 @@ export class IntroductionPage implements OnInit {
   private currentUrl:string='';
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
-    private location:Location) {
-      
+    private location:Location, private service:TeenagersService,public navigationService:NavigationService ) {
+      let url = this.route.snapshot.paramMap.get('TopicName');
+      this.GetGuidedQs_Topics(url);
   }
 
   ngOnInit() {
-  
   }
 
   goBack() {
-  if(this.isByPass==true){
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
-  }else{
-    this.location.back();
-  }
-    // this.router.navigate(['/adults/journal'])
+    if(this.isByPass==true){
+      this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
+    }else{
+      var url = this.navigationService.navigateToBackLink();
+      if(url == 'adults/search'){
+       this.location.back();
+      }
+      if(url == 'DONOROUTE'){
+        this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
+      }
+      this.router.navigate([url]);
+    }
   }
 
   NavigateToQuestions() {
     this.router.navigate(['/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
   }
 
-  // GetGuidedQs_Topics(url) {
-  //   this.service.GetGuidedQs_Topics().subscribe(res => {
-  //     if (res) {
-  //       this.data = res.filter(x => (x.Landing_URL) == '/' + url)[0];
-  //     }
-  //   });
-  // }
+  GetGuidedQs_Topics(url) {
+    this.service.GetGuidedQs_Topics().subscribe(res => {
+      if (res) {
+        this.data = res.filter(x => (x.Landing_URL) == '/' + url)[0];
+      }
+    });
+  }
 }

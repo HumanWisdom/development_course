@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          Our mind is usually defensive and we feel attacked when we are criticised - by our parents, teachers or our friends. We can feel hurt, get angry, withdraw or retaliate in some way.
+
+         </p>
+         <p>
+          To be successful in our relationships and at work we need to be able to listen to critical feedback with care, say thank you to the person offering it, reflect on it, and then make any changes that we may need to do. You can go further and tell your friends and the people you work that you are open to receiving it. This helps you improve. It can also help you to keep growing as a person and avoid making big mistakes in your life. 
+
+         </p>
+         <p>
+          Employers value staff who can receive critical feedback in a constructive and positive way.
+          Like all skills we want to learn it requires curiosity, perseverance and a mind that is open to learning.
+         
+         </p>
+        
+        
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

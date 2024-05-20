@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProgramType } from '../../models/program-model';
-import { SharedService } from '../../services/shared.service';
+import { SharedService, UrlConstant } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { Subscription } from 'rxjs';
 
@@ -48,7 +48,10 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
           this.userdetail = res[0];
           if(this.userdetail['UserImagePath'] !='')
           {
-            this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+            // this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+            this.url = this.userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+
+          
           }
           this.profile = true;
         });
@@ -57,25 +60,25 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
       }
     }
 
-    if (this.router.url == "/adults/search"
-      || this.router.url.includes('/adults/site-search/') ||
-      this.router.url.includes('/adults/search')) {
+    if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
+      || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
+      this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))){
       this.dash = false
       this.journal = false
       this.fourm = false;
       this.search = true;
       this.enableprofile = false;
     }
-    if (this.router.url == "/adults/adult-dashboard") {
+    if (this.router.url == SharedService.getDashboardUrls()) {
       this.dash = true;
       this.journal = false;
       this.search = false;
       this.fourm = false;
       this.enableprofile = false;
     }
-    if ((this.router.url == "/adults/journal") ||
+    if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
       this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
-      (this.router.url.indexOf('/adults/note') > -1)) {
+      (this.router.url.indexOf(`/${SharedService.getprogramName()}/note`) > -1)) {
       this.dash = false
       this.journal = true;
       this.search = false;
@@ -90,7 +93,7 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
       this.enableprofile = false;
       this.journal = false;
     }
-    if (this.router.url == "/onboarding/user-profile"
+    if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
       || this.router.url.includes('/profile-edit')) {
       this.dash = false
       this.journal = false
@@ -106,44 +109,27 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
   }
 
   routeDash() {
-    if(ProgramType.Teenagers==this.programType ||
-      SharedService.ProgramId == ProgramType.Teenagers){
-      this.router.navigate(['/teenager-dashboard/']);
-    }else{
-      this.router.navigate(['/adults/adult-dashboard'])
-    }
-    //this.logeventservice.logEvent('click_home')
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 
   routeJournal() {
-    if(ProgramType.Teenagers==this.programType ||
-      SharedService.ProgramId == ProgramType.Teenagers){
-      this.router.navigate(['/journal/']);
-    }else{
-      this.router.navigate(['/adults/journal']);
-    }
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.journal)]);
   }
 
 
   routeSearch() {
-    if(ProgramType.Teenagers==this.programType ||
-      SharedService.ProgramId == ProgramType.Teenagers){
-      this.router.navigate(['/search/']);
-    }else{
-      this.router.navigate(['/adults/search']);
-    }
-    //this.logeventservice.logEvent('click_for_you')
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
   }
   profileclickevent() {
 
     if (localStorage.getItem('isloggedin') === 'T') {
       //this.logeventservice.logEvent('click_profile')
-      this.router.navigate(['/onboarding/user-profile'])
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.userProfile)]);
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
       //this.logeventservice.logEvent('click_login')
       localStorage.setItem('btnclick', 'T')
-      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.login)]);
       // }
 
     }
@@ -151,7 +137,7 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
 
   routeForum() {
     // if(localStorage.getItem('isloggedin') === 'T')
-    this.router.navigate(['/forum'],{ state: { programType: this.programType } })
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.forum)],{ state: { programType: this.programType } })
   }
 
   saveQuestionButton() {

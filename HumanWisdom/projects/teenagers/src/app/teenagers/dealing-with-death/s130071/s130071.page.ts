@@ -13,7 +13,7 @@ export class S130071Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="self-esteem/s130001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/47.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp"
  
   bg=""
   moduleLink="/relationships"
@@ -23,21 +23,21 @@ export class S130071Page implements OnInit
   moduleList: any = [
     {
       name: 'Sorrow and Loss',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/60.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/116.webp',
       link: '/sorrow',
       id: 116
 
     },
     {
       name: ' Podcasts ',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/key_features/08.svg',
-      link: '/podcast/sorrow',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/17.webp',
+      link: '/audiopage/~podcasts~17.mp3/17/T/Sorrow-and-loss',
       id: 0
  
     },
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/107.webp',
       link: '/breathing',
       id: 107
     },

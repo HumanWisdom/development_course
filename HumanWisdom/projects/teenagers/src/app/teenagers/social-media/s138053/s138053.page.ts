@@ -15,7 +15,7 @@ export class S138053Page implements OnInit
   bg_cft=""
   bg=""
   hint = ""
-  toc = "/social-media/s138001"
+  toc = "teenagers/social-media/s138001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S138053Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/social-media/s138054'])
+        this.router.navigate(['/teenagers/social-media/s138054'])
 
       },
       () => {
-        this.router.navigate(['/social-media/s138054'])
+        this.router.navigate(['/teenagers/social-media/s138054'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/social-media/s138052'])
+    this.router.navigate(['/teenagers/social-media/s138052'])
   }
 
   ngOnDestroy() 

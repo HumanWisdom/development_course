@@ -7,9 +7,9 @@ import {
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService } from '../../../shared/services/shared.service';
+import { SharedService,UrlConstant } from '../../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
-
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-tn-dashboard-v03',
   templateUrl: './tn-dashboard-v03.component.html',
@@ -177,11 +177,11 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.login)])
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.login)]);
   }
 
   giftwisdom() {
@@ -196,7 +196,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
 
   Subscribe() {
     if(!(this.platform.IOS || this.platform.SAFARI)){
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.startFreeTrial)]);
     }
   }
 
@@ -212,11 +212,11 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     }
   }
   goToNotification() {
-    this.router.navigate(['adults/notification']);
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.notification)]);
   }
 
   routedashboard() {
-    this.router.navigate(['/adults/adult-dashboard'])
+    this.router.navigate([SharedService.getDashboardUrls()])
   }
 
 

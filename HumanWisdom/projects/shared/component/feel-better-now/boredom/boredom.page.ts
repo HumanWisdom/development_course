@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
-
+import { NavigationService } from '../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-boredom',
   templateUrl: './boredom.page.html',
@@ -14,14 +14,18 @@ export class BoredomPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  isAdults = true;
 
 
 
-
-  constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location) { }
+  constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location,private navigationService:NavigationService){ }
 
   ngOnInit() {
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
 
@@ -31,7 +35,7 @@ export class BoredomPage implements OnInit {
     }
   }
 
-  goBack() {
+  defaultGoBack() {
     // this.location.back()
     if (window.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);
@@ -40,6 +44,14 @@ export class BoredomPage implements OnInit {
     }
   }
 
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
 
   routeVideoaudio(type, url, title = '') {
     console.log(url)

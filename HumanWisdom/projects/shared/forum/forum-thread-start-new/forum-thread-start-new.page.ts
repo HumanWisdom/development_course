@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild,AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
@@ -23,12 +23,14 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
-  fileToUpload: File = null;
+  fileToUpload: any = null;
   @ViewChild('postModal') postModal: any;
   @ViewChild('checkboxSelect') checkboxSelect: any;
   @ViewChild('closeCategory') closeCategory: any;
+  @ViewChild('myTextarea') myTextarea: ElementRef;
   programType: ProgramType.Adults;
   isSubscriber:boolean;
+  PostImgAndroid='';
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
     this.router.events
@@ -49,7 +51,10 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   ngOnInit() {
-   
+   this.exposeFunction();
+   setTimeout(() => {
+    this.myTextarea.nativeElement.focus();
+  }, 2000);
   }
 
   ngOnDestroy(): void {
@@ -94,7 +99,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         ReflectionID: '0',
         TagIds: this.selectedOption.toString(),
         Anonymous: this.isChecked ? "1" : "0",
-        PostImg: this.fileToUpload
+        PostImg: this.fileToUpload,
+        PostImgAndroid: this.PostImgAndroid
       }
     ).subscribe(res => {
       if (res) {
@@ -109,6 +115,29 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   closePost() {
     this.router.navigateByUrl('/forum', { state: { programType: this.programType } });
+  }
+
+  handleEvent(payload: any) {
+    console.log('Received event in Angular:', payload);
+    //  this.objString = payload;
+    const jsonObject = JSON.parse(payload);
+    // Assume base64Image is the URL-encoded and Base64-encoded string
+    this.imageUrl= 'data:;base64,'+jsonObject.base64String;
+    this.fileToUpload = '';
+    this.PostImgAndroid = jsonObject.base64String;
+    setTimeout(() => {
+      this.myTextarea.nativeElement.focus();
+    }, 1000);
+  }
+
+  // Expose function to global window object
+  exposeFunction() {
+    window['handleAngularEvent'] = this.handleEvent.bind(this);
+  }
+
+  clickEventForProfile() {
+    const customEvent = new CustomEvent('ImageEditClicked');
+    window.dispatchEvent(customEvent);
   }
 
   getFileUpload(event) {

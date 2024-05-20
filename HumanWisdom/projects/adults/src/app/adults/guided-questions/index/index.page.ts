@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
+import { SharedService } from "../../../../../../shared/services/shared.service";
 
 @Component({
   selector: "app-index",
@@ -129,7 +130,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
-      let url = `/journal${item.Landing_URL}`;
+      let url = `/adults/journal${item.Landing_URL}`;
       this.router.navigate([url], { state: { "isBypass": true } });
     }
 
@@ -176,7 +177,7 @@ export class IndexPage implements OnInit, AfterViewInit {
       );
   }
   NavigateToQuestions(data) {
-    this.router.navigate(["/guidedquestions"], {
+    this.router.navigate(["/adults/guidedquestions"], {
       queryParams: { Qid: data.ProgId, Attempt: data.UserReflectionID },
     });
   }
@@ -314,13 +315,14 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   goBack() {
-    if(this.isGuidedQueestionsTab){
+    if(this.isGuidedQueestionsTab && !SharedService.isFromAdults){
         this.isGuidedQueestionsTab = false;
         this.isDiary=true;
         this.viewJournalAndReflections();
         this.getDailyQuestion();
     }else{
-         this.router.navigate(['adults/adult-dashboard']);
+      SharedService.isFromAdults =  false;
+         this.router.navigate(['/adults/adult-dashboard']);
     }
 
   }
@@ -329,10 +331,10 @@ export class IndexPage implements OnInit, AfterViewInit {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(['/subscription/start-your-free-trial']);
+        this.router.navigate(['/adults/subscription/start-your-free-trial']);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/adults/onboarding/login"]);
       }
     }
   }

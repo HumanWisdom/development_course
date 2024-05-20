@@ -14,7 +14,7 @@ export class S103002Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_flat"
-  toc = "without-language/s103001"
+  toc = "teenagers/without-language/s103001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -106,7 +106,7 @@ export class S103002Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['without-language/s103003'])
+    this.router.navigate(['/teenagers/without-language/s103003'])
   }
 
   ngOnDestroy() 

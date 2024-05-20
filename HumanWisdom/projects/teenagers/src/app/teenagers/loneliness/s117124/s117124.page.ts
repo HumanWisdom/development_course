@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S117124Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/loneliness/s117001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/14.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/118.webp"
  
   bg=""
   moduleLink="/anger"
@@ -23,20 +23,20 @@ export class S117124Page implements OnInit {
   moduleList: any = [
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
       link: '/relationships',
       id: 131
     },
     {
       name: 'The Nature of the ‘I’',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/57.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/122.webp',
       link: '/nature-of-i',
       id: 122
  
     },
     {
       name: 'Sorrow and Loss',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/60.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/116.webp',
       link: '/sorrow',
       id: 116
   
@@ -47,7 +47,7 @@ export class S117124Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/anger.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/118.webp"
      
       this.moduleLink = "/anger"
       this.moduleName = "Anger"

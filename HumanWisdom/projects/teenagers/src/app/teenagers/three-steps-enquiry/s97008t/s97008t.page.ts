@@ -18,8 +18,8 @@ export class S97008tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/three-steps-enquiry/s97008"
-  toc="three-steps-enquiry/s97001"
+  audioPage="/teenagers/three-steps-enquiry/s97008"
+  toc="teenagers/three-steps-enquiry/s97001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -70,7 +70,7 @@ export class S97008tPage implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/three-steps-enquiry/s97009'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97009'])
     if (this.userId !== 563){
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -88,7 +88,7 @@ export class S97008tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s97007'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97007'])
   }
 
 

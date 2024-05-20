@@ -10,34 +10,33 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S97019Page implements OnInit {
   programType:ProgramType=ProgramType.Teenagers;
-  toc="three-steps-enquiry/s97001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/38.png"
+  toc="teenagers/three-steps-enquiry/s97001"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp"
   
   bg=""
   moduleLink="/insight/s99001"
-  moduleName="04. Insight"
+  moduleName="Insight"
   sectionName= "Art of Enquiry";
   moduleId=99
   moduleList: any = [
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
       link: '/awareness',
       id: 100
     },
     {
       name: 'Questions are Key',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/41.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/102.webp',
       link: '/questions-are-key',
       id: 102
  
     },
-    { 
+    {
       name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp',
       link: '/insight',
       id: 99
-  
     },
   ]
   

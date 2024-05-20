@@ -137,7 +137,7 @@
               <!-- /audio meditation -->
 
               <!-- short video -->
-              <a class="" (click)="determineRouterLink('wisdom-shorts/1.71.mp4')">
+              <a class="" (click)="determineRouterLink('wisdom-shorts/1.71.mp4/T/Dealing with grief')">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06">
 
@@ -283,8 +283,11 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                         <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/60.webp" class="img-responsive">
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/116.webp" class="img-responsive">
                           </div>
                         </div>
 
@@ -315,8 +318,11 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                         <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isAdults">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/18.webp" class="img-responsive">
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp" class="img-responsive">
                           </div>
                         </div>
 

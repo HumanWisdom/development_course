@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+        
+          <p>
+            Having grown up in the age of social media you will have seen famous influencers and want to be like them. Wanting to be recognised, to be someone important is a deep urge in many of us. It brings short term pleasure, so we think it will also bring long term happiness, but that is often not the case. The Olympic gold medalist may feel an extraordinary high when winning the medal, but that feeling quickly fades and they have to deal with their inner emptiness again. Many pop stars lead unhappy lives, not being able to cope with fame. 
+            This urge to be famous is not right or wrong, but just needs to be understood. Often it acts from behind the scenes and we are not aware of it. Understanding it can help us make the right choices for our lives.
+       
+
+
+          </p>
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

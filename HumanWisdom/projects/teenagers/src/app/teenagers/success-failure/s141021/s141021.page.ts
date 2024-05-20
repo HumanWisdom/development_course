@@ -14,7 +14,7 @@ export class S141021Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w7"
   hint = " It could be a fear of being poor, for example "
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S141021Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/success-failure/s141022'])
+        this.router.navigate(['/teenagers/success-failure/s141022'])
 
       },
       () => {
-        this.router.navigate(['/success-failure/s141022'])
+        this.router.navigate(['/teenagers/success-failure/s141022'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/success-failure/s141020'])
+    this.router.navigate(['/teenagers/success-failure/s141020'])
   }
 
   ngOnDestroy() 

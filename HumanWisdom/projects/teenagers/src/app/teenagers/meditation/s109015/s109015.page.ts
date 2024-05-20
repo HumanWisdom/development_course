@@ -102,7 +102,7 @@ export class S109015Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/teenagers/meditation/s109016'])
+    this.router.navigate(['/teenagers/meditation/s109014'])
   }
 
   ngOnDestroy()

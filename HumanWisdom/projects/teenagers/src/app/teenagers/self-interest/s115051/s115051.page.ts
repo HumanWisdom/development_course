@@ -33,7 +33,7 @@ export class S115051Page implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  toc="/self-interest/s115001"
+  toc="teenagers/self-interest/s115001"
 
   constructor
   (
@@ -156,12 +156,12 @@ export class S115051Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/self-interest/s115052'])
+    this.router.navigate(['/teenagers/self-interest/s115052'])
   }
 
   prev()
   {
-    this.router.navigate(['/self-interest/s115050'])
+    this.router.navigate(['/teenagers/self-interest/s115050'])
   }
 
   sessionFetch(id, divid)

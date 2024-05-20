@@ -31,7 +31,7 @@ export class S136059Page implements OnInit {
     return this.router.url;
   }, 1000);
   avDuration: any
-  transcriptPage = "/criticism/s136059t"
+  transcriptPage = "/teenagers/criticism/s136059t"
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers"

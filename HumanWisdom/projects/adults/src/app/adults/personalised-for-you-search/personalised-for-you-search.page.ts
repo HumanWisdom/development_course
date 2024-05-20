@@ -148,10 +148,15 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.GetWisdomScreens();
     this.getUserPreference();
     this.isSubscribe = SharedService.isSubscriber();
+    let closetour = localStorage.getItem('closeTour');
 
-    if(!localStorage.getItem('firstTimeSearchTour')) {
+    if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
       this.continueTour();
     }
+  }
+
+  closeTour(){
+    localStorage.setItem('firstTimeTour', 'T');
   }
 
   continueTour() {
@@ -166,14 +171,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: 'end'
         }
-      }, {
-        element: ".tour_find_inspiration",
-        popover: {
-          title: 'Find Inspiration',
-          description: 'Explore our rich library of motivational content.',
-          side: "right"
-        }
-      }, {
+      },
+       {
         element: ".tour_exercises",
         popover: {
           title: 'Exercises',
@@ -187,7 +186,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       onNextClick: () => {
         localStorage.setItem('firstTimeSearchTour', 'T');
         this.tourIndex++;
-        if (this.tourIndex > this.tourTotalIndex) {
+        if (this.tourIndex >= this.tourTotalIndex) {
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
         }
@@ -200,6 +199,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         document.body.classList.add('overflow_hidden');
       },
       onCloseClick:() => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');
         document.body.classList.add('overflow_auto');
@@ -385,7 +385,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.route.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.route.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   googleLogin() {
@@ -1138,6 +1138,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
+  }
+
+
+
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/adults/find-answers/' + param]);
   }
 
 }

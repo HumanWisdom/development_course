@@ -18,8 +18,8 @@ export class S131287tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/relationships/s131287"
-  toc="/relationships/s131001"
+  audioPage="/teenagers/relationships/s131287"
+  toc="teenagers/relationships/s131001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -63,7 +63,7 @@ export class S131287tPage implements OnInit {
     sessionStorage.setItem("bookmark131287",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/relationships/s131288'])
+    this.router.navigate(['/teenagers/relationships/s131288'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -80,7 +80,7 @@ export class S131287tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/relationships/s131286'])
+    this.router.navigate(['/teenagers/relationships/s131286'])
   }
 
 }

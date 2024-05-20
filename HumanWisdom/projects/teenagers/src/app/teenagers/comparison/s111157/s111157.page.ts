@@ -14,7 +14,7 @@ export class S111157Page implements OnInit
 {  
   
   toc="teenagers/comparison/s111001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp"
   bg=""
   moduleLink="/reactive-mind"
   moduleName=" Reactive Mind"
@@ -24,20 +24,20 @@ export class S111157Page implements OnInit
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp',
       link: '/stress',
       id: 125
     },
     {
       name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/126.webp',
       link: '/self-esteem',
       id: 126
  
     },
     {
       name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/118.webp',
       link: '/anger',
       id: 118
   
@@ -48,18 +48,18 @@ export class S111157Page implements OnInit
   {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/loneliness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/117.webp"
       this.moduleLink = "/loneliness"
       this.moduleName = "Loneliness"
       this.sectionName = "Manage Your Emotions";
-      this.moduleId = 61
+      this.moduleId = 117
     }
     else if (cur && cur === 'happier') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/133.webp"
       this.moduleLink = "/happiness"
       this.moduleName = "Happiness"
       this.sectionName = "Transform your life";
-      this.moduleId = 23
+      this.moduleId = 133
     }
   }
 

@@ -29,7 +29,7 @@ export class S125047Page implements OnInit,AfterViewInit
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   @ViewChild('playerContainer',{static:false})
   public playerContainer:ElementRef
-  toc="/stress/s125001"
+  toc="teenagers/stress/s125001"
   transcriptPage="/stress/s125047t"
   bookmark=0
   path = setTimeout(() => {
@@ -75,6 +75,11 @@ export class S125047Page implements OnInit,AfterViewInit
     }).subscribe(res=>{})
   }
 
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
+  }
+
   receiveBookmark(e)
   {
     console.log(e)
@@ -94,7 +99,7 @@ export class S125047Page implements OnInit,AfterViewInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/stress/s125048'])
+    this.router.navigate(['/teenagers/stress/s125048'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +113,7 @@ export class S125047Page implements OnInit,AfterViewInit
 
   previous()
   {
-    this.router.navigate(['/stress/s125046'])
+    this.router.navigate(['/teenagers/stress/s125046'])
   }
 
   ngAfterViewInit()

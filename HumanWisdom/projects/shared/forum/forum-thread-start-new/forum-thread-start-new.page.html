@@ -56,7 +56,7 @@
                     <div class="absolute_edit">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_img_edit.svg" class="img-responsive">
                     </div>
-                    <input id="img-edit" (change)="getFileUpload($event)" type="file" class="">
+                    <input id="img-edit" (click)="clickEventForProfile()" (change)="getFileUpload($event)" type="file" class="">
                   </label>
                 </div>
               </div>
@@ -68,14 +68,14 @@
                     <h4 class="mb0px mt15px fs_12px fw_500 lh_150p fc_e58d82">
                       Upload image (max 2MB)
                     </h4>
-                    <input id="forum_thread_img" (change)="getFileUpload($event)" type="file">
+                    <input id="forum_thread_img" (click)="clickEventForProfile()" (change)="getFileUpload($event)" type="file">
                   </label>
                 </div>
               </div>
 
               <div class="row mtb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <textarea type="text" class="mtb0px ta_new_thread" id="Post" name="Post" 
+                  <textarea type="text" #myTextarea class="mtb0px ta_new_thread" id="Post" name="Post" 
                    rows="10" 
                    placeholder="{{getPlaceHolder()}}"
                     maxlength="256" 

@@ -15,8 +15,10 @@ export class S134106Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w2"
   hint = " It may stop you getting close to someone, or being the authentic you "
-  toc = "/love/s134001"
-  path = this.router.url
+  toc = "teenagers/love/s134001"
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +114,17 @@ export class S134106Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134107'])
+        this.router.navigate(['/teenagers/love/s134107'])
 
       },
       () => {
-        this.router.navigate(['/love/s134107'])
+        this.router.navigate(['/teenagers/love/s134107'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134105'])
+    this.router.navigate(['/teenagers/love/s134105'])
   }
 
   ngOnDestroy() 

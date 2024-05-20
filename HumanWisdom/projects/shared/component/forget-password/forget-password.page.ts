@@ -3,7 +3,7 @@ import { UntypedFormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { OnboardingService } from '../../services/onboarding.service';
-
+import { SharedService } from "../../services/shared.service";
 @Component({
   selector: 'app-common-forget-password',
   templateUrl: './forget-password.page.html',
@@ -23,7 +23,7 @@ export class ForgetPasswordPage implements OnInit {
   showMessage=false
   enableAlert = false;
   content = '';
-
+  isAdults:boolean =true;
   constructor(private fb: UntypedFormBuilder,
     private router: Router,
     private activate:ActivatedRoute,
@@ -35,6 +35,7 @@ export class ForgetPasswordPage implements OnInit {
      }
 
   ngOnInit() {
+    this.isAdults = SharedService.ProgramId === 9;
   }
 
   recoverPassword(){
@@ -186,7 +187,7 @@ export class ForgetPasswordPage implements OnInit {
   }
 
   loginpage() {
-    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    this.router.navigate(['/onboarding/login'])
   }
 
   getAlertcloseEvent(event) {

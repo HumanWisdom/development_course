@@ -11,7 +11,7 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 })
 export class S138102Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
-  toc="social-media/s138001"
+  toc="teenagers/social-media/s138001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
  
   // bg=""
@@ -20,7 +20,7 @@ export class S138102Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=23
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/53.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/132.webp"
   
   bg=""
   moduleLink="/communication"
@@ -30,34 +30,26 @@ export class S138102Page implements OnInit {
   moduleList: any = [
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
       link: '/conditioning',
       id: 105
     },
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp',
       link: '/fear-anxiety',
       id: 112
     },
     {
       name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
       link: '/emotional-needs',
       id: 120
     },
   ]
 
   constructor() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'leadership') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
-      this.moduleLink = "/leadership"
-      this.moduleName = "Leadership"
-      this.sectionName = "Transform your life";
-      this.moduleId = 59
-    }
-  }
+      }
 
   ngOnInit() {}
 

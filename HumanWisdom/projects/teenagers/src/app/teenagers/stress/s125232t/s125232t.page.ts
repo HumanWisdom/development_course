@@ -18,8 +18,8 @@ export class S125232tPage implements OnInit
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/stress/s125232"
-  toc="/stress/s125001"
+  audioPage="/teenagers/stress/s125232"
+  toc="teenagers/stress/s125001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -68,7 +68,7 @@ export class S125232tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/stress/s125233'])
+    this.router.navigate(['/teenagers/stress/s125233'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S125232tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/stress/s125231'])
+    this.router.navigate(['/teenagers/stress/s125231'])
   }
 
 }

@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S102022Page implements OnInit {
   
   toc="questions-are-key//s102001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/42.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/103.webp"
   bg=""
   moduleLink="/without-language/s103001"
   moduleName="Without Language"
@@ -20,21 +20,21 @@ export class S102022Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
-      name: 'KeyIdeas',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/34.png',
-      link: '/keyideas',
-      id: 83
+      name: 'Three Steps to Enquiry',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp',
+      link: '/three-steps-enquiry',
+      id: 97
     },
     {
       name: 'The Nature of the ‘I’',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/57.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/122.webp',
       link: '/nature-of-i',
       id: 122
   
     },
     {
       name: 'No Judgemnet',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/40.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/101.webp',
       link: '/no-judgement',
       id: 101
     },

@@ -14,7 +14,7 @@ export class S134200Page implements OnInit {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w4"
   hint = " You could plant a tree, or walk instead of drive, or learn a new plant based recipe, or not buy the thing you don’t really need."
-  toc = "/love/s134001"
+  toc = "teenagers/love/s134001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S134200Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134201'])
+        this.router.navigate(['/teenagers/love/s134201'])
 
       },
       () => {
-        this.router.navigate(['/love/s134201'])
+        this.router.navigate(['/teenagers/love/s134201'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134199'])
+    this.router.navigate(['/teenagers/love/s134199'])
   }
 
   ngOnDestroy() 

@@ -15,7 +15,7 @@ export class S116038Page implements OnInit
   bg_cft="bg_purple"
   bg="purple_w11"
   hint = " It may strain our relationships"
-  toc="sorrow/s116001"
+  toc="teenagers/sorrow/s116001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S116038Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/sorrow/s116039'])
+        this.router.navigate(['/teenagers/sorrow/s116039'])
 
       },
       () => {
-        this.router.navigate(['/sorrow/s116039'])
+        this.router.navigate(['/teenagers/sorrow/s116039'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/sorrow/s116037'])
+    this.router.navigate(['/teenagers/sorrow/s116037'])
   }
 
   ngOnDestroy() 

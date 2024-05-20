@@ -14,7 +14,7 @@ export class S131037tPage implements OnInit {
   bg_cft = "bg_purple"
   bg = "purple_w6"
  
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   moduleId = localStorage.getItem("moduleId")
@@ -29,7 +29,7 @@ export class S131037tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/relationships/s131037"
+  audioPage="/teenagers/relationships/s131037"
   avDuration=localStorage.getItem("avDuration131037")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers"
@@ -70,7 +70,7 @@ export class S131037tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/relationships/s131038'])
+    this.router.navigate(['/teenagers/relationships/s131038'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -84,7 +84,7 @@ export class S131037tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/relationships/s131036'])
+    this.router.navigate(['/teenagers/relationships/s131036'])
   }
 
 }

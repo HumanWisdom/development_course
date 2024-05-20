@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          Begin by noticing how flexible you are in your opinions and when things don’t go the way you expect. If you want to watch one movie and your friend wants to watch another, how easy is it for you to accept and do what others may want? Or if you are looking forward to going out with friends, and the plans change, how easily do you adapt and go along with the new plan?
+         </p>
+         <p>
+          To have successful relationships at home and at work you need to learn the art of compromise, of being able to change your mind and being able to look at things from different points of view. 
+
+         </p>
+         <p>
+          You also need to adapt to change. If you don’t get the job of your choice for example, you need to be able to move on from the initial disappointment and embrace a different job.
+         </p>
+         <p>
+          You can begin practising that now.
+         </p>
+        
+        
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

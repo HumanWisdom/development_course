@@ -12,8 +12,8 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S125248Page implements OnInit 
 {  
   
-  toc="stress/s125001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/17.png"
+  toc="teenagers/stress/s125001"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/126.webp"
   
   bg=""
   moduleLink="/self-esteem/s126001"
@@ -25,23 +25,22 @@ export class S125248Page implements OnInit
   moduleList: any = [
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
       link: '/conditioning/s105001',
       id: 105
     },
     {
       name: 'Comparison & Envy',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/111.webp',
       link: '/comparison/s11101',
       id: 111
  
     },
     {
-      name: 'Money',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/73.png',
-      link: '/money',
-      id: 73
-  
+      name: 'Identity',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp',
+      link: '/identity',
+      id: 119
     },
   ]
 

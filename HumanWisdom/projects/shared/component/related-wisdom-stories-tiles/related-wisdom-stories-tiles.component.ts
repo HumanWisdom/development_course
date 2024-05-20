@@ -1,6 +1,8 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-related-wisdom-stories-tiles',
   templateUrl: './related-wisdom-stories-tiles.component.html',
@@ -45,10 +47,20 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
     let res = localStorage.getItem("isloggedin");
     if(res && res === 'T') {
       this.service.clickStory(item.ScenarioID).subscribe(res=>{
-        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+         if (SharedService.ProgramId == ProgramType.Teenagers) {
+        this.router.navigate(['/teenagers/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+         }
+         else{
+          this.router.navigate(['/adults/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+         }
       })
     }else {
-      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+      if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate(['/teenagers/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+      }
+      else{
+        this.router.navigate(['/adults/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}}) 
+      }
     }
 
   }

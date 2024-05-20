@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          Life can be tough and to succeed in life we need to learn how to manage our own mental health, and know when we need to ask for help if we need it.
+
+         </p>
+         <p>
+          This is important because when we are suffering on the inside we cannot be as effective in our jobs, we are less able to be kind to others, and small things can upset and trigger us. When we are emotionally distressed we can’t think clearly and can make poor decisions.
+
+         </p>
+         <p>
+          Prevention is so much easier. It's like learning to swim so when the challenges of life appear we are ready and can swim right through them. The app helps you feel better now but if you want to be mentally healthy for the long term then you need to build your own self-awareness and understand your own mind, so you can be in charge of how you react to challenges.
+
+         </p>
+        
+        
+        
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

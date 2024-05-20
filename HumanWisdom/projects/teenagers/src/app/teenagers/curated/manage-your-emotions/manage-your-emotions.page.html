@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class=""  routerLink="/adults/select-a-topic-to-explore" >                        
+      <a class=""  routerLink="/teenagers/select-a-topic-to-explore" >                        
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>  
     </div>
@@ -24,7 +24,7 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
 
@@ -76,7 +76,7 @@
                   </div>
                   
                   <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <a routerLink="/adults/curated/manage-your-emotions-transcript">
+                    <a routerLink="/teenagers/curated/manage-your-emotions-transcript">
                       <button class="btn flex_ai btn_pn">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/transcript_left.svg" alt="" class="img-responsive">
                       </button>
@@ -104,7 +104,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/feel-better-now/">
+                                  <a routerLink="/teenagers/feel-better-now/">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -119,13 +119,100 @@
                         <div class="panel-body">
 
                           <div class="div_fbn">
-                            <a routerLink="/feel-better-now/anger">
+                            <a routerLink="/teenagers/feel-better-now/anger">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
                                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                                     <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
                                       Anger
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+
+                            <a routerLink="/teenagers/feel-better-now/fear">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Fear
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+                            <a routerLink="/teenagers/feel-better-now/stress">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Stress
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+                            <a routerLink="/teenagers/feel-better-now/loneliness">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Loneliness
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+                            <a routerLink="/teenagers/feel-better-now/pleasure">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Pleasure
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+
+                            <a routerLink="/teenagers/feel-better-now/sorrow-and-loss">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Dealing with Loss
                                     </h4>
                                   </div>
                   
@@ -190,7 +277,7 @@
                     </h2>
                   </div>
                   <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                    <a routerLink="/adults/feel-better-now/">
+                    <a routerLink="/teenagers/pathway/">
                       <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                         View all
                       </h2>
@@ -217,7 +304,7 @@
   
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.webp" class="img-responsive">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/118.webp" class="img-responsive">
                             </div>
                           </div>  
       
@@ -249,7 +336,7 @@
   
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/54.webp" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp" class="img-responsive">
                             </div>
                           </div>  
       
@@ -281,7 +368,7 @@
   
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/20.webp" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/124.webp" class="img-responsive">
                             </div>
                           </div>  
       
@@ -313,7 +400,7 @@
   
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/45.webp" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/127.webp" class="img-responsive">
                             </div>
                           </div>  
       
@@ -338,14 +425,14 @@
                     </a>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
                     <a (click)="routeComparison(0)">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.webp" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/111.webp" class="img-responsive">
                             </div>
                           </div>  
       
@@ -377,7 +464,7 @@
   
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/61.webp" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/117.webp" class="img-responsive">
                             </div>
                           </div>  
       
@@ -393,6 +480,69 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
                                 3 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
+                    <a (click)="routeAnxiety(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Anxiety
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                7 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
+                    <a (click)="routeDealingWithDepression(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/156.webp" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Dealing with depression
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                9 sessions
                               </h4>
                             </div>
                           </div> 
@@ -465,7 +615,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/wisdom-stories">
+                                  <a routerLink="/teenagers/wisdom-stories">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -640,7 +790,7 @@
                         <div class="panel-body">
 
                           <div class="div_fbn">
-                            <a (click)="enableRoute('/journal/anger')">
+                            <a (click)="enableRoute('/teenagers/journal/anger')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -658,7 +808,7 @@
                               </div>
                             </a>
               
-                            <a (click)="enableRoute('/journal/pleasure')">
+                            <a (click)="enableRoute('/teenagers/journal/pleasure')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -675,14 +825,33 @@
                                 </div>
                               </div>
                             </a>
+                           
 
-                            <a (click)="enableRoute('/journal/envy')" *ngIf="!enableGuidedQuesViewMore">
+                            <a (click)="enableRoute('/teenagers/journal/envy')" >
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
                                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                                     <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
                                       Understand Envy
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+
+                            <a (click)="enableRoute('/teenagers/journal/dealing-with-sorrow')" *ngIf="!enableGuidedQuesViewMore">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Dealing with sorrow
                                     </h4>
                                   </div>
                   
@@ -752,7 +921,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/wisdom-shorts">
+                                  <a routerLink="/teenagers/wisdom-shorts">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1078,7 +1247,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/podcast">
+                                  <a routerLink="/teenagers/podcast">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1307,7 +1476,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/events">
+                                  <a routerLink="/teenagers/events">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1463,7 +1632,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/audio-meditation">
+                                  <a routerLink="/teenagers/audio-meditation">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1563,7 +1732,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="blogs">
+                                  <a routerLink="/teenagers/blogs">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1618,7 +1787,7 @@
               <!-- /hr -->
 
               <!-- explore other topics -->
-              <a routerLink="/adults/select-a-topic-to-explore">
+              <a routerLink="/teenagers/select-a-topic-to-explore">
                 <div class="row mt60px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
                     <h4 class="mtb0px fs_15px lh_140p fc_ffffff tcenter underline">

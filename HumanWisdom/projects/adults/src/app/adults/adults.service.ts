@@ -3,7 +3,7 @@ import {
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { environment} from '../../../../environments/environment'
+import { environment } from '../../../../environments/environment'
 import { OnboardingService } from '../../../../shared/services/onboarding.service';
 import { SharedService } from "../../../../shared/services/shared.service";
 import { ProgramType } from "../../../../shared/models/program-model";
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class AdultsService {
   //path="http://18.132.47.231/api";
   path = environment.apiURL;
-  programId=ProgramType.Adults;
+  programId = ProgramType.Adults;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
   personalisedforyoulist = [
     {
@@ -55,15 +55,15 @@ export class AdultsService {
   previousUrl: string = '';
 
   constructor(private http: HttpClient,
-     handler: HttpBackend,
-      private services: OnboardingService,
-      private router: Router
-     ) {
-        if(SharedService.ProgramId === 11){
-          this.programId=ProgramType.Teenagers;
-        }else{
-          this.programId=ProgramType.Adults;
-        }
+    handler: HttpBackend,
+    private services: OnboardingService,
+    private router: Router
+  ) {
+    if (SharedService.ProgramId === 11) {
+      this.programId = ProgramType.Teenagers;
+    } else {
+      this.programId = ProgramType.Adults;
+    }
   }
 
   submitProgressText(data: any): Observable<any> {
@@ -137,8 +137,8 @@ export class AdultsService {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
 
-  ValidateAffRefCode(affrefcode){
-    return this.http.post(this.path+`/validatePartner/${affrefcode}`,null);
+  ValidateAffRefCode(affrefcode) {
+    return this.http.post(this.path + `/validatePartner/${affrefcode}`, null);
   }
 
   readStories(): Observable<any> {
@@ -192,7 +192,7 @@ export class AdultsService {
   }
 
   verifytoken(encrypt) {
-    return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}`)
+  return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
   }
 
   verifyactkey(data): Observable<any> {
@@ -250,7 +250,7 @@ export class AdultsService {
 
 
   getSearchDataForSearchSite(data): Observable<any> {
-    return this.http.post(this.path + `/SiteSearch/${data}`, {})
+    return this.http.post(this.path + `/SiteSearch/${data}${SharedService.ProgramId}`, {})
   }
   getForumSearchDataSite(data): Observable<any> {
     return this.http.get(this.path + `/GetAllPosts/${data}`);
@@ -415,18 +415,18 @@ export class AdultsService {
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
         console.log(qrList)
-      },error => {
+      }, error => {
         console.log(error)
       },
-      () => {
-        if(lastVisitedurl !== '' && indexUrl !== '') {
-          if (pgResume && pgResume !== '') {
-            this.router.navigate([`${lastVisitedurl}/${pgResume}`])
-          } else {
-            this.router.navigate([`${indexUrl}`])
+        () => {
+          if (lastVisitedurl !== '' && indexUrl !== '') {
+            if (pgResume && pgResume !== '') {
+              this.router.navigate([`${lastVisitedurl}/${pgResume}`])
+            } else {
+              this.router.navigate([`${indexUrl}`])
+            }
           }
-        }
-      })
+        })
   }
 
   encryptUserId(id) {
@@ -558,20 +558,19 @@ export class AdultsService {
   }
 
 
-  freescreens(){
+  freescreens() {
     console.log("freeScreens");
-    let x=[];
-    this.freeScreens().subscribe(res=>
-      {
-          let result = res.map(a => a.FreeScrs);
-          let arr;
-          result=result.forEach(element => {
-          x.push(element?.map(a=>a.ScrNo))
-          arr = Array.prototype.concat.apply([], x);
-          })
-          localStorage.setItem("freeScreens",JSON.stringify(arr))
-        }
-      )
+    let x = [];
+    this.freeScreens().subscribe(res => {
+      let result = res.map(a => a.FreeScrs);
+      let arr;
+      result = result.forEach(element => {
+        x.push(element?.map(a => a.ScrNo))
+        arr = Array.prototype.concat.apply([], x);
+      })
+      localStorage.setItem("freeScreens", JSON.stringify(arr))
+    }
+    )
   }
 
 
@@ -579,14 +578,14 @@ export class AdultsService {
     return this.http.post(this.path + '/AddUserRefPost', data)
   }
 
-  AddUserPreference(data:any): Observable<any>{
+  AddUserPreference(data: any): Observable<any> {
     return this.http.post(this.path + `/AddUserPreference/${data}`, null)
   }
 
   GetPodcastList(): Observable<any> {
     return this.http.get(this.path + '/GetPodcastsListing');
   }
-  GetUsedAffDiscCode(){
+  GetUsedAffDiscCode() {
     return this.http.get(this.path + '/GetUsedAffDiscCode');
   }
 
@@ -6120,7 +6119,7 @@ export class AdultsService {
         "Phones (Landline)": 301600,
         "GDP": 10480000000
       }
-     ]
+    ]
     return list;
   }
 

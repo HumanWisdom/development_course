@@ -12,7 +12,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S80012Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="how-can-wisdom-help/s80001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_wisdom.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/32.png"
   bg=""
   moduleLink="/benefits-of-wisdom/"
   moduleName=" Wisdom brings change"

@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>
+          We are influenced by what our friends and brothers and sisters may have chosen for their careers, and can choose to follow them without exploring whether that suits our personality and our natural ability. This often happens in families and affects younger siblings. 
+          Again, this is not wrong, but understanding this can help us make better choices in our lives.
+          Your brother or sister may have chosen a career in finance, and you decide to follow them but maths may not be your strong point, or they have chosen to be a builder, but you may prefer working with numbers instead.
+
+         </p>
+         <p>
+          Or you may compare yourself with someone on social media who has a lavish lifestyle and want that for yourself.
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

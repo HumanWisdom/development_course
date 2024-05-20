@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 
 @Component({
@@ -38,7 +40,8 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
-
+  isAdults = true;
+  
   constructor(private service: TeenagersService, private router: Router, private location: Location,
     private navigationService:NavigationService, 
     private meta: Meta, private title: Title) {
@@ -56,7 +59,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           id: 42,
           url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
+          title: 'Emotional Wellness in Relationships'
         },
         pc03:
         {
@@ -68,13 +71,13 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         {
           id: 57,
           url: '/podcasts/57.mp3',
-          title: 'Managing expectations'
+          title: 'Understanding expectations for happier relationships'
         },
         pc05:
         {
           id: 56,
           url: '/podcasts/56.mp3',
-          title: 'Exploring kindness'
+          title: 'How can we be more kind'
         }
       }
 
@@ -106,19 +109,24 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getimage(id) {
     let Id = id <= 9 ? '0' + id : id;
     return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
-
   goBack() {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
     }
-    this.location.back();
+    this.router.navigate([url]);
   }
 
   routeGuided() {
@@ -146,7 +154,9 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
+    let url = audioLink.replaceAll(':', '_');
+    url = encodeURIComponent(url.replaceAll('/', '~'));
+    this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
     }
   }
 
@@ -169,7 +179,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -361,7 +371,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
         loveResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen     
         // continue where you left
         if (res.lastVisitedScreen === '') {
           localStorage.setItem("lastvisited", 'F')
@@ -456,17 +466,17 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/teenagers/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/teenagers/onboarding/login"]);
       }
     }
   }

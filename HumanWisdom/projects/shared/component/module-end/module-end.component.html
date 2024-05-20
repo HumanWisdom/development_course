@@ -95,9 +95,9 @@
                 </div>
 
                 <div>
-                  <div class="row center_flex safari_dblock mt30px " *ngIf="9 == programType;else OtherModule">
+                  <div class="row center_flex safari_dblock mt30px" *ngIf="9 == programType;else OtherModule">
                     <a (click)="proceed()">
-                      <div class="col-md-12 col-sm-12 col-xs-12 tcenter prelative float_none" >
+                      <div class="col-md-12 col-sm-12 col-xs-12 tcenter prelative float_none">
 
                         <img [src]="moduleImg"  class="module_img w100" alt="">
 
@@ -118,10 +118,12 @@
                     </a>
                   </div>
                   <ng-template #OtherModule>
-                    <div class="row me_next_module center_flex safari_dblock">
+                    <div class="row center_flex safari_dblock mt30px">
                       <a (click)="ContinueToThisModule()">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tcenter p0 prelative float_none" >
+                        <div class="col-md-12 col-sm-12 col-xs-12 tcenter prelative float_none">
+
                           <img [src]="moduleImg"  class="module_img w100" alt="">
+                          
                           <div class="me_overlay"></div>
 
                           <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">

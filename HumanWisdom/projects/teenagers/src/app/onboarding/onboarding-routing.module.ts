@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import {EnableRouteGuard} from '../../../../shared/enable-route.guard'
 const routes: Routes = [
   {
     path: 'login',
@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then(m => m.SignupPageModule)
+  },
+  {
+    path: 'profile-edit',
+    loadChildren: () => import('../../../../shared/component/profile-edit/profile-edit.module').then(m=>m.ProfileEditPageModule)
   },
   {
     path: 'forgotpassword',
@@ -25,6 +29,15 @@ const routes: Routes = [
   {
     path: 'password-link',
     loadChildren: () => import('./set-password/set-password.module').then(m => m.SetPasswordPageModule)
+  },
+  {
+    path: 'user-profile',
+    loadChildren: () => import('../../../../shared/component/profile/profile.module').then(m => m.ProfilePageModule),
+    canActivate:[EnableRouteGuard]
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('../../../../shared/component/subscription-payment/subscription-payment.module').then(m => m.SubscriptionPaymentPageModule)
   },
 
 ];

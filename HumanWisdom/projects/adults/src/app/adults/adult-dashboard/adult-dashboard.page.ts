@@ -57,57 +57,8 @@ export class AdultDashboardPage implements OnInit {
   searchinp = '';
   public dash = false;
   public isSubscriber = false;
-  //static progress mapping
-  // public angerP: any
-  // public comparisonP: any
-  // public awarenessP: any
-  // public obstaclesP: any
-  // public meditationP: any
-  // public benefitsWisdomP: any
   public guideP = '50';
-  // public fearP: any
-  // public benefitsEnquiryP: any
-  // public questionsP: any
-  // public identityP: any
-  // public keyP: any
-  // public selfEsteemP: any
-  // public conditioningP: any
-  // public fiveCirclesP: any
-  // public happinessP: any
-  // public threeStepsP: any
-  // public noJudgementP: any
-  // public discoveringP: any
-  // public beginP: any
-  // public insightP: any
-  // public pleasureP: any
-  // public withoutLanguageP: any
-  // public criticismP: any
-  // public stressP: any
-  // public relationshipsP: any
-  // public natureP: any
-  // public breathingP: any
-  // public ntP: any
-  // public gamP: any
   searchResult = [];
-  // public communicationP: any
-  // public rmP: any
-  // public siP: any
-  // public sinP: any
-  // public enP: any
-  // public ibP: any
-  // public wP: any
-  // public lP: any
-  // public seP: any
-  // public niP: any
-  // public lonelinessP: any
-  // public livingwithpeaceP: any
-  // public loveP: any
-  // public dealingwithdeathP: any
-  // public opinionsandbeliefsP: any
-  // public successandfailureP: any
-  // public addictionP: any
-  // public foodP: any
-  // public moneyP: any
   isEnableHam = true;
   public Subscriber: any
   public alertMsg: any
@@ -115,7 +66,6 @@ export class AdultDashboardPage implements OnInit {
   public friendname = ''
   public name = ''
   public streak = ''
-  // public sorrowandlossP
   public isloggedIn = false
   public x = []
   public isSubscribe = false
@@ -169,6 +119,8 @@ export class AdultDashboardPage implements OnInit {
   public isIos = false;
   public tourTotalIndex = 9;
   public tourIndex = 1;
+  public isSkip = false;
+
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -179,7 +131,7 @@ export class AdultDashboardPage implements OnInit {
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
     //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    //   this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
     localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
@@ -228,7 +180,7 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem('guest', 'T');
           localStorage.setItem('isloggedin', 'F');
           this.services.setDataRecievedState(true);
-          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+          // this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
@@ -351,14 +303,14 @@ export class AdultDashboardPage implements OnInit {
   }
 
   viewDetails() {
-    this.router.navigate(["/onboarding/user-profile"]);
+    this.router.navigate(["/adults/onboarding/user-profile"]);
   }
 
   loginpage() {
     // $("#signuplogin").modal("hide");
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/adults/onboarding/login'])
   }
 
   getLastvisitedScr() {
@@ -582,7 +534,16 @@ export class AdultDashboardPage implements OnInit {
     SharedService.enablebanner = false
   }
 
+
+  closeTour(){
+    if(!this.isSkip) {
+      localStorage.setItem('closeTour', 'T');
+    }
+    localStorage.setItem('firstTimeTour', 'T');
+  }
+
   continueTour() {
+    this.isSkip = true;
     this.closetourmodal.nativeElement.click();
     const driver = window['driver'].js.driver;
     let stepList = [
@@ -632,6 +593,14 @@ export class AdultDashboardPage implements OnInit {
           title: 'Introduction',
           description: 'Learn how to make the most of the app and explore the key ideas',
           side: "bottom"
+        }
+      },
+      {
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
         }
       },
       {
@@ -685,7 +654,10 @@ export class AdultDashboardPage implements OnInit {
         document.body.classList.add('overflow_hidden');
         this.services.setEnableTour(true);
       },
-      onCloseClick:() => {
+      onCloseClick:(event) => {
+        console.log(event)
+        localStorage.setItem('closeTour', 'T');
+        localStorage.setItem('firstTimeTour', 'T');
         this.tourIndex = 1;
         document.body.classList.remove('overflow_hidden');
         document.body.classList.add('overflow_auto');
@@ -856,7 +828,7 @@ export class AdultDashboardPage implements OnInit {
   subscribenow() {
     // if(localStorage.getItem("email") === 'guest@humanwisdom.me'){
     //   localStorage.setItem("subscribepage", 'T')
-    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+    //   this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // } else {
     //   this.router.navigate(['/onboarding/add-to-cart'])
     // }
@@ -1685,7 +1657,7 @@ export class AdultDashboardPage implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/adults/onboarding/login'])
   }
 
   friendName(value) {
@@ -1698,7 +1670,7 @@ export class AdultDashboardPage implements OnInit {
 
   getLogin() {
     localStorage.setItem('btnclick', 'T')
-    this.router.navigate(['/onboarding/login', { queryParams: { email: '' } }])
+    this.router.navigate(['/adults/onboarding/login', { queryParams: { email: '' } }])
   }
 
   friendEmail(value) {
@@ -4158,6 +4130,15 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate(['/subscription/start-your-free-trial']);
   }
 
+  routeToUrl(url){
+    if(url.includes('isGuided')){
+      SharedService.isFromAdults = true;
+      this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    }else{
+      window.location = url;
+    }
+  }
+
   // RouteToWisdomExercise(exercise) {
   //   var weR = exercise?.ScreenNo;
   //   localStorage.setItem("moduleId", JSON.stringify(75))
@@ -4241,13 +4222,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  routeToFindAnswer(param) {
-    localStorage.setItem('lastRoute', param);
-    this.logeventservice.logEvent("click_find-answers-" + param);
-    this.router.navigate(['/adults/find-answers/' + param]);
-  }
-
-  activeTopicRoute(name) {
+    activeTopicRoute(name) {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
@@ -4266,7 +4241,7 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Habits and Addiction') {
       this.logeventservice.logEvent('click_be_happier');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    } else if (name === 'Deal with  loss') {
+    } else if (name === 'Deal with loss') {
       this.logeventservice.logEvent('click_sorrow_loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     } else if (name === 'Meditation') {
@@ -4353,4 +4328,10 @@ export class AdultDashboardPage implements OnInit {
       }
     })
   }
+ro
+  logEvent(event, url) {
+    this.logeventservice.logEvent(event);
+    this.router.navigate([url]);
+  }
+
 }

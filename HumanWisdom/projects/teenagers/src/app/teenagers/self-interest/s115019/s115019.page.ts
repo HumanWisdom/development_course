@@ -14,7 +14,7 @@ export class S115019Page implements OnInit
   bg_tn = "bg_purple_red"
   bg_cft = "bg_purple_red"
   bg = "purple_red_w5"
-  toc = "self-interest/s115001"
+  toc = "teenagers/self-interest/s115001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
@@ -154,18 +154,18 @@ export class S115019Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/self-interest/s234'])
+        //this.router.navigate(['/teenagers/self-interest/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/self-interest/s115018'])
+    this.router.navigate(['/teenagers/self-interest/s115018'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/self-interest/s115020'])
+    this.router.navigate(['/teenagers/self-interest/s115020'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

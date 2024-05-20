@@ -15,7 +15,7 @@ export class S97017Page implements OnInit {
   bg = "pink_orange_w3"
   hint = ""
 
-  toc = "three-steps-enquiry/s97001"
+  toc = "teenagers/three-steps-enquiry/s97001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -102,11 +102,11 @@ export class S97017Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/three-steps-enquiry/s97018'])
+        this.router.navigate(['/teenagers/three-steps-enquiry/s97018'])
 
       },
       () => {
-        this.router.navigate(['/three-steps-enquiry/s97018'])
+        this.router.navigate(['/teenagers/three-steps-enquiry/s97018'])
       })
 
 
@@ -116,7 +116,7 @@ export class S97017Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/three-steps-enquiry/s97016'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97016'])
   }
 
   ngOnDestroy() {

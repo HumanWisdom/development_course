@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety',
@@ -35,7 +37,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
-
+  isAdults = true;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -72,39 +74,51 @@ export class OvercomeStressAnxietyPage implements OnInit {
         },
         pc05:
         {
+          id: 32,
+          url: '/podcasts/32.mp3',
+          title: ' Overcoming grief'
+        },
+        pc06:
+        {
           id: 15,
           url: '/podcasts/15.mp3',
           title: 'Why do we follow trends'
         },
-        pc06:
+        pc07:
         {
           id: 28,
           url: '/podcasts/28.mp3',
           title: 'Healing emotional pain'
         },
-        pc07:
+        pc08:
         {
           id: 33,
           url: '/podcasts/33.mp3',
           title: 'Preventing suicide'
         },
-        pc08:
+        pc09:
         {
           id: 38,
           url: '/podcasts/38.mp3',
           title: 'Deal with bullying'
         },
-        pc09:
+        pc10:
         {
           id: 40,
           url: '/podcasts/40.mp3',
           title: 'Overcoming depression'
         },
-        pc10:
+        pc11:
         {
           id: 45,
           url: '/podcasts/45.mp3',
-          title: 'The resilient mindset,'
+          title: 'The resilient mindset'
+        },
+        pc12:
+        {
+          id: 58,
+          url: '/podcasts/58.mp3',
+          title: 'Overcoming loneliness'
         },
     
       }
@@ -137,6 +151,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getimage(id) {
@@ -163,7 +182,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   toRead(obj) {
     let sId = obj;
-    this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
+    this.router.navigate(['/teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
 
   getsupport(url, id, ind = 0) {
@@ -188,15 +207,16 @@ export class OvercomeStressAnxietyPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
+    }else{
+      this.router.navigate([url]);
     }
-    this.location.back();
   }
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
     }else{
     this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
@@ -216,7 +236,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }else{
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
-      this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
+      let url = audioLink.replaceAll(':', '_');
+      url = encodeURIComponent(url.replaceAll('/', '~'));
+      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
     }
   }
 
@@ -531,7 +553,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
   enableRoute(route) {
@@ -544,10 +566,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(["/onboarding/add-to-cart"]);
+        this.router.navigate(["/teenagers/onboarding/add-to-cart"]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/teenagers/onboarding/login"]);
       }
     }
   }

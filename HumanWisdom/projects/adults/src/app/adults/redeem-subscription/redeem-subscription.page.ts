@@ -209,7 +209,7 @@ export class RedeemSubscriptionPage implements OnInit {
       this.content = "Are you sure you want to logout ?";
       this.enableAlert = true;
     } else {
-      this.router.navigate(["/onboarding/login"]);
+      this.router.navigate(["/adults/onboarding/login"]);
     }
   }
 

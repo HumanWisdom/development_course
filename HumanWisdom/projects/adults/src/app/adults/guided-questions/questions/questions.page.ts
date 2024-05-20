@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AdultsService } from '../../adults.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-questions',
@@ -20,7 +21,7 @@ export class QuestionsPage implements OnInit {
   isChanged = false;
   userId: number = 0;
   constructor(private adultService: AdultsService, private router: ActivatedRoute
-    , private route: Router) {
+    , private route: Router,private navigationService:NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
   ngOnInit() {
@@ -66,9 +67,21 @@ export class QuestionsPage implements OnInit {
     });
   }
 
-  Backward() {
+  goback() {
+   var url = this.navigationService.navigateToBackLink();
+   if(url == 'adults/search'){
     this.route.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+   }
   };
+
+  Backward() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.goback();
+    }else{
+      this.route.navigate([url]);
+    }
+  }
 
   getClass(questionNo) {
     if (+questionNo == this.counter) {

@@ -15,11 +15,16 @@ import { Location } from '@angular/common';
 export class UnderstandHowYourMindWorksPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  public natureP: any
-  public breathingP: any
-  public meditationP: any
-  public ntP: any
-  public gamP: any
+  public comparisonP: any
+  public conditioningP: any
+  public reactiveP: any
+  public selfImageP: any
+  public selfInterestP: any
+  public identityP: any
+  public emotionalNeedsP: any
+  public innerBoredomP: any
+  public natureOfIP: any
+  public approvalP: any
 
   constructor(public router: Router, public service: TeenagersService,
     public logeventservice: LogEventService,
@@ -28,11 +33,16 @@ export class UnderstandHowYourMindWorksPage implements OnInit {
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
-      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 28)?.Percentage;
-      this.breathingP = d['ModUserScrPc'].find(e => e.ModuleId == 29)?.Percentage;
-      this.meditationP = d['ModUserScrPc'].find(e => e.ModuleId == 22)?.Percentage;
-      this.ntP = d['ModUserScrPc'].find(e => e.ModuleId == 30)?.Percentage;
-      this.gamP = d['ModUserScrPc'].find(e => e.ModuleId == 51)?.Percentage;
+      this.comparisonP = d['ModUserScrPc'].find(e => e.ModuleId  == 111)?.Percentage;
+      this.conditioningP = d['ModUserScrPc'].find(e => e.ModuleId == 105)?.Percentage;
+      this.reactiveP = d['ModUserScrPc'].find(e => e.ModuleId == 113)?.Percentage;
+      this.selfImageP = d['ModUserScrPc'].find(e => e.ModuleId == 114)?.Percentage;
+      this.selfInterestP = d['ModUserScrPc'].find(e => e.ModuleId == 115)?.Percentage;
+      this.identityP = d['ModUserScrPc'].find(e => e.ModuleId == 119)?.Percentage;
+      this.emotionalNeedsP = d['ModUserScrPc'].find(e => e.ModuleId == 120)?.Percentage;
+      this.innerBoredomP = d['ModUserScrPc'].find(e => e.ModuleId == 121)?.Percentage;
+      this.natureOfIP = d['ModUserScrPc'].find(e => e.ModuleId == 122)?.Percentage;
+      this.approvalP = d['ModUserScrPc'].find(e => e.ModuleId == 123)?.Percentage;
     });
     this.logeventservice.logEvent('view_develop_calm_mind');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
@@ -49,10 +59,10 @@ export class UnderstandHowYourMindWorksPage implements OnInit {
   }
 
   goBack() {
-    this.logeventservice.logEvent('click_back');
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
+    // this.logeventservice.logEvent('click_back');
+    // var url = this.navigationService.navigateToBackLink();
+    // if (url == null) {
       this.location.back();
-    }
+    // }
   }
 }

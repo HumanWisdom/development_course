@@ -14,7 +14,7 @@ export class S114032Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w1"
   hint = "You may pretend you are confident when you are not"
-  toc = "/self-image/s114001"
+  toc = "teenagers/self-image/s114001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S114032Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-image/s114033'])
+        this.router.navigate(['/teenagers/self-image/s114033'])
 
       },
       () => {
-        this.router.navigate(['/self-image/s114033'])
+        this.router.navigate(['/teenagers/self-image/s114033'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-image/s114031'])
+    this.router.navigate(['/teenagers/self-image/s114031'])
   }
 
   ngOnDestroy() 

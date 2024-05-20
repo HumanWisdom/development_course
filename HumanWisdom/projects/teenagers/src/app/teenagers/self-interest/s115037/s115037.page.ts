@@ -15,7 +15,7 @@ export class S115037Page implements OnInit
   bg_cft = "bg_purple_red"
   bg = "purple_red_w3"
   hint = "You could stop speaking to a good friend, and try and be friends with someone who is popular, just so you can also be popular"
-  toc = "/self-interest/s115001"
+  toc = "teenagers/self-interest/s115001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -114,17 +114,17 @@ export class S115037Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-interest/s115038'])
+        this.router.navigate(['/teenagers/self-interest/s115038'])
 
       },
       () => {
-        this.router.navigate(['/self-interest/s115038'])
+        this.router.navigate(['/teenagers/self-interest/s115038'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-interest/s115036'])
+    this.router.navigate(['/teenagers/self-interest/s115036'])
   }
 
   ngOnDestroy() 

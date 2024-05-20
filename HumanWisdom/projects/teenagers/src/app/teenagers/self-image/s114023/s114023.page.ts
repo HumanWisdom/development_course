@@ -14,7 +14,7 @@ export class S114023Page implements OnInit
   bg_cft = "bg_blue"
   bg = "blue_w4"
   hint = "It feels like an automatic process and we can’t help it. We want to protect our image."
-  toc = "/self-image/s114001"
+  toc = "teenagers/self-image/s114001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S114023Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/self-image/s114024'])
+        this.router.navigate(['/teenagers/self-image/s114024'])
 
       },
       () => {
-        this.router.navigate(['/self-image/s114024'])
+        this.router.navigate(['/teenagers/self-image/s114024'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/self-image/s114022'])
+    this.router.navigate(['/teenagers/self-image/s114022'])
   }
 
   ngOnDestroy() 

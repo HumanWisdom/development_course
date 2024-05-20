@@ -15,11 +15,14 @@ import { Location } from '@angular/common';
 export class ManageYourEmotionsPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  public natureP: any
-  public breathingP: any
-  public meditationP: any
-  public ntP: any
-  public gamP: any
+  public anxietyP: any
+  public depressionP: any
+  public pleasureP: any
+  public sorrowP: any
+  public lonelinessP: any
+  public angerP: any
+  public deathP: any
+
 
   constructor(public router: Router, public service: TeenagersService,
     public logeventservice: LogEventService,
@@ -28,11 +31,13 @@ export class ManageYourEmotionsPage implements OnInit {
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
-      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 28)?.Percentage;
-      this.breathingP = d['ModUserScrPc'].find(e => e.ModuleId == 29)?.Percentage;
-      this.meditationP = d['ModUserScrPc'].find(e => e.ModuleId == 22)?.Percentage;
-      this.ntP = d['ModUserScrPc'].find(e => e.ModuleId == 30)?.Percentage;
-      this.gamP = d['ModUserScrPc'].find(e => e.ModuleId == 51)?.Percentage;
+       this.anxietyP = d['ModUserScrPc'].find(e => e.ModuleId  == 112)?.Percentage;
+      this.depressionP = d['ModUserScrPc'].find(e => e.ModuleId == 156)?.Percentage;
+      this.pleasureP = d['ModUserScrPc'].find(e => e.ModuleId == 124)?.Percentage;
+      this.sorrowP = d['ModUserScrPc'].find(e => e.ModuleId == 116)?.Percentage;
+      this.lonelinessP = d['ModUserScrPc'].find(e => e.ModuleId == 117)?.Percentage;
+      this.angerP = d['ModUserScrPc'].find(e => e.ModuleId == 118)?.Percentage;
+      this.deathP = d['ModUserScrPc'].find(e => e.ModuleId == 130)?.Percentage;
     });
     this.logeventservice.logEvent('view_develop_calm_mind');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
@@ -49,10 +54,10 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   goBack() {
-    this.logeventservice.logEvent('click_back');
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
+    // this.logeventservice.logEvent('click_back');
+    // var url = this.navigationService.navigateToBackLink();
+    // if (url == null) {
       this.location.back();
-    }
+    // }
   }
 }

@@ -25,7 +25,7 @@ export class S141002Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -107,7 +107,7 @@ export class S141002Page implements OnInit, OnDestroy {
   goNext() 
   {
     // this.router.navigate(['/adults/comparison/s2'])
-    this.router.navigate(['/success-failure/s141003'])
+    this.router.navigate(['/teenagers/success-failure/s141003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

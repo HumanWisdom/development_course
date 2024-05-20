@@ -17,7 +17,7 @@ export class S134143Page implements OnInit,OnDestroy
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/love/audios/4.2.mp3'
   transcriptPage="love/s134143t"
-  toc="love/s134001"
+  toc="teenagers/love/s134001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
@@ -91,7 +91,7 @@ export class S134143Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/love/s134144'])
+    this.router.navigate(['/teenagers/love/s134144'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -109,7 +109,7 @@ export class S134143Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/love/s134142'])
+    this.router.navigate(['/teenagers/love/s134142'])
   }
 
   ngOnDestroy()

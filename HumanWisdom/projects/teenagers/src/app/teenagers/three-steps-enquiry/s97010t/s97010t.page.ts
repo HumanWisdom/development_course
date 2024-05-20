@@ -18,8 +18,8 @@ export class S97010tPage implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/three-steps-enquiry/s97010"
-  toc="three-steps-enquiry/s97001"
+  audioPage="/teenagers/three-steps-enquiry/s97010"
+  toc="teenagers/three-steps-enquiry/s97001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -65,7 +65,7 @@ export class S97010tPage implements OnInit {
     sessionStorage.setItem("bookmark97010",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/three-steps-enquiry/s97011'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97011'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -82,7 +82,7 @@ export class S97010tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s97009'])
+    this.router.navigate(['/teenagers/three-steps-enquiry/s97009'])
   }
 
 

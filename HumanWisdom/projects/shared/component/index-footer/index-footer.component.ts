@@ -34,7 +34,7 @@ export class IndexFooterComponent implements OnInit {
         this.userdetail = res[0];
         if(this.userdetail['UserImagePath'] !='')
         {
-            this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
+            this.url = this.userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
         }
         this.profile = true;
       });

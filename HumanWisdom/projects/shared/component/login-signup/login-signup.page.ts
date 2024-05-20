@@ -28,7 +28,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild("enabletab") enabletab: ElementRef;
   @ViewChild("enableotpmodal") enableotpmodal: ElementRef;
   @ViewChild("closeotpmodal") closeotpmodal: ElementRef;
-
+  isAdults:boolean =true;
   user: any;
   userId: any;
   idToken: any;
@@ -139,7 +139,7 @@ export class LoginSignupPage implements OnInit {
     // if (!this.router.url.includes('/log-in')) {
     //   window.history.pushState('', '', '/log-in');
     // }
-
+    this.isAdults = SharedService.ProgramId === 9;
   }
   forbiddenNameValidator(
     control: AbstractControl
@@ -750,8 +750,12 @@ export class LoginSignupPage implements OnInit {
           let option = localStorage.getItem("introoption");
           let giftwisdom = localStorage.getItem("giftwisdom");
           const url = SharedService.UrlToRedirect;
-          if(url == '/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+          if(url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
             this.router.navigate(['adults/adult-dashboard']);
+            return;
+          }
+          else if(url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+            this.router.navigate(['/teenagers/teenager-dashboard']);
             return;
           }
          else if (url != null) {
@@ -866,7 +870,8 @@ export class LoginSignupPage implements OnInit {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          this.router.navigate(["/teenagers/repeat-user"]);
+                         // window.location.href = environment.clientUrl+"/teenagers/repeat-user";
                           // this.router.navigate(["/teenagers/change-topic"], {
                           //   state: {
                           //     routedFromLogin: true,
@@ -977,17 +982,32 @@ export class LoginSignupPage implements OnInit {
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
-    this.router.navigate(['/adults/adult-dashboard'])
+    if(this.isAdults){
+      this.router.navigate(['/adults/adult-dashboard'])
+    }else{
+      this.router.navigate(['/teenagers/teenager-dashboard'])
+    }
+   
   }
 
   navigate(url) {
-    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+    this.router.navigate([url]);
   }
 
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
   }
+  
+  routeForgotPassword(){
+    if(this.isAdults){
+      this.router.navigate(['/onboarding/forgotpassword'])
+    }else{
+      this.router.navigate(['/teenagers/onboarding/forgotpassword'])
+    }
+  }
+
+
 
   getLoginTab() {
     this.isSignUp = false;

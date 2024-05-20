@@ -14657,7 +14657,8 @@ input[type="number"] {
 .progress-bar
 {
   /* background: linear-gradient(90deg, #FFC455 131.91%, #E69B5A 157.31%); */
-  background: #E8A880;
+  /* background: #E8A880; */
+  background: #E58D82;
   box-shadow: 1px 0px 2px rgb(0 0 0 / 25%);
   /* border-radius: 0 5px 5px 0; */
   border-radius: 0;
@@ -15878,11 +15879,13 @@ input[type="search"].dark::-webkit-search-cancel-button {
   bottom: 0px;
   right: 0px;
   left: 0px;
-  height: 10px;
+  /* height: 10px; */
+  height: 6px;
   margin-bottom: 0;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 6px 6px;
   box-shadow: unset;
-  background: rgba(255,255,255,0.1);
+  /* background: rgba(255,255,255,0.1); */
+  background: rgba(255,255,255,0.2);
 }
 
 .dprogress .progress-bar
@@ -29485,6 +29488,11 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   padding: 12rem 0 0 0 !important;
 }
 
+.cpt_rem_01
+{
+  padding: 14rem 0 0 0 !important;
+}
+
 .cp20px
 {
   padding: 0 0 0 0;
@@ -35630,7 +35638,7 @@ li ol > li:before {
 
 .img_logo
 {
-  max-width: 150px;
+  max-width: 125px;
 }
 
 .img_parent 
@@ -36471,5 +36479,24 @@ a.fc_e58d82:hover
   border-radius: 12px;
   background: #0C2B5F;
   padding: 15px 20px;
+}
+
+.bell_badge
+{
+  color: #FFF;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 150%;
+  position: absolute;
+  right: 2px;
+  margin: 0 auto;
+  background: #E58D82;
+  padding: 10px;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* /version - 03 */

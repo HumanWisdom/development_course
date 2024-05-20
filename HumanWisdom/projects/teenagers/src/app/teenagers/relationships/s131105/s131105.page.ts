@@ -21,7 +21,7 @@ export class S131105Page implements OnInit
   link="/relationships/s131106"
   name="#4  Our hidden emotional needs"
   progressImg=""
-  toc="relationships/s131001"
+  toc="teenagers/relationships/s131001"
 
   constructor
   (

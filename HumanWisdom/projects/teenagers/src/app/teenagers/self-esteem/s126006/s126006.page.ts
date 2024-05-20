@@ -14,7 +14,7 @@ export class S126006Page implements OnInit {
   bg_tn = "bg_teal"
   bg_cft = "bg_teal"
   bg = "teal_w9"
-  toc = "/self-esteem/s126001"
+  toc = "teenagers/self-esteem/s126001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -124,7 +124,7 @@ export class S126006Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/self-esteem/s126007'])
+    this.router.navigate(['/teenagers/self-esteem/s126007'])
     var optionT = [this.s1]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
@@ -146,7 +146,7 @@ export class S126006Page implements OnInit {
   }
 
   prev() {
-    this.router.navigate(['/self-esteem/s126005'])
+    this.router.navigate(['/teenagers/self-esteem/s126005'])
   }
 
   ngOnDestroy() {

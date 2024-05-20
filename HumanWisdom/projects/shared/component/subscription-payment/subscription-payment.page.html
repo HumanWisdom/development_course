@@ -1,0 +1,199 @@
+<!-- header -->
+<!-- <app-tn-hwp-project></app-tn-hwp-project> -->
+<!-- /header -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" (click)="back()" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Payment
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright"></div>
+  </div>
+</div>
+
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->
+  <div class="cw100p">
+
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-7 col-sm-7 col-xs-7 p0">
+                  <!-- <div class="radio">
+                    <label class="mt0px">
+                      <input type="radio" checked="false" value="option1" id="optionsRadios1" name="optionsRadios">
+                      <span class="">
+                        <span class="fw_500 fs_16px lh_19px fc_ffffff ml5px va_middle">
+                          Credit or Debit Card
+                        </span>
+                      </span>
+                    </label>
+                  </div> -->
+                  <h4 class="mtb0px fs_15px fw_500 lh_140p fc_ffffff">
+                    Credit or Debit Card
+                  </h4>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-5 p0">
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/visa_active.svg" alt=""
+                      class="">
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mastercard_active.svg"
+                      alt="" class="">
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/maestro_active.svg"
+                      alt="" class="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <form id="payment-form">
+              <div id="payment-request-button">
+                <!-- A Stripe Element will be inserted here. -->
+              </div>
+
+              <div id="card-element" class="mtb30px">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <input type="text" id="name"
+                    class="sp_fc mb10px" placeholder="Cardholder’s Name">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <input type="text" id="postal-code" class="sp_fc mb10px" placeholder="Postal Code">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div id="card-number" class="sp_fc mb10px"></div>
+                  </div>
+                </div>
+
+                <div class="row ">
+                  <div class="col-md-6 col-sm-6 col-xs-6 pl0px pr5px">
+                    <div id="card-expiry" class="sp_fc mb10px"></div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 pr0px pl5px">
+                    <div id="card-cvc" class="sp_fc mb10px"></div>
+                  </div>
+                </div>
+
+
+                <!-- We'll put the error messages in this element -->
+                <div id="card-element-errors" role="alert"></div>
+
+                <!-- <button id="btnsubmit" type="submit">Subscribe</button> -->
+                <div class="row mtb20px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="checkbox mtb0px">
+                      <label for="forum_post_checkbox" class="tcenter chkb_post_anonymously mt0px">
+                        <input id="forum_post_checkbox" type="checkbox" name="remember" value="">
+                        <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
+                          <span class="ml10px">
+                            Save card details for faster payments (secure)
+                          </span>
+                        </h4>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <hr class="hr_style_9">
+                  </div>
+                </div> -->
+
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                      Total Payable
+                      <span class="fs_16px fw_700 lh_140p fc_ffffff">
+                        <!-- &ensp;{{symbol + '  ' + amount}} -->
+                        &ensp;{{symbol + amount}}{{getIsoCode()}}
+                      </span>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row center_flex">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 btn_post_anonymously plr20pxi col_cw">
+                  <form id="payment-form">
+                    <button id="btnsubmit" class="btn btn_ctd" data-dismiss="modal" type="button">
+                      Confirm Payment
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- <div class="row ">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <button type="button" data-dismiss="modal" type="button" id="btnsubmit" class="btn profile_dmd">
+                      Confirm Payment
+                    </button>
+                    <button type="button" id="btnsubmit" class="btn btn-warning mb0 btn_confirm_payment w100"
+                      data-dismiss="modal">Confirm Payment</button>
+                    </div>
+              </div> -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
+</app-modal>

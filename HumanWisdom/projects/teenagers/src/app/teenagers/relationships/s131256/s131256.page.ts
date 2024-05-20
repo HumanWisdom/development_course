@@ -15,7 +15,7 @@ export class S131256Page implements OnInit {
   bg = "purple_w5"
   hint = "Do you think it's important? Or a curtailment of freedom? Are you scared of it?"
 
-  toc = "relationships/s131001"
+  toc = "teenagers/relationships/s131001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -99,11 +99,11 @@ export class S131256Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131257'])
+        this.router.navigate(['/teenagers/relationships/s131257'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131257'])
+        this.router.navigate(['/teenagers/relationships/s131257'])
       })
 
 
@@ -113,7 +113,7 @@ export class S131256Page implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/relationships/s131255'])
+    this.router.navigate(['/teenagers/relationships/s131255'])
   }
 
   ngOnDestroy() {

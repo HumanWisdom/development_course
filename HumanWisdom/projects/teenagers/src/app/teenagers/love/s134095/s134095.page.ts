@@ -15,8 +15,10 @@ export class S134095Page implements OnInit
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w3"
   hint = "  It may have come from your various influences including social media."
-  toc = "/love/s134001"
-  path = this.router.url
+  toc = "teenagers/love/s134001"
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -112,17 +114,17 @@ export class S134095Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/love/s134096'])
+        this.router.navigate(['/teenagers/love/s134096'])
 
       },
       () => {
-        this.router.navigate(['/love/s134096'])
+        this.router.navigate(['/teenagers/love/s134096'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/love/s134094'])
+    this.router.navigate(['/teenagers/love/s134094'])
   }
 
   ngOnDestroy() 

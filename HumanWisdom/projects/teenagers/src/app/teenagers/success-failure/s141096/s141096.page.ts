@@ -14,7 +14,7 @@ export class S141096Page implements OnInit {
   bg_cft="bg_light_blue"
   bg="light_blue_w10"
   hint = "It could keep you in a job you don’t like, for example."
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -113,17 +113,17 @@ export class S141096Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/success-failure/s141097'])
+        this.router.navigate(['/teenagers/success-failure/s141097'])
 
       },
       () => {
-        this.router.navigate(['/success-failure/s141097'])
+        this.router.navigate(['/teenagers/success-failure/s141097'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/success-failure/s141095'])
+    this.router.navigate(['/teenagers/success-failure/s141095'])
   }
 
   ngOnDestroy() 

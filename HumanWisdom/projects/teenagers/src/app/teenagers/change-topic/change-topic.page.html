@@ -1,7 +1,7 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" *ngIf="!isRoutedFromLogin">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0" (click)="goBack()">
       <a class="">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" *ngIf="isRoutedFromLogin">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter" >
         Pick a topic you’re interested in
@@ -39,10 +39,10 @@
             <div class="mt40px div_ct">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
-                    <button class="">
+                  <div (click)="updateList(item.id,item.name)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of changeTopicList">
+                    <button [ngClass]="item.id == selectedId ? 'topic-op-point-5': 'topic-op-one'">
                       <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
-                        Work and Leadership 
+                        {{item.name}}
                       </h4>
                     </button>
                   </div>

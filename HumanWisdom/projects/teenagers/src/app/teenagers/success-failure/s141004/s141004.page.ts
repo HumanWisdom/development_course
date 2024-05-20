@@ -14,7 +14,7 @@ export class S141004Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w2"
   hint = "What is your idea of a successful life?  "
-  toc = "/success-failure/s141001"
+  toc = "teenagers/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -115,17 +115,17 @@ export class S141004Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/success-failure/s141005'])
+        this.router.navigate(['/teenagers/success-failure/s141005'])
 
       },
       () => {
-        this.router.navigate(['/success-failure/s141005'])
+        this.router.navigate(['/teenagers/success-failure/s141005'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/success-failure/s141003'])
+    this.router.navigate(['/teenagers/success-failure/s141003'])
   }
 
   ngOnDestroy() 

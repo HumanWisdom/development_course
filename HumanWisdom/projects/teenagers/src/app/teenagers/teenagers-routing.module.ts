@@ -4,12 +4,13 @@ import { AudioVideoGuard } from '../audio-video.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { ActiveGuard } from '../authGuard/active.guard';
-
+import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/blog-article.page';
+import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
     },
     {
         path: 'change-topic',
@@ -41,7 +42,7 @@ const routes: Routes = [
     },
     {
         path: 'teenager-dashboard',
-        loadChildren: () => import('../teenagers/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
     },
     {
         path: 'benefits-of-enquiry',
@@ -136,6 +137,11 @@ const routes: Routes = [
         path: 'anger',
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
+    {
+        path: "journal/:TopicName",
+        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+      },
     {
         path: 'journal',
         loadChildren: () => import('../teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
@@ -250,6 +256,10 @@ const routes: Routes = [
         loadChildren: () => import('../teenagers/pressure-of-exams/pressure-of-exams.module').then(m => m.PressureOfExamsModule)
     },
     {
+        path: 'career-success',
+        loadChildren: () => import('../teenagers/career-success/career-success.module').then(m => m.CareerSuccessModule)
+    },
+    {
         path: 'dealing-with-depression',
         loadChildren: () => import('../teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
     },
@@ -301,7 +311,7 @@ const routes: Routes = [
         canActivate: [AudioVideoGuard],
         component: S3VideoComponent
     },
-    {
+       {
         path: 'teen-talk',
         loadChildren: () => import('../teenagers/teen-talk/teen-talk.module').then(m => m.TeenTalkPageModule)
     },
@@ -345,11 +355,18 @@ const routes: Routes = [
         path: 'wisdom-stories',
         loadChildren: () => import('./wisdom-stories/wisdom-stories.module').then(m => m.WisdomStoriesModule)
     },
+    // {
+    //     path: 'blogs',
+    //     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+    // },
     {
-        path: 'blogs',
-        loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-    },
-
+        path:'blogs',
+        component:BlogIndexPage
+      },
+    {
+        path: 'wisdom-shorts',
+        loadChildren: () => import('../../../../shared/component/wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
+      },
     {
         path: 'curated',
         loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
@@ -358,6 +375,36 @@ const routes: Routes = [
         path: 'onboarding',
         loadChildren: () => import('../onboarding/onboarding.module').then(m => m.OnboardingModule)
     },
+    {
+        path: 'audio-meditation',
+        loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
+   },
+   {
+
+    path: 'blog-article',
+    // canActivate:[ActiveGuard],
+    component:BlogArticlePage
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('../../../../shared/component/events/events.module').then(m => m.EventsModule)
+  },
+  {
+    path: 'podcast/:tag',
+    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule),
+  },
+  {
+    path: 'podcast',
+    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
+  },
+  {
+    path: 'site-search/:word',
+    loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
+  },
+  {
+    path: 'subscription',
+    loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
+  }
 ];
 
 
