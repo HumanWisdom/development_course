@@ -2183,6 +2183,7 @@ a
 {
   max-width: 100%;
   width: auto;
+  object-fit: cover;
 }
 
 .owl-carousel .owl-stage 
