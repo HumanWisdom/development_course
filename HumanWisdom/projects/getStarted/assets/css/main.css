@@ -2788,3 +2788,8 @@ audio::-webkit-media-controls-enclosure
   line-height: 180%;
   color: #CB6171;
 }
+
+.owl-carousel.owl-drag .owl-item
+{
+  cursor: pointer;
+}
