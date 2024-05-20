@@ -214,7 +214,7 @@ export class OnboardingService {
   }
 
   checkTrial(): Observable<any>{
-    return this.http.get(this.path + '/CheckIsTrial/');
+    return this.http.get(this.path +  `/CheckIsTrial/${SharedService.ProgramId}`);
   }
 
   ReviveSubscription(key): Observable<any>{
