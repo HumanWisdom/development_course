@@ -2293,10 +2293,21 @@ a
   float: none;
 }
 
-.tool_tabs li a:active,
+/* .tool_tabs li a:active,
 .tool_tabs li a:hover,
 .tool_tabs li a:focus,
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+{
+  border-radius: 10px;
+  border: 1px solid #834B66;
+  background: #E58D82;
+  color: #FFF;
+} */
+
+.tool_tabs li a:active,
+.tool_tabs li a:hover,
+.tool_tabs li a:focus,
+.tool_tabs>li.active>a, .tool_tabs>li.active>a:focus, .tool_tabs>li.active>a:hover
 {
   border-radius: 10px;
   border: 1px solid #834B66;
