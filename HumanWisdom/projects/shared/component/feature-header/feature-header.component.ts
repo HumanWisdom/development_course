@@ -5,6 +5,9 @@ import {AdultsService} from "../../../adults/src/app/adults/adults.service";
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
+import { NavigationService } from '../../services/navigation.service';
+
+
 
 @Component({
   selector: 'app-feature-header',
@@ -26,7 +29,7 @@ export class FeatureHeaderComponent implements OnInit {
 
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
-    private location:Location,
+    private location:Location,private navigationService: NavigationService,
     private ac:ActivatedRoute) {
       this.address=this.router.url;
       this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
@@ -67,9 +70,14 @@ export class FeatureHeaderComponent implements OnInit {
       console.log(error);
     });
    }
-   goBack(){
-     this.location.back()
-   }
+    goBack(){
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
+   } 
 
 
 }

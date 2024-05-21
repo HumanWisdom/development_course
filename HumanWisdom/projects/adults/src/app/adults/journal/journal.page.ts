@@ -2,8 +2,10 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { AdultsService } from '../adults.service';
+import { NavigationService } from '../../../../../shared/services/navigation.service';
+
 
 @Component({
   selector: 'app-journal',
@@ -26,7 +28,7 @@ export class JournalPage implements OnInit {
 
 
   constructor(private router: Router, private location: Location,
-    private service: AdultsService, public logeventservice: LogEventService,
+    private service: AdultsService, public logeventservice: LogEventService, private navigationService: NavigationService,
     private meta: Meta, private title: Title) {
 
   }
@@ -145,6 +147,12 @@ export class JournalPage implements OnInit {
     this.jrList = this.jrListC.filter(p => p.ProgId == "0")
   }
   goBack() {
-    this.location.back()
+    // this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 }

@@ -45,7 +45,8 @@ export class NavigationService {
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-     , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4'
+     , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4',
+     's72002','s72001','s72003','s72004','s72005','s72006','s72007'
   ];
 
   const wholeUrlCheckKeywords = [
@@ -81,14 +82,17 @@ export class NavigationService {
     let prevPath=null;
     if (this.history.length > 0) {
         // Pop the topmost path from the stack
-        this.history.pop();
+       this.history.pop();
         this.backClicked = true;
         // Perform routing logic to the popped path
         prevPath = this.history[this.history.length - 1];
+
+
         console.log(`Going back to: ${prevPath}`);
     } else {
         console.log("Cannot go back. History is empty.");
     }
+    console.log(this.history)
     return prevPath ;
 }
 }
