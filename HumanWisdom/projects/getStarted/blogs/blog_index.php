@@ -83,7 +83,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Manage your emotions
                     </button>
                   </div>
                 </div>
@@ -117,7 +117,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Work and Leadership
                     </button>
                   </div>
                 </div>
@@ -151,7 +151,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Relationships
                     </button>
                   </div>
                 </div>
@@ -185,7 +185,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Relationships
                     </button>
                   </div>
                 </div>

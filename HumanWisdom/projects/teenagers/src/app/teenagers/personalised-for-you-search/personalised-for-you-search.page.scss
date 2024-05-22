@@ -221,3 +221,8 @@ li:hover,
 li:hover:before {
   background: #93dfd7;
 }
+
+.circular-player-container
+{
+    transform: translate(-10%) scaleX(-1);
+}
