@@ -183,7 +183,9 @@ export class UnderstandYourselfPage implements OnInit {
     }else{
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/teenagers/curated/audiopage', audioLink, title, id])
+    let url = audioLink.replaceAll(':', '_');
+    url = encodeURIComponent(url.replaceAll('/', '~'));
+    this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
     }
   }
 
@@ -274,10 +276,10 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/teenagers/living-with-peace/${livingwithpeaceResume}`])
+            this.router.navigate([`/teenagers/three-steps-enquiry/${livingwithpeaceResume}`])
           }
           else
-            this.router.navigate([`/teenagers/living-with-peace/s97001`])
+            this.router.navigate([`/teenagers/three-steps-enquiry/s97001`])
           /* if(!lonelinessResume)
             {
 
@@ -392,10 +394,10 @@ export class UnderstandYourselfPage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.router.navigate([`/teenagers/comparison/${comparisonR}`])
+            this.router.navigate([`/teenagers/without-language/${comparisonR}`])
           }
           else
-            this.router.navigate([`/teenagers/comparison/s103001`])
+            this.router.navigate([`/teenagers/without-language/s103001`])
         })
   }
 
@@ -571,6 +573,7 @@ export class UnderstandYourselfPage implements OnInit {
     localStorage.setItem("blogId", JSON.stringify(id))
     this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
+
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;

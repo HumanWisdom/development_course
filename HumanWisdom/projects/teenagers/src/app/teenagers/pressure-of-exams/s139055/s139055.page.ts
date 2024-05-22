@@ -40,11 +40,11 @@ export class S139055Page implements OnInit {
       id: 105
     },
     {
-      name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/131.webp',
-      link: '/teenagers/relationships',
-      id: 131
-    },
+      name: 'Need For External approval',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp',
+      link: '/external-approval',
+      id: 123
+    }
   ]
 
   constructor() {

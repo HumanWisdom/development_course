@@ -12,13 +12,13 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S82022Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="five-circles-of-wisdom/s82001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/key_ideas.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp"
   
   bg=""
-  moduleLink="/key-ideas/s83001"
-  moduleName=" Key Ideas"
-  sectionName= "Introduction";
-  moduleId=83
+  moduleLink="/insight/s99001"
+  moduleName=" Insight"
+  sectionName= "Art of Enquiry";
+  moduleId=99
 
   constructor() { }
 
