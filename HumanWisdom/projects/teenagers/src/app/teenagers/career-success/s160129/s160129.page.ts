@@ -17,7 +17,7 @@ export class S160129Page implements OnInit,OnDestroy
   title="#8 Be flexible"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.18.mp3'
-  transcriptPage="career-success/s160129t"
+  transcriptPage="teenagers/career-success/s160129t"
   toc="teenagers/career-success/s160001"
   bookmark=0
   path = setTimeout(() => {
