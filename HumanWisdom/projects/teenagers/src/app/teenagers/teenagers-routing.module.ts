@@ -399,6 +399,14 @@ const routes: Routes = [
   {
     path: 'subscription',
     loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
+  },
+  {
+    path: 'coach',
+    loadChildren: () => import('../teenagers/coach/coach.module').then( m => m.CoachModule)
+  },
+  {
+    path: 'daily-practise/:id',
+    loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
   }
 ];
 
