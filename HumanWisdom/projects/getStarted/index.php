@@ -339,7 +339,7 @@
         <div class="row center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-            <div class="owl_container">
+            <div class="owl_container owl_testimonials">
               <div class="owl-carousel owl-theme">
                 <a class="item" data-aos="fade-up" data-aos-delay="200">
                   <div class="div_testimonials">
