@@ -73,7 +73,7 @@ const routes: Routes = [
   {
     path: 'index-transcript',
     loadChildren: () => import('./index-transcript/index-transcript.module').then( m => m.IndexTranscriptPageModule)
-  }
+  },
 ];
 
 @NgModule({
