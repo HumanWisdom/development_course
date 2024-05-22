@@ -12,7 +12,7 @@ export class CookiePolicyPage implements OnInit {
 
   ngOnInit() {
     if (!this.router.url.includes('/cookies-policy')) {
-        window.history.pushState('', '', '/cookies-policy');
+      //  window.history.pushState('', '', '/cookies-policy');
     }
   
   }
