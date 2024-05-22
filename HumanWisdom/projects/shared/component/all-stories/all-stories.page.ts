@@ -49,6 +49,7 @@ export class AllStoriesPage implements OnInit {
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
+    console.log("url=" + url)
     if (url == null) {
      this.location.back();
     }else{

@@ -20,7 +20,7 @@ export class S140110Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=17
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/110.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/141.webp"
  
   bg=""
   moduleLink="/success-failure"

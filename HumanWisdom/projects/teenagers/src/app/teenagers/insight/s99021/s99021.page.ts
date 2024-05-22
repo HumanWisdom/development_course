@@ -12,7 +12,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S99021Page implements OnInit {
   programType:ProgramType=ProgramType.Teenagers;
   toc="teenagers/insight/s99001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/100.png"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp"
   
   bg=""
   moduleLink="/awareness/s100001"  
@@ -21,9 +21,9 @@ export class S99021Page implements OnInit {
   moduleId=100
   moduleList: any = [
     {
-      name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
-      link: '/anxiety',
+      name: 'Awareness',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/100.webp',
+      link: '/awareness',
       id: 105
     },
     {

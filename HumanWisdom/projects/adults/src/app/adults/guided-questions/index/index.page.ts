@@ -4,6 +4,9 @@ import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
 import { SharedService } from "../../../../../../shared/services/shared.service";
+import { NavigationService } from "../../../../../../shared/services/navigation.service";
+
+
 
 @Component({
   selector: "app-index",
@@ -44,7 +47,8 @@ export class IndexPage implements OnInit, AfterViewInit {
     private location: Location,
     public logeventservice: LogEventService,
     private elementRef: ElementRef,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private navigationService: NavigationService
   ) {
 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
@@ -322,7 +326,13 @@ export class IndexPage implements OnInit, AfterViewInit {
         this.getDailyQuestion();
     }else{
       SharedService.isFromAdults =  false;
-         this.router.navigate(['/adults/adult-dashboard']);
+        //  this.router.navigate(['/adults/adult-dashboard']);
+        var url = this.navigationService.navigateToBackLink();
+        if (url == null) {
+          this.location.back();
+        }else{
+          this.router.navigate([url]);
+        }
     }
 
   }

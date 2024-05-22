@@ -28,10 +28,11 @@ export class S109077Page implements OnInit {
     id: 107
   },
   {
-    name: 'Nature',
-    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/106.webp',
-    link: '/nature',
-    id: 106
+    name: 'Noticing Thoughts',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/108.webp',
+    link: '/noticing-thoughts',
+    id: 108
+
   },
   {
     name: ' Guided Meditation',
