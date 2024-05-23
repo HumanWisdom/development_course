@@ -70,6 +70,10 @@ const routes: Routes = [
     path: 'guided-meditation',
     loadChildren: () => import('../guided-meditation/guided-meditation.module').then( m => m.GuidedMeditationModule)
   },
+  {
+    path: 'index-transcript',
+    loadChildren: () => import('./index-transcript/index-transcript.module').then( m => m.IndexTranscriptPageModule)
+  },
 ];
 
 @NgModule({

@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Happier Me</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>Explore Your Inner World with Our Self-Discovery Blog</title>
+    <meta property="title" content="Explore Your Inner World with Our Self-Discovery Blog">
+    <meta property="description" content="Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.">
+    <meta property="keyword" content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
 
     <!-- Favicons -->
     <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -83,7 +84,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Manage your emotions
                     </button>
                   </div>
                 </div>
@@ -117,7 +118,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Work and Leadership
                     </button>
                   </div>
                 </div>
@@ -151,7 +152,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Relationships
                     </button>
                   </div>
                 </div>
@@ -185,7 +186,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Relationships
                     </button>
                   </div>
                 </div>

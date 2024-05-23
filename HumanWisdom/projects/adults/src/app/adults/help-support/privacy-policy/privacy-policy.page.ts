@@ -13,7 +13,7 @@ export class PrivacyPolicyPage implements OnInit {
 
   ngOnInit() {
     if (this.router.url=="/adults/help-support/privacy-policy") {
-      window.history.pushState('', '', '/privacy-policy');
+     // window.history.pushState('', '', '/privacy-policy');
     }
   }
 
