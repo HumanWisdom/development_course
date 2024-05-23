@@ -14,7 +14,7 @@ export class SupportPage implements OnInit {
 
   ngOnInit() {
     if (!this.router.url.includes('/contact-us')) {
-      window.history.pushState('', '', '/contact-us');
+     // window.history.pushState('', '', '/contact-us');
     }
   }
 

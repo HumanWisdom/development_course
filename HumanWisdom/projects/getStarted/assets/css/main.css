@@ -2250,6 +2250,12 @@ a
   right: 5%;
 }
 
+.owl_coach a.item,
+.owl_testimonials a.item
+{
+  cursor: auto;
+}
+
 .tool_tabs 
 {
   position: absolute;
@@ -2293,10 +2299,21 @@ a
   float: none;
 }
 
-.tool_tabs li a:active,
+/* .tool_tabs li a:active,
 .tool_tabs li a:hover,
 .tool_tabs li a:focus,
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+{
+  border-radius: 10px;
+  border: 1px solid #834B66;
+  background: #E58D82;
+  color: #FFF;
+} */
+
+.tool_tabs li a:active,
+.tool_tabs li a:hover,
+.tool_tabs li a:focus,
+.tool_tabs>li.active>a, .tool_tabs>li.active>a:focus, .tool_tabs>li.active>a:hover
 {
   border-radius: 10px;
   border: 1px solid #834B66;
@@ -2787,4 +2804,9 @@ audio::-webkit-media-controls-enclosure
   font-weight: 600;
   line-height: 180%;
   color: #CB6171;
+}
+
+.owl-carousel.owl-drag .owl-item
+{
+  cursor: pointer;
 }

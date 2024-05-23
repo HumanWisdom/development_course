@@ -14,7 +14,7 @@ export class FaqPage implements OnInit {
 
   ngOnInit() {
     if (!this.router.url.includes('/faqs')) {
-      window.history.pushState('', '', '/faqs');
+     // window.history.pushState('', '', '/faqs');
     }
   }
 

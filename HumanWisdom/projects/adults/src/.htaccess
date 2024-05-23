@@ -12,3 +12,5 @@ RewriteRule ^adults/index\.html - [L]
 
 # Redirect all requests within the "adults" project to index.html
 RewriteRule ^(.*)$ /adults/index.html [NC,L,QSA]
+
+RewriteRule ^course/(.*)$ /adults/$1 [R=301,L]
