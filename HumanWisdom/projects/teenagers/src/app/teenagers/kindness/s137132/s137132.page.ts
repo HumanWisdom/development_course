@@ -35,10 +35,10 @@ export class S137132Page implements OnInit {
       id: 125
     },
     {
-      name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
-      link: '/anxiety',
-      id: 105
+      name: 'Fear & Anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp',
+      link: '/fear-anxiety',
+      id: 112
     },
     {
       name: 'Relationships',

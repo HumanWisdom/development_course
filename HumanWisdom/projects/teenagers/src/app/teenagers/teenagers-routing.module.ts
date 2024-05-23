@@ -5,6 +5,7 @@ import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { ActiveGuard } from '../authGuard/active.guard';
 import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/blog-article.page';
+import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 
 const routes: Routes = [
     {
@@ -354,10 +355,14 @@ const routes: Routes = [
         path: 'wisdom-stories',
         loadChildren: () => import('./wisdom-stories/wisdom-stories.module').then(m => m.WisdomStoriesModule)
     },
+    // {
+    //     path: 'blogs',
+    //     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+    // },
     {
-        path: 'blogs',
-        loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-    },
+        path:'blogs',
+        component:BlogIndexPage
+      },
     {
         path: 'wisdom-shorts',
         loadChildren: () => import('../../../../shared/component/wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
@@ -399,6 +404,14 @@ const routes: Routes = [
   {
     path: 'subscription',
     loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
+  },
+  {
+    path: 'coach',
+    loadChildren: () => import('../teenagers/coach/coach.module').then( m => m.CoachModule)
+  },
+  {
+    path: 'daily-practise/:id',
+    loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
   }
 ];
 

@@ -1,7 +1,7 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeenagersService } from './teenagers/teenagers.service';
@@ -23,12 +23,22 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
 import { StripeModule } from "stripe-angular";
+import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-index.page';
+import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    BlogIndexPage,
+    BlogArticlePage,
+],
+    exports:[
+        BlogIndexPage,
+        BlogArticlePage
+    ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
@@ -37,6 +47,7 @@ import { StripeModule } from "stripe-angular";
     BrowserAnimationsModule,
     PlatformModule,
     SharedModule,
+    FormsModule,
     StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
@@ -49,6 +60,7 @@ import { StripeModule } from "stripe-angular";
       useClass: TokenInterceptorService,
       multi: true
   },
+  FormsModule,
     TeenagersService,
     AdultsService,
     SharedService,

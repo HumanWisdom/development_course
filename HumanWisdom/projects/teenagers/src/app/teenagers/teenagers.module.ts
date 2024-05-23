@@ -6,6 +6,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons'
 import { BrowserModule } from '@angular/platform-browser';
 import { TeenagersRoutingModule } from './teenagers-routing.module';
 import { TokenInterceptorService } from '../teenagerOnboarding/token-interceptor.service';
+import { SharedModule } from '../../../../shared/shared.module';
 
 @NgModule({
   declarations: [],
@@ -16,6 +17,7 @@ import { TokenInterceptorService } from '../teenagerOnboarding/token-interceptor
     ShareButtonsModule.withConfig({
         debug:true
        }),
+       SharedModule
   ],
   providers: [
     {

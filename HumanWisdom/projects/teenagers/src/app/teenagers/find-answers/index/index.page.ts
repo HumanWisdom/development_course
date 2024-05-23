@@ -32,23 +32,18 @@ export class IndexPage implements OnInit {
     return '';
   }
 
-  getclcickevent(event) 
+  getclcickevent(event)
   {
-    if (event === 'enablepopup') 
+    if (event === 'enablepopup')
     {
       this.enablepopup.nativeElement.click();
     }
   }
 
-  goBack() 
+  goBack()
   {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    }else{
-      this.router.navigate([url]);
-    }
-  } 
+    this.location.back();
+  }
 
   routeToTab(param){
     this.defaultUrl = param;
