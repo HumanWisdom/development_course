@@ -559,78 +559,131 @@
             </div>
             <!-- /hr -->
 
-            <!-- find answers -->
-            <div class="row">
+            <!-- find inspiration -->
+            <div class="row tour_find_inspiration">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <div class="box_v3_05">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
-                        Find quick answers
-                      </h4>
-                    </div>
-                  </div>
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                  Find inspiration
+                </h4>
+              </div>
 
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px">
-                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
-                        Make sense of what you think and feel, find fresh ways to deal with life’s many challenges, and grow as a person.
-                      </h4>
-                    </div>
-                  </div>
 
-                  <div class="fas_div">
-                    <a (click)="routeToFindAnswer('why-do-i')">
-                      <div class="row fas_box">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                              Why do I ... ?
-                            </h4>
+            <div class="mt30px div_fi_a">
 
-                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                              Find answers to questions about why you feel the way you do
-                            </h4>
-                          </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
 
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                          </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('Click_life_stories', '/teenagers/wisdom-stories') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Life stories
+                          </h4>
                         </div>
                       </div>
-                    </a>
+                    </button>
+                  </div>
 
-                    <a (click)="routeToFindAnswer('how-can-i')">
-                      <div class="row fas_box">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                              How can I ... ?
-                            </h4>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_audio_meditation', '/teenagers/audio-meditation') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_audio_meditation.svg" class="img-responsive">
+                          </h4>
 
-                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                              Learn how to deal with challenges
-                            </h4>
-                          </div>
-
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                          </div>
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Audio meditation
+                          </h4>
                         </div>
                       </div>
-                    </a>
+                    </button>
                   </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_blog', '/teenagers/blogs') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Blog
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_podcast', '/teenagers/podcast') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_podcast.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Podcast
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_short_video', '/teenagers/wisdom-shorts') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Short videos
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_Events', '/teenagers/events') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Events
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
                 </div>
               </div>
-            </div>
 
+            </div>
+            </div>
+            <!-- /find inspiration -->
+
+            <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
             </div>
-
-            <!-- /find answers -->
+            <!-- /hr -->
+            
             <!-- subscribe to premium -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
