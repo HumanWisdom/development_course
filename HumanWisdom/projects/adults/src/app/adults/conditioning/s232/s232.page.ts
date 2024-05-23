@@ -186,4 +186,9 @@ export class S232Page implements OnInit, OnDestroy {
     this.router.navigate(['/adults/journal'])
   }
 
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  }
+
 }

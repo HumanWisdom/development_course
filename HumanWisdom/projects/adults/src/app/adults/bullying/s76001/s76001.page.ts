@@ -181,10 +181,10 @@ export class S76001Page implements OnInit, OnDestroy {
 
   }
   ngOnDestroy() {
-    this.endTime = Date.now();
+    /* this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //
-    if (this.userId !== 563) this.submitProgress()
+    if (this.userId !== 563) this.submitProgress() */
 
 
 
@@ -203,6 +203,12 @@ export class S76001Page implements OnInit, OnDestroy {
     state: {
       class: this.bg,
     }})
+  }
+
+  
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
   }
 
 }
