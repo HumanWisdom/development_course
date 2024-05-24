@@ -15,8 +15,8 @@ export class S133149Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w6"
   title="How can we discover joy?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/happiness/audios/4.5.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/happiness/audios/happiness+4.5.mp3'
 
   transcriptPage="happiness/s133149t"
   toc="teenagers/happiness/s133001"
