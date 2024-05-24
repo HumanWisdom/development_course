@@ -13,8 +13,8 @@ export class S133140Page implements OnInit {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w4"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/happiness/audios/4.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/happiness/audios/happiness+4.4.mp3'
   title="How can I make peace with my inner boredom?"
 
   toc="teenagers/happiness/s133001"

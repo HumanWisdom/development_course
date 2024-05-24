@@ -17,7 +17,7 @@ export class S160140Page implements OnInit,OnDestroy
   title="#10 Manage your own mental health"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.20.mp3'
-  transcriptPage="career-success/s160140t"
+  transcriptPage="teenagers/career-success/s160140t"
   toc="teenagers/career-success/s160001"
   bookmark=0
   path = setTimeout(() => {
