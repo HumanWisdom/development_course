@@ -202,5 +202,10 @@ continue(){
     }
   }
 
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  }
+
 
 }
