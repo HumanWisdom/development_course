@@ -5,10 +5,18 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Happier Me</title>
+    <!-- <title>Happier Me</title>
     <meta property="title" content="">
     <meta property="description" content="Discover how to reduce suffering & build a better world at Happier Me. Find wisdom through self-understanding, & live a more fulfilling life.">
-    <meta property="keyword" content="">
+    <meta property="keyword" content=""> -->
+
+    <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Master your mind and be happier" />
+    <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+    <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
 
     <!-- Favicons -->
     <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -339,7 +347,7 @@
         <div class="row center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-            <div class="owl_container">
+            <div class="owl_container owl_testimonials">
               <div class="owl-carousel owl-theme">
                 <a class="item" data-aos="fade-up" data-aos-delay="200">
                   <div class="div_testimonials">
@@ -1836,7 +1844,7 @@
 
                 <li>
                   <a data-toggle="tab" href="#teenage_program">
-                    Teenage program
+                    Program for teenagers
                   </a>
                 </li>
 

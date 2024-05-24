@@ -2250,6 +2250,12 @@ a
   right: 5%;
 }
 
+.owl_coach a.item,
+.owl_testimonials a.item
+{
+  cursor: auto;
+}
+
 .tool_tabs 
 {
   position: absolute;

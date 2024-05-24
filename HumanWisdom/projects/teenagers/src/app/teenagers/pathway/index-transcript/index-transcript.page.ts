@@ -8,6 +8,7 @@ import { AdultsService } from '../../../../../../adults/src/app/adults/adults.se
   templateUrl: './index-transcript.page.html',
   styleUrls: ['./index-transcript.page.scss'],
 })
+
 export class IndexTranscriptPage implements OnInit
 {
 

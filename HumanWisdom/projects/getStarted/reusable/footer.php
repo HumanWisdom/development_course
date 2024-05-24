@@ -139,23 +139,23 @@
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_social_links">
-            <a href="https://facebook.com/happiermeapp/">
+            <a href="https://facebook.com/happiermeapp/" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
             </a>
 
-            <a href="https://www.instagram.com/happiermeapp/">
+            <a href="https://www.instagram.com/happiermeapp/" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
             </a>
 
-            <a href="https://www.linkedin.com/company/humanwisdom">
+            <a href="https://www.linkedin.com/company/humanwisdom" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive">
             </a>
 
-            <a href="https://twitter.com/happiermeapp">
+            <a href="https://twitter.com/happiermeapp" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive">
             </a>
 
-            <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA">
+            <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive">
             </a>
           </div>
@@ -163,7 +163,7 @@
 
         <div class="row mtb20px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
-            <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567">
+            <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive">
             </a>
           </div>
@@ -171,7 +171,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
-            <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
+            <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive">
             </a>
           </div>
@@ -222,7 +222,7 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/partnership-app">
+                  <a href="https://happierme.app/adults/partnership-app">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Partnership Program
                     </h4>
@@ -259,7 +259,7 @@
               <!-- links -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-                  <a href="https://happierme.app/onboarding/add-to-cart">
+                  <a href="https://happierme.app/adults/onboarding/add-to-cart">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Gift HappierMe
                     </h4>
@@ -271,13 +271,13 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/wisdom-for-work">
+                  <a href="https://happierme.app/adults/wisdom-for-work">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for business
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/wisdom-for-students">
+                  <a href="https://happierme.app/adults/wisdom-for-students">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for education
                     </h4>
@@ -320,31 +320,31 @@
               <!-- links -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-                  <a href="https://happierme.app/faqs">
+                  <a href="https://happierme.app/adults/faqs">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       FAQ
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/contact-us">
+                  <a href="https://happierme.app/adults/contact-us">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Contact us
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/terms-and-conditions">
+                  <a href="https://happierme.app/adults/terms-and-conditions">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Terms & conditions
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/privacy-policy">
+                  <a href="https://happierme.app/adults/privacy-policy">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Privacy policy
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/cookies-policy">
+                  <a href="https://happierme.app/adults/cookies-policy">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Cookie policy
                     </h4>
