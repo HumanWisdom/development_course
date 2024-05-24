@@ -222,7 +222,7 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/partnership-app">
+                  <a href="https://happierme.app/adults/partnership-app">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Partnership Program
                     </h4>
@@ -259,7 +259,7 @@
               <!-- links -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-                  <a href="https://happierme.app/onboarding/add-to-cart">
+                  <a href="https://happierme.app/adults/onboarding/add-to-cart">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Gift HappierMe
                     </h4>
@@ -271,13 +271,13 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/wisdom-for-work">
+                  <a href="https://happierme.app/adults/wisdom-for-work">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for business
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/wisdom-for-students">
+                  <a href="https://happierme.app/adults/wisdom-for-students">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for education
                     </h4>
@@ -320,31 +320,31 @@
               <!-- links -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-                  <a href="https://happierme.app/faqs">
+                  <a href="https://happierme.app/adults/faqs">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       FAQ
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/contact-us">
+                  <a href="https://happierme.app/adults/contact-us">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Contact us
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/terms-and-conditions">
+                  <a href="https://happierme.app/adults/terms-and-conditions">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Terms & conditions
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/privacy-policy">
+                  <a href="https://happierme.app/adults/privacy-policy">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Privacy policy
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/cookies-policy">
+                  <a href="https://happierme.app/adults/cookies-policy">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Cookie policy
                     </h4>
