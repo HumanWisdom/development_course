@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LearnToQuestionYourselfTranscriptPage implements OnInit {
 
+  bg=""
+  
   constructor() { }
 
   ngOnInit() {
