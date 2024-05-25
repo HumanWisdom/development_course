@@ -1782,15 +1782,19 @@ export class AdultDashboardPage implements OnInit {
 
   // }
   routeResume(r, enableLastVisited = false) {
-    let id = '';
+    console.log(r);
+    let id = '', url='', screenNo='';
     if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';
+      url = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleUrl'].toString() : '/adults/happiness/';
+      this.service.setmoduleID(id,url, url );
+
     }
     // else {
     //   id = r.ModuleId.toString();
     // }
     localStorage.setItem("pageaction", 'next');
-    switch (id) {
+   /*  switch (id) {
       case "07": {
         this.service.setmoduleID(id, '/adults/comparison', '/adults/comparison/s0');
         // this.routeComparison(1)
@@ -2078,8 +2082,9 @@ export class AdultDashboardPage implements OnInit {
         // this.routeDiversityandInclusion(1)
         break
       }
-
-    }
+      }
+    */
+    
   }
 
   // introduction

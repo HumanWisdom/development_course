@@ -17,7 +17,7 @@ export class S160134Page implements OnInit,OnDestroy
   title="#9 Learn to solve problems"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.19.mp3'
-  transcriptPage="career-success/s160134t"
+  transcriptPage="teenagers/career-success/s160134t"
   toc="teenagers/career-success/s160001"
   bookmark=0
   path = setTimeout(() => {

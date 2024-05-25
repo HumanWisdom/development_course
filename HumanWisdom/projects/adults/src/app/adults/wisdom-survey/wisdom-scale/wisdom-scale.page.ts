@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
@@ -105,7 +106,7 @@ export class WisdomScalePage implements OnInit {
     private service: AdultsService,
     private location: Location,
     public logeventservice: LogEventService,
-    private ac: ActivatedRoute,
+    private ac: ActivatedRoute, private navigationService: NavigationService,
     private meta: Meta, private title: Title) {
 
     this.ac.queryParams.subscribe(params => {
@@ -324,7 +325,13 @@ export class WisdomScalePage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    // this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   viewClickEvent(url) {

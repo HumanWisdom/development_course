@@ -14,7 +14,7 @@
 
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
-        <a [routerLink]="['/adults/questions-are-key', qakResume]" *ngIf="lastvisited">
+        <a  (click)="Resume('/adults/questions-are-key/');"    *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>

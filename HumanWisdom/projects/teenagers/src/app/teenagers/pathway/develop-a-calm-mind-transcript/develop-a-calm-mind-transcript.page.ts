@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevelopACalmMindTranscriptPage implements OnInit {
 
+  bg=""
+  
   constructor() { }
 
   ngOnInit() {

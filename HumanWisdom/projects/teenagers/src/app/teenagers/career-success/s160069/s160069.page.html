@@ -1,26 +1,17 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-quotation [bg]="bg">
+ <app-simple-text [bg]="bg">
+
   <form>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 mb20px">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/quotation_01.svg" alt="">
-      </div>
-    </div>
-
-    <h1 class="mtb0px quotation_txt">
-      Your true value lies not in being famous but in being a good person.
-
+    <h1 class="txt1">
+      Being aware of the process of comparison operating in the background and being able to understand and question it can help us make better choices in our lives.
     </h1>
-    <hr class="hr_style_v3_05 mtb20px">
-   <h1 class="mtb0px quotation_writer">
-    Robin Williams
 
-
-    </h1>
+    <div class="clearfix"></div>
 
   </form>
-</app-quotation>
+
+</app-simple-text> 
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
