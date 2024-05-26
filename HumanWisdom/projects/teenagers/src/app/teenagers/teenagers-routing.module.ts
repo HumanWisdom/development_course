@@ -412,6 +412,10 @@ const routes: Routes = [
   {
     path: 'daily-practise/:id',
     loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
+  },
+  {
+    path: 'intro-happierme',
+    loadChildren: () => import('../teenagers/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
   }
 ];
 
