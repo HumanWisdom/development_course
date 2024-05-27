@@ -17,7 +17,7 @@ export class S160118Page implements OnInit,OnDestroy
   title="#6 Deal with critical feedback"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/teenagers/modules/career-success/audios/1.16.mp3'
-  transcriptPage="career-success/s160118t"
+  transcriptPage="teenagers/career-success/s160118t"
   toc="teenagers/career-success/s160001"
   bookmark=0
   path = setTimeout(() => {

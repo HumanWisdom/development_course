@@ -805,6 +805,11 @@ const routes: Routes = [
     canActivate: [ActiveGuard],
     component: S160107Page,
   },
+  {
+    path: 's160107t',
+    canActivate: [ActiveGuard],
+    component: S160107tPage,
+  },
 
   {
     path: 's160108',
@@ -867,6 +872,11 @@ const routes: Routes = [
     component: S160118Page,
   },
   {
+    path: 's160118t',
+    canActivate: [ActiveGuard],
+    component: S160118tPage,
+  },
+  {
     path: 's160119',
     canActivate: [ActiveGuard],
     component: S160119Page,
@@ -891,6 +901,11 @@ const routes: Routes = [
     path: 's160123',
     canActivate: [ActiveGuard],
     component: S160123Page,
+  },
+  {
+    path: 's160123t',
+    canActivate: [ActiveGuard],
+    component: S160123tPage,
   },
   {
     path: 's160124',
@@ -924,6 +939,11 @@ const routes: Routes = [
     component: S160129Page,
   },
   {
+    path: 's160129t',
+    canActivate: [ActiveGuard],
+    component: S160129tPage,
+  },
+  {
     path: 's160130',
     canActivate: [ActiveGuard],
     component: S160130Page,
@@ -947,6 +967,11 @@ const routes: Routes = [
     path: 's160134',
     canActivate: [ActiveGuard],
     component: S160134Page,
+  },
+  {
+    path: 's160134t',
+    canActivate: [ActiveGuard],
+    component: S160134tPage,
   },
   {
     path: 's160135',
@@ -977,6 +1002,11 @@ const routes: Routes = [
     path: 's160140',
     canActivate: [ActiveGuard],
     component: S160140Page,
+  },
+  {
+    path: 's160140t',
+    canActivate: [ActiveGuard],
+    component: S160140tPage,
   },
   {
     path: 's160141',
