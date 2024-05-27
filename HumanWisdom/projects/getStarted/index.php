@@ -2752,7 +2752,7 @@
     var pricingModel = ""
     var defaultCurrencySymbol = "";
     // Frontend JavaScript code
-    async function fetchData() {
+  async function fetchData() {
 
       const response = await fetch('https://ipapi.co/json');
       if (!response.ok) {
@@ -2775,13 +2775,14 @@
         this.defaultCurrencySymbol = pricingModel["ISOCode"]
         this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
         console.log(this.pricingModel);
-
+        console.log("this.pricingModel");
 
         const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
-
+        console.log("annualPricingModelHeading");
         const monthlyPricingModelHeading = document.getElementById('monthlyPricingModelHeading');
-
+  
         function annualPricingModelHeadingDisplay() {
+          console.log(pricingModel.CurSymbol + pricingModel.Annual + getIsoCode());
           annualPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Annual + getIsoCode();
         }
         const spanAnnualLabel = document.getElementById('spanAnnualLabel');
@@ -2907,45 +2908,6 @@
           }
       }
     });
-
-    fetchData();
-    var countryCode = "";
-    var pricingModel = ""
-    var defaultCurrencySymbol = "";
-    // Frontend JavaScript code
-    async function fetchData() {
-
-      const response = await fetch('https://ipapi.co/json');
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      const data = await response.json();
-      console.log(data);
-      if (data['in_eu']) {
-        this.countryCode = 'EUR'
-      } else {
-        this.countryCode = data['country_code_iso3']
-      }
-
-      const pricing = await fetch(`https://staging.humanwisdom.info/api/CountryRates/${this.countryCode}`);
-      if (!pricing.ok) {
-        throw new Error('Network response was not ok ' + pricing.statusText);
-      } else{
-        const pricingData = await pricing.json();
-        this.pricingModel = pricingData.filter((d) => d["ProgID"] == "9")[0];
-        this.defaultCurrencySymbol = pricingModel["ISOCode"]
-        this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
-        console.log(this.pricingModel);
-      }
-    }
-
-
-    function formatToDecimal(value) {
-      if (Number.isInteger(value)) {
-        return `${value}.00`;
-      }
-      return value.toFixed(2);
-    }
 
     </script>
   </body>
