@@ -1079,8 +1079,8 @@
 
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                  After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled.
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+     
                   <span class="">
                     <a class="fc_000000">
                       Terms
@@ -2778,17 +2778,24 @@
         console.log("this.pricingModel");
 
         const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
-        console.log("annualPricingModelHeading");
+
+        const totalAnnualPricingModelHeading = document.getElementById('totalAnnualPricingModelHeading');
+    
         const monthlyPricingModelHeading = document.getElementById('monthlyPricingModelHeading');
   
-        function annualPricingModelHeadingDisplay() {
-          console.log(pricingModel.CurSymbol + pricingModel.Annual + getIsoCode());
-          annualPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Annual + getIsoCode();
-        }
         const spanAnnualLabel = document.getElementById('spanAnnualLabel');
 
+        function annualPricingModelHeadingDisplay() {
+          annualPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Annual + getIsoCode();
+        }
+
+     
         function spanAnnualLabelDisplay() {
           spanAnnualLabel.textContent = `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`
+        }
+
+        function totalAnnualPricingModelHeadingDisplay() {
+          totalAnnualPricingModelHeading.textContent = `After your free trial, the yearly subscription is ${annualPricingModelHeading.textContent} and automatically renews each year until cancelled.`
         }
 
         function monthlyPricingModelHeadingDisplay() {
@@ -2798,6 +2805,7 @@
         annualPricingModelHeadingDisplay();
         spanAnnualLabelDisplay();
         monthlyPricingModelHeadingDisplay();
+        totalAnnualPricingModelHeadingDisplay();
       }
     }
 
