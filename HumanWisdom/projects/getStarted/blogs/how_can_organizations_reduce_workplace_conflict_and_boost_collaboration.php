@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Real success</title>
-    <meta property="title" content="Real success">
-    <meta property="description" content="Real success lies in how you are on the inside">
-    <meta property="keyword" content="success">
+    <title>How can organizations reduce workplace conflict and boost collaboration?</title>
+    <meta property="title" content="How can organizations reduce workplace conflict and boost collaboration?">
+    <meta property="description" content="How can governments and organizations reduce tribalism and factionalism and boost collaboration? It is a question that many organizations grapple with.">
+    <meta property="keyword" content="Work and Leadership">
 
     <!-- Favicons -->
     <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -76,7 +76,7 @@
             <div class="row rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                  Real success
+                  How can organizations reduce workplace conflict and boost collaboration? 
                 </h4>
               </div>
             </div>
@@ -91,7 +91,7 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5 tright">
-                    8 months ago 
+                    2 years ago 
                   </h4>
                 </div>
               </div>
@@ -99,130 +99,122 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/26.webp" class="img-responsive">
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px blog_desc">
-                  Real success lies in how you are on the inside
+                  ‘Self-knowledge is the first step to maturity’ ~ Jane Austen
+                </h4>
+
+                <h4 class="mtb0px blog_sub_title">
+                  How can organisations boost collaboration?
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Its not dependent on how much wealth or fame you have, but on how much you are at peace with yourself.
+                  In this article we are going to explore how helping everyone develop a deeper self-awareness and self-understanding may help reduce tribalism and boost collaboration in organisations.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  We want to be successful because we hope that the more we accumulate and the more famous we become, the better we will feel on the inside, but that may be an illusion, created by our thinking.
+                  But first, here is a story which illustrates the problem.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  We often assume the person who is rich and famous, and who has a big house and expensive holidays must be happy and if we could afford that we would be happier. Why? Have we ever paused to consider that wealth may not make people happier? (though poverty can make you unhappy).
+                  <span class="blog_highlight_black">
+                    I visited the 9/11 memorial in New York
+                  </span>
+                  recently and was moved by the beautiful water feature where the towers once stood and the wonderful museum with moving stories of bravery on the day.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Just ask Jim Carey who said ‘I think everybody should get rich and famous and do everything they ever dreamed of so they can see that its not the answer’
+                  What also struck me was that many intelligence agencies had information that could have prevented the attacks, and had they shared it readily with each other, the attacks could have been prevented. But each agency seemed to be in a competition for importance and influence and as a result intelligence sharing did not happen. Each agency thought only about protecting its own influence rather than about the common good, without exception. It is easy to blame individuals or leaders, but the origin of the problem is deeper, and linked to the way our minds work.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  This article explores why we have this powerful urge to be successful and if it cannot bring the lasting happiness we seek, what can? Chasing success is not wrong, but it may not deliver on its promise of making us happy. Of course we all need to earn an income to look after our physical needs and our loved ones, but real happiness comes from the inside. I hear someone say recently - Happiness is an inside job.
+                  This problem is also rife in organisations where 
+                  <span class="blog_highlight_black">
+                    one department is at odds with another,
+                  </span>
+                  and colleagues in the same department are sometimes in conflict with each other. This contributes to low productivity, poorer outcomes, and increased risk. It can also result in a loss of life, for example in hospital environments where teams are not communicating effectively. In the UK 10 million employees report workplace conflict. 900,00 workers took time off due to this (ACAS).
+                  <span class="blog_highlight_black">
+                    In the US the cost of workplace conflict is estimated at $359 billion/year (CPP Inc., 2008).
+                  </span>
+                  Companies with a poor corporate culture report a 48% turnover of staff, compared to 13% where there is a healthy one (Columbia University, 2012).
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  At present 1 in 4 people have a mental health problem, 1 in 6 a substance abuse problem, 1 in 10 are depressed, 42% are obese, and more than half our relationships are unhappy (US data, but similar worldwide). Is that success? Even if one of our relationships is unhappy we cannot be happy, no matter how wealthy we are.
+                  To address any problem, we need to explore the root cause, and in this case it lies in a deeper understanding of how the human mind is wired. There are four hidden drivers in our thinking that contribute to the problem.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  I asked some 17 years olds in the school what they wanted from their life ahead. All of them, with one exception said they wanted to be rich and famous.
+                  <span class="blog_highlight_black">
+                    Conditioning:
+                  </span>
+                  We are all conditioned by our environment and past influences. We are not aware of this, and yet become attached to our conditioning. This becomes our ‘normal’ and shapes our opinions and beliefs. Anyone we meet who is different is ‘wrong’ and we either avoid them or try to convince them of our point of view. Conflict follows.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Why’ I asked.
+                  <span class="blog_highlight_black">
+                    Identity:
+                  </span>
+                  This is also an unconscious process. If I belong to ‘Department A’ that becomes my identity, and I am at odds with ‘Department B’. We compete for influence and resources in the organisation. This turf war does not serve the organisation as a whole.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  ’Because that will make us happy’ they said.
+                  <span class="blog_highlight_black">
+                    Self-interest:
+                  </span>
+                  Our hidden self-interest operates in the background, shaping our thoughts and actions. In any meeting I am always looking out for myself and resist anyone else gaining in influence, even though they may not be interfering in our work in any way. Our self-interest stops us living with integrity and collaborating with each other for the common good.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Why aren’t you happy now’ I asked.
+                  <span class="blog_highlight_black">
+                    Comparison:
+                  </span>
+                  The unconscious process of comparison operates in the background in all of us. If others are better in some way it generates a feeling of envy and resistance, and we blame others for how we are feeling. We often act then to pull the other person down and conflict follows.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Because happiness is hard’ they said.
+                  A deeper understanding of these hidden drivers in our thinking can help us put them to one side and collaborate with others for the common good. It can also reduce interpersonal conflict. Each person needs to go on a journey of learning about themselves and this awakens wisdom, which can be life-changing in many ways.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  ‘If you are not happy now, why do you think you will be in the future’ I asked.
+                  Organizations can help by training staff in self-awareness – for their own personal growth. A natural by-product of this is better collaboration and reduced conflict. To be effective this training cannot be done as a one off event because it is quickly forgotten.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  There was no answer.
+                  It also not effective imparted as pure information, though that is a good start. Regular group discussions combined with the use of the app and the built in online journal help users go on a journey of self-awareness, and it is this that brings transformation.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Why hasn’t any one of you said you want to be healthy’ I asked.
+                  The HappierMe app makes this process of self-awareness easy, with more than 60 bite-sized modules and a growing library of content. This awareness is then applied practically to help boost relationship and communication skills, boost collaboration and reduce conflict, and help people meet challenges with much less stress and anxiety.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  ‘Because we already are’ they said.
+                  This wisdom can transform the culture of organizations and they can become happier places to work. This can boost retention, productivity, litigation and result in better outcomes for all concerned.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  So do we want what we don’t already have, and take what we do have for granted’ I asked.
+                  To find out more download and browse the HappierMe app for free, or visit
+                  <a class="blog_highlight_peach td_underline" href="">
+                    https://happierme.app.
+                  </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Yes’ they said.
+                  To talk to us about a bespoke training package for your organization, using the HappierMe app and trained HappierMe coaches, please email – 
+                  <a class="blog_highlight_peach td_underline" href="">
+                    team@happierme.app
+                  </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  We are programmed from a young age to chase success in the world in the hope it will make us happy, but that inner happiness often eludes us. We are told we will be recognised as successful if we are better than others and wealthy or famous - so we chase those dreams in the hope that will make us  happy. Every milestone we achieve, every exam we pass, or promotion we get, makes us feel good for a short time, and then the feeling passes, and we are left feeling empty again. Our conditioning pushes us to chase the next milestone, and this is how we spend our lives, until we arrive at the top of our imagined mountain, as president of this, or head of that, or rich and famous, and discover our hearts are still empty, and wonder where we went wrong. To numb the pain we feel we may turn to drink or drugs, and a downward spiral begins. So many rich and famous people have walked that well trodden path.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  In the pursuit of success we may not have looked after our health or paid enough attention to our relationships and may find both in disarray, further contributing to our unhappiness. In any pursuit there is always the chance of disappointment and failure, and that can make us stressed, anxious, or depressed. Or we may compare ourselves with others, and feel less than them and think our lives are a failure, when in fact we may have much to be grateful for. It is a paradox that the journey to success which we thought would make us happier, may in fact end up doing the opposite.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  To understand what is going on in our mind we need to be curious and understand the many hidden drivers in our own thinking that create this framework in which we live our lives. Understanding these drivers can help us take charge of our own lives, and live a more balanced, happier life.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  We are all influenced (conditioned) by our environment and not aware of it. If everyone is running in one direction we start running after them, without pausing to ask why. If people around us are obese we are much more likely to be obese, for example, or if everyone is busy chasing money, we are likely to do the same. Our conditioning influences come from our parents, our friends, and the media we consume.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Inside all of us is an inner emptiness that we may not be aware of.  It makes us feel uncomfortable and pushes us to escape from it. It is why we are restless, always chasing something and never satisfied. When we are chasing something we feel a dopamine rush that disappears when we get what we want. We then feel empty again and need to chase something else.  This is why our minds are wired to assume that the more we accumulate on the outside, the better we will feel on the inside. This conditioning is powerful and we react when anyone suggests it may not be true.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  I once met a lady who had 176 pairs of shoes, and was about to go shopping for the next pair. She did not understand the emptiness within her that was pushing her to do this, nor the futility of it. When challenged she could of course justify her actions. Our minds are very capable of justifying everything we do. There is nothing wrong with buying shoes, except the happiness we seek does not last long.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  To experience true happiness which is a mix of contentment and joy, we also need to begin an inner journey to find out what real happiness is, and find that peace for ourselves. How do we begin?
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  The first step is to realise that the happiness we seek in the world outside is already there inside us and to find it we need to go on a journey of learning about ourselves and how our minds work. Be curious. Ask questions of yourself. Why is my mind so restless, always chasing the next thing? Why is the happiness I seek in the world so short-lived? Why I am blind to the extraordinary beauty of the world? Is my pursuit of success actually making me more unhappy?
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  If you do want to begin your journey to discover this sense of peace and happiness within you, the HappierMe app (formerly HumanWisdom) has all the self-awareness tools to help you do so. The additional benefit of this deeper self-understanding is that it helps you understand others better, which leads to happier relationships. It also makes you emotionally intelligent, a better communicator and more resilient, and this contributes to your success in the world.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  If you are happy, content with who you are and what you have, and have a peaceful relationship with yourself and others, you can count yourself as successful already. If not, you can get started on that journey.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  In summary, this deeper self-understanding can help you feel happier on the inside, and contribute to your success in the world.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Take the first step, and begin. Your happiness (and success) depends on it.
+                  Read more blogs:
+                  <a class="blog_highlight_peach td_underline" href="">
+                    15 ways wisdom can transform organization
+                  </a>
                 </h4>
               </div>
             </div>
