@@ -109,6 +109,40 @@
         font-size: 12px !important;
     }
     /* /responsive_fonts */
+
+    .div_price,
+    .div_dyk_l1,
+    .div_inspire,
+    .input_parent
+    {
+        display: block !important;
+    }
+
+    .div_price > [class^="col-"],
+    .div_dyk_l1 > [class^="col-"]
+    {
+        margin-bottom: 20px;
+        border: 0;
+    }
+
+    .div_price > [class^="col-"]:last-child,
+    .div_dyk_l1 > [class^="col-"]:last-child
+    {
+        margin-bottom: 0;
+    }
+
+    .absolute_desc
+    {
+        position: relative;
+        left: 0;
+        justify-content: center;
+    }
+
+    .absolute_desc h4 
+    {
+        color: #000;
+        text-align: center;
+    }
 }
 
 @media (min-width: 768px)
