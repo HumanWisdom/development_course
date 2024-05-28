@@ -8,7 +8,7 @@ import { IntroHappiermePageRoutingModule } from './intro-happierme-routing.modul
 
 import { IntroHappiermePage } from './intro-happierme.page';
 
-import { SharedModule } from '../../../../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
   imports: [

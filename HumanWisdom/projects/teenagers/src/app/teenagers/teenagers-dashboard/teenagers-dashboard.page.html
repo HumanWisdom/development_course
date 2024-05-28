@@ -419,7 +419,7 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_user">
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
-                              <a class="prelative">
+                              <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
                                 </div>
@@ -437,7 +437,7 @@
                                   </div>
                                 </div>
 
-                                <div class="row mb15px" (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
+                                <div class="row mb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
                                       Introduction to HappierMe
