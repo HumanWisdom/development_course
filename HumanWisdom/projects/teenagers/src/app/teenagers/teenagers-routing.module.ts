@@ -415,7 +415,7 @@ const routes: Routes = [
   },
   {
     path: 'intro-happierme',
-    loadChildren: () => import('../teenagers/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
+    loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
   }
 ];
 
