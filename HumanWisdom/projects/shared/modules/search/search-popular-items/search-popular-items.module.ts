@@ -21,7 +21,6 @@ import { IndexPage } from '../../../../adults/src/app/adults/guided-questions/in
     SearchPopularItemsPageRoutingModule,
     SharedModule,
     ForumLandingPageModule,
-    IndexPageModule,
     PodcastTocPageModule
   ],
   declarations: [SearchPopularItemsPage,IndexPage],
