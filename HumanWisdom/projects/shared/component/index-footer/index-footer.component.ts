@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService } from '../../services/shared.service';
+import { SharedService,  UrlConstant } from '../../services/shared.service';
 
 @Component({
   selector: 'app-index-footer',
@@ -86,32 +86,40 @@ export class IndexFooterComponent implements OnInit {
     
   }
   routeDash(){
-    this.router.navigate(['/adults/adult-dashboard'])
-   
+    // this.router.navigate(['/adults/adult-dashboard'])
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
+
   }
   routeJournal(){
-    // if(localStorage.getItem('isloggedin') === 'T')
-      this.router.navigate(['/adults/journal'])
-   
+    
+      // this.router.navigate(['/adults/journal'])
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/journal`);
   }
+
   routeSearch(){
-    this.router.navigate(['/adults/search']);
+    // this.router.navigate(['/adults/search']);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/search`);
   } 
   profileclickevent() {
     if(localStorage.getItem('isloggedin') === 'T') {
-      this.router.navigate(['/onboarding/user-profile'])
+    //  this.router.navigate(['/onboarding/user-profile'])
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/user-profile`);
+
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
         localStorage.setItem('btnclick', 'T')
-        this.router.navigate(['/onboarding/login'])
+        //this.router.navigate(['/onboarding/login'])
+        this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/login`);
       // }
       
     }
   }
 
   routeForum(){
-    // if(localStorage.getItem('isloggedin') === 'T')
-       this.router.navigate(['/forum'])
+    
+      //  this.router.navigate(['/forum'])
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/forum`);
+
    
   }
 
