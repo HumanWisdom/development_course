@@ -421,6 +421,10 @@ const routes: Routes = [
     path: 'treesisters',
     loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
   },
+   {
+    path: 'intro-happierme',
+    loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
+  }
 ];
 
 

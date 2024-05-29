@@ -165,4 +165,12 @@ export class S39000Page implements OnInit,OnDestroy {
     this.location.back()
   }
 
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
+  }
+
+
 }

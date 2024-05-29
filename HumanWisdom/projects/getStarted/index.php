@@ -1014,8 +1014,7 @@
       <!-- /testimonials -->
 
       <!-- subscription -->
-      <!-- <section>
-        <div class="row center_flex div_subscription">
+      <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
@@ -1044,14 +1043,12 @@
                         Yearly
                       </h4>
 
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                        INR 5,999/yr
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="annualPricingModelHeading">
                       </h4>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 500/mo.
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel">
                       </h4>
                     </div>
                   </div>
@@ -1070,8 +1067,8 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 700/mo.
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading">
+
                       </h4>
                     </div>
                   </div>
@@ -1082,8 +1079,8 @@
 
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                  After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled.
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+     
                   <span class="">
                     <a class="fc_000000">
                       Terms
@@ -1099,7 +1096,7 @@
               </div>
             </div>
 
-            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
+            <div class="row center_flex mt40px" id="AnnualType" data-aos="fade-up" data-aos-delay="300">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Continue
@@ -1109,7 +1106,6 @@
 
           </div>
         </div>
-      </section> -->
       <!-- /subscription -->
 
       <!-- coaches -->
@@ -2751,6 +2747,101 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
     <script>
+     fetchData();
+    var countryCode = "";
+    var pricingModel = ""
+    var defaultCurrencySymbol = "";
+    // Frontend JavaScript code
+  async function fetchData() {
+
+      const response = await fetch('https://ipapi.co/json');
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      const data = await response.json();
+      console.log(data);
+      if (data['in_eu']) {
+        this.countryCode = 'EUR'
+      } else {
+        this.countryCode = data['country_code_iso3']
+      }
+
+      const pricing = await fetch(`https://staging.humanwisdom.info/api/CountryRates/${this.countryCode}`);
+      if (!pricing.ok) {
+        throw new Error('Network response was not ok ' + pricing.statusText);
+      } else {
+        const pricingData = await pricing.json();
+        this.pricingModel = pricingData.filter((d) => d["ProgID"] == "9")[0];
+        this.defaultCurrencySymbol = pricingModel["ISOCode"]
+        this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
+        console.log(this.pricingModel);
+        console.log("this.pricingModel");
+
+        const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
+
+        const totalAnnualPricingModelHeading = document.getElementById('totalAnnualPricingModelHeading');
+    
+        const monthlyPricingModelHeading = document.getElementById('monthlyPricingModelHeading');
+  
+        const spanAnnualLabel = document.getElementById('spanAnnualLabel');
+
+        function annualPricingModelHeadingDisplay() {
+          annualPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Annual + getIsoCode();
+        }
+
+     
+        function spanAnnualLabelDisplay() {
+          spanAnnualLabel.textContent = `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`
+        }
+
+        function totalAnnualPricingModelHeadingDisplay() {
+          totalAnnualPricingModelHeading.textContent = `After your free trial, the yearly subscription is ${annualPricingModelHeading.textContent} and automatically renews each year until cancelled.`
+        }
+
+        function monthlyPricingModelHeadingDisplay() {
+          monthlyPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Monthly + getIsoCode()+'/mo';
+        }
+        
+        annualPricingModelHeadingDisplay();
+        spanAnnualLabelDisplay();
+        monthlyPricingModelHeadingDisplay();
+        totalAnnualPricingModelHeadingDisplay();
+      }
+    }
+
+
+    function formatToDecimal(value) {
+      if (Number.isInteger(value)) {
+        return `${value}.00`;
+      }
+      return value.toFixed(2);
+    }
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const AnnualType = document.getElementById('AnnualType');
+      AnnualType.addEventListener('click', () => {
+    window.location.href="https://happierme.app/adults/subscription/try-free-and-subscribe"
+      });
+
+      // const MonthlyType = document.getElementById('MonthlyType');
+      // MonthlyType.addEventListener('click', () => {
+      //   addCountryLinks(countries);
+      // });
+
+    });
+
+    function getIsoCode() {
+      if (this.pricingModel.CurSymbol == '$') {
+        return ` (${this.pricingModel.ISOCode})`;
+      }
+      return '';
+    }
+
+  
+
+
     $('.owl_container .owl-carousel').owlCarousel({
       stagePadding: 50,
       loop: false,
@@ -2825,6 +2916,7 @@
           }
       }
     });
+
     </script>
   </body>
 
