@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChang
 import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
-
+import { ProgramType } from '../../models/program-model';
 
 import {
   getSupportedInputTypes,
@@ -45,13 +45,20 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   subscription: Subscription;
   toursubscription: Subscription;
   disableClick = false;
+  isAdults: boolean = true; 
 
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
     public platform: Platform,
     public logeventservice: LogEventService
-  ) { }
+  ) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+   }
 
   getmenuevent() {
     if (this.router.url == "/onboarding/user-profile") {
@@ -63,6 +70,23 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     this.closemodal.nativeElement.click();
   }
 
+  handleReferFriendClick() {
+    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+    this.router.navigate([url]);
+  }
+
+  handleReferFriend(){
+    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+    this.Logevent(url, '', 'click_refer_friend_Hamburger');
+    this.router.navigate([url]);
+  }
+
+  handleTreeSistersClick(){
+    const url = this.isAdults ? '/adults/treesisters' : '/teenagers/treesisters';
+    this.Logevent(url,  '', 'click_treesisters_Hamburger');
+    this.router.navigate([url]);
+  }
+ 
   ngOnChanges(changes: SimpleChanges): void {
     if(this.userDetails.length !== 0) {
       let userdetail = this.userDetails[0];

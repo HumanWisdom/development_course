@@ -414,6 +414,14 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
   },
   {
+    path: 'refer-friend',
+    loadChildren: () => import('../../../../shared/component/refer-friend/refer-friend.module').then(m => m.ReferFriendPageModule)
+  },
+  {
+    path: 'treesisters',
+    loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
+  },
+   {
     path: 'intro-happierme',
     loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
   }

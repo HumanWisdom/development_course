@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LogEventService } from "../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../shared/services/onboarding.service';
+import { SharedService } from '../../../shared/services/shared.service';
+import { ProgramType } from '../../../shared/models/program-model';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -37,7 +39,8 @@ export class ProfilePage implements OnInit {
   enableAlert = false;
   contentText = 'Are you sure you want to delete your data?';
   isCancel = true;
-
+  isAdults: boolean = true; 
+  
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     public platform: Platform, public logeventservice: LogEventService) {
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -58,6 +61,11 @@ export class ProfilePage implements OnInit {
     } else {
       this.score = -(this.score);
       this.direction = "down";
+    }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
     }
   }
 
@@ -101,6 +109,11 @@ export class ProfilePage implements OnInit {
     } else {
       this.isSubscribe = true;
     }
+  }
+
+  handleReferFriendClick() {
+    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+    this.router.navigate([url]);
   }
 
   survey() {
