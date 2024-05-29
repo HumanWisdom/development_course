@@ -7,6 +7,8 @@ import {
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-toc-topnav',
@@ -25,6 +27,7 @@ export class TocTopnavComponent implements OnInit {
   subscriber = false;
   @Input()
   enableplaystore = true
+  isAdults: boolean = true; 
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
@@ -33,7 +36,11 @@ export class TocTopnavComponent implements OnInit {
     if (userid === 'T') {
       this.isloggedIn = true
     }
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   ngOnInit() {
@@ -54,7 +61,15 @@ export class TocTopnavComponent implements OnInit {
     this.router.navigate([`/adults/program-guide/s35001`])
   }
 
-
+  handleReferFriendClick() {
+    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+    this.router.navigate([url]);
+  }
+  
+  handleTreeSisterClick() {
+    const url = this.isAdults ? '/adults/treesisters' : '/teenagers/treesisters';
+    this.router.navigate([url]);
+  }
 
   getevent() {
     this.name = localStorage.getItem('name');
