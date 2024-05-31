@@ -69,23 +69,23 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/wisdom-for-work">
+            <a href="../pages/work.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                HappierMe for business
+                HappierMe for work
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/wisdom-for-students">
+            <a href="../pages/education.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 HappierMe for education
               </h4>
             </a>
 
-            <!-- <a href="">
+            <a href="../pages/healthcare.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 HappierMe for healthcare
               </h4>
-            </a> -->
+            </a>
 
             <a href="https://happierme.app/newsletter.html">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
@@ -271,23 +271,23 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/wisdom-for-work">
+                  <a href="../work.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      HappierMe for business
+                      HappierMe for work
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/wisdom-for-students">
+                  <a href="../education.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for education
                     </h4>
                   </a>
 
-                  <!-- <a>
+                  <a href="../healthcare.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for healthcare
                     </h4>
-                  </a> -->
+                  </a>
 
                   <a href="https://happierme.app/newsletter.html">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">

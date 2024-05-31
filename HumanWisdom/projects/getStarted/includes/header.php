@@ -11,12 +11,14 @@
     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
       <nav id="navbar" class="navbar m0pxi">
         <ul>
-          <!-- <li><a href="#about">About us</a></li> -->
-          <li><a href="blog_index.php">Blog</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="../pages/about_us.php">About us</a></li>
+          <li><a href="../blogs/blog_index.php">Blog</a></li>
+          <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <li><a href="../pages/work.php">HappierMe for work</a></li>
+              <li><a href="../pages/education.php">HappierMe for education</a></li>
+              <li><a href="../pages/healthcare.php">HappierMe for healthcare</a></li>
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
@@ -24,12 +26,9 @@
                   <li><a href="#">Deep Drop Down 4</a></li>
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              </li> -->
             </ul>
-          </li> -->
+          </li>
           <!-- <li><a href="#events">Partnership</a></li> -->
           <li><a href="https://staging.happierme.app/adults/onboarding/login">Login</a></li>
         </ul>
