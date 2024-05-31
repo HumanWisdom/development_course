@@ -1042,7 +1042,8 @@
                       <h4 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
                         Yearly
                       </h4>
-
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="strikeOutAnnualPricingModelHeading">
+                      </h4>
                       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="annualPricingModelHeading">
                       </h4>
                     </div>
@@ -2778,7 +2779,9 @@
         console.log("this.pricingModel");
 
         const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
-
+       
+        const strikeOutAnnualPricingModelHeading  = document.getElementById('strikeOutAnnualPricingModelHeading');
+       
         const totalAnnualPricingModelHeading = document.getElementById('totalAnnualPricingModelHeading');
     
         const monthlyPricingModelHeading = document.getElementById('monthlyPricingModelHeading');
@@ -2786,12 +2789,15 @@
         const spanAnnualLabel = document.getElementById('spanAnnualLabel');
 
         function annualPricingModelHeadingDisplay() {
-          annualPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Annual + getIsoCode();
+          annualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual + getIsoCode()}/yr`;
         }
 
+        function strikeOutAnnualPricingModelHeadingDisplay() {
+          strikeOutAnnualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`;
+        }
      
         function spanAnnualLabelDisplay() {
-          spanAnnualLabel.textContent = `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`
+          spanAnnualLabel.textContent =  `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`
         }
 
         function totalAnnualPricingModelHeadingDisplay() {
@@ -2801,7 +2807,7 @@
         function monthlyPricingModelHeadingDisplay() {
           monthlyPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Monthly + getIsoCode()+'/mo';
         }
-        
+        strikeOutAnnualPricingModelHeadingDisplay();
         annualPricingModelHeadingDisplay();
         spanAnnualLabelDisplay();
         monthlyPricingModelHeadingDisplay();
