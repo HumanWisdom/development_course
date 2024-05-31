@@ -177,12 +177,12 @@ export class S142001Page implements OnInit, OnDestroy {
 
   }
   ngOnDestroy() {
-    this.endTime = Date.now();
+   /*  this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //
     if (this.userId !== 563) this.submitProgress()
 
-
+ */
 
   }
 

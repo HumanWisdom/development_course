@@ -390,7 +390,7 @@ export class TeenagersService {
 
   activateModule(id, lastVisitedurl = '', indexUrl = '') {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
-    let discoveringWisdomResume;
+    let pgResume;
     let mediaPercent;
     localStorage.setItem("moduleId", JSON.stringify(id))
     this.clickModule(id, userId)
@@ -398,8 +398,14 @@ export class TeenagersService {
 
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
-        discoveringWisdomResume = "s" + res.lastVisitedScreen
-        sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
+        pgResume = "s" + res.lastVisitedScreen
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        sessionStorage.setItem("pgResume", pgResume)
         mediaPercent = parseInt(res.MediaPercent);
         let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
         localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
@@ -416,8 +422,8 @@ export class TeenagersService {
       },
         () => {
           if (lastVisitedurl !== '' && indexUrl !== '') {
-            if (discoveringWisdomResume && discoveringWisdomResume !== '') {
-              this.router.navigate([`${lastVisitedurl}/${discoveringWisdomResume}`])
+            if (pgResume && pgResume !== '') {
+              this.router.navigate([`${lastVisitedurl}/${pgResume}`])
             } else {
               this.router.navigate([`${indexUrl}`])
             }
