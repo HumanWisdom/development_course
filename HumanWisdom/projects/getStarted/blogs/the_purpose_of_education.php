@@ -2,48 +2,20 @@
 <html lang="en">
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <title>The purpose of education.</title>
     <meta property="title" content="The purpose of education.">
     <meta property="description" content="The purpose of this thinkpiece is to ask questions of our global education system, to create a discussion and to look at education with fresh eyes.">
     <meta property="keyword" content="Understand yourself, Succeed in life">
 
-    <!-- Favicons -->
-    <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="icon">
-    <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="../assets/css/main.css" rel="stylesheet">
-    <link href="../assets/css/responsive.css" rel="stylesheet">
-    <link href="../assets/font/font_colour.css" rel="stylesheet">
-    <link href="../assets/font/font_size.css" rel="stylesheet">
-    <link href="../assets/font/font_weight.css" rel="stylesheet">
-    <link href="../assets/font/line_height.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- vendor_header -->
+    <?php include('../includes/vendor_header.php'); ?>
+    <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../reusable/header.php'); ?>
+    <?php include('../includes/header.php'); ?>
     <!-- /header -->
 
     <!-- <section class="hpt120px">
@@ -85,13 +57,13 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Manage your emotions
+                    Work & Leadership
                   </button>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5 tright">
-                    2 years ago 
+                    <!-- 2 years ago  -->
                   </h4>
                 </div>
               </div>
@@ -110,22 +82,29 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  The purpose of this thinkpiece is to ask questions of our global education system, to create a discussion and to look at education with fresh eyes.
+                  <span class="blog_highlight_black">
+                    The purpose of this article is to ask questions of our global education system,
+                  </span>
+                  to generate a discussion and to look at education with fresh eyes.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  The world is changing rapidly, at a pace we are struggling to keep up with. Our education system is at a standstill, based as it is in the era of the industrial revolution. We are in the age of the technological revolution, a communication revolution, and an information revolution.
+                  The world is changing rapidly, at a pace we are struggling to keep up with.
+                  <span class="blog_highlight_black">
+                    Our education system is at a standstill, based as it is in the era of the industrial revolution.
+                  </span>
+                  We are in the age of the technological revolution, a communication revolution, and an information revolution. 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wisdom has never been more needed to address the challenges the world faces. Wisdom can begin by asking questions, especially those we usually don’t ask.
+                  Wisdom has never been more needed to address the challenges the world faces, and it begins by asking questions.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
                   Have we got education upside down?
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb0px blog_desc blog_highlight_black">
                   The root of the word ‘education’ is ‘educere’ which means ‘to draw out.’
                 </h4>
 
@@ -144,7 +123,7 @@
                   <span class="blog_highlight_black">
                     Watch the children in a Nursery as they play imaginatively
                   </span>
-                  without consideration for how they might look to others. The imagination they are born with runs wild as they express themselves freely. A child who paints their first picture is not assessed or judged then given a label as a ‘good’ or ‘bad’ artist. They are celebrated for using the qualities within them and encouraged to keep going. But this raises another question:
+                  without consideration for how they might look to others. The imagination they are born with runs wild as they express themselves freely. A child who paints their first picture is not assessed or judged then given a label as a ‘good’ or ‘bad’ artist. They are celebrated for using the qualities within them and encouraged to keep going. But this raises another question: 
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -168,22 +147,22 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Our education system is focused on grades because they are easy to measure, but research has shown that grades are a poor predictor of long term success. What has been shown to be far more important is emotional intelligence, resilience, the ability to solve problems, have healthy relationships, collaborate with others, and manage your own mental health. These qualities are rarely taught through our education system, and because they cannot be easily measured, are not given much importance. Our mission at HumanWisdom is to redress this imbalance and give students and teachers the tools they need to acquire these skills for themselves. In addition to contributing to long term success, they also contribute to long term happiness.
+                  Our education system is focused on grades because they are easy to measure, but research has shown that grades are a poor predictor of long term success.
+                  <span class="blog_highlight_black">
+                    What has been shown to be far more important for success is emotional intelligence, resilience, the ability to solve problems, have healthy relationships, collaborate with others, and manage your own mental health. These qualities are rarely taught through our education system, 
+                  </span>
+                  and because they cannot be easily measured, are not given much importance. Our mission at HappierMe is to redress this imbalance and give students and teachers the tools they need to acquire these skills for themselves. In addition to contributing to long term success, they also contribute to long term happiness.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                     We have an education system that measures children,
                   </span>
-                  compares them, then places them in a band of below average, average or above average. A system that judges them based on those measurements and tells them if they are successful or failures. We do this because we think knowledge is important. It is, but is it important to memorise it and test students on that ability, when it is all easily accessible on the phone or computer anyway?
+                  compares them, then places them in a band of below average, average or above average. A system that judges them based on those measurements and tells them if they are successful or failures. We do this because we think knowledge is important. It is, but is it important to memorise it and test students on that ability, when it is all easily accessible on the phone or computer anyway? Are we guilty of creating the problems we see in the world today? These include mental health issues, stress, anxiety, body image problems - the list goes on.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb0px blog_desc blog_highlight_black">
                   By giving them so much information to assimilate and memorise are we destroying their own curiosity and their love for learning?
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  When we measure, compare, label and judge our children are we teaching them to do the same to themselves? Are we guilty of creating the problems we see in the world today? These include mental health issues, stress, anxiety, body image problems - the list goes on.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -191,48 +170,64 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Do we then apply the same principles of measuring, comparing, labelling and judging to our teachers and to the institutions in which they serve? Are the labels and judgements we place on our schools and teachers enabling them to make the difference they want to make in the lives of our children, or is it creating a narrow curriculum which is disempowering teachers and leading to frustration, stress, burnout and a disenfranchised profession?
+                  <span class="blog_highlight_black">
+                    Do we then apply the same principles of measuring, comparing, labelling and judging to our teachers and to the institutions in which they serve?
+                  </span>
+                  Are the labels and judgements we place on our schools and teachers enabling them to make the difference they want to make in the lives of our children, or is it creating a narrow curriculum which is disempowering teachers and leading to frustration, stress, burnout and a disenfranchised profession?
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Is there an over reliance on a knowledge based curriculum in a world where information is available literally at our fingertips? Knowledge plays its part. But the biggest leaps of mankind have come from the innate wisdom and genius that is within us. Helping children tap into their innate wisdom should be the real purpose of education. This wisdom comes from a deeper self-understanding and brings creativity, intelligence and curiosity to the forefront and enables us to live with joy, and find solutions to our problems.
+                  <span class="blog_highlight_black">
+                    Is there an over reliance on a knowledge based curriculum in a world where information is available literally at our fingertips?
+                  </span>
+                  Knowledge plays its part. But the biggest leaps of mankind have come from the innate wisdom and genius that is within us. Helping children tap into their innate wisdom should be the real purpose of education. This wisdom comes from a deeper self-understanding and brings creativity, intelligence and curiosity to the forefront and enables us to live with joy, and find solutions to our problems.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  If our current model of education is the cause of these problems, then it could also be the solution. At present we teach children merely about the world around them, but not about themselves. As a result, they may know all about chemistry or maths, but do not know how to make good decisions for their lives, deal with stress and anxiety, have healthy relationships, avoid addiction, be kind, or live with a sense of peace. By including self-knowledge into the curriculum children would be able to access their own wisdom and have the tools to be successful as human beings, and also be successful in the world.
+                  <span class="blog_highlight_black">
+                    If our current model of education is the cause of these problems, then it could also be the solution. 
+                  </span>
+                  At present we teach children merely about the world around them, but not about themselves. As a result, they may know all about chemistry or maths, but do not know how to make good decisions for their lives, deal with stress and anxiety, have healthy relationships, avoid addiction, be kind, or live with a sense of peace.
+                  <span class="blog_highlight_black">
+                    By including self-knowledge into the curriculum children would be able to access their own wisdom and have the tools to be successful as human beings, and also be successful in the world.
+                  </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  It is time for a fresh approach where knowledge has its place, but memorising and repeating it is less important. Instead we need to nurture the innate curiosity and love for learning which children already have. This learning needs to be about themselves, as well as the world around them.
+                  <span class="blog_highlight_black">
+                    It is time for a fresh approach where knowledge has its place, but memorising and repeating it is less important. 
+                  </span>
+                  Instead we need to nurture the innate curiosity and love for learning which children already have. This learning needs to be about themselves, as well as the world around them.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  If we are to change the future of humanity, we need to begin by having a fresh approach to education. We need to change education so it no longer adds to the stress and anxiety young people feel, but helps them be happy, mentally and physically healthy, and have the wisdom and skills to deal with the many challenges the coming century will bring. This is what we are trying to do with the Human Wisdom Project. To find out more listen to this podcast 
-                  <a class="blog_highlight_peach td_underline" href="">
-                    https://humanwisdom.podbean.com/e/human-wisdom-project/
+                  <span class="blog_highlight_black">
+                    If we are to change the future of humanity, we need to begin by having a fresh approach to education. 
+                  </span>
+                  We need to change education so it no longer adds to the stress and anxiety young people feel, but helps them be happy, mentally and physically healthy, and have the wisdom and skills to deal with the many challenges the coming century will bring. This is what we are trying to do with HappierMe.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  To find out more listen to this podcast
+                  <a class="blog_highlight_peach td_underline" href="https://humanwisdom.podbean.com/e/human-wisdom-project">
+                    https://humanwisdom.podbean.com/e/human-wisdom-project/, 
                   </a>
                   and visit
-                  <a class="blog_highlight_peach td_underline" href="">
-                    https://humanwisdom.me.
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                    https://happierme.app.
                   </a>
                   You can also download the HappierMe app from the Apple or Google store.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  This is a short video introduction to the HumanWisdom app -
-                  <a class="blog_highlight_peach td_underline" href="">
+                  This is a short video introduction to the HappierMe app.
+                  <a class="blog_highlight_peach td_underline" href="https://youtu.be/MgsYk1SZh-w">
                     https://youtu.be/GYbpYnkGJ0U
                   </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  If you would like to begin a conversation or get involved, please contact: 
-                  <br>
-                  Dominic Curran,
-                  <br>
-                  Head of Education, HappierMe Project.
-                  <br>
-                  dominic@humanwisdom.me.
+                  If you would like to begin a conversation or get involved, please get in touch: team@happierme.app
                 </h4>
               </div>
             </div>
@@ -260,10 +255,10 @@
             </div>
 
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+                <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
                   Try HappierMe for free
-                </button>
+                </a>
               </div>
             </div>
 
@@ -273,112 +268,15 @@
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include('../reusable/footer.php'); ?>
+      <?php include('../includes/footer.php'); ?>
       <!-- /footer -->
 
     </main>
 
-    <a href="#" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- vendor_footer -->
+    <?php include('../includes/vendor_footer.php'); ?>
+    <!-- /vendor_footer -->
 
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="../assets/js/main.js"></script>
-    <script src="../scripts/index.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
-    <script type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https:///code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
-
-    <script>
-    $('.owl_container .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_container .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    $('.owl_coach .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_coach .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    $('.owl_blog .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_blog .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-    </script>
   </body>
 
 </html>

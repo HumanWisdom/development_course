@@ -1,9 +1,13 @@
-<!-- <div class="right_col mc_03">
+<!-- page content -->
+<div class="right_col mc_03">
+  <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
+
+           
 
             <div class="row prelative mtb30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -12,7 +16,7 @@
                 </h4>
               </div>
             </div>
-
+            <!-- search -->
             <div class="row prelative mtb30px">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                 <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
@@ -29,8 +33,18 @@
                 </div>
               </div>
             </div>
+            <!-- /search -->
+
+            <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                  What would you like to explore today?
+                </h4>
+              </div>
+            </div> -->
 
             <div class="div_ru">
+
               <a *ngIf="resume.length !== 0">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex" (click)="routeResume()">
@@ -138,6 +152,7 @@
                   </div>
                 </div>
               </a>
+
             </div>
 
             <div class="row mt20px">
@@ -157,34 +172,10 @@
       </div>
     </div>
   </div>
+  <!--/class -->
 </div>
+<!-- /page content -->
 
-<app-bottom-navigation></app-bottom-navigation> -->
-
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 v1_3_bg_splash center_flex col_cw">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ru_welcome.svg" class="">
-        </div>
-      </div>
-  
-      <div class="row mt50px mb5px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="mtb0px fw_400 fs_24px lh_140p fc_ffffff tcenter">
-            Welcome back, Nidhi!
-          </h4>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff tcenter">
-            Explore something new today
-          </h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

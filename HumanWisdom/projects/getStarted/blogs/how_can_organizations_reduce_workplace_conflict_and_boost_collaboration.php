@@ -2,48 +2,20 @@
 <html lang="en">
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <title>How can organizations reduce workplace conflict and boost collaboration?</title>
     <meta property="title" content="How can organizations reduce workplace conflict and boost collaboration?">
     <meta property="description" content="How can governments and organizations reduce tribalism and factionalism and boost collaboration? It is a question that many organizations grapple with.">
     <meta property="keyword" content="Work and Leadership">
 
-    <!-- Favicons -->
-    <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="icon">
-    <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="../assets/css/main.css" rel="stylesheet">
-    <link href="../assets/css/responsive.css" rel="stylesheet">
-    <link href="../assets/font/font_colour.css" rel="stylesheet">
-    <link href="../assets/font/font_size.css" rel="stylesheet">
-    <link href="../assets/font/font_weight.css" rel="stylesheet">
-    <link href="../assets/font/line_height.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- vendor_header -->
+    <?php include('../includes/vendor_header.php'); ?>
+    <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../reusable/header.php'); ?>
+    <?php include('../includes/header.php'); ?>
     <!-- /header -->
 
     <!-- <section class="hpt120px">
@@ -91,7 +63,7 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5 tright">
-                    2 years ago 
+                    <!-- 2 years ago  -->
                   </h4>
                 </div>
               </div>
@@ -129,7 +101,10 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  What also struck me was that many intelligence agencies had information that could have prevented the attacks, and had they shared it readily with each other, the attacks could have been prevented. But each agency seemed to be in a competition for importance and influence and as a result intelligence sharing did not happen. Each agency thought only about protecting its own influence rather than about the common good, without exception. It is easy to blame individuals or leaders, but the origin of the problem is deeper, and linked to the way our minds work.
+                  <span class="blog_highlight_black">
+                    What also struck me was that many intelligence agencies had information that could have prevented the attacks,
+                  </span>
+                  and had they shared it readily with each other, the attacks could have been prevented. But each agency seemed to be in a competition for importance and influence and as a result intelligence sharing did not happen. Each agency thought only about protecting its own influence rather than about the common good, without exception. It is easy to blame individuals or leaders, but the origin of the problem is deeper, and linked to the way our minds work.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -155,6 +130,13 @@
                   We are all conditioned by our environment and past influences. We are not aware of this, and yet become attached to our conditioning. This becomes our ‘normal’ and shapes our opinions and beliefs. Anyone we meet who is different is ‘wrong’ and we either avoid them or try to convince them of our point of view. Conflict follows.
                 </h4>
 
+                <h4 class="mtb0px blog_sub_title">
+                  Explore the Conditioning module in the app
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/conditioning">
+                    here
+                  </a>
+                </h4>
+
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                     Identity:
@@ -162,11 +144,25 @@
                   This is also an unconscious process. If I belong to ‘Department A’ that becomes my identity, and I am at odds with ‘Department B’. We compete for influence and resources in the organisation. This turf war does not serve the organisation as a whole.
                 </h4>
 
+                <h4 class="mtb0px blog_sub_title">
+                  Explore the Identity module in the app
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/identity">
+                    here
+                  </a>
+                </h4>
+
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                     Self-interest:
                   </span>
-                  Our hidden self-interest operates in the background, shaping our thoughts and actions. In any meeting I am always looking out for myself and resist anyone else gaining in influence, even though they may not be interfering in our work in any way. Our self-interest stops us living with integrity and collaborating with each other for the common good.
+                  Our hidden self-interest operates in the background, shaping our thoughts and actions. We are not always aware of it. In any meeting we are always looking out for ourselves and resist anyone else gaining influence, even though they may not be interfering in our work in any way, and they may be right. Our self-interest stops us living with integrity and collaborating with others for the common good.
+                </h4>
+
+                <h4 class="mtb0px blog_sub_title">
+                  Explore the Self-interest module in the app
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/self-interest">
+                    here
+                  </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -176,45 +172,38 @@
                   The unconscious process of comparison operates in the background in all of us. If others are better in some way it generates a feeling of envy and resistance, and we blame others for how we are feeling. We often act then to pull the other person down and conflict follows.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  A deeper understanding of these hidden drivers in our thinking can help us put them to one side and collaborate with others for the common good. It can also reduce interpersonal conflict. Each person needs to go on a journey of learning about themselves and this awakens wisdom, which can be life-changing in many ways.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Organizations can help by training staff in self-awareness – for their own personal growth. A natural by-product of this is better collaboration and reduced conflict. To be effective this training cannot be done as a one off event because it is quickly forgotten.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  It also not effective imparted as pure information, though that is a good start. Regular group discussions combined with the use of the app and the built in online journal help users go on a journey of self-awareness, and it is this that brings transformation.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  The HappierMe app makes this process of self-awareness easy, with more than 60 bite-sized modules and a growing library of content. This awareness is then applied practically to help boost relationship and communication skills, boost collaboration and reduce conflict, and help people meet challenges with much less stress and anxiety.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  This wisdom can transform the culture of organizations and they can become happier places to work. This can boost retention, productivity, litigation and result in better outcomes for all concerned.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  To find out more download and browse the HappierMe app for free, or visit
-                  <a class="blog_highlight_peach td_underline" href="">
-                    https://happierme.app.
+                <h4 class="mtb0px blog_sub_title">
+                  Explore the Comparison module in the app
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/comparison">
+                    here
                   </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  To talk to us about a bespoke training package for your organization, using the HappierMe app and trained HappierMe coaches, please email – 
-                  <a class="blog_highlight_peach td_underline" href="">
-                    team@happierme.app
+                  A deeper understanding of these hidden drivers in our thinking can help us put them to one side and collaborate with others for the common good. It can also reduce interpersonal conflict. 
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  Organisations can help by training staff in self-awareness, for their own personal growth. A natural by-product of this is better collaboration and reduced conflict. To be effective this training cannot be done as a one off event because it is quickly forgotten. Regular group discussions combined with the use of the app and the built in online journal help users go on a journey of self-awareness, and it is this that brings transformation.
+                </h4>
+
+                <h4 class="mtb0px blog_sub_title">
+                  Explore the online journal in the app
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
+                    here
                   </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Read more blogs:
-                  <a class="blog_highlight_peach td_underline" href="">
-                    15 ways wisdom can transform organization
-                  </a>
+                  The HappierMe app makes this process of self-awareness easy, with more than 70 bite-sized modules and a growing library of content. This awareness is then applied practically to help boost relationship and communication skills, boost collaboration and reduce conflict, and help people meet challenges with much less stress and anxiety. This can boost collaboration and productivity.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  To find out more download the HappierMe app and begin your free trial.
+                </h4>
+
+                <h4 class="mtb0px blog_desc blog_highlight_black">
+                  To request a demo please email: team@happierme.app
                 </h4>
               </div>
             </div>
@@ -242,10 +231,10 @@
             </div>
 
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+                <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
                   Try HappierMe for free
-                </button>
+                </a>
               </div>
             </div>
 
@@ -255,112 +244,15 @@
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include('../reusable/footer.php'); ?>
+      <?php include('../includes/footer.php'); ?>
       <!-- /footer -->
 
     </main>
 
-    <a href="#" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- vendor_footer -->
+    <?php include('../includes/vendor_footer.php'); ?>
+    <!-- /vendor_footer -->
 
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="../assets/js/main.js"></script>
-    <script src="../scripts/index.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
-    <script type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https:///code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
-
-    <script>
-    $('.owl_container .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_container .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    $('.owl_coach .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_coach .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    $('.owl_blog .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_blog .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-    </script>
   </body>
 
 </html>
