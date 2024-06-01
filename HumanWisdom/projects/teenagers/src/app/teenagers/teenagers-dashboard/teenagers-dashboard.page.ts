@@ -1562,13 +1562,15 @@ export class TeenagersDashboardPage implements OnInit {
 
 
   routeResume(r, enableLastVisited = false) {
-    let id = '';
+    let id = '', url='', screenNo='';
     if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';
+      url = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleUrl'].toString() : '/adults/happiness/';
+      this.service.setmoduleID(id,url, url );
     }
 
     localStorage.setItem("pageaction", 'next');
-    switch (id) {
+    /* switch (id) {
       case "07": {
         this.service.setmoduleID(id, '/teenagers/comparison', '/teenagers/comparison/s111001');
         break
@@ -1799,7 +1801,7 @@ export class TeenagersDashboardPage implements OnInit {
         break
       }
 
-    }
+    } */
   }
 
   wisdomexercise() {

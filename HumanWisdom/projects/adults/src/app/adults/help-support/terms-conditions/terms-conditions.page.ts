@@ -13,7 +13,7 @@ export class TermsConditionsPage implements OnInit {
 
   ngOnInit() {
     if (!(this.router.url=='/terms-and-conditions')){
-      window.history.pushState('', '', '/terms-and-conditions');
+     //  window.history.pushState('', '', '/terms-and-conditions');
     }
   
   }

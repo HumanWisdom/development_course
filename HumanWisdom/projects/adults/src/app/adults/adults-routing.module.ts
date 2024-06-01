@@ -273,7 +273,7 @@ const routes: Routes = [
   // },
   {
     path: 'treesisters',
-    loadChildren: () => import('./treesisters/treesisters.module').then(m => m.TreesistersPageModule)
+    loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
   },
   {
     path: 'add-to-home-screen-ios',
@@ -314,7 +314,7 @@ const routes: Routes = [
   },
   {
     path: 'refer-friend',
-    loadChildren: () => import('./refer-friend/refer-friend.module').then(m => m.ReferFriendPageModule)
+    loadChildren: () => import('../../../../shared/component/refer-friend/refer-friend.module').then(m => m.ReferFriendPageModule)
   },
   {
     path: 'testimonials',
@@ -520,7 +520,7 @@ const routes: Routes = [
   },
   {
     path: 'intro-happierme',
-    loadChildren: () => import('./intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
+    loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
   },
   {
     path: 'kindness',

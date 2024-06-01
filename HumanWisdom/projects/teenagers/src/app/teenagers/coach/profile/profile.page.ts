@@ -26,7 +26,7 @@ export class ProfilePage implements OnInit {
 
   getCoachBio(){
     if(this.route.snapshot.paramMap.get('id')) {
-      this.id = localStorage.getItem("coachId");
+      this.id = this.route.snapshot.paramMap.get('id');
       this.service.GetCoachBio(this.id).subscribe(res=>
         {
           console.log(res);

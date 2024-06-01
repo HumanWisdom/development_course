@@ -1,7 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { AdultsService } from '../adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-refer-friend',
@@ -14,8 +17,15 @@ export class ReferFriendPage implements OnInit {
   content = '';
   enableAlert = false;
   emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
+  isAdults: boolean = true; 
 
-  constructor(private service: AdultsService, private location: Location, public platform: Platform) { }
+  constructor(private service: AdultsService, private location: Location, public platform: Platform,private router: Router) { 
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   ngOnInit() {
   }
@@ -34,6 +44,11 @@ export class ReferFriendPage implements OnInit {
 
   goBack() {
     this.location.back()
+  }
+
+  handleTreeSisterClick() {
+    const url = this.isAdults ? '/adults/treesisters' : '/teenagers/treesisters';
+    this.router.navigate([url]);
   }
 
   submitrefer() {

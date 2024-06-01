@@ -166,4 +166,9 @@ export class S60001Page implements OnInit,OnDestroy {
     this.location.back()
   } */
 
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  }
+
 }

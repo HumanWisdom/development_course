@@ -131,9 +131,9 @@ export class S162p0Page implements OnInit, OnDestroy
 
   ngOnDestroy() 
   {
-    this.endTime = Date.now();
+   /*  this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
+    if (this.userId !== 563) this.submitProgress() */
   }
 
   routeJournal() 
@@ -144,6 +144,13 @@ export class S162p0Page implements OnInit, OnDestroy
   goBack() 
   {
     this.location.back()
+  }
+
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
   }
 
 }

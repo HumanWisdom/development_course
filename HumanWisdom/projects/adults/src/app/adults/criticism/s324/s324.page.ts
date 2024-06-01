@@ -196,4 +196,10 @@ export class S324Page implements OnInit,OnDestroy {
     this.router.navigate(['/adults/journal'])
   }
 
+  
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  }
+
 }

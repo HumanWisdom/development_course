@@ -36,6 +36,9 @@ export class AppComponent implements OnDestroy   {
     moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
     swPath:'/teenagers/serviceworker.js'
     });
+    if (localStorage.getItem("isloggedin") !== 'T') {
+      this.services.emaillogin();
+    }
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {

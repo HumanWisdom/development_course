@@ -167,4 +167,9 @@ export class S91001Page implements OnInit,OnDestroy {
       class: this.bg,
     }})
   }
+
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  }
 }

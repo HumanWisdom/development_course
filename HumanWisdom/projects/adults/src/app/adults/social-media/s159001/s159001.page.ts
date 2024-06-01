@@ -200,6 +200,11 @@ continue(){
       this.router.navigate(['adults/subscription/start-your-free-trial']);
     }
   }
+
+  Resume(url)
+  {  
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  }
   
 
 
