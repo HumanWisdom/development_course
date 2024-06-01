@@ -143,6 +143,18 @@
         color: #000;
         text-align: center;
     }
+
+    .work_edu_health_outer > [class^="col-"]
+    {
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+
+    .aspects_outer > [class^="col-"]
+    {
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
 }
 
 @media (min-width: 768px)

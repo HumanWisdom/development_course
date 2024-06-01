@@ -23,88 +23,215 @@
 <script src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
+<!-- subscription -->
 <script>
-    $('.owl_container .owl-carousel').owlCarousel({
-        stagePadding: 50,
-        loop: false,
-        margin: 40,
-        nav: true,
-        autoWidth: true,
-        dots: false,
-        navText: [
-            '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
-            '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
-        ],
-        navContainer: '.owl_container .owl-nav',
-        responsive:{
-            0:{
-                items: 1
-            },
-            600:{
-                items: 3
-            },
-            1000:{
-                items: 3
-            }
+fetchData();
+var countryCode = "";
+var pricingModel = ""
+var defaultCurrencySymbol = "";
+// Frontend JavaScript code
+async function fetchData() {
+    const response = await fetch('https://ipapi.co/json');
+
+    if (!response.ok) 
+    {
+        throw new Error('Network response was not ok ' + response.statusText);
+    }
+    
+    const data = await response.json();
+    
+    console.log(data);
+    
+    if (data['in_eu']) 
+    {
+        this.countryCode = 'EUR'
+    } 
+    else 
+    {
+        this.countryCode = data['country_code_iso3']
+    }
+
+    const pricing = await fetch(`https://staging.humanwisdom.info/api/CountryRates/${this.countryCode}`);
+    
+    if (!pricing.ok) 
+    {
+        throw new Error('Network response was not ok ' + pricing.statusText);
+    } 
+    else 
+    {
+        const pricingData = await pricing.json();
+        
+        this.pricingModel = pricingData.filter((d) => d["ProgID"] == "9")[0];
+        
+        this.defaultCurrencySymbol = pricingModel["ISOCode"]
+        
+        this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
+        
+        console.log(this.pricingModel);
+        
+        console.log("this.pricingModel");
+
+        const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
+        
+        const strikeOutAnnualPricingModelHeading  = document.getElementById('strikeOutAnnualPricingModelHeading');
+        
+        const totalAnnualPricingModelHeading = document.getElementById('totalAnnualPricingModelHeading');
+
+        const monthlyPricingModelHeading = document.getElementById('monthlyPricingModelHeading');
+
+        const spanAnnualLabel = document.getElementById('spanAnnualLabel');
+
+        function annualPricingModelHeadingDisplay() 
+        {
+            annualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual + getIsoCode()}/yr`;
         }
+
+        function strikeOutAnnualPricingModelHeadingDisplay() 
+        {
+            strikeOutAnnualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`;
+        }
+        
+        function spanAnnualLabelDisplay() 
+        {
+            spanAnnualLabel.textContent =  `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`
+        }
+
+        function totalAnnualPricingModelHeadingDisplay() 
+        {
+            totalAnnualPricingModelHeading.textContent = `After your free trial, the yearly subscription is ${annualPricingModelHeading.textContent} and automatically renews each year until cancelled.`
+        }
+
+        function monthlyPricingModelHeadingDisplay() 
+        {
+            monthlyPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Monthly + getIsoCode()+'/mo';
+        }
+
+        strikeOutAnnualPricingModelHeadingDisplay();
+        
+        annualPricingModelHeadingDisplay();
+        
+        spanAnnualLabelDisplay();
+        
+        monthlyPricingModelHeadingDisplay();
+        
+        totalAnnualPricingModelHeadingDisplay();
+    }
+}
+
+function formatToDecimal(value) 
+{
+    if (Number.isInteger(value)) 
+    {
+        return `${value}.00`;
+    }
+    return value.toFixed(2);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const AnnualType = document.getElementById('AnnualType');
+    AnnualType.addEventListener('click', () => {
+    window.location.href="https://happierme.app/adults/subscription/try-free-and-subscribe"
     });
 
-    $('.owl_coach .owl-carousel').owlCarousel({
-        stagePadding: 50,
-        loop: false,
-        margin: 40,
-        nav: true,
-        autoWidth: true,
-        dots: false,
-        navText: [
-            '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
-            '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
-        ],
-        navContainer: '.owl_coach .owl-nav',
-        responsive:{
-            0:{
-                items: 1
-            },
-            600:{
-                items: 3
-            },
-            1000:{
-                items: 3
-            }
-        }
-    });
+    // const MonthlyType = document.getElementById('MonthlyType');
+    // MonthlyType.addEventListener('click', () => {
+    //   addCountryLinks(countries);
+    // });
+});
 
-    $('.owl_blog .owl-carousel').owlCarousel({
-        stagePadding: 50,
-        loop: false,
-        margin: 40,
-        nav: true,
-        autoWidth: true,
-        dots: false,
-        navText: [
+function getIsoCode() 
+{
+    if (this.pricingModel.CurSymbol == '$') 
+    {
+        return ` (${this.pricingModel.ISOCode})`;
+    }
+    return '';
+}
+</script>
+<!-- /subscription -->
+
+<script>
+$('.owl_container .owl-carousel').owlCarousel({
+    stagePadding: 50,
+    loop: false,
+    margin: 40,
+    nav: true,
+    autoWidth: true,
+    dots: false,
+    navText: [
         '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
         '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
-        ],
-        navContainer: '.owl_blog .owl-nav',
-        responsive:{
-            0:{
-                items: 1
-            },
-            600:{
-                items: 3
-            },
-            1000:{
-                items: 3
-            }
+    ],
+    navContainer: '.owl_container .owl-nav',
+    responsive:{
+        0:{
+            items: 1
+        },
+        600:{
+            items: 3
+        },
+        1000:{
+            items: 3
         }
-    });
-    $( window ).resize( function() {
-        if (window.matchMedia('(max-width: 768px)').matches)
-        {
-        $('.btn_tff').attr('href','https://onelink.to/qsptex');
-        } else {
-        $('.btn_tff').attr('href','https://happierme.app/adults/intro/intro-carousel');
+    }
+});
+
+$('.owl_coach .owl-carousel').owlCarousel({
+    stagePadding: 50,
+    loop: false,
+    margin: 40,
+    nav: true,
+    autoWidth: true,
+    dots: false,
+    navText: [
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
+    ],
+    navContainer: '.owl_coach .owl-nav',
+    responsive:{
+        0:{
+            items: 1
+        },
+        600:{
+            items: 3
+        },
+        1000:{
+            items: 3
         }
-    });
-    $( window ).resize();
+    }
+});
+
+$('.owl_blog .owl-carousel').owlCarousel({
+    stagePadding: 50,
+    loop: false,
+    margin: 40,
+    nav: true,
+    autoWidth: true,
+    dots: false,
+    navText: [
+    '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+    '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
+    ],
+    navContainer: '.owl_blog .owl-nav',
+    responsive:{
+        0:{
+            items: 1
+        },
+        600:{
+            items: 3
+        },
+        1000:{
+            items: 3
+        }
+    }
+});
+$( window ).resize( function() {
+    if (window.matchMedia('(max-width: 768px)').matches)
+    {
+    $('.btn_tff').attr('href','https://onelink.to/qsptex');
+    } else {
+    $('.btn_tff').attr('href','https://happierme.app/adults/intro/intro-carousel');
+    }
+});
+$( window ).resize();
 </script>

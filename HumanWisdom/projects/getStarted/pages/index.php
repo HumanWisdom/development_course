@@ -65,9 +65,9 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc aspects_outer">
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mental_health.webp" class="img-responsive img_aspects">
@@ -101,7 +101,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happier_relationships.webp" class="img-responsive img_aspects">
@@ -135,7 +135,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pl20px" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_leadership.webp" class="img-responsive img_aspects">
@@ -219,6 +219,98 @@
         </div>
       </section>
       <!-- /topics -->
+
+      <!-- work_education_healtcare -->
+      <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                Find out how HappierMe can help your organisation
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter work_edu_health_outer">
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <a class="" href="../pages/work.php">
+                <div class="div_work_edu_health">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_work.webp" class="img-responsive">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
+                        HappierMe for the 
+                        <br>
+                        <span class="fw_600">
+                          Work
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
+              <a class="" href="../pages/education.php">
+                <div class="div_work_edu_health">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_education.webp" class="img-responsive">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
+                        HappierMe for the 
+                        <br>
+                        <span class="fw_600">
+                          Education
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
+              <a class="" href="../pages/healthcare.php">
+                <div class="div_work_edu_health">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_healthcare.webp" class="img-responsive">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
+                        HappierMe for the 
+                        <br>
+                        <span class="fw_600">
+                          Healthcare
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- /work_education_healtcare -->
 
       <!-- teenagers -->
       <section>
@@ -934,7 +1026,7 @@
       <!-- /testimonials -->
 
       <!-- subscription -->
-      <!-- <section>
+      <section>
         <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
@@ -964,15 +1056,21 @@
                         Yearly
                       </h4>
 
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                      <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
                         INR 5,999/yr
-                      </h4>
+                      </h4> -->
+
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="strikeOutAnnualPricingModelHeading"></h4>
+
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="annualPricingModelHeading"></h4>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                         INR 500/mo.
-                      </h4>
+                      </h4> -->
+
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
                     </div>
                   </div>
                 </button>
@@ -990,9 +1088,11 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                         INR 700/mo.
-                      </h4>
+                      </h4> -->
+
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
                     </div>
                   </div>
                 </button>
@@ -1002,8 +1102,8 @@
 
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                  After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled.
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+                  <!-- After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. -->
                   <span class="">
                     <a class="fc_000000">
                       Terms
@@ -1019,7 +1119,7 @@
               </div>
             </div>
 
-            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
+            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Continue
@@ -1029,7 +1129,7 @@
 
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- /subscription -->
 
       <!-- coaches -->
