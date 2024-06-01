@@ -26291,6 +26291,7 @@ h1
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
+  color: rgba(255, 255, 255, 0.70);
 }
 
 .mdp_answer_here::-webkit-input-placeholder
@@ -36122,6 +36123,7 @@ section > .row
 {
   height: 110px;
   padding: 30px 20px;
+  background: #120F40;
 }
 
 .v1_3_sfooter_sft

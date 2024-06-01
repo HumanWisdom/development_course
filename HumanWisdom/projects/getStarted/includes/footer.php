@@ -5,7 +5,7 @@
   <div class="row center_flex display_m_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
-        <h4 class="mt0px mb15px fs_12px fw_600 lh_150p fc_ffffff">
+        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           About us
         </h4>
 
@@ -51,7 +51,7 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
-        <h4 class="mt0px mb15px fs_12px fw_600 lh_150p fc_ffffff">
+        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           Get HappierMe
         </h4>
 
@@ -97,7 +97,7 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
-        <h4 class="mt0px mb15px fs_12px fw_600 lh_150p fc_ffffff">
+        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           Support
         </h4>
 

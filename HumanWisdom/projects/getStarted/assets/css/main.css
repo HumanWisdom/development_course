@@ -2532,7 +2532,7 @@ a
 
 #accordion_footer .panel-title>a
 {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 150%;
   color: #FFF;
@@ -2931,4 +2931,37 @@ audio::-webkit-media-controls-enclosure
   appearance: none;
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_down_arrow.svg) white no-repeat 98.5% !important;
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_down_arrow.svg) white no-repeat calc(100% - 15px) !important;
+}
+
+.div_work_edu_health
+{
+  border-radius: 10px;
+  background: rgba(232, 168, 128, 0.20);
+  padding: 0;
+  /* width: 300px !important;
+  height: 260px !important; */
+  width: 100%;
+  height: auto;
+}
+
+.div_work_edu_health h4 
+{
+  padding: 20px; 
+}
+
+.div_work_edu_health img
+{
+  max-height: 240px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.work_edu_health_outer > [class^="col-"]
+{
+  padding: 0 20px 0 20px;
+}
+
+.aspects_outer > [class^="col-"]
+{
+  padding: 0 20px 0 20px;
 }
