@@ -4,19 +4,19 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./personalised-for-you/personalised-for-you.module").then(m => m.PersonalisedForYouPageModule)  
+    loadChildren: () => import("./personalised-for-you/personalised-for-you.module").then(m => m.PersonalisedForYouPageModule)
   },
   {
     path: "personalised-for-you",
-    loadChildren: () => import("./personalised-for-you/personalised-for-you.module").then(m => m.PersonalisedForYouPageModule)  
+    loadChildren: () => import("./personalised-for-you/personalised-for-you.module").then(m => m.PersonalisedForYouPageModule)
   },
   {
     path: "subscription-options",
-    loadChildren: () => import("./subscription-options/subscription-options.module").then(m => m.SubscriptionOptionsPageModule)  
+    loadChildren: () => import("./subscription-options/subscription-options.module").then(m => m.SubscriptionOptionsPageModule)
   },
   {
     path: 'intro-carousel',
-    loadChildren: () => import('./intro-carousel/intro-carousel.module').then( m => m.IntroCarouselPageModule)
+    loadChildren: () => import('../../../../shared/component/intro-carousel/intro-carousel.module').then( m => m.IntroCarouselPageModule)
   },
 ];
 

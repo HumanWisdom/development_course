@@ -340,8 +340,8 @@ const routes: Routes = [
         loadChildren: () => import('../teenagers/pathway/pathway.module').then(m => m.PathwayModule)
     },
     {
-        path: 'intro-carousel',
-        loadChildren: () => import('./intro-carousel/intro-carousel.module').then(m => m.IntroCarouselPageModule)
+      path: 'intro-carousel',
+      loadChildren: () => import('../../../../shared/component/intro-carousel/intro-carousel.module').then( m => m.IntroCarouselPageModule)
     },
     {
         path: 'change-topic',
