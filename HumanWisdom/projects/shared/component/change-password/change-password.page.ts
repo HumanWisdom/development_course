@@ -30,9 +30,9 @@ export class ChangePasswordPage implements OnInit {
   user: any
   content = '';
   enableAlert = false;
-  passwordhide : boolean = true;
-  confirmpasswordhide : boolean = true;
-  oldpasswordhide : boolean = true;
+  passwordhide: boolean = true;
+  confirmpasswordhide: boolean = true;
+  oldpasswordhide: boolean = true;
   isAdults = true;
 
   constructor(private router: Router,
@@ -40,7 +40,7 @@ export class ChangePasswordPage implements OnInit {
     private authService: SocialAuthService,
     private activate: ActivatedRoute,
     public logeventservice: LogEventService
-    ) {
+  ) {
     this.activate.queryParams.subscribe(params => {
       this.urlEmail = params['email'];
     });
@@ -50,9 +50,9 @@ export class ChangePasswordPage implements OnInit {
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
   }
 
   forgotPassword() {
@@ -90,7 +90,12 @@ export class ChangePasswordPage implements OnInit {
                 this.successPassword = 1
                 localStorage.setItem("emailCode", 'F');
                 sessionStorage.setItem("successPassword", JSON.stringify(this.successPassword))
-                this.router.navigate(["/onboarding/login"]);
+                if (this.isAdults) {
+                  this.router.navigate(["adults/onboarding/login"]);
+                } else {
+                  this.router.navigate(["teenagers/onboarding/login"]);
+
+                }
               }
               this.content = 'Your password has been reset.';
               this.enableAlert = true;
@@ -190,10 +195,18 @@ export class ChangePasswordPage implements OnInit {
                       if (subscribePage === 'T') {
                         localStorage.setItem("subscribepage", 'F')
                       }
-                      this.router.navigate(['/onboarding/add-to-cart'])
+                      if (this.isAdults) {
+                        this.router.navigate(['/adults/onboarding/add-to-cart'])
+                      } else {
+                        this.router.navigate(['/teenagers/onboarding/add-to-cart'])
+                      }
                     } else {
                       localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/adults/adult-dashboard'])
+                      if (this.isAdults) {
+                        this.router.navigate(['/adults/adult-dashboard'])
+                      } else {
+                        this.router.navigate(['/teenagers/teenager-dashboard'])
+                      }
                     }
 
 
@@ -314,17 +327,33 @@ export class ChangePasswordPage implements OnInit {
                         }
                         if (roleid === 8 && emailcode === 'T') {
                           localStorage.setItem("isloggedin", 'T')
-                          this.router.navigate(['/onboarding/set-password'])
+                          if (this.isAdults) {
+                            this.router.navigate(['/adults/onboarding/set-password'])
+                          } else {
+                            this.router.navigate(['/teenagers/onboarding/set-password'])
+                          }
                         } else {
-                          this.router.navigate(['/onboarding/add-to-cart'])
+                          if (this.isAdults) {
+                            this.router.navigate(['/adults/onboarding/add-to-cart'])
+                          } else {
+                            this.router.navigate(['/teenagers/onboarding/add-to-cart'])
+                          }
                         }
                       } else {
                         if (roleid === 8 && emailcode === 'T') {
                           localStorage.setItem("isloggedin", 'T')
-                          this.router.navigate(['/onboarding/set-password'])
+                          if (this.isAdults) {
+                            this.router.navigate(['/adults/onboarding/set-password'])
+                          } else {
+                            this.router.navigate(['/teenagers/onboarding/set-password'])
+                          }
                         } else {
                           localStorage.setItem("isloggedin", 'T')
-                          this.router.navigate(['/adults/adult-dashboard'])
+                          if (this.isAdults) {
+                            this.router.navigate(['/adults/adult-dashboard'])
+                          } else {
+                            this.router.navigate(['/teenagers/teenager-dashboard'])
+                          }
                         }
                       }
                     }
@@ -356,12 +385,21 @@ export class ChangePasswordPage implements OnInit {
     this.enableAlert = false;
   }
 
+  Logevent(route) {
+    if (this.isAdults) {
+      this.router.navigate([route])
+    } else {
+      route = route.toString().replace('adults', 'teenagers');
+      this.router.navigate([route])
+    }
+  }
+
   hideFunction(type) {
-    if(type === 'password') {
+    if (type === 'password') {
       this.passwordhide = !this.passwordhide;
-    }else if(type === 'confirmpassword') {
+    } else if (type === 'confirmpassword') {
       this.confirmpasswordhide = !this.confirmpasswordhide;
-    }else {
+    } else {
       this.oldpasswordhide = !this.oldpasswordhide
     }
   }

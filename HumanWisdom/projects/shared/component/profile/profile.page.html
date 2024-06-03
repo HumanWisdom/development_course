@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/adults/adult-dashboard">
+      <a class="" (click)="Logevent('/adults/adult-dashboard', '', 'click_profile')">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -173,7 +173,7 @@
                           </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                          <a routerLink="/adults/wisdom-survey/progress">
+                          <a (click)="Logevent('/adults/wisdom-survey/progress', '', 'click_progress')">
                             <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
                               Progress
                               <i class="fa fa-angle-right ml10px"></i>
