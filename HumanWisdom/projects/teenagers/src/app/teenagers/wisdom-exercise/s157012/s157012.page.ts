@@ -54,7 +54,7 @@ export class S157012Page implements OnInit {
   }
 
   ngOnInit() {
-    this.adult.GetWisdomScreens().subscribe((x: any) => {
+    this.adult.GetWisdomScreens(157).subscribe((x: any) => {
    if (x) {
     var data = x.filter(x => x.ScreenNo.includes('157012'));
     

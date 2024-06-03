@@ -3,6 +3,8 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 
 @Component({
   selector: 'app-introduction',
@@ -13,10 +15,16 @@ export class IntroductionPage implements OnInit {
   data: any
   private currentUrl:string='';
   private isByPass :boolean=false;
+  isAdults: boolean = true; 
   constructor(public route: ActivatedRoute, private router: Router,
     private location:Location, private service:TeenagersService,public navigationService:NavigationService ) {
       let url = this.route.snapshot.paramMap.get('TopicName');
       this.GetGuidedQs_Topics(url);
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
   }
 
   ngOnInit() {
