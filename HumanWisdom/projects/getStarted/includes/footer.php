@@ -71,19 +71,19 @@
 
             <a href="../pages/work.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                HappierMe for work
+                HappierMe for Work
               </h4>
             </a>
 
             <a href="../pages/education.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                HappierMe for education
+                HappierMe for Education
               </h4>
             </a>
 
             <a href="../pages/healthcare.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                HappierMe for healthcare
+                HappierMe for Healthcare
               </h4>
             </a>
 
@@ -273,19 +273,19 @@
 
                   <a href="../work.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      HappierMe for work
+                      HappierMe for Work
                     </h4>
                   </a>
 
                   <a href="../education.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      HappierMe for education
+                      HappierMe for Education
                     </h4>
                   </a>
 
                   <a href="../healthcare.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      HappierMe for healthcare
+                      HappierMe for Healthcare
                     </h4>
                   </a>
 

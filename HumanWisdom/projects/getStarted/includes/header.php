@@ -15,9 +15,9 @@
           <li><a href="../blogs/blog_index.php">Blog</a></li>
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="../pages/work.php">HappierMe for work</a></li>
-              <li><a href="../pages/education.php">HappierMe for education</a></li>
-              <li><a href="../pages/healthcare.php">HappierMe for healthcare</a></li>
+              <li><a href="../pages/work.php">HappierMe for Work</a></li>
+              <li><a href="../pages/education.php">HappierMe for Education</a></li>
+              <li><a href="../pages/healthcare.php">HappierMe for Healthcare</a></li>
               <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
