@@ -159,8 +159,8 @@ $('.owl_container .owl-carousel').owlCarousel({
     autoWidth: true,
     dots: false,
     navText: [
-        '<span class="glyphicon glyphicon glyphicon-menu-left"></span>',
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
     ],
     navContainer: '.owl_container .owl-nav',
     responsive:{
@@ -184,8 +184,8 @@ $('.owl_coach .owl-carousel').owlCarousel({
     autoWidth: true,
     dots: false,
     navText: [
-        '<span class="glyphicon glyphicon glyphicon-menu-left"></span>',
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
     ],
     navContainer: '.owl_coach .owl-nav',
     responsive:{
@@ -209,8 +209,8 @@ $('.owl_blog .owl-carousel').owlCarousel({
     autoWidth: true,
     dots: false,
     navText: [
-        '<span class="glyphicon glyphicon glyphicon-menu-left"></span>',
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+    '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+    '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
     ],
     navContainer: '.owl_blog .owl-nav',
     responsive:{
