@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JournalGuard } from 'src/app/journal.guard';
 
 const routes: Routes = [
   {

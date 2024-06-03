@@ -2,98 +2,20 @@
 <html lang="en">
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>HappierMe: Master your mind</title>
+    <meta property="title" content="HappierMe: Master your mind.">
+    <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
+    <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
 
-    <!-- <title>Happier Me</title>
-    <meta property="title" content="">
-    <meta property="description" content="Discover how to reduce suffering & build a better world at Happier Me. Find wisdom through self-understanding, & live a more fulfilling life.">
-    <meta property="keyword" content=""> -->
-
-    <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Master your mind and be happier" />
-    <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <meta property="og:image:width" content="414" />
-    <meta property="og:image:height" content="232" />
-
-    <!-- Favicons -->
-    <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="icon">
-    <link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-    <link href="assets/font/font_colour.css" rel="stylesheet">
-    <link href="assets/font/font_size.css" rel="stylesheet">
-    <link href="assets/font/font_weight.css" rel="stylesheet">
-    <link href="assets/font/line_height.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- vendor_header -->
+    <?php include('../includes/vendor_header.php'); ?>
+    <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <div class="row header_fixed">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
-
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
-          <a class="" href="https://happierme.app/index.php">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive">
-          </a>
-        </div>
-
-        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
-          <nav id="navbar" class="navbar m0pxi">
-            <ul>
-              <!-- <li><a href="#about">About us</a></li> -->
-              <li><a href="blogs/blog_index.php">Blog</a></li>
-              <!-- <li class="dropdown"><a href="#"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                </ul>
-              </li> -->
-              <!-- <li><a href="#events">Partnership</a></li> -->
-              <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
-            </ul>
-          </nav>
-
-          <a class="btn_tff" href="https://happierme.app/adults/intro/intro-carousel">Try for free</a>
-          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-        </div>
-
-      </div>
-    </div>
+    <?php include('../includes/header.php'); ?>
     <!-- /header -->
 
     <section class="hpt120px">
@@ -118,11 +40,9 @@
           </div>
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
-              <a href="https://happierme.app/adults/intro/intro-carousel">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
-                  Try HappierMe for free
-                </button>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+              <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                Try HappierMe for free
               </a>
             </div>
           </div>
@@ -145,9 +65,9 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc aspects_outer">
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mental_health.webp" class="img-responsive img_aspects">
@@ -181,7 +101,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happier_relationships.webp" class="img-responsive img_aspects">
@@ -215,7 +135,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pl20px" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_leadership.webp" class="img-responsive img_aspects">
@@ -299,6 +219,98 @@
         </div>
       </section>
       <!-- /topics -->
+
+      <!-- work_education_healtcare -->
+      <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                Find out how HappierMe can help your organisation
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter work_edu_health_outer">
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <a class="" href="../pages/work.php">
+                <div class="div_work_edu_health">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_work.png" class="img-responsive">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
+                        HappierMe for the 
+                        <br>
+                        <span class="fw_600">
+                          Work
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
+              <a class="" href="../pages/education.php">
+                <div class="div_work_edu_health">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_education.png" class="img-responsive">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
+                        HappierMe for the 
+                        <br>
+                        <span class="fw_600">
+                          Education
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
+              <a class="" href="../pages/healthcare.php">
+                <div class="div_work_edu_health">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_healthcare.png" class="img-responsive">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
+                        HappierMe for the 
+                        <br>
+                        <span class="fw_600">
+                          Healthcare
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- /work_education_healtcare -->
 
       <!-- teenagers -->
       <section>
@@ -1014,7 +1026,8 @@
       <!-- /testimonials -->
 
       <!-- subscription -->
-      <div class="row center_flex div_subscription">
+      <!-- <section>
+        <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
@@ -1043,12 +1056,14 @@
                         Yearly
                       </h4>
 
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="annualPricingModelHeading">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                        INR 5,999/yr
                       </h4>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                        INR 500/mo.
                       </h4>
                     </div>
                   </div>
@@ -1067,8 +1082,8 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading">
-
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                        INR 700/mo.
                       </h4>
                     </div>
                   </div>
@@ -1079,8 +1094,8 @@
 
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
-     
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                  After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled.
                   <span class="">
                     <a class="fc_000000">
                       Terms
@@ -1096,7 +1111,7 @@
               </div>
             </div>
 
-            <div class="row center_flex mt40px" id="AnnualType" data-aos="fade-up" data-aos-delay="300">
+            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Continue
@@ -1106,6 +1121,7 @@
 
           </div>
         </div>
+      </section> -->
       <!-- /subscription -->
 
       <!-- coaches -->
@@ -2716,208 +2732,15 @@
       <!-- /faqs -->
 
       <!-- footer -->
-      <?php include('reusable/footer.php'); ?>
+      <?php include('../includes/footer.php'); ?>
       <!-- /footer -->
 
     </main>
 
-    <a href="#" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- vendor_footer -->
+    <?php include('../includes/vendor_footer.php'); ?>
+    <!-- /vendor_footer -->
 
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="scripts/index.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
-    <script type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https:///code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
-
-    <script>
-     fetchData();
-    var countryCode = "";
-    var pricingModel = ""
-    var defaultCurrencySymbol = "";
-    // Frontend JavaScript code
-  async function fetchData() {
-
-      const response = await fetch('https://ipapi.co/json');
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      const data = await response.json();
-      console.log(data);
-      if (data['in_eu']) {
-        this.countryCode = 'EUR'
-      } else {
-        this.countryCode = data['country_code_iso3']
-      }
-
-      const pricing = await fetch(`https://staging.humanwisdom.info/api/CountryRates/${this.countryCode}`);
-      if (!pricing.ok) {
-        throw new Error('Network response was not ok ' + pricing.statusText);
-      } else {
-        const pricingData = await pricing.json();
-        this.pricingModel = pricingData.filter((d) => d["ProgID"] == "9")[0];
-        this.defaultCurrencySymbol = pricingModel["ISOCode"]
-        this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
-        console.log(this.pricingModel);
-        console.log("this.pricingModel");
-
-        const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
-
-        const totalAnnualPricingModelHeading = document.getElementById('totalAnnualPricingModelHeading');
-    
-        const monthlyPricingModelHeading = document.getElementById('monthlyPricingModelHeading');
-  
-        const spanAnnualLabel = document.getElementById('spanAnnualLabel');
-
-        function annualPricingModelHeadingDisplay() {
-          annualPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Annual + getIsoCode();
-        }
-
-     
-        function spanAnnualLabelDisplay() {
-          spanAnnualLabel.textContent = `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`
-        }
-
-        function totalAnnualPricingModelHeadingDisplay() {
-          totalAnnualPricingModelHeading.textContent = `After your free trial, the yearly subscription is ${annualPricingModelHeading.textContent} and automatically renews each year until cancelled.`
-        }
-
-        function monthlyPricingModelHeadingDisplay() {
-          monthlyPricingModelHeading.textContent = pricingModel.CurSymbol + pricingModel.Monthly + getIsoCode()+'/mo';
-        }
-        
-        annualPricingModelHeadingDisplay();
-        spanAnnualLabelDisplay();
-        monthlyPricingModelHeadingDisplay();
-        totalAnnualPricingModelHeadingDisplay();
-      }
-    }
-
-
-    function formatToDecimal(value) {
-      if (Number.isInteger(value)) {
-        return `${value}.00`;
-      }
-      return value.toFixed(2);
-    }
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const AnnualType = document.getElementById('AnnualType');
-      AnnualType.addEventListener('click', () => {
-    window.location.href="https://happierme.app/adults/subscription/try-free-and-subscribe"
-      });
-
-      // const MonthlyType = document.getElementById('MonthlyType');
-      // MonthlyType.addEventListener('click', () => {
-      //   addCountryLinks(countries);
-      // });
-
-    });
-
-    function getIsoCode() {
-      if (this.pricingModel.CurSymbol == '$') {
-        return ` (${this.pricingModel.ISOCode})`;
-      }
-      return '';
-    }
-
-  
-
-
-    $('.owl_container .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_container .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    $('.owl_coach .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-          '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_coach .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    $('.owl_blog .owl-carousel').owlCarousel({
-      stagePadding: 50,
-      loop: false,
-      margin: 40,
-      nav: true,
-      autoWidth: true,
-      dots: false,
-      navText: [
-        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_left.svg" class="">',
-        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_angle_right.svg" class="">'
-      ],
-      navContainer: '.owl_blog .owl-nav',
-      responsive:{
-          0:{
-              items: 1
-          },
-          600:{
-              items: 3
-          },
-          1000:{
-              items: 3
-          }
-      }
-    });
-
-    </script>
   </body>
 
 </html>

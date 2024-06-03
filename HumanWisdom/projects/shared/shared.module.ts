@@ -99,6 +99,7 @@ import { ForgetPasswordPage } from './component/forget-password/forget-password.
 import { ChangePasswordPage } from './component/change-password/change-password.page';
 import { SetPasswordPage } from './component/set-password/set-password.page';
 import { CommonService } from './services/common.service';
+import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.page';
 @NgModule({
   declarations: [
     TnCrossComponent,
