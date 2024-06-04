@@ -186,4 +186,11 @@ export class S123001Page implements OnInit,OnDestroy {
     this.router.navigate(['/journal'])
   }
 
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
+  }
+
 }

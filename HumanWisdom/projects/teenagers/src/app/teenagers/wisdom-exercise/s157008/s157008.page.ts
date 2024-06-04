@@ -82,7 +82,7 @@ export class S157008Page implements OnInit {
   }
 */
 
-    this.teenagers.GetWisdomScreens().subscribe((x: any) => {
+    this.teenagers.GetWisdomScreens(157).subscribe((x: any) => {
    if (x) {
     var data = x.filter(x => x.ScreenNo.includes('157008'));
     

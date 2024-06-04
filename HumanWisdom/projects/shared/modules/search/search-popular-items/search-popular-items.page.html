@@ -9,7 +9,7 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
 
@@ -81,9 +81,13 @@
                       <a (click)="routemodule(item)" *ngFor="let item of searchData.ModuleRes">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                            <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative" *ngIf="isAdults==true">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/0{{item.ModuleId}}.png" alt="" class="p0 session_img" *ngIf="item.ModuleId<10">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/{{item.ModuleId}}.png" alt="" class="p0 session_img" *ngIf="item.ModuleId>10">
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative" *ngIf="isAdults==false">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/0{{item.ModuleId}}.webp" alt="" class="p0 session_img" *ngIf="item.ModuleId<10">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{item.ModuleId}}.webp" alt="" class="p0 session_img" *ngIf="item.ModuleId>10">
                             </div>
                 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0 pl20pxi">

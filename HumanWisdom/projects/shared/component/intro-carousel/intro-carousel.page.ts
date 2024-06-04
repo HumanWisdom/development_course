@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'bcswipe';
-import { AdultsService } from 'src/app/adults/adults.service';
-import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { UntypedFormBuilder } from '@angular/forms';
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-import { SharedService } from '../../../../../shared/services/shared.service';
+import { LogEventService } from '../../services/log-event.service';
+import { OnboardingService } from '../../services/onboarding.service';
+import { AdultsService } from "../../../adults/src/app/adults/adults.service";
+import { SharedService } from '../../services/shared.service';
 
 declare var $: any;
 var carouselId: any = 1;
@@ -57,6 +57,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   video = 3;
   audio = 4;
   carouselId = 1;
+  isAdults:boolean =true;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -83,6 +84,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         }
       })
     }
+
+    this.isAdults = SharedService.ProgramId === 9;
   }
 
   ngAfterViewInit() {
@@ -116,7 +119,11 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   skip() {
-    this.router.navigate(['/adults/onboarding/login']);
+    if(this.isAdults) {
+      this.router.navigate(['/adults/onboarding/login']);
+    }else {
+      this.router.navigate(['/teenagers/onboarding/login']);
+    }
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
     this.logeventservice.logEvent('click_skip_onboarding' + ' ' + carouselId);
@@ -140,14 +147,22 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
     login() {
-      this.router.navigate(['/adults/onboarding/login']);
+      if(this.isAdults) {
+        this.router.navigate(['/adults/onboarding/login']);
+      }else {
+        this.router.navigate(['/teenagers/onboarding/login']);
+      }
       localStorage.setItem('personalised', 'F');
       localStorage.setItem('fromlandingpage', 'F');
     }
 
     routedashboard() {
       this.logeventservice.logEvent('Guest_Login');
-      this.router.navigate(['/adults/adult-dashboard'])
+      if(this.isAdults) {
+        this.router.navigate(['/adults/adult-dashboard'])
+      }else {
+        this.router.navigate(['/teenagers/teenager-dashboard'])
+      }
     }
 
 
@@ -300,13 +315,29 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
                           localStorage.setItem(
                             "signupfirst", 'F'
                           );
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          if(this.isAdults) {
+                            this.router.navigate(["/adults/change-topic"], {
+                              state: {
+                                routedFromLogin: true,
+                              }
+                            });
+                          }else {
+                            this.router.navigate(["/teenagers/change-topic"], {
+                              state: {
+                                routedFromLogin: true,
+                              }
+                            });
+                          }
+
                         } else {
-                          this.router.navigate(["/adults/repeat-user"]);
+                          if(this.isAdults) {
+                            this.router.navigate(["/adults/repeat-user"]);
+
+                          }else {
+                            this.router.navigate(["/teenagers/repeat-user"]);
+
+                          }
+
                         }
                       }
                     }
@@ -483,13 +514,29 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
                           localStorage.setItem(
                             "signupfirst", 'F'
                           );
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                          if(this.isAdults) {
+                            this.router.navigate(["/adults/change-topic"], {
+                              state: {
+                                routedFromLogin: true,
+                              }
+                            });
+                          }else {
+                            this.router.navigate(["/teenagers/change-topic"], {
+                              state: {
+                                routedFromLogin: true,
+                              }
+                            });
+
+                          }
+
                         } else {
-                          this.router.navigate(["/adults/repeat-user"]);
+                          if(this.isAdults) {
+                            this.router.navigate(["/adults/repeat-user"]);
+
+                          }else {
+                            this.router.navigate(["/teenagers/repeat-user"]);
+
+                          }
                         }
                       }
                     }
