@@ -31,7 +31,7 @@ export class ProfilePage implements OnInit {
   userData: any;
   enablepayment = true;
   isPartner = false;
-  isDeleted=false;
+  isDeleted = false;
   enableSuccessAlert = false;
   partnerOption = localStorage.getItem('PartnerOption');
   score = 0;
@@ -39,8 +39,8 @@ export class ProfilePage implements OnInit {
   enableAlert = false;
   contentText = 'Are you sure you want to delete your data?';
   isCancel = true;
-  isAdults: boolean = true; 
-  
+  isAdults: boolean = true;
+
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     public platform: Platform, public logeventservice: LogEventService) {
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -92,7 +92,7 @@ export class ProfilePage implements OnInit {
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
         // this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
-        this.url = userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+        this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
         this.userData = res[0];
       })
     }, 1000)
@@ -138,11 +138,16 @@ export class ProfilePage implements OnInit {
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (params != '' && route != '') {
-      this.router.navigate([route, params]);
-    } else if (route != '') {
-      this.router.navigate([route])
+    if (route.includes('dashboard')) {
+      if (this.isAdults) {
+        this.router.navigate([route])
+      } else {
+        this.router.navigate(['/teenagers/teenager-dashboard'])
+      }
+    } else {
+      this.router.navigate(['/' + SharedService.getprogramName() + route])
     }
+
   }
 
   getAlertcloseEvent(event) {
@@ -179,7 +184,7 @@ export class ProfilePage implements OnInit {
              } */
             this.isCancel = false;
             this.enableAlert = true;
-            this.isDeleted=true;
+            this.isDeleted = true;
             this.contentText = "Your data has been deleted successfuly.";
 
           }
@@ -200,32 +205,32 @@ export class ProfilePage implements OnInit {
       localStorage.setItem("btnClickBecomePartner", "false");
       this.router.navigate(["/adults/onboarding/login"]);
     } else {
-      
-     this.clickButtonById("liLogout");
+
+      this.clickButtonById("liLogout");
     }
   }
 
-   clickButtonById(buttonId: string): void {
+  clickButtonById(buttonId: string): void {
     const buttonElement: HTMLButtonElement | null = document.getElementById(buttonId) as HTMLButtonElement;
 
     if (buttonElement) {
-        buttonElement.click();
+      buttonElement.click();
     } else {
-        console.error(`Button with ID '${buttonId}' not found`);
+      console.error(`Button with ID '${buttonId}' not found`);
     }
-}
+  }
 
- iOS() {
-  return [
-    'iPad Simulator',
-    'iPhone Simulator',
-    'iPod Simulator',
-    'iPad',
-    'iPhone',
-    'iPod'
-  ].includes(navigator.platform)
-  // iPad on iOS 13 detection
-  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-}
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
 
 }
