@@ -997,7 +997,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.logeventservice.logEvent("click_Awareness_exercise");
 
     if (exercise != null) {
-      this.route.navigate(['teenagers/wisdom-exercise/' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+      this.route.navigate(['teenagers/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
         state: {
           day: exercise.day,
         }

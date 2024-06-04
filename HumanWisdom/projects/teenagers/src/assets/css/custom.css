@@ -30824,6 +30824,9 @@ svg path
   box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.2);
   /* height: 100px; */
 }
+.we_ft_cl{
+  background: #4267A5 !important;
+}
 
 .we_ft::-webkit-scrollbar
 {

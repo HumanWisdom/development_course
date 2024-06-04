@@ -6,6 +6,8 @@ import * as moment from 'moment';
 import { AdultsService } from '../../../../adults/src/app/adults/adults.service';
 import { ForumService } from '../../../forum/forum.service';
 import { SearchDataModel } from '../../../models/search-data-model';
+import { ProgramType } from '../../../models/program-model';
+import { SharedService } from '../../../services/shared.service';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -27,13 +29,20 @@ export class SearchPopularItemsPage implements OnInit {
   PostComment: string = ''
   public qrList: any
   public userId = 100
+  isAdults: boolean = true; 
 
   constructor(private adultService: AdultsService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
     private router: Router,
     private route: ActivatedRoute,
-    private location: Location,) { }
+    private location: Location,) {
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
+     }
 
   ngOnInit() {
     this.search = this.route.snapshot.paramMap.get('word')
