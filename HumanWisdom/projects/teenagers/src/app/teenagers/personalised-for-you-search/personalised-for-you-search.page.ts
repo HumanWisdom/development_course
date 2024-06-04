@@ -254,11 +254,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
       //Pushing final list for display
       for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let lastDigit = item.ScreenNo.slice(-1);
         let obj = {
           " SessionNo": item.SessionNo,
           "ScreenNo": item.ScreenNo,
           "completed": item.completed,
-          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+          "day": parseInt(lastDigit, 10),
           "Title": item.Title
         }
         this.currentList.push(obj);
