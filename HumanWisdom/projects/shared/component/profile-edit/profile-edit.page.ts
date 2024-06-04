@@ -145,7 +145,7 @@ export class ProfileEditPage implements OnInit {
   }
 
   closeprofileedit() {
-    this.router.navigate(["/onboarding/user-profile"]);
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/user-profile`]);
   }
 
   updateUser() {

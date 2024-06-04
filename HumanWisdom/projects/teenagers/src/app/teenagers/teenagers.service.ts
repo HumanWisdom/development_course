@@ -253,7 +253,7 @@ export class TeenagersService {
   }
 
   getUserpreference(): Observable<any> {
-    return this.http.get(this.path + `/GetUserPreference`)
+    return this.http.get(this.path + `/GetUserPreference/${SharedService.ProgramId}`)
   }
 
   getperList() {
