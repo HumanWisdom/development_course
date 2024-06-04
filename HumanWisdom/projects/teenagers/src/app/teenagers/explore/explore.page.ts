@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExplorePage implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

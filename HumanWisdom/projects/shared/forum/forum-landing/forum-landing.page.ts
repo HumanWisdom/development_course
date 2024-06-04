@@ -31,7 +31,8 @@ export class ForumLandingPage implements OnInit {
   replyflag = false;
   selectthread;
   searchText = '';
-
+  isAdults: boolean = true; 
+  
   path = '';
   posts = [];
   selectIndex = 0;
@@ -120,6 +121,11 @@ export class ForumLandingPage implements OnInit {
 
     this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     this.categoryList = this.serivce.GetTagList();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
   ngOnInit() {
     this.title.setTitle('Online Community for Wisdom Exchange')

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProgramType } from '../../../../../../shared/models/program-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import { AdultsService } from '../../../../../../adults/src/app/adults/adults.service';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +18,7 @@ export class ProfilePage implements OnInit {
     return this.router.url;
   }, 1000);
 
-  constructor(private service: AdultsService, private router: Router, private route: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService) { }
+  constructor(private service: TeenagersService, private router: Router, private route: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
     this.getCoachBio();
