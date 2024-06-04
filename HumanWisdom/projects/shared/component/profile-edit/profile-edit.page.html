@@ -47,7 +47,7 @@
                 <input id="files"  (click)="clickEventForProfile()"  style="visibility:hidden;"  (change)="getFileUpload($event)"  type="file">
               </div>
             </div>
-            
+
             <div class="div_inputs mt30px">
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -81,13 +81,13 @@
                     <input type="text" name="name" class="sp_fc" placeholder="+XX" [(ngModel)]="isdcode">
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <input type="text" name="name" class="sp_fc" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
+                    <input type="text" name="name" class="sp_fc" maxlength="10" oninput="this.value = this.value.replace(/\D+/g, '')" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
                   </div>
                 </div>
               </div>
 
-             
-          
+
+
              <!--  <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3 p0">
                   <div class="dropdown dropdown_outer">
@@ -167,7 +167,7 @@
                 </button>
               </div>
             </div>
-            <!-- <div *ngIf="isShow"> 
+            <!-- <div *ngIf="isShow">
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h6 class="mtb0px fw_700 fs_12px lh_14px fc_ffffff">

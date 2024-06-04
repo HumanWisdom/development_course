@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
-import { AdultsService } from '../../../../../../adults/src/app/adults/adults.service';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-contact',
@@ -25,7 +25,7 @@ export class ContactPage implements OnInit {
   coachName = '';
   activecoachId = '';
 
-  constructor(private onboardingService: OnboardingService, private location: Location, private adultService: AdultsService,
+  constructor(private onboardingService: OnboardingService, private location: Location, private adultService: TeenagersService,
     private meta: Meta, private title: Title, private router: Router,private route: ActivatedRoute) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     this.initializeForm();

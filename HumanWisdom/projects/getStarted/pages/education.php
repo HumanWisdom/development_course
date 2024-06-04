@@ -16,7 +16,22 @@
   </head>
 
   <body>
-
+  <?php
+      // Simulate fetching country data from a database or external API
+      $countries = [
+          "United States",
+          "Canada",
+          "United Kingdom",
+          "Australia",
+          "Germany",
+          "France",
+          "Italy",
+          "Spain",
+          "Mexico",
+          "Japan",
+        
+      ];
+    ?>
     <!-- header -->
     <?php include('../includes/header.php'); ?>
     <!-- /header -->
@@ -335,7 +350,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine. 
+                          HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.
                         </h4>
                       </div>
                     </div>
@@ -343,7 +358,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Samaira, India
+                          Adam Beagley, UK
                         </h4>
                       </div>
                     </div>
@@ -361,7 +376,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial to me. It covers a wide range of topics, including anxiety, depression, and relationships and is truly impressive. 
+                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine.
                         </h4>
                       </div>
                     </div>
@@ -369,7 +384,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Sree, Dubai
+                          Samaira, India
                         </h4>
                       </div>
                     </div>
@@ -387,7 +402,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          Having trouble figuring it all out? The Human Wisdom app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.
+                          After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their relationships. I believe the HappierMe project, which aims to awaken wisdom through self-understanding, is one of those solutions. Wisdom can bring peace to the individual, and so to the world.
                         </h4>
                       </div>
                     </div>
@@ -395,7 +410,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Jondi Whitis, Atlanta, USA
+                          Sir Anthony Seldon, UK
                         </h4>
                       </div>
                     </div>
@@ -413,7 +428,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          Whether you are seeking clarity or guidance over your mental, emotional or spiritual wellness, the HappierMe App can help you do that in a simple and easy way. The app has helped me to be more reflective inwardly and find my own answers rather than turning to the external world for solutions.
+                          Happier me has helped me build a better relationship with myself and others. This app provided a safe space for me to explore my thoughts and feelings, guided by insightful exercises and resources tailored to my needs. Through consistent use, I've cultivated a deeper understanding of myself and developed practical coping mechanisms that have significantly improved my mental well-being. I am grateful for the transformative impact this app has had on my life, empowering me to navigate challenges with greater resilience and self-awareness
                         </h4>
                       </div>
                     </div>
@@ -421,7 +436,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Roland Yeo, Singapore
+                          Roshal Sebastian, Texas, USA
                         </h4>
                       </div>
                     </div>
@@ -439,7 +454,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          I subscribed to The Human Wisdom app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them.
+                          The HappierMe App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life.
                         </h4>
                       </div>
                     </div>
@@ -447,7 +462,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Julie Goodfellow, UK
+                          Dominic Curran, England
                         </h4>
                       </div>
                     </div>
@@ -1245,81 +1260,7 @@
       <!-- /inspiring -->
 
       <!-- bring happierme -->
-      <section id="bring_happierme">
-        <div class="row center_flex div_subscription">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  Bring HappierMe to your organization
-                </h4>
-              </div>
-            </div>
-
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
-                  Connect with our specialists today and see how we can help you prioritize a happier workspace
-                </h4>
-              </div>
-            </div>
-
-            <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <form>
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 div_input">
-                        <input type="text" class="form-control fc_01" id="name" name="name"  placeholder="Your Name">
-                        <div class="fc_icons">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 div_input">
-                        <input type="text" class="form-control fc_01" id="name" name="name"  placeholder="Company name">
-                        <div class="fc_icons">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 div_input">
-                        <input type="text" class="form-control fc_01" id="name" name="name"  placeholder="Work email">
-                        <div class="fc_icons">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 div_input">
-                        <select class="form-select form-control fc_01 fc_select_01">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
-              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                  Request a demo
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <?php include('../includes/happierme-email.php'); ?>
       <!-- /bring happierme -->
 
       <!-- blog -->

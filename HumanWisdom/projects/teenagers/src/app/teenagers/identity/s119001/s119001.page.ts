@@ -36,7 +36,9 @@ export class S119001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  identityResume=sessionStorage.getItem("identityResume")
+  // identityResume=sessionStorage.getItem("identityResume")
+  pgResume = sessionStorage.getItem("pgResume")
+
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/119.webp"
   tocColor="white"
   lastvisited = false;
@@ -53,6 +55,8 @@ export class S119001Page implements OnInit,OnDestroy {
   ) 
   { 
     this.service.setmoduleID(119);
+    this.pgResume = sessionStorage.getItem("pgResume")
+
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -188,6 +192,14 @@ export class S119001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/journal'])
+  }
+
+  
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
   }
 
 }

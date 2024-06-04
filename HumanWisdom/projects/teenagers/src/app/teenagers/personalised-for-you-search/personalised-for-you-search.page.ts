@@ -54,6 +54,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public hcwhP: any
   public percentage: any
 
+  wisdomExerciseList = [];
   mediaPercent: any
   freeScreens = []
   isWelcomePopup = false;
@@ -73,6 +74,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public tourIndex = 1;
   public Title: string = '';
   currentList = [];
+  public day: string = '';
 
   constructor(private route: Router, private aservice: TeenagersService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
@@ -118,8 +120,177 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.getModuleList();
       this.getProgress()
     }
+    this.GetWisdomScreens();
     this.getUserPreference();
+    this.isSubscribe = SharedService.isSubscriber();
+    let closetour = localStorage.getItem('closeTour');
+
+    if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
+      this.continueTour();
+    }
   }
+  continueTour() {
+    const driver = window['driver'].js.driver;
+    let stepList = [
+      {
+        element: ".tour_pathway",
+        popover: {
+          title: 'PATHWAY',
+          description: 'A step-by-step guide for a happier life',
+          // side: "right"
+          side: "right",
+          align: 'end'
+        }
+      },
+       {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
+        }
+      }
+    ];
+
+    const driverObj = driver({
+      onNextClick: () => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+        this.tourIndex++;
+        if (this.tourIndex >= this.tourTotalIndex) {
+          document.body.classList.remove('overflow_hidden');
+          document.body.classList.add('overflow_auto');
+        }
+        driverObj.moveNext();
+      },
+      onPrevClick: () => {
+        this.tourIndex--;
+        driverObj.movePrevious();
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
+      },
+      onCloseClick:() => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+        this.tourIndex = 1;
+        document.body.classList.remove('overflow_hidden');
+        document.body.classList.add('overflow_auto');
+        console.log('Close Button Clicked');
+        driverObj.destroy();
+      },
+      allowClose: false,
+      showButtons: [
+        'next',
+        //'previous',
+        'close'
+      ],
+      nextBtnText: 'Next',
+      //prevBtnText: 'Prev',
+      doneBtnText: 'Done',
+      showProgress: true,
+      steps: stepList
+    });
+
+    driverObj.drive();
+
+    document.body.classList.remove('overflow_auto');
+    document.body.classList.add('overflow_hidden');
+
+  }
+
+  GetWisdomScreens() {
+    this.aservice.GetWisdomScreens(157).subscribe(res => {
+      this.wisdomExerciseList = res;
+      var allCompletedScreen: boolean = false;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      if (this.wisdomExerciseList.length == data.length) {
+        allCompletedScreen = true;
+      }
+      console.log(data.length);
+      let exercise: any
+      let emptyList = false;
+      let increaseExcercise = false;
+      //   Any of the exercise is not completed
+      if (data.length == 0) {
+        emptyList = true;
+        data = this.wisdomExerciseList;
+        exercise = data[0];
+      }
+      else {
+        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+        if (incomppletedExercise.length > 0) {
+          exercise = incomppletedExercise[0];
+        } else {
+          exercise = data[data.length - 1];
+        }
+        // It contains data may be some exercise is completed
+        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+        if (completed.length == 0) {
+          increaseExcercise = true;
+          emptyList = true;
+        }
+      }
+      // Setting final title and Exercise no
+      this.Title = exercise.Title;
+
+      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+
+      if (allCompletedScreen) {
+        this.exerciseNo = "1";
+      }
+      if (this.exerciseNo == "13") {
+        this.exerciseNo = "1";
+      }
+      // Checking the length if its less than 10  to append for current session number
+      if (this.exerciseNo.length == 1) {
+        this.exerciseNo = "0" + this.exerciseNo;
+      }
+      if (incomppletedExercise && incomppletedExercise.length > 0) {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      } else {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      }
+      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+
+
+      //Pushing final list for display
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let lastDigit = item.ScreenNo.slice(-1);
+        let obj = {
+          " SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": parseInt(lastDigit, 10),
+          "Title": item.Title
+        }
+        this.currentList.push(obj);
+      }
+      if (this.currentList.length > 0) {
+        this.Title = this.currentList[0].Title;
+      }
+      // Dynamic Scroll
+      setTimeout(() => {
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".ae_days")?.getBoundingClientRect().x;
+        if (document.querySelector(".ae_days")) {
+          document.querySelector(".ae_days").scrollLeft = editable - wediv;
+        }
+
+      }, 5000);
+
+      console.log(this.currentList);
+    })
+  }
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return ' uneditable';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return ' editable';
+    } else {
+      return ' inactive';
+    }
+  }
+
 
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
@@ -827,7 +998,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.logeventservice.logEvent("click_Awareness_exercise");
 
     if (exercise != null) {
-      this.route.navigate(['teenagers/wisdom-exercise/' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+      this.route.navigate(['teenagers/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
         state: {
           day: exercise.day,
         }
