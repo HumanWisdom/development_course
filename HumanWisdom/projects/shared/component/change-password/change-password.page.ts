@@ -90,12 +90,7 @@ export class ChangePasswordPage implements OnInit {
                 this.successPassword = 1
                 localStorage.setItem("emailCode", 'F');
                 sessionStorage.setItem("successPassword", JSON.stringify(this.successPassword))
-                if (this.isAdults) {
-                  this.router.navigate(["adults/onboarding/login"]);
-                } else {
-                  this.router.navigate(["teenagers/onboarding/login"]);
-
-                }
+                this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/login"]);
               }
               this.content = 'Your password has been reset.';
               this.enableAlert = true;
@@ -195,11 +190,9 @@ export class ChangePasswordPage implements OnInit {
                       if (subscribePage === 'T') {
                         localStorage.setItem("subscribepage", 'F')
                       }
-                      if (this.isAdults) {
-                        this.router.navigate(['/adults/onboarding/add-to-cart'])
-                      } else {
-                        this.router.navigate(['/teenagers/onboarding/add-to-cart'])
-                      }
+
+                      this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/add-to-cart"]);
+
                     } else {
                       localStorage.setItem("isloggedin", 'T')
                       if (this.isAdults) {
@@ -327,26 +320,15 @@ export class ChangePasswordPage implements OnInit {
                         }
                         if (roleid === 8 && emailcode === 'T') {
                           localStorage.setItem("isloggedin", 'T')
-                          if (this.isAdults) {
-                            this.router.navigate(['/adults/onboarding/set-password'])
-                          } else {
-                            this.router.navigate(['/teenagers/onboarding/set-password'])
-                          }
+                          this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/set-password"]);
+
                         } else {
-                          if (this.isAdults) {
-                            this.router.navigate(['/adults/onboarding/add-to-cart'])
-                          } else {
-                            this.router.navigate(['/teenagers/onboarding/add-to-cart'])
-                          }
+                          this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/add-to-cart"]);
                         }
                       } else {
                         if (roleid === 8 && emailcode === 'T') {
                           localStorage.setItem("isloggedin", 'T')
-                          if (this.isAdults) {
-                            this.router.navigate(['/adults/onboarding/set-password'])
-                          } else {
-                            this.router.navigate(['/teenagers/onboarding/set-password'])
-                          }
+                          this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/set-password"]);
                         } else {
                           localStorage.setItem("isloggedin", 'T')
                           if (this.isAdults) {
