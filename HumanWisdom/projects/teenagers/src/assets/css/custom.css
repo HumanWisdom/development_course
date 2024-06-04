@@ -36411,6 +36411,12 @@ a.fc_e58d82:hover
   border-radius: 12px;
   height: auto;
 }
+.bg_profile_a{
+  background: #120F40 !important;
+}
+.bg_profile_t{
+  background: #0C2B5F !important;
+}
 
 .partnership_row a .box_02
 {
