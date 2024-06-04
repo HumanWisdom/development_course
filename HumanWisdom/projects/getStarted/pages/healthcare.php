@@ -35,8 +35,7 @@
     <!-- header -->
     <?php include('../includes/header.php'); ?>
     <!-- /header -->
-
-    <!-- test -->
+    
     <section class="hpt120px">
       <div class="row" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -78,7 +77,6 @@
         </div>
       </div>
     </section>
-    <!-- /test -->
 
     <main id="main">
 
