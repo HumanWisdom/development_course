@@ -386,12 +386,7 @@ export class ChangePasswordPage implements OnInit {
   }
 
   Logevent(route) {
-    if (this.isAdults) {
-      this.router.navigate([route])
-    } else {
-      route = route.toString().replace('adults', 'teenagers');
-      this.router.navigate([route])
-    }
+    this.router.navigate(['/' + SharedService.getprogramName() + route])
   }
 
   hideFunction(type) {

@@ -145,13 +145,7 @@ export class ProfileEditPage implements OnInit {
   }
 
   closeprofileedit() {
-    if (this.isAdults) {
-      this.router.navigate(["/adults/onboarding/user-profile"]);
-
-    } else {
-      this.router.navigate(["/teenagers/onboarding/user-profile"]);
-
-    }
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/user-profile`]);
   }
 
   updateUser() {

@@ -138,20 +138,16 @@ export class ProfilePage implements OnInit {
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (this.isAdults) {
-      if (params != '' && route != '') {
-        this.router.navigate([route, params]);
-      } else if (route != '') {
+    if (route.includes('dashboard')) {
+      if (this.isAdults) {
         this.router.navigate([route])
+      } else {
+        this.router.navigate(['/teenagers/teenager-dashboard'])
       }
     } else {
-      route = route.toString().replace('adults', 'teenagers');
-      if (params != '' && route != '') {
-        this.router.navigate([route, params]);
-      } else if (route != '') {
-        this.router.navigate([route])
-      }
+      this.router.navigate(['/' + SharedService.getprogramName() + route])
     }
+
   }
 
   getAlertcloseEvent(event) {
