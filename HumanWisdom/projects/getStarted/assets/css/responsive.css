@@ -155,6 +155,11 @@
         margin: 0 0 20px 0;
         padding: 0;
     }
+
+    .cpl40px 
+    {
+        padding-left: 0;
+    }
 }
 
 @media (min-width: 768px)

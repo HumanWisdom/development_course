@@ -129,52 +129,9 @@ function formatToDecimal(value)
 
 document.addEventListener('DOMContentLoaded', () => {
     const AnnualType = document.getElementById('AnnualType');
-    AnnualType?.addEventListener('click', () => {
+    AnnualType.addEventListener('click', () => {
     window.location.href="https://happierme.app/adults/subscription/try-free-and-subscribe"
     });
-    setTimeout(() => {
-        const requestDemo = document.getElementById('Request-Demo');
-       requestDemo.addEventListener('click', () => {
-        debugger;
-            const email = document.getElementById('email').value;
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const country = document.getElementById('country').value;
-
-            // Prepare the data to be sent to the API
-            const data = {
-                Email_Id: 'team@happierme.app',
-                Subject: 'Request a demo',
-                Body: `Name :${name} Company:${company} Work Email:${email} Country:${country}`
-            };
-
-            // Send data to the API using Fetch API
-            fetch('https://staging.humanwisdom.info/api/SendMail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                
-                // Clear the form fields
-                document.getElementById('email').value = '';
-                document.getElementById('name').value = '';
-                 document.getElementById('company').value='';
-                document.getElementById('country').value = '';
-                alert('Form submitted successfully!');
-                
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            });
-    });
-    }, 2000);
-  
 
     // const MonthlyType = document.getElementById('MonthlyType');
     // MonthlyType.addEventListener('click', () => {
@@ -202,8 +159,8 @@ $('.owl_container .owl-carousel').owlCarousel({
     autoWidth: true,
     dots: false,
     navText: [
-        '<span class="glyphicon glyphicon glyphicon-menu-left"></span>',
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
     ],
     navContainer: '.owl_container .owl-nav',
     responsive:{
@@ -227,8 +184,8 @@ $('.owl_coach .owl-carousel').owlCarousel({
     autoWidth: true,
     dots: false,
     navText: [
-        '<span class="glyphicon glyphicon glyphicon-menu-left"></span>',
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+        '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
     ],
     navContainer: '.owl_coach .owl-nav',
     responsive:{
@@ -252,8 +209,8 @@ $('.owl_blog .owl-carousel').owlCarousel({
     autoWidth: true,
     dots: false,
     navText: [
-        '<span class="glyphicon glyphicon glyphicon-menu-left"></span>',
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+    '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_left.svg" class="">',
+    '<img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/svgs/v1_3/web_angle_right.svg" class="">'
     ],
     navContainer: '.owl_blog .owl-nav',
     responsive:{

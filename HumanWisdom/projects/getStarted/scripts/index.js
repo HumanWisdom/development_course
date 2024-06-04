@@ -14,3 +14,44 @@ teenagers.addEventListener("click", function() {
 window.location.href = "https://staging.happierme.app/teenagers/onboarding/login";
 });
 
+
+    const requestDemo = document.getElementById('Request-Demo');
+    
+    requestDemo.addEventListener('click', () => {
+        debugger;
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const country = document.getElementById('country').value;
+
+            // Prepare the data to be sent to the API
+            const data = {
+                Email_Id: email,
+                Subject: 'Request a demo',
+                Body: `Name : ${name} Company: ${company}`
+            };
+
+            // Send data to the API using Fetch API
+            fetch('https://staging.humanwisdom.info/api/SendMail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Form submitted successfully!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+    });
+
+    // const MonthlyType = document.getElementById('MonthlyType');
+    // MonthlyType.addEventListener('click', () => {
+    //   addCountryLinks(countries);
+    // });
+

@@ -428,7 +428,7 @@ section {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .navbar .dropdown ul a i {
@@ -1760,6 +1760,11 @@ section {
 {
   text-transform: uppercase;
 }
+
+.td_linethrough 
+{
+  text-decoration: line-through;
+}
 /* /text */
 
 /* anchor */
@@ -2028,6 +2033,11 @@ a
   padding-left: 20px;
 }
 
+.cpl40px 
+{
+  padding-left: 40px;
+}
+
 .pr0px 
 {
   padding-right: 0;
@@ -2194,6 +2204,11 @@ a
   border-radius: 10px 10px 0 0;
 }
 
+.owl-carousel 
+{
+  padding-bottom: 20px;
+}
+
 .owl-carousel .owl-item img 
 {
   max-width: 100%;
@@ -2216,8 +2231,8 @@ a
 .owl-prev,
 .owl-next
 {
-  width: 50px;
-  height: 50px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: rgba(173,173, 173, 1);
   color: #FFF;
@@ -2410,23 +2425,26 @@ a
   border: 0;
   margin: 0;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 150%;
   text-transform: uppercase;
-  color: #834B66;
+  color: #CB6171;
+  text-decoration: underline;
+  
 }
 
 .tab_faqs.nav-tabs>li>a:hover,
 .tab_faqs.nav-tabs>li>a:focus,
-.tab_faqs.nav-tabs>li>a:active
+.tab_faqs.nav-tabs>li>a:active,
+.tab_faqs>li.active>a, .tab_faqs>li.active>a:focus, .tab_faqs>li.active>a:hover
 {
   background: transparent;
   padding: 0 0 20px 0;
   border: 0;
   margin: 0;
-  font-weight: 500;
-  color: #CB6171;
-  text-decoration: underline;
+  font-weight: 600;
+  color: #834B66;
+  text-decoration: none;
 }
 
 .tab-content.tc_faqs 

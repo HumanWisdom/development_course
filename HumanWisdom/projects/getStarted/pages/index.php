@@ -247,7 +247,7 @@
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for the 
+                        HappierMe for 
                         <br>
                         <span class="fw_600">
                           Work
@@ -271,7 +271,7 @@
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for the 
+                        HappierMe for 
                         <br>
                         <span class="fw_600">
                           Education
@@ -295,7 +295,7 @@
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for the 
+                        HappierMe for 
                         <br>
                         <span class="fw_600">
                           Healthcare
@@ -320,7 +320,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp" class="img-responsive desktop">
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cpl40px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
               <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 COMING SOON!
               </h4>
@@ -1031,7 +1031,7 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   Start your free trial of HappierMe Premium
                 </h4>
@@ -1039,7 +1039,7 @@
             </div>
 
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
 
                 <button class="btn btn_subscription">
                   <div class="row center_flex btn_subscription_trial">
@@ -1060,9 +1060,14 @@
                         INR 5,999/yr
                       </h4> -->
 
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="strikeOutAnnualPricingModelHeading"></h4>
+                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
+                        <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
 
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="annualPricingModelHeading"></h4>
+                        <span class="" id="annualPricingModelHeading"></span>
+                      </h4>
+
+
+                      
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
@@ -1101,7 +1106,7 @@
             </div>
 
             <div class="row center_flex">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
                   <!-- After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. -->
                   <span class="">
@@ -1844,7 +1849,7 @@
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <ul class="nav nav-tabs flex_ai m0px tab_faqs">
-                <li>
+                <li class="active">
                   <a data-toggle="tab" href="#about_happierme" class="active">
                     About HappierMe
                   </a>
