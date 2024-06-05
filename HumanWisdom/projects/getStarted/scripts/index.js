@@ -18,17 +18,20 @@ window.location.href = "https://staging.happierme.app/teenagers/onboarding/login
     const requestDemo = document.getElementById('Request-Demo');
     
     requestDemo.addEventListener('click', () => {
-        debugger;
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value;
             const country = document.getElementById('country').value;
 
+            if (!email || !name || !company || !country || name =='' || email=='' || company == '' || country == '') {
+                alert("All fields must be filled out");
+                return false;
+            }
             // Prepare the data to be sent to the API
             const data = {
                 Email_Id: email,
                 Subject: 'Request a demo',
-                Body: `Name : ${name} Company: ${company}`
+                Body: `Name : ${name} Company: ${company} Country :${country}`
             };
 
             // Send data to the API using Fetch API
