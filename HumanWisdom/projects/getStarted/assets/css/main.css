@@ -2077,6 +2077,17 @@ a
 }
 /* /image */
 
+/* ellipsis */
+.ellipsis_01
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+/* /ellipsis */
+
 .btn_tff 
 {
   margin: 0;
@@ -2149,6 +2160,16 @@ a
   padding: 20px;
   width: 300px !important;
   height: 100%;
+  max-height: 377px;
+}
+
+.div_testimonials h4:first-child
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
 }
 
 .div_coaches 
@@ -2365,7 +2386,8 @@ a
 
 .div_subscription 
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png);
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
+  background: -webkit-linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;

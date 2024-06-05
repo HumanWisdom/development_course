@@ -339,7 +339,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine. 
+                          HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.
                         </h4>
                       </div>
                     </div>
@@ -347,7 +347,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Samaira, India
+                          Adam Beagley, UK
                         </h4>
                       </div>
                     </div>
@@ -365,7 +365,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial to me. It covers a wide range of topics, including anxiety, depression, and relationships and is truly impressive. 
+                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine.
                         </h4>
                       </div>
                     </div>
@@ -373,7 +373,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Sree, Dubai
+                          Samaira, India
                         </h4>
                       </div>
                     </div>
@@ -391,7 +391,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          Having trouble figuring it all out? The Human Wisdom app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.
+                          After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their relationships. I believe the HappierMe project, which aims to awaken wisdom through self-understanding, is one of those solutions. Wisdom can bring peace to the individual, and so to the world.
                         </h4>
                       </div>
                     </div>
@@ -399,7 +399,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Jondi Whitis, Atlanta, USA
+                          Sir Anthony Seldon, UK
                         </h4>
                       </div>
                     </div>
@@ -417,7 +417,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          Whether you are seeking clarity or guidance over your mental, emotional or spiritual wellness, the HappierMe App can help you do that in a simple and easy way. The app has helped me to be more reflective inwardly and find my own answers rather than turning to the external world for solutions.
+                          Happier me has helped me build a better relationship with myself and others. This app provided a safe space for me to explore my thoughts and feelings, guided by insightful exercises and resources tailored to my needs. Through consistent use, I've cultivated a deeper understanding of myself and developed practical coping mechanisms that have significantly improved my mental well-being. I am grateful for the transformative impact this app has had on my life, empowering me to navigate challenges with greater resilience and self-awareness
                         </h4>
                       </div>
                     </div>
@@ -425,7 +425,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Roland Yeo, Singapore
+                          Roshal Sebastian, Texas, USA
                         </h4>
                       </div>
                     </div>
@@ -443,7 +443,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          I subscribed to The Human Wisdom app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them.
+                          The HappierMe App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life.
                         </h4>
                       </div>
                     </div>
@@ -451,7 +451,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Julie Goodfellow, UK
+                          Dominic Curran, England
                         </h4>
                       </div>
                     </div>
@@ -1104,7 +1104,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Leadership skills are a by-product of self-awareness. The 
-                    <a class="fc_cb6171" href="">
+                    <a class="fc_cb6171" href="https://happierme.app/adults/leadership">
                       Leadership
                     </a>
                     section offers students a way of developing these skills to succeed at work.
@@ -1186,7 +1186,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Happy relationships enhance learning and lay the foundation for long-term happiness. We have a dedicated 
-                    <a class="fc_cb6171" href="">
+                    <a class="fc_cb6171" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
                       Relationship section 
                     </a>
                     for users to explore.
