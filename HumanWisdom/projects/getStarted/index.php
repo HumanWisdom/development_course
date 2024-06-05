@@ -8,14 +8,14 @@
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../includes/header.php'); ?>
+    <?php include('./includes/header.php'); ?>
     <!-- /header -->
 
     <section class="hpt120px">
@@ -236,7 +236,7 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter work_edu_health_outer">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <a class="" href="../pages/work.php">
+              <a class="" href="./pages/work.php">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -260,7 +260,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
-              <a class="" href="../pages/education.php">
+              <a class="" href="./pages/education.php">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -284,7 +284,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
-              <a class="" href="../pages/healthcare.php">
+              <a class="" href="./pages/healthcare.php">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2745,13 +2745,13 @@
       <!-- /faqs -->
 
       <!-- footer -->
-      <?php include('../includes/footer.php'); ?>
+      <?php include('./includes/footer.php'); ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('./includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>
