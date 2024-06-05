@@ -26,7 +26,6 @@ export class S156001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/156.webp"
   tocColor="white"
   tocAlt=""
@@ -34,7 +33,6 @@ export class S156001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
-  dealingwithdepressionResume=sessionStorage.getItem("dealingwithdepressionResume")
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -46,7 +44,8 @@ export class S156001Page implements OnInit,OnDestroy {
   localFreeScreens =localStorage.getItem("freeScreens");
   freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
   moduleData:ProgramModel;
-  
+  pgResume=""
+
   constructor(
     private router: Router,
     private service: TeenagersService,
@@ -54,7 +53,10 @@ export class S156001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   )
   { 
-    this.getSetModuleData(156);
+    this.service.setmoduleID(156);
+    this.pgResume=sessionStorage.getItem("pgResume")
+
+    // this.getSetModuleData(156);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -192,20 +194,27 @@ export class S156001Page implements OnInit,OnDestroy {
     this.router.navigate(['/teenagers/journal'])
   }
 
-  getSetModuleData(moduleId){
+ /*  getSetModuleData(moduleId){
     this.service.setmoduleID(moduleId);
     this.service.getModulebyId(moduleId).subscribe(res=>{
       this.moduleData=res;
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       console.log(res[0].lastScreen)
      });
-  }
+  } */
    youtube(link) 
   {
     this.router.navigate(['/teenagers/curated/youtubelink', link],{
     state: {
       class: this.bg,
     }})
+  }
+
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
   }
 
 }

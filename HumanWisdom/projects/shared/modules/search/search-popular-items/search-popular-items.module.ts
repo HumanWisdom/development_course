@@ -10,7 +10,7 @@ import { SearchPopularItemsPage } from './search-popular-items.page';
 import { PodcastTocPageModule } from '../../.././component/podcast/podcast-toc/podcast-toc.module';
 import { ForumLandingPageModule } from '../../../forum/forum-landing/forum-landing.module';
 import { SharedModule } from '../../../shared.module';
-import { IndexPageModule } from '../../../subscription/index/index.module';
+import { IndexPageModule } from '../../../../adults/src/app/adults/guided-questions/index/index.module';
 
 @NgModule({
   imports: [
@@ -20,8 +20,8 @@ import { IndexPageModule } from '../../../subscription/index/index.module';
     SearchPopularItemsPageRoutingModule,
     SharedModule,
     ForumLandingPageModule,
-    IndexPageModule,
-    PodcastTocPageModule
+    PodcastTocPageModule,
+    IndexPageModule
   ],
   declarations: [SearchPopularItemsPage]
 })

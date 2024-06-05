@@ -18,7 +18,7 @@
 
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
-        <a [routerLink]="['/teenagers/nature-of-the-i', natureoftheiResume]" *ngIf="lastvisited">
+        <a  (click)="Resume('/teenagers/nature-of-the-i/');"  *ngIf="lastvisited">
           <button type="button" class="btn  mb0 btn_begin_here " data-dismiss="modal">Continue where you left</button>
         </a>
         <!-- <a routerLink="/identity/s1">

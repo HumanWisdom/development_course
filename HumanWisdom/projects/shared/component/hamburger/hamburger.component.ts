@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChang
 import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
-
+import { ProgramType } from '../../models/program-model';
 
 import {
   getSupportedInputTypes,
@@ -45,13 +45,20 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   subscription: Subscription;
   toursubscription: Subscription;
   disableClick = false;
+  isAdults: boolean = true;
 
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
     public platform: Platform,
     public logeventservice: LogEventService
-  ) { }
+  ) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   getmenuevent() {
     if (this.router.url == "/onboarding/user-profile") {
@@ -59,20 +66,37 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  closemenuevent(){
+  closemenuevent() {
     this.closemodal.nativeElement.click();
   }
 
+  handleReferFriendClick() {
+    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+    this.router.navigate([url]);
+  }
+
+  handleReferFriend() {
+    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+    this.Logevent(url, '', 'click_refer_friend_Hamburger');
+    this.router.navigate([url]);
+  }
+
+  handleTreeSistersClick() {
+    const url = this.isAdults ? '/adults/treesisters' : '/teenagers/treesisters';
+    this.Logevent(url, '', 'click_treesisters_Hamburger');
+    this.router.navigate([url]);
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
-    if(this.userDetails.length !== 0) {
+    if (this.userDetails.length !== 0) {
       let userdetail = this.userDetails[0];
       localStorage.setItem("isPartner", this.userDetails[0].IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails[0].PartnerOption);
-    /*   this.url =
-        userdetail["UserImagePath"].split("\\")[1] +
-        "?" +
-        new Date().getTime(); */
-        this.url = userdetail['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+      /*   this.url =
+          userdetail["UserImagePath"].split("\\")[1] +
+          "?" +
+          new Date().getTime(); */
+      this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
 
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
@@ -87,28 +111,28 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
 
-  public getImageUrl(){
-    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
+  public getImageUrl() {
+    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
   }
 
   ngOnInit() {
-    if(this.platform.IOS || this.platform.SAFARI || this.iOS()){
+    if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.ios = true;
-     }
-     if(localStorage.getItem("isPartner")!=null){
-           this.isPartner = localStorage.getItem("isPartner");
-     }
-     if(localStorage.getItem("PartnerOption")!=null){
-       this.partnerOption = localStorage.getItem("PartnerOption")?.toString();
-     }
-     if( localStorage.getItem("SubscriberType")!=null){
+    }
+    if (localStorage.getItem("isPartner") != null) {
+      this.isPartner = localStorage.getItem("isPartner");
+    }
+    if (localStorage.getItem("PartnerOption") != null) {
+      this.partnerOption = localStorage.getItem("PartnerOption")?.toString();
+    }
+    if (localStorage.getItem("SubscriberType") != null) {
       this.subscriberType = localStorage.getItem("SubscriberType");
-     }
-     if( localStorage.getItem("Subscriber")!=null){
+    }
+    if (localStorage.getItem("Subscriber") != null) {
       let sub: any = localStorage.getItem("Subscriber");
       if (sub === "1" || sub === 1) {
-       this.subscriber = true;
-     }
+        this.subscriber = true;
+      }
     }
 
     this.toursubscription = this.Onboardingservice.getEnableTour().subscribe((value) => {
@@ -116,7 +140,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     });
 
     this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
-      if(value){
+      if (value) {
         let sub: any = localStorage.getItem("Subscriber");
         this.roleid = JSON.parse(localStorage.getItem("RoleID"));
         let userid = localStorage.getItem("isloggedin");
@@ -134,20 +158,21 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
         if (sub === "1" || sub === 1) {
           this.subscriber = true;
         }
-      }})
-    }
-
-
-  getSubscriber(){
-    let sub: any = localStorage.getItem("Subscriber");
-    if (sub === "1" || sub === 1) {
-     this.subscriber = true;
-   }
-   return this.subscriber;
+      }
+    })
   }
 
 
-  getLoggedIn(){
+  getSubscriber() {
+    let sub: any = localStorage.getItem("Subscriber");
+    if (sub === "1" || sub === 1) {
+      this.subscriber = true;
+    }
+    return this.subscriber;
+  }
+
+
+  getLoggedIn() {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
@@ -155,7 +180,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     return this.isloggedIn;
   }
 
-  getName(){
+  getName() {
     return this.name;
   }
 
@@ -181,7 +206,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   loginroute() {
-    this.router.navigate([SharedService.getprogramName()+ "/onboarding/login"], {
+    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"], {
       replaceUrl: true,
       skipLocationChange: true
     });
@@ -260,7 +285,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       this.content = 'To become a Partner you will need to Complete Registration and login?';
       this.enablebecomepartner = true;
       this.enableAlert = true;
-      this.router.navigate([SharedService.getprogramName()+  "/onboarding/login"]);
+      this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
     } else {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -271,34 +296,58 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
 
-    if (params != '' && route != '') {
-      this.router.navigate([route, params]);
-    } else if (route != '') {
-      if (route == '/adults/adverts-work' ||
-        route == '/adults/adverts-student' ||
-        route == '/adults/adverts-about' ||
-        route == '/adults/help-support/faq' ||
-        route == '/adults/help-support/terms-conditions' ||
-        route == '/adults/help-support/support' ||
-        route == '/adults/partnership-webpage/partnership-index/') {
-        this.navigate(route);
-        return;
+    if (this.isAdults) {
+      if (params != '' && route != '') {
+        this.router.navigate([route, params]);
+      } else if (route != '') {
+        if (route == '/adults/adverts-work' ||
+          route == '/adults/adverts-student' ||
+          route == '/adults/adverts-about' ||
+          route == '/adults/help-support/faq' ||
+          route == '/adults/help-support/terms-conditions' ||
+          route == '/adults/help-support/support' ||
+          route == '/adults/partnership-webpage/partnership-index/') {
+          this.navigate(route);
+          return;
+        }
+        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
+          this.router.navigate([route])
+        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
+          this.router.navigate([route])
+        }
       }
-      if(!this.ios && route == '/'+ SharedService.getprogramName()+ '/subscription/start-your-free-trial'){
-         this.router.navigate([route])
-      } else if(route != '/'+ SharedService.getprogramName()+ '/subscription/start-your-free-trial'){
-        this.router.navigate([route])
+    } else {
+      route = route.toString().replace('adults', 'teenagers');
+      if (params != '' && route != '') {
+        this.router.navigate([route, params]);
+      } else if (route != '') {
+        if (route == '/teenagers/adverts-work' ||
+          route == '/teenagers/adverts-student' ||
+          route == '/teenagers/adverts-about' ||
+          route == '/teenagers/help-support/faq' ||
+          route == '/teenagers/help-support/terms-conditions' ||
+          route == '/teenagers/help-support/support' ||
+          route == '/teenagers/partnership-webpage/partnership-index/') {
+          this.navigate(route);
+          return;
+        }
+        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
+          this.router.navigate([route])
+        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
+          this.router.navigate([route])
+        }
       }
     }
+
     this.closemodal?.nativeElement?.click();
   }
 
   routeManageSubscriptiont(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(this.ios){
+    if (this.ios) {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
-    }else{
+    } else {
       this.router.navigate([route]);
     }
     this.closemodal?.nativeElement?.click();
@@ -310,41 +359,41 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   getAlertcloseEvent(event) {
-    if(this.enableAlert){
+    if (this.enableAlert) {
       this.enableAlert = false;
       this.content = '';
-      if(event === 'ok') {
-        const accessObj:any = window;
+      if (event === 'ok') {
+        const accessObj: any = window;
         (accessObj)?.Moengage?.destroy_session();
-        if(this.enablebecomepartner) {
+        if (this.enablebecomepartner) {
           let res = localStorage.getItem("isloggedin");
-          if(!res || res === 'F') {
-              this.closeLogoutmodal.nativeElement.click();
-              localStorage.setItem("isloggedin", "F");
-              localStorage.setItem("guest", "T");
-              localStorage.setItem("navigateToUpgradeToPremium", "true");
-              localStorage.setItem("btnClickBecomePartner", "true");
-              this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
-          }else{
+          if (!res || res === 'F') {
+            this.closeLogoutmodal.nativeElement.click();
+            localStorage.setItem("isloggedin", "F");
+            localStorage.setItem("guest", "T");
+            localStorage.setItem("navigateToUpgradeToPremium", "true");
+            localStorage.setItem("btnClickBecomePartner", "true");
+            this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+          } else {
             this.Onboardingservice.navigateToUpgradeToPremium = true;
             this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
           }
-        }else {
+        } else {
           this.logeventservice.logEvent('click_logout_Hamburger');
           if (this.platform.isBrowser) {
             this.closemenuevent();
             this.closeLogoutmodal.nativeElement.click();
-            this.isloggedIn=false;
+            this.isloggedIn = false;
             this.isPartner = false;
             this.initialize();
             let acceptCookie = localStorage.getItem("acceptcookie");
             let firstTimeTour = localStorage.getItem("firstTimeTour");
             let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
             localStorage.clear();
-            if(firstTimeTour === 'T') {
+            if (firstTimeTour === 'T') {
               localStorage.setItem('firstTimeTour', 'T');
             }
-            if(firstTimeSearchTour === 'T') {
+            if (firstTimeSearchTour === 'T') {
               localStorage.setItem('firstTimeSearchTour', 'T');
             }
             localStorage.setItem("isloggedin", "F");
@@ -352,7 +401,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
-            this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
+            this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
           }
         }
       }
@@ -369,26 +418,26 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       'iPhone',
       'iPod'
     ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
-  GetSubscriptionText(){
-    if(this.ios){
+  GetSubscriptionText() {
+    if (this.ios) {
       return "Manage Subscriptions"
     }
     return "My Subscriptions"
   }
 
-  initialize(){
-  this.isPartner = "0";
-  this.isloggedIn = false;
-  this.name = "guest";
-  this.roleid = 0;
-  this.url = "";
-  this.subscriber = false;
-  this.partnerOption= "";
-  this.enableplaystore = true;
+  initialize() {
+    this.isPartner = "0";
+    this.isloggedIn = false;
+    this.name = "guest";
+    this.roleid = 0;
+    this.url = "";
+    this.subscriber = false;
+    this.partnerOption = "";
+    this.enableplaystore = true;
   }
 
   setLogevent(evtName, param = '') {

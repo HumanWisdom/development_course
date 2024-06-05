@@ -588,14 +588,6 @@ export class AdultDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_intro",
-        popover: {
-          title: 'Introduction',
-          description: 'Learn how to make the most of the app and explore the key ideas',
-          side: "bottom"
-        }
-      },
-      {
         element: ".tour_find_inspiration",
         popover: {
           title: 'Find Inspiration',
@@ -626,6 +618,14 @@ export class AdultDashboardPage implements OnInit {
           description: 'Join our community discussions. Ask a coach a question',
           side: "top"
         },
+      },
+      {
+        element: ".tour_intro",
+        popover: {
+          title: 'Begin Here',
+          description: 'Begin with this introduction to make the most of the app and explore the key ideas.',
+          side: "bottom"
+        }
       }
     ];
 
@@ -644,6 +644,7 @@ export class AdultDashboardPage implements OnInit {
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
           this.services.setEnableTour(false);
+          this.tourIndex=1;
         }
         driverObj.moveNext();
       },
@@ -1782,15 +1783,19 @@ export class AdultDashboardPage implements OnInit {
 
   // }
   routeResume(r, enableLastVisited = false) {
-    let id = '';
+    console.log(r);
+    let id = '', url='', screenNo='';
     if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';
+      url = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleUrl'].toString() : '/adults/happiness/';
+      this.service.setmoduleID(id,url, url );
+
     }
     // else {
     //   id = r.ModuleId.toString();
     // }
     localStorage.setItem("pageaction", 'next');
-    switch (id) {
+   /*  switch (id) {
       case "07": {
         this.service.setmoduleID(id, '/adults/comparison', '/adults/comparison/s0');
         // this.routeComparison(1)
@@ -2078,8 +2083,9 @@ export class AdultDashboardPage implements OnInit {
         // this.routeDiversityandInclusion(1)
         break
       }
-
-    }
+      }
+    */
+    
   }
 
   // introduction

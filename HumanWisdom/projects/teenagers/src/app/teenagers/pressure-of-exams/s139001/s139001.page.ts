@@ -52,7 +52,8 @@ export class S139001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.getSetModuleData(139);
+    this.service.setmoduleID(139);
+    // this.getSetModuleData(139);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -180,14 +181,14 @@ export class S139001Page implements OnInit,OnDestroy {
     this.router.navigate(['/teenagers/journal'])
   }
 
-  getSetModuleData(moduleId){
+ /*  getSetModuleData(moduleId){
     this.service.setmoduleID(moduleId);
     this.service.getModulebyId(moduleId).subscribe(res=>{
       this.moduleData=res;
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       console.log(res[0].lastScreen)
      });
-  }
+  } */
    youtube(link) 
   {
     this.router.navigate(['/curated/youtubelink', link],{

@@ -250,7 +250,7 @@ export class AdultsService {
 
 
   getSearchDataForSearchSite(data): Observable<any> {
-    return this.http.post(this.path + `/SiteSearch/${data}${SharedService.ProgramId}`, {})
+    return this.http.post(this.path + `/SiteSearch/${data}/${SharedService.ProgramId}`, {})
   }
   getForumSearchDataSite(data): Observable<any> {
     return this.http.get(this.path + `/GetAllPosts/${data}`);
@@ -260,7 +260,7 @@ export class AdultsService {
   }
 
   getUserpreference(): Observable<any> {
-    return this.http.get(this.path + `/GetUserPreference`)
+    return this.http.get(this.path + `/GetUserPreference/${SharedService.ProgramId}`)
   }
 
   getperList() {

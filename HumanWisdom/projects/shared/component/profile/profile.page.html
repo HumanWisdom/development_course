@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/adults/adult-dashboard">
+      <a class="" (click)="Logevent('/adults/adult-dashboard', '', 'click_profile')">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -29,7 +29,7 @@
   <div class="cw100p">
 
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -64,12 +64,12 @@
                     <div class="row mt20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                          <button type="button" class="btn btn_profile_ep" (click)="Logevent('/adults/onboarding/profile-edit', '', 'click_edit_profile')">
+                          <button type="button" class="btn btn_profile_ep" (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')">
                             Edit Profile
                           </button>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <button type="button" class="btn btn_profile_cp" (click)="Logevent('/adults/onboarding/change-password', '', 'click_change_password')">
+                          <button type="button" class="btn btn_profile_cp" (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
                             Change password
                           </button>
                         </div>
@@ -77,7 +77,7 @@
                     </div>
                   </div>
 
-                  <div class="profile_pe_div_01 mt20px">
+                  <div class="profile_pe_div_01 mt20px"  [ngClass]="isAdults ? 'bg_profile_a' : 'bg_profile_t'">
                     <div class="row center_flex">
                       <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
@@ -173,7 +173,7 @@
                           </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                          <a routerLink="/adults/wisdom-survey/progress">
+                          <a (click)="Logevent('/wisdom-survey/progress', '', 'click_progress')">
                             <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
                               Progress
                               <i class="fa fa-angle-right ml10px"></i>
@@ -397,7 +397,7 @@
                       </div>
                     </a> -->
 
-                    <a routerLink="/adults/refer-friend">
+                    <a (click)="handleReferFriendClick()">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">

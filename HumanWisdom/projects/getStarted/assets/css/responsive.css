@@ -109,6 +109,57 @@
         font-size: 12px !important;
     }
     /* /responsive_fonts */
+
+    .div_price,
+    .div_dyk_l1,
+    .div_inspire,
+    .input_parent
+    {
+        display: block !important;
+    }
+
+    .div_price > [class^="col-"],
+    .div_dyk_l1 > [class^="col-"]
+    {
+        margin-bottom: 20px;
+        border: 0;
+    }
+
+    .div_price > [class^="col-"]:last-child,
+    .div_dyk_l1 > [class^="col-"]:last-child
+    {
+        margin-bottom: 0;
+    }
+
+    .absolute_desc
+    {
+        position: relative;
+        left: 0;
+        justify-content: center;
+    }
+
+    .absolute_desc h4 
+    {
+        color: #000;
+        text-align: center;
+    }
+
+    .work_edu_health_outer > [class^="col-"]
+    {
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+
+    .aspects_outer > [class^="col-"]
+    {
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+
+    .cpl40px 
+    {
+        padding-left: 0;
+    }
 }
 
 @media (min-width: 768px)
@@ -139,5 +190,18 @@
     header .logo img 
     {
         max-height: 40px;
+    }
+}
+
+@media (min-width: 1920px)
+{
+    [class^="col-xl-4"]
+    {
+        width: 33.33%;
+    }
+
+    [class^="col-lg-10"]
+    {
+        width: 980px;
     }
 }
