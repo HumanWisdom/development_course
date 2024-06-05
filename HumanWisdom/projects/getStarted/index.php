@@ -1476,7 +1476,7 @@
 
             <div class="owl_blog">
               <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200" href="blogs/difficult_emotions.html">
+                <a class="item" data-aos="fade-up" data-aos-delay="200" href="./blogs/difficult_emotions.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1494,7 +1494,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300" href="blogs/real_success.html">
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/real_success.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1512,7 +1512,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400" href="blogs/self_Awareness_can_help_relationships_flourish.html">
+                <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1530,7 +1530,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="500" href="blogs/why_are_we_critical_of_ourselves.html">
+                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/why_are_we_critical_of_ourselves.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1548,7 +1548,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="600" href="blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.html">
+                <a class="item" data-aos="fade-up" data-aos-delay="600" href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
