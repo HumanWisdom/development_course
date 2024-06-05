@@ -16,11 +16,15 @@
   </head>
 
   <body>
-  <?php
+
+    <!-- request a demo php script -->
+    <?php
       // Simulate fetching country data from a database or external API
       $countries = 
      ["United States", "Canada", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and/or Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Cook Islands", "Costa Rica", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecudaor", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France, Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kosovo", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfork Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbarn and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States minor outlying islands", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City State", "Venezuela", "Vietnam", "Virigan Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zaire", "Zambia", "Zimbabwe"]
     ?>
+    <!-- /request a demo php script -->
+
     <!-- header -->
     <?php include('../includes/header.php'); ?>
     <!-- /header -->
@@ -31,27 +35,27 @@
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_landing.webp" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_landing.webp" class="img-responsive">
             </div>
           </div>
     
           <div class="row center_flex absolute_desc" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
-                <h4 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">
-                  Boost student wellbeing, learning and emotional intelligence
+                <h4 class="mtb0px fs_36px fw_600 lh_140p fc_ffffff">
+                  Boost workplace wellbeing, performance and productivity
                 </h4>
               </div>
     
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
-                <h4 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
-                  Give students all the support they need to help reduce stress and anxiety, manage their own mental health, be happier and learn the soft skills they need to succeed at work.
+                <h4 class="mt20px mb30px fs_15px fw_400 lh_160p fc_ffffff">
+                  Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
                 </h4>
               </div>
     
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                  <a href="#bring_happierme">
+                  <a href="#bring_happierme" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       Request a demo
                     </button>
@@ -82,7 +86,7 @@
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc div_price">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
@@ -102,7 +106,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
@@ -123,7 +127,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pl20px" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
@@ -139,6 +143,27 @@
                       Silver
                     </span>
                     + Coaching by trained HappierMe coaches
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 pl20px" data-aos="fade-up" data-aos-delay="500">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
+                    Platinum
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
+                    <span class="fw_600">
+                      Gold
+                    </span>
+                    + Wisdom Leadership Training
                   </h4>
                 </div>
               </div>
@@ -166,16 +191,16 @@
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_block">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pl0px" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_app.webp" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_app.webp" class="img-responsive">
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
               <h4 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
-                Develop a mind that is calm, and open to learning
+                Feel calm, capable, and better everyday, with HappierMe!
               </h4>
 
               <h4 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
-                How we think matters! We can avoid and overcome so many challenges we face every day by understanding ourselves and how our minds work. This can help students to self-regulate their habits, emotions and mental health, have happier relationships, and shine in the world.
+                How you think matters! The app helps you feel better now, and then helps you to understand your own mind so you can be in charge of how you respond to challenges.
               </h4>
             </div>
           </div>
@@ -202,7 +227,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                    80%
+                    75%
                   </h4>
                 </div>
               </div>
@@ -210,7 +235,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    of students suffer from stress
+                    of employers say staff lack soft skills
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                    (shrm.org)
                   </h4>
                 </div>
               </div>
@@ -220,7 +253,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                    44%
+                    67%
                   </h4>
                 </div>
               </div>
@@ -228,7 +261,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    of students use alcohol or drugs to cope with their problems
+                    of employees are disengaged
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                    (Gallup)
                   </h4>
                 </div>
               </div>
@@ -238,7 +279,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                    33%
+                    76%
                   </h4>
                 </div>
               </div>
@@ -246,7 +287,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    of students report that they were often or always lonely
+                    of employees have a mental health problem
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                    (US Surgeon General)
                   </h4>
                 </div>
               </div>
@@ -256,7 +305,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                    42%
+                    50-70%
                   </h4>
                 </div>
               </div>
@@ -264,7 +313,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    of students suffer from anxiety
+                    of leaders fail within 18 months
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                      (CEB)
                   </h4>
                 </div>
               </div>
@@ -274,7 +331,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                    50%
+                    1 in 6
                   </h4>
                 </div>
               </div>
@@ -282,7 +339,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    of students report some thoughts of self-harm
+                    people have a substance abuse disorder
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                      (CDC)
                   </h4>
                 </div>
               </div>
@@ -292,7 +357,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                    75%
+                    38%
                   </h4>
                 </div>
               </div>
@@ -300,7 +365,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    of students conceal symptoms due to fears of stigma
+                    of UK employees experience interpersonal conflict at work
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                      (CIPD)
                   </h4>
                 </div>
               </div>
@@ -339,7 +412,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.
+                          I subscribed to The HappierMe app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them.
                         </h4>
                       </div>
                     </div>
@@ -347,7 +420,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Adam Beagley, UK
+                          Julie Goodfellow, UK
                         </h4>
                       </div>
                     </div>
@@ -365,7 +438,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine.
+                          This app is exactly what each and every person in the world needs every day. It will give each person the tools to leads a purposeful and fulfilling life.
                         </h4>
                       </div>
                     </div>
@@ -373,7 +446,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Samaira, India
+                          Tinamarie Rodriguez, USA
                         </h4>
                       </div>
                     </div>
@@ -391,7 +464,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their relationships. I believe the HappierMe project, which aims to awaken wisdom through self-understanding, is one of those solutions. Wisdom can bring peace to the individual, and so to the world.
+                          Having trouble figuring it all out? The HappierMe app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.
                         </h4>
                       </div>
                     </div>
@@ -399,7 +472,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Sir Anthony Seldon, UK
+                          Jondi Whitis, Atlanta, USA
                         </h4>
                       </div>
                     </div>
@@ -417,7 +490,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          Happier me has helped me build a better relationship with myself and others. This app provided a safe space for me to explore my thoughts and feelings, guided by insightful exercises and resources tailored to my needs. Through consistent use, I've cultivated a deeper understanding of myself and developed practical coping mechanisms that have significantly improved my mental well-being. I am grateful for the transformative impact this app has had on my life, empowering me to navigate challenges with greater resilience and self-awareness
+                          The HappierMe app is a pre-eminent asset for people of all ages. It changes peoples lives by assisting them to better know themselves and live with peace, love, harmony, and fulfilment. It is a wonderful gift to humanity.
                         </h4>
                       </div>
                     </div>
@@ -425,14 +498,14 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Roshal Sebastian, Texas, USA
+                          Garry Prigg, Australia
                         </h4>
                       </div>
                     </div>
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="600">
+                <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -1010,14 +1083,14 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_employability.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_productivity.svg" class="img-responsive">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                    Boost employability
+                    Improved productivity
                   </h4>
                 </div>
               </div>
@@ -1025,7 +1098,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Soft skills like communication, teamwork, emotional intelligence, critical thinking, and creativity are a natural by-product of self-understanding.
+                    Boost productivity by helping staff feel 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/happiness">
+                      happier
+                    </a>
+                    and less 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/stress">
+                      stressed.
+                    </a>
+                    Reduce interpersonal friction and boost collaboration through healthier relationships.
                   </h4>
                 </div>
               </div>
@@ -1049,7 +1130,11 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Understanding your emotions boosts your EQ, and this can help staff manage their mental health and have happier relationships.
+                    Understanding your 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/curated/manage-your-emotions">
+                      emotions 
+                    </a>
+                    boosts your EQ, and this can help staff manage their mental health and have happier relationships.
                   </h4>
                 </div>
               </div>
@@ -1058,14 +1143,14 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_learning.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_well_being.svg" class="img-responsive">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                    Better learning
+                    Well-being
                   </h4>
                 </div>
               </div>
@@ -1073,7 +1158,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Happy students who are not stressed or anxious, and who have healthy relationships are able to learn better.
+                    Emotional intelligence can prevent problems before they arise, and supports staff to be happy and have a positive attitude. This is infectious.
                   </h4>
                 </div>
               </div>
@@ -1103,11 +1188,11 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Leadership skills are a by-product of self-awareness. The 
+                    Leadership skills are a by-product of self-awareness, and emotional intelligence. Our 
                     <a class="fc_cb6171" href="https://happierme.app/adults/leadership">
-                      Leadership
+                      leadership 
                     </a>
-                    section offers students a way of developing these skills to succeed at work.
+                    section helps people learn these skills and flourish at work.
                   </h4>
                 </div>
               </div>
@@ -1131,7 +1216,10 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Self-awareness helps you to think clearly, solve problems, and make better decisions. This can lead to healthier habits.
+                    <a class="fc_cb6171" href="https://happierme.app/adults/awareness">
+                      Self-awareness 
+                    </a>
+                    helps you to think clearly, understand your emotions, and make better decisions.
                   </h4>
                 </div>
               </div>
@@ -1140,14 +1228,14 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_addiction.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_diversity.svg" class="img-responsive">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                    Overcome Addiction
+                    Diversity & inclusion
                   </h4>
                 </div>
               </div>
@@ -1155,7 +1243,15 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Our need for pleasure, our conditioning, and escaping from emotional pain drive addiction. We help people avoid and overcome it.
+                    Our modules on 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/conditioning">
+                      Conditioning,
+                    </a>
+                    and
+                    <a class="fc_cb6171" href="https://happierme.app/adults/diversity-and-inclusion">
+                      Diversity & Inclusion
+                    </a>
+                    help people explore and overcome their prejudices to enhance inclusion and reduce conflict.
                   </h4>
                 </div>
               </div>
@@ -1170,14 +1266,14 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="800">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_relationships.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_workplace.svg" class="img-responsive">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                    Relationships
+                    Workplace relationships
                   </h4>
                 </div>
               </div>
@@ -1185,11 +1281,18 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Happy relationships enhance learning and lay the foundation for long-term happiness. We have a dedicated 
-                    <a class="fc_cb6171" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
-                      Relationship section 
+                    Less friction between people and departments improves collaboration. We have detailed modules on 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/relationships">
+                      Relationships,
                     </a>
-                    for users to explore.
+                    <a class="fc_cb6171" href="https://happierme.app/adults/work">
+                      Work,
+                    </a>
+                    and 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/communication">
+                      Communication
+                    </a>
+                    to enable this.
                   </h4>
                 </div>
               </div>
@@ -1198,14 +1301,14 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="900">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_stress.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_attract.svg" class="img-responsive">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                    Overcome stress & anxiety  
+                    Attract and retain talent
                   </h4>
                 </div>
               </div>
@@ -1213,7 +1316,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    We offer quick solutions to relieve stress and anxiety, and then understand the root cause for prevention and long-term solutions.
+                    The app enables everyone to live with a positive attitude. This can change the culture of an organisation making it an attractive place to work.
                   </h4>
                 </div>
               </div>
@@ -1237,7 +1340,11 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    We help students accept feedback with a positive attitude, which can enhance their learning and employability.
+                    Our module on 
+                    <a class="fc_cb6171" href="https://happierme.app/adults/criticism">
+                      Criticism
+                    </a>
+                    helps employees accept feedback with a positive attitude, and can help managers offer it with care.
                   </h4>
                 </div>
               </div>
@@ -1248,9 +1355,9 @@
       </section>
       <!-- /inspiring -->
 
-      <!-- bring happierme -->
+      <!-- header -->
       <?php include('../includes/happierme-email.php'); ?>
-      <!-- /bring happierme -->
+      <!-- /header -->
 
       <!-- blog -->
       <section>
@@ -1269,54 +1376,54 @@
 
             <div class="owl_blog">
               <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/15_ways_self_awareness_can_help_students.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/to_succeed_as_a_leader_you_need_self_awareness.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/19.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/33.webp" class="img-responsive">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          15 ways self-awareness can help students 
+                          To succeed as a leader you need self-awareness
                         </h4>
                       </div>
                     </div>
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300"href="../blogs/the_purpose_of_education.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="../blogs/6_ways_to_transform_organisations.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/10.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/56.webp" class="img-responsive">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          The purpose of education
+                          6 ways to transform organisations
                         </h4>
                       </div>
                     </div>
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/responding_to_criticism.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/6_ways_to_transform_organisations.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/3.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/26.webp" class="img-responsive">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Responding to criticism
+                          6 ways to transform organisations to be happier and more productive 
                         </h4>
                       </div>
                     </div>

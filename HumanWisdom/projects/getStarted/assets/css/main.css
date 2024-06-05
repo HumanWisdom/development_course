@@ -2386,7 +2386,8 @@ a
 
 .div_subscription 
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png);
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
+  background: -webkit-linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
