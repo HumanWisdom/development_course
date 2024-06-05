@@ -5,6 +5,7 @@ import { Location } from "@angular/common";
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
 import { SharedService } from "../../../../../../shared/services/shared.service";
 import { NavigationService } from "../../../../../../shared/services/navigation.service";
+import { ProgramType } from "../../../../../../shared/models/program-model";
 
 
 
@@ -39,6 +40,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   viewMore = [];
   viewLess = [];
   isViewMore = true;
+  isAdults: boolean = true; 
 
   constructor(
     private router: Router,
@@ -53,7 +55,11 @@ export class IndexPage implements OnInit, AfterViewInit {
 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
-
+if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
   }
 
   ngOnInit() {

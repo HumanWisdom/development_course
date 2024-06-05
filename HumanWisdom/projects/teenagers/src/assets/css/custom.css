@@ -31235,8 +31235,10 @@ svg path
 }
 
 .nextDayButton{
-  background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
+  /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
   box-shadow: 0px 0px 8px 0px #0000001A;
+  background: #FFFFFF;
+  color: #E58D82;
   }
 .hr_style_19
 {
@@ -34321,6 +34323,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
     font-weight: 400;
     line-height: 140%;
     color: #fff
+}
+.bg_0C2B5F{
+  background:#0C2B5F;
 }
 
 .v3_ta_coach:focus,.v3_ta_coach:active {
