@@ -117,7 +117,7 @@ export class S157015Page implements OnInit {
       } else if (this.slideStart == this.totalSlidesCount) {
         //this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '157015p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
+          "ScreenNo": '157015p' + (parseInt(this.screenNumber.substring(7, this.screenNumber.length))),
           "ModuleID": 157,
           "SessionID": 0,
         })

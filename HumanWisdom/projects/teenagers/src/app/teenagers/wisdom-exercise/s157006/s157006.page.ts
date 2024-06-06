@@ -235,12 +235,12 @@ export class S157006Page implements OnInit {
       } else if (this.slideStart == this.totalSlidesCount) {
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '157006p' + (parseInt(this.screenNumber.substring(6, 7))),
+          "ScreenNo": '157006p' + (parseInt(this.screenNumber.substring(7, 8))),
           "ModuleID": 157,
           "SessionID": 0,
         })
         if(this.currentDay>this.totaldays){
-          this.router.navigate(['/wisdom-exercise/s157007']);
+          this.router.navigate(['teenagers/wisdom-exercise/s157007']);
         }else{
           this.getdayevent(this.currentDay.toString());
         }

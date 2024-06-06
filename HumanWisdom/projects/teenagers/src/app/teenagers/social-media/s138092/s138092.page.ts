@@ -1,23 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import * as jQuery from 'jquery';
 import { TeenagersService } from '../../teenagers.service';
-
 @Component({
-  selector: 'HumanWisdom-s138092',
+  selector: 'app-s138092-audio',
   templateUrl: './s138092.page.html',
   styleUrls: ['./s138092.page.scss'],
 })
-export class S138092Page implements OnInit {
 
+export class S138092Page implements OnInit,OnDestroy 
+{
   bg_tn=""
   bg_cft=""
   bg=""
+  title="Risks of being online for Teens"
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.14.mp3'
+  transcriptPage="social-media/s138092t"
+  toc="teenagers/social-media/s138001"
+  bookmark=0
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
+  avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
-
+  screenType=localStorage.getItem("audio")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=138092
+  startTime:any
+  endTime:any
+  totalTime:any
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName ="teenagers"
+  
   constructor
   (
     private router: Router,
@@ -25,7 +42,7 @@ export class S138092Page implements OnInit {
     private location:Location
   ) 
   { }
-
+ 
   ngOnInit() 
   {
     if(this.saveUsername==false)
@@ -36,27 +53,70 @@ export class S138092Page implements OnInit {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
-    this.sessionPoints()
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    this.createScreen()
+    if(JSON.parse(sessionStorage.getItem("bookmark138092"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark138092"))==1)
+      this.bookmark=1
   }
-
-  sessionPoints()
+ 
+  createScreen()
   {
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"})
-    .subscribe(res=>
-    {
-      console.log("points",res)
-      this.points=res
-    })
+    this.service.createScreen({
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>{})
   }
-
+ 
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark138092",JSON.stringify(this.bookmark))
+  }
+ 
+  receiveAvDuration(e)
+  {
+    console.log(e)
+    this.avDuration=e
+  }
+ 
   submitProgress()
   {
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/teenagers/social-media/s138093'])
+    this.service.submitProgressAv({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      })
   }
 
   prev()
   {
     this.router.navigate(['/teenagers/social-media/s138091'])
   }
+
+  ngOnDestroy()
+  {
+    localStorage.setItem("totalTime138092",this.totalTime)
+    localStorage.setItem("avDuration138092",this.avDuration)
+  }
+
 }

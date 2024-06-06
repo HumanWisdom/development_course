@@ -130,7 +130,7 @@ export class S157014Page implements OnInit {
         this.router.navigate(['/wisdom-exercise/s157016']);
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '157014p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
+          "ScreenNo": '157014p' + (parseInt(this.screenNumber.substring(7, this.screenNumber.length))),
           "ModuleID": 157,
           "SessionID": 0,
         })
