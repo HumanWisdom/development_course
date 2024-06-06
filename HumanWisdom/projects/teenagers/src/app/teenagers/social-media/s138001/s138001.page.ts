@@ -51,7 +51,8 @@ export class S138001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.getSetModuleData(138);
+    this.service.setmoduleID(138)
+    // this.getSetModuleData(138);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -186,6 +187,13 @@ export class S138001Page implements OnInit,OnDestroy {
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       console.log(res[0].lastScreen)
      });
+  }
+
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
   }
 
 }
