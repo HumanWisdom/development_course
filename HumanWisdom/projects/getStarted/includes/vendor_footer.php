@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Send data to the API using Fetch API
-            fetch('https://staging.humanwisdom.info/api/SendMail', {
+            fetch('https://www.humanwisdom.info/api/SendMail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
