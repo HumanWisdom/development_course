@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 //import { colorSets } from '@swimlane/ngx-charts';
 declare var $: any;
 @Component({
@@ -74,7 +75,7 @@ export class S157011Page implements OnInit {
           this.currentDay=0;
      this.getdayevent(this.currentDay.toString());
     } else if(completed.length>0){
-     this.currentDay = +completed[0].ScreenNo.substring(6, 7);
+     this.currentDay = +completed[0].ScreenNo.substring(7, 8);
      this.getdayevent(this.currentDay.toString());
     }
 
@@ -294,48 +295,53 @@ export class S157011Page implements OnInit {
     }, 700);
   }
   
-  getClass(day) {
-    var dayclass = '';
-    var className = '';
-    if (day === '157011p0') {
-      dayclass = "0";
-    }
-    else if (day === '157011p1') {
-      dayclass = '1';
-    }
-    else if (day === '157011p2') {
-      dayclass = '2';
-    }
-    else if (day === '157011p3') {
-      dayclass = '3';
-    }
-    else if (day === '157011p4') {
-      dayclass = '4';
-    }
-    else if (day === '157011p5') {
-      dayclass = '5';
-    }
-    else if (day === '157011p6') {
-      dayclass = '6';
-    }
-    else if (day === '157011p7') {
-      dayclass = '7';
-    }
-    else if (day === '157011p8') {
-      dayclass = '8';
-    }
+  // getClass(day) {
+  //   var dayclass = '';
+  //   var className = '';
+  //   if (day === '157011p0') {
+  //     dayclass = "0";
+  //   }
+  //   else if (day === '157011p1') {
+  //     dayclass = '1';
+  //   }
+  //   else if (day === '157011p2') {
+  //     dayclass = '2';
+  //   }
+  //   else if (day === '157011p3') {
+  //     dayclass = '3';
+  //   }
+  //   else if (day === '157011p4') {
+  //     dayclass = '4';
+  //   }
+  //   else if (day === '157011p5') {
+  //     dayclass = '5';
+  //   }
+  //   else if (day === '157011p6') {
+  //     dayclass = '6';
+  //   }
+  //   else if (day === '157011p7') {
+  //     dayclass = '7';
+  //   }
+  //   else if (day === '157011p8') {
+  //     dayclass = '8';
+  //   }
 
-    if (this.currentDay.toString() == dayclass) {
-      className += 'editable ';
-    }
-    if (this.vistedScreens.some(x => x.ScreenNo == day)) {
-      className += 'inactive ';
-    }
-    if (this.nextDay == +(dayclass)) {
-      className = 'nextDayButton ';
-    }
-    return className;
+  //   if (this.currentDay.toString() == dayclass) {
+  //     className += 'editable ';
+  //   }
+  //   if (this.vistedScreens.some(x => x.ScreenNo == day)) {
+  //     className += 'inactive ';
+  //   }
+  //   if (this.nextDay == +(dayclass)) {
+  //     className = 'nextDayButton ';
+  //   }
+  //   return className;
+  // }
+  
+  getClass(day) {
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
+
   back() {
     this.nextDay = null;
     this.resetHintValue();

@@ -79,7 +79,7 @@ export class S157004Page implements OnInit {
       this.getdayevent(this.currentDay.toString());
      }
      else if(completed.length>0){
-      this.currentDay = +completed[0].ScreenNo.substring(6, 7);
+      this.currentDay = +completed[0].ScreenNo.substring(7, 8);
       this.getdayevent(this.currentDay.toString());
      }
   

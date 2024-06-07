@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import "bcswipe";
 import "hammerjs";
 import { TeenagersService } from "../../teenagers.service";
+import { SharedService } from '../../../../../../shared/services/shared.service';
 declare var $: any;
 var moveleft = false;
 @Component({
@@ -78,7 +79,7 @@ export class S157002Page implements OnInit, AfterViewInit {
           this.currentDay = 0;
           this.getdayevent(this.currentDay.toString());
         } else if (completed.length > 0) {
-          this.currentDay = +completed[0].ScreenNo.substring(6, 7);
+          this.currentDay = +completed[0].ScreenNo.substring(7, 8);
           this.getdayevent(this.currentDay.toString());
         }
       }
@@ -141,35 +142,38 @@ export class S157002Page implements OnInit, AfterViewInit {
   //     this.back();
   //   }
   // }
+  // getClass(day) {
+  //   var dayclass = "";
+  //   var className = "";
+  //   if (day === "157002p0") {
+  //     dayclass = "0";
+  //   } else if (day === "157002p1") {
+  //     dayclass = "1";
+  //   } else if (day === "157002p2") {
+  //     dayclass = "2";
+  //   } else if (day === "157002p3") {
+  //     dayclass = "3";
+  //   } else if (day === "157002p4") {
+  //     dayclass = "4";
+  //   } else if (day === "157002p5") {
+  //     dayclass = "5";
+  //   }
+
+  //   if (this.currentDay.toString() == dayclass) {
+  //     className += "editable ";
+  //   }
+  //   if (this.vistedScreens.some((x) => x.ScreenNo == day)) {
+  //     className += "inactive ";
+  //   }
+  //   if (this.nextDay == +dayclass) {
+  //     className = "nextDayButton ";
+  //   }
+  //   return className;
+  // }
+
   getClass(day) {
-    var dayclass = "";
-    var className = "";
-    if (day === "157002p0") {
-      dayclass = "0";
-    } else if (day === "157002p1") {
-      dayclass = "1";
-    } else if (day === "157002p2") {
-      dayclass = "2";
-    } else if (day === "157002p3") {
-      dayclass = "3";
-    } else if (day === "157002p4") {
-      dayclass = "4";
-    } else if (day === "157002p5") {
-      dayclass = "5";
-    }
-
-    if (this.currentDay.toString() == dayclass) {
-      className += "editable ";
-    }
-    if (this.vistedScreens.some((x) => x.ScreenNo == day)) {
-      className += "inactive ";
-    }
-    if (this.nextDay == +dayclass) {
-      className = "nextDayButton ";
-    }
-    return className;
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
-
   getdayevent(event) {
     if (event === "intro") {
       this.startTime = Date.now();
