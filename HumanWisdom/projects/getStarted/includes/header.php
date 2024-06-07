@@ -1,9 +1,9 @@
 <!-- header -->
-<div class="row header_fixed">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
+<div class="row header_fixed center_flex">
+  <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
 
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
-      <a class="" href="https://happierme.app/index.php">
+      <a class="" href="../index.php">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive">
       </a>
     </div>
@@ -18,19 +18,10 @@
               <li><a href="../pages/work.php">HappierMe for Work</a></li>
               <li><a href="../pages/education.php">HappierMe for Education</a></li>
               <li><a href="../pages/healthcare.php">HappierMe for Healthcare</a></li>
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li> -->
             </ul>
           </li>
           <!-- <li><a href="#events">Partnership</a></li> -->
-          <li><a href="https://staging.happierme.app/adults/onboarding/login">Login</a></li>
+          <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
         </ul>
       </nav>
 

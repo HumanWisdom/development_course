@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
+import { SharedService } from "../../../shared/services/shared.service";
 
 @Injectable({
   providedIn: 'root'
@@ -147,7 +148,7 @@ export class AuthGuard implements CanActivate, OnInit {
       ) {
         localStorage.setItem('btnclick', 'F');
         localStorage.setItem('guest', 'T');
-        this.router.navigate(['/adults/onboarding/login'])
+        this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login'])
         return false;
       }
       // localStorage.clear()

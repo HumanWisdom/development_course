@@ -249,7 +249,7 @@ export class TeenagersService {
     return this.http.get(this.path + `/GetAllPosts/${data}`);
   }
   postUserpreference(data): Observable<any> {
-    return this.http.post(this.path + `/AddUserPreference/${data}`, {})
+    return this.http.post(this.path + `/AddUserPreference/${data}/${SharedService.ProgramId}`, {})
   }
 
   getUserpreference(): Observable<any> {
@@ -5964,7 +5964,7 @@ export class TeenagersService {
 
 
   AddUserPreference(data: any): Observable<any> {
-    return this.http.post(this.path + `/AddUserPreference/${data}`, null)
+    return this.http.post(this.path + `/AddUserPreference/${data}/${SharedService.ProgramId}`, null)
   }
 
   emaillogin(id = '') {
