@@ -1,10 +1,10 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
-import { LogEventService } from "../../../../../../shared/services/log-event.service";
-import { SharedService } from "../../../../../../shared/services/shared.service";
-import { NavigationService } from "../../../../../../shared/services/navigation.service";
+import { LogEventService } from '../../../services/log-event.service';
+import { CommonService } from '../../../services/common.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { SharedService } from '../../../services/shared.service';
 
 
 
@@ -43,7 +43,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   constructor(
     private router: Router,
     private rout: ActivatedRoute,
-    public service: AdultsService,
+    public service: CommonService,
     private location: Location,
     public logeventservice: LogEventService,
     private elementRef: ElementRef,
@@ -70,8 +70,6 @@ export class IndexPage implements OnInit, AfterViewInit {
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
     }
-
-
   }
 
   viewJournalAndReflections() {
@@ -109,7 +107,7 @@ export class IndexPage implements OnInit, AfterViewInit {
       this.enableAlert = true;
     } else {
       this.router.navigate([
-        "/adults/note",
+        SharedService.getUrlfromFeatureName('note'),
         { title: jTitle, jId: jId, jNotes: jNotes, type: type },
       ]);
     }
@@ -118,7 +116,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     return false;
   }
   note() {
-    this.router.navigate(["/adults/note"]);
+    this.router.navigate([SharedService.getUrlfromFeatureName('note')]);
   }
 
   ngAfterViewInit() {
@@ -134,7 +132,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
-      let url = `/adults/journal${item.Landing_URL}`;
+      let url =  `${SharedService.getUrlfromFeatureName('journal')}/${item.Landing_URL}`;
       this.router.navigate([url], { state: { "isBypass": true } });
     }
 
@@ -181,7 +179,8 @@ export class IndexPage implements OnInit, AfterViewInit {
       );
   }
   NavigateToQuestions(data) {
-    this.router.navigate(["/adults/guidedquestions"], {
+  
+    this.router.navigate([  SharedService.getUrlfromFeatureName('guidedquestions')], {
       queryParams: { Qid: data.ProgId, Attempt: data.UserReflectionID },
     });
   }
@@ -341,10 +340,10 @@ export class IndexPage implements OnInit, AfterViewInit {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(['/adults/subscription/start-your-free-trial']);
+        this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/adults/onboarding/login"]);
+        this.router.navigate([SharedService.getUrlfromFeatureName("onboarding/login")]);
       }
     }
   }

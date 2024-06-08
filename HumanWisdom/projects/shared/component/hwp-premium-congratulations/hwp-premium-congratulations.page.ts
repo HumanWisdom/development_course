@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from "@angular/common";
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-hwp-premium-congratulations',
@@ -8,17 +9,24 @@ import { Location } from "@angular/common";
   styleUrls: ['./hwp-premium-congratulations.page.scss'],
 })
 export class HwpPremiumCongratulationsPage implements OnInit {
-
+   isAdults=true;
   constructor(public router:Router,private location: Location) { }
 
   ngOnInit() {
+    if(SharedService.getprogramName()=='adults'){
+      this.isAdults =true;
+    }else{
+      this.isAdults =false;
+    }
   }
+
   JoinHumanWisdom(){
     localStorage.setItem('btnClickBecomePartner','true');
     this.router.navigate(['adults/partnership-app/referral-code']);
   }
+  
   NotNow(){
-    this.router.navigate(['/adults/adult-dashboard'])
+    this.router.navigate([ `/${SharedService.getprogramName()}/hwp-premium-congratulations`])
   }
   GoToIndex(){
     this.router.navigate(['adults/partnership-webpage/partnership-index']);
@@ -27,5 +35,8 @@ export class HwpPremiumCongratulationsPage implements OnInit {
   goBack() 
   {
     this.location.back();
+  }
+  ProceedToDashboard(){
+      this.router.navigate([SharedService.getDashboardUrls()]);
   }
 }

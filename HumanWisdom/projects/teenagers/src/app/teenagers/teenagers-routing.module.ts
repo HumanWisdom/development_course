@@ -4,7 +4,7 @@ import { AudioVideoGuard } from '../audio-video.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { ActiveGuard } from '../authGuard/active.guard';
-import {BlogArticlePage} from '../../../../shared/component/blogs/blog-article/blog-article.page';
+import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 
 const routes: Routes = [
@@ -141,10 +141,6 @@ const routes: Routes = [
         path: "journal/:TopicName",
         loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
         pathMatch: "full"
-      },
-    {
-        path: 'journal',
-        loadChildren: () => import('../teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
     },
     {
         path: "forum",
@@ -311,7 +307,7 @@ const routes: Routes = [
         canActivate: [AudioVideoGuard],
         component: S3VideoComponent
     },
-       {
+    {
         path: 'teen-talk',
         loadChildren: () => import('../teenagers/teen-talk/teen-talk.module').then(m => m.TeenTalkPageModule)
     },
@@ -340,8 +336,8 @@ const routes: Routes = [
         loadChildren: () => import('../teenagers/pathway/pathway.module').then(m => m.PathwayModule)
     },
     {
-      path: 'intro-carousel',
-      loadChildren: () => import('../../../../shared/component/intro-carousel/intro-carousel.module').then( m => m.IntroCarouselPageModule)
+        path: 'intro-carousel',
+        loadChildren: () => import('../../../../shared/component/intro-carousel/intro-carousel.module').then(m => m.IntroCarouselPageModule)
     },
     {
         path: 'change-topic',
@@ -360,13 +356,13 @@ const routes: Routes = [
     //     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
     // },
     {
-        path:'blogs',
-        component:BlogIndexPage
-      },
+        path: 'blogs',
+        component: BlogIndexPage
+    },
     {
         path: 'wisdom-shorts',
         loadChildren: () => import('../../../../shared/component/wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
-      },
+    },
     {
         path: 'curated',
         loadChildren: () => import('../teenagers/curated/curated.module').then(m => m.CuratedModule)
@@ -378,53 +374,70 @@ const routes: Routes = [
     {
         path: 'audio-meditation',
         loadChildren: () => import('../../../../shared/component/audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
-   },
-   {
+    },
+    {
 
-    path: 'blog-article',
-    // canActivate:[ActiveGuard],
-    component:BlogArticlePage
-  },
-  {
-    path: 'events',
-    loadChildren: () => import('../../../../shared/component/events/events.module').then(m => m.EventsModule)
-  },
-  {
-    path: 'podcast/:tag',
-    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule),
-  },
-  {
-    path: 'podcast',
-    loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
-  },
-  {
-    path: 'site-search/:word',
-    loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
-  },
-  {
-    path: 'subscription',
-    loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
-  },
-  {
-    path: 'coach',
-    loadChildren: () => import('../teenagers/coach/coach.module').then( m => m.CoachModule)
-  },
-  {
-    path: 'daily-practise/:id',
-    loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
-  },
-  {
-    path: 'refer-friend',
-    loadChildren: () => import('../../../../shared/component/refer-friend/refer-friend.module').then(m => m.ReferFriendPageModule)
-  },
-  {
-    path: 'treesisters',
-    loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
-  },
-   {
-    path: 'intro-happierme',
-    loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
-  }
+        path: 'blog-article',
+        // canActivate:[ActiveGuard],
+        component: BlogArticlePage
+    },
+    {
+        path: 'events',
+        loadChildren: () => import('../../../../shared/component/events/events.module').then(m => m.EventsModule)
+    },
+    {
+        path: 'podcast/:tag',
+        loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule),
+    },
+    {
+        path: 'podcast',
+        loadChildren: () => import('../../../../shared/component/podcast/podcast.module').then(m => m.PodcastModule)
+    },
+    {
+        path: 'site-search/:word',
+        loadChildren: () => import('../../../../shared/modules/search/search.module').then(m => m.SearchModule)
+    },
+    {
+        path: 'subscription',
+        loadChildren: () => import('../teenagers/subscription/subscription.module').then(m => m.SubscriptionModule)
+    },
+    {
+        path: 'coach',
+        loadChildren: () => import('../teenagers/coach/coach.module').then(m => m.CoachModule)
+    },
+    {
+        path: 'daily-practise/:id',
+        loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
+    },
+    {
+        path: 'refer-friend',
+        loadChildren: () => import('../../../../shared/component/refer-friend/refer-friend.module').then(m => m.ReferFriendPageModule)
+    },
+    {
+        path: 'treesisters',
+        loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
+    },
+    {
+        path: 'intro-happierme',
+        loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then(m => m.IntroHappiermePageModule)
+    },
+    {
+        path: 'hwp-premium-congratulations',
+        loadChildren: () => import('../../../../shared/component/hwp-premium-congratulations/hwp-premium-congratulations.module').then(m => m.HwpPremiumCongratulationsPageModule)
+    },
+    {
+        path: "journal/:TopicName",
+        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+    },
+    {
+        path: 'journal',
+        loadChildren: () => import('../../../../shared/component/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
+    },
+    {
+        path: 'guidedquestions',
+        loadChildren: () => import('../../../../shared/component/guided-questions/questions/questions.module').then(m => m.QuestionsPageModule)
+    },
 ];
 
 
