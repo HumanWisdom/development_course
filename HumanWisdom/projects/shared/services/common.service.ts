@@ -41,8 +41,35 @@ export class CommonService {
     return this.http.get(this.path + '/GetWisdomShortsListing');
   }
 
+  GetGuidedQs_Topics(): Observable<any> {
+    return this.http.get(this.path + `/GetGuidedQs_Topics`)
+  }
+
+  GetGuidedQs_Response(id: any, attempt: any): Observable<any> {
+    return this.http.get(this.path + `/GetGuidedQs_Response/` + id + '/' + attempt)
+  }
+
+  AddGuidedQs_Response(data: any) {
+    return this.http.post(this.path + `/AddGuidedQs_Response/`, data);
+  }
+
   submitProgressAv(data: any): Observable<any> {
     return this.http.post(this.path + '/UserProgressAv', data)
+  }
+
+  viewJournal(data: any): Observable<any> {
+    return this.http.get(this.path + `/viewJournalAndReflections/${data}`)
+  }
+  submitJournal(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddJournal', data)
+  }
+
+  getDailyQuestion(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/userDailyQuestion/${data}`)
+  }
+  addDailyQuestion(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddUserReflection', data)
   }
 
   submitProgressQuestion(data: any): Observable<any> {

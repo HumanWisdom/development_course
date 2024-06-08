@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { AdultsService } from '../../adults.service';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { CommonService } from '../../../services/common.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { SharedService } from '../../../services/shared.service';
 
 @Component({
   selector: 'app-questions',
@@ -20,14 +21,14 @@ export class QuestionsPage implements OnInit {
   length: number = 0;
   isChanged = false;
   userId: number = 0;
-  constructor(private adultService: AdultsService, private router: ActivatedRoute
+  constructor(private commonService: CommonService, private router: ActivatedRoute
     , private route: Router,private navigationService:NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
   ngOnInit() {
     var id = +this.router.snapshot.queryParamMap.get("Qid");
     var attempt = +this.router.snapshot.queryParamMap.get("Attempt");
-    this.adultService.GetGuidedQs_Response(id, attempt).subscribe(x => {
+    this.commonService.GetGuidedQs_Response(id, attempt).subscribe(x => {
       if (x) {
         this.data = x;
         this.numSlides = this.data.length;
@@ -60,7 +61,7 @@ export class QuestionsPage implements OnInit {
         savetoJournal: "0"
       };
     }
-    this.adultService.AddGuidedQs_Response(data).subscribe(res => {
+    this.commonService.AddGuidedQs_Response(data).subscribe(res => {
       if (res) {
         console.log(res);
       }
@@ -69,8 +70,8 @@ export class QuestionsPage implements OnInit {
 
   goback() {
    var url = this.navigationService.navigateToBackLink();
-   if(url == 'adults/search'){
-    this.route.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+   if(url == `/${SharedService.getprogramName()}/search`){
+    this.route.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
    }
   };
 
@@ -142,12 +143,12 @@ export class QuestionsPage implements OnInit {
         savetoJournal: "1"
       };
     }
-    this.adultService.AddGuidedQs_Response(data).subscribe(res => {
+    this.commonService.AddGuidedQs_Response(data).subscribe(res => {
       this.saveBtn.nativeElement.click();
     });
   }
 
   SubmitButton() {
-    this.route.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.route.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
   }
 }

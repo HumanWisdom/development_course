@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
-
+import { CommonService } from '../../../services/common.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { SharedService } from '../../../services/shared.service';
 @Component({
   selector: 'app-introduction',
   templateUrl: './introduction.page.html',
@@ -14,7 +14,7 @@ export class IntroductionPage implements OnInit {
   private currentUrl:string='';
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
-    private service: AdultsService, private location:Location,private navigationService:NavigationService) {
+    private service: CommonService, private location:Location,private navigationService:NavigationService) {
       let url = this.route.snapshot.paramMap.get('TopicName');
       this.GetGuidedQs_Topics(url);
       if(this.router.getCurrentNavigation()!=null &&  this.router.getCurrentNavigation().extras && this.router.getCurrentNavigation().extras.state){
@@ -28,18 +28,17 @@ export class IntroductionPage implements OnInit {
 
   goBack() {
   if(this.isByPass==true){
-    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+    this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
   }else{
     var url = this.navigationService.navigateToBackLink();
-    if(url == 'adults/search'){
+    if(url == `/${SharedService.getprogramName()}/search`){
      this.location.back();
     }
     if(url == 'DONOROUTE'){
-      this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+      this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
     }
     this.router.navigate([url]);
   }
-    // this.router.navigate(['/adults/journal'])
   }
 
   
@@ -48,9 +47,9 @@ export class IntroductionPage implements OnInit {
   NavigateToQuestions() {
     let log = localStorage.getItem("isloggedin");
     if (log === 'T') {
-      this.router.navigate(['/adults/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+      this.router.navigate([SharedService.getUrlfromFeatureName('guidedquestions')], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
     }else{
-      this.router.navigate(['/adults/subscription/start-your-free-trial']);
+      this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
     }
   }
 

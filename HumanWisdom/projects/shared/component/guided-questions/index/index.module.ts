@@ -4,10 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-
-import { SharedModule } from '../../../../../../shared/shared.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { GuidedQuestionsRoutingModule } from '../guided-questions-routing.module';
+import { SharedModule } from '../../../shared.module';
 import { IndexPage } from './index.page';
 import { IndexPageRoutingModule } from './index-routing.module';
 
