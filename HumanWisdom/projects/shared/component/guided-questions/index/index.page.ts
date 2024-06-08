@@ -1,11 +1,11 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
-import { LogEventService } from "../../../../../../shared/services/log-event.service";
-import { SharedService } from "../../../../../../shared/services/shared.service";
-import { NavigationService } from "../../../../../../shared/services/navigation.service";
-import { ProgramType } from "../../../../../../shared/models/program-model";
+import { LogEventService } from '../../../services/log-event.service';
+import { CommonService } from '../../../services/common.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from "../../../models/program-model";
 
 
 
@@ -45,7 +45,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   constructor(
     private router: Router,
     private rout: ActivatedRoute,
-    public service: AdultsService,
+    public service: CommonService,
     private location: Location,
     public logeventservice: LogEventService,
     private elementRef: ElementRef,
@@ -76,8 +76,6 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
     }
-
-
   }
 
   viewJournalAndReflections() {
@@ -115,7 +113,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.enableAlert = true;
     } else {
       this.router.navigate([
-        "/adults/note",
+        SharedService.getUrlfromFeatureName('note'),
         { title: jTitle, jId: jId, jNotes: jNotes, type: type },
       ]);
     }
@@ -124,7 +122,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     return false;
   }
   note() {
-    this.router.navigate(["/adults/note"]);
+    this.router.navigate([SharedService.getUrlfromFeatureName('note')]);
   }
 
   ngAfterViewInit() {
@@ -140,7 +138,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
-      let url = `/adults/journal${item.Landing_URL}`;
+      let url =  `${SharedService.getUrlfromFeatureName('journal')}/${item.Landing_URL}`;
       this.router.navigate([url], { state: { "isBypass": true } });
     }
 
@@ -187,7 +185,8 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       );
   }
   NavigateToQuestions(data) {
-    this.router.navigate(["/adults/guidedquestions"], {
+  
+    this.router.navigate([  SharedService.getUrlfromFeatureName('guidedquestions')], {
       queryParams: { Qid: data.ProgId, Attempt: data.UserReflectionID },
     });
   }
@@ -347,10 +346,10 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     this.enableAlert = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
-        this.router.navigate(['/adults/subscription/start-your-free-trial']);
+        this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
       } else if (this.guest) {
         localStorage.setItem("subscribepage", 'T');
-        this.router.navigate(["/adults/onboarding/login"]);
+        this.router.navigate([SharedService.getUrlfromFeatureName("onboarding/login")]);
       }
     }
   }

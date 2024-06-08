@@ -97,7 +97,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           },  */        
         },            
         variables: {
-          colorBackground: this.isAdults ?'#120F40':'#0C2B5F',
+          colorBackground: (this.isAdults? '#120F40' : '#0C2B5F' ) ,
           colorDanger: '#df1b41',
           fontFamily: 'Poppins,sans-serif !important;',
           spacingUnit: '4px',

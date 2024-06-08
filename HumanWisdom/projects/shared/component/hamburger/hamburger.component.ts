@@ -96,7 +96,13 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           userdetail["UserImagePath"].split("\\")[1] +
           "?" +
           new Date().getTime(); */
-      this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        if( userdetail['UserImagePath'] !="")
+        {
+
+          this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        }
+
+    
 
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
