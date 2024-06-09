@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AdultsService } from "../adults.service"
+import { CommonService } from '../../services/common.service';
 import { Location } from '@angular/common'
 import { Router, ActivatedRoute } from '@angular/router';
-import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { LogEventService } from '../../services/log-event.service';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class NotePage implements OnInit {
 
   constructor(
     private router: Router,
-    private service: AdultsService,
+    private service: CommonService,
     private location: Location,
     private activate: ActivatedRoute,
     public logeventservice: LogEventService,

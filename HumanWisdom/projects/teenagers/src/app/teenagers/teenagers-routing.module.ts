@@ -137,11 +137,7 @@ const routes: Routes = [
         path: 'anger',
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
-    {
-        path: "journal/:TopicName",
-        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
-        pathMatch: "full"
-    },
+
     {
         path: "forum",
         loadChildren: () => import("../teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)
@@ -438,6 +434,16 @@ const routes: Routes = [
         path: 'guidedquestions',
         loadChildren: () => import('../../../../shared/component/guided-questions/questions/questions.module').then(m => m.QuestionsPageModule)
     },
+    {
+        path: 'note',
+        loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
+      },
+      {
+        path: "journal/:TopicName",
+        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+    },
+
 ];
 
 
