@@ -321,7 +321,7 @@ const routes: Routes = [
     },
     {
         path: 'repeat-user',
-        loadChildren: () => import('../teenagers/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule)
+        loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule)
     },
     {
         path: 'select-a-topic-to-explore',

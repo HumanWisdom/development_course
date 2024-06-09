@@ -454,7 +454,7 @@ const routes: Routes = [
   },
   {
     path: 'repeat-user',
-    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
+    loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
     canActivate: [AuthGuard]
   },
   {
