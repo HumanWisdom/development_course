@@ -6,11 +6,13 @@ import { SingleAudioContentComponent } from '../../../../shared/component/single
 import { ActiveGuard } from '../authGuard/active.guard';
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
+import { AuthGuard } from '../authGuard/auth.guard';
 
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
+        canActivate: [AuthGuard]
     },
     {
         path: 'change-topic',
@@ -42,7 +44,8 @@ const routes: Routes = [
     },
     {
         path: 'teenager-dashboard',
-        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
+        canActivate: [AuthGuard]
     },
     {
         path: 'benefits-of-enquiry',
@@ -321,7 +324,8 @@ const routes: Routes = [
     },
     {
         path: 'repeat-user',
-        loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule)
+        loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule),
+        canActivate: [AuthGuard]
     },
     {
         path: 'select-a-topic-to-explore',
