@@ -28,20 +28,20 @@ const routes: Routes = [
   // },
   {
     path: "journal/:TopicName",
-    loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+    loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
     pathMatch: "full"
   },
   {
     path: 'journal',
-    loadChildren: () => import('./guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
+    loadChildren: () => import('../../../../shared/component/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
   },
   {
     path: 'guidedquestions',
-    loadChildren: () => import('./guided-questions/questions/questions.module').then(m => m.QuestionsPageModule)
+    loadChildren: () => import('../../../../shared/component/guided-questions/questions/questions.module').then(m => m.QuestionsPageModule)
   },
   {
     path: 'note',
-    loadChildren: () => import('./note/note.module').then(m => m.NotePageModule)
+    loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
   },
   {
     path: 'coursenote',
@@ -382,7 +382,7 @@ const routes: Routes = [
   },
   {
     path: 'hwp-premium-congratulations',
-    loadChildren: () => import('./hwp-premium-congratulations/hwp-premium-congratulations.module').then(m => m.HwpPremiumCongratulationsPageModule)
+    loadChildren: () => import('../../../../shared/component/hwp-premium-congratulations/hwp-premium-congratulations.module').then(m => m.HwpPremiumCongratulationsPageModule)
   },
   {
     path: 'partnership-report',
@@ -454,7 +454,7 @@ const routes: Routes = [
   },
   {
     path: 'repeat-user',
-    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
+    loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
     canActivate: [AuthGuard]
   },
   {

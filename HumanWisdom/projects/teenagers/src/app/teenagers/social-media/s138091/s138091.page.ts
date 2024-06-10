@@ -1,42 +1,39 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+
 @Component({
-  selector: 'app-s138091',
+  selector: 'HumanWisdom-s138091',
   templateUrl: './s138091.page.html',
   styleUrls: ['./s138091.page.scss'],
 })
-export class S138091Page implements OnInit,OnDestroy {
+export class S138091Page implements OnInit {
 
   bg_tn=""
   bg_cft=""
   bg=""
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/social-media/videos/1.1.mp4'  
-  title="In this short film two teens explore the impact social media has on their lives."
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("video")
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=138091
-  startTime:any
-  endTime:any
-  totalTime:any  
-  toc="/social-medial/s138001"
-  bookmark=0
+
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  screenType = localStorage.getItem("text")
+  moduleId = localStorage.getItem("moduleId")
+  screenNumber = 138091
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark = 0
+  toc = "teenagers/social-media/s138001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  avDuration:any
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+
   constructor
   (
     private router: Router,
-    private service:TeenagersService,
-    private location:Location
+    private service: TeenagersService,
+    private location: Location
   ) 
   { }
 
@@ -44,69 +41,78 @@ export class S138091Page implements OnInit,OnDestroy {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
     }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    
-    if(JSON.parse(sessionStorage.getItem("bookmark138091"))==0)
-      this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark138091"))==1)
-      this.bookmark=1
+
+    if (JSON.parse(sessionStorage.getItem("bookmark138091")) == 0)
+      this.bookmark = 0
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark138091")) == 1)
+      this.bookmark = 1
   }
 
-  receiveBookmark(e)
+  receiveBookmark(e) 
   {
     console.log(e)
-    if(e==true)
-      this.bookmark=1
+    if (e == true)
+      this.bookmark = 1
     else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark138091",JSON.stringify(this.bookmark))
+      this.bookmark = 0
+    sessionStorage.setItem("bookmark138091", JSON.stringify(this.bookmark))
   }
 
-  createScreen()
+  createScreen() 
   {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {})
   }
 
-  submitProgress()
+  submitProgress() 
   {
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/social-media/s138092'])
-    this.service.submitProgressAv({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
-    }).subscribe(res=>
-      { 
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+    this.service.submitProgressText({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime
+    }).subscribe(res => {
+      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+    },
+      error => { console.log(error) },
+      () => {
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
   }
 
-  prev()
+  prev() 
   {
     this.router.navigate(['/teenagers/social-media/s138090'])
   }
 
-  ngOnDestroy()
+  goNext() 
+  {
+    // this.router.navigate(['/adults/comparison/s2'])
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    if (this.userId !== 563) this.submitProgress()
+    this.router.navigate(['/teenagers/social-media/s138092'])
+  }
+
+  ngOnDestroy() 
   {}
 
 }

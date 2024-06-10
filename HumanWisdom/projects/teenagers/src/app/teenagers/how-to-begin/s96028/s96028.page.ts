@@ -13,7 +13,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S96028Page implements OnInit 
 {
   
-  toc="teenagers/how-to-begin/s96001"
+  toc="/teenagers/how-to-begin/s96001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/97.webp"
   bg=""
   moduleLink="/three-steps-enquiry/s97001"

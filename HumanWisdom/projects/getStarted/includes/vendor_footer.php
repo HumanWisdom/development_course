@@ -140,7 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value;
             const country = document.getElementById('country').value;
-
+            if (!email || !name || !company || !country || name =='' || email=='' || company == '' || country == '') {
+                alert("All fields must be filled out");
+                return false;
+            }
             // Prepare the data to be sent to the API
             const data = {
                 Email_Id: 'team@happierme.app',
@@ -149,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Send data to the API using Fetch API
-            fetch('https://staging.humanwisdom.info/api/SendMail', {
+            fetch('https://www.humanwisdom.info/api/SendMail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
