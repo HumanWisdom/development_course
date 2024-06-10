@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { Router } from '@angular/router';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-journal-we',
@@ -25,13 +27,29 @@ export class JournalWeComponent implements OnInit {
   endTime: any
   totalTime: any
   isGuest:boolean = false;
-  constructor(private service: AdultsService, private router: Router) { }
+  enabletickValue = true;
+  isAdults: boolean = true; 
+
+  constructor(private service: AdultsService, private router: Router) { 
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   ngOnInit() {
     this.isGuest = localStorage.getItem('guest') =='T';
     this.userId = JSON.parse(sessionStorage.getItem("userId"))
     this.findReflection()
     this.startTime = Date.now();
+    this.checkRoute();
+  }
+  checkRoute(): void {
+    // Check if the current URL contains "wisdom-exercise"
+    if (this.router.url.includes('wisdom-exercise')) {
+      this.enabletickValue = false;
+    }
   }
 
   findReflection() {
@@ -104,6 +122,12 @@ export class JournalWeComponent implements OnInit {
   }
 
   routejournel(){
-    this.router.navigate(['/adults/journal'])
+    if(this.isAdults){
+      this.router.navigate(['/adults/journal'])
+    }
+    else{
+      this.router.navigate(['/teenagers/journal'])
+    }
+   
   }
 }

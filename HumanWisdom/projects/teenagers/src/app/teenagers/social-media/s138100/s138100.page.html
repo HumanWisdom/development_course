@@ -1,44 +1,76 @@
-<app-feedback-question skipToPage="/social-media/s138101" [progName]="progName">
-  <form>
-    <h2 class="mt0px fs_24px fw_600 lh_150p fc_ffffff">
-      Feedback Survey
-    </h2>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-      social-media
-    </h4>
+<app-bg-video></app-bg-video>
 
-    <!-- multistep wizard -->
-    <div id="svg_wrap"></div>                 
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_stake col_cw">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>
+              <!-- <h5 class="txt4 justified_center"> -->
+              <h5 class="txt1">
+                How to stay safe online
+                <br/>
+                  Avoid the dangers with these simple tips.
+                </h5>
+              <div class="clearfix"></div>
 
-    <section>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <a class="sb_anchor">
-            <div class="box textarea_box">
-              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff display_flex">
-                3. 
-                <p class="mtb0px ml5px">
-                  {{reflection}}
-                </p>
-              </h4>    
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
 
-              <hr class="hr_style_v3_06">
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                      #7 
+
+                    </h4>
+
+                    <h4 class="txt45 tleft">
+                      Install anti-virus software on your computer. Never open software unless you trust the source.
+                      
+                     </h4>
+                  </div>
+                </div>
+              </section>
+
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+
+
              
-              <textarea id="message" required="required" class="form-control textarea_fs" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r138100"></textarea>
+              
+                           
 
-              <br>
-            </div>                    
-          </a>
+              <!-- /multistep wizard -->       
+
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                 
+                </div>
+              </div>
+              
+            </form>
+          </div>
         </div>
       </div>
-    </section>
-    <section></section>
-    <section></section>
-    <section></section>
-  </form>
-</app-feedback-question>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
 
-<!-- feedback survey footer  -->
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
-<!-- /feedback survey footer -->
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

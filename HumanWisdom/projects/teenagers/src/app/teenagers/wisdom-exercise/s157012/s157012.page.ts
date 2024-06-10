@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
-
+import { SharedService } from '../../../../../../shared/services/shared.service';
 //import { colorSets } from '@swimlane/ngx-charts';
 declare var $: any;
 @Component({
@@ -77,7 +77,7 @@ export class S157012Page implements OnInit {
      this.getdayevent(this.currentDay.toString());
     }
    else if(completed.length>0){
-     this.currentDay = +completed[0].ScreenNo.substring(6, 7);
+     this.currentDay = +completed[0].ScreenNo.substring(7, 8);
      this.getdayevent(this.currentDay.toString());
     }
 
@@ -291,12 +291,12 @@ export class S157012Page implements OnInit {
       } else if (this.slideStart == this.totalSlidesCount) {
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '157012p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
+          "ScreenNo": '157012p' + (parseInt(this.screenNumber.substring(7, this.screenNumber.length))),
           "ModuleID": 157,
           "SessionID": 0,
         })
         if(this.currentDay>this.totaldays){
-          this.router.navigate(['/wisdom-exercise/s157013']);
+          this.router.navigate(['teenagers/wisdom-exercise/s157016']);
         }else{
           this.getdayevent(this.currentDay.toString());
         }
@@ -322,51 +322,56 @@ export class S157012Page implements OnInit {
       this.setHint();
     }, 700);
   }
-  getClass(day) {
-    var dayclass = '';
-    var className = '';
-    if (day === '157012p0') {
-      dayclass = "0";
-    }
-    else if (day === '157012p1') {
-      dayclass = '1';
-    }
-    else if (day === '157012p2') {
-      dayclass = '2';
-    }
-    else if (day === '157012p3') {
-      dayclass = '3';
-    }
-    else if (day === '157012p4') {
-      dayclass = '4';
-    }
-    else if (day === '157012p5') {
-      dayclass = '5';
-    }
-    else if (day === '157012p6') {
-      dayclass = '6';
-    }
-    else if (day === '157012p7') {
-      dayclass = '7';
-    }
-    else if (day === '157012p7') {
-      dayclass = '8';
-    }
-    else if (day === '157012p8') {
-      dayclass = '9';
-    }
+  // getClass(day) {
+  //   var dayclass = '';
+  //   var className = '';
+  //   if (day === '157012p0') {
+  //     dayclass = "0";
+  //   }
+  //   else if (day === '157012p1') {
+  //     dayclass = '1';
+  //   }
+  //   else if (day === '157012p2') {
+  //     dayclass = '2';
+  //   }
+  //   else if (day === '157012p3') {
+  //     dayclass = '3';
+  //   }
+  //   else if (day === '157012p4') {
+  //     dayclass = '4';
+  //   }
+  //   else if (day === '157012p5') {
+  //     dayclass = '5';
+  //   }
+  //   else if (day === '157012p6') {
+  //     dayclass = '6';
+  //   }
+  //   else if (day === '157012p7') {
+  //     dayclass = '7';
+  //   }
+  //   else if (day === '157012p7') {
+  //     dayclass = '8';
+  //   }
+  //   else if (day === '157012p8') {
+  //     dayclass = '9';
+  //   }
 
-    if (this.currentDay.toString() == dayclass) {
-      className += 'editable ';
-    }
-    if (this.vistedScreens.some(x => x.ScreenNo == day)) {
-      className += 'inactive ';
-    }
-    if (this.nextDay == +(dayclass)) {
-      className = 'nextDayButton ';
-    }
-    return className;
+  //   if (this.currentDay.toString() == dayclass) {
+  //     className += 'editable ';
+  //   }
+  //   if (this.vistedScreens.some(x => x.ScreenNo == day)) {
+  //     className += 'inactive ';
+  //   }
+  //   if (this.nextDay == +(dayclass)) {
+  //     className = 'nextDayButton ';
+  //   }
+  //   return className;
+  // }
+  
+  getClass(day) {
+    return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
+
   back() {
     this.nextDay = null;
     this.resetHintValue();
