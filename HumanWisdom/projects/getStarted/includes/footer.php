@@ -11,17 +11,17 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-            <a href="https://happierme.app/adults/about-us">
+            <a href="../pages/about_us.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Our story
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/hwp-project">
+            <!-- <a href="https://happierme.app/adults/hwp-project">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 HappierMe app
               </h4>
-            </a>
+            </a> -->
 
             <a href="https://happierme.app/adults/testimonials">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
@@ -198,17 +198,17 @@
               <!-- links -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-                  <a href="https://happierme.app/adults/about-us">
+                  <a href="../pages/about_us.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Our story
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/adults/hwp-project">
+                  <!-- <a href="https://happierme.app/adults/hwp-project">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe app
                     </h4>
-                  </a>
+                  </a> -->
 
                   <a href="https://happierme.app/adults/testimonials">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
@@ -271,19 +271,19 @@
                     </h4>
                   </a>
 
-                  <a href="../work.php">
+                  <a href="../pages/work.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for Work
                     </h4>
                   </a>
 
-                  <a href="../education.php">
+                  <a href="../pages/education.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for Education
                     </h4>
                   </a>
 
-                  <a href="../healthcare.php">
+                  <a href="../pages/healthcare.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       HappierMe for Healthcare
                     </h4>

@@ -1033,7 +1033,11 @@
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  Start your free trial of HappierMe Premium
+                  40% off HappierMe Premium
+                </h4>
+
+                <h4 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+                  Start your free trial today!
                 </h4>
               </div>
             </div>
@@ -1459,132 +1463,6 @@
       </section>
       <!-- /coaches -->
 
-      <!-- blog -->
-      <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                Explore our blog
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="row center_flex">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-            <div class="owl_blog">
-              <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200" href="./blogs/difficult_emotions.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Difficult emotions: a guide to freedom
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/real_success.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Real success
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Self-Awareness can help relationships flourish
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/why_are_we_critical_of_ourselves.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Why are we critical of ourselves
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="600" href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          How to calm anxiety
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="owl-theme">
-                <div class="owl-controls">
-                  <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/blogs">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        View all blogs
-                      </h4>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      <!-- /blog -->
-
       <!-- tools -->
       <section>
         <div class="section-header">
@@ -1830,6 +1708,132 @@
         </div>
       </section>
       <!-- /tools -->
+
+      <!-- blog -->
+      <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                Explore our blog
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+            <div class="owl_blog">
+              <div class="owl-carousel owl-theme">
+                <a class="item" data-aos="fade-up" data-aos-delay="200" href="./blogs/difficult_emotions.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          Difficult emotions: a guide to freedom
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/real_success.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          Real success
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          Self-Awareness can help relationships flourish
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/why_are_we_critical_of_ourselves.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          Why are we critical of ourselves
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="600" href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          How to calm anxiety
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="owl-theme">
+                <div class="owl-controls">
+                  <div class="owl-nav">
+                    <a class="sap" href="https://happierme.app/adults/blogs">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                        View all blogs
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- /blog -->
 
       <!-- faqs -->
       <section>

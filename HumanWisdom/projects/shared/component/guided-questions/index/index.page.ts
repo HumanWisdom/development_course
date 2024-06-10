@@ -5,8 +5,7 @@ import { LogEventService } from '../../../services/log-event.service';
 import { CommonService } from '../../../services/common.service';
 import { NavigationService } from '../../../services/navigation.service';
 import { SharedService } from '../../../services/shared.service';
-import { ProgramType } from "../../../models/program-model";
-
+import { ProgramType } from '../../../models/program-model';
 
 
 @Component({
@@ -42,6 +41,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   isViewMore = true;
   isAdults: boolean = true; 
 
+
   constructor(
     private router: Router,
     private rout: ActivatedRoute,
@@ -52,7 +52,11 @@ export class IndexPage implements OnInit, AfterViewInit {
     private cd: ChangeDetectorRef,
     private navigationService: NavigationService
   ) {
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 if (SharedService.ProgramId == ProgramType.Adults) {
@@ -186,7 +190,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   }
   NavigateToQuestions(data) {
   
-    this.router.navigate([  SharedService.getUrlfromFeatureName('guidedquestions')], {
+    this.router.navigate([SharedService.getUrlfromFeatureName('guidedquestions')], {
       queryParams: { Qid: data.ProgId, Attempt: data.UserReflectionID },
     });
   }

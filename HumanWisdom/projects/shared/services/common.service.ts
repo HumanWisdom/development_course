@@ -72,6 +72,10 @@ export class CommonService {
     return this.http.post(this.path + '/AddUserReflection', data)
   }
 
+  addReflection(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddUserReflection', data)
+  }
+
   submitProgressQuestion(data: any): Observable<any> {
     return this.http.post(this.path + '/userProgressQuestion', data)
   }

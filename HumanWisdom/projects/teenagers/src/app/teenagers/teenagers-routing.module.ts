@@ -6,11 +6,13 @@ import { SingleAudioContentComponent } from '../../../../shared/component/single
 import { ActiveGuard } from '../authGuard/active.guard';
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
+import { AuthGuard } from '../authGuard/auth.guard';
 
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
+        canActivate: [AuthGuard]
     },
     {
         path: 'change-topic',
@@ -42,7 +44,8 @@ const routes: Routes = [
     },
     {
         path: 'teenager-dashboard',
-        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule)
+        loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
+        canActivate: [AuthGuard]
     },
     {
         path: 'benefits-of-enquiry',
@@ -137,11 +140,7 @@ const routes: Routes = [
         path: 'anger',
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
-    {
-        path: "journal/:TopicName",
-        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
-        pathMatch: "full"
-    },
+
     {
         path: "forum",
         loadChildren: () => import("../teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)
@@ -325,7 +324,8 @@ const routes: Routes = [
     },
     {
         path: 'repeat-user',
-        loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule)
+        loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule),
+        canActivate: [AuthGuard]
     },
     {
         path: 'select-a-topic-to-explore',
@@ -438,6 +438,16 @@ const routes: Routes = [
         path: 'guidedquestions',
         loadChildren: () => import('../../../../shared/component/guided-questions/questions/questions.module').then(m => m.QuestionsPageModule)
     },
+    {
+        path: 'note',
+        loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
+      },
+      {
+        path: "journal/:TopicName",
+        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+    },
+
 ];
 
 

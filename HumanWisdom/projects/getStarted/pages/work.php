@@ -519,7 +519,7 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                              The HappierMe App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life.
+                              By knowing more about how my mind works, I have learned to make better choices in how I think, behave and act. The HappierMe app is a space where I feel supported to grow into the person I want to be. It has helped me in many ways.
                             </h4>
                           </div>
                         </div>
@@ -527,7 +527,7 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                              Dominic Curran, England
+                              Suzanne Oades, UK
                             </h4>
                           </div>
                         </div>
@@ -1415,7 +1415,7 @@
                       </div>
                     </a>
 
-                    <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/6_ways_to_transform_organisations.php">
+                    <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/how_can_organizations_reduce_workplace_conflict_and_boost_collaboration.php">
                       <div class="div_blog">
                         <div class="row">
                           <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1426,7 +1426,7 @@
                         <div class="row">
                           <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                              6 ways to transform organisations to be happier and more productive 
+                              How can organizations reduce workplace conflict and boost collaboration? 
                             </h4>
                           </div>
                         </div>
