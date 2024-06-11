@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/profile-edit/profile-edit.module').then(m=>m.ProfileEditPageModule)
   },
   {
+    path: 'myprogram',
+    loadChildren: () => import('./subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
+  },
+  {
     path: 'forgotpassword',
     loadChildren: () => import('./forget-password/forget-password.module').then(m => m.ForgetPasswordPageModule)
   },

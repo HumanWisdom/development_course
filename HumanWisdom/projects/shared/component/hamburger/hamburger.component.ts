@@ -102,7 +102,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
         }
 
-    
+
 
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
@@ -316,10 +316,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           this.navigate(route);
           return;
         }
-        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
-        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
+        if (!this.ios) {
+          // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
+        } else {
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
         }
       }
     } else {
@@ -337,10 +338,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           this.navigate(route);
           return;
         }
-        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
-        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
+        if (!this.ios) {
+          // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
+        } else {
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
         }
       }
     }
@@ -354,7 +356,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
-      this.router.navigate([route]);
+      if (this.isAdults) {
+        this.router.navigate([route]);
+      }else {
+        this.router.navigate(['/' + SharedService.getprogramName() + route]);
+      }
     }
     this.closemodal?.nativeElement?.click();
   }
