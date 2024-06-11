@@ -42,6 +42,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   @Input() isLoginPage:boolean=false;
   toursubscription: Subscription;
   disableClick = false;
+  isAdults = false;
 
   constructor(private router: Router, public Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));

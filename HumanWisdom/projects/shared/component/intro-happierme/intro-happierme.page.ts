@@ -11,6 +11,7 @@ import { ProgramType } from '../.././models/program-model';
 })
 export class IntroHappiermePage implements OnInit {
   isAdults = true;
+  enablekeyideasViewMore = true;
 
   constructor(private location: Location,private router: Router) {
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -53,6 +54,18 @@ export class IntroHappiermePage implements OnInit {
       this.router.navigate(['teenagers/audiopage/', concat, '1', 'T', title])
      }
     }
+ }
+
+ enableViewMore(type) {
+  if(type==='key_ideas') {
+    this.enablekeyideasViewMore = false;
+  }
+ }
+
+ enableViewLess(type) {
+  if(type==='key_ideas') {
+    this.enablekeyideasViewMore = true;
+  }
  }
 
 }

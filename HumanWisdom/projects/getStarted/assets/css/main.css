@@ -2936,7 +2936,8 @@ audio::-webkit-media-controls-enclosure
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(18, 15, 64, 0.50);
+  /* color: rgba(18, 15, 64, 0.50); */
+  color: #000;
   border-radius: 12px;
   background: #FFF;
   border: 0;
