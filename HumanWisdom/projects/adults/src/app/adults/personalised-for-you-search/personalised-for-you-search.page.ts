@@ -244,7 +244,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
       }
     }
   }

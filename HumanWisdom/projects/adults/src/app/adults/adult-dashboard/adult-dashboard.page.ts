@@ -4302,7 +4302,7 @@ export class AdultDashboardPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
       }
     }
   }
@@ -4312,7 +4312,7 @@ export class AdultDashboardPage implements OnInit {
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
     } else {
-      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(this.searchinp?.toLocaleLowerCase()));
     }
   }
 
@@ -4334,7 +4334,8 @@ export class AdultDashboardPage implements OnInit {
       }
     })
   }
-ro
+
+
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
