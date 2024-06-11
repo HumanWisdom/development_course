@@ -35399,8 +35399,10 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 6px;
   border: 1px solid #FFF;
-  width: 78px;
-  height: 72px 
+  /* width: 78px; */
+  height: 72px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .mc_01_v3_ext
