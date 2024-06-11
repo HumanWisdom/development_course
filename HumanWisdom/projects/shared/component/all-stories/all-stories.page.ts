@@ -111,7 +111,8 @@ export class AllStoriesPage implements OnInit {
       }
     }else{
       if(!this.isSubscriber) {
-        this.router.navigate(['/subscription/start-your-free-trial']);
+        this.router.navigateByUrl(SharedService.getprogramName()+'/subscription/start-your-free-trial')
+        // this.router.navigate(['/subscription/start-your-free-trial']);
       }
     }
   }
