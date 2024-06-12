@@ -195,7 +195,7 @@ export class S51000Page implements OnInit, OnDestroy {
   audioevent(data) {
     let sub: any = localStorage.getItem("Subscriber")
     if (sub == 0 && data['RowID'] >= 4) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
     } else {
       let url = data['Text_URL'].replaceAll(':', '_');
        url = encodeURIComponent(url.replaceAll('/', '~'));
