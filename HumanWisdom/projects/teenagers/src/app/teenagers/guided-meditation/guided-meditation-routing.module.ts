@@ -18,12 +18,10 @@ import { AdultsAudioMeditationComponent } from '../../../../../shared/component/
 const routes: Routes = [
   {
     path: '',  
-    canActivate: [ActiveGuard],  
      component: S110001Page,
   }, 
   {
     path: 's110001',    
-    canActivate: [ActiveGuard],
     component: S110001Page,
   },   {
 

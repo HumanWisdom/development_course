@@ -106,6 +106,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           colorTextPlaceholder: "rgba(255, 255, 255, 0.50)"
         }
       };
+
       
 
      

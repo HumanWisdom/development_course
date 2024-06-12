@@ -5,8 +5,8 @@
   </label>
   <label class="m-menu__overlay" #closemodal for="menu"></label>
   <!-- submenu -->
-  <div class="m-menu menu_parent">
-    <div class="m-menu__header">
+  <div class="m-menu menu_parent" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+    <div class="m-menu__header" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
       <div class="row w100">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <ul class="dh_ul">
+    <ul class="dh_ul" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
 
       <li id="liSubscribe" *ngIf="!subscriber">
         <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')"  class="p0 b0px">
@@ -250,7 +250,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Refer a Friend
                 </h4>
               </div>
@@ -277,7 +277,7 @@
         </a>
       </li> -->
 
-      <li *ngIf="!ios">
+      <!-- <li *ngIf="!ios">
         <a  (click)="Logevent('/adults/adverts-work', '', 'click_hwp_business_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -311,9 +311,63 @@
             </div>
           </div>
         </a>
-      </li>
+      </li> -->
 
-      <li>
+      <!-- <li *ngIf="!ios">
+        <a class="p0 b0px" href="https://happierme.app/pages/work.php">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/20.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  HappierMe for Work
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
+
+      <!-- <li *ngIf="!ios">
+        <a class="p0 b0px" href="https://happierme.app/pages/education.php">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/21.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
+                  HappierMe for Education
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
+
+      <!-- <li *ngIf="!ios">
+        <a class="p0 b0px" href="https://happierme.app/pages/healthcare.php">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/21.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
+                  HappierMe for Healthcare
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
+
+      <!-- <li>
         <a  (click)="handleTreeSistersClick()"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -329,7 +383,7 @@
             </div>
           </div>
         </a>
-      </li>
+      </li> -->
 
       <li>
         <a  (click)="Logevent('', '', 'click_newsletter_Hamburger')" href="https://humanwisdom.me/newsletter.html"  class="p0 b0px hc_sfn">
@@ -349,10 +403,27 @@
         </a>
       </li>
 
+      <!-- <li *ngIf="!ios">
+        <a href="https://happierme.app/pages/about_us.php"  class="p0 b0px hc_sfn">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/19.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  About Us
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
+
       <!-- multilayer li for about us -->
-      <li *ngIf="!ios">
+      <!-- <li *ngIf="!ios">
         <label class="a-label__chevron title_au" for="item-about_us">
-          <!-- Item 2 -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
@@ -429,7 +500,7 @@
               </a>
             </li>
 
-           <!--  <li>
+            <li>
               <a (click)="Logevent('/adults/gpay', '', 'gpay')"  class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -445,11 +516,11 @@
                   </div>
                 </div>
               </a>
-            </li> -->
+            </li>
 
           </ul>
         </div>
-      </li>
+      </li> -->
       <!-- /multilayer li for about us -->
 
       <!-- multilayer li for help & support -->
@@ -476,8 +547,8 @@
         </label>
         <input type="checkbox" id="item-2" name="item-2" class="m-menu__checkbox">
 
-        <div class="m-menu">
-          <div class="m-menu__header">
+        <div class="m-menu" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+          <div class="m-menu__header" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
             <label class="m-menu__toggle" for="item-2">
               <div class="row mb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -495,7 +566,7 @@
               </div>
             </label>
           </div>
-          <ul class="dh_ul">
+          <ul class="dh_ul" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
             <!-- <li>
               <a (click)="routeGuide()" class="p0 b0px">
                 <div class="row">

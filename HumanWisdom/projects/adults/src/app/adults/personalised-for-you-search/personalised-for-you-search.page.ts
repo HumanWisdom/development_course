@@ -44,6 +44,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
+ 
   public alertMsg: any
   public qrList: any
   public goToPage: any
@@ -230,6 +231,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
+      
       if (isLoad) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
@@ -244,7 +247,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
       }
     }
   }
@@ -298,7 +301,57 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
-    let url = `/adults/site-search/${this.searchinp}`
+    let url=""
+    switch(event) 
+    {
+      case "Events":{
+          url = `/adults/events`
+          break;
+      }
+      case "Blogs":{
+        url = `/adults/blogs`
+        break;
+      }
+      case "Life stories":
+      case "Stories":{
+        url = `/adults/wisdom-stories`
+        break;
+      }
+      case "Podcast":{
+        url = `/adults/podcast`
+        break;
+      }
+      case "Audio meditations":{
+        url = `/adults/audio-meditation`
+        break;
+      }
+      case ("Short videos"):
+      case ("Videos"):
+        {
+        url = `/adults/wisdom-shorts`
+        break;
+      }
+     case "Journal":{
+        url = `/adults/journal`
+        break;
+      }
+      case "Exercises":
+      case "Awareness Exercises":
+        {
+        url = `/adults/wisdom-exercise`
+        break;
+      }
+      case "Forum":{
+        url = `/adults/forum`
+        break;
+      }
+     default: {
+       url = `/adults/site-search/${this.searchinp}`
+        break;
+      }
+
+    } 
+     
     this.route.navigate([url])
   }
 

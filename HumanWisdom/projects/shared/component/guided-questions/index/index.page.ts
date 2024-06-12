@@ -39,7 +39,9 @@ export class IndexPage implements OnInit, AfterViewInit {
   viewMore = [];
   viewLess = [];
   isViewMore = true;
-  isAdults = true;
+  isAdults: boolean = true; 
+
+
   constructor(
     private router: Router,
     private rout: ActivatedRoute,
@@ -57,7 +59,11 @@ export class IndexPage implements OnInit, AfterViewInit {
     }
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
-
+if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
   }
 
   ngOnInit() {
