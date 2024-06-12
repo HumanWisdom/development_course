@@ -4316,7 +4316,12 @@ export class AdultDashboardPage implements OnInit {
         url = `/adults/wisdom-shorts`
         break;
       }
-    
+      case "Exercises":
+      case "Awareness Exercises":
+        {
+        url = `/adults/wisdom-exercise`
+        break;
+      }    
       case "Journal":{
         url = `/adults/journal`
         break;
@@ -4371,7 +4376,7 @@ export class AdultDashboardPage implements OnInit {
   getModuleList(isLoad?) {
     this.service.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"})
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
       
       if (isLoad) {
         if (this.searchinp == '') {

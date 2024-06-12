@@ -1953,7 +1953,56 @@ export class TeenagersDashboardPage implements OnInit {
   }
 
   getinp(event) {
-    let url = `/teenagers/site-search/${this.searchinp}`
+    let url=""
+    switch(event) 
+    {
+      case "Events":{
+          url = `/teenagers/events`
+          break;
+      }
+      case "Blogs":{
+        url = `/teenagers/blogs`
+        break;
+      }
+      case "Life stories":
+      case "Stories":{
+        url = `/teenagers/wisdom-stories`
+        break;
+      }
+      case "Podcast":{
+        url = `/teenagers/podcast`
+        break;
+      }
+      case "Audio meditations":{
+        url = `/teenagers/audio-meditation`
+        break;
+      }
+      case ("Short videos"):
+      case ("Videos"):
+        {
+        url = `/teenagers/wisdom-shorts`
+        break;
+      }
+     case "Journal":{
+        url = `/teenagers/journal`
+        break;
+      }
+      case "Exercises":
+      case "Awareness Exercises":
+        {
+        url = `/teenagers/wisdom-exercise`
+        break;
+      }
+      case "Forum":{
+        url = `/teenagers/forum`
+        break;
+      }
+     default: {
+       url = `/teenagers/site-search/${this.searchinp}`
+        break;
+      }
+
+    } 
     this.router.navigate([url])
   }
 
@@ -1992,6 +2041,8 @@ export class TeenagersDashboardPage implements OnInit {
   getModuleList(isLoad?) {
     this.service.getModuleList().subscribe(res => {
       this.moduleList = res;
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
+
       if (isLoad) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
