@@ -41,7 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'note',
-    loadChildren: () => import('./note/note.module').then(m => m.NotePageModule)
+    loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
   },
   {
     path: 'coursenote',

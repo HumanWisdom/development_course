@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { CommonService } from '../../../services/common.service';
 import { NavigationService } from '../../../services/navigation.service';
 import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from '../../../models/program-model';
 @Component({
   selector: 'app-introduction',
   templateUrl: './introduction.page.html',
@@ -11,6 +12,7 @@ import { SharedService } from '../../../services/shared.service';
 })
 export class IntroductionPage implements OnInit {
   data: any
+  isAdults = true;
   private currentUrl:string='';
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
@@ -23,7 +25,11 @@ export class IntroductionPage implements OnInit {
   }
 
   ngOnInit() {
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   goBack() {
