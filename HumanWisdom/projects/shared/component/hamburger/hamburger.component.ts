@@ -340,7 +340,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
         if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
           this.router.navigate([route])
         } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
+          this.router.navigate([`${ SharedService.getprogramName()}/${route}`])
         }
       }
     }

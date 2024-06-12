@@ -5,6 +5,10 @@ import { CommonService } from '../../../services/common.service';
 import { NavigationService } from '../../../services/navigation.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-questions',
@@ -22,10 +26,20 @@ export class QuestionsPage implements OnInit {
   length: number = 0;
   isChanged = false;
   userId: number = 0;
+<<<<<<< Updated upstream
   isAdults = true;
+=======
+  isAdults: boolean = true; 
+
+>>>>>>> Stashed changes
   constructor(private commonService: CommonService, private router: ActivatedRoute
     , private route: Router,private navigationService:NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
   ngOnInit() {
     var id = +this.router.snapshot.queryParamMap.get("Qid");

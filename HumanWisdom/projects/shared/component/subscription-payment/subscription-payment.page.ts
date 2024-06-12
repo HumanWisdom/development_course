@@ -319,7 +319,7 @@ export class SubscriptionPaymentPage implements OnInit {
                 this.content = 'Your Payment Is Successfully Submitted';
                 this.enableAlert = true;
                 setTimeout(() => {
-                  this.router.navigate(['/onboarding/myprogram'])
+                  this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
                 }, 800);
                 // alert('Your Payment Is Successfully Submitted');
               }

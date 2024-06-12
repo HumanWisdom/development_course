@@ -137,7 +137,19 @@ const routes: Routes = [
         path: 'anger',
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
+<<<<<<< Updated upstream
 
+=======
+    {
+        path: "journal/:TopicName",
+        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+    },
+  {
+    path: 'viewcart',
+    loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
+  },
+>>>>>>> Stashed changes
     {
         path: "forum",
         loadChildren: () => import("../teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)

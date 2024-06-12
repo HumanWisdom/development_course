@@ -24,7 +24,11 @@
 
   <div class="cw100p" *ngIf="!defaultShow">
     <div class="row center_flex">
+<<<<<<< Updated upstream
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+=======
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+>>>>>>> Stashed changes
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
@@ -110,7 +114,11 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
+<<<<<<< Updated upstream
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+=======
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+>>>>>>> Stashed changes
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
@@ -219,28 +227,28 @@
                     <div class="row gqtns_recent_tabs">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 pb10px odiv odiv_mdp">
                         <button type="button" class="btn btn_recent"
-                          [ngStyle]="{'background-color': enableTab === 'All' ? '' : '#424675'}"
+                          [ngStyle]="{'background-color': enableTab === 'All' ? '' :(isAdults ? '#424675' : '#4267A5')}"
                           [ngClass]="{'active': enableTab === 'All'}"
                           (click)="showAll()">
                           All Notes
                         </button>
 
                         <button (click)="showNotes()"
-                        [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : '#424675'}"
+                        [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : (isAdults ? '#424675' : '#4267A5')}"
                         [ngClass]="{'active': enableTab === 'Diary'}"
                          class="btn btn_recent">
                           Diary
                         </button>
 
                         <button (click)="showReflections()"
-                        [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : '#424675'}"
+                        [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : (isAdults ? '#424675' : '#4267A5')}"
                         [ngClass]="{'active': enableTab === 'Reflections'}"
                         class="btn btn_recent">
                           Reflections
                         </button>
 
                         <button (click)="showGuidedQuestions()"
-                        [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : '#424675'}"
+                        [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : (isAdults ? '#424675' : '#4267A5')}"
                         [ngClass]="{'active': enableTab === 'Guided'}"
                          class="btn btn_recent">
                           Guided Questions

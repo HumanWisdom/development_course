@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'viewcart',
-    loadChildren: () => import('./viewcart/viewcart.module').then(m => m.ViewcartPageModule)
+    loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
   },
   {
     path: 'myprogram',
@@ -61,7 +61,7 @@ const routes: Routes = [
   },
   {
     path: 'add-to-cart',
-    loadChildren: () => import('./subscription/subscription-s01-v04/subscription-s01-v04.module').then(m => m.SubscriptionS01V04PageModule)
+    loadChildren: () => import('../../../../shared/component/subscription-s01-v04/subscription-s01-v04.module').then(m => m.SubscriptionS01V04PageModule)
   },
   {
     path: 'raf',

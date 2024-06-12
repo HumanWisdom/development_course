@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'payment',
     loadChildren: () => import('../../../../shared/component/subscription-payment/subscription-payment.module').then(m => m.SubscriptionPaymentPageModule)
   },
+  {
+    path: 'add-to-cart',
+    loadChildren: () => import('../../../../shared/component/subscription-s01-v04/subscription-s01-v04.module').then(m => m.SubscriptionS01V04PageModule)
+  },
+  {
+    path: 'viewcart',
+    loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
+  },
 
 ];
 
