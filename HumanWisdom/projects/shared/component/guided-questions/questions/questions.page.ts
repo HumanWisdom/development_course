@@ -22,12 +22,8 @@ export class QuestionsPage implements OnInit {
   length: number = 0;
   isChanged = false;
   userId: number = 0;
-<<<<<<< Updated upstream
-  isAdults = true;
-=======
   isAdults: boolean = true; 
 
->>>>>>> Stashed changes
   constructor(private commonService: CommonService, private router: ActivatedRoute
     , private route: Router,private navigationService:NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
