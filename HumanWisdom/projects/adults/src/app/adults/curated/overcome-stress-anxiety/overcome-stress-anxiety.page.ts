@@ -69,6 +69,18 @@ export class OvercomeStressAnxietyPage implements OnInit {
           id: 37,
           url: '/podcasts/37.mp3',
           title: 'Five ways to avoid stress'
+        },
+        pc05:
+        {
+          id: 71,
+          url: '/podcasts/71.mp3',
+          title: 'Acceptance can dissolve stress'
+        },
+        pc06:
+        {
+          id: 72,
+          url: '/podcasts/72.mp3',
+          title: 'Preventing self-harm and suicide'
         }
       }
 
