@@ -5,10 +5,6 @@ import { CommonService } from '../../../services/common.service';
 import { NavigationService } from '../../../services/navigation.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-questions',
