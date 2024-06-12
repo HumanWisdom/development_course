@@ -853,6 +853,9 @@ export class SelectATopicToExplorePage implements OnInit {
         this.location.back();
       }
      }
+     else{
+      this.router.navigate([url]);
+    }
   }
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
