@@ -338,18 +338,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           this.navigate(route);
           return;
         }
-<<<<<<< HEAD
-        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
-        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([`${ SharedService.getprogramName()}/${route}`])
-=======
         if (!this.ios) {
           // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
           this.router.navigate(['/' + SharedService.getprogramName() + route])
         } else {
           this.router.navigate(['/' + SharedService.getprogramName() + route])
->>>>>>> d7eeec097d69df759853ff3f5688f37c9ff20b67
         }
       }
     }
