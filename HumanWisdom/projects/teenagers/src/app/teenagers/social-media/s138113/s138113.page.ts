@@ -16,8 +16,7 @@ export class S138113Page implements OnInit,OnDestroy
   bg=""
   title="What you post online can impact your career in the future"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/social-media/1.2.mp3'
-  transcriptPage="social-media/s138113t"
+  audioLink=this.mediaAudio+'/teenagers/modules/social-media/audios/1.15.mp3'
   toc="teenagers/social-media/s138001"
   bookmark=0
   path = setTimeout(() => {
