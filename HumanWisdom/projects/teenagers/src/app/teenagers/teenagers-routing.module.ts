@@ -143,7 +143,7 @@ const routes: Routes = [
 
     {
         path: "journal/:TopicName",
-        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
         pathMatch: "full"
     },
   {
@@ -451,12 +451,7 @@ const routes: Routes = [
         path: 'note',
         loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
       },
-      {
-        path: "journal/:TopicName",
-        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
-        pathMatch: "full"
-    },
-
+      
 ];
 
 
