@@ -142,6 +142,15 @@ const routes: Routes = [
     },
 
     {
+        path: "journal/:TopicName",
+        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+    },
+  {
+    path: 'viewcart',
+    loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
+  },
+    {
         path: "forum",
         loadChildren: () => import("../teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)
     },

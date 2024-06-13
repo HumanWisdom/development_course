@@ -12479,7 +12479,8 @@ h1.module_title
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
-  line-height: 150%;
+  /* line-height: 150%; */
+  line-height: 180%;
   /* or 36px */
   color: #FFFFFF;
   text-align: left;
@@ -35399,8 +35400,10 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 6px;
   border: 1px solid #FFF;
-  width: 78px;
-  height: 72px 
+  /* width: 78px; */
+  height: 72px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .mc_01_v3_ext

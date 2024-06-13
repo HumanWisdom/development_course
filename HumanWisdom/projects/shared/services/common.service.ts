@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { OnboardingService } from './onboarding.service';
 import { Router } from '@angular/router';
+import { SharedService } from './shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,14 @@ export class CommonService {
   GetGuidedQs_Response(id: any, attempt: any): Observable<any> {
     return this.http.get(this.path + `/GetGuidedQs_Response/` + id + '/' + attempt)
   }
+
+  verifytoken(encrypt) {
+    return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
+    }
+  
+    verifyactkey(data): Observable<any> {
+      return this.http.get(this.path + `/VerifyActKey/${data}`)
+    }
 
   AddGuidedQs_Response(data: any) {
     return this.http.post(this.path + `/AddGuidedQs_Response/`, data);

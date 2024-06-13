@@ -169,7 +169,7 @@ export class PodcastTocPage implements OnInit {
   audioevent(data) {
     let sub: any = localStorage.getItem("Subscriber")
     if (sub == 0 && data['PodcastID'] >= 4) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
     } else {
       if (data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')) {
         data['MediaUrl'] = data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
