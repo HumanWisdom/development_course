@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
-
 
 @Component({
   selector: 'app-s138119',
@@ -14,7 +13,6 @@ export class S138119Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-
   toc="teenagers/social-media/s138001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -42,8 +40,8 @@ export class S138119Page implements OnInit {
 
   // multistep wizard
   $( document ).ready(function() {
-    // var base_color = "rgb(230,230,230)";
-    // var active_color = "rgb(237, 40, 70)";
+    // var base_color = "rgb(240,240,240)";
+    // var active_color = "rgb(247, 40, 70)";
     var base_color = "rgba(196,196,196,1)";
       var active_color = "#E58D82";
 
@@ -159,8 +157,27 @@ export class S138119Page implements OnInit {
       "fill",
       base_color
     );
+    // tb copied mul;tiple times
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
     
-      
     
   });
   // /multistep wizard
@@ -198,7 +215,7 @@ export class S138119Page implements OnInit {
       this.bookmark=0
     sessionStorage.setItem("bookmark138119",JSON.stringify(this.bookmark))
   }
- createScreen(){
+createScreen(){
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
@@ -231,7 +248,7 @@ export class S138119Page implements OnInit {
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-       
+      
        
      
       },

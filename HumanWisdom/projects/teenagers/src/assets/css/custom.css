@@ -19173,7 +19173,8 @@ circle-progress circle
 {
   background: #fff !important;
   /* fill: #ffffff; */
-  fill: rgba(41,45,86,1);
+  /* fill: rgba(41,45,86,1); */
+  fill: #183C79;
 }
 
 .absolute_flex_center

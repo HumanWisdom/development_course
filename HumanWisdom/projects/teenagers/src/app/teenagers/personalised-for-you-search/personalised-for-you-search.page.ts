@@ -245,21 +245,21 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.exerciseNo = "0" + this.exerciseNo;
       }
       if (incomppletedExercise && incomppletedExercise.length > 0) {
-        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.includes('p') ?  exercise.ScreenNo.split('p').pop() : '')).toString() : "0";
       } else {
         this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
       }
       var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
 
 
-      //Pushing final list for display
+      //Pushing final ist for display
       for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
-        let lastDigit = item.ScreenNo.slice(-1);
+
         let obj = {
-          " SessionNo": item.SessionNo,
+          "SessionNo": item.SessionNo,
           "ScreenNo": item.ScreenNo,
           "completed": item.completed,
-          "day": parseInt(lastDigit, 10),
+          "day": item.ScreenNo.includes('p') ?  item.ScreenNo.split('p').pop() : '',
           "Title": item.Title
         }
         this.currentList.push(obj);
