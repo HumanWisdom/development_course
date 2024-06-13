@@ -1,5 +1,5 @@
 import { Platform } from "@angular/cdk/platform";
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 
@@ -22,29 +22,13 @@ export class SessionEndComponent implements OnInit {
   shareUrl: any
 
   constructor(private router: Router, public platform: Platform,
-    private ngNavigatorShareService: NgNavigatorShareService,private el: ElementRef,private renderer: Renderer2) {
+    private ngNavigatorShareService: NgNavigatorShareService) {
     localStorage.setItem("progressbarvalue", '0')
     this.ngNavigatorShareService = ngNavigatorShareService;
   }
 
   ngOnInit() {
     console.log(this.link, this.name, this.progressImg, this.progressText, this.progressPercent)
-  }
-
-  ngAfterViewInit() {
-    const svgElement = this.el.nativeElement.querySelector('svg');
-    if (svgElement) {
-      const circleElement = svgElement.querySelector('circle');
-      const pathElement = svgElement.querySelector('path');
-
-      if (circleElement) {
-        this.renderer.addClass(circleElement, 'we_ft_cl');
-      }
-
-      if (pathElement) {
-        this.renderer.addClass(pathElement, 'we_ft_cl');
-      }
-    }
   }
 
   shareIndex() {
