@@ -33,6 +33,7 @@ export class S138113Page implements OnInit,OnDestroy
   totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName ="teenagers"
+  transcriptPage="social-media/s1380113t"
   
   constructor
   (
