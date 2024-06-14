@@ -21,7 +21,7 @@ export class TeenTalkPage implements OnInit {
   }
 
   teentalkS3(id, title) {
-    this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'F', title])
+    this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
   }
 
 }
