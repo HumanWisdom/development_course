@@ -60,7 +60,7 @@ export class S133001Page implements OnInit,OnDestroy {
   ngOnInit() 
   {
 
-    this.service.setmoduleID(82);
+    this.service.setmoduleID(133);
     setTimeout(() => {
       let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
