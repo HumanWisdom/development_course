@@ -1,13 +1,12 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import { Location } from '@angular/common'
-import { AdultsService } from 'src/app/adults/adults.service';
-import { LogEventService } from "../../../../../../shared/services/log-event.service";
-import { ForumService } from '../../../../../../shared/forum/forum.service';
-import { SharedService } from '../../../../../../shared/services/shared.service';
-
-
+import { LogEventService } from "../../services/log-event.service";
+import { ForumService } from '../../forum/forum.service';
+import { SharedService } from '../../services/shared.service';
+import { CommonService } from '../../services/common.service';
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-subscription-s01-v04',
   templateUrl: './subscription-s01-v04.page.html',
@@ -15,7 +14,7 @@ import { SharedService } from '../../../../../../shared/services/shared.service'
 })
 export class SubscriptionS01V04Page implements OnInit {
   @ViewChild('closemodal') closemodal: ElementRef;
-
+  isAdults = false;
   selectedCountryId: any
   selectedCountry: any
   selectedBracket: any
@@ -73,16 +72,16 @@ export class SubscriptionS01V04Page implements OnInit {
   constructor(
     private router: Router,
     public service: OnboardingService,
-    public services: AdultsService,
+    public services: CommonService,
     private location: Location,
     public logeventservice: LogEventService,
     private cd: ChangeDetectorRef,
     private forumservice: ForumService
   ) {
     let res = localStorage.getItem("isloggedin")
-    if (res !== 'T') this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    if (res !== 'T') this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
     if (localStorage.getItem('subscribepage') === 'T') {
-      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
     }
     if (localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
@@ -109,6 +108,11 @@ export class SubscriptionS01V04Page implements OnInit {
       this.addToCart('Adults','Annual');
      }, 5000);
 
+    }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
     }
   }
 
@@ -335,21 +339,21 @@ export class SubscriptionS01V04Page implements OnInit {
 
   getActivationCode() {
     localStorage.setItem("activeCode", 'T')
-    this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
   }
 
 
   proceedcart() {
     this.logeventservice.logEvent('click_view_cart');
-    this.router.navigate(['/onboarding/viewcart'])
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/viewcart`])
   }
 
   already(value) {
     this.closemodal.nativeElement.click()
     if (value === 'home') {
-      this.router.navigate(['/adults/adult-dashboard'])
+      this.router.navigate([SharedService.getDashboardUrls()])
     } else {
-      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
     }
   }
 
@@ -431,7 +435,7 @@ export class SubscriptionS01V04Page implements OnInit {
                     this.secondpage = false;
                     this.fourthpage = true;
                     if (this.yearormonth == 'Year' && this.service.isActivationFlow) {
-                      this.router.navigate(['/adults/hwp-premium-congratulations']);
+                      this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                     }
                   } else {
                     this.secondpage = false;
@@ -573,8 +577,7 @@ export class SubscriptionS01V04Page implements OnInit {
   loggedUser() {
     if (!this.userId) {
       console.log("login first")
-      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
-
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`])
     }
 
 

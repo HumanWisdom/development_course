@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViewcartPageRoutingModule } from './viewcart-routing.module';
+import { SubscriptionS09V02PageRoutingModule } from './subscription-s09-v02-routing.module';
 
-import { ViewcartPage } from './viewcart.page';
+import { SubscriptionS09V02Page } from './subscription-s09-v02.page';
 
 import {SharedModule} from '../../../../../shared/shared.module'
 
@@ -15,9 +15,9 @@ import {SharedModule} from '../../../../../shared/shared.module'
     CommonModule,
     FormsModule,
     IonicModule,
-    ViewcartPageRoutingModule,
+    SubscriptionS09V02PageRoutingModule,
     SharedModule
   ],
-  declarations: [ViewcartPage]
+  declarations: [SubscriptionS09V02Page]
 })
-export class ViewcartPageModule {}
+export class SubscriptionS09V02PageModule {}

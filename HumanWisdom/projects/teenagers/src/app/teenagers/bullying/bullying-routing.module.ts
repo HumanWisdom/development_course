@@ -118,12 +118,10 @@ import { ActiveGuard } from 'src/app/authGuard/active.guard';
 const routes: Routes = [
   {
     path: '',   
-    canActivate:[ActiveGuard], 
      component: S135001Page,
   },
   {
-    path: 's135001', 
-    canActivate:[ActiveGuard],   
+    path: 's135001',   
     component: S135001Page,
   },
   {

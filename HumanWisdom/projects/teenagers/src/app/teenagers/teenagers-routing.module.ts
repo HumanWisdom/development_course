@@ -142,6 +142,15 @@ const routes: Routes = [
     },
 
     {
+        path: "journal/:TopicName",
+        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
+        pathMatch: "full"
+    },
+  {
+    path: 'viewcart',
+    loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
+  },
+    {
         path: "forum",
         loadChildren: () => import("../teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)
     },
@@ -442,12 +451,7 @@ const routes: Routes = [
         path: 'note',
         loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
       },
-      {
-        path: "journal/:TopicName",
-        loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
-        pathMatch: "full"
-    },
-
+      
 ];
 
 

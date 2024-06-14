@@ -195,12 +195,10 @@ const routes: Routes = [
 
   {
     path: '',
-    canActivate: [ActiveGuard],
     component: S111001Page,
   },
   {
     path: 's111001',
-    canActivate: [ActiveGuard],
     component: S111001Page,
   },
   {

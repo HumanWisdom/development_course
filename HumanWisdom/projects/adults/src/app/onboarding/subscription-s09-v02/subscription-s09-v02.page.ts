@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
 import {
   Platform,
 } from "@angular/cdk/platform";
+import { ProgramType } from '../../../../../shared/models/program-model';
 @Component({
   selector: 'app-subscription-s09-v02',
   templateUrl: './subscription-s09-v02.page.html',
@@ -28,11 +29,18 @@ export class SubscriptionS09V02Page implements OnInit {
   public previd = '';
   public isActiveSubscription = false;
   public userId: any = '';
+  isAdults: boolean = true; 
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
     private router: Router,
     private location: Location,
-    public platform: Platform) { }
+    public platform: Platform) {
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
+     }
 
   ngOnInit() {
     this.isActiveSubscription = SharedService.isSubscriber();

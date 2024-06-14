@@ -41,6 +41,9 @@ export class S139001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;
+ 
   pgResume=sessionStorage.getItem("pgResume")
   moduleData:ProgramModel;
 
