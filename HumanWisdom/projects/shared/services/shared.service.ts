@@ -8,7 +8,7 @@ export class SharedService {
   public static TeenagerBaseUrl: string = 'https://happierme.app/';
   public static AdultsBaseUrl: string = 'https://happierme.app/';
   public static UrlToRedirect: string = null;
-  public static ClientUrl: string = 'https://staging.happierme.app/adults/';
+  public static ClientUrl: string = 'https://staging.happierme.app/';
   public static enablebanner = false;
   public static isIos = false;
   public static isFromAdults = false;
