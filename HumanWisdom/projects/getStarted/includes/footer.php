@@ -115,19 +115,19 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/terms-and-conditions">
+            <a href="../pages/terms_conditions.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Terms & conditions
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/privacy-policy">
+            <a href="../pages/privacy_policy.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Privacy policy
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/cookies-policy">
+            <a href="../pages/cookie_policy.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Cookie policy
               </h4>
@@ -332,19 +332,19 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/terms-and-conditions">
+                  <a href="../pages/terms_conditions.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Terms & conditions
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/privacy-policy">
+                  <a href="../pages/privacy_policy.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Privacy policy
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/cookies-policy">
+                  <a href="../pages/cookie_policy.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Cookie policy
                     </h4>

@@ -286,7 +286,6 @@
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
-  font-family: 'Roboto', sans-serif;
   z-index: 0;
   min-height: 100vh;
 }
