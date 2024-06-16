@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/profile-edit/profile-edit.module').then(m=>m.ProfileEditPageModule)
   },
   {
+    path: 'myprogram',
+    loadChildren: () => import('./subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
+  },
+  {
     path: 'forgotpassword',
     loadChildren: () => import('./forget-password/forget-password.module').then(m => m.ForgetPasswordPageModule)
   },
@@ -38,6 +42,14 @@ const routes: Routes = [
   {
     path: 'payment',
     loadChildren: () => import('../../../../shared/component/subscription-payment/subscription-payment.module').then(m => m.SubscriptionPaymentPageModule)
+  },
+  {
+    path: 'add-to-cart',
+    loadChildren: () => import('../../../../shared/component/subscription-s01-v04/subscription-s01-v04.module').then(m => m.SubscriptionS01V04PageModule)
+  },
+  {
+    path: 'viewcart',
+    loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
   },
 
 ];

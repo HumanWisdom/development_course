@@ -37,13 +37,11 @@ import { S95028Page } from './s95028/s95028.page';
 import { ActiveGuard } from 'src/app/authGuard/active.guard';
 const routes: Routes = [
   {
-    path: '',
-    canActivate:[ActiveGuard],
+    path: '',   
     component:S95001Page
   },
   {
-    path: 's95001',
-    canActivate:[ActiveGuard],
+    path: 's95001',    
     component:S95001Page
   },
   {

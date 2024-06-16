@@ -22,10 +22,16 @@ export class QuestionsPage implements OnInit {
   length: number = 0;
   isChanged = false;
   userId: number = 0;
-  isAdults = true;
+  isAdults: boolean = true; 
+
   constructor(private commonService: CommonService, private router: ActivatedRoute
     , private route: Router,private navigationService:NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
   ngOnInit() {
     var id = +this.router.snapshot.queryParamMap.get("Qid");

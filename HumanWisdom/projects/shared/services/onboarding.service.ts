@@ -81,7 +81,7 @@ export class OnboardingService {
   freeScreens(): Observable<any> {
     return this.http.get(this.path + `/AllModulesFreeScrs`)
   }
-  
+
   setPassword(data: any): Observable<any> {
     return this.http.post(this.path + '/SetPassword', data)
   }

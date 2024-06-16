@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common'
-import { OnboardingService } from '../../../../../shared/services/onboarding.service'
 import * as $ from 'jquery'
-import { LogEventService } from "../../../../../shared/services/log-event.service";
-import { ForumService } from '../../../../../shared/forum/forum.service';
-
+import { OnboardingService } from '../../services/onboarding.service';
+import { LogEventService } from '../../services/log-event.service';
+import { ForumService } from '../../forum/forum.service';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-viewcart',
   templateUrl: './viewcart.page.html',
@@ -52,7 +53,7 @@ export class ViewcartPage implements OnInit {
   teenagerenableMonthEmailbox = false
   totalCartAmount = 0;
   cartListResult = []
-
+  isAdults = false;
   constructor(
     private router: Router,
     private service: OnboardingService,
@@ -61,12 +62,17 @@ export class ViewcartPage implements OnInit {
     private forumservice: ForumService
   ) {
     let res = localStorage.getItem("isloggedin")
-    if (res !== 'T') this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    if (res !== 'T') this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
     if (localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
     } else {
       this.enableLoginSubscriber = false;
       localStorage.setItem("activeCode", 'F')
+    }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
     }
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true
@@ -365,7 +371,7 @@ export class ViewcartPage implements OnInit {
         this.service.deleteItem({ "Id": parseFloat(cartId) })
           .subscribe(res => {
             this.totalPrice();
-            if (this.cartList.length === 0) this.router.navigate(['/onboarding/add-to-cart'])
+            if (this.cartList.length === 0) this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
           })
       }
     }
@@ -418,7 +424,7 @@ export class ViewcartPage implements OnInit {
 
   getKey() {
     this.logeventservice.logEvent('click_proceed_to_pay');
-    this.router.navigate(['/onboarding/payment'], { state: { quan: this.cartList.length.toString(), plan: this.cartList[0]['Plan'] } })
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/payment`], { state: { quan: this.cartList.length.toString(), plan: this.cartList[0]['Plan'] } })
   }
 
   radioevent(event) {
@@ -539,12 +545,12 @@ export class ViewcartPage implements OnInit {
   remove() {
     if (this.cartList.length == 0) {
       this.service.isActivationFlow = true;
-      this.router.navigate(['/onboarding/add-to-cart']);
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
     } else {
       this.service.isActivationFlow = true;
-      this.router.navigate(['/onboarding/add-to-cart']);
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
     }
-    console.log(this.cartList)
+    console.log(this.cartList);
   }
 
   ValidateEmail() {
