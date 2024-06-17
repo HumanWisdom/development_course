@@ -26,10 +26,10 @@ export class TeenagersService {
       name: 'Succeed in Life'
     },
     {
-      id: "10",
-      name: 'Mental Health'
+      id: "14",
+      name: 'Manage your emotions',
     },
-    {
+     {
       id: "11",
       name: 'Relationships'
     },
@@ -50,8 +50,8 @@ export class TeenagersService {
       name: 'Feel calm',
     },
     {
-      id: "14",
-      name: 'Manage your emotions',
+      id: "10",
+      name: 'Manage your mental health'
     }
   ]
 

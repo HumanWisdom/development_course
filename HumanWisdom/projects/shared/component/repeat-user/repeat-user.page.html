@@ -165,8 +165,11 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 center_flex col_cw" [ngClass]="isAdults ? 'v1_3_bg_splash' : 'v1_3_bg_splash_teens'">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ru_welcome.svg" class="">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ru_welcome_teens.svg" class="">
         </div>
       </div>
   
