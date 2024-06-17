@@ -55,11 +55,11 @@ isUseCloseButton:boolean;
 
   submitProgress(){
 
-    this.router.navigate(['/adults/discovering-wisdom/s27032'])
+    this.router.navigate(['/teenagers/discovering-wisdom/s27032'])
 
   }
   prev(){
-    this.router.navigate(['/adults/discovering-wisdom/s27020'])
+    this.router.navigate(['/teenagers/discovering-wisdom/s27020'])
 
   }
 

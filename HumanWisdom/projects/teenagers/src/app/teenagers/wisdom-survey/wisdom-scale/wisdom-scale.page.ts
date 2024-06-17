@@ -317,9 +317,9 @@ export class WisdomScalePage implements OnInit {
           this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
           const { isUseCloseButton } = window.history.state;
           if (isUseCloseButton) {
-            this.router.navigate(["/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
+            this.router.navigate(["/teenagers/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
           } else {
-            this.router.navigate(["/wisdom-survey/wisdom-score"]);
+            this.router.navigate(["/teenagers/wisdom-survey/wisdom-score"]);
           }
         });
   }
@@ -339,7 +339,7 @@ export class WisdomScalePage implements OnInit {
     if (res && res === 'T') {
       this.router.navigate([url]);
     } else {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
     }
   }
 }
