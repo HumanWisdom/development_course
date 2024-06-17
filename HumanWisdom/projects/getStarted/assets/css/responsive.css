@@ -160,6 +160,11 @@
     {
         padding-left: 0;
     }
+
+    .hs_bg 
+    {
+        padding: 20px;
+    }
 }
 
 @media (min-width: 768px)
