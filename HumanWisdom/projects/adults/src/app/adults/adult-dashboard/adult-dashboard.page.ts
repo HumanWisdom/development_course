@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
 
