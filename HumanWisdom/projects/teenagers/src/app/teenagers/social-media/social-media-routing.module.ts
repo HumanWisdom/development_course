@@ -142,9 +142,8 @@ import { S138128Page } from './s138128/s138128.page';
 import { S138129Page } from './s138129/s138129.page';
 import { S138130Page } from './s138130/s138130.page';
 import { S138131Page } from './s138131/s138131.page';
-import { S138132Page } from './s138132/s138132.page';
 import { S138092tPage } from './s138092t/s138092t.page';
-import { S138114tPage } from './s138114t/s138114t.page';
+import { S138113tPage } from './s138113t/s138113t.page';
 import { S138118Page } from './s138118/s138118.page';
 import { S138108Page } from './s138108/s138108.page';
 import { S138109Page } from './s138109/s138109.page';
@@ -799,9 +798,9 @@ const routes: Routes = [
     component: S138114Page,
   },
   {
-    path: 's138114t',
+    path: 's138113t',
     canActivate: [ActiveGuard],
-    component: S138114tPage,
+    component: S138113tPage,
   },
   {
     path: 's138115',
@@ -888,11 +887,7 @@ const routes: Routes = [
     canActivate: [ActiveGuard],
     component: S138131Page,
   },
-  {
-    path: 's138132',
-    canActivate: [ActiveGuard],
-    component: S138132Page,
-  },
+  
   
   
 ];

@@ -44,7 +44,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
- 
+
   public alertMsg: any
   public qrList: any
   public goToPage: any
@@ -188,8 +188,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
         localStorage.setItem('firstTimeSearchTour', 'T');
         this.tourIndex++;
         if (this.tourIndex >= this.tourTotalIndex) {
+          this.tourIndex = 1;
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
+          driverObj.destroy();
         }
         driverObj.moveNext();
       },
@@ -232,7 +234,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
-      
+
       if (isLoad) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
@@ -302,7 +304,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   getinp(event) {
     let url=""
-    switch(event) 
+    switch(event)
     {
       case "Events":{
           url = `/adults/events`
@@ -350,8 +352,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
 
-    } 
-     
+    }
+
     this.route.navigate([url])
   }
 

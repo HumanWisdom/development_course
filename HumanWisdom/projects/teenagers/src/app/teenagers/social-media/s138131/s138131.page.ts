@@ -1,63 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
+import {  ProgramType } from "../../../../../../shared/models/program-model";
+
 
 @Component({
   selector: 'HumanWisdom-s138131',
   templateUrl: './s138131.page.html',
-  styleUrls: ['./s138131.page.scss'],
 })
 export class S138131Page implements OnInit {
+  programType : ProgramType = ProgramType.Teenagers;
+  toc="teenagers/social-media/s138001"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+  // bg=""
+  // moduleLink="/adults/happiness"
+  // moduleName=" Happiness"
+  // sectionName= "Transform your life - II";
+  // moduleId=23
 
-  bg_tn=""
-  bg_cft=""
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/132.webp"
+  
   bg=""
-
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
-
-  constructor
-  (
-    private router: Router,
-    private service:TeenagersService,
-    private location:Location
-  ) 
-  { }
-
-  ngOnInit() 
-  {
-    if(this.saveUsername==false)
+  moduleLink="/communication"
+  moduleName=" Communication"
+  sectionName= "Transform your life - II";
+  moduleId=132
+  moduleList: any = [
     {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/105.webp',
+      link: '/conditioning',
+      id: 105
+    },
     {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
-    this.sessionPoints()
-  }
-
-  sessionPoints()
-  {
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"})
-    .subscribe(res=>
+      name: 'Fear & Anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp',
+      link: '/fear-anxiety',
+      id: 112
+    },
     {
-      console.log("points",res)
-      this.points=res
-    })
-  }
+      name: 'Emotional Needs',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/120.webp',
+      link: '/emotional-needs',
+      id: 120
+    },
+  ]
 
-  submitProgress()
-  {
-    this.router.navigate(['/teenagers/social-media/s138132'])
-  }
+  constructor() {
+      }
 
-  prev()
-  {
-    this.router.navigate(['/teenagers/social-media/s138130'])
-  }
+  ngOnInit() {}
+
 }
