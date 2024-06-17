@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from "@angular/common";
 import { SharedService } from '../../services/shared.service';
-
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-hwp-premium-congratulations',
   templateUrl: './hwp-premium-congratulations.page.html',
@@ -13,10 +13,10 @@ export class HwpPremiumCongratulationsPage implements OnInit {
   constructor(public router:Router,private location: Location) { }
 
   ngOnInit() {
-    if(SharedService.getprogramName()=='adults'){
-      this.isAdults =true;
-    }else{
-      this.isAdults =false;
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
     }
   }
 

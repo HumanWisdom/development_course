@@ -140,12 +140,6 @@ const routes: Routes = [
         path: 'anger',
         loadChildren: () => import('../teenagers/anger/anger.module').then(m => m.AngerModule)
     },
-
-    {
-        path: "journal/:TopicName",
-        loadChildren: () => import('./guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
-        pathMatch: "full"
-    },
   {
     path: 'viewcart',
     loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)

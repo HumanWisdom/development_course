@@ -33,7 +33,27 @@
       </div>
     </div>
     <ul class="dh_ul" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
-
+      <li>
+      <a class="p0 b0px">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+            <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/06.svg" class="img-responsive">
+            </div> -->
+            <div class="col-md-11 col-sm-11 col-xs-11 p0">
+              <label  *ngIf="!isAdults" class="flex_ai fw_500 fs_14px lh_16px fc_ffffff mtb0px" >
+                <input type="radio" name="switch" [value]="true" (change)="onProgramChange(true)" [checked]="isAdults"> 
+                <span class="slider round"></span>
+                <h4 style="margin-top: 6px;" class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  {{isAdults ? "Switch to Teenagers" : "Switch to Adults" }}
+                </h4>
+              </label> 
+            </div>
+          </div>
+        </div>
+      </a>
+     </li>
+    
       <li id="liSubscribe" *ngIf="!subscriber">
         <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')"  class="p0 b0px">
           <div class="row">
@@ -103,7 +123,7 @@
       </li>
 
       <!-- multilayer li for partnership -->
-      <li>
+      <li *ngIf="isAdults">
         <label class="a-label__chevron title_p" for="item-partnership">
           <!-- Item 2 -->
           <div class="row" (click)="setLogevent('click_Partnership_Program')">
