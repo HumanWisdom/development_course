@@ -281,6 +281,10 @@ const routes: Routes = [
         loadChildren: () => import('../../../../shared/component/feel-better-now/feel-better-now.module').then(m => m.FeelBetterNowModule),
     },
     {
+      path: 'wisdom-survey',
+      loadChildren: () => import('./wisdom-survey/wisdom-survey.module').then(m => m.WisdomSurveyModule)
+    },
+    {
         path: 'videopage/:videolink/:enable',
         canActivate: [AudioVideoGuard],
         component: S3VideoComponent
@@ -451,7 +455,7 @@ const routes: Routes = [
         path: 'note',
         loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
       },
-      
+
 ];
 
 
