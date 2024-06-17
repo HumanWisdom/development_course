@@ -41,44 +41,49 @@ export class S95001Page implements OnInit, OnDestroy  {
     private location:Location
   )
   { 
-   this.getSetModuleData(95);
-    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    story = JSON.parse(story)
-    let splitarr = []
-    let arraythree = []
-    if(story) {
-      if(story?.length <= 2) 
-      {
-        story.forEach((e) => 
-        {
-          arraythree.push(e)
-        })
-        splitarr.push(arraythree)
-      }
-      else
-      {
-        story?.forEach((e) => 
-        {
-          if(arraythree.length < 2) 
-          {
-            arraythree.push(e)
-          }
-          else 
-          {
-            splitarr.push(arraythree)
-            arraythree = []
-            arraythree.push(e)
-          }
-        })
-      }
-      this.stories = splitarr
-    }
-    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    // this.stories = JSON.parse(this.stories)
+   
   }
 
   ngOnInit() 
   {
+
+
+    this.service.setmoduleID(95);
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    if(story?.length <= 2)
+    {
+      story.forEach((e) =>
+      {
+        arraythree.push(e)
+      })
+      splitarr.push(arraythree)
+    }
+    else
+    {
+      story?.forEach((e) =>
+      {
+        if(arraythree.length < 2)
+        {
+          arraythree.push(e)
+        }
+        else
+        {
+          splitarr.push(arraythree)
+          arraythree = []
+          arraythree.push(e)
+        }
+      })
+      splitarr.push(arraythree)
+
+    }
+    this.stories = splitarr
+    console.log(this.stories)
+    }, 2000)
+
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }

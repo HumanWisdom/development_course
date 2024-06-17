@@ -80,7 +80,7 @@ export class CourseFooterComponent implements OnInit {
     }
     else if(SharedService.ProgramId == ProgramType.Teenagers) {
       this.programName = "";
-      this.router.navigate([this.programName + '/teenager-dashboard'])
+      this.router.navigate(['/teenagers' + '/teenager-dashboard'])
     }else{
       this.router.navigate(['/adults/adult-dashboard'])
     }

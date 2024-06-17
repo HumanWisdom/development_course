@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
 
@@ -632,7 +632,7 @@ export class AdultDashboardPage implements OnInit {
 
 
     if(!this.isloggedIn) {
-      this.tourTotalIndex = 8;
+      this.tourTotalIndex = 9;
       stepList.splice(1, 1);
     }
 
@@ -2085,7 +2085,7 @@ export class AdultDashboardPage implements OnInit {
       }
       }
     */
-    
+
   }
 
   // introduction
@@ -4287,7 +4287,7 @@ export class AdultDashboardPage implements OnInit {
 
   getinp(event) {
     let url=""
-    switch(event) 
+    switch(event)
     {
       case "Events":{
           url = `/adults/events`
@@ -4321,7 +4321,7 @@ export class AdultDashboardPage implements OnInit {
         {
         url = `/adults/wisdom-exercise`
         break;
-      }    
+      }
       case "Journal":{
         url = `/adults/journal`
         break;
@@ -4335,9 +4335,9 @@ export class AdultDashboardPage implements OnInit {
         break;
       }
 
-    } 
+    }
 
-   
+
     this.router.navigate([url])
   }
 
@@ -4377,7 +4377,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.getModuleList().subscribe(res => {
       this.moduleList = res;
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
-      
+
       if (isLoad) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
