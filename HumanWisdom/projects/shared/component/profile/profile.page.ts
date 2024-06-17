@@ -117,7 +117,7 @@ export class ProfilePage implements OnInit {
   }
 
   survey() {
-    this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
+    this.router.navigate(['/' + SharedService.getprogramName() + "/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
   getAffiliate() {
