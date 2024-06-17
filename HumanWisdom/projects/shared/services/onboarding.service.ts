@@ -259,4 +259,11 @@ export class OnboardingService {
   }
 
 
+  getNotificationList(): Observable<any> {
+    return this.http.get(this.path + `/GetNotifications`);
+  }
+
+  MarkNotificationAsRead(NotificationId: number): Observable<any> {
+    return this.http.post(this.path + `/SetNotificationRead/` + NotificationId, null);
+  }
 }
