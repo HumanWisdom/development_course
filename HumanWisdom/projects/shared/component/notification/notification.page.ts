@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NotificationModel } from './notification-model';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'HumanWisdom-notification',
@@ -171,7 +172,8 @@ export class NotificationPage implements OnInit {
 
   NavigateToUrl(Url, NotificationId) {
     this.MarkAsRead(NotificationId);
-    this.router.navigateByUrl(Url);
+    Url = Url.replace('/adults', '');
+    this.router.navigateByUrl('/' + SharedService.getprogramName() + Url);
   }
 
   getClass(item) {
