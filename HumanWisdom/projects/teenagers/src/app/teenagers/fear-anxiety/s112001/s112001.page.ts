@@ -184,4 +184,12 @@ export class S112001Page implements OnInit,OnDestroy {
      });
   }
 
+  Resume(url)
+  {
+    //url='/adults/breathing/'
+    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+
+  }
+
+
 }
