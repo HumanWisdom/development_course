@@ -1,0 +1,134 @@
+<title>Happiness Survey | HumanWisdom</title>
+
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Happiness Survey
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <div class="row" id="div_graph" *ngIf="enablebtn">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                  <canvas baseChart width="400" height="400"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    [plugins]="lineChartPlugins">
+                  </canvas>
+
+                  <!-- <div class="row mt40px">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                  </div>
+
+                  <div class="row mt17px">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                  </div> -->
+
+                </div>
+              </div>
+
+              <div class="row mtb30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <button type="button" class="btn btn_e58d82" (click)="viewClickEvent('/teenagers/wisdom-survey/progress')">
+                    View your progress
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_24px fw_600 lh_150p fc_ffffff">
+                    Take the survey
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row mt10px mb20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    We recommend taking this survey at least twice a month
+                  </h6>
+                </div>
+              </div>
+              <!-- Reversed Rating -->
+              <app-progress-slider [q]="q1" r="1" nFilter="Not at all anxious" pFilter="Very anxious"   (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+              <!-- Reversed Rating -->
+              <app-progress-slider [q]="q2" r="2" nFilter="Not at all stressed" pFilter="Very stressed"  (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+              <app-progress-slider [q]="q3" r="3" nFilter="Not well at all"   pFilter="Very well"   (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+              <app-progress-slider [q]="q4" r="4"  nFilter="Not calm at all"  pFilter="Very calm "  (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+              <app-progress-slider [q]="q5" r="5" nFilter="Not self confident at all"  pFilter="Very self confident"  (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+
+              <app-progress-slider [q]="q6" r="6" nFilter="No conflict" pFilter="A lot of conflict"  (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+
+              <app-progress-slider [q]="q7" r="7" nFilter="I don’t have any addictions" pFilter="I struggle with an addiction"  (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+              <!-- Reversed Rating -->
+              <app-progress-slider [q]="q8" r="8" nFilter="Not well at all, I get very upset"  pFilter="I cope very well"   (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+               <!-- Reversed Rating -->
+              <app-progress-slider [q]="q9" r="9" nFilter="I don’t have much compassion for others" pFilter="I have a lot of compassion for others"   (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+              <app-progress-slider [q]="q10" r="10"  nFilter="Not happy at all"  pFilter="Very happy" (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br>
+
+              <div class="row mt30px mb40px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <a (click)="submitProgress()">
+                    <button type="button" class="btn btn_e58d82">Submit</button>
+                  </a>
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

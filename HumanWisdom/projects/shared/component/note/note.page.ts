@@ -3,6 +3,8 @@ import { CommonService } from '../../services/common.service';
 import { Location } from '@angular/common'
 import { Router, ActivatedRoute } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 
 @Component({
@@ -30,6 +32,7 @@ export class NotePage implements OnInit {
   readOnly = false;
   enableSave = false
   oldnotes = '';
+  isAdults: boolean = true; 
 
   @ViewChild('savebtn') savebtn:any;
   @ViewChild('successbtn') successbtn :any;
@@ -40,7 +43,13 @@ export class NotePage implements OnInit {
     private location: Location,
     private activate: ActivatedRoute,
     public logeventservice: LogEventService,
-  ) {  }
+  ) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+    }
 
   ngOnInit() {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }

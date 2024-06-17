@@ -114,7 +114,7 @@ export class ChangeTopicPage implements OnInit {
         if (this.isRoutedFromLogin == true) {
           this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
           this.url = "/teenagers/subscription/start-your-free-trial"
-
+          this.router.navigate([this.url]);
         }
         else {
 
@@ -123,7 +123,7 @@ export class ChangeTopicPage implements OnInit {
             localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
             this.logeventservice.logEvent('click_emotions');
             this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-          } else if (name === 'Mental Health') {
+          } else if (name === 'Manage your mental health') {
             localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
             this.logeventservice.logEvent('click_stress_anxiety');
             this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])

@@ -283,7 +283,7 @@
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                                       <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                        Happiness score
+                                        Wellness score
                                       </h4>
                                     </div>
 
@@ -500,9 +500,11 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
-                              <a class="prelative" (click)="routeForUser(res)">
+                            
                                 <div class="prelative">
-                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash">
+                                  <a (click)="routeForUser(res)" class="prelative">
+                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash" />
+                                 </a>
                                   <!-- <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div> -->
@@ -513,14 +515,22 @@
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
                                       <img src="{{res['IconUrl']}}" class="img-responsive w100">
                                     </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
                                         {{res['FeatureType']}}
                                       </h4>
                                     </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                      <a (click)="routeToUrl(res['ViewLink'])">
+                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
+                                          View more
+                                        </h4>
+                                      </a>
+                                    </div>
                                   </div>
                                 </div>
 
+                                <a (click)="routeForUser(res)" class="prelative">
                                 <div class="row mb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
@@ -536,7 +546,7 @@
                                     </h4>
                                   </div>
                                 </div>
-                              </a>
+                                </a>
                             </div>
 
                           </div>

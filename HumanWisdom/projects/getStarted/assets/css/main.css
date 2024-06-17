@@ -3022,3 +3022,50 @@ audio::-webkit-media-controls-enclosure
 {
   padding: 0 20px 0 20px;
 }
+
+.hs_bg
+{
+  background: rgba(232, 168, 128, 0.10);
+  padding: 60px;
+}
+
+.hs_bg h4 
+{
+  margin: 0;
+}
+
+.hs_desc
+{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #000;
+  margin-bottom: 12px !important;
+}
+
+.hs_desc_company
+{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #000;
+  margin: 6px 0 36px 0 !important
+}
+
+.hs_title
+{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #000;
+  margin-bottom: 12px !important;
+}
+
+.hs_sub_title
+{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 160%;
+  color: #000;
+  margin-bottom: 12px !important;
+}
