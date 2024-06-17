@@ -207,7 +207,7 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
         this.route.navigate(['/adults/curated/manage-your-emotions'])
-      } else if (name === 'Mental Health') {
+      } else if (name === 'Manage your mental health') {
         localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
