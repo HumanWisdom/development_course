@@ -31,6 +31,7 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   pageaction = localStorage.getItem("pageaction");
   reachedLimit = false;
   enableAlert = false;
+  isAdults: boolean = true; 
 
   constructor(
     private service: AdultsService,
@@ -39,6 +40,11 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   ngOnInit() {
@@ -73,6 +79,22 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
         // window.alert('You have reached free limit')
       }
     };
+    this.setAudioControlsBackground();
+  }
+  
+  setAudioControlsBackground() {
+    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
   }
 
   getTime() {

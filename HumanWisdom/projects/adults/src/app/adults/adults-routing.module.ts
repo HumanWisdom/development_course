@@ -294,7 +294,7 @@ const routes: Routes = [
   },
   {
     path: 'help-support',
-    loadChildren: () => import('./help-support/help-support.module').then(m => m.HelpSupportModule)
+    loadChildren: () => import('../../../../shared/component/help-support/help-support.module').then(m => m.HelpSupportModule)
   },
   {
     path: 'hwp-project',
@@ -601,23 +601,23 @@ const routes: Routes = [
   },
   {
     path: 'faqs',
-    loadChildren: () => import('../adults/help-support/faq/faq.module').then( m => m.FaqPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/faq/faq.module').then( m => m.FaqPageModule)
   },
   {
     path: 'contact-us',
-    loadChildren: () => import('../adults/help-support/support/support.module').then( m => m.SupportPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/support/support.module').then( m => m.SupportPageModule)
   },
   {
     path: 'terms-and-conditions',
-    loadChildren: () => import('../adults/help-support/terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
   },
   {
     path: 'privacy-policy',
-    loadChildren: () => import('../adults/help-support/privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
   },
   {
     path: 'cookies-policy',
-    loadChildren: () => import('../adults/help-support/cookie-policy/cookie-policy.module').then( m => m.CookiePolicyPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/cookie-policy/cookie-policy.module').then( m => m.CookiePolicyPageModule)
   },
   {
     path: 'give-the-gift-of-wisdom',
