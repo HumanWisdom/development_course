@@ -45,7 +45,7 @@ export class EventsIndexPage implements OnInit {
   }
 
   routeFutureEvents(item){
-    this.router.navigate([SharedService.getprogramName()+"/events/event?eid="+item.RowID])
+    this.router.navigateByUrl(SharedService.getprogramName()+"/events/event?eid="+item.RowID);
   }
 
   clearSearch(){
