@@ -42,7 +42,7 @@
             </div> -->
             <div class="col-md-11 col-sm-11 col-xs-11 p0">
               <label class="flex_ai fw_500 fs_14px lh_16px fc_ffffff mtb0px" >
-                <input type="radio" name="switch" [value]="true" (change)="onProgramChange(true)" [checked]="isAdults"> 
+                <input type="radio" name="switch" [value]="isAdults" (change)="onProgramChange($event)"> 
                 <span class="slider round"></span>
                 <h4 style="margin-top: 6px;" class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   {{isAdults ? "Switch to Teenagers" : "Switch to Adults" }}

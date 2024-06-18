@@ -20,6 +20,7 @@ export class AppComponent implements OnDestroy   {
   programType: ProgramType = ProgramType.Teenagers;
   journal = false
   fourm = false
+  pageLoaded = false;
   profile = true
   isloggedIn = false
   enableprofile = false
@@ -42,6 +43,9 @@ export class AppComponent implements OnDestroy   {
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+      setTimeout(() => {
+        this.pageLoaded = true;
+      }, 2000)
     //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
