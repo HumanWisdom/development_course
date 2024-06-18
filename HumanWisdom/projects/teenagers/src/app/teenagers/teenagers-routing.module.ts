@@ -282,7 +282,7 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-survey',
-    loadChildren: () => import('./wisdom-survey/wisdom-survey.module').then(m => m.WisdomSurveyModule)
+    loadChildren: () => import('../../../../shared/component/wisdom-survey/wisdom-survey.module').then(m => m.WisdomSurveyModule)
   },
   {
     path: 'videopage/:videolink/:enable',

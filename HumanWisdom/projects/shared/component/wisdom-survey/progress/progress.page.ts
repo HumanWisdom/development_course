@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Color } from 'ng2-charts';
-import { TeenagersService } from '../../teenagers.service';
+import { OnboardingService } from '../../../services/onboarding.service';
 
 @Component({
   selector: 'app-progress',
@@ -129,7 +129,7 @@ export class ProgressPage implements OnInit {
 
   constructor(
     private location: Location,
-    private service: TeenagersService
+    private service: OnboardingService
   )
   {
   let userId = JSON.parse(localStorage.getItem("userId"))

@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdultsService } from '../../adults.service';
+import { OnboardingService } from '../../../services/onboarding.service';
 
 @Component({
   selector: 'app-wisdom-survey-insight',
@@ -43,7 +43,7 @@ export class WisdomSurveyInsightComponent implements OnInit {
   ]
   userId: any
 
-  constructor(private service: AdultsService, private router: Router, private location: Location) {
+  constructor(private service: OnboardingService, private router: Router, private location: Location) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
     service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
       console.log(r)
