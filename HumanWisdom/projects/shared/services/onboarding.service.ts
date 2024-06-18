@@ -266,4 +266,26 @@ export class OnboardingService {
   MarkNotificationAsRead(NotificationId: number): Observable<any> {
     return this.http.post(this.path + `/SetNotificationRead/` + NotificationId, null);
   }
+
+  wisdomScore(data: any): Observable<any> {
+
+    return this.http.post(this.path + `/UserWisdomSurveyScore/${data}`, null)
+  }
+  wisdomSurveyinsights(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/GetYearlyWisdomScore/${data}`)
+  }
+
+  wisdomSurveyinsightsummary(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/GetYearlyWisdomScoreSummary/${data}`)
+  }
+
+  createScreen(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddScreen', data)
+  }
+
+  submitProgressQuestion(data: any): Observable<any> {
+    return this.http.post(this.path + '/userProgressQuestion', data)
+  }
 }

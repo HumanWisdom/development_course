@@ -1,7 +1,9 @@
+import { TeenagersService } from './../../../../teenagers/src/app/teenagers/teenagers.service';
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
+import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from '../../../models/program-model';
 
 @Component({
   selector: 'app-wisdom-score',
@@ -24,11 +26,18 @@ export class WisdomScorePage implements OnInit {
   }, 1000);
   points=localStorage.getItem("wisdomScore");
   enableDash = false;
+  isAdults: boolean = true;
 
 isUseCloseButton:boolean;
   constructor(private router: Router,
-    private service:AdultsService,
-    private location:Location) { }
+    private service:TeenagersService,
+    private location:Location) {
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
+     }
 
   ngOnInit() {
     if(this.saveUsername==false)
@@ -37,8 +46,8 @@ isUseCloseButton:boolean;
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
       const {isUseCloseButton} = window.history.state;
       this.isUseCloseButton=isUseCloseButton;
-
-      if (this.service.previousUrl === '/adults/wisdom-survey') {
+       
+      if (this.service.previousUrl === '/' + SharedService.getprogramName() + '/wisdom-survey') {
         this.enableDash = true;
       }
   }
@@ -54,11 +63,11 @@ isUseCloseButton:boolean;
 
   submitProgress(){
 
-    this.router.navigate(['/adults/discovering-wisdom/s27032'])
+    this.router.navigateByUrl('/' + SharedService.getprogramName() + '/discovering-wisdom/s27032');
 
   }
   prev(){
-    this.router.navigate(['/adults/discovering-wisdom/s27020'])
+    this.router.navigateByUrl('/' + SharedService.getprogramName() + '/discovering-wisdom/s27020');
 
   }
 

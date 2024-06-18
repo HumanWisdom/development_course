@@ -1,13 +1,13 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AdultsService } from '../../adults.service';
-import { LogEventService } from '../../../../../../shared/services/log-event.service';
 import { Meta, Title } from '@angular/platform-browser';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-
+import { LogEventService } from '../../../services/log-event.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { OnboardingService } from '../../../services/onboarding.service';
+import { SharedService } from '../../../services/shared.service';
 
 @Component({
   selector: 'app-wisdom-scale',
@@ -103,7 +103,7 @@ export class WisdomScalePage implements OnInit {
   public lineChartType: ChartType = 'line';
 
   constructor(private router: Router,
-    private service: AdultsService,
+    private service: OnboardingService,
     private location: Location,
     public logeventservice: LogEventService,
     private ac: ActivatedRoute, private navigationService: NavigationService,
@@ -111,7 +111,8 @@ export class WisdomScalePage implements OnInit {
 
     this.ac.queryParams.subscribe(params => {
       this.nextPath = params['page'];
-      if (this.nextPath !== '/adults/discovering-wisdom/s27032') {
+
+      if (this.nextPath !== '/' + SharedService.getprogramName() + '/discovering-wisdom/s27032') {
         this.enablebtn = true;
       }
 
@@ -317,9 +318,9 @@ export class WisdomScalePage implements OnInit {
           this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
           const { isUseCloseButton } = window.history.state;
           if (isUseCloseButton) {
-            this.router.navigate(["/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
+            this.router.navigate(["/teenagers/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
           } else {
-            this.router.navigate(["/wisdom-survey/wisdom-score"]);
+            this.router.navigate(["/teenagers/wisdom-survey/wisdom-score"]);
           }
         });
   }
@@ -339,7 +340,7 @@ export class WisdomScalePage implements OnInit {
     if (res && res === 'T') {
       this.router.navigate([url]);
     } else {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
     }
   }
 }

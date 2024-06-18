@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
-import { SharedModule } from '../../../../../../shared/shared.module';
-
 import { ProgressPageRoutingModule } from './progress-routing.module';
 
 import { ProgressPage } from './progress.page';
 import { ChartsModule } from 'ng2-charts';
+import { SharedModule } from '../../../shared.module';
 
 
 @NgModule({

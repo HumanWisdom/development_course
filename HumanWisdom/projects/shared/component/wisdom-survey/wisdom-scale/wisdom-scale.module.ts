@@ -9,8 +9,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { WisdomScalePageRoutingModule } from './wisdom-scale-routing.module';
 
 import { WisdomScalePage } from './wisdom-scale.page';
-import {SharedModule} from '../../../../../../shared/shared.module'
 import { ChartsModule } from 'ng2-charts';
+import { SharedModule } from '../../../shared.module';
 
 @NgModule({
   imports: [
