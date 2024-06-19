@@ -314,7 +314,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/adults/adverts-work' ||
+        if (route == '/adults/testimonials'  ||
+          route == '/adults/adverts-work' ||
           route == '/adults/adverts-student' ||
           route == '/adults/adverts-about' ||
           route == '/adults/help-support/faq' ||
@@ -336,7 +337,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/teenagers/adverts-work' ||
+        if (route == '/teenagers/testimonials' ||
+          route == '/teenagers/adverts-work' ||
           route == '/teenagers/adverts-student' ||
           route == '/teenagers/adverts-about' ||
           route == '/teenagers/help-support/faq' ||
