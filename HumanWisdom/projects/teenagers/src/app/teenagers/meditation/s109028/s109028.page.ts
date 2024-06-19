@@ -13,7 +13,7 @@ export class S109028Page implements OnInit {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w5"
-  toc="teenagers/meditation/109001"
+  toc="teenagers/meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
