@@ -458,7 +458,35 @@ const routes: Routes = [
   {
     path: 'notification',
     loadChildren: () => import('../../../../shared/component/notification/notification.module').then(m => m.NotificationPageModule)
-  }
+  },
+  {
+    path: 'faqs',
+    loadChildren: () => import('../../../../shared/component/help-support/faq/faq.module').then( m => m.FaqPageModule)
+  },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('../../../../shared/component/help-support/support/support.module').then( m => m.SupportPageModule)
+  },
+  {
+    path: 'terms-and-conditions',
+    loadChildren: () => import('../../../../shared/component/help-support/terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
+  },
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('../../../../shared/component/help-support/privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+  },
+  {
+    path: 'cookies-policy',
+    loadChildren: () => import('../../../../shared/component/help-support/cookie-policy/cookie-policy.module').then( m => m.CookiePolicyPageModule)
+  },
+  {
+    path: 'help-support',
+    loadChildren: () => import('../../../../shared/component/help-support/help-support.module').then(m => m.HelpSupportModule)
+  },
+  {
+    path: 'awareness-exercises-transcript',
+    loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
+  },
 ];
 
 

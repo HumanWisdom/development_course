@@ -7,16 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SupportPageRoutingModule } from './support-routing.module';
 
 import { SupportPage } from './support.page';
+import { SharedModule } from '../../../shared.module';
 
-import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     SupportPageRoutingModule,
-    SharedModule
   ],
   declarations: [SupportPage]
 })

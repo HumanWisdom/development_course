@@ -4,20 +4,21 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FaqPageRoutingModule } from './faq-routing.module';
+import { ContactUsPageRoutingModule } from './contact-us-routing.module';
 
-import { FaqPage } from './faq.page';
+import { ContactUsPage } from './contact-us.page';
+import { SharedModule } from '../../../shared.module';
 
-import { SharedModule } from '../../../../../../shared/shared.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FaqPageRoutingModule,
+    ContactUsPageRoutingModule,
     SharedModule
   ],
-  declarations: [FaqPage]
+  declarations: [ContactUsPage]
 })
-export class FaqPageModule {}
+export class ContactUsPageModule {}

@@ -3,11 +3,12 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService } from '../../services/shared.service';
 import { LogEventService } from "../../services/log-event.service";
 import { Constant } from '../../services/constant';
-
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-subscription-payment',
   templateUrl: './subscription-payment.page.html',
@@ -37,6 +38,7 @@ export class SubscriptionPaymentPage implements OnInit {
   content = '';
   symbol: any
   isoCode:any;
+  isAdults = false;
   constructor(private service: OnboardingService,
     private location:Location,
     public logeventservice: LogEventService,
@@ -89,6 +91,12 @@ export class SubscriptionPaymentPage implements OnInit {
         () => {
           // this.router.navigate(["/onboarding/assign-key"])
         })
+
+        if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
   getCountry() {
