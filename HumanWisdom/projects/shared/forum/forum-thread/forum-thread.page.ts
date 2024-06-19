@@ -182,7 +182,8 @@ export class ForumThreadPage implements OnInit {
       "UserId": this.posttread.UserId,
       "ParentPostID": "0",
       "ReflectionID": "0",
-      "TagIds": "0"
+      "TagIds": "0",
+      "ProgID": SharedService.ProgramId
     };
     this.service.UpdatePost(model).subscribe(res => {
       if (res) {
@@ -211,7 +212,8 @@ export class ForumThreadPage implements OnInit {
       "Post": item.ReplyPost,
       "UserId": item.ReplyPostUserID,
       "ReflectionID": "0",
-      "TagIds": "0"
+      "TagIds": "0",
+      "ProgID": SharedService.ProgramId
     };
     this.service.UpdatePost(model).subscribe(res => {
       if (res) {
