@@ -126,7 +126,7 @@ export class ChangeTopicPage implements OnInit {
                 localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
                 this.logeventservice.logEvent('click_emotions');
                 this.url='/adults/curated/manage-your-emotions';
-              } else if ( this.selectedname === 'Mental Health') {
+              } else if ( this.selectedname === 'Manage your mental health') {
                 localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
                 this.logeventservice.logEvent('click_stress_anxiety');
                 this.url='/adults/curated/overcome-stress-anxiety';

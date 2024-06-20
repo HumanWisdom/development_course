@@ -214,3 +214,69 @@ ul.dh_ul li:last-child
 {
   border-bottom: 0 !important;
 }
+
+/* Hide the default radio button */
+.switch input[type="radio"] {
+    display: none;
+  }
+  
+  /* The slider */
+  .slider {
+    position: relative;
+    cursor: pointer;
+    width: 52px !important;
+    height: 23px !important;
+
+    border-radius: 34px;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 34px;
+    color: white !important;
+    font-weight: bold;
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height:15px !important;
+    width: 17px  !important;
+    left: 4px !important;
+    bottom: 4px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* On/Off labels */
+  label {
+    position: relative;
+  }
+  
+//   label:first-of-type .slider {
+//     background-color: #4CAF50; /* Green background for "On" */
+//   }
+  
+  label:last-of-type .slider {
+    background-color: #ccc; /* Grey background for "Off" */
+  }
+  
+//   input:checked + .slider {
+//     background-color: #4CAF50; /* Green background when "On" is checked */
+//   }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  

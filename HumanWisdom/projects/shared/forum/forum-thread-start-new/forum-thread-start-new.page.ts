@@ -100,7 +100,9 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         TagIds: this.selectedOption.toString(),
         Anonymous: this.isChecked ? "1" : "0",
         PostImg: this.fileToUpload,
-        PostImgAndroid: this.PostImgAndroid
+        PostImgAndroid: this.PostImgAndroid,
+        ProgID: SharedService.ProgramId
+
       }
     ).subscribe(res => {
       if (res) {

@@ -34679,6 +34679,10 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   color: #FFF;
 }
 
+.btn_profile_cp:hover {
+  color: #fff
+}
+
 .profile_pe_div
 {
   text-align: center;

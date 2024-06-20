@@ -44,6 +44,10 @@ export class EventsIndexPage implements OnInit {
     }, 30);
   }
 
+  routeFutureEvents(item){
+    this.router.navigateByUrl(SharedService.getprogramName()+"/events/event?eid="+item.RowID);
+  }
+
   clearSearch(){
     setTimeout(() => {
     this.searchinp='';

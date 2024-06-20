@@ -13,7 +13,7 @@ export class CopingWithIllnessPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-
+  isAdults = false;
   mediaUrl:any;
 
   constructor(private router: Router, private location: Location,private navigationService:NavigationService)
@@ -21,6 +21,11 @@ export class CopingWithIllnessPage implements OnInit {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.30.mp3',
       youtubeUrl: 'tsl5QK9aqTI'
+    }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
     }
   }
 

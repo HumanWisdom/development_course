@@ -674,7 +674,7 @@ export class ForumLandingPage implements OnInit {
   startNewThread(tagId){
     if(this.isLoggedIn){
       localStorage.setItem('tagId',tagId);
-      this.router.navigate(['/forum/forum-thread-start-new']);
+      this.router.navigate(['teenagers/forum/forum-thread-start-new']);
     }else{
       this.enableAlert= true;
     }

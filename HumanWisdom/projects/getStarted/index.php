@@ -29,13 +29,13 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
             <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
-              Understand your mind. Live a happier life.
+              Understand your mind. Develop your emotional intelligence. Be happier.
             </h4>
           </div>
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
             <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-              Life can be tough. The HappierMe app is your personal guide to help you feel better now, but also to take you deeper to understand your thoughts and feelings. It supports you to become the person you want to be, to be happier, manage your emotions and  succeed in the world. There are also coaches you can speak to through the app.
+              Life can be tough. The HappierMe emotional intelligence app is your personal guide to help you feel better now, but also to take you deeper to understand your thoughts and feelings. It supports you to become the person you want to be, to be happier, manage your emotions and  succeed in the world. There are also coaches you can speak to through the app.
             </h4>
           </div>
 
@@ -85,7 +85,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h4 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Find longterm solutions to stress, anxiety, depression by understanding and managing your emotions.
+                    Find long-term solutions to stress, anxiety and depression by understanding and managing your emotions.
                   </h4>
                 </div>
               </div>
