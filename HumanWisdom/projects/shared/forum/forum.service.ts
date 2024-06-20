@@ -70,7 +70,7 @@ export class ForumService {
           url = this.path + `/GetPosts/${uID}/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetPosts/${uID}/${SharedService.ProgramId}`;
+          url = this.path + `/GetPosts_Prog/${uID}/${SharedService.ProgramId}`;
         }
         break;
       case 3:
