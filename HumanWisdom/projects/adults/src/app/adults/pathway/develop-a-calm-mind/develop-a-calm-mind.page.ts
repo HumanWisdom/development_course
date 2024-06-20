@@ -6,6 +6,7 @@ import { SharedService } from '../../../../../../shared/services/shared.service'
 import { Constant } from '../../../../../../shared/services/constant';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
+import { ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-develop-a-calm-mind',
@@ -21,10 +22,17 @@ export class DevelopACalmMindPage implements OnInit {
   public meditationP: any
   public ntP: any
   public gamP: any
+  mediaUrl: any;
 
   constructor(public router: Router, public service: AdultsService,
     public logeventservice: LogEventService,
-    private location: Location, private navigationService: NavigationService) { }
+    private location: Location, private navigationService: NavigationService) 
+    {
+      this.mediaUrl = {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3',
+        youtubeUrl: 'b5PZ6fFCL3g'
+      }
+    }
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
@@ -56,5 +64,28 @@ export class DevelopACalmMindPage implements OnInit {
       this.location.back();
     }
     this.router.navigate([url]);
+  }
+
+  routeVideoaudio(type, url, title = '') {
+    console.log(url)
+    if(type === 'video') {
+     this.router.navigate([url, 'F', title])
+    }else{
+      let concat = encodeURIComponent(url.replaceAll('/','~'));
+      if ( SharedService.ProgramId == ProgramType.Teenagers) {
+        this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title])
+      }
+      else{
+        this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+      }
+    }
+  }
+
+  determineVideoUrl(url): string {
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      return `/teenagers/videopage/${url}`;
+    } else {
+      return `/adults/videopage/${url}`;
+    }
   }
 }

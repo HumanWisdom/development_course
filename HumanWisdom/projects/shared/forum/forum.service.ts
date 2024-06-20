@@ -54,7 +54,7 @@ export class ForumService {
           url = this.path + `/GetAllPosts/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetAllPosts/${SharedService.ProgramId}`;
+          url = this.path + `/GetAllPosts_Prog/${SharedService.ProgramId}`;
         }
         break;
       case 1:
@@ -70,7 +70,7 @@ export class ForumService {
           url = this.path + `/GetPosts/${uID}/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetPosts/${uID}/${SharedService.ProgramId}`;
+          url = this.path + `/GetPosts_Prog/${uID}/${SharedService.ProgramId}`;
         }
         break;
       case 3:
