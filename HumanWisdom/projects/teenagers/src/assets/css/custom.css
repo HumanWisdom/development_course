@@ -12476,10 +12476,11 @@ h1.module_title
 .transcript_txt
 {
   /* font-family: Roboto; */
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: 400;
   font-size: 18px;
-  line-height: 150%;
+  /* line-height: 150%; */
+  line-height: 180%;
   /* or 36px */
   color: #FFFFFF;
   text-align: left;
