@@ -31,6 +31,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   programType: ProgramType.Adults;
   isSubscriber:boolean;
   PostImgAndroid='';
+  isAdults: boolean = true; 
+
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
     this.router.events
@@ -48,6 +50,14 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     }
     this.isSubscriber = SharedService.isSubscriber(); 
     this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+
+  
   }
 
   ngOnInit() {

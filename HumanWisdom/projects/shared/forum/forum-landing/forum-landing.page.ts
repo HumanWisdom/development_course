@@ -255,8 +255,14 @@ export class ForumLandingPage implements OnInit {
   }
 
   postnavigate(item) {
-    this.serivce.postdataSource.next(item);
-    this.router.navigateByUrl('/adults/forum/forum-thread/'+item.PostID);
+    //this.serivce.postdataSource.next(item);
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.router.navigateByUrl('/adults/forum/forum-thread/'+item.PostID);
+    } else {
+      this.router.navigateByUrl('/teenagers/forum/forum-thread/'+item.PostID);
+    }
+
+    
   }
 
   onFocusOutEvent(){
