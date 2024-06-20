@@ -6,7 +6,8 @@
 
 <div class="row tcenter">
   <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px">
-    <audio id="aud1" controls controlsList="nodownload" #audio>
+    <audio #audio controls controlsList="nodownload"     [ngClass]="{'adults-true': isAdults, 'adults-false' : !isAdults }" 
+    class="adults-true"  id="aud1">
       <source [src]="audioLink" type="audio/mpeg">
     </audio>
   </div>
