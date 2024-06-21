@@ -8,6 +8,7 @@ import { LogEventService } from '../../../services/log-event.service';
 import { NavigationService } from '../../../services/navigation.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from "../../../models/program-model";
 
 @Component({
   selector: 'app-wisdom-scale',
@@ -101,6 +102,7 @@ export class WisdomScalePage implements OnInit {
   ];
   public lineChartLegend = false;
   public lineChartType: ChartType = 'line';
+  isAdults = true;
 
   constructor(private router: Router,
     private service: OnboardingService,
@@ -118,6 +120,14 @@ export class WisdomScalePage implements OnInit {
 
     });
     console.log(this.nextPath)
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
+    
+
   }
 
   ngOnInit() {
@@ -318,9 +328,9 @@ export class WisdomScalePage implements OnInit {
           this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
           const { isUseCloseButton } = window.history.state;
           if (isUseCloseButton) {
-            this.router.navigate(["/teenagers/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
+            this.router.navigate(["/"+SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
           } else {
-            this.router.navigate(["/teenagers/wisdom-survey/wisdom-score"]);
+            this.router.navigate(["/"+SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"]);
           }
         });
   }
