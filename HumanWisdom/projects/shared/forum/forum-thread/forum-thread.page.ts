@@ -61,6 +61,8 @@ export class ForumThreadPage implements OnInit {
   path = "";
   sharedPostId = '';
   isReportPost = false;
+  isAdults: boolean = true; 
+
   constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService,) {
     this.userID = localStorage.getItem('userId');
     this.token = localStorage.getItem("shareToken");
@@ -75,6 +77,12 @@ export class ForumThreadPage implements OnInit {
         const navigation = this.router.getCurrentNavigation();
         this.programType = navigation.extras.state ? navigation.extras.state.programType : ProgramType.Adults;
       });
+
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
   }
 
   ngOnInit() {
