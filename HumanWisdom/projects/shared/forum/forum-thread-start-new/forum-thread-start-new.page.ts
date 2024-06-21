@@ -84,6 +84,11 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       }
     });
   }
+
+  routeToLanding(){
+    this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+  }
+
   post() {
     if(this.selectedOption!=0 && this.buttonText !='Choose Category'){
          this.submitPost();
@@ -126,7 +131,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   closePost() {
-    this.router.navigateByUrl('/forum', { state: { programType: this.programType } });
+    this.router.navigateByUrl(SharedService.getUrlfromFeatureName("/forum"), { state: { programType: this.programType } });
   }
 
   handleEvent(payload: any) {

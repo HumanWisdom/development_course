@@ -12,6 +12,7 @@ import { OnboardingService } from "../../services/onboarding.service";
 import { ForumService } from '../forum.service';
 import { ProgramType } from "../../models/program-model";
 import { SharedService } from '../../services/shared.service';
+import { ShareService } from "ngx-sharebuttons";
 @Component({
   selector: 'app-forum-landing',
   templateUrl: './forum-landing.page.html',
@@ -255,14 +256,8 @@ export class ForumLandingPage implements OnInit {
   }
 
   postnavigate(item) {
-    //this.serivce.postdataSource.next(item);
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.router.navigateByUrl('/adults/forum/forum-thread/'+item.PostID);
-    } else {
-      this.router.navigateByUrl('/teenagers/forum/forum-thread/'+item.PostID);
-    }
-
-    
+    this.serivce.postdataSource.next(item);
+    this.router.navigateByUrl(SharedService.getUrlfromFeatureName('forum/forum-thread')+'/'+item.PostID);
   }
 
   onFocusOutEvent(){
@@ -278,7 +273,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   shareOnThread(item){
-      this.path = "https://happierme.app/forum/forum-thread/"+item.PostID;
+      this.path = `https://happierme.app/${SharedService.getprogramName()}forum/forum-thread/${item.PostID}`;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
     // }
@@ -299,7 +294,7 @@ export class ForumLandingPage implements OnInit {
     //localStorage.setItem('forumUserID',item.UserId);
 
     //this.router.navigate(['/forum/profile', concat, '1', 'T', title])
-    this.router.navigate(['/forum/profile/',item.UserId]);
+    this.router.navigate([SharedService.getUrlfromFeatureName('/forum/profile/'),item.UserId]);
   }
 
   getAllposts(index) {
@@ -680,7 +675,7 @@ export class ForumLandingPage implements OnInit {
   startNewThread(tagId){
     if(this.isLoggedIn){
       localStorage.setItem('tagId',tagId);
-      this.router.navigate(['teenagers/forum/forum-thread-start-new']);
+      this.router.navigate([SharedService.getUrlfromFeatureName('forum/forum-thread-start-new')]);
     }else{
       this.enableAlert= true;
     }
