@@ -328,7 +328,7 @@ export class WisdomScalePage implements OnInit {
           this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
           const { isUseCloseButton } = window.history.state;
           if (isUseCloseButton) {
-            this.router.navigate(["/"+SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
+            this.router.navigate(["/" + SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
           } else {
             this.router.navigate(["/"+SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"]);
           }
