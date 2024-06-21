@@ -23,7 +23,7 @@ export class AdultsService {
     },
     {
       id: "2",
-      name: 'Mental Health'
+      name: 'Manage your mental health'
     },
     {
       id: "3",

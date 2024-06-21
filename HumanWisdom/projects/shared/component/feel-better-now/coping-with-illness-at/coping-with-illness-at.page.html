@@ -1,0 +1,116 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          How to deal with an illness
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/coping_with_illness.mp3"></app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      How to deal with an illness
+                    </p>
+
+                    <p>
+                      The distress caused to a patient by an illness, no matter whether it is severe back pain, cancer, or by a heart attack is a combination of two things - the illness itself and the pain and disability it causes, and our emotional reaction to it.
+                    </p>
+
+                    <p>
+                      Sometimes the emotional reaction to the illness can be far more than the actual suffering it causes - e.g a diagnosis of breast cancer. Modern medicine is great at treating the cause of illness itself, but not so good at treating the emotional distress it causes.
+                    </p>
+
+                    <p>
+                      This emotional distress is felt not just by the patient but by the entire family.
+                    </p>
+
+                    <p>
+                      As a result of a diagnosis of cancer for example, we can experience a shower of thoughts and emotions and struggle to deal with them all. There could be anger at what has happened, regret at perhaps not looking after our health, many fears for the future and for our loved ones, and so on.
+                    </p>
+
+                    <p>
+                      How can we cope with them all?
+                    </p>
+
+                    <p>
+                      The main thing is to try and calm the mind down so you can think rationally - do a breathing exercise, journal your thoughts down, start meditating, or do some tapping. All of these will help. Speak to your friends. Create a support group for yourself. 
+                    </p>
+
+                    <p>
+                      There is a journey to acceptance of what has happened and that acceptance will bring you peace - but it is a journey and can take time.
+                    </p>
+
+                    <p>
+                      There are many resources in the app to help you go deeper - explore the modules on stress, and anxiety, and continue to watch this discussion with Martha Van Dam,a psychologist from Florida - she talks about her own illness and how she emerged from it stronger than ever. Lets get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

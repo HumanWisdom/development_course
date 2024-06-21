@@ -41,6 +41,9 @@ export class S139001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;
+ 
   pgResume=sessionStorage.getItem("pgResume")
   moduleData:ProgramModel;
 
@@ -52,19 +55,25 @@ export class S139001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(139);
-    // this.getSetModuleData(139);
+   
+   
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
      
-    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+  }
+
+  ngOnInit() 
+  {
+    this.service.setmoduleID(139);
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
-    if(story?.length <= 2) 
+    if(story?.length <= 2)
     {
-      story.forEach((e) => 
+      story.forEach((e) =>
       {
         arraythree.push(e)
       })
@@ -72,27 +81,33 @@ export class S139001Page implements OnInit,OnDestroy {
     }
     else
     {
-      story?.forEach((e) => 
+      story?.forEach((e) =>
       {
-        if(arraythree.length < 2) 
+        if(arraythree.length < 2)
         {
           arraythree.push(e)
         }
-        else 
+        else
         {
           splitarr.push(arraythree)
           arraythree = []
           arraythree.push(e)
         }
       })
+      splitarr.push(arraythree)
+
     }
     this.stories = splitarr
-    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    // this.stories = JSON.parse(this.stories)
-  }
+    console.log(this.stories)
+    }, 2000)
 
-  ngOnInit() 
-  {
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+        
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 

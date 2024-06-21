@@ -81,7 +81,7 @@ export class OnboardingService {
   freeScreens(): Observable<any> {
     return this.http.get(this.path + `/AllModulesFreeScrs`)
   }
-  
+
   setPassword(data: any): Observable<any> {
     return this.http.post(this.path + '/SetPassword', data)
   }
@@ -259,4 +259,33 @@ export class OnboardingService {
   }
 
 
+  getNotificationList(): Observable<any> {
+    return this.http.get(this.path + `/GetNotifications`);
+  }
+
+  MarkNotificationAsRead(NotificationId: number): Observable<any> {
+    return this.http.post(this.path + `/SetNotificationRead/` + NotificationId, null);
+  }
+
+  wisdomScore(data: any): Observable<any> {
+
+    return this.http.post(this.path + `/UserWisdomSurveyScore/${data}`, null)
+  }
+  wisdomSurveyinsights(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/GetYearlyWisdomScore/${data}`)
+  }
+
+  wisdomSurveyinsightsummary(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/GetYearlyWisdomScoreSummary/${data}`)
+  }
+
+  createScreen(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddScreen', data)
+  }
+
+  submitProgressQuestion(data: any): Observable<any> {
+    return this.http.post(this.path + '/userProgressQuestion', data)
+  }
 }

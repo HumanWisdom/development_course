@@ -1,0 +1,83 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        {{data.Topic}}
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+        <div class="x_panel p0">  
+          <div class="x_content p0" *ngIf="data">
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_18px fw_400 lh_150p fc_e58d82 flex_ai" (click)="goBack()">
+                  <i class="fa fa-angle-left mr5px"></i>
+                  Guided Questions
+                </h4>
+              </div>
+            </div>
+
+            <div class="row mt30px mb20px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_30px fw_400 lh_150p fc_ffffff">
+                  {{data.Topic}}
+                </h4>
+              </div>
+            </div>
+
+            <div class="row mb30px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 fs_18px fw_400 lh_150p fc_ffffff">
+                <p class="">
+                 {{data.introduction}}
+                </p>
+                <p class="mb0px">
+                  Your answers are stored in your private online journal.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <button (click)="NavigateToQuestions()" class="btn btn_gqtns_bh">
+                  Begin here
+                  <i class="fa fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="pagebreak"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

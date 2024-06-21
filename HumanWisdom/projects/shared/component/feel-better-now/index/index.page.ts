@@ -42,7 +42,7 @@ export class IndexPage implements OnInit {
   }
 
   routeToBlog(){
-    this.router.navigateByUrl('/adults/blog-article?sId=Difficult-emotions:-a-guide-to-freedom')
+    this.router.navigateByUrl('/'+ SharedService.getprogramName() + '/blog-article?sId=Difficult-emotions:-a-guide-to-freedom')
   }
 
   goBack() {

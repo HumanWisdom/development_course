@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AudioVideoGuard implements CanActivate {
       if(isloggedin === 'T') {
         return true
       }else {
-        this.router.navigate(['/subscription/start-your-free-trial']);
+        this.router.navigate([SharedService.getprogramName()+'/subscription/start-your-free-trial']);
         return false
       }
     }

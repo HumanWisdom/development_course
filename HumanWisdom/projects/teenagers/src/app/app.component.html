@@ -1,3 +1,4 @@
+<app-splash *ngIf="!pageLoaded"></app-splash>
 <app-tn-dashboard-v03 [isShowHeader]="isShowHeader" [isLoginPage]="isLoginPage" [enableplaystore]="enableplaystore" [routeid]="routeid" [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03>
 
 

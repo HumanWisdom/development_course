@@ -97,7 +97,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           },  */        
         },            
         variables: {
-          colorBackground: '#120F40',
+          colorBackground: (this.isAdults? '#120F40' : '#0C2B5F' ) ,
           colorDanger: '#df1b41',
           fontFamily: 'Poppins,sans-serif !important;',
           spacingUnit: '4px',
@@ -106,6 +106,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           colorTextPlaceholder: "rgba(255, 255, 255, 0.50)"
         }
       };
+
       
 
      

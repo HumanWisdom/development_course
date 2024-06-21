@@ -1,5 +1,5 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { AdultsService } from '../../../../../../adults/src/app/adults/adults.service';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 

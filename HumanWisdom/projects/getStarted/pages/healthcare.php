@@ -1044,7 +1044,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Understanding your mind helps you be in charge of your thoughts, feelings and reactions to self-regulate your emotions and mental health.
+                    Understanding your mind helps you be in charge of your thoughts, feelings and reactions, and self-regulate your emotions and mental health.
                   </h4>
                 </div>
               </div>

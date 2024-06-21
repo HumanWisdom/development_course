@@ -1,0 +1,112 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Have happier relationships
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/relationship_problems.mp3"></app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Have happier relationships
+                    </p>
+
+                    <p>
+                      The art of having healthy relationships is one we are rarely taught, but has probably the biggest impact on our long term health and happiness - even if one of our relationships is unhappy - with our friends, our family, our children or our work colleagues, we can struggle to be happy. Ultimately - happiness is something all of us want.
+                    </p>
+
+                    <p>
+                      Successful relationships can make us happy, be a balm for our loneliness and help us grow into the people we want to be. If you are struggling with conflict in a relationship you are not alone - probably every human being does so at some point in their life.
+                    </p>
+
+                    <p>
+                      The app helps you to feel better now with breathing exercises, journaling, meditations or tapping exercises.
+                    </p>
+
+                    <p>
+                      Would you like to explore how you can have healthy and happier relationships for the long term? They can contribute to your happiness, and your success at work. If you don't, the patterns of conflict will keep repeating in your life, and you will remain unhappy.
+                    </p>
+
+                    <p>
+                      The most important thing to realise is that deep down we are the same human being. The more we understand ourselves the easier it is to understand others, and this can lead to happier relationships. All of us have the same emotional needs for example - to be loved, understood, accepted, listened to, feel important, and so on.
+                    </p>
+
+                    <p>
+                      Just as we commit so much time and energy to learning things that we feel are important for our future - like our education, or skills for a job, we need to commit time and energy to learning about ourselves and the art of having meaningful relationships with depth and without conflict. This will contribute to your long term happiness.
+                    </p>
+
+                    <p>
+                      If you are willing to do so, we are here to walk with you and support you as you do so. Explore the relationship module for a guided step by step understanding of the subject and what you can do to be happier. Once you've done that, explore a podcast, read a blog or a story or explore the guided questions. Let's get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

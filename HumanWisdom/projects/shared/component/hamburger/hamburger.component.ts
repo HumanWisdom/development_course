@@ -12,6 +12,7 @@ import {
 } from "@angular/cdk/platform";
 import { SharedService } from "../../services/shared.service";
 import { Subscription } from "rxjs";
+import { environment } from "../../../../projects/environments/environment";
 
 @Component({
   selector: "app-hamburger",
@@ -60,6 +61,14 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
+  onProgramChange($event) {
+    if (this.isAdults) {
+      window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
+    } else {
+      window.location.href = environment.clientUrl + '/adults/adult-dashboard';
+    }
+  }
+
   getmenuevent() {
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
@@ -96,7 +105,12 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           userdetail["UserImagePath"].split("\\")[1] +
           "?" +
           new Date().getTime(); */
-      this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      if (userdetail['UserImagePath'] != "") {
+
+        this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      }
+
+
 
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
@@ -300,7 +314,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/adults/adverts-work' ||
+        if (route == '/adults/testimonials'  ||
+          route == '/adults/adverts-work' ||
           route == '/adults/adverts-student' ||
           route == '/adults/adverts-about' ||
           route == '/adults/help-support/faq' ||
@@ -310,10 +325,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           this.navigate(route);
           return;
         }
-        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
-        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
+        if (!this.ios) {
+          // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
+        } else {
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
         }
       }
     } else {
@@ -321,7 +337,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/teenagers/adverts-work' ||
+        if (route == '/teenagers/testimonials' ||
+          route == '/teenagers/adverts-work' ||
           route == '/teenagers/adverts-student' ||
           route == '/teenagers/adverts-about' ||
           route == '/teenagers/help-support/faq' ||
@@ -331,10 +348,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           this.navigate(route);
           return;
         }
-        if (!this.ios && route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
-        } else if (route != '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial') {
-          this.router.navigate([route])
+        if (!this.ios) {
+          // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
+        } else {
+          this.router.navigate(['/' + SharedService.getprogramName() + route])
         }
       }
     }
@@ -348,7 +366,11 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
-      this.router.navigate([route]);
+      if (this.isAdults) {
+        this.router.navigate([route]);
+      } else {
+        this.router.navigate(['/' + SharedService.getprogramName() + route]);
+      }
     }
     this.closemodal?.nativeElement?.click();
   }

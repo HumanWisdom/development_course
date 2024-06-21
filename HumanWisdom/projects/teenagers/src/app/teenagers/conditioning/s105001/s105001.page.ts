@@ -51,12 +51,13 @@ export class S105001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.getSetModuleData(105);
+   
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
-     
-    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    
+    
+    /* let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
@@ -84,13 +85,52 @@ export class S105001Page implements OnInit,OnDestroy {
         }
       })
     }
-    this.stories = splitarr
-    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    // this.stories = JSON.parse(this.stories)
+    this.stories = splitarr */
+
   }
 
   ngOnInit() 
   {
+    this.service.setmoduleID(105);
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    if(story?.length <= 2)
+    {
+      story.forEach((e) =>
+      {
+        arraythree.push(e)
+      })
+      splitarr.push(arraythree)
+    }
+    else
+    {
+      story?.forEach((e) =>
+      {
+        if(arraythree.length < 2)
+        {
+          arraythree.push(e)
+        }
+        else
+        {
+          splitarr.push(arraythree)
+          arraythree = []
+          arraythree.push(e)
+        }
+      })
+      splitarr.push(arraythree)
+
+    }
+    this.stories = splitarr
+    console.log(this.stories)
+    }, 2000)
+
+
+
+
+
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }
@@ -135,7 +175,11 @@ export class S105001Page implements OnInit,OnDestroy {
     }
    
     this.startTime = Date.now();
-    this.startTime = Date.now();
+   
+
+
+   
+
     this.createScreen()
   }
 
