@@ -46,7 +46,7 @@ export class NavigationService {
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
      , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4',
-     's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid'
+     's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid','/curated/youtubelink/'
   ];
 
   const wholeUrlCheckKeywords = [
