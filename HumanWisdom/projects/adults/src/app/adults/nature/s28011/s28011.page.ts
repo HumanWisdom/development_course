@@ -16,7 +16,7 @@ export class S28011Page implements OnInit {
   bg = "green_yellow_w9"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink = this.mediaVideo + '/nature/videos/1.9.mp4'
-  title = " Nature meditation 9"
+  title = " Looking without language"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_03.jpg"
 
   userId: any

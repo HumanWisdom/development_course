@@ -17,7 +17,7 @@ export class S28004Page implements OnInit {
 
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink = this.mediaVideo + '/nature/videos/1.2.mp4'
-  title = "Nature meditation 2"
+  title = "Perspective"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_02.jpg"
 
   userId: any
