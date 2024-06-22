@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
-
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'HumanWisdom-youtube-content',
   templateUrl: './youtube-content.component.html',
