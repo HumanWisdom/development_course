@@ -635,7 +635,7 @@ export class ForumLandingPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate([SharedService.getUrlfromFeatureName('/onboarding/login')];)
   }
 
   getAlertcloseEvent($event) {
@@ -643,7 +643,7 @@ export class ForumLandingPage implements OnInit {
       this.enableAlert = false;
     } else {
       this.enableAlert = false;
-      this.router.navigate(['/login'])
+        this.loginpage();
     }
   }
 
