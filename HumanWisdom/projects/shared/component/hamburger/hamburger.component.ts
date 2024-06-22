@@ -366,11 +366,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
-      if (this.isAdults) {
-        this.router.navigate([route]);
-      } else {
         this.router.navigate(['/' + SharedService.getprogramName() + route]);
-      }
     }
     this.closemodal?.nativeElement?.click();
   }
