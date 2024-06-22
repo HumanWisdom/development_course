@@ -16,7 +16,9 @@ export class YoutubeContentComponent implements OnInit {
 
   @Input() bg: string;
   
-  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router, private location: Location) {
+  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router, private location: Location,
+    private navigationService:NavigationService
+  ) {
     this.linkcode = this.route.snapshot.paramMap.get('videolink')
    
     let accesscode = 'rdtfghjhfdg'
@@ -67,9 +69,13 @@ export class YoutubeContentComponent implements OnInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url)
   }
 
-  goBack() 
-  {
-    this.location.back()
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   getclcickevent(event) {

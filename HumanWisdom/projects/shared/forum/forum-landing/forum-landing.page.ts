@@ -635,7 +635,7 @@ export class ForumLandingPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.router.navigate([SharedService.getUrlfromFeatureName('/onboarding/login')];)
+    this.router.navigate([SharedService.getUrlfromFeatureName('/onboarding/login')])
   }
 
   getAlertcloseEvent($event) {
