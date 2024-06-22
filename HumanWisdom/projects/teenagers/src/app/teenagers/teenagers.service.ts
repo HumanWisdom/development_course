@@ -246,7 +246,7 @@ export class TeenagersService {
     return this.http.post(this.path + `/SiteSearch/${data}/${SharedService.ProgramId}`, {})
   }
   getForumSearchDataSite(data): Observable<any> {
-    return this.http.get(this.path + `/GetAllPosts/${data}`);
+    return this.http.get(this.path + `/GetAllPosts_Search/${data}/11`);
   }
   postUserpreference(data): Observable<any> {
     return this.http.post(this.path + `/AddUserPreference/${data}/${SharedService.ProgramId}`, {})
