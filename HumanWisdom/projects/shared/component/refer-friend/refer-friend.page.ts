@@ -66,6 +66,9 @@ export class ReferFriendPage implements OnInit {
           this.name = '';
           (<HTMLInputElement>document.getElementById('name')).value = '';
           (<HTMLInputElement>document.getElementById('email')).value = '';
+
+          this.content = 'Mail Sent successfully';
+          this.enableAlert = true;
         }
       })
   }
