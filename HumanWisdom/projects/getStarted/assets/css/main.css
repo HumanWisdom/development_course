@@ -2172,7 +2172,7 @@ a
 {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 9;
   -webkit-box-orient: vertical;
   word-break: break-word;
 }
