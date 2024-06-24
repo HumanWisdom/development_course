@@ -17,11 +17,9 @@ export class NavigationService {
       if (urltoCheck) {
         let isNan = isNaN(urltoCheck[urltoCheck.length - 1]);
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
-          if (this.history.length>0 && this.history[this.history.length-1] != url) {
-            console.log("----------------PUSHED -----------: "+url);
+          if (this.history.length>0 && this.history[this.history.length-1] != url) { 
             this.history.push(url);
           } else if(this.history[this.history.length-1] != url) {
-            console.log("----------------PUSHED -----------: "+url);
             this.history.push(url);
           }
         }
