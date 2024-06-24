@@ -492,8 +492,7 @@
                     </div>
                   </div>
                 </a>
-
-                <!--
+                                
                 <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
@@ -572,6 +571,7 @@
                   </div>
                 </a>
 
+                <!--
                 <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
