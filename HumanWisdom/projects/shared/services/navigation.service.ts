@@ -1,5 +1,6 @@
 import { HostListener, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from './shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +68,7 @@ export class NavigationService {
     if (this.history.length > 0) {
       return this.history[this.history.length - 1];
     }
-    return 'adults/search';
+    return  SharedService.getDashboardUrls();
   }
 
   navigateToBackLink() {
@@ -75,7 +76,7 @@ export class NavigationService {
     if (url != null) {
       return url;
     }
-    return 'adults/search';
+    return SharedService.getDashboardUrls();
   }
 
   public goBack() {
