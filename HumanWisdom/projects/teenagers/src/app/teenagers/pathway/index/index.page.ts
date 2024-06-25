@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AdultsService } from '../../../../../../adults/src/app/adults/adults.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-index',
@@ -13,7 +14,8 @@ export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location, private router: Router, private service: AdultsService,  public logeventservice: LogEventService) { }
+  constructor(private location: Location, private router: Router, private service: AdultsService,
+      public logeventservice: LogEventService,private navigationService:NavigationService) { }
 
   ngOnInit() {
   }
@@ -25,8 +27,21 @@ export class IndexPage implements OnInit {
   }
 
   goBack() {
-      this.location.back()
-   }
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.defaultGoBack();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
+
+  defaultGoBack() {
+    if (window.location.href.includes('teenagers')) {
+      this.router.navigate(['/teenagers/feel-better-now']);
+    } else {
+      this.router.navigate(['/adults/feel-better-now']);
+    }
+  }
 
   logEvent(event, url){
     this.logeventservice.logEvent(event);
