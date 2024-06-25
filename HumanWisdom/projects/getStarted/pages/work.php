@@ -534,6 +534,84 @@
                       </div>
                     </a>
 
+                    <a class="item">
+                      <div class="div_testimonials">
+                        <div class="row">
+                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                              The HappierMe app supports an individual's exploration in seeking positive outcomes through a journey of self- discovery, by applying our intelligence with common sense and insight. I believe this is truly a gift for every single human being to embrace.
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                              Gopalan Nair, Singapore
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a class="item">
+                      <div class="div_testimonials">
+                        <div class="row">
+                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                              I recommend The HappierMe app to my clients as a stand-out app among similar programmes. The design and content meets users where they are and reminds them that wisdom comes from inquiry and a deeper understanding of self. The Human Wisdom app is an accessible "hand-hold" for anyone navigating the rough edges of life as well as provocative and inspiring for personal growth.
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                              Lynne Staley, USA
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a class="item">
+                      <div class="div_testimonials">
+                        <div class="row">
+                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                              I absolutely love the HappierMe app. It has enabled me to really go on a journey of self-exploration. It covers so many different aspects of how our mind works in the real world. I would highly recommend this app to anyone that wishes to improve their life through the art of self-enquiry.
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                              Carolyn King, Melbourne
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
                     <!--
                     <a class="item">
                       <div class="div_testimonials">

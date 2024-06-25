@@ -9,6 +9,7 @@ import {
 
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../environments/environment';
+import { SharedService } from '../services/shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -50,46 +51,46 @@ export class ForumService {
     switch (index) {
       case 0:
         if (searchText) {
-          url = this.path + `/GetAllPosts/${searchText}`;
+          url = this.path + `/GetAllPosts_Search/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetAllPosts`;
+          url = this.path + `/GetAllPosts_Prog/${SharedService.ProgramId}`;
         }
         break;
       case 1:
         if (searchText) {
-          url = this.path + `/GetFollowedPosts/${uID}/${searchText}`;
+          url = this.path + `/GetFollowedPosts/${uID}/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetFollowedPosts/${uID}`;
+          url = this.path + `/GetFollowedPosts/${uID}/${SharedService.ProgramId}`;
         }
         break;
       case 2:
         if (searchText) {
-          url = this.path + `/GetPosts/${uID}/${searchText}`;
+          url = this.path + `/GetPosts/${uID}/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetPosts/${uID}`;
+          url = this.path + `/GetPosts_Prog/${uID}/${SharedService.ProgramId}`;
         }
         break;
       case 3:
         if (searchText) {
-          url = this.path + `/GetReflectionPosts/${searchText}`;
+          url = this.path + `/GetReflectionPosts/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetReflectionPosts`;
+          url = this.path + `/GetReflectionPosts/${SharedService.ProgramId}`;
         }
         break;
 
       default:
-        url = this.path + `/GetAllPosts`;
+        url = this.path + `/GetAllPosts_Prog/${SharedService.ProgramId}`;
         break;
     }
     return this.http.get(url);
   }
 
   getForumRecords(startRecord,endRecord){
-   const url=  this.path + `/GetAllPosts/${startRecord}/${endRecord}`;
+   const url=  this.path + `/GetAllPosts/${startRecord}/${endRecord}/${SharedService.ProgramId}`;
    return this.http.get(url);
   }
   submitPost(data: any): Observable<any> {
@@ -158,6 +159,6 @@ export class ForumService {
   }
 
   getForumSearchDataSite(data): Observable<any> {
-    return this.http.get(this.path + `/GetAllPosts/${data}`);
+    return this.http.get(this.path + `/GetAllPosts_Search/${data}`);
   }
 }

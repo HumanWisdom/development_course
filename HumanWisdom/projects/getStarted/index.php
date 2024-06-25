@@ -29,7 +29,9 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
             <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
-              Understand your mind. Develop your emotional intelligence. Be happier.
+              Develop your Emotional Intelligence.
+              <br>
+              Understand your Mind and Be Happier.
             </h4>
           </div>
 
@@ -490,8 +492,7 @@
                     </div>
                   </div>
                 </a>
-
-                <!--
+                                
                 <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
@@ -570,6 +571,7 @@
                   </div>
                 </a>
 
+                <!--
                 <a class="item">
                   <div class="div_testimonials">
                     <div class="row">

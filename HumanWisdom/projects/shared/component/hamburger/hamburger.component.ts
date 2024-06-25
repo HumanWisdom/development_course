@@ -22,7 +22,7 @@ import { environment } from "../../../../projects/environments/environment";
 export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closeLogoutmodal') closeLogoutmodal: ElementRef;
-
+  isHamburgerClicked = false;
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(", ");
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
@@ -45,7 +45,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   userDetails = [];
   subscription: Subscription;
   toursubscription: Subscription;
-  disableClick = false;
+  disableClick = true;
   isAdults: boolean = true;
 
   constructor(
@@ -59,6 +59,9 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     } else {
       this.isAdults = false;
     }
+    setTimeout(() => {
+      this.disableClick = false;
+    }, 500);
   }
 
   onProgramChange($event) {
@@ -73,9 +76,14 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
+   // this.isHamburgerClicked =  !this.isHamburgerClicked;
+
   }
 
   closemenuevent() {
+    setTimeout(() => {
+     // this.isHamburgerClicked = false;
+    }, 1000);
     this.closemodal.nativeElement.click();
   }
 
@@ -220,10 +228,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   loginroute() {
-    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"], {
-      replaceUrl: true,
-      skipLocationChange: true
-    });
+    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
   }
 
   giftwisdom() {
@@ -314,7 +319,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/adults/adverts-work' ||
+        if (route == '/adults/testimonials'  ||
+          route == '/adults/adverts-work' ||
           route == '/adults/adverts-student' ||
           route == '/adults/adverts-about' ||
           route == '/adults/help-support/faq' ||
@@ -336,7 +342,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/teenagers/adverts-work' ||
+        if (route == '/teenagers/testimonials' ||
+          route == '/teenagers/adverts-work' ||
           route == '/teenagers/adverts-student' ||
           route == '/teenagers/adverts-about' ||
           route == '/teenagers/help-support/faq' ||
@@ -364,11 +371,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
-      if (this.isAdults) {
-        this.router.navigate([route]);
-      } else {
         this.router.navigate(['/' + SharedService.getprogramName() + route]);
-      }
     }
     this.closemodal?.nativeElement?.click();
   }

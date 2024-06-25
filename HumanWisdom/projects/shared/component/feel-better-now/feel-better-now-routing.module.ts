@@ -50,6 +50,46 @@ const routes: Routes = [
     path: 'depression',
     loadChildren: () => import('./depression/depression.module').then( m => m.DepressionPageModule)
   },
+  {
+    path: 'stress-at',
+    loadChildren: () => import('./stress-at/stress-at.module').then( m => m.StressAtPageModule)
+  },
+  {
+    path: 'anger-at',
+    loadChildren: () => import('./anger-at/anger-at.module').then( m => m.AngerAtPageModule)
+  },
+  {
+    path: 'anxiety-at',
+    loadChildren: () => import('./anxiety-at/anxiety-at.module').then( m => m.AnxietyAtPageModule)
+  },
+  {
+    path: 'boredom-at',
+    loadChildren: () => import('./boredom-at/boredom-at.module').then( m => m.BoredomAtPageModule)
+  },
+  {
+    path: 'coping-with-illness-at',
+    loadChildren: () => import('./coping-with-illness-at/coping-with-illness-at.module').then( m => m.CopingWithIllnessAtPageModule)
+  },
+  {
+    path: 'depression-at',
+    loadChildren: () => import('./depression-at/depression-at.module').then( m => m.DepressionAtPageModule)
+  },
+  {
+    path: 'feeling-upset-at',
+    loadChildren: () => import('./feeling-upset-at/feeling-upset-at.module').then( m => m.FeelingUpsetAtPageModule)
+  },
+  {
+    path: 'loneliness-at',
+    loadChildren: () => import('./loneliness-at/loneliness-at.module').then( m => m.LonelinessAtPageModule)
+  },
+  {
+    path: 'relationship-problems-at',
+    loadChildren: () => import('./relationship-problems-at/relationship-problems-at.module').then( m => m.RelationshipProblemsAtPageModule)
+  },
+  {
+    path: 'sorrow-and-loss-at',
+    loadChildren: () => import('./sorrow-and-loss-at/sorrow-and-loss-at.module').then( m => m.SorrowAndLossAtPageModule)
+  },
 ];
 
 @NgModule({

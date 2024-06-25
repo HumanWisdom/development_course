@@ -564,10 +564,10 @@ export class AdultDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_fbn",
+        element: ".tour_eatid",
         popover: {
-          title: 'Feel better now',
-          description: 'Find breathing exercises, meditations and videos to feel better now.',
+          title: 'Change your topic of choice',
+          description: 'Choose from 8 broad topics to explore in depth.',
           side: "bottom"
         }
       },
@@ -580,10 +580,10 @@ export class AdultDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_eatid",
+        element: ".tour_fbn",
         popover: {
-          title: 'Change your topic of choice',
-          description: 'Choose from 8 broad topics to explore in depth.',
+          title: 'Feel better now',
+          description: 'Find breathing exercises, meditations and videos to feel better now.',
           side: "bottom"
         }
       },

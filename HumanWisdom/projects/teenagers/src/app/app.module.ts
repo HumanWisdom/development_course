@@ -26,15 +26,18 @@ import { StripeModule } from "stripe-angular";
 import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-index.page';
 import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
 import { FormsModule } from '@angular/forms';
+import { SplashPage } from './teenagers/splash/splash.page';
 @NgModule({
   declarations: [
     AppComponent,
     BlogIndexPage,
     BlogArticlePage,
+    SplashPage
 ],
     exports:[
         BlogIndexPage,
-        BlogArticlePage
+        BlogArticlePage,
+        SplashPage
     ],
   imports: [
     BrowserModule,
