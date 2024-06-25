@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-adults-audio-meditation',
@@ -21,7 +21,7 @@ export class AdultsAudioMeditationComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    private service: AdultsService
+    private navigationService:NavigationService
   )
   {
     this.audioLink = this.route.snapshot.paramMap.get('audiolink')
@@ -43,7 +43,7 @@ export class AdultsAudioMeditationComponent implements OnInit {
   }
 
   ngOnInit() {
-   let curr = this.service.currentUrl;
+   let curr = this.router.url;
    if(curr.includes('podcast')) {
       this.type = '';
    }else{
@@ -57,8 +57,15 @@ export class AdultsAudioMeditationComponent implements OnInit {
     }
   }
 
+
   goBack() {
-    this.location.back()
-  }
+    // this.router.navigate(["/adults/adult-dashboard"]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
+}
 
 }

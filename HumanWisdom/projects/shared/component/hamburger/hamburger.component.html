@@ -3,7 +3,7 @@
   <label class="m-menu__toggle m0px ihamburger" for="menu" (click)="disableClick ? $event.preventDefault() : null">
     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/tn_hamburger.svg" class="" alt="" (click)="getmenuevent()">
   </label>
-  <label class="m-menu__overlay" #closemodal for="menu"></label>
+  <label class="m-menu__overlay"  (click)="closemenuevent()" #closemodal for="menu"></label>
   <!-- submenu -->
   <div class="m-menu menu_parent" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
     <div class="m-menu__header" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
@@ -749,7 +749,7 @@
 </app-modal> -->
 
 <!-- modal logout -->
-<div *ngIf="isloggedIn" class="modal fade in" id="modal_logout" data-keyboard="false" data-backdrop="false">
+<div *ngIf="isloggedIn && isHamburgerClicked" class="modal fade in" id="modal_logout" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
