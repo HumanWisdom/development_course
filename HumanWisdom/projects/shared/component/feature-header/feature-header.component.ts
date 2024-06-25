@@ -70,10 +70,12 @@ export class FeatureHeaderComponent implements OnInit {
       console.log(error);
     });
    }
+
+
     goBack(){
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
-      this.location.back();
+      this.router.navigate([SharedService.getDashboardUrls()]);
     }else{
       this.router.navigate([url]);
     }
