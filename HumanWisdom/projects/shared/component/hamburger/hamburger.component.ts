@@ -228,10 +228,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   loginroute() {
-    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"], {
-      replaceUrl: true,
-      skipLocationChange: true
-    });
+    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
   }
 
   giftwisdom() {
