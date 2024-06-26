@@ -36466,7 +36466,9 @@ a.fc_e58d82:hover
 .div_fbn a:nth-child(4) .row,
 .div_fbn a:nth-child(7) .row,
 .div_fbn a:nth-child(10) .row,
-.div_fbn a:nth-child(13) .row
+.div_fbn a:nth-child(13) .row,
+.div_fbn a:nth-child(16) .row,
+.div_fbn a:nth-child(19) .row
 {
   background: #A54265;
 }
@@ -36485,7 +36487,8 @@ a.fc_e58d82:hover
 .div_fbn a:nth-child(5) .row,
 .div_fbn a:nth-child(8) .row,
 .div_fbn a:nth-child(11) .row,
-.div_fbn a:nth-child(14) .row
+.div_fbn a:nth-child(14) .row,
+.div_fbn a:nth-child(17) .row
 {
   background: #65BFC2;
 }
@@ -36503,7 +36506,8 @@ a.fc_e58d82:hover
 .div_fbn a:nth-child(6) .row,
 .div_fbn a:nth-child(9) .row,
 .div_fbn a:nth-child(12) .row,
-.div_fbn a:nth-child(15) .row
+.div_fbn a:nth-child(15) .row,
+.div_fbn a:nth-child(18) .row
 {
   background: #EE9596;
 }
