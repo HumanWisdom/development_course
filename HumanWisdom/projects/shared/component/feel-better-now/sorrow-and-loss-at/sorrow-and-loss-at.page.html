@@ -1,0 +1,115 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Understand and overcome sorrow
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/sorrow_and_loss.mp3"></app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Understand and overcome sorrow
+                    </p>
+
+                    <p>
+                      To be human is to experience the suffering of loss - of a person we love, our health, objects we have grown fond of, our pets and so on.
+                    </p>
+
+                    <p>
+                      Nobody can escape that suffering, no matter how rich or poor you may be. How we deal with that suffering though is up to us, and we are here to help you navigate that suffering using your own inner intelligence, so you can come through and find the joy in your life again.
+                    </p>
+
+                    <p>
+                      When you first suffer this pain of loss you can't think straight - your mind is full of strong emotions and you need some relief from that suffering.
+                    </p>
+
+                    <p>
+                      The app offers breathing exercises, journaling, meditations and tapping exercises to feel better now…they ground you to the present reality and provide some relief from the storm of emotions in your mind…reminding you that the thoughts may not be real, though the suffering they create is.
+                    </p>
+
+                    <p>
+                      Once you start feeling better the module on sorrow and loss that follows helps you to understand what is going on in your own mind to make you feel this way and guides you to a deeper sense of acceptance and peace.
+                    </p>
+
+                    <p>
+                      The journey to peace is unique for each of us, but there is peace to be found at the end of this journey - and a deeper understanding of your own mind can make this journey easier, and perhaps a bit quicker. Your commitment to learning about your own mind is all you need.
+                    </p>
+
+                    <p>
+                      Lets get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

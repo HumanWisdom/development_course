@@ -6,6 +6,7 @@ import { SharedService } from '../../../services/shared.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ProgramType } from '../../../models/program-model'
 import { CommonService } from '../../../services/common.service';
+import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-s51000',
@@ -48,6 +49,7 @@ export class S51000Page implements OnInit, OnDestroy {
     private service: CommonService,
     private location: Location,
     private meta: Meta, private title: Title, private ngNavigatorShareService: NgNavigatorShareService,
+    private navigationService:NavigationService
   ) {
     this.service.setmoduleID(51);
     this.getaudiomeditation()
@@ -182,9 +184,17 @@ export class S51000Page implements OnInit, OnDestroy {
   routeJournal() {
     this.router.navigate(['/adults/journal'])
   }
+
   goBack() {
-    this.location.back()
-  }
+    // this.router.navigate(["/adults/adult-dashboard"]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
+}
+
 
   audiopage(audiofile, title, RowID) {
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))

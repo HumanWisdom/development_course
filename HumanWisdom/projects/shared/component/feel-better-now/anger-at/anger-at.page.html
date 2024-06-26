@@ -1,0 +1,123 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Manage your own anger
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/anger.mp3"></app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Manage your own anger
+                    </p>
+
+                    <p>
+                      About 1 in 10 people have an anger management problem that significantly impacts their lives and 1 in 4 say they worry about how angry they get. If you struggle to manage your anger you are not alone.
+                    </p>
+
+                    <p>
+                      Anger is important to protect us from physical harm and an essential part of being human - but when it is uncontrolled it can harm us and others, damage our relationships and lead to long term unhappiness.
+                    </p>
+
+                    <p>
+                      We seem to have no control over our anger sometimes and it can just erupt - sometimes catching us by surprise.
+                    </p>
+
+                    <p>
+                      When we are angry the app offers things you can do to calm down now - breathing exercises, a meditation, journaling, or a tapping exercise.
+                    </p>
+
+                    <p>
+                      Once you feel more calm, would you like to explore how you can better manage your anger next week, next month and for the future? If not, it will keep on erupting and spoiling your own life.
+                    </p>
+
+                    <p>
+                      We assume our anger is triggered by others, or our circumstances -  that's just how our mind is wired - but it is not always the case.
+                    </p>
+
+                    <p>
+                      The most important thing to realise is that anger is an automatic reaction from our thinking to an external trigger - and behind all anger is a feeling of being disappointed or hurt. If we want to manage our own anger better, because it's harming our mental and physical health and our relationships, we need to begin by taking ownership of it and being curious about what lies behind it, without blaming ourselves or others for it.
+                    </p>
+
+                    <p>
+                      As we go on this journey of learning about our own mind and why we get angry, we can learn to manage our anger better so it serves it’s rightful purpose in our life.
+                    </p>
+
+                    <p>
+                      Continue now to explore the module on anger for an in depth understanding of anger and how you can manage it better. After that explore the guided questions on anger, listen to a podcast, or read a blog on the subject. Lets get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

@@ -14,13 +14,12 @@ export class ProfilePage implements OnInit {
   coachBio = [];
   id = '';
   baseUrl: string;
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  path:string='';
 
   constructor(private service: TeenagersService, private router: Router, private route: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
+    this.path = this.router.url;
     this.getCoachBio();
   }
 

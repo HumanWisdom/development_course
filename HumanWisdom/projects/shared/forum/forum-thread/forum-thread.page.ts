@@ -61,6 +61,8 @@ export class ForumThreadPage implements OnInit {
   path = "";
   sharedPostId = '';
   isReportPost = false;
+  isAdults: boolean = true; 
+
   constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService,) {
     this.userID = localStorage.getItem('userId');
     this.token = localStorage.getItem("shareToken");
@@ -75,6 +77,12 @@ export class ForumThreadPage implements OnInit {
         const navigation = this.router.getCurrentNavigation();
         this.programType = navigation.extras.state ? navigation.extras.state.programType : ProgramType.Adults;
       });
+
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
   }
 
   ngOnInit() {
@@ -147,10 +155,12 @@ export class ForumThreadPage implements OnInit {
   }
   navi() {
     localStorage.setItem('postid', this.posttread.PostID);
-    this.router.navigateByUrl('/forum/forum-thread-start-new',);
+    this.router.navigateByUrl(SharedService.getUrlfromFeatureName('/forum/forum-thread-start-new'));
 
   }
-
+  routeToLanding(){
+    this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+  }
   like(PostID, ParentPOstID = null, index: number) {
     if (this.isLoggedIn) {
       this.service.likePost({ PostID: PostID, UserID: this.userID }).subscribe(res => {
@@ -182,7 +192,8 @@ export class ForumThreadPage implements OnInit {
       "UserId": this.posttread.UserId,
       "ParentPostID": "0",
       "ReflectionID": "0",
-      "TagIds": "0"
+      "TagIds": "0",
+      "ProgID": SharedService.ProgramId
     };
     this.service.UpdatePost(model).subscribe(res => {
       if (res) {
@@ -211,7 +222,8 @@ export class ForumThreadPage implements OnInit {
       "Post": item.ReplyPost,
       "UserId": item.ReplyPostUserID,
       "ReflectionID": "0",
-      "TagIds": "0"
+      "TagIds": "0",
+      "ProgID": SharedService.ProgramId
     };
     this.service.UpdatePost(model).subscribe(res => {
       if (res) {
@@ -342,7 +354,7 @@ export class ForumThreadPage implements OnInit {
   }
 
   shareOnThread(item) {
-    this.path = "http://humanwisdom.me/forum/forum-thread/" + item.PostID;
+    this.path = `http://humanwisdom.me/${SharedService.getprogramName()}/forum/forum-thread/${item.PostID}`;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
     // }
@@ -407,7 +419,7 @@ export class ForumThreadPage implements OnInit {
   }
 
   gotToProfile(UserId) {
-    this.router.navigate(['/forum/profile/', UserId]);
+    this.router.navigate([SharedService.getprogramName()+'/forum/profile/', UserId]);
   }
 
   reportComment(item) {
