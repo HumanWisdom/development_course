@@ -13,7 +13,7 @@
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
-                  Connect with our specialists today and see how we can help you prioritize a happier workspace
+                  Connect with our specialists today and see how we can help you
                 </h4>
               </div>
             </div>
