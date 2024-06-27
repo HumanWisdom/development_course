@@ -93,14 +93,14 @@
 
               <!-- overflow buttons -->
               <div class="row mr-20pxi mtb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv btn_podcast">
-                  <ng-container *ngFor="let data of prefData">
-                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] === 'All'"
+                <div class="col-md-12 col-sm-12 col-xs-12 odiv btn_podcast" >
+                  <ng-container *ngFor="let data of prefData"> 
+                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] === 'All'" 
                      [ngStyle]="{'color': selectedPref === 'All' ? '#000' : '', 'background': selectedPref === 'All' ? '#fff' : '' }" (click)="getUserPref(data)">
                       {{data['name']}}
                     </button>
 
-                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] !== 'All'" (click)="getUserPref(data)">
+                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] !== 'All'" (click)="getUserPref(data)" [ngClass]="isAdults ? '' : 'we_ft_cl'">
                      {{data['name']}}
                    </button>
 

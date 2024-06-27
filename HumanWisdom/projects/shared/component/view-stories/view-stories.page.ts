@@ -340,7 +340,8 @@ export class ViewStoriesPage implements OnInit {
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
-      url: this.path + '?sId=' + this.sId + '&t=' + this.token
+      //url: this.path + '?sId=' + this.sId + '&t=' + this.token
+      url: this.path + '?sId=' + this.sId 
     }).then((response) => {
     })
       .catch((error) => {
