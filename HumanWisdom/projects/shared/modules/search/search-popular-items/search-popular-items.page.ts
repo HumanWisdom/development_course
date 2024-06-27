@@ -8,6 +8,7 @@ import { ForumService } from '../../../forum/forum.service';
 import { SearchDataModel } from '../../../models/search-data-model';
 import { ProgramType } from '../../../models/program-model';
 import { SharedService } from '../../../services/shared.service';
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -29,20 +30,21 @@ export class SearchPopularItemsPage implements OnInit {
   PostComment: string = ''
   public qrList: any
   public userId = 100
-  isAdults: boolean = true; 
+  feelBetterNowTopic:string ='';
+  isAdults: boolean = true;
 
-  constructor(private adultService: AdultsService,
+  constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
     private router: Router,
     private route: ActivatedRoute,
-    private location: Location,) {
-      if (SharedService.ProgramId == ProgramType.Adults) {
-        this.isAdults = true;
-      } else {
-        this.isAdults = false;
-      }
-     }
+  ) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   ngOnInit() {
     this.search = this.route.snapshot.paramMap.get('word')
@@ -62,7 +64,8 @@ export class SearchPopularItemsPage implements OnInit {
       PodCastRes: [],
       SessionRes: [],
       WisdomShortsRes: [],
-      WisdomStoriesRes: []
+      WisdomStoriesRes: [],
+      FeelBetterNowRes:null
     } as SearchDataModel;
   }
 
@@ -81,22 +84,23 @@ export class SearchPopularItemsPage implements OnInit {
     return 0;
 
   }
-  view(item){
+  view(item) {
     /* localStorage.setItem("blogdata",JSON.stringify(item))
     localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
     this.router.navigate(['/blog/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}});
    */
-    this.router.navigateByUrl(SharedService.getprogramName()+item['url']);
-    
+    this.router.navigateByUrl(SharedService.getprogramName() + item['url']);
+
   }
- 
+
   getSourceForPodBin(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
   }
   getSearchData() {
-    this.adultService.getSearchDataForSearchSite(this.search).subscribe(res => {
+    this.commonService.getSearchDataForSearchSite(this.search).subscribe(res => {
       if (res) {
         this.searchData = res;
+        this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
     });
     this.getForumSearchData();
@@ -127,7 +131,7 @@ export class SearchPopularItemsPage implements OnInit {
     }
   }
   getForumSearchData() {
-    this.adultService.getForumSearchDataSite(this.search).subscribe(res => {
+    this.serivce.getForumSearchDataSite(this.search).subscribe(res => {
       if (res) {
         this.list(res);
       }
@@ -218,13 +222,13 @@ export class SearchPopularItemsPage implements OnInit {
 
   routemodule(res) {
     localStorage.setItem("moduleId", JSON.stringify(res['ModuleId']))
-    this.adultService.clickModule(res['ModuleId'], this.userId)
+    this.commonService.clickModule(res['ModuleId'], this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
         if (res.lastVisitedScreen === '') {
           localStorage.setItem("lastvisited", 'F')
-        }else {
+        } else {
           localStorage.setItem("lastvisited", 'T')
         }
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -232,11 +236,20 @@ export class SearchPopularItemsPage implements OnInit {
     this.router.navigate([res['ModuleUrl']]);
   }
 
-  timeSince(date){
+  timeSince(date) {
     return moment.utc(date).fromNow();
   }
 
-  stripTags(story){
+  stripTags(story) {
     //
   }
+
+  getFeelBetterNowTitle(url) {
+    return url?.split('/')?.[2];
+  }
+
+  routeToFeelBetterNow(url) {
+    this.router.navigate([SharedService.getUrlfromFeatureName(url)]);
+  }
+
 }

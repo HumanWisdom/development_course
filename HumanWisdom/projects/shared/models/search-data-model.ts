@@ -6,6 +6,7 @@ export interface SearchDataModel {
   JournalRes: any[];
   PodCastRes: PodCastRe[];
   WisdomShortsRes: WisdomShortsRe[];
+  FeelBetterNowRes:string;
 }
 
 interface WisdomShortsRe {
