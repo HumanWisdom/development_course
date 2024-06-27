@@ -46,6 +46,40 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="200">
+              <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Manage your emotions
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                      #10 ways understanding your mind could transform your life 
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      <!-- 25 days ago  -->
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="200">
               <a class="" href="difficult_emotions.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -112,6 +146,8 @@
                 </div>
               </a>
             </div>
+
+            <div class="clearfix"></div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="400">
               <a class="" href="self_Awareness_can_help_relationships_flourish.php">
@@ -215,6 +251,8 @@
               </a>
             </div>
 
+            <div class="clearfix"></div>
+
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="700">
               <a class="" href="the_missed_opportunity_in_relationships.php">
                 <div class="row">
@@ -252,8 +290,6 @@
                 </div>
               </a>
             </div>
-
-            <div class="clearfix"></div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="800">
               <a class="" href="how_to_manage_your_own_mental_health.php">
@@ -331,6 +367,9 @@
               </a>
             </div>
 
+            <div class="clearfix"></div>
+
+
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1000">
               <a class="" href="6_ways_to_transform_organisations.php">
                 <div class="row">
@@ -364,8 +403,6 @@
                 </div>
               </a>
             </div>
-
-            <div class="clearfix"></div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
               <a class="" href="6_barriers_to_overcoming_stress.php">
