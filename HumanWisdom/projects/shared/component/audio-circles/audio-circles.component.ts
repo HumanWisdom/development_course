@@ -2,6 +2,8 @@ import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChil
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-audio-circles',
@@ -26,6 +28,7 @@ export class AudioCirclesComponent implements OnInit, AfterViewInit {
   scrId: any
   reachedLimit = false;
   enableAlert = false;
+  isAdults: boolean = true; 
 
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
@@ -40,6 +43,11 @@ export class AudioCirclesComponent implements OnInit, AfterViewInit {
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   ngOnInit() {
@@ -92,7 +100,24 @@ export class AudioCirclesComponent implements OnInit, AfterViewInit {
         this.enableAlert = true;
         // window.alert('You have reached free limit')
       }
+
     };
+    this.setAudioControlsBackground();
+  }
+
+  setAudioControlsBackground() {
+    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
   }
 
   getAlertcloseEvent(event) {
