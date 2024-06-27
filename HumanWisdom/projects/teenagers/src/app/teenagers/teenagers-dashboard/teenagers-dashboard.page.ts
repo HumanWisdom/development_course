@@ -2055,10 +2055,10 @@ export class TeenagersDashboardPage implements OnInit {
 
   routeToUrl(url){
     if(url.includes('isGuided')){
-      SharedService.isFromAdults = true;
+      // SharedService.isFromAdults = true;
       this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
     }else{
-      window.location = url;
+      this.router.navigate([`/${url}`])
     }
   }
 

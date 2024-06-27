@@ -159,6 +159,6 @@ export class ForumService {
   }
 
   getForumSearchDataSite(data): Observable<any> {
-    return this.http.get(this.path + `/GetAllPosts_Search/${data}`);
+    return this.http.get(this.path + `/GetAllPosts_Search/${data}/${SharedService.ProgramId}`);
   }
 }
