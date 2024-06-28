@@ -318,7 +318,7 @@ const routes: Routes = [
   },
   {
     path: 'testimonials',
-    loadChildren: () => import('./testimonials/testimonials.module').then(m => m.TestimonialsPageModule)
+    loadChildren: () => import('../../../../shared/component/testimonials/testimonials.module').then(m => m.TestimonialsPageModule)
   },
   {
     path: 'tree-planting-program',
