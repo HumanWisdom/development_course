@@ -2062,7 +2062,7 @@ export class TeenagersDashboardPage implements OnInit {
 
       this.logeventservice.logEvent("click_upcoming_event");
      let eid = url.split('eid=')[1];
-      this.router.navigate(['/adults/events/event'], { queryParams: { eid: `${eid}` } })    
+      this.router.navigate(['/teenagers/events/event'], { queryParams: { eid: `${eid}` } })    
       
     
     }
