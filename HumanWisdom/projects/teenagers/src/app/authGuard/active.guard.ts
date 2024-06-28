@@ -52,7 +52,7 @@ export class ActiveGuard implements CanActivate, OnInit {
     }
 
 
-    if (!(m[0].includes("wisdom-shorts")) && sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
+    if ( sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
       return true;
     }
    /*  else if (sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
