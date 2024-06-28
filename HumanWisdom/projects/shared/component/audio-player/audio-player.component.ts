@@ -21,5 +21,21 @@ export class AudioPlayerComponent implements OnInit  {
     } else {
       this.isAdults = false;
     }
+    this.setAudioControlsBackground(); 
+  }
+
+  setAudioControlsBackground() {
+    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+  
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+  
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
   }
 }

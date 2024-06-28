@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { LogEventService } from "src/app/log-event.service";
+import { SharedService } from '../../../../../shared/services/shared.service';
 
 var style = {
   base: {
@@ -70,7 +71,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
     let couponid = localStorage.getItem("couponid")
     let obj = {
       UserID: userId,
-      ProgramID: '9',
+      ProgramID:SharedService.ProgramId,
       PlanId: plan === 'Annual' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,

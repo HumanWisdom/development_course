@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
@@ -13,6 +13,7 @@ import { paymentIntentModel } from '../../models/search-data-model';
   styleUrls: ['./proceed-to-payment.page.scss'],
 })
 export class ProceedToPaymentPage implements OnInit {
+  @ViewChild('modalClick') modalClick: any;
   selectedSubscription: string;
   Monthly: string;
   Annual: string;
@@ -168,21 +169,29 @@ export class ProceedToPaymentPage implements OnInit {
       this.totalCartValue = this.pricingModel.Annual;
     }
 
+
+
+
     this.onboardingService.couponValidation({
       "CouponCode": this.discountCode,
       "CartAmt": this.totalCartValue
     }).subscribe(
       res => {
         if (res.length !== 0) {
-          this.couponCodeApplied = true;
-          this.onboardingService.toastrService.success('', 'Coupon applied successfully');
-          this.msg = 'Coupon applied successfully'
-          this.discount = parseFloat(res[0].Discount)
-          localStorage.setItem("couponid", res[0]['CouponID'])
-          this.totalCartValueDiscount = this.totalCartValue - this.discount;
-          this.percentage = res[0].Percentage
+          if(res[0].IsAnnual =='1' && this.selectedSubscription == Constant.MonthlyPlan){
+            this.couponCodeApplied = false;
+            this.discountCode= '';
+            this.modalClick.nativeElement.click();
+          }else{
+            this.couponCodeApplied = true;
+            this.onboardingService.toastrService.success('', 'Coupon applied successfully');
+            this.msg = 'Coupon applied successfully'
+            this.discount = parseFloat(res[0].Discount)
+            localStorage.setItem("couponid", res[0]['CouponID'])
+            this.totalCartValueDiscount = this.totalCartValue - this.discount;
+            this.percentage = res[0].Percentage
+          }
         }
-
         else {
           this.onboardingService.toastrService.error('', 'Please enter a valid coupon code. ');
           this.msg = 'Please enter a valid coupon code. '
