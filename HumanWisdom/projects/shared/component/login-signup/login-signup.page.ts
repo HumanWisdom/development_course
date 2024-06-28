@@ -1021,7 +1021,7 @@ export class LoginSignupPage implements OnInit {
   
   routeForgotPassword(){
     if(this.isAdults){
-      this.router.navigate(['/onboarding/forgotpassword'])
+      this.router.navigate(['/adults/onboarding/forgotpassword'])
     }else{
       this.router.navigate(['/teenagers/onboarding/forgotpassword'])
     }
