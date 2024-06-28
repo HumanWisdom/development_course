@@ -32782,7 +32782,8 @@ body *
   padding-right: 5px;
 }
 
-.div_fi_a .col-lg-6:nth-child(1) button
+.div_fi_a .col-lg-6:nth-child(1) button,
+.div_fi_a .col-lg-6:nth-child(7) button
 {
   background: #65BFC2;
 }
