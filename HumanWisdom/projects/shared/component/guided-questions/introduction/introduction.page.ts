@@ -18,10 +18,12 @@ export class IntroductionPage implements OnInit {
   constructor(public route: ActivatedRoute, private router: Router,
     private service: CommonService, private location:Location,private navigationService:NavigationService) {
       let url = this.route.snapshot.paramMap.get('TopicName');
-      this.GetGuidedQs_Topics(url);
-      if(this.router.getCurrentNavigation()!=null &&  this.router.getCurrentNavigation().extras && this.router.getCurrentNavigation().extras.state){
-        this.isByPass=  this.router.getCurrentNavigation().extras.state.isBypass;
-      }
+      setTimeout(() => {
+        this.GetGuidedQs_Topics(url);
+        if(this.router.getCurrentNavigation()!=null &&  this.router.getCurrentNavigation().extras && this.router.getCurrentNavigation().extras.state){
+          this.isByPass=  this.router.getCurrentNavigation().extras.state.isBypass;
+        }    
+      }, 0);
   }
 
   ngOnInit() {

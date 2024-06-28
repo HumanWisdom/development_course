@@ -18,7 +18,7 @@ export class S122045Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/nature-of-the-i/s122046"
+  link="teenagers/nature-of-the-i/s122046"
   name="#2 Four ways nature-of-the-i impacts our life"
   progressImg=""
   toc="teenagers/nature-of-the-i/s122001"
@@ -50,7 +50,7 @@ export class S122045Page implements OnInit
   {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="the nature of i").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==122).Percentage)
      console.log(this.progressPercent)
     })
   }

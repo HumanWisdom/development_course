@@ -51,10 +51,10 @@ export class ForumService {
     switch (index) {
       case 0:
         if (searchText) {
-          url = this.path + `/GetAllPosts/${searchText}/${SharedService.ProgramId}`;
+          url = this.path + `/GetAllPosts_Search/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetAllPosts/${SharedService.ProgramId}`;
+          url = this.path + `/GetAllPosts_Prog/${SharedService.ProgramId}`;
         }
         break;
       case 1:
@@ -70,7 +70,7 @@ export class ForumService {
           url = this.path + `/GetPosts/${uID}/${searchText}/${SharedService.ProgramId}`;
         }
         else {
-          url = this.path + `/GetPosts/${uID}/${SharedService.ProgramId}`;
+          url = this.path + `/GetPosts_Prog/${uID}/${SharedService.ProgramId}`;
         }
         break;
       case 3:
@@ -83,7 +83,7 @@ export class ForumService {
         break;
 
       default:
-        url = this.path + `/GetAllPosts/${SharedService.ProgramId}`;
+        url = this.path + `/GetAllPosts_Prog/${SharedService.ProgramId}`;
         break;
     }
     return this.http.get(url);
@@ -159,6 +159,6 @@ export class ForumService {
   }
 
   getForumSearchDataSite(data): Observable<any> {
-    return this.http.get(this.path + `/GetAllPosts/${data}`);
+    return this.http.get(this.path + `/GetAllPosts_Search/${data}/${SharedService.ProgramId}`);
   }
 }

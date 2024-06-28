@@ -94,18 +94,14 @@ export class ChangeTopicPage implements OnInit {
   }
 
   goBack() {
+    // this.router.navigate(["/adults/adult-dashboard"]);
     var url = this.navigation.navigateToBackLink();
     if (url == null) {
-      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
-      if (url && url != null && url != 'null') {
-        this.router.navigate([url]);
-      } else {
-        this.location.back();
-      }
+      this.location.back();
     }else{
       this.router.navigate([url]);
     }
-  }
+}
 
   update(id, name) {
     console.log("update")

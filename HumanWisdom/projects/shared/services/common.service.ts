@@ -304,4 +304,11 @@ export class CommonService {
   GetCountry() {
     return this.http.get(this.path + `/Countries`);
   }
+
+  getSearchDataForSearchSite(data): Observable<any> {
+    return this.http.post(this.path + `/SiteSearch/${data}/${SharedService.ProgramId}`, {})
+  }
+  getForumSearchDataSite(data): Observable<any> {
+    return this.http.get(this.path + `/GetAllPosts/${data}`);
+  }
 }

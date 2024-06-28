@@ -40,9 +40,13 @@ export class IndexPage implements OnInit {
     }
   }
 
-  goBack()
-  {
-    this.location.back();
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   routeToTab(param){

@@ -16,15 +16,15 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 export class IndexPage implements OnInit {
   coachList = [];
   baseUrl: string;
-  path = setTimeout(() => {
-    return this.router.url;
-  }, 1000);
+  path:string='';
 
   constructor(private service: AdultsService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
      private navigationService: NavigationService,
      private location: Location)
-      { }
+      {
+        this.path =  this.router.url;
+       }
 
   ngOnInit() {
     this.getAllCoachList();

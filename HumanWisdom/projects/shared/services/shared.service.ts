@@ -12,11 +12,15 @@ export class SharedService {
   public static enablebanner = false;
   public static isIos = false;
   public static isFromAdults = false;
-  
   constructor() {
   }
 
-
+  public static isAdultProgram(){
+    if (SharedService.ProgramId == ProgramType.Adults) {
+     return true;
+    } 
+    return false;
+  }
    
 
   public static setDataInLocalStorage(key: string, value: string) {

@@ -231,6 +231,10 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
         this.logeventservice.logEvent('click_calm_mind');
         this.route.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+      } else if (name === 'Manage your mental health') {
+        localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
+        this.logeventservice.logEvent('click_calm_mind');
+        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
       }
     }else {
       if (this.isloggedIn) {
