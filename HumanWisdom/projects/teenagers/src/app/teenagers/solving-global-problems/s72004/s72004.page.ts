@@ -1,5 +1,5 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
@@ -12,7 +12,7 @@ export class S72004Page implements OnInit,OnDestroy {
 
   bg="dark_blue_w4"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/solving-global-problems/videos/1.4.mp4'  
+  videoLink=this.mediaVideo+'/solving-global-problems/videos/1.4.mp4'
   title="Ending Conflict"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/solving_global_problems/solving_global_problems_04.jpg"
   toc=""
@@ -24,9 +24,9 @@ export class S72004Page implements OnInit,OnDestroy {
   screenNumber=72004
   startTime:any
   endTime:any
-  totalTime:any  
- 
-  
+  totalTime:any
+
+
   // toc="/solving-global-problems/s72004"
   bookmark=0
   path = setTimeout(() => {
@@ -35,35 +35,35 @@ export class S72004Page implements OnInit,OnDestroy {
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
-  
- 
+
+
+
   constructor(
     private router: Router,
-    private service:AdultsService,
+    private service:TeenagersService,
     private location:Location
   ) { }
 ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
+
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
   else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
-  
+
     this.startTime = Date.now();
-    
+
     if(JSON.parse(sessionStorage.getItem("bookmark72004"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark72004"))==1)
       this.bookmark=1
-   
-   
- 
- 
-    
+
+
+
+
+
   }
   receiveBookmark(e)
   {
@@ -82,15 +82,15 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        
+
       })
-    
- 
+
+
   }
- 
+
 
   submitProgress(){
-   
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
@@ -104,13 +104,13 @@ createScreen(){
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        
+
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
+
     this.router.navigate(['/adults/solving-global-problems/s72004p1'])
-   
+
 
   }
   prev(){
