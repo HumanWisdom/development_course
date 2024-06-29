@@ -34863,7 +34863,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .div_intro 
 {
-   background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
+   background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important;
 }
 
 .mt70px
@@ -37147,4 +37147,108 @@ span
   border: 0;
 }
 
+.w0p 
+{
+  width: 0% !important;
+}
+
+.vhr_03
+{
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin: 0 auto;
+  height: 81px;
+  display: -webkit-inline-box;
+  display: inline-block;
+}
+
+.tn_dailycheckin
+{
+  height: 80px;
+  background: transparent;
+  box-shadow: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.pt80pxi
+{
+  padding-top: 80px !important;
+}
+
+.div_smiley>[class^=col-]
+{
+  width: 20%;
+  margin-bottom: 30px;
+}
+
+.footer_dailycheckin
+{
+  height: 110px;
+  padding: 30px 20px;
+}
+
+.img_journal_emoji
+{
+  width: 86px;
+  height: 86px;
+}
+
+.ta_dailycheckin
+{
+  height: 163px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: rgba(0, 0, 0, 0.10);
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.ta_dailycheckin::-webkit-input-placeholder
+{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 70px 0 0 0;
+}
+
+.ta_dailycheckin:focus
+{
+  color: #FFF;
+  outline: none;
+  padding: 90px 0 0 20px;
+}
+
+.ta_absolute_emoji
+{
+  /* position: absolute;
+  margin: 20px 0 5px 1ch; */
+
+  position: absolute;
+  padding: 20px 0 5px 20px !important;
+  background: transparent;
+  /* background: rgba(131, 75, 102, 0.9); */
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.lab-modal-body_dc 
+{
+  padding: 40px;
+}
 /* /version - 03 */
