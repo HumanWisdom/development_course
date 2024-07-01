@@ -51,7 +51,7 @@
                 <div id="tab1" class="tab-pane fade in active">
                   <div class="">
                     <div class="row mb10px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="enableChart">
                         <div *ngFor="let data of chartData">
                           <div style="margin-bottom: 10px">
                             <span class="labelClass">{{data['lineChartData'][0]['label']}}</span>

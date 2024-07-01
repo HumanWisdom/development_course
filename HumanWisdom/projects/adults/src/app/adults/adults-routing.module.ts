@@ -650,6 +650,22 @@ const routes: Routes = [
     // canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
+  {
+    path: 'note-save-smiley',
+    loadChildren: () => import('./note-save-smiley/note-save-smiley.module').then( m => m.NoteSaveSmileyPageModule)
+  },
+  {
+    path: 'note-save',
+    loadChildren: () => import('./note-save/note-save.module').then( m => m.NoteSavePageModule)
+  },
+  {
+    path: 'note-add-smiley',
+    loadChildren: () => import('./note-add-smiley/note-add-smiley.module').then( m => m.NoteAddSmileyPageModule)
+  },
+  {
+    path: 'note-add',
+    loadChildren: () => import('./note-add/note-add.module').then( m => m.NoteAddPageModule)
+  },
 ];
 
  @NgModule({

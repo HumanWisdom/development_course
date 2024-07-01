@@ -348,7 +348,7 @@ export class TeenagersDashboardPage implements OnInit {
   }
 
   viewDetails() {
-    this.router.navigate(["/onboarding/user-profile"]);
+    this.router.navigate(["teenagers/onboarding/user-profile"]);
   }
 
   loginpage() {
@@ -2057,7 +2057,16 @@ export class TeenagersDashboardPage implements OnInit {
     if(url.includes('isGuided')){
       // SharedService.isFromAdults = true;
       this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
-    }else{
+    }
+    else if(url.includes('eid=')) { 
+
+      this.logeventservice.logEvent("click_upcoming_event");
+     let eid = url.split('eid=')[1];
+      this.router.navigate(['/teenagers/events/event'], { queryParams: { eid: `${eid}` } })    
+      
+    
+    }
+    else{
       this.router.navigate([`/${url}`])
     }
   }

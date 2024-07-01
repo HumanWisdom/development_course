@@ -32782,7 +32782,8 @@ body *
   padding-right: 5px;
 }
 
-.div_fi_a .col-lg-6:nth-child(1) button
+.div_fi_a .col-lg-6:nth-child(1) button,
+.div_fi_a .col-lg-6:nth-child(7) button
 {
   background: #65BFC2;
 }
@@ -36557,5 +36558,21 @@ a.fc_e58d82:hover
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.toc_adiv_04 a .row 
+{
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #0C2B5F;
+  min-height: 60px;
+  margin-bottom: 10px;
+  padding: 20px;
+  /* margin: 0 10px 10px 10px; */
+}
+
+.toc_adiv_04 .session_img
+{
+  border: 0;
 }
 /* /version - 03 */

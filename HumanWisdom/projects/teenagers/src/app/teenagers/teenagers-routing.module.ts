@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/what-is-wisdom/what-is-wisdom.module').then(m => m.WhatIsWisdomModule)
   },
   {
+    path: 'solving-global-problems',
+    loadChildren: () => import('../teenagers/solving-global-problems/solving-global-problems.module').then(m => m.SolvingGlobalProblemsModule)
+  },
+  {
     path: 'how-can-wisdom-help',
     loadChildren: () => import('../teenagers/how-can-wisdom-help/how-can-wisdom-help.module').then(m => m.HowCanWisdomHelpModule)
   },

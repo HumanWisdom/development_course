@@ -126,7 +126,7 @@ export class WisdomScalePage implements OnInit {
         } else {
          this.isAdults = false;
         }
-    
+
 
   }
 
@@ -149,7 +149,6 @@ export class WisdomScalePage implements OnInit {
         e => console.log(e),
         () => {
 
-          console.log(this.qrList.ListOfQueOpts)
           this.questionA = this.qrList.ListOfQueOpts
 
           this.q1 = this.findQuestion(122).Question
@@ -175,7 +174,6 @@ export class WisdomScalePage implements OnInit {
         })
 
     this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
-      console.log(r)
       var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
       // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
