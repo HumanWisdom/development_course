@@ -1,0 +1,55 @@
+name: Deploy-Website
+on:
+  push:
+    branches: [Production]
+    
+jobs:
+  build-website:
+     runs-on: ubuntu-latest
+    
+     steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+
+     - name: Compress the build artifacts
+       run: |
+        cd HumanWisdom
+        mkdir -p builds/compressed
+        tar -czf builds/compressed/website.tgz projects/getStarted
+     - name: Upload artifact
+       uses: actions/upload-artifact@v2
+       with:
+        name: website-artifact
+        path: HumanWisdom/builds/compressed/website.tgz
+  
+  website-deploy:
+     runs-on: ubuntu-latest
+     needs: build-website
+     steps:
+     - name: Download artifact
+       uses: actions/download-artifact@v2
+       with:
+        name: website-artifact
+
+     - name: Copy the artifact to remote server
+       uses: appleboy/scp-action@master
+       with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
+        source: "website.tgz"
+        target: "builds/compressed/${{ github.run_id }}"
+        
+     - name: Setup the build on remote server
+       uses: appleboy/ssh-action@master
+       with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
+        script: |
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
+          sudo rm -rf /var/www/html/getStarted/
+          sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/          
+          sudo chown ubuntu:ubuntu /var/www/html/getStarted
