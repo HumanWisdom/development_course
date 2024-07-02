@@ -3,7 +3,7 @@
   <label class="m-menu__toggle m0px ihamburger" for="menu" (click)="disableClick ? $event.preventDefault() : null">
     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/tn_hamburger.svg" class="" alt="" (click)="getmenuevent()">
   </label>
-  <label class="m-menu__overlay"  (click)="closemenuevent()" #closemodal for="menu"></label>
+  <label class="m-menu__overlay m-menu__toggle" #closemodal for="menu"></label>
   <!-- submenu -->
   <div class="m-menu menu_parent" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
     <div class="m-menu__header" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">

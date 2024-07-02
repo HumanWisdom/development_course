@@ -53,6 +53,7 @@ export class ProfilePage implements OnInit {
   enableAlert: boolean;
   profileUsername:string="";
   programType = ProgramType.Adults
+  isAdults:boolean = false;
   constructor(private route: ActivatedRoute, private forumService: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location, public onboardingService: OnboardingService
   ) {
@@ -71,6 +72,7 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
+    this.isAdults = SharedService.isAdultProgram();
     this.getAllPosts(2, this.userId);
   }
 
