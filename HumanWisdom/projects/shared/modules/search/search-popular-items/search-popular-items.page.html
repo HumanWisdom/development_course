@@ -75,9 +75,9 @@
                   <!-- learning -->
                   <div id="tab1" *ngIf="tabName=='Learning'" class="tab-pane fade in active">
 
-                  
+
                     <!-- podcasts -->
-          
+
                     <!-- /podcasts -->
 
 
@@ -88,7 +88,8 @@
                           Pathway
                         </h4>
 
-                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="searchData.ModuleRes.length==0">
+                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+                          *ngIf="searchData.ModuleRes.length==0">
                           No Record Found
                         </h4>
                       </div>
@@ -96,18 +97,26 @@
 
                     <div class="toc_adiv">
                       <!-- video row -->
-                      <a (click)="routemodule(item)" *ngFor="let item of searchData.ModuleRes">
+                      <a (click)="routemodule(item)" *ngFor="let item of searchData.ModuleRes; let i=index">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative" *ngIf="isAdults==true">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/0{{item.ModuleId}}.png" alt="" class="p0 session_img" *ngIf="item.ModuleId<10">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/{{item.ModuleId}}.png" alt="" class="p0 session_img" *ngIf="item.ModuleId>10">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/0{{item.ModuleId}}.png"
+                                alt="" class="p0 session_img" *ngIf="item.ModuleId<10">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/{{item.ModuleId}}.png"
+                                alt="" class="p0 session_img" *ngIf="item.ModuleId>10">
                             </div>
                             <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative" *ngIf="isAdults==false">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/0{{item.ModuleId}}.webp" alt="" class="p0 session_img" *ngIf="item.ModuleId<10">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{item.ModuleId}}.webp" alt="" class="p0 session_img" *ngIf="item.ModuleId>10">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/0{{item.ModuleId}}.webp"
+                                alt="" class="p0 session_img" *ngIf="item.ModuleId<10">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{item.ModuleId}}.webp"
+                                alt="" class="p0 session_img" *ngIf="item.ModuleId>10">
                             </div>
-                
+
                             <div class="col-md-7 col-sm-7 col-xs-7 p0 pl20pxi">
                               <h4 class="mt0px mb5px fs_15px fw_400 lh_150p fc_e58d82">
                                 {{item.SectionName}}
@@ -118,6 +127,35 @@
                             </div>
                           </div>
                         </div>
+
+                        <a (click)="enableViewMore('key_ideas')"
+                          *ngIf="enablekeyideasViewMore && searchData.ModuleRes.length > 2 && i === 2">
+                          <div class="mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                  class="img-responsive mb10px">
+                                View More
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
+                        <a (click)="enableViewLess('key_ideas')"
+                          *ngIf="!enablekeyideasViewMore && searchData.ModuleRes.length > 2 && i === 2">
+                          <div class="mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                  class="img-responsive mb10px">
+                                View Less
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
                       </a>
                       <!-- /video row -->
                     </div>
@@ -132,7 +170,7 @@
                     </div> -->
 
 
-                    <div class="row mt30px mb15px"  *ngIf="feelBetterNowTopic && feelBetterNowTopic != ''">
+                    <div class="row mt30px mb15px" *ngIf="feelBetterNowTopic && feelBetterNowTopic != ''">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                           Feel Better Now
@@ -145,7 +183,7 @@
                       <a (click)="routeToFeelBetterNow(searchData.FeelBetterNowRes)">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    
+
                             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                               <h4 class="mtb0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                                 {{feelBetterNowTopic}}
@@ -165,7 +203,7 @@
                       <a [routerLink]="item.ModuleUrl" *ngFor="let item of searchData.SessionRes;let i=index">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            
+
                             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                                 {{item.ModuleName}}
@@ -174,11 +212,11 @@
                                 #{{i+1}} {{item.SessionName}}
                               </h4>
                             </div>
-                
+
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                             </div>
-                
+
                           </div>
                         </div>
                       </a>
@@ -192,38 +230,69 @@
                           Life Stories
                         </h4>
 
-                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="searchData.WisdomStoriesRes.length==0">
+                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+                          *ngIf="searchData.WisdomStoriesRes.length==0">
                           No Record Found
                         </h4>
                       </div>
                     </div>
 
                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow" *ngIf="searchData.WisdomStoriesRes.length>0">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of searchData.WisdomStoriesRes">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow"
+                        *ngIf="searchData.WisdomStoriesRes.length>0">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                          *ngFor="let item of searchData.WisdomStoriesRes">
                           <!-- <a href="https://humanwisdom.me/wisdom-stories/view-stories?sId={{item.ScenarioID}}"> -->
-                          <a  (click)="view(item)"  >
+                          <a (click)="view(item)">
                             <div class="row box_v3_04a">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  
+
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                     <img [src]="item.ImgUrl" class="img-responsive">
                                   </div>
-                                </div>  
-                  
+                                </div>
+
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
                                       {{item.Title}}
                                     </h4>
                                   </div>
-                                </div>  
-                  
+                                </div>
+
                               </div>
                             </div>
                           </a>
                         </div>
+
+                        <a (click)="enableViewMore('story','more')"
+                          *ngIf="!enableStoryViewMore && searchData.WisdomStoriesRes.length>1">
+                          <div class="mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                  class="img-responsive mb10px">
+                                View More
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+
+                        <a (click)="enableViewMore('story','less')"
+                          *ngIf="enableStoryViewMore  && searchData.WisdomStoriesRes.length>1">
+                          <div class="mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                  class="img-responsive mb10px">
+                                View Less
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
                       </div>
                     </div>
                     <!-- /wisdom stories -->
@@ -235,7 +304,8 @@
                           Short videos
                         </h4>
 
-                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="searchData.WisdomShortsRes.length==0">
+                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+                          *ngIf="searchData.WisdomShortsRes.length==0">
                           No Record Found
                         </h4>
                       </div>
@@ -249,9 +319,11 @@
                             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
                               <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
                                 <img src="{{item.ImgUrl}}" alt="" class="p0 session_img">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg" alt="" class="p0 session_img_play">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+                                  alt="" class="p0 session_img_play">
                               </div>
-                  
+
                               <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                                 <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
                                   {{item.Title}}
@@ -260,12 +332,38 @@
                                   {{item['timing']}} min
                                 </h4>
                               </div>
-                              
+
                             </div>
-                  
+
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                             </div>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a (click)="enableViewMore('short','more')"
+                        *ngIf="!enableShortViewMore  && searchData.WisdomShortsRes.length>1">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                class="img-responsive mb10px">
+                              View More
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a (click)="enableViewMore('short','less')"
+                        *ngIf="enableShortViewMore  && searchData.WisdomShortsRes.length>1">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                class="img-responsive mb10px">
+                              View Less
+                            </h4>
                           </div>
                         </div>
                       </a>
@@ -280,14 +378,15 @@
                           Podcast
                         </h4>
 
-                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="searchData.PodCastRes.length==0">
+                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+                          *ngIf="searchData.PodCastRes.length==0">
                           No Record Found
                         </h4>
                       </div>
                     </div>
-                    
+
                     <ng-container *ngIf="searchData.PodCastRes.length>0">
-                        <app-podcast-toc [isdefaultShow]="true"  [podcastList]="searchData.PodCastRes" ></app-podcast-toc>
+                      <app-podcast-toc [isdefaultShow]="true" [podcastList]="searchData.PodCastRes"></app-podcast-toc>
                     </ng-container>
                     <!-- /podcasts -->
 
@@ -298,25 +397,26 @@
                           Blog
                         </h4>
 
-                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="searchData.BlogRes.length==0">
+                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+                          *ngIf="searchData.BlogRes.length==0">
                           No Record Found
                         </h4>
                       </div>
                     </div>
 
                     <div class="div_blogs" *ngIf="searchData && searchData.BlogRes.length>0">
-                      <!-- article 01 
+                      <!-- article 01
                       <a *ngFor="let item of searchData.BlogRes" (click)="viewblog(item)"> href="{{item['url']}}"   -->
-                        <a *ngFor="let item of searchData.BlogRes" (click)="view(item)"  >
+                      <a *ngFor="let item of searchData.BlogRes; let i=index" (click)="view(item)">
                         <div class="row blog_bg">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-        
+
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <img src="{{item['img']}}" alt="" class="img-responsive img_blog">
                               </div>
                             </div>
-            
+
                             <div class="row mt15px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
@@ -324,7 +424,7 @@
                                 </h4>
                               </div>
                             </div>
-            
+
                             <div class="row mt10px mb15px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff limit_characters">
@@ -332,7 +432,7 @@
                                 </h4>
                               </div>
                             </div>
-            
+
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
@@ -340,12 +440,39 @@
                                 </h4>
                               </div>
                             </div>
-        
+
+                          </div>
+                        </div>
+
+                      </a>
+
+                      <a (click)="enableViewMore('blog','more')"
+                        *ngIf="!enableBlogViewMore && searchData.BlogRes.length>1">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                class="img-responsive mb10px">
+                              View More
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a (click)="enableViewMore('blog','less')"
+                        *ngIf="enableBlogViewMore && searchData.BlogRes.length>1">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                class="img-responsive mb10px">
+                              View Less
+                            </h4>
                           </div>
                         </div>
                       </a>
                       <!-- /article 01 -->
-        
+
                       <div class="pagebreak"></div>
                     </div>
                     <!-- /blogs -->
@@ -357,13 +484,13 @@
 
                   <!-- forum -->
                   <div id="tab2" *ngIf="tabName=='Forum'" class="tab-pane fade in active">
-                     <app-forum-landing [defaultShow]="false" [search]="search"></app-forum-landing>
+                    <app-forum-landing [defaultShow]="false" [search]="search"></app-forum-landing>
                   </div>
                   <!-- /forum -->
 
                   <!-- journal -->
-                  <div id="tab3" *ngIf="tabName=='Journal'"  class="tab-pane fade in active">
-                    <app-index [defaultShow]="false"  [search]="search" ></app-index>
+                  <div id="tab3" *ngIf="tabName=='Journal'" class="tab-pane fade in active">
+                    <app-index [defaultShow]="false" [search]="search"></app-index>
                   </div>
                   <!-- /journal -->
 
