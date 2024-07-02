@@ -34065,16 +34065,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 20px;
 }
 
-.forum_profile_desc_teenagers
-{
-  background: #0C2B5F;
-  background-size:cover;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  text-align: center;
-  margin-top: -12%;
-  padding: 20px;
-}
+
 
 .forum_profile_img 
 {
