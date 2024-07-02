@@ -36,7 +36,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
        "Notes":this.checkInDescription,
        "UserId":userId,
        "CheckinID":this.rowData.RowID,
-       "Title":'Daily CheckIn'
+       "Title":'Daily Checkin'
       };
       this.commonService.submitJournal(obj).subscribe(res=>{
         if(res){
