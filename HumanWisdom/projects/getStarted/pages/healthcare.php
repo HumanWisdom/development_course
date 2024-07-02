@@ -477,6 +477,84 @@
                   </div>
                 </a>
 
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their relationships. I believe the Human Wisdom project, which aims to awaken wisdom through self-understanding, is one of those solutions. Wisdom can bring peace to the individual, and so to the world.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Sir Anthony Seldon, UK
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          The Human Wisdom Project connects human beings to one another from distant lands, in thoughtful dialogue and shared experience through the power of technology. It connects us with our shared humanity and has the potential to bring peace to the individual, and to the world. Education takes on a broader meaning - a lifelong journey of learning about ourselves in addition to learning about the world. This understanding awakens wisdom and allows for personal growth and acceptance of the human experience we share.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Rod Berger, USA
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          Oh how I wish I had this app available to me when my life imploded many years ago. In fact, I wish I had had access as a child. It would have made a significant difference to my life journey, and to exploring my emotions constructively, rather than destructively, as so often I did. For me, everyone should have access to this app, to unlock their own innate wisdom, their very own 'superpowers'.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Laura Toop, London
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
                 <!--
                 <a class="item">
                   <div class="div_testimonials">

@@ -458,6 +458,84 @@
                   </div>
                 </a>
 
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          Through its modules, awareness exercises and life stories the HappierMe app has helped me better understand why I think and act the way I do. This gave me a new perspective on how to handle various situations, including stress, peer pressure, and social media. I believe I have acquired crucial skills for my future.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Swati, Dubai
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          HappierMe is a unique and inspiring app that has encouraged me to dig deeper within myself. Its various modules and journaling activities have helped me learn more about myself and how to cope with life's challenges. I really appreciate what the app offers because now I am more aware of how my mind operates and feel happier.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Camille, USA
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime. HappierMe is a toolkit you can use for any personal or mental struggle you may face.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Leah Christensen, USA
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
                 <!--
                 <a class="item">
                   <div class="div_testimonials">

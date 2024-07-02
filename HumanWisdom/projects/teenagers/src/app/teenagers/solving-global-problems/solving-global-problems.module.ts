@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {SharedModule} from '../../../../../shared/shared.module'
-import {AdultsService} from '../adults.service';
 
 import { SolvingGlobalProblemsRoutingModule } from './solving-global-problems-routing.module';
 
@@ -20,6 +19,7 @@ import { S72002p1Page } from './s72002p1/s72002p1.page';
 import { S72003p1Page } from './s72003p1/s72003p1.page';
 import { S72004p1Page } from './s72004p1/s72004p1.page';
 import { S72005p1Page } from './s72005p1/s72005p1.page';
+import { TeenagersService } from '../teenagers.service';
 @NgModule({
   declarations: [
     S72001Page,
@@ -43,7 +43,7 @@ import { S72005p1Page } from './s72005p1/s72005p1.page';
     SolvingGlobalProblemsRoutingModule
   ],
   providers:[
-    AdultsService
+    TeenagersService
   ]
 })
 export class SolvingGlobalProblemsModule { }

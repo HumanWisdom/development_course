@@ -323,7 +323,9 @@ export class LoginSignupPage implements OnInit {
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
-              } else {
+              } 
+              else 
+              {
                 this.showAlert = false;
                 this.userId = this.loginResponse.UserId;
                 this.userName = this.loginResponse.Name;
@@ -377,8 +379,11 @@ export class LoginSignupPage implements OnInit {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
                   this.router.navigate(["/intro/personalised-for-you"]);
-                } else {
-                  if (acceptCookie === "T" || subscribePage === "T") {
+                } 
+                else
+                {
+                  if (acceptCookie === "T" || subscribePage === "T")
+                  {
                     localStorage.setItem("isloggedin", "T");
                     if (acceptCookie === "T") {
                       localStorage.setItem("activeCode", "F");
@@ -393,19 +398,24 @@ export class LoginSignupPage implements OnInit {
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
                     }
-                  } else {
+                  }
+                  else 
+                  {
                     localStorage.setItem("isloggedin", "T");
                     if (pers && persub && pers === "T") {
                       this.router.navigate(["/onboarding/viewcart"], {
                         state: { quan: "1", plan: persub },
                       });
-                    } else {
+                    } 
+                    else 
+                    {
                       localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) {
+                      if (this.loginResponse?.NoOfVisits === 1) 
+                      {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        if(SharedService.ProgramId === 9) {
+                        /* if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/change-topic"], {
                             state: {
                               routedFromLogin: true,
@@ -418,10 +428,17 @@ export class LoginSignupPage implements OnInit {
                               routedFromLogin: true,
                             }
                           });
-                        }
+                        } */
+                          this.router.navigate(["/"+ SharedService.getprogramName() +"/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
 
-                      } else {
-                        if(SharedService.ProgramId === 9) {
+                      } 
+                      else 
+                      {
+                        /* if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
                        //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
@@ -431,18 +448,21 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }
+                        } */
+
+                        this.router.navigate(["/"+ SharedService.getprogramName()+  "/repeat-user"]);
                       }
                     }
                   }
+
+                  /* if(this.urlEmail)
+                  {
+                    this.service.verifyUser(this.userId)
+                    .subscribe(res=>{
+
+                    })
+                  }*/
                 }
-
-                /* if(this.urlEmail)
-                {
-                  this.service.verifyUser(this.userId)
-                  .subscribe(res=>{
-
-                  })
-                }*/
               }
             }
           });
@@ -1001,7 +1021,7 @@ export class LoginSignupPage implements OnInit {
   
   routeForgotPassword(){
     if(this.isAdults){
-      this.router.navigate(['/onboarding/forgotpassword'])
+      this.router.navigate(['/adults/onboarding/forgotpassword'])
     }else{
       this.router.navigate(['/teenagers/onboarding/forgotpassword'])
     }

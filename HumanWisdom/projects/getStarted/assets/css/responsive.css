@@ -198,6 +198,14 @@
     }
 }
 
+@media (min-width: 1200px)
+{
+    .owl-carousel.owl-drag .owl-item:last-child a.item
+    {
+        margin-right: 450px;
+    }
+}
+
 @media (min-width: 1920px)
 {
     [class^="col-xl-4"]

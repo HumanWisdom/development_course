@@ -82,7 +82,13 @@ export class BlogArticlePage implements OnInit {
       if (res) {
      this.blogList = res
      var tempEl = document.createElement('div');
-     tempEl.innerHTML = res.Blog;
+     if(SharedService.ProgramId==9){
+        tempEl.innerHTML = res.Blog; }
+     else if(SharedService.ProgramId==11)
+      {
+         tempEl.innerHTML = res.Blog.replaceAll("/adults/","/teenagers/");
+      }
+
      for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {
      tempEl.querySelectorAll('img')[i].style.width='100%';
      }

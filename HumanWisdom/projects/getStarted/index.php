@@ -10,6 +10,17 @@
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-44RHVTTNB8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-44RHVTTNB8');
+    </script>
+    
   </head>
 
   <body>
@@ -27,10 +38,14 @@
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
             <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
               Develop your Emotional Intelligence.
-              <br>
+            </h4>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb0px">
+            <h4 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
               Understand your Mind and Be Happier.
             </h4>
           </div>
@@ -201,6 +216,16 @@
         </div>
       </section>
       <!-- /video -->
+
+      <div class="row mt100px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+            <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+              Try HappierMe for free
+            </a>
+          </div>
+        </div>
+      </div>
 
       <!-- topics -->
       <section>
@@ -492,8 +517,7 @@
                     </div>
                   </div>
                 </a>
-
-                <!--
+                                
                 <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
@@ -572,6 +596,7 @@
                   </div>
                 </a>
 
+                <!--
                 <a class="item">
                   <div class="div_testimonials">
                     <div class="row">

@@ -14,7 +14,6 @@ import { NavigationService } from '../../../../../shared/services/navigation.ser
     FindAnswersRoutingModule
   ],
   providers:[
-    NavigationService
   ]
 })
 export class FindAnswersModule { }
