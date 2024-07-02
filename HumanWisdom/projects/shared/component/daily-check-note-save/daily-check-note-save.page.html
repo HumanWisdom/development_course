@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_dailycheckin col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a>
+      <a (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -24,14 +24,14 @@
           
           <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/emojis/1.svg" alt="" class="img-responsive img_journal_emoji">
+              <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
             </div>
           </div>
 
           <div class="row mt40px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
               <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                Glad you are feeling happy. Reflect on why you feel this way. It may help you later.
+                {{rowData.Description}}
               </h4>
             </div>
           </div>
@@ -39,7 +39,7 @@
           <div class="row mtb20px prelative">
             <div class="row prelative">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <textarea type="text" class="ta_dailycheckin" placeholder="Type here..." maxlength="256"></textarea>
+                <textarea type="text" class="ta_dailycheckin" id="textArea" name="textArea" [(ngModel)]="checkInDescription" placeholder="Type here..." maxlength="256"></textarea>
               </div>
             </div>
             
@@ -47,13 +47,13 @@
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/emojis/1.svg" class="img-responsive">
+                    <img src="{{rowData.ImgPath}}" class="img-responsive">
                   </div>
                 </div>
                 <div class="row mt5px">
                   <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_9px fw_400 lh_140p fc_ffffff">
-                      Happy
+                      {{rowData.Expression}}
                     </h4>
                   </div>
                 </div>
@@ -63,8 +63,8 @@
           </div>
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <button type="submit" class="btn mdp_add_to_journal" data-toggle="modal" data-target="#added">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0" (click)="SaveJournal()">
+              <button type="submit" class="btn mdp_add_to_journal">
                 Save to journal
               </button>
             </div>
@@ -86,7 +86,13 @@
   </div>
 </div>
 
-<div class="mfooter">
+<div class="row" style="display: none;">                  
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 btn_post_anonymously">
+   <button type="button" #saveJournal class="btn btn_ctd center_flex" data-toggle="modal" data-target="#added"></button>  
+  </div>
+</div>
+
+<div class="mfooter" (click)="goToHome()">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_dailycheckin col_cw">
       <a>
@@ -128,13 +134,13 @@
       <div class="row mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-            <button type="btn" class="btn btn_ctd">
+            <button (click)="findOutMore()" type="btn" class="btn btn_ctd">
               Find out more
             </button>
           </div>
 
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-            <button type="btn" class="btn btn_ctd">
+            <button  (click)="goToHome()" type="btn" class="btn btn_ctd">
               Go to Home
             </button>
           </div>

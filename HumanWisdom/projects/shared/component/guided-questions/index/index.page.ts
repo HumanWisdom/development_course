@@ -40,7 +40,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   viewLess = [];
   isViewMore = true;
   isAdults: boolean = true; 
-
+  dailyCheckIn:any;
 
   constructor(
     private router: Router,
@@ -84,14 +84,20 @@ if (SharedService.ProgramId == ProgramType.Adults) {
 
   viewJournalAndReflections() {
     this.service.viewJournal(this.userId).subscribe((res) => {
-      this.jrList = res;
-      this.jrList.sort((val1, val2) => {
-        return <any>new Date(val2.Date) - <any>new Date(val1.Date);
-      });
-      this.jrListC = this.jrList;
-      if (!this.defaultShow) {
-        this.searchjournal(this.search);
-      }
+      this.service.getDailyCheckins().subscribe(dailyCheckIn=>{
+        if(dailyCheckIn){
+          this.jrList = res;
+          this.dailyCheckIn = dailyCheckIn;
+          this.jrList.sort((val1, val2) => {
+            return <any>new Date(val2.Date) - <any>new Date(val1.Date);
+          });
+          this.jrListC = this.jrList;
+          if (!this.defaultShow) {
+            this.searchjournal(this.search);
+          }
+        }
+      })
+
     });
   }
   showGuidedQuestions() {
@@ -367,5 +373,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.topic = [...this.viewMore, ...this.viewLess];
     }
   }
-
+  getImagePath(rowId){
+    return this.dailyCheckIn.filter(x=>x.RowID == +rowId)[0].ImgPath;
+  }
 }

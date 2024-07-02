@@ -318,7 +318,7 @@ const routes: Routes = [
   },
   {
     path: 'testimonials',
-    loadChildren: () => import('./testimonials/testimonials.module').then(m => m.TestimonialsPageModule)
+    loadChildren: () => import('../../../../shared/component/testimonials/testimonials.module').then(m => m.TestimonialsPageModule)
   },
   {
     path: 'tree-planting-program',
@@ -620,6 +620,14 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/help-support/cookie-policy/cookie-policy.module').then( m => m.CookiePolicyPageModule)
   },
   {
+    path: 'daily-checkin',
+    loadChildren: () => import('../../../../shared/component/daily-checkin-landing/daily-checkin-landing.module').then( m => m.DailyCheckInLandingPageModule)
+  },
+  {
+    path: 'daily-checkin-save',
+    loadChildren: () => import('../../../../shared/component/daily-check-note-save/daily-check-note-save.module').then( m => m.DailyCheckinNoteSavePageModule)
+  },
+  {
     path: 'give-the-gift-of-wisdom',
     loadChildren: () => import('../adults/give-the-gift-of-wisdom/give-the-gift-of-wisdom.module').then(m => m.GiveTheGiftOfWisdomPageModule)
   },
@@ -649,14 +657,6 @@ const routes: Routes = [
     path: 'blog-article',
     // canActivate:[ActiveGuard],
     component:BlogArticlePage
-  },
-  {
-    path: 'note-save-smiley',
-    loadChildren: () => import('./note-save-smiley/note-save-smiley.module').then( m => m.NoteSaveSmileyPageModule)
-  },
-  {
-    path: 'note-save',
-    loadChildren: () => import('./note-save/note-save.module').then( m => m.NoteSavePageModule)
   },
   {
     path: 'note-add-smiley',

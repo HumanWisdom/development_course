@@ -3979,6 +3979,9 @@ export class AdultDashboardPage implements OnInit {
 
 
   }
+  routeDailyCheckIn(){
+    this.router.navigate(['/adults/daily-checkin']);
+  }
 
   // getinp(event) {
   //   let url = `/adults/site-search/${event}`

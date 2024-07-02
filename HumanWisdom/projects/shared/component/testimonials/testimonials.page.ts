@@ -1,9 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
-import { SharedService } from '../../../../../shared/services/shared.service';
-import { Constant } from '../../../../../shared/services/constant';
-import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { LogEventService } from "../../services/log-event.service";
+import { ForumService } from '../../forum/forum.service';
+import { SharedService } from '../../services/shared.service';
+import { CommonService } from '../../services/common.service';
+import { ProgramType } from '../../models/program-model';
+import { Constant } from '../../services/constant';
 
 
 @Component({
@@ -12,12 +15,13 @@ import { LogEventService } from '../../../../../shared/services/log-event.servic
   styleUrls: ['./testimonials.page.scss'],
 })
 export class TestimonialsPage implements OnInit,OnDestroy {
-  
+  isAdults = false;
   divId :any;
   constructor(private location :Location,private meta: Meta, public logeventservice: LogEventService, private title: Title) { 
    this.divId = SharedService.getDataFromLocalStorage(Constant.TestimonialId);
    if(this.divId && this.divId !=null && this.divId!='' && this.divId!='null' ){
     this.scroll_to_Testimonial();
+    this.isAdults = SharedService.isAdultProgram();
    }
   }
 
