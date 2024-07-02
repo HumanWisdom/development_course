@@ -1,4 +1,4 @@
-name: build-program-prod
+name: Website-Production
 
 on:
   push:
