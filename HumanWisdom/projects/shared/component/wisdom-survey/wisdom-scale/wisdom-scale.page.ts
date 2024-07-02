@@ -346,7 +346,7 @@ export class WisdomScalePage implements OnInit {
   viewClickEvent(url) {
     let res = localStorage.getItem("isloggedin")
     if (res && res === 'T') {
-      this.router.navigate([url]);
+      this.router.navigate(["/" + SharedService.getprogramName() + url]);
     } else {
       this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
     }
