@@ -52,5 +52,4 @@ jobs:
           tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/getStarted/*
           sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/getStarted          
-          sudo mv /var/www/html/adults/getStarted /var/www/html/
           sudo chown ubuntu:ubuntu /var/www/html/getStarted
