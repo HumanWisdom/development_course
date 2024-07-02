@@ -20,7 +20,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v2
         with:
-          node-version: "18.13.0"
+          node-version: "18.19.0"
 
       - name: Cache node modules
         id: cache-nodemodules
@@ -49,7 +49,7 @@ jobs:
         run: |
           cd HumanWisdom
           export NODE_OPTIONS=--max_old_space_size=8096
-          ionic build --configuration=production --project="adults" -- --base-href /course/
+          ionic build --configuration=production --project="adults" -- --base-href /adults/
 
       - name: Compress the build artifacts
         run: |
@@ -88,16 +88,17 @@ jobs:
           username: ${{ secrets.New_PRODUCTION_USERNAME }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
+            sudo rm -rf /var/www/html/course_backup_1
+            sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
             rm -rf builds/uncompressed/${{ github.run_id }}
             mkdir -p builds/uncompressed/${{ github.run_id }}
             tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-            sudo rm -rf /var/www/html/course_backup_1
-            sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
-            sudo mkdir -p /var/www/html/course
-            sudo rm -rf /var/www/html/course
-            sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course
-            sudo chown ubuntu:ubuntu /var/www/html/course
-            sudo chown ubuntu:ubuntu /var/www/html/course_backup_1
+            sudo rm -rf /var/www/html/adults
+            sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/adults          
+            sudo chown ubuntu:ubuntu /var/www/html/adults 
+            sudo rm -rf /var/www/html/getStarted/*
+            sudo mv /var/www/html/adults/getStarted /var/www/html/
+            sudo chown ubuntu:ubuntu /var/www/html/getStarted
 
   build-teenagers:
     runs-on: ubuntu-latest
@@ -109,7 +110,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v2
         with:
-          node-version: "18.13.0"
+          node-version: "18.19.0"
   
       - name: Cache node modules
         id: cache-nodemodules
