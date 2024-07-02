@@ -50,6 +50,6 @@ jobs:
           rm -rf builds/uncompressed/${{ github.run_id }}
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo rm -rf /var/www/html/getStarted/*
-          sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/getStarted          
+          sudo rm -rf /var/www/html/getStarted/
+          sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/          
           sudo chown ubuntu:ubuntu /var/www/html/getStarted
