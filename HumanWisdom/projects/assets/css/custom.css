@@ -34065,6 +34065,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 20px;
 }
 
+
+
 .forum_profile_img 
 {
   border: 2px solid #292d5e;
