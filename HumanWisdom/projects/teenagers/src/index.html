@@ -264,7 +264,9 @@
             $(".rm_txt_01").slideUp();
           }
         });
-
+        function ProfileEventReceived(p1) {
+          alert(p1);
+        }
         $(document).on('click', '.rmd_01', function () {
           var elem = $(".rmd_01").text();
           if (elem == "read more") {
@@ -323,7 +325,11 @@
         $(document).on('click', '#btnShare', function () {
           //console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
           if (window.AndroidHandler) {
-            window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+            if(window.location.href.includes("/s"))
+              window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+            else
+              window.AndroidHandler.share(window.location.href);
+
           }
         });
 
@@ -602,7 +608,61 @@
         $('body').removeClass("overflow_auto").addClass("overflow_hidden");
       });
     </script>
+    <!-- view more & less -->
+    <script>
+      function onchange_rm() {
+        const content = document.getElementById('ca_wdi');
+        const btn_rm = document.getElementById('btn_rm');
+        const vm = document.getElementById('vm');
+        const vl = document.getElementById('vl');
 
+        if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'inline';
+          vm.style.display = "none";
+          vl.style.display = "inline";
+        }
+        else {
+          content.style.display = 'none';
+          vm.style.display = "inline";
+          vl.style.display = "none";
+        }
+      }
+
+      function onchange_rm_hdi() {
+        const content = document.getElementById('ca_hdi');
+        const btn_rm = document.getElementsByClassName('btn_rm_hdi');
+        const vm = document.getElementById('vm_hdi');
+        const vl = document.getElementById('vl_hdi');
+
+        if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'inline';
+          vm.style.display = "none";
+          vl.style.display = "inline";
+        }
+        else {
+          content.style.display = 'none';
+          vm.style.display = "inline";
+          vl.style.display = "none";
+        }
+      }
+
+
+      function test() {
+        if (window.AndroidHandler) {
+          window.AndroidHandler.showToast("Hell From Angular");
+        }
+      }
+
+
+      function ImageSelectedEventFromAndroid(str) {
+        if (window.AndroidHandler) {
+          triggerAngularEvent(str);
+        //  window.AndroidHandler.showToast(str);
+        }
+      }
+
+    </script>
+    <!-- /view more & less -->
   </body>
 
 </html>
