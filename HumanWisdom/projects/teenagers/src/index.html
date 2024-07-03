@@ -380,17 +380,109 @@
           }
         });
         
+
+    /*     
         $(document).on('click', '#downloadFile', function () {
-        if (window.webkit) {
-          setTimeout(() => {
-            console.log(localStorage.getItem('fileName')+"---------------");
-          console.log(localstorage.getItem('myFileContent')+"-----------");
-          window.webkit.messageHandlers.nativeActionHandler.postMessage(localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
-          }, 200);
-        }
-      });
+          if (window.webkit) {
+            setTimeout(() => {
+              console.log(localStorage.getItem('fileName')+"---------------");
+            console.log(localstorage.getItem('myFileContent')+"-----------");
+            window.webkit.messageHandlers.nativeActionHandler.postMessage(localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
+            }, 200);
+          }
+        }); */
+
+        window.addEventListener('cancelButtonClicked', function () {
+
+            var key = '';
+            if (localStorage.getItem('ActivationKey') && localStorage.getItem('ActivationKey').toString() != null) {
+              this.key = localStorage.getItem('ActivationKey').toString();
+            }
+
+            if (window.webkit) {
+              window.webkit.messageHandlers.nativeActionHandler.postMessage("CancelSubscription" + key);
+            }
+
+            if (window.AndroidHandler) {
+              window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
+            }
+            // Perform the download action here
+        });
+
       });
 
+
+      window.addEventListener('ImageEditClicked', function () {
+      var fileName = localStorage.getItem('userId') + "_Profile";
+      console.log("ProfileEvenClicked--------------------");
+      // this.triggerAngularEvent('{"byteArray":"iVBORw0KGgoAAAANSUhEUgAAAFYAAABMCAIAAAB4edddAAAAAXNSR0IArs4c6QAAAANzQklUCAgI","fileName":"FileName"}');
+      if (window.AndroidHandler) {
+        window.AndroidHandler.imageEditClicked(fileName);
+      }
+      // Perform the download action here
+    });
+
+    function triggerAngularEvent(data) {
+      // Call the function exposed by Angular
+      window['handleAngularEvent'](data);
+    }
+
+    window.addEventListener('ProfileEventReceived', function (obj) {
+      console.log(obj);
+      alert(obj);
+      // Perform the download action here
+    });
+
+    window.addEventListener('downloadButtonClicked', function () {
+      console.log('fileName1:' + localStorage.getItem('fileName'));
+      var fileName = 'Completion';
+      if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+        this.fileName = localStorage.getItem('fileName').toString();
+        console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
+      }
+      console.log(myFileContentData);
+      if (window.webkit) {
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + this.fileName + "_" + myFileContentData);
+      }
+
+      if (window.AndroidHandler) {
+        var fileName = 'Completion Certificate';
+        if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+          this.fileName = localStorage.getItem('fileName').toString();
+          console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
+        }
+        window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
+      }
+      // Perform the download action here
+    });
+
+    window.addEventListener('ShareEvent', function () {
+      var fileName = 'Completion Certificate';
+      if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+        this.fileName = localStorage.getItem('fileName').toString();
+      }
+      console.log(myFileContentData);
+      console.log(this.fileName);
+      if (window.AndroidHandler) {
+        window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
+      }
+    })
+
+    window.addEventListener('manage_subscr', function () {
+      if (window.webkit) {
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
+      }
+    })
+
+    window.addEventListener('nativeEvent', function () {
+      // Handle the event data received from native Android
+      var item = localStorage.getItem('filenameofProfile');
+      if (window.AndroidHandler) {
+        window.AndroidHandler.showToast(item);
+      }
+
+      console.log('Received event data:');
+    });
 
 
       // $(document).on('click', '#rm_01', function(){
