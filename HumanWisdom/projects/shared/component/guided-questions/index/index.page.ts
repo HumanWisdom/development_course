@@ -373,7 +373,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.topic = [...this.viewMore, ...this.viewLess];
     }
   }
-  getImagePath(rowId){
-    return this.dailyCheckIn.filter(x=>x.RowID == +rowId)[0].ImgPath;
+  getdailCheckInData(rowId){
+    return this.dailyCheckIn.filter(x=>x.RowID == +rowId);
   }
 }
