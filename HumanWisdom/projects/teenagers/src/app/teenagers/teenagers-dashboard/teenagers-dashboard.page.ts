@@ -54,57 +54,8 @@ export class TeenagersDashboardPage implements OnInit {
   searchinp = '';
   public dash = false;
   public isSubscriber = false;
-  //static progress mapping
-  // public angerP: any
-  // public comparisonP: any
-  // public awarenessP: any
-  // public obstaclesP: any
-  // public meditationP: any
-  // public benefitsWisdomP: any
   public guideP = '50';
-  // public fearP: any
-  // public benefitsEnquiryP: any
-  // public questionsP: any
-  // public identityP: any
-  // public keyP: any
-  // public selfEsteemP: any
-  // public conditioningP: any
-  // public fiveCirclesP: any
-  // public happinessP: any
-  // public threeStepsP: any
-  // public noJudgementP: any
-  // public discoveringP: any
-  // public beginP: any
-  // public insightP: any
-  // public pleasureP: any
-  // public withoutLanguageP: any
-  // public criticismP: any
-  // public stressP: any
-  // public relationshipsP: any
-  // public natureP: any
-  // public breathingP: any
-  // public ntP: any
-  // public gamP: any
   searchResult = [];
-  // public communicationP: any
-  // public rmP: any
-  // public siP: any
-  // public sinP: any
-  // public enP: any
-  // public ibP: any
-  // public wP: any
-  // public lP: any
-  // public seP: any
-  // public niP: any
-  // public lonelinessP: any
-  // public livingwithpeaceP: any
-  // public loveP: any
-  // public dealingwithdeathP: any
-  // public opinionsandbeliefsP: any
-  // public successandfailureP: any
-  // public addictionP: any
-  // public foodP: any
-  // public moneyP: any
   isEnableHam = true;
   public Subscriber: any
   public alertMsg: any
@@ -172,12 +123,6 @@ export class TeenagersDashboardPage implements OnInit {
     public platform: Platform,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
-    // let remem = localStorage.getItem("remember")
-    // if (remem === null || remem === 'F') {
-    //   localStorage.setItem('isloggedin', 'F')
-    //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-    // }
     localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
@@ -430,7 +375,6 @@ export class TeenagersDashboardPage implements OnInit {
         }, 100)
       }
     }
-
 
 
     setTimeout(() => {
@@ -1917,7 +1861,7 @@ export class TeenagersDashboardPage implements OnInit {
     } else if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_calm_mind');
       this.router.navigate(['/teenagers/curated/have-calm-mind'])
-    }else if (name === 'Succeed in Life') {
+    } else if (name === 'Succeed in Life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
     }
@@ -1953,56 +1897,55 @@ export class TeenagersDashboardPage implements OnInit {
   }
 
   getinp(event) {
-    let url=""
-    switch(event) 
-    {
-      case "Events":{
-          url = `/teenagers/events`
-          break;
+    let url = ""
+    switch (event) {
+      case "Events": {
+        url = `/teenagers/events`
+        break;
       }
-      case "Blogs":{
+      case "Blogs": {
         url = `/teenagers/blogs`
         break;
       }
       case "Life stories":
-      case "Stories":{
+      case "Stories": {
         url = `/teenagers/wisdom-stories`
         break;
       }
-      case "Podcast":{
+      case "Podcast": {
         url = `/teenagers/podcast`
         break;
       }
-      case "Audio meditations":{
+      case "Audio meditations": {
         url = `/teenagers/audio-meditation`
         break;
       }
       case ("Short videos"):
       case ("Videos"):
         {
-        url = `/teenagers/wisdom-shorts`
-        break;
-      }
-     case "Journal":{
+          url = `/teenagers/wisdom-shorts`
+          break;
+        }
+      case "Journal": {
         url = `/teenagers/journal`
         break;
       }
       case "Exercises":
       case "Awareness Exercises":
         {
-        url = `/teenagers/wisdom-exercise`
-        break;
-      }
-      case "Forum":{
+          url = `/teenagers/wisdom-exercise`
+          break;
+        }
+      case "Forum": {
         url = `/teenagers/forum`
         break;
       }
-     default: {
-       url = `/teenagers/site-search/${this.searchinp}`
+      default: {
+        url = `/teenagers/site-search/${this.searchinp}`
         break;
       }
 
-    } 
+    }
     this.router.navigate([url])
   }
 
@@ -2041,7 +1984,7 @@ export class TeenagersDashboardPage implements OnInit {
   getModuleList(isLoad?) {
     this.service.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
+      this.moduleList.push({ "ModuleName": "Events" }, { "ModuleName": "Blogs" }, { "ModuleName": "Life stories" }, { "ModuleName": "Stories" }, { "ModuleName": "Podcast" }, { "ModuleName": "Short videos" }, { "ModuleName": "Videos" }, { "ModuleName": "Audio meditations" }, { "ModuleName": "Journal" }, { "ModuleName": "Forum" }, { "ModuleName": "Exercises" }, { "ModuleName": "Awareness Exercises" })
 
       if (isLoad) {
         if (this.searchinp == '') {
@@ -2053,20 +1996,20 @@ export class TeenagersDashboardPage implements OnInit {
     })
   }
 
-  routeToUrl(url){
-    if(url.includes('isGuided')){
+  routeToUrl(url) {
+    if (url.includes('isGuided')) {
       // SharedService.isFromAdults = true;
       this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
     }
-    else if(url.includes('eid=')) { 
+    else if (url.includes('eid=')) {
 
       this.logeventservice.logEvent("click_upcoming_event");
-     let eid = url.split('eid=')[1];
-      this.router.navigate(['/teenagers/events/event'], { queryParams: { eid: `${eid}` } })    
-      
-    
+      let eid = url.split('eid=')[1];
+      this.router.navigate(['/teenagers/events/event'], { queryParams: { eid: `${eid}` } })
+
+
     }
-    else{
+    else {
       this.router.navigate([`/${url}`])
     }
   }
