@@ -264,7 +264,9 @@
             $(".rm_txt_01").slideUp();
           }
         });
-
+        function ProfileEventReceived(p1) {
+          alert(p1);
+        }
         $(document).on('click', '.rmd_01', function () {
           var elem = $(".rmd_01").text();
           if (elem == "read more") {
@@ -323,7 +325,11 @@
         $(document).on('click', '#btnShare', function () {
           //console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
           if (window.AndroidHandler) {
-            window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+            if(l.includes("/s") && !isNaN( l.substring(l.lastIndexOf("/s"))))
+              window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+            else
+              window.AndroidHandler.share(window.location.href);
+
           }
         });
 
@@ -380,17 +386,109 @@
           }
         });
         
+
+    /*     
         $(document).on('click', '#downloadFile', function () {
-        if (window.webkit) {
-          setTimeout(() => {
-            console.log(localStorage.getItem('fileName')+"---------------");
-          console.log(localstorage.getItem('myFileContent')+"-----------");
-          window.webkit.messageHandlers.nativeActionHandler.postMessage(localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
-          }, 200);
-        }
-      });
+          if (window.webkit) {
+            setTimeout(() => {
+              console.log(localStorage.getItem('fileName')+"---------------");
+            console.log(localstorage.getItem('myFileContent')+"-----------");
+            window.webkit.messageHandlers.nativeActionHandler.postMessage(localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
+            }, 200);
+          }
+        }); */
+
+        window.addEventListener('cancelButtonClicked', function () {
+
+            var key = '';
+            if (localStorage.getItem('ActivationKey') && localStorage.getItem('ActivationKey').toString() != null) {
+              this.key = localStorage.getItem('ActivationKey').toString();
+            }
+
+            if (window.webkit) {
+              window.webkit.messageHandlers.nativeActionHandler.postMessage("CancelSubscription" + key);
+            }
+
+            if (window.AndroidHandler) {
+              window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
+            }
+            // Perform the download action here
+        });
+
       });
 
+
+      window.addEventListener('ImageEditClicked', function () {
+      var fileName = localStorage.getItem('userId') + "_Profile";
+      console.log("ProfileEvenClicked--------------------");
+      // this.triggerAngularEvent('{"byteArray":"iVBORw0KGgoAAAANSUhEUgAAAFYAAABMCAIAAAB4edddAAAAAXNSR0IArs4c6QAAAANzQklUCAgI","fileName":"FileName"}');
+      if (window.AndroidHandler) {
+        window.AndroidHandler.imageEditClicked(fileName);
+      }
+      // Perform the download action here
+    });
+
+    function triggerAngularEvent(data) {
+      // Call the function exposed by Angular
+      window['handleAngularEvent'](data);
+    }
+
+    window.addEventListener('ProfileEventReceived', function (obj) {
+      console.log(obj);
+      alert(obj);
+      // Perform the download action here
+    });
+
+    window.addEventListener('downloadButtonClicked', function () {
+      console.log('fileName1:' + localStorage.getItem('fileName'));
+      var fileName = 'Completion';
+      if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+        this.fileName = localStorage.getItem('fileName').toString();
+        console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
+      }
+      console.log(myFileContentData);
+      if (window.webkit) {
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + this.fileName + "_" + myFileContentData);
+      }
+
+      if (window.AndroidHandler) {
+        var fileName = 'Completion Certificate';
+        if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+          this.fileName = localStorage.getItem('fileName').toString();
+          console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
+        }
+        window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
+      }
+      // Perform the download action here
+    });
+
+    window.addEventListener('ShareEvent', function () {
+      var fileName = 'Completion Certificate';
+      if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
+        this.fileName = localStorage.getItem('fileName').toString();
+      }
+      console.log(myFileContentData);
+      console.log(this.fileName);
+      if (window.AndroidHandler) {
+        window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
+      }
+    })
+
+    window.addEventListener('manage_subscr', function () {
+      if (window.webkit) {
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
+      }
+    })
+
+    window.addEventListener('nativeEvent', function () {
+      // Handle the event data received from native Android
+      var item = localStorage.getItem('filenameofProfile');
+      if (window.AndroidHandler) {
+        window.AndroidHandler.showToast(item);
+      }
+
+      console.log('Received event data:');
+    });
 
 
       // $(document).on('click', '#rm_01', function(){
@@ -510,7 +608,61 @@
         $('body').removeClass("overflow_auto").addClass("overflow_hidden");
       });
     </script>
+    <!-- view more & less -->
+    <script>
+      function onchange_rm() {
+        const content = document.getElementById('ca_wdi');
+        const btn_rm = document.getElementById('btn_rm');
+        const vm = document.getElementById('vm');
+        const vl = document.getElementById('vl');
 
+        if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'inline';
+          vm.style.display = "none";
+          vl.style.display = "inline";
+        }
+        else {
+          content.style.display = 'none';
+          vm.style.display = "inline";
+          vl.style.display = "none";
+        }
+      }
+
+      function onchange_rm_hdi() {
+        const content = document.getElementById('ca_hdi');
+        const btn_rm = document.getElementsByClassName('btn_rm_hdi');
+        const vm = document.getElementById('vm_hdi');
+        const vl = document.getElementById('vl_hdi');
+
+        if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'inline';
+          vm.style.display = "none";
+          vl.style.display = "inline";
+        }
+        else {
+          content.style.display = 'none';
+          vm.style.display = "inline";
+          vl.style.display = "none";
+        }
+      }
+
+
+      function test() {
+        if (window.AndroidHandler) {
+          window.AndroidHandler.showToast("Hell From Angular");
+        }
+      }
+
+
+      function ImageSelectedEventFromAndroid(str) {
+        if (window.AndroidHandler) {
+          triggerAngularEvent(str);
+        //  window.AndroidHandler.showToast(str);
+        }
+      }
+
+    </script>
+    <!-- /view more & less -->
   </body>
 
 </html>
