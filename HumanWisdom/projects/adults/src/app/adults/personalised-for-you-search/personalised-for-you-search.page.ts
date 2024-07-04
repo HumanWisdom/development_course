@@ -233,7 +233,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
+                          {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
+                          {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
 
       if (isLoad) {
         if (this.searchinp == '') {
@@ -345,6 +348,30 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
       case "Forum":{
         url = `/adults/forum`
+        break;
+      }
+      case "Develop a calm mind":{
+        url = `/adults/pathway/develop-a-calm-mind`
+        break;
+      }
+      case "Understand yourself":{
+        url = `/adults/pathway/understand-yourself`
+        break;
+      }
+      case "Understand how your mind works":{
+        url = `/adults/pathway/understand-how-your-mind-works`
+        break;
+      }
+      case "Manage your emotions":{
+        url = `/adults/pathway/manage-your-emotions`
+        break;
+      }
+      case "Succeed in life":{
+        url = `/adults/pathway/live-your-best-life`
+        break;
+      }
+      case "Mental Health":{
+        url = `/adults/curated/overcome-stress-anxiety`
         break;
       }
      default: {
