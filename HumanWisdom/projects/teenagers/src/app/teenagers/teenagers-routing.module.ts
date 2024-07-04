@@ -487,6 +487,14 @@ const routes: Routes = [
     path: 'awareness-exercises-transcript',
     loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
   },
+  {
+    path: 'daily-checkin',
+    loadChildren: () => import('../../../../shared/component/daily-checkin-landing/daily-checkin-landing.module').then( m => m.DailyCheckInLandingPageModule)
+  },
+  {
+    path: 'daily-checkin-save',
+    loadChildren: () => import('../../../../shared/component/daily-check-note-save/daily-check-note-save.module').then( m => m.DailyCheckinNoteSavePageModule)
+  },
 ];
 
 
