@@ -76,8 +76,9 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      this.router.navigate([SharedService.getUrlfromFeatureName('/search')]);
+      this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
     }
+
     getAlertcloseEvent(event) {
       if(event=='ok'){
         this.enableAlert = false;
