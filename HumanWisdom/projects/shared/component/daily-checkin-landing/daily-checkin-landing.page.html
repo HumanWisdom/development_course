@@ -1,0 +1,77 @@
+<!-- top navigation - with hint -->
+<!-- <div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_dailycheckin col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    </div>
+  </div>
+</div> -->
+<!-- /top navigation -->
+
+<div class="right_col mc_03">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 pt80pxi_dc col_cw"  [ngClass]="isAdults ? 'div_intro' : 'bg_stake'">
+        <form>
+          
+          <div class="row tcenter">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_ffffff">
+                Hi {{name}} !
+              </h4>
+
+              <h4 class="mb0px mt5px fs_15px fw_400 lh_140p fc_ffffff">
+                How are you feeling today?
+              </h4>
+            </div>
+          </div>
+
+          <div class="row mt30px tcenter" >
+            <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0 div_smiley">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" *ngFor="let item of dailyCheckInList; index as i">
+                <a class="" (click)="dailyCheckInRowClick(item)">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
+                      <img src="{{item.ImgPath}}" class="img-responsive">
+                    </div>
+                  </div>
+                  <div class="row mt5px">
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_10px fw_400 lh_140p fc_ffffff">
+                        {{item.Expression}}
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- <div *ngIf="i%5==0" class="clearfix"></div> -->
+              
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mfooter">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_dailycheckin col_cw" (click)="goToHome()">
+      <a>
+        <h4 class="mtb0px fs_15px fw_400 lh_130p fc_ffffff td_underline tcenter">
+          Go to Home
+        </h4>
+      </a>
+    </div>
+  </div>
+</div>

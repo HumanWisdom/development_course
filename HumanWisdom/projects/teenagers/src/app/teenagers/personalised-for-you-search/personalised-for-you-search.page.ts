@@ -295,7 +295,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"})
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},
+                          {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, 
+                          {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},
+                          {"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
+                          {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
+                          {"ModuleName":"Understand how your mind works"}, {"ModuleName":"Mental Health"},
+                        )
 
       if (isLoad) {
         if (this.searchinp == '') {
@@ -371,6 +378,30 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
       case "Forum":{
         url = `/teenagers/forum`
+        break;
+      }
+      case "Develop a calm mind":{
+        url = `/teenagers/pathway/develop-a-calm-mind`
+        break;
+      }
+      case "Understand yourself":{
+        url = `/teenagers/pathway/learn-to-question-yourself`
+        break;
+      }
+      case "Understand how your mind works":{
+        url = `/teenagers/pathway/understand-how-your-mind-works`
+        break;
+      }
+      case "Manage your emotions":{
+        url = `/teenagers/pathway/manage-your-emotions`
+        break;
+      }
+      case "Succeed in life":{
+        url = `/teenagers/pathway/succeed-in-life`
+        break;
+      }
+      case "Mental Health":{
+        url = `/teenagers/curated/overcome-stress-anxiety`
         break;
       }
      default: {

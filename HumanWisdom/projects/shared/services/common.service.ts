@@ -311,4 +311,8 @@ export class CommonService {
   getForumSearchDataSite(data): Observable<any> {
     return this.http.get(this.path + `/GetAllPosts/${data}`);
   }
+
+  getDailyCheckins(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyCheckins/`);
+  }
 }

@@ -1411,6 +1411,24 @@
                     </div>
                   </div>
                 </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/addressing_health_problems_with_emotional_intelligence.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          Addressing health problems with emotional intelligence
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </div>
 
               <div class="owl-theme">
