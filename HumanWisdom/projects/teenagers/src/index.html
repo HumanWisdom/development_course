@@ -323,10 +323,8 @@
           }
         });
         $(document).on('click', '#btnShare', function () {
-          //console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
-          if (window.AndroidHandler) {
-            let l=window.location.href.toString();
-            if(l.includes("/s") && !isNaN( l.substring(l.lastIndexOf("/s"))))
+        if (window.AndroidHandler) {           
+            if(this.rel=="module")
               window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
             else
               window.AndroidHandler.share(window.location.href);
