@@ -76,7 +76,13 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
+      console.log(this.rowData.Expression)
+      if(this.rowData.Expression=="Tired")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);
+      else if(this.rowData.Expression=="Overwhelmed")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/curated/overcome-stress-anxiety`)]);
+      else
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
     }
 
     getAlertcloseEvent(event) {
