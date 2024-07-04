@@ -82,7 +82,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
     getAlertcloseEvent(event) {
       if(event=='ok'){
         this.enableAlert = false;
-        this.router.navigate([SharedService.getUrlfromFeatureName('/subscription/try-free-and-subscribe') ]);
+        this.router.navigate([SharedService.getUrlfromFeatureName('/subscription/start-your-free-trial') ]);
       }else{
         this.enableAlert = false;
       }
