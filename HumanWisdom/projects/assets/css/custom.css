@@ -37180,7 +37180,7 @@ span
   margin: 0 auto;
 }
 
-.pt80pxi
+.pt80pxi_dc
 {
   padding-top: 80px !important;
 }
@@ -37254,6 +37254,14 @@ span
 .bg_emoji_blur
 {
   background: rgba(131, 75, 102, 0.9);
+}
+
+.div_smiley>[class^=col-]:nth-child(5),
+.div_smiley>[class^=col-]:nth-child(9),
+.div_smiley>[class^=col-]:nth-child(13),
+.div_smiley>[class^=col-]:nth-child(17)
+{
+  clear: both;
 }
 
 .lab-modal-body_dc 
