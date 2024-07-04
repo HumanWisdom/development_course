@@ -30,8 +30,12 @@ export class SearchPopularItemsPage implements OnInit {
   PostComment: string = ''
   public qrList: any
   public userId = 100
-  feelBetterNowTopic:string ='';
+  feelBetterNowTopic: string = '';
   isAdults: boolean = true;
+  enableBlogViewMore: boolean = false;
+  enableShortViewMore: boolean = false;
+  enableStoryViewMore: boolean = false;
+  searchDataDup: any;
 
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
@@ -65,7 +69,7 @@ export class SearchPopularItemsPage implements OnInit {
       SessionRes: [],
       WisdomShortsRes: [],
       WisdomStoriesRes: [],
-      FeelBetterNowRes:null
+      FeelBetterNowRes: null
     } as SearchDataModel;
   }
 
@@ -99,7 +103,29 @@ export class SearchPopularItemsPage implements OnInit {
   getSearchData() {
     this.commonService.getSearchDataForSearchSite(this.search).subscribe(res => {
       if (res) {
-        this.searchData = res;
+        this.searchDataDup = JSON.parse(JSON.stringify(res));
+
+        if (res.BlogRes && res.BlogRes.length > 2) {
+          res.BlogRes = res.BlogRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.WisdomShortsRes && res.WisdomShortsRes.length > 2) {
+          res.WisdomShortsRes = res.WisdomShortsRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.WisdomStoriesRes && res.WisdomStoriesRes.length > 2) {
+          res.WisdomStoriesRes = res.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
         this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
     });
@@ -137,6 +163,49 @@ export class SearchPopularItemsPage implements OnInit {
       }
     });
   }
+
+  enableViewMore(section, type) {
+    if(section === 'blog') {
+      if (type === 'more') {
+        if (this.searchDataDup.BlogRes && this.searchDataDup.BlogRes.length > 2) {
+          this.searchData.BlogRes = this.searchDataDup.BlogRes;
+        }
+        this.enableBlogViewMore = true;
+      }else {
+        if (this.searchDataDup.BlogRes && this.searchDataDup.BlogRes.length > 2) {
+          this.searchData.BlogRes = this.searchDataDup.BlogRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableBlogViewMore = false;
+      }
+    }else if(section === 'short') {
+      if (type === 'more') {
+        if (this.searchDataDup.WisdomShortsRes && this.searchDataDup.WisdomShortsRes.length > 2) {
+          this.searchData.WisdomShortsRes = this.searchDataDup.WisdomShortsRes;
+        }
+        this.enableShortViewMore = true;
+      }else {
+        if (this.searchDataDup.WisdomShortsRes && this.searchDataDup.WisdomShortsRes.length > 2) {
+          this.searchData.WisdomShortsRes = this.searchDataDup.WisdomShortsRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableShortViewMore = false;
+      }
+    }else if(section === 'story') {
+      if (type === 'more') {
+        if (this.searchDataDup.WisdomStoriesRes && this.searchDataDup.WisdomStoriesRes.length > 2) {
+          this.searchData.WisdomStoriesRes = this.searchDataDup.WisdomStoriesRes;
+        }
+        this.enableStoryViewMore = true;
+      }else {
+        if (this.searchDataDup.WisdomStoriesRes && this.searchDataDup.WisdomStoriesRes.length > 2) {
+          this.searchData.WisdomStoriesRes = this.searchDataDup.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableStoryViewMore = false;
+      }
+    }
+
+
+  }
+
   like(item, index) {
     if (this.UserID) {
       this.serivce.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {

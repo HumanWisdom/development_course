@@ -348,7 +348,7 @@ export class TeenagersDashboardPage implements OnInit {
   }
 
   viewDetails() {
-    this.router.navigate(["/onboarding/user-profile"]);
+    this.router.navigate(["teenagers/onboarding/user-profile"]);
   }
 
   loginpage() {

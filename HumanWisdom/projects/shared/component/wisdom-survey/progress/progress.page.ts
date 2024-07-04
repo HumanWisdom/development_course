@@ -10,6 +10,7 @@ import { OnboardingService } from '../../../services/onboarding.service';
   styleUrls: ['./progress.page.scss'],
 })
 export class ProgressPage implements OnInit {
+  public enableChart = false;
   public lineChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false
@@ -153,6 +154,7 @@ export class ProgressPage implements OnInit {
           )
         }
         if(this.chartData[0]['lineChartData'][0]['data'].length < 6) {
+          this.chartData[0]['lineChartData'][0]['data'].push(0);
           this.chartData[0]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
           this.chartData[0]['enable'] = true;
           if(!(this.chartData[0]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
@@ -176,6 +178,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[1]['lineChartData'][0]['data'].length < 6) {
           this.chartData[1]['enable'] = true;
+          this.chartData[1]['lineChartData'][0]['data'].push(0);
           this.chartData[1]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
           if(!(this.chartData[1]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
             this.chartData[1]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -198,6 +201,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[2]['lineChartData'][0]['data'].length < 6) {
           this.chartData[2]['enable'] = true;
+          this.chartData[2]['lineChartData'][0]['data'].push(0);
           this.chartData[2]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
           if(!(this.chartData[2]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
             this.chartData[2]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -220,6 +224,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[3]['lineChartData'][0]['data'].length < 6) {
           this.chartData[3]['enable'] = true;
+          this.chartData[3]['lineChartData'][0]['data'].push(0);
           this.chartData[3]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
           if(!(this.chartData[3]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
             this.chartData[3]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -242,6 +247,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[4]['lineChartData'][0]['data'].length < 6) {
             this.chartData[4]['enable'] = true;
+            this.chartData[4]['lineChartData'][0]['data'].push(0);
             this.chartData[4]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
             if(!(this.chartData[4]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
               this.chartData[4]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -264,6 +270,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[5]['lineChartData'][0]['data'].length < 6) {
           this.chartData[5]['enable'] = true;
+          this.chartData[5]['lineChartData'][0]['data'].push(0);
           this.chartData[5]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
           if(!(this.chartData[5]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
             this.chartData[5]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -287,6 +294,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[6]['lineChartData'][0]['data'].length < 6) {
             this.chartData[6]['enable'] = true;
+            this.chartData[6]['lineChartData'][0]['data'].push(0);
             this.chartData[6]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
             if(!(this.chartData[6]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
               this.chartData[6]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -309,6 +317,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[7]['lineChartData'][0]['data'].length < 6) {
             this.chartData[7]['enable'] = true;
+            this.chartData[7]['lineChartData'][0]['data'].push(0);
             this.chartData[7]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
             if(!(this.chartData[7]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
               this.chartData[7]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -331,6 +340,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[8]['lineChartData'][0]['data'].length < 6) {
             this.chartData[8]['enable'] = true;
+            this.chartData[8]['lineChartData'][0]['data'].push(0);
             this.chartData[8]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
             if(!(this.chartData[8]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
               this.chartData[8]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -353,6 +363,7 @@ export class ProgressPage implements OnInit {
         }
         if(this.chartData[9]['lineChartData'][0]['data'].length < 6) {
           this.chartData[9]['enable'] = true;
+          this.chartData[9]['lineChartData'][0]['data'].push(0);
           this.chartData[9]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
           if(!(this.chartData[9]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
             this.chartData[9]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
@@ -362,6 +373,8 @@ export class ProgressPage implements OnInit {
         }
       }
     });
+    this.enableChart = true;
+    console.log(this.chartData)
     // this.chartData = this.chartData.filter((a) => a.enable);
     // this.chartData = this.chartData.slice(0, 6)
     // this.tableData = this.tableData.filter((a) => a.enable);

@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<div class="row center_flex"  *ngIf="defaultShow">
+<div class="row center_flex" *ngIf="defaultShow">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
@@ -22,95 +22,105 @@
 <app-bg-video *ngIf="defaultShow"></app-bg-video>
 
 
-  <div class="cw100p" *ngIf="!defaultShow">
-    <div class="row center_flex">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
-        <div class="x_panel p0">
-          <div class="x_content p0">
-            <div class="container">
-              <div class="tab-content">
-                <!-- journal -->
-                <div id="tab1" class="tab-pane fade in active" *ngIf="isDiary">
-                  <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="jrList.length==0">
-                    No Record Found
-                  </h4>
-                  <form>
+<div class="cw100p" *ngIf="!defaultShow">
+  <div class="row center_flex">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+      <div class="x_panel p0">
+        <div class="x_content p0">
+          <div class="container">
+            <div class="tab-content">
+              <!-- journal -->
+              <div id="tab1" class="tab-pane fade in active" *ngIf="isDiary">
+                <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5" *ngIf="jrList.length==0">
+                  No Record Found
+                </h4>
+                <form>
 
-                    <ng-container *ngIf="isReloadList">
-                      <div *ngFor="let j of jrList" class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <a>
-                            <div (click)="GoToQuestions(j)" class="panel panel-default pdefault_01 prelative">
-                              <div class="panel-heading absolute_ptitle"
-                                [ngClass]="{'cyan_light': j.JrType=='Guided Questions','gray_light':j.JrType=='Diary'}">
-                                <h4 class="panel-title">{{j.JrType}}</h4>
-                              </div>
-                              <div class="panel-body">
-                                <h4 class="fs_12px fw_400 lh_150p fc_ffffff_0_5">{{j.Date| date}}</h4>
-                                <h4 class="fs_18px fw_500 lh_150p fc_ffffff"
-                                  *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'">
-                                  {{j.ModuleName}}
-                                </h4>
-                                <h4 class="fs_18px fw_500 lh_150p fc_ffffff">{{j.TitleQue}}</h4>
-                                <h4 class="fs_15px fw_400 lh_150p fc_ffffff">
-                                  {{j.Response|slice:0:40}}...
-                                </h4>
-                              </div>
+                  <ng-container *ngIf="isReloadList">
+                    <div *ngFor="let j of jrList" class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <a>
+                          <div (click)="GoToQuestions(j)" class="panel panel-default pdefault_01 prelative">
+                            <div class="panel-heading absolute_ptitle"
+                              [ngClass]="{'cyan_light': j.JrType=='Guided Questions','gray_light':j.JrType=='Diary'}">
+                              <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
-                          </a>
-                        </div>
+                            <div class="panel-body">
+                              <h4 class="fs_12px fw_400 lh_150p fc_ffffff_0_5">{{j.Date| date}}</h4>
+                              <h4 class="fs_18px fw_500 lh_150p fc_ffffff"
+                                *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'">
+                                {{j.ModuleName}}
+                              </h4>
+                              <h4 class="fs_18px fw_500 lh_150p fc_ffffff">{{j.TitleQue}}</h4>
+                              <ng-container *ngIf="j.TitleQue == 'Daily Checkin'">
+                                <div class="row mtb10px" *ngFor="let item of getdailCheckInData(j.ModuleId)">
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tcenter">
+                                    <img src="{{item.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
+                                  </div>
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tcenter">
+                                    <span class="fc_ffffff fs_18px">{{item.Expression}}</span>
+                                  </div>
+                                </div>
+                              </ng-container>
+                              <h4 class="fs_15px fw_400 lh_150p fc_ffffff">
+                                {{j.Response|slice:0:40}}...
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
                       </div>
-
-                    </ng-container>
-                  </form>
-
-                </div>
-                <!-- /journal -->
-
-                <!-- guided questions -->
-                <div id="tab2" class="tab-pane fade in active" *ngIf="isGuidedQueestionsTab">
-                  <div class="row center_flex mtb30px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
-                        Explore questions on different topics. They help you consider fresh ways of thinking.
-                      </h4>
                     </div>
-                  </div>
 
-                  <div class="div_fbn">
-                    <a (click)="RouteToToQuestions(item)" *ngFor="let item of topic">
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-md-11 col-sm-11 col-xs-11 p0">
-                            <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
-                              {{item.Topic}}
-                            </h4>
-                          </div>
-                          <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
-                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
+                  </ng-container>
+                </form>
+
+              </div>
+              <!-- /journal -->
+
+              <!-- guided questions -->
+              <div id="tab2" class="tab-pane fade in active" *ngIf="isGuidedQueestionsTab">
+                <div class="row center_flex mtb30px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                      Explore questions on different topics. They help you consider fresh ways of thinking.
+                    </h4>
                   </div>
                 </div>
-                <!-- /guided questions -->
-              </div>
-            </div>
 
-            <div class="pagebreak"></div>
+                <div class="div_fbn">
+                  <a (click)="RouteToToQuestions(item)" *ngFor="let item of topic">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                          <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                            {{item.Topic}}
+                          </h4>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
+                          <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- /guided questions -->
+            </div>
           </div>
+
+          <div class="pagebreak"></div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class -->
+</div>
+<!--/Class -->
 
 <div class="right_col mc_01" *ngIf="defaultShow">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
@@ -220,29 +230,25 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 pb10px odiv odiv_mdp">
                         <button type="button" class="btn btn_recent"
                           [ngStyle]="{'background-color': enableTab === 'All' ? '' :(isAdults ? '#424675' : '#4267A5')}"
-                          [ngClass]="{'active': enableTab === 'All'}"
-                          (click)="showAll()">
+                          [ngClass]="{'active': enableTab === 'All'}" (click)="showAll()">
                           All Notes
                         </button>
 
                         <button (click)="showNotes()"
-                        [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : (isAdults ? '#424675' : '#4267A5')}"
-                        [ngClass]="{'active': enableTab === 'Diary'}"
-                         class="btn btn_recent">
+                          [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : (isAdults ? '#424675' : '#4267A5')}"
+                          [ngClass]="{'active': enableTab === 'Diary'}" class="btn btn_recent">
                           Diary
                         </button>
 
                         <button (click)="showReflections()"
-                        [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : (isAdults ? '#424675' : '#4267A5')}"
-                        [ngClass]="{'active': enableTab === 'Reflections'}"
-                        class="btn btn_recent">
+                          [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : (isAdults ? '#424675' : '#4267A5')}"
+                          [ngClass]="{'active': enableTab === 'Reflections'}" class="btn btn_recent">
                           Reflections
                         </button>
 
                         <button (click)="showGuidedQuestions()"
-                        [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : (isAdults ? '#424675' : '#4267A5')}"
-                        [ngClass]="{'active': enableTab === 'Guided'}"
-                         class="btn btn_recent">
+                          [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : (isAdults ? '#424675' : '#4267A5')}"
+                          [ngClass]="{'active': enableTab === 'Guided'}" class="btn btn_recent">
                           Guided Questions
                         </button>
                       </div>
@@ -264,6 +270,16 @@
                                   {{j.ModuleName}}
                                 </h4>
                                 <h4 class="fs_18px fw_500 lh_150p fc_ffffff">{{j.TitleQue}}</h4>
+                                <ng-container *ngIf="j.TitleQue == 'Daily Checkin'">
+                                  <div class="row mtb10px" *ngFor="let item of getdailCheckInData(j.ModuleId)">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tcenter">
+                                      <img src="{{item.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tcenter">
+                                      <span class="fc_ffffff fs_18px">{{item.Expression}}</span>
+                                    </div>
+                                  </div>
+                                </ng-container>
                                 <h4 class="fs_15px fw_400 lh_150p fc_ffffff">
                                   {{j.Response|slice:0:40}}...
                                 </h4>
@@ -282,7 +298,8 @@
                   <div class="row center_flex mtb30px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
-                        Explore these questions to understand yourself, and find fresh ways of dealing with life’s challenges
+                        Explore these questions to understand yourself, and find fresh ways of dealing with life’s
+                        challenges
                       </h4>
                     </div>
                   </div>
@@ -306,19 +323,23 @@
 
                   <!-- view more & less -->
                   <a id="btn_rm">
-                    <div class="row bg_transparent p0 filter_unseti fa_vm" id="vm" (click)="viewMoreAndLess(false)" *ngIf="isViewMore">
+                    <div class="row bg_transparent p0 filter_unseti fa_vm" id="vm" (click)="viewMoreAndLess(false)"
+                      *ngIf="isViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb30px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                            class="img-responsive mb10px">
                           View More
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row bg_transparent p0 filter_unseti fa_vm" (click)="viewMoreAndLess(true)" id="vl_gq" *ngIf="!isViewMore">
+                    <div class="row bg_transparent p0 filter_unseti fa_vm" (click)="viewMoreAndLess(true)" id="vl_gq"
+                      *ngIf="!isViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb30px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                            class="img-responsive mb10px">
                           View Less
                         </h4>
                       </div>
