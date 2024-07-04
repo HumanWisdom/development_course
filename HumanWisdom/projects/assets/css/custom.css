@@ -37210,7 +37210,8 @@ span
   border-radius: 12px;
   border: 1px solid rgba(204, 204, 204, 0.25);
   background: rgba(0, 0, 0, 0.10);
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 90px 20px 20px 20px;
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
@@ -37223,14 +37224,15 @@ span
   font-weight: 400;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.25);
-  padding: 70px 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .ta_dailycheckin:focus
 {
   color: #FFF;
   outline: none;
-  padding: 90px 0 0 20px;
+  /* padding: 90px 0 0 20px; */
+  padding: 90px 20px 20px 20px;
 }
 
 .ta_absolute_emoji
@@ -37247,6 +37249,11 @@ span
   top: 0;
   margin: 0 auto;
   border-radius: 12px 12px 0 0;
+}
+
+.bg_emoji_blur
+{
+  background: rgba(131, 75, 102, 0.9);
 }
 
 .lab-modal-body_dc 
