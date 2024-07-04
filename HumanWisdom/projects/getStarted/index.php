@@ -46,7 +46,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb0px">
             <h4 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
-              Understand your Mind and Be Happier.
+              Understand your mind and be happier.
             </h4>
           </div>
 
@@ -1753,7 +1753,25 @@
 
             <div class="owl_blog">
               <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200" href="./blogs/difficult_emotions.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="200" href="./blogs/10_ways_understanding_your_mind_could_transform_your_life.php">
+                  <div class="div_blog">
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
+                          #10 ways understanding your mind could transform your life
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/difficult_emotions.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1771,7 +1789,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/real_success.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/real_success.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1789,7 +1807,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1807,7 +1825,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/why_are_we_critical_of_ourselves.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="600" href="./blogs/why_are_we_critical_of_ourselves.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1825,7 +1843,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="600" href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="700" href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
