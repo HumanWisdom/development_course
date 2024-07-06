@@ -13,15 +13,15 @@ export class S100007Page implements OnInit {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w5"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.3.mp3'
+  mediaAudio:any;
+  audioLink='';
   title=""
 
  toc="teenagers/awareness/s100001"
   transcriptPage="awareness/s100007t"
 
   userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  saveUsername:any;
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=100007
@@ -38,13 +38,29 @@ export class S100007Page implements OnInit {
   
   avDuration:any
   
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  bookmarkList:any;
   
   constructor(private router: Router,
     private service:TeenagersService,
     private location:Location) { }
  
   ngOnInit() {
+     var userName = localStorage.getItem("saveUsername");
+     if(userName!=null && userName){
+      this.saveUsername = JSON.parse(userName)
+     }
+     var bookmark =   localStorage.getItem("bookmarkList")
+     if(bookmark && bookmark!=null){
+     this.bookmarkList = JSON.parse(bookmark);
+     }
+
+
+    var mediaAudio = localStorage.getItem("mediaAudio")
+    if(mediaAudio && mediaAudio!=null){
+     this.mediaAudio= JSON.parse(mediaAudio);
+     this.audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.3.mp3'
+    }
+
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else

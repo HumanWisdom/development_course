@@ -54,34 +54,13 @@
                 </div>
               </div>
 
-              <div class="div_fa mt30px">
-                <a routerLink="/">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_08 center_flex">
-                      
-                      <!-- <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/pathway/59.png" class="img-responsive w100">
-                      </div>
-      
-                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
-                          Live your best life
-                        </h4>
-                        <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_ffffff ellipsis">
-                          Leadership
-                        </h4>
-                        <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                          5 sessions
-                        </h4> 
-                   
-                        
-                      </div> -->
-                      <audio id="aud1" controls controlsList="nodownload" #audio>
-                        <source [src]="audioLink" type="audio/mpeg"/>
-                      </audio>
-                    </div>
-                  </div>
-                </a>
+        
+              <div class="row tcenter mt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0"  *ngIf="audioLink !== ''">
+                  <audio id="aud1" controls controlsList="nodownload" #audio >
+                    <source [src]="audioLink" type="audio/mpeg">
+                  </audio>
+                </div>
               </div>
 
             </div>
