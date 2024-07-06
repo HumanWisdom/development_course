@@ -128,7 +128,7 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
       //this.logeventservice.logEvent('click_login')
-      localStorage.setItem('btnclick', 'T')
+      localStorage.setItem('btnclick', 'F')
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.login)]);
       // }
 

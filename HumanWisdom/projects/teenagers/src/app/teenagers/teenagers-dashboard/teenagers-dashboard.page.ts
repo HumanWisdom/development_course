@@ -176,7 +176,6 @@ export class TeenagersDashboardPage implements OnInit {
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
     //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
     localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
@@ -225,7 +224,6 @@ export class TeenagersDashboardPage implements OnInit {
           localStorage.setItem('guest', 'T');
           localStorage.setItem('isloggedin', 'F');
           this.services.setDataRecievedState(true);
-          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
