@@ -222,7 +222,7 @@
   </script>
 
   <!-- <script type="text/javascript">
-      $(window).on('load', function() {      
+      $(window).on('load', function() {
         $('#modal_cookie').modal('show');
       });
     </script> -->
@@ -250,12 +250,12 @@
       <script>
       $(document).ready(function () {
         $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) 
-          { 
+          if ($(this).scrollTop() > 100)
+          {
             $('#div_google_playstore').fadeOut(500);
             $(".navbar-static-top").attr("style", "top: 0");
-          } 
-          else 
+          }
+          else
           {
             $('#div_google_playstore').fadeIn(500);
             $(".navbar-static-top").addClass("navbar_01");
@@ -325,26 +325,25 @@
         }
       });
 
-      $(document).on('click', '.rm_03', function () {
-        var elem = $(".rm_03").text();
-        if (elem == "read more") {
-          //Stuff to do when btn is in the read more state
-          $(".rm_03").text("read less");
-          $(".rm_txt_03").slideDown();
-        }
-        else {
-          //Stuff to do when btn is in the read less state
-          $(".rm_03").text("read more");
-          $(".rm_txt_03").slideUp();
-        }
-      });
-      $(document).on('click', '#btnShare', function () {
-        //console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
+        $(document).on('click', '.rm_03', function () {
+          var elem = $(".rm_03").text();
+          if (elem == "read more") {
+            //Stuff to do when btn is in the read more state
+            $(".rm_03").text("read less");
+            $(".rm_txt_03").slideDown();
+          }
+          else {
+            //Stuff to do when btn is in the read less state
+            $(".rm_03").text("read more");
+            $(".rm_txt_03").slideUp();
+          }
+        });
+        $(document).on('click', '#btnShare', function () {
         if (window.AndroidHandler) {
-          if (l.includes("/s") && !isNaN(l.substring(l.lastIndexOf("/s"))))
-            window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
-          else
-            window.AndroidHandler.share(window.location.href);
+            if(this.rel=="module")
+              window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+            else
+              window.AndroidHandler.share(window.location.href);
 
         }
       });
@@ -403,7 +402,7 @@
       });
 
 
-      /*     
+      /*
           $(document).on('click', '#downloadFile', function () {
             if (window.webkit) {
               setTimeout(() => {
