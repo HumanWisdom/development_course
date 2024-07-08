@@ -1542,7 +1542,7 @@ export class TeenagersDashboardPage implements OnInit {
 
   getLogin() {
     localStorage.setItem('btnclick', 'T')
-    this.router.navigate(['/onboarding/login', { queryParams: { email: '' } }])
+    this.router.navigate(['/teenagers/onboarding/login', { queryParams: { email: '' } }])
   }
 
   friendEmail(value) {

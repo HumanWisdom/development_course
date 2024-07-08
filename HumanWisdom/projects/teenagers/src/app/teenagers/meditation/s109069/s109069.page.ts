@@ -85,7 +85,7 @@ export class S109069Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/meditation/s109070'])
+    this.router.navigate(['/teenagers/meditation/s109069p'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
