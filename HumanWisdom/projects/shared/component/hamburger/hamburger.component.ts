@@ -469,7 +469,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.closemodal?.nativeElement?.click();
+    // this.closemodal?.nativeElement?.click();
     this.toursubscription.unsubscribe();
   }
 }
