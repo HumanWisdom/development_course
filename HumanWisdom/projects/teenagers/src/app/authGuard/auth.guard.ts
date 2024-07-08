@@ -140,7 +140,7 @@ export class AuthGuard implements CanActivate, OnInit {
       return true;
     } else if (btnclick !== null && btnclick === 'T') {
       // this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-      this.router.navigate(['/adults/onboarding/login'])
+      this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login'])
       return false
     } else {
       if (this.onboarding.navigateToUpgradeToPremium

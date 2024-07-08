@@ -16,7 +16,7 @@ export class S107007Page implements OnInit {
   bg="teal_w5"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/breathing/videos/1.5.mp4'  
-  title="Breathing exercise 4"
+  title=" Humming Bee"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_02.jpg"
   
   userId:any

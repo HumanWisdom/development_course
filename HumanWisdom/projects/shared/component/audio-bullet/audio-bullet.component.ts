@@ -2,7 +2,7 @@ import { Component, OnInit,OnDestroy,Input,ViewChild,  ElementRef,AfterViewInit,
 import { Router,ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
-
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-audio-bullet',
   templateUrl: './audio-bullet.component.html',
@@ -17,15 +17,15 @@ yellow="#FFC455"
 @Output() sendAvDuration = new EventEmitter<string>();
 myAudio:any
 pauseTime:any
-mediaPercent=JSON.parse(localStorage.getItem("mediaPercent"))
+mediaPercent:any;
 interval:any
 t:any
 loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
-freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+freeScreens:any;
 scrId:any
 reachedLimit = false;
 enableAlert = false;
-
+isAdults:boolean;
 @ViewChild('audio') audio;
 @ViewChild('screen', { static: true }) screen: any;
 
@@ -41,6 +41,17 @@ constructor(
 }
 
 ngOnInit() {
+  this.isAdults = SharedService.isAdultProgram();
+  this.setAudioControlsBackground();
+ let mediaPercent=JSON.parse(localStorage.getItem("mediaPercent"))
+  if(mediaPercent && mediaPercent!=null){
+    this.mediaPercent=JSON.parse(mediaPercent);
+  }
+
+  let freeScreens=localStorage.getItem("freeScreens")
+  if(freeScreens && freeScreens!=null){
+    this.freeScreens=JSON.parse(freeScreens);
+  }
   console.log(this.audioLink,this.mediaPercent,this.loginResponse,this.list)
   var str=this.router.url
     var lastSlash = str.lastIndexOf("/");
@@ -55,7 +66,20 @@ ngOnInit() {
       }
     }
 }
+setAudioControlsBackground() {
+  const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
 
+  // Create a new <style> element
+  const style = document.createElement('style');
+  style.textContent = `
+    audio::-webkit-media-controls-enclosure {
+      background: ${backgroundColor} !important;
+    }
+  `;
+
+  // Append the <style> element to the document head
+  document.head.appendChild(style);
+}
 
 
 getTime(){

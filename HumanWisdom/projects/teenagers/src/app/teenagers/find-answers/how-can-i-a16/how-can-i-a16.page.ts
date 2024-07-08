@@ -17,6 +17,7 @@ export class HowCanIA16Page implements OnInit {
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }
 
   ngOnInit() {
+    this.setAudioControlsBackground();
   }
 
   getclcickevent(event) 
@@ -36,4 +37,18 @@ export class HowCanIA16Page implements OnInit {
     }
   }
 
+  setAudioControlsBackground() {
+    const backgroundColor ='#0C2B5F';
+  
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+  
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
+  }
 }
