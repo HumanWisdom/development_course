@@ -16,7 +16,7 @@ export class S107008Page implements OnInit {
   bg="teal_w6"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/breathing/videos/1.6.mp4'  
-  title="Breathing exercise 5"
+  title="Hand on Chest & Abdomen"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_03.jpg"
   
   userId:any
