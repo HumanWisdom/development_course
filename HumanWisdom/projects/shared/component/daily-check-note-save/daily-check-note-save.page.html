@@ -19,12 +19,15 @@
 <div class="right_col mc_03">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 pt80pxi div_intro col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 pt80pxi col_cw"  [ngClass]="isAdults ? 'div_intro' : 'bg_stake'">
         <form>
           
           <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
+              <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                {{rowData.Expression}}
+              </h4>
             </div>
           </div>
 
@@ -43,7 +46,7 @@
               </div>
             </div>
             
-            <div class="row ta_absolute_emoji">
+           <!--  <div class="row ta_absolute_emoji bg_emoji_blur">
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
@@ -58,7 +61,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             
           </div>
 
@@ -151,3 +154,7 @@
   </div>
 </div>
 <!-- /successfully saved -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'Start your free trial to activate this feature'">
+</app-modal>

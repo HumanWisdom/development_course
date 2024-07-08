@@ -1005,6 +1005,11 @@
     {
         -webkit-line-clamp: 2;
     }
+
+    .pt80pxi_dc
+    {
+        padding-top: 40px !important;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)

@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 export class DailyCheckInLandingPage implements OnInit {
   dailyCheckInList: any = [];
   name :string = '';
+  isAdults = false;
   constructor(public commonService:CommonService,public router:Router) { 
     this.initializeDailyCheckinList();
     this.name = localStorage.getItem("name");
+    this.isAdults = SharedService.isAdultProgram();
   }
 
   ngOnInit() {

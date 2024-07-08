@@ -275,7 +275,7 @@ export class SelectATopicToExplorePage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.route.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.route.navigate(['/onboarding/login'])
   }
 
   googleLogin() {
@@ -868,6 +868,6 @@ export class SelectATopicToExplorePage implements OnInit {
   }
 
   navigate(url) {
-    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+    this.router.navigate([url]);
   }
 }
