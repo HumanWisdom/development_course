@@ -25,6 +25,7 @@ export class CourseFooterComponent implements OnInit {
   urlT:any
   shared=false;
   programName="";
+  isAdults:boolean = false;
   //@ViewChild('screen', { static: true }) screen: any;
   @Input() screenName: any = '';
 
@@ -36,6 +37,7 @@ export class CourseFooterComponent implements OnInit {
     //private captureService:NgxCaptureService
     public logeventservice: LogEventService
   ) {
+    this.isAdults= SharedService.isAdultProgram();
     if(this.router.getCurrentNavigation()) {
       this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
     }
