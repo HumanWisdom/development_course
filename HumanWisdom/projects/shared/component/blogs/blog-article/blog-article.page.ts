@@ -86,7 +86,7 @@ export class BlogArticlePage implements OnInit {
         tempEl.innerHTML = res.Blog; }
      else if(SharedService.ProgramId==11)
       {
-         tempEl.innerHTML = res.Blog.replaceAll("/adults/","/teenagers/");
+         tempEl.innerHTML = res.Blog.replaceAll("/adults/","/teenagers/").replaceAll("/pathway/live-your-best-life","/pathway/succeed-in-life");
       }
 
      for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {

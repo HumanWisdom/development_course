@@ -115,7 +115,7 @@ export class S117041Page implements OnInit,OnDestroy {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/loneliness/s117040'])
+    this.router.navigate(['/teenagers/loneliness/s117040p'])
   }
 
   ngOnDestroy()

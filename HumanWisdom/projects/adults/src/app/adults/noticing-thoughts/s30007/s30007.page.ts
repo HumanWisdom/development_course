@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
   styleUrls: ['./s30007.page.scss'],
 })
 export class S30007Page implements OnInit {
-  programType : ProgramType = ProgramType.Teenagers;
+  programType : ProgramType = ProgramType.Adults;
   toc=""
   moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   
@@ -19,7 +19,7 @@ export class S30007Page implements OnInit {
   moduleLink="/adults/guided-meditation"
   moduleName="Guided Audio Meditation"
   sectionName= "Nurturing a Quiet Mind";
-  moduleId=110
+  moduleId=51
   moduleList: any = [
     {
       name: 'Breathing',

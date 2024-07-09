@@ -42,7 +42,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
          "Notes":this.checkInDescription,
          "UserId":userId,
          "CheckinID":this.rowData.RowID,
-         "Title":'Daily Checkin'
+         "Title":'Daily check-in'
         };
         this.commonService.submitJournal(obj).subscribe(res=>{
           if(res){
@@ -76,12 +76,19 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      this.router.navigate([SharedService.getUrlfromFeatureName('/search')]);
+      console.log(this.rowData.Expression)
+      if(this.rowData.Expression=="Tired")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);
+      else if(this.rowData.Expression=="Overwhelmed")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/curated/overcome-stress-anxiety`)]);
+      else
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
     }
+
     getAlertcloseEvent(event) {
       if(event=='ok'){
         this.enableAlert = false;
-        this.router.navigate([SharedService.getUrlfromFeatureName('/subscription/try-free-and-subscribe') ]);
+        this.router.navigate([SharedService.getUrlfromFeatureName('/subscription/start-your-free-trial') ]);
       }else{
         this.enableAlert = false;
       }

@@ -36648,8 +36648,8 @@ a.fc_e58d82:hover
   border-radius: 12px;
   border: 1px solid rgba(204, 204, 204, 0.25);
   background: rgba(0, 0, 0, 0.10);
-  /* padding: 20px; */
-  padding: 90px 20px 20px 20px;
+  padding: 20px;
+  /* padding: 90px 20px 20px 20px; */
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
@@ -36670,7 +36670,7 @@ a.fc_e58d82:hover
   color: #FFF;
   outline: none;
   /* padding: 90px 0 0 20px; */
-  padding: 90px 20px 20px 20px;
+  /* padding: 90px 20px 20px 20px; */
 }
 
 .ta_absolute_emoji

@@ -4,11 +4,11 @@ import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s109065',
-  templateUrl: './s109065.page.html',
-  styleUrls: ['./s109065.page.scss'],
+  selector: 'app-s109069p',
+  templateUrl: './s109069p.page.html',
+  styleUrls: ['./s109069p.page.scss'],
 })
-export class S109065Page implements OnInit {
+export class S109069pPage implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
@@ -19,7 +19,7 @@ export class S109065Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=109065
+  screenNumber="109069p"
   startTime:any
   endTime:any
   totalTime:any
@@ -99,7 +99,7 @@ export class S109065Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/teenagers/meditation/s109064'])
+    this.router.navigate(['/teenagers/meditation/s109069'])
   }
 
   goNext() 
@@ -108,7 +108,7 @@ export class S109065Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/teenagers/meditation/s109066'])
+    this.router.navigate(['/teenagers/meditation/s109070'])
   }
 
   ngOnDestroy() 

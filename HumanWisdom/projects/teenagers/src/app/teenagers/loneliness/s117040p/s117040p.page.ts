@@ -1,47 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { AdultsService } from "../../adults.service";
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import {Location } from '@angular/common'
+import { TeenagersService } from '../../teenagers.service';
+
 
 @Component({
-  selector: 'app-s29008p2',
-  templateUrl: './s29008p2.page.html',
-  styleUrls: ['./s29008p2.page.scss'],
+  selector: 'app-s117040p',
+  templateUrl: './s117040p.page.html',
+  styleUrls: ['./s117040p.page.scss'],
 })
-export class S29008p2Page implements OnInit {
+export class S117040pPage implements OnInit,OnDestroy {
 
-  bg_tn="bg_teal"
-  bg_cft="bg_teal"
-  bg="teal_w1"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/breathing/videos/1.9.mp4'  
-  title="Bellows Breath"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_01.jpg"
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
+  bg="green_yellow_w5"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("video")
+  screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber="29008p2"
+  screenNumber="117040p"
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/breathing/s29000"
   bookmark=0
+  toc="teenagers/loneliness/s117001"
   path = setTimeout(() => {
     return this.router.url;
-  }, 1000);
-  avDuration:any
+  }, 1000);  
+
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
-  constructor(
+  constructor
+  (
     private router: Router,
-    private service:AdultsService,
+    private service:TeenagersService,
     private location:Location
-  ) { }
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -52,20 +53,21 @@ export class S29008p2Page implements OnInit {
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    if(JSON.parse(sessionStorage.getItem("bookmark29008p2"))==0)
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark117040p"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark29008p2"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark117040p"))==1)
       this.bookmark=1
   }
 
   receiveBookmark(e)
   {
     console.log(e)
-     if(e==true)
+    if(e==true)
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark29008p2",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark117040p",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -84,28 +86,31 @@ export class S29008p2Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/breathing/s29008p3'])
-    this.service.submitProgressAv({
+    this.router.navigate(['/teenagers/loneliness/s117041'])
+    this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
+      "timeSpent":this.totalTime
     }).subscribe(res=>
-      {
+      { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/loneliness/s234'])
       })
   }
 
   prev()
   {
-    localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/breathing/s29008p1'])
+    this.router.navigate(['/teenagers/loneliness/s117040'])
   }
 
-  ngOnDestroy(){}
+  ngOnDestroy()
+  {}
+
 }
