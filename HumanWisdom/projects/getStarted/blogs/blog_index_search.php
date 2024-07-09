@@ -38,6 +38,177 @@
       </div>
     </section>
 
+    <!-- search -->
+    <!-- <header id="header-1" class="header">
+      <nav class="header-nav">
+        <div class="search-button">
+          <a href="#" class="search-toggle" data-selector="#header-1"></a>
+        </div>
+        <ul class="menu_search">
+          <li><a href="#">For Business</a></li>
+          <li><a href="#">For Personal</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="" class="search-box">
+          <input type="text" class="text search-input" placeholder="Type here to search..." />
+        </form>
+      </nav>
+    </header> -->
+
+    <!-- <header id="header-2" class="header">
+      <nav class="header-nav">
+        <div class="search-button">
+          <a href="#" class="search-toggle" data-selector="#header-2"></a>
+        </div>
+        <ul class="menu_search">
+          <li><a href="#">For Business</a></li>
+          <li><a href="#">For Personal</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="" class="search-box">
+          <input type="text" class="text search-input" placeholder="Type here to search..." />
+        </form>
+      </nav>
+    </header> -->
+
+    <!-- <header id="header-3" class="header">
+      <nav class="header-nav">
+        <div class="search-button">
+          <a href="#" class="search-toggle" data-selector="#header-3"></a>
+        </div>
+        <ul class="menu_search">
+          <li><a href="#">For Business</a></li>
+          <li><a href="#">For Personal</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="" class="search-box">
+          <input type="text" class="text search-input" placeholder="Type here to search..." />
+        </form>
+      </nav>
+    </header> -->
+    <!-- /search -->
+
+    <!-- isotope -->
+    <section>
+      <div class="row center_flex">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" data-aos="fade-up" data-aos-delay="100">
+          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 header" id="header-2">
+                <ul class="portfolio-filters isotope-filters ul_cp menu_search" data-aos="fade-up" data-aos-delay="100" id="header-2">
+                  <li data-filter="*" class="filter-active">
+                    All
+                  </li>
+                  
+                  <li data-filter=".filter_mental_health">
+                    Mental health
+                  </li>
+                  
+                  <li data-filter=".filter_relationships">
+                    Relationships
+                  </li>
+                  
+                  <li data-filter=".filter_work_leadership">
+                    Work & Leadership
+                  </li>
+
+                  <li data-filter=".filter_breathing_meditation">
+                    Breathing & Meditation
+                  </li>
+
+                  <div class="search-button">
+                    <a href="#" class="search-toggle" data-selector="#header-2"></a>
+                  </div>
+
+                  <form action="" class="search-box">
+                    <input type="text" class="form-control fc_01 fc_web_search" placeholder="Type here to search..." />
+                  </form>
+                </ul>
+              </div>
+            </div>
+
+            <div class="isotope-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0 portfolio-item isotope-item filter_mental_health" data-aos="fade-up" data-aos-delay="200">
+                <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs">
+                    </div>
+                  </div>
+
+                  <div class="row mt20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                        Manage your emotions
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                        #10 ways understanding your mind could transform your life 
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                        <!-- 25 days ago  -->
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0 portfolio-item isotope-item filter_relationships" data-aos="fade-up" data-aos-delay="200">
+                <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs">
+                    </div>
+                  </div>
+
+                  <div class="row mt20px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                        Manage your emotions
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                        #10 ways understanding your mind could transform your life 
+                        Relation demo
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                        <!-- 25 days ago  -->
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /isotope -->
+
     <main id="main">
 
       <!-- aspects -->
@@ -56,7 +227,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Manage your emotions
                     </button>
                   </div>
                 </div>
@@ -490,6 +661,16 @@
     <!-- vendor_footer -->
     <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+
+    <script type="text/javascript">
+    $('.header').on('click', '.search-toggle', function(e) 
+    {
+        var selector = $(this).data('selector');
+        $(selector).toggleClass('show').find('.search-input').focus();
+        $(this).toggleClass('active');
+        e.preventDefault();
+    });
+    </script>
     
   </body>
 

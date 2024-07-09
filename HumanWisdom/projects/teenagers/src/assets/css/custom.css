@@ -36711,4 +36711,44 @@ a.fc_e58d82:hover
 {
   padding: 40px;
 }
+
+.h4_blogs ol 
+{
+  padding: 0 15px !important;
+  color: #FFF !important;
+}
+
+.h4_blogs ol li
+{
+  color: #FFF !important;
+  background: transparent !important;
+}
+
+.h4_blogs p
+{
+  padding: 0;
+  margin: 0 !important;
+}
+
+.h4_blogs p b 
+{
+  color: #FFF !important;
+}
+
+.h4_blogs a span
+{
+  word-break: break-word;
+}
+
+.h4_blogs p a,
+.h4_blogs span div a
+{
+  background: transparent !important;
+}
+
+.h4_blogs img
+{
+  width: 100%;
+  max-height: 100%;
+}
 /* /version - 03 */

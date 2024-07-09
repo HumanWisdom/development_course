@@ -4,26 +4,26 @@ import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
 
 @Component({
-  selector: 'app-s59170p2',
-  templateUrl: './s59170p2.page.html',
-  styleUrls: ['./s59170p2.page.scss'],
+  selector: 'app-s59170p3',
+  templateUrl: './s59170p3.page.html',
+  styleUrls: ['./s59170p3.page.scss'],
 })
-export class S59170p2Page implements OnInit {
+export class S59170p3Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w2"
+  bg = "purple_w3"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/36.mp4'
+  videoLink = this.mediaVideo + '/events/54.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
-  title = "To be a better leader, understand your ego."
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/leadership/leadership_02.jpg"
+  title = " Self-awareness: the key to leadership "
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/leadership/leadership_03.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "59170p2"
+  screenNumber = "59170p3"
   startTime: any
   endTime: any
   totalTime: any
@@ -54,9 +54,9 @@ export class S59170p2Page implements OnInit {
     this.startTime = Date.now();
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark59170p2")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark59170p3")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark59170p2")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark59170p3")) == 1)
       this.bookmark = 1
   }
 
@@ -66,7 +66,7 @@ export class S59170p2Page implements OnInit {
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark59170p2", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark59170p3", JSON.stringify(this.bookmark))
   }
 
   createScreen() {
@@ -82,7 +82,7 @@ export class S59170p2Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/leadership/s59170p3'])
+    this.router.navigate(['/adults/leadership/s59171'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
