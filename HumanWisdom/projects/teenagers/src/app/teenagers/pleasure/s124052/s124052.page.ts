@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
-import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s124052',
@@ -23,7 +23,7 @@ export class S124052Page implements OnInit
   name="#4  Responding to pleasure with wisdom"
   progressImg=""
   toc="teenagers/pleasure/s124001"
-  programType : ProgramType = ProgramType.Teenagers;
+
 
   constructor
   (
