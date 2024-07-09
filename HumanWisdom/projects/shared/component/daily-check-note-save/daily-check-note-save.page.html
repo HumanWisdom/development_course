@@ -24,7 +24,8 @@
           
           <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
+              <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji" *ngIf="isAdults">
+              <img src="{{rowData.ImgPath.replace('/assets/svgs/v1_3/emojis/','/teenagers/assets/svgs/emojis/') }}" alt="" class="img-responsive img_journal_emoji" *ngIf="!isAdults">
               <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
                 {{rowData.Expression}}
               </h4>
