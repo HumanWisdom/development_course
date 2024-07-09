@@ -1201,7 +1201,7 @@
 
             <div class="owl_coach">
               <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                <a class="item" data-aos="fade-up" data-aos-delay="200" href="https://happierme.app/adults/coach/profile/692">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1227,7 +1227,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300">
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="https://happierme.app/adults/coach/profile/18814">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1253,7 +1253,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400">
+                <a class="item" data-aos="fade-up" data-aos-delay="400" href="https://happierme.app/adults/coach/profile/776">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1279,7 +1279,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="500">
+                <a class="item" data-aos="fade-up" data-aos-delay="500" href="https://happierme.app/adults/coach/profile/675">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1305,7 +1305,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="600">
+                <a class="item" data-aos="fade-up" data-aos-delay="600" href="https://happierme.app/adults/coach/profile/755">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1331,7 +1331,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="700">
+                <a class="item" data-aos="fade-up" data-aos-delay="700" href="https://happierme.app/adults/coach/profile/760">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1357,7 +1357,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="800">
+                <a class="item" data-aos="fade-up" data-aos-delay="800" href="https://happierme.app/adults/coach/profile/926">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1383,7 +1383,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="900">
+                <a class="item" data-aos="fade-up" data-aos-delay="900" href="https://happierme.app/adults/coach/profile/733">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1409,7 +1409,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="1000">
+                <a class="item" data-aos="fade-up" data-aos-delay="1000" href="https://happierme.app/adults/coach/profile/702">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1435,7 +1435,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="1100">
+                <a class="item" data-aos="fade-up" data-aos-delay="1100" href="https://happierme.app/adults/coach/profile/19199">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1461,7 +1461,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="1200">
+                <a class="item" data-aos="fade-up" data-aos-delay="1200" href="https://happierme.app/adults/coach/profile/740">
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
