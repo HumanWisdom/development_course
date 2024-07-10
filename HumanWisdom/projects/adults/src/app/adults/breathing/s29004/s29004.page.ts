@@ -16,7 +16,7 @@ export class S29004Page implements OnInit {
   bg="teal_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/breathing/videos/1.3.mp4'  
-  title="Breathing exercise 2"
+  title="Smooth, Slow Exhale"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_03.jpg"
   
   userId:any

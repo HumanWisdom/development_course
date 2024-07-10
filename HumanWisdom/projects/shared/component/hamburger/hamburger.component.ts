@@ -11,8 +11,9 @@ import {
   supportsScrollBehavior
 } from "@angular/cdk/platform";
 import { SharedService } from "../../services/shared.service";
-import { Subscription } from "rxjs";
+import { Subject, Subscription } from "rxjs";
 import { environment } from "../../../../projects/environments/environment";
+import { debounceTime, throttleTime } from "rxjs/operators";
 
 @Component({
   selector: "app-hamburger",
@@ -47,7 +48,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   toursubscription: Subscription;
   disableClick = true;
   isAdults: boolean = true;
-
+  private closeEventSubject: Subject<void>= new Subject();
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
@@ -62,6 +63,9 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     setTimeout(() => {
       this.disableClick = false;
     }, 500);
+    this.closeEventSubject.pipe(throttleTime(1000)).subscribe(()=>{
+      this.closemodal.nativeElement.click();
+    })  
   }
 
   onProgramChange($event) {
@@ -81,10 +85,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   closemenuevent() {
-    setTimeout(() => {
-     // this.isHamburgerClicked = false;
-    }, 1000);
-    this.closemodal.nativeElement.click();
+    this.closeEventSubject.next();
   }
 
   handleReferFriendClick() {
@@ -468,7 +469,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.closemodal?.nativeElement?.click();
+    // this.closemodal?.nativeElement?.click();
     this.toursubscription.unsubscribe();
   }
 }

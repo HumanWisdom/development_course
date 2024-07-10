@@ -34042,6 +34042,17 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 20px;
 }
 
+.forum_profile_desc_teenagers
+{
+  background: #0C2B5F;
+  background-size:cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  margin-top: -12%;
+  padding: 20px;
+}
+
 .forum_profile_img 
 {
   border: 2px solid #292d5e;
@@ -36574,5 +36585,170 @@ a.fc_e58d82:hover
 .toc_adiv_04 .session_img
 {
   border: 0;
+}
+
+.w0p 
+{
+  width: 0% !important;
+}
+
+.vhr_03
+{
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin: 0 auto;
+  height: 81px;
+  display: -webkit-inline-box;
+  display: inline-block;
+}
+
+.tn_dailycheckin
+{
+  height: 80px;
+  background: transparent;
+  box-shadow: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.pt80pxi_dc
+{
+  padding-top: 80px !important;
+}
+
+.div_smiley>[class^=col-]
+{
+  /* width: 20%; */
+  margin-bottom: 15px;
+}
+
+.footer_dailycheckin
+{
+  height: 110px;
+  padding: 30px 20px;
+}
+
+.img_journal_emoji
+{
+  width: 86px;
+  height: 86px;
+}
+
+.ta_dailycheckin
+{
+  height: 163px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: rgba(0, 0, 0, 0.10);
+  padding: 20px;
+  /* padding: 90px 20px 20px 20px; */
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.ta_dailycheckin::-webkit-input-placeholder
+{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 0 0 0 0;
+}
+
+.ta_dailycheckin:focus
+{
+  color: #FFF;
+  outline: none;
+  /* padding: 90px 0 0 20px; */
+  /* padding: 90px 20px 20px 20px; */
+}
+
+.ta_absolute_emoji
+{
+  /* position: absolute;
+  margin: 20px 0 5px 1ch; */
+
+  position: absolute;
+  padding: 20px 0 5px 20px !important;
+  background: transparent;
+  /* background: rgba(131, 75, 102, 0.9); */
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.bg_emoji_blur
+{
+  background: rgba(131, 75, 102, 0.9);
+}
+
+.bg_emoji_blur_teens
+{
+  background: rgba(12, 43, 95, 0.9);
+}
+
+.div_smiley>[class^=col-]:nth-child(5),
+.div_smiley>[class^=col-]:nth-child(9),
+.div_smiley>[class^=col-]:nth-child(13),
+.div_smiley>[class^=col-]:nth-child(17)
+{
+  clear: both;
+}
+
+.lab-modal-body_dc 
+{
+  padding: 40px;
+}
+
+.h4_blogs ol 
+{
+  padding: 0 15px !important;
+  color: #FFF !important;
+}
+
+.h4_blogs ol li
+{
+  color: #FFF !important;
+  background: transparent !important;
+}
+
+.h4_blogs p
+{
+  padding: 0;
+  margin: 0 !important;
+}
+
+.h4_blogs p b 
+{
+  color: #FFF !important;
+}
+
+.h4_blogs a span
+{
+  word-break: break-word;
+}
+
+.h4_blogs p a,
+.h4_blogs span div a
+{
+  background: transparent !important;
+}
+
+.h4_blogs img
+{
+  width: 100%;
+  max-height: 100%;
 }
 /* /version - 03 */

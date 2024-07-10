@@ -520,10 +520,13 @@
         }
       });
       $(document).on('click', '#btnShare', function () {
-        //console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
         if (window.AndroidHandler) {
-          window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
-        }
+          if(this.rel=="module")
+            window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+          else
+            window.AndroidHandler.share(window.location.href);
+
+          }
       });
 
       $(document).on('click', '#mailto', function (e) {

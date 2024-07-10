@@ -24,7 +24,11 @@
           
           <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
+              <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji" *ngIf="isAdults">
+              <img src="{{rowData.ImgPath.replace('/assets/svgs/v1_3/emojis/','/teenagers/assets/svgs/emojis/') }}" alt="" class="img-responsive img_journal_emoji" *ngIf="!isAdults">
+              <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                {{rowData.Expression}}
+              </h4>
             </div>
           </div>
 
@@ -43,7 +47,7 @@
               </div>
             </div>
             
-            <div class="row ta_absolute_emoji">
+           <!--  <div class="row ta_absolute_emoji bg_emoji_blur">
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
@@ -58,7 +62,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             
           </div>
 

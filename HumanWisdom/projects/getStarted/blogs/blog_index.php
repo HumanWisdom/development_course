@@ -56,7 +56,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Manage your emotions
+                      Mental health
                     </button>
                   </div>
                 </div>
@@ -428,6 +428,40 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       6 Barriers to overcoming stress
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="addressing_health_problems_with_emotional_intelligence.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive img_blogs">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Mental health
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                      Addressing health problems with emotional intelligence
                     </h4>
                   </div>
                 </div>
