@@ -30,11 +30,12 @@ cardCaptureReady = false
   uID: any;
   enableAlert = false;
   content = '';
-
+  isAdults = false;
   constructor(private service: OnboardingService,
     private router: Router, private location :Location) {
       this.amount = localStorage.getItem('totalAmount')
-    this.uID = JSON.parse(localStorage.getItem("userId"))
+    this.uID = JSON.parse(localStorage.getItem("userId"));
+    this.isAdults = SharedService.isAdultProgram();
   }
 
   ngAfterViewInit() {
