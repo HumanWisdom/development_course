@@ -74,7 +74,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-              <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+              <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
                 Try HappierMe for free
               </a>
             </div>
@@ -365,7 +365,8 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cpl40px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
               <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                COMING SOON!
+                <!-- COMING SOON! -->
+                JUST LAUNCHED!
               </h4>
 
               <h4 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
@@ -386,6 +387,16 @@
         </div>
       </section>
       <!-- /teenagers -->
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+            <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+              Try HappierMe for free
+            </a>
+          </div>
+        </div>
+      </div>
 
       <!-- testimonials -->
       <section>
