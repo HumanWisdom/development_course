@@ -278,7 +278,7 @@ $( window ).resize( function() {
     {
     $('.btn_tff').attr('href','https://onelink.to/qsptex');
     } else {
-    $('.btn_tff').attr('href','https://happierme.app/adults/intro/intro-carousel');
+    $('.btn_tff').attr('href','splash_options.html');
     }
 });
 $( window ).resize();
