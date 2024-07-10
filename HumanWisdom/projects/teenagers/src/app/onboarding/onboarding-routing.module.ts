@@ -51,7 +51,10 @@ const routes: Routes = [
     path: 'viewcart',
     loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
   },
-
+  {
+    path: 'payment-details',
+    loadChildren: () => import('../../../../shared/component/duplicate-subscription-payment/duplicate-subscription-payment.module').then(m => m.DuplicateSubscriptionPaymentModule)
+  },
 ];
 
 @NgModule({
