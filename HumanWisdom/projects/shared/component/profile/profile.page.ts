@@ -143,7 +143,7 @@ export class ProfilePage implements OnInit {
     this.logeventservice.logEvent(evtName);
     if (route.includes('dashboard')) {
       if (this.isAdults) {
-        this.router.navigate([route])
+        this.router.navigate(['/' + SharedService.getprogramName() + route])
       } else {
         this.router.navigate(['/teenagers/teenager-dashboard'])
       }
