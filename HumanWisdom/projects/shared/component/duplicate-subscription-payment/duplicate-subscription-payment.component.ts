@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../../../environments/environment';
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { environment } from '../../../environments/environment';
+import { SharedService } from '../../services/shared.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import { Location } from '@angular/common'; 
 
 
