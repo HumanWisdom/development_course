@@ -578,6 +578,7 @@ export class TeenagersDashboardPage implements OnInit {
         if (this.tourIndex > this.tourTotalIndex) {
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
+          this.tourIndex = 1;
           this.services.setEnableTour(false);
         }
         driverObj.moveNext();

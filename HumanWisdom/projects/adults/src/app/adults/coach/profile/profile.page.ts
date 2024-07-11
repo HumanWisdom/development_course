@@ -51,10 +51,12 @@ export class ProfilePage implements OnInit {
 
   share() {
     this.shareUrl(SharedService.ProgramId);
+    this.baseUrl = 'https://humanwisdom.me/' + SharedService.getprogramName() + '/coach/profile/' + this.id;
+
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: 'Hey, check out the HappierMe Program',
-      url: this.baseUrl + this.path
+      url: this.baseUrl
     }).then((response) => {
       console.log(response);
     })
