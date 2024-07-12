@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../../shared/services/constant';
 import { TeenagersService } from '../../teenagers.service';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
 @Component({
   selector: 'HumanWisdom-s157001',
   templateUrl: './s157001.page.html',
@@ -23,7 +22,7 @@ export class S157001Page implements OnInit {
     private router: Router,
     private service: TeenagersService,
     private location: Location,
-    private NavigationService:NavigationService ) 
+    public navigationService:NavigationService ) 
     { }
  
   ngOnInit() {
