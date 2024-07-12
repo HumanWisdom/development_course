@@ -98,7 +98,7 @@ export class ManageSubscriptionPage implements OnInit {
     //   if(res){
     //        this.router.navigate(["onboarding/myprogram"]);
     SharedService.setDataInLocalStorage(Constant.ActivationKey,this.manageSubscriptionData.ActKey);
-    this.router.navigate(["/myprogram/cancel-subscription"]);
+    this.router.navigate(["teenagers/onboarding/myprogram/cancel-subscription"]);
   //}
   // })
   }
