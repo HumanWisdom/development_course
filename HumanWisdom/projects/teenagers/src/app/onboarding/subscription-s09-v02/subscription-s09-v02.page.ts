@@ -173,7 +173,7 @@ export class SubscriptionS09V02Page implements OnInit {
       if (item.canceled == 0) {
         if ((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1) {
           SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData, JSON.stringify(item));
-          this.router.navigate(["/myprogram/manage-subscription"]);
+          this.router.navigate(["teenagers/onboarding/myprogram/manage-subscription"]);
         }
       }
     }

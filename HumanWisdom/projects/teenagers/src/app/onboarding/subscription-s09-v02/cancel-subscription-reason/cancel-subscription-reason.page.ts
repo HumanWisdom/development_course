@@ -25,7 +25,7 @@ export class CancelSubscriptionReasonPage implements OnInit {
         this.reasonList = res;
       }
     });
-    
+
    }
 
   cancelSubscription() {
@@ -35,7 +35,7 @@ export class CancelSubscriptionReasonPage implements OnInit {
     window.dispatchEvent(event);
     this.onboardingService.cancelSubscription(key,this.selectedId).subscribe(res => {
       if (res) {
-        this.router.navigate(["/myprogram/cancelled"]);
+        this.router.navigate(["teenagers/onboarding/myprogram/cancelled"]);
       }
     });
   }
