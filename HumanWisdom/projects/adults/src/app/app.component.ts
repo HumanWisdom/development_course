@@ -11,7 +11,7 @@ import { slider } from './route.animation';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import moengage from "@moengage/web-sdk";
-import { MoengageService } from './moengage.service';
+// import { MoengageService } from './moengage.service';
 import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
 @Component({
@@ -58,7 +58,7 @@ export class AppComponent implements OnDestroy {
     private meta: Meta,
     private title: Title,
     private services: AdultsService,
-    public moengageService: MoengageService,
+    // public moengageService: MoengageService,
     private navigationService:NavigationService
   ) {
     if (platform.isBrowser) {
