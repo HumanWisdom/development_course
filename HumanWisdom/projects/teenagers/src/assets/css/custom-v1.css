@@ -1,252 +1,191 @@
-/* certificate */
-.outer-rec {
+
+
+
+.certificate {
+  width: 316px;
+  height: 433px;
   position: relative;
+  background: linear-gradient(to bottom, #4267A5 0%, #183C79 100%);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #EE9596;
+  margin-top: 6rem;
+}
+
+.adult-certificate {
+  width: 316px;
+  height: 433px;
+  position: relative;
+  background:#120F40;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #EE9596;
+  margin-top: 6rem;
+}
+
+.border-gradient {
   width: 100%;
-  height: 621px;
-  background-repeat: no-repeat !important;
-  background-size: 101% 100% !important;
-  /* background: url(../images/outer-rec.png); */
-  background-color: #292D56;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.img-url{
-  background: url(../images/outer-rec.png);
+.content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #4267A5 0%, #183C79 100%);
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.inner-rec {
-  position: relative;
-  top: 7.35%;
-  width: 81%;
-  height: 86%;
-  /* left: 38%; */
-  background-size: 100% 100%!important;
-  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-rec.png); */
-  /* background: url(../images/inner-rec.png); */
-  background-repeat: no-repeat !important;
-  background-color: #120F40;
-  border: 1px solid #E58D82;
+.hd {
+  margin-bottom: 10px;
 }
 
-.inner-icon {
-  position: absolute;
-  top: 30.35%;
-  height: 14%;
-  width: 13%;
-  background-size: 100% 86% !important;
-  background-repeat: no-repeat !important;
-  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-icon.png); */
-   background: url(../images/inner-icon.png);
+.hd h1 {
+  font-size: 24px;
+  margin: -25px 0 0;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
-.cert-h1 {
-  font-size: 3.4rem;
+.completion-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.hd h2 {
+  font-size: 15px;
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.completion-line {
+  flex: 1;
+  height: 1px;
+  background-color: white;
+  margin: 0 10px;
+}
+
+.presented-to {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.presented-to p {
+  font-size: 12px;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.presented-to h3 {
+  font-size: 18px;
+  color: #F48C42;
+  margin: 10px 0;
   font-weight: 600;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #FFFFFF;
+  margin-top: 20px
+}
+
+.description {
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.description p {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+.center-logo {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/logo_teens_4x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.footer p {
+  font-size: 10px;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.owl-icon {
+  width: 34px;
+  height: 52px;
+  background-image: url('../images/owl-icon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 22px auto;
+}
+
+
+.corner {
   position: absolute;
-  top: 9.98%;
+  width: 5px;
+  height: 5px;
+
 }
 
-.vector {
+.corner::before,
+.corner::after {
+  content: '';
   position: absolute;
-  width: 1.8rem;
-  z-index: 999;
+  background-color: #EE9596;
 }
 
-.cert-txt {
-  font-size: 1.3rem;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #FFFFFF;
-  z-index: 999;
-  position: absolute;
+.top-left::before,
+.bottom-right::after {
+  width: 11.5px;
+  height: 79px;
 }
 
-.cert-txt1 {
-  position: absolute;
-  top: 46.6%;
-  font-size: 1rem;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #FFFFFF;
+.top-left::after,
+.bottom-right::before {
+  width: 90.5px;
+  height: 10px;
 }
 
-.cert-txt2 {
-    position: absolute;
-    top: 54.59%;
-    font-style: normal;
-    font-size: 2.4rem;
-    text-align: center;
-    color: #FFC455;
+.top-left::before {
+  top: 150px;
+  left: 159px;
 }
 
-.cert-txt3 {
-    position: absolute;
-    top: 64.3%;
-    font-style: normal;
-    font-size: 1.3rem;
-    text-align: center;
-    color: #FFFFFF;
-}
-.cert-txt3-1 {
-  position: absolute;
-  top: 68.3%;
-  font-style: normal;
-  font-size: 1.3rem;
-  text-align: center;
-  color: #FFFFFF;
+.top-left::after {
+  top: 219px;
+  left: 80px;
 }
 
-.cert-logo {
-  position: absolute;
-  top: 78%;
-  left: 27.13%;
-  /* height: 10%;
-  width: 17%; */
-  height: 9%;
-  width: 15%;
-  background-size: 98% 99% !important;
-  background-repeat: no-repeat !important;
-  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/human-wisdom-icon.png);  */
-  background: url(../images/human-wisdom-icon.png);
+.bottom-right::before {
+  bottom: 219px;
+  right: 81px;
 }
 
-.cert-txt4 {
-  /* margin-left: 1.8rem; */
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: #FFFFFF;
-  text-align: initial;
-  z-index: 999;
-  position: absolute;
-  top: 81%;
-  left: 43%;
+.bottom-right::after {
+  bottom: 150px;
+  right: 160px;
+
 }
 
-.cert-txt5 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #FFFFFF;
-  position: absolute;
-  /* margin-left: 4rem;
-  margin-top: 5px; */
-  z-index: 99;
-  top: 88%;
-  left: 41%;
-}
-
-.m-top-2{
-  margin-top: 2%;
-}
-
-.cert-txt6 {
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 11px;
-  text-align: center;
-  color:#fff;
-  /* margin-top: 25%; */
-  top: 90%;
-  left: 39%;
-}
-
-.vector-3 {
-  position: absolute;
-  left: 7.6%;
-  top: 5.8%;
-  height: 12%;
-  width: 17%;
-  background-size: 100% 100% !important;
-  background-repeat: no-repeat !important;
-  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-2.png); */
-   background: url(../images/vector-left.png);
-}
-
-.vector-4 {
-  position: absolute;
-  left: 75.2%;
-  top: 82.7%;
-  height: 12%;
-  width: 17%;
-  background-size: 100% 100% !important;
-  background-repeat: no-repeat !important;
-  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-1.png); */
-  background: url(../images/vector-right.png);
-}
-
-.m-top{
-  margin-top:73rem;
-}
-.m-top10{
-  margin-top:10%;
-}
-.p-nextmodule{
-  padding-bottom:2rem;
-  padding-top: 0.5rem;
-}
-.p-bottom3{
-  padding-bottom:3rem;
-}
-.m-top23{
-  margin-top: 27rem;
-}
-
-.m-top13
-{
-  margin-top: 13rem;
-}
-.m-left3
-{
-  margin-left: -17.2rem;
-}
-.m-right3
-{
-  margin-right: -17.1rem;
-}
-
-.ml{
-  margin-top:2rem;
-  margin-bottom:2rem;
-}
-.ml-top{
-  margin-top: 25%;
-}
-
-.certificate-share-btn {
-margin-top: 8%;
-margin-bottom: 8%;
-}
-/* /certficate */
-
-/* /forum */
-.m-bottom{
-  margin-bottom: 3rem; 
-}
-.btn-down{
-  color:#E8A880;
-  background: transparent;
-  cursor: pointer;
-  padding-left: 9px;
-  font-size: 16px;
-}
-.btn-thread{
-  display: contents!important;
-}
-.choose-category-popup{
-  top: 40%;
-}
-
-.h-250{
-height: 250px;
-}
-
-.img-forum{
-border-radius: 1rem;
-}
-
-/* /forum */
 
