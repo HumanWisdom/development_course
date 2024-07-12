@@ -143,6 +143,7 @@ border-radius: 1rem;
   align-items: center;
   border: 1px solid #EE9596;
   margin-top: 6rem;
+  margin-bottom: 4rem;
 }
 
 .adult-certificate {
@@ -184,7 +185,7 @@ border-radius: 1rem;
 }
 
 .hd h1 {
-  font-size: 24px;
+  font-size: 32px;
   margin: -25px 0 0;
   font-weight: 700;
   line-height: 1.5;
