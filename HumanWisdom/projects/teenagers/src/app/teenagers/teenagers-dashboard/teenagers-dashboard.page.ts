@@ -2048,5 +2048,9 @@ export class TeenagersDashboardPage implements OnInit {
     }
   }
 
+  routeDailyCheckIn(){
+    this.router.navigate(['/teenagers/daily-checkin']);
+  }
+
 }
 
