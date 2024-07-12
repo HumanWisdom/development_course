@@ -19,11 +19,12 @@ export class S157001Page implements OnInit {
     return this.router.url;
   }, 1000);
   constructor(
+    private navigationService:NavigationService,
     public ngNavigatorShareService: NgNavigatorShareService,
     private router: Router,
     private service: TeenagersService,
-    private location: Location,
-    public navigationService:NavigationService ) 
+    private location: Location
+ ) 
     { }
  
   ngOnInit() {
@@ -44,7 +45,7 @@ export class S157001Page implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    var url = this.navigationService.navigateToBackLink()
     if (url == null) {
       this.location.back();
     }else{

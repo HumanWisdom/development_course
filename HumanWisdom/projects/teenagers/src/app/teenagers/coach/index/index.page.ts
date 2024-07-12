@@ -18,7 +18,8 @@ export class IndexPage implements OnInit {
     return this.router.url;
   }, 1000);
 
-  constructor(private service: TeenagersService,   private location: Location,private router: Router,private NavigationService:NavigationService ,private ngNavigatorShareService: NgNavigatorShareService) { }
+  constructor(private service: TeenagersService,   private location: Location,private router: Router,
+    private navigationService:NavigationService ,private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
     this.getAllCoachList();
