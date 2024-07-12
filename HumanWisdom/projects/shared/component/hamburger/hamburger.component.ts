@@ -379,7 +379,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
   navigate(url) {
     this.closemodal?.nativeElement?.click();
-    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+    this.router.navigate([url]);
   }
 
   getAlertcloseEvent(event) {
