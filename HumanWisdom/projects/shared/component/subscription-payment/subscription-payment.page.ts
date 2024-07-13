@@ -57,7 +57,7 @@ export class SubscriptionPaymentPage implements OnInit {
     if(checkout == 'T'){
         this.obj = {
           UserID: userId,
-          ProgramID: '9',
+          ProgramID: SharedService.ProgramId,
           PlanId:  plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
           DiscountCode:  parseInt(couponid) ?? 0,
           Quantity: 1,
@@ -68,7 +68,7 @@ export class SubscriptionPaymentPage implements OnInit {
   }else{
     this.obj = {
       UserID: userId,
-      ProgramID: '9',
+      ProgramID: SharedService.ProgramId ,
       PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
