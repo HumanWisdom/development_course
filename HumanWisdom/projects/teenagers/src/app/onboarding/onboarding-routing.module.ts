@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'myprogram',
-    loadChildren: () => import('./subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
+    loadChildren: () => import('../../../../shared/component/subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
   },
   {
     path: 'forgotpassword',

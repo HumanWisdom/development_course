@@ -1,8 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
 import { Location } from '@angular/common';
-import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
-import { SharedService } from '../../../../../../shared/services/shared.service';
-import { Constant } from '../../../../../../shared/services/constant';
+import { OnboardingService } from '../../../services/onboarding.service';
+import { SharedService } from "../../../services/shared.service";
+import { Constant } from '../../../services/constant';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +25,7 @@ export class CancelSubscriptionReasonPage implements OnInit {
         this.reasonList = res;
       }
     });
-    
+
    }
 
   cancelSubscription() {
@@ -35,7 +35,7 @@ export class CancelSubscriptionReasonPage implements OnInit {
     window.dispatchEvent(event);
     this.onboardingService.cancelSubscription(key,this.selectedId).subscribe(res => {
       if (res) {
-        this.router.navigate(["/myprogram/cancelled"]);
+        this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/myprogram/cancelled"]);
       }
     });
   }

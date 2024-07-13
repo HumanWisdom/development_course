@@ -149,7 +149,7 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_mdp">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="routeDailyCheckIn()">
+                              <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/daily_checkin.svg" alt="" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily check-in
@@ -456,7 +456,7 @@
             </div>
             <!-- /feel better now -->
 
-            
+
 
             <!-- hr -->
             <div class="row">
@@ -540,8 +540,8 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                     
-                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100"> 
+
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -594,9 +594,9 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      
+
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
-                                      
+
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
