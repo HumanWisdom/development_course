@@ -16,6 +16,18 @@
   margin-bottom: 4rem;
 }
 
+.cert-logo {
+  position: absolute;
+  top: 80%;
+  left: 28%;
+  height: 8%;
+  width: 40%;
+  background-size: 98% 99% !important;
+  background-repeat: no-repeat !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/human-wisdom-icon.png);  */
+  background: url(../images/hwp-logo-teenagers.png);
+}
+
 .adult-certificate {
   width: 316px;
   height: 433px;

@@ -177,7 +177,7 @@ export class S141025Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/success-failure/s141024'])
+    this.router.navigate(['/teenagers/success-failure/s141024p'])
 
 
   }
