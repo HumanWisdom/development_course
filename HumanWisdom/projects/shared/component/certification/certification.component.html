@@ -16,7 +16,7 @@
         <h3>{{ userName }}</h3>
       </div>
       <div class="description">
-        <p>for completing the <b>{{ moduleName }}</b> module on HappierMe</p>
+        <p>for completing the <b>{{ moduleName && capitalizeFirstLetter(moduleName) }}</b> module on {{ getTodayDate() }}</p>
       </div>
       <div class="footer">
 
@@ -27,7 +27,7 @@
           <span class="cert-txt4">HappierMe</span>
         </div>
        
-        <p>humanwisdom.me</p>
+        <!-- <a href="https://happierme.app/">happierme.app</a> -->
       </div>
     </div>
   </div>

@@ -110,7 +110,7 @@
 
 .description p {
   font-size: 12px;
-  margin: 10px 0;
+  margin: 25px 0;
 }
 
 .footer {
@@ -126,7 +126,7 @@
   background-repeat: no-repeat;
 }
 
-.footer p {
+.footer a {
   font-size: 10px;
   margin: 0;
   margin-top: 20px;
@@ -159,7 +159,7 @@
 
 .top-left::before,
 .bottom-right::after {
-  width: 11.5px;
+  width: 10.5px;
   height: 79px;
 }
 
@@ -171,7 +171,7 @@
 
 .top-left::before {
   top: 150px;
-  left: 159px;
+  left: 160px;
 }
 
 .top-left::after {
@@ -181,7 +181,7 @@
 
 .bottom-right::before {
   bottom: 219px;
-  right: 81px;
+  right: 80px;
 }
 
 .bottom-right::after {

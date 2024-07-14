@@ -30830,6 +30830,17 @@ svg path
   background: #4267A5 !important;
 }
 
+.bg-clr{
+  background: #4267A5 !important;
+}
+
+.bg-clr:hover,
+.bg-clr:focus
+{
+  background: #fff !important ;
+  color: #000 !important;
+}
+
 .we_ft::-webkit-scrollbar
 {
   display: none;
@@ -35836,10 +35847,30 @@ li ol > li:before {
   padding: 0 20px 10px 0;
 }
 
+.btn_podcast_t
+{
+  padding: 0 20px 10px 0;
+}
+
 .btn_podcast .btn 
 {
   border-radius: 12px;
   background: #424675;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #fff;
+  margin: 0 10px 0 0;
+  padding: 9px 10px;
+  height: 36px;
+  box-shadow: unset;
+}
+
+.btn_podcast_t .btn 
+{
+  border-radius: 12px;
+  background: #4267A5;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -35858,6 +35889,18 @@ li ol > li:before {
 
 .btn_podcast .btn:hover,
 .btn_podcast .btn:focus
+{
+  background: #fff ;
+  color: #000;
+}
+
+.btn_podcast_t .btn:last-child
+{
+  margin-right: 0;
+}
+
+.btn_podcast_t .btn:hover,
+.btn_podcast_t .btn:focus
 {
   background: #fff ;
   color: #000;
