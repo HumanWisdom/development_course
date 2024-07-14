@@ -1,0 +1,117 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Learn to listen and speak better
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" 
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/mini_podcast/audio/how_can_i_03.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Of all the skills we are not taught anywhere is our education, communicating with care is perhaps the most important.
+                    </p>
+
+                    <p>
+                      It can contribute to the success of all our relationships - in our personal and professional lives, and help you be a better leader.
+                    </p>
+
+                    <p>
+                      Most people aren’t good at it - they don’t listen with curiosity and real interest in what you may be saying, or are distracted, or interrupt you while you are talking, and so on. They also don’t speak with care - pausing to reflect on how it may be received, or are critical all the time, or only speak about themselves. Understanding what another person really means is an art, especially what they may be feeling and not saying.
+                    </p>
+
+                    <p>
+                      It is easier to notice this in others, rather than ourselves.
+                    </p>
+
+                    <p>
+                      Noticing that others are interrupting you is awareness. Noticing you are interrupting others is self awareness. Asking why your mind is interrupting others as they speak and exploring that further is emotional intelligence, and can lead to change, helping you be a better listener.
+                    </p>
+
+                    <p>
+                      So, how can we acquire this core skill, which can help us flourish in so many ways. The first step is to realise there is something important to learn - that needs humility. To learn any skill takes time and energy and this si no different. You will reap what you sow.
+                    </p>
+
+                    <p>
+                      There are 2 key steps involved - first, to be aware of how we listen, speak and understand, and then to be curious and ask a question - what is going on in my mind that makes me listen and speak as i do. That deeper awareness brings change.
+                    </p>
+
+                    <p>
+                      Continue now to explore the module on Communication which has detailed bite sized learning exercises to help you boost your communication skills. There are videos, podcasts, guided questions and more. Lets get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
