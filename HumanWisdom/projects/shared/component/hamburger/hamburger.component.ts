@@ -42,8 +42,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   enableAlert = false;
   content = '';
   enablebecomepartner = false;
-  @Input()
-  userDetails = [];
+  @Input() userDetails :any
   subscription: Subscription;
   toursubscription: Subscription;
   disableClick = true;
@@ -106,21 +105,12 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.userDetails.length !== 0) {
-      let userdetail = this.userDetails[0];
-      localStorage.setItem("isPartner", this.userDetails[0].IsPartner);
-      localStorage.setItem("PartnerOption", this.userDetails[0].PartnerOption);
-      /*   this.url =
-          userdetail["UserImagePath"].split("\\")[1] +
-          "?" +
-          new Date().getTime(); */
-      if (userdetail['UserImagePath'] != "") {
-
-        this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+    if (this.userDetails) {
+      localStorage.setItem("isPartner", this.userDetails.IsPartner);
+      localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
+      if (this.userDetails['UserImagePath'] != "") {
+        this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
       }
-
-
-
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
       this.partnerOption = localStorage.getItem("PartnerOption");
