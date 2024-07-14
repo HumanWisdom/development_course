@@ -1,0 +1,109 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Be successful, and meet failure
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" 
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/mini_podcast/audio/how_can_i_07.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      We all want to be happy and successful and feel the two are connected. We think the more successful we are, the happier we will be. That translates to a lifelong quest for money, power and recognition in many cases.
+                    </p>
+
+                    <p>
+                      Lets zoom in and explore this in more detail.
+                    </p>
+
+                    <p>
+                      You only have to ask wealthy and successful people and they will tell you that success does not automatically lead to happiness. Happiness is an inside job and is explored in more detail in the module on happiness. It depends on many things including the quality of your relationships.
+                    </p>
+
+                    <p>
+                      If you want to be successful your IQ contributes about 20% to your success - that includes your grades in school and university. The rest is down to other factors including your emotional intelligence - which comes from a deeper understanding of yourself and helps you to self-regulate your emotions, habits and mental health, have happier relationships and make better decisions. It also helps you develop your communication and leadership skills which can contribute to your success at work.
+                    </p>
+
+                    <p>
+                      When we chase anything, including success, there is always the possibility of failure, of not reaching our goal and that can create an emotional storm in our mind that we are often unprepared for. We all need to prepare for failure by learning emotional first aid techniques to calm our mind in a storm - including breathing exercises, journaling, tapping and meditation. Being able to zoom out and think positively about what has happened as an opportunity for learning can help us pick ourselves up and get going again.
+                    </p>
+
+                    <p>
+                      Continue now to explore the module on Success and Failure. It explores in depth the qualities you need to cultivate to be successful in life, and how you can prepare for, and deal with failure when it arrives. Lets get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

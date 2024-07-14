@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class HowCanIA03Page implements OnInit {
 
   
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }
