@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'myprogram',
-    loadChildren: () => import('./subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
+    loadChildren: () => import('../../../../shared/component/subscription-s09-v02/subscription-s09-v02.module').then(m => m.SubscriptionS09V02PageModule)
   },
   {
     path: 'forgotpassword',
@@ -51,7 +51,10 @@ const routes: Routes = [
     path: 'viewcart',
     loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
   },
-
+  {
+    path: 'payment-details',
+    loadChildren: () => import('../../../../shared/component/duplicate-subscription-payment/duplicate-subscription-payment.module').then(m => m.DuplicateSubscriptionPaymentModule)
+  },
 ];
 
 @NgModule({

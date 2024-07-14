@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../../../../../../shared/services/shared.service';
-import { Constant } from '../../../../../../shared/services/constant';
-import { ProgramType } from "../../../../../../shared/models/program-model";
+import { SharedService } from "../../../services/shared.service";
+import { Constant } from '../../../services/constant';
+import { ProgramType } from '../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-cancelled',
@@ -11,9 +11,15 @@ import { ProgramType } from "../../../../../../shared/models/program-model";
 })
 export class CancelledPage implements OnInit {
   trialData:any;
-  isAdults = true;
+  isAdults: boolean = true;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+   }
 
   ngOnInit() {
    let data =  SharedService.getDataFromLocalStorage(Constant.ManageSubscriptionData);
@@ -25,20 +31,16 @@ export class CancelledPage implements OnInit {
 
   NewSubscription() {
     SharedService.setDataInLocalStorage(Constant.isFromCancelled,'T');
-    this.router.navigate(['/subscription/try-free-and-subscribe']);
+    this.router.navigate(["/"+ SharedService.getprogramName() + '/subscription/try-free-and-subscribe']);
   }
 
   dashboard(){
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.isAdults = true;
-    } else {
-      this.isAdults = false;
-    }
     if (this.isAdults) {
-      this.router.navigate(['/adults/adult-dashboard'])
+      this.router.navigate(['/' + SharedService.getprogramName() + '/adult-dashboard'])
     } else {
       this.router.navigate(['/teenagers/teenager-dashboard'])
     }
+    this.router.navigate(['/adults/adult-dashboard']);
   }
 
 }

@@ -12,7 +12,7 @@ import { ProgramType } from '../../../models/program-model';
   styleUrls: ['./questions.page.scss'],
 })
 export class QuestionsPage implements OnInit {
-  data: any;
+  data: any=[];
   @ViewChild('saveBtn') saveBtn: any;
   counter = 1;
   maintitile = new BehaviorSubject(1);
@@ -27,11 +27,21 @@ export class QuestionsPage implements OnInit {
   constructor(private commonService: CommonService, private router: ActivatedRoute
     , private route: Router,private navigationService:NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.initializeData();
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
       this.isAdults = false;
     }
+  }
+
+  private initializeData(){
+    this.data = [{
+      QuestionNo:'',
+      Question:'',
+      Response:'',
+      hint:''
+    }]
   }
   ngOnInit() {
     var id = +this.router.snapshot.queryParamMap.get("Qid");

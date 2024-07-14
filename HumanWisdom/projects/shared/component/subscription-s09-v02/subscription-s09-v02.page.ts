@@ -1,14 +1,15 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-import { SharedService } from '../../../../../shared/services/shared.service';
-import { Constant } from '../../../../../shared/services/constant';
+import { OnboardingService } from '../../services/onboarding.service';
+import { SharedService } from "../../services/shared.service";
+import { Constant } from '../../services/constant';
 import { Location } from '@angular/common';
 import {
   Platform,
 } from "@angular/cdk/platform";
-import { ProgramType } from '../../../../../shared/models/program-model';
+import { ProgramType } from "../../models/program-model";
+
 @Component({
   selector: 'app-subscription-s09-v02',
   templateUrl: './subscription-s09-v02.page.html',
@@ -29,7 +30,7 @@ export class SubscriptionS09V02Page implements OnInit {
   public previd = '';
   public isActiveSubscription = false;
   public userId: any = '';
-  isAdults: boolean = true; 
+  isAdults: boolean = true;
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
     private router: Router,
@@ -181,7 +182,7 @@ export class SubscriptionS09V02Page implements OnInit {
       if (item.canceled == 0) {
         if ((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1) {
           SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData, JSON.stringify(item));
-          this.router.navigate(["/myprogram/manage-subscription"]);
+          this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/myprogram/manage-subscription"]);
         }
       }
     }
@@ -193,7 +194,7 @@ export class SubscriptionS09V02Page implements OnInit {
 
   buyAgain(item) {
     SharedService.setDataInLocalStorage('BuyAgain', JSON.stringify(item));
-    this.router.navigate(["/onboarding/add-to-cart"]);
+    this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/add-to-cart"]);
 
   }
 

@@ -332,11 +332,7 @@ export class ViewStoriesPage implements OnInit {
   }
 
   addToken() {
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.path = 'https://humanwisdom.me/wisdom-stories/view-stories';
-    } else {
-      this.path = 'https://humanwisdom.me/teenagers/wisdom-stories/view-stories';
-    }
+    this.path = 'https://humanwisdom.me/' + SharedService.getprogramName() + '/wisdom-stories/view-stories';
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",

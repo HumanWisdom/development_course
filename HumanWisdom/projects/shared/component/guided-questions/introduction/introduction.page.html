@@ -28,7 +28,7 @@
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">  
-          <div class="x_content p0" *ngIf="data">
+          <div class="x_content p0">
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -42,7 +42,7 @@
             <div class="row mt30px mb20px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_30px fw_400 lh_150p fc_ffffff">
-                  {{data.Topic}}
+                  {{data?.Topic}}
                 </h4>
               </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="row mb30px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 fs_18px fw_400 lh_150p fc_ffffff">
                 <p class="">
-                 {{data.introduction}}
+                 {{data?.introduction}}
                 </p>
                 <p class="mb0px">
                   Your answers are stored in your private online journal.

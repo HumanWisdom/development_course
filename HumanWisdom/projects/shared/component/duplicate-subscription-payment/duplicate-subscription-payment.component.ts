@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../../../environments/environment';
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { environment } from '../../../environments/environment';
+import { SharedService } from '../../services/shared.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import { Location } from '@angular/common'; 
 
 
@@ -29,11 +30,12 @@ cardCaptureReady = false
   uID: any;
   enableAlert = false;
   content = '';
-
+  isAdults = false;
   constructor(private service: OnboardingService,
     private router: Router, private location :Location) {
       this.amount = localStorage.getItem('totalAmount')
-    this.uID = JSON.parse(localStorage.getItem("userId"))
+    this.uID = JSON.parse(localStorage.getItem("userId"));
+    this.isAdults = SharedService.isAdultProgram();
   }
 
   ngAfterViewInit() {

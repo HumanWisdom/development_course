@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../../../../../../shared/services/shared.service';
-import { Constant } from '../../../../../../shared/services/constant';
-import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
+import { OnboardingService } from '../../../services/onboarding.service';
+import { SharedService } from "../../../services/shared.service";
+import { Constant } from '../../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -98,7 +98,7 @@ export class ManageSubscriptionPage implements OnInit {
     //   if(res){
     //        this.router.navigate(["onboarding/myprogram"]);
     SharedService.setDataInLocalStorage(Constant.ActivationKey,this.manageSubscriptionData.ActKey);
-    this.router.navigate(["/myprogram/cancel-subscription"]);
+    this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/myprogram/cancel-subscription"]);
   //}
   // })
   }
