@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { HowCanIA06AtPageRoutingModule } from './how-can-i-a06-at-routing.module';
 
 import { HowCanIA06AtPage } from './how-can-i-a06-at.page';
@@ -12,6 +14,7 @@ import { HowCanIA06AtPage } from './how-can-i-a06-at.page';
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     IonicModule,
     HowCanIA06AtPageRoutingModule
   ],
