@@ -1,0 +1,125 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Why do I feel the need to feel listened to and be important?
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" 
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/mini_podcast/audio/why_do_i_07.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Why do I feel the need to feel listened to and be important?
+                    </p>
+
+                    <p>
+                      Do you find it frustrating that no one is interested in what you are saying? Do you also get frustrated when you don’t feel understood? Do you notice in yourself the need to be listened to, but not the same need to listen?
+                    </p>
+
+                    <p>
+                      Now be curious and ask yourself why that is. Why do we have a need to feel listened to and heard, more than our need to listen? The answer to this question may help us to be better listeners, have deeper friendships and learn from others.
+                    </p>
+
+                    <p>
+                      We all have emotional needs we are often not aware of and being listened to and understood is high on that list. This makes us feel good inside.
+                    </p>
+
+                    <p>
+                      Talking, and feeling listened to makes us feel important. When people agree with us we feel good, and when they disagree with us we can get frustrated and irritated with them. We try and find people who will agree with us. This makes us push to be heard in a conversation. Do you notice this in yourself?
+                    </p>
+
+                    <p>
+                      Once we observe this process in ourselves we can pause and ask ourselves how we can respond with intelligence in a way that serves us.
+                    </p>
+
+                    <p>
+                      It is clear that our relationships can improve if we can learn to listen to others deeply without interrupting and be curious about what they are saying. Everyone wants to be friends with a good listener. If we are curious, we can learn so much from listening to others. How they came to have the opinion they have, for example.
+                    </p>
+
+                    <p>
+                      As the Dalai Lama said - when you talk you are merely repeating what you already know, but when you listen you can learn something new.
+                    </p>
+
+                    <p>
+                      There are many other emotional needs we have which influence our thinking and our behaviour - like our need to be understood, have power over others, be agreed with, feel safe, feel loved, and so on. All of them are part of being human, and neither right nor wrong - but understanding them can help us lead happier lives.
+                    </p>
+
+                    <p>
+                      Continue now to explore the module on emotional needs so you can understand them better in yourself. This can help to improve all your relationships and reduce your own stress.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

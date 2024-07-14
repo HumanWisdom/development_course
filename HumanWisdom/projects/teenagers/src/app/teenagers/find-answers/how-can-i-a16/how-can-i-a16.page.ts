@@ -10,6 +10,8 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 })
 export class HowCanIA16Page implements OnInit {
 
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   audioLink='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/modules/find-answers/audios/1.1.mp3'
