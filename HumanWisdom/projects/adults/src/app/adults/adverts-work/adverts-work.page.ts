@@ -23,9 +23,7 @@ export class AdvertsWorkPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'wisdom for work, self motivation words, self encouragement quotes, communication skills for business, communication skills for workplace, professional life, self-motivation, confidence, success, communication skills'})
 
 
-    if (!this.router.url.includes('/wisdom-for-work')) {
-      window.history.pushState('', '', '/wisdom-for-work');
-    }
+  
   }
 
   clickbanner(url = '') {
