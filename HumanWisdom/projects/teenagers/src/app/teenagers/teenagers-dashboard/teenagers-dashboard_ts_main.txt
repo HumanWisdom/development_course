@@ -531,6 +531,14 @@ export class TeenagersDashboardPage implements OnInit {
         }
       },
       {
+        element: ".tour_intro",
+        popover: {
+          title: 'Introduction',
+          description: 'Learn how to make the most of the app and explore the key ideas',
+          side: "bottom"
+        }
+      },
+      {
         element: ".tour_explore",
         popover: {
           title: 'Explore',
@@ -553,15 +561,7 @@ export class TeenagersDashboardPage implements OnInit {
           description: 'Join our community discussions. Ask a coach a question',
           side: "top"
         },
-      },
-      {
-        element: ".tour_intro",
-        popover: {
-          title: 'Introduction',
-          description: 'Learn how to make the most of the app and explore the key ideas',
-          side: "bottom"
-        }
-      },
+      }
     ];
 
 
