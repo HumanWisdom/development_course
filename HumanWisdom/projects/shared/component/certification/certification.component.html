@@ -16,18 +16,18 @@
         <h3>{{ userName }}</h3>
       </div>
       <div class="description">
-        <p>for completing the <b>{{ moduleName }}</b> module on HappierMe</p>
+        <p>for completing the <b>{{ moduleName && capitalizeFirstLetter(moduleName) }}</b> module on {{ getTodayDate() }}</p>
       </div>
       <div class="footer">
-
-        <img *ngIf="!isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/logo_teens_4x.png" height="33px">
-       
-        <div *ngIf="isAdults" class="row center_flex logo-container">
+        <div *ngIf="isAdults;else isTeenagers" class="row center_flex logo-container">
           <span class="cert-logo"></span>
           <span class="cert-txt4">HappierMe</span>
         </div>
+        <ng-template #isTeenagers>
+          <span class="cert-logo"></span>
+        </ng-template>
        
-        <p>humanwisdom.me</p>
+        <!-- <a href="https://happierme.app/">happierme.app</a> -->
       </div>
     </div>
   </div>

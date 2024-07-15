@@ -28,6 +28,7 @@ import { S141021Page } from './s141021/s141021.page';
 import { S141022Page } from './s141022/s141022.page';
 import { S141023Page } from './s141023/s141023.page';
 import { S141024Page } from './s141024/s141024.page';
+import { S141024pPage } from './s141024p/s141024p.page';
 import { S141025Page } from './s141025/s141025.page';
 import { S141026Page } from './s141026/s141026.page';
 import { S141027Page } from './s141027/s141027.page';
@@ -273,6 +274,11 @@ const routes: Routes = [
     path: 's141024',
     canActivate: [ActiveGuard], 
     component: S141024Page,
+  },
+  {
+    path: 's141024p',
+    canActivate: [ActiveGuard], 
+    component: S141024pPage,
   },
   {
     path: 's141025',
