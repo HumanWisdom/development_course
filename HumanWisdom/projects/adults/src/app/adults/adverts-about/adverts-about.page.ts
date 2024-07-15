@@ -22,9 +22,7 @@ export class AdvertsAboutPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Discover the mission and team behind Human Wisdom, the life-changing app for personal growth and self-improvement. Join our community and empower your life with daily motivation, mindfulness techniques, powerful quotes, and more.'})
     this.meta.updateTag({ property: 'keywords', content: 'human wisdom, about us, app, mission, team, life-changing, personal growth, self-improvement, community, daily motivation, mindfulness techniques, powerful quotes, self-help'})
 
-    if (!this.router.url.includes('/about-us')) {
-      window.history.pushState('', '', '/about-us');
-    }
+ 
   }
 
 
