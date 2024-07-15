@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 
+
 @Component({
   selector: 'app-s124052',
   templateUrl: './s124052.page.html',
@@ -18,10 +19,11 @@ export class S124052Page implements OnInit
   userName:any
   progressPercent:any
   progressText="3/4"
-  link="/pleasure/s124053"
+  link="/teenagers/pleasure/s124053"
   name="#4  Responding to pleasure with wisdom"
   progressImg=""
   toc="teenagers/pleasure/s124001"
+
 
   constructor
   (

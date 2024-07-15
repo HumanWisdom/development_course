@@ -4,7 +4,7 @@ import 'bcswipe';
 import { Router } from '@angular/router';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { AdultsService } from '../../../../../adults/src/app/adults/adults.service';
-
+import { SharedService } from '../../../../../shared/services/shared.service';
 
 declare var $: any;
 @Component({
@@ -40,17 +40,19 @@ export class DailyPracticePage implements OnInit {
   placeholder = 'Answer here'
   enableAlert = false;
   content = ''
-
+  isAdults:boolean;
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService,
     public router: Router,
     public logeventservice: LogEventService
   ) {
+    this.isAdults = SharedService.isAdultProgram();
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
 
   ngOnInit() {
+    this.setAudioControlsBackground();
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if(popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
@@ -154,5 +156,20 @@ export class DailyPracticePage implements OnInit {
   getAlertcloseEvent() {
     this.enableAlert = false;
     this.content = '';
+  }
+
+  setAudioControlsBackground() {
+    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+  
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+  
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
   }
 }

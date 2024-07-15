@@ -10,7 +10,7 @@ import { CommonService } from '../../../services/common.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { environment } from '../../../../environments/environment';
-
+import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-podcast-toc',
@@ -89,7 +89,8 @@ export class PodcastTocPage implements OnInit {
     public logeventservice: LogEventService,
     private sanitizer: DomSanitizer,
     private meta: Meta, private title: Title,
-    private service: CommonService
+    private service: CommonService,
+    private navigationService:NavigationService
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -131,7 +132,12 @@ export class PodcastTocPage implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&logo_link=none&order=episodic&limit=5&filter=tags&tag=16106786&ss=55fe7c7156e4b9c14621bacb4c53cfa7&btn-skin=60a0c8&size=220");
   }
   goBack() {
-    this.location.back();
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
   shareUrl(programType: ProgramType) {
     const token = JSON.parse(localStorage.getItem("token"))

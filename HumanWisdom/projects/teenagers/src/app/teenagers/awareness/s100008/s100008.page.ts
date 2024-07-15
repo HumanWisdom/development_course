@@ -15,8 +15,8 @@ export class S100008Page implements OnInit,OnDestroy
   bg_cft="bg_red_pink"
   bg="red_pink_w6"
   title=""
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.4.mp3'
+  mediaAudio:any;
+  audioLink:any;
   transcriptPage="teenagers/awareness/s100008t"
   yellow="#FFC455"
  toc="teenagers/awareness/s100001"
@@ -26,7 +26,7 @@ export class S100008Page implements OnInit,OnDestroy
   }, 1000);
   avDuration:any
   userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  saveUsername:any;
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=100008
@@ -55,6 +55,15 @@ export class S100008Page implements OnInit,OnDestroy
  
   ngOnInit() 
   {
+    var userName = localStorage.getItem("saveUsername");
+    if(userName!=null && userName){
+     this.saveUsername = JSON.parse(userName)
+    }
+    var mediaAudio = localStorage.getItem("mediaAudio")
+    if(mediaAudio && mediaAudio!=null){
+     this.mediaAudio= JSON.parse(mediaAudio);
+     this.audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.3.mp3'
+    }
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))

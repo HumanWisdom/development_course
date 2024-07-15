@@ -242,7 +242,6 @@ export class LoginSignupPage implements OnInit {
               "signupfirst",
               'T'
             );
-            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
@@ -634,23 +633,23 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          // this.router.navigate(["/teenagers/change-topic"], {
-                          //   state: {
-                          //     routedFromLogin: true,
-                          //   }
-                          // });
+                          //window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
                         }
                       } else {
                         if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
-                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          // this.router.navigate(["/teenagers/change-topic"], {
-                          //   state: {
-                          //     routedFromLogin: true,
-                          //   }
-                          // });
+                         // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          this.router.navigate(["/teenagers/repeat-user"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
                         }
                       }
                     }
@@ -760,7 +759,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.getItem("SubscriberType") == "Annual"
             ) {
               localStorage.setItem("btnClickBecomePartner", "false");
-              this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+              this.router.navigate(['adults/partnership-app']);
             }
           }
           let acceptCookie = localStorage.getItem("activeCode");
@@ -833,7 +832,7 @@ export class LoginSignupPage implements OnInit {
                     localStorage.getItem("SubscriberType") == "Annual"
                   ) {
                     localStorage.setItem("btnClickBecomePartner", "F");
-                    this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+                    this.router.navigate(['adults/partnership-app']);
                   }
                 } else {
                   if (pers && persub && pers === "T") {
@@ -863,7 +862,7 @@ export class LoginSignupPage implements OnInit {
                       } else {
                         this.service.navigateToUpgradeToPremium = false;
                         // localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+                        this.router.navigate(['adults/partnership-app']);
                       }
                     } else {
                       localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
@@ -878,12 +877,12 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         }else if(SharedService.ProgramId === 11) {
-                          window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          // this.router.navigate(["/teenagers/change-topic"], {
-                          //   state: {
-                          //     routedFromLogin: true,
-                          //   }
-                          // });
+                        //  window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
                         }
 
                       } else {
@@ -891,12 +890,12 @@ export class LoginSignupPage implements OnInit {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
                           this.router.navigate(["/teenagers/repeat-user"]);
-                         // window.location.href = environment.clientUrl+"/teenagers/repeat-user";
-                          // this.router.navigate(["/teenagers/change-topic"], {
-                          //   state: {
-                          //     routedFromLogin: true,
-                          //   }
-                          // });
+                          window.location.href = environment.clientUrl+"/teenagers/repeat-user";
+                          this.router.navigate(["/teenagers/change-topic"], {
+                            state: {
+                              routedFromLogin: true,
+                            }
+                          });
                         }
                       }
                     }
@@ -999,16 +998,10 @@ export class LoginSignupPage implements OnInit {
     );
   }
 
-
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
-    if(this.isAdults){
-      this.router.navigate(['/adults/adult-dashboard'])
-    }else{
-      this.router.navigate(['/teenagers/teenager-dashboard'])
-    }
-   
-  }
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
+   }
 
   navigate(url) {
     this.router.navigate([url]);
@@ -1027,13 +1020,12 @@ export class LoginSignupPage implements OnInit {
     }
   }
 
-
-
   getLoginTab() {
     this.isSignUp = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
   }
+
   initializeRegistrationForm() {
     this.registrationForm = this.fb.group(
       {

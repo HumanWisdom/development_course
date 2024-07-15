@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class WhyDoIA12Page implements OnInit {
 
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location, private router:Router) { }

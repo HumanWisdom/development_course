@@ -1,0 +1,113 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Why do I feel bad when someone criticizes my country or religion?
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" 
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/mini_podcast/audio/why_do_i_04.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Have you noticed how you instantly react when your country, or religion, or sports team, or favorite politician is being criticized?
+                    </p>
+
+                    <p>
+                      Sometimes you can feel the anger rising in you as if you are being personally attacked and this can make you react and lash out. You may find yourself criticizing their religion or country or political party and a heated argument results. Sometimes this anger can lead to violence. We may even feel threatened and so to feel safer we hang out with people who share our opinions and beliefs and the distrust and misunderstanding between people with different beliefs grows.
+                    </p>
+
+                    <p>
+                      Have you ever paused to wonder why we get so upset and why we seem to have no control over our reactions? And why do others react in the same way? What's going on in our own mind for us to react in such a predictable manner?
+                    </p>
+
+                    <p>
+                      To understand this we have to explore the subject of identity. Identity is when you say ‘my country’, or ‘my political party’, or ‘my school’. Our identities meet our emotional need to feel part of a group, feel secure and to feel important. This happens without our awareness. Our unconscious identification with our identities divides us from others who have an attachment to theirs and conflict and division follow. 
+                    </p>
+
+                    <p>
+                      We can’t see any fault with the group we identify with - whether it's a political party or religion. 
+                    </p>
+
+                    <p>
+                      Understanding this entire process in ourselves can make us emotionally intelligent and better able to manage our own reactions, understand others and not let this divide us from other human beings.
+                    </p>
+
+                    <p>
+                      Continue now to explore the module on Identity and understand the many ways this process of identity operates in your life. Be curious and travel with an open mind. This understanding can enrich your life in many ways.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

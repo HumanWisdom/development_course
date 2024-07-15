@@ -159,6 +159,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         if (this.tourIndex >= this.tourTotalIndex) {
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
+          this.tourIndex = 1;
         }
         driverObj.moveNext();
       },
@@ -296,7 +297,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},
-                          {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, 
+                          {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"},
                           {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},
                           {"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
@@ -335,9 +336,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
-   
+
     let url=""
-    switch(event) 
+    switch(event)
     {
       case "Events":{
           url = `/teenagers/events`
@@ -409,7 +410,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
 
-    } 
+    }
 
     this.route.navigate([url])
   }

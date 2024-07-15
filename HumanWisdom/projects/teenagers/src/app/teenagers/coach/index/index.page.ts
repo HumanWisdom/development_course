@@ -4,7 +4,8 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { TeenagersService } from '../../teenagers.service';
-
+import { Location } from '@angular/common';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',
@@ -17,7 +18,8 @@ export class IndexPage implements OnInit {
     return this.router.url;
   }, 1000);
 
-  constructor(private service: TeenagersService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService) { }
+  constructor(private service: TeenagersService,   private location: Location,private router: Router,
+    private navigationService:NavigationService ,private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
     this.getAllCoachList();
@@ -37,7 +39,12 @@ export class IndexPage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/teenagers/teenager-dashboard"]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   routeCoach(data) {

@@ -17,6 +17,7 @@ export class IntroductionPage implements OnInit {
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
     private service: CommonService, private location:Location,private navigationService:NavigationService) {
+      this.initializeData();
       let url = this.route.snapshot.paramMap.get('TopicName');
       setTimeout(() => {
         this.GetGuidedQs_Topics(url);
@@ -31,6 +32,13 @@ export class IntroductionPage implements OnInit {
       this.isAdults = true;
     } else {
       this.isAdults = false;
+    }
+  }
+
+  private initializeData(){
+    this.data = {
+      Topic:"",
+      introduction:""
     }
   }
 

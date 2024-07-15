@@ -50,6 +50,7 @@ import { S117037Page } from './s117037/s117037.page'; 
 import { S117038Page } from './s117038/s117038.page';  
 import { S117039Page } from './s117039/s117039.page';  
 import { S117040Page } from './s117040/s117040.page';  
+import { S117040pPage } from './s117040p/s117040p.page';  
 import { S117041Page } from './s117041/s117041.page';  
 import { S117041tPage } from './s117041t/s117041t.page';
 import { S117042Page } from './s117042/s117042.page';  
@@ -199,6 +200,7 @@ import { TeenagersService } from '../teenagers.service';
     S117038Page ,    
     S117039Page ,
     S117040Page ,
+    S117040pPage ,
     S117041Page ,
     S117041tPage ,
     S117042Page ,

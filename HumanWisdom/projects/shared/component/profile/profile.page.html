@@ -347,7 +347,7 @@
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <a routerLink="/onboarding/payment-details">
+                            <a (click)="Logevent('/onboarding/payment-details', '', 'click_payment_update')" >
                               <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
                                 Update
                                 <i class="fa fa-angle-right ml10px"></i>
@@ -372,7 +372,7 @@
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <a routerLink="/onboarding/myprogram">
+                            <a  (click)="Logevent('/onboarding/myprogram', '', 'click_subscription_details')"  >
                               <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
                                 Details
                                 <i class="fa fa-angle-right ml10px"></i>
