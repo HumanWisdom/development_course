@@ -27262,7 +27262,7 @@ body
   font-family: 'Roboto';
 	height: 100vh;
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	overflow-x: hidden;
 }
 
@@ -37183,5 +37183,21 @@ a.fc_e58d82:hover
 {
   width: 100%;
   max-height: 100%;
+}
+
+.toc_adiv_mp a > .row 
+{
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #0C2B5F;
+  min-height: 88px;
+  margin-bottom: 10px;
+  padding: 15px;
+  /* margin: 0 10px 10px 10px; */
+}
+
+.toc_adiv_mp a:last-child > .row
+{
+  margin-bottom: 0;
 }
 /* /version - 03 */
