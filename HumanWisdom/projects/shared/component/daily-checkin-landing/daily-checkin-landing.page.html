@@ -39,8 +39,13 @@
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" *ngFor="let item of dailyCheckInList; index as i">
                 <a class="" (click)="dailyCheckInRowClick(item)">
                   <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
-                      <img src="{{item.ImgPath}}" class="img-responsive">
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
+
+                      <img src="{{item.ImgPath }}" class="img-responsive">
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
+
+                      <img src="{{item.ImgPath.replace('/assets/svgs/v1_3/emojis/','/teenagers/assets/svgs/emojis/') }}" class="img-responsive">
                     </div>
                   </div>
                   <div class="row mt5px">

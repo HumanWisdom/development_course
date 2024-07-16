@@ -185,16 +185,18 @@
 </div>
 <!-- /page content -->
 
-<div class="toc_adiv" *ngIf="isdefaultShow">
+<div class="toc_adiv_02" *ngIf="isdefaultShow">
   <!-- audio row -->
   <a *ngFor="let data of podcastList; let i=index" (click)="audioevent(data)">
     <div class="row">
+  
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-        <!--   <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-            Podcast #{{data['PodcastID']}}
-          </h4> -->
+       
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+          <img [src]="getimage(data['PodcastID'])" class="img-responsive  img_podcast_01">
+        </div>
+           
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
           <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
             {{data['Title']}}
           </h4>

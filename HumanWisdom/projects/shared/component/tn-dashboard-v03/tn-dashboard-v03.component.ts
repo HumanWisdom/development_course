@@ -45,6 +45,12 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   isAdults = false;
 
   constructor(private router: Router, public Onboardingservice: OnboardingService, public platform: Platform) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+    
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {

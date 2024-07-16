@@ -1,0 +1,121 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Have a healthy relationship with food
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <app-audio-player class="audio-test" 
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/mini_podcast/audio/how_can_i_09.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      30% of people in Britain are obese, and that rises to 42% in the US - that is much more than just being overweight - its a body mass index or BMI of 30 or more.
+                    </p>
+
+                    <p>
+                      In addition around 7.8% of people worldwide have an eating disorder, which is a mental health condition where you use the control of food to cope with feelings and other situations.
+                    </p>
+
+                    <p>
+                      Both are linked to many diseases and mental health conditions.
+                    </p>
+
+                    <p>
+                      It is clear we need to develop a healthier relationship to food to avoid these problems - but how can we do that?
+                    </p>
+
+                    <p>
+                      We eat food for many different reasons. We eat when we are hungry and to stay alive - but we also eat for pleasure, in response to emotional distress, for comfort, out of boredom, and to celebrate notable events in our lives - like birthdays. Sometimes we mistake thirst for hunger. Eating more food that our body needs leads to obesity. A greater awareness of our own body, and being able to regulate our own emotions could help us avoid this.
+                    </p>
+
+                    <p>
+                      Eating disorders are often linked to emotional distress and our inability to deal with strong emotions. If we were able to better manage our own emotions in response to the challenges we face, we could have a healthier relationship to food.
+                    </p>
+
+                    <p>
+                      There are also many hidden drivers in our own mind that govern our habits around food - not only the amount but also the type of food we eat. These include our conditioning influences, our need for pleasure, our boredom and stress and anxiety.
+                    </p>
+
+                    <p>
+                      If we lived with emotional intelligence, which comes from a deeper self-awareness and understanding of our own mind, we could have a healthier relationship to food.
+                    </p>
+
+                    <p>
+                      Continue now to explore the module below on Food and Health, where the topic is explored in depth and you are guided to have a better understanding of your own hidden drivers which control your relationship to food. There are videos, podcasts and guided questions. The long term benefit of doing so is being physically and mentally healthy so we can enjoy our lives to the full. Lets get started.
+                    </p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

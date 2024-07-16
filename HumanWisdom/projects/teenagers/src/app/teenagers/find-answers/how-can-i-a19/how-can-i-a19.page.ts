@@ -8,6 +8,8 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
   styleUrls: ['./how-can-i-a19.page.scss'],
 })
 export class HowCanIA19Page implements OnInit {
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }

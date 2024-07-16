@@ -14,8 +14,8 @@ import { HowCanIA06Page } from './how-can-i-a06.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
     SharedModule,
+    IonicModule,
     HowCanIA06PageRoutingModule
   ],
   declarations: [HowCanIA06Page]

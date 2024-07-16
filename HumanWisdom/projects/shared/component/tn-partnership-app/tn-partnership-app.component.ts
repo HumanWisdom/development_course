@@ -25,9 +25,6 @@ export class TnPartnershipAppComponent implements OnInit {
       }
     }
     this.isPartner=localStorage.getItem('isPartner')=='1';
-    if (this.router.url !='/partnership-app') {
-      window.history.pushState('', '', '/partnership-app');
-    }
   }
 
   goBack()

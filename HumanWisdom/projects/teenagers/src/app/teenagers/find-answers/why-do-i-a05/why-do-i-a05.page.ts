@@ -9,6 +9,8 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
   styleUrls: ['./why-do-i-a05.page.scss'],
 })
 export class WhyDoIA05Page implements OnInit {
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }

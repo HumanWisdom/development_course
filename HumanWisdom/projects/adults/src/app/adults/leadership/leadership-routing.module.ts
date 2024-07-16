@@ -200,6 +200,7 @@ import { S59169Page } from './s59169/s59169.page'; 
 import { S59170Page } from './s59170/s59170.page'; 
 import { S59170p1Page } from './s59170p1/s59170p1.page';  
 import { S59170p2Page } from './s59170p2/s59170p2.page';  
+import { S59170p3Page } from './s59170p3/s59170p3.page';  
 import { S59171Page } from './s59171/s59171.page';  
 
 const routes: Routes = [
@@ -1198,11 +1199,15 @@ const routes: Routes = [
     component: S59170p2Page,
   },
   {
+    path: 's59170p3',   
+     canActivate:[ActiveGuard],  
+    component: S59170p3Page,
+  },
+  {
     path: 's59171',   
      canActivate:[ActiveGuard],  
     component: S59171Page,
-  },  
- 
+  },   
  
 ];
 

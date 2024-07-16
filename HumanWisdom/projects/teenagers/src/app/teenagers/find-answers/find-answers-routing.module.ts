@@ -142,6 +142,138 @@ const routes: Routes = [
     path: 'how-can-i-a19',
     loadChildren: () => import('./how-can-i-a19/how-can-i-a19.module').then( m => m.HowCanIA19PageModule)
   },
+  {
+    path: 'how-can-i-a01-at',
+    loadChildren: () => import('./how-can-i-a01-at/how-can-i-a01-at.module').then( m => m.HowCanIA01AtPageModule)
+  },
+  {
+    path: 'how-can-i-a02-at',
+    loadChildren: () => import('./how-can-i-a02-at/how-can-i-a02-at.module').then( m => m.HowCanIA02AtPageModule)
+  },
+  {
+    path: 'how-can-i-a03-at',
+    loadChildren: () => import('./how-can-i-a03-at/how-can-i-a03-at.module').then( m => m.HowCanIA03AtPageModule)
+  },
+  {
+    path: 'how-can-i-a04-at',
+    loadChildren: () => import('./how-can-i-a04-at/how-can-i-a04-at.module').then( m => m.HowCanIA04AtPageModule)
+  },
+  {
+    path: 'how-can-i-a05-at',
+    loadChildren: () => import('./how-can-i-a05-at/how-can-i-a05-at.module').then( m => m.HowCanIA05AtPageModule)
+  },
+  {
+    path: 'how-can-i-a06-at',
+    loadChildren: () => import('./how-can-i-a06-at/how-can-i-a06-at.module').then( m => m.HowCanIA06AtPageModule)
+  },
+  {
+    path: 'how-can-i-a07-at',
+    loadChildren: () => import('./how-can-i-a07-at/how-can-i-a07-at.module').then( m => m.HowCanIA07AtPageModule)
+  },
+  {
+    path: 'how-can-i-a08-at',
+    loadChildren: () => import('./how-can-i-a08-at/how-can-i-a08-at.module').then( m => m.HowCanIA08AtPageModule)
+  },
+  {
+    path: 'how-can-i-a09-at',
+    loadChildren: () => import('./how-can-i-a09-at/how-can-i-a09-at.module').then( m => m.HowCanIA09AtPageModule)
+  },
+  {
+    path: 'how-can-i-a10-at',
+    loadChildren: () => import('./how-can-i-a10-at/how-can-i-a10-at.module').then( m => m.HowCanIA10AtPageModule)
+  },
+  {
+    path: 'how-can-i-a11-at',
+    loadChildren: () => import('./how-can-i-a11-at/how-can-i-a11-at.module').then( m => m.HowCanIA11AtPageModule)
+  },
+  {
+    path: 'how-can-i-a12-at',
+    loadChildren: () => import('./how-can-i-a12-at/how-can-i-a12-at.module').then( m => m.HowCanIA12AtPageModule)
+  },
+  {
+    path: 'how-can-i-a13-at',
+    loadChildren: () => import('./how-can-i-a13-at/how-can-i-a13-at.module').then( m => m.HowCanIA13AtPageModule)
+  },
+  {
+    path: 'how-can-i-a14-at',
+    loadChildren: () => import('./how-can-i-a14-at/how-can-i-a14-at.module').then( m => m.HowCanIA14AtPageModule)
+  },
+  {
+    path: 'how-can-i-a15-at',
+    loadChildren: () => import('./how-can-i-a15-at/how-can-i-a15-at.module').then( m => m.HowCanIA15AtPageModule)
+  },
+  {
+    path: 'how-can-i-a16-at',
+    loadChildren: () => import('./how-can-i-a16-at/how-can-i-a16-at.module').then( m => m.HowCanIA16AtPageModule)
+  },
+  {
+    path: 'how-can-i-a17-at',
+    loadChildren: () => import('./how-can-i-a17-at/how-can-i-a17-at.module').then( m => m.HowCanIA17AtPageModule)
+  },
+  {
+    path: 'how-can-i-a18-at',
+    loadChildren: () => import('./how-can-i-a18-at/how-can-i-a18-at.module').then( m => m.HowCanIA18AtPageModule)
+  },
+  {
+    path: 'how-can-i-a19-at',
+    loadChildren: () => import('./how-can-i-a19-at/how-can-i-a19-at.module').then( m => m.HowCanIA19AtPageModule)
+  },
+  {
+    path: 'why-do-i-a01-at',
+    loadChildren: () => import('./why-do-i-a01-at/why-do-i-a01-at.module').then( m => m.WhyDoIA01AtPageModule)
+  },
+  {
+    path: 'why-do-i-a02-at',
+    loadChildren: () => import('./why-do-i-a02-at/why-do-i-a02-at.module').then( m => m.WhyDoIA02AtPageModule)
+  },
+  {
+    path: 'why-do-i-a03-at',
+    loadChildren: () => import('./why-do-i-a03-at/why-do-i-a03-at.module').then( m => m.WhyDoIA03AtPageModule)
+  },
+  {
+    path: 'why-do-i-a04-at',
+    loadChildren: () => import('./why-do-i-a04-at/why-do-i-a04-at.module').then( m => m.WhyDoIA04AtPageModule)
+  },
+  {
+    path: 'why-do-i-a05-at',
+    loadChildren: () => import('./why-do-i-a05-at/why-do-i-a05-at.module').then( m => m.WhyDoIA05AtPageModule)
+  },
+  {
+    path: 'why-do-i-a06-at',
+    loadChildren: () => import('./why-do-i-a06-at/why-do-i-a06-at.module').then( m => m.WhyDoIA06AtPageModule)
+  },
+  {
+    path: 'why-do-i-a07-at',
+    loadChildren: () => import('./why-do-i-a07-at/why-do-i-a07-at.module').then( m => m.WhyDoIA07AtPageModule)
+  },
+  {
+    path: 'why-do-i-a08-at',
+    loadChildren: () => import('./why-do-i-a08-at/why-do-i-a08-at.module').then( m => m.WhyDoIA08AtPageModule)
+  },
+  {
+    path: 'why-do-i-a09-at',
+    loadChildren: () => import('./why-do-i-a09-at/why-do-i-a09-at.module').then( m => m.WhyDoIA09AtPageModule)
+  },
+  {
+    path: 'why-do-i-a10-at',
+    loadChildren: () => import('./why-do-i-a10-at/why-do-i-a10-at.module').then( m => m.WhyDoIA10AtPageModule)
+  },
+  {
+    path: 'why-do-i-a11-at',
+    loadChildren: () => import('./why-do-i-a11-at/why-do-i-a11-at.module').then( m => m.WhyDoIA11AtPageModule)
+  },
+  {
+    path: 'why-do-i-a12-at',
+    loadChildren: () => import('./why-do-i-a12-at/why-do-i-a12-at.module').then( m => m.WhyDoIA12AtPageModule)
+  },
+  {
+    path: 'why-do-i-a13-at',
+    loadChildren: () => import('./why-do-i-a13-at/why-do-i-a13-at.module').then( m => m.WhyDoIA13AtPageModule)
+  },
+  {
+    path: 'why-do-i-a14-at',
+    loadChildren: () => import('./why-do-i-a14-at/why-do-i-a14-at.module').then( m => m.WhyDoIA14AtPageModule)
+  },
 
 ];
 

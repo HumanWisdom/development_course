@@ -5,6 +5,7 @@ import {  LogEventService } from '../../../../../shared/services/log-event.servi
 import { Location } from '@angular/common';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { TeenagersService } from '../teenagers.service';
+import { NavigationService } from '../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-select-a-topic-to-explore',
@@ -71,6 +72,7 @@ export class SelectATopicToExplorePage implements OnInit {
     public cd: ChangeDetectorRef,
     private location: Location,
     private router: Router,
+    private navigationService:NavigationService
   ) {
 
     this.logeventservice.logEvent('View_For_you');
@@ -844,7 +846,12 @@ export class SelectATopicToExplorePage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   Logevent(route, params, evtName) {

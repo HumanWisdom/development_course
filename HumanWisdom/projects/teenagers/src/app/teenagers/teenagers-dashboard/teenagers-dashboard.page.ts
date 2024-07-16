@@ -531,14 +531,6 @@ export class TeenagersDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_intro",
-        popover: {
-          title: 'Introduction',
-          description: 'Learn how to make the most of the app and explore the key ideas',
-          side: "bottom"
-        }
-      },
-      {
         element: ".tour_explore",
         popover: {
           title: 'Explore',
@@ -561,7 +553,15 @@ export class TeenagersDashboardPage implements OnInit {
           description: 'Join our community discussions. Ask a coach a question',
           side: "top"
         },
-      }
+      },
+      {
+        element: ".tour_intro",
+        popover: {
+          title: 'Introduction',
+          description: 'Learn how to make the most of the app and explore the key ideas',
+          side: "bottom"
+        }
+      },
     ];
 
 
@@ -578,6 +578,7 @@ export class TeenagersDashboardPage implements OnInit {
         if (this.tourIndex > this.tourTotalIndex) {
           document.body.classList.remove('overflow_hidden');
           document.body.classList.add('overflow_auto');
+          this.tourIndex = 1;
           this.services.setEnableTour(false);
         }
         driverObj.moveNext();
@@ -2045,6 +2046,10 @@ export class TeenagersDashboardPage implements OnInit {
     else {
       this.router.navigate([`/${url}`])
     }
+  }
+
+  routeDailyCheckIn(){
+    this.router.navigate(['/teenagers/daily-checkin']);
   }
 
 }

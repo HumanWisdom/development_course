@@ -68,7 +68,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     })  
   }
 
-  onProgramChange($event) {
+  onProgramChange() {
     if (this.isAdults) {
       window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
     } else {
@@ -379,7 +379,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
   navigate(url) {
     this.closemodal?.nativeElement?.click();
-    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+    this.router.navigate([url]);
   }
 
   getAlertcloseEvent(event) {

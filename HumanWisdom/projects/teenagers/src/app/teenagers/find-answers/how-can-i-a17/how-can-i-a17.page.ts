@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./how-can-i-a17.page.scss'],
 })
 export class HowCanIA17Page implements OnInit {
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }
