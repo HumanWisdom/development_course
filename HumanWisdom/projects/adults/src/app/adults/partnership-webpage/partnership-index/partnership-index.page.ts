@@ -48,11 +48,6 @@ export class PartnershipIndexPage implements OnInit {
         }, 200);
       }
     }
-
-    if (!this.router.url.includes('/partnership-program')) {
-      window.history.pushState('', '', '/partnership-program');
-    }
-
   }
 
   scroll_to_obs(): void {
@@ -105,7 +100,7 @@ export class PartnershipIndexPage implements OnInit {
     localStorage.setItem('btnClickBecomePartner', 'true');
     this.services.navigateToUpgradeToPremium = true;
     //localStorage.setItem("navigateToUpgradeToPremium","true")
-    this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+    this.router.navigate(['adults/partnership-app']);
   }
 
   scroll_to_Faq(): void {
