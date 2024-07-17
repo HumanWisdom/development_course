@@ -1794,7 +1794,7 @@ export class TeenagersDashboardPage implements OnInit {
     if (res['FeatureType'] === "BLOG") {
       this.logeventservice.logEvent("click_blog");
       sid = res['Url'].split('sId=')[1];
-      this.router.navigate(['/blog-article'], { queryParams: { sId: `${sid}` } })
+      this.router.navigate(['teenagers//blog-article'], { queryParams: { sId: `${sid}` } })
     } else if (res['FeatureType'] === "LIFE STORY") {
       this.logeventservice.logEvent("click_life_stories");
       sid = res['Url'].split('sId=')[1];
