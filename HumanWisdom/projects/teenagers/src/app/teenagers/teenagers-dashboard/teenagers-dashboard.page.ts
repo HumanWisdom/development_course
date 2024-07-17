@@ -146,10 +146,22 @@ export class TeenagersDashboardPage implements OnInit {
     }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
-      localStorage.setItem('acceptcookie', 'T')
+      localStorage.setItem('acceptcookie', 'T');
+
+      if (!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 2000)
+      }
     }
     if (this.platform.IOS) {
-      localStorage.setItem('acceptcookie', 'T')
+      localStorage.setItem('acceptcookie', 'T');
+
+      if (!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 2000)
+      }
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
@@ -312,7 +324,7 @@ export class TeenagersDashboardPage implements OnInit {
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
         console.log(res)
-        if (res[0]['ModuleId'] == 75) {
+        if (res[0]?.ModuleId == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
         this.resumeLastvisited = res;
