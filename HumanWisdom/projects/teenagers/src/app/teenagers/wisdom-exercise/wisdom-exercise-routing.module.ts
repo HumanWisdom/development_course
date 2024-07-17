@@ -14,7 +14,6 @@ const routes: Routes = [
   },
   {
     path: 's157002',   
-    canActivate:[ActiveGuard],
     loadChildren: () => import('./s157002/s157002.module').then( m => m.S157002PageModule)
   },
   {

@@ -29,13 +29,11 @@ const routes: Routes = [
   },
   {
     path: 's106002',
-    canActivate: [ActiveGuard], 
     component: S106002Page
   },
   {
     path: 's106003',
-    canActivate: [ActiveGuard], 
-    component: S106003Page,
+       component: S106003Page,
     // data: { animation: 0 }
   },
   {
