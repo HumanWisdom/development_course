@@ -205,7 +205,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (this.wisdomExerciseList.length == data.length) {
         allCompletedScreen = true;
       }
-      console.log(data.length);
       let exercise: any
       let emptyList = false;
       let increaseExcercise = false;
@@ -278,7 +277,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
       }, 5000);
 
-      console.log(this.currentList);
     })
   }
 
