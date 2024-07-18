@@ -182,7 +182,7 @@ export class TranscriptHeaderComponent implements OnInit {
       text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);

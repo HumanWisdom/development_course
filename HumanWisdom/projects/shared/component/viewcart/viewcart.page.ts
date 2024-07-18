@@ -481,7 +481,7 @@ export class ViewcartPage implements OnInit {
         "LearnerMsg": this.learnermsg,
       })
         .subscribe(res => {
-          console.log(res, "cartId")
+          
           for (var i = 0; i < this.cartList.length; i++) {
             if (this.cartList[i].ProgID === pid) {
               this.cartList[i].cartId = res

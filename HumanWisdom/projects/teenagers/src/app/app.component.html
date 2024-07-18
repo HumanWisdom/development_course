@@ -3,12 +3,12 @@
 
 
 <router-outlet></router-outlet>
-<ng-container *ngIf="enableFooter()">
-    <app-bottom-navigation 
+<ng-container *ngIf="enablefooter">
+    <app-bottom-navigation
      [dash]="dash"
      [journal]="journal"
-     [fourm]="fourm" 
-     [search]="search" 
-     [enableprofile]="enableprofile" 
+     [fourm]="fourm"
+     [search]="search"
+     [enableprofile]="enableprofile"
      (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 </ng-container>

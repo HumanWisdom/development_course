@@ -119,7 +119,7 @@ export class SubscribedUnsubscribedPage implements OnInit {
       getPricing(){
         this.services.getPricing(this.countryCode).subscribe(res=>
           {
-            console.log(res,"product list from api")
+            
             this.cardlist = res[0]; 
             this.pricingModel = res.filter((d) => d[Constant.ProgID] === SharedService.ProgramId)[0];
             this.defaultCurrencySymbol = res[0][Constant.ISOCode]

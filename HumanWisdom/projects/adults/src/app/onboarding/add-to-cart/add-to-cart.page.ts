@@ -312,7 +312,7 @@ submitcode(){
   getPricing(){
     this.service.getPricing(this.countryCode).subscribe(res=>
       {
-        console.log(res,"product list from api")
+        
         this.cartList=res.filter((d) => d['Program'] === "Adults");
         this.cartList.forEach(function (element) {
           element.Monthly=parseInt(element.Monthly)
@@ -373,7 +373,7 @@ submitcode(){
               "LearnerMsg": this.learnermsg,
               })
               .subscribe(res=>{
-                console.log(res,"cartId")
+                
                 this.cartId=res
                 for(var i=0;i<this.cartList.length;i++){
                   if(this.cartList[i].ProgID === pid){

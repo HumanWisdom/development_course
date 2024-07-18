@@ -117,7 +117,7 @@ export class AddcartPage implements OnInit,OnDestroy {
   getPricing(){
     this.service.getPricing({ "Id":parseInt(this.selectedCountryId)}).subscribe(res=>
       {
-        console.log(res,"product list from api")
+        
         this.cartList=res;
         this.cartList.forEach(function (element) {
           element.Monthly=parseInt(element.Monthly)
@@ -175,7 +175,7 @@ export class AddcartPage implements OnInit,OnDestroy {
   
               })
               .subscribe(res=>{
-                console.log(res,"cartId")
+                
                 this.cartId=res
               })
   

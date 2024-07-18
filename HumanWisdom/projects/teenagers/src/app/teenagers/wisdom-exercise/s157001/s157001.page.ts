@@ -37,7 +37,7 @@ export class S157001Page implements OnInit {
       text: 'Hey, check out the HappierMe Program',
       url: "https://humanwisdom.me"+this.path
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);

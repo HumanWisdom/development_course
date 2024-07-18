@@ -175,7 +175,7 @@ export class SubscriptionOptionsPage implements OnInit, OnDestroy {
 
   getPricing() {
     this.services.getPricing(this.countryCode).subscribe(res => {
-      console.log(res, "product list from api")
+      
       this.cardlist = res[0];
     }, (err) => {
       window.alert(err.error['Message'])

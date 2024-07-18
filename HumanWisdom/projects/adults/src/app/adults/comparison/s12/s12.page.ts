@@ -79,7 +79,6 @@ export class S12Page implements OnInit, OnDestroy {
   }
 
   checkOption(optId) {
-    console.log(optId)
     this.option.push(optId)
 
     this.sendOption.push(this.option[this.option.length - 1])

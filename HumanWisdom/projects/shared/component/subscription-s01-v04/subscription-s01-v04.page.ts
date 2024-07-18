@@ -588,7 +588,7 @@ export class SubscriptionS01V04Page implements OnInit {
 
   getPricing() {
     this.service.getPricing(this.countryCode).subscribe(res => {
-      console.log(res, "product list from api")
+      
       this.cartList = res.filter((d) => d['ActiveProgram'] === "1");
       this.cartList.forEach((element, i) => {
         element.Monthly = parseInt(element.Monthly)

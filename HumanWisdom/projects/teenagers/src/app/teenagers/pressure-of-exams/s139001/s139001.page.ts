@@ -201,7 +201,7 @@ export class S139001Page implements OnInit,OnDestroy {
     this.service.getModulebyId(moduleId).subscribe(res=>{
       this.moduleData=res;
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      console.log(res[0].lastScreen)
+      
      });
   } */
    youtube(link) 

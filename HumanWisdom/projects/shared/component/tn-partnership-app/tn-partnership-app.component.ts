@@ -38,7 +38,7 @@ export class TnPartnershipAppComponent implements OnInit {
       text: 'Hey, check out the HappierMe Partnership Program',
       url: this.router.url
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);

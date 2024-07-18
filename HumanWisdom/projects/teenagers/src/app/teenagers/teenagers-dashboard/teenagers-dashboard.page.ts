@@ -323,7 +323,6 @@ export class TeenagersDashboardPage implements OnInit {
     this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        console.log(res)
         if (res[0]?.ModuleId == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
@@ -335,7 +334,6 @@ export class TeenagersDashboardPage implements OnInit {
     let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
-        console.log(res);
         this.dashboardFeature = res;
       });
   }
@@ -1119,7 +1117,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1199,7 +1197,7 @@ export class TeenagersDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    
+
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1292,7 +1290,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          
+
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1390,7 +1388,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))

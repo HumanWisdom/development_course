@@ -41,7 +41,7 @@ export class ForgotpasswordPage implements OnInit {
         .subscribe(
           resp=>
           {
-            console.log(resp)
+            
            
             if(resp.toLocaleLowerCase().match("Your password has been reset. "))
             {

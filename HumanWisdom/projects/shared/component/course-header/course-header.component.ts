@@ -195,7 +195,7 @@ export class CourseHeaderComponent implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);
