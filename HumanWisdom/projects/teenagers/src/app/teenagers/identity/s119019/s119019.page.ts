@@ -91,7 +91,7 @@ export class S119019Page implements OnInit
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress(e) 
@@ -101,7 +101,7 @@ export class S119019Page implements OnInit
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r119019", JSON.stringify(e))
     this.r119019 = sessionStorage.getItem("r119019")
-    console.log(this.r119019)
+    
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

@@ -84,7 +84,7 @@ export class S140001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;

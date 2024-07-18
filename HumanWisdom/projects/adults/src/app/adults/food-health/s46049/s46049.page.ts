@@ -87,7 +87,7 @@ export class S46049Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -99,7 +99,7 @@ export class S46049Page implements OnInit {
     this.router.navigate(['/adults/food-health/s46050'])
     sessionStorage.setItem("r46049", JSON.stringify(e))
     this.r46049 = sessionStorage.getItem("r46049")
-    console.log(this.r46049)
+    
 
 
     this.service.submitProgressReflection({

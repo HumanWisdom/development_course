@@ -76,7 +76,7 @@ export class S343Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

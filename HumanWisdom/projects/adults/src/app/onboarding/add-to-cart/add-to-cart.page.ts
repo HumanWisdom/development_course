@@ -79,7 +79,7 @@ export class AddToCartPage implements OnInit, OnDestroy {
     this.viewCart()
    
 setTimeout(() => {
-  console.log(this.cartList)
+  
   this.cartList[0].qty = this.cartitemList.length
 
 }, 7000)
@@ -219,7 +219,7 @@ submitcode(){
       {
         
         this.countryList=res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId=== item.CountryId) === i);
-        console.log(this.countryList)
+        
        let found=this.countryList.find(o=>o.Country==this.defaultCountry)
        if(found){
          console.log("found")
@@ -241,7 +241,7 @@ submitcode(){
     // console.log(country)
     // this.selectedCountryId=this.countryList.filter(r=>{return r.Country==country})[0].CID
     this.selectedCountryId=countryId
-    console.log(this.selectedCountryId)
+    
     
     this.getPricing()
   }
@@ -257,7 +257,7 @@ submitcode(){
         CountryID:elm.CountryID,
         price: elm.Monthly,
         qty:0}));
-      console.log(this.cartList)
+      
     }
     else{
       this.cartList=this.productList.map(({ProgID,Program,CountryID,Annual})=>({ProgID,Program,CountryID,Annual}))
@@ -266,7 +266,7 @@ submitcode(){
         CountryID:elm.CountryID,
         price: elm.Annual,
       qty:0}));
-      console.log(this.cartList)
+      
     }
     
 
@@ -304,7 +304,7 @@ submitcode(){
          
       
     }
-    console.log(this.cartList)
+    
   }
   
   
@@ -393,8 +393,8 @@ submitcode(){
                 console.log(error)
               },
               ()=>{
-                console.log(this.cartList[i])
-                console.log(this.cartList,"afteraddidtion")
+                
+                
                 this.totalPrice()  
               })
             
@@ -507,7 +507,7 @@ submitcode(){
       } 
             
     }
-    console.log(this.cartList,"afterRemoval")
+    
     this.totalPrice()  
   }
 
@@ -520,7 +520,7 @@ submitcode(){
       this.totalCartValue += (this.cartList[i].price);
      
     }
-    console.log(this.totalCartValue,this.totalItemCount)
+    
   }
 
   ngOnDestroy(){

@@ -64,7 +64,7 @@ export class LoginPage implements OnInit,OnDestroy {
         this.enableLogin = true
       }
       this.urlKey=params['key']
-      console.log(this.urlEmail,this.urlKey)
+      
        // Print the parameter to the console. 
   });}
 
@@ -80,7 +80,7 @@ export class LoginPage implements OnInit,OnDestroy {
 
   
     
-    console.log(this.urlKey)
+    
     /*if(this.codeVerified==true)
     {
       this.email=JSON.parse(localStorage.getItem("email"))
@@ -89,7 +89,7 @@ export class LoginPage implements OnInit,OnDestroy {
     }*/
     localStorage.setItem("saveUsername",JSON.stringify(this.saveUsername))
    
-    console.log(this.successPassword)
+    
     if(this.successPassword==1)
     {
       this.showSuccessPassword=true
@@ -261,7 +261,7 @@ export class LoginPage implements OnInit,OnDestroy {
       {//
         this.loginResponse=res
         this.userId=res.UserId
-        console.log(this.loginResponse)
+        
         localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
         sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
         localStorage.setItem("token",JSON.stringify(res.access_token))
@@ -376,7 +376,7 @@ export class LoginPage implements OnInit,OnDestroy {
 
   rememberUsername(event){
     this.saveUsername=!this.saveUsername
-    console.log(this.saveUsername)
+    
     localStorage.setItem("saveUsername",JSON.stringify(this.saveUsername))
     if(event) {
       localStorage.setItem("remember", 'T')

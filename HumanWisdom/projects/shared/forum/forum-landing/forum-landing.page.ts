@@ -115,7 +115,7 @@ export class ForumLandingPage implements OnInit {
        this.programType = navigation.extras.state ? navigation.extras.state.programType : ProgramType.Adults;
       });
     this.UserID = localStorage.getItem('userId');
-    console.log(this.UserID);
+    
     this.token = localStorage.getItem("shareToken");
     this.address = this.router.url;
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;

@@ -124,7 +124,7 @@ export class S105001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
 
 
@@ -153,7 +153,7 @@ export class S105001Page implements OnInit,OnDestroy {
     }    
     // /continue where you left
 
-    console.log(this.shareUrl,this.loginResponse)
+    
     
     if(this.saveUsername==false)
     {

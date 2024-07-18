@@ -36,7 +36,7 @@ export class S92264Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r92264)
+    
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
@@ -145,7 +145,7 @@ export class S92264Page implements OnInit {
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress() {
@@ -153,7 +153,7 @@ export class S92264Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r92264", this.r92264)
     this.r92264 = sessionStorage.getItem("r92264")
-    console.log(this.r92264)
+    
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,

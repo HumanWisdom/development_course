@@ -1143,7 +1143,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
       }, 5000);
 
-      console.log(this.currentList);
+      
     })
   }
 

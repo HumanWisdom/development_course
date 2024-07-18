@@ -43,7 +43,7 @@ export class S35tPage implements OnInit {
   ngOnInit() {
     this.avDuration=localStorage.getItem("avDuration35")
     this.totalTime=localStorage.getItem("totalTime35")
-    console.log(this.avDuration,this.totalTime)
+    
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
@@ -69,7 +69,7 @@ export class S35tPage implements OnInit {
       console.log(error)
     },
     ()=>{
-      console.log(this.bookmarkList)
+      
       console.log(JSON.parse(sessionStorage.getItem("bookmark35")))
     if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark35"))==1)
       this.bookmark=1
@@ -96,7 +96,7 @@ export class S35tPage implements OnInit {
 
     }
       
-    console.log(this.bookmark)
+    
     sessionStorage.setItem("bookmark35",JSON.stringify(this.bookmark))
     
   }

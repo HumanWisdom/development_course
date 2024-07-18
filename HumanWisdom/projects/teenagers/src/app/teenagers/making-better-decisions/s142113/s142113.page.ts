@@ -37,7 +37,7 @@ export class S142113Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r142113)
+    
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
@@ -169,7 +169,7 @@ export class S142113Page implements OnInit {
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress() {

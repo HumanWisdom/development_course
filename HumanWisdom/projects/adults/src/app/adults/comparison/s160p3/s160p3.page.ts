@@ -203,7 +203,7 @@ export class S160p3Page implements OnInit {
     });
     // /multistep wizard
 
-    console.log(this.r160p3)
+    
     this.createScreen()
 
 
@@ -241,7 +241,7 @@ export class S160p3Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -251,7 +251,7 @@ export class S160p3Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r160p3", this.r160p3)
     //this.r160p3 = sessionStorage.getItem("r160p3")
-    console.log(this.r160p3)
+    
     if (this.r160p3 != "undefined") {
 
       this.service.submitProgressReflection({

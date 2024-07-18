@@ -96,7 +96,7 @@ export class S132001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
 
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
@@ -121,7 +121,7 @@ export class S132001Page implements OnInit,OnDestroy {
     }    
     // /continue where you left
 
-    console.log(this.shareUrl,this.loginResponse)
+    
     
     if(this.saveUsername==false)
     {

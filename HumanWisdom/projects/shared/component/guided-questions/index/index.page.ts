@@ -171,7 +171,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
         /* if(this.dailyResponse==null)
         this.dailyResponse="Start Typing"*/
         this.dailyId = res[0].QueId;
-        console.log(this.dailyQuestion, this.dailyResponse);
+        
       },
       (error) => {
         console.log(error);

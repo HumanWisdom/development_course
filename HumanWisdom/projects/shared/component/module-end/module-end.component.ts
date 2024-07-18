@@ -68,7 +68,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    console.log(this.toc)
+    
     this.GetModuleDataBasedOnProgramType();
     this.getDataForCertificate();
 

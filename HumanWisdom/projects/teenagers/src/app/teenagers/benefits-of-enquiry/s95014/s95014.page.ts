@@ -50,8 +50,8 @@ export class S95014Page implements OnInit {
       this.bookmark = 0
     else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark95014")) == 1)
       this.bookmark = 1
-    console.log(this.qrList, "Qrlist")
-    console.log(this.qrList.ListOfQueOpts)
+    
+   
     this.questionA = this.qrList.ListOfQueOpts
 
 
@@ -99,7 +99,7 @@ export class S95014Page implements OnInit {
       }
 
     }
-    console.log(this.question, this.optionList)
+    
 
   }
 
@@ -142,7 +142,7 @@ export class S95014Page implements OnInit {
       document.getElementById(opt.OptId).style.background = '#120F40';
       // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
-    console.log(this.enableTick)
+    
   }
 
 

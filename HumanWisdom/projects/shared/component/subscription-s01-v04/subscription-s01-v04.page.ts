@@ -133,7 +133,7 @@ export class SubscriptionS01V04Page implements OnInit {
     this.viewCart();
 
     setTimeout(() => {
-      console.log(this.cartList)
+      
     }, 7000)
 
   }
@@ -160,7 +160,7 @@ export class SubscriptionS01V04Page implements OnInit {
             this.cartList[i].price = this.cartList[i].Monthly
         }
       }
-      console.log(this.cartList)
+      
     }
     this.learnermail = '';
     if(enable) {
@@ -520,7 +520,7 @@ export class SubscriptionS01V04Page implements OnInit {
     this.service.getCurrencies().subscribe(res => {
 
       this.countryList = res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId === item.CountryId) === i);
-      console.log(this.countryList)
+      
       let found = this.countryList.find(o => o.Country == this.defaultCountry)
       if (found) {
         console.log("found")
@@ -542,7 +542,7 @@ export class SubscriptionS01V04Page implements OnInit {
     // console.log(country)
     // this.selectedCountryId=this.countryList.filter(r=>{return r.Country==country})[0].CID
     this.selectedCountryId = countryId
-    console.log(this.selectedCountryId)
+    
 
     this.getPricing()
   }
@@ -558,7 +558,7 @@ export class SubscriptionS01V04Page implements OnInit {
          CountryID:elm.CountryID,
          price: elm.Monthly,
          qty:0}));
-       console.log(this.cartList)
+       
      }
      else{
        this.cartList=this.productList.map(({ProgID,Program,CountryID,Annual})=>({ProgID,Program,CountryID,Annual}))
@@ -567,7 +567,7 @@ export class SubscriptionS01V04Page implements OnInit {
          CountryID:elm.CountryID,
          price: elm.Annual,
        qty:0}));
-       console.log(this.cartList)
+       
      }
 
 
@@ -700,8 +700,8 @@ export class SubscriptionS01V04Page implements OnInit {
                 console.log(error)
               },
               () => {
-                console.log(this.cartList[i])
-                console.log(this.cartList, "afteraddidtion")
+                
+                
                 this.totalPrice()
               })
         }
@@ -757,7 +757,7 @@ export class SubscriptionS01V04Page implements OnInit {
     for (var i = 0; i < this.cartList.length; i++) {
       this.totalCartValue += (this.cartList[i].price);
     }
-    console.log(this.totalCartValue, this.totalItemCount)
+    
   }
 
   getAmount() {

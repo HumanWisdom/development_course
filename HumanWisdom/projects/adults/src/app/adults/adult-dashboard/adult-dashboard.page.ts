@@ -1287,7 +1287,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+          
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1367,7 +1367,7 @@ export class AdultDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    console.log(this.streak)
+    
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1460,7 +1460,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+          
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1558,7 +1558,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          console.log(this.streak)
+          
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -4097,7 +4097,7 @@ export class AdultDashboardPage implements OnInit {
 
   //     }, 3000);
 
-  //     console.log(this.currentList);
+  //     
   //   })
   // }
 

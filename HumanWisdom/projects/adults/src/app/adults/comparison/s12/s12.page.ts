@@ -35,7 +35,7 @@ export class S12Page implements OnInit, OnDestroy {
   ngOnInit() {
     this.createScreen()
 
-    console.log(this.qrList.ListOfQueOpts)
+
     this.questionA = this.qrList.ListOfQueOpts
 
 
@@ -74,14 +74,14 @@ export class S12Page implements OnInit, OnDestroy {
       }
 
     }
-    console.log(this.question, this.optionList)
+
 
   }
 
   checkOption(optId) {
     console.log(optId)
     this.option.push(optId)
-    console.log(this.option)
+
     this.sendOption.push(this.option[this.option.length - 1])
   }
   checkright() {

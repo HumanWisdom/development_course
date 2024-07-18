@@ -80,7 +80,7 @@ export class S81001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
 
     // continue where you left    

@@ -34,7 +34,7 @@ export class S434Page implements OnInit {
     private location:Location) { }
 
   ngOnInit() {
-    console.log(this.bookmarkList)
+    
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else

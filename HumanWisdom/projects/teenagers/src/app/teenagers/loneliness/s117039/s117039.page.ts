@@ -45,7 +45,7 @@ export class S117039Page implements OnInit {
     .subscribe(res=>{
       
      this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==117).Percentage)
-     console.log(this.progressPercent)
+     
     
     })
   }

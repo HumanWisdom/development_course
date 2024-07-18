@@ -35,7 +35,7 @@ export class S48104Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r48104)
+    
     this.createScreen()
 
 
@@ -158,7 +158,7 @@ export class S48104Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

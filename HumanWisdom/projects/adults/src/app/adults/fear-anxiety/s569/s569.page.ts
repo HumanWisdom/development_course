@@ -87,7 +87,7 @@ export class S569Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -100,7 +100,7 @@ export class S569Page implements OnInit {
     this.router.navigate(['/adults/fear-anxiety/s570'])
     sessionStorage.setItem("r569", JSON.stringify(e))
     this.r569 = sessionStorage.getItem("r569")
-    console.log(this.r569)
+    
 
 
     this.service.submitProgressReflection({

@@ -37,7 +37,7 @@ export class S56051Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r56051)
+    
     this.createScreen()
 
 
@@ -184,7 +184,7 @@ export class S56051Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -194,7 +194,7 @@ export class S56051Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r56051", this.r56051)
     //this.r56051 = sessionStorage.getItem("r56051")
-    console.log(this.r56051)
+    
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,

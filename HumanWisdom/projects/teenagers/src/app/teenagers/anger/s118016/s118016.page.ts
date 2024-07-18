@@ -52,8 +52,8 @@ export class S118016Page implements OnInit
   ngOnInit() 
   {
     this.createScreen()
-    console.log(this.r118016);
-    console.log(this.r118016_1);
+    
+    
 
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
@@ -107,7 +107,7 @@ export class S118016Page implements OnInit
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress() 
@@ -119,7 +119,7 @@ export class S118016Page implements OnInit
     sessionStorage.setItem("r118016_1", this.r118016_1)
     this.r118016 = sessionStorage.getItem("r118016")
     this.r118016_1 = sessionStorage.getItem("r118016_1")
- //   console.log(this.r118016) 
+ //   
  if(this.r118016 !=''){
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,

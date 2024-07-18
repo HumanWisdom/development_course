@@ -119,7 +119,7 @@ export class WisdomScalePage implements OnInit {
       }
 
     });
-    console.log(this.nextPath)
+    
 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -202,7 +202,7 @@ export class WisdomScalePage implements OnInit {
     switch (e.Id) {
       case "1": {
         this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        console.log(this.rating1)
+        
         this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
         console.log("selected rating", this.s1)
         break;
@@ -213,7 +213,7 @@ export class WisdomScalePage implements OnInit {
         // this.optionList2.sort((a, b) => a.OptId - b.OptId);
         // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
         this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
-        console.log(this.s2)
+        
         break;
       }
       case "3": {
@@ -307,7 +307,7 @@ export class WisdomScalePage implements OnInit {
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
     this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
     localStorage.setItem("wisdomScore", this.wisdomScore)
-    console.log(this.wisdomScore, "ws")
+    
     this.option = optionT.join()
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,

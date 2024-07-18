@@ -80,7 +80,7 @@ export class S316Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

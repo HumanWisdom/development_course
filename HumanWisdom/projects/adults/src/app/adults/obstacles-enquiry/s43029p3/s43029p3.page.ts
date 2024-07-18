@@ -227,7 +227,7 @@ export class S43029p3Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -237,7 +237,7 @@ export class S43029p3Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r43029p3", this.r43029p3)
     //this.r43029p3 = sessionStorage.getItem("r43029p3")
-    console.log(this.r43029p3)
+    
 
 
     this.service.submitProgressReflection({
