@@ -4,6 +4,8 @@ import { SharedService } from "../../../services/shared.service";
 import { Constant } from '../../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { ProgramType } from '../../../models/program-model';
+
 
 @Component({
   selector: 'app-manage-subscription',
@@ -17,6 +19,7 @@ export class ManageSubscriptionPage implements OnInit {
   public defaultCountry: any;
   public defaultCurrencySymbol: any;
   paymentDetail: any;
+  isAdults = true;
   constructor(public onboardingService: OnboardingService, private datePipe: DatePipe,
     private router: Router, private location: Location) {
 
@@ -88,8 +91,12 @@ export class ManageSubscriptionPage implements OnInit {
       }
     });
 
-
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }     
+  
   }
 
 
