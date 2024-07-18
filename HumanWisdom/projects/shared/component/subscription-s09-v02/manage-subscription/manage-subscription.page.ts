@@ -19,7 +19,8 @@ export class ManageSubscriptionPage implements OnInit {
   public defaultCountry: any;
   public defaultCurrencySymbol: any;
   paymentDetail: any;
-  isAdults = true;
+  isAdults: boolean = true;
+
   constructor(public onboardingService: OnboardingService, private datePipe: DatePipe,
     private router: Router, private location: Location) {
 
@@ -35,6 +36,12 @@ export class ManageSubscriptionPage implements OnInit {
       "Currency": "",
       "ISOCode": "",
       "PerMonthAmountOnAnnual": "",
+    }
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
     }
   }
 
