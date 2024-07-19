@@ -13,9 +13,9 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnDestroy   {
   title = 'teenagers';
-  teenagerCss = 'assets/css/custom.css';
+  teenagerCss ='assets/css/custom.css';
   navigationSubs = new Subscription();
   programType: ProgramType = ProgramType.Teenagers;
   journal = false
@@ -26,19 +26,16 @@ export class AppComponent implements OnDestroy {
   enableprofile = false
   search = false;
   enableplaystore = false;
-  routeid = 'search';
+  routeid='search';
   isEnableHam = true;
   enablebanner = false;
   isShowHeader = false;
   dash = false;
   isLoginPage = false;
-  enablefooter = true;
-
-  constructor(private navigationService: NavigationService, private router: Router, private services: TeenagersService) {
-    SharedService.ProgramId = 11;
-    moengage.initialize({
-      app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
-      swPath: '/teenagers/serviceworker.js'
+  constructor(private navigationService:NavigationService,private router: Router, private services: TeenagersService){
+    SharedService.ProgramId=11;
+    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
+    swPath:'/teenagers/serviceworker.js'
     });
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
@@ -49,31 +46,29 @@ export class AppComponent implements OnDestroy {
       setTimeout(() => {
         this.pageLoaded = true;
       }, 2000)
-      //  this.navigationService.routeToPath(event.url);
+    //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
     });
-    //  this.setDynamicCSS();
+   //  this.setDynamicCSS();
   }
 
 
-  setDynamicCSS() {
-    window.document.getElementById('teenagersCss').setAttribute('href', this.teenagerCss);
-  }
-  ngOnDestroy(): void {
+   setDynamicCSS(){
+      window.document.getElementById('teenagersCss').setAttribute('href',this.teenagerCss);
+   }
+   ngOnDestroy(): void {
     this.navigationSubs.unsubscribe();
   }
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
-      //   this.enablepopup.nativeElement.click();
+   //   this.enablepopup.nativeElement.click();
     }
   }
 
   enableFooter() {
-    let reg = new RegExp('forum');
-    let enable = true;
     if (this.router.url == "/teenagers/search" || this.router.url == "/search"
       || this.router.url.includes('/teenagers/site-search/') ||
       this.router.url.includes('/teenagers/search')) {
@@ -82,15 +77,15 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.search = true;
       this.enableprofile = false;
-      this.routeid = 'search';
+      this.routeid='search';
       this.isEnableHam = true;
       this.enableplaystore = false;
-      this.isShowHeader = true;
+      this.isShowHeader=true;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
-      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard")) {
+     || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard")) {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -99,13 +94,13 @@ export class AppComponent implements OnDestroy {
       this.isEnableHam = true;
       let ban = localStorage.getItem('enablebanner');
       if (ban === null || ban === 'T') {
-        this.enableplaystore = true;
+       this.enableplaystore = true;
       } else {
         this.enableplaystore = false;
       }
-      this.isShowHeader = true;
+      this.isShowHeader=true;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if ((this.router.url == "/teenagers/journal") ||
       this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
@@ -117,10 +112,11 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.isEnableHam = false;
       this.enableplaystore = false;
-      this.isShowHeader = false;
+      this.isShowHeader=false;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
+    let reg = new RegExp('forum')
     if ((reg.test(this.router.url))) {
       this.dash = false
       this.journal = false
@@ -130,9 +126,9 @@ export class AppComponent implements OnDestroy {
       this.isEnableHam = false;
       this.search = false;
       this.enableplaystore = false;
-      this.isShowHeader = false;
+      this.isShowHeader=false;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if (this.router.url == "/onboarding/user-profile"
       || this.router.url.includes('/profile-edit')) {
@@ -143,30 +139,27 @@ export class AppComponent implements OnDestroy {
       this.search = false;
       this.isEnableHam = false;
       this.enableplaystore = false;
-      this.isShowHeader = false;
+      this.isShowHeader=false;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
-    if (this.router.url == "/teenagers/notification") {
-      this.dash = false
-      this.journal = false
-      this.fourm = false;
-      this.enableprofile = false;
-      this.search = false;
-      this.isEnableHam = false;
-      this.enableplaystore = false;
-      this.isShowHeader = true;
-      this.isLoginPage = false;
-      enable = true;
-    }
-    if (this.router.url == "/teenagers/onboarding/login") {
-      this.isLoginPage = true;
-    } else {
-      this.isShowHeader = false;
-      enable = false;
-    }
-
-    this.enablefooter = enable;
+  if (this.router.url == "/teenagers/notification") {
+    this.dash = false
+    this.journal = false
+    this.fourm = false;
+    this.enableprofile = false;
+    this.search = false;
+    this.isEnableHam = false;
+    this.enableplaystore = false;
+    this.isShowHeader=true;
+    this.isLoginPage = false;
+    return true;
+  }
+  if (this.router.url == "/teenagers/onboarding/login") {
+    this.isLoginPage = true;
+  }
+    this.isShowHeader=false;
+    return false;
   }
 
   getplaystore(event) {
