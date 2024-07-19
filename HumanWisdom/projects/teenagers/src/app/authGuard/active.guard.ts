@@ -73,7 +73,7 @@ console.log(freeScreens)
         }
         else {
           /* localStorage.setItem("StoryType","Locked")
-          
+           console.log("res", res ) */
           this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           // this.router.navigate(['/start-your-free-trial']);
           return false;
@@ -97,7 +97,7 @@ console.log(freeScreens)
         }
         else {
           /*     localStorage.setItem("StoryType","Locked")
-              
+               console.log("res", res ) */
               this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           return false;
         }
