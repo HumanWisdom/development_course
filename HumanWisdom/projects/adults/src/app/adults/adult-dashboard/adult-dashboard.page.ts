@@ -3980,6 +3980,8 @@ export class AdultDashboardPage implements OnInit {
 
   }
   routeDailyCheckIn(){
+    this.logeventservice.logEvent("Click_daily-checkin");
+
     this.router.navigate(['/adults/daily-checkin']);
   }
 
