@@ -65,7 +65,7 @@ console.log(freeScreens)
 
       let id = m[1].split("=")[1]
       this.service.CheckStoryIsFree(id).subscribe(res => {
-        console.log(res)
+        
         if (res === true) {
           /* localStorage.setItem("StoryType","Open")
             console.log("res", res ) */
@@ -73,7 +73,7 @@ console.log(freeScreens)
         }
         else {
           /* localStorage.setItem("StoryType","Locked")
-          console.log(res) */
+          
           this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           // this.router.navigate(['/start-your-free-trial']);
           return false;
@@ -97,7 +97,7 @@ console.log(freeScreens)
         }
         else {
           /*     localStorage.setItem("StoryType","Locked")
-              console.log(res) */
+              
               this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           return false;
         }

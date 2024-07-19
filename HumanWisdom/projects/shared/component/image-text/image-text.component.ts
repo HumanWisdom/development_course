@@ -23,7 +23,7 @@ export class ImageTextComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.base, this.overlay)
+    
   }
 
   ngAfterViewInit() {

@@ -76,7 +76,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      console.log(this.rowData.Expression)
+      
       if(this.rowData.Expression=="Tired")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);
       else if(this.rowData.Expression=="Overwhelmed")

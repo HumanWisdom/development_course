@@ -78,7 +78,7 @@ export class ChangeTopicPage implements OnInit {
     let NoOfVisits = loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits )
     this.isRoutedFromLogin = NoOfVisits === '1' ? true : false;
-    console.log(this.isRoutedFromLogin);
+    
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
@@ -159,7 +159,7 @@ export class ChangeTopicPage implements OnInit {
                 this.url='/adults/curated/have-calm-mind';
               }
 
-              console.log(this.url)
+              
              /*  if (this.url == null) {
                 this.url = '/adults/adult-dashboard';
               } */

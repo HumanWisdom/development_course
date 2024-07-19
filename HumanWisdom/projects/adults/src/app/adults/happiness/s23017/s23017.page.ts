@@ -87,7 +87,7 @@ export class S23017Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -98,7 +98,7 @@ export class S23017Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r23017", JSON.stringify(e))
     this.r23017 = sessionStorage.getItem("r23017")
-    console.log(this.r23017)
+    
     localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/happiness/s23018'])
     if (this.userId === 563) return;

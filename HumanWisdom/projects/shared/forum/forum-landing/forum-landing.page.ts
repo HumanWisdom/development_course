@@ -115,7 +115,7 @@ export class ForumLandingPage implements OnInit {
        this.programType = navigation.extras.state ? navigation.extras.state.programType : ProgramType.Adults;
       });
     this.UserID = localStorage.getItem('userId');
-    console.log(this.UserID);
+    
     this.token = localStorage.getItem("shareToken");
     this.address = this.router.url;
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
@@ -283,7 +283,7 @@ export class ForumLandingPage implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);
@@ -389,7 +389,7 @@ export class ForumLandingPage implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);
@@ -416,7 +416,7 @@ export class ForumLandingPage implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);

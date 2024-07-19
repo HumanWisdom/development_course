@@ -64,7 +64,7 @@ export class FeatureHeaderComponent implements OnInit {
       text: 'Hey, check out the HappierMe Program',
       url: this.baseUrl+this.address
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);

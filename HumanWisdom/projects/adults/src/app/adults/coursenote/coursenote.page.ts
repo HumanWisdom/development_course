@@ -22,12 +22,12 @@ export class CoursenotePage implements OnInit {
    ) { }
 
   ngOnInit() {
-   // console.log(this.ac.snapshot.paramMap.get('path'))
+   // 
    if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
   else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    console.log(this.userId)
+    
   }
   addJournal(){
     console.log("adding journal")

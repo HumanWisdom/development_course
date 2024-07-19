@@ -91,7 +91,7 @@ export class NavigationService {
     } else {
         console.log("Cannot go back. History is empty.");
     }
-    console.log(this.history)
+    
     return prevPath ;
 }
 }

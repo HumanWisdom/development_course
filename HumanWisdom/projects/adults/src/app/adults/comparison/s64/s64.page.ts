@@ -88,7 +88,7 @@ export class S64Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -98,7 +98,7 @@ export class S64Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r64", JSON.stringify(e))
     this.r64 = sessionStorage.getItem("r64")
-    console.log(this.r64)
+    
     if (this.r64 != "undefined") {
 
       this.service.submitProgressReflection({

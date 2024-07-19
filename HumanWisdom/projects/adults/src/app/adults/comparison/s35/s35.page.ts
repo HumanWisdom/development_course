@@ -66,7 +66,7 @@ export class S35Page implements OnInit,AfterViewInit,OnDestroy {
       console.log(error)
     },
     ()=>{
-      console.log(this.bookmarkList)
+      
       console.log(JSON.parse(sessionStorage.getItem("bookmark35")))
     if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark35"))==1)
       this.bookmark=1
@@ -107,7 +107,7 @@ export class S35Page implements OnInit,AfterViewInit,OnDestroy {
 
     }
       
-    console.log(this.bookmark)
+    
     sessionStorage.setItem("bookmark35",JSON.stringify(this.bookmark))
     
   }

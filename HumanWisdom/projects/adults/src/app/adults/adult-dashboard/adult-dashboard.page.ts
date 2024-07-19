@@ -317,7 +317,7 @@ export class AdultDashboardPage implements OnInit {
     this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        console.log(res)
+        
         if (res[0]['ModuleId'] == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
@@ -329,7 +329,7 @@ export class AdultDashboardPage implements OnInit {
     let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
-        console.log(res);
+        
         this.dashboardFeature = res;
       });
   }
@@ -1287,7 +1287,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+          
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1367,7 +1367,7 @@ export class AdultDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    console.log(this.streak)
+    
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1460,7 +1460,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+          
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1558,7 +1558,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          console.log(this.streak)
+          
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -3933,7 +3933,7 @@ export class AdultDashboardPage implements OnInit {
      localStorage.setItem("moduleId", JSON.stringify(75))
      this.service.clickModule(75, this.userId)
        .subscribe(res => {
-         console.log(res)
+         
          this.qrList = res
          weR = "s" + res.lastVisitedScreen
          // continue where you left
@@ -4097,7 +4097,7 @@ export class AdultDashboardPage implements OnInit {
 
   //     }, 3000);
 
-  //     console.log(this.currentList);
+  //     
   //   })
   // }
 
@@ -4162,7 +4162,7 @@ export class AdultDashboardPage implements OnInit {
   //   localStorage.setItem("moduleId", JSON.stringify(75))
   //   this.service.clickModule(75, this.userId)
   //     .subscribe(res => {
-  //       console.log(res)
+  //       
   //       this.qrList = res
   //       weR = "s" + res.lastVisitedScreen
   // continue where you left

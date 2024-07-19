@@ -204,7 +204,7 @@ export class S38019p7Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r38019p7)
+    
     console.log(sessionStorage.getItem("r38019p7"))
     if (sessionStorage.getItem("r38019p7") == null) {
       this.r38019p7 = sessionStorage.getItem("r38019p7")
@@ -244,7 +244,7 @@ export class S38019p7Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -254,7 +254,7 @@ export class S38019p7Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r38019p7", this.r38019p7)
     this.r38019p7 = sessionStorage.getItem("r38019p7")
-    console.log(this.r38019p7)
+    
     if (this.r38019p7 != "undefined") {
 
       this.service.submitProgressReflection({

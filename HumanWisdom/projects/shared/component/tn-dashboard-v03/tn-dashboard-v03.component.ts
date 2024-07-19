@@ -50,7 +50,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     } else {
       this.isAdults = false;
     }
-    
+
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
@@ -85,21 +85,18 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   ngOnChanges(changes: SimpleChanges): void {
       if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
         if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
-          console.log(changes.enableHamburger.currentValue);
           this.enableHamburger = changes.enableHamburger.currentValue;
         }
       }
 
       if(changes && changes.isLoginPage && !changes.isLoginPage.firstChange){
         if(changes.isLoginPage.currentValue != changes.isLoginPage.previousValue){
-          console.log(changes.isLoginPage.currentValue);
           this.isLoginPage = changes.isLoginPage.currentValue;
         }
       }
 
       if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
         if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
-          console.log(changes.isShowHeader.currentValue);
           this.isShowHeader = changes.isShowHeader.currentValue;
         }
       }

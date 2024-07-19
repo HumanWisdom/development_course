@@ -66,7 +66,7 @@ export class S111026Page implements OnInit
     this.optionList0=this.findQuestion(424).optionList
     this.q1=this.findQuestion(425).Question
     this.optionList1=this.findQuestion(425).optionList
-    console.log(this.optionList0,this.q0)
+    
     this.q2=this.findQuestion(426).Question
     this.optionList2=this.findQuestion(426).optionList
     this.q3=this.findQuestion(427).Question
@@ -75,12 +75,12 @@ export class S111026Page implements OnInit
     this.optionList4=this.findQuestion(428).optionList
     this.q5=this.findQuestion(429).Question
     this.optionList5=this.findQuestion(429).optionList
-    console.log(this.optionList0)
-    console.log(this.optionList1)
-    console.log(this.optionList2)
-    console.log(this.optionList3)
-    console.log(this.optionList4)
-    console.log(this.optionList5)
+    
+    
+    
+    
+    
+    
 
     if(this.saveUsername==false)
     {
@@ -274,7 +274,7 @@ export class S111026Page implements OnInit
     }
     this.sendOptions.push(id)
     this.sendOptions=[...new Set(this.sendOptions)]
-    console.log(this.sendOptions)
+    
     sessionStorage.setItem("sessionOptions",JSON.stringify(this.sendOptions))
   }
 

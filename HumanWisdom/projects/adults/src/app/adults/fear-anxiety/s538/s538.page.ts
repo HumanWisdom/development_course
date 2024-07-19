@@ -87,7 +87,7 @@ export class S538Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -98,7 +98,7 @@ export class S538Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r538", JSON.stringify(e))
     this.r538 = sessionStorage.getItem("r538")
-    console.log(this.r538)
+    
 
 
     this.service.submitProgressReflection({

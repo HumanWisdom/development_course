@@ -69,7 +69,7 @@ async function fetchData() {
         
         this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
         
-        console.log(this.pricingModel);
+        
         
         console.log("this.pricingModel");
 

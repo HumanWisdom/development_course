@@ -40,7 +40,7 @@ export class S135059Page implements OnInit {
     private location:Location) { }
 
   ngOnInit() {
-    console.log(this.sendOption,this.sessionOption135059)
+    
     if(this.sessionOption135059==null)
     {
       this.sessionOption135059=[]
@@ -58,7 +58,7 @@ export class S135059Page implements OnInit {
     this.questionA=this.qrList?.ListOfQueOpts
     this.question=this.findQuestion(627).Question
     this.optionList=this.findQuestion(627).optionList
-    console.log(this.optionList,this.question)
+    
 
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
@@ -133,7 +133,7 @@ export class S135059Page implements OnInit {
         if(element==id) this.sendOption.splice(index,1);
       });
     }
-    console.log(this.sendOption)
+    
     sessionStorage.setItem("sessionOption135059",JSON.stringify(this.sendOption))
   }
 

@@ -38,7 +38,7 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
      }else if(this.wisdomstories.length === 1) {
       this.enablewisdomstory = true
      }
-     console.log(this.wisdomstories)
+     
 
   }
 

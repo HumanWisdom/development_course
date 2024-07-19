@@ -36,7 +36,7 @@ export class S20070p2Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r20070p2)
+    
     this.createScreen()
 
 
@@ -161,7 +161,7 @@ export class S20070p2Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

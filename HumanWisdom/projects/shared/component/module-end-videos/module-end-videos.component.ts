@@ -73,7 +73,7 @@ export class ModuleEndVideosComponent implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
 else
   {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    console.log(this.toc)
+    
   }
 
   shareIndex(){

@@ -41,7 +41,7 @@ export class S143102Page implements OnInit
 
   ngOnInit() 
   {
-    console.log(this.r143102)
+    
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
@@ -195,7 +195,7 @@ export class S143102Page implements OnInit
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress() 
@@ -204,7 +204,7 @@ export class S143102Page implements OnInit
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r143102", this.r143102)
     //this.r143102 = sessionStorage.getItem("r143102")
-    console.log(this.r143102)
+    
     if (this.r143102 != "undefined") 
     {
       this.service.submitProgressReflection({

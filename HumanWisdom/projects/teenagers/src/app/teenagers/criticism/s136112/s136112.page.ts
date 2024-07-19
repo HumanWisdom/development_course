@@ -48,7 +48,7 @@ export class S136112Page implements OnInit {
 
     //if(!sessionStorage.getItem("r136112"))
    // this.r136112 = sessionStorage.getItem("r136112")
-    console.log(this.r136112)
+    
 
 
     //this.r136112=JSON.parse(sessionStorage.getItem("r136112"))
@@ -179,7 +179,7 @@ export class S136112Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r136112)
+    
     console.log(sessionStorage.getItem("r136112"))
     if (sessionStorage.getItem("r136112") == null) {
       this.r136112 = sessionStorage.getItem("r136112")
@@ -219,7 +219,7 @@ export class S136112Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -229,7 +229,7 @@ export class S136112Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r136112", this.r136112)
     //this.r136112 = sessionStorage.getItem("r136112")
-    console.log(this.r136112)
+    
     if (this.r136112 != "undefined") {
 
       this.service.submitProgressReflection({
