@@ -273,7 +273,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   shareOnThread(item){
-      this.path = `https://happierme.app/${SharedService.getprogramName()}forum/forum-thread/${item.PostID}`;
+      this.path = `https://happierme.app/${SharedService.getprogramName()}/forum/forum-thread/${item.PostID}`;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
     // }

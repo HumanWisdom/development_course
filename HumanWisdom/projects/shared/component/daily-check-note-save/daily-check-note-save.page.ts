@@ -4,6 +4,8 @@ import { SharedService } from '../../services/shared.service';
 import { Router } from '@angular/router';
 import { NavigationService } from  '../../services/navigation.service';
 import { Location } from '@angular/common';
+import { LogEventService } from '../../services/log-event.service';
+
 @Component({
   selector: 'app-note-save',
   templateUrl: './daily-check-note-save.page.html',
@@ -18,7 +20,9 @@ export class DailyCheckinNoteSavePage implements OnInit {
   enableAlert:boolean =false;
   isLoggedIn:boolean;
   isAdults:boolean = false;
-  constructor(public commonService:CommonService,public router:Router,public navigationService:NavigationService,public location:Location) { 
+  constructor(public commonService:CommonService,public router:Router,public navigationService:NavigationService,public location:Location,
+    public logeventservice: LogEventService
+  ) { 
     this.rowData = this.initializeDailyCheckinList();
     this.t = new Date();
     this.minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate());
@@ -27,6 +31,8 @@ export class DailyCheckinNoteSavePage implements OnInit {
   }
 
   ngOnInit() {
+    this.logeventservice.logEvent('View_daily_checkin_save');
+
     this.rowData=JSON.parse(SharedService.getDataFromLocalStorage('dailyCheckIn'))
   }
   initializeDailyCheckinList(){
@@ -34,6 +40,8 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     SaveJournal(){
+      this.logeventservice.logEvent('click_daily_checkin_save');
+
       if(this.isLoggedIn){
         let userId = JSON.parse(localStorage.getItem("userId"));
         var obj = {
@@ -63,10 +71,14 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     goToHome(){
+      this.logeventservice.logEvent('click_daily_checkin_Save_home');
+
       this.router.navigate([SharedService.getDashboardUrls()]);
     }
 
     goBack() {
+      this.logeventservice.logEvent('click_daily_checkin_Save_back');
+
       var url = this.navigationService.navigateToBackLink();
       if (url == null) {
         this.location.back();
@@ -76,7 +88,8 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      
+      this.logeventservice.logEvent('click_daily_checkin_Save_findOutmore');
+
       if(this.rowData.Expression=="Tired")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);
       else if(this.rowData.Expression=="Overwhelmed")
