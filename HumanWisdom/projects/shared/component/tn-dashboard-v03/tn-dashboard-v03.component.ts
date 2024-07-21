@@ -7,7 +7,7 @@ import {
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService,UrlConstant } from '../../../shared/services/shared.service';
+import { SharedService, UrlConstant } from '../../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
 import { ProgramType } from '../../models/program-model';
 @Component({
@@ -15,13 +15,13 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './tn-dashboard-v03.component.html',
   styleUrls: ['./tn-dashboard-v03.component.scss'],
 })
-export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
+export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
   @Output() playstoreenable = new EventEmitter<boolean>();
   @Input() enableHamburger = false;
-  @Input() isShowHeader =  true;
+  @Input() isShowHeader = true;
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -39,7 +39,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   userDetails: any = [];
   loginResponse: any;
   subscription: Subscription;
-  @Input() isLoginPage:boolean=false;
+  @Input() isLoginPage: boolean = false;
   toursubscription: Subscription;
   disableClick = false;
   isAdults = false;
@@ -55,23 +55,23 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
-    }else{
+    } else {
       this.isloggedIn = false;
     }
 
   }
 
-  getLoggedIn(){
+  getLoggedIn() {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
-    }else{
+    } else {
       this.isloggedIn = false;
     }
     return this.isloggedIn;
   }
 
-  getIsSubscriber(){
+  getIsSubscriber() {
     let sub: any = localStorage.getItem("Subscriber");
     if (sub == '1') {
       this.subscriber = true;
@@ -83,23 +83,17 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     return this.subscriber;
   }
   ngOnChanges(changes: SimpleChanges): void {
-      if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
-        if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
-          this.enableHamburger = changes.enableHamburger.currentValue;
-        }
-      }
+    if (changes?.enableHamburger?.currentValue) {
+      this.enableHamburger = changes.enableHamburger.currentValue;
+    }
 
-      if(changes && changes.isLoginPage && !changes.isLoginPage.firstChange){
-        if(changes.isLoginPage.currentValue != changes.isLoginPage.previousValue){
-          this.isLoginPage = changes.isLoginPage.currentValue;
-        }
-      }
+    if (changes?.isLoginPage?.currentValue) {
+      this.isLoginPage = changes.isLoginPage.currentValue;
+    }
 
-      if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
-        if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
-          this.isShowHeader = changes.isShowHeader.currentValue;
-        }
-      }
+    if (changes?.isShowHeader?.currentValue) {
+      this.isShowHeader = changes.isShowHeader.currentValue;
+    }
   }
 
 
@@ -110,24 +104,24 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
     });
 
     this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
-      if(value){
-          let sub: any = localStorage.getItem("Subscriber");
-          if (sub == '1') {
-            this.subscriber = true;
-            this.isShowbookMark = true;
-          } else {
-            this.subscriber = false;
-            this.isShowbookMark = false;
-          }
-          let userId = JSON.parse(localStorage.getItem("userId"))
+      if (value) {
+        let sub: any = localStorage.getItem("Subscriber");
+        if (sub == '1') {
+          this.subscriber = true;
+          this.isShowbookMark = true;
+        } else {
+          this.subscriber = false;
+          this.isShowbookMark = false;
+        }
+        let userId = JSON.parse(localStorage.getItem("userId"))
 
-          this.Onboardingservice.getuser(userId).subscribe((res) => {
-            this.userDetails = res;
-            let userdetail = res[0];
-            this.url = userdetail['UserImagePath'].split('\\')[1]
-            this.name = localStorage.getItem('name');
-          });
-          this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+        this.Onboardingservice.getuser(userId).subscribe((res) => {
+          this.userDetails = res;
+          let userdetail = res[0];
+          this.url = userdetail['UserImagePath'].split('\\')[1]
+          this.name = localStorage.getItem('name');
+        });
+        this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
       }
     });
 
@@ -159,8 +153,8 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
       'iPhone',
       'iPod'
     ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
   routeGuide() {
@@ -199,7 +193,7 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
   }
 
   Subscribe() {
-    if(!(this.platform.IOS || this.platform.SAFARI)){
+    if (!(this.platform.IOS || this.platform.SAFARI)) {
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.startFreeTrial)]);
     }
   }
@@ -225,9 +219,9 @@ export class TnDashboardV03Component implements OnInit,OnChanges,OnDestroy {
 
 
   getNotifi(notifi) {
-    if(notifi) {
-       return parseInt(notifi) > 9 ? 9 + '+' : notifi;
-    }else {
+    if (notifi) {
+      return parseInt(notifi) > 9 ? 9 + '+' : notifi;
+    } else {
       return '';
     }
   }

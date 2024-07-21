@@ -1,6 +1,7 @@
 import { AngularFireAnalytics } from '@angular/fire/analytics';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Injectable } from '@angular/core';
+import { SharedService } from './shared.service';
 declare const gtag: Function;
 declare const fbq;
 @Injectable({
@@ -20,6 +21,7 @@ export class LogEventService {
         let deviceInfo = localStorage.getItem('isPWA');
         const isDesktopDevice = this.deviceService.isDesktop();
         let eventName = (deviceInfo && deviceInfo === 'NOTAPP') ? eventname + '_' + 'Web' : eventname + '_' + 'App';
+        eventName = SharedService.getprogramName() + '_' + eventName;
         // let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web';
         // gtag('event', eventname + '_' + device_info.os, { UserName: name })
         // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })
