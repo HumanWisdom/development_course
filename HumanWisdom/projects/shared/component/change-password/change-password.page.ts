@@ -78,7 +78,7 @@ export class ChangePasswordPage implements OnInit {
       })
         .subscribe(
           resp => {
-            console.log(resp)
+            
             let roleid = JSON.parse(localStorage.getItem('RoleID'));
             let emailcode = localStorage.getItem("emailCode");
             if (resp.toLocaleLowerCase().match('your password has been reset.')) {

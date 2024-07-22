@@ -42,7 +42,7 @@ export class S106Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r106)
+    
     this.createScreen()
 
 
@@ -88,7 +88,7 @@ export class S106Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -98,7 +98,7 @@ export class S106Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r106", JSON.stringify(e))
     this.r106 = sessionStorage.getItem("r106")
-    console.log(this.r106)
+    
     if (this.r106 != "undefined") {
 
       this.service.submitProgressReflection({

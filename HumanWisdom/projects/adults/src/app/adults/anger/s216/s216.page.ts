@@ -44,7 +44,7 @@ export class S216Page implements OnInit,AfterViewInit {
 
     
   ngAfterViewInit(){
-    // console.log(this.playerContainer.nativeElement)    
+    // 
     // console.log("hello")
 
     // audio script    

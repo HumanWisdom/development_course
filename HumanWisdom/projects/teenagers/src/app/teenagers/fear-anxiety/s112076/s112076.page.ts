@@ -39,7 +39,7 @@ export class S112076Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r112076)
+    
     this.reflectionA = this.qrList.ListOfReflection
 
     this.findReflection()
@@ -69,7 +69,7 @@ export class S112076Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

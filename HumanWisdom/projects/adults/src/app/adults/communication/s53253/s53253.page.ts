@@ -36,7 +36,7 @@ export class S53253Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r53253)
+    
     this.createScreen()
 
 
@@ -181,7 +181,7 @@ export class S53253Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

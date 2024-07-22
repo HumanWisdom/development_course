@@ -90,7 +90,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
           "Hey, checkout HumanWisdom's Give the gift of Wisdom program – https://www.humanwisdom.me/adults/give-the-gift-of-wisdom"
       })
       .then((response) => {
-        console.log(response);
+        
       })
       .catch((error) => {
         console.log(error);

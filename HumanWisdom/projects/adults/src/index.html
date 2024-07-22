@@ -13,7 +13,7 @@
 
   <meta property="og:title" id="tag1" content="HappierMe: Master your mind" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://happierme.app/" /> 
+  <meta property="og:url" content="https://happierme.app/" />
   <meta property="og:description" content="Manage your emotions. Be happy." />
   <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
   <!-- content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
@@ -405,10 +405,6 @@
 
 
         }
-        console.log(emailstr)
-        console.log(mlsubject)
-        console.log(mlbody)
-
 
         if (window.AndroidHandler) {
           // window.AndroidHandler.mailto($('a#mailto').prop('href'));
@@ -420,7 +416,6 @@
 
 
       $(document).on('click', '#liLogout', function () {
-        console.log("internal logout clicked");
         if (window.AndroidHandler) {
           window.AndroidHandler.logout();
         }
@@ -455,7 +450,6 @@
     });
     window.addEventListener('ImageEditClicked', function () {
       var fileName = localStorage.getItem('userId') + "_Profile";
-      console.log("ProfileEvenClicked--------------------");
       // this.triggerAngularEvent('{"byteArray":"iVBORw0KGgoAAAANSUhEUgAAAFYAAABMCAIAAAB4edddAAAAAXNSR0IArs4c6QAAAANzQklUCAgI","fileName":"FileName"}');
       if (window.AndroidHandler) {
         window.AndroidHandler.imageEditClicked(fileName);
@@ -469,19 +463,15 @@
     }
 
     window.addEventListener('ProfileEventReceived', function (obj) {
-      console.log(obj);
       alert(obj);
       // Perform the download action here
     });
 
     window.addEventListener('downloadButtonClicked', function () {
-      console.log('fileName1:' + localStorage.getItem('fileName'));
       var fileName = 'Completion';
       if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
         this.fileName = localStorage.getItem('fileName').toString();
-        console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
       }
-      console.log(myFileContentData);
       if (window.webkit) {
         window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + this.fileName + "_" + myFileContentData);
       }
@@ -490,7 +480,6 @@
         var fileName = 'Completion Certificate';
         if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
           this.fileName = localStorage.getItem('fileName').toString();
-          console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
         }
         window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
       }
@@ -502,8 +491,6 @@
       if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
         this.fileName = localStorage.getItem('fileName').toString();
       }
-      console.log(myFileContentData);
-      console.log(this.fileName);
       if (window.AndroidHandler) {
         window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
       }
@@ -522,7 +509,6 @@
         window.AndroidHandler.showToast(item);
       }
 
-      console.log('Received event data:');
     });
 
 
@@ -577,7 +563,7 @@
   <script type="text/javascript"
     src="https://static.mailerlite.com/js/w/webforms.min.js?v7316d10e2931a97c7b0f5c7e7e7be3ea"></script>
 -->
-  <script> 
+  <script>
     /*
     $(document).on('click', '.ihamburger', function ()
     {

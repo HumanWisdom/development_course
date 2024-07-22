@@ -88,7 +88,7 @@ export class S48015Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

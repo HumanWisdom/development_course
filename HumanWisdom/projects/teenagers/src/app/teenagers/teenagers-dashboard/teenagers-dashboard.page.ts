@@ -146,10 +146,22 @@ export class TeenagersDashboardPage implements OnInit {
     }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
-      localStorage.setItem('acceptcookie', 'T')
+      localStorage.setItem('acceptcookie', 'T');
+
+      if (!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 2000)
+      }
     }
     if (this.platform.IOS) {
-      localStorage.setItem('acceptcookie', 'T')
+      localStorage.setItem('acceptcookie', 'T');
+
+      if (!localStorage.getItem('firstTimeTour')) {
+        setTimeout(() => {
+          this.enabletourmodal.nativeElement.click();
+        }, 2000)
+      }
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
@@ -311,8 +323,7 @@ export class TeenagersDashboardPage implements OnInit {
     this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        console.log(res)
-        if (res[0]['ModuleId'] == 75) {
+        if (res[0]?.ModuleId == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
         this.resumeLastvisited = res;
@@ -323,7 +334,6 @@ export class TeenagersDashboardPage implements OnInit {
     let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
-        console.log(res);
         this.dashboardFeature = res;
       });
   }
@@ -531,14 +541,6 @@ export class TeenagersDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_intro",
-        popover: {
-          title: 'Introduction',
-          description: 'Learn how to make the most of the app and explore the key ideas',
-          side: "bottom"
-        }
-      },
-      {
         element: ".tour_explore",
         popover: {
           title: 'Explore',
@@ -561,7 +563,15 @@ export class TeenagersDashboardPage implements OnInit {
           description: 'Join our community discussions. Ask a coach a question',
           side: "top"
         },
-      }
+      },
+      {
+        element: ".tour_intro",
+        popover: {
+          title: 'Introduction',
+          description: 'Learn how to make the most of the app and explore the key ideas',
+          side: "bottom"
+        }
+      },
     ];
 
 
@@ -1107,7 +1117,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1187,7 +1197,7 @@ export class TeenagersDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    console.log(this.streak)
+
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1280,7 +1290,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1378,7 +1388,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          console.log(this.streak)
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1794,7 +1804,7 @@ export class TeenagersDashboardPage implements OnInit {
     if (res['FeatureType'] === "BLOG") {
       this.logeventservice.logEvent("click_blog");
       sid = res['Url'].split('sId=')[1];
-      this.router.navigate(['/blog-article'], { queryParams: { sId: `${sid}` } })
+      this.router.navigate(['teenagers//blog-article'], { queryParams: { sId: `${sid}` } })
     } else if (res['FeatureType'] === "LIFE STORY") {
       this.logeventservice.logEvent("click_life_stories");
       sid = res['Url'].split('sId=')[1];
@@ -2049,6 +2059,8 @@ export class TeenagersDashboardPage implements OnInit {
   }
 
   routeDailyCheckIn(){
+    this.logeventservice.logEvent("Click_daily-checkin");
+
     this.router.navigate(['/teenagers/daily-checkin']);
   }
 

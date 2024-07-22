@@ -92,7 +92,6 @@ export class ProfilePage implements OnInit {
     text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
     url: this.path
   }).then((response) => {
-    console.log(response);
   })
     .catch((error) => {
       console.log(error);
@@ -102,11 +101,9 @@ export class ProfilePage implements OnInit {
 
   share() {
     if (this.urlT) {
-      console.log("url")
       this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
     }
     else {
-      console.log("local")
       this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
 
@@ -115,7 +112,6 @@ export class ProfilePage implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
     })
       .catch((error) => {
         console.log(error);

@@ -68,7 +68,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    console.log(this.toc)
+    
     this.GetModuleDataBasedOnProgramType();
     this.getDataForCertificate();
 
@@ -129,7 +129,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.shareUrl
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);
@@ -2748,7 +2748,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         text: 'Certificate of Completion!',
         url: this.shareUrl
       }).then((response) => {
-        console.log(response);
+        
       })
         .catch((error) => {
           console.log(error);

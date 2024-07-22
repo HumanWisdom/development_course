@@ -44,7 +44,7 @@ export class S158013Page implements OnInit,OnDestroy
  
   ngOnInit() 
   {
-    console.log(this.audioLink)
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))

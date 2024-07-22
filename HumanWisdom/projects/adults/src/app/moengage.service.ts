@@ -18,7 +18,6 @@ export class MoengageService {
                 .subscribe({ userVisibleOnly: true })
                 .then((subscription) => {
                   // Send the subscription details to your server for storing and later use
-                  console.log(subscription);
                 })
                 .catch((error) => {
                   console.error('Failed to subscribe user to push notifications:', error);

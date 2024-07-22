@@ -65,7 +65,7 @@ export class S26Page implements OnInit
     this.optionList0=this.findQuestion(34).optionList
     this.q1=this.findQuestion(35).Question
     this.optionList1=this.findQuestion(35).optionList
-    console.log(this.optionList0,this.q0)
+    
     this.q2=this.findQuestion(37).Question
     this.optionList2=this.findQuestion(37).optionList
     this.q3=this.findQuestion(38).Question

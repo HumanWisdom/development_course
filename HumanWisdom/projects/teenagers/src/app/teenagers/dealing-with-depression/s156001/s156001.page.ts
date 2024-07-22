@@ -99,7 +99,7 @@ export class S156001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
     this.pgResume=sessionStorage.getItem("pgResume")
 
@@ -125,7 +125,7 @@ export class S156001Page implements OnInit,OnDestroy {
     }    
     // /continue where you left
 
-    console.log(this.shareUrl,this.loginResponse)
+    
     
     if(this.saveUsername==false)
     {
@@ -206,7 +206,7 @@ export class S156001Page implements OnInit,OnDestroy {
     this.service.getModulebyId(moduleId).subscribe(res=>{
       this.moduleData=res;
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      console.log(res[0].lastScreen)
+      
      });
   } */
    youtube(link) 

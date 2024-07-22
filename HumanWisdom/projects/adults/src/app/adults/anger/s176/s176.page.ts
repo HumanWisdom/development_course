@@ -95,7 +95,7 @@ export class S176Page implements OnInit, OnDestroy {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -154,7 +154,7 @@ export class S176Page implements OnInit, OnDestroy {
       .subscribe(
         r => {
           this.progress = parseFloat(r)
-          console.log(this.progress, "sessionProgress")
+          
         }
       )
 

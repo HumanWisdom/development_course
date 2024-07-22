@@ -11,12 +11,12 @@ export class ActiveGuard implements CanActivate, OnInit {
   x = []
   scrId: any
   public canGoBack: boolean;
- 
+
   constructor(public router: Router, private url: ActivatedRoute, private service: TeenagersService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.canGoBack = !!(this.router.getCurrentNavigation()?.previousNavigation);
     console.log("this.canGoBack", this.canGoBack)
-  
+
   }
   ngOnInit() {
 
@@ -39,7 +39,7 @@ export class ActiveGuard implements CanActivate, OnInit {
     } */
     m = m.split('?')
 
-
+console.log(freeScreens)
     let str = next.routeConfig.path;
     console.log("str",str)
     //this.logeventservice.logEvent(str);
@@ -53,25 +53,26 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     if ( sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
+      console.log("sub:",sub)
+
       return true;
     }
    /*  else if (sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
       return true;
     } */
-    else if (m[0].includes("view-stories") === true) 
+    else if (m[0].includes("view-stories") === true)
       {
 
       let id = m[1].split("=")[1]
       this.service.CheckStoryIsFree(id).subscribe(res => {
-        console.log(res)
+
         if (res === true) {
-          /* localStorage.setItem("StoryType","Open")
-            console.log("res", res ) */
+          /* localStorage.setItem("StoryType","Open") */
           return true;
         }
         else {
-          /* localStorage.setItem("StoryType","Locked")
-          console.log(res) */
+          /* localStorage.setItem("StoryType","Locked") */
+
           this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           // this.router.navigate(['/start-your-free-trial']);
           return false;
@@ -87,18 +88,15 @@ export class ActiveGuard implements CanActivate, OnInit {
     else if (m[0].includes("wisdom-shorts") === true) {
       let id = m[0].split("/")[3].split(".")[1]
 
-      console.log(m[0])
-      console.log(id)
+
       this.service.CheckShortsIsFree(id).subscribe(res => {
-        console.log(res)
         if (res === true) {
-          /*  localStorage.setItem("ShortsType","Open")
-             console.log("res", res ) */
+
           return true;
         }
         else {
-          /*     localStorage.setItem("StoryType","Locked")
-              console.log(res) */
+          /*     localStorage.setItem("StoryType","Locked") */
+
               this.router.navigate(['teenagers/subscription/start-your-free-trial']);
           return false;
         }
@@ -108,8 +106,8 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     }
-    else if (freeScreens !== null && (!loggedin || loggedin !== 'T' ? freeScreens.includes(this.scrId.replace('t', '').toString()) : freeScreens.includes(parseInt(this.scrId.replace('t', ''))) )) {
-          return true;
+    else if (freeScreens !== null && (!loggedin || loggedin !== 'T' ? freeScreens.includes(this.scrId.replace('t', '').toString()) : freeScreens.includes(this.scrId.replace('t', '')) )) {
+      return true;
     }
     else {
       // window.alert('You Have Reached Free Limit')

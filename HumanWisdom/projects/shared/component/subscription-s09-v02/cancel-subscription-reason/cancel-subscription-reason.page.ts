@@ -5,6 +5,8 @@ import { SharedService } from "../../../services/shared.service";
 import { Constant } from '../../../services/constant';
 import { Router } from '@angular/router';
 
+import { ProgramType } from '../../../models/program-model';
+
 @Component({
   selector: 'app-cancel-subscription-reason',
   templateUrl: './cancel-subscription-reason.page.html',
@@ -15,8 +17,14 @@ export class CancelSubscriptionReasonPage implements OnInit {
   constructor(private location:Location,private onboardingService:OnboardingService,private router :Router) { }
    reasonList = [];
    selectedId = 1;
+   isAdults: boolean = true;
   ngOnInit() {
     this.getReason();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
    getReason(){

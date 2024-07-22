@@ -374,7 +374,7 @@ export class ProgressPage implements OnInit {
       }
     });
     this.enableChart = true;
-    console.log(this.chartData)
+    
     // this.chartData = this.chartData.filter((a) => a.enable);
     // this.chartData = this.chartData.slice(0, 6)
     // this.tableData = this.tableData.filter((a) => a.enable);

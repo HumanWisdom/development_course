@@ -21,7 +21,7 @@ export class ActivationkeyPage implements OnInit {
 
   ngOnInit() {
     console.log("save username",this.saveUsername)
-    console.log(this.urlKey)
+    
 
     if(this.urlKey)
     {

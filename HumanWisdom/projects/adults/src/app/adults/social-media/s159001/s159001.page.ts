@@ -117,7 +117,7 @@ continue(){
     }    
     // /continue where you left
 
-    console.log(this.shareUrl,this.loginResponse)
+    
     
     if(this.saveUsername==false)
     {

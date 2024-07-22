@@ -46,7 +46,7 @@ export class S60031Page implements OnInit {
     private location:Location) { }
 
   ngOnInit() {
-    console.log(this.sendOption,this.sessionOption60031)
+    
     if(this.sessionOption60031==null)
     {
       this.sessionOption60031=[]
@@ -68,7 +68,7 @@ export class S60031Page implements OnInit {
     
     this.question=this.findQuestion(214).Question
     this.optionList=this.findQuestion(214).optionList
-    console.log(this.optionList,this.question)
+    
    
   
    
@@ -148,7 +148,7 @@ export class S60031Page implements OnInit {
       if(element==id) this.sendOption.splice(index,1);
    });
    }
-   console.log(this.sendOption)
+   
    sessionStorage.setItem("sessionOption60031",JSON.stringify(this.sendOption))
   
  }
