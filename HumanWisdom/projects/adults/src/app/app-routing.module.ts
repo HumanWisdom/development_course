@@ -8,21 +8,23 @@ import{BlogIndexPage}  from './../../../shared/component/blogs/blog-index/blog-i
 import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
 
 const routes: Routes = [
+  // {
+  //   path: "",
+  //  loadChildren:() => import("./adults/adverts-hwp/adverts-hwp.module").then(m => m.AdvertsHwpPageModule)
+  // },
   {
     path: "adults",
     loadChildren: () => import("./adults/adults.module").then(m => m.AdultsModule)
   },
-  // {
-  //   path: "course",
-  //   pathMatch:"full",
-  //   redirectTo:"",
-  //   //canActivate:[AuthGuard]
-  // },
-  // {
-  //   path: "course/adults",
-  //   redirectTo:"adults",
-  //   //canActivate:[AuthGuard]
-  // },
+  {
+    path: "course",
+    pathMatch:"full",
+    redirectTo:"adults",
+  },
+  {
+    path: "course/adults",
+    redirectTo:"adults",
+  },
 ];
 
 @NgModule({
