@@ -29,7 +29,7 @@ export class ProfilePage implements OnInit {
       this.id = this.route.snapshot.paramMap.get('id');
       this.service.GetCoachBio(this.id).subscribe(res=>
         {
-          console.log(res);
+          
           if(res) {
             this.coachBio = res;
           }
@@ -58,7 +58,7 @@ export class ProfilePage implements OnInit {
       text: 'Hey, check out the HappierMe Program',
       url: this.baseUrl
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);

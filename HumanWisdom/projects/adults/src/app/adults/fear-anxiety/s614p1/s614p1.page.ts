@@ -86,7 +86,7 @@ export class S614p1Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -97,7 +97,7 @@ export class S614p1Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r614p1", JSON.stringify(e))
     this.r614p1 = sessionStorage.getItem("r614p1")
-    console.log(this.r614p1)
+    
 
 
     this.service.submitProgressReflection({

@@ -365,9 +365,6 @@
 
 
         }
-        console.log(emailstr)
-        console.log(mlsubject)
-        console.log(mlbody)
 
 
         if (window.AndroidHandler) {
@@ -435,7 +432,6 @@
 
     window.addEventListener('ImageEditClicked', function () {
       var fileName = localStorage.getItem('userId') + "_Profile";
-      console.log("ProfileEvenClicked--------------------");
       // this.triggerAngularEvent('{"byteArray":"iVBORw0KGgoAAAANSUhEUgAAAFYAAABMCAIAAAB4edddAAAAAXNSR0IArs4c6QAAAANzQklUCAgI","fileName":"FileName"}');
       if (window.AndroidHandler) {
         window.AndroidHandler.imageEditClicked(fileName);
@@ -449,19 +445,15 @@
     }
 
     window.addEventListener('ProfileEventReceived', function (obj) {
-      console.log(obj);
       alert(obj);
       // Perform the download action here
     });
 
     window.addEventListener('downloadButtonClicked', function () {
-      console.log('fileName1:' + localStorage.getItem('fileName'));
       var fileName = 'Completion';
       if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
         this.fileName = localStorage.getItem('fileName').toString();
-        console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
       }
-      console.log(myFileContentData);
       if (window.webkit) {
         window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + this.fileName + "_" + myFileContentData);
       }
@@ -470,7 +462,6 @@
         var fileName = 'Completion Certificate';
         if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
           this.fileName = localStorage.getItem('fileName').toString();
-          console.log('fileName2:' + localStorage.getItem('fileName').toString() + myFileContentData);
         }
         window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
       }
@@ -482,8 +473,6 @@
       if (localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() != null) {
         this.fileName = localStorage.getItem('fileName').toString();
       }
-      console.log(myFileContentData);
-      console.log(this.fileName);
       if (window.AndroidHandler) {
         window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
       }
@@ -502,7 +491,6 @@
         window.AndroidHandler.showToast(item);
       }
 
-      console.log('Received event data:');
     });
 
 

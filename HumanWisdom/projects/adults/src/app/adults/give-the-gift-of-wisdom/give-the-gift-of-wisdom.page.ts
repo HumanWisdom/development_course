@@ -40,9 +40,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'give the gift of wisdom, personal growth, wellness, self-improvement, mindfulness, relationships, mental health, human wisdom, life coach'})
 
 
-    if (this.router.url=='/adults/give-the-gift-of-wisdom') {
-      window.history.pushState('', '', '/give-the-gift-of-wisdom');
-    }
+  
         this.getCountry();
 
   }
@@ -92,7 +90,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
           "Hey, checkout HumanWisdom's Give the gift of Wisdom program – https://www.humanwisdom.me/adults/give-the-gift-of-wisdom"
       })
       .then((response) => {
-        console.log(response);
+        
       })
       .catch((error) => {
         console.log(error);

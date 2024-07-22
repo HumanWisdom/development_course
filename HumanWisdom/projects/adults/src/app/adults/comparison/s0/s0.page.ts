@@ -74,7 +74,7 @@ export class S0Page implements OnInit, OnDestroy {
     }
     // /continue where you left
 
-    console.log(this.shareUrl, this.loginResponse)
+    
 
     if (this.saveUsername == false) {
       this.userId = JSON.parse(sessionStorage.getItem("userId"))

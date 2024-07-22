@@ -78,7 +78,7 @@ export class S83001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
 
     // continue where you left    
@@ -161,7 +161,7 @@ export class S83001Page implements OnInit,OnDestroy {
     this.service.getModulebyId(moduleId).subscribe(res=>{
       this.moduleData=res;
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      console.log(res[0].lastScreen)
+      
      });
   }
 }

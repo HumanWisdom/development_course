@@ -88,7 +88,7 @@ export class S45008Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -100,7 +100,7 @@ export class S45008Page implements OnInit {
     this.router.navigate(['/adults/habit-addiction/s45009'])
     sessionStorage.setItem("r45008", JSON.stringify(e))
     this.r45008 = sessionStorage.getItem("r45008")
-    console.log(this.r45008)
+    
 
 
     this.service.submitProgressReflection({

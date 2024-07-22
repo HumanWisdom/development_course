@@ -207,7 +207,7 @@ export class S230p1Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -218,7 +218,7 @@ export class S230p1Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r230p1", this.r230p1)
     this.r230p1 = sessionStorage.getItem("r230p1")
-    console.log(this.r230p1)
+    
     if (this.r230p1 != "undefined") {
 
       this.service.submitProgressReflection({

@@ -82,7 +82,7 @@ export class S213Page implements OnInit, OnDestroy {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -93,7 +93,7 @@ export class S213Page implements OnInit, OnDestroy {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r213", JSON.stringify(e))
     this.r213 = sessionStorage.getItem("r213")
-    console.log(this.r213)
+    
     if (this.r213 != "undefined") {
 
       this.service.submitProgressReflection({

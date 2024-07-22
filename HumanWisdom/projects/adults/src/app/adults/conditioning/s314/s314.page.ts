@@ -42,7 +42,7 @@ export class S314Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r314)
+    
     console.log(sessionStorage.getItem("r314"))
     if (sessionStorage.getItem("r314") == null) {
       this.r314 = sessionStorage.getItem("r314")
@@ -83,7 +83,7 @@ export class S314Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -93,7 +93,7 @@ export class S314Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r314", JSON.stringify(e))
     this.r314 = sessionStorage.getItem("r314")
-    console.log(this.r314)
+    
     if (this.r314 != "undefined") {
 
       this.service.submitProgressReflection({

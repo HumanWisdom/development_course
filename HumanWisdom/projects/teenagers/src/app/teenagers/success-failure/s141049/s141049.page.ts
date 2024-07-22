@@ -91,7 +91,7 @@ export class S141049Page implements OnInit, OnDestroy {
       }
 
     }
-    console.log(this.reflection)
+    
   }
   
 

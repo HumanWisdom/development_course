@@ -68,7 +68,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     })  
   }
 
-  onProgramChange($event) {
+  onProgramChange() {
     if (this.isAdults) {
       window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
     } else {

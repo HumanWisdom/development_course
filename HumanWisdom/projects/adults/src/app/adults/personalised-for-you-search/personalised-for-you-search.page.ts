@@ -1143,7 +1143,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
       }, 5000);
 
-      console.log(this.currentList);
+      
     })
   }
 
@@ -1167,7 +1167,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
      localStorage.setItem("moduleId", JSON.stringify(75))
      this.aservice.clickModule(75, this.userId)
        .subscribe(res => {
-         console.log(res)
+         
          this.qrList = res
          weR = "s" + res.lastVisitedScreen
          // continue where you left

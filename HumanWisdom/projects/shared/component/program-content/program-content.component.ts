@@ -23,7 +23,7 @@ export class ProgramContentComponent implements OnInit,AfterViewInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.content)
+    
   }
 
   ngAfterViewInit(){

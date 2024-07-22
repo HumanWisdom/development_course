@@ -77,7 +77,7 @@ export class CourseHeaderComponent implements OnInit {
     this.address = this.router.url;
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.showheaderbar = true;
-    // console.log(this.ac)
+    // 
     // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
 
     // var modLast=module.lastIndexOf("/")
@@ -159,7 +159,7 @@ export class CourseHeaderComponent implements OnInit {
       this.router.navigate(['/adults/adult-dashboard'])
     }
     else {
-      console.log(this.programName + '/teenager-dashboard');
+      
       this.router.navigate([this.programName + '/teenager-dashboard'])
     }
 
@@ -195,7 +195,7 @@ export class CourseHeaderComponent implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);

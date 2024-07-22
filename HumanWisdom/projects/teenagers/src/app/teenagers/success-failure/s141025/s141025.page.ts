@@ -44,7 +44,7 @@ export class S141025Page implements OnInit {
     private location:Location) { }
 
   ngOnInit() {
-    console.log(this.sendOption,this.sessionOption141025)
+    
     if(this.sessionOption141025==null)
     {
       this.sessionOption141025=[]
@@ -66,7 +66,7 @@ export class S141025Page implements OnInit {
     
     this.question=this.findQuestion(514).Question
     this.optionList=this.findQuestion(514).optionList
-    console.log(this.optionList,this.question)
+    
    
   
    
@@ -146,7 +146,7 @@ export class S141025Page implements OnInit {
       if(element==id) this.sendOption.splice(index,1);
    });
    }
-   console.log(this.sendOption)
+   
    sessionStorage.setItem("sessionOption141025",JSON.stringify(this.sendOption))
   
  }
@@ -177,7 +177,7 @@ export class S141025Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/success-failure/s141024'])
+    this.router.navigate(['/teenagers/success-failure/s141024p'])
 
 
   }

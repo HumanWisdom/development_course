@@ -13,7 +13,6 @@ export class ActiveGuard implements CanActivate, OnInit {
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.canGoBack = !!(this.router.getCurrentNavigation()?.previousNavigation);
-    console.log("this.canGoBack", this.canGoBack)
   }
 
   ngOnInit() {

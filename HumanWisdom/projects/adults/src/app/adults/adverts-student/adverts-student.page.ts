@@ -21,9 +21,7 @@ export class AdvertsStudentPage implements OnInit {
     this.meta.updateTag({ property: 'description', content: 'Empower your academic success with wisdom for students. Motivate yourself with our motivational blogs, self-confidence speeches, and self-motivational quotes. Enhance your interpersonal skills and communication skills for students. Learn how to deal with anxiety and practice mindfulness meditation for a better life.'})
     this.meta.updateTag({ property: 'keywords', content: 'wisdom for students, motivational blogs for students, self confidence motivational speech, self motivational quotes, self inspirational quotes, communication skills for students, interpersonal skills, deal with anxiety, mindfulness meditation for students, academic success, self-improvement, personal growth'})
 
-    if (!this.router.url.includes('/wisdom-for-students')) {
-      window.history.pushState('', '', '/wisdom-for-students');
-    }
+ 
   }
 
   clickbanner(url = '') {

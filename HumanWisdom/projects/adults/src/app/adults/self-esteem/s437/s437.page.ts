@@ -65,7 +65,7 @@ export class S437Page implements OnInit {
 
     this.createScreen()
 
-    console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA = this.qrList.ListOfQueOpts
 
     this.q1 = this.findQuestion(259).Question
@@ -74,7 +74,7 @@ export class S437Page implements OnInit {
 
 
 
-    console.log(this.q1, this.optionList1)
+    
 
 
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }

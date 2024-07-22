@@ -49,7 +49,7 @@ export class ReflectionComponent implements OnInit {
     this.path = this.router.url;
     var lastSlash = this.path?.lastIndexOf("/");
     this.scrNumber = this.path?.substring(lastSlash + 2);
-    console.log(this.scrNumber)
+    
     this.getProgress(this.scrNumber)
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
@@ -126,7 +126,7 @@ export class ReflectionComponent implements OnInit {
       .subscribe(
         r => {
           this.progress = parseFloat(r)
-          console.log(this.progress, "sessionProgress")
+          
           localStorage.setItem("progressbarvalue", this.progress.toString())
           setTimeout(() => {
             this.showheaderbar = true;
@@ -155,5 +155,9 @@ export class ReflectionComponent implements OnInit {
     }else{
       this.router.navigate(['/adults/adult-dashboard'])
     }
+  }
+
+  goToForum() {
+    this.router.navigate(["/"+ SharedService.getprogramName() +'/forum'])
   }
 }

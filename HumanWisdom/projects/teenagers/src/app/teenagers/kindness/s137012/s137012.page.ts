@@ -89,7 +89,7 @@ export class S137012Page implements OnInit,OnDestroy {
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress(e) 
@@ -99,7 +99,7 @@ export class S137012Page implements OnInit,OnDestroy {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r137012", JSON.stringify(e))
     this.r137012 = sessionStorage.getItem("r137012")
-    console.log(this.r137012)
+    
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

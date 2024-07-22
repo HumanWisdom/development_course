@@ -74,7 +74,7 @@ export class S338Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

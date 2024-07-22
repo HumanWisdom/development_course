@@ -28,7 +28,7 @@ export class OnlySliderComponent implements OnInit {
   selectRating(r)
   {
     
-    console.log(this.rating,this.r)
+    
     this.sendRating.emit(JSON.stringify({"Id":this.r,"Rating":this.rating}))
 
   }

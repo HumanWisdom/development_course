@@ -129,7 +129,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               }
             }
           }).then((result) => {
-            console.log(result)
+            
             if (result.error) {
               // alert(result.error.message);
               this.content = result.error.message;

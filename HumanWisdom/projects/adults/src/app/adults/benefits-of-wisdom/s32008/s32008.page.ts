@@ -88,7 +88,7 @@ export class S32008Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -99,7 +99,7 @@ export class S32008Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r32008", JSON.stringify(e))
     this.r32008 = sessionStorage.getItem("r32008")
-    console.log(this.r32008)
+    
     localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/benefits-of-wisdom/s32009'])
     this.service.submitProgressReflection({

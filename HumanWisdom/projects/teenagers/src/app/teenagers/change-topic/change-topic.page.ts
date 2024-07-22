@@ -71,9 +71,13 @@ export class ChangeTopicPage implements OnInit {
   }
 
   ngOnInit() {
-    let NoOfVisits = localStorage.getItem("NoOfVisits")
+    let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+
+    let NoOfVisits = loginResponse.NoOfVisits
+    console.log("NoofVisits:" + NoOfVisits )
+    
     this.isRoutedFromLogin = NoOfVisits === '1' ? true : false;
-    console.log(this.isRoutedFromLogin);
+    
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();

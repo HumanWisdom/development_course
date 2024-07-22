@@ -25,9 +25,6 @@ export class TnPartnershipAppComponent implements OnInit {
       }
     }
     this.isPartner=localStorage.getItem('isPartner')=='1';
-    if (this.router.url !='/partnership-app') {
-      window.history.pushState('', '', '/partnership-app');
-    }
   }
 
   goBack()
@@ -41,7 +38,7 @@ export class TnPartnershipAppComponent implements OnInit {
       text: 'Hey, check out the HappierMe Partnership Program',
       url: this.router.url
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);
