@@ -60,12 +60,7 @@ export class AppComponent implements OnDestroy {
     private meta: Meta,
     private title: Title,
     private services: AdultsService,
-<<<<<<< HEAD
     // public moengageService: MoengageService,
-=======
-    private onboardingService:OnboardingService,
-    public moengageService: MoengageService,
->>>>>>> 884894ad2c2f8400da4d5ebf0b5a70d50e12953e
     private navigationService:NavigationService
   ) {
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
