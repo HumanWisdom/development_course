@@ -2173,7 +2173,7 @@ a
   max-height: 377px;
 }
 
-.div_testimonials h4:first-child
+.div_testimonials h5:first-child
 {
   overflow: hidden;
   display: -webkit-box;
