@@ -31,24 +31,24 @@
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
             </div>
           </div>
 
           <div class="row center_flex absolute_desc" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
-                <h4 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">
+                <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">
                   Support your staff to be happier at work, and patients to lead healthier lives.
-                </h4>
+                </h1>
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
-                <h4 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
+                <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
                   Support staff to be more resilient, avoid burnout, manage their own emotions and mental health, and be more compassionate.
                   <br>
                   Empower patients to self-regulate their habits, emotions and mental health so they can lead happier and healthier lives.
-                </h4>
+                </h5>
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -74,9 +74,9 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 Packages to suit your needs
-              </h4>
+              </h2>
             </div>
           </div>
         </div>
@@ -95,11 +95,11 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
+                  <h6 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
                     1-year subscription +
                     <br>
                     1-hour training session
-                  </h4>
+                  </h6>
                 </div>
               </div>
             </div>
@@ -115,12 +115,12 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
+                  <h6 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
                     <span class="fw_600">
                         Bronze
                     </span>
                     + 12 hrs of training for facilitators over a year, to aid engagement, host discussions and answer questions
-                  </h4>
+                  </h6>
                 </div>
               </div>
             </div>
@@ -136,12 +136,12 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
+                  <h6 class="mt10px mb0px fs_12px fw_400 lh_150p fc_000000">
                     <span class="fw_600">
                       Silver
                     </span>
                     + Coaching by trained HappierMe coaches
-                  </h4>
+                  </h6>
                 </div>
               </div>
             </div>
@@ -168,19 +168,19 @@
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_block">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pl0px" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp" class="img-responsive" alt="Take charge of your mental health, habits and emotions.">
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
-              <h4 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
                 Take charge of your mental health, habits and emotions.
-              </h4>
+              </h2>
 
-              <h4 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
+              <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
                 Reduce the demand for healthcare by helping patients self-regulate their habits and manage their own mental health.
                 <br>
                 Reduce burnout, boost retention and productivity by supporting staff to develop a positive attitude, have healthy relationships, and be happier.
-              </h4>
+              </h5>
             </div>
           </div>
         </div>
@@ -192,9 +192,9 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 Did you know?
-              </h4>
+              </h2>
             </div>
           </div>
         </div>
@@ -205,20 +205,20 @@
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="100">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
+                  <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                     60-80%
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     of primary care visits are linked to stress 
                     <span class="fs_12px">
                       (NIH)
                     </span>
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -226,20 +226,20 @@
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
+                  <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                     79%
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     of healthcare staff report burnout
                     <span class="fs_12px">
                       (CDC)
                     </span>
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -247,20 +247,20 @@
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
+                  <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                     42%
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Obesity rate 
                     <span class="fs_12px">
                       (CDC)
                     </span>
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -268,20 +268,20 @@
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
+                  <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                     1 in 6
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     people have a substance abuse problem
                     <span class="fs_12px">
                       (HHS)
                     </span>
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -289,20 +289,20 @@
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
+                  <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                     1 in 5
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     people have a mental health problem
                     <span class="fs_12px">
                       (HHS)
                     </span>
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -310,17 +310,17 @@
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
+                  <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                     70%
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     of people with depression don’t seek help
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -335,9 +335,9 @@
         <div class="section-header">
           <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 The HappierMe impact across organisations
-              </h4>
+              </h2>
             </div>
           </div>
         </div>
@@ -351,23 +351,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           Having trouble figuring it all out? The Human Wisdom app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Jondi Whitis, Atlanta, USA
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -377,23 +377,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           The HappierMe app is a pre-eminent asset for people of all ages. It changes peoples lives by assisting them to better know themselves and live with peace, love, harmony, and fulfilment. It is a wonderful gift to humanity.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Garry Prigg, Australia
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -403,23 +403,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           HappierMe is what today's world which is full of stress, needs so so desperately. I have been using the HappierMe app in my counselling practice and it's helped me fast track recovery of childhood trauma parents have been carrying. The app guides me everyday to help parents raise children who won't have to recover from their childhoods.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Saakshi Singla, New Delhi, India
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -429,23 +429,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           It's so easy to get caught up in all the things we have to do, want to do, and should do. What we gain in productivity we lose in self-awareness, meaning, and satisfaction in our lives. We need tools to bring us back to the wisdom of our essential selves. The HappierMe app is such an excellent pocket companion that brings wisdom and joy back to our daily existence.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Dr Tim Merrick, USA
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -455,23 +455,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           The HappierMe App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Dominic Curran, England
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -481,23 +481,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their relationships. I believe the Human Wisdom project, which aims to awaken wisdom through self-understanding, is one of those solutions. Wisdom can bring peace to the individual, and so to the world.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Sir Anthony Seldon, UK
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -507,23 +507,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           The Human Wisdom Project connects human beings to one another from distant lands, in thoughtful dialogue and shared experience through the power of technology. It connects us with our shared humanity and has the potential to bring peace to the individual, and to the world. Education takes on a broader meaning - a lifelong journey of learning about ourselves in addition to learning about the world. This understanding awakens wisdom and allows for personal growth and acceptance of the human experience we share.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Rod Berger, USA
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -533,23 +533,23 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
                           Oh how I wish I had this app available to me when my life imploded many years ago. In fact, I wish I had had access as a child. It would have made a significant difference to my life journey, and to exploring my emotions constructively, rather than destructively, as so often I did. For me, everyone should have access to this app, to unlock their own innate wisdom, their very own 'superpowers'.
-                        </h4>
+                        </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Laura Toop, London
-                        </h4>
+                        </h5>
                       </div>
                     </div>
                   </div>
@@ -1094,9 +1094,9 @@
         <div class="section-header">
           <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 Inspiring fresh ways of thinking
-              </h4>
+              </h2>
             </div>
           </div>
         </div>
@@ -1107,23 +1107,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_intelligence.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_intelligence.svg" class="img-responsive" alt="Mental health">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Mental health
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Understanding your mind helps you be in charge of your thoughts, feelings and reactions, and self-regulate your emotions and mental health.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1131,23 +1131,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_happier.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_happier.svg" class="img-responsive" alt="Be happier">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Be happier
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Happiness is more of an inside job and comes from loving what you do, a positive attitude, and being grateful. Happy staff perform better.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1155,23 +1155,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_burnout.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_burnout.svg" class="img-responsive" alt="Avoid burnout">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Avoid burnout
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Avoid staff burnout by helping them deal with stress better in the present, and then understand the root cause to overcome it more easily.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1185,23 +1185,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_kind.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_kind.svg" class="img-responsive" alt="Be more kind">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Be more kind
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Patients and staff remember the kindness shown to them. Our kindness module explores what gets in the way of being more kind.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1209,23 +1209,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_attitude.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_attitude.svg" class="img-responsive" alt="A positive attitude">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     A positive attitude
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Finding the good in people and situations helps develop a positive attitude, which helps people and organisations flourish.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1233,23 +1233,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_relationships.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_relationships.svg" class="img-responsive" alt="Healthy relationships">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Healthy relationships
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     The more we understand ourselves, the easier it is to understand others, and have healthy relationships with meaning and without conflict.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1263,23 +1263,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="800">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive" alt="Make better decisions">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Make better decisions
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     By understanding our ego, our fear and our conditioning we can make better decisions, which can improve patient care and reduce complaints.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1287,23 +1287,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="900">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_leadership.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_leadership.svg" class="img-responsive" alt="Leadership and emotional intelligence">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Leadership and emotional intelligence
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Every skill leaders need is enhanced by self-awareness - empathy, communication, emotional intelligence, resilience, integrity and so on.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1311,23 +1311,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1000">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_addiction.svg" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_addiction.svg" class="img-responsive" alt="Avoid unhealthy habits and addiction">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                     Avoid unhealthy habits and addiction 
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Self-awareness allows us to self-regulate our habits around sleep, food, alcohol and exercise helping us to lead healthier lives.
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -1346,9 +1346,9 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 Explore our blog
-              </h4>
+              </h2>
             </div>
           </div>
         </div>
@@ -1362,7 +1362,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/30.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/30.webp" class="img-responsive" alt="Self-Awareness can help prevent addiction">
                       </div>
                     </div>
 
@@ -1380,7 +1380,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/49.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/49.webp" class="img-responsive" alt="Avoid and overcome burnout, with self-awareness ">
                       </div>
                     </div>
 
@@ -1398,7 +1398,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/23.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/23.webp" class="img-responsive" alt="To be mentally healthy, we need self-awareness">
                       </div>
                     </div>
 
@@ -1416,7 +1416,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive" alt="Addressing health problems with emotional intelligence">
                       </div>
                     </div>
 
