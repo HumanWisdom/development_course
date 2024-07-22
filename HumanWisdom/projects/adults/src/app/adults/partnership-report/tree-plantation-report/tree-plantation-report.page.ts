@@ -129,7 +129,7 @@ getTittle(){
   this.router.navigate(['adults/adult-dashboard'])
   }
 
-  btnShare(){
+  share(){
     console.log("url")
     this.address = this.router.url;
     this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
