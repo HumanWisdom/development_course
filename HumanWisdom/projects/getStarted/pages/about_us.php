@@ -37,16 +37,16 @@
     <section class="hpt120px">
       <div class="row" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_landing.webp" class="img-responsive w100p">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_landing.webp" class="img-responsive w100p" alt="About Us">
         </div>
       </div>
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt100px">
-            <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
               Welcome to HappierMe
-            </h4>
+            </h1>
           </div>
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px mb0px">
@@ -78,23 +78,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="100">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_01.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_01.svg" class="img-responsive img_aspects" alt="70+ modules">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
+                  <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
                     70+ modules
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                     An all-in-one app with 70+ modules, covering every aspect of life
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -102,23 +102,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_02.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_02.svg" class="img-responsive img_aspects" alt="Not just a band-aid">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
+                  <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
                     Not just a band-aid
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                     Addresses the root cause, and offers prevention and long-term solutions
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -126,23 +126,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pl20px" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_03.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_03.svg" class="img-responsive img_aspects" alt="Caters to all ages">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
+                  <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
                     Caters to all ages
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                     Caters to all ages, separately customised for teens and adults
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -158,9 +158,9 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
-              <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
                 Our WHY
-              </h4>
+              </h1>
             </div>
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt30px mb0px">
@@ -179,9 +179,9 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
-              <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
                 Our HOW
-              </h4>
+              </h1>
             </div>
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt30px mb60px">
@@ -209,13 +209,13 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="mtb0px fs_36px fw_600 lh_160p fc_834b66">
+              <h1 class="mtb0px fs_36px fw_600 lh_160p fc_834b66">
                 Watch. Read. Listen. Interact. Or just be.
-              </h4>
+              </h1>
 
-              <h4 class="mtb0px fs_24px fw_600 lh_160p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_160p fc_834b66">
                 Inspiring content to live your best life
-              </h4>
+              </h2>
             </div>
           </div>
         </div>
@@ -226,23 +226,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_pathway.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_pathway.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     PATHWAY
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     A 5-step guided program to learn about yourself, grow as a person, and lead a happier life
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -250,23 +250,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_daily_practice.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_daily_practice.svg" class="img-responsive img_aspects" alt="Daily practice">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Daily practice
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     5 exercises to set you up for the day
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -274,23 +274,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_trained_coaches.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_trained_coaches.svg" class="img-responsive img_aspects" alt="Trained coaches">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Trained coaches
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     For extra support, when you need it
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -298,23 +298,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_podcasts.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_podcasts.svg" class="img-responsive img_aspects" alt="Podcasts">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Podcasts
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Exploring solutions to everyday problems
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -327,23 +327,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_mindfulness.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_mindfulness.svg" class="img-responsive img_aspects" alt="Mindfulness">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Mindfulness
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Breathing exercises, nature meditations and audio meditations to calm the mind
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -351,23 +351,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_awareness_exercises.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_awareness_exercises.svg" class="img-responsive img_aspects" alt="Awareness exercises">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Awareness exercises
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Daily exercises for a deeper understanding of your own mind, to develop your emotional intelligence
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -375,23 +375,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="800">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_online_forum.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_online_forum.svg" class="img-responsive img_aspects" alt="Online forum">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Online forum
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Join our community and share your thoughts and questions with others
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -399,23 +399,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="900">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_life_stories.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_life_stories.svg" class="img-responsive img_aspects" alt="Life stories">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Life stories
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Inspiring real life stories from across the world
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -429,23 +429,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1000">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_journal.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_journal.svg" class="img-responsive img_aspects" alt="Journal & Guided Questions">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Journal & Guided Questions
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Your secure online journal, with questions that push you to think beyond
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -453,23 +453,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1100">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_happiness_survey.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_happiness_survey.svg" class="img-responsive img_aspects" alt="Happiness survey">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Happiness survey
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     A survey to regularly track your progress through the app
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -477,23 +477,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_find_answers.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_find_answers.svg" class="img-responsive img_aspects" alt="Find answers">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Find answers
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Common questions that can help you understand yourself, think clearly, and find fresh ways to deal with challenges
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -501,23 +501,23 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_partner_program.svg" class="img-responsive img_aspects">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_partner_program.svg" class="img-responsive img_aspects" alt="Partner program">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                  <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
                     Partner program
-                  </h4>
+                  </h3>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_120f40">
                     Spread happiness by introducing the app to others and earn an income
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -531,24 +531,24 @@
       <section>
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
-            <h4 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
               The Founder
-            </h4>
+            </h1>
           </div>
         </div>
 
         <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive" alt="Dr Manoj Krishna">
           </div>
         </div>
   
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h4 class="mtb0px fs_21px fw_500 lh_160p fc_000000">
+              <h3 class="mtb0px fs_21px fw_500 lh_160p fc_000000">
                 Dr Manoj Krishna
-              </h4>
+              </h3>
             </div>
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
