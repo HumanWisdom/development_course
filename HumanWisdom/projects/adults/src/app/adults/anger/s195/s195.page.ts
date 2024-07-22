@@ -82,7 +82,7 @@ export class S195Page implements OnInit, OnDestroy {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -93,7 +93,7 @@ export class S195Page implements OnInit, OnDestroy {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r195", JSON.stringify(e))
     this.r195 = sessionStorage.getItem("r195")
-    console.log(this.r195)
+    
     if (this.r195 != "undefined") {
 
       this.service.submitProgressReflection({

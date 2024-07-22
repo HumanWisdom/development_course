@@ -23,7 +23,7 @@ export class FiveCirclesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.colours)
+    
     this.c1=this.colours[0]
     this.c2=this.colours[1]
     this.c3=this.colours[2]

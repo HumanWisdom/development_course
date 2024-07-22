@@ -90,7 +90,7 @@ Hooks
     - this.$ : jQuery wrapped element
     - this.o : options
     - this.i : input
-    - ... console.log(this);
+    - ... 
 
 * 'cancel' : triggered on [esc] keydown
 

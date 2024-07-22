@@ -102,7 +102,7 @@ export class ViewcartPage implements OnInit {
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('upgradeToPremium', 'F');
 
-    console.log(this.cartList)
+    
   }
 
   viewCart() {
@@ -344,7 +344,7 @@ export class ViewcartPage implements OnInit {
           })
       }
     }
-    console.log(this.cartList)
+    
     this.totalPrice()
 
   }
@@ -383,7 +383,7 @@ export class ViewcartPage implements OnInit {
     for (var i = 0; i < this.cartList.length; i++) {
       this.totalCartValue += this.cartList[i].Amt;
     }
-    console.log(this.cartList)
+    
     this.totalCartAmount = this.totalCartValue;
     if(this.couponCodeApplied) {
       this.totalCartValueDiscount = this.totalCartValue - this.discount
@@ -481,7 +481,7 @@ export class ViewcartPage implements OnInit {
         "LearnerMsg": this.learnermsg,
       })
         .subscribe(res => {
-          console.log(res, "cartId")
+          
           for (var i = 0; i < this.cartList.length; i++) {
             if (this.cartList[i].ProgID === pid) {
               this.cartList[i].cartId = res
@@ -505,7 +505,7 @@ export class ViewcartPage implements OnInit {
             console.log(error)
           },
           () => {
-            console.log(this.cartList, "afteraddidtion")
+            
             this.totalPrice()
           })
 
@@ -550,7 +550,7 @@ export class ViewcartPage implements OnInit {
       this.service.isActivationFlow = true;
       this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
     }
-    console.log(this.cartList);
+    
   }
 
   ValidateEmail() {

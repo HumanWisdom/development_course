@@ -62,7 +62,7 @@ export class SetPasswordPage implements OnInit {
         .subscribe(
           resp=>
           {
-            console.log(resp)
+            
 
             if(resp.toLocaleLowerCase().match('your password has been reset.'))
             {

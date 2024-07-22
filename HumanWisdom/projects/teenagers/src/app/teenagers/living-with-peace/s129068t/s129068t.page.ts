@@ -44,7 +44,7 @@ export class S129068tPage implements OnInit {
  
   ngOnInit() {
 
-    console.log(this.path)
+    
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else

@@ -41,7 +41,7 @@ constructor(
 }
 
 ngOnInit() {
-  console.log(this.audioLink,this.mediaPercent,this.loginResponse)
+  
   var str=this.router.url
     var lastSlash = str.lastIndexOf("/");
      str=str.substring(lastSlash+2);
@@ -56,8 +56,8 @@ ngOnInit() {
 }
 
 getTime(){
-  console.log(this.audio)
-  console.log(this.audio.audio.nativeElement.currentTime)
+  
+  
   this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))
 }
 

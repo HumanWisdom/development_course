@@ -45,7 +45,7 @@ export class S27Page implements OnInit
 
   ngOnInit() 
   {
-    console.log(this.sendOption,this.sessionOption27)
+    
     if(this.sessionOption27==null)
     {
       this.sessionOption27=[]
@@ -62,7 +62,7 @@ export class S27Page implements OnInit
     this.questionA=this.qrList?.ListOfQueOpts
     this.question=this.findQuestion(41).Question
     this.optionList=this.findQuestion(41).optionList
-    console.log(this.optionList,this.question)
+    
 
     if(this.saveUsername==false)
     {
@@ -139,7 +139,7 @@ export class S27Page implements OnInit
           if(element==id) this.sendOption.splice(index,1);
         });
     }
-    console.log(this.sendOption)
+    
     sessionStorage.setItem("sessionOption27",JSON.stringify(this.sendOption))
   }
 

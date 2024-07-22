@@ -57,11 +57,11 @@ export class S126006Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA = this.qrList.ListOfQueOpts
     this.q1 = this.findQuestion(545).Question
     this.optionList1 = this.findQuestion(545).optionList
-    console.log(this.q1, this.optionList1)
+    
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();

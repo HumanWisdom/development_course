@@ -49,7 +49,7 @@ export class ContactPage implements OnInit {
 
       this.adultService.GetCoachBio(this.coachId).subscribe(res=>
         {
-          console.log(res);
+          
           if(res) {
             let coachList = res;
             this.activecoachId = coachList[0]['UserID'];

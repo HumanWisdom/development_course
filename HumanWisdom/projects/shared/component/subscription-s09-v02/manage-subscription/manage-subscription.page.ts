@@ -4,7 +4,8 @@ import { SharedService } from "../../../services/shared.service";
 import { Constant } from '../../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { ProgramType } from '../../../../shared/models/program-model';
+import { ProgramType } from '../../../models/program-model';
+
 
 @Component({
   selector: 'app-manage-subscription',
@@ -97,8 +98,12 @@ export class ManageSubscriptionPage implements OnInit {
       }
     });
 
-
-
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }     
+  
   }
 
 

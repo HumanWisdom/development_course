@@ -24,7 +24,6 @@ export class CertificationComponent implements OnInit {
 
   ngOnInit() {
      if (SharedService.ProgramId == ProgramType.Adults) {
-      debugger
       this.isAdults = true;
         } else {
          this.isAdults = false;

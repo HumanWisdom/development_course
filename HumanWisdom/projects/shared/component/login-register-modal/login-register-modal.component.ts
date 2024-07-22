@@ -266,7 +266,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             localStorage.setItem("isloggedin", 'T')
             this.isLoggedIn = true
             this.loginResponse = res
-            console.log(this.loginResponse)
+            
             localStorage.setItem('guest', 'F');
             localStorage.setItem("remember", 'T')
             localStorage.setItem('socialLogin', 'T');

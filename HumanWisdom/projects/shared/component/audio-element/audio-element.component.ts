@@ -17,7 +17,7 @@ export class AudioElementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.audioLink)
+    
     
   }
 
@@ -28,8 +28,8 @@ export class AudioElementComponent implements OnInit {
 
   
   getTime(){
-    console.log(this.audio)
-    console.log(this.audio.audio.nativeElement.currentTime)
+    
+    
     this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))
     
   }

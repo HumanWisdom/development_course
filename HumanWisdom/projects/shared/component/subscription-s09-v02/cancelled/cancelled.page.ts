@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { Constant } from '../../../services/constant';
-import { ProgramType } from '../../../../shared/models/program-model';
+import { ProgramType } from '../../../models/program-model';
 
 @Component({
   selector: 'app-cancelled',

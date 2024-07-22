@@ -220,7 +220,7 @@ export class S47366Page implements OnInit {
 
     this.createScreen()
 
-    console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA = this.qrList.ListOfQueOpts
 
     this.q1 = this.findQuestion(154).Question
@@ -234,11 +234,11 @@ export class S47366Page implements OnInit {
     this.q5 = this.findQuestion(158).Question
     this.optionList5 = this.findQuestion(158).optionList
 
-    console.log(this.q1, this.optionList1)
-    console.log(this.q2, this.optionList2)
-    console.log(this.q3, this.optionList3)
-    console.log(this.q4, this.optionList4)
-    console.log(this.q5, this.optionList5)
+    
+    
+    
+    
+    
 
 
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
@@ -267,7 +267,7 @@ export class S47366Page implements OnInit {
         this.optionList2.forEach((x) => { x.OptId = parseInt(x.OptId) });
         this.optionList2.sort((a, b) => a.OptId - b.OptId);
         this.s2 = this.optionList2.find(x => this.optionList2.indexOf(x) + 1 == e.Rating).OptId
-        console.log(this.s2)
+        
         break;
 
       }

@@ -1,5 +1,5 @@
 
-<div [ngClass]="isAdults ? 'adult-certificate' : 'certificate'" id="myDiv">
+<div [ngClass]="isAdults ? 'adult-certificate' : 'certificate'" id="myDiv" [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">
   <div class="border-gradient">
     <div class="content">
       <div class="hd">

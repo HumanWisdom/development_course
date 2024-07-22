@@ -33,7 +33,7 @@ export class PaymentIncomePage implements OnInit {
       title: 'HappierMe Program',
       text:  "Hi! I’ve just subscribed to the amazing HappierMe app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+this.referralCode+". If you want to find out more about the partnership program – https://humanwisdom.me/adults/partnership-webpage"
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);

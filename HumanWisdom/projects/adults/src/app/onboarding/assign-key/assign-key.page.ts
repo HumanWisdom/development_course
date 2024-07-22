@@ -21,7 +21,7 @@ export class AssignKeyPage implements OnInit {
   constructor(private router: Router,private service:OnboardingService, private location:Location) { }
 
   ngOnInit() {
-    console.log(this.keyList)
+    
     for(var i=0;i<this.keyList.length;i++)
     {
       this.keyList[i].sentInvite=false

@@ -39,7 +39,7 @@ export class S264Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r264)
+    
 
 
 
@@ -76,7 +76,7 @@ export class S264Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

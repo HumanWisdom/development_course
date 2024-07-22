@@ -49,7 +49,7 @@ export class AddcartPage implements OnInit,OnDestroy {
       {
         
         this.countryList=res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId=== item.CountryId) === i);
-        console.log(this.countryList)
+        
       }
     )
   }
@@ -58,7 +58,7 @@ export class AddcartPage implements OnInit,OnDestroy {
     // console.log(country)
     // this.selectedCountryId=this.countryList.filter(r=>{return r.Country==country})[0].CID
     this.selectedCountryId=countryId
-    console.log(this.selectedCountryId)
+    
     
     this.getPricing()
   }
@@ -74,7 +74,7 @@ export class AddcartPage implements OnInit,OnDestroy {
         CountryID:elm.CountryID,
         price: elm.Monthly,
         qty:0}));
-      console.log(this.cartList)
+      
     }
     else{
       this.cartList=this.productList.map(({ProgID,Program,CountryID,Annual})=>({ProgID,Program,CountryID,Annual}))
@@ -83,7 +83,7 @@ export class AddcartPage implements OnInit,OnDestroy {
         CountryID:elm.CountryID,
         price: elm.Annual,
       qty:0}));
-      console.log(this.cartList)
+      
     }
     
 
@@ -117,7 +117,7 @@ export class AddcartPage implements OnInit,OnDestroy {
   getPricing(){
     this.service.getPricing({ "Id":parseInt(this.selectedCountryId)}).subscribe(res=>
       {
-        console.log(res,"product list from api")
+        
         this.cartList=res;
         this.cartList.forEach(function (element) {
           element.Monthly=parseInt(element.Monthly)
@@ -175,7 +175,7 @@ export class AddcartPage implements OnInit,OnDestroy {
   
               })
               .subscribe(res=>{
-                console.log(res,"cartId")
+                
                 this.cartId=res
               })
   
@@ -200,7 +200,7 @@ export class AddcartPage implements OnInit,OnDestroy {
       } 
             
     }
-    console.log(this.cartList,"afteraddidtion")
+    
     this.totalPrice()  
     
 
@@ -276,7 +276,7 @@ export class AddcartPage implements OnInit,OnDestroy {
       } 
             
     }
-    console.log(this.cartList,"afterRemoval")
+    
     this.totalPrice()  
   }
 
@@ -300,7 +300,7 @@ export class AddcartPage implements OnInit,OnDestroy {
       // }          
     }
    
-    console.log(this.cartProductionList);
+    
     this.totalPrice()
     
   }
@@ -328,7 +328,7 @@ export class AddcartPage implements OnInit,OnDestroy {
       }           
     }
    
-    console.log(this.cartProductionList);
+    
     this.totalPrice()
     
   }*/
@@ -340,7 +340,7 @@ export class AddcartPage implements OnInit,OnDestroy {
       this.totalCartValue += (this.cartList[i].price);
      
     }
-    console.log(this.totalCartValue,this.totalItemCount)
+    
   }
 
   ngOnDestroy(){

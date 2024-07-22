@@ -37,7 +37,7 @@ export class S30004Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r30004)
+    
 
 
 
@@ -100,7 +100,7 @@ export class S30004Page implements OnInit {
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress(e = '') {

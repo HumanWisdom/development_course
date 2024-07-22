@@ -47,7 +47,7 @@ export class S428Page implements OnInit {
 
     //if(!sessionStorage.getItem("r428"))
    // this.r428 = sessionStorage.getItem("r428")
-    console.log(this.r428)
+    
 
 
     //this.r428=JSON.parse(sessionStorage.getItem("r428"))
@@ -176,7 +176,7 @@ export class S428Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r428)
+    
     console.log(sessionStorage.getItem("r428"))
     if (sessionStorage.getItem("r428") == null) {
       this.r428 = sessionStorage.getItem("r428")
@@ -216,7 +216,7 @@ export class S428Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -226,7 +226,7 @@ export class S428Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r428", this.r428)
     //this.r428 = sessionStorage.getItem("r428")
-    console.log(this.r428)
+    
     if (this.r428 != "undefined") {
 
       this.service.submitProgressReflection({

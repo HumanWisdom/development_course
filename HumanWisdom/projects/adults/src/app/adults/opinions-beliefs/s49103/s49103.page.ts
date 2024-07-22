@@ -64,7 +64,7 @@ export class S49103Page implements OnInit {
       this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/143.webp"
       
       this.moduleLink = "/adults/diversity-and-inclusion"
-      console.log(this.moduleLink)
+      
       this.moduleName = "Diversity and Inclusion"
       this.sectionName = "Transform your life";
       this.moduleId = 143

@@ -62,7 +62,7 @@ export class TranscriptHeaderComponent implements OnInit {
     var lastSlash = this.path.lastIndexOf("/");
      this.scrNumber=this.path.substring(lastSlash+2);
      this.scrNumber = this.scrNumber.replace(/\D/g,'');
-     console.log(this.scrNumber)
+     
     this.getProgress(this.scrNumber)
     this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase();
     if (this.programName == 'teenagers') {
@@ -72,7 +72,7 @@ export class TranscriptHeaderComponent implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    console.log(this.toc,this.audioPage)
+    
     if (this.urlT)
     {
       this.shared=true
@@ -101,7 +101,7 @@ export class TranscriptHeaderComponent implements OnInit {
      console.log("local")
     this.path="https://humanwisdom.me/"+this.address+`?t=${this.token}`
    }
-   console.log(this.path)
+   
   }
 
 
@@ -128,7 +128,7 @@ export class TranscriptHeaderComponent implements OnInit {
       this.router.navigate(['/adults/adult-dashboard'])
     }
     else {
-      console.log(this.programName + '/teenager-dashboard');
+      
       this.router.navigate([this.programName + '/teenager-dashboard'])
     }
   }
@@ -182,7 +182,7 @@ export class TranscriptHeaderComponent implements OnInit {
       text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then( (response) => {
-      console.log(response);
+      
     })
     .catch( (error) => {
       console.log(error);
@@ -195,7 +195,7 @@ export class TranscriptHeaderComponent implements OnInit {
     .subscribe(
       r=>{
         this.progress=parseFloat(r)
-        console.log(this.progress,"sessionProgress")
+        
       }
     )
 

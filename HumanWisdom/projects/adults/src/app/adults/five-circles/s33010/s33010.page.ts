@@ -88,7 +88,7 @@ export class S33010Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -101,7 +101,7 @@ export class S33010Page implements OnInit {
     this.router.navigate(['/adults/five-circles/s33011'])
     sessionStorage.setItem("r33010", JSON.stringify(e))
     this.r33010 = sessionStorage.getItem("r33010")
-    console.log(this.r33010)
+    
 
 
     this.service.submitProgressReflection({

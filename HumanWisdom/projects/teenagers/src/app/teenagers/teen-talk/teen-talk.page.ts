@@ -16,7 +16,7 @@ export class TeenTalkPage implements OnInit {
   ngOnInit() {
     this.service.getTeenagerTalk().subscribe(res => {
        this.teenTalkList = res;
-       console.log(res)
+       
     })
   }
 
