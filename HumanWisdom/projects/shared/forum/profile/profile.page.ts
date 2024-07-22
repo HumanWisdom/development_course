@@ -8,6 +8,7 @@ import { OnboardingService } from "../../services/onboarding.service";
 import { ProgramType } from "../../models/program-model";
 import { environment } from '../../../environments/environment';
 import { SharedService } from '../../services/shared.service';
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -54,8 +55,11 @@ export class ProfilePage implements OnInit {
   profileUsername:string="";
   programType = ProgramType.Adults
   isAdults:boolean = false;
-  constructor(private route: ActivatedRoute, private forumService: ForumService, public platform: Platform, private router: Router,
-    private ngNavigatorShareService: NgNavigatorShareService, private location: Location, public onboardingService: OnboardingService
+  constructor(private route: ActivatedRoute, private forumService: ForumService,
+     public platform: Platform, private router: Router,
+    private ngNavigatorShareService: NgNavigatorShareService, 
+    private location: Location, public onboardingService: OnboardingService,
+    private navigationService:NavigationService
   ) {
     this.userId= this.route.snapshot.paramMap.get('userId');
     this.address = this.router.url;
@@ -219,5 +223,14 @@ export class ProfilePage implements OnInit {
     this.forumService.postdataSource.next(item);
     this.router.navigateByUrl('/forum/forum-thread/'+item.PostID);
     // this.router.navigateByUrl('/forum/forum-thread',{ state: { programType: this.programType }});
+  }
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 }
