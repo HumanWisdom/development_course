@@ -14,6 +14,7 @@ import moengage from "@moengage/web-sdk";
 // import { MoengageService } from './moengage.service';
 import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
+import { OnboardingService } from '../../../shared/services/onboarding.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -52,6 +53,7 @@ export class AppComponent implements OnDestroy {
   enablebanner = false;
   isShowHeader = false;
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  userdetail:any;
   constructor(
     private platform: Platform,
     private router: Router,
@@ -61,18 +63,14 @@ export class AppComponent implements OnDestroy {
     // public moengageService: MoengageService,
     private navigationService:NavigationService
   ) {
-    if (platform.isBrowser) {
-      //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',
-      //    debug_logs:1,
-      //   // swPath:'/course/serviceworker.js',
-      // });
-      // this.moengageService.requestWebPushPermission().then((permission) => {
-      //   console.log('Web push permission:', permission);
-      // });
-    }
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
+      setTimeout(() => {
+        this.getUserInformationById(SharedService.getUserId());
+      }, 1000);
+    }else{
+      this.getUserInformationById(SharedService.getUserId());
     }
     localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId = 9;
@@ -87,25 +85,15 @@ export class AppComponent implements OnDestroy {
         this.UpdateMeta(event.url);
       }
     });
-
-
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
-    //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
     });
-
     this.initializeApp();
     this.getFreeScreens();
-    // this.setDynamicCSS();
-    // if (window.matchMedia('(display-mode: standalone)').matches) {
-    //   localStorage.setItem("isPWA", 'APP')
-    // } else {
-    //   localStorage.setItem("isPWA", 'ISNOTAPP')
-    // }
   }
 
   prepareRoute(outlet: RouterOutlet) {
@@ -115,9 +103,7 @@ export class AppComponent implements OnDestroy {
 
   UpdateMeta(PageUrl) {
     if (PageUrl.includes('/adults/stress')) {
-
       if (this.title.getTitle() !== 'Emotional Well-Being and Stress: Strategies for Life Balance') {
-
         this.title.setTitle('Emotional Well-Being and Stress: Strategies for Life Balance')
         this.meta.updateTag({ property: 'title', content: 'Emotional Well-Being and Stress: Strategies for Life Balance' })
         this.meta.updateTag({ property: 'description', content: 'Balance your life and reduce stress with our comprehensive guide on resilience, self-care, and stress management. Read more on HumanWisdom.me.' })
@@ -126,10 +112,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/self-esteem')) {
-
-
       if (this.title.getTitle() !== 'Overcoming Self-Doubt: Enhancing Self-Worth & Improving Self-Esteem') {
-
         this.title.setTitle('Overcoming Self-Doubt: Enhancing Self-Worth & Improving Self-Esteem')
         this.meta.updateTag({ property: 'title', content: 'Overcoming Self-Doubt: Enhancing Self-Worth & Improving Self-Esteem' })
         this.meta.updateTag({ property: 'description', content: 'Discover strategies for overcoming self-doubt and enhancing your self-worth. Improve your self-esteem and mental health with HumanWisdom.me.' })
@@ -137,9 +120,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/habit-addiction')) {
-
       if (this.title.getTitle() !== 'Breaking the Cycle: Overcoming Habit') {
-
         this.title.setTitle('Breaking the Cycle: Overcoming Habit')
         this.meta.updateTag({ property: 'title', content: 'Breaking the Cycle: Overcoming Habit' })
         this.meta.updateTag({ property: 'description', content: 'Discover practical strategies and resources to help you overcome habit addiction. Learn how to break addictive habits, find support and achieve a healthier and happier life.' })
@@ -147,9 +128,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/food-health')) {
-
       if (this.title.getTitle() !== 'Healthy Eating: A Key to Total Wellness') {
-
         this.title.setTitle('Healthy Eating: A Key to Total Wellness')
         this.meta.updateTag({ property: 'title', content: 'Healthy Eating: A Key to Total Wellness' })
         this.meta.updateTag({ property: 'description', content: 'Find your path to total wellness with healthy eating. Learn about nutritious food choices, healthy habits, and creating a balanced diet for better health and happiness.' })
@@ -157,9 +136,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/living-with-peace')) {
-
       if (this.title.getTitle() !== 'Living with Peace: Find Your Inner Calm') {
-
         this.title.setTitle('Living with Peace: Find Your Inner Calm')
         this.meta.updateTag({ property: 'title', content: 'Living with Peace: Find Your Inner Calm' })
         this.meta.updateTag({ property: 'description', content: 'Discover the power of peace and learn how to find inner calm. Learn about mindfulness, stress relief, and creating a life filled with peace and serenity.' })
@@ -167,9 +144,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/dealing-with-death')) {
-
       if (this.title.getTitle() !== 'Coping with Death: Finding Comfort in Grief') {
-
         this.title.setTitle('Coping with Death: Finding Comfort in Grief')
         this.meta.updateTag({ property: 'title', content: 'Coping with Death: Finding Comfort in Grief' })
         this.meta.updateTag({ property: 'description', content: 'Navigate the grieving process and find comfort in the face of loss. Learn about honoring the dead, dealing with death, and finding peace after a loved one has passed away.' })
@@ -177,9 +152,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/relationships')) {
-
       if (this.title.getTitle() !== 'Building Strong Relationships') {
-
         this.title.setTitle('Building Strong Relationships')
         this.meta.updateTag({ property: 'title', content: 'Building Strong Relationships' })
         this.meta.updateTag({ property: 'description', content: 'Learn how to build and maintain healthy relationships with advice and tips from experts. Improve communication, conflict resolution, and create stronger connections.' })
@@ -188,9 +161,7 @@ export class AppComponent implements OnDestroy {
     }
 
     else if (PageUrl.includes('/adults/communication')) {
-
       if (this.title.getTitle() !== 'Improving Communication Skills') {
-
         this.title.setTitle('Improving Communication Skills')
         this.meta.updateTag({ property: 'title', content: 'Improving Communication Skills' })
         this.meta.updateTag({ property: 'description', content: 'Learn how to build and maintain healthy relationships with advice and tips from experts. Improve communication, conflict resolution, and create stronger connections.' })
@@ -198,9 +169,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/happiness')) {
-
       if (this.title.getTitle() !== 'Achieving Happiness for Adults: Tips & Strategies') {
-
         this.title.setTitle('Achieving Happiness for Adults: Tips & Strategies')
         this.meta.updateTag({ property: 'title', content: 'Achieving Happiness for Adults: Tips & Strategies' })
         this.meta.updateTag({ property: 'description', content: 'Learn how to find and maintain happiness in adulthood with our expert-approved tips and strategies.' })
@@ -208,9 +177,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/love')) {
-
       if (this.title.getTitle() !== 'Finding Love in Adulthood: Tips & Advice for Adult Relationships') {
-
         this.title.setTitle('Finding Love in Adulthood: Tips & Advice for Adult Relationships')
         this.meta.updateTag({ property: 'title', content: 'Finding Love in Adulthood: Tips & Advice for Adult Relationships' })
         this.meta.updateTag({ property: 'description', content: 'Find the love you deserve with these tips and advice for adult relationships. Learn how to cultivate healthy relationships, build meaningful connections, and find happiness in love.' })
@@ -218,9 +185,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/bullying')) {
-
       if (this.title.getTitle() !== 'Stop Adult Bullying: Dealing & Overcoming Techniques') {
-
         this.title.setTitle('Stop Adult Bullying: Dealing & Overcoming Techniques')
         this.meta.updateTag({ property: 'title', content: 'Stop Adult Bullying: Dealing & Overcoming Techniques' })
         this.meta.updateTag({ property: 'description', content: 'Find support and learn how to handle bullying as an adult with our expert tips and strategies. Discover ways to prevent bullying and its effects, and take steps towards recovery and a brighter future. Get help with adult bullying today!' })
@@ -228,9 +193,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/criticism')) {
-
       if (this.title.getTitle() !== 'Overcome Criticism and Boost Your Self-Worth') {
-
         this.title.setTitle('Overcome Criticism and Boost Your Self-Worth')
         this.meta.updateTag({ property: 'title', content: 'Overcome Criticism and Boost Your Self-Worth' })
         this.meta.updateTag({ property: 'description', content: 'Discover strategies for handling criticism in adulthood and build resilience for a stronger, happier life.' })
@@ -238,9 +201,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/work')) {
-
       if (this.title.getTitle() !== 'Manage Work Stress & Achieve Work-Life Balance') {
-
         this.title.setTitle('Manage Work Stress & Achieve Work-Life Balance')
         this.meta.updateTag({ property: 'title', content: 'Manage Work Stress & Achieve Work-Life Balance' })
         this.meta.updateTag({ property: 'description', content: 'Get tips for adult work life integration, handling stress, and finding job satisfaction for a harmonious, productive life.' })
@@ -248,9 +209,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/leadership')) {
-
       if (this.title.getTitle() !== 'Leadership for Adults: Your Guide to Success') {
-
         this.title.setTitle('Leadership for Adults: Your Guide to Success')
         this.meta.updateTag({ property: 'title', content: 'Leadership for Adults: Your Guide to Success' })
         this.meta.updateTag({ property: 'description', content: 'Learn how to develop your leadership style, communicate effectively, and lead with purpose and vision.' })
@@ -258,9 +217,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/money')) {
-
       if (this.title.getTitle() !== 'Financial Planning for Adults: A Path to Financial Stability') {
-
         this.title.setTitle('Financial Success for Adults: Tips & Strategies')
         this.meta.updateTag({ property: 'title', content: 'Financial Success for Adults: Tips & Strategies' })
         this.meta.updateTag({ property: 'description', content: 'Discover practical tips and strategies for managing your finances and achieving financial success in adulthood. Learn to make smart money decisions and build wealth.' })
@@ -268,9 +225,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/opinions-beliefs')) {
-
       if (this.title.getTitle() !== 'Navigating Adult Opinions and Beliefs') {
-
         this.title.setTitle('Navigating Adult Opinions and Beliefs')
         this.meta.updateTag({ property: 'title', content: 'Navigating Adult Opinions and Beliefs' })
         this.meta.updateTag({ property: 'description', content: 'Learn how to manage your beliefs and opinions in adulthood. Explore techniques for changing and shaping your beliefs to improve self-esteem and decision-making' })
@@ -278,9 +233,7 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/success-failure')) {
-
       if (this.title.getTitle() !== 'Discover the Keys to Success and Overcoming Failure as an Adult') {
-
         this.title.setTitle('Discover the Keys to Success and Overcoming Failure as an Adult')
         this.meta.updateTag({ property: 'title', content: 'Discover the Keys to Success and Overcoming Failure as an Adult' })
         this.meta.updateTag({ property: 'description', content: 'Unlock your potential for success as an adult with our practical tips for overcoming failure and achieving your goals.' })
@@ -288,23 +241,17 @@ export class AppComponent implements OnDestroy {
       }
     }
     else if (PageUrl.includes('/adults/making-better-decisions')) {
-
       if (this.title.getTitle() !== 'Improve Your Decision Making Skills Today') {
-
         this.title.setTitle('Improve Your Decision Making Skills Today')
         this.meta.updateTag({ property: 'title', content: 'Improve Your Decision Making Skills Today' })
         this.meta.updateTag({ property: 'description', content: 'Learn how to improve your decision making skills and make smart choices with these tips for adult decision making.' })
         this.meta.updateTag({ property: 'keywords', content: 'adult decision making,better decision making,decision making tips,adult decision making skills,making smart decisions,improving decision making,effective decision making,adult decision making process,decision making strategies,improving decision making skills' })
       }
     }
-
-
   }
 
 
   initializeApp() {
-
-
     let remember = localStorage.getItem("remember")
     let first = localStorage.getItem("firsttime")
     let firstTimeTour = localStorage.getItem("firstTimeTour");
@@ -336,24 +283,33 @@ export class AppComponent implements OnDestroy {
     this.navigationSubs.unsubscribe();
   }
 
-  getFreeScreens() {
+  async getFreeScreens() {
     if (localStorage.getItem("freeScreens") == null || localStorage.getItem("freeScreens") == 'undefined' || localStorage.getItem("freeScreens") == undefined) {
-      this.services.freeScreens().subscribe((res) => {
-        if (res) {
-          let x = []
-          let result = res.map(a => a.FreeScrs);
-          let arr;
-          result = result.forEach(element => {
-            if (element && element.length !== 0) {
-              x.push(element.map(a => a.ScrNo))
-              arr = Array.prototype.concat.apply([], x);
+          this.services.freeScreens().subscribe(res=>{
+            if(res){
+              let x = []
+              let result = res.map(a => a.FreeScrs);
+              let arr;
+              result = result.forEach(element => {
+                if (element && element.length !== 0) {
+                  x.push(element.map(a => a.ScrNo))
+                  arr = Array.prototype.concat.apply([], x);
+                }
+              })
+              localStorage.setItem("freeScreens", JSON.stringify(arr))
             }
           })
-          localStorage.setItem("freeScreens", JSON.stringify(arr))
         }
-      });
-    }
   }
+  
+  async getUserInformationById(loggedInUserId){
+   this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
+    if(res){
+      this.userdetail=res[0];
+    }
+  });
+ 
+}
 
   getclcickevent(event) {
     if (event === 'enablepopup') {

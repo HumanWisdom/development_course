@@ -36,7 +36,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   ios = false;
   cardlist = [];
   countryCode: any;
-  userDetails: any = [];
+  @Input() userdetail: any = [];
   loginResponse: any;
   subscription: Subscription;
   @Input() isLoginPage: boolean = false;
@@ -93,6 +93,32 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
 
     if (changes?.isShowHeader?.currentValue) {
       this.isShowHeader = changes.isShowHeader.currentValue;
+    let userdetail = localStorage.getItem("userDetails");
+    if(userdetail){
+      this.userdetail = JSON.parse(userdetail);
+      if (this.userdetail && this.userdetail['UserImagePath'] != '') {
+        this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      }
+    }
+    if (changes && changes.enableHamburger && !changes.enableHamburger.firstChange) {
+      if (changes.enableHamburger.currentValue != changes.enableHamburger.previousValue) {
+        console.log(changes.enableHamburger.currentValue);
+        this.enableHamburger = changes.enableHamburger.currentValue;
+      }
+    }
+
+    if (changes && changes.isLoginPage && !changes.isLoginPage.firstChange) {
+      if (changes.isLoginPage.currentValue != changes.isLoginPage.previousValue) {
+        console.log(changes.isLoginPage.currentValue);
+        this.isLoginPage = changes.isLoginPage.currentValue;
+      }
+    }
+
+    if (changes && changes.isShowHeader && !changes.isShowHeader.firstChange) {
+      if (changes.isShowHeader.currentValue != changes.isShowHeader.previousValue) {
+        console.log(changes.isShowHeader.currentValue);
+        this.isShowHeader = changes.isShowHeader.currentValue;
+      }
     }
   }
 
@@ -114,7 +140,6 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
           this.isShowbookMark = false;
         }
         let userId = JSON.parse(localStorage.getItem("userId"))
-
         this.Onboardingservice.getuser(userId).subscribe((res) => {
           this.userDetails = res;
           let userdetail = res[0];
