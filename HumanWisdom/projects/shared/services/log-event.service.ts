@@ -28,6 +28,8 @@ export class LogEventService {
     // gtag('event', eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser })
     this.analytics.logEvent(eventName, { UserName: name });
     this.analytics.logEvent(eventName, { DeviceOS: device_info.os });
+    this.analytics.logEvent(eventName, { device: device_info.device });
+    this.analytics.logEvent(eventName, { userAgent: device_info.userAgent });
     this.analytics.logEvent(eventName, { DeviceBrowser: device_info.browser });
     if (module) {
       this.analytics.logEvent(eventName, { ScreenNo: screenNo });
