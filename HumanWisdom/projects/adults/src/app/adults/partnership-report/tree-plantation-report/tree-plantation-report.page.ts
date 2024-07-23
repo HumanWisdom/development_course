@@ -124,7 +124,7 @@ getTittle(){
     this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
-      text:  "Hi! I’ve just subscribed to the amazing HappierMe app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://humanwisdom.me/adults/partnership-webpage"
+      text:  "Hi! I’ve just subscribed to the amazing HappierMe app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://humanwisdom.me/adults/partnership-webpage",
       url: this.path
     }).then((response) => {
       console.log(response);
