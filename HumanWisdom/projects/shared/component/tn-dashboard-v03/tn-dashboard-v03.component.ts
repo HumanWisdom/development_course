@@ -36,7 +36,9 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   ios = false;
   cardlist = [];
   countryCode: any;
-  @Input() userdetail: any = [];
+  @Input() userDetails: any = [];
+  userdetail:any;
+
   loginResponse: any;
   subscription: Subscription;
   @Input() isLoginPage: boolean = false;
@@ -82,6 +84,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     }
     return this.subscriber;
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes?.enableHamburger?.currentValue) {
       this.enableHamburger = changes.enableHamburger.currentValue;
@@ -91,13 +94,15 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
       this.isLoginPage = changes.isLoginPage.currentValue;
     }
 
-    if (changes?.isShowHeader?.currentValue) {
+    if (changes?.isShowHeader?.currentValue) 
+    {
       this.isShowHeader = changes.isShowHeader.currentValue;
-    let userdetail = localStorage.getItem("userDetails");
-    if(userdetail){
-      this.userdetail = JSON.parse(userdetail);
-      if (this.userdetail && this.userdetail['UserImagePath'] != '') {
-        this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      let userDetails = localStorage.getItem("userDetails");
+      if(userDetails){
+        this.userDetails = JSON.parse(userDetails);
+        if (this.userdetail && this.userDetails['UserImagePath'] != '') {
+          this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        }
       }
     }
     if (changes && changes.enableHamburger && !changes.enableHamburger.firstChange) {
@@ -141,7 +146,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
         }
         let userId = JSON.parse(localStorage.getItem("userId"))
         this.Onboardingservice.getuser(userId).subscribe((res) => {
-          this.userDetails = res;
+          this.userdetail = res;
           let userdetail = res[0];
           this.url = userdetail['UserImagePath'].split('\\')[1]
           this.name = localStorage.getItem('name');
