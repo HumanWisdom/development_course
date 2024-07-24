@@ -83,16 +83,22 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     return this.subscriber;
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes?.enableHamburger?.currentValue) {
-      this.enableHamburger = changes.enableHamburger.currentValue;
+    if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
+      if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
+        this.enableHamburger = changes.enableHamburger.currentValue;
+      }
     }
 
-    if (changes?.isLoginPage?.currentValue) {
-      this.isLoginPage = changes.isLoginPage.currentValue;
+    if(changes && changes.isLoginPage && !changes.isLoginPage.firstChange){
+      if(changes.isLoginPage.currentValue != changes.isLoginPage.previousValue){
+        this.isLoginPage = changes.isLoginPage.currentValue;
+      }
     }
 
-    if (changes?.isShowHeader?.currentValue) {
-      this.isShowHeader = changes.isShowHeader.currentValue;
+    if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
+      if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
+        this.isShowHeader = changes.isShowHeader.currentValue;
+      }
     }
   }
 
