@@ -164,8 +164,13 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       enable = true;
     }
-    if (this.router.url.includes("/teenagers/onboarding/login")) {
+    if (this.router.url.includes("/teenagers/onboarding/login") ||
+     this.router.url.includes("/subscription/start-your-free-trial")) {
       this.isLoginPage = true;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader = false;
+      this.enablefooter = false;
     }
     this.isShowHeader = this.isShowHeader;
     if (enable) {
