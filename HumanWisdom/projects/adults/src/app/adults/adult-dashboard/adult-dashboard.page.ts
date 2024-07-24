@@ -4213,7 +4213,7 @@ export class AdultDashboardPage implements OnInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
-    } else if (name === 'Mental Health') {
+    } else if (name === 'Manage your mental health') {
       this.logeventservice.logEvent('click_stress_anxiety');
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
     } else if (name === 'Work and Leadership') {
