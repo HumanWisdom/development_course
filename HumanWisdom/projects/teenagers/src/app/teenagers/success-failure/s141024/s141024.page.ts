@@ -90,7 +90,7 @@ export class S141024Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/success-failure/s141025'])
+    this.router.navigate(['/teenagers/success-failure/s141024p'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

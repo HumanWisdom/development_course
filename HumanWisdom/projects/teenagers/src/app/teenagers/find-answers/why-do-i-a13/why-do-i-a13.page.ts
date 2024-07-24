@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./why-do-i-a13.page.scss'],
 })
 export class WhyDoIA13Page implements OnInit {
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location,private router:Router,private navigationService:NavigationService) { }

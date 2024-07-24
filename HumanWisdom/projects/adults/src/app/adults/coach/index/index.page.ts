@@ -20,7 +20,7 @@ export class IndexPage implements OnInit {
 
   constructor(private service: AdultsService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
-     private navigationService: NavigationService,
+     public navigationService: NavigationService,
      private location: Location)
       {
         this.path =  this.router.url;

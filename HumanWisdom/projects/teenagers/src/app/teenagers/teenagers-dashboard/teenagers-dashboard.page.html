@@ -31,7 +31,7 @@
             <!-- /search -->
 
             <!-- feel better now -->
-            <div class="row">
+            <div class="row tour_fbn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a (click)="tourIndex === 1 ? DashboardLogevent('teenagers/feel-better-now', '', 'click_feel-better-now') : $event.preventDefault()">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
@@ -103,6 +103,19 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_mdp">
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg" alt="" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily check-in
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1 w0p">
+                              <hr class="vhr_03">
+                            </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '0', 'click_breathing_exercise') : $event.preventDefault()">
@@ -302,12 +315,12 @@
                             <div class="row progress_box_score tcenter pt30px pb30px" *ngIf="!isloggedIn">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
-                                  Happy points for a happier life
+                                  Earn points and check your daily streak.
                                 </h4>
 
                                 <h4 class="mt10px mb0px fs_12px fw_500 lh_150p fc_e58d82">
                                   <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline" (click)="getLogin()">Login</a>
-                                  to view your progress
+                                  to track your progress
                                 </h4>
                               </div>
                             </div>
@@ -550,7 +563,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
-                            
+
                                 <div class="prelative">
                                   <a (click)="routeForUser(res)" class="prelative">
                                   <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash" />
@@ -1212,3 +1225,106 @@
 <!-- footer  -->
 <app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
+
+
+<!-- modal-tour -->
+<div class="modal fade" id="tour_modal_welcome">
+  <div class="row center_flex mlr20px">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw height_100vh">
+
+      <div class="modal-dialog modal-dialog-centered modal_cvc">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/prompt_welcome.svg" class="img-responsive">
+              </div>
+            </div>
+
+            <div class="row mt30px mb40px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                  Hi  {{!isloggedIn ? 'Guest' : name + ','}}
+                </h4>
+
+                <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                  Welcome to HappierMe!
+                </h4>
+
+                <h4 class="mtb0px fs_18px fw_400 lh_140p fc_ffffff">
+                  We are here to support you to live your best life everyday. Here is a short tour to get you started.
+                </h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                  <button #closetourmodal class="btn_prompt_skip" data-dismiss="modal" (click)="closeTour()">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hide_tips.svg" class="img-responsive mr5px">
+                    Skip
+                  </button>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright" (click)="continueTour()">
+                  <button class="btn_prompt_continue">
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- /modal-tour -->
+
+<span #enabletourmodal data-toggle="modal" data-target="#tour_modal_welcome"></span>
+
+
+
+<span #enablecookiemodal data-toggle="modal" data-target="#modal_cookie"></span>
+
+<!-- cookie modal  -->
+<div class="modal fade in" id="modal_cookie" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="modal_cookie_title" aria-hidden="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
+      <div class="modal-header b0">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row center_flex">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+            This website uses cookies
+          </h4>
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+            By continuing to browse you are agreeing to our use of cookies as explained in our
+            <a class="underline fs_15px fw_400 lh_150p fc_ffffff_0_5" (click)="opennewTab()">Cookie Policy</a>
+          </h4>
+        </div>
+      </div>
+
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
+          <button type="button" class="btn btn_ctd" (click)="acceptCookies()">
+            Accept all cookies
+          </button>
+          <button type="button" class="btn btn_ctd" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /cookie modal -->

@@ -156,4 +156,8 @@ export class ReflectionComponent implements OnInit {
       this.router.navigate(['/adults/adult-dashboard'])
     }
   }
+
+  goToForum() {
+    this.router.navigate(["/"+ SharedService.getprogramName() +'/forum'])
+  }
 }

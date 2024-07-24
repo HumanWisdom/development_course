@@ -3,7 +3,7 @@ var adults = document.getElementById("adults");
 // Add a click event listener to the button
 adults.addEventListener("click", function() {
     // This function will be executed when the button is clicked
-window.location.href = "https://staging.happierme.app/adults/intro/intro-carousel";
+window.location.href = "https://happierme.app/adults/intro/intro-carousel";
 });
 
 // Get the button element by its id
@@ -11,7 +11,7 @@ var teenagers = document.getElementById("teenagers");
 // Add a click event listener to the button
 teenagers.addEventListener("click", function() {
     // This function will be executed when the button is clicked
-window.location.href = "https://staging.happierme.app/teenagers/intro-carousel";
+window.location.href = "https://happierme.app/teenagers/intro-carousel";
 });
 
 
@@ -35,7 +35,7 @@ window.location.href = "https://staging.happierme.app/teenagers/intro-carousel";
             };
 
             // Send data to the API using Fetch API
-            fetch('https://staging.humanwisdom.info/api/SendMail', {
+            fetch('https://humanwisdom.info/api/SendMail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

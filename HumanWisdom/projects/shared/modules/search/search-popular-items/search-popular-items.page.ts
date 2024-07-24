@@ -91,7 +91,6 @@ export class SearchPopularItemsPage implements OnInit {
   view(item) {
     /* localStorage.setItem("blogdata",JSON.stringify(item))
     localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
-    this.router.navigate(['/blog/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}});
    */
     this.router.navigateByUrl(SharedService.getprogramName() + item['url']);
 

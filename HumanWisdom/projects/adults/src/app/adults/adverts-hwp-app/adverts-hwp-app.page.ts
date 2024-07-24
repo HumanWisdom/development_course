@@ -25,9 +25,7 @@ export class AdvertsHwpAppPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'human wisdom applications, mindfulness techniques, daily inspirational quotes, motivational quotes, communication skills, relationship quotes, reduce anxiety, mindfulness app, self-improvement, personal growth, wellness, mental health, human wisdom, life coach'})
 
 
-    if (!this.router.url.includes('/applications')) {
-      window.history.pushState('', '', '/applications');
-    }
+  
   }
 
   clickbanner(url = '') {

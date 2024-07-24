@@ -37180,15 +37180,15 @@ span
   margin: 0 auto;
 }
 
-.pt80pxi
+.pt80pxi_dc
 {
   padding-top: 80px !important;
 }
 
 .div_smiley>[class^=col-]
 {
-  width: 20%;
-  margin-bottom: 30px;
+  /* width: 20%; */
+  margin-bottom: 15px;
 }
 
 .footer_dailycheckin
@@ -37211,6 +37211,7 @@ span
   border: 1px solid rgba(204, 204, 204, 0.25);
   background: rgba(0, 0, 0, 0.10);
   padding: 20px;
+  /* padding: 90px 20px 20px 20px; */
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
@@ -37223,14 +37224,15 @@ span
   font-weight: 400;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.25);
-  padding: 70px 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .ta_dailycheckin:focus
 {
   color: #FFF;
   outline: none;
-  padding: 90px 0 0 20px;
+  /* padding: 90px 0 0 20px; */
+  /* padding: 90px 20px 20px 20px; */
 }
 
 .ta_absolute_emoji
@@ -37249,8 +37251,46 @@ span
   border-radius: 12px 12px 0 0;
 }
 
+.bg_emoji_blur
+{
+  background: rgba(131, 75, 102, 0.9);
+}
+
+.div_smiley>[class^=col-]:nth-child(5),
+.div_smiley>[class^=col-]:nth-child(9),
+.div_smiley>[class^=col-]:nth-child(13),
+.div_smiley>[class^=col-]:nth-child(17)
+{
+  clear: both;
+}
+
 .lab-modal-body_dc 
 {
   padding: 40px;
+}
+
+.ellipsis_02
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.toc_adiv_mp a > .row 
+{
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
+  min-height: 88px;
+  margin-bottom: 10px;
+  padding: 15px;
+  /* margin: 0 10px 10px 10px; */
+}
+
+.toc_adiv_mp a:last-child > .row
+{
+  margin-bottom: 0;
 }
 /* /version - 03 */

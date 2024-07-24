@@ -460,6 +460,12 @@
     {
         padding: 0px 20px !important;
     } */
+
+    .modal_cvc .modal-content 
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 @media (max-width: 768px)
@@ -473,6 +479,12 @@
     {
         padding: 0px 10px !important;
     } */
+
+    .modal_cvc .modal-content 
+    {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px)
@@ -985,6 +997,11 @@
     .blog_static .limit_characters
     {
         -webkit-line-clamp: 2;
+    }
+
+    .pt80pxi_dc
+    {
+        padding-top: 40px !important;
     }
 }
 

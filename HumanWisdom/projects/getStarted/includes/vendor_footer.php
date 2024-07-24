@@ -11,6 +11,8 @@
 <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
 <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
 <!-- Template Main JS File -->
 <script src="../assets/js/main.js"></script>
@@ -276,7 +278,7 @@ $( window ).resize( function() {
     {
     $('.btn_tff').attr('href','https://onelink.to/qsptex');
     } else {
-    $('.btn_tff').attr('href','https://happierme.app/adults/intro/intro-carousel');
+    $('.btn_tff').attr('href','splash_options.html');
     }
 });
 $( window ).resize();

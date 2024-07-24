@@ -74,7 +74,7 @@ export class S117040Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/teenagers/loneliness/s117041'])
+    this.router.navigate(['/teenagers/loneliness/s117040p'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

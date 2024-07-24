@@ -462,7 +462,7 @@ export class BeHappierPage implements OnInit {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { queryParams: { sId: `${id}` } })
   }
 
   getAlertcloseEvent(event) {

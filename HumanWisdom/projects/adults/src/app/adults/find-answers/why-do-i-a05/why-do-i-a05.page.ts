@@ -9,6 +9,8 @@ import { Router, RouterEvent } from '@angular/router';
 })
 export class WhyDoIA05Page implements OnInit {
 
+  isAdults = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location, private router:Router) { }

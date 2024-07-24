@@ -1,35 +1,38 @@
-<div class="outer-rec" id="myDiv" [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">
-  <div class="vector-3"></div>
-  <div class="vector-4"></div>
-  <div class="inner-rec">
-    <div class="row center_flex"><span class="cert-h1 col-sm-12">CERTIFICATE</span></div>
-    <div class="row center_flex m-top13">
-      <hr class="vector col-xs-2 col-md-2 col-sm-2  m-right3">
-      <span class="cert-txt col-xs-8 col-md-6 col-sm-8">OF COMPLETION</span>
-      <hr class="vector col-xs-2 col-md-2  col-sm-2 m-left3">
+
+<div [ngClass]="isAdults ? 'adult-certificate' : 'certificate'" id="myDiv" [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">
+  <div class="border-gradient">
+    <div class="content">
+      <div class="hd">
+        <h1>CERTIFICATE</h1>
+        <div class="completion-container">
+          <hr class="completion-line">
+          <h2>OF COMPLETION</h2>
+          <hr class="completion-line">
+        </div>
+        <div class="owl-icon"></div>
+      </div>
+      <div class="presented-to">
+        <p>PRESENTED TO</p>
+        <h3>{{ userName }}</h3>
+      </div>
+      <div class="description">
+        <p>for completing the <b>{{ moduleName && capitalizeFirstLetter(moduleName) }}</b> module on {{ getTodayDate() }}</p>
+      </div>
+      <div class="footer">
+        <div *ngIf="isAdults;else isTeenagers" class="row center_flex logo-container">
+          <span class="cert-logo"></span>
+          <span class="cert-txt4">HappierMe</span>
+        </div>
+        <ng-template #isTeenagers>
+          <span class="cert-logo"></span>
+        </ng-template>
+       
+        <!-- <a href="https://happierme.app/">happierme.app</a> -->
+      </div>
     </div>
-    <div class="row center_flex">
-      <div class="inner-icon"></div>
-    </div>
-    <div class="row center_flex"><span class="cert-txt1 col-sm-12 ">PRESENTED TO</span></div>
-    <div class="row center_flex"><span class="cert-txt2 col-sm-12">{{userName}}</span></div>
-    <div class="row center_flex"><span class="cert-txt3 col-sm-12 ">for completing the <b>{{moduleName}}</b> </span>
-    </div>
-    <div class="row center_flex"><span class="cert-txt3-1 col-sm-12 ">module on HappierMe</span></div>
-
-    <!-- <div class="row center_flex m-top23">                  -->
-    <span class="cert-logo"></span>
-    <!-- <div class="col-md-12 col-sm-12 col-xs-12 center_flex m-top-2"> -->
-    <span class="cert-txt4">&nbsp;HappierMe <br /><br />
-    </span>
-
-    <!-- </div> -->
-
-    <!-- </div> -->
-
-    <!-- <div class="row center_flex"><span class="cert-txt6 col-sm-12 ">humanwisdom.me</span></div> 
-                      -->
-    <span class="cert-txt6">happierme.app</span>
-
   </div>
+  <div class="corner top-left"></div>
+  <div class="corner bottom-right"></div>
 </div>
+
+
