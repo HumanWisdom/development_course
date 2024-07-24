@@ -95,6 +95,12 @@ export class WisdomForWorkplacePage implements OnInit {
           id: 41,
           url: '/podcasts/41.mp3',
           title: 'People management'
+        },
+        pc09: 
+        {
+          id: 75,
+          url: '/podcasts/75.mp3',
+          title: 'Making better decisions'
         }
       }
 
