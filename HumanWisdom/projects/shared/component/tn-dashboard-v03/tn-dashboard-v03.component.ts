@@ -36,7 +36,9 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   ios = false;
   cardlist = [];
   countryCode: any;
-  userDetails: any = [];
+  @Input() userDetails: any = [];
+  userdetail:any;
+
   loginResponse: any;
   subscription: Subscription;
   @Input() isLoginPage: boolean = false;
@@ -82,6 +84,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     }
     return this.subscriber;
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
       if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
@@ -94,6 +97,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
         this.isLoginPage = changes.isLoginPage.currentValue;
       }
     }
+
 
     if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
       if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
@@ -120,9 +124,8 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
           this.isShowbookMark = false;
         }
         let userId = JSON.parse(localStorage.getItem("userId"))
-
         this.Onboardingservice.getuser(userId).subscribe((res) => {
-          this.userDetails = res;
+          this.userdetail = res;
           let userdetail = res[0];
           this.url = userdetail['UserImagePath'].split('\\')[1]
           this.name = localStorage.getItem('name');
