@@ -81,7 +81,7 @@ export class S77068Page implements OnInit {
         // this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.reflection)
+    
   }
 
   submitProgress(e) 

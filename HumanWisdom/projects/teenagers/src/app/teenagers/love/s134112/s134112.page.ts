@@ -68,7 +68,7 @@ export class S134112Page implements OnInit {
     
     this.question=this.findQuestion(603).Question
     this.optionList=this.findQuestion(603).optionList
-    console.log(this.optionList,this.question)
+    
    
   
    
@@ -148,7 +148,7 @@ export class S134112Page implements OnInit {
       if(element==id) this.sendOption.splice(index,1);
    });
    }
-   console.log(this.sendOption)
+   
    sessionStorage.setItem("sessionOption134112",JSON.stringify(this.sendOption))
   
  }

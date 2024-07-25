@@ -56,8 +56,8 @@ export class S111012Page implements OnInit
     else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark115")) == 1)
       this.bookmark = 1
     this.createScreen()
-    console.log(this.qrList, "Qrlist")
-    console.log(this.qrList.ListOfQueOpts)
+    
+   
     this.questionA = this.qrList.ListOfQueOpts
     this.findQuestion()
     if (this.saveUsername == false)
@@ -97,8 +97,8 @@ export class S111012Page implements OnInit
         this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.question, this.optionList)
-    console.log(this.enableTick)
+    
+    
   }
 
   checkOption(opt, enableTick)
@@ -138,7 +138,7 @@ export class S111012Page implements OnInit
       document.getElementById(opt.OptId).style.background = '#120F40';
       // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
-    console.log(this.enableTick)
+    
   }
 
 

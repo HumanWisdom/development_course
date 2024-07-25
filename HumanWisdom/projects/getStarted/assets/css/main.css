@@ -81,7 +81,7 @@ section {
   padding-bottom: 60px;
 }
 
-.section-header h2 {
+/* .section-header h2 {
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 400;
@@ -90,7 +90,7 @@ section {
   color: #7f7f90;
   text-transform: uppercase;
   font-family: var(--font-default);
-}
+} */
 
 .section-header p {
   margin: 0;
@@ -2173,7 +2173,7 @@ a
   max-height: 377px;
 }
 
-.div_testimonials h4:first-child
+.div_testimonials h5:first-child
 {
   overflow: hidden;
   display: -webkit-box;

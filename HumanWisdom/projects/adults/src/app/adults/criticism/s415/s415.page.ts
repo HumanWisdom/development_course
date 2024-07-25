@@ -39,7 +39,7 @@ export class S415Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r415)
+    
 
 
 
@@ -76,7 +76,7 @@ export class S415Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

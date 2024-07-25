@@ -1,33 +1,25 @@
-<!--<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>-->
+<app-splash *ngIf="!pageLoaded">
+</app-splash>
 
-<!-- <app-login-signup-splash *ngIf="!pageLoaded"></app-login-signup-splash> -->
-
-<!-- <div id="page-loader" class="fade" [ngClass]="[pageLoaded ? '' : 'show']"><span class="spinner"></span></div> -->
-
-<app-splash *ngIf="!pageLoaded"></app-splash>
-
-<!-- <main [@routeAnimations]="prepareRoute(outlet)"> 
-  <ngx-json-ld [json]="schema"></ngx-json-ld>
-  <router-outlet #outlet="outlet"></router-outlet>
-</main> -->
-<!-- top navigation -->
-<!-- header -->
-
-<app-tn-dashboard-v03 [isShowHeader]="isShowHeader" [isLoginPage]="isLoginPage" [enableplaystore]="enableplaystore" [routeid]="routeid" [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03>
-
-<!-- /header -->
-<!-- /top navigation -->
+<app-tn-dashboard-v03  [isShowHeader]="isShowHeader"
+ [isLoginPage]="isLoginPage" 
+ [enableplaystore]="enableplaystore" 
+ [routeid]="routeid"
+ [enableHamburger]="isEnableHam" 
+ (playstoreenable)="getplaystore($event)"
+ [userDetails]="userdetail">
+</app-tn-dashboard-v03>
 
 <router-outlet></router-outlet>
+
 <ng-container *ngIf="enableFooter()">
 <app-bottom-navigation 
  [dash]="dash"
  [journal]="journal"
+ [userdetail]="userdetail"
  [fourm]="fourm" 
  [search]="search" 
  [enableprofile]="enableprofile" 
- (journalclick)="getclcickevent($event)"></app-bottom-navigation>
+ (journalclick)="getclcickevent($event)">
+</app-bottom-navigation>
 </ng-container>
-<!-- <router-outlet *ngIf="pageLoaded"></router-outlet> -->

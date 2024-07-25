@@ -323,7 +323,6 @@ export class TeenagersDashboardPage implements OnInit {
     this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        console.log(res)
         if (res[0]?.ModuleId == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
@@ -335,7 +334,6 @@ export class TeenagersDashboardPage implements OnInit {
     let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
-        console.log(res);
         this.dashboardFeature = res;
       });
   }
@@ -1119,7 +1117,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1199,7 +1197,7 @@ export class TeenagersDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    console.log(this.streak)
+
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1292,7 +1290,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1390,7 +1388,7 @@ export class TeenagersDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          console.log(this.streak)
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1857,8 +1855,8 @@ export class TeenagersDashboardPage implements OnInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-    } else if (name === 'Mental Health') {
-      this.logeventservice.logEvent('click_stress_anxiety');
+    } else if (name === 'Manage your mental health') {
+      this.logeventservice.logEvent('click_mental_health');
       this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
     } else if (name === 'Overcome unhelpful habits') {
       this.logeventservice.logEvent('click_overcome_unhelpful_habits');
@@ -1875,10 +1873,7 @@ export class TeenagersDashboardPage implements OnInit {
     } else if (name === 'Feel calm') {
       this.logeventservice.logEvent('click_feel_calm');
       this.router.navigate(['/teenagers/curated/feel-calm'])
-    } else if (name === 'Manage your emotions') {
-      this.logeventservice.logEvent('click_calm_mind');
-      this.router.navigate(['/teenagers/curated/have-calm-mind'])
-    } else if (name === 'Succeed in Life') {
+    }  else if (name === 'Succeed in life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
     }
@@ -2061,6 +2056,8 @@ export class TeenagersDashboardPage implements OnInit {
   }
 
   routeDailyCheckIn(){
+    this.logeventservice.logEvent("Click_daily-checkin");
+
     this.router.navigate(['/teenagers/daily-checkin']);
   }
 

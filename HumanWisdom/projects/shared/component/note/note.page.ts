@@ -54,7 +54,7 @@ export class NotePage implements OnInit {
   ngOnInit() {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    console.log(this.userId)
+    
 
     this.urlNotes = this.activate.snapshot.paramMap.get('jNotes')
     this.urlId = this.activate.snapshot.paramMap.get('jId')
@@ -63,7 +63,7 @@ export class NotePage implements OnInit {
     this.urlPid = this.activate.snapshot.paramMap.get('pId')
     this.urlMid = this.activate.snapshot.paramMap.get('mId')
 
-    console.log(this.urlNotes, this.urlTitle, this.urlId, this.urlType)
+    
     if (this.urlId != 0) {
       this.notes = this.urlNotes
       this.oldnotes = this.notes

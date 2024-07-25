@@ -2213,7 +2213,7 @@ export class RepeatUserPage implements OnInit {
     this.service.GetLastVisitedScreen(this.userId)
     
     .subscribe(res => {
-      console.log(res)
+      
       
    
     if( res[0]['screenno'].length >=1)

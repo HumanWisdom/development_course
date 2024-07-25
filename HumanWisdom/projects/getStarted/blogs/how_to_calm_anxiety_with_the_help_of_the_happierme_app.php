@@ -47,9 +47,9 @@
             
             <div class="row rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
+                <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   How to calm anxiety
-                </h4>
+                </h1>
               </div>
             </div>
 
@@ -71,7 +71,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive" alt="How to calm anxiety">
               </div>
             </div>
 
@@ -166,17 +166,17 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
+                <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   Understand your mind. Live a happier life. 
-                </h4>
+                </h1>
               </div>
             </div>
 
             <div class="row mt20px mb40px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                   Life can be tough. The HappierMe app is your personal guide to help you feel better now, but also to take you deeper to understand your thoughts and feelings. It supports you to become the person you want to be, to be happier, manage your emotions and  succeed in the world. There are also coaches you can speak to through the app.
-                </h4>
+                </h5>
               </div>
             </div>
 

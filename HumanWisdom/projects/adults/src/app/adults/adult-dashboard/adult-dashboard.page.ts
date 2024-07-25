@@ -127,12 +127,6 @@ export class AdultDashboardPage implements OnInit {
     public platform: Platform,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
-    // let remem = localStorage.getItem("remember")
-    // if (remem === null || remem === 'F') {
-    //   localStorage.setItem('isloggedin', 'F')
-    //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
-    // }
     localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
@@ -146,8 +140,6 @@ export class AdultDashboardPage implements OnInit {
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')
     setTimeout(() => {
-      // this.getModuleList();
-      // this.GetWisdomScreens();
     }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
@@ -163,7 +155,6 @@ export class AdultDashboardPage implements OnInit {
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
-
         if (res) {
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
@@ -193,31 +184,24 @@ export class AdultDashboardPage implements OnInit {
     } else {
       this.services.setDataRecievedState(true);
     }
-
-
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
       SharedService.enablebanner = true;
     } else {
       SharedService.enablebanner = false;
     }
-
-
     this.services.getCountry().subscribe((res: any) => {
-
       if (res['in_eu']) {
         this.countryCode = 'EUR'
       } else {
         this.countryCode = res['country_code_iso3']
       }
     },
-
       error => {
         console.log(error)
       },
       () => {
       });
-
     let sub: any = localStorage.getItem('Subscriber')
     let res = localStorage.getItem("isloggedin")
     if (sub && sub === '0' && res === 'T') {
@@ -228,7 +212,6 @@ export class AdultDashboardPage implements OnInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
-
     // /carousel multiple items increment by 1 - c1_w33_01
     localStorage.setItem('cicd', 'T')
     let userid = localStorage.getItem('isloggedin');
@@ -257,11 +240,11 @@ export class AdultDashboardPage implements OnInit {
       let app = localStorage.getItem("fromapp")
       if (!app || app === 'F') {
         if (localStorage.getItem('socialLogin') !== 'T') {
-          this.emaillogin()
+          // this.emaillogin()
         };
       } else if (app && app === 'T') {
-        let authtoken = JSON.parse(localStorage.getItem("token"))
-        this.fromapplogin(authtoken);
+        // let authtoken = JSON.parse(localStorage.getItem("token"))
+        // this.fromapplogin(authtoken);
       }
 
     }
@@ -275,7 +258,6 @@ export class AdultDashboardPage implements OnInit {
     // }
 
     this.getLastvisitedScr();
-
     if (localStorage.getItem("Affreftoken") !== null) {
       let token = localStorage.getItem("Affreftoken");
       this.service.decrypt(token).subscribe((res: any) => {
@@ -288,8 +270,6 @@ export class AdultDashboardPage implements OnInit {
     if (this.isloggedIn) {
       this.encryptUserId();
     }
-
-
   }
 
   encryptUserId() {
@@ -317,7 +297,7 @@ export class AdultDashboardPage implements OnInit {
     this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        console.log(res)
+        
         if (res[0]['ModuleId'] == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
@@ -329,7 +309,7 @@ export class AdultDashboardPage implements OnInit {
     let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
-        console.log(res);
+        
         this.dashboardFeature = res;
       });
   }
@@ -366,14 +346,7 @@ export class AdultDashboardPage implements OnInit {
 
 
     this.dash = this.router.url.includes('adult-dashboard');
-    // this.getuserDetail();
-    setTimeout(() => {
-      // this.getUsershorts()
-      // this.getUserstories()
-      this.GetDashboardFeatures();
-      this.isSubscriber = SharedService.isSubscriber();
-    }, 1000)
-
+    this.isSubscriber = SharedService.isSubscriber();
     if (localStorage.getItem('acceptcookie') === null) {
       setTimeout(() => {
         this.enablecookiemodal.nativeElement.click();
@@ -710,6 +683,7 @@ export class AdultDashboardPage implements OnInit {
           }
         })
         this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+        this.GetDashboardFeatures();
       }
     })
   }
@@ -1287,7 +1261,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+          
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1367,7 +1341,7 @@ export class AdultDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    console.log(this.streak)
+    
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1460,7 +1434,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          console.log(this.streak)
+          
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1488,13 +1462,6 @@ export class AdultDashboardPage implements OnInit {
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
 
           }
-          //this.getBookmarks()
-          setTimeout(() => {
-            // this.getProgress()
-            // this.freescreens();
-            // this.getBookmarks()
-          }, 1000);
-
           if (res.UserId == 0) {
 
           }
@@ -1558,7 +1525,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          console.log(this.streak)
+          
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -3933,7 +3900,7 @@ export class AdultDashboardPage implements OnInit {
      localStorage.setItem("moduleId", JSON.stringify(75))
      this.service.clickModule(75, this.userId)
        .subscribe(res => {
-         console.log(res)
+         
          this.qrList = res
          weR = "s" + res.lastVisitedScreen
          // continue where you left
@@ -3980,6 +3947,8 @@ export class AdultDashboardPage implements OnInit {
 
   }
   routeDailyCheckIn(){
+    this.logeventservice.logEvent("Click_daily-checkin");
+
     this.router.navigate(['/adults/daily-checkin']);
   }
 
@@ -4097,7 +4066,7 @@ export class AdultDashboardPage implements OnInit {
 
   //     }, 3000);
 
-  //     console.log(this.currentList);
+  //     
   //   })
   // }
 
@@ -4162,7 +4131,7 @@ export class AdultDashboardPage implements OnInit {
   //   localStorage.setItem("moduleId", JSON.stringify(75))
   //   this.service.clickModule(75, this.userId)
   //     .subscribe(res => {
-  //       console.log(res)
+  //       
   //       this.qrList = res
   //       weR = "s" + res.lastVisitedScreen
   // continue where you left
@@ -4244,7 +4213,7 @@ export class AdultDashboardPage implements OnInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
-    } else if (name === 'Mental Health') {
+    } else if (name === 'Manage your mental health') {
       this.logeventservice.logEvent('click_stress_anxiety');
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
     } else if (name === 'Work and Leadership') {

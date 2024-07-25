@@ -90,7 +90,7 @@ export class S60Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
   submitProgress(e) {
@@ -99,7 +99,7 @@ export class S60Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r60", JSON.stringify(e))
     this.r60 = sessionStorage.getItem("r60")
-    console.log(this.r60)
+    
     if (this.r60 != "undefined") {
 
       this.service.submitProgressReflection({

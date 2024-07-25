@@ -35,7 +35,7 @@ export class TreesistersPage implements OnInit {
       url:this.isAdults? "https://happierme.app/adults/treesisters":"https://happierme.app/teenagers/treesisters"
     })
     .then((response) => {
-      console.log(response);
+      
     })
     .catch((error) => {
       console.log(error);

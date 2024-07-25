@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from "../../services/shared.service";
+import { NavigationService } from "../../services/navigation.service";
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-common-forget-password',
   templateUrl: './forget-password.page.html',
@@ -28,7 +30,9 @@ export class ForgetPasswordPage implements OnInit {
     private router: Router,
     private activate:ActivatedRoute,
     private authService: SocialAuthService,
-    private service:OnboardingService) {
+    private service:OnboardingService,
+    private location:Location,
+    private navigationService:NavigationService) {
       this.activate.queryParams.subscribe(params => {
         this.urlKey=params['key']
     });
@@ -194,5 +198,12 @@ export class ForgetPasswordPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
-
+  back(){
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
 }

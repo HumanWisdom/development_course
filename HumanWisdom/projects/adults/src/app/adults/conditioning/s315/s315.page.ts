@@ -38,7 +38,7 @@ export class S315Page implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    console.log(this.r315)
+    
 
 
 
@@ -80,7 +80,7 @@ export class S315Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

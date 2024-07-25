@@ -67,7 +67,7 @@ export class S300Page implements OnInit {
     
     this.question=this.findQuestion(63).Question
     this.optionList=this.findQuestion(63).optionList
-    console.log(this.optionList,this.question)
+    
    
   
    
@@ -147,7 +147,7 @@ export class S300Page implements OnInit {
       if(element==id) this.sendOption.splice(index,1);
    });
    }
-   console.log(this.sendOption)
+   
    sessionStorage.setItem("sessionOption300",JSON.stringify(this.sendOption))
   
  }

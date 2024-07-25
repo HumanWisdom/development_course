@@ -39,7 +39,7 @@ export class S390Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r390)
+    
 
 
 
@@ -76,7 +76,7 @@ export class S390Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 

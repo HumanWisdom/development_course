@@ -204,7 +204,7 @@ export class S321p3Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r321p3)
+    
     console.log(sessionStorage.getItem("r321p3"))
     if (sessionStorage.getItem("r321p3") == null) {
       this.r321p3 = sessionStorage.getItem("r321p3")
@@ -244,7 +244,7 @@ export class S321p3Page implements OnInit {
       }
 
     }
-    console.log(this.reflection)
+    
 
   }
 
@@ -254,7 +254,7 @@ export class S321p3Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r321p3", this.r321p3)
    // this.r321p3 = sessionStorage.getItem("r321p3")
-    console.log(this.r321p3)
+    
     if (this.r321p3 != "undefined") {
 
       this.service.submitProgressReflection({

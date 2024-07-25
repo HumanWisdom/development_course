@@ -87,7 +87,7 @@ export class QuestionsPage implements OnInit {
     }
     this.commonService.AddGuidedQs_Response(data).subscribe(res => {
       if (res) {
-        console.log(res);
+        
       }
     });
   }

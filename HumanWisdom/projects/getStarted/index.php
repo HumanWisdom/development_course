@@ -623,6 +623,32 @@
                   </div>
                 </a>
 
+                <a class="item">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Dr Dan Reidenberg">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        HappierMe is a well-designed, intuitive app that provides many useful tools and resources for anyone wanting to improve their life, resilience and well-being.  Built upon the belief that the more you know, the stronger you will be in moments of crisis, HappierMe increases your knowledge, awareness and internal strength in an easy to use format.
+                        </h5>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          Dr Dan Reidenberg, USA
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
                 <!--
                 <a class="item">
                   <div class="div_testimonials">

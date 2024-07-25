@@ -95,7 +95,7 @@ export class S141001Page implements OnInit,OnDestroy {
 
     }
     this.stories = splitarr
-    console.log(this.stories)
+    
     }, 2000)
 
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
@@ -120,7 +120,7 @@ export class S141001Page implements OnInit,OnDestroy {
     }    
     // /continue where you left
 
-    console.log(this.shareUrl,this.loginResponse)
+    
     
     if(this.saveUsername==false)
     {
@@ -201,7 +201,7 @@ export class S141001Page implements OnInit,OnDestroy {
     this.service.getModulebyId(moduleId).subscribe(res=>{
       this.moduleData=res;
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      console.log(res[0].lastScreen)
+      
      });
   }
 

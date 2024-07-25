@@ -55,8 +55,8 @@ export class S26018Page implements OnInit
       this.bookmark = 0
     else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark26018")) == 1)
       this.bookmark = 1
-    console.log(this.qrList, "Qrlist")
-    console.log(this.qrList.ListOfQueOpts)
+    
+   
     this.questionA = this.qrList.ListOfQueOpts
     this.findQuestion()
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
@@ -100,8 +100,8 @@ export class S26018Page implements OnInit
         this.optionList.push(this.questionA[i])
       }
     }
-    console.log(this.question, this.optionList)
-    console.log(this.enableTick)
+    
+    
   }
   checkOption(opt)
   {
@@ -142,7 +142,7 @@ export class S26018Page implements OnInit
       document.getElementById(opt.OptId).style.background = '#120F40';
       // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
-    console.log(this.enableTick)
+    
   }
   submitProgress()
   {

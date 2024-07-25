@@ -28,14 +28,14 @@ export class SessionEndComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.link, this.name, this.progressImg, this.progressText, this.progressPercent)
+    
   }
 
   shareIndex() {
-    console.log(this.toc)
+    
     //this.socialShare=true
     this.shareUrl = "https://happierme.app/adults/" + this.toc + `?t=${this.token}`
-    console.log(this.shareUrl)
+    
 
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
        alert(`This service/api is not supported in your Browser`);
@@ -48,7 +48,7 @@ export class SessionEndComponent implements OnInit {
       text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.shareUrl
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);

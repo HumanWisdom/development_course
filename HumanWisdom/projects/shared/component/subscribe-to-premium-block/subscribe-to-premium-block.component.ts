@@ -57,7 +57,7 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
 
   SubscribeToPremium(){
     if(!this.isIos){
-      this.router.navigate(['/subscription/start-your-free-trial']);
+      this.router.navigate(["/"+ SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
     }
   }
   
@@ -108,4 +108,5 @@ export class SubscribeToPremiumBlockComponent implements OnInit {
       return `${value}.00`;
     }
     return value.toFixed(2);
-  }}
+  }
+}

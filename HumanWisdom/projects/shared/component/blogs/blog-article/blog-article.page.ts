@@ -121,7 +121,7 @@ export class BlogArticlePage implements OnInit {
          this.meta.addTag({ property: 'og:type', content: 'article'})
 
           //this.meta.updateTag({ property: 'og:url', content: "https://staging.humanwisdom.me/course/"+ this.path})
-          console.log(this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom")
+          
 
         if(this.meta.getTag("property='og:description'"))
           this.meta.updateTag({ property: 'og:description', content: this.blogList['MetaDesc']})
@@ -215,7 +215,7 @@ export class BlogArticlePage implements OnInit {
       text:  "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
       url: this.path
     }).then((response) => {
-      console.log(response);
+      
     })
       .catch((error) => {
         console.log(error);

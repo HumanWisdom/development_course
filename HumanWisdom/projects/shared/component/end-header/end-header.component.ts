@@ -15,7 +15,7 @@ export class EndHeaderComponent implements OnInit {
   constructor(private router:Router,private ac:ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.toc)
+    
   }
 
   sendIndex(){
