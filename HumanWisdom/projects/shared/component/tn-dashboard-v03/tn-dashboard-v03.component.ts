@@ -145,12 +145,13 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
           this.isShowbookMark = false;
         }
         let userId = JSON.parse(localStorage.getItem("userId"))
-        this.Onboardingservice.getuser(userId).subscribe((res) => {
-          this.userdetail = res;
-          let userdetail = res[0];
-          this.url = userdetail['UserImagePath'].split('\\')[1]
-          this.name = localStorage.getItem('name');
-        });
+        let userdetail = localStorage.getItem("userDetails");
+        if(userdetail){
+          let detail = JSON.parse(userdetail);
+          if (detail && detail['UserImagePath'] != '') {
+            this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+          }
+        }
         this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
       }
     });

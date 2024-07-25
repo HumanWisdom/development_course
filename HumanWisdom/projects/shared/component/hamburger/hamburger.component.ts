@@ -125,6 +125,13 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
 
   public getImageUrl() {
+    let userdetail = localStorage.getItem("userDetails");
+    if(userdetail){
+      let detail = JSON.parse(userdetail);
+      if (detail && detail['UserImagePath'] != '') {
+        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      }
+    }
     return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
   }
 
