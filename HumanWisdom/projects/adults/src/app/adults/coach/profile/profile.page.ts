@@ -4,6 +4,8 @@ import { AdultsService } from '../../adults.service';
 import { ProgramType } from '../../../../../../shared/models/program-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +20,8 @@ export class ProfilePage implements OnInit {
     return this.router.url;
   }, 1000);
 
-  constructor(private service: AdultsService, private router: Router, private route: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService) { }
+  constructor(private service: AdultsService, private router: Router, private route: ActivatedRoute,
+     private ngNavigatorShareService: NgNavigatorShareService,private navigationService:NavigationService,private location:Location) { }
 
   ngOnInit() {
     this.getCoachBio();
@@ -42,7 +45,12 @@ export class ProfilePage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/adults/coach"]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   contactCoach() {
