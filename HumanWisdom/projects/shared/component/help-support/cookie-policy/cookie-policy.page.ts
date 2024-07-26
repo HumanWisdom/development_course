@@ -7,8 +7,16 @@ import { Location } from '@angular/common';
   styleUrls: ['./cookie-policy.page.scss'],
 })
 export class CookiePolicyPage implements OnInit {
+  isAdults: boolean = true; 
+  constructor(private router:Router, private location: Location) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }   
+   }
 
-  constructor(private router:Router, private location: Location) { }
+   
 
   ngOnInit() {
     if (!this.router.url.includes('/cookies-policy')) {

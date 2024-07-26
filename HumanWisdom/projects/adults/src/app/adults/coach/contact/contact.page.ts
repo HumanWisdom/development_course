@@ -119,7 +119,6 @@ export class ContactPage implements OnInit {
   }
 
   goBack() {
-      // this.router.navigate(["/adults/adult-dashboard"]);
       var url = this.navigationService.navigateToBackLink();
       if (url == null) {
         this.location.back();
@@ -229,6 +228,11 @@ export class ContactPage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/adults/coach/profile", this.coachId]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 }
