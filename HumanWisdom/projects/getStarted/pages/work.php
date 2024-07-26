@@ -25,8 +25,8 @@
     ?>
     <!-- /request a demo php script -->
 
-    <div class="row center_flex">
-      <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+    <!-- <div class="row center_flex">
+      <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"> -->
 
         <!-- header -->
         <?php include('../includes/header.php'); ?>
@@ -1536,8 +1536,8 @@
 
         </main>
 
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
 
     <!-- vendor_footer -->
     <?php include('../includes/vendor_footer.php'); ?>

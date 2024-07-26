@@ -139,8 +139,8 @@
         </div>
 
         <div *ngIf="!isloggedIn">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_footer_login.svg"
-            alt="">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_footer_login.svg" alt="" *ngIf="isAdults">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_footer_login_teens.svg" alt="" *ngIf="!isAdults">
           <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Login
           </p>

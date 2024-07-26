@@ -29,8 +29,15 @@ export class BottomNavigationComponent implements OnInit,OnDestroy {
   @Output() journalclick = new EventEmitter();
   toursubscription: Subscription;
   disableClick = false;
+  isAdults = false;
 
-  constructor(private router: Router,private onboardingService: OnboardingService) { }
+  constructor(private router: Router,private onboardingService: OnboardingService) { 
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   ngOnInit() {
 

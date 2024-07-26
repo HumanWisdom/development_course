@@ -31,7 +31,7 @@
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
             </div>
           </div>
 
