@@ -177,10 +177,11 @@
   z-index: 2;
   mix-blend-mode: multiply; */
 
-  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger_01.jpg');
+  background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/anger/anger03.png');
   background-color: #5d5d5d;
   background-blend-mode: multiply;
-  background-size: cover !important;
+  background-size: 98% 100% !important;
+  background-position: center bottom;
 }
 
 .anger_base2
@@ -599,7 +600,9 @@
   background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/happiness/happiness_mobile_01.jpg');
   background-color: #5d5d5d;
   background-blend-mode: multiply;
-  background-size: cover !important;
+  background-size: 98% 100% !important;
+  background-position: center bottom;
+
 }
 
 .happiness_overlay1_desktop
@@ -920,7 +923,8 @@
   background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/relationships/relationships_mobile_01.jpg');
   background-color: #5d5d5d;
   background-blend-mode: multiply;
-  background-size: cover !important;
+  background-size: 92% 105% !important;
+  background-position: center bottom;
 }
 
 .relationships_overlay1_desktop

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProgramType } from '../../../models/program-model';
+import { SharedService } from '../../../services/shared.service';
 
 @Component({
   selector: 'HumanWisdom-terms-conditions',
@@ -8,8 +10,14 @@ import { Location } from '@angular/common';
   styleUrls: ['./terms-conditions.page.scss'],
 })
 export class TermsConditionsPage implements OnInit {
-
-  constructor(private router:Router, private location: Location) { }
+  isAdults: boolean = true; 
+  constructor(private router:Router, private location: Location) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+   }
 
   ngOnInit() {
     if (!(this.router.url=='/terms-and-conditions')){

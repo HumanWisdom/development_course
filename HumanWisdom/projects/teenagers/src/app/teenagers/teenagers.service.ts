@@ -23,7 +23,7 @@ export class TeenagersService {
   personalisedforyoulist = [
     {
       id: "17",
-      name: 'Succeed in Life'
+      name: 'Succeed in life'
     },
     {
       id: "14",

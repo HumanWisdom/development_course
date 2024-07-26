@@ -281,6 +281,11 @@ export class LoginSignupPage implements OnInit {
           .subscribe((res) => {
             if (res) {
               this.loginResponse = res;
+              this.service.getuser(res.UserId).subscribe(userInfo=>{
+                if(userInfo){
+                  localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+                }
+              })
               localStorage.setItem("guest", "F");
               localStorage.setItem("remember", "T");
               localStorage.setItem("socialLogin", "T");
@@ -362,7 +367,11 @@ export class LoginSignupPage implements OnInit {
                     JSON.stringify(this.userName)
                   );
                 }
-
+                this.service.getuser(res.UserId).subscribe(userInfo=>{
+                  if(userInfo){
+                    localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+                  }
+                })
                 let pers = localStorage.getItem("personalised");
                 let persub = localStorage.getItem("personalised subscription");
                 let acceptCookie = localStorage.getItem("activeCode");
@@ -484,6 +493,7 @@ export class LoginSignupPage implements OnInit {
     this.authService.authState.subscribe((user) => {
       // this.user = user;
       this.user = user;
+
       this.idToken = user.authToken;
       this.socialFirstName = user.firstName;
       this.socialLastName = user.lastName;
@@ -500,8 +510,7 @@ export class LoginSignupPage implements OnInit {
           })
           .subscribe((res) => {
             if (res) {
-
-
+       
               this.loginResponse = res;
               localStorage.setItem("socialLogin", "T");
               localStorage.setItem(
@@ -582,7 +591,11 @@ export class LoginSignupPage implements OnInit {
                     JSON.stringify(this.userName)
                   );
                 }
-
+                this.service.getuser(res.UserId).subscribe(userInfo=>{
+                  if(userInfo){
+                    localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+                  }
+                })
                 let pers = localStorage.getItem("personalised");
                 let persub = localStorage.getItem("personalised subscription");
                 let acceptCookie = localStorage.getItem("activeCode");
@@ -699,6 +712,7 @@ export class LoginSignupPage implements OnInit {
             (accessObj)?.Moengage.add_first_name(res.Name);
           })
           this.loginResponse = res;
+      
           localStorage.setItem("socialLogin", "F");
           localStorage.setItem("isloggedin", "T");
           localStorage.setItem("guest", "F");
@@ -749,6 +763,11 @@ export class LoginSignupPage implements OnInit {
             sessionStorage.setItem("userEmail", JSON.stringify(this.email));
             sessionStorage.setItem("userName", JSON.stringify(this.userName));
           }
+          this.service.getuser(res.UserId).subscribe(userInfo=>{
+            if(userInfo){
+              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+            }
+          })
           this.freescreens();
           let roleid = JSON.parse(localStorage.getItem("RoleID"));
           let emailcode = localStorage.getItem("emailCode");

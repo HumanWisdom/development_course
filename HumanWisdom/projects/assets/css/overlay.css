@@ -926,7 +926,8 @@
   background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/relationships/relationships_mobile_01.jpg');
   background-color: #5d5d5d;
   background-blend-mode: multiply;
-  background-size: cover !important;
+  background-size: 92% 105% !important;
+  background-position: center bottom;
 }
 
 .relationships_overlay1_desktop

@@ -1855,8 +1855,8 @@ export class TeenagersDashboardPage implements OnInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-    } else if (name === 'Mental Health') {
-      this.logeventservice.logEvent('click_stress_anxiety');
+    } else if (name === 'Manage your mental health') {
+      this.logeventservice.logEvent('click_mental_health');
       this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
     } else if (name === 'Overcome unhelpful habits') {
       this.logeventservice.logEvent('click_overcome_unhelpful_habits');
@@ -1873,10 +1873,7 @@ export class TeenagersDashboardPage implements OnInit {
     } else if (name === 'Feel calm') {
       this.logeventservice.logEvent('click_feel_calm');
       this.router.navigate(['/teenagers/curated/feel-calm'])
-    } else if (name === 'Manage your emotions') {
-      this.logeventservice.logEvent('click_calm_mind');
-      this.router.navigate(['/teenagers/curated/have-calm-mind'])
-    } else if (name === 'Succeed in Life') {
+    }  else if (name === 'Succeed in life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
     }
