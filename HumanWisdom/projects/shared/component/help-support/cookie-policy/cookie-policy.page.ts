@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProgramType } from '../../../models/program-model';
+import { SharedService } from '../../../services/shared.service';
 @Component({
   selector: 'app-cookie-policy',
   templateUrl: './cookie-policy.page.html',
