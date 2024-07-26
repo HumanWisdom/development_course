@@ -15,10 +15,8 @@ export class CookiePolicyPage implements OnInit {
       this.isAdults = true;
     } else {
       this.isAdults = false;
-    }   
+    }
    }
-
-   
 
   ngOnInit() {
     if (!this.router.url.includes('/cookies-policy')) {

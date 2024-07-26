@@ -1,6 +1,6 @@
 <!-- header -->
 <div class="row header_fixed center_flex">
-  <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
 
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
       <a class="" href="../index.php">

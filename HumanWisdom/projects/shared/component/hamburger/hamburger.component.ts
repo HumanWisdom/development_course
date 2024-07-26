@@ -346,6 +346,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
           route == '/teenagers/adverts-about' ||
           route == '/teenagers/help-support/faq' ||
           route == '/teenagers/help-support/terms-conditions' ||
+          route == '/teenagers/help-support/privacy-policy' ||
+          route == '/teenagers/help-support/cookie-policy' ||
           route == '/teenagers/help-support/support' ||
           route == '/teenagers/partnership-webpage/partnership-index/') {
           this.navigate(route);

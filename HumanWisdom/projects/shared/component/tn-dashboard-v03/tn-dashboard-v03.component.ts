@@ -86,42 +86,21 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes?.enableHamburger?.currentValue) {
-      this.enableHamburger = changes.enableHamburger.currentValue;
-    }
-
-    if (changes?.isLoginPage?.currentValue) {
-      this.isLoginPage = changes.isLoginPage.currentValue;
-    }
-
-    if (changes?.isShowHeader?.currentValue) 
-    {
-      this.isShowHeader = changes.isShowHeader.currentValue;
-      let userDetails = localStorage.getItem("userDetails");
-      if(userDetails){
-        this.userDetails = JSON.parse(userDetails);
-        if (this.userdetail && this.userDetails['UserImagePath'] != '') {
-          this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
-        }
-      }
-    }
-    if (changes && changes.enableHamburger && !changes.enableHamburger.firstChange) {
-      if (changes.enableHamburger.currentValue != changes.enableHamburger.previousValue) {
-        console.log(changes.enableHamburger.currentValue);
+    if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
+      if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
         this.enableHamburger = changes.enableHamburger.currentValue;
       }
     }
 
-    if (changes && changes.isLoginPage && !changes.isLoginPage.firstChange) {
-      if (changes.isLoginPage.currentValue != changes.isLoginPage.previousValue) {
-        console.log(changes.isLoginPage.currentValue);
+    if(changes && changes.isLoginPage && !changes.isLoginPage.firstChange){
+      if(changes.isLoginPage.currentValue != changes.isLoginPage.previousValue){
         this.isLoginPage = changes.isLoginPage.currentValue;
       }
     }
 
-    if (changes && changes.isShowHeader && !changes.isShowHeader.firstChange) {
-      if (changes.isShowHeader.currentValue != changes.isShowHeader.previousValue) {
-        console.log(changes.isShowHeader.currentValue);
+
+    if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
+      if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
         this.isShowHeader = changes.isShowHeader.currentValue;
       }
     }
