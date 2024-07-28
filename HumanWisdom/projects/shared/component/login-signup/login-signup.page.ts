@@ -1019,6 +1019,7 @@ export class LoginSignupPage implements OnInit {
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
+    localStorage.setItem('btnclick','F')
     this.router.navigateByUrl(SharedService.getDashboardUrls());
    }
 
