@@ -15,22 +15,21 @@ export class YoutubeContentComponent implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   @Input() bg: string;
-  
+
   constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router, private location: Location,
     private navigationService:NavigationService
   ) {
     this.linkcode = this.route.snapshot.paramMap.get('videolink')
-   
+
     let accesscode = 'rdtfghjhfdg'
-  
+
    if(this.linkcode.includes('=')==true)
    {  accesscode =this.linkcode.split('=')[1]
      this.linkcode =this.linkcode.split('=')[0]
-     console.log(accesscode)
   }
 
 
-  // let accesscode = this.linkcode.contains('=')==true?this.linkcode.splitarr('=')[1]:'rdtfghjhfdg'  
+  // let accesscode = this.linkcode.contains('=')==true?this.linkcode.splitarr('=')[1]:'rdtfghjhfdg'
    let access='free'
    if (accesscode=='rdtfghjhfdg' ) access='free'
    if (accesscode=='vncbxdfchgvxd' ) access='paid'
@@ -58,13 +57,13 @@ export class YoutubeContentComponent implements OnInit {
     }
   }
 
-  ngOnInit() 
+  ngOnInit()
   {
     let code = `https://www.youtube.com/embed/${this.linkcode}`;
     this.videoLink = this.getSafeUrl(code);
   }
 
-  getSafeUrl(url) 
+  getSafeUrl(url)
   {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url)
   }

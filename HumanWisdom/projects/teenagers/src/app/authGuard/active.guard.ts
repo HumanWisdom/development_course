@@ -15,7 +15,6 @@ export class ActiveGuard implements CanActivate, OnInit {
   constructor(public router: Router, private url: ActivatedRoute, private service: TeenagersService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.canGoBack = !!(this.router.getCurrentNavigation()?.previousNavigation);
-    console.log("this.canGoBack", this.canGoBack)
 
   }
   ngOnInit() {
@@ -39,9 +38,7 @@ export class ActiveGuard implements CanActivate, OnInit {
     } */
     m = m.split('?')
 
-console.log(freeScreens)
     let str = next.routeConfig.path;
-    console.log("str",str)
     //this.logeventservice.logEvent(str);
     this.scrId = str.substring(1, str.length + 1);
     if (this.scrId !== '29000') {
@@ -53,7 +50,6 @@ console.log(freeScreens)
 
 
     if ( sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
-      console.log("sub:",sub)
 
       return true;
     }

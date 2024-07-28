@@ -64,7 +64,6 @@ export class EventsIndexPage implements OnInit {
 
 
     this.service.getAllEvents().subscribe(x => {
-      console.log(x)
       this.futureeventList= x.FutureEvents.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
       this.eventList=x.PastEvents.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
        this.backupList=JSON.parse(JSON.stringify(this.eventList));
@@ -100,14 +99,13 @@ export class EventsIndexPage implements OnInit {
        alert(`This service/api is not supported in your Browser`);
        return;
      } */
-    console.log("url")
     this.path = "https://happierme.app" + this.address;
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
-      
+
     })
       .catch((error) => {
         console.log(error);

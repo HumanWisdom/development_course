@@ -8,7 +8,7 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s118008.page.html',
   styleUrls: ['./s118008.page.scss'],
 })
-export class S118008Page implements OnInit 
+export class S118008Page implements OnInit
 {
 
   bg_tn = "bg_red_pink"
@@ -41,37 +41,37 @@ export class S118008Page implements OnInit
     private router: Router,
     private service: TeenagersService,
     private location: Location
-  ) 
+  )
   { }
 
-  ngOnInit() 
+  ngOnInit()
   {
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    if (this.saveUsername == false)
+    {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    else
+    {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
     }
     this.startTime = Date.now();
   }
 
-  sharedForum(e) 
+  sharedForum(e)
   {
     console.log(e)
     this.shared = e
   }
 
-  confirmShare() 
+  confirmShare()
   {
     this.confirmed = true
   }
 
-  createScreen() 
+  createScreen()
   {
     this.service.createScreen({
       "ScrId": 0,
@@ -81,27 +81,26 @@ export class S118008Page implements OnInit
     }).subscribe(res => {})
   }
 
-  findReflection() 
+  findReflection()
   {
-    for (var i = 0; i < this.reflectionA.length; i++) 
+    for (var i = 0; i < this.reflectionA.length; i++)
     {
-      if (this.rId == this.reflectionA[i].ReflectionId) 
+      if (this.rId == this.reflectionA[i].ReflectionId)
       {
         this.reflection = this.reflectionA[i].Que
         // this.optionList.push(this.questionA[i])
       }
     }
-    
+
   }
 
-  submitProgress(e) 
+  submitProgress(e)
   {
-    console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r118008", JSON.stringify(e))
     this.r118008 = sessionStorage.getItem("r118008")
-    
+
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -122,12 +121,12 @@ export class S118008Page implements OnInit
       })
   }
 
-  previous() 
+  previous()
   {
     this.router.navigate(['/teenagers/anger/s118007'])
   }
 
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
 
 }
