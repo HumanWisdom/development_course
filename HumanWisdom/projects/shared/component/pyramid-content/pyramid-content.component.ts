@@ -42,12 +42,11 @@ constructor(
 }
 
 ngOnInit() {
-  
+
   var str=this.router.url
     var lastSlash = str.lastIndexOf("/");
      str=str.substring(lastSlash+2);
      this.scrId=str
-     console.log("str",str,"id",this.scrId)
 
      if ((this.loginResponse.Subscriber != 1)) {
       if (!this.freeScreens.includes(parseInt(this.scrId))) {
@@ -57,8 +56,8 @@ ngOnInit() {
 }
 
 getTime(){
-  
-  
+
+
   this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))
 }
 

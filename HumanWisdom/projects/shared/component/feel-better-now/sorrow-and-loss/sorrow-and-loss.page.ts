@@ -56,7 +56,6 @@ export class SorrowAndLossPage implements OnInit {
   }
 
   routeVideoaudio(type, url, title = '') {
-    console.log(url)
     if(type === 'video') {
      this.router.navigate([url, 'F', title])
     }else{

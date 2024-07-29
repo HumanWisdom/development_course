@@ -14,7 +14,7 @@ export class StressPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   isAdults = true;
-  
+
   constructor(private location: Location, private router: Router,private navigationService: NavigationService) { }
 
   ngOnInit() {
@@ -51,7 +51,6 @@ export class StressPage implements OnInit {
 
 
   routeVideoaudio(type, url, title = '') {
-    console.log(url)
     if(type === 'video') {
      this.router.navigate([url, 'F', title])
     }else{
