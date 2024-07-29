@@ -213,6 +213,15 @@
     }
 }
 
+@media (max-width: 1024px)
+{
+    .img_teens_launch
+    {
+        height: 240px;
+        object-fit: cover;
+    }
+}
+
 @media (min-width: 1200px)
 {
     .owl-carousel.owl-drag .owl-item:last-child a.item
