@@ -276,9 +276,10 @@ $('.owl_blog .owl-carousel').owlCarousel({
 $( window ).resize( function() {
     if (window.matchMedia('(max-width: 768px)').matches)
     {
-    $('.btn_tff').attr('href','https://onelink.to/qsptex');
+    //$('.btn_tff').attr('href','https://onelink.to/qsptex');
+    $('.btn_tff').attr('href','#div_subscription');
     } else {
-    $('.btn_tff').attr('href','splash_options.html');
+    $('.btn_tff').attr('href','#div_subscription');
     }
 });
 $( window ).resize();

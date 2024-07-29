@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { AdultsService } from '../adults.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { NavigationService } from '../../../../../shared/services/navigation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-coach',
@@ -20,7 +22,8 @@ export class ContactCoachPage implements OnInit {
 
 
   constructor(private location:Location,private adultService:AdultsService,
-    private meta: Meta, private title: Title) {
+    private navigationService:NavigationService,
+    private meta: Meta, private title: Title,private router:Router) {
     this.initializeForm();
     this.getCountriesList();
    }
@@ -43,9 +46,14 @@ export class ContactCoachPage implements OnInit {
     }
   }
 
-  goBack(){
-    this.location.back()
-  }
+    goBack() {
+      var url = this.navigationService.navigateToBackLink();
+      if (url == null) {
+        this.location.back();
+      }else{
+        this.router.navigate([url]);
+      }
+    }
 
   titleChangeEvent(value){
     this.form.Title=value;

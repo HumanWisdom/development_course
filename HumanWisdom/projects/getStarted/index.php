@@ -44,8 +44,41 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-
     <section class="hpt120px">
+      <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_launch.webp" class="img-responsive w100p img_teens_launch" alt="HappierMe">
+          </div>
+        </div>
+        
+        <div class="row absolute_teens_launch">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_ffffff">
+                JUST LAUNCHED!
+              </h1>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+              <h2 class="mtb20px fs_24px fw_600 lh_120p fc_ffffff">
+                HappierMe for Teenagers
+              </h2>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
+                <a href="https://happierme.app/teenagers/intro-carousel" class="btn btn_fom center_flex">
+                  Find out more
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt0px">
       <div class="row" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp" class="img-responsive" alt="HappierMe">
@@ -56,13 +89,13 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
             <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
-              Develop your Emotional Intelligence.
+              Develop your Emotional Intelligence
             </h1>
           </div>
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb0px">
             <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
-              Understand your mind and be happier.
+              Understand your mind and be happier
             </h2>
           </div>
 
@@ -74,8 +107,10 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-              <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                Try HappierMe for free
+              <!-- <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
+              <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                <!-- Try HappierMe for free -->
+                Start your free trial
               </a>
             </div>
           </div>
@@ -123,7 +158,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
@@ -157,7 +192,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
@@ -191,7 +226,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
@@ -202,6 +237,46 @@
               </div>
             </div>
 
+          </div>
+        </div>
+
+        <div class="row center_flex display_m_none">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc aspects_outer">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -233,11 +308,13 @@
       </section>
       <!-- /video -->
 
-      <div class="row mt100px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+      <div class="row center_flex mt100px">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-            <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-              Try HappierMe for free
+            <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
+            <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+              <!-- Try HappierMe for free -->
+              Start your free trial
             </a>
           </div>
         </div>
@@ -288,7 +365,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_weh">
                       <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
                         HappierMe for 
                         <br>
@@ -312,7 +389,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_weh">
                       <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
                         HappierMe for 
                         <br>
@@ -336,7 +413,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_weh">
                       <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
                         HappierMe for 
                         <br>
@@ -360,7 +437,7 @@
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_block">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp" class="img-responsive desktop" alt="Teenagers">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp" class="img-responsive desktop" alt="Teenagers">
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cpl40px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -388,11 +465,13 @@
       </section>
       <!-- /teenagers -->
 
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+      <div class="row center_flex mt100px">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-            <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-              Try HappierMe for free
+            <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
+            <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+              <!-- Try HappierMe for free -->
+              Start your free trial
             </a>
           </div>
         </div>
@@ -1106,7 +1185,7 @@
       <!-- /testimonials -->
 
       <!-- subscription -->
-      <section>
+      <section id="div_subscription">
         <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 

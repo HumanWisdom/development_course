@@ -6,6 +6,7 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { TeenagersService } from '../../teenagers.service';
 import { Location } from '@angular/common';
+import { ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-develop-a-calm-mind',
@@ -54,5 +55,27 @@ export class DevelopACalmMindPage implements OnInit {
     // if (url == null) {
       this.location.back();
     // }
+  }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url, 'F', title])
+    }else{
+      let concat = encodeURIComponent(url.replaceAll('/','~'));
+      if ( SharedService.ProgramId == ProgramType.Teenagers) {
+        this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title])
+      }
+      else{
+        this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+      }
+    }
+  }
+
+  determineVideoUrl(url): string {
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      return `/teenagers/videopage/${url}`;
+    } else {
+      return `/adults/videopage/${url}`;
+    }
   }
 }

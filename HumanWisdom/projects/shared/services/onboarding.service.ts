@@ -288,4 +288,154 @@ export class OnboardingService {
   submitProgressQuestion(data: any): Observable<any> {
     return this.http.post(this.path + '/userProgressQuestion', data)
   }
+
+  guestEmailLogin(id = '') {
+    let email = 'guest@humanwisdom.me';
+    let password = '12345';
+    let userId;
+    let loginResponse;
+    let modaldata = {};
+    let name;
+    let isSubscribe;
+    let streak;
+    let text = 2;
+    let video = 3;
+    let audio = 4;
+    let question = 6;
+    let reflection = 5;
+    let feedbackSurvey = 7;
+    let moduleId = 7;
+    let Subscriber;
+    let userName;
+    let mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
+    let mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
+    let saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+    this.emailLogin(email, password)
+      .subscribe(
+        res => {
+          loginResponse = res
+          userId = res.UserId
+          if (res.Subscriber === 0) {
+            isSubscribe = true;
+          }
+          let guest = localStorage.getItem('guest');
+          if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+          else localStorage.setItem("guest", 'F')
+          localStorage.setItem("text", JSON.stringify(2))
+          sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+          localStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+          localStorage.setItem("token", JSON.stringify(res.access_token))
+          localStorage.setItem("Subscriber", res.Subscriber)
+          localStorage.setItem("userId", JSON.stringify(userId))
+          localStorage.setItem("email", email)
+          localStorage.setItem("pswd", password)
+          localStorage.setItem("name", res.Name);
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            name = nameupdate
+          } else {
+            name = res.Name
+          }
+          streak = res.Streak
+          let namedata = localStorage.getItem('name').split(' ')
+          modaldata['email'] = localStorage.getItem('email');
+          modaldata['firstname'] = namedata[0];
+          modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+          localStorage.setItem("video", JSON.stringify(video))
+          localStorage.setItem("audio", JSON.stringify(audio))
+          localStorage.setItem("moduleId", JSON.stringify(moduleId))
+          localStorage.setItem("question", JSON.stringify(question))
+          localStorage.setItem("reflection", JSON.stringify(reflection))
+          localStorage.setItem("feedbackSurvey", JSON.stringify(feedbackSurvey))
+          userId = JSON.parse(localStorage.getItem("userId"))
+          Subscriber = localStorage.getItem('Subscriber')
+          localStorage.setItem("mediaAudio", JSON.stringify(mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(mediaVideo))
+          if (localStorage.getItem("token") && (saveUsername == true)) {
+            userId = JSON.parse(localStorage.getItem("userId"))
+            userName = JSON.parse(localStorage.getItem("userName"))
+          }
+          else {
+            userId = JSON.parse(sessionStorage.getItem("userId"))
+            userName = JSON.parse(sessionStorage.getItem("userName"))
+          }
+          this.getBookmark(userId)
+          if (res.UserId == 0) {
+
+          }
+          else {
+            userId = res.UserId
+            userName = res.Name
+            sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+            localStorage.setItem("userId", JSON.stringify(userId))
+            localStorage.setItem("token", JSON.stringify(res.access_token))
+            if (saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(userId))
+              localStorage.setItem("userEmail", JSON.stringify(email))
+              localStorage.setItem("userName", JSON.stringify(userName))
+            }
+            else {
+              sessionStorage.setItem("userId", JSON.stringify(userId))
+              sessionStorage.setItem("userEmail", JSON.stringify(email))
+              sessionStorage.setItem("userName", JSON.stringify(userName))
+            }
+          }
+          if (id !== '') {
+            this.activateModule(id);
+          }
+        },
+        error => { console.log(error) },
+        () => {
+        }
+      )
+  }
+
+  getBookmark(userid) {
+    this.getBookmarks(userid)
+      .subscribe(res => {
+        let bookmarks = res
+        bookmarks = bookmarks.map(a => parseInt(a.ScrNo));
+        localStorage.setItem("bookmarkList", JSON.stringify(bookmarks))
+      })
+  }
+  getBookmarks(data: any): Observable<any> {
+    return this.http.get(this.path + `/UserBookMarks/${data}`)
+  }
+
+   activateModule(id, lastVisitedurl = '', indexUrl = '') {
+    let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
+    let pgResume;
+    let mediaPercent;
+    localStorage.setItem("moduleId", JSON.stringify(id))
+    this.clickModule(id, userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        let qrList = res
+        pgResume = "s" + res.lastVisitedScreen
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        sessionStorage.setItem("pgResume", pgResume)
+        mediaPercent = parseInt(res.MediaPercent);
+        localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(qrList))
+        console.log(qrList)
+      }, error => {
+        console.log(error)
+      },
+        () => {
+          // if (lastVisitedurl !== '' && indexUrl !== '') {
+          //   if (pgResume && pgResume !== '') {
+          //     this.router.navigate([`${lastVisitedurl}/${pgResume}`])
+          //   } else {
+          //     this.router.navigate([`${indexUrl}`])
+          //   }
+          // }
+        })
+  }
 }

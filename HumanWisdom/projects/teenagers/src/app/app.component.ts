@@ -35,8 +35,8 @@ export class AppComponent implements OnDestroy {
   enablefooter = false;
 
   constructor(private navigationService: NavigationService,
-     private router: Router,
-      private services: TeenagersService) {
+    private router: Router,
+    private services: TeenagersService) {
     SharedService.ProgramId = 11;
     moengage.initialize({
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
@@ -91,7 +91,7 @@ export class AppComponent implements OnDestroy {
       this.enableplaystore = false;
       this.isShowHeader = true;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
       || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard")) {
@@ -109,7 +109,7 @@ export class AppComponent implements OnDestroy {
       }
       this.isShowHeader = true;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if ((this.router.url == "/teenagers/journal") ||
       this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
@@ -123,7 +123,7 @@ export class AppComponent implements OnDestroy {
       this.enableplaystore = false;
       this.isShowHeader = false;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     let reg = new RegExp('forum')
     if ((reg.test(this.router.url))) {
@@ -137,7 +137,7 @@ export class AppComponent implements OnDestroy {
       this.enableplaystore = false;
       this.isShowHeader = false;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if (this.router.url == "/onboarding/user-profile"
       || this.router.url.includes('/profile-edit')) {
@@ -150,7 +150,7 @@ export class AppComponent implements OnDestroy {
       this.enableplaystore = false;
       this.isShowHeader = false;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if (this.router.url == "/teenagers/notification") {
       this.dash = false
@@ -162,15 +162,13 @@ export class AppComponent implements OnDestroy {
       this.enableplaystore = false;
       this.isShowHeader = true;
       this.isLoginPage = false;
-      enable = true;
+      return true;
     }
     if (this.router.url == "/teenagers/onboarding/login") {
       this.isLoginPage = true;
     }
-    this.isShowHeader = this.isShowHeader;
-    if (enable) {
-      this.enablefooter = true
-    }
+    this.isShowHeader = false;
+    return false;
   }
 
   getplaystore(event) {

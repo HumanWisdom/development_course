@@ -10,7 +10,8 @@ import { SharedService } from '../../../services/shared.service';
 })
 export class ContactUsPage implements OnInit {
   isAdults: boolean = true; 
-  constructor(private location: Location) {
+
+  constructor(private location: Location) { 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {

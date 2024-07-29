@@ -110,12 +110,6 @@ export class MyHammerConfig extends HammerGestureConfig {
                 ]
             } as SocialAuthServiceConfig,
         },
-        {
-          provide: APP_INITIALIZER,
-          useFactory: initDependency,
-          deps: [AdultsService],
-          multi: true,
-        },
         AudioVideoGuard,
         EnableRouteGuard
     ],

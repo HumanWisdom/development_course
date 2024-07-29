@@ -39,7 +39,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   viewMore = [];
   viewLess = [];
   isViewMore = true;
-  isAdults: boolean = true; 
+  isAdults: boolean = true;
   dailyCheckIn:any;
 
   constructor(
@@ -164,14 +164,13 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   getDailyQuestion() {
     this.service.getDailyQuestion(this.userId).subscribe(
       (res) => {
-        console.log("daily", res);
         this.d = res;
         this.dailyQuestion = res[0].Qtn;
         this.dailyResponse = res[0].Ans;
         /* if(this.dailyResponse==null)
         this.dailyResponse="Start Typing"*/
         this.dailyId = res[0].QueId;
-        
+
       },
       (error) => {
         console.log(error);
@@ -180,7 +179,6 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   }
 
   addDailyQuestion(id) {
-    console.log(id, this.dailyResponse);
     this.service
       .addDailyQuestion({
         SubscriberID: this.userId,
@@ -195,7 +193,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       );
   }
   NavigateToQuestions(data) {
-  
+
     this.router.navigate([SharedService.getUrlfromFeatureName('guidedquestions')], {
       queryParams: { Qid: data.ProgId, Attempt: data.UserReflectionID },
     });

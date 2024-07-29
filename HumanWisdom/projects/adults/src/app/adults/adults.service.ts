@@ -104,7 +104,6 @@ export class AdultsService {
     return this.http.post(this.path + '/AddUserReflection', data)
   }
   getBookmarks(data: any): Observable<any> {
-
     return this.http.get(this.path + `/UserBookMarks/${data}`)
   }
 
@@ -478,7 +477,7 @@ export class AdultsService {
           localStorage.setItem("email", email)
           localStorage.setItem("pswd", password)
           localStorage.setItem("name", res.Name);
-          this.freescreens();
+         // this.freescreens();
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
@@ -516,7 +515,7 @@ export class AdultsService {
             // this.getProgress()
             this.getBookmark(userId)
           }, 1000);
-
+  
           if (res.UserId == 0) {
 
           }
@@ -554,7 +553,6 @@ export class AdultsService {
         bookmarks = bookmarks.map(a => parseInt(a.ScrNo));
         localStorage.setItem("bookmarkList", JSON.stringify(bookmarks))
       })
-
   }
 
 

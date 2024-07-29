@@ -201,6 +201,25 @@
     {
         max-height: 40px;
     }
+
+    .display_m_none
+    {
+        display: none !important;
+    }
+
+    .display_d_none
+    {
+        display: block !important;
+    }
+}
+
+@media (max-width: 1024px)
+{
+    .img_teens_launch
+    {
+        height: 240px;
+        object-fit: cover;
+    }
 }
 
 @media (min-width: 1200px)
@@ -213,7 +232,7 @@
 
 @media (min-width: 1920px)
 {
-    [class^="col-xl-4"]
+    /* [class^="col-xl-4"]
     {
         width: 33.33%;
     }
@@ -221,5 +240,5 @@
     [class^="col-lg-10"]
     {
         width: 980px;
-    }
+    } */
 }

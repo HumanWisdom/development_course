@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 export class authLoginGuard implements CanActivate, OnInit {
   t: any
 
-  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService, private onboarding: OnboardingService) {
+  constructor(public router: Router, private url: ActivatedRoute,
+     private service: AdultsService, private onboarding: OnboardingService,
+    private commonService:CommonService) {
 
   }
   ngOnInit() {
@@ -19,6 +22,12 @@ export class authLoginGuard implements CanActivate, OnInit {
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     let m: any = window.location.href;
+    if(localStorage.getItem('isloggedin') == 'F'){
+        this.onboarding.guestEmailLogin('');
+        setTimeout(() => {
+          this.commonService.freescreens();
+        }, 1000);
+    }
     m = m.split('?')
     let cookie = false;
     let affrefcode = '';

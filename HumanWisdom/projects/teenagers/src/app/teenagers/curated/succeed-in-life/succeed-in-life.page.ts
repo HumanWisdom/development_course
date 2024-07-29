@@ -67,6 +67,12 @@ export class SucceedInLifePage implements OnInit {
           id: 60,
           url: '/podcasts/60.mp3',
           title: ' How can we be successful?'
+        },
+        pc05: 
+        {
+          id: 75,
+          url: '/podcasts/75.mp3',
+          title: 'Making better decisions'
         }
 
 

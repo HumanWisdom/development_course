@@ -18,7 +18,7 @@ export class NavigationService {
       if (urltoCheck) {
         let isNan = isNaN(urltoCheck[urltoCheck.length - 1]);
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
-          if (this.history.length>0 && this.history[this.history.length-1] != url) { 
+          if (this.history.length>0 && this.history[this.history.length-1] != url) {
             this.history.push(url);
           } else if(this.history[this.history.length-1] != url) {
             this.history.push(url);
@@ -26,7 +26,7 @@ export class NavigationService {
         }
       }
     }
-  
+
     this.backClicked = false;
   }
 
@@ -45,11 +45,12 @@ export class NavigationService {
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
      , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4',
-     's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid','/curated/youtubelink/','why-do-i','how-can-i'
+     's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid',
+     '/curated/youtubelink/','why-do-i','how-can-i'
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3'
+     'mp3','coach/profile/','coach/contact/'
   ]
   var isValid = false;
   for(var item of wholeUrlCheckKeywords){
@@ -57,7 +58,7 @@ export class NavigationService {
       isValid = true;
      }
   }
-  
+
   return exceptions.some(exception => urltoCheck.includes(exception)) || urltoCheck == 's0' || isValid ;
 }
 
@@ -87,11 +88,10 @@ export class NavigationService {
         prevPath = this.history[this.history.length - 1];
 
 
-        console.log(`Going back to: ${prevPath}`);
     } else {
         console.log("Cannot go back. History is empty.");
     }
-    
+
     return prevPath ;
 }
 }

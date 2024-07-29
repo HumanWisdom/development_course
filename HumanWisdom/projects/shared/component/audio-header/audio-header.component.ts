@@ -63,7 +63,6 @@ export class AudioHeaderComponent implements OnInit {
     }
 
     this.progUrl = JSON.parse(JSON.stringify(this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1)));
-    console.log("url=" + this.progUrl);
     this.showheaderbar = true;
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
