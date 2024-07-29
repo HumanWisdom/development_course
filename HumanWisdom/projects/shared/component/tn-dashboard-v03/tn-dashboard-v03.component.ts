@@ -36,7 +36,9 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   ios = false;
   cardlist = [];
   countryCode: any;
-  userDetails: any = [];
+  @Input() userDetails: any = [];
+  userdetail:any;
+
   loginResponse: any;
   subscription: Subscription;
   @Input() isLoginPage: boolean = false;
@@ -82,17 +84,25 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     }
     return this.subscriber;
   }
+
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes?.enableHamburger?.currentValue) {
-      this.enableHamburger = changes.enableHamburger.currentValue;
+    if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
+      if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
+        this.enableHamburger = changes.enableHamburger.currentValue;
+      }
     }
 
-    if (changes?.isLoginPage?.currentValue) {
-      this.isLoginPage = changes.isLoginPage.currentValue;
+    if(changes && changes.isLoginPage && !changes.isLoginPage.firstChange){
+      if(changes.isLoginPage.currentValue != changes.isLoginPage.previousValue){
+        this.isLoginPage = changes.isLoginPage.currentValue;
+      }
     }
 
-    if (changes?.isShowHeader?.currentValue) {
-      this.isShowHeader = changes.isShowHeader.currentValue;
+
+    if(changes && changes.isShowHeader && !changes.isShowHeader.firstChange){
+      if(changes.isShowHeader.currentValue != changes.isShowHeader.previousValue){
+        this.isShowHeader = changes.isShowHeader.currentValue;
+      }
     }
   }
 
@@ -114,13 +124,13 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
           this.isShowbookMark = false;
         }
         let userId = JSON.parse(localStorage.getItem("userId"))
-
-        this.Onboardingservice.getuser(userId).subscribe((res) => {
-          this.userDetails = res;
-          let userdetail = res[0];
-          this.url = userdetail['UserImagePath'].split('\\')[1]
-          this.name = localStorage.getItem('name');
-        });
+        let userdetail = localStorage.getItem("userDetails");
+        if(userdetail){
+          let detail = JSON.parse(userdetail);
+          if (detail && detail['UserImagePath'] != '') {
+            this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+          }
+        }
         this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
       }
     });
