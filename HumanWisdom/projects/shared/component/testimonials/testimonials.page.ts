@@ -19,9 +19,10 @@ export class TestimonialsPage implements OnInit,OnDestroy {
   divId :any;
   constructor(private location :Location,private meta: Meta, public logeventservice: LogEventService, private title: Title) { 
    this.divId = SharedService.getDataFromLocalStorage(Constant.TestimonialId);
+   this.isAdults = SharedService.isAdultProgram();
    if(this.divId && this.divId !=null && this.divId!='' && this.divId!='null' ){
     this.scroll_to_Testimonial();
-    this.isAdults = SharedService.isAdultProgram();
+  
    }
   }
 

@@ -26,7 +26,7 @@ export class DevelopACalmMindPage implements OnInit {
 
   constructor(public router: Router, public service: AdultsService,
     public logeventservice: LogEventService,
-    private location: Location, private navigationService: NavigationService) 
+    private location: Location, private navigationService: NavigationService)
     {
       this.mediaUrl = {
         url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3',
@@ -67,7 +67,6 @@ export class DevelopACalmMindPage implements OnInit {
   }
 
   routeVideoaudio(type, url, title = '') {
-    console.log(url)
     if(type === 'video') {
      this.router.navigate([url, 'F', title])
     }else{

@@ -22,7 +22,7 @@ export class QuestionsPage implements OnInit {
   length: number = 0;
   isChanged = false;
   userId: number = 0;
-  isAdults: boolean = true; 
+  isAdults: boolean = true;
 
   constructor(private commonService: CommonService, private router: ActivatedRoute
     , private route: Router,private navigationService:NavigationService) {
@@ -87,7 +87,7 @@ export class QuestionsPage implements OnInit {
     }
     this.commonService.AddGuidedQs_Response(data).subscribe(res => {
       if (res) {
-        
+
       }
     });
   }
@@ -169,6 +169,8 @@ export class QuestionsPage implements OnInit {
     }
     this.commonService.AddGuidedQs_Response(data).subscribe(res => {
       this.saveBtn.nativeElement.click();
+    }, (e) =>{
+      console.log(e?.Message);
     });
   }
 

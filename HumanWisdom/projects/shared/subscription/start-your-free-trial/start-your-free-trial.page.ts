@@ -45,15 +45,14 @@ constructor(private router: Router,private location: Location, private servive: 
     if((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
       window.history.go(-2)
     }else {
-     
+
 
     var url = this.navigateService.goBack();
 
-       console.log(url);
 
       if(url==null){
         this.router.navigateByUrl(SharedService.getDashboardUrls());
-      }  
+      }
       else
       this.router.navigateByUrl(url);
     }

@@ -119,7 +119,7 @@ export class WisdomScalePage implements OnInit {
       }
 
     });
-    
+
 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -197,14 +197,12 @@ export class WisdomScalePage implements OnInit {
   }
 
   receiveRating(e) {
-    console.log(e)
     e = JSON.parse(e)
     switch (e.Id) {
       case "1": {
         this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        
+
         this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
-        console.log("selected rating", this.s1)
         break;
       }
       case "2": {
@@ -213,61 +211,52 @@ export class WisdomScalePage implements OnInit {
         // this.optionList2.sort((a, b) => a.OptId - b.OptId);
         // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
         this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
-        
+
         break;
       }
       case "3": {
         this.rating3 = (e.Rating == 0) ? (1) : e.Rating
         this.s3 = this.optionList3.find(x => x.Points == this.rating3).OptId
-        console.log("selected rating", this.s3)
         break;
       } case "4": {
         this.rating4 = (e.Rating == 0) ? (1) : e.Rating
         this.s4 = this.optionList4.find(x => x.Points == this.rating4).OptId
-        console.log("selected rating", this.s4)
         break;
       } case "5": {
         this.rating5 = (e.Rating == 0) ? (1) : e.Rating
         this.s5 = this.optionList5.find(x => x.Points == this.rating5).OptId
-        console.log("selected rating", this.s5)
         break;
       } case "6": {
         this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
         this.s6 = this.optionList6.find(x => x.Points == this.rating6).OptId
-        console.log("selected rating", this.s6)
         break;
 
       }
       case "7": {
         this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
         this.s7 = this.optionList7.find(x => x.Points == this.rating7).OptId
-        console.log("selected rating", this.s7)
         break;
 
       }
       case "8": {
         this.rating8 = (e.Rating == 0) ? (1) : e.Rating
         this.s8 = this.optionList8.find(x => x.Points == this.rating8).OptId
-        console.log("selected rating", this.s8)
         break;
 
       }
       case "9": {
         this.rating9 = (e.Rating == 0) ? (1) : e.Rating
         this.s9 = this.optionList9.find(x => x.Points == this.rating9).OptId
-        console.log("selected rating", this.s9)
         break;
 
       }
       case "10": {
         this.rating10 = (e.Rating == 0) ? (1) : e.Rating
         this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
-        console.log("selected rating", this.s10)
         break;
 
       }
       default: {
-        console.log("week")
         break;
       }
     }
@@ -285,7 +274,6 @@ export class WisdomScalePage implements OnInit {
 
   findQuestion(q) {
     var optionList = []
-    console.log(q, "questionId")
     for (var i = 0; i < this.questionA.length; i++) {
       if (this.questionA[i].CorrectAns == "0")
         this.questionA[i].CorrectAns = false
@@ -296,7 +284,6 @@ export class WisdomScalePage implements OnInit {
         optionList.push(this.questionA[i])
       }
     }
-    console.log(question, optionList)
     return ({ "Question": question, "optionList": optionList })
   }
 
@@ -307,7 +294,7 @@ export class WisdomScalePage implements OnInit {
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
     this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
     localStorage.setItem("wisdomScore", this.wisdomScore)
-    
+
     this.option = optionT.join()
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,

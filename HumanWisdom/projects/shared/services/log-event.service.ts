@@ -27,6 +27,7 @@ export class LogEventService {
     // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })
     // gtag('event', eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser })
     this.analytics.logEvent(eventName, { UserName: name });
+    this.analytics.logEvent(eventName, { APP: deviceInfo });
     this.analytics.logEvent(eventName, { DeviceOS: device_info.os });
     this.analytics.logEvent(eventName, { device: device_info.device });
     this.analytics.logEvent(eventName, { userAgent: device_info.userAgent });
