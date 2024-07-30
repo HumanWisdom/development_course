@@ -3,7 +3,7 @@ import { UntypedFormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService } from "../../services/shared.service";
+import { SharedService, UrlConstant } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
 import { Location } from '@angular/common';
 @Component({
@@ -198,12 +198,9 @@ export class ForgetPasswordPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
+  
   back(){
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    }else{
-      this.router.navigate([url]);
-    }
+    let url = SharedService.getUrlfromFeatureName(UrlConstant.login);
+    this.router.navigate([url]);
   }
 }
