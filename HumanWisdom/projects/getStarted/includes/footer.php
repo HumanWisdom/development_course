@@ -143,7 +143,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
             </a>
 
-            <a href="https://www.instagram.com/happiermeapp/" target="_blank">
+            <a href="https://www.instagram.com/happierme_app/" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
             </a>
 
@@ -182,7 +182,7 @@
   <!-- /desktop -->
 
   <!-- mobile -->
-  <div class="row center_flex display_d_none">
+  <div class="row center_flex display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
       <div class="panel-group" id="accordion_footer">
         <div class="panel panel-default">
@@ -359,7 +359,7 @@
     </div>
   </div>
 
-  <div class="row center_flex mt40px display_d_none">
+  <div class="row center_flex mt40px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
         <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567">
@@ -375,13 +375,13 @@
     </div>
   </div>
 
-  <div class="row center_flex mtb30px display_d_none">
+  <div class="row center_flex mtb30px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter dfooter_social_links_ext">
       <a href="https://facebook.com/happiermeapp/">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
       </a>
 
-      <a href="https://www.instagram.com/happiermeapp/">
+      <a href="https://www.instagram.com/happierme_app/">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
       </a>
 
@@ -399,7 +399,7 @@
     </div>
   </div>
 
-  <div class="row center_flex mt30px display_d_none">
+  <div class="row center_flex mt30px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
         Copyright © 2024 HappierMe. All rights reserved

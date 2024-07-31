@@ -25,7 +25,7 @@
         </ul>
       </nav>
 
-      <a class="btn_tff" href="https://onelink.to/qsptex">Try for free</a>
+      <a class="btn_tff btn_tff_tn" href="https://onelink.to/qsptex">Try for free</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>
