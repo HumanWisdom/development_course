@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, ChangeDetectorRef } from "@angular/core";
 import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
@@ -20,7 +20,7 @@ import { debounceTime, throttleTime } from "rxjs/operators";
   templateUrl: "./hamburger.component.html",
   styleUrls: ["./hamburger.component.scss"],
 })
-export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
+export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDestroy {
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closeLogoutmodal') closeLogoutmodal: ElementRef;
   isHamburgerClicked = false;
@@ -52,7 +52,8 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
     private router: Router,
     private Onboardingservice: OnboardingService,
     public platform: Platform,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private cd:ChangeDetectorRef
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -125,14 +126,7 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
 
 
   public getImageUrl() {
-    let userdetail = localStorage.getItem("userDetails");
-    if(userdetail){
-      let detail = JSON.parse(userdetail);
-      if (detail && detail['UserImagePath'] != '') {
-        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
-      }
-    }
-    return this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
+   
   }
 
   ngOnInit() {
@@ -470,5 +464,20 @@ export class HamburgerComponent implements OnInit, OnChanges, OnDestroy {
   ngOnDestroy() {
     // this.closemodal?.nativeElement?.click();
     this.toursubscription.unsubscribe();
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      let userdetail = localStorage.getItem("userDetails");
+      if(userdetail){
+        let detail = JSON.parse(userdetail);
+        if (detail && detail['UserImagePath'] != '') {
+          this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        }
+      }
+      this.url = this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
+      this.cd.detectChanges();
+    }, 1000);
+
   }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { TeenagersService } from '../teenagers.service';
 import { UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms';
@@ -15,7 +15,7 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
   templateUrl: './teenagers-dashboard.page.html',
   styleUrls: ['./teenagers-dashboard.page.scss'],
 })
-export class TeenagersDashboardPage implements OnInit {
+export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   @ViewChild('enablemodal') enablemodal: ElementRef;
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closerefermodal') closerefermodal: ElementRef;
@@ -2059,6 +2059,12 @@ export class TeenagersDashboardPage implements OnInit {
     this.logeventservice.logEvent("Click_daily-checkin");
 
     this.router.navigate(['/teenagers/daily-checkin']);
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+        this.cd.detectChanges();
+    }, 1000);
   }
 
 }
