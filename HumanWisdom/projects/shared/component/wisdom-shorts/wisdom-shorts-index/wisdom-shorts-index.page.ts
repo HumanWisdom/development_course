@@ -58,7 +58,7 @@ export class WisdomShortsIndexPage implements OnInit {
     this.service.GetWisdomShorts().subscribe((res) => {
       if (res) {
         let res1 = new Array()
-        res1 = res.filter(p => p.display === "1" && p.ProgIDs.includes(SharedService.ProgramId))
+        res1 = res.filter(p =>  p.ProgIDs.includes(SharedService.ProgramId))
         res1.forEach(element => {
           res.splice(res.indexOf(element), 1)
           res.unshift(element)

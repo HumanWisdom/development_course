@@ -10,6 +10,7 @@ import { LogEventService } from "../../services/log-event.service";
 import { OnboardingService } from "../..//services/onboarding.service";
 import { SharedService } from "../../services/shared.service";
 import { environment } from "../../../environments/environment";
+import { NavigationService } from "../../services/navigation.service";
 
 
 declare var $: any;
@@ -107,7 +108,8 @@ export class LoginSignupPage implements OnInit {
     public logeventservice: LogEventService,
     private activate: ActivatedRoute,
     private authService: SocialAuthService,
-    private service: OnboardingService
+    private service: OnboardingService,
+    private navigtionService:NavigationService
   ) {
     this.initializeRegistrationForm();
     // let acceptCookie = localStorage.getItem('acceptcookie');
@@ -140,7 +142,12 @@ export class LoginSignupPage implements OnInit {
     //   window.history.pushState('', '', '/log-in');
     // }
     this.isAdults = SharedService.ProgramId === 9;
+    const lastUrl = this.navigtionService.getLastUrlVisited()
+    if(lastUrl!=null && lastUrl.includes('forgotpassword')){
+      this.isSignUp=false;
+    }
   }
+
   forbiddenNameValidator(
     control: AbstractControl
   ): { [key: string]: any } | null {
