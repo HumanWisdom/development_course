@@ -55,13 +55,13 @@
         <div class="row absolute_teens_launch">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_ffffff">
+              <h1 class="mtb0px fs_24px fw_600 lh_120p fc_ffffff">
                 JUST LAUNCHED!
               </h1>
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              <h2 class="mtb20px fs_24px fw_600 lh_120p fc_ffffff">
+              <h2 class="mtb20px fs_36px fw_600 lh_120p fc_ffffff">
                 HappierMe for Teenagers
               </h2>
             </div>

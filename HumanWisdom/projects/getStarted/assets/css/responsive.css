@@ -101,7 +101,14 @@
     /* responsive_fonts */
     .fs_36px 
     {
-        font-size: 27px !important;
+        /* font-size: 27px !important; */
+        font-size: 24px !important;
+    }
+
+    .fs_24px 
+    {
+        /* font-size: 27px !important; */
+        font-size: 18px !important;
     }
 
     .fs_15px 
