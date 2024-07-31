@@ -37301,4 +37301,9 @@ span
   max-height: 48vh;
   object-fit: cover;
 }
+
+.toc_adiv_mp
+{
+  margin-bottom: 30px;
+}
 /* /version - 03 */

@@ -31,11 +31,13 @@
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_landing.webp" class="img-responsive w100p" alt="Boost student wellbeing, learning and emotional intelligence">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_landing.webp" class="img-responsive w100p display_m_none" alt="Boost student wellbeing, learning and emotional intelligence">
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost student wellbeing, learning and emotional intelligence">
             </div>
           </div>
     
-          <div class="row center_flex absolute_desc" data-aos="fade-up" data-aos-delay="500">
+          <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
                 <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">

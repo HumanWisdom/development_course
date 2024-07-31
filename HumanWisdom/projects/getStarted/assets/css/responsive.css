@@ -187,7 +187,8 @@
     }
 
     .mobile,
-    .display_d_none
+    .display_d_none,
+    .display_df_none
     {
         display: none !important;
     }
@@ -217,6 +218,30 @@
     .display_d_none
     {
         display: block !important;
+    }
+
+    .display_df_none
+    {
+        display: flex !important;
+    }
+
+    .absolute_desc_m
+    {
+        position: absolute !important;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        display: flex;
+        align-items: baseline;
+    }
+
+    .header .btn_tff, .header .btn_tff:focus 
+    {
+        width: 106px;
+        height: 40px;
+        font-size: 12px;
     }
 }
 
