@@ -37249,6 +37249,14 @@ a.fc_e58d82:hover
   height: 280px;
 }
 
+.cvideo_ext_di
+{
+  /* width: auto; */
+  width: 100%;
+  max-height: 48vh;
+  object-fit: cover;
+}
+
 .toc_adiv_mp
 {
   margin-bottom: 30px;
