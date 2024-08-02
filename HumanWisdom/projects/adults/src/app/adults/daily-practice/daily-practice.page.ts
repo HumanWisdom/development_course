@@ -135,7 +135,7 @@ export class DailyPracticePage implements OnInit {
     this.logeventservice.logEvent(evtName);
   }
 
-  next() {
+  next(event) {
     this.Logevent(event);
     this.enableVideo = false;
     setTimeout(() => {
@@ -143,7 +143,7 @@ export class DailyPracticePage implements OnInit {
     }, 200);
   }
 
-  back() {
+  back(event) {
     this.Logevent(event);
     this.enableVideo = false;
     setTimeout(() => {
