@@ -5,7 +5,6 @@ import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video
 import { ActiveGuard } from '../active.guard';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { AudioVideoGuard } from '../audio-video.guard';
-import { RedeemCongratulationPage } from './redeem-congratulation/redeem-congratulation.page';
 import { authLoginGuard } from '../auth-login.guard';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
