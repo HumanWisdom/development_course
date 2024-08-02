@@ -512,11 +512,11 @@ const routes: Routes = [
   },
   {
     path: 'redeem-subscription',
-    loadChildren: () => import('./redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
   },
   {
     path: 'redeem-congratulation',
-    loadChildren: () => import('./redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
   },
   {
     path: 'intro-happierme',
@@ -536,7 +536,7 @@ const routes: Routes = [
   },
   {
     path: 'redeem-subscription-landing',
-    loadChildren: () => import('./redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
   },
   {
     path: 'blog-static',
