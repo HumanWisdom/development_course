@@ -43,6 +43,12 @@ export class MyHammerConfig extends HammerGestureConfig {
       swipe: { direction: Hammer.DIRECTION_ALL },
     };
   }
+
+  const googleLoginOptions = {
+    scope: 'profile email',
+    plugin_name:'login'
+  }; 
+  
 @NgModule({
     declarations: [AppComponent,
         BlogIndexPage,
@@ -101,7 +107,7 @@ export class MyHammerConfig extends HammerGestureConfig {
                 providers: [
                     {
                         id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com', googleLoginOptions)
                     },
                     {
                         id: FacebookLoginProvider.PROVIDER_ID,
