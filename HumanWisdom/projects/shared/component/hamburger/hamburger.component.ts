@@ -239,7 +239,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   routeToPartnerScreen() {
     this.logeventservice.logEvent('click_My_Partnership_Hamburger')
     if (this.partnerOption == "ReceiveIncome") {
-      this.router.navigate(["adults/partnership-report/income-activity"]);
+      this.router.navigate(["adults/partnership-report/income-report"]);
     } else {
       this.router.navigate([
         "/adults/partnership-report/tree-plantation-report",

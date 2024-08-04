@@ -253,7 +253,6 @@ export class IncomeActivityPage implements OnInit {
         .save();
       this.isPdfDownloading = false;
     }, 500);
-
   }
 
 

@@ -6,7 +6,7 @@ import { SubscriptionType } from '../../../../../../shared/models/program-model'
 import { Constant } from '../../../../../../shared/services/constant';
 import { paymentIntentModel } from '../../../../../../shared/models/search-data-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
-
+import {AdultsService} from '../../adults.service';
 @Component({
   selector: 'app-subscribed-unsubscribed',
   templateUrl: './subscribed-unsubscribed.page.html',
@@ -31,7 +31,7 @@ export class SubscribedUnsubscribedPage implements OnInit {
   startDate:any;
   expDate:any;
   isSubscriber:any;
-  constructor(private router :Router,private services: OnboardingService,public location:Location) { }
+  constructor(private router :Router,private services: OnboardingService,public location:Location,public adultService:AdultsService) { }
 
   ngOnInit() {
     this.isSubscriber  = SharedService.isSubscriber();
@@ -61,6 +61,23 @@ export class SubscribedUnsubscribedPage implements OnInit {
    // this.userType=localStorage.getItem('SubscriberType');
   }
 
+  Proceed(data) {
+    this.adultService.AddPartner(data).subscribe(res=> {
+      if(res!=null && res!="" && res.length>5){
+        alert(res)
+      }else{
+        this.NavigateRecieveIncome();
+      }
+    },
+    error=>{
+
+    },);
+  }
+  NavigateRecieveIncome(){
+    this.router.navigate(['adults/partnership-app/payment-bank']);
+  }
+
+  
   InitializeDefaultValues() {
     let canclled = SharedService.getDataFromLocalStorage(Constant.isFromCancelled);
     this.isFromCancelled =  (canclled == null || canclled == undefined || canclled =='null' || canclled =='') ? false : (canclled==Constant.ShortTrue) ? true:false;
@@ -100,8 +117,9 @@ export class SubscribedUnsubscribedPage implements OnInit {
 
   GetStarted(){
     this.services.navigateToUpgradeToPremium=true;
+    this.Proceed('');
     //localStorage.setItem("navigateToUpgradeToPremium","true")
-    this.router.navigate(['adults/partnership-app/referral-code']);
+    // this.router.navigate(['adults/partnership-app/referral-code']);
   }
   
       goBack(){
