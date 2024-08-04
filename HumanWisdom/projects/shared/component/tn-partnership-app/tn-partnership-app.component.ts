@@ -71,5 +71,6 @@ export class TnPartnershipAppComponent implements OnInit {
     //   })
     // }, 150);
     this.router.navigate(['/adults/partnership-webpage'], { state: { isScroll: true}}) 
-  }  
+  } 
+  
 }

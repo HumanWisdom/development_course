@@ -21,13 +21,16 @@ export class IncomeReportPage implements OnInit {
   groupedDates = [];
   currentDate = new Date();
   years: any = [];
-  totalSubscriber: number;
-  selectedYear = new Date().getFullYear().toString();
-  totalPartners: number;
-  totalRevenu: number;
+  totalSubscriber: number=0;
+  selectedYear = '0';
+  totalPartners: number = 0;
+  totalRevenu: number=0;
   isPdfDownloading = false;
   BankDet: string = null;
   isCopy: boolean = false;
+  titl:string ='0';
+  url :string = '';
+  hasIncome:boolean;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -36,10 +39,77 @@ export class IncomeReportPage implements OnInit {
   ) {
     this.InitializePartnershipReport();
   }
+  
 
   ngOnInit() {
     this.onChange(this.selectedYear);
+    let userdetail = localStorage.getItem("userDetails");
+    if(userdetail){
+      let detail = JSON.parse(userdetail);
+      if (detail && detail['UserImagePath'] != '') {
+        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      }
+    }
+    this.adultService.GetPartnerCommReport().subscribe((res) => {
+      if (res) {
+        this.partnershipReport = res;
+        if(this.partnershipReport.IncomeActivity.length>0)
+        {
+          this.hasIncome=true;
+
+        }
+        this.getMaskAccountDetails();
+        this.groupDates();
+      }
+    });
   }
+
+  
+  getMaskAccountDetails() {
+    this.BankDet =
+    "XXXXXXX " +
+    this.partnershipReport.BankDet.substring(
+      this.partnershipReport.BankDet.length - 4,
+      this.partnershipReport.BankDet.length
+    );
+  }
+
+  groupDates() {
+    this.partnershipReport.IncomeActivity.forEach((d) => {
+      let obj = {
+        SubscriptionId: "",
+        Level: "",
+        Comm_Earned: "",
+        date:0,
+        month:"",
+        PartnerName:''
+      };
+      const dt = new Date(d.CreatedOn);
+      obj.SubscriptionId = d.SubscriptionId;
+      obj.Level = d.Level;
+      obj.Comm_Earned = d.Comm_Earned;
+      obj.PartnerName=d.PartnerName;
+      const date = dt.getDate();
+      const year = dt.getFullYear();
+      const month = dt.toLocaleString("default", { month: "long" });
+      obj.date=date;
+      obj.month=month;
+      const key = `${month} ${year}`;
+      if (key in this.groupedDates) {
+        this.groupedDates[key].dates = [...this.groupedDates[key].dates, obj];
+      } else {
+        this.groupedDates[key] = {
+          year,
+          month,
+          dates: [obj],
+        };
+      }
+    });
+
+    return Object.values(this.groupedDates);
+  }
+
+
 
   InitializePartnershipReport() {
     this.partnershipReport = {
@@ -69,7 +139,7 @@ export class IncomeReportPage implements OnInit {
     const html = document.getElementById('partnershipReport');
     var options = {
       margin: [0, 0, 0, 0],
-      filename:"PartnershipIncome"
+      filename:"PartnershipIncomeActivity"
     }
     setTimeout(() => {
       html2pdf()
@@ -77,7 +147,6 @@ export class IncomeReportPage implements OnInit {
         .save();
       this.isPdfDownloading = false;
     }, 500);
-
   }
   DownloadPdf1() {
     this.isPdfDownloading = true;
@@ -165,18 +234,19 @@ export class IncomeReportPage implements OnInit {
         console.log(error);
       });
   }
+
   redirectToIncomeActivity() {
     this.router.navigate(["/adults/partnership-report/income-activity"]);
   }
 
-  getMaskAccountDetails() {
-    this.BankDet =
-      "XXXXXXX " +
-      this.partnershipReport.BankDet.substring(
-        this.partnershipReport.BankDet.length - 4,
-        this.partnershipReport.BankDet.length
-      );
-  }
+  // getMaskAccountDetails() {
+  //   this.BankDet =
+  //     "XXXXXXX " +
+  //     this.partnershipReport.BankDet.substring(
+  //       this.partnershipReport.BankDet.length - 4,
+  //       this.partnershipReport.BankDet.length
+  //     );
+  // }
 
   groupByYears(res) {
     this.years = [
