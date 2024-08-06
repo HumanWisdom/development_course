@@ -253,12 +253,12 @@
                 </div>
               </ng-container>
 
-              <ng-container *ngFor="let item of groupedDates| keyvalue">
+              <ng-container *ngFor="let item of sortedData">
                 <!-- date heading -->
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
-                      {{item.key}}
+                      {{item[1][0]}}
                     </h4>
 
                     <hr class="hr_style_v3_12">
@@ -267,7 +267,7 @@
                 <!-- /date heading -->
 
                 <div class="row_vp">
-                  <ng-container *ngFor="let val of item.value.dates">
+                  <ng-container *ngFor="let val of item[1][1].dates;">
                     <!-- partners -->
                     <div class="row box_blue_01">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -301,7 +301,41 @@
 
                       </div>
                     </div>
+             
                     <!-- /partners -->
+                  </ng-container>
+                  <ng-container *ngFor="let item of getWithdrwalData(item[1][0])">
+                    <div class="row box_blue_01">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                                {{item.Date}} {{item.Month}}
+                              </h4>
+
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                                Withdrawal
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                          <div class="row" *ngIf="partnershipReport.PartnerCount>0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 style="float: right;" class="mt0px mb5px fs_12px fw_400 lh_150p fc_e58d82">
+                               - USD {{item.WithdrawalAmt}}
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                   </ng-container>
                 </div>
               </ng-container>
@@ -324,7 +358,7 @@
 
                             <div class="col-md-4 col-sm-4 col-xs-4">
                               <h4 class="mtb0px fs_14px fw_700 lh_120p fc_ffffff">
-                                {{totalPartners}}
+                                {{totalSubscriber}}
                               </h4>
                             </div>
 
@@ -403,8 +437,10 @@
                       <tr>
                         <th style="border: 1px solid #ddd; padding: 10px;">Date</th>
                         <th style="border: 1px solid #ddd; padding: 10px; ">Subscriber Name</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; ">Subscriber ID</th>
                         <th style="border: 1px solid #ddd; padding: 10px;">Earning</th>
                       </tr>
+
                     </thead>
                     <tbody>
                       <ng-container *ngFor="let item of groupedDates| keyvalue">
@@ -412,6 +448,7 @@
                           <tr>
                             <td style="border: 1px solid #ddd; padding: 10px;">{{val.date}} {{val.month}}</td>
                             <td style="border: 1px solid #ddd; padding: 10px;"> {{val.PartnerName}}</td>
+                            <td style="border: 1px solid #ddd; padding: 10px;"> {{val.SubscriptionId}}</td>
                             <td style="border: 1px solid #ddd; padding: 10px;">${{val.Comm_Earned}}</td>
                           </tr>
                         </ng-container>
@@ -419,23 +456,9 @@
                     </tbody>
               
                     <tfoot>
-                      <!-- <tr>
-                              <td colspan="1" style="border: 1px solid #ddd; padding: 10px; font-weight: bold; ">Total</td>
-                              <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">  {{totalPartners}}</td>
-                              <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold; ">{{totalSubscriber}}</td>
-                              <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;"></td>
-                          </tr> -->
-                      <!-- <tr>
-                          <td colspan="3" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;"></td>
-                          <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">Earnings : ${{totalRevenu| number}}</td>
-                      </tr> -->
+                   
                     </tfoot>
                   </table>
-              
-                  <!-- <footer style="margin-top: 20px; text-align: right;">
-                      <p><strong>Payment Information:</strong> Please make the payment to XYZ Company.</p>
-                  </footer> -->
-              
                 </body>
               </div>
 

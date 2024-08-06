@@ -10,7 +10,8 @@ export interface PartnershipReport {
     ByPaypal:number;
     AffImgPath:string;
     TreesCnt:number;
-    PartnerCount:number;
+    PartnerCount:any;
+    WithdrawalReport:any;
 }
 
 export interface IncomeActivity {
