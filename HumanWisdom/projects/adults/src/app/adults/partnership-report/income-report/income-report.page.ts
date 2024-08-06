@@ -18,19 +18,22 @@ import html2pdf from "html2pdf.js";
 export class IncomeReportPage implements OnInit {
   partnershipReport: PartnershipReport;
   @ViewChild('screen') screen: ElementRef;
-  groupedDates = [];
+  groupedDates: any
+  withdrwalGroup=new Map();
   currentDate = new Date();
   years: any = [];
-  totalSubscriber: number=0;
-  selectedYear = '0';
+  totalSubscriber: number = 0;
+  selectedYear = new Date().getFullYear().toString();
   totalPartners: number = 0;
-  totalRevenu: number=0;
+  totalRevenu: number = 0;
   isPdfDownloading = false;
   BankDet: string = null;
   isCopy: boolean = false;
-  titl:string ='0';
-  url :string = '';
-  hasIncome:boolean;
+  titl: string = '0';
+  url: string = '';
+  sortedData: any;
+  hasIncome: boolean;
+
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -39,12 +42,12 @@ export class IncomeReportPage implements OnInit {
   ) {
     this.InitializePartnershipReport();
   }
-  
+
 
   ngOnInit() {
     this.onChange(this.selectedYear);
     let userdetail = localStorage.getItem("userDetails");
-    if(userdetail){
+    if (userdetail) {
       let detail = JSON.parse(userdetail);
       if (detail && detail['UserImagePath'] != '') {
         this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
@@ -53,9 +56,8 @@ export class IncomeReportPage implements OnInit {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
         this.partnershipReport = res;
-        if(this.partnershipReport.IncomeActivity.length>0)
-        {
-          this.hasIncome=true;
+        if (this.partnershipReport.IncomeActivity.length > 0) {
+          this.hasIncome = true;
 
         }
         this.getMaskAccountDetails();
@@ -64,52 +66,117 @@ export class IncomeReportPage implements OnInit {
     });
   }
 
-  
+
   getMaskAccountDetails() {
     this.BankDet =
-    "XXXXXXX " +
-    this.partnershipReport.BankDet.substring(
-      this.partnershipReport.BankDet.length - 4,
-      this.partnershipReport.BankDet.length
-    );
+      "XXXXXXX " +
+      this.partnershipReport.BankDet.substring(
+        this.partnershipReport.BankDet.length - 4,
+        this.partnershipReport.BankDet.length
+      );
   }
 
   groupDates() {
+    this.groupedDates = new Map();
+
+  this.partnershipReport.WithdrawalReport.forEach(element => {
+    let obj = {
+  Comm_PaidDt:'',
+  WithdrawalAmt:'',
+  Month:'',
+  Date:0,
+  Year:0
+    };
+
+    const dt = new Date(element.Comm_PaidDt);
+    obj.WithdrawalAmt = element.Withdrawal;
+    const date = dt.getDate();
+    const year = dt.getFullYear();
+    const month = dt.toLocaleString("default", { month: "long" });
+    obj.Date = date;
+    obj.Month = month;
+    obj.Year = year;
+    const key = `${month} ${year}`;
+    if (this.withdrwalGroup.has(key)) {
+      const existing = this.withdrwalGroup.get(key);
+      existing.dates.push(obj);
+      this.withdrwalGroup.set(key, existing);
+    } else {
+      this.withdrwalGroup.set(key, {
+        year,
+        month,
+        dates: [obj]
+      });
+    }
+  });
+
+
+
+
     this.partnershipReport.IncomeActivity.forEach((d) => {
       let obj = {
         SubscriptionId: "",
         Level: "",
         Comm_Earned: "",
-        date:0,
-        month:"",
-        PartnerName:''
+        date: 0,
+        month: "",
+        PartnerName: ''
       };
+
       const dt = new Date(d.CreatedOn);
       obj.SubscriptionId = d.SubscriptionId;
       obj.Level = d.Level;
       obj.Comm_Earned = d.Comm_Earned;
-      obj.PartnerName=d.PartnerName;
+      obj.PartnerName = d.PartnerName;
       const date = dt.getDate();
       const year = dt.getFullYear();
       const month = dt.toLocaleString("default", { month: "long" });
-      obj.date=date;
-      obj.month=month;
+      obj.date = date;
+      obj.month = month;
       const key = `${month} ${year}`;
-      if (key in this.groupedDates) {
-        this.groupedDates[key].dates = [...this.groupedDates[key].dates, obj];
+      
+      // Use Map's set method to add or update entries
+      if (this.groupedDates.has(key)) {
+        const existing = this.groupedDates.get(key);
+        existing.dates.push(obj);
+        this.groupedDates.set(key, existing);
       } else {
-        this.groupedDates[key] = {
+        this.groupedDates.set(key, {
           year,
           month,
-          dates: [obj],
-        };
+          dates: [obj]
+        });
       }
     });
-
+    this.sortMapByDateDescending();
     return Object.values(this.groupedDates);
   }
 
+  sortMapByDateDescending() {
+    const sortedEntries = Array.from(this.groupedDates.entries())
+      .sort(([keyA]: any, [keyB]: any) => new Date(keyB).getTime() - new Date(keyA).getTime()) as any; // Sorting in descending order
 
+    // Convert Map to Array
+    this.sortedData = Array.from(sortedEntries.entries()) as any;
+    // sortedDataArray now maintains the insertion order of the Map
+    console.log(this.sortedData);
+  }
+
+  ReverseDate(date) {
+    return date.reverse();
+  }
+
+
+  getWithdrwalData(date){
+    if( this.withdrwalGroup.has(date)){
+     return this.withdrwalGroup.get(date).dates;
+    }
+    return [];
+  }
+
+  sortedDataList(data) {
+    console.log(data);
+  }
 
   InitializePartnershipReport() {
     this.partnershipReport = {
@@ -122,7 +189,9 @@ export class IncomeReportPage implements OnInit {
       BankDet: "",
       AffImgPath: "",
       ByPaypal: 0,
-      PartnerCount: 0
+      PartnerCount: 0,
+      WithdrawalReport:[],
+      TreesCnt:0
     } as PartnershipReport;
   }
 
@@ -139,7 +208,7 @@ export class IncomeReportPage implements OnInit {
     const html = document.getElementById('partnershipReport');
     var options = {
       margin: [0, 0, 0, 0],
-      filename:"PartnershipIncomeActivity"
+      filename: "PartnershipIncomeActivity"
     }
     setTimeout(() => {
       html2pdf()
@@ -228,7 +297,7 @@ export class IncomeReportPage implements OnInit {
           "Hi! I’ve just subscribed to the amazing HappierMe app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – " + refcode + ". If you want to find out more about the partnership program – <a href='https://humanwisdom.me/adults/partnership-webpage'> https://humanwisdom.me/adults/partnership-webpage</a>"
       })
       .then((response) => {
-        
+
       })
       .catch((error) => {
         console.log(error);
