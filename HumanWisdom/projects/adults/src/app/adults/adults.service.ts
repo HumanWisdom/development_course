@@ -223,6 +223,10 @@ export class AdultsService {
     return this.http.get(this.path + `/GetDailyPractise_Question`)
   }
 
+  getDailyInspirationQuestion(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyInspiration`)
+  }
+
   submitDailypractiseQuestion(data): Observable<any> {
     return this.http.post(this.path + '/AddDailyQuestion_Response', data)
   }

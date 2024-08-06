@@ -57,18 +57,14 @@ export class WisdomShortsIndexPage implements OnInit {
   getwisdomshorts() {
     this.service.GetWisdomShorts().subscribe((res) => {
       if (res) {
-        // this.wisdomshorts = res;
         let res1 = new Array()
-        res1 = res.filter(p => p.display === "1" && p.ProgIDs.includes(SharedService.ProgramId))
-
+        res1 = res.filter(p =>  p.ProgIDs.includes(SharedService.ProgramId))
         res1.forEach(element => {
           res.splice(res.indexOf(element), 1)
           res.unshift(element)
         });
-
-        this.wisdomshorts = res;
-        this.allwisdomshorts = res;
-
+        this.wisdomshorts = res1;
+        this.allwisdomshorts = res1;
       }
     })
   }

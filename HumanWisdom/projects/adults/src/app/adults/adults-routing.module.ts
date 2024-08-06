@@ -5,7 +5,6 @@ import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video
 import { ActiveGuard } from '../active.guard';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { AudioVideoGuard } from '../audio-video.guard';
-import { RedeemCongratulationPage } from './redeem-congratulation/redeem-congratulation.page';
 import { authLoginGuard } from '../auth-login.guard';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
@@ -512,11 +511,11 @@ const routes: Routes = [
   },
   {
     path: 'redeem-subscription',
-    loadChildren: () => import('./redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
   },
   {
     path: 'redeem-congratulation',
-    loadChildren: () => import('./redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
   },
   {
     path: 'intro-happierme',
@@ -536,7 +535,7 @@ const routes: Routes = [
   },
   {
     path: 'redeem-subscription-landing',
-    loadChildren: () => import('./redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
   },
   {
     path: 'blog-static',

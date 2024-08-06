@@ -76,7 +76,7 @@ export class ChangeTopicPage implements OnInit {
     let NoOfVisits = loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits )
     
-    this.isRoutedFromLogin = NoOfVisits === '1' ? true : false;
+    this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
     
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;

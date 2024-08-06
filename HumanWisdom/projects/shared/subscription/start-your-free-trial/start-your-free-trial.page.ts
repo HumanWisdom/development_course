@@ -50,7 +50,7 @@ constructor(private router: Router,private location: Location, private servive: 
     var url = this.navigateService.goBack();
 
 
-      if(url==null){
+      if(url==null ||(url !=null &&  url.includes("start-your-free-trial"))){
         this.router.navigateByUrl(SharedService.getDashboardUrls());
       }
       else

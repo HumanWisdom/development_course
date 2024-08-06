@@ -16,7 +16,7 @@ import { SharedService } from "../../services/shared.service";
 })
 
 export class ModuleEndComponent implements OnInit, AfterViewInit {
-  isModuleCompleted: boolean = true;
+  isModuleCompleted: boolean = false;
   file: any;
   @Input() moduleImg: string;
   @Input() moduleLink: string;

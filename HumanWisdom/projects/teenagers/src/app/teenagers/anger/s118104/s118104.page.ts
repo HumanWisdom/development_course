@@ -14,13 +14,13 @@ export class S118104Page implements OnInit
 {  
   
   toc="/teenagers/anger/s118001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/112.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/130.webp"
   bg=""
   programType : ProgramType = ProgramType.Teenagers;
   moduleLink="/comparison"
-  moduleName="Fear & Anxiety "
+  moduleName="Fear Of Death "
   sectionName= "Understand Emotions";
-  moduleId=112 
+  moduleId=130
   moduleList: any = [
     {
       name: 'Reactive mind',

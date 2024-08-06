@@ -2,14 +2,14 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/adults/adult-dashboard">
+      <a class="" routerLink="/teenagers/teenager-dashboard">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        My daily practice
+        My daily inspiration
       </h1>
     </div>
 
@@ -25,7 +25,7 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_183c79 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -39,7 +39,7 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
-                            <a href="#mdp_carousel" data-slide="prev" class="skip" (click)="back('click_Breathingexercise_Previous')">
+                            <a href="#mdp_carousel" data-slide="prev" class="skip" (click)="back('click_daily_inspiration_Previous')">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 <!-- Skip -->
                                 Previous
@@ -63,7 +63,7 @@
                             </ol>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
-                            <a href="#mdp_carousel" data-slide="next" class="next" (click)="next('click_Breathingexercise_Next')">
+                            <a href="#mdp_carousel" data-slide="next" class="next" (click)="next('click_daily_inspiration_Next')">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
@@ -79,7 +79,7 @@
                     <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -120,7 +120,7 @@
                     <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -181,7 +181,7 @@
                     <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -230,7 +230,7 @@
                     <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -270,7 +270,7 @@
                     <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -297,7 +297,7 @@
                     <div class="item" [ngClass]="[dailyid === '5' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_teens.svg" alt="" class="img-responsive">
                         </div>
                       </div>
 

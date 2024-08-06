@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../../../../shared/services/shared.service';
 
 @Component({
   selector: 'app-redeem-subscription-landing',
@@ -22,11 +23,11 @@ export class RedeemSubscriptionLandingPage implements OnInit {
   route(type) {
     if(type === 'redeem') {
       localStorage.setItem('redeemlanding', 'T');
-      this.router.navigate(['/adults/redeem-subscription']);
+      this.router.navigate(['/' + SharedService.getprogramName()+ '/adults/redeem-subscription']);
     }else if(type === 'login') {
       this.enabledModal = true;
     }else if(type === 'dash') {
-      this.router.navigate(['/adults/adult-dashboard']);
+      this.router.navigate(['/' + SharedService.getprogramName()+ '/adult-dashboard']);
     }
   }
 
