@@ -222,7 +222,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a>
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '5', 'click_daily_inspiration') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Testimonials" class="crimg">
