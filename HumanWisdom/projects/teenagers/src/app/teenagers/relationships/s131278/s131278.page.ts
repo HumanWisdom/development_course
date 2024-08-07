@@ -99,11 +99,11 @@ export class S131278Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/relationships/s131279'])
+        this.router.navigate(['/teenagers/relationships/s131280'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/relationships/s131279'])
+        this.router.navigate(['/teenagers/relationships/s131280'])
       })
 
   }
