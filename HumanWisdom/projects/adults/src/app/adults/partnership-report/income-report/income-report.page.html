@@ -177,7 +177,7 @@
                     INCOME ACTIVITY
                   </h4>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tright p0">
                     <select class="form-control subscribe_select1" name="drpSelectYear" [(ngModel)]="selectedYear"
                       #mySelect (change)='onChange(mySelect.value)'>
@@ -185,7 +185,7 @@
                       <option *ngFor="let titl of years" [value]="titl">{{titl}}</option>
                     </select>
                   </div>
-                </div>
+                </div> -->
               </div>
 
 
@@ -407,8 +407,8 @@
               <!-- download pdf -->
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
-                  [ngClass]="(isPdfDownloading || partnershipReport.IncomeActivity.length == 0) ? 'op-5' : ''"
-                  [ngStyle]="{ cursor: (isPdfDownloading || partnershipReport.IncomeActivity.length == 0) ? 'not-allowed' : 'pointer'}">
+                  [ngClass]="(isPdfDownloading || partnershipReport.IncomeActivity.length == 0 || isSubscriber) ? 'op-5' : ''"
+                  [ngStyle]="{ cursor: (isPdfDownloading || partnershipReport.IncomeActivity.length == 0 || isSubscriber) ? 'not-allowed' : 'pointer'}">
                   <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt=""
                       class="img-responsive mr10px">

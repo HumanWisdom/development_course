@@ -9,6 +9,7 @@ import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
 import jspdf from "jspdf";
 import html2pdf from "html2pdf.js";
+import { SharedService } from "../../../../../../shared/services/shared.service";
 
 @Component({
   selector: "app-income-report",
@@ -33,13 +34,14 @@ export class IncomeReportPage implements OnInit {
   url: string = '';
   sortedData: any;
   hasIncome: boolean;
-
+  isSubscriber:boolean = false;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
     public router: Router,
     private location: Location
   ) {
+    this.isSubscriber = SharedService.isSubscriber()
     this.InitializePartnershipReport();
   }
 
@@ -219,6 +221,7 @@ export class IncomeReportPage implements OnInit {
   }
 
   DownloadPdf() {
+    if(this.isSubscriber){
     this.isPdfDownloading = true;
     const html = document.getElementById('partnershipReport');
     var options = {
@@ -232,32 +235,10 @@ export class IncomeReportPage implements OnInit {
       this.isPdfDownloading = false;
     }, 500);
   }
-  DownloadPdf1() {
-    this.isPdfDownloading = true;
-
-    setTimeout(() => {
-      let DATA: any = document.getElementById("partnershipReport");
-      html2canvas(DATA).then((canvas) => {
-        const imgData = canvas.toDataURL("image/jpeg")
-
-        const pdf = new jsPDF({ orientation: 'portrait' });
-
-        const imageProps = pdf.getImageProperties(imgData)
-
-        const pdfw = pdf.internal.pageSize.getWidth()
-        const test = pdf.internal.pageSize.getHeight()
-        const pdfh = (imageProps.height * pdfw) / imageProps.width
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
-        pdf.save("partnership-report.pdf");
-
-      });
-      this.isPdfDownloading = false;
-    }, 500);
+}
 
 
-
-
-  }
+  
 
   //  // let DATA: any = document.getElementById("partnershipReport");
   //   var markup = document.documentElement.innerHTML;
