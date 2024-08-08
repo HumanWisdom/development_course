@@ -78,41 +78,7 @@ export class IncomeReportPage implements OnInit {
 
   groupDates() {
     this.groupedDates = new Map();
-
-  this.partnershipReport.WithdrawalReport.forEach(element => {
-    let obj = {
-  Comm_PaidDt:'',
-  WithdrawalAmt:'',
-  Month:'',
-  Date:0,
-  Year:0
-    };
-
-    const dt = new Date(element.Comm_PaidDt);
-    obj.WithdrawalAmt = element.Withdrawal;
-    const date = dt.getDate();
-    const year = dt.getFullYear();
-    const month = dt.toLocaleString("default", { month: "long" });
-    obj.Date = date;
-    obj.Month = month;
-    obj.Year = year;
-    const key = `${month} ${year}`;
-    if (this.withdrwalGroup.has(key)) {
-      const existing = this.withdrwalGroup.get(key);
-      existing.dates.push(obj);
-      this.withdrwalGroup.set(key, existing);
-    } else {
-      this.withdrwalGroup.set(key, {
-        year,
-        month,
-        dates: [obj]
-      });
-    }
-  });
-
-
-
-
+    
     this.partnershipReport.IncomeActivity.forEach((d) => {
       let obj = {
         SubscriptionId: "",
@@ -148,8 +114,57 @@ export class IncomeReportPage implements OnInit {
         });
       }
     });
+
+    this.partnershipReport.WithdrawalReport.forEach(element => {
+      let obj = {
+        SubscriptionId: "",
+          Level: "",
+          Comm_Earned: "",
+          date: 0,
+          month: "",
+          withdrawalAmt:'',
+          PartnerName:'Withdrawal'
+      };
+  
+      const dt = new Date(element.Comm_PaidDt);
+      obj.withdrawalAmt = element.Withdrawal;
+      const date = dt.getDate();
+      const year = dt.getFullYear();
+      const month = dt.toLocaleString("default", { month: "long" });
+      obj.date = date;
+      obj.month = month;
+      const key = `${month} ${year}`;
+      // Use Map's set method to add or update entries
+      if (this.groupedDates.has(key)) {
+        const existing = this.groupedDates.get(key);
+        existing.dates.push(obj);
+        this.groupedDates.set(key, existing);
+      } else {
+        this.groupedDates.set(key, {
+          year,
+          month,
+          dates: [obj]
+        });
+      }
+    });
+
+    
     this.sortMapByDateDescending();
+  //  this.sortDatesInMap();
     return Object.values(this.groupedDates);
+  }
+
+  
+  sortDatesInMap() {
+    for (const [key, value] of this.sortedData) {
+      if (Array.isArray(value.dates)) {
+        value.dates.sort((a, b) => a - b);
+        this.sortedData.set(key, {
+          ...value,
+          dates: value.dates
+        });
+      }
+    }
   }
 
   sortMapByDateDescending() {
