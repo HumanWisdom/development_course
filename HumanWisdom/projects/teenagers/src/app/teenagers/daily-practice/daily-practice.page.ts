@@ -41,6 +41,9 @@ export class DailyPracticePage implements OnInit {
   enableAlert = false;
   content = ''
   isAdults: boolean;
+  dailyInspirationTitle = '';
+  DailyInspirationLink = '';
+
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService,
@@ -79,6 +82,12 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
+      }
+    })
+    this.service.getDailyInspirationQuestion().subscribe((res) => {
+      if (res) {
+        this.dailyInspirationTitle = res.split(';')[0]
+        this.DailyInspirationLink = res.split(';')[1];
       }
     })
     this.service.getDailypractiseQuestionins().subscribe((res) => {
