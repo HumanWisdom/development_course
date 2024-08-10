@@ -74,7 +74,9 @@ export class SubscribedUnsubscribedPage implements OnInit {
     },);
   }
   NavigateRecieveIncome(){
-    this.router.navigate(['adults/partnership-app/payment-bank']);
+
+    this.router.navigate(["adults/partnership-app/payment-income"]);
+    //this.router.navigate(['adults/partnership-app/payment-bank']);
   }
 
   

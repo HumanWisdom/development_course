@@ -35,6 +35,7 @@ export class IncomeReportPage implements OnInit {
   sortedData: any;
   hasIncome: boolean;
   isSubscriber:boolean = false;
+  tableData:any;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -88,6 +89,7 @@ export class IncomeReportPage implements OnInit {
         Comm_Earned: "",
         date: 0,
         month: "",
+        year:'',
         PartnerName: ''
       };
 
@@ -101,6 +103,7 @@ export class IncomeReportPage implements OnInit {
       const month = dt.toLocaleString("default", { month: "long" });
       obj.date = date;
       obj.month = month;
+      obj.year = year.toString();
       const key = `${month} ${year}`;
       
       // Use Map's set method to add or update entries
@@ -117,6 +120,8 @@ export class IncomeReportPage implements OnInit {
       }
     });
 
+   this.tableData = JSON.parse(JSON.stringify(this.sortMapByDateDescending()));
+
     this.partnershipReport.WithdrawalReport.forEach(element => {
       let obj = {
         SubscriptionId: "",
@@ -124,6 +129,7 @@ export class IncomeReportPage implements OnInit {
           Comm_Earned: "",
           date: 0,
           month: "",
+          year:'',
           withdrawalAmt:'',
           PartnerName:'Withdrawal'
       };
@@ -135,6 +141,7 @@ export class IncomeReportPage implements OnInit {
       const month = dt.toLocaleString("default", { month: "long" });
       obj.date = date;
       obj.month = month;
+      obj.year = year.toString();
       const key = `${month} ${year}`;
       // Use Map's set method to add or update entries
       if (this.groupedDates.has(key)) {
@@ -150,26 +157,20 @@ export class IncomeReportPage implements OnInit {
       }
     });
 
-    
-    this.sortMapByDateDescending();
-  //  this.sortDatesInMap();
+    this.sortMapByDateDescendingForReport();
+
     return Object.values(this.groupedDates);
   }
 
-  
-  sortDatesInMap() {
-    for (const [key, value] of this.sortedData) {
-      if (Array.isArray(value.dates)) {
-        value.dates.sort((a, b) => a - b);
-        this.sortedData.set(key, {
-          ...value,
-          dates: value.dates
-        });
-      }
-    }
+  sortMapByDateDescending() {
+    const sortedEntries = Array.from(this.groupedDates.entries())
+      .sort(([keyA]: any, [keyB]: any) => new Date(keyB).getTime() - new Date(keyA).getTime()) as any; // Sorting in descending order
+   return  Array.from(sortedEntries.entries()) as any;
   }
 
-  sortMapByDateDescending() {
+
+  
+  sortMapByDateDescendingForReport() {
     const sortedEntries = Array.from(this.groupedDates.entries())
       .sort(([keyA]: any, [keyB]: any) => new Date(keyB).getTime() - new Date(keyA).getTime()) as any; // Sorting in descending order
 
@@ -178,6 +179,7 @@ export class IncomeReportPage implements OnInit {
     // sortedDataArray now maintains the insertion order of the Map
     console.log(this.sortedData);
   }
+
 
   ReverseDate(date) {
     return date.reverse();
@@ -208,7 +210,8 @@ export class IncomeReportPage implements OnInit {
       ByPaypal: 0,
       PartnerCount: 0,
       WithdrawalReport:[],
-      TreesCnt:0
+      TreesCnt:0,
+      RefferalLink:''
     } as PartnershipReport;
   }
 
@@ -226,7 +229,7 @@ export class IncomeReportPage implements OnInit {
     const html = document.getElementById('partnershipReport');
     var options = {
       margin: [0, 0, 0, 0],
-      filename: "PartnershipIncomeActivity"
+      filename: "PartnershipIncomeActivity",
     }
     setTimeout(() => {
       html2pdf()
@@ -236,6 +239,8 @@ export class IncomeReportPage implements OnInit {
     }, 500);
   }
 }
+
+
 
 
   
