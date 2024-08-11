@@ -46,4 +46,7 @@ export class PaymentIncomePage implements OnInit {
   routeToDashboard(){
     this.router.navigate(['/adults/adult-dashboard'])
   }
+  routerToUpdatePaymentDetails(){
+    this.router.navigate(['adults/partnership-app/payment-bank']);
+  }
 }
