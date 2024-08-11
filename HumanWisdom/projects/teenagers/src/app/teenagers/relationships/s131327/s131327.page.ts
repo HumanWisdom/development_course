@@ -11,13 +11,13 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S131327Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="teenagers/relationships/s131001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/125.webp"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/133.webp"
   
   bg=""
-  moduleLink="/stress"
-  moduleName="Stress"
+  moduleLink="/happiness"
+  moduleName="Happiness"
   sectionName= "Transform your life - II";
-  moduleId=125
+  moduleId=133
 
   moduleList: any = [
     {

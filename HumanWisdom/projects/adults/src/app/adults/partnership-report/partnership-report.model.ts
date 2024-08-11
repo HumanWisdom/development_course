@@ -12,6 +12,7 @@ export interface PartnershipReport {
     TreesCnt:number;
     PartnerCount:any;
     WithdrawalReport:any;
+    RefferalLink:string;
 }
 
 export interface IncomeActivity {

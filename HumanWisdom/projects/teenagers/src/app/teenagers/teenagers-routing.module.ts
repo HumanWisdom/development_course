@@ -506,10 +506,6 @@ const routes: Routes = [
   {
     path: 'redeem-subscription-landing',
     loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
-  },
-  {
-    path: 'daily-inspiration/:id',
-    loadChildren: () => import('../teenagers/daily-inspiration/daily-inspiration.module').then(m => m.DailyInspirationPageModule)
   }
 ];
 

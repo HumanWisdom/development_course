@@ -9,6 +9,7 @@ import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
 import jspdf from "jspdf";
 import html2pdf from "html2pdf.js";
+import { SharedService } from "../../../../../../shared/services/shared.service";
 
 @Component({
   selector: "app-income-report",
@@ -27,19 +28,21 @@ export class IncomeReportPage implements OnInit {
   totalPartners: number = 0;
   totalRevenu: number = 0;
   isPdfDownloading = false;
-  BankDet: string = null;
+  BankDet: string = '';
   isCopy: boolean = false;
   titl: string = '0';
   url: string = '';
   sortedData: any;
   hasIncome: boolean;
-
+  isSubscriber:boolean = false;
+  tableData:any;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
     public router: Router,
     private location: Location
   ) {
+    this.isSubscriber = SharedService.isSubscriber()
     this.InitializePartnershipReport();
   }
 
@@ -68,51 +71,21 @@ export class IncomeReportPage implements OnInit {
 
 
   getMaskAccountDetails() {
-    this.BankDet =
+    if( this.partnershipReport.BankDet == ''){
+      this.BankDet = '';
+    }else{
+      this.BankDet =
       "XXXXXXX " +
       this.partnershipReport.BankDet.substring(
         this.partnershipReport.BankDet.length - 4,
         this.partnershipReport.BankDet.length
       );
+    }
   }
 
   groupDates() {
     this.groupedDates = new Map();
-
-  this.partnershipReport.WithdrawalReport.forEach(element => {
-    let obj = {
-  Comm_PaidDt:'',
-  WithdrawalAmt:'',
-  Month:'',
-  Date:0,
-  Year:0
-    };
-
-    const dt = new Date(element.Comm_PaidDt);
-    obj.WithdrawalAmt = element.Withdrawal;
-    const date = dt.getDate();
-    const year = dt.getFullYear();
-    const month = dt.toLocaleString("default", { month: "long" });
-    obj.Date = date;
-    obj.Month = month;
-    obj.Year = year;
-    const key = `${month} ${year}`;
-    if (this.withdrwalGroup.has(key)) {
-      const existing = this.withdrwalGroup.get(key);
-      existing.dates.push(obj);
-      this.withdrwalGroup.set(key, existing);
-    } else {
-      this.withdrwalGroup.set(key, {
-        year,
-        month,
-        dates: [obj]
-      });
-    }
-  });
-
-
-
-
+    
     this.partnershipReport.IncomeActivity.forEach((d) => {
       let obj = {
         SubscriptionId: "",
@@ -120,6 +93,7 @@ export class IncomeReportPage implements OnInit {
         Comm_Earned: "",
         date: 0,
         month: "",
+        year:'',
         PartnerName: ''
       };
 
@@ -133,6 +107,7 @@ export class IncomeReportPage implements OnInit {
       const month = dt.toLocaleString("default", { month: "long" });
       obj.date = date;
       obj.month = month;
+      obj.year = year.toString();
       const key = `${month} ${year}`;
       
       // Use Map's set method to add or update entries
@@ -148,11 +123,58 @@ export class IncomeReportPage implements OnInit {
         });
       }
     });
-    this.sortMapByDateDescending();
+
+   this.tableData = JSON.parse(JSON.stringify(this.sortMapByDateDescending()));
+
+    this.partnershipReport.WithdrawalReport.forEach(element => {
+      let obj = {
+        SubscriptionId: "",
+          Level: "",
+          Comm_Earned: "",
+          date: 0,
+          month: "",
+          year:'',
+          withdrawalAmt:'',
+          PartnerName:'Withdrawal'
+      };
+  
+      const dt = new Date(element.Comm_PaidDt);
+      obj.withdrawalAmt = element.Withdrawal;
+      const date = dt.getDate();
+      const year = dt.getFullYear();
+      const month = dt.toLocaleString("default", { month: "long" });
+      obj.date = date;
+      obj.month = month;
+      obj.year = year.toString();
+      const key = `${month} ${year}`;
+      // Use Map's set method to add or update entries
+      if (this.groupedDates.has(key)) {
+        const existing = this.groupedDates.get(key);
+        existing.dates.push(obj);
+        this.groupedDates.set(key, existing);
+      } else {
+        this.groupedDates.set(key, {
+          year,
+          month,
+          dates: [obj]
+        });
+      }
+    });
+
+    this.sortMapByDateDescendingForReport();
+
     return Object.values(this.groupedDates);
   }
 
   sortMapByDateDescending() {
+    const sortedEntries = Array.from(this.groupedDates.entries())
+      .sort(([keyA]: any, [keyB]: any) => new Date(keyB).getTime() - new Date(keyA).getTime()) as any; // Sorting in descending order
+   return  Array.from(sortedEntries.entries()) as any;
+  }
+
+
+  
+  sortMapByDateDescendingForReport() {
     const sortedEntries = Array.from(this.groupedDates.entries())
       .sort(([keyA]: any, [keyB]: any) => new Date(keyB).getTime() - new Date(keyA).getTime()) as any; // Sorting in descending order
 
@@ -161,6 +183,7 @@ export class IncomeReportPage implements OnInit {
     // sortedDataArray now maintains the insertion order of the Map
     console.log(this.sortedData);
   }
+
 
   ReverseDate(date) {
     return date.reverse();
@@ -191,7 +214,8 @@ export class IncomeReportPage implements OnInit {
       ByPaypal: 0,
       PartnerCount: 0,
       WithdrawalReport:[],
-      TreesCnt:0
+      TreesCnt:0,
+      RefferalLink:''
     } as PartnershipReport;
   }
 
@@ -204,11 +228,12 @@ export class IncomeReportPage implements OnInit {
   }
 
   DownloadPdf() {
+    if(this.isSubscriber){
     this.isPdfDownloading = true;
     const html = document.getElementById('partnershipReport');
     var options = {
       margin: [0, 0, 0, 0],
-      filename: "PartnershipIncomeActivity"
+      filename: "PartnershipIncomeActivity",
     }
     setTimeout(() => {
       html2pdf()
@@ -217,32 +242,12 @@ export class IncomeReportPage implements OnInit {
       this.isPdfDownloading = false;
     }, 500);
   }
-  DownloadPdf1() {
-    this.isPdfDownloading = true;
-
-    setTimeout(() => {
-      let DATA: any = document.getElementById("partnershipReport");
-      html2canvas(DATA).then((canvas) => {
-        const imgData = canvas.toDataURL("image/jpeg")
-
-        const pdf = new jsPDF({ orientation: 'portrait' });
-
-        const imageProps = pdf.getImageProperties(imgData)
-
-        const pdfw = pdf.internal.pageSize.getWidth()
-        const test = pdf.internal.pageSize.getHeight()
-        const pdfh = (imageProps.height * pdfw) / imageProps.width
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
-        pdf.save("partnership-report.pdf");
-
-      });
-      this.isPdfDownloading = false;
-    }, 500);
+}
 
 
 
 
-  }
+  
 
   //  // let DATA: any = document.getElementById("partnershipReport");
   //   var markup = document.documentElement.innerHTML;
