@@ -28,7 +28,7 @@ export class IncomeReportPage implements OnInit {
   totalPartners: number = 0;
   totalRevenu: number = 0;
   isPdfDownloading = false;
-  BankDet: string = null;
+  BankDet: string = '';
   isCopy: boolean = false;
   titl: string = '0';
   url: string = '';
@@ -71,6 +71,11 @@ export class IncomeReportPage implements OnInit {
 
 
   getMaskAccountDetails() {
+  
+    if( this.partnershipReport.BankDet == ''){
+      this.BankDet = '';
+    }
+
     this.BankDet =
       "XXXXXXX " +
       this.partnershipReport.BankDet.substring(
