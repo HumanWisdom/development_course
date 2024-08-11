@@ -71,17 +71,16 @@ export class IncomeReportPage implements OnInit {
 
 
   getMaskAccountDetails() {
-  
     if( this.partnershipReport.BankDet == ''){
       this.BankDet = '';
-    }
-
-    this.BankDet =
+    }else{
+      this.BankDet =
       "XXXXXXX " +
       this.partnershipReport.BankDet.substring(
         this.partnershipReport.BankDet.length - 4,
         this.partnershipReport.BankDet.length
       );
+    }
   }
 
   groupDates() {
