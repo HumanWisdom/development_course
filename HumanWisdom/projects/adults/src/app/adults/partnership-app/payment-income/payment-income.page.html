@@ -65,6 +65,28 @@
                         </a>
                       </div>
                     </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex mt20px">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+                       
+                        <div class="w100p">
+                         
+                          <h4 class="fw_500 fs_15px lh_150p fc_ffffff mtb0px p_rc">
+                            {{ReferralLink}}
+                          </h4>
+                        </div>
+                        <div class="div_copy_rc">
+                          <a>
+                            <img *ngIf="isCopy" (click)="copyText()" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" alt="" class="img-responsive"/> 
+                            <img *ngIf="!isCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg" alt="" class="img-responsive"/> 
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <a>
+                          <img (click)="share()" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/share.svg" alt="" class="img-responsive"/> 
+                        </a>
+                      </div>
+                    </div>
                   </div>
 
 
