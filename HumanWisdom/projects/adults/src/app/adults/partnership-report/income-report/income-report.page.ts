@@ -215,7 +215,7 @@ export class IncomeReportPage implements OnInit {
       PartnerCount: 0,
       WithdrawalReport:[],
       TreesCnt:0,
-      RefferalLink:''
+      ReferralLink:''
     } as PartnershipReport;
   }
 
