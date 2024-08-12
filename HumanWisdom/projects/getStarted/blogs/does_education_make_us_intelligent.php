@@ -4,7 +4,7 @@
   <head>
     <title>Does education make us intelligent? </title>
     <meta property="title" content="Does education make us intelligent?">
-    <meta property="description" content="Discover 10 powerful ways to transform your life by understanding your mind. Learn how self-awareness, mindfulness, and emotional intelligence can lead to personal growth and a happier life. Read more on HappierMe.">
+    <meta property="description" content="Does education make us intelligent?">
     <meta property="keyword" content="understanding your mind, mental health, self-awareness, personal growth, mindfulness, emotional intelligence, cognitive skills, mental transformation, happier life, self-improvement">
 
     <!-- vendor_header -->
