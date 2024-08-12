@@ -66,7 +66,10 @@ export class SubscribedUnsubscribedPage implements OnInit {
       if(res!=null && res!="" && res.length>5){
         alert(res)
       }else{
-        localStorage.setItem("referralCode", res);
+        //localStorage.setItem("referralCode", res);
+        localStorage.setItem("isPartner","1");
+        localStorage.setItem("CouponCode", res[0].CouponCode);
+        localStorage.setItem("ReferralLink", res[0].ReferralLink);
         this.NavigateRecieveIncome();
       }
     },
