@@ -10,9 +10,11 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class PaymentIncomePage implements OnInit {
 
   referralCode:string='';
+  ReferralLink:string='';
   isCopy=true;
   constructor(public ngNavigatorShareService: NgNavigatorShareService,public router:Router) {
-  this.referralCode=localStorage.getItem('referralCode');
+  this.referralCode=localStorage.getItem('CouponCode');
+  this.ReferralLink=localStorage.getItem('ReferralLink');
    }
 
 
@@ -45,5 +47,8 @@ export class PaymentIncomePage implements OnInit {
   }
   routeToDashboard(){
     this.router.navigate(['/adults/adult-dashboard'])
+  }
+  routerToUpdatePaymentDetails(){
+    this.router.navigate(['adults/partnership-app/payment-bank']);
   }
 }

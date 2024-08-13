@@ -66,15 +66,22 @@ export class SubscribedUnsubscribedPage implements OnInit {
       if(res!=null && res!="" && res.length>5){
         alert(res)
       }else{
+        //localStorage.setItem("referralCode", res);
+        localStorage.setItem("isPartner","1");
+        localStorage.setItem("CouponCode", res[0].CouponCode);
+        localStorage.setItem("ReferralLink", res[0].ReferralLink);
         this.NavigateRecieveIncome();
       }
     },
     error=>{
-
+           if(error.Message == "Already added as Partner"){
+               this.NavigateRecieveIncome();
+          }   
     },);
   }
   NavigateRecieveIncome(){
-    this.router.navigate(['adults/partnership-app/payment-bank']);
+    this.router.navigate(["/adults/partnership-app/payment-income"]);
+    //this.router.navigate(['adults/partnership-app/payment-bank']);
   }
 
   
