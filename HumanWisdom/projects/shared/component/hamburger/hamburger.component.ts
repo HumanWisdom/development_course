@@ -275,6 +275,9 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
     // let el: HTMLElement = document.getElementById('ispartnership');
     // el.style.display = "block";
   }
+  getPartnerInfo(){
+   return SharedService.getPartnerInfo()
+  }
 
   // let el: HTMLElement = document.getElementById('s1');
   //   el.style.transform = "translate3d(0,0,0)";
