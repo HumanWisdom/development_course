@@ -369,7 +369,8 @@
             <!-- <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
             <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
               <!-- Try HappierMe for free -->
-              Try for Free
+              <!-- Try for Free -->
+              Start your free trial now
             </a>
           </div>
         </div>
@@ -538,7 +539,8 @@
             <!-- <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
             <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
               <!-- Try HappierMe for free -->
-              Try for Free
+              <!-- Try for Free -->
+              Start your free trial now
             </a>
           </div>
         </div>
