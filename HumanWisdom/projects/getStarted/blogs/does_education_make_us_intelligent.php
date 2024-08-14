@@ -72,7 +72,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://www.canva.com/design/DAGNZOKXYSQ/ZuP1MMisqzLjtKz4g5smHA/edit?utm_content=DAGNZOKXYSQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp
                 " class="img-responsive" alt="Does education make us intelligent?
 ">
               </div>
@@ -93,7 +93,7 @@
                 Imagine someone visiting our planet and observing these facts about us — would they regard us as intelligent?
 
                 </h4>
-                <ul style="list-style-type:disc;">
+                <ul>
                     <li>1 in 6 of us have an addiction problem.
                     </li>
                      <li>42% of us are obese, and unable to regulate how much food we eat.
@@ -127,7 +127,7 @@
                 What are the hallmarks of an intelligent person?
 
                 </h4>
-                <ul style="list-style-type:disc;">
+                <ul>
                     <li>Manage their own emotions and mental health.
                     </li>
                      <li>Self regulate their habits around sleep, exercise, food, drinks and drugs.
