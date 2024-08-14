@@ -93,7 +93,7 @@
                 Imagine someone visiting our planet and observing these facts about us — would they regard us as intelligent?
 
                 </h4>
-                <ul style="list-style-type:disc;">
+                <ul>
                     <li>1 in 6 of us have an addiction problem.
                     </li>
                      <li>42% of us are obese, and unable to regulate how much food we eat.
@@ -127,7 +127,7 @@
                 What are the hallmarks of an intelligent person?
 
                 </h4>
-                <ul style="list-style-type:disc;">
+                <ul>
                     <li>Manage their own emotions and mental health.
                     </li>
                      <li>Self regulate their habits around sleep, exercise, food, drinks and drugs.
