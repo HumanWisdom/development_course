@@ -11,8 +11,8 @@ export class PaymentIncomePage implements OnInit {
 
   referralCode: string = '';
   ReferralLink: string = '';
-  isCopy = false;
-  isReferraLinkCopy = false;
+  isCopy = true;
+  isReferraLinkCopy = true;
   constructor(public ngNavigatorShareService: NgNavigatorShareService, public router: Router) {
     this.referralCode = localStorage.getItem('CouponCode');
     this.ReferralLink = localStorage.getItem('ReferralLink');
