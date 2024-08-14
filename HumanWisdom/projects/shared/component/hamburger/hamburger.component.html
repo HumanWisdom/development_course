@@ -182,7 +182,7 @@
           </div>
           <ul class="dh_ul">
 
-            <li id="isNotPartner" *ngIf="isPartner=='0'">
+            <li id="isNotPartner" *ngIf="getPartnerInfo()=='0'">
               <a (click)="RouteToBecomeAPartner()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -200,7 +200,7 @@
               </a>
             </li>
 
-            <li id="isPartner" *ngIf="isPartner=='1'">
+            <li id="isPartner" *ngIf="getPartnerInfo()=='1'">
               <a (click)="routeToPartnerScreen()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
