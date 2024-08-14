@@ -19,7 +19,7 @@ export class PaymentBankPage implements OnInit {
   isUpdate: boolean = false;
   ByPaypal: number = 0;
   isPaypalChecked: boolean = false;
-  isBankAccount:boolean = true;
+  isBankAccount:boolean = false;
   @ViewChild('postModal') postModal: any;
   constructor(
     private service: AdultsService,
@@ -152,10 +152,10 @@ export class PaymentBankPage implements OnInit {
     localStorage.removeItem("ByPaypal");
     localStorage.removeItem("isUpdate");
     if (this.isUpdate) {
-      window.history.go(-2);
+      this.router.navigate(["adults/partnership-app/payment-income"]);
     }
     else {
-      this.router.navigate(["adults/partnership-app/payment-income"]);
+      this.router.navigate(["adults/partnership-report/income-report"]);
     }
   }
 
