@@ -37316,6 +37316,13 @@ span
   border-radius: 16px;
   background: #120F40;
   padding: 24px;
-  margin: 30px 20px;
+  margin: 30px 10px;
+}
+
+.partnership_income_div
+{
+  background: #120F40;
+  border-radius: 16px;
+  padding: 20px;
 }
 /* /version - 03 */

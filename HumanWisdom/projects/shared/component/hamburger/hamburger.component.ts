@@ -66,6 +66,10 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
     this.closeEventSubject.pipe(throttleTime(1000)).subscribe(()=>{
       this.closemodal.nativeElement.click();
     })  
+
+    this.Onboardingservice.isPartnerSubject.subscribe(value => {
+      this.isPartner = value;
+    });
   }
 
   onProgramChange() {
@@ -238,13 +242,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
 
   routeToPartnerScreen() {
     this.logeventservice.logEvent('click_My_Partnership_Hamburger')
-    if (this.partnerOption == "ReceiveIncome") {
       this.router.navigate(["adults/partnership-report/income-report"]);
-    } else {
-      this.router.navigate([
-        "/adults/partnership-report/tree-plantation-report",
-      ]);
-    }
   }
 
   RouteToFaq() {
@@ -276,6 +274,9 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   dpartnership() {
     // let el: HTMLElement = document.getElementById('ispartnership');
     // el.style.display = "block";
+  }
+  getPartnerInfo(){
+   return SharedService.getPartnerInfo()
   }
 
   // let el: HTMLElement = document.getElementById('s1');
