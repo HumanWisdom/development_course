@@ -2,7 +2,7 @@ import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { environment} from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
@@ -23,7 +23,9 @@ export class OnboardingService {
   public toastrService: ToastrService
   private isEnableHam = new BehaviorSubject<boolean>(false);
   private isEnableTour = new BehaviorSubject<boolean>(false);
+  isPartnerSubject = new Subject<string>();
 
+  // Subscribe to the Subject
   constructor(private http: HttpClient, handler: HttpBackend,public toastr: ToastrService) {
     // this.http = new HttpClient(handler);
     this.toastrService=this.toastr;

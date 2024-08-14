@@ -29,13 +29,14 @@ export class IncomeReportPage implements OnInit {
   totalRevenu: number = 0;
   isPdfDownloading = false;
   BankDet: string = '';
-  isCopy: boolean = false;
+  isCopy: boolean = true;
   titl: string = '0';
   url: string = '';
   sortedData: any;
   hasIncome: boolean;
   isSubscriber:boolean = false;
   tableData:any;
+  isReferraLinkCopy = true;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -219,6 +220,24 @@ export class IncomeReportPage implements OnInit {
     } as PartnershipReport;
   }
 
+  copyText(text, type): void {
+    navigator.clipboard.writeText(text).catch(() => {
+      console.error("Unable to copy text");
+    });
+    if (type == 'link') {
+      this.isReferraLinkCopy = false;
+    } else {
+      this.isCopy = false;
+    }
+    setTimeout(() => {
+      if (type == 'link') {
+        this.isReferraLinkCopy = true;
+      } else {
+        this.isCopy = true;
+      }
+    }, 4000);
+  }
+
   getTittle() {
     if (this.isCopy) {
       return 'Copy';
@@ -228,7 +247,7 @@ export class IncomeReportPage implements OnInit {
   }
 
   DownloadPdf() {
-    if(this.isSubscriber){
+    if(!this.isPdfDownloading && this.partnershipReport.IncomeActivity.length > 0 && this.isSubscriber){
     this.isPdfDownloading = true;
     const html = document.getElementById('partnershipReport');
     var options = {
@@ -370,15 +389,4 @@ export class IncomeReportPage implements OnInit {
   goBack() {
     this.router.navigate(['adults/adult-dashboard'])
   }
-
-  copyText(referralCode): void {
-    navigator.clipboard.writeText(referralCode).catch(() => {
-      console.error("Unable to copy text");
-    });
-    this.isCopy = false;
-    setTimeout(() => {
-      this.isCopy = true;
-    }, 4000);
-  }
-
 }
