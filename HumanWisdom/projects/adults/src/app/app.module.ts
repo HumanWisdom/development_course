@@ -44,7 +44,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     };
   }
 
-  const googleLoginOptions = {
+  const googleLoginOptions:GoogleInitOptions  = {
     scope: 'profile email',
     plugin_name:'login'
   }; 

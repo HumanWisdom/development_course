@@ -31,6 +31,9 @@ export class SubscribedUnsubscribedPage implements OnInit {
   startDate:any;
   expDate:any;
   isSubscriber:any;
+// Create a new Subject
+// Subscribe to the Subject
+
   constructor(private router :Router,private services: OnboardingService,public location:Location,public adultService:AdultsService) { }
 
   ngOnInit() {
@@ -48,12 +51,14 @@ export class SubscribedUnsubscribedPage implements OnInit {
         }
       })
       this.InitializeDefaultValues();
+   
     }
     this.getCountry();
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.services.getuser(userId).subscribe((res) => {
    //  let userdetail = res[0];
      localStorage.setItem("isPartner", res[0].IsPartner);
+ 
      localStorage.setItem('PartnerOption', res[0].PartnerOption);
      localStorage.setItem('SubscriberType', res[0].SubscriberType);
 
@@ -66,13 +71,19 @@ export class SubscribedUnsubscribedPage implements OnInit {
       if(res!=null && res!="" && res.length>5){
         alert(res)
       }else{
-        localStorage.setItem("referralCode", res);
+        //localStorage.setItem("referralCode", res);
+        localStorage.setItem("isPartner","1");
+        localStorage.setItem("CouponCode", res[0].CouponCode);
+        localStorage.setItem("ReferralLink", res[0].ReferralLink);
+        this.services.updateUserDetails.next(true);
+        localStorage.setItem("isPartner","ReceiveIncome");
         this.NavigateRecieveIncome();
       }
     },
     error=>{
            if(error.Message == "Already added as Partner"){
-               this.NavigateRecieveIncome();
+            this.services.updateUserDetails.next(true);
+            this.NavigateRecieveIncome();
           }   
     },);
   }

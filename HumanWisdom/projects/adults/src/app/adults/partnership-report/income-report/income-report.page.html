@@ -47,7 +47,7 @@
 
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <button type="button" class="btn_pr_code" title="{{getTittle()}}"
-                              (click)="copyText(partnershipReport.AffRefCode)">
+                              (click)="copyText(partnershipReport.AffRefCode,'code')">
                               {{this.partnershipReport.AffRefCode}}
                             </button>
                           </div>
@@ -80,9 +80,9 @@
                       </h4>
                     </div>
                     <div class="div_copy_rc">
-                      <a (click)="copyText(partnershipReport.ReferralLink)" >
-                        <img *ngIf="isCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" alt="" class="img-responsive"/> 
-                        <img *ngIf="!isCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg" alt="" class="img-responsive"/> 
+                      <a (click)="copyText(partnershipReport.ReferralLink,'link')" >
+                        <img *ngIf="isReferraLinkCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" alt="" class="img-responsive"/> 
+                        <img *ngIf="!isReferraLinkCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg" alt="" class="img-responsive"/> 
                       </a>
                     </div>
                   </div>
@@ -267,7 +267,7 @@
 
                       <div class="div_copy_01">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg"
-                          class="img-responsive" *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)">
+                          class="img-responsive" *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode,'code')">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg"
                           class="img-responsive" *ngIf="!isCopy">
                       </div>
@@ -439,7 +439,7 @@
               <!-- download pdf -->
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
-                  [ngClass]="(isPdfDownloading || partnershipReport.IncomeActivity.length == 0 || isSubscriber) ? 'op-5' : ''"
+                  [ngClass]="(isPdfDownloading || partnershipReport.IncomeActivity.length == 0 || !isSubscriber) ? 'op-5' : ''"
                   [ngStyle]="{ cursor: (isPdfDownloading || partnershipReport.IncomeActivity.length == 0 || isSubscriber) ? 'not-allowed' : 'pointer'}">
                   <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt=""

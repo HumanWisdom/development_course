@@ -63,6 +63,14 @@ export class ForgetPasswordPage implements OnInit {
     this.email = value;
   }
 
+  ValidateEmail() {
+    if (this.email != '') {
+      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      return reg.test(this.email);
+    }
+
+  }
+
 
   googleLogin(){
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
@@ -201,6 +209,11 @@ export class ForgetPasswordPage implements OnInit {
   
   back(){
     let url = SharedService.getUrlfromFeatureName(UrlConstant.login);
-    this.router.navigate([url]);
+    if(url){
+      this.router.navigate([url]);
+    }else{
+      this.location.back();
+    }
+    
   }
 }

@@ -2,7 +2,7 @@ import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { environment} from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
@@ -23,10 +23,37 @@ export class OnboardingService {
   public toastrService: ToastrService
   private isEnableHam = new BehaviorSubject<boolean>(false);
   private isEnableTour = new BehaviorSubject<boolean>(false);
-
+  updateUserDetails = new Subject<any>();
+  getUserDetails = new Subject<any>();
+  // Subscribe to the Subject
   constructor(private http: HttpClient, handler: HttpBackend,public toastr: ToastrService) {
     // this.http = new HttpClient(handler);
     this.toastrService=this.toastr;
+    this.updateUserDetails.subscribe(val=>{
+       if(val){
+        let userId = JSON.parse(localStorage.getItem("userId"))
+        if (userId != null) {
+          this.getuser(userId).subscribe((res: any) => {
+            localStorage.setItem("isPartner", res[0].IsPartner);
+            localStorage.setItem('PartnerOption', res[0].PartnerOption);
+            localStorage.setItem("SubscriberType", res[0].SubscriberType)
+            this.getUserDetails.next(res);
+          });
+        }
+       }
+    })
+  }
+
+  
+  getuserDetail() {
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    if (userId != null) {
+      this.getuser(userId).subscribe((res: any) => {
+        localStorage.setItem("isPartner", res[0].IsPartner);
+        localStorage.setItem('PartnerOption', res[0].PartnerOption);
+        localStorage.setItem("SubscriberType", res[0].SubscriberType)
+      });
+    }
   }
 
   setEnableTour(value: boolean): void {
