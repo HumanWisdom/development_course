@@ -36,6 +36,7 @@ export class ProfileEditPage implements OnInit {
   fileName = '';
   objString: any;
   object:any;
+  isupload = false;
   @ViewChild('myText') myTextarea: ElementRef;
   constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
   ) {
@@ -58,13 +59,13 @@ export class ProfileEditPage implements OnInit {
     const byteArray= 'data:;base64,'+jsonObject.base64String;
     this.isShow = true;
     this.imageupload = byteArray;
+    this.isupload = true;
     this.byteArray = jsonObject.base64String;
     this.object = {
       "UserID": this.userId,
       "byteArray": "",
       "byteStringAndroid":jsonObject.base64String
     };
-
     setTimeout(() => {
       this.myTextarea.nativeElement.focus();
     }, 500);
@@ -129,6 +130,7 @@ export class ProfileEditPage implements OnInit {
 
     const reader = new FileReader();
     this.fileToUpload = files;
+   this.isupload = true;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       let byte: any = reader.result;
@@ -168,6 +170,7 @@ export class ProfileEditPage implements OnInit {
       if (r) {
         this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
           if (r) {
+           this.onboardingService.updateUserDetails.next(true); 
            console.log("image uplodaed successfully");
           }})
         localStorage.setItem(

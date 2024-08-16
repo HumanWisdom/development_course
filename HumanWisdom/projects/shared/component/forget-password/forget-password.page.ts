@@ -201,6 +201,11 @@ export class ForgetPasswordPage implements OnInit {
   
   back(){
     let url = SharedService.getUrlfromFeatureName(UrlConstant.login);
-    this.router.navigate([url]);
+    if(url){
+      this.router.navigate([url]);
+    }else{
+      this.location.back();
+    }
+    
   }
 }
