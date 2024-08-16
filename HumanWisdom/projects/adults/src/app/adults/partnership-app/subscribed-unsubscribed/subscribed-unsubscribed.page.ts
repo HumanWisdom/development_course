@@ -75,14 +75,14 @@ export class SubscribedUnsubscribedPage implements OnInit {
         localStorage.setItem("isPartner","1");
         localStorage.setItem("CouponCode", res[0].CouponCode);
         localStorage.setItem("ReferralLink", res[0].ReferralLink);
-        this.services.isPartnerSubject.next( res[0].IsPartner);
+        this.services.updateUserDetails.next(true);
         localStorage.setItem("isPartner","ReceiveIncome");
         this.NavigateRecieveIncome();
       }
     },
     error=>{
            if(error.Message == "Already added as Partner"){
-            this.services.isPartnerSubject.next('1');
+            this.services.updateUserDetails.next(true);
             this.NavigateRecieveIncome();
           }   
     },);
