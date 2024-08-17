@@ -100,6 +100,14 @@ import { ChangePasswordPage } from './component/change-password/change-password.
 import { SetPasswordPage } from './component/set-password/set-password.page';
 import { CommonService } from './services/common.service';
 import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.page';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,
+
+  GoogleSigninButtonDirective,
+  GoogleSigninButtonModule,
+  SocialLoginModule,
+
+
+} from '@abacritt/angularx-social-login';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -199,6 +207,8 @@ import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.pag
     NgxSliderModule,
     RouterModule,
     PlatformModule,
+    FacebookLoginProvider,
+    SocialLoginModule,
     ShareButtonsModule.withConfig({
       debug: true
     }),
