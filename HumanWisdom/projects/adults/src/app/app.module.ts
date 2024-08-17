@@ -1,6 +1,6 @@
 import { PlatformModule } from '@angular/cdk/platform';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,
+
+    GoogleSigninButtonDirective,
+    GoogleSigninButtonModule,
+    SocialLoginModule,
+
+
+ } from '@abacritt/angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
 import { StripeModule } from "stripe-angular";
 import { environment } from '../../../environments/environment';
@@ -52,8 +59,8 @@ export class MyHammerConfig extends HammerGestureConfig {
 @NgModule({
     declarations: [AppComponent,
         BlogIndexPage,
-        BlogArticlePage,
-    ],
+        BlogArticlePage
+        ],
         exports:[
             BlogIndexPage,
             BlogArticlePage
@@ -76,7 +83,8 @@ export class MyHammerConfig extends HammerGestureConfig {
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule,
         NgxJsonLdModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        GoogleSigninButtonModule
     ],
     providers: [
         StatusBar,
@@ -107,7 +115,7 @@ export class MyHammerConfig extends HammerGestureConfig {
                 providers: [
                     {
                         id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com', googleLoginOptions)
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
                     },
                     {
                         id: FacebookLoginProvider.PROVIDER_ID,
@@ -116,9 +124,11 @@ export class MyHammerConfig extends HammerGestureConfig {
                 ]
             } as SocialAuthServiceConfig,
         },
+        GoogleSigninButtonDirective,
         AudioVideoGuard,
         EnableRouteGuard
     ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

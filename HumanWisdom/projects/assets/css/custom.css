@@ -37318,4 +37318,22 @@ span
   padding: 24px;
   margin: 30px 20px;
 }
+
+.myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
+  background:#120F40 !important;
+}
+
+
+.abcRioButtonBlue .abcRioButtonIcon {
+  background:#120F40 !important;
+}
+
+
+.abcRioButtonBlue .abcRioButtonContentWrapper {
+  border: 0px !important;
+}
+
+.abcRioButtonBlue {
+  background:#120F40 !important;
+}
 /* /version - 03 */

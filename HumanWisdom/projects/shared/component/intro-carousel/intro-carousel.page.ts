@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'bcswipe';
 import { UntypedFormBuilder } from '@angular/forms';
-import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from '@abacritt/angularx-social-login';
 import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
