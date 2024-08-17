@@ -296,7 +296,6 @@ export class LoginSignupPage implements OnInit {
     }
   }
   private onSuccess(googleUser: any): void {
-    alert("logged in")
     console.log('Logged in as: ' + googleUser);
     this.idToken = googleUser.getAuthResponse().id_token;
     this.socialFirstName = googleUser.getBasicProfile().getGivenName();

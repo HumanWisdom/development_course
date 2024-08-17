@@ -432,8 +432,6 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             const auth2 = (window as any).gapi.auth2.getAuthInstance();
             if (auth2) {
               auth2.signOut().then(() => {
-                console.log('User signed out.');
-                alert("USer Signed out")
                 this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
               });
             }else {
