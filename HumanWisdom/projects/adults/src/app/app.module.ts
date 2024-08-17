@@ -10,12 +10,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,
-
     GoogleSigninButtonDirective,
     GoogleSigninButtonModule,
     SocialLoginModule,
-
-
+    SocialAuthService
  } from '@abacritt/angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
 import { StripeModule } from "stripe-angular";
