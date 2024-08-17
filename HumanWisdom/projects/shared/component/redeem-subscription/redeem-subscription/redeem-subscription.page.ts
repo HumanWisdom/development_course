@@ -46,7 +46,7 @@ export class RedeemSubscriptionPage implements OnInit {
   public registrationForm : any;
   enabledModal = false;
   landingpage = '';
-  public programName = SharedService.getprogramName();
+  public programName = '';
 
   constructor(
     public platform: Platform,
@@ -139,8 +139,9 @@ export class RedeemSubscriptionPage implements OnInit {
           if (res) {
             console.log('res');
             this.showWarning = true
-            this.yearormonth = res;
-            localStorage.setItem('yearormonth', this.yearormonth)
+            this.yearormonth = res.split('-')[0];
+            this.programName = res.split('-')[1];
+            localStorage.setItem('yearormonth', res);
             this.subthirdpage = false
             this.subfirstpage = false
             this.subsecondpage = true;

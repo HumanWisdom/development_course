@@ -23,11 +23,15 @@ export class RedeemSubscriptionLandingPage implements OnInit {
   route(type) {
     if(type === 'redeem') {
       localStorage.setItem('redeemlanding', 'T');
-      this.router.navigate(['/' + SharedService.getprogramName()+ '/adults/redeem-subscription']);
+      this.router.navigate(['/' + SharedService.getprogramName()+ '/redeem-subscription']);
     }else if(type === 'login') {
       this.enabledModal = true;
     }else if(type === 'dash') {
-      this.router.navigate(['/' + SharedService.getprogramName()+ '/adult-dashboard']);
+      if(SharedService.getprogramName() === 'teenagers') {
+        this.router.navigate(['/teenagers/teenager-dashboard'])
+      }else {
+        this.router.navigate(['/' + SharedService.getprogramName()+ '/adult-dashboard']);
+      }
     }
   }
 

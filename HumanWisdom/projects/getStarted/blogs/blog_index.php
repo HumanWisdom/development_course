@@ -366,6 +366,7 @@
                 </div>
               </a>
             </div>
+            
 
             <div class="clearfix"></div>
 
@@ -463,6 +464,111 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Addressing health problems with emotional intelligence
                     </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="does_education_make_us_intelligent.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" class="img-responsive img_blogs" alt="Addressing health problems with emotional intelligence">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Mental health
+                    </button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                    Work and Leadership
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                    Does education make us intelligent?</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="a_fresh_way_to_avoid_and_overcome_addiction.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/48.webp" class="img-responsive img_blogs" alt="A fresh way to avoid and overcome addiction">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Mental health
+                    </button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                    Breathing & Meditation
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                    A fresh way to avoid and overcome addiction
+</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="how_to_manage_anxiety_attacks.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/38.webp" 
+                    class="img-responsive img_blogs" alt="
+                    How to manage anxiety attacks">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Mental health
+                    </button>
+                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                    How to manage anxiety attacks
+
                   </div>
                 </div>
 

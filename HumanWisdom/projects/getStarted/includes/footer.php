@@ -418,3 +418,47 @@
 
 </div>
 <!-- /footer -->
+
+<!-- sticky rating banner -->
+<div class="row center_flex sticky_rating_banner">
+  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 p0 flex_ai">
+
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
+      <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_close_grey.svg" class="img-responsive">
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_footer_hwp.svg" class="img-responsive">
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
+      <h6 class="mtb0px flex_ai">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="img-responsive mr6px">
+
+        <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
+          App Store
+        </span>
+
+        <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
+          4.8
+        </span>
+
+        <span class="rating_a">
+          <i class="fa fa-star"></i>
+        </span>
+      </h6>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <a href="https://onelink.to/qsptex" class="">
+        <button class="fs_12px fw_600 lh_140p fc_ffffff btn_download" >
+          Download app
+        </button>
+      </a>
+    </div>
+
+  </div>  
+</div>
+<!-- /sticky rating banner -->

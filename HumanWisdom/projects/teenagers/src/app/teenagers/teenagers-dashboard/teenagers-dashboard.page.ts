@@ -1518,7 +1518,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     let id = '', url = '', screenNo = '';
     if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';
-      url = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleUrl'].toString() : '/adults/happiness/';
+      url = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleUrl'].toString() : '/teenagers/happiness/';
       this.service.setmoduleID(id, url, url);
     }
 
