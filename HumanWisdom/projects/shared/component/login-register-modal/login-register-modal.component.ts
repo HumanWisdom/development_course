@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output, Input, HostListener } from "@angular/core";
 import { UntypedFormBuilder, Validators, AbstractControl } from "@angular/forms";
-import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "@abacritt/angularx-social-login";
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { LogEventService } from "../../services/log-event.service";
 import { Platform } from '@angular/cdk/platform';
