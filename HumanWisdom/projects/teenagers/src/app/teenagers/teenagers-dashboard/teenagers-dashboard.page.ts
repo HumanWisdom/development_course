@@ -5,7 +5,7 @@ import { UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms'
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Platform } from '@angular/cdk/platform';
-import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+// import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { Constant } from '../../../../../shared/services/constant';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
@@ -119,7 +119,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public tourIndex = 1;
   constructor(
     public router: Router, public service: TeenagersService, public services: OnboardingService,
-    public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
+    public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
     public platform: Platform,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
@@ -726,214 +726,215 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   }
 
   googleLogin(d = '') {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.idToken = user.idToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
+    // this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    // this.authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   this.idToken = user.idToken
+    //   this.socialFirstName = user.firstName
+    //   this.socialLastName = user.lastName
+    //   this.socialEmail = user.email
 
-      this.services.verifyGoogle({
-        "TokenID": this.idToken,
-        "FName": this.socialFirstName,
-        "LName": this.socialLastName,
-        "Email": this.socialEmail,
-        "VCode": "",
-        "Pwd": ""
-      })
-        .subscribe(res => {
+    //   this.services.verifyGoogle({
+    //     "TokenID": this.idToken,
+    //     "FName": this.socialFirstName,
+    //     "LName": this.socialLastName,
+    //     "Email": this.socialEmail,
+    //     "VCode": "",
+    //     "Pwd": ""
+    //   })
+    //     .subscribe(res => {
 
-          if (res) {
+    //       if (res) {
 
-            this.firstpage = false
-            this.fifthpage = false
-            this.thirdpage = true
-            this.loginResponse = res
-            localStorage.setItem('guest', 'F');
-            localStorage.setItem("remember", 'T')
-            localStorage.setItem('socialLogin', 'T');
-            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-            localStorage.setItem("video", JSON.stringify(this.video))
-            localStorage.setItem("audio", JSON.stringify(this.audio))
-            localStorage.setItem('btnclick', 'F')
-            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-            localStorage.setItem("userId", JSON.stringify(this.userId))
-            localStorage.setItem("email", this.socialEmail)
-            localStorage.setItem("FnName", this.socialFirstName)
-            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-            localStorage.setItem("LName", this.socialLastName)
-            localStorage.setItem("pswd", '')
-            localStorage.setItem("name", this.loginResponse.Name)
-            localStorage.setItem("first", 'T')
-            let namedata = localStorage.getItem('name').split(' ')
-            this.modaldata['email'] = localStorage.getItem('email');
-            this.modaldata['firstname'] = namedata[0];
-            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-            if (parseInt(this.loginResponse.UserId) == 0) {
-              // this.showAlert=true
-              // window.alert('You have enetered wrong credentials. Please try again.')
-              // this.email=""
-              // this.password=""
-            }
-            else {
-              // this.showAlert=false
-              this.userId = this.loginResponse.UserId
-              this.userName = this.loginResponse.Name
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              if (this.saveUsername == true) {
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                localStorage.setItem("userName", JSON.stringify(this.userName))
-              }
-              else {
-                sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                sessionStorage.setItem("userName", JSON.stringify(this.userName))
-              }
-              let acceptCookie = localStorage.getItem('activeCode');
-              let subscribePage = localStorage.getItem('subscribepage');
-              if (acceptCookie === 'T' || subscribePage === 'T') {
-                localStorage.setItem("isloggedin", 'T')
-                if (acceptCookie === 'T') {
-                  localStorage.setItem("activeCode", 'F')
-                }
-                if (subscribePage === 'T') {
-                  localStorage.setItem("subscribepage", 'F')
-                }
-              } else {
-                localStorage.setItem("isloggedin", 'T')
-              }
-            }
-            if (d === 'journal') {
-              window.location.reload();
-            }
-          }
+    //         this.firstpage = false
+    //         this.fifthpage = false
+    //         this.thirdpage = true
+    //         this.loginResponse = res
+    //         localStorage.setItem('guest', 'F');
+    //         localStorage.setItem("remember", 'T')
+    //         localStorage.setItem('socialLogin', 'T');
+    //         localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+    //         localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    //         localStorage.setItem("video", JSON.stringify(this.video))
+    //         localStorage.setItem("audio", JSON.stringify(this.audio))
+    //         localStorage.setItem('btnclick', 'F')
+    //         localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //         sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //         localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+    //         localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+    //         localStorage.setItem("userId", JSON.stringify(this.userId))
+    //         localStorage.setItem("email", this.socialEmail)
+    //         localStorage.setItem("FnName", this.socialFirstName)
+    //         localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+    //         localStorage.setItem("LName", this.socialLastName)
+    //         localStorage.setItem("pswd", '')
+    //         localStorage.setItem("name", this.loginResponse.Name)
+    //         localStorage.setItem("first", 'T')
+    //         let namedata = localStorage.getItem('name').split(' ')
+    //         this.modaldata['email'] = localStorage.getItem('email');
+    //         this.modaldata['firstname'] = namedata[0];
+    //         this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    //         if (parseInt(this.loginResponse.UserId) == 0) {
+    //           // this.showAlert=true
+    //           // window.alert('You have enetered wrong credentials. Please try again.')
+    //           // this.email=""
+    //           // this.password=""
+    //         }
+    //         else {
+    //           // this.showAlert=false
+    //           this.userId = this.loginResponse.UserId
+    //           this.userName = this.loginResponse.Name
+    //           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //           localStorage.setItem("userId", JSON.stringify(this.userId))
+    //           localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+    //           if (this.saveUsername == true) {
+    //             localStorage.setItem("userId", JSON.stringify(this.userId))
+    //             localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+    //             localStorage.setItem("userName", JSON.stringify(this.userName))
+    //           }
+    //           else {
+    //             sessionStorage.setItem("userId", JSON.stringify(this.userId))
+    //             sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+    //             sessionStorage.setItem("userName", JSON.stringify(this.userName))
+    //           }
+    //           let acceptCookie = localStorage.getItem('activeCode');
+    //           let subscribePage = localStorage.getItem('subscribepage');
+    //           if (acceptCookie === 'T' || subscribePage === 'T') {
+    //             localStorage.setItem("isloggedin", 'T')
+    //             if (acceptCookie === 'T') {
+    //               localStorage.setItem("activeCode", 'F')
+    //             }
+    //             if (subscribePage === 'T') {
+    //               localStorage.setItem("subscribepage", 'F')
+    //             }
+    //           } else {
+    //             localStorage.setItem("isloggedin", 'T')
+    //           }
+    //         }
+    //         if (d === 'journal') {
+    //           window.location.reload();
+    //         }
+    //       }
 
-        })
-    },
-      error => console.log(error),
-      () => {
+    //     })
+    // },
+    //   error => console.log(error),
+    //   () => {
 
-      });
+    //   });
   }
 
+
   fbLogin(d = '') {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      // this.user = user;
-      this.user = user;
-      this.idToken = user.authToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
-      if (user.email !== undefined) {
-        this.services.verifyFb({
-          "TokenID": this.idToken,
-          "FName": this.socialFirstName,
-          "LName": this.socialLastName,
-          "Email": this.socialEmail,
-          "VCode": "",
-          "Pwd": ""
-        })
-          .subscribe(res => {
+    // this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    // this.authService.authState.subscribe((user) => {
+    //   // this.user = user;
+    //   this.user = user;
+    //   this.idToken = user.authToken
+    //   this.socialFirstName = user.firstName
+    //   this.socialLastName = user.lastName
+    //   this.socialEmail = user.email
+    //   if (user.email !== undefined) {
+    //     this.services.verifyFb({
+    //       "TokenID": this.idToken,
+    //       "FName": this.socialFirstName,
+    //       "LName": this.socialLastName,
+    //       "Email": this.socialEmail,
+    //       "VCode": "",
+    //       "Pwd": ""
+    //     })
+    //       .subscribe(res => {
 
-            if (res) {
-              this.firstpage = false
-              this.fifthpage = false
-              this.thirdpage = true
-              this.loginResponse = res
-              localStorage.setItem('socialLogin', 'T');
-              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-              localStorage.setItem("video", JSON.stringify(this.video))
-              localStorage.setItem("audio", JSON.stringify(this.audio))
-              localStorage.setItem("remember", 'T')
-              localStorage.setItem('guest', 'F');
-              localStorage.setItem('btnclick', 'F')
-              localStorage.setItem("FnName", this.socialFirstName)
-              localStorage.setItem("LName", this.socialLastName)
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-              localStorage.setItem("email", this.socialEmail)
-              localStorage.setItem("pswd", '')
-              localStorage.setItem("name", this.loginResponse.Name)
-              localStorage.setItem("first", 'T')
-              let namedata = localStorage.getItem('name').split(' ')
-              this.modaldata['email'] = localStorage.getItem('email');
-              this.modaldata['firstname'] = namedata[0];
-              this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-              if (parseInt(this.loginResponse.UserId) == 0) {
-                // this.showAlert=true
-                // window.alert('You have enetered wrong credentials. Please try again.')
-                // this.email=""
-                // this.password=""
+    //         if (res) {
+    //           this.firstpage = false
+    //           this.fifthpage = false
+    //           this.thirdpage = true
+    //           this.loginResponse = res
+    //           localStorage.setItem('socialLogin', 'T');
+    //           localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+    //           localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    //           localStorage.setItem("video", JSON.stringify(this.video))
+    //           localStorage.setItem("audio", JSON.stringify(this.audio))
+    //           localStorage.setItem("remember", 'T')
+    //           localStorage.setItem('guest', 'F');
+    //           localStorage.setItem('btnclick', 'F')
+    //           localStorage.setItem("FnName", this.socialFirstName)
+    //           localStorage.setItem("LName", this.socialLastName)
+    //           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //           localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+    //           localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+    //           localStorage.setItem("userId", JSON.stringify(this.userId))
+    //           localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+    //           localStorage.setItem("email", this.socialEmail)
+    //           localStorage.setItem("pswd", '')
+    //           localStorage.setItem("name", this.loginResponse.Name)
+    //           localStorage.setItem("first", 'T')
+    //           let namedata = localStorage.getItem('name').split(' ')
+    //           this.modaldata['email'] = localStorage.getItem('email');
+    //           this.modaldata['firstname'] = namedata[0];
+    //           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    //           if (parseInt(this.loginResponse.UserId) == 0) {
+    //             // this.showAlert=true
+    //             // window.alert('You have enetered wrong credentials. Please try again.')
+    //             // this.email=""
+    //             // this.password=""
 
-              }
-              else {
-                // this.showAlert=false
-                this.userId = this.loginResponse.UserId
-                this.userName = this.loginResponse.Name
-                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId))
-                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  localStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                let acceptCookie = localStorage.getItem('activeCode');
-                let subscribePage = localStorage.getItem('subscribepage');
-                if (acceptCookie === 'T' || subscribePage === 'T') {
-                  localStorage.setItem("isloggedin", 'T')
-                  if (acceptCookie === 'T') {
-                    localStorage.setItem("activeCode", 'F')
-                  }
-                  if (subscribePage === 'T') {
-                    localStorage.setItem("subscribepage", 'F')
-                  }
-                  if (d === 'journal') {
-                    window.location.reload();
-                  } else {
-                    this.router.navigate(['/onboarding/add-to-cart'])
-                  }
-                } else {
-                  localStorage.setItem("isloggedin", 'T')
-                  if (d === 'journal') {
-                    window.location.reload();
-                  } else {
-                    this.router.navigate(['/teenagers/adult-dashboard'])
-                  }
-                }
+    //           }
+    //           else {
+    //             // this.showAlert=false
+    //             this.userId = this.loginResponse.UserId
+    //             this.userName = this.loginResponse.Name
+    //             localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //             sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    //             localStorage.setItem("userId", JSON.stringify(this.userId))
+    //             localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+    //             if (this.saveUsername == true) {
+    //               localStorage.setItem("userId", JSON.stringify(this.userId))
+    //               localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+    //               localStorage.setItem("userName", JSON.stringify(this.userName))
+    //             }
+    //             else {
+    //               sessionStorage.setItem("userId", JSON.stringify(this.userId))
+    //               sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+    //               sessionStorage.setItem("userName", JSON.stringify(this.userName))
+    //             }
+    //             let acceptCookie = localStorage.getItem('activeCode');
+    //             let subscribePage = localStorage.getItem('subscribepage');
+    //             if (acceptCookie === 'T' || subscribePage === 'T') {
+    //               localStorage.setItem("isloggedin", 'T')
+    //               if (acceptCookie === 'T') {
+    //                 localStorage.setItem("activeCode", 'F')
+    //               }
+    //               if (subscribePage === 'T') {
+    //                 localStorage.setItem("subscribepage", 'F')
+    //               }
+    //               if (d === 'journal') {
+    //                 window.location.reload();
+    //               } else {
+    //                 this.router.navigate(['/onboarding/add-to-cart'])
+    //               }
+    //             } else {
+    //               localStorage.setItem("isloggedin", 'T')
+    //               if (d === 'journal') {
+    //                 window.location.reload();
+    //               } else {
+    //                 this.router.navigate(['/teenagers/adult-dashboard'])
+    //               }
+    //             }
 
-              }
-              if (d === 'journal') {
-                window.location.reload();
-              }
-            }
+    //           }
+    //           if (d === 'journal') {
+    //             window.location.reload();
+    //           }
+    //         }
 
-          })
-      } else {
-        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
-      }
-    });
+    //       })
+    //   } else {
+    //     window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+    //   }
+    // });
 
   }
 

@@ -9,13 +9,15 @@ import { TeenagerOnboardingService } from './teenagerOnboarding/teenager-onboard
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import{ SharedModule } from './../../../shared/shared.module'
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {
+    SocialAuthService
+ } from '@abacritt/angularx-social-login';
 import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ForumService } from '../../../shared/forum/forum.service';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { LogEventService } from '../../../shared/services/log-event.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlatformModule } from '@angular/cdk/platform';
@@ -45,7 +47,6 @@ import { SplashPage } from './teenagers/splash/splash.page';
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    SocialLoginModule,
     NgxCaptureModule,
     BrowserAnimationsModule,
     PlatformModule,
@@ -55,8 +56,7 @@ import { SplashPage } from './teenagers/splash/splash.page';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
   ],
-  providers:
-  [
+  providers:[
     { provide: APP_BASE_HREF, useValue: '/' } ,
     {
       provide: HTTP_INTERCEPTORS,
@@ -72,24 +72,6 @@ import { SplashPage } from './teenagers/splash/splash.page';
     OnboardingService,
     LogEventService,
     ToastrService,
-    SocialAuthService,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-          autoLogin: false,
-          providers: [
-              {
-                  id: GoogleLoginProvider.PROVIDER_ID,
-                  provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-              },
-              {
-                  id: FacebookLoginProvider.PROVIDER_ID,
-                  provider: new FacebookLoginProvider('238869214957032')
-              }
-          ]
-      } as SocialAuthServiceConfig,
-  }
-
    ],
   bootstrap: [AppComponent]
 })
