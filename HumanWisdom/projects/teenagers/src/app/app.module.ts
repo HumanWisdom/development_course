@@ -9,6 +9,9 @@ import { TeenagerOnboardingService } from './teenagerOnboarding/teenager-onboard
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import{ SharedModule } from './../../../shared/shared.module'
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {
+    SocialAuthService
+ } from '@abacritt/angularx-social-login';
 import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ForumService } from '../../../shared/forum/forum.service';
@@ -53,8 +56,7 @@ import { SplashPage } from './teenagers/splash/splash.page';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
   ],
-  providers:
-  [
+  providers:[
     { provide: APP_BASE_HREF, useValue: '/' } ,
     {
       provide: HTTP_INTERCEPTORS,

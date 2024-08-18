@@ -66,6 +66,7 @@ export class LoginSignupPage implements OnInit {
   email: any;
   password: any;
   showAlert = false;
+  renderGoogle = false;
   successPassword = JSON.parse(sessionStorage.getItem("successPassword"));
   showSuccessPassword: any;
   saveUsername = false;
@@ -302,7 +303,15 @@ export class LoginSignupPage implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.loadGoogleScript();
+    setTimeout(() => {
+      this.loadGoogleScript();   
+    }, 1000);
+  }
+
+  getDisplay(){
+    if(!this.renderGoogle){
+      return 'display:none;'
+    }
   }
 
   private loadGoogleScript(): void {
@@ -322,7 +331,12 @@ export class LoginSignupPage implements OnInit {
         onfailure: this.onFailure.bind(this)
       });
     }
+    this.renderGoogle = true;
   }
+
+
+
+  
   private onSuccess(googleUser: any): void {
     console.log('Logged in as: ' + googleUser);
     this.idToken = googleUser.getAuthResponse().id_token;
@@ -1252,6 +1266,26 @@ export class LoginSignupPage implements OnInit {
     this.freescreens();
   }
 
+// myMethod(){
+//   const google= (window as any).google
+//   if(google){
+//      google.accounts.id.initialize({
+//       client_id: '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com',
+//       callback: this.handleCredentialResponse.bind(this),
+//     });
+//     google.accounts.id.renderButton(
+//       document.getElementById('my-signin2'),
+//       { theme: 'outline', size: 'large' }  // customization attributes
+//     );
+//     google.accounts.id.prompt(); // also display the One Tap dialog
+//   }; // also display the One Tap dialog
+// }
+
+
+handleCredentialResponse(response){
+  console.log("Encoded JWT ID token: " + response.credential);
+}
+
   getrenew() {
     this.closemodal.nativeElement.click();
     localStorage.setItem("isloggedin", "T");
@@ -1263,9 +1297,11 @@ export class LoginSignupPage implements OnInit {
     this.showAlert = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
+    this.renderGoogle = false;
     setTimeout(() => {
       this.loadGoogleScript();
-    }, 100);
+      this.renderGoogle = true;
+    }, 200);
   }
 
   freescreens() {
@@ -1330,9 +1366,11 @@ export class LoginSignupPage implements OnInit {
     this.isSignUp = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
+    this.renderGoogle = false;
     setTimeout(() => {
       this.loadGoogleScript();
-    }, 100);
+      this.renderGoogle = true;
+    }, 200);
   }
 
   initializeRegistrationForm() {
