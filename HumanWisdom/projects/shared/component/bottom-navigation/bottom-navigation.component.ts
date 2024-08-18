@@ -30,13 +30,26 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   toursubscription: Subscription;
   disableClick = false;
   isAdults = false;
-
+  isDataRecieved = false;
   constructor(private router: Router,private onboardingService: OnboardingService) { 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
       this.isAdults = false;
     }
+
+    this.onboardingService.getUserDetails.subscribe(res => {
+      if (res) {
+        console.log('hamburger subscription called');
+        console.log(res);
+        this.userdetail = res[0];
+        this.isDataRecieved = true;
+        if (this.userdetail && this.userdetail['UserImagePath'] != '') {
+          this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        }
+        this.isDataRecieved = false;
+      }
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {

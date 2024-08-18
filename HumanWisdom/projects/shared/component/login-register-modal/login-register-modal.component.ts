@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output, Input, HostListener } from "@angular/core";
 import { UntypedFormBuilder, Validators, AbstractControl } from "@angular/forms";
-import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+// import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { LogEventService } from "../../services/log-event.service";
 import { Platform } from '@angular/cdk/platform';
@@ -69,7 +69,6 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     private services: OnboardingService,
     public fb: UntypedFormBuilder,
     public service: AdultsService,
-    public authService: SocialAuthService,
     public logeventservice: LogEventService
   ) {
     this.registrationForm = this.fb.group({
@@ -344,214 +343,214 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       )
   }
 
-  googleLogin(d = '') {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.idToken = user.idToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
+  // googleLogin(d = '') {
+  //   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  //   this.authService.authState.subscribe((user) => {
+  //     this.user = user;
+  //     this.idToken = user.idToken
+  //     this.socialFirstName = user.firstName
+  //     this.socialLastName = user.lastName
+  //     this.socialEmail = user.email
 
-      this.services.verifyGoogle({
-        "TokenID": this.idToken,
-        "FName": this.socialFirstName,
-        "LName": this.socialLastName,
-        "Email": this.socialEmail,
-        "VCode": "",
-        "Pwd": ""
-      })
-        .subscribe(res => {
+  //     this.services.verifyGoogle({
+  //       "TokenID": this.idToken,
+  //       "FName": this.socialFirstName,
+  //       "LName": this.socialLastName,
+  //       "Email": this.socialEmail,
+  //       "VCode": "",
+  //       "Pwd": ""
+  //     })
+  //       .subscribe(res => {
 
-          if (res) {
-            this.firstpage = false
-            this.fifthpage = false
-            this.thirdpage = true
-            this.enabledModal = false
-            this.loginResponse = res
-            localStorage.setItem('guest', 'F');
-            localStorage.setItem("remember", 'T')
-            localStorage.setItem('socialLogin', 'T');
-            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-            localStorage.setItem("video", JSON.stringify(this.video))
-            localStorage.setItem("audio", JSON.stringify(this.audio))
-            localStorage.setItem('btnclick', 'F')
-            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-            localStorage.setItem("userId", JSON.stringify(this.userId))
-            localStorage.setItem("email", this.socialEmail)
-            localStorage.setItem("FnName", this.socialFirstName)
-            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-            localStorage.setItem("LName", this.socialLastName)
-            localStorage.setItem("pswd", '')
-            localStorage.setItem("name", this.loginResponse.Name)
-            localStorage.setItem("first", 'T')
-            let namedata = localStorage.getItem('name').split(' ')
-            this.modaldata['email'] = localStorage.getItem('email');
-            this.modaldata['firstname'] = namedata[0];
-            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-            if (parseInt(this.loginResponse.UserId) == 0) {
+  //         if (res) {
+  //           this.firstpage = false
+  //           this.fifthpage = false
+  //           this.thirdpage = true
+  //           this.enabledModal = false
+  //           this.loginResponse = res
+  //           localStorage.setItem('guest', 'F');
+  //           localStorage.setItem("remember", 'T')
+  //           localStorage.setItem('socialLogin', 'T');
+  //           localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+  //           localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+  //           localStorage.setItem("video", JSON.stringify(this.video))
+  //           localStorage.setItem("audio", JSON.stringify(this.audio))
+  //           localStorage.setItem('btnclick', 'F')
+  //           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //           localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //           localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+  //           localStorage.setItem("userId", JSON.stringify(this.userId))
+  //           localStorage.setItem("email", this.socialEmail)
+  //           localStorage.setItem("FnName", this.socialFirstName)
+  //           localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+  //           localStorage.setItem("LName", this.socialLastName)
+  //           localStorage.setItem("pswd", '')
+  //           localStorage.setItem("name", this.loginResponse.Name)
+  //           localStorage.setItem("first", 'T')
+  //           let namedata = localStorage.getItem('name').split(' ')
+  //           this.modaldata['email'] = localStorage.getItem('email');
+  //           this.modaldata['firstname'] = namedata[0];
+  //           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+  //           if (parseInt(this.loginResponse.UserId) == 0) {
 
-            }
-            else {
-              this.userId = this.loginResponse.UserId
-              this.userName = this.loginResponse.Name
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              if (this.saveUsername == true) {
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                localStorage.setItem("userName", JSON.stringify(this.userName))
-              }
-              else {
-                sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                sessionStorage.setItem("userName", JSON.stringify(this.userName))
-              }
-              let acceptCookie = localStorage.getItem('activeCode');
-              let subscribePage = localStorage.getItem('subscribepage');
-              if (acceptCookie === 'T' || subscribePage === 'T') {
-                localStorage.setItem("isloggedin", 'T')
-                if (acceptCookie === 'T') {
-                  localStorage.setItem("activeCode", 'F')
-                }
-                if (subscribePage === 'T') {
-                  localStorage.setItem("subscribepage", 'F')
-                }
-              } else {
-                localStorage.setItem("isloggedin", 'T')
-              }
-            }
-            this.actclosemodal.nativeElement.click();
-            this.closeModal.emit(false);
-            if (this.isAdvertpage) {
-              if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-                SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
-              ) {
-                this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
-              } else {
-                this.router.navigate(['/adults/redeem-subscription']);
-              }
-            }
-          }
-        })
-    },
-      error => console.log(error),
-      () => {
+  //           }
+  //           else {
+  //             this.userId = this.loginResponse.UserId
+  //             this.userName = this.loginResponse.Name
+  //             localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             localStorage.setItem("userId", JSON.stringify(this.userId))
+  //             localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //             if (this.saveUsername == true) {
+  //               localStorage.setItem("userId", JSON.stringify(this.userId))
+  //               localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //               localStorage.setItem("userName", JSON.stringify(this.userName))
+  //             }
+  //             else {
+  //               sessionStorage.setItem("userId", JSON.stringify(this.userId))
+  //               sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //               sessionStorage.setItem("userName", JSON.stringify(this.userName))
+  //             }
+  //             let acceptCookie = localStorage.getItem('activeCode');
+  //             let subscribePage = localStorage.getItem('subscribepage');
+  //             if (acceptCookie === 'T' || subscribePage === 'T') {
+  //               localStorage.setItem("isloggedin", 'T')
+  //               if (acceptCookie === 'T') {
+  //                 localStorage.setItem("activeCode", 'F')
+  //               }
+  //               if (subscribePage === 'T') {
+  //                 localStorage.setItem("subscribepage", 'F')
+  //               }
+  //             } else {
+  //               localStorage.setItem("isloggedin", 'T')
+  //             }
+  //           }
+  //           this.actclosemodal.nativeElement.click();
+  //           this.closeModal.emit(false);
+  //           if (this.isAdvertpage) {
+  //             if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+  //               SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+  //             ) {
+  //               this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+  //             } else {
+  //               this.router.navigate(['/adults/redeem-subscription']);
+  //             }
+  //           }
+  //         }
+  //       })
+  //   },
+  //     error => console.log(error),
+  //     () => {
 
-      });
-  }
+  //     });
+  // }
 
-  fbLogin(d = '') {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      // this.user = user;
-      this.user = user;
-      this.idToken = user.authToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
-      if (user.email !== undefined) {
-        this.services.verifyFb({
-          "TokenID": this.idToken,
-          "FName": this.socialFirstName,
-          "LName": this.socialLastName,
-          "Email": this.socialEmail,
-          "VCode": "",
-          "Pwd": ""
-        })
-          .subscribe(res => {
-            if (res) {
-              this.firstpage = false
-              this.fifthpage = false
-              this.thirdpage = true
-              this.enabledModal = false
-              this.loginResponse = res
-              localStorage.setItem('guest', 'F');
-              localStorage.setItem("remember", 'T')
-              localStorage.setItem('socialLogin', 'T');
-              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-              localStorage.setItem("video", JSON.stringify(this.video))
-              localStorage.setItem("audio", JSON.stringify(this.audio))
-              localStorage.setItem('btnclick', 'F')
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("email", this.socialEmail)
-              localStorage.setItem("FnName", this.socialFirstName)
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-              localStorage.setItem("LName", this.socialLastName)
-              localStorage.setItem("pswd", '')
-              localStorage.setItem("name", this.loginResponse.Name)
-              localStorage.setItem("first", 'T')
-              let namedata = localStorage.getItem('name').split(' ')
-              this.modaldata['email'] = localStorage.getItem('email');
-              this.modaldata['firstname'] = namedata[0];
-              this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-              if (parseInt(this.loginResponse.UserId) == 0) {
+  // fbLogin(d = '') {
+  //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  //   this.authService.authState.subscribe((user) => {
+  //     // this.user = user;
+  //     this.user = user;
+  //     this.idToken = user.authToken
+  //     this.socialFirstName = user.firstName
+  //     this.socialLastName = user.lastName
+  //     this.socialEmail = user.email
+  //     if (user.email !== undefined) {
+  //       this.services.verifyFb({
+  //         "TokenID": this.idToken,
+  //         "FName": this.socialFirstName,
+  //         "LName": this.socialLastName,
+  //         "Email": this.socialEmail,
+  //         "VCode": "",
+  //         "Pwd": ""
+  //       })
+  //         .subscribe(res => {
+  //           if (res) {
+  //             this.firstpage = false
+  //             this.fifthpage = false
+  //             this.thirdpage = true
+  //             this.enabledModal = false
+  //             this.loginResponse = res
+  //             localStorage.setItem('guest', 'F');
+  //             localStorage.setItem("remember", 'T')
+  //             localStorage.setItem('socialLogin', 'T');
+  //             localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+  //             localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+  //             localStorage.setItem("video", JSON.stringify(this.video))
+  //             localStorage.setItem("audio", JSON.stringify(this.audio))
+  //             localStorage.setItem('btnclick', 'F')
+  //             localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //             localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+  //             localStorage.setItem("userId", JSON.stringify(this.userId))
+  //             localStorage.setItem("email", this.socialEmail)
+  //             localStorage.setItem("FnName", this.socialFirstName)
+  //             localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+  //             localStorage.setItem("LName", this.socialLastName)
+  //             localStorage.setItem("pswd", '')
+  //             localStorage.setItem("name", this.loginResponse.Name)
+  //             localStorage.setItem("first", 'T')
+  //             let namedata = localStorage.getItem('name').split(' ')
+  //             this.modaldata['email'] = localStorage.getItem('email');
+  //             this.modaldata['firstname'] = namedata[0];
+  //             this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+  //             if (parseInt(this.loginResponse.UserId) == 0) {
 
-              }
-              else {
-                this.userId = this.loginResponse.UserId
-                this.userName = this.loginResponse.Name
-                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId))
-                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  localStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                let acceptCookie = localStorage.getItem('activeCode');
-                let subscribePage = localStorage.getItem('subscribepage');
-                if (acceptCookie === 'T' || subscribePage === 'T') {
-                  localStorage.setItem("isloggedin", 'T')
-                  if (acceptCookie === 'T') {
-                    localStorage.setItem("activeCode", 'F')
-                  }
-                  if (subscribePage === 'T') {
-                    localStorage.setItem("subscribepage", 'F')
-                  }
-                } else {
-                  localStorage.setItem("isloggedin", 'T')
-                }
-              }
-              this.actclosemodal.nativeElement.click();
-              this.closeModal.emit(false);
-              if (this.isAdvertpage) {
-                if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-                  SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
-                ) {
-                  this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
-                } else {
-                  this.router.navigate(['/adults/redeem-subscription']);
-                }
-              }
-            }
-          })
-      } else {
-        this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
-        this.enableAlert = true;
-        this.alertenabled = true;
-        // window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
-      }
-    });
+  //             }
+  //             else {
+  //               this.userId = this.loginResponse.UserId
+  //               this.userName = this.loginResponse.Name
+  //               localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //               sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //               localStorage.setItem("userId", JSON.stringify(this.userId))
+  //               localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //               if (this.saveUsername == true) {
+  //                 localStorage.setItem("userId", JSON.stringify(this.userId))
+  //                 localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //                 localStorage.setItem("userName", JSON.stringify(this.userName))
+  //               }
+  //               else {
+  //                 sessionStorage.setItem("userId", JSON.stringify(this.userId))
+  //                 sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //                 sessionStorage.setItem("userName", JSON.stringify(this.userName))
+  //               }
+  //               let acceptCookie = localStorage.getItem('activeCode');
+  //               let subscribePage = localStorage.getItem('subscribepage');
+  //               if (acceptCookie === 'T' || subscribePage === 'T') {
+  //                 localStorage.setItem("isloggedin", 'T')
+  //                 if (acceptCookie === 'T') {
+  //                   localStorage.setItem("activeCode", 'F')
+  //                 }
+  //                 if (subscribePage === 'T') {
+  //                   localStorage.setItem("subscribepage", 'F')
+  //                 }
+  //               } else {
+  //                 localStorage.setItem("isloggedin", 'T')
+  //               }
+  //             }
+  //             this.actclosemodal.nativeElement.click();
+  //             this.closeModal.emit(false);
+  //             if (this.isAdvertpage) {
+  //               if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+  //                 SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+  //               ) {
+  //                 this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+  //               } else {
+  //                 this.router.navigate(['/adults/redeem-subscription']);
+  //               }
+  //             }
+  //           }
+  //         })
+  //     } else {
+  //       this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
+  //       this.enableAlert = true;
+  //       this.alertenabled = true;
+  //       // window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+  //     }
+  //   });
 
-  }
+  // }
 
   getAlertcloseEvent(event) {
     this.content = '';
