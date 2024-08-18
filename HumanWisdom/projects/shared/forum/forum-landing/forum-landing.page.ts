@@ -445,6 +445,14 @@ export class ForumLandingPage implements OnInit {
     }
   }
 
+  fbLogin(){
+
+  }
+
+  googleLogin(){
+    
+  }
+
   // fbLogin() {
   //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   //   this.authService.authState.subscribe((user) => {

@@ -7,13 +7,32 @@ import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { SharedService } from '../../services/shared.service';
-
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
+import {  CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from "../../shared.module";
+import { PlatformModule } from '@angular/cdk/platform';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  SocialAuthService,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from "@abacritt/angularx-social-login";
 declare var $: any;
 var carouselId: any = 1;
 @Component({
   selector: 'app-intro-carousel',
+  standalone:true,
   templateUrl: './intro-carousel.page.html',
-  imports:[SocialLoginModule ],
+  imports:[
+    SocialLoginModule,CommonModule,
+    FormsModule,
+    ReactiveFormsModule     ,
+    RouterModule,
+    PlatformModule,
+  SharedModule
+  ],
 providers:[
   SocialAuthService, 
         {

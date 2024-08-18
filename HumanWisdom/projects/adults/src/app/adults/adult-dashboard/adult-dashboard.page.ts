@@ -911,6 +911,14 @@ export class AdultDashboardPage implements OnInit {
   //     });
   //   }
   // }
+
+  fbLogin(d=''){
+
+  }
+
+  googleLogin(){
+    
+  }
   // fbLogin(d = '') {
   //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   //   this.authService.authState.subscribe((user) => {
