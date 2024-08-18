@@ -93,7 +93,6 @@ import { SubscribeToPremiumBlockComponent } from './component/subscribe-to-premi
 import { HwpSearchBarComponent } from './component/hwp-search-bar/hwp-search-bar.component';
 import { NavigationService } from './services/navigation.service';
 import { SpinnerComponent } from './component/spinner/spinner.component';
-import { LoginSignupPage } from './component/login-signup/login-signup.page';
 import { SignupPage } from './component/signup/signup.page';
 import { ForgetPasswordPage } from './component/forget-password/forget-password.page';
 import { ChangePasswordPage } from './component/change-password/change-password.page';
@@ -186,7 +185,6 @@ import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.pag
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent,
     SpinnerComponent,
-    LoginSignupPage,
     SignupPage,
     ForgetPasswordPage,
     ChangePasswordPage,
@@ -302,7 +300,6 @@ import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.pag
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent,
     SpinnerComponent,
-    LoginSignupPage,
     SignupPage,
     ForgetPasswordPage,
     ChangePasswordPage,
