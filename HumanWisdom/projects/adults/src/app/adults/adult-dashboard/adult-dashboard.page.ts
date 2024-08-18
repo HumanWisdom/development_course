@@ -916,7 +916,7 @@ export class AdultDashboardPage implements OnInit {
 
   }
 
-  googleLogin(){
+  googleLogin(d=''){
     
   }
   // fbLogin(d = '') {
