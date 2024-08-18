@@ -108,7 +108,9 @@ export class PersonalisedForYouPage implements OnInit {
     }
   }
 
-
+  googleLogin(){
+    
+  }
   // googleLogin() {
   //   this.logeventservice.logEvent('gmail_login');
   //   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
@@ -198,6 +200,10 @@ export class PersonalisedForYouPage implements OnInit {
   //     });
   // }
 
+
+  fbLogin(){
+
+  }
   // fbLogin() {
   //   this.logeventservice.logEvent('facebook_login');
   //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
