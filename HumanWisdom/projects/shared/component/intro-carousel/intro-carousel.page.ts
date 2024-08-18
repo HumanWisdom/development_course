@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'bcswipe';
 import { UntypedFormBuilder } from '@angular/forms';
-import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from '@abacritt/angularx-social-login';
+import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
@@ -13,6 +13,26 @@ var carouselId: any = 1;
 @Component({
   selector: 'app-intro-carousel',
   templateUrl: './intro-carousel.page.html',
+  imports:[SocialLoginModule ],
+providers:[
+  SocialAuthService, 
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+                    },
+                    {
+                        id: FacebookLoginProvider.PROVIDER_ID,
+                        provider: new FacebookLoginProvider('238869214957032')
+                    }
+                ]
+            } as SocialAuthServiceConfig,
+        },
+],
   styleUrls: ['./intro-carousel.page.scss'],
 })
 export class IntroCarouselPage implements OnInit, AfterViewInit {

@@ -5,6 +5,7 @@ import {
   FacebookLoginProvider,
   GoogleLoginProvider,
   SocialAuthService,
+  SocialAuthServiceConfig,
   SocialLoginModule
 } from "@abacritt/angularx-social-login";
 import { LogEventService } from "../../services/log-event.service";
@@ -18,6 +19,25 @@ declare var $: any;
 @Component({
   selector: "app-common-login",
   imports:[SocialLoginModule ],
+providers:[
+  SocialAuthService, 
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+                    },
+                    {
+                        id: FacebookLoginProvider.PROVIDER_ID,
+                        provider: new FacebookLoginProvider('238869214957032')
+                    }
+                ]
+            } as SocialAuthServiceConfig,
+        },
+],
   templateUrl: "./login-signup.page.html",
   styleUrls: ["./login-signup.page.scss"],
 })

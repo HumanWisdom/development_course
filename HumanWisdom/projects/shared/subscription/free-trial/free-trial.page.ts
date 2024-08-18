@@ -3,6 +3,7 @@ import { Constant } from '../../services/constant';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
+import { OnboardingService } from '../../services/onboarding.service';
 @Component({
   selector: 'app-free-trial',
   templateUrl: './free-trial.page.html',
@@ -16,7 +17,7 @@ export class FreeTrialPage implements OnInit {
   AnnualPlanFreeTrial = 14;
   isAdults = true;
   constructor(
-    private router: Router){
+    private router: Router,private onboardingService:OnboardingService){
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -24,6 +25,7 @@ export class FreeTrialPage implements OnInit {
     } else {
       this.isAdults = false;
     }
+    this.onboardingService.updateUserDetails.next(true);
   }
 
   ngOnInit() {
@@ -49,5 +51,9 @@ export class FreeTrialPage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.PaymentIntentModel, null);
     SharedService.setDataInLocalStorage(Constant.SelectedPlanModel,null);
     SharedService.setDataInSessionStorage(Constant.ClientSecret, null);
+  }
+
+  routeToPartnership(){
+     this.router.navigate(['/adults/partnership-webpage/partnership-index']);
   }
 }

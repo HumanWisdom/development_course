@@ -429,7 +429,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
-            const auth2 = (window as any).gapi.auth2.getAuthInstance();
+            const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
             if (auth2) {
               auth2.signOut().then(() => {
                 this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);

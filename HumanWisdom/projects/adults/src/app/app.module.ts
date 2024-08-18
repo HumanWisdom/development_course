@@ -9,12 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,
-    GoogleSigninButtonDirective,
-    GoogleSigninButtonModule,
-    SocialLoginModule,
-    SocialAuthService
- } from '@abacritt/angularx-social-login';
+// import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,
+//     SocialLoginModule,
+//     SocialAuthService
+//  } from '@abacritt/angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
 import { StripeModule } from "stripe-angular";
 import { environment } from '../../../environments/environment';
@@ -72,7 +70,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         HammerModule,
         SharedModule,
         HttpClientModule,
-        SocialLoginModule,
+      //  SocialLoginModule,
         SplashPageModule,
         StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
         NgxCaptureModule,
@@ -81,8 +79,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule,
         NgxJsonLdModule,
-        ToastrModule.forRoot(),
-        GoogleSigninButtonModule
+        ToastrModule.forRoot()
     ],
     providers: [
         StatusBar,
@@ -106,27 +103,26 @@ export class MyHammerConfig extends HammerGestureConfig {
             useClass: MyHammerConfig,
           },
         //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-        {
-            provide: 'SocialAuthServiceConfig',
-            useValue: {
-                autoLogin: false,
-                providers: [
-                    {
-                        id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-                    },
-                    {
-                        id: FacebookLoginProvider.PROVIDER_ID,
-                        provider: new FacebookLoginProvider('238869214957032')
-                    }
-                ]
-            } as SocialAuthServiceConfig,
-        },
-        GoogleSigninButtonDirective,
+        // {
+        //     provide: 'SocialAuthServiceConfig',
+        //     useValue: {
+        //         autoLogin: false,
+        //         providers: [
+        //             {
+        //                 id: GoogleLoginProvider.PROVIDER_ID,
+        //                 provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+        //             },
+        //             {
+        //                 id: FacebookLoginProvider.PROVIDER_ID,
+        //                 provider: new FacebookLoginProvider('238869214957032')
+        //             }
+        //         ]
+        //     } as SocialAuthServiceConfig,
+        // },
         AudioVideoGuard,
         EnableRouteGuard
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    schemas: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
