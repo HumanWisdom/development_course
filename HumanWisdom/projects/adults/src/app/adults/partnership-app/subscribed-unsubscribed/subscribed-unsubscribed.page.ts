@@ -129,7 +129,6 @@ export class SubscribedUnsubscribedPage implements OnInit {
     } as paymentIntentModel
   }
 
-
   GetStarted(){
     this.services.navigateToUpgradeToPremium=true;
     this.Proceed('');

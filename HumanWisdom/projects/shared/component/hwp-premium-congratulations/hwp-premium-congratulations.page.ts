@@ -16,7 +16,7 @@ export class HwpPremiumCongratulationsPage implements OnInit {
     private onboardingService:OnboardingService
     
   ) { 
-    this.onboardingService.updateUserDetails(true);
+    this.onboardingService.updateUserDetails.next(true);
   }
 
   ngOnInit() {
