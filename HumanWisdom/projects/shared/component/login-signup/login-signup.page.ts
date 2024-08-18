@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import {
   FacebookLoginProvider,
   GoogleLoginProvider,
@@ -8,18 +8,26 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule
 } from "@abacritt/angularx-social-login";
+import { PlatformModule } from '@angular/cdk/platform';
 import { LogEventService } from "../../services/log-event.service";
 import { OnboardingService } from "../..//services/onboarding.service";
 import { SharedService } from "../../services/shared.service";
 import { environment } from "../../../environments/environment";
 import { NavigationService } from "../../services/navigation.service";
-
-
+import {  CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from "../../shared.module";
 declare var $: any;
 @Component({
   selector: "app-common-login",
-  imports:[SocialLoginModule ],
-providers:[
+  imports:[SocialLoginModule,CommonModule,
+    FormsModule,
+    ReactiveFormsModule     ,
+    RouterModule,
+    PlatformModule,
+  SharedModule ],
+  standalone:true,
+  providers:[
   SocialAuthService, 
         {
             provide: 'SocialAuthServiceConfig',
