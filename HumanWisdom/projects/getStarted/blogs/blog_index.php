@@ -533,10 +533,9 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     A fresh way to avoid and overcome addiction
+                       </div>
 </div>
-                </div>
-
-                <div class="row">
+<div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                       
@@ -545,6 +544,7 @@
                 </div>
               </a>
             </div>
+               
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
               <a class="" href="how_to_manage_anxiety_attacks.php">
                 <div class="row">
@@ -581,6 +581,120 @@
                 </div>
               </a>
             </div>
+            <div class="clearfix"></div>
+
+            
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="how_to_meditate.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/40.webp" 
+                    class="img-responsive img_blogs" alt="
+                    How to meditate">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Mental health
+                    </button>
+                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                    How to meditate
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="happierme_survey_into_causes_of_work_stress.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/50.webp" 
+                    class="img-responsive img_blogs" alt="
+                   HappierMe survey into causes of work stress.">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                    Work and Leadership
+                    </button>
+                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                    HappierMe survey into causes of work stress.
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+              <a class="" href="avoid_and_overcome_burnout_with_self_awareness.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/49.webp" 
+                    class="img-responsive img_blogs" alt="
+                    Avoid and overcome burnout, with self-awareness">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Mental health
+                    </button>
+                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+                    Avoid and overcome burnout, with self-awareness
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+                      
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+              
+            
 
           </div>
         </div>

@@ -194,11 +194,17 @@ The conditioning module in the HappierMe app helps users understand their own co
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                In summary, the roots of all addictions lie in the hidden drivers in our thinking that shape our thoughts and actions. Learning about ourselves and how our minds function makes the unconscious conscious, and helps us take charge of our own life and flourish in the world. The HappierMe app (soon to be called HappierMe) has all the tools you may need to begin your own journey to freedom.                  <a class="blog_highlight_peach" href="https://happierme.app/adults/habit-addiction">
-                  Module on Addiction 
-                  </a>
+                In summary, the roots of all addictions lie in the hidden drivers in our thinking that shape our thoughts and actions. Learning about ourselves and how our minds function makes the unconscious conscious, and helps us take charge of our own life and flourish in the world. The HappierMe app (soon to be called HappierMe) has all the tools you may need to begin your own journey to freedom.                  
+                
                   
-                  in the HappierMe app
+                 
+                  
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                To get in touch and discuss a collaboration write to us - team@happierme.app                
+                  
+                 
                   
                 </h4>
               </div>
