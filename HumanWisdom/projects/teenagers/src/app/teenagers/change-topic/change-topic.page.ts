@@ -117,7 +117,7 @@ export class ChangeTopicPage implements OnInit {
           this.router.navigate([this.url]);
         }
         else {
-debugger
+
           localStorage.setItem('storyNumber', this.selectedId);
           if (name === 'Manage your emotions') {
             localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');

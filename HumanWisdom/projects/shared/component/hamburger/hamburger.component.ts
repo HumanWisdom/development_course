@@ -208,7 +208,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getName() {
-    return this.name;
+    return this.name===""? 'guest' :this.name
+
   }
 
 
@@ -490,6 +491,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       if (userdetail) {
         let detail = JSON.parse(userdetail);
         this.setProfileImage(detail);
+      }
+      else{
+        this.url = this.url === '' || this.url.includes('undefined') ?'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' :'';
       }
     }, 1000);
 
