@@ -51,7 +51,7 @@
                       </div>
                     </div>
 
-                    <div class="row center_flex mt15px">
+                    <div class="row center_flex mt15px" >
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
                           <button type="submit" class="btn btn_login_signup tcenter" (click)="fbLogin('signup')">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
                           <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter"></div>
-                          <!-- <button type="submit" class="btn btn_login_signup tcenter" (click)="googleLogin('signup')">
+                          <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
                           </button> -->
                         </div>
@@ -236,8 +236,8 @@
                         </button>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-                        <div id="my-signin2" class="btn btn_login_signup tcenter"></div>
-                         <!-- <button type="submit" class="btn btn_login_signup tcenter" (click)="googleLogin('login')">
+                        <div  id="my-signin2" class="btn btn_login_signup tcenter"></div>
+                         <!-- <button  *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
                         </button> -->
                       </div>

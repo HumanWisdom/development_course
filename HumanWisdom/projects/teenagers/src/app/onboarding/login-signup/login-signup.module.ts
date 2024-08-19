@@ -9,7 +9,7 @@ import { LoginSignupPageRoutingModule } from './login-signup-routing.module';
 import { LoginSignupPage } from './login-signup.page';
 
 import { SharedModule } from '../../../../../shared/shared.module';
-
+import {LoginSignupPage as CommonLogin} from '../../../../../shared/component/login-signup/login-signup.page';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +17,8 @@ import { SharedModule } from '../../../../../shared/shared.module';
     ReactiveFormsModule,
     IonicModule,
     LoginSignupPageRoutingModule,
-    SharedModule
+    SharedModule,
+    CommonLogin
   ],
   declarations: [LoginSignupPage]
 })
