@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output, Input, HostListener } from "@angular/core";
-import { UntypedFormBuilder, Validators, AbstractControl } from "@angular/forms";
+import { UntypedFormBuilder, Validators, AbstractControl, ReactiveFormsModule, FormsModule } from "@angular/forms";
 // import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { LogEventService } from "../../services/log-event.service";
@@ -10,12 +10,14 @@ import { SharedService } from "../../services/shared.service";
 import { Constant } from "../../services/constant";
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from "@abacritt/angularx-social-login";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
   styleUrls: ['./login-register-modal.component.scss'],
-  imports:[SocialLoginModule],
+  standalone:true,
+  imports:[SocialLoginModule,CommonModule,FormsModule,ReactiveFormsModule],
   providers:[
     SocialAuthService, 
     {

@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../../../../shared/shared.module';
 import { RedeemSubscriptionPageRoutingModule } from './redeem-subscription-routing.module';
 import { RedeemSubscriptionPage } from './redeem-subscription.page';
+import { LoginRegisterModalComponent } from '../../login-register-modal/login-register-modal.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { RedeemSubscriptionPage } from './redeem-subscription.page';
     IonicModule,
     RedeemSubscriptionPageRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoginRegisterModalComponent
   ],
   declarations: [RedeemSubscriptionPage]
 })
