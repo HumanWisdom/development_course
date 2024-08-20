@@ -8,6 +8,8 @@ import { IndexPageRoutingModule } from './index-routing.module';
 
 import { IndexPage } from './index.page';
 import { SharedModule } from '../../../shared/shared.module';
+import { LoginRegisterModalComponent } from  '../../../shared/component/login-register-modal/login-register-modal.component';
+;
 
 @NgModule({
   imports: [
@@ -15,7 +17,8 @@ import { SharedModule } from '../../../shared/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
-    IndexPageRoutingModule
+    IndexPageRoutingModule,
+    LoginRegisterModalComponent
   ],
   declarations: [IndexPage]
 })
