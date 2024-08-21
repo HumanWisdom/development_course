@@ -297,4 +297,14 @@ $( window ).resize( function() {
     }
 });
 $( window ).resize();
+
+/*$('.search-button').click(function () {
+    $('.search-button').css({'position':'absolute', 'right':'0'});
+});*/
+
+$('.search-button').click(function () 
+{
+    $('.search-button').toggleClass('cp_absolute');
+    $('.fc_web_search').focus();
+});
 </script>
