@@ -694,8 +694,117 @@
               </a>
             </div>
               
-            
+            <div class="clearfix"></div>
 
+            
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+  <a class="" href="looking_for_love.php">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/35.webp" 
+        class="img-responsive img_blogs" alt="
+        Looking for love">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+          Mental health
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+        Looking for love
+      </div>
+    </div>
+    
+    
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+          
+        </h6>
+      </div>
+    </div>
+  </a>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+  <a class="" href="to_succeed_as_a_leader_you_need_self-awareness.php">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/33.webp" 
+        class="img-responsive img_blogs" alt="
+        Looking for love">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+          Mental health
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+        To succeed as a leader you need self-awareness
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+          
+        </h6>
+      </div>
+    </div>
+  </a>
+</div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+  <a class="" href="boosting_well-being_and_productivity_at_work.php">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/32.webp" 
+        class="img-responsive img_blogs" alt="
+        Boosting well-being and productivity at work">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+        Work and Leadership
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+        Boosting well-being and productivity at work
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+          
+        </h6>
+      </div>
+    </div>
+  </a>
+</div>
+      
           </div>
         </div>
       </section>
