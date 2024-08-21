@@ -287,20 +287,12 @@
                 This understanding is simple, but the impact can be profound. It can help people of all ages live in peace with themselves and others, manage their own emotions and mental health, make better decisions and live a happier and more meaningful life. It can also contribute to our success at work by helping us develop our soft skills, like empathy, integrity, communication and leadership.
                 </h4>
 
-                
-
-              
-
-                
-
-                
-
-           
                 <h4 class="mtb0px blog_desc">
-                The HappierMe emotional intelligence app is available for both adults and teens and helps with all of the above. Created by experts from around the world it can be downloaded and explored with a free trial.The website is
+                The HappierMe emotional intelligence app is available for both adults and teens and helps with all of the above. Created by experts from around the world it 
+                can be downloaded and explored with a free trial. The website is
                  
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
-                    happiermeapp.</a> If you’d like to get in touch — please email team@happierme.app
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                    happierme.app</a> . If you’d like to get in touch — please email team@happierme.app
 
                     
                 </h4>

@@ -35,7 +35,7 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/partnership-app">
+            <a href="../pages/partnership.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Partnership Program
               </h4>
@@ -222,7 +222,7 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/partnership-app">
+                  <a href="../pages/partnership.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Partnership Program
                     </h4>
@@ -420,7 +420,7 @@
 <!-- /footer -->
 
 <!-- sticky rating banner -->
-<div  id="closeableElement" class="row center_flex sticky_rating_banner">
+<div   id="closeableElement" class="row center_flex sticky_rating_banner display_df_none">
   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 p0 flex_ai">
 
     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
