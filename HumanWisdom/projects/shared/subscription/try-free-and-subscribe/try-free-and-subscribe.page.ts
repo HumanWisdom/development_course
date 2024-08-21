@@ -66,6 +66,7 @@ export class TryFreeAndSubscribePage implements OnInit {
       this.onboardingService.getUserDetails.subscribe(res => {
         if (res) {
           let userDetails = res[0];
+          localStorage.setItem('userDetails',res[0]);
           localStorage.setItem("isPartner", userDetails.IsPartner);
           localStorage.setItem("PartnerOption", userDetails.PartnerOption);
           localStorage.setItem("SubscriberType", res[0].SubscriberType)
