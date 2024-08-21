@@ -35,7 +35,7 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/partnership-app">
+            <a href="../pages/partnership.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Partnership Program
               </h4>
@@ -222,7 +222,7 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/partnership-app">
+                  <a href="../pages/partnership.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Partnership Program
                     </h4>

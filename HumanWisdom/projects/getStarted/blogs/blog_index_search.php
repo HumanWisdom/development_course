@@ -127,7 +127,7 @@
                   </div>
 
                   <form action="" class="search-box">
-                    <input type="text" class="form-control fc_01 fc_web_search" placeholder="Type here to search..." />
+                    <input type="text" class="form-control fc_01 fc_web_search" placeholder="Type here to search..."/>
                   </form>
                 </ul>
               </div>
