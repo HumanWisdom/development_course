@@ -3736,6 +3736,9 @@ audio::-webkit-media-controls-enclosure
   background: linear-gradient(180deg, #E58D82, #CB6171);
 } 
 
+.mb-8rem {
+  margin-bottom: 8rem;
+}
 /* .navbar>ul>li>a:active {
   
   position: absolute;

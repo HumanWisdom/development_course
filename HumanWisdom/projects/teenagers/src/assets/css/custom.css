@@ -37281,4 +37281,9 @@ a.fc_e58d82:hover
 .abcRioButtonBlue {
   background:#0C2B5F !important;
 }
+
+.abcRioButton:hover {
+  box-shadow: none!important;
+}
+
 /* /version - 03 */
