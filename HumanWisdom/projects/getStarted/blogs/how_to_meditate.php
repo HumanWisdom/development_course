@@ -447,8 +447,9 @@ Cultivating an attitude of acceptance and non-judgment towards your experiences
                     To practice mantra meditation, you can follow these steps:                </h4>
                 <h4 class="mtb0px blog_desc">
                   
-               
-                Choose a mantra: Choose a word, phrase, or sound that has meaning to you. This can be a spiritual word or phrase, such as "Om" or "peace," or it can be a personal word or phrase that has significance for you.                </h4>
+                <span class="blog_highlight_black">
+                Choose a mantra:                 </span>
+                 Choose a word, phrase, or sound that has meaning to you. This can be a spiritual word or phrase, such as "Om" or "peace," or it can be a personal word or phrase that has significance for you.                </h4>
                 <h4 class="mtb0px blog_desc">
                   
                
