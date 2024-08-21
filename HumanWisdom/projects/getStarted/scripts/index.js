@@ -56,7 +56,9 @@ window.location.href = "https://happierme.app/teenagers/intro-carousel";
 
     function closeElement() {
         // Hides the element with the ID 'closeableElement'
-        document.getElementById('closeableElement').style.display = 'none';
+       var closeElement = document.getElementById('closeableElement')
+       closeElement.style.display = 'none';
+       closeElement.classList.remove('display_df_none'); 
         var element = document.getElementById('scrollTopArrow');
         element.classList.remove('mb-8rem');
     }
