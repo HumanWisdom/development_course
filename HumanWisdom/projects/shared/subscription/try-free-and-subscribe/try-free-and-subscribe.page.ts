@@ -56,9 +56,23 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   ngOnInit() {
+    this.getUserDetails();
     this.logeventservice.logEvent('view_try_free_subscribe');
     this.InitializeDefaultValues();
     this.getCountry();
+  }
+
+  getUserDetails() {
+      this.onboardingService.getuser(this.userId).subscribe(res => {
+        if (res) {
+          let userDetails = res[0];
+          localStorage.setItem('userDetails',res[0]);
+          localStorage.setItem("isPartner", userDetails.IsPartner);
+          localStorage.setItem("PartnerOption", userDetails.PartnerOption);
+          localStorage.setItem("SubscriberType", res[0].SubscriberType);
+          this.onboardingService.getUserDetails.next(true);
+        }
+      });
   }
 
   InitializeDefaultValues() {

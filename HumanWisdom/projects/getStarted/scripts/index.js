@@ -1,5 +1,7 @@
 var adults = document.getElementById("adults");
-
+if(localStorage.getItem('isDownloadHide')=='true'){
+    this.closeElement();
+}
 // Add a click event listener to the button
 adults.addEventListener("click", function() {
     // This function will be executed when the button is clicked
@@ -55,6 +57,7 @@ window.location.href = "https://happierme.app/teenagers/intro-carousel";
 
 
     function closeElement() {
+        localStorage.setItem('isDownloadHide',true);
         // Hides the element with the ID 'closeableElement'
        var closeElement = document.getElementById('closeableElement')
        closeElement.style.display = 'none';
