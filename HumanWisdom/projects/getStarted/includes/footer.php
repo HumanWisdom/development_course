@@ -420,11 +420,11 @@
 <!-- /footer -->
 
 <!-- sticky rating banner -->
-<div class="row center_flex sticky_rating_banner">
+<div  id="closeableElement" class="row center_flex sticky_rating_banner">
   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 p0 flex_ai">
 
     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
-      <a class="">
+      <a class="" href="javascript:void(0);" onclick="closeElement();">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_close_grey.svg" class="img-responsive">
       </a>
     </div>

@@ -53,6 +53,13 @@ window.location.href = "https://happierme.app/teenagers/intro-carousel";
             });
     });
 
+
+    function closeElement() {
+        // Hides the element with the ID 'closeableElement'
+        document.getElementById('closeableElement').style.display = 'none';
+        var element = document.getElementById('scrollTopArrow');
+        element.classList.remove('mb-8rem');
+    }
     // const MonthlyType = document.getElementById('MonthlyType');
     // MonthlyType.addEventListener('click', () => {
     //   addCountryLinks(countries);

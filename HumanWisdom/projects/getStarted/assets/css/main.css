@@ -3704,3 +3704,7 @@ audio::-webkit-media-controls-enclosure
   /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
   background: linear-gradient(180deg, #E58D82, #CB6171);
 } 
+
+.mb-8rem {
+  margin-bottom: 8rem;
+}
