@@ -63,13 +63,14 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   getUserDetails() {
-      this.onboardingService.getUserDetails.subscribe(res => {
+      this.onboardingService.getuser(this.userId).subscribe(res => {
         if (res) {
           let userDetails = res[0];
           localStorage.setItem('userDetails',res[0]);
           localStorage.setItem("isPartner", userDetails.IsPartner);
           localStorage.setItem("PartnerOption", userDetails.PartnerOption);
-          localStorage.setItem("SubscriberType", res[0].SubscriberType)
+          localStorage.setItem("SubscriberType", res[0].SubscriberType);
+          this.onboardingService.getUserDetails.next(true);
         }
       });
   }
