@@ -1,4 +1,4 @@
-<a href="#" id="scrollTopArrow" class="scroll-top center_flex mb-8rem"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scrollTopArrow" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
 
 <div id="preloader"></div>
 
