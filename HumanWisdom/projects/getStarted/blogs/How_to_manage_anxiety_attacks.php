@@ -142,13 +142,13 @@
                                    </h4>
 
                                   
-                                   <h4 class="mtb0px blog_desc">
+                <h4 class="mtb0px blog_desc">
                
                <span class="blog_highlight_black">
                Journaling:
                </span>
                Writing down your thoughts and feelings can help you gain clarity and reduce stress. The HappierMe app includes journaling prompts and exercises to help you manage anxiety and improve your mental well-being.               
-</h4>
+           </h4>
                 
               <h4 class="mtb0px blog_desc">
                

@@ -299,7 +299,7 @@
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/three-steps-enquiry">
                     Three steps to enquiry,
                   </a>
-                  <a class="blog_highlight_peach td_underline" href="">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
                     Guided questions
                   </a>
                 </h4>
@@ -404,7 +404,7 @@
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/coach">
                     Coaches,
                   </a>
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/forum">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/forum">
                     Discussion Forum
                   </a>
                 </h4>

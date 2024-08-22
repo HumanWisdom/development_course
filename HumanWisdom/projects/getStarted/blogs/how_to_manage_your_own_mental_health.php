@@ -317,7 +317,7 @@
 
                 <h4 class="mtb0px blog_sub_title">
                   Explore the Feel Better Now section
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/feel-better-now">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/feel-better-now">
                     here.
                   </a>
                   <br>
