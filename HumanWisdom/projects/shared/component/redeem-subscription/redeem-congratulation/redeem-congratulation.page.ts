@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from '../../../../shared/models/program-model';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'redeem-congratulation',
@@ -28,14 +29,22 @@ export class RedeemCongratulationPage {
   }
 
   route(event) {
+    let path;
+    
+    if(environment.production){
+      path = "https://humanwisdom.me/";
+    }else{
+      path = "https://staging.happierme.app/";
+    }
+
     if (event === 'dash') {
       if (this.programName !== 'Teenagers') {
-        this.router.navigate(['/adults/adult-dashboard'])
+        this.router.navigate([path+'adults/adult-dashboard'])
       } else {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
+        this.router.navigate([path+'teenagers/teenager-dashboard'])
       }
     } else {
-      this.router.navigate(['/' + this.programName.toLowerCase() + '/onboarding/myprogram'])
+      this.router.navigate([path + this.programName.toLowerCase() + '/onboarding/myprogram'])
     }
   }
 }

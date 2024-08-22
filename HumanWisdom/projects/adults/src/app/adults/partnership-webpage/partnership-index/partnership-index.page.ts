@@ -54,18 +54,6 @@ export class PartnershipIndexPage implements OnInit {
     this.isHowItWorks = true;
     this.isOtherBenefits = true;
 
-    /*
-    setTimeout(() => {
-      window.scrollTo({
-        behavior: 'smooth',
-        top:
-        document.getElementById('pa_other_benefits').getBoundingClientRect().top -
-          document.body.getBoundingClientRect().top -
-          150,
-      })
-    }, 100);
-    */
-
     setTimeout(() => {
       window.scrollTo({ top: 400, behavior: 'smooth' });
     }, 100);
@@ -89,13 +77,6 @@ export class PartnershipIndexPage implements OnInit {
     }
   }
 
-  partnerFaqClick() {
-    if (this.isPartnerFaq) {
-      this.isPartnerFaq = false;
-    } else {
-      this.isPartnerFaq = true;
-    }
-  }
   BecomeAPartner() {
     localStorage.setItem('btnClickBecomePartner', 'true');
     this.services.navigateToUpgradeToPremium = true;
@@ -111,7 +92,7 @@ export class PartnershipIndexPage implements OnInit {
       window.scrollTo({
         behavior: 'smooth',
         top:
-          document.getElementById('pa_PartnerFaq').getBoundingClientRect().top -
+          document.getElementById('pa_faqs').getBoundingClientRect().top -
           document.body.getBoundingClientRect().top -
           120,
       })
@@ -136,7 +117,7 @@ export class PartnershipIndexPage implements OnInit {
       text: 'Hey, check out the HappierMe Partnership Program',
       url: this.router.url
     }).then((response) => {
-      
+
     })
       .catch((error) => {
         console.log(error);
