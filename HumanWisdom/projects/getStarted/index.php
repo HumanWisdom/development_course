@@ -6,7 +6,8 @@
     <meta property="title" content="HappierMe: Master your mind.">
     <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
-
+    <!--Canonical Tag-->
+    <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
@@ -29,7 +30,7 @@
     })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
     <!-- End Google Tag Manager -->
 
-
+  
     
   </head>
 
