@@ -102,6 +102,12 @@ export class MyHammerConfig extends HammerGestureConfig {
             provide: HAMMER_GESTURE_CONFIG,
             useClass: MyHammerConfig,
           },
+         {
+          provide: APP_INITIALIZER,
+          useFactory: initDependency,
+          deps: [AdultsService],
+          multi: true
+        },
         //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         // {
         //     provide: 'SocialAuthServiceConfig',
