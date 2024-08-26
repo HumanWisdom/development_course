@@ -307,4 +307,14 @@ $('.search-button').click(function ()
     $('.search-button').toggleClass('cp_absolute');
     $('.fc_web_search').focus();
 });
+
+jQuery(function($) 
+{
+    var path = window.location.href;
+    $('li a').each(function() {
+        if (this.href === path) {
+            $(this).addClass('active_nav');
+        }
+    });
+});
 </script>
