@@ -29,22 +29,14 @@ export class RedeemCongratulationPage {
   }
 
   route(event) {
-    let path;
-    
-    if(environment.production){
-      path = "https://humanwisdom.me/";
-    }else{
-      path = "https://staging.happierme.app/";
-    }
-
     if (event === 'dash') {
       if (this.programName !== 'Teenagers') {
-        this.router.navigate([path+'adults/adult-dashboard'])
+        window.location.href = environment.clientUrl + '/adults/adult-dashboard';
       } else {
-        this.router.navigate([path+'teenagers/teenager-dashboard'])
+        window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
       }
     } else {
-      this.router.navigate([path + this.programName.toLowerCase() + '/onboarding/myprogram'])
+      this.router.navigate(['/' + this.programName.toLowerCase() + '/onboarding/myprogram'])
     }
   }
 }
