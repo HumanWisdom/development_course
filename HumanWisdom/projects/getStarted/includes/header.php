@@ -22,7 +22,7 @@
               </div>
             </a>
           </li> -->
-          <li><a href="../blogs/blog_index.php">Blog</a></li>
+          <li><a href="../blogs/blog_index.php" class="">Blog</a></li>
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="../pages/work.php">HappierMe for Work</a></li>
