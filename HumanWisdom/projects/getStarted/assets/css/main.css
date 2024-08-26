@@ -1744,6 +1744,13 @@ section {
   align-items: center;
   justify-content: center;
 }
+
+.dflex_jc_lc
+{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
 /* /flex */
 
 /* display */
