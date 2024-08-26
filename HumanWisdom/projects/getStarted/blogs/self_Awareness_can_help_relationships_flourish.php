@@ -247,8 +247,8 @@
 
                 <h4 class="mtb0px blog_sub_title">
                   For more information – Explore the Relationship module. Download the HappierMe app from the Apple or Google store, or visit
-                  <a class="blog_highlight_peach">
-                    https://happierme.app
+                  <a class="blog_highlight_peach" href="https://happierme.app/">
+                     https://happierme.app
                   </a>
                 </h4>
               </div>
