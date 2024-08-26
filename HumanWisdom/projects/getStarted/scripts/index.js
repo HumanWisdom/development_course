@@ -1,4 +1,4 @@
-var adults = document.getElementById("adults");
+
 
 const userAgent = navigator.userAgent;
 
@@ -12,10 +12,12 @@ if (/Mobi|Android/i.test(userAgent)) {
 }
 
 var element = document.getElementById('scrollTopArrow');
-if (type == 'Desktop') {
-    element.classList.add('mb15px');
-} else {
-    element.classList.add('mb-8rem');
+if (element) {
+    if (type == 'Desktop') {
+        element.classList.add('mb15px');
+    } else {
+        element.classList.add('mb-8rem');
+    }
 }
 
 
@@ -23,26 +25,31 @@ if (localStorage.getItem('isDownloadHide') == 'true') {
     this.closeElement();
 }
 
-
-
+var adults = document.getElementById("adults");
+if(adults){
+    adults.addEventListener("click", function () {
+        // This function will be executed when the button is clicked
+        window.location.href = "https://happierme.app/adults/intro/intro-carousel";
+    });
+}
 // Add a click event listener to the button
-adults.addEventListener("click", function () {
-    // This function will be executed when the button is clicked
-    window.location.href = "https://happierme.app/adults/intro/intro-carousel";
-});
+
 
 // Get the button element by its id
 var teenagers = document.getElementById("teenagers");
+if(teenagers){
 // Add a click event listener to the button
 teenagers.addEventListener("click", function () {
     // This function will be executed when the button is clicked
     window.location.href = "https://happierme.app/teenagers/intro-carousel";
 });
 
+}
+
 
 const requestDemo = document.getElementById('Request-Demo');
-
-requestDemo.addEventListener('click', () => {
+if(requestDemo){
+    requestDemo.addEventListener('click', () => {
     const email = document.getElementById('email').value;
     const name = document.getElementById('name').value;
     const company = document.getElementById('company').value;
@@ -77,6 +84,7 @@ requestDemo.addEventListener('click', () => {
             alert('An error occurred. Please try again.');
         });
 });
+}
 
 
 function closeElement() {
