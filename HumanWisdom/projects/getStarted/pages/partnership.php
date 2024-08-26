@@ -72,8 +72,8 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                  <a href="#bring_happierme">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                  <a href="https://happierme.app/adults/partnership-webpage/partnership-index">
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff_a" >
                       Become a partner
                     </button>
                   </a>
@@ -103,8 +103,8 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-              <a href="#bring_happierme">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+              <a href="https://happierme.app/adults/partnership-webpage/partnership-index">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff_a" >
                   Become a partner
                 </button>
               </a>
@@ -149,7 +149,7 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
             <video controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/pp_video_01.webp"
+              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_01.mp4"
@@ -333,7 +333,7 @@
       <div class="row center_flex mt100px">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
           <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 p0">
-            <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+            <a href="https://happierme.app/adults/partnership-webpage/partnership-index" class="btn btn_tff_a fs_15px fw_600 lh_140p fc_ffffff center_flex">
               Become a partner
             </a>
           </div>

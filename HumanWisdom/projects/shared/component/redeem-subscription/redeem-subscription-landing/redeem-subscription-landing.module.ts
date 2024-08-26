@@ -8,6 +8,7 @@ import { RedeemSubscriptionLandingPageRoutingModule } from './redeem-subscriptio
 
 import { RedeemSubscriptionLandingPage } from './redeem-subscription-landing.page';
 import { SharedModule } from '../../../../shared/shared.module';
+import { LoginRegisterModalComponent } from '../../login-register-modal/login-register-modal.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SharedModule } from '../../../../shared/shared.module';
     FormsModule,
     IonicModule,
     RedeemSubscriptionLandingPageRoutingModule,
-    SharedModule
+    SharedModule,
+    LoginRegisterModalComponent
   ],
   declarations: [RedeemSubscriptionLandingPage]
 })

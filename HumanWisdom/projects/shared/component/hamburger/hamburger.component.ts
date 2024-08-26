@@ -20,7 +20,7 @@ import { debounceTime, throttleTime } from "rxjs/operators";
   templateUrl: "./hamburger.component.html",
   styleUrls: ["./hamburger.component.scss"],
 })
-export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDestroy {
+export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closeLogoutmodal') closeLogoutmodal: ElementRef;
   isHamburgerClicked = false;
@@ -31,7 +31,6 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   isloggedIn = false;
   name = "";
   roleid = 0;
-  url = "";
   subscriber = false;
   partnerOption: string = "";
   @Input()
@@ -42,18 +41,20 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   enableAlert = false;
   content = '';
   enablebecomepartner = false;
-  @Input() userDetails :any
+  @Input() userDetails: any
   subscription: Subscription;
   toursubscription: Subscription;
   disableClick = true;
   isAdults: boolean = true;
-  private closeEventSubject: Subject<void>= new Subject();
+  isDataRecieved = false;
+  url='';
+  private closeEventSubject: Subject<void> = new Subject();
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
     public platform: Platform,
     public logeventservice: LogEventService,
-    private cd:ChangeDetectorRef
+    private cd: ChangeDetectorRef
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -63,12 +64,20 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
     setTimeout(() => {
       this.disableClick = false;
     }, 500);
-    this.closeEventSubject.pipe(throttleTime(1000)).subscribe(()=>{
+    this.closeEventSubject.pipe(throttleTime(1000)).subscribe(() => {
       this.closemodal.nativeElement.click();
-    })  
-
-    this.Onboardingservice.isPartnerSubject.subscribe(value => {
-      this.isPartner = value;
+    })
+    this.Onboardingservice.getUserDetails.subscribe(res => {
+      if (res) {
+        console.log('hamburger subscription called');
+        console.log(res);
+        this.userDetails = res[0];
+        this.isDataRecieved = true;
+        this.setInitialData();
+        this.setProfileImage( this.userDetails);
+        console.log(res);
+        this.isDataRecieved = false;
+      }
     });
   }
 
@@ -84,8 +93,6 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
-   // this.isHamburgerClicked =  !this.isHamburgerClicked;
-
   }
 
   closemenuevent() {
@@ -110,6 +117,10 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.setInitialData();
+  }
+
+  setInitialData() {
     if (this.userDetails) {
       localStorage.setItem("isPartner", this.userDetails.IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
@@ -129,9 +140,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   }
 
 
-  public getImageUrl() {
-   
-  }
+
 
   ngOnInit() {
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
@@ -199,7 +208,8 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   }
 
   getName() {
-    return this.name;
+    return this.name===""? 'guest' :this.name
+
   }
 
 
@@ -224,7 +234,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   }
 
   loginroute() {
-    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
+      this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
   }
 
   giftwisdom() {
@@ -242,7 +252,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
 
   routeToPartnerScreen() {
     this.logeventservice.logEvent('click_My_Partnership_Hamburger')
-      this.router.navigate(["adults/partnership-report/income-report"]);
+    this.router.navigate(["adults/partnership-report/income-report"]);
   }
 
   RouteToFaq() {
@@ -275,8 +285,8 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
     // let el: HTMLElement = document.getElementById('ispartnership');
     // el.style.display = "block";
   }
-  getPartnerInfo(){
-   return SharedService.getPartnerInfo()
+  getPartnerInfo() {
+    return SharedService.getPartnerInfo()
   }
 
   // let el: HTMLElement = document.getElementById('s1');
@@ -312,7 +322,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
       if (params != '' && route != '') {
         this.router.navigate([route, params]);
       } else if (route != '') {
-        if (route == '/adults/testimonials'  ||
+        if (route == '/adults/testimonials' ||
           route == '/adults/adverts-work' ||
           route == '/adults/adverts-student' ||
           route == '/adults/adverts-about' ||
@@ -366,7 +376,7 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
-        this.router.navigate(['/' + SharedService.getprogramName() + route]);
+      this.router.navigate(['/' + SharedService.getprogramName() + route]);
     }
     this.closemodal?.nativeElement?.click();
   }
@@ -391,7 +401,8 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
             localStorage.setItem("guest", "T");
             localStorage.setItem("navigateToUpgradeToPremium", "true");
             localStorage.setItem("btnClickBecomePartner", "true");
-            this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+       
+           // this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
           } else {
             this.Onboardingservice.navigateToUpgradeToPremium = true;
             this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -419,7 +430,14 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
-            this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+            const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
+            if (auth2) {
+              auth2.signOut().then(() => {
+                this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
+              });
+            }else {
+              this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+            }
           }
         }
       }
@@ -470,15 +488,24 @@ export class HamburgerComponent implements OnInit,AfterViewInit ,OnChanges, OnDe
   ngAfterViewInit(): void {
     setTimeout(() => {
       let userdetail = localStorage.getItem("userDetails");
-      if(userdetail){
+      if (userdetail) {
         let detail = JSON.parse(userdetail);
-        if (detail && detail['UserImagePath'] != '') {
-          this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
-        }
+        this.setProfileImage(detail);
       }
-      this.url = this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
-      this.cd.detectChanges();
+      else{
+        this.url = this.url === '' || this.url.includes('undefined') ?'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' :'';
+      }
     }, 1000);
 
   }
-}
+
+  setProfileImage(detail) {
+    if (detail) {
+      if (detail && detail['UserImagePath'] != '') {
+        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      }
+    }
+    this.url = this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
+    this.cd.detectChanges();
+  }
+  }

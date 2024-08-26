@@ -121,9 +121,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <p class="fs_15px fw_400 lh_140p fc_ffffff">
+                          <!-- <p class="fs_15px fw_400 lh_140p fc_ffffff">
                             The HappierMe app helps people to understand their thoughts, feelings and actions and be mentally healthy, have happier relationships and succeed in life. 
-                          </p>
+                          </p> -->
 
                           <p class="fs_15px fw_400 lh_140p fc_ffffff">
                             We developed the HappierMe Partnership Program to develop a community of users to help us spread some happiness in the world. We invite you to join us and find out how it can help you, help others, and make the world a better place. You can also earn an income.
@@ -1050,7 +1050,7 @@
                       </div>
                       <!-- /testimonials -->
 
-                      <!-- <div class="row">
+                      <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <a (click)="scroll_to_obs()">
                             <h4 class="fs_15px fw_600 lh_150p fc_e58d82 vpb">
@@ -1068,7 +1068,7 @@
                             </button>
                           </a>
                         </div>
-                      </div> -->
+                      </div>
 
                     </form>
                   </div>
@@ -1361,7 +1361,7 @@
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" (click)="partnerFaqClick()" href="#pa_faqs">
+                                    <a data-toggle="collapse" class="collapsed" href="#pa_faqs">
                                       <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                           <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
@@ -1372,7 +1372,7 @@
                                     </a>
                                   </h4>
                                 </div>
-                                <div id="pa_faqs" id="pa_PartnerFaq"  *ngIf="isPartnerFaq"  class="panel-collapse collapse in">
+                                <div id="pa_faqs" data-parent="#panel-title" class="panel-collapse collapse">
                                   <div class="panel-body">
 
                                     <div class="row">

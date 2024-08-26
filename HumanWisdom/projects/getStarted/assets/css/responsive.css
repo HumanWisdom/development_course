@@ -201,6 +201,13 @@
     {
         display: none;
     }
+
+    .dflex_jc_lc
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 820px)
@@ -243,6 +250,25 @@
         height: 40px;
         font-size: 12px;
     }
+
+    .ddflex_mblock
+    {
+        display: block;
+    }
+
+    .cml40px 
+    {
+        margin-left: 0;
+    }
+
+    .badge_new
+    {
+        position: absolute;
+        left: 30%;
+        top: 25%;
+        bottom: 0;
+        margin: unset;
+    }
 }
 
 @media (max-width: 1024px)
@@ -259,6 +285,11 @@
     .owl-carousel.owl-drag .owl-item:last-child a.item
     {
         margin-right: 450px;
+    }
+
+    .w5p
+    {
+        width: 5%;
     }
 }
 

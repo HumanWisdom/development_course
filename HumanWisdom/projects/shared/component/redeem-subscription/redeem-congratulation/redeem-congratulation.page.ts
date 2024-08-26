@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from '../../../../shared/models/program-model';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'redeem-congratulation',
@@ -11,7 +12,7 @@ import { ProgramType } from '../../../../shared/models/program-model';
 export class RedeemCongratulationPage {
   public yearormonth = ''
   public isAdults = true;
-  public programName = SharedService.getprogramName();
+  public programName = '';
 
   constructor(
     private router: Router
@@ -21,18 +22,21 @@ export class RedeemCongratulationPage {
     } else {
       this.isAdults = false;
     }
-    this.yearormonth = localStorage.getItem('yearormonth');
+    let res = localStorage.getItem('yearormonth');
+
+    this.yearormonth = res.split('-')[0];
+    this.programName = res.split('-')[1];
   }
 
   route(event) {
-    if(event === 'dash') {
-      if (this.isAdults) {
-        this.router.navigate(['/adults/adult-dashboard'])
+    if (event === 'dash') {
+      if (this.programName !== 'Teenagers') {
+        window.location.href = environment.clientUrl + '/adults/adult-dashboard';
       } else {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
+        window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
       }
-    }else {
-      this.router.navigate(['/'+ SharedService.getprogramName() +'/onboarding/myprogram'])
+    } else {
+      this.router.navigate(['/' + this.programName.toLowerCase() + '/onboarding/myprogram'])
     }
   }
 }

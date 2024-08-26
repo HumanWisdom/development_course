@@ -1,4 +1,4 @@
-<a href="#" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scrollTopArrow" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
 
 <div id="preloader"></div>
 
@@ -297,4 +297,24 @@ $( window ).resize( function() {
     }
 });
 $( window ).resize();
+
+/*$('.search-button').click(function () {
+    $('.search-button').css({'position':'absolute', 'right':'0'});
+});*/
+
+$('.search-button').click(function () 
+{
+    $('.search-button').toggleClass('cp_absolute');
+    $('.fc_web_search').focus();
+});
+
+jQuery(function($) 
+{
+    var path = window.location.href;
+    $('li a').each(function() {
+        if (this.href === path) {
+            $(this).addClass('active_nav');
+        }
+    });
+});
 </script>

@@ -3,7 +3,7 @@ import {
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from "rxjs";
-import { environment} from '../../environments/environment'
+import { environment } from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
 import { ToastrService } from "ngx-toastr";
@@ -23,12 +23,41 @@ export class OnboardingService {
   public toastrService: ToastrService
   private isEnableHam = new BehaviorSubject<boolean>(false);
   private isEnableTour = new BehaviorSubject<boolean>(false);
-  isPartnerSubject = new Subject<string>();
-
+  updateUserDetails = new Subject<any>();
+  getUserDetails = new Subject<any>();
   // Subscribe to the Subject
-  constructor(private http: HttpClient, handler: HttpBackend,public toastr: ToastrService) {
+  constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService) {
     // this.http = new HttpClient(handler);
-    this.toastrService=this.toastr;
+    this.toastrService = this.toastr;
+    this.updateUserDetails.subscribe(val => {
+      if (val) {
+        let userId = JSON.parse(localStorage.getItem("userId"))
+        if (userId != null) {
+          this.getuser(userId).subscribe((res: any) => {
+            localStorage.setItem("isPartner", res[0].IsPartner);
+            localStorage.setItem('PartnerOption', res[0].PartnerOption);
+            localStorage.setItem("SubscriberType", res[0].SubscriberType)
+            if (localStorage.getItem("SubscriberType") == "Monthly" ||
+              localStorage.getItem("SubscriberType") == "Annual") {
+              localStorage.setItem("Subscriber", "1")
+            }
+            this.getUserDetails.next(res);
+          });
+        }
+      }
+    })
+  }
+
+
+  getuserDetail() {
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    if (userId != null) {
+      this.getuser(userId).subscribe((res: any) => {
+        localStorage.setItem("isPartner", res[0].IsPartner);
+        localStorage.setItem('PartnerOption', res[0].PartnerOption);
+        localStorage.setItem("SubscriberType", res[0].SubscriberType)
+      });
+    }
   }
 
   setEnableTour(value: boolean): void {
@@ -203,11 +232,11 @@ export class OnboardingService {
     return this.http.post(this.path + `/AttachPaymentMethod/${StripePayMethodID}/${UserID}`, {})
   }
 
-  createSetupIntent(paymentIntent:paymentIntentModel){
+  createSetupIntent(paymentIntent: paymentIntentModel) {
     return this.http.post(this.path + '/CreateSetupIntent/', paymentIntent);
   }
 
-  cancelSubscription(code,reasonId): Observable<any> {
+  cancelSubscription(code, reasonId): Observable<any> {
     return this.http.post(this.path + `/CancelSubscription/${code}/${reasonId}`, {});
   }
 
@@ -215,12 +244,12 @@ export class OnboardingService {
     return this.http.get(this.path + '/cancelReasons/');
   }
 
-  checkTrial(): Observable<any>{
-    return this.http.get(this.path +  `/CheckIsTrial/${SharedService.ProgramId}`);
+  checkTrial(): Observable<any> {
+    return this.http.get(this.path + `/CheckIsTrial/${SharedService.ProgramId}`);
   }
 
-  ReviveSubscription(key): Observable<any>{
-    return this.http.post(this.path + `/ReviveSubscription/${key}`,{});
+  ReviveSubscription(key): Observable<any> {
+    return this.http.post(this.path + `/ReviveSubscription/${key}`, {});
   }
 
   getScenarios(): Observable<any> {
@@ -406,7 +435,7 @@ export class OnboardingService {
     return this.http.get(this.path + `/UserBookMarks/${data}`)
   }
 
-   activateModule(id, lastVisitedurl = '', indexUrl = '') {
+  activateModule(id, lastVisitedurl = '', indexUrl = '') {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
     let pgResume;
     let mediaPercent;

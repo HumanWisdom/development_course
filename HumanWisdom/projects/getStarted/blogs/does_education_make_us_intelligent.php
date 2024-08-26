@@ -57,8 +57,11 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                  Does education make us intelligent?
+                  Mental health
+                  </button>
 
+                  <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                  Work and Leadership
                   </button>
                 </div>
 
@@ -72,7 +75,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://www.canva.com/design/DAGNZOKXYSQ/ZuP1MMisqzLjtKz4g5smHA/edit?utm_content=DAGNZOKXYSQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp
                 " class="img-responsive" alt="Does education make us intelligent?
 ">
               </div>
@@ -93,7 +96,8 @@
                 Imagine someone visiting our planet and observing these facts about us — would they regard us as intelligent?
 
                 </h4>
-                <ul style="list-style-type:disc;">
+                <h4 class="mtb0px blog_desc">
+                <ul>
                     <li>1 in 6 of us have an addiction problem.
                     </li>
                      <li>42% of us are obese, and unable to regulate how much food we eat.
@@ -111,7 +115,8 @@
                      </li>
                      
 
-                  </ul>  
+                  </ul> 
+                </h4> 
                 <!-- <h4 class="mtb0px blog_sub_title">
                     How well do you understand yourself?
                 </h4> -->
@@ -127,7 +132,8 @@
                 What are the hallmarks of an intelligent person?
 
                 </h4>
-                <ul style="list-style-type:disc;">
+                <h4 class="mtb0px blog_desc">
+                <ul>
                     <li>Manage their own emotions and mental health.
                     </li>
                      <li>Self regulate their habits around sleep, exercise, food, drinks and drugs.
@@ -166,7 +172,7 @@
                      
 
                   </ul>  
-
+                </h4>
 
 
                
@@ -223,9 +229,10 @@
                 <h4 class="mtb0px blog_sub_title">
                 Here are some of the things that could be taught:
                 </h4>
+              
+                <h4 class="mtb0px blog_desc">
 
-
-                <ul style="list-style-type:disc;">
+                <ul>
                     <li>Understand and question our conditioning influences.
                     </li>
                      <li>Understand the nature of fear so it does not operate irrationally.
@@ -263,7 +270,7 @@
                      
 
                   </ul>  
-
+             </h4>
 
 
 
@@ -280,22 +287,14 @@
                 This understanding is simple, but the impact can be profound. It can help people of all ages live in peace with themselves and others, manage their own emotions and mental health, make better decisions and live a happier and more meaningful life. It can also contribute to our success at work by helping us develop our soft skills, like empathy, integrity, communication and leadership.
                 </h4>
 
-                
-
-              
-
-                
-
-                
-
-           
                 <h4 class="mtb0px blog_desc">
-                The HappierMe emotional intelligence app is available for both adults and teens and helps with all of the above. Created by experts from around the world it can be downloaded and explored with a free trial.The website is
+                The HappierMe emotional intelligence app is available for both adults and teens and helps with all of the above. Created by experts from around the world it 
+                can be downloaded and explored with a free trial. The website is
                  
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
-                    happierme.app If you’d like to get in touch — please email team@happierme.app
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                    happierme.app</a> . If you’d like to get in touch — please email team@happierme.app
 
-                    </a>
+                    
                 </h4>
 
                
