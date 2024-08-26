@@ -54,7 +54,7 @@
               poster=""
               controlsList="nodownload" id="vid">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_landing.mp4#t=1"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults.mp4#t=1"
                 type="video/mp4">
             </video>
           </div>
@@ -1817,8 +1817,12 @@
                         A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.
                       </h5>
 
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+                      <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                          <audio id="aud1" controls controlsList="nodownload">
+                            <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                          </audio>
+                        </div>
                       </div>
 
                       <a href="https://happierme.app/adults/pathway/">
