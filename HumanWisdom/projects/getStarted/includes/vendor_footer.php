@@ -1,4 +1,4 @@
-<a href="#" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scrollTopArrow" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
 
 <div id="preloader"></div>
 
@@ -282,7 +282,7 @@ $( window ).resize( function() {
     } else {
     // $('.btn_tff').attr('href','#div_subscription');
     $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
-    }
+    } 
 });
 $( window ).resize();
 

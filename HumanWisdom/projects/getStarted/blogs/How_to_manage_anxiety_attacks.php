@@ -116,11 +116,7 @@
                   </a>
                   that can help you stay present and calm. By focusing on your breath and body sensations, you can reduce anxious thoughts and feelings.
 
-</h4>
-
-                
-
-               
+                </h4>
 
                 <h4 class="mtb0px blog_desc">
                
@@ -129,16 +125,10 @@
                   </span>
                   Progressive muscle relaxation is a technique that involves tensing and relaxing different muscle groups to release tension in the body. The HappierMe app includes guided exercises that can help you learn this technique and apply it to your daily life. By reducing physical tension, you can also reduce mental tension and anxiety.                </h4>
 
-               
-
-              
-
-                
-
-                <h4 class="mtb0px blog_desc">
+              <h4 class="mtb0px blog_desc">
                 <span class="blog_highlight_black">
                 Cognitive Behavioral Therapy (CBT):
-</span>
+                </span>
                   <a class="blog_highlight_peach td_underline" href="https://www.verywellmind.com/what-is-cognitive-behavior-therapy-2795747">
                   CBT
                   </a>
@@ -152,13 +142,13 @@
                                    </h4>
 
                                   
-                                   <h4 class="mtb0px blog_desc">
+                <h4 class="mtb0px blog_desc">
                
                <span class="blog_highlight_black">
                Journaling:
                </span>
                Writing down your thoughts and feelings can help you gain clarity and reduce stress. The HappierMe app includes journaling prompts and exercises to help you manage anxiety and improve your mental well-being.               
-</h4>
+           </h4>
                 
               <h4 class="mtb0px blog_desc">
                

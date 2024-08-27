@@ -117,7 +117,7 @@ export class ChangeTopicPage implements OnInit {
           this.router.navigate([this.url]);
         }
         else {
-debugger
+
           localStorage.setItem('storyNumber', this.selectedId);
           if (name === 'Manage your emotions') {
             localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
@@ -127,7 +127,7 @@ debugger
             localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
             this.logeventservice.logEvent('click_stress_anxiety');
             this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
-          } else if (name === 'Succeed in Life') {
+          } else if (name === 'Succeed in life') {
             localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
             this.logeventservice.logEvent('click_workplace');
             this.router.navigate(['/teenagers/curated/succeed-in-life'])

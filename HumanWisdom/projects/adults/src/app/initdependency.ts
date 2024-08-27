@@ -5,12 +5,18 @@ export function initDependency(
   ) {
     if (!(localStorage.getItem("isloggedin")) || localStorage.getItem("isloggedin") !== 'T') {
       services.emaillogin();
+      return () => {
+        return new Promise<void>((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, 2000);
+        });
+      };
+    }else {
+      return () => {
+        return new Promise<void>((resolve) => {
+            resolve();
+        });
+      };
     }
-  return () => {
-    return new Promise<void>((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 2000);
-    });
-  };
 }
