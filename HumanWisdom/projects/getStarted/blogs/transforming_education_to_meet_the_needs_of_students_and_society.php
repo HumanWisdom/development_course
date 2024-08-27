@@ -2,10 +2,10 @@
 <html lang="en">
 
   <head>
-    <title>Avoid and overcome burnout, with self-awareness</title>
-    <meta property="title" content="Avoid and overcome burnout, with wisdom">
-    <meta property="description" content="A recent poll by HappierMe suggests that 70% of employees think burnout is very common in their organization.">
-    <meta property="keyword" content="burnout,Stress, Overcome stress">
+    <title>Transforming education to meet the needs of students and society.</title>
+    <meta property="title" content="Why Teaching Wisdom in Schools is Crucial for the Future">
+    <meta property="description" content="Learn why incorporating wisdom into the curriculum is essential for nurturing well-rounded, thoughtful students who are prepared for the complexities of modern life.">
+    <meta property="keyword" content="teaching wisdom, education reform, school curriculum, life skills education, modern education, holistic learning, wisdom in schools, educational philosophy, student development, values-based education">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -48,7 +48,7 @@
             <div class="row rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                  Avoid and overcome burnout, with self-awareness
+                Transforming education to meet the needs of students and society.
                 </h1>
               </div>
             </div>

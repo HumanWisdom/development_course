@@ -3,9 +3,9 @@
 
   <head>
     <title>The Future of Education: A HappierMe Survey</title>
-    <meta property="title" content="Avoid and overcome burnout, with wisdom">
-    <meta property="description" content="A recent poll by HappierMe suggests that 70% of employees think burnout is very common in their organization.">
-    <meta property="keyword" content="burnout,Stress, Overcome stress">
+    <meta property="title" content="The Future of Education: A HappierMe Survey">
+    <meta property="description" content="Discover key insights from HappierMe’s survey on the future of education, highlighting emerging trends, challenges, and opportunities for creating a more effective learning environment.">
+    <meta property="keyword" content="future of education, education survey, education trends, learning environment, educational challenges, modern education, survey results, student insights, digital education, educational innovation, education">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -79,12 +79,18 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px blog_sub_title">
-                Education is the cornerstone of personal development and societal growth. It shapes the minds of the young and prepares them for the challenges of the future. However, the traditional focus on academic knowledge alone is increasingly being questioned. A recent survey conducted by HappierMe, an emotional intelligence and personal development app, set out to understand what people think should be added to the educational curriculum to complement academic knowledge. The results are a compelling call for a more holistic approach to education.                </h4>
+                <h4 class="mtb0px blog_desc">
+                Education is the cornerstone of personal development and societal growth. It shapes the minds of the young and prepares them for the challenges of the future. However, the traditional focus on academic knowledge alone is increasingly being questioned. A recent survey conducted by HappierMe, an emotional intelligence and personal development app, set out to understand what people think should be added to the educational curriculum to complement academic knowledge. The results are a compelling call for a more holistic approach to education. </h4>
+                <h4 class="mtb0px blog_desc">
+                  
+                The survey, which had 1,609 responses, revealed that a significant number of people believe that schools should teach more than just academic knowledge. Here’s a breakdown of the results:
+                  </h4>
+
+
 
                 <h4 class="mtb0px blog_desc">
                   
-                - 11% voted for the art of happy relationships                  </h4>
+                - 11% voted for the art of happy relationships  </h4>
 
                 <h4 class="mtb0px blog_desc">
                 - 39% for emotional intelligence                </h4>
@@ -118,7 +124,7 @@
                   <a class="blog_highlight_peach" href="https://happierme.app/adults/wisdom-exercise">
                   Emotional Intelligence
                   </a>
-</h4>
+                    </h4>
                   
 
                
@@ -160,8 +166,8 @@
 
                 <h4 class="mtb0px blog_desc">
                   
-                As we look to the future, it is clear that our educational institutions have the opportunity to redefine what it means to be educated. By embracing a more comprehensive approach, we can unlock the full potential of the next generation.                  <a class="blog_highlight_peach" href="https://happierme.app/adults/breathing">
-                    
+                As we look to the future, it is clear that our educational institutions have the opportunity to redefine what it means to be educated. By embracing a more comprehensive approach, we can unlock the full potential of the next generation.     
+                
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
