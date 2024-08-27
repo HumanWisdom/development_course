@@ -2,8 +2,8 @@
 <html lang="en">
 
   <head>
-    <title>Avoid and overcome burnout, with self-awareness</title>
-    <meta property="title" content="Avoid and overcome burnout, with wisdom">
+    <title>Transforming the lives of children through self-knowledge</title>
+    <meta property="title" content="Transforming the lives of children through self-knowledge">
     <meta property="description" content="A recent poll by HappierMe suggests that 70% of employees think burnout is very common in their organization.">
     <meta property="keyword" content="burnout,Stress, Overcome stress">
 
@@ -48,7 +48,8 @@
             <div class="row rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                  Avoid and overcome burnout, with self-awareness
+                
+                  Transforming the lives of children through self-knowledge
                 </h1>
               </div>
             </div>
@@ -80,177 +81,106 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px blog_sub_title">
-                  This article explores how burnout can be avoided and overcome and the results of a HappierMe poll.
-                </h4>
+                
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
-                    A recent poll by HappierMe suggests that 70% of employees think burnout is very common in their organization.
-                  </span>
-                  The poll was conducted in January 2024 and 1900 people took part.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  It was commonest among those who had positions of responsibility, especially among CEO’s, teachers, finance professionals, doctors, nurses and those working in mental health.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    It is the silent epidemic of modern life leading to emotional and physical exhaustion.
-                  </span>
-                  Those who are experiencing burnout may not even realize the symptoms of it unless it’s too late. It is so important to spot it early and do something about it, and better still, avoid it altogether.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Symptoms of early burnout
-                  </span>
-                  include feeling tired all the time, or unable to cope, or getting more irritable, or not sleeping well. We don’t enjoy our work any more, and are more likely to make poor decisions. We can feel like a victim of our own circumstances.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Burnout is caused by long term stress
-                  </span>
-                  and there are many causes of that in our lives, work is just one of them.
-                </h4>
-
-                <h4 class="mtb0px blog_sub_title">
-                  Work
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Employers and managers are under pressure to deliver, and that pressure gets passed down to employees. In the name of efficiency, employers try to get more done from fewer people, not realizing that if an employee starts burning out, their productivity is going to decrease. They have a greater chance of going off sick or leaving their jobs.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Our own ambition to be better than others and climb the ladder of success can contribute to burnout, with some employees not taking their allocated leave, or working evenings and weekends just to get ahead.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  We can get caught up in a frenzied competitive atmosphere and not be aware we are being conditioned by it. Many self-employed people live with a constant anxiety about having enough work or money in the future, and work longer hours than if they were employed.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Explore the module on Work
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/work">
-                    here
-                  </a>
-                  <br>
-                  <span class="blog_highlight_black">
-                    Explore the Conditioning module
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/conditioning">
-                    here
-                  </a>
-                </h4>
-
-                <h4 class="mtb0px blog_sub_title">
-                  Personal lives
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Chronic stress can be a product of our personal circumstances. We may not have enough money, or worry about not having enough in the future. That stress contributes to burnout and exhaustion. Or we may have recurring conflict in our relationships and that can wear us down. Or we might be carers dealing with challenging circumstances with no respite. There are many sources of long term stress we have to deal with every day.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Explore the module on Relationships
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/relationships">
-                    here
-                  </a>
-                </h4>
-
-                <h4 class="mtb0px blog_sub_title">
-                  Past trauma
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  If we have suffered some past trauma, that may put our nervous system on high alert and the same situation can make us feel more stressed than it would others. In some surveys 70% of people have suffered some past trauma, and not everyone has resolved it. Long term stress can lead to poor sleep, and this makes us even more irritable and prone to stress during the day.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Explore a podcast on dealing with trauma
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/audiopage/~podcasts~68.mp3/68/T/Overcoming-Past-Trauma">
-                    here
-                  </a>
-                </h4>
-
-                <h4 class="mtb0px blog_sub_title">
-                  Our need to be occupied
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Our brains never switch off and the mind never gets a rest. When work finishes, digital entertainment takes over. Deep down our minds are restless and we feel uncomfortable being quiet in our own company. We scroll endlessly on social media, or watch TV, or listen to music or find other ways to try and escape from that feeling, including drugs and alcohol. The brain is an amazing machine, but it also needs periods of rest to recover and we need to recognise the importance of doing so.
-                </h4>
-
-                <h4 class="mtb0px blog_sub_title">
-                  What can we do to avoid and overcome burnout?
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Perhaps the first step is to realize that it is common and can happen to anyone, and ask yourself if it may be happening to you. 
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Explore the module on Stress in the HappierMe app
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/stress">
-                    here
-                  </a>
-                  and put in place practical measures to reduce your stress. Initially this could include regular
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/breathing">
-                    breathing exercises
-                  </a>
-                  or a
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/meditation">
-                    meditation practice.
-                  </a>
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Stress is often caused by the automatic way our mind reacts to our circumstances. A deeper self-awareness can help us be in charge of our own reactions and find fresh ways to respond. Many of the causes of stress begin in our own thinking but we are not aware of them, for example our mind comparing all the time.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Understanding them can help us put them to one side and be less stressed.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  Employers could also prioritize the well-being of their staff, realizing that it is in their own best interest to have employees who are not suffering from burnout.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-                  To find out more, explore all the resources in the
+                  The 
                   <a class="blog_highlight_peach" href="https://happierme.app/">
-                    HappierMe app
-                  </a>
-                  to avoid and overcome stress for the long term.
-                </h4>
+                  HappierMe Project
+                  </a> was born from a tragedy.                  </span>
+                   A children’s hospital was accidentally bombed in a war zone. I was deeply moved and felt human beings could do better; we must do better. I felt that if we could just connect with our own innate wisdom, which comes from a deeper self-understanding, many problems which begin in our thinking could be avoided and more easily solved. These include mental health problems, relationship conflict, addiction, violence, divisions in society, low self-esteem, and war. This understanding is simple, but the impact on our lives and on the world, can be profound. I think if we can share this with every child, we could change the future of humanity. </h4>
+
+                <h4 class="mtb0px blog_desc">
+                1 in 10 primary school children and 1 in 5 secondary school children report a mental health problem. This can be reduced by helping children understand their mind — and giving them the skills to respond to situations with their wisdom, rather than just react from their unconscious conditioning influences, whatever they may be.                </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
-                    Listen to a podcast on Burnout
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/audiopage/~podcasts~63.mp3/63/T/Avoiding-burnout">
-                    here
-                  </a>
-                  <br>
-                  <span class="blog_highlight_black">
-                    Explore the Reactive Mind module
-                  </span>
-                  <a class="blog_highlight_peach" href="https://happierme.app/adults/reactive-mind">
-                    here
-                  </a>
+                  I left my career as a spine surgeon                   </span>
+                  in 2018 and began working with children in schools. I would sit with them and say — ‘I am the same human being you are. What would you like to explore today?’. And so, our conversations would begin exploring different subjects like stress, friendship, fear and so on. I made an amazing discovery, which every parent and teacher in the world needs to hear. Children already have this innate wisdom within them. It is just waiting to be drawn out of them. We can do that by asking questions and letting them find the answers.
+
+               The word Education comes from Educere, which in Latin means to draw out. I was amazed at how their unconditioned minds could arrive at the truth of things quickly. They were open, bold, and fearless in exploring the questions I asked. Here are a sample of the nuggets that 10-year-old children came up with:                </h4>
+
+                
+                
+
+                <h4 class="mtb0px blog_sub_title">
+                How can we end war?
                 </h4>
-              </div>
+
+                <h4 class="mtb0px blog_desc">
+                ‘Realise that we are the same ice-cream — just different flavors. Chocolate would never go to war with Vanilla, just because it appeared different.’                </h4>
+
+                
+
+               <h4 class="mtb0px blog_sub_title">
+               What is the root cause of fear?
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                ‘It’s just your imagination playing up.’                </h4>
+
+                
+                <h4 class="mtb0px blog_sub_title">
+                How can we get over stress?
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                ‘Realise it’s just the difference between how things are and how we want them to be. If we can accept things as they are — our stress can end.’                </h4>
+
+                
+
+                <h4 class="mtb0px blog_sub_title">
+                Dialogue with an 8-year-old — video:
+                </h4>
+
+                
+
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  This wisdom comes from self-knowledge 
+                  </span>
+                 
+                  and understanding how our mind works. It is simple to learn and to teach, but the impact can be profound. This wisdom can help children be excellent human beings, who are emotionally intelligent, mentally healthy, in charge of their own well-being, and who live with compassion for themselves and others. It can also boost their resilience, communication and relationship skills. Imagine the heartache that could be avoided if we could give them the wisdom to avoid the perils of addiction which affect 10–15% of the population, or to avoid anxiety which affects a third of teenagers.
+                   A talk at the World Education Summit — March 2023
+                  
+                </h4>
+
+                
+
+              
+
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Imagine how their lives, and the world, could change
+                  </span>
+                  if we could bring the teaching of this wisdom into education. With good mental health support in schools, we offer students a better chance at understanding their minds. Young people I meet tell me this is very relevant to their lives, and they wish it was part of their education. The beauty of this approach is that it is not based on any book or ideology, just looking and learning about ourselves. 
+                   Education, after all, is all about learning.
+
+                </h4>
+                <h4 class="mtb0px blog_sub_title">
+                Exploring belief with children — video:                </h4>
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  At present, we only teach children about the world around them,
+                  </span>
+                  and not about themselves, and this omission needs to be addressed urgently. Most of what they learn in school can be accessed on their phones anyway, and yet we insist they memorise and repeat all that we teach them in exams. Exams cause so much stress and achieve so little. They destroy the love for learning that is the most important gift we can give young people. Wisdom comes naturally when you learn about yourself, and this is a life-long journey of learning. It allows us to make the most of our time on earth and live in peace — with ourselves, each other, and the earth. I believe if we could bring mental health resources in schools, and every child in the world, we could change the future of humanity.</h4>
+                  
+                  <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  The  
+                  <a class="blog_highlight_peach" href="https://happierme.app/">
+                  HappierMe
+                  </a>has separate sections for Teens and Adults — in one app.
+                   was born from a tragedy. </span>
+                   One for parents and children is in the pipeline.
+
+                  Follow us on social media: <a class="blog_highlight_peach" href="https://linktr.ee/HappierMe.app.">
+                
+                  </a>
+                  <h4 class="mtb0px blog_desc">
+                  To get in touch with us and explore ways we could collaborate email us: team@happierme.app </h4>               
+                </div>
             </div>
 
             <div class="row">
