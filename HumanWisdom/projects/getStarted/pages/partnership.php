@@ -66,7 +66,8 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
                 <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
-                  Join the HappierMe Partnership program and help make the world a happier place.
+                  <!-- Join the HappierMe Partnership program and help make the world a happier place. -->
+                  Join the HappierMe partnership program, earn an income, and help make the world a happier place.
                 </h5>
               </div>
 
@@ -125,7 +126,8 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-              HappierMe helps people to deal with life’s challenges, manage their own mental health, be emotionally intelligent, and have happier relationships. We developed the HappierMe partnership program to develop a community of users and share this happiness with others. We invite you to join us and find out how it can help you, help others, and make the world a better place. If you are interested, you can also help plant trees and earn a secondary income.
+              <!-- HappierMe helps people to deal with life’s challenges, manage their own mental health, be emotionally intelligent, and have happier relationships. We developed the HappierMe partnership program to develop a community of users and share this happiness with others. We invite you to join us and find out how it can help you, help others, and make the world a better place. If you are interested, you can also help plant trees and earn a secondary income. -->
+              We developed the HappierMe Partnership Program to develop a community of users to help us spread some happiness in the world. We invite you to join us and find out how it can help you, help others, and make the world a better place. You can also earn an income. 
             </h4>
           </div>
         </div>
@@ -152,7 +154,7 @@
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_01.mp4"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/partnership.mp4"
                 type="video/mp4">
             </video>
           </div>
@@ -199,7 +201,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
+            <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/pw_world_happier.svg" class="img-responsive" alt="Be happier">
@@ -218,6 +220,30 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     If you are happy and at peace, you can contribute to a more peaceful world.
+                  </h5>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/pw_potential_income.svg" class="img-responsive" alt="Be more kind">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                    Earn an income
+                  </h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                    Earn 20% from any subscription made using your partner link. No strings attached.
                   </h5>
                 </div>
               </div>
@@ -250,7 +276,7 @@
           </div>
         </div>
 
-        <div class="row center_flex">
+        <!-- <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter div_inspire">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500">
@@ -326,7 +352,7 @@
             </div>
             
           </div>
-        </div>
+        </div> -->
       </section>
       <!-- /inspiring -->
 
