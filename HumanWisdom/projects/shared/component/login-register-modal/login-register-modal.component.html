@@ -84,7 +84,7 @@
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                <input class="sp_fc" placeholder="Required Password" [type]="confirmpasswordhide ? 'password' : 'text'" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
+                <input class="sp_fc" placeholder="Confirm Password" [type]="confirmpasswordhide ? 'password' : 'text'" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
                 <div class="fc_img" (click)="hideFunction('')" *ngIf="confirmpasswordhide">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive">
                 </div>
@@ -293,9 +293,9 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft">
-              <button type="button" class="btn btn_connect_with">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_apple.svg" class="">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+              <button type="button" class="btn btn_connect_with" (click)="fbLogin()">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_facebook.svg" class="">
               </button>
             </div>
 
@@ -306,11 +306,14 @@
               </button> -->
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-              <button type="button" class="btn btn_connect_with" (click)="fbLogin()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_facebook.svg" class="">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft">
+              <button type="button" class="btn btn_connect_with">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_apple.svg" class="">
               </button>
             </div>
+
+
+          
           </div>
         </div>
 
