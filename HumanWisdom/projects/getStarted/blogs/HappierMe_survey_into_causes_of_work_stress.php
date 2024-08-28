@@ -93,26 +93,13 @@
                 <h4 class="mtb0px blog_desc">
                 These factors can create a sense of frustration, dissatisfaction and anxiety that can impact our physical and mental health. However, work stress is not inevitable. Here are some strategies that can help us manage and reduce it:                </h4>
 
-                
-               
-
-               
-
-               
-
-                
-
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Too much work:  
                   </span>
                   37% of people said that they felt stressed because they have too much work to do and not enough time to do it. This can lead to burnout, fatigue and reduced productivity. To cope with this, it is important to prioritise your tasks, set realistic deadlines, delegate when possible and take regular breaks. You can also use tools to organise your work and track your progress. It is important for employers to be mindful of how much they expect of their employees, and not overwhelm them.
-</h4>
-                 
-
-                
-
-                <h4 class="mtb0px blog_desc">
+                </h4>
+                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Not enough recognition: 
                   </span>
@@ -139,12 +126,12 @@
                 <h4 class="mtb0px blog_desc">
                 63% of our stress comes from factors not related to our workload. By understanding our own mind we can learn how to manage these ourselves, and this can contribute to us being much less stressed.
 
-</h4>
+                </h4>
 
                 <h4 class="mtb0px blog_desc">
                 Work stress is not inevitable. By understanding the causes and effects of work stress and applying some strategies to cope with it, you can improve your well-being, performance and happiness at work. 
 
-</h4>
+            </h4>
 
                 
 
