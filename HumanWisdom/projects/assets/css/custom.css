@@ -30057,7 +30057,8 @@ svg path
   box-shadow: unset;
   padding: 20px;
   border: 0;
-  border-radius: 5px 5px 0 0;
+  /* border-radius: 5px 5px 0 0; */
+  border-radius: 12px 12px 0 0;
 }
 
 #obfaqs .panel-body
@@ -30068,7 +30069,8 @@ svg path
   /* box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
   border-top: 1px solid #ADADAD; */
   box-shadow: 0;
-  border-radius: 0 0 5px 5px;
+  /* border-radius: 0 0 5px 5px; */
+  border-radius: 0 0 12px 12px;
 }
 
 #tree_plant .panel-title > a[aria-expanded="true"]:after,
