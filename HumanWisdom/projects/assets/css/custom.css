@@ -37355,6 +37355,12 @@ span
   box-shadow: none!important;
 }
 
+.w-75 {
+  width:75px !important
+}
+.h-34{
+  height: 34px !important;
+}
 /* /v
 
 ersion - 03 */

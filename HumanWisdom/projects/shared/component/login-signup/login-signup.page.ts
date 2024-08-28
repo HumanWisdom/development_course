@@ -1392,4 +1392,8 @@ handleCredentialResponse(response){
       this.confirmpasswordhide = !this.confirmpasswordhide;
     }
   }
+
+  loginWithInstagram() {
+    this.service.loginWithInstagram();
+  }
 }

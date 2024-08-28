@@ -337,8 +337,17 @@ export class AdultDashboardPage implements OnInit {
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
-
-
+    const queryString = this.router.url.split('?')[1];
+    if(queryString){
+      const params = new URLSearchParams(queryString);
+      const code = params.get('code');
+      if(code && code != null){
+        localStorage.setItem('instaToken',code)
+        window.close();
+      }
+    }
+    // Extract the query string from the URL
+ 
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
