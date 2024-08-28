@@ -295,9 +295,9 @@ export class LoginSignupPage implements OnInit {
 
   googleLogin(reqtype) {
     if(reqtype=="signup")
-      this.logeventservice.logEvent('facebook_signup');
+      this.logeventservice.logEvent('google_signup');
     else
-      this.logeventservice.logEvent('facebook_login');
+      this.logeventservice.logEvent('google_login');
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
 
   }
@@ -1324,9 +1324,9 @@ handleCredentialResponse(response){
 
   signInWithApple(reqtype) {
     if(reqtype=="signup")
-    this.logeventservice.logEvent('facebook_signup');
+    this.logeventservice.logEvent('apple_signup');
   else
-    this.logeventservice.logEvent('facebook_login');
+    this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
     const REDIRECT_API_URL =
       "https://www.humanwisdom.info/api/verifyAppleToken_html";
