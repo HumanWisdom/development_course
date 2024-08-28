@@ -78,9 +78,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               
-
-                <h4 class="mtb0px blog_sub_title">
+               <h4 class="mtb0px blog_sub_title">
                 HappierMe survey into causes of work stress.
                 </h4>
 
@@ -105,11 +103,9 @@
                   </span>
                   23% of people said that they felt stressed because they do not receive enough recognition or appreciation for their work. This can lead to low self-esteem, resentment and lack of motivation. There are two ways to deal with this. Firstly, to realise that expecting recognition is normal, but gives others the key to our happiness. Can we find a way to value ourselves, and let go of this need for external validation which causes so much of our stress? The second way is for employers to step up and recognise staff for their achievements.
 
-</h4>
+               </h4>
 
-             
-
-                <h4 class="mtb0px blog_desc">
+             <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Conflict in relationships: 
                   </span>
