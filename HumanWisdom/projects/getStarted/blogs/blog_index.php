@@ -534,8 +534,8 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     A fresh way to avoid and overcome addiction
                        </div>
-</div>
-<div class="row">
+                  </div>
+                     <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                       
@@ -567,7 +567,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                    How to manage anxiety attacks
+                    How to manage anxiety attacks.
 
                   </div>
                 </div>
