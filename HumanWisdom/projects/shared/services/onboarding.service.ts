@@ -28,7 +28,7 @@ export class OnboardingService {
   updateUserDetails = new Subject<any>();
   getUserDetails = new Subject<any>();
   private clientId = '1840609876679041'; // Replace with your Instagram App Client ID
-  private redirectUri = 'https://localhost:4200/adults/adult-dashboard'; 
+  private redirectUri = environment.clientUrl+"/adults/adult-dashboard"; 
   private authUrl = `https://api.instagram.com/oauth/authorize`;
   private accessToken: string | null = null;
   // Subscribe to the Subject
@@ -189,7 +189,7 @@ export class OnboardingService {
       client_id: this.clientId,
       client_secret: '1b498f77e08b26728741d12e247ab2a3', 
       grant_type: 'authorization_code',
-      redirect_uri: 'https://staging.happierme.app/adults/adult-dashboard',
+      redirect_uri: this.redirectUri,
       code: code
     };
 
