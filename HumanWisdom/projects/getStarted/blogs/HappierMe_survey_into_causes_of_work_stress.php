@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>How can organizations reduce workplace conflict and boost collaboration?</title>
+    <title>HappierMe survey into causes of work stress. </title>
     <meta property="title" content="How can organizations reduce workplace conflict and boost collaboration?">
     <meta property="description" content="How can governments and organizations reduce tribalism and factionalism and boost collaboration? It is a question that many organizations grapple with.">
     <meta property="keyword" content="Work and Leadership">
@@ -109,7 +109,7 @@
                   <span class="blog_highlight_black">
                   Conflict in relationships: 
                   </span>
-                  21% of people said that they felt stressed because they have conflict or tension with their co-workers, managers or clients. This can lead to anger, distrust and impact collaboration. To deal with this, it is important to resolve conflicts constructively, listen actively, empathise with others and respect different opinions. Accepting other perspectives as being equally valid is so important. The more we understand ourselves, the easier it is to understand others.                </h4>
+                  21%  of people said that they felt stressed because they have conflict or tension with their co-workers, managers or clients. This can lead to anger, distrust and impact collaboration. To deal with this, it is important to resolve conflicts constructively, listen actively, empathise with others and respect different opinions. Accepting other perspectives as being equally valid is so important. The more we understand ourselves, the easier it is to understand others.                </h4>
 
                
 
