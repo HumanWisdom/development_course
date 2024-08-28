@@ -90,10 +90,6 @@
                 The HappierMe app
                   </a> can help you calm anxiety attacks and improve your overall mental well-being. In this blog post, we'll explore how the HappierMe app can assist with anxiety management.                </h4>
 
-                
-
-                
-
                 <h4 class="mtb0px blog_desc">
                   
                   <span class="blog_highlight_black">
