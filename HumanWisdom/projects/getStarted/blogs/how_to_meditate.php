@@ -257,9 +257,9 @@
                   <span class="blog_highlight_black">
                   Increased focus and concentration:                  </span>
                   Regular meditation can help you to improve your focus and concentration, which can be beneficial for work, school, or other activities that require 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                 
                   mental clarity.
-                  </a>
+                 
                                     </h4>
                                     <h4 class="mtb0px blog_desc">
                   
@@ -401,9 +401,9 @@ Cultivating an attitude of acceptance and non-judgment towards your experiences
                   
                  
                      Over time, regular practice of breath awareness meditation can help you to develop greater awareness and control of your breath, which can have a positive impact on your physical and 
-                     <a href="https://happierme.app/" class="blog_highlight_peach td_underline ">
+                    
                      mental health.
-                </a>
+                
                      It can also help you to become more mindful and present in your daily life. </h4>
 
                      <h4 class="mtb0px blog_desc">
