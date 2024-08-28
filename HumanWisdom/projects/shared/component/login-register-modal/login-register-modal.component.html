@@ -84,7 +84,7 @@
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                <input class="sp_fc" placeholder="Required Password" [type]="confirmpasswordhide ? 'password' : 'text'" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
+                <input class="sp_fc" placeholder="Confirm Password" [type]="confirmpasswordhide ? 'password' : 'text'" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
                 <div class="fc_img" (click)="hideFunction('')" *ngIf="confirmpasswordhide">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive">
                 </div>
