@@ -12,7 +12,17 @@
       <nav id="navbar" class="navbar m0pxi">
         <ul>
           <li><a href="../pages/about_us.php">About us</a></li>
-          <li><a href="../blogs/blog_index.php">Blog</a></li>
+          <!-- <li class="prelative">
+            <a href="../pages/about_us.php">
+              Teenagers
+              <div class="badge_new">
+                <h6 class="mtb0px fs_6px fw_600 lh_130p fc_ffffff">
+                  NEW
+                </h6>
+              </div>
+            </a>
+          </li> -->
+          <li><a href="../blogs/blog_index.php" class="">Blog</a></li>
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="../pages/work.php">HappierMe for Work</a></li>
@@ -20,12 +30,13 @@
               <li><a href="../pages/healthcare.php">HappierMe for Healthcare</a></li>
             </ul>
           </li>
-          <!-- <li><a href="#events">Partnership</a></li> -->
+          <li><a href="../index.php#div_subscription">Pricing</a></li>
+          <!-- <li><a href="../pages/partnership.php">Partnership</a></li> -->
           <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
         </ul>
       </nav>
 
-      <a class="btn_tff" href="https://onelink.to/qsptex">Try for free</a>
+      <a class="btn_tff btn_tff_tn" href="https://onelink.to/qsptex">Free trial</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>

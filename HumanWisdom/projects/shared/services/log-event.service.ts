@@ -18,16 +18,16 @@ export class LogEventService {
     let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
     let device_info: any = this.deviceService.getDeviceInfo()
     const isMobile = this.deviceService.isMobile();
-    let deviceInfo = localStorage.getItem('isPWA');
+    let deviceInfo = localStorage.getItem('fromapp');
     const isDesktopDevice = this.deviceService.isDesktop();
-    let eventName = (!deviceInfo || deviceInfo !== 'APP') && this.isBrowser(device_info?.browser) ? eventname + '_' + 'Web' : eventname + '_' + 'App';
+    let eventName = (!deviceInfo || deviceInfo !== 'T') && this.isBrowser(device_info?.browser) ? eventname + '_' + 'Web' : eventname + '_' + 'App';
     eventName = SharedService.getprogramName() + '_' + eventName;
     // let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web';
     // gtag('event', eventname + '_' + device_info.os, { UserName: name })
     // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })
     // gtag('event', eventname + '_' + device_info.os, { DeviceBrowser: device_info.browser })
     this.analytics.logEvent(eventName, { UserName: name });
-    this.analytics.logEvent(eventName, { APP: deviceInfo });
+    this.analytics.logEvent(eventName, { IsApp: deviceInfo });
     this.analytics.logEvent(eventName, { DeviceOS: device_info.os });
     this.analytics.logEvent(eventName, { device: device_info.device });
     this.analytics.logEvent(eventName, { userAgent: device_info.userAgent });

@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+// import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
@@ -123,7 +123,7 @@ export class AdultDashboardPage implements OnInit {
 
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
-    public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
+    public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
     public platform: Platform,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
@@ -298,7 +298,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
         
-        if (res[0]['ModuleId'] == 75) {
+        if (res && res[0] && res[0]['ModuleId'] == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
         this.resumeLastvisited = res;
@@ -452,56 +452,14 @@ export class AdultDashboardPage implements OnInit {
         }
       });
 
+
     }, 3000)
     localStorage.setItem("pageaction", 'next');
 
-    // setTimeout(() =>{
-    //   this.enabletourmodal.nativeElement.click();
-    // }, 100)
-    // const driverObj = driver({
-    //   showProgress: true,
-    //   steps: [
-    //     { element: '#tour-example', popover: { title: 'Animated Tour Example', description: 'Here is the code example showing animated tour. Let\'s walk you through it.', side: "left", align: 'start' }},
-    //     { element: 'code .line:nth-child(1)', popover: { title: 'Import the Library', description: 'It works the same in vanilla JavaScript as well as frameworks.', side: "bottom", align: 'start' }},
-    //     { element: 'code .line:nth-child(2)', popover: { title: 'Importing CSS', description: 'Import the CSS which gives you the default styling for popover and overlay.', side: "bottom", align: 'start' }},
-    //     { element: 'code .line:nth-child(4) span:nth-child(7)', popover: { title: 'Create Driver', description: 'Simply call the driver function to create a driver.js instance', side: "left", align: 'start' }},
-    //     { element: 'code .line:nth-child(18)', popover: { title: 'Start Tour', description: 'Call the drive method to start the tour and your tour will be started.', side: "top", align: 'start' }},
-    //     { element: 'a[href="/docs/configuration"]', popover: { title: 'More Configuration', description: 'Look at this page for all the configuration options you can pass.', side: "right", align: 'start' }},
-    //     { popover: { title: 'Happy Coding', description: 'And that is all, go ahead and start adding tours to your applications.' } }
-    //   ]
-    // });
-
-    // driverObj.drive();
-
+    setTimeout(() => {
+      this.GetDashboardFeatures();
+    }, 1000)
   }
-
-  // curatedDash(name: any) {
-  //   if (name === 'Manage your emotions') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
-  //     this.router.navigate(['/adults/curated/manage-your-emotions'])
-  //   } else if (name === 'Overcome stress and anxiety') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
-  //     this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
-  //   } else if (name === 'Wisdom for the workplace') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
-  //     this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-  //   } else if (name === 'Have fulfilling relationships') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
-  //     this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
-  //   } else if (name === 'Be happier') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/be-happier');
-  //     this.router.navigate(['/adults/curated/be-happier'])
-  //   } else if (name === 'Change unhelpful habits') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
-  //     this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-  //   } else if (name === 'Deal with sorrow and loss') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
-  //     this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
-  //   } else if (name === 'Mindfulness') {
-  //     localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
-  //     this.router.navigate(['/adults/curated/have-calm-mind'])
-  //   }
-  // }
 
   getplaystore(event) {
     SharedService.enablebanner = false
@@ -666,24 +624,16 @@ export class AdultDashboardPage implements OnInit {
       this.personalisedList = []
       if (res) {
         localStorage.setItem('userPreference', res);
-        let arr = res.split('').filter((d) => d !== ',');
-        arr.forEach((d) => {
-          perd.forEach((r) => {
-            if (d === r['id']) {
-              r['active'] = true;
-              this.personalisedList.push(r);
-            }
-          })
-        })
         perd.forEach((r) => {
-          let find = this.personalisedList.some((d) => d['name'] === r['name']);
-          if (!find) {
+          if (res === r.id) {
+            r['active'] = true;
+            this.personalisedList.push(r);
+          } else {
             r['active'] = false;
             this.personalisedList.push(r);
           }
         })
         this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-        this.GetDashboardFeatures();
       }
     })
   }
@@ -835,118 +785,118 @@ export class AdultDashboardPage implements OnInit {
 
   }
 
-  googleLogin(d = '') {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.idToken = user.idToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
+  // googleLogin(d = '') {
+  //   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  //   this.authService.authState.subscribe((user) => {
+  //     this.user = user;
+  //     this.idToken = user.idToken
+  //     this.socialFirstName = user.firstName
+  //     this.socialLastName = user.lastName
+  //     this.socialEmail = user.email
 
-      this.services.verifyGoogle({
-        "TokenID": this.idToken,
-        "FName": this.socialFirstName,
-        "LName": this.socialLastName,
-        "Email": this.socialEmail,
-        "VCode": "",
-        "Pwd": ""
-      })
-        .subscribe(res => {
+  //     this.services.verifyGoogle({
+  //       "TokenID": this.idToken,
+  //       "FName": this.socialFirstName,
+  //       "LName": this.socialLastName,
+  //       "Email": this.socialEmail,
+  //       "VCode": "",
+  //       "Pwd": ""
+  //     })
+  //       .subscribe(res => {
 
-          if (res) {
+  //         if (res) {
 
-            this.firstpage = false
-            this.fifthpage = false
-            this.thirdpage = true
-            this.loginResponse = res
-            localStorage.setItem('guest', 'F');
-            localStorage.setItem("remember", 'T')
-            localStorage.setItem('socialLogin', 'T');
-            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-            localStorage.setItem("video", JSON.stringify(this.video))
-            localStorage.setItem("audio", JSON.stringify(this.audio))
-            localStorage.setItem('btnclick', 'F')
-            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-            localStorage.setItem("userId", JSON.stringify(this.userId))
-            localStorage.setItem("email", this.socialEmail)
-            localStorage.setItem("FnName", this.socialFirstName)
-            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-            localStorage.setItem("LName", this.socialLastName)
-            localStorage.setItem("pswd", '')
-            localStorage.setItem("name", this.loginResponse.Name)
-            localStorage.setItem("first", 'T')
-            let namedata = localStorage.getItem('name').split(' ')
-            this.modaldata['email'] = localStorage.getItem('email');
-            this.modaldata['firstname'] = namedata[0];
-            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-            if (parseInt(this.loginResponse.UserId) == 0) {
-              // this.showAlert=true
-              // window.alert('You have enetered wrong credentials. Please try again.')
-              // this.email=""
-              // this.password=""
-            }
-            else {
-              // this.showAlert=false
-              this.userId = this.loginResponse.UserId
-              this.userName = this.loginResponse.Name
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              if (this.saveUsername == true) {
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                localStorage.setItem("userName", JSON.stringify(this.userName))
-              }
-              else {
-                sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                sessionStorage.setItem("userName", JSON.stringify(this.userName))
-              }
-              let acceptCookie = localStorage.getItem('activeCode');
-              let subscribePage = localStorage.getItem('subscribepage');
-              if (acceptCookie === 'T' || subscribePage === 'T') {
-                localStorage.setItem("isloggedin", 'T')
-                if (acceptCookie === 'T') {
-                  localStorage.setItem("activeCode", 'F')
-                }
-                if (subscribePage === 'T') {
-                  localStorage.setItem("subscribepage", 'F')
-                }
-                // this.router.navigate(['/onboarding/add-to-cart'])
-              } else {
-                localStorage.setItem("isloggedin", 'T')
-                // this.router.navigate(['/adults/adult-dashboard'])
-              }
+  //           this.firstpage = false
+  //           this.fifthpage = false
+  //           this.thirdpage = true
+  //           this.loginResponse = res
+  //           localStorage.setItem('guest', 'F');
+  //           localStorage.setItem("remember", 'T')
+  //           localStorage.setItem('socialLogin', 'T');
+  //           localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+  //           localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+  //           localStorage.setItem("video", JSON.stringify(this.video))
+  //           localStorage.setItem("audio", JSON.stringify(this.audio))
+  //           localStorage.setItem('btnclick', 'F')
+  //           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //           localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //           localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+  //           localStorage.setItem("userId", JSON.stringify(this.userId))
+  //           localStorage.setItem("email", this.socialEmail)
+  //           localStorage.setItem("FnName", this.socialFirstName)
+  //           localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+  //           localStorage.setItem("LName", this.socialLastName)
+  //           localStorage.setItem("pswd", '')
+  //           localStorage.setItem("name", this.loginResponse.Name)
+  //           localStorage.setItem("first", 'T')
+  //           let namedata = localStorage.getItem('name').split(' ')
+  //           this.modaldata['email'] = localStorage.getItem('email');
+  //           this.modaldata['firstname'] = namedata[0];
+  //           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+  //           if (parseInt(this.loginResponse.UserId) == 0) {
+  //             // this.showAlert=true
+  //             // window.alert('You have enetered wrong credentials. Please try again.')
+  //             // this.email=""
+  //             // this.password=""
+  //           }
+  //           else {
+  //             // this.showAlert=false
+  //             this.userId = this.loginResponse.UserId
+  //             this.userName = this.loginResponse.Name
+  //             localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             localStorage.setItem("userId", JSON.stringify(this.userId))
+  //             localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //             if (this.saveUsername == true) {
+  //               localStorage.setItem("userId", JSON.stringify(this.userId))
+  //               localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //               localStorage.setItem("userName", JSON.stringify(this.userName))
+  //             }
+  //             else {
+  //               sessionStorage.setItem("userId", JSON.stringify(this.userId))
+  //               sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //               sessionStorage.setItem("userName", JSON.stringify(this.userName))
+  //             }
+  //             let acceptCookie = localStorage.getItem('activeCode');
+  //             let subscribePage = localStorage.getItem('subscribepage');
+  //             if (acceptCookie === 'T' || subscribePage === 'T') {
+  //               localStorage.setItem("isloggedin", 'T')
+  //               if (acceptCookie === 'T') {
+  //                 localStorage.setItem("activeCode", 'F')
+  //               }
+  //               if (subscribePage === 'T') {
+  //                 localStorage.setItem("subscribepage", 'F')
+  //               }
+  //               // this.router.navigate(['/onboarding/add-to-cart'])
+  //             } else {
+  //               localStorage.setItem("isloggedin", 'T')
+  //               // this.router.navigate(['/adults/adult-dashboard'])
+  //             }
 
 
-              /* if(this.urlEmail)
-                {
-                  this.service.verifyUser(this.userId)
-                  .subscribe(res=>{
+  //             /* if(this.urlEmail)
+  //               {
+  //                 this.service.verifyUser(this.userId)
+  //                 .subscribe(res=>{
 
-                  })
-                }*/
+  //                 })
+  //               }*/
 
-            }
-            if (d === 'journal') {
-              window.location.reload();
-            }
-          }
+  //           }
+  //           if (d === 'journal') {
+  //             window.location.reload();
+  //           }
+  //         }
 
-        })
-    },
-      error => console.log(error),
-      () => {
-        //this.router.navigate[('/onboarding/addcart')]
-        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
-      });
-  }
+  //       })
+  //   },
+  //     error => console.log(error),
+  //     () => {
+  //       //this.router.navigate[('/onboarding/addcart')]
+  //       // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+  //     });
+  // }
   // getModuleList(isLoad?) {
   //   if (this.moduleList.length == 0) {
   //     this.service.getModuleList().subscribe(res => {
@@ -961,124 +911,132 @@ export class AdultDashboardPage implements OnInit {
   //     });
   //   }
   // }
-  fbLogin(d = '') {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      // this.user = user;
-      this.user = user;
-      this.idToken = user.authToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
-      if (user.email !== undefined) {
-        this.services.verifyFb({
-          "TokenID": this.idToken,
-          "FName": this.socialFirstName,
-          "LName": this.socialLastName,
-          "Email": this.socialEmail,
-          "VCode": "",
-          "Pwd": ""
-        })
-          .subscribe(res => {
 
-            if (res) {
-              this.firstpage = false
-              this.fifthpage = false
-              this.thirdpage = true
-              this.loginResponse = res
-              localStorage.setItem('socialLogin', 'T');
-              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-              localStorage.setItem("video", JSON.stringify(this.video))
-              localStorage.setItem("audio", JSON.stringify(this.audio))
-              localStorage.setItem("remember", 'T')
-              localStorage.setItem('guest', 'F');
-              localStorage.setItem('btnclick', 'F')
-              localStorage.setItem("FnName", this.socialFirstName)
-              localStorage.setItem("LName", this.socialLastName)
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-              localStorage.setItem("email", this.socialEmail)
-              localStorage.setItem("pswd", '')
-              localStorage.setItem("name", this.loginResponse.Name)
-              localStorage.setItem("first", 'T')
-              let namedata = localStorage.getItem('name').split(' ')
-              this.modaldata['email'] = localStorage.getItem('email');
-              this.modaldata['firstname'] = namedata[0];
-              this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-              if (parseInt(this.loginResponse.UserId) == 0) {
-                // this.showAlert=true
-                // window.alert('You have enetered wrong credentials. Please try again.')
-                // this.email=""
-                // this.password=""
-
-              }
-              else {
-                // this.showAlert=false
-                this.userId = this.loginResponse.UserId
-                this.userName = this.loginResponse.Name
-                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId))
-                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  localStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                let acceptCookie = localStorage.getItem('activeCode');
-                let subscribePage = localStorage.getItem('subscribepage');
-                if (acceptCookie === 'T' || subscribePage === 'T') {
-                  localStorage.setItem("isloggedin", 'T')
-                  if (acceptCookie === 'T') {
-                    localStorage.setItem("activeCode", 'F')
-                  }
-                  if (subscribePage === 'T') {
-                    localStorage.setItem("subscribepage", 'F')
-                  }
-                  if (d === 'journal') {
-                    window.location.reload();
-                  } else {
-                    this.router.navigate(['/onboarding/add-to-cart'])
-                  }
-                } else {
-                  localStorage.setItem("isloggedin", 'T')
-                  if (d === 'journal') {
-                    window.location.reload();
-                  } else {
-                    this.router.navigate(['/adults/adult-dashboard'])
-                  }
-                }
-                /* if(this.urlEmail)
-                  {
-                    this.service.verifyUser(this.userId)
-                    .subscribe(res=>{
-
-                    })
-                  }*/
-
-              }
-              if (d === 'journal') {
-                window.location.reload();
-              }
-            }
-
-          })
-      } else {
-        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
-      }
-    });
+  fbLogin(d=''){
 
   }
+
+  googleLogin(d=''){
+    
+  }
+  // fbLogin(d = '') {
+  //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  //   this.authService.authState.subscribe((user) => {
+  //     // this.user = user;
+  //     this.user = user;
+  //     this.idToken = user.authToken
+  //     this.socialFirstName = user.firstName
+  //     this.socialLastName = user.lastName
+  //     this.socialEmail = user.email
+  //     if (user.email !== undefined) {
+  //       this.services.verifyFb({
+  //         "TokenID": this.idToken,
+  //         "FName": this.socialFirstName,
+  //         "LName": this.socialLastName,
+  //         "Email": this.socialEmail,
+  //         "VCode": "",
+  //         "Pwd": ""
+  //       })
+  //         .subscribe(res => {
+
+  //           if (res) {
+  //             this.firstpage = false
+  //             this.fifthpage = false
+  //             this.thirdpage = true
+  //             this.loginResponse = res
+  //             localStorage.setItem('socialLogin', 'T');
+  //             localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+  //             localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+  //             localStorage.setItem("video", JSON.stringify(this.video))
+  //             localStorage.setItem("audio", JSON.stringify(this.audio))
+  //             localStorage.setItem("remember", 'T')
+  //             localStorage.setItem('guest', 'F');
+  //             localStorage.setItem('btnclick', 'F')
+  //             localStorage.setItem("FnName", this.socialFirstName)
+  //             localStorage.setItem("LName", this.socialLastName)
+  //             localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //             localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //             localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+  //             localStorage.setItem("userId", JSON.stringify(this.userId))
+  //             localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+  //             localStorage.setItem("email", this.socialEmail)
+  //             localStorage.setItem("pswd", '')
+  //             localStorage.setItem("name", this.loginResponse.Name)
+  //             localStorage.setItem("first", 'T')
+  //             let namedata = localStorage.getItem('name').split(' ')
+  //             this.modaldata['email'] = localStorage.getItem('email');
+  //             this.modaldata['firstname'] = namedata[0];
+  //             this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+  //             if (parseInt(this.loginResponse.UserId) == 0) {
+  //               // this.showAlert=true
+  //               // window.alert('You have enetered wrong credentials. Please try again.')
+  //               // this.email=""
+  //               // this.password=""
+
+  //             }
+  //             else {
+  //               // this.showAlert=false
+  //               this.userId = this.loginResponse.UserId
+  //               this.userName = this.loginResponse.Name
+  //               localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //               sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+  //               localStorage.setItem("userId", JSON.stringify(this.userId))
+  //               localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+  //               if (this.saveUsername == true) {
+  //                 localStorage.setItem("userId", JSON.stringify(this.userId))
+  //                 localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //                 localStorage.setItem("userName", JSON.stringify(this.userName))
+  //               }
+  //               else {
+  //                 sessionStorage.setItem("userId", JSON.stringify(this.userId))
+  //                 sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+  //                 sessionStorage.setItem("userName", JSON.stringify(this.userName))
+  //               }
+  //               let acceptCookie = localStorage.getItem('activeCode');
+  //               let subscribePage = localStorage.getItem('subscribepage');
+  //               if (acceptCookie === 'T' || subscribePage === 'T') {
+  //                 localStorage.setItem("isloggedin", 'T')
+  //                 if (acceptCookie === 'T') {
+  //                   localStorage.setItem("activeCode", 'F')
+  //                 }
+  //                 if (subscribePage === 'T') {
+  //                   localStorage.setItem("subscribepage", 'F')
+  //                 }
+  //                 if (d === 'journal') {
+  //                   window.location.reload();
+  //                 } else {
+  //                   this.router.navigate(['/onboarding/add-to-cart'])
+  //                 }
+  //               } else {
+  //                 localStorage.setItem("isloggedin", 'T')
+  //                 if (d === 'journal') {
+  //                   window.location.reload();
+  //                 } else {
+  //                   this.router.navigate(['/adults/adult-dashboard'])
+  //                 }
+  //               }
+  //               /* if(this.urlEmail)
+  //                 {
+  //                   this.service.verifyUser(this.userId)
+  //                   .subscribe(res=>{
+
+  //                   })
+  //                 }*/
+
+  //             }
+  //             if (d === 'journal') {
+  //               window.location.reload();
+  //             }
+  //           }
+
+  //         })
+  //     } else {
+  //       window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+  //     }
+  //   });
+
+  // }
 
   signup() {
     this.services.addUser({

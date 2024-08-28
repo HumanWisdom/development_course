@@ -9,6 +9,32 @@
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
     <meta property="og:image:height" content="232" />
+    <meta property="og:title" content=HappierMe-Mental Health Care>
+    <meta property="og:site_name" content=HappierMe>
+    <meta property="og:url" content=https://happierme.app/>
+    <meta property="og:description" content="">
+    <meta property="og:type" content="">
+    
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp>
+    <!--Schema tag for Organization :-->
+    <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HappierMe",
+      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "url": "https://happierme.app/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MentalHealthService",
+      "name": "HappierMe",
+      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "url": "https://happierme.app/"
+    }
+  ]
+</script>
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -31,11 +57,13 @@
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p display_m_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_mobile.webp" class="img-responsive w100p display_d_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
             </div>
           </div>
 
-          <div class="row center_flex absolute_desc" data-aos="fade-up" data-aos-delay="500">
+          <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
                 <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">

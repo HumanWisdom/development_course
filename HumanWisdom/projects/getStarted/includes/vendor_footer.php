@@ -1,4 +1,4 @@
-<a href="#" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scrollTopArrow" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
 
 <div id="preloader"></div>
 
@@ -277,10 +277,44 @@ $( window ).resize( function() {
     if (window.matchMedia('(max-width: 768px)').matches)
     {
     //$('.btn_tff').attr('href','https://onelink.to/qsptex');
-    $('.btn_tff').attr('href','#div_subscription');
+    // $('.btn_tff').attr('href','#div_subscription');
+    $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
     } else {
-    $('.btn_tff').attr('href','#div_subscription');
+    // $('.btn_tff').attr('href','#div_subscription');
+    $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
+    } 
+});
+$( window ).resize();
+
+$( window ).resize( function() {
+    if (window.matchMedia('(max-width: 768px)').matches)
+    {
+        $('.btn_tff_tn').attr('href','https://onelink.to/qsptex');
+    } 
+    else 
+    {
+        $('.btn_tff_tn').attr('href','https://happierme.app/adults/splash-options');
     }
 });
 $( window ).resize();
+
+/*$('.search-button').click(function () {
+    $('.search-button').css({'position':'absolute', 'right':'0'});
+});*/
+
+$('.search-button').click(function () 
+{
+    $('.search-button').toggleClass('cp_absolute');
+    $('.fc_web_search').focus();
+});
+
+jQuery(function($) 
+{
+    var path = window.location.href;
+    $('li a').each(function() {
+        if (this.href === path) {
+            $(this).addClass('active_nav');
+        }
+    });
+});
 </script>

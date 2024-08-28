@@ -69,6 +69,14 @@ export class NavigationService {
     }
     return  SharedService.getDashboardUrls();
   }
+  
+  getLastUrlVisited(): string | null {
+    if (this.history.length > 0) {
+      return this.history[this.history.length - 2];
+    }
+    return null;
+  }
+
 
   navigateToBackLink() {
     const url = this.goBack();

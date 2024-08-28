@@ -101,7 +101,14 @@
     /* responsive_fonts */
     .fs_36px 
     {
-        font-size: 27px !important;
+        /* font-size: 27px !important; */
+        font-size: 24px !important;
+    }
+
+    .fs_24px 
+    {
+        /* font-size: 27px !important; */
+        font-size: 18px !important;
     }
 
     .fs_15px 
@@ -180,7 +187,8 @@
     }
 
     .mobile,
-    .display_d_none
+    .display_d_none,
+    .display_df_none
     {
         display: none !important;
     }
@@ -192,6 +200,13 @@
     .owl-nav .owl-next
     {
         display: none;
+    }
+
+    .dflex_jc_lc
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -211,6 +226,49 @@
     {
         display: block !important;
     }
+
+    .display_df_none
+    {
+        display: flex !important;
+    }
+
+    .absolute_desc_m
+    {
+        position: absolute !important;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        display: flex;
+        align-items: baseline;
+    }
+
+    .header .btn_tff, .header .btn_tff:focus 
+    {
+        width: 106px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .ddflex_mblock
+    {
+        display: block;
+    }
+
+    .cml40px 
+    {
+        margin-left: 0;
+    }
+
+    .badge_new
+    {
+        position: absolute;
+        left: 30%;
+        top: 25%;
+        bottom: 0;
+        margin: unset;
+    }
 }
 
 @media (max-width: 1024px)
@@ -227,6 +285,11 @@
     .owl-carousel.owl-drag .owl-item:last-child a.item
     {
         margin-right: 450px;
+    }
+
+    .w5p
+    {
+        width: 5%;
     }
 }
 

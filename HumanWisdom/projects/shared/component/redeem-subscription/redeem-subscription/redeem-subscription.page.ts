@@ -1,10 +1,11 @@
 import { Platform } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdultsService } from '../adults.service';
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { OnboardingService } from '../../../../shared/services/onboarding.service';
+import { LogEventService } from '../../../../shared/services/log-event.service';
 import { Location } from '@angular/common';
+import { SharedService } from '../../../../shared/services/shared.service';
+import { CommonService } from '../../../../shared/services/common.service';
 
 @Component({
   selector: 'redeem-subscription',
@@ -45,12 +46,13 @@ export class RedeemSubscriptionPage implements OnInit {
   public registrationForm : any;
   enabledModal = false;
   landingpage = '';
+  public programName = '';
 
   constructor(
     public platform: Platform,
     private router: Router,
     private services: OnboardingService,
-    public service: AdultsService,
+    public service: CommonService,
     public logeventservice: LogEventService,
     private location: Location
   ) {
@@ -137,8 +139,9 @@ export class RedeemSubscriptionPage implements OnInit {
           if (res) {
             console.log('res');
             this.showWarning = true
-            this.yearormonth = res;
-            localStorage.setItem('yearormonth', this.yearormonth)
+            this.yearormonth = res.split('-')[0];
+            this.programName = res.split('-')[1];
+            localStorage.setItem('yearormonth', res);
             this.subthirdpage = false
             this.subfirstpage = false
             this.subsecondpage = true;
@@ -175,7 +178,7 @@ export class RedeemSubscriptionPage implements OnInit {
             this.subthirdpage = false;
             this.subsecondpage = false;
             this.subfirstpage = true;
-            this.router.navigate(['/adults/redeem-congratulation'])
+            this.router.navigate(['/' + SharedService.getprogramName() + '/redeem-congratulation'])
           } else {
             this.subthirdpage = true
           }
@@ -200,7 +203,7 @@ export class RedeemSubscriptionPage implements OnInit {
   }
 
   route_adverts_hwp() {
-    this.router.navigate(['/adults/adverts-hwp'])
+    this.router.navigate(['/' + SharedService.getprogramName()+ '/adverts-hwp'])
   }
 
   Logevent() {
@@ -209,7 +212,7 @@ export class RedeemSubscriptionPage implements OnInit {
       this.content = "Are you sure you want to logout ?";
       this.enableAlert = true;
     } else {
-      this.router.navigate(["/adults/onboarding/login"]);
+      this.router.navigate(['/' + SharedService.getprogramName()+ "/onboarding/login"]);
     }
   }
 

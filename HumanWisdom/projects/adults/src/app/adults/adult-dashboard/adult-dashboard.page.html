@@ -95,7 +95,7 @@
             <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Explore a different topic in depth
+                  Explore a different topic
                 </button>
               </div>
             </div>
@@ -162,9 +162,22 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '5', 'click_daily_inspiration') : $event.preventDefault()">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
+                                  alt="Testimonials" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily
+                                  <br>
+                                  inspiration
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_v3.svg"
                                   alt="Wisdom Stories" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Breathing exercise
@@ -176,7 +189,7 @@
                               <a
                                 (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_v3.svg"
                                   alt="Journal" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Question
@@ -189,7 +202,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Testimonials" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Quote  <br> of the day
@@ -200,7 +213,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3', 'click_daily_meditation') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_meditation_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily meditation
@@ -211,7 +224,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_challenge_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily

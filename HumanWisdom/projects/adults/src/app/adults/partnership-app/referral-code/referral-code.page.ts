@@ -62,7 +62,11 @@ export class ReferralCodePage implements OnInit {
       if(res!=null && res!="" && res.length>5){
         alert(res)
       }else{
-        this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
+        localStorage.setItem("CouponCode", res[0].CouponCode);
+        localStorage.setItem("ReferralLink", res[0].ReferralLink);
+        localStorage.setItem("isPartner","1");
+        this.router.navigate(["/adults/partnership-app/payment-income"]);
+        //this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
       }
     },
     error=>{

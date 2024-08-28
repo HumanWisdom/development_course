@@ -495,6 +495,22 @@ const routes: Routes = [
     path: 'daily-checkin-save',
     loadChildren: () => import('../../../../shared/component/daily-check-note-save/daily-check-note-save.module').then( m => m.DailyCheckinNoteSavePageModule)
   },
+  {
+    path: 'redeem-subscription',
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
+  },
+  {
+    path: 'redeem-congratulation',
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
+  },
+  {
+    path: 'redeem-subscription-landing',
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  },
+  {
+    path: 'redeem-gift-card',
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  }
 ];
 
 

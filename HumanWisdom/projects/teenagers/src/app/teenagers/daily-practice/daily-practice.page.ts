@@ -33,14 +33,17 @@ export class DailyPracticePage implements OnInit {
   audioTitle = ''
   dailybreathTitle = ''
   isloggedIn = false
-  enablepopup=false;
-  isSubscribe=false;
+  enablepopup = false;
+  isSubscribe = false;
   Subscriber: any;
   guest = true;
   placeholder = 'Answer here'
   enableAlert = false;
   content = ''
-  isAdults:boolean;
+  isAdults: boolean;
+  dailyInspirationTitle = '';
+  DailyInspirationLink = '';
+
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService,
@@ -54,7 +57,7 @@ export class DailyPracticePage implements OnInit {
   ngOnInit() {
     this.setAudioControlsBackground();
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
-    if(popup === 1) this.enablepopup = true
+    if (popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
     this.dailyid = this.route.snapshot.paramMap.get('id')
     this.getdailyques();
@@ -66,7 +69,7 @@ export class DailyPracticePage implements OnInit {
     };
     $('.carousel').bcSwipe({ threshold: 50 });
 
-    if(this.guest || !this.isloggedIn || this.Subscriber === '0') {
+    if (this.guest || !this.isloggedIn || this.Subscriber === '0') {
       this.placeholder = 'Please subscribe to access your online journal';
     }
 
@@ -79,6 +82,12 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
+      }
+    })
+    this.service.getDailyInspirationQuestion().subscribe((res) => {
+      if (res) {
+        this.dailyInspirationTitle = res.split(';')[0]
+        this.DailyInspirationLink = res.split(';')[1];
       }
     })
     this.service.getDailypractiseQuestionins().subscribe((res) => {
@@ -112,11 +121,11 @@ export class DailyPracticePage implements OnInit {
 
   subdailyques() {
     this.logeventservice.logEvent('click_add_answer_here');
-    if(!this.isloggedIn || !this.isSubscribe){
+    if (!this.isloggedIn || !this.isSubscribe) {
       this.content = "Subscribe to activate your online journal";
       this.enableAlert = true;
       // alert("Subscribe to activate your online journal");
-    }else{
+    } else {
       let obj = {
         ReflectionId: this.dailyqusrefid,
         SubscriberId: this.userId,
@@ -134,22 +143,22 @@ export class DailyPracticePage implements OnInit {
 
 
   Logevent(evtName) {
-    console.log('hi')
     this.logeventservice.logEvent(evtName);
   }
 
-  next(){
-
-    this.enableVideo= false;
-  setTimeout(() => {
-    this.enableVideo =true;
-  }, 200);
+  next(event) {
+    this.Logevent(event);
+    this.enableVideo = false;
+    setTimeout(() => {
+      this.enableVideo = true;
+    }, 200);
   }
 
-  back(){
-    this.enableVideo= false;
+  back(event) {
+    this.Logevent(event);
+    this.enableVideo = false;
     setTimeout(() => {
-      this.enableVideo =true;
+      this.enableVideo = true;
     }, 200);
   }
 
@@ -160,7 +169,7 @@ export class DailyPracticePage implements OnInit {
 
   setAudioControlsBackground() {
     const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
-  
+
     // Create a new <style> element
     const style = document.createElement('style');
     style.textContent = `
@@ -168,7 +177,7 @@ export class DailyPracticePage implements OnInit {
         background: ${backgroundColor} !important;
       }
     `;
-  
+
     // Append the <style> element to the document head
     document.head.appendChild(style);
   }

@@ -76,7 +76,7 @@ export class ChangeTopicPage implements OnInit {
     let NoOfVisits = loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits )
     
-    this.isRoutedFromLogin = NoOfVisits === '1' ? true : false;
+    this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
     
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
@@ -127,7 +127,7 @@ export class ChangeTopicPage implements OnInit {
             localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
             this.logeventservice.logEvent('click_stress_anxiety');
             this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
-          } else if (name === 'Succeed in Life') {
+          } else if (name === 'Succeed in life') {
             localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
             this.logeventservice.logEvent('click_workplace');
             this.router.navigate(['/teenagers/curated/succeed-in-life'])

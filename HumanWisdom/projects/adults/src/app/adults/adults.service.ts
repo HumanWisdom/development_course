@@ -223,6 +223,10 @@ export class AdultsService {
     return this.http.get(this.path + `/GetDailyPractise_Question`)
   }
 
+  getDailyInspirationQuestion(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyInspiration/${SharedService.ProgramId}`)
+  }
+
   submitDailypractiseQuestion(data): Observable<any> {
     return this.http.post(this.path + '/AddDailyQuestion_Response', data)
   }
@@ -515,7 +519,7 @@ export class AdultsService {
             // this.getProgress()
             this.getBookmark(userId)
           }, 1000);
-  
+
           if (res.UserId == 0) {
 
           }

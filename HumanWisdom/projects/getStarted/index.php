@@ -6,7 +6,8 @@
     <meta property="title" content="HappierMe: Master your mind.">
     <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
-
+    <!--Canonical Tag-->
+    <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
@@ -29,7 +30,7 @@
     })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
     <!-- End Google Tag Manager -->
 
-
+  
     
   </head>
 
@@ -45,75 +46,136 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <section class="hpt120px">
-      <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_launch.webp" class="img-responsive w100p img_teens_launch" alt="HappierMe">
+      <div class="row center_flex web_home_div">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_home_app.webp" class="img-responsive"> -->
+            <video controls playinline autoplay loop muted class="w100p"
+              poster=""
+              controlsList="nodownload" id="vid">
+              <source
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults.mp4#t=1"
+                type="video/mp4">
+            </video>
           </div>
-        </div>
-        
-        <div class="row absolute_teens_launch">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_ffffff">
-                JUST LAUNCHED!
-              </h1>
-            </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              <h2 class="mtb20px fs_24px fw_600 lh_120p fc_ffffff">
-                HappierMe for Teenagers
-              </h2>
-            </div>
+          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
+                  <span class="rating_a">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </span>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
-                <a href="https://happierme.app/teenagers/intro-carousel" class="btn btn_fom center_flex">
-                  Find out more
-                </a>
+                  <span class="appstore_a">
+                    <i class="fa fa-apple"></i>
+                  </span> 
+
+                  <span class="fs_15px fw_700 lh_140p fc_000000">
+                    4.8  
+                  </span>  
+
+                  App store rating
+                </h6>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="pt0px">
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp" class="img-responsive" alt="HappierMe">
-        </div>
-      </div>
-
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
-            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
-              Develop your Emotional Intelligence
-            </h1>
-          </div>
-
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb0px">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
-              Understand your mind and be happier
-            </h2>
-          </div>
-
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
-            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-              Life can be tough. The HappierMe emotional intelligence app is your personal guide to help you feel better now, but also to take you deeper to understand your thoughts and feelings. It supports you to become the person you want to be, to be happier, manage your emotions and  succeed in the world. There are also coaches you can speak to through the app.
-            </h5>
-          </div>
-
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-              <!-- <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-              <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                <!-- Try HappierMe for free -->
-                Start your free trial
-              </a>
+            <div class="row mt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h1 class="mtb0px fs_56px fw_600 lh_130p fc_834b66 ta_lc">
+                  Your guide for a happier life
+                </h1>
+              </div>
             </div>
+
+            <div class="row mtb15px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
+                  One app for emotional intelligence, relationships and mental health.
+                </h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                </div>
+
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                    Not just a quick fix. Solutions for the long term.
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mtb5px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                </div>
+
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                    Created by experts.
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                </div>
+
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                    Online journal, podcasts, meditations, stories and more.  
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
+                  <a href="https://happierme.app/adults/intro/intro-carousel" class="">
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                      HappierMe for Adults
+                    </button>
+                  </a>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                      HappierMe for Teens
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block">
+                  Start your free trial now. Download the app on
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px">
+                  and
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px">
+                </h3>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </div>
     </section>
@@ -297,7 +359,7 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
             <video controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/pp_video_01.webp"
+              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_01.mp4"
@@ -312,9 +374,11 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
             <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+            <!-- <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
+            <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
               <!-- Try HappierMe for free -->
-              Start your free trial
+              <!-- Try for Free -->
+              Start your free trial now
             </a>
           </div>
         </div>
@@ -443,7 +507,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cpl40px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 <!-- COMING SOON! -->
-                JUST LAUNCHED!
+                NEW!
               </h2>
 
               <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
@@ -459,23 +523,51 @@
               <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                 Introducing a new edition of the app especially curated to help teenagers manage their own mental health, have better friendships, deal with various challenges and succeed in life.
               </h5>
+
+              <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt30px">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                      Find out more
+                    </button>
+                  </a>
+                </div>
+              </div> -->
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px">
+                    </h4>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                  <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                    Start your free trial now
+                  </a>
+                </div>
+              </div>
             </div>
+            
           </div>
         </div>
       </section>
       <!-- /teenagers -->
 
-      <div class="row center_flex mt100px">
+      <!-- <div class="row center_flex mt100px">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-            <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-              <!-- Try HappierMe for free -->
-              Start your free trial
+            <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+              Start your free trial now
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- testimonials -->
       <section>
@@ -1174,7 +1266,13 @@
 
               <div class="owl-theme">
                 <div class="owl-controls">
-                  <div class="owl-nav"></div>
+                  <div class="owl-nav">
+                    <a class="sap" href="https://happierme.app/adults/testimonials">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                        View all testimonials
+                      </h4>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1720,8 +1818,12 @@
                         A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.
                       </h5>
 
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+                      <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                          <audio id="aud1" controls controlsList="nodownload">
+                            <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                          </audio>
+                        </div>
                       </div>
 
                       <a href="https://happierme.app/adults/pathway/">
@@ -2026,7 +2128,7 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <ul class="nav nav-tabs flex_ai m0px tab_faqs">
+              <ul class="nav nav-tabs m0px tab_faqs">
                 <li class="active">
                   <a data-toggle="tab" href="#about_happierme" class="active">
                     About HappierMe
@@ -2480,7 +2582,7 @@
         <!-- /desktop -->
 
         <!-- mobile -->
-        <div class="row center_flex prelative display_d_none">
+        <div class="row center_flex prelative display_df_none">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             <div class="tab-content tc_faqs mobile">
               <div id="about_happierme" class="tab-pane fade in active">

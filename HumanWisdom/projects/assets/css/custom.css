@@ -29859,7 +29859,8 @@ svg path
 
 .box_02
 {
-  height: 125px;
+  /* height: 125px; */
+  height: auto;
   border: 0;
   border-radius: 16px;
   color: #fff;
@@ -29871,7 +29872,8 @@ svg path
   flex-flow: wrap;
   /* padding: 20px 10px;
   margin: 0 -10px 2px -10px!important; */
-  padding: 16px;
+  /* padding: 16px; */
+  padding: 0;
   margin: 0;
 }
 
@@ -30055,7 +30057,8 @@ svg path
   box-shadow: unset;
   padding: 20px;
   border: 0;
-  border-radius: 5px 5px 0 0;
+  /* border-radius: 5px 5px 0 0; */
+  border-radius: 12px 12px 0 0;
 }
 
 #obfaqs .panel-body
@@ -30066,7 +30069,8 @@ svg path
   /* box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
   border-top: 1px solid #ADADAD; */
   box-shadow: 0;
-  border-radius: 0 0 5px 5px;
+  /* border-radius: 0 0 5px 5px; */
+  border-radius: 0 0 12px 12px;
 }
 
 #tree_plant .panel-title > a[aria-expanded="true"]:after,
@@ -30188,7 +30192,8 @@ svg path
 
 .sub_unsubp
 {
-  margin: 40px 0;
+  /* margin: 40px 0; */
+  margin: 0 20px;
 }
 
 .btn_sub_unsubp
@@ -36375,12 +36380,12 @@ section > .row
   margin: 16px 0;
 }
 
-/* .partnership_row 
+.partnership_row 
 {
-  border-radius: 16px;
+  border-radius: 20px;
   background: #120F40;
-  padding: 16px;
-} */
+  padding: 30px 20px;
+}
 
 .box_blue_01
 {
@@ -36494,7 +36499,8 @@ a.fc_e58d82:hover
 
 .partnership_row a .box_02
 {
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+  margin-bottom: 20px;
 }
 
 .partnership_row a:last-child .box_02
@@ -36502,9 +36508,9 @@ a.fc_e58d82:hover
   margin-bottom: 0;
 }
 
-.partnership_row a:nth-child(1) .box_02,
+/* .partnership_row a:nth-child(1) .box_02,
 .partnership_row a:nth-child(4) .box_02,
-.partnership_row a:nth-child(7) .box_02,
+.partnership_row a:nth-child(7) .box_02, */
 .div_fq a:nth-child(1) .row,
 .div_fq a:nth-child(4) .row,
 .div_fq a:nth-child(7) .row,
@@ -36522,9 +36528,9 @@ a.fc_e58d82:hover
   background: #834B66;
 }
 
-.partnership_row a:nth-child(2) .box_02,
+/* .partnership_row a:nth-child(2) .box_02,
 .partnership_row a:nth-child(5) .box_02,
-.partnership_row a:nth-child(8) .box_02,
+.partnership_row a:nth-child(8) .box_02, */
 .div_fq a:nth-child(2) .row,
 .div_fq a:nth-child(5) .row,
 .div_fq a:nth-child(8) .row,
@@ -36542,8 +36548,8 @@ a.fc_e58d82:hover
   background: #CB6171;
 }
 
-.partnership_row a:nth-child(3) .box_02,
-.partnership_row a:nth-child(6) .box_02,
+/* .partnership_row a:nth-child(3) .box_02,
+.partnership_row a:nth-child(6) .box_02, */
 .div_fq a:nth-child(3) .row,
 .div_fq a:nth-child(6) .row,
 .div_fq a:nth-child(9) .row,
@@ -37293,4 +37299,62 @@ span
 {
   margin-bottom: 0;
 }
-/* /version - 03 */
+
+.cvideo_ext_di
+{
+  /* width: auto; */
+  width: 100%;
+  max-height: 48vh;
+  /*object-fit: cover;*/
+  border-radius: 16px;
+}
+
+.toc_adiv_mp
+{
+  margin-bottom: 30px;
+}
+
+.partnership_treesisters
+{
+  border-radius: 16px;
+  background: #120F40;
+  padding: 24px;
+  margin: 30px 10px;
+}
+
+.partnership_income_div
+{
+  background: #120F40;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
+  background:#120F40 !important;
+}
+
+
+.abcRioButtonBlue .abcRioButtonIcon {
+  background:#120F40 !important;
+}
+
+
+.abcRioButtonBlue .abcRioButtonContentWrapper {
+  border: 0px !important;
+  box-shadow: none !important;
+}
+
+.abcRioButtonBlue {
+  box-shadow: none !important;
+  background:#120F40 !important;
+}
+
+
+
+.abcRioButton:hover {
+  box-shadow: none!important;
+}
+
+/* /v
+
+ersion - 03 */

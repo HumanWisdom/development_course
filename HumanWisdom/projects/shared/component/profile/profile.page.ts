@@ -5,6 +5,7 @@ import { LogEventService } from "../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -42,7 +43,7 @@ export class ProfilePage implements OnInit {
   isAdults: boolean = true;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
-    public platform: Platform, public logeventservice: LogEventService) {
+    public platform: Platform, public logeventservice: LogEventService,private location:Location) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
     this.Onboardingservice.getpaymentdetail(userId).subscribe((res) => {
@@ -138,6 +139,17 @@ export class ProfilePage implements OnInit {
     this.isCancel = true;
     this.enableAlert = true;
   }
+
+    back(){
+      let url = SharedService.getDashboardUrls();
+      if(url){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+    }
+
+
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);

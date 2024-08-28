@@ -35,7 +35,7 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/partnership-app">
+            <a href="../pages/partnership.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Partnership Program
               </h4>
@@ -143,7 +143,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
             </a>
 
-            <a href="https://www.instagram.com/happiermeapp/" target="_blank">
+            <a href="https://www.instagram.com/happierme_app/" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
             </a>
 
@@ -182,7 +182,7 @@
   <!-- /desktop -->
 
   <!-- mobile -->
-  <div class="row center_flex display_d_none">
+  <div class="row center_flex display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
       <div class="panel-group" id="accordion_footer">
         <div class="panel panel-default">
@@ -222,7 +222,7 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/partnership-app">
+                  <a href="../pages/partnership.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Partnership Program
                     </h4>
@@ -359,7 +359,7 @@
     </div>
   </div>
 
-  <div class="row center_flex mt40px display_d_none">
+  <div class="row center_flex mt40px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
         <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567">
@@ -375,13 +375,13 @@
     </div>
   </div>
 
-  <div class="row center_flex mtb30px display_d_none">
+  <div class="row center_flex mtb30px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter dfooter_social_links_ext">
       <a href="https://facebook.com/happiermeapp/">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
       </a>
 
-      <a href="https://www.instagram.com/happiermeapp/">
+      <a href="https://www.instagram.com/happierme_app/">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
       </a>
 
@@ -399,7 +399,7 @@
     </div>
   </div>
 
-  <div class="row center_flex mt30px display_d_none">
+  <div class="row center_flex mt30px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
         Copyright © 2024 HappierMe. All rights reserved
@@ -418,3 +418,47 @@
 
 </div>
 <!-- /footer -->
+
+<!-- sticky rating banner -->
+<div   id="closeableElement" class="row center_flex sticky_rating_banner display_df_none">
+  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 p0 flex_ai">
+
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
+      <a class="" href="javascript:void(0);" onclick="closeElement();">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_close_grey.svg" class="img-responsive">
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_footer_hwp.svg" class="img-responsive">
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
+      <h6 class="mtb0px flex_ai">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="img-responsive mr6px">
+
+        <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
+          App Store
+        </span>
+
+        <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
+          4.8
+        </span>
+
+        <span class="rating_a">
+          <i class="fa fa-star"></i>
+        </span>
+      </h6>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <a href="https://onelink.to/qsptex" class="">
+        <button class="fs_12px fw_600 lh_140p fc_ffffff btn_download" >
+          Download app
+        </button>
+      </a>
+    </div>
+
+  </div>  
+</div>
+<!-- /sticky rating banner -->

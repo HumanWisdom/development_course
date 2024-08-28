@@ -42,6 +42,13 @@ export class SharedService {
     }
   }
 
+ public static getPartnerInfo(){
+  if(localStorage.getItem('isPartner')){
+    return localStorage.getItem('isPartner');
+  }
+  return '0';
+ }
+
   public static getDataFromSessionStorage(key: string): string {
     if (key && key != null) {
       return sessionStorage.getItem(key);
