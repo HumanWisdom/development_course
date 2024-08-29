@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from '../../../../shared/models/program-model';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'redeem-congratulation',
@@ -30,12 +31,12 @@ export class RedeemCongratulationPage {
   route(event) {
     if (event === 'dash') {
       if (this.programName !== 'Teenagers') {
-        this.router.navigate(['/adults/adult-dashboard'])
+        window.location.href = environment.clientUrl + '/adults/adult-dashboard';
       } else {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
+        window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
       }
     } else {
-      this.router.navigate(['/' + this.programName.toLowerCase() + '/onboarding/myprogram'])
+       window.location.href = environment.clientUrl + '/' + this.programName.toLowerCase() + '/onboarding/myprogram'
     }
   }
 }

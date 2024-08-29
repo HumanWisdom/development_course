@@ -1,21 +1,51 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import {
   FacebookLoginProvider,
   GoogleLoginProvider,
-  SocialAuthService
-} from "angularx-social-login";
+  SocialAuthService,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from "@abacritt/angularx-social-login";
+import { PlatformModule } from '@angular/cdk/platform';
 import { LogEventService } from "../../services/log-event.service";
 import { OnboardingService } from "../..//services/onboarding.service";
 import { SharedService } from "../../services/shared.service";
 import { environment } from "../../../environments/environment";
 import { NavigationService } from "../../services/navigation.service";
-
-
+import {  CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from "../../shared.module";
 declare var $: any;
 @Component({
   selector: "app-common-login",
+  imports:[SocialLoginModule,CommonModule,
+    FormsModule,
+    ReactiveFormsModule     ,
+    RouterModule,
+    PlatformModule,
+  SharedModule ],
+  standalone:true,
+  providers:[
+  SocialAuthService, 
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+                    },
+                    {
+                        id: FacebookLoginProvider.PROVIDER_ID,
+                        provider: new FacebookLoginProvider('238869214957032')
+                    }
+                ]
+            } as SocialAuthServiceConfig,
+        },
+],
   templateUrl: "./login-signup.page.html",
   styleUrls: ["./login-signup.page.scss"],
 })
@@ -36,6 +66,7 @@ export class LoginSignupPage implements OnInit {
   email: any;
   password: any;
   showAlert = false;
+  renderGoogle = false;
   successPassword = JSON.parse(sessionStorage.getItem("successPassword"));
   showSuccessPassword: any;
   saveUsername = false;
@@ -135,7 +166,7 @@ export class LoginSignupPage implements OnInit {
     setTimeout(() => {
       if (localStorage.getItem("emailCode") === "T") {
         let userid = localStorage.getItem("userIdCode");
-        this.service.verifyUser(userid).subscribe((res) => { });
+     //   this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
     // if (!this.router.url.includes('/log-in')) {
@@ -264,10 +295,268 @@ export class LoginSignupPage implements OnInit {
 
   googleLogin(reqtype) {
     if(reqtype=="signup")
-      this.logeventservice.logEvent('facebook_signup');
+      this.logeventservice.logEvent('google_signup');
     else
-      this.logeventservice.logEvent('facebook_login');
+      this.logeventservice.logEvent('google_login');
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.loadGoogleScript();   
+    }, 1000);
+  }
+
+  getDisplay(){
+    if(!this.renderGoogle){
+      return 'display:none;'
+    }
+  }
+
+  private loadGoogleScript(): void {
+    this.renderButton();
+  }
+
+  private renderButton(): void {
+    const gapi = (window as any).gapi;
+    if (gapi) {
+      gapi.signin2.render('my-signin2', {
+        scope: 'profile email',
+        width: 38,
+        height: 38,
+        longtitle: false,
+        theme: 'dark',
+        onsuccess: this.onSuccess.bind(this),
+        onfailure: this.onFailure.bind(this)
+      });
+    }
+    this.renderGoogle = true;
+  }
+
+
+
+  
+  private onSuccess(googleUser: any): void {
+    console.log('Logged in as: ' + googleUser);
+    this.idToken = googleUser.getAuthResponse().id_token;
+    this.socialFirstName = googleUser.getBasicProfile().getGivenName();
+    this.socialLastName = googleUser.getBasicProfile().getFamilyName()
+    this.socialEmail = googleUser.getBasicProfile().getEmail()
+    // this.VerifyGoogle();
+    this.service
+    .verifyGoogle({
+      TokenID: this.idToken,
+      FName: this.socialFirstName,
+      LName: this.socialLastName,
+      Email: this.socialEmail,
+      VCode: "",
+      Pwd: "",
+    })
+    .subscribe((res) => {
+      if (res) {
+        this.loginResponse = res;
+        this.service.getuser(res.UserId).subscribe(userInfo=>{
+          if(userInfo){
+            localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+          }
+        })
+        localStorage.setItem("guest", "F");
+        localStorage.setItem("remember", "T");
+        localStorage.setItem("socialLogin", "T");
+        localStorage.setItem(
+          "mediaAudio",
+          JSON.stringify(this.mediaAudio)
+        );
+        localStorage.setItem(
+          "mediaVideo",
+          JSON.stringify(this.mediaVideo)
+        );
+        localStorage.setItem("video", JSON.stringify(this.video));
+        localStorage.setItem("audio", JSON.stringify(this.audio));
+        localStorage.setItem("btnclick", "F");
+        localStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        sessionStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        localStorage.setItem(
+          "token",
+          JSON.stringify(this.loginResponse.access_token)
+        );
+        localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+        localStorage.setItem("userId", JSON.stringify(this.userId));
+        localStorage.setItem("email", this.socialEmail);
+        localStorage.setItem("FnName", this.socialFirstName);
+        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+        localStorage.setItem("LName", this.socialLastName);
+        localStorage.setItem("pswd", "");
+        localStorage.setItem("name", this.loginResponse.Name);
+        localStorage.setItem("first", "T");
+        if (parseInt(this.loginResponse.UserId) == 0) {
+          this.showAlert = true;
+          this.content = "You have entered wrong credentials. Please try again.";
+          this.enableAlert = true;
+          this.email = "";
+          this.password = "";
+        } 
+        else 
+        {
+          this.showAlert = false;
+          this.userId = this.loginResponse.UserId;
+          this.userName = this.loginResponse.Name;
+          localStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          sessionStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem(
+            "token",
+            JSON.stringify(this.loginResponse.access_token)
+          );
+          if (this.saveUsername == true) {
+            localStorage.setItem("userId", JSON.stringify(this.userId));
+            localStorage.setItem(
+              "userEmail",
+              JSON.stringify(this.socialEmail)
+            );
+            localStorage.setItem(
+              "userName",
+              JSON.stringify(this.userName)
+            );
+          } else {
+            sessionStorage.setItem("userId", JSON.stringify(this.userId));
+            sessionStorage.setItem(
+              "userEmail",
+              JSON.stringify(this.socialEmail)
+            );
+            sessionStorage.setItem(
+              "userName",
+              JSON.stringify(this.userName)
+            );
+          }
+          this.service.getuser(res.UserId).subscribe(userInfo=>{
+            if(userInfo){
+              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+            }
+          })
+          let pers = localStorage.getItem("personalised");
+          let persub = localStorage.getItem("personalised subscription");
+          let acceptCookie = localStorage.getItem("activeCode");
+          let subscribePage = localStorage.getItem("subscribepage");
+          let option = localStorage.getItem("introoption");
+          let giftwisdom = localStorage.getItem("giftwisdom");
+          const url = SharedService.UrlToRedirect;
+          if (url != null) {
+            SharedService.UrlToRedirect = null;
+            this.router.navigate([url]);
+          }
+          else if (option === "T") {
+            localStorage.setItem("introoption", "F");
+            localStorage.setItem("isloggedin", "T");
+            this.router.navigate(["/intro/personalised-for-you"]);
+          } 
+          else
+          {
+            if (acceptCookie === "T" || subscribePage === "T")
+            {
+              localStorage.setItem("isloggedin", "T");
+              if (acceptCookie === "T") {
+                localStorage.setItem("activeCode", "F");
+              }
+              if (subscribePage === "T") {
+                localStorage.setItem("subscribepage", "F");
+              }
+              if (giftwisdom === 'T') {
+                this.router.navigate(["/onboarding/add-to-cart"]);
+              } else if (this.loginResponse.Subscriber === 0) {
+                this.router.navigate(["/onboarding/add-to-cart"]);
+              } else {
+                this.router.navigate(["/onboarding/viewcart"])
+              }
+            }
+            else 
+            {
+              localStorage.setItem("isloggedin", "T");
+              if (pers && persub && pers === "T") {
+                this.router.navigate(["/onboarding/viewcart"], {
+                  state: { quan: "1", plan: persub },
+                });
+              } 
+              else 
+              {
+                localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                if (this.loginResponse?.NoOfVisits === 1) 
+                {
+                  localStorage.setItem(
+                    "signupfirst", 'F'
+                  );
+                  /* if(SharedService.ProgramId === 9) {
+                    this.router.navigate(["/adults/change-topic"], {
+                      state: {
+                        routedFromLogin: true,
+                      }
+                    });
+                  }else if(SharedService.ProgramId === 11) {
+                    // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                    this.router.navigate(["/teenagers/change-topic"], {
+                      state: {
+                        routedFromLogin: true,
+                      }
+                    });
+                  } */
+                    this.router.navigate(["/"+ SharedService.getprogramName() +"/change-topic"], {
+                      state: {
+                        routedFromLogin: true,
+                      }
+                    });
+
+                } 
+                else 
+                {
+                  /* if(SharedService.ProgramId === 9) {
+                    this.router.navigate(["/adults/repeat-user"]);
+                  }else if(SharedService.ProgramId === 11) {
+                 //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                    this.router.navigate(["/teenagers/change-topic"], {
+                      state: {
+                        routedFromLogin: true,
+                      }
+                    });
+                  }
+                  } */
+
+                  this.router.navigate(["/"+ SharedService.getprogramName()+  "/repeat-user"]);
+                }
+              }
+            }
+
+            /* if(this.urlEmail)
+            {
+              this.service.verifyUser(this.userId)
+              .subscribe(res=>{
+
+              })
+            }*/
+          }
+        }
+      }
+    });
+    
+  }
+
+  private onFailure(error: any): void {
+    console.log(error);
+  }
+
+  private VerifyGoogle(){
     this.authService.authState.subscribe(
       (user) => {
         this.user = user;
@@ -490,6 +779,7 @@ export class LoginSignupPage implements OnInit {
     );
   }
 
+ 
   fbLogin(reqtype) {
     if(reqtype=="signup")
         this.logeventservice.logEvent('facebook_signup');
@@ -976,6 +1266,26 @@ export class LoginSignupPage implements OnInit {
     this.freescreens();
   }
 
+// myMethod(){
+//   const google= (window as any).google
+//   if(google){
+//      google.accounts.id.initialize({
+//       client_id: '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com',
+//       callback: this.handleCredentialResponse.bind(this),
+//     });
+//     google.accounts.id.renderButton(
+//       document.getElementById('my-signin2'),
+//       { theme: 'outline', size: 'large' }  // customization attributes
+//     );
+//     google.accounts.id.prompt(); // also display the One Tap dialog
+//   }; // also display the One Tap dialog
+// }
+
+
+handleCredentialResponse(response){
+  console.log("Encoded JWT ID token: " + response.credential);
+}
+
   getrenew() {
     this.closemodal.nativeElement.click();
     localStorage.setItem("isloggedin", "T");
@@ -987,6 +1297,11 @@ export class LoginSignupPage implements OnInit {
     this.showAlert = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
+    this.renderGoogle = false;
+    setTimeout(() => {
+      this.loadGoogleScript();
+      this.renderGoogle = true;
+    }, 200);
   }
 
   freescreens() {
@@ -1009,9 +1324,9 @@ export class LoginSignupPage implements OnInit {
 
   signInWithApple(reqtype) {
     if(reqtype=="signup")
-    this.logeventservice.logEvent('facebook_signup');
+    this.logeventservice.logEvent('apple_signup');
   else
-    this.logeventservice.logEvent('facebook_login');
+    this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
     const REDIRECT_API_URL =
       "https://www.humanwisdom.info/api/verifyAppleToken_html";
@@ -1051,6 +1366,11 @@ export class LoginSignupPage implements OnInit {
     this.isSignUp = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
+    this.renderGoogle = false;
+    setTimeout(() => {
+      this.loadGoogleScript();
+      this.renderGoogle = true;
+    }, 200);
   }
 
   initializeRegistrationForm() {
@@ -1071,5 +1391,9 @@ export class LoginSignupPage implements OnInit {
     } else {
       this.confirmpasswordhide = !this.confirmpasswordhide;
     }
+  }
+
+  loginWithInstagram() {
+    this.service.loginWithInstagram();
   }
 }

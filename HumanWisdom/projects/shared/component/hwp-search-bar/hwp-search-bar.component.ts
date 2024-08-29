@@ -20,10 +20,8 @@ export class HwpSearchBarComponent implements OnInit {
 
     
   clearSearch(){
-    setTimeout(() => {
     this.searchinp='';
     this.textBoxEvent.emit('');
-    }, 40);
   }
 
 

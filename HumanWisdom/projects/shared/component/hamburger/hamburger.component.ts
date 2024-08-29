@@ -208,7 +208,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getName() {
-    return this.name;
+    return this.name===""? 'guest' :this.name
+
   }
 
 
@@ -233,7 +234,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   loginroute() {
-    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
+      this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
   }
 
   giftwisdom() {
@@ -400,7 +401,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             localStorage.setItem("guest", "T");
             localStorage.setItem("navigateToUpgradeToPremium", "true");
             localStorage.setItem("btnClickBecomePartner", "true");
-            this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+       
+           // this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
           } else {
             this.Onboardingservice.navigateToUpgradeToPremium = true;
             this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -428,7 +430,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
-            this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+            const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
+            if (auth2) {
+              auth2.signOut().then(() => {
+                this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
+              });
+            }else {
+              this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+            }
           }
         }
       }
@@ -482,6 +491,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       if (userdetail) {
         let detail = JSON.parse(userdetail);
         this.setProfileImage(detail);
+      }
+      else{
+        this.url = this.url === '' || this.url.includes('undefined') ?'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' :'';
       }
     }, 1000);
 

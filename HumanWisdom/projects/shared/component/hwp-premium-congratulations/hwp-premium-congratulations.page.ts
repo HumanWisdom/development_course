@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from "@angular/common";
 import { SharedService } from '../../services/shared.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-hwp-premium-congratulations',
@@ -10,7 +11,13 @@ import { ProgramType } from '../../models/program-model';
 })
 export class HwpPremiumCongratulationsPage implements OnInit {
    isAdults=true;
-  constructor(public router:Router,private location: Location) { }
+  constructor(public router:Router,
+    private location: Location,
+    private onboardingService:OnboardingService
+    
+  ) { 
+    this.onboardingService.updateUserDetails.next(true);
+  }
 
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {

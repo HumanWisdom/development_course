@@ -45,16 +45,19 @@
                             </h4>
                           </div>
 
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <button type="button" class="btn_pr_code" title="{{getTittle()}}"
-                              (click)="copyText(partnershipReport.AffRefCode,'code')">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+                            <button type="button" class="btn_pr_code d-flex" title="{{getTittle()}}" >
                               {{this.partnershipReport.AffRefCode}}
+                              <a (click)="copyTextHeader(partnershipReport.AffRefCode,'code')" class="btn-copy-icon">
+                                <img *ngIf="isCopyHeader" style="height: 16px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" alt="" class="img-responsive"/> 
+                                <img *ngIf="!isCopyHeader" style="height: 16px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg" alt="" class="img-responsive"/> 
+                              </a>
                             </button>
                           </div>
                         </div>
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                          <a class="" (click)="share(partnershipReport.AffRefCode)">
+                          <a class="" (click)="share(partnershipReport.AffRefCode,'code')">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_share.svg"
                               class="img-responsive">
@@ -88,7 +91,7 @@
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                     <a>
-                      <img (click)="share(partnershipReport.ReferralLink)" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/share.svg" alt="" class="img-responsive"/> 
+                      <img (click)="share(partnershipReport.ReferralLink,'link')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/share.svg" alt="" class="img-responsive"/> 
                     </a>
                   </div>
                 </div>
@@ -274,7 +277,7 @@
                     </div>
 
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pr0px tright"
-                      (click)="share(partnershipReport.AffRefCode)">
+                      (click)="share(partnershipReport.AffRefCode,'code')">
                       <a>
                         <img
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_peach_round.svg"
