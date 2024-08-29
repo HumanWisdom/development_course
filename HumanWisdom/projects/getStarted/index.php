@@ -145,7 +145,7 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
                   <a href="https://happierme.app/adults/intro/intro-carousel" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Adults
@@ -153,7 +153,7 @@
                   </a>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
