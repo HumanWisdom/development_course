@@ -123,7 +123,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Created by experts.
+                    Guided programs created by experts.
                   </h3>
                 </div>
               </div>
@@ -147,7 +147,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
                   <a href="https://happierme.app/adults/intro/intro-carousel" class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff bg_adults" >
                       HappierMe for Adults
                     </button>
                   </a>
@@ -155,7 +155,7 @@
 
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff bg_teens" >
                       HappierMe for Teens
                     </button>
                   </a>
