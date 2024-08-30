@@ -3708,6 +3708,12 @@ audio::-webkit-media-controls-enclosure
   justify-content: center;
 }
 
+.ddflex_mblock_a
+{
+  display: flex;
+  align-items: center;
+}
+
 .badge_new 
 {
   width: 22px;
