@@ -534,8 +534,8 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     A fresh way to avoid and overcome addiction
                        </div>
-</div>
-<div class="row">
+                  </div>
+                     <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                       
@@ -567,7 +567,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                    How to manage anxiety attacks
+                    How to manage anxiety attacks.
 
                   </div>
                 </div>
@@ -697,15 +697,15 @@
             <div class="clearfix"></div>
 
             
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-  <a class="" href="looking_for_love.php">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/35.webp" 
-        class="img-responsive img_blogs" alt="
-        Looking for love">
-      </div>
-    </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+             <a class="" href="looking_for_love.php">
+               <div class="row">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/35.webp" 
+                       class="img-responsive img_blogs" alt="
+                      Looking for love">
+                  </div>
+               </div>
 
     <div class="row mt20px">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">

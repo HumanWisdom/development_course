@@ -37361,3 +37361,10 @@ span
   content: none;
 }
 /* /version - 03 */
+.w-75 {
+  width:75px !important
+}
+.h-34{
+  height: 34px !important;
+}
+/* /version - 03 */
