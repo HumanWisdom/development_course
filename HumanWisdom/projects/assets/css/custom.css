@@ -37355,6 +37355,9 @@ span
   box-shadow: none!important;
 }
 
-/* /v
-
-ersion - 03 */
+#obfaqs .panel-title > a:after,
+#obfaqs .panel-title > a[aria-expanded="true"]:after
+{
+  content: none;
+}
+/* /version - 03 */
