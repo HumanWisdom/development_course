@@ -3792,3 +3792,13 @@ audio::-webkit-media-controls-enclosure
 {
   color: #834B66;
 }
+
+.bg_adults
+{
+  background: #292D56;
+}
+
+.bg_teens
+{
+  background: #183C79;
+}
