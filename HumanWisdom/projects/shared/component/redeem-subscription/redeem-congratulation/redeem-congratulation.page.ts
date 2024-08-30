@@ -36,7 +36,7 @@ export class RedeemCongratulationPage {
         window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
       }
     } else {
-      this.router.navigate(['/' + this.programName.toLowerCase() + '/onboarding/myprogram'])
+       window.location.href = environment.clientUrl + '/' + this.programName.toLowerCase() + '/onboarding/myprogram'
     }
   }
 }

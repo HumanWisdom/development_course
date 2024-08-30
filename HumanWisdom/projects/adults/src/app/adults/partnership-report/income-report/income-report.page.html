@@ -45,10 +45,13 @@
                             </h4>
                           </div>
 
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <button type="button" class="btn_pr_code" title="{{getTittle()}}"
-                              (click)="copyText(partnershipReport.AffRefCode,'code')">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+                            <button type="button" class="btn_pr_code d-flex" title="{{getTittle()}}" >
                               {{this.partnershipReport.AffRefCode}}
+                              <a (click)="copyTextHeader(partnershipReport.AffRefCode,'code')" class="btn-copy-icon">
+                                <img *ngIf="isCopyHeader" style="height: 16px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg" alt="" class="img-responsive"/> 
+                                <img *ngIf="!isCopyHeader" style="height: 16px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg" alt="" class="img-responsive"/> 
+                              </a>
                             </button>
                           </div>
                         </div>

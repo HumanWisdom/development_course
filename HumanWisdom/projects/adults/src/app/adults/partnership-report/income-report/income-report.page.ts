@@ -37,6 +37,7 @@ export class IncomeReportPage implements OnInit {
   isSubscriber:boolean = false;
   tableData:any;
   isReferraLinkCopy = true;
+  isCopyHeader = true;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -234,6 +235,25 @@ export class IncomeReportPage implements OnInit {
         this.isReferraLinkCopy = true;
       } else {
         this.isCopy = true;
+      }
+    }, 4000);
+  }
+
+
+  copyTextHeader(text, type): void {
+    navigator.clipboard.writeText(text).catch(() => {
+      console.error("Unable to copy text");
+    });
+    if (type == 'link') {
+      this.isReferraLinkCopy = false;
+    } else {
+      this.isCopyHeader = false;
+    }
+    setTimeout(() => {
+      if (type == 'link') {
+        this.isReferraLinkCopy = true;
+      } else {
+        this.isCopyHeader = true;
       }
     }, 4000);
   }

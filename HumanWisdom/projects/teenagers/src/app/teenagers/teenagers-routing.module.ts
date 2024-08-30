@@ -506,6 +506,10 @@ const routes: Routes = [
   {
     path: 'redeem-subscription-landing',
     loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  },
+  {
+    path: 'redeem-gift-card',
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
   }
 ];
 

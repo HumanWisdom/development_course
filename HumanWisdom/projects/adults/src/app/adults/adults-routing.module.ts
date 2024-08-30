@@ -517,7 +517,7 @@ const routes: Routes = [
     path: 'redeem-congratulation',
     loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
   },
-  
+
   {
     path: 'intro-happierme',
     loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then( m => m.IntroHappiermePageModule)
@@ -536,6 +536,10 @@ const routes: Routes = [
   },
   {
     path: 'redeem-subscription-landing',
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  },
+  {
+    path: 'redeem-gift-card',
     loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
   },
   {

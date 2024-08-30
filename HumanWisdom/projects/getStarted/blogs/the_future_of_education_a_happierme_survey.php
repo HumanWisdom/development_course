@@ -73,7 +73,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/49.webp" class="img-responsive" alt="Avoid and overcome burnout, with self-awareness">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive" alt="Avoid and overcome burnout, with self-awareness">
               </div>
             </div>
 
