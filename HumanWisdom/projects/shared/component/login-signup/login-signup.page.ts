@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
+import { AbstractControl, NgForm, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import {
   FacebookLoginProvider,
@@ -14,38 +14,47 @@ import { OnboardingService } from "../..//services/onboarding.service";
 import { SharedService } from "../../services/shared.service";
 import { environment } from "../../../environments/environment";
 import { NavigationService } from "../../services/navigation.service";
-import {  CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from "../../shared.module";
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from "ng-recaptcha";
 declare var $: any;
 @Component({
   selector: "app-common-login",
-  imports:[SocialLoginModule,CommonModule,
+  imports: [SocialLoginModule, CommonModule,
     FormsModule,
-    ReactiveFormsModule     ,
+    ReactiveFormsModule,
     RouterModule,
     PlatformModule,
-  SharedModule ],
-  standalone:true,
-  providers:[
-  SocialAuthService, 
-        {
-            provide: 'SocialAuthServiceConfig',
-            useValue: {
-                autoLogin: false,
-                providers: [
-                    {
-                        id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-                    },
-                    {
-                        id: FacebookLoginProvider.PROVIDER_ID,
-                        provider: new FacebookLoginProvider('238869214957032')
-                    }
-                ]
-            } as SocialAuthServiceConfig,
-        },
-],
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    SharedModule],
+  standalone: true,
+  providers: [
+    SocialAuthService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('238869214957032')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: '6LelvDIqAAAAAG6RPFwaKk7XgnhYruDwK-FzXjwd',
+      } as RecaptchaSettings,
+    },
+  ],
   templateUrl: "./login-signup.page.html",
   styleUrls: ["./login-signup.page.scss"],
 })
@@ -59,7 +68,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild("enabletab") enabletab: ElementRef;
   @ViewChild("enableotpmodal") enableotpmodal: ElementRef;
   @ViewChild("closeotpmodal") closeotpmodal: ElementRef;
-  isAdults:boolean =true;
+  isAdults: boolean = true;
   user: any;
   userId: any;
   idToken: any;
@@ -94,7 +103,7 @@ export class LoginSignupPage implements OnInit {
   signUser: any;
   video = 3;
   audio = 4;
-
+  token: string | undefined;
   t = new Date();
   minDate =
     this.t.getFullYear() +
@@ -103,7 +112,7 @@ export class LoginSignupPage implements OnInit {
     "-" +
     this.addZero(this.t.getDate());
   message: any;
-
+  isValidCaptach:boolean = false;
   get fullname() {
     return this.registrationForm?.get("fullname");
   }
@@ -140,7 +149,8 @@ export class LoginSignupPage implements OnInit {
     private activate: ActivatedRoute,
     private authService: SocialAuthService,
     private service: OnboardingService,
-    private navigtionService:NavigationService
+    private navigtionService: NavigationService,
+    private renderer: Renderer2, private el: ElementRef
   ) {
     this.initializeRegistrationForm();
     // let acceptCookie = localStorage.getItem('acceptcookie');
@@ -163,10 +173,12 @@ export class LoginSignupPage implements OnInit {
   }
 
   ngOnInit() {
+    document.getElementById('password-reveal').style.display = 'none';
+
     setTimeout(() => {
       if (localStorage.getItem("emailCode") === "T") {
         let userid = localStorage.getItem("userIdCode");
-     //   this.service.verifyUser(userid).subscribe((res) => { });
+        //   this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
     // if (!this.router.url.includes('/log-in')) {
@@ -174,8 +186,8 @@ export class LoginSignupPage implements OnInit {
     // }
     this.isAdults = SharedService.ProgramId === 9;
     const lastUrl = this.navigtionService.getLastUrlVisited()
-    if(lastUrl!=null && lastUrl.includes('forgotpassword')){
-      this.isSignUp=false;
+    if (lastUrl != null && lastUrl.includes('forgotpassword')) {
+      this.isSignUp = false;
     }
   }
 
@@ -272,7 +284,7 @@ export class LoginSignupPage implements OnInit {
               "password",
               JSON.stringify(this.registrationForm.get("password").value)
             );
-            setTimeout(() =>{
+            setTimeout(() => {
               this.content = "Code has been verified , Login with Your Credentials";
               this.enableAlert = true;
             }, 1000)
@@ -304,12 +316,12 @@ export class LoginSignupPage implements OnInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      this.loadGoogleScript();   
+      this.loadGoogleScript();
     }, 1000);
   }
 
-  getDisplay(){
-    if(!this.renderGoogle){
+  getDisplay() {
+    if (!this.renderGoogle) {
       return 'display:none;'
     }
   }
@@ -336,7 +348,7 @@ export class LoginSignupPage implements OnInit {
 
 
 
-  
+
   private onSuccess(googleUser: any): void {
     console.log('Logged in as: ' + googleUser);
     this.idToken = googleUser.getAuthResponse().id_token;
@@ -345,69 +357,36 @@ export class LoginSignupPage implements OnInit {
     this.socialEmail = googleUser.getBasicProfile().getEmail()
     // this.VerifyGoogle();
     this.service
-    .verifyGoogle({
-      TokenID: this.idToken,
-      FName: this.socialFirstName,
-      LName: this.socialLastName,
-      Email: this.socialEmail,
-      VCode: "",
-      Pwd: "",
-    })
-    .subscribe((res) => {
-      if (res) {
-        this.loginResponse = res;
-        this.service.getuser(res.UserId).subscribe(userInfo=>{
-          if(userInfo){
-            localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-          }
-        })
-        localStorage.setItem("guest", "F");
-        localStorage.setItem("remember", "T");
-        localStorage.setItem("socialLogin", "T");
-        localStorage.setItem(
-          "mediaAudio",
-          JSON.stringify(this.mediaAudio)
-        );
-        localStorage.setItem(
-          "mediaVideo",
-          JSON.stringify(this.mediaVideo)
-        );
-        localStorage.setItem("video", JSON.stringify(this.video));
-        localStorage.setItem("audio", JSON.stringify(this.audio));
-        localStorage.setItem("btnclick", "F");
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        sessionStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem(
-          "token",
-          JSON.stringify(this.loginResponse.access_token)
-        );
-        localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-        localStorage.setItem("userId", JSON.stringify(this.userId));
-        localStorage.setItem("email", this.socialEmail);
-        localStorage.setItem("FnName", this.socialFirstName);
-        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-        localStorage.setItem("LName", this.socialLastName);
-        localStorage.setItem("pswd", "");
-        localStorage.setItem("name", this.loginResponse.Name);
-        localStorage.setItem("first", "T");
-        if (parseInt(this.loginResponse.UserId) == 0) {
-          this.showAlert = true;
-          this.content = "You have entered wrong credentials. Please try again.";
-          this.enableAlert = true;
-          this.email = "";
-          this.password = "";
-        } 
-        else 
-        {
-          this.showAlert = false;
-          this.userId = this.loginResponse.UserId;
-          this.userName = this.loginResponse.Name;
+      .verifyGoogle({
+        TokenID: this.idToken,
+        FName: this.socialFirstName,
+        LName: this.socialLastName,
+        Email: this.socialEmail,
+        VCode: "",
+        Pwd: "",
+      })
+      .subscribe((res) => {
+        if (res) {
+          this.loginResponse = res;
+          this.service.getuser(res.UserId).subscribe(userInfo => {
+            if (userInfo) {
+              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+            }
+          })
+          localStorage.setItem("guest", "F");
+          localStorage.setItem("remember", "T");
+          localStorage.setItem("socialLogin", "T");
+          localStorage.setItem(
+            "mediaAudio",
+            JSON.stringify(this.mediaAudio)
+          );
+          localStorage.setItem(
+            "mediaVideo",
+            JSON.stringify(this.mediaVideo)
+          );
+          localStorage.setItem("video", JSON.stringify(this.video));
+          localStorage.setItem("audio", JSON.stringify(this.audio));
+          localStorage.setItem("btnclick", "F");
           localStorage.setItem(
             "loginResponse",
             JSON.stringify(this.loginResponse)
@@ -416,147 +395,173 @@ export class LoginSignupPage implements OnInit {
             "loginResponse",
             JSON.stringify(this.loginResponse)
           );
-          localStorage.setItem("userId", JSON.stringify(this.userId));
           localStorage.setItem(
             "token",
             JSON.stringify(this.loginResponse.access_token)
           );
-          if (this.saveUsername == true) {
+          localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem("email", this.socialEmail);
+          localStorage.setItem("FnName", this.socialFirstName);
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+          localStorage.setItem("LName", this.socialLastName);
+          localStorage.setItem("pswd", "");
+          localStorage.setItem("name", this.loginResponse.Name);
+          localStorage.setItem("first", "T");
+          if (parseInt(this.loginResponse.UserId) == 0) {
+            this.showAlert = true;
+            this.content = "You have entered wrong credentials. Please try again.";
+            this.enableAlert = true;
+            this.email = "";
+            this.password = "";
+          }
+          else {
+            this.showAlert = false;
+            this.userId = this.loginResponse.UserId;
+            this.userName = this.loginResponse.Name;
+            localStorage.setItem(
+              "loginResponse",
+              JSON.stringify(this.loginResponse)
+            );
+            sessionStorage.setItem(
+              "loginResponse",
+              JSON.stringify(this.loginResponse)
+            );
             localStorage.setItem("userId", JSON.stringify(this.userId));
             localStorage.setItem(
-              "userEmail",
-              JSON.stringify(this.socialEmail)
+              "token",
+              JSON.stringify(this.loginResponse.access_token)
             );
-            localStorage.setItem(
-              "userName",
-              JSON.stringify(this.userName)
-            );
-          } else {
-            sessionStorage.setItem("userId", JSON.stringify(this.userId));
-            sessionStorage.setItem(
-              "userEmail",
-              JSON.stringify(this.socialEmail)
-            );
-            sessionStorage.setItem(
-              "userName",
-              JSON.stringify(this.userName)
-            );
-          }
-          this.service.getuser(res.UserId).subscribe(userInfo=>{
-            if(userInfo){
-              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+            if (this.saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(this.userId));
+              localStorage.setItem(
+                "userEmail",
+                JSON.stringify(this.socialEmail)
+              );
+              localStorage.setItem(
+                "userName",
+                JSON.stringify(this.userName)
+              );
+            } else {
+              sessionStorage.setItem("userId", JSON.stringify(this.userId));
+              sessionStorage.setItem(
+                "userEmail",
+                JSON.stringify(this.socialEmail)
+              );
+              sessionStorage.setItem(
+                "userName",
+                JSON.stringify(this.userName)
+              );
             }
-          })
-          let pers = localStorage.getItem("personalised");
-          let persub = localStorage.getItem("personalised subscription");
-          let acceptCookie = localStorage.getItem("activeCode");
-          let subscribePage = localStorage.getItem("subscribepage");
-          let option = localStorage.getItem("introoption");
-          let giftwisdom = localStorage.getItem("giftwisdom");
-          const url = SharedService.UrlToRedirect;
-          if (url != null) {
-            SharedService.UrlToRedirect = null;
-            this.router.navigate([url]);
-          }
-          else if (option === "T") {
-            localStorage.setItem("introoption", "F");
-            localStorage.setItem("isloggedin", "T");
-            this.router.navigate(["/intro/personalised-for-you"]);
-          } 
-          else
-          {
-            if (acceptCookie === "T" || subscribePage === "T")
-            {
-              localStorage.setItem("isloggedin", "T");
-              if (acceptCookie === "T") {
-                localStorage.setItem("activeCode", "F");
+            this.service.getuser(res.UserId).subscribe(userInfo => {
+              if (userInfo) {
+                localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
               }
-              if (subscribePage === "T") {
-                localStorage.setItem("subscribepage", "F");
-              }
-              if (giftwisdom === 'T') {
-                this.router.navigate(["/onboarding/add-to-cart"]);
-              } else if (this.loginResponse.Subscriber === 0) {
-                this.router.navigate(["/onboarding/add-to-cart"]);
-              } else {
-                this.router.navigate(["/onboarding/viewcart"])
-              }
+            })
+            let pers = localStorage.getItem("personalised");
+            let persub = localStorage.getItem("personalised subscription");
+            let acceptCookie = localStorage.getItem("activeCode");
+            let subscribePage = localStorage.getItem("subscribepage");
+            let option = localStorage.getItem("introoption");
+            let giftwisdom = localStorage.getItem("giftwisdom");
+            const url = SharedService.UrlToRedirect;
+            if (url != null) {
+              SharedService.UrlToRedirect = null;
+              this.router.navigate([url]);
             }
-            else 
-            {
+            else if (option === "T") {
+              localStorage.setItem("introoption", "F");
               localStorage.setItem("isloggedin", "T");
-              if (pers && persub && pers === "T") {
-                this.router.navigate(["/onboarding/viewcart"], {
-                  state: { quan: "1", plan: persub },
-                });
-              } 
-              else 
-              {
-                localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                if (this.loginResponse?.NoOfVisits === 1) 
-                {
-                  localStorage.setItem(
-                    "signupfirst", 'F'
-                  );
-                  /* if(SharedService.ProgramId === 9) {
-                    this.router.navigate(["/adults/change-topic"], {
-                      state: {
-                        routedFromLogin: true,
-                      }
-                    });
-                  }else if(SharedService.ProgramId === 11) {
-                    // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                    this.router.navigate(["/teenagers/change-topic"], {
-                      state: {
-                        routedFromLogin: true,
-                      }
-                    });
-                  } */
-                    this.router.navigate(["/"+ SharedService.getprogramName() +"/change-topic"], {
-                      state: {
-                        routedFromLogin: true,
-                      }
-                    });
-
-                } 
-                else 
-                {
-                  /* if(SharedService.ProgramId === 9) {
-                    this.router.navigate(["/adults/repeat-user"]);
-                  }else if(SharedService.ProgramId === 11) {
-                 //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                    this.router.navigate(["/teenagers/change-topic"], {
-                      state: {
-                        routedFromLogin: true,
-                      }
-                    });
-                  }
-                  } */
-
-                  this.router.navigate(["/"+ SharedService.getprogramName()+  "/repeat-user"]);
+              this.router.navigate(["/intro/personalised-for-you"]);
+            }
+            else {
+              if (acceptCookie === "T" || subscribePage === "T") {
+                localStorage.setItem("isloggedin", "T");
+                if (acceptCookie === "T") {
+                  localStorage.setItem("activeCode", "F");
+                }
+                if (subscribePage === "T") {
+                  localStorage.setItem("subscribepage", "F");
+                }
+                if (giftwisdom === 'T') {
+                  this.router.navigate(["/onboarding/add-to-cart"]);
+                } else if (this.loginResponse.Subscriber === 0) {
+                  this.router.navigate(["/onboarding/add-to-cart"]);
+                } else {
+                  this.router.navigate(["/onboarding/viewcart"])
                 }
               }
+              else {
+                localStorage.setItem("isloggedin", "T");
+                if (pers && persub && pers === "T") {
+                  this.router.navigate(["/onboarding/viewcart"], {
+                    state: { quan: "1", plan: persub },
+                  });
+                }
+                else {
+                  localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                  if (this.loginResponse?.NoOfVisits === 1) {
+                    localStorage.setItem(
+                      "signupfirst", 'F'
+                    );
+                    /* if(SharedService.ProgramId === 9) {
+                      this.router.navigate(["/adults/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
+                        }
+                      });
+                    }else if(SharedService.ProgramId === 11) {
+                      // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                      this.router.navigate(["/teenagers/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
+                        }
+                      });
+                    } */
+                    this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
+                      state: {
+                        routedFromLogin: true,
+                      }
+                    });
+
+                  }
+                  else {
+                    /* if(SharedService.ProgramId === 9) {
+                      this.router.navigate(["/adults/repeat-user"]);
+                    }else if(SharedService.ProgramId === 11) {
+                   //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                      this.router.navigate(["/teenagers/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
+                        }
+                      });
+                    }
+                    } */
+
+                    this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                  }
+                }
+              }
+
+              /* if(this.urlEmail)
+              {
+                this.service.verifyUser(this.userId)
+                .subscribe(res=>{
+  
+                })
+              }*/
             }
-
-            /* if(this.urlEmail)
-            {
-              this.service.verifyUser(this.userId)
-              .subscribe(res=>{
-
-              })
-            }*/
           }
         }
-      }
-    });
-    
+      });
+
   }
 
   private onFailure(error: any): void {
     console.log(error);
   }
 
-  private VerifyGoogle(){
+  private VerifyGoogle() {
     this.authService.authState.subscribe(
       (user) => {
         this.user = user;
@@ -577,8 +582,8 @@ export class LoginSignupPage implements OnInit {
           .subscribe((res) => {
             if (res) {
               this.loginResponse = res;
-              this.service.getuser(res.UserId).subscribe(userInfo=>{
-                if(userInfo){
+              this.service.getuser(res.UserId).subscribe(userInfo => {
+                if (userInfo) {
                   localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
                 }
               })
@@ -623,9 +628,8 @@ export class LoginSignupPage implements OnInit {
                 this.enableAlert = true;
                 this.email = "";
                 this.password = "";
-              } 
-              else 
-              {
+              }
+              else {
                 this.showAlert = false;
                 this.userId = this.loginResponse.UserId;
                 this.userName = this.loginResponse.Name;
@@ -663,8 +667,8 @@ export class LoginSignupPage implements OnInit {
                     JSON.stringify(this.userName)
                   );
                 }
-                this.service.getuser(res.UserId).subscribe(userInfo=>{
-                  if(userInfo){
+                this.service.getuser(res.UserId).subscribe(userInfo => {
+                  if (userInfo) {
                     localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
                   }
                 })
@@ -683,11 +687,9 @@ export class LoginSignupPage implements OnInit {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
                   this.router.navigate(["/intro/personalised-for-you"]);
-                } 
-                else
-                {
-                  if (acceptCookie === "T" || subscribePage === "T")
-                  {
+                }
+                else {
+                  if (acceptCookie === "T" || subscribePage === "T") {
                     localStorage.setItem("isloggedin", "T");
                     if (acceptCookie === "T") {
                       localStorage.setItem("activeCode", "F");
@@ -703,19 +705,16 @@ export class LoginSignupPage implements OnInit {
                       this.router.navigate(["/onboarding/viewcart"])
                     }
                   }
-                  else 
-                  {
+                  else {
                     localStorage.setItem("isloggedin", "T");
                     if (pers && persub && pers === "T") {
                       this.router.navigate(["/onboarding/viewcart"], {
                         state: { quan: "1", plan: persub },
                       });
-                    } 
-                    else 
-                    {
+                    }
+                    else {
                       localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) 
-                      {
+                      if (this.loginResponse?.NoOfVisits === 1) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
@@ -733,15 +732,14 @@ export class LoginSignupPage implements OnInit {
                             }
                           });
                         } */
-                          this.router.navigate(["/"+ SharedService.getprogramName() +"/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                        this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
 
-                      } 
-                      else 
-                      {
+                      }
+                      else {
                         /* if(SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
                         }else if(SharedService.ProgramId === 11) {
@@ -754,7 +752,7 @@ export class LoginSignupPage implements OnInit {
                         }
                         } */
 
-                        this.router.navigate(["/"+ SharedService.getprogramName()+  "/repeat-user"]);
+                        this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
                       }
                     }
                   }
@@ -779,12 +777,12 @@ export class LoginSignupPage implements OnInit {
     );
   }
 
- 
+
   fbLogin(reqtype) {
-    if(reqtype=="signup")
-        this.logeventservice.logEvent('facebook_signup');
+    if (reqtype == "signup")
+      this.logeventservice.logEvent('facebook_signup');
     else
-          this.logeventservice.logEvent('facebook_login');
+      this.logeventservice.logEvent('facebook_login');
 
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
@@ -807,7 +805,7 @@ export class LoginSignupPage implements OnInit {
           })
           .subscribe((res) => {
             if (res) {
-       
+
               this.loginResponse = res;
               localStorage.setItem("socialLogin", "T");
               localStorage.setItem(
@@ -888,8 +886,8 @@ export class LoginSignupPage implements OnInit {
                     JSON.stringify(this.userName)
                   );
                 }
-                this.service.getuser(res.UserId).subscribe(userInfo=>{
-                  if(userInfo){
+                this.service.getuser(res.UserId).subscribe(userInfo => {
+                  if (userInfo) {
                     localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
                   }
                 })
@@ -936,13 +934,13 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        if(SharedService.ProgramId === 9) {
+                        if (SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/change-topic"], {
                             state: {
                               routedFromLogin: true,
                             }
                           });
-                        }else if(SharedService.ProgramId === 11) {
+                        } else if (SharedService.ProgramId === 11) {
                           //window.location.href = environment.clientUrl+"/teenagers/change-topic";
                           this.router.navigate(["/teenagers/change-topic"], {
                             state: {
@@ -951,10 +949,10 @@ export class LoginSignupPage implements OnInit {
                           });
                         }
                       } else {
-                        if(SharedService.ProgramId === 9) {
+                        if (SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
-                        }else if(SharedService.ProgramId === 11) {
-                         // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                        } else if (SharedService.ProgramId === 11) {
+                          // window.location.href = environment.clientUrl+"/teenagers/change-topic";
                           this.router.navigate(["/teenagers/repeat-user"], {
                             state: {
                               routedFromLogin: true,
@@ -1009,7 +1007,7 @@ export class LoginSignupPage implements OnInit {
             (accessObj)?.Moengage.add_first_name(res.Name);
           })
           this.loginResponse = res;
-      
+
           localStorage.setItem("socialLogin", "F");
           localStorage.setItem("isloggedin", "T");
           localStorage.setItem("guest", "F");
@@ -1060,8 +1058,8 @@ export class LoginSignupPage implements OnInit {
             sessionStorage.setItem("userEmail", JSON.stringify(this.email));
             sessionStorage.setItem("userName", JSON.stringify(this.userName));
           }
-          this.service.getuser(res.UserId).subscribe(userInfo=>{
-            if(userInfo){
+          this.service.getuser(res.UserId).subscribe(userInfo => {
+            if (userInfo) {
               localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
             }
           })
@@ -1085,15 +1083,15 @@ export class LoginSignupPage implements OnInit {
           let option = localStorage.getItem("introoption");
           let giftwisdom = localStorage.getItem("giftwisdom");
           const url = SharedService.UrlToRedirect;
-          if(url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+          if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
             this.router.navigate(['adults/adult-dashboard']);
             return;
           }
-          else if(url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()){
+          else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
             this.router.navigate(['/teenagers/teenager-dashboard']);
             return;
           }
-         else if (url != null) {
+          else if (url != null) {
             SharedService.UrlToRedirect = null;
             this.router.navigate([url]);
           }
@@ -1104,7 +1102,7 @@ export class LoginSignupPage implements OnInit {
           } else {
             if (pers && persub && pers === "T") {
               localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/onboarding/payment"],{
+              this.router.navigate(["/onboarding/payment"], {
                 state: { quan: "1", plan: persub },
               });
             }
@@ -1186,14 +1184,14 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        if(SharedService.ProgramId === 9) {
+                        if (SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/change-topic"], {
                             state: {
                               routedFromLogin: true,
                             }
                           });
-                        }else if(SharedService.ProgramId === 11) {
-                        //  window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                        } else if (SharedService.ProgramId === 11) {
+                          //  window.location.href = environment.clientUrl+"/teenagers/change-topic";
                           this.router.navigate(["/teenagers/change-topic"], {
                             state: {
                               routedFromLogin: true,
@@ -1202,9 +1200,9 @@ export class LoginSignupPage implements OnInit {
                         }
 
                       } else {
-                        if(SharedService.ProgramId === 9) {
+                        if (SharedService.ProgramId === 9) {
                           this.router.navigate(["/adults/repeat-user"]);
-                        }else if(SharedService.ProgramId === 11) {
+                        } else if (SharedService.ProgramId === 11) {
                           this.router.navigate(["/teenagers/repeat-user"]);
                           // window.location.href = environment.clientUrl+"/teenagers/repeat-user";
                           // this.router.navigate(["/teenagers/change-topic"], {
@@ -1266,25 +1264,25 @@ export class LoginSignupPage implements OnInit {
     this.freescreens();
   }
 
-// myMethod(){
-//   const google= (window as any).google
-//   if(google){
-//      google.accounts.id.initialize({
-//       client_id: '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com',
-//       callback: this.handleCredentialResponse.bind(this),
-//     });
-//     google.accounts.id.renderButton(
-//       document.getElementById('my-signin2'),
-//       { theme: 'outline', size: 'large' }  // customization attributes
-//     );
-//     google.accounts.id.prompt(); // also display the One Tap dialog
-//   }; // also display the One Tap dialog
-// }
+  // myMethod(){
+  //   const google= (window as any).google
+  //   if(google){
+  //      google.accounts.id.initialize({
+  //       client_id: '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com',
+  //       callback: this.handleCredentialResponse.bind(this),
+  //     });
+  //     google.accounts.id.renderButton(
+  //       document.getElementById('my-signin2'),
+  //       { theme: 'outline', size: 'large' }  // customization attributes
+  //     );
+  //     google.accounts.id.prompt(); // also display the One Tap dialog
+  //   }; // also display the One Tap dialog
+  // }
 
 
-handleCredentialResponse(response){
-  console.log("Encoded JWT ID token: " + response.credential);
-}
+  handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+  }
 
   getrenew() {
     this.closemodal.nativeElement.click();
@@ -1341,9 +1339,9 @@ handleCredentialResponse(response){
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
-    localStorage.setItem('btnclick','F')
+    localStorage.setItem('btnclick', 'F')
     this.router.navigateByUrl(SharedService.getDashboardUrls());
-   }
+  }
 
   navigate(url) {
     this.router.navigate([url]);
@@ -1353,11 +1351,11 @@ handleCredentialResponse(response){
     this.content = '';
     this.enableAlert = false;
   }
-  
-  routeForgotPassword(){
-    if(this.isAdults){
+
+  routeForgotPassword() {
+    if (this.isAdults) {
       this.router.navigate(['/adults/onboarding/forgotpassword'])
-    }else{
+    } else {
       this.router.navigate(['/teenagers/onboarding/forgotpassword'])
     }
   }
@@ -1383,6 +1381,7 @@ handleCredentialResponse(response){
       },
       { validator: this.PasswordValidator }
     );
+    this.token = undefined;
   }
 
   hideFunction(type) {
@@ -1393,7 +1392,35 @@ handleCredentialResponse(response){
     }
   }
 
+  onKeyPress($event) {
+    const revealDiv = this.el.nativeElement.querySelector('#password-reveal');
+    if (revealDiv) {
+      this.renderer.setStyle(revealDiv, 'display', 'none');
+    }
+
+  }
+
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
+
+    console.debug(`Token [${this.token}] generated`);
+  }
+
   loginWithInstagram() {
     this.service.loginWithInstagram();
   }
+
+  resolved(captchaResponse: string) {
+    this.service.verifyCaptcha(captchaResponse).subscribe(res=>{
+      if(res){
+        this.isValidCaptach = res.valid;
+      }
+    })
+  }
+
 }
