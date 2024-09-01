@@ -9,6 +9,32 @@
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
     <meta property="og:image:height" content="232" />
+    <meta property="og:title" content=HappierMe-Mental Health Care>
+    <meta property="og:site_name" content=HappierMe>
+    <meta property="og:url" content=https://happierme.app/>
+    <meta property="og:description" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_app.webp>
+    
+    <!--Schema tag for Organization :-->
+    <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HappierMe",
+      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "url": "https://happierme.app/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MentalHealthService",
+      "name": "HappierMe",
+      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "url": "https://happierme.app/"
+    }
+  ]
+</script>
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>

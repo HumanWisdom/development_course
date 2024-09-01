@@ -6,7 +6,8 @@
     <meta property="title" content="HappierMe: Master your mind.">
     <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
-
+    <!--Canonical Tag-->
+    <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
@@ -29,7 +30,7 @@
     })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
     <!-- End Google Tag Manager -->
 
-
+  
     
   </head>
 
@@ -48,18 +49,18 @@
       <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_home_app.webp" class="img-responsive"> -->
-            <video controls playinline class="w100p"
+            <video controls playinline autoplay loop muted class="w100p"
               poster=""
-              controlsList="nodownload">
+              controlsList="nodownload" id="vid">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_01.mp4#t=0"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults.mp4#t=1"
                 type="video/mp4">
             </video>
           </div>
 
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
@@ -122,7 +123,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Created by experts.
+                    Guided programs created by experts.
                   </h3>
                 </div>
               </div>
@@ -143,18 +144,18 @@
             </div>
 
             <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
                   <a href="https://happierme.app/adults/intro/intro-carousel" class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff bg_adults" >
                       HappierMe for Adults
                     </button>
                   </a>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff bg_teens" >
                       HappierMe for Teens
                     </button>
                   </a>
@@ -536,7 +537,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px">
                     </h4>
@@ -544,7 +545,7 @@
                 </div>
               </div>
 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
                   <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Start your free trial now
@@ -1817,8 +1818,12 @@
                         A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.
                       </h5>
 
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+                      <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                          <audio id="aud1" controls controlsList="nodownload">
+                            <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                          </audio>
+                        </div>
                       </div>
 
                       <a href="https://happierme.app/adults/pathway/">

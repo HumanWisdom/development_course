@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>How can organizations reduce workplace conflict and boost collaboration?</title>
+    <title>HappierMe survey into causes of work stress. </title>
     <meta property="title" content="How can organizations reduce workplace conflict and boost collaboration?">
     <meta property="description" content="How can governments and organizations reduce tribalism and factionalism and boost collaboration? It is a question that many organizations grapple with.">
     <meta property="keyword" content="Work and Leadership">
@@ -78,9 +78,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               
-
-                <h4 class="mtb0px blog_sub_title">
+               <h4 class="mtb0px blog_sub_title">
                 HappierMe survey into causes of work stress.
                 </h4>
 
@@ -93,40 +91,25 @@
                 <h4 class="mtb0px blog_desc">
                 These factors can create a sense of frustration, dissatisfaction and anxiety that can impact our physical and mental health. However, work stress is not inevitable. Here are some strategies that can help us manage and reduce it:                </h4>
 
-                
-               
-
-               
-
-               
-
-                
-
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Too much work:  
                   </span>
                   37% of people said that they felt stressed because they have too much work to do and not enough time to do it. This can lead to burnout, fatigue and reduced productivity. To cope with this, it is important to prioritise your tasks, set realistic deadlines, delegate when possible and take regular breaks. You can also use tools to organise your work and track your progress. It is important for employers to be mindful of how much they expect of their employees, and not overwhelm them.
-</h4>
-                 
-
-                
-
-                <h4 class="mtb0px blog_desc">
+                </h4>
+                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Not enough recognition: 
                   </span>
                   23% of people said that they felt stressed because they do not receive enough recognition or appreciation for their work. This can lead to low self-esteem, resentment and lack of motivation. There are two ways to deal with this. Firstly, to realise that expecting recognition is normal, but gives others the key to our happiness. Can we find a way to value ourselves, and let go of this need for external validation which causes so much of our stress? The second way is for employers to step up and recognise staff for their achievements.
 
-</h4>
+               </h4>
 
-             
-
-                <h4 class="mtb0px blog_desc">
+             <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Conflict in relationships: 
                   </span>
-                  21% of people said that they felt stressed because they have conflict or tension with their co-workers, managers or clients. This can lead to anger, distrust and impact collaboration. To deal with this, it is important to resolve conflicts constructively, listen actively, empathise with others and respect different opinions. Accepting other perspectives as being equally valid is so important. The more we understand ourselves, the easier it is to understand others.                </h4>
+                  21%  of people said that they felt stressed because they have conflict or tension with their co-workers, managers or clients. This can lead to anger, distrust and impact collaboration. To deal with this, it is important to resolve conflicts constructively, listen actively, empathise with others and respect different opinions. Accepting other perspectives as being equally valid is so important. The more we understand ourselves, the easier it is to understand others.                </h4>
 
                
 
@@ -139,12 +122,12 @@
                 <h4 class="mtb0px blog_desc">
                 63% of our stress comes from factors not related to our workload. By understanding our own mind we can learn how to manage these ourselves, and this can contribute to us being much less stressed.
 
-</h4>
+                </h4>
 
                 <h4 class="mtb0px blog_desc">
                 Work stress is not inevitable. By understanding the causes and effects of work stress and applying some strategies to cope with it, you can improve your well-being, performance and happiness at work. 
 
-</h4>
+            </h4>
 
                 
 

@@ -27,5 +27,6 @@
 <link href="../assets/font/font_size.css" rel="stylesheet">
 <link href="../assets/font/font_weight.css" rel="stylesheet">
 <link href="../assets/font/line_height.css" rel="stylesheet">
+<link href="../assets/css/style_hb.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />

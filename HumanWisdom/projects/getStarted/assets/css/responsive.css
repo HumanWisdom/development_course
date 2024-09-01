@@ -201,6 +201,13 @@
     {
         display: none;
     }
+
+    .dflex_jc_lc
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 820px)
@@ -244,7 +251,8 @@
         font-size: 12px;
     }
 
-    .ddflex_mblock
+    .ddflex_mblock,
+    .ddflex_mblock_a
     {
         display: block;
     }
