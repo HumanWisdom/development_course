@@ -154,6 +154,13 @@ export class OnboardingService {
     this.pollPopup(popup)
     }, 1000);
   }
+
+
+
+  
+  // verifyRepatcha(){
+  //   this.http.post("")
+  // }
   
   private pollPopup(popup): void {
     const intervalId = setInterval(() => {
@@ -631,4 +638,11 @@ export class OnboardingService {
           // }
         })
   }
+
+  verifyCaptcha(token:any): Observable<any> {
+    console.log("Recaptacha");
+    console.log(token);
+    return this.http.post(this.path + `/VerifyCaptcha?token=${token}`, null)
+  }
+
 }
