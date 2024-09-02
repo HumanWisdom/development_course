@@ -120,13 +120,13 @@ export class LoginSignupPage implements OnInit {
     return this.registrationForm?.get("email");
   }
   get passwordvalid() {
-    return this.registrationForm?.get("password");
+    return this.registrationForm?.get("ogpassword");
   }
   get confirmpasswordvalid() {
     return this.registrationForm?.get("confirmPassword");
   }
   get passwordvalidation() {
-    return this.registrationForm?.get("confirmPassword").value !== this.registrationForm.get("password").value;
+    return this.registrationForm?.get("confirmPassword").value !== this.registrationForm.get("ogpassword").value;
   }
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
@@ -201,7 +201,7 @@ export class LoginSignupPage implements OnInit {
   PasswordValidator(
     control: AbstractControl
   ): { [key: string]: boolean } | null {
-    const password = control.get("password");
+    const password = control.get("ogpassword");
     const confirmPassword = control.get("confirmPassword");
     if (password.pristine || confirmPassword.pristine) return null;
     return password &&
@@ -228,18 +228,28 @@ export class LoginSignupPage implements OnInit {
             ? ""
             : this.registrationForm.get("fullname").value.split(" ")[1],
         Email: this.registrationForm.get("email").value,
-        Pwd: this.registrationForm.get("password").value,
+        Pwd: this.registrationForm.get("ogpassword").value,
       })
       .subscribe(
         (res) => {
           if (res > 0) {
-            this.content = "An email has been sent to you";
-            this.enableAlert = true;
-            this.enableotpmodal.nativeElement.click();
-            this.showMessage = true;
+            // this.content = "An email has been sent to you";
+            // this.enableAlert = true;
+            // this.enableotpmodal.nativeElement.click();
+            // this.showMessage = true;
             this.signUser = res;
-            this.showWarning = false;
+            // this.showWarning = false;
             localStorage.setItem("signUser", JSON.stringify(this.signUser));
+            this.initializeRegistrationForm();
+            setTimeout(() => {
+              this.content = "Account Created Successfully , Login with Your Credentials";
+              this.enableAlert = true;
+            }, 1000)
+            this.getLoginTab();
+            localStorage.setItem(
+              "signupfirst",
+              'T'
+            );
           }
         },
         (error) => {
@@ -282,7 +292,7 @@ export class LoginSignupPage implements OnInit {
             );
             localStorage.setItem(
               "password",
-              JSON.stringify(this.registrationForm.get("password").value)
+              JSON.stringify(this.registrationForm.get("ogpassword").value)
             );
             setTimeout(() => {
               this.content = "Code has been verified , Login with Your Credentials";
@@ -1376,9 +1386,10 @@ export class LoginSignupPage implements OnInit {
       {
         fullname: ["", [Validators.required, Validators.minLength(6)]],
         email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-        password: ["", [Validators.required, Validators.minLength(6)]],
+        ogpassword: ["", [Validators.required, Validators.minLength(6)]],
         confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
-      },
+      }
+      ,
       { validator: this.PasswordValidator }
     );
     this.token = undefined;
