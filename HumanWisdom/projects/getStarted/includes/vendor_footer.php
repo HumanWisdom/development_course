@@ -317,4 +317,13 @@ jQuery(function($)
         }
     });
 });
+
+$( document ).ready(function() {   
+    $('.blog_links a').click(function () {
+        $('.blog_main a').css({'color':'black'});
+        //alert('hi');
+        // $(".blog_links").click(function (e) { 
+        // $(".navbar ul li a .blog_main").addClass('active_nav');
+    });  
+});
 </script>
