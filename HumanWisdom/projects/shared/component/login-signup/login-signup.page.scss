@@ -1,3 +1,18 @@
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
     background:#120F40 !important;
 }
+
+
+  /* Using Attribute Selector */
+// div[pseudo="-ms-reveal"] {
+//     display: none !important;
+//   }
+  
+
+//   input[type="password"] + div {
+//     display: none !important;
+//   }
+
+  input[type="password" i]::-ms-reveal {
+    display: none !important;
+  }
