@@ -86,7 +86,7 @@
                 Anxiety
                   </a>
                 attacks can be overwhelming and debilitating. If you suffer from anxiety, you know how important it is to have effective tools and techniques to manage your symptoms.
-                <a class="blog_highlight_peach" href="https://www.medicalnewstoday.com/articles/323454">
+                <a class="blog_highlight_peach" href="https://happierme.app/">
                     The HappierMe app
                   </a> can help you calm anxiety attacks and improve your overall mental well-being. In this blog post, we'll explore how the HappierMe app can assist with anxiety management.                </h4>
 
