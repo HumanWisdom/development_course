@@ -54,6 +54,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_m_none" alt="Boost workplace wellbeing, performance and productivity">
 
+
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
                 </div>
               </div>
@@ -127,7 +128,7 @@
                  
                   <div class="row mt20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                      <a href="#bring_happierme" class="">
+                      <a href="https://happierme.app/teenagers/intro-carousel" class="">
                         <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1" >
                         Start your free trial now
                         </button>
@@ -147,9 +148,9 @@
                     Adults,
                     </span>
                      on
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px">
-                  and
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px">
+                  <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567 "><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px">
+                  </a>and
+                  <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US  "><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px"></a>
                 </h3>
               </div>
             </div>
@@ -344,7 +345,7 @@
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
               controlsList="nodownload">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/video/teenagers_1.mp4"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers_1.mp4"
                 type="video/mp4">
             </video>
           </div>
@@ -2111,11 +2112,11 @@
 
             <div class="owl_blog">
               <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200" href="./blogs/10_ways_understanding_your_mind_could_transform_your_life.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="200" href="../blogs/transforming_the_lives_of_children_through_self-knowledge.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" class="img-responsive" alt="#10 ways understanding your mind could transform your life">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" class="img-responsive" alt=" Transforming the lives of children through self-knowledge">
                       </div>
                     </div>
 
@@ -2130,11 +2131,11 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/difficult_emotions.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="../blogs/the_future_of_education_a_happierme_survey.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive" alt="The Future of Education: A HappierMe Survey">
                       </div>
                     </div>
 
@@ -2149,11 +2150,11 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/real_success.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="400" href="../blogs/transforming_education_to_meet_the_needs_of_students_and_society.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" class="img-responsive" alt="Real success">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" class="img-responsive" alt="Transforming education to meet the needs of students and society">
                       </div>
                     </div>
 
@@ -2167,65 +2168,50 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="500" href="../blogs/does_education_make_us_intelligent.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="Self-Awareness can help relationships flourish">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" class="img-responsive" alt=" Does education make us intelligent?">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Self-Awareness can help relationships flourish
+                        Does education make us intelligent?
                         </h4>
                       </div>
                     </div>
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="600" href="./blogs/why_are_we_critical_of_ourselves.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="600" href="../blogs/how_to_manage_your_own_mental_health.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive" alt="Why are we critical of ourselves">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive" alt=" How to manage your own mental health">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Why are we critical of ourselves
+                        How to manage your own mental health
+
                         </h4>
                       </div>
                     </div>
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="700" href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive" alt="How to calm anxiety">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          How to calm anxiety
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+               
               </div>
 
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/blogs">
+                    <a class="sap" href="https://staging.happierme.app/teenagers/blogs">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>
