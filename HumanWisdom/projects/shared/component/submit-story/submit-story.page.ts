@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { Constant } from '../../services/constant';
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-submit-story',
   templateUrl: './submit-story.page.html',
@@ -11,7 +13,7 @@ import { ProgramType } from '../../models/program-model';
 export class SubmitStoryPage implements OnInit {
   isAdults = true;
   constructor(private router: Router,
-    private location:Location) { 
+    private location:Location,private navigationService:NavigationService) { 
 
       if (SharedService.ProgramId == ProgramType.Adults) {
         this.isAdults = true;
@@ -24,7 +26,12 @@ export class SubmitStoryPage implements OnInit {
   }
   
   goBack(){
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if(url==null){
+        this.location.back();
+     } else {
+      this.router.navigate([url]);
+     }
   }
 
 }
