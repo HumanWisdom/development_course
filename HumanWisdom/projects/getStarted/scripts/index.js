@@ -38,9 +38,9 @@ blogs.addEventListener("click", function(e) {
 //organisation
 var organisation = document.getElementById('organisation');
 organisation.addEventListener("click", function(e) {
-    localStorage.setItem('activeTab','blogs');
-    work.classList.add('active_nav');
-    window.location.href="../blogs/blog_index.php";
+    // localStorage.setItem('activeTab','blogs');
+    // work.classList.add('active_nav');
+    // window.location.href="../blogs/blog_index.php";
 }, false);
 
 //work
