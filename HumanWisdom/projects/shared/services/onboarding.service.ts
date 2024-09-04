@@ -208,14 +208,12 @@ export class OnboardingService {
     }
     )}
 
-    getUserInfo(accessToken: string) {
+    getUserInfo(accessToken: string):Observable<any> {
       const params = {
         fields: 'id,username,account_type', // Define the fields you need
         access_token: accessToken,
       };
-       this.http.get<any>('https://graph.instagram.com/me', { params }).subscribe(res=>{
-        console.log(res);
-      });
+      return this.http.get<any>('https://graph.instagram.com/me', { params })
     }
 
   getuserDetail() {
@@ -419,6 +417,13 @@ export class OnboardingService {
 
   ReviveSubscription(key): Observable<any> {
     return this.http.post(this.path + `/ReviveSubscription/${key}`, {});
+  }
+
+  verifyInstagramLogin(body): Observable<any> {
+    const payLoad = {
+      "TokenID":body
+    }
+    return this.http.post(this.path + `/verifyInstagramTokenAndLogin/`,payLoad);
   }
 
   getScenarios(): Observable<any> {
