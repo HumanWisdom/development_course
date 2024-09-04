@@ -21,6 +21,82 @@ if (element) {
 }
 
 
+// About US
+var aboutUs = document.getElementById('AboutUs');
+aboutUs.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','aboutUs');
+    window.location.href="../pages/about_us.php";
+}, false);
+
+// Blogs
+var blogs = document.getElementById('blogs');
+blogs.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','blogs');
+    window.location.href="../blogs/blog_index.php";
+}, false);
+
+//organisation
+var organisation = document.getElementById('organisation');
+organisation.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','blogs');
+    work.classList.add('active_nav');
+    window.location.href="../blogs/blog_index.php";
+}, false);
+
+//work
+var work = document.getElementById('work');
+work.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','org-work');
+    work.classList.add('active_nav');
+    window.location.href="../pages/work.php";
+}, false);
+
+//education
+var education = document.getElementById('education');
+education.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','org-work');
+    education.classList.add('active_nav');
+    window.location.href="../pages/education.php";
+}, false);
+
+
+//healthcare
+var healthcare = document.getElementById('healthcare');
+healthcare.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','org-healthcare');
+    work.classList.add('active_nav');
+    window.location.href="../pages/healthcare.php";
+}, false);
+
+
+//pricing
+var pricing = document.getElementById('pricing');
+pricing.addEventListener("click", function(e) {
+    localStorage.setItem('activeTab','pricing');
+    work.classList.add('active_nav');
+    window.location.href="../index.php#div_subscription";
+}, false);
+
+
+// making tab active
+var tabName = window.location.href;
+if(tabName.includes('blogs')){
+    blogs.classList.add('active_nav');
+} if(tabName.includes('work')){
+    organisation.classList.add('active_nav');
+    work.classList.add('active_nav');
+} if(tabName.includes('healthcare')){
+    organisation.classList.add('active_nav');
+    healthcare.classList.add('active_nav');
+}  if(tabName.includes('education')){
+    organisation.classList.add('active_nav');
+    education.classList.add('active_nav');
+}  if(tabName.includes('index.php#div_subscription')){
+    pricing.classList.add('active_nav');
+}  if(tabName.includes('about')){
+    aboutUs.classList.add('active_nav');
+} 
+
 if (localStorage.getItem('isDownloadHide') == 'true') {
     this.closeElement();
 }
@@ -84,6 +160,8 @@ if(requestDemo){
             alert('An error occurred. Please try again.');
         });
 });
+
+
 }
 
 

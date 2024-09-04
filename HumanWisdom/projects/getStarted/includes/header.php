@@ -11,7 +11,7 @@
     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
       <nav id="navbar" class="navbar m0pxi">
         <ul>
-          <li><a href="../pages/about_us.php">About us</a></li>
+          <li><a id="AboutUs" >About us</a></li>
           <!-- <li class="prelative">
             <a href="../pages/about_us.php">
               Teenagers
@@ -22,15 +22,15 @@
               </div>
             </a>
           </li> -->
-          <li><a href="../blogs/blog_index.php" class="">Blog</a></li>
-          <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a id="blogs" class="">Blog</a></li>
+          <li class="dropdown"><a id="organisation"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="../pages/work.php">HappierMe for Work</a></li>
-              <li><a href="../pages/education.php">HappierMe for Education</a></li>
-              <li><a href="../pages/healthcare.php">HappierMe for Healthcare</a></li>
+              <li><a  id="work">HappierMe for Work</a></li>
+              <li><a id="education" >HappierMe for Education</a></li>
+              <li><a id="healthcare">HappierMe for Healthcare</a></li>
             </ul>
           </li>
-          <li><a href="../index.php#div_subscription">Pricing</a></li>
+          <li><a id="pricing">Pricing</a></li>
           <!-- <li><a href="../pages/partnership.php">Partnership</a></li> -->
           <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
         </ul>
