@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from "../../shared.module";
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from "ng-recaptcha";
+import { Constant } from  "../../services/constant";
 declare var $: any;
 @Component({
   selector: "app-common-login",
@@ -233,19 +234,13 @@ export class LoginSignupPage implements OnInit {
       .subscribe(
         (res) => {
           if (res > 0) {
-            // this.content = "An email has been sent to you";
-            // this.enableAlert = true;
-            // this.enableotpmodal.nativeElement.click();
-            // this.showMessage = true;
             this.signUser = res;
-            // this.showWarning = false;
+            this.email =  this.registrationForm.get("email").value;
+            this.password =  this.registrationForm.get("ogpassword").value;
             localStorage.setItem("signUser", JSON.stringify(this.signUser));
             this.initializeRegistrationForm();
-            setTimeout(() => {
-              this.content = "Account Created Successfully , Login with Your Credentials";
-              this.enableAlert = true;
-            }, 1000)
-            this.getLoginTab();
+            this.content = Constant.AccountCreated;
+            this.enableAlert = true;
             localStorage.setItem(
               "signupfirst",
               'T'
@@ -1358,6 +1353,9 @@ export class LoginSignupPage implements OnInit {
   }
 
   getAlertcloseEvent(event) {
+    if(this.content == Constant.AccountCreated){
+      this.emailLogin();
+    }
     this.content = '';
     this.enableAlert = false;
   }
