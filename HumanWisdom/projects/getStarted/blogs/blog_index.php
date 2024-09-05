@@ -805,13 +805,25 @@
   </a>
 </div>
 
+        <div class="clearfix"></div>
+            <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title" style="text-decoration-line: underline;color:red; font-size:23px; text-align:center;">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c12">
+                           View More
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="c12" class="panel-collapse collapse">
+                        <div class="panel-body">
 
 
 
+                        <div class="clearfix"></div>
 
-
-
-<div class="clearfix"></div>
+<br/>
+<br/>
+<br/>
 
             
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -921,6 +933,18 @@
     </div>
   </a>
 </div>
+</div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <hr class="hr_style_web_01">
+                      </div>
+                    </div>
+
+
+                    
       
           </div>
         </div>
