@@ -278,10 +278,10 @@ $( window ).resize( function() {
     {
     //$('.btn_tff').attr('href','https://onelink.to/qsptex');
     // $('.btn_tff').attr('href','#div_subscription');
-    $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
+    $('.btn_tff').attr('href','https://happierme.app/splash_options.html');
     } else {
     // $('.btn_tff').attr('href','#div_subscription');
-    $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
+    $('.btn_tff').attr('href','https://happierme.app/splash_options.html');
     } 
 });
 $( window ).resize();
@@ -293,7 +293,7 @@ $( window ).resize( function() {
     } 
     else 
     {
-        $('.btn_tff_tn').attr('href','https://happierme.app/adults/splash-options');
+        $('.btn_tff_tn').attr('href','https://happierme.app/splash_options.html');
     }
 });
 $( window ).resize();

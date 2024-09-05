@@ -79,7 +79,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px blog_desc">
                   Are you looking for ways to reduce anxiety and manage stress? The
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/splash_options.html">
                     happierme.app
                   </a>
                   can help! Anxiety can be overwhelming, but with the right tools and techniques, it's possible to find relief. In this blog post, we'll explore how the HappierMe app can help you calm anxiety and feel more at ease.
