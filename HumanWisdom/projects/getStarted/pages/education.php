@@ -20,7 +20,7 @@
   [
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "Article",
       "name": "HappierMe",
       "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
       "url": "https://happierme.app/"
