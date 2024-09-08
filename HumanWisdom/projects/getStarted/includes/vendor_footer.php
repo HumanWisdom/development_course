@@ -134,6 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
     AnnualType?.addEventListener('click', () => {
     window.location.href="https://happierme.app/adults/subscription/try-free-and-subscribe"
     });
+  
+    const teenagersApp = document.getElementById('teenagers-AnnualType');
+    teenagersApp?.addEventListener('click', () => {
+    window.location.href="https://happierme.app/teenagers/subscription/try-free-and-subscribe"
+    });
+
+
     setTimeout(() => {
         const requestDemo = document.getElementById('Request-Demo');
        requestDemo.addEventListener('click', () => {
