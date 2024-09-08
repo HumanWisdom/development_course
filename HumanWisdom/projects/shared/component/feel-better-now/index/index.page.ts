@@ -55,12 +55,6 @@ export class IndexPage implements OnInit {
       }else{
         this.router.navigate([url]);
       }
-    // this.location.back()
-    // if (SharedService.ProgramId == ProgramType.Teenagers) {
-    //   this.router.navigate(['teenagers/teenager-dashboard']);
-    // } else {
-    //   this.router.navigate(["/adults/adult-dashboard"])
-    // }
      }
 
   enableRoute(url) {
