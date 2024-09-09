@@ -104,7 +104,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -118,7 +118,7 @@
             <div class="row mtb5px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -132,7 +132,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -167,9 +167,9 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block">
                   Start your free trial now. Download the app on
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore">
                   and
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore">
                 </h3>
               </div>
             </div>
@@ -514,7 +514,7 @@
                 HappierMe for Teenagers
               </h2>
 
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen">
 
               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
                 Guiding teenagers to flourish in life
@@ -539,7 +539,7 @@
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach">
                     </h4>
                   </a>
                 </div>
@@ -590,7 +590,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Samaira">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="quotation">
                       </div>
                     </div>
 
@@ -1806,7 +1806,7 @@
                 <div class="row center_flex">
                   <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway">
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
