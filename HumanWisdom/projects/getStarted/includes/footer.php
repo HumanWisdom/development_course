@@ -140,23 +140,23 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_social_links">
             <a href="https://facebook.com/happiermeapp/" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive" alt="facebook">
             </a>
 
             <a href="https://www.instagram.com/happierme_app/" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive" alt="instagram">
             </a>
 
             <a href="https://www.linkedin.com/company/humanwisdom" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive" alt="linkdn">
             </a>
 
             <a href="https://twitter.com/happiermeapp" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive" alt="twitter">
             </a>
 
             <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive" alt="youtube">
             </a>
           </div>
         </div>
@@ -164,7 +164,7 @@
         <div class="row mtb20px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
             <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive" alt="appstore">
             </a>
           </div>
         </div>
@@ -172,7 +172,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
             <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive" alt="playstore">
             </a>
           </div>
         </div>
