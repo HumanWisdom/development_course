@@ -37305,7 +37305,7 @@ span
   /* width: auto; */
   width: 100%;
   max-height: 48vh;
-  /*object-fit: cover;*/
+  object-fit: cover;
   border-radius: 16px;
 }
 
@@ -37355,12 +37355,16 @@ span
   box-shadow: none!important;
 }
 
+#obfaqs .panel-title > a:after,
+#obfaqs .panel-title > a[aria-expanded="true"]:after
+{
+  content: none;
+}
+/* /version - 03 */
 .w-75 {
   width:75px !important
 }
 .h-34{
   height: 34px !important;
 }
-/* /v
-
-ersion - 03 */
+/* /version - 03 */

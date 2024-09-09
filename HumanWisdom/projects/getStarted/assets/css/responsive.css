@@ -251,7 +251,8 @@
         font-size: 12px;
     }
 
-    .ddflex_mblock
+    .ddflex_mblock,
+    .ddflex_mblock_a
     {
         display: block;
     }

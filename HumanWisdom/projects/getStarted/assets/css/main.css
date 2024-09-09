@@ -3708,6 +3708,12 @@ audio::-webkit-media-controls-enclosure
   justify-content: center;
 }
 
+.ddflex_mblock_a
+{
+  display: flex;
+  align-items: center;
+}
+
 .badge_new 
 {
   width: 22px;
@@ -3785,4 +3791,14 @@ audio::-webkit-media-controls-enclosure
 .active_nav
 {
   color: #834B66;
+}
+
+.bg_adults
+{
+  background: #292D56;
+}
+
+.bg_teens
+{
+  background: #183C79;
 }

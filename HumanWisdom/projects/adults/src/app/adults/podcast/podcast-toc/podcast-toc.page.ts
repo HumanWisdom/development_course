@@ -90,7 +90,7 @@ export class PodcastTocPage implements OnInit {
     private sanitizer: DomSanitizer,
     private meta: Meta, private title: Title,
     private service: AdultsService,
-    ptivate NavigationService:NavigationService
+    private navigationService:NavigationService
   ) {
   }
 

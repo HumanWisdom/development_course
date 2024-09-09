@@ -42,6 +42,7 @@ export class DailyPracticePage implements OnInit {
   content = ''
   dailyInspirationTitle = '';
   DailyInspirationLink = '';
+  DailyInspirationImg = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -85,6 +86,9 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+
+        this.DailyInspirationImg ="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4","webp")
+
       }
     })
     this.service.getDailypractiseQuestionins().subscribe((res) => {

@@ -3,8 +3,8 @@
 
   <head>
     <title>HappierMe: Master your mind</title>
-    <meta property="title" content="HappierMe: Master your mind.">
-    <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
+    <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
+    <meta property="description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
@@ -123,7 +123,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Created by experts.
+                    Guided programs created by experts.
                   </h3>
                 </div>
               </div>
@@ -144,18 +144,18 @@
             </div>
 
             <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock">
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
                   <a href="https://happierme.app/adults/intro/intro-carousel" class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff bg_adults" >
                       HappierMe for Adults
                     </button>
                   </a>
                 </div>
 
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff bg_teens" >
                       HappierMe for Teens
                     </button>
                   </a>

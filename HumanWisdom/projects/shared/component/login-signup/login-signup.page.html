@@ -25,7 +25,7 @@
               <div class="tab-content">
                 <!-- signup -->
                 <div id="tab1" class="tab-pane fade" *ngIf="isSignUp" [ngClass]="{' in active' : isSignUp }">
-                  <form [formGroup]="registrationForm">
+                  <form  [formGroup]="registrationForm">
 
                     <div class="row mtb20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -118,14 +118,24 @@
 
                       <div class="row mb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                          <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" maxlength="15" required>
+                        <input 
+                        [type]="passwordhide ? 'password' : 'text'"
+                        class="sp_fc" 
+                        placeholder="Password" 
+                        id="password" 
+                        formControlName="ogpassword"
+                        (keydown.space)="$event.preventDefault()" 
+                        (keypress)="onKeyPress($event)"
+                        autocomplete="new-password" 
+                        maxlength="15" 
+                        required>
 
                           <div class="fc_img" (click)="hideFunction('password')">
-                            <img *ngIf="passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                              class="img-responsive" >
-
-                              <img *ngIf="!passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
-                              class="img-responsive" >
+                       
+                            <img [src]="passwordhide ? 
+                            'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg' : 
+                            'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg'"
+                                 class="img-responsive">
                           </div>
                         </div>
                         <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
@@ -155,15 +165,17 @@
                         </div>
                       </div>
                     </div>
+                        <re-captcha (resolved)="resolved($event)" siteKey="6LelvDIqAAAAAG6RPFwaKk7XgnhYruDwK-FzXjwd"></re-captcha>
 
+                    <!-- <button class="g-recaptcha"
+                    data-sitekey="6LdEcDIqAAAAACAcbDxCLhQOIePbpfZdSeuXORRM"
+                    data-callback='onSubmit'
+                    data-action='submit'>
+                         Submit
+                   </button> -->
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
-                          If you have a problem with signup, please email
-                          <a class="fw_500 fc_ffffff" href="mailto:support@humanwisdom.me" target="_top">
-                            team@happierme.app.
-                          </a>
-                        </h4> <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
                           By continuing you agree to our
                           <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/terms-conditions')">
                             terms of use
@@ -175,10 +187,10 @@
                         </h4>
                       </div>
                     </div>
-
+                    <!-- [disabled]="!registrationForm.valid && !isValidCaptach" -->
                     <div class="row mt40px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid" (click)="signup()">
+                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid || !isValidCaptach" (click)="signup()">
                           Sign up
                         </button>
                       </div>

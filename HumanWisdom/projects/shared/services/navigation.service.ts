@@ -50,7 +50,7 @@ export class NavigationService {
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/'
+     'mp3','coach/profile/','coach/contact/','mp4'
   ]
   var isValid = false;
   for(var item of wholeUrlCheckKeywords){
