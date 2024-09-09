@@ -20,7 +20,7 @@
   [
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "Article",
       "name": "HappierMe",
       "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
       "url": "https://happierme.app/"
@@ -138,6 +138,7 @@
                   </h4>
                 </div>
               </div>
+              
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
