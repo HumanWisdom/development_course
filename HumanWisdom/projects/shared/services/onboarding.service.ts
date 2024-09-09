@@ -423,7 +423,7 @@ export class OnboardingService {
     const payLoad = {
       "TokenID":body
     }
-    return this.http.post(this.path + `/verifyInstagramTokenAndLogin/`,payLoad);
+    return this.http.post(this.path + `/verifyInstaTokenAndLogin/`,payLoad);
   }
 
   getScenarios(): Observable<any> {
