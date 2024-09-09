@@ -11,9 +11,10 @@
     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
       <nav id="navbar" class="navbar m0pxi">
         <ul>
-          <li><a id="AboutUs" >About us</a></li>
-          <!-- <li class="prelative">
-            <a href="../pages/about_us.php">
+
+          <li><a href="../pages/about_us.php"  id="AboutUs" >About us</a></li>
+          <li class="prelative">
+            <a href="../pages/teenagers.php">       
               Teenagers
               <div class="badge_new">
                 <h6 class="mtb0px fs_6px fw_600 lh_130p fc_ffffff">
@@ -21,9 +22,11 @@
                 </h6>
               </div>
             </a>
-          </li> -->
-          <li><a id="blogs" class="">Blog</a></li>
+
+          </li> 
+          <li><a href="../blogs/blog_index.php" id="blogs" class="">Blog</a></li>
           <li class="dropdown"><a id="organisation"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+
             <ul>
               <li><a  id="work">HappierMe for Work</a></li>
               <li><a id="education" >HappierMe for Education</a></li>
