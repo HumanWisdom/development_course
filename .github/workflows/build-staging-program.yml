@@ -150,7 +150,7 @@ jobs:
     needs: build-teenagers
     steps:
     - name: Download artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.8
       with:
         name: program-artifact
 
