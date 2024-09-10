@@ -1,13 +1,13 @@
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
-    background:#120F40 !important;
+  background: #120F40 !important;
 }
 
 
-  /* Using Attribute Selector */
+/* Using Attribute Selector */
 // div[pseudo="-ms-reveal"] {
 //     display: none !important;
 //   }
-  
+
 
 //   input[type="password"] + div {
 //     display: none !important;
@@ -37,4 +37,11 @@
 .rc-anchor-logo-portrait
 {
   margin: 10px 26px 0 0px;
+}
+
+.google-login-socialx {
+  opacity: 0;
+  top: 4px;
+  position: absolute;
+  left: 27px;
 }
