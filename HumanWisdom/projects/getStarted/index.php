@@ -46,7 +46,7 @@
               poster=""
               controlsList="nodownload" id="vid">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults.mp4#t=1"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video>
           </div>
@@ -137,7 +137,7 @@
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
-                  <a href="https://happierme.app/adults/intro/intro-carousel" class="pulse-button">
+                  <a href="https://happierme.app/adults/intro/intro-carousel" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Adults
                     </button>
@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
-                  <a href="https://happierme.app/teenagers/intro-carousel" class="pulse-button">
+                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
                     </button>
@@ -158,9 +158,13 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block">
                   Start your free trial now. Download the app on
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore">
+                  <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore">
+                  </a>
                   and
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore">
+                  <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore">
+                  </a>
                 </h3>
               </div>
             </div>
@@ -353,7 +357,7 @@
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_01.mp4"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_intro.mp4"
                 type="video/mp4">
             </video>
           </div>
