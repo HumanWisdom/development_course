@@ -1,18 +1,26 @@
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
-    background:#120F40 !important;
+  background: #120F40 !important;
 }
 
 
-  /* Using Attribute Selector */
+/* Using Attribute Selector */
 // div[pseudo="-ms-reveal"] {
 //     display: none !important;
 //   }
-  
+
 
 //   input[type="password"] + div {
 //     display: none !important;
 //   }
 
-  input[type="password" i]::-ms-reveal {
-    display: none !important;
-  }
+input[type="password" i]::-ms-reveal {
+  display: none !important;
+}
+
+
+.google-login-socialx {
+  opacity: 0;
+  top: 4px;
+  position: absolute;
+  left: 27px;
+}
