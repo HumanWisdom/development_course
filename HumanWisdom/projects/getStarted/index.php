@@ -12,15 +12,7 @@
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
 
-    <!-- Google tag (gtag.js) -->
-  <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-44RHVTTNB8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-44RHVTTNB8'); 
-    </script>-->
+   
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -50,7 +42,6 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
-            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_home_app.webp" class="img-responsive"> -->
             <video controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
