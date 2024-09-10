@@ -368,7 +368,7 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_bubbles.webp" class="img-responsive" alt="modules">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp" class="img-responsive" alt="modules">
           </div>
         </div>
       </section>
@@ -473,13 +473,13 @@
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp" class="img-responsive" alt="Feel calm, capable, and better everyday, with HappierMe!">
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
                   <h2 class="mtb0px fs_24px fw_600 lh_150p fc_183C79">
                     Feel calm, capable, and better everyday, with HappierMe!
                   </h2>
 
                   <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
-                  The app helps you not only to feel better now, but also to understand your own mind, so you can be in charge of your emotions, habits and mental health.                  </h5>
+                  The app helps you not only to feel better now ,     but also to understand why you think, feel and behave as you do so you can be in charge of your emotions, habits and mental health. </h5>
                 </div>
               </div>
             </div>
