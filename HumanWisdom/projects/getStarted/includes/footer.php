@@ -363,13 +363,13 @@
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
         <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive" alt="appstore">
         </a>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
         <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive" alt="playstore">
         </a>
       </div>
     </div>
