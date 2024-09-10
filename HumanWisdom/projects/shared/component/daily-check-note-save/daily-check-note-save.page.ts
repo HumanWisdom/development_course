@@ -94,6 +94,10 @@ export class DailyCheckinNoteSavePage implements OnInit {
         this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);
       else if(this.rowData.Expression=="Overwhelmed")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/curated/overcome-stress-anxiety`)]);
+      else if(this.rowData.Expression=="Embarrassed")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~77.mp3/77/T/Feeling-embarassed`)]);
+      else if(this.rowData.Expression=="Disappointed")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~76.mp3/76/T/Feeling-Disappointed`)]);
       else
         this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
     }

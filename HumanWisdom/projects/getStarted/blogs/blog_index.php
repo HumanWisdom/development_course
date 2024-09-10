@@ -42,7 +42,7 @@
 
       <!-- aspects -->
       <section>
-        <div class="row center_flex">
+        <div class="row center_flex blog_links">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="200">
@@ -534,8 +534,8 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     A fresh way to avoid and overcome addiction
                        </div>
-</div>
-<div class="row">
+                  </div>
+                     <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                       
@@ -567,7 +567,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                    How to manage anxiety attacks
+                    How to manage anxiety attacks.
 
                   </div>
                 </div>
@@ -697,15 +697,15 @@
             <div class="clearfix"></div>
 
             
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-  <a class="" href="looking_for_love.php">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/35.webp" 
-        class="img-responsive img_blogs" alt="
-        Looking for love">
-      </div>
-    </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+             <a class="" href="looking_for_love.php">
+               <div class="row">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/35.webp" 
+                       class="img-responsive img_blogs" alt="
+                      Looking for love">
+                  </div>
+               </div>
 
     <div class="row mt20px">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -804,6 +804,147 @@
     </div>
   </a>
 </div>
+
+        <div class="clearfix"></div>
+            <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title" style="text-decoration-line: underline;color:red; font-size:23px; text-align:center;">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c12">
+                           View More
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="c12" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+
+
+                        <div class="clearfix"></div>
+
+<br/>
+<br/>
+<br/>
+
+            
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+             <a class="" href="transforming_the_lives_of_children_through_self-knowledge.php">
+               <div class="row">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" 
+                       class="img-responsive img_blogs" alt="
+                      Transforming the lives of children through self-knowledge">
+                  </div>
+               </div>
+
+    <div class="row mt20px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+          Mental health
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+        Transforming the lives of children through self-knowledge
+      </div>
+    </div>
+    
+    
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+          
+        </h6>
+      </div>
+    </div>
+  </a>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+  <a class="" href="the_future_of_education_a_happierme_survey.php">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" 
+        class="img-responsive img_blogs" alt="
+        The Future of Education: A HappierMe Survey">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+          Mental health
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+        The Future of Education: A HappierMe Survey
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+          
+        </h6>
+      </div>
+    </div>
+  </a>
+</div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+  <a class="" href="transforming_education_to_meet_the_needs_of_students_and_society.php">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/32.webp" 
+        class="img-responsive img_blogs" alt="
+        Transforming education to meet the needs of students and society.">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+        Work and Leadership
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
+        Transforming education to meet the needs of students and society.
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
+          
+        </h6>
+      </div>
+    </div>
+  </a>
+</div>
+</div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <hr class="hr_style_web_01">
+                      </div>
+                    </div>
+
+
+                    
       
           </div>
         </div>

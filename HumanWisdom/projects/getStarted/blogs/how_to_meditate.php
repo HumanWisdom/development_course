@@ -83,7 +83,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px blog_desc">
                 Meditation is a powerful tool that can help you improve your mental and physical health 
-                and the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
+                and the <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
                 happiermeapp.</a> app can help you do this. It is a practice that has been used for centuries to reduce stress and anxiety, improve focus andoncentration, and promote overall well-being. In this blog, we will discuss how to meditate, including different techniques, tips, and benefits.                </h4>
 
                 
@@ -257,9 +257,9 @@
                   <span class="blog_highlight_black">
                   Increased focus and concentration:                  </span>
                   Regular meditation can help you to improve your focus and concentration, which can be beneficial for work, school, or other activities that require 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                 
                   mental clarity.
-                  </a>
+                 
                                     </h4>
                                     <h4 class="mtb0px blog_desc">
                   
@@ -401,9 +401,9 @@ Cultivating an attitude of acceptance and non-judgment towards your experiences
                   
                  
                      Over time, regular practice of breath awareness meditation can help you to develop greater awareness and control of your breath, which can have a positive impact on your physical and 
-                     <a href="https://happierme.app/" class="blog_highlight_peach td_underline ">
+                    
                      mental health.
-                </a>
+                
                      It can also help you to become more mindful and present in your daily life. </h4>
 
                      <h4 class="mtb0px blog_desc">

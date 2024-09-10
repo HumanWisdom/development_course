@@ -134,6 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
     AnnualType?.addEventListener('click', () => {
     window.location.href="https://happierme.app/adults/subscription/try-free-and-subscribe"
     });
+  
+    const teenagersApp = document.getElementById('teenagers-AnnualType');
+    teenagersApp?.addEventListener('click', () => {
+    window.location.href="https://happierme.app/teenagers/subscription/try-free-and-subscribe"
+    });
+
+
     setTimeout(() => {
         const requestDemo = document.getElementById('Request-Demo');
        requestDemo.addEventListener('click', () => {
@@ -278,10 +285,10 @@ $( window ).resize( function() {
     {
     //$('.btn_tff').attr('href','https://onelink.to/qsptex');
     // $('.btn_tff').attr('href','#div_subscription');
-    $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
+    $('.btn_tff').attr('href','https://happierme.app/splash_options.html');
     } else {
     // $('.btn_tff').attr('href','#div_subscription');
-    $('.btn_tff').attr('href','https://happierme.app/adults/splash-options');
+    $('.btn_tff').attr('href','https://happierme.app/splash_options.html');
     } 
 });
 $( window ).resize();
@@ -293,7 +300,7 @@ $( window ).resize( function() {
     } 
     else 
     {
-        $('.btn_tff_tn').attr('href','https://happierme.app/adults/splash-options');
+        $('.btn_tff_tn').attr('href','https://happierme.app/splash_options.html');
     }
 });
 $( window ).resize();
@@ -316,5 +323,14 @@ jQuery(function($)
             $(this).addClass('active_nav');
         }
     });
+});
+
+$( document ).ready(function() {   
+    $('.blog_links a').click(function () {
+        $('.blog_main a').css({'color':'black'});
+        //alert('hi');
+        // $(".blog_links").click(function (e) { 
+        // $(".navbar ul li a .blog_main").addClass('active_nav');
+    });  
 });
 </script>

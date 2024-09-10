@@ -140,23 +140,23 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_social_links">
             <a href="https://facebook.com/happiermeapp/" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive" alt="facebook">
             </a>
 
             <a href="https://www.instagram.com/happierme_app/" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive" alt="instagram">
             </a>
 
             <a href="https://www.linkedin.com/company/humanwisdom" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive" alt="linkdn">
             </a>
 
             <a href="https://twitter.com/happiermeapp" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive" alt="twitter">
             </a>
 
             <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive" alt="youtube">
             </a>
           </div>
         </div>
@@ -164,7 +164,7 @@
         <div class="row mtb20px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
             <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive" alt="appstore">
             </a>
           </div>
         </div>
@@ -172,7 +172,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
             <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US" target="_blank">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_playstore.svg" class="img-responsive" alt="playstore">
             </a>
           </div>
         </div>
@@ -378,23 +378,23 @@
   <div class="row center_flex mtb30px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter dfooter_social_links_ext">
       <a href="https://facebook.com/happiermeapp/">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_facebook.svg" class="img-responsive" alt="facebook">
       </a>
 
       <a href="https://www.instagram.com/happierme_app/">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_instagram.svg" class="img-responsive" alt="instagram">
       </a>
 
       <a href="https://www.linkedin.com/company/humanwisdom">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_linkedin.svg" class="img-responsive" alt="linkdn">
       </a>
 
       <a href="https://twitter.com/happiermeapp">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_twitter.svg" class="img-responsive" alt="twitter">
       </a>
 
       <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_youtube.svg" class="img-responsive" alt="youtube">
       </a>
     </div>
   </div>
@@ -425,17 +425,17 @@
 
     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
       <a class="" href="javascript:void(0);" onclick="closeElement();">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_close_grey.svg" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_close_grey.svg" class="img-responsive" alt="close">
       </a>
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_footer_hwp.svg" class="img-responsive">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/webpage_footer_hwp.svg" class="img-responsive" alt="banner">
     </div>
 
     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
       <h6 class="mtb0px flex_ai">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="img-responsive mr6px">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="img-responsive mr6px" alt="app">
 
         <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
           App Store

@@ -241,7 +241,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   4. Unhappy
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-shorts/1.66.mp4">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
                     relationships
                   </a>
                   are a major cause of poor mental health. A deeper understanding of ourselves helps us to understand others better, and realise that deep down our minds function in similar ways. This leads to empathy and compassion, and can both prevent problems and heal our divisions. 

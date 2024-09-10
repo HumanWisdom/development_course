@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>How can organizations reduce workplace conflict and boost collaboration?</title>
+    <title>HappierMe survey into causes of work stress. </title>
     <meta property="title" content="How can organizations reduce workplace conflict and boost collaboration?">
     <meta property="description" content="How can governments and organizations reduce tribalism and factionalism and boost collaboration? It is a question that many organizations grapple with.">
     <meta property="keyword" content="Work and Leadership">
@@ -78,16 +78,14 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               
-
-                <h4 class="mtb0px blog_sub_title">
+               <h4 class="mtb0px blog_sub_title">
                 HappierMe survey into causes of work stress.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                 70-80% of workers report work related stress in most studies but the causes 
                 of it have not been studied in depth. According to a recent survey conducted by
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/conditioning">HappierMe</a>
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/">HappierMe</a>
                 here a self awareness platform for a happier and more successful life, the main reason for work stress among employees is too much work. The survey asked 1,000 workers from various industries and sectors to rank four possible causes of work stress: too much work, not enough recognition, conflict in relationships and our attitude to work. The results showed that 37% of the respondents chose too much work as the main reason, followed by 23% who selected not enough recognition, 21% who cited conflict in relationships and 18% who attributed work stress to our attitude to work.                </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -105,15 +103,13 @@
                   </span>
                   23% of people said that they felt stressed because they do not receive enough recognition or appreciation for their work. This can lead to low self-esteem, resentment and lack of motivation. There are two ways to deal with this. Firstly, to realise that expecting recognition is normal, but gives others the key to our happiness. Can we find a way to value ourselves, and let go of this need for external validation which causes so much of our stress? The second way is for employers to step up and recognise staff for their achievements.
 
-</h4>
+               </h4>
 
-             
-
-                <h4 class="mtb0px blog_desc">
+             <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                   Conflict in relationships: 
                   </span>
-                  21% of people said that they felt stressed because they have conflict or tension with their co-workers, managers or clients. This can lead to anger, distrust and impact collaboration. To deal with this, it is important to resolve conflicts constructively, listen actively, empathise with others and respect different opinions. Accepting other perspectives as being equally valid is so important. The more we understand ourselves, the easier it is to understand others.                </h4>
+                  21%  of people said that they felt stressed because they have conflict or tension with their co-workers, managers or clients. This can lead to anger, distrust and impact collaboration. To deal with this, it is important to resolve conflicts constructively, listen actively, empathise with others and respect different opinions. Accepting other perspectives as being equally valid is so important. The more we understand ourselves, the easier it is to understand others.                </h4>
 
                
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LogEventService } from '../../../services/log-event.service';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
+import { NavigationService } from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-index',
@@ -19,7 +20,8 @@ export class IndexPage implements OnInit {
 
   constructor(private location: Location,
     private router: Router,
-    private logeventservice:LogEventService
+    private logeventservice:LogEventService,
+    private navigationService:NavigationService
     ) {
     localStorage.setItem('feelbetternow', 'T')
    }
@@ -45,13 +47,14 @@ export class IndexPage implements OnInit {
     this.router.navigateByUrl('/'+ SharedService.getprogramName() + '/blog-article?sId=Difficult-emotions:-a-guide-to-freedom')
   }
 
-  goBack() {
-    // this.location.back()
-    if (SharedService.ProgramId == ProgramType.Teenagers) {
-      this.router.navigate(['teenagers/teenager-dashboard']);
-    } else {
-      this.router.navigate(["/adults/adult-dashboard"])
-    }
+    goBack() {
+      var url = this.navigationService.navigateToBackLink();
+      console.log("url=" + url)
+      if (url == null) {
+       this.location.back();
+      }else{
+        this.router.navigate([url]);
+      }
      }
 
   enableRoute(url) {

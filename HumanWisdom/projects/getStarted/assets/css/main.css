@@ -1888,6 +1888,11 @@ a
   margin-top: 40px;
 }
 
+.mt80px 
+{
+  margin-top: 80px;
+}
+
 .mt100px 
 {
   margin-top: 100px;
@@ -3703,6 +3708,12 @@ audio::-webkit-media-controls-enclosure
   justify-content: center;
 }
 
+.ddflex_mblock_a
+{
+  display: flex;
+  align-items: center;
+}
+
 .badge_new 
 {
   width: 22px;
@@ -3779,5 +3790,54 @@ audio::-webkit-media-controls-enclosure
 
 .active_nav
 {
-  color: #834B66;
+  color: #834B66 !important;
+}
+
+.bg_adults
+{
+  background: #292D56;
+}
+
+.bg_teens
+{
+  background: #183C79;
+}
+
+/* a:visited
+{
+  color: inherit !important;
+} */
+
+.pulse-button 
+{
+
+  display: block;
+  border-radius: 24px;
+  animation: pulse 2s infinite;
+}
+
+.pulse-button:hover 
+{
+  animation: none;
+}
+
+@keyframes pulse 
+{
+  0% 
+  {
+    transform: scale(.9);
+    box-shadow: 0 0 0 10px rgba(229,141,130, 0.4);
+  }
+  
+  70% 
+  {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(229,141,130, 0);
+  }
+
+  100% 
+  {
+    transform: scale(.9);
+    box-shadow: 0 0 0 10px rgba(229,141,130, 0);
+  }
 }
