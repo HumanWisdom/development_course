@@ -345,7 +345,7 @@
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
               controlsList="nodownload">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers_1.mp4"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers.mp4"
                 type="video/mp4">
             </video>
           </div>

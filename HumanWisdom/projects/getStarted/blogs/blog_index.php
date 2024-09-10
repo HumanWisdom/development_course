@@ -42,7 +42,7 @@
 
       <!-- aspects -->
       <section>
-        <div class="row center_flex">
+        <div class="row center_flex blog_links">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="200">

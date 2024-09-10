@@ -3719,7 +3719,7 @@ audio::-webkit-media-controls-enclosure
   width: 22px;
   height: 12px;
   border-radius: 7px;
-  background: #CB6171;
+  background: #834B66;
   padding: 2px 4px;
   display: flex;
   align-items: center;
@@ -3790,7 +3790,7 @@ audio::-webkit-media-controls-enclosure
 
 .active_nav
 {
-  color: #834B66;
+  color: #834B66 !important;
 }
 
 .bg_adults
@@ -3801,4 +3801,43 @@ audio::-webkit-media-controls-enclosure
 .bg_teens
 {
   background: #183C79;
+}
+
+/* a:visited
+{
+  color: inherit !important;
+} */
+
+.pulse-button 
+{
+
+  display: block;
+  border-radius: 24px;
+  animation: pulse 2s infinite;
+}
+
+.pulse-button:hover 
+{
+  animation: none;
+}
+
+@keyframes pulse 
+{
+  0% 
+  {
+    transform: scale(.9);
+    box-shadow: 0 0 0 10px rgba(229,141,130, 0.4);
+  }
+  
+  70% 
+  {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(229,141,130, 0);
+  }
+
+  100% 
+  {
+    transform: scale(.9);
+    box-shadow: 0 0 0 10px rgba(229,141,130, 0);
+  }
 }
