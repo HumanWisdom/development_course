@@ -139,7 +139,7 @@
                   
                   <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block">
+                <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dinline_block">
                 Available for 
                 <span class="fw_600">
                 Teenagers
