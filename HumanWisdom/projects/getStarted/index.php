@@ -1983,7 +1983,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive" alt="#10 ways understanding your mind could transform your life">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive" alt="transform_life_blog">
                       </div>
                     </div>
 
@@ -2001,7 +2001,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive" alt="difficult_emotions_blog">
                       </div>
                     </div>
 
@@ -2019,7 +2019,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive" alt="Real success">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive" alt="Real_success_blog">
                       </div>
                     </div>
 
@@ -2037,7 +2037,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="Self-Awareness can help relationships flourish">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="flourish_relationships_blog">
                       </div>
                     </div>
 
@@ -2055,7 +2055,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive" alt="Why are we critical of ourselves">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive" alt="self_criticism_blog">
                       </div>
                     </div>
 
@@ -2073,7 +2073,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive" alt="How to calm anxiety">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive" alt="calm_anxiety_blog">
                       </div>
                     </div>
 
