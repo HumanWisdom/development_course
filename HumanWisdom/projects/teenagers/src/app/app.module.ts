@@ -71,7 +71,6 @@ export class MyHammerConfig extends HammerGestureConfig {
       useClass: TokenInterceptorService,
       multi: true
     },
-    ,
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyHammerConfig,
