@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { TeenagersService } from './teenagers/teenagers.service';
 import { TeenagerOnboardingService } from './teenagerOnboarding/teenager-onboarding.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
-import{ SharedModule } from './../../../shared/shared.module'
+import { SharedModule } from './../../../shared/shared.module'
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import {
-    SocialAuthService
- } from '@abacritt/angularx-social-login';
- import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+  SocialAuthService
+} from '@abacritt/angularx-social-login';
+import { HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ForumService } from '../../../shared/forum/forum.service';
@@ -27,12 +27,12 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
 import { StripeModule } from "stripe-angular";
 import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-index.page';
-import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
+import { BlogArticlePage } from './../../../shared/component/blogs/blog-article/blog-article.page';
 import { FormsModule } from '@angular/forms';
 import { SplashPage } from './teenagers/splash/splash.page';
 import * as Hammer from 'hammerjs';
 export class MyHammerConfig extends HammerGestureConfig {
-  overrides = <any> {
+  overrides = <any>{
     swipe: { direction: Hammer.DIRECTION_ALL },
   };
 }
@@ -42,12 +42,12 @@ export class MyHammerConfig extends HammerGestureConfig {
     BlogIndexPage,
     BlogArticlePage,
     SplashPage
-],
-    exports:[
-        BlogIndexPage,
-        BlogArticlePage,
-        SplashPage
-    ],
+  ],
+  exports: [
+    BlogIndexPage,
+    BlogArticlePage,
+    SplashPage
+  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -64,14 +64,19 @@ export class MyHammerConfig extends HammerGestureConfig {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
   ],
-  providers:[
-    { provide: APP_BASE_HREF, useValue: '/' } ,
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-  },
-  FormsModule,
+    },
+    ,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig,
+    },
+    FormsModule,
     TeenagersService,
     AdultsService,
     SharedService,
@@ -80,7 +85,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     OnboardingService,
     LogEventService,
     ToastrService,
-   ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
