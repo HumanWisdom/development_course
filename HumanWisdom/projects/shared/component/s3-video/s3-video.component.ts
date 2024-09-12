@@ -84,7 +84,8 @@ export class S3VideoComponent implements OnInit {
       data = this.wisdomShortOrderList[++this.currentIndex]
     }
     this.videoTitle = data.shortsData.Title;
-    this.linkcode = data.shortsData.VideoUrl
+    let linklist = this. data.shortsData.VideoUrl.split("/");
+    this.linkcode = linklist[linklist.length-1];
     const  code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
     this.videoLink = this.getSafeUrl(code);
     this.isSwiped =  true;
