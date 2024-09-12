@@ -27141,7 +27141,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   line-height: 19px;
   /* identical to box height */
   /* color: #5D5D5D !important; */
-  color: rgba(255, 255, 255, 0.50)!important;
+  /* color: rgba(255, 255, 255, 0.50)!important; */
+  color: rgba(255, 255, 255, 1)!important;
   /* height: 60px; */
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -29483,7 +29484,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 
 .carousel-inner>.item
 {
-  transition: auto;
+  /* transition: auto; */
 }
 
 .pt6rem
@@ -37329,6 +37330,53 @@ span
   padding: 20px;
 }
 
+#obfaqs .panel-title > a:after,
+#obfaqs .panel-title > a[aria-expanded="true"]:after
+{
+  content: none;
+}
+
+/* captya */
+#rc-anchor-container
+{
+  color: white;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: #120F40;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+}
+
+.rc-anchor-light .rc-anchor-logo-text, .rc-anchor-light div a:link, .rc-anchor-light div a:visited {
+  color: #555;
+  color: white;
+}
+
+.rc-anchor-logo-portrait
+{
+  margin: 10px 26px 0 0px;
+}
+
+.box_ad_intro 
+{
+  height: 50px;
+  padding: 16px 15px;
+  background: rgba(255, 255, 255, 0.10);
+  display: flex;
+  align-items: center;
+}
+/* /version - 03 */
+
+
+.w-75 {
+  width:75px !important
+}
+.h-34{
+  height: 34px !important;
+}
+
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
   background:#120F40 !important;
 }
@@ -37349,22 +37397,6 @@ span
   background:#120F40 !important;
 }
 
-
-
 .abcRioButton:hover {
   box-shadow: none!important;
 }
-
-#obfaqs .panel-title > a:after,
-#obfaqs .panel-title > a[aria-expanded="true"]:after
-{
-  content: none;
-}
-/* /version - 03 */
-.w-75 {
-  width:75px !important
-}
-.h-34{
-  height: 34px !important;
-}
-/* /version - 03 */

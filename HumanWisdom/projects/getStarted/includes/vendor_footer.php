@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
         const requestDemo = document.getElementById('Request-Demo');
-       requestDemo.addEventListener('click', () => {
-        debugger;
+        if(requestDemo){
+            requestDemo.addEventListener('click', () => {
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value;
@@ -185,6 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('An error occurred. Please try again.');
             });
     });
+        }
+       
     }, 2000);
   
 
@@ -323,5 +325,14 @@ jQuery(function($)
             $(this).addClass('active_nav');
         }
     });
+});
+
+$( document ).ready(function() {   
+    $('.blog_links a').click(function () {
+        $('.blog_main a').css({'color':'black'});
+        //alert('hi');
+        // $(".blog_links").click(function (e) { 
+        // $(".navbar ul li a .blog_main").addClass('active_nav');
+    });  
 });
 </script>

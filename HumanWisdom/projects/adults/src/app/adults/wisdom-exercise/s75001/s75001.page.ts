@@ -45,7 +45,7 @@ export class S75001Page implements OnInit {
   goBack(){
     if(this.service.previousUrl.includes('wisdom-exercise'))
     {
-      this.router.navigateByUrl("/adults/search");
+      this.router.navigateByUrl("/adults/adult-dashboard");
 
     }
     else
