@@ -65,6 +65,7 @@ export class WisdomShortsIndexPage implements OnInit {
         });
         this.wisdomshorts = res1;
         this.allwisdomshorts = res1;
+        localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
       }
     })
   }

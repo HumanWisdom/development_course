@@ -25,12 +25,12 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <h1 class="txt1">{{ videoTitle }}</h1>
+              <h1  *ngIf="!isSwiped" class="txt1">{{ videoTitle }}</h1>
 
               <!-- video  -->
               <div class="row tcenter">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <video controls playinline autoplay [ngClass]="['cvideo_01']" controlsList="nodownload">
+                <div  *ngIf="!isSwiped" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <video  controls playinline autoplay [ngClass]="['cvideo_01']" controlsList="nodownload">
                     <source [src]="videoLink" type="video/mp4">
                   </video>
                 </div>
@@ -44,33 +44,4 @@
   </div>
 </div>
 
-<span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>
-<div class="modal-dialog modal-dialog-centered  modal_popup" role="document">
-  <div class="h80p">
-    <div class="modal-header b0">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="button" #closerefermodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close"
-           >
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/modal_close_01.svg" alt=""
-              class="img-responsive fright">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="modal-body h100p">
-      <!-- modal content -->
-      <div class="row h100p center_flex">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <div class="row mt30px">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                  Swipe Success
-              </div>
-            </div>
-        </div>
-      </div>
-      <!-- /modal content -->
-    </div>
-  </div>
-</div>
 <!-- /page content -->

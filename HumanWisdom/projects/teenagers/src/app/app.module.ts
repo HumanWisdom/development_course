@@ -12,6 +12,7 @@ import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@a
 import {
     SocialAuthService
  } from '@abacritt/angularx-social-login';
+ import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ForumService } from '../../../shared/forum/forum.service';
@@ -29,6 +30,12 @@ import { BlogIndexPage } from '../../../shared/component/blogs/blog-index/blog-i
 import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
 import { FormsModule } from '@angular/forms';
 import { SplashPage } from './teenagers/splash/splash.page';
+import * as Hammer from 'hammerjs';
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+    swipe: { direction: Hammer.DIRECTION_ALL },
+  };
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +57,7 @@ import { SplashPage } from './teenagers/splash/splash.page';
     NgxCaptureModule,
     BrowserAnimationsModule,
     PlatformModule,
+    HammerModule,
     SharedModule,
     FormsModule,
     StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
