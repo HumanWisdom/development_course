@@ -10,7 +10,7 @@ import {  Renderer2 } from '@angular/core';
 import { ProgramType } from '../../../models/program-model';
 import { SharedService } from '../../../services/shared.service';
 import { OnboardingService } from '../../../services/onboarding.service';
-
+import { NavigationService } from "../../../services/navigation.service";
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -35,7 +35,8 @@ export class BlogArticlePage implements OnInit {
   isAdults =  true;
   constructor(private sanitizer: DomSanitizer, private service: OnboardingService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
-    private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
+    private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform,
+    private navigationService:NavigationService ) {
       let login: any = localStorage.getItem("isloggedin");
       if (login && login === 'T') {
         this.isLoggedIn = true;
@@ -204,8 +205,14 @@ export class BlogArticlePage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
-  }
+    var url = this.navigationService.navigateToBackLink();
+    console.log("url=" + url)
+    if (url == null) {
+     this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
+   }
 
 
   share() {

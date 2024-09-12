@@ -1,13 +1,15 @@
 import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { environment } from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
 import { ToastrService } from "ngx-toastr";
 import { SharedService } from "./shared.service";
+import {  from, throwError } from 'rxjs';  // Import 'from' and 'throwError' here
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +27,13 @@ export class OnboardingService {
   private isEnableTour = new BehaviorSubject<boolean>(false);
   updateUserDetails = new Subject<any>();
   getUserDetails = new Subject<any>();
+  private clientId = '1840609876679041'; // Replace with your Instagram App Client ID
+  private redirectUri = environment.clientUrl+"/adults/adult-dashboard"; 
+  private authUrl = `https://api.instagram.com/oauth/authorize`;
+  private accessToken: string | null = null;
   // Subscribe to the Subject
-  constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService) {
-    // this.http = new HttpClient(handler);
+  constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone) {
+    // this.http =  new HttpClient(handler);
     this.toastrService = this.toastr;
     this.updateUserDetails.subscribe(val => {
       if (val) {
@@ -45,9 +51,170 @@ export class OnboardingService {
           });
         }
       }
+      
     })
   }
 
+  // authenticateInstagram(instagramClientId: string, instagramRedirectUri: string): Promise<string> {
+  //   return new Promise((resolve, reject) => {
+  //     const popupWidth = 700;
+  //     const popupHeight = 500;
+  //     const popupLeft = (window.screen.width - popupWidth) / 2;
+  //     const popupTop = (window.screen.height - popupHeight) / 2;
+  
+  //     const authUrl = `https://api.instagram.com/oauth/authorize?client_id=${instagramClientId}&redirect_uri=${instagramRedirectUri}&response_type=code&scope=user_profile,user_media`;
+  
+  //     const popup = window.open(
+  //       authUrl,
+  //       'Instagram Auth',
+  //       `width=${popupWidth},height=${popupHeight},left=${popupLeft},top=${popupTop}`
+  //     );
+  
+  //     if (popup) {
+  //       const interval = setInterval(() => {
+  //         try {
+  //           if (popup.location.href.indexOf(instagramRedirectUri) === 0) {
+  //             const urlParams = new URLSearchParams(popup.location.search);
+  //             const authCode = urlParams.get('code');
+  
+  //             if (authCode) {
+  //               popup.close();
+  //               clearInterval(interval);
+  //               resolve(authCode);  // Now resolving with the authorization code
+  //             } else {
+  //               reject('Authorization code not found in URL.');
+  //             }
+  //           }
+  //         } catch (error) {
+  //           console.error('Error accessing popup location:', error);
+  //         }
+  //       }, 100);
+  //     } else {
+  //       reject('Could not open the popup window');
+  //     }
+  //   });
+  // }
+  
+  
+
+  // // Function to handle Instagram login and fetch user data
+  // loginWithInstagram(): Observable<any> {
+  //   return from(
+  //     this.authenticateInstagram(this.clientId, this.redirectUri)
+  //       .then(() => this.getUserData().toPromise())
+  //       .then(response => {
+  //         const userData = response.data;
+
+  //         // Save user data
+  //         this.saveUserData(userData).subscribe();
+
+  //         // Store user data in sessionStorage
+  //         sessionStorage.setItem('userLoggedIn', '1');
+  //         sessionStorage.setItem('provider', 'instagram');
+  //         sessionStorage.setItem('userData', JSON.stringify(userData));
+
+  //         return userData;
+  //       })
+  //       .catch(error => {
+  //         console.error('Error during Instagram login:', error);
+  //         throw error;
+  //       })
+  //   );
+  // }
+
+  // getUserData(): Observable<any> {
+  //   if (!this.accessToken) {
+  //     return throwError(() => new Error('Access token is not available'));
+  //   }
+
+  //   const url = `https://api.instagram.com/v1/users/self/`;
+  //   const params = new HttpParams().set('access_token', this.accessToken);
+
+  //   return this.http.get(url, { params }).pipe(
+  //     catchError(error => {
+  //       console.error('Error fetching Instagram user data:', error);
+  //       return throwError(() => error);
+  //     })
+  //   );
+  // }
+
+  // // Save user data to the database
+  // saveUserData(userData: any): Observable<any> {
+  //   return this.http.post('userData.php', { oauth_provider: 'instagram', userData: JSON.stringify(userData) });
+  // }
+
+  loginWithInstagram() {
+    const url = `${this.authUrl}?client_id=${this.clientId}&redirect_uri=${encodeURIComponent(this.redirectUri)}&scope=user_profile,user_media&response_type=code`;
+    const popup = window.open(
+      url,
+      'instagram-login-popup',
+      'width=500,height=600',
+    );
+    setTimeout(() => {
+    this.pollPopup(popup)
+    }, 1000);
+  }
+
+
+
+  
+  // verifyRepatcha(){
+  //   this.http.post("")
+  // }
+  
+  private pollPopup(popup): void {
+    const intervalId = setInterval(() => {
+      if (popup && !popup.closed) {
+        try {
+          // Handle the URL if needed
+          // const popupUrl = popup.location.href;
+          // console.log('Popup URL:', popupUrl);
+
+          // Check if the URL contains the expected data
+          // if (popupUrl.includes('your_redirect_url_with_code')) {
+          //   clearInterval(intervalId);
+          //   // Handle the URL or extract data here
+          // }
+        } catch (e) {
+          clearInterval(intervalId);
+          // Handle cross-origin access errors
+          console.error('Unable to access popup location:', e);
+        }
+      } else {
+        clearInterval(intervalId);
+        console.log('Popup was closed');
+        this.getUserInfo(localStorage.getItem('instaToken'));
+      }
+    }, 1000); // Poll every 500 milliseconds
+  }
+  
+
+  handleAuthCallback(code: string) {
+
+    const tokenUrl = `https://api.instagram.com/oauth/access_token`;
+    const body = {
+      client_id: this.clientId,
+      client_secret: '1b498f77e08b26728741d12e247ab2a3', 
+      grant_type: 'authorization_code',
+      redirect_uri: this.redirectUri,
+      code: code
+    };
+
+    return this.http.post(tokenUrl, body).subscribe(res=>{
+      if(res){
+        console.log("response from instagram");
+        console.log(res);
+      }
+    }
+    )}
+
+    getUserInfo(accessToken: string):Observable<any> {
+      const params = {
+        fields: 'id,username,account_type', // Define the fields you need
+        access_token: accessToken,
+      };
+      return this.http.get<any>('https://graph.instagram.com/me', { params })
+    }
 
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -250,6 +417,13 @@ export class OnboardingService {
 
   ReviveSubscription(key): Observable<any> {
     return this.http.post(this.path + `/ReviveSubscription/${key}`, {});
+  }
+
+  verifyInstagramLogin(body): Observable<any> {
+    const payLoad = {
+      "TokenID":body
+    }
+    return this.http.post(this.path + `/verifyInstaTokenAndLogin/`,payLoad);
   }
 
   getScenarios(): Observable<any> {
@@ -469,4 +643,11 @@ export class OnboardingService {
           // }
         })
   }
+
+  verifyCaptcha(token:any): Observable<any> {
+    console.log("Recaptacha");
+    console.log(token);
+    return this.http.post(this.path + `/VerifyCaptcha?token=${token}`, null)
+  }
+
 }

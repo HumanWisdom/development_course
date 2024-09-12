@@ -137,6 +137,8 @@ export class AdultDashboardPage implements OnInit {
     }, { validator: this.PasswordValidator })
 
     this.getUserPreference();
+    this.GetWisdomScreens();
+
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')
     setTimeout(() => {
@@ -337,8 +339,17 @@ export class AdultDashboardPage implements OnInit {
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
-
-
+    const queryString = this.router.url.split('?')[1];
+    if(queryString){
+      const params = new URLSearchParams(queryString);
+      const code = params.get('code');
+      if(code && code != null){
+        localStorage.setItem('instaToken',code)
+        window.close();
+      }
+    }
+    // Extract the query string from the URL
+ 
     this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
@@ -3942,102 +3953,101 @@ export class AdultDashboardPage implements OnInit {
   // }
 
 
+  GetWisdomScreens() {
+    this.service.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      var allCompletedScreen: boolean = false;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      if (this.wisdomExerciseList.length == data.length) {
+        allCompletedScreen = true;
+      }
+      console.log(data.length);
+      let exercise: any
+      let emptyList = false;
+      let increaseExcercise = false;
+      //   Any of the exercise is not completed
+      if (data.length == 0) {
+        emptyList = true;
+        data = this.wisdomExerciseList;
+        exercise = data[0];
+      }
+      else {
+        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+        if (incomppletedExercise.length > 0) {
+          exercise = incomppletedExercise[0];
+        } else {
+          exercise = data[data.length - 1];
+        }
+        // It contains data may be some exercise is completed
+        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+        if (completed.length == 0) {
+          increaseExcercise = true;
+          emptyList = true;
+        }
+      }
+      // Setting final title and Exercise no
+      this.Title = exercise.Title;
+
+      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+
+      if (allCompletedScreen) {
+        this.exerciseNo = "1";
+      }
+      if (this.exerciseNo == "13") {
+        this.exerciseNo = "1";
+      }
+      // Checking the length if its less than 10  to append for current session number
+      if (this.exerciseNo.length == 1) {
+        this.exerciseNo = "0" + this.exerciseNo;
+      }
+      if (incomppletedExercise && incomppletedExercise.length > 0) {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      } else {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      }
+      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
 
 
-  // GetWisdomScreens() {
-  //   this.service.GetWisdomScreens().subscribe(res => {
-  //     this.wisdomExerciseList = res;
-  //     var allCompletedScreen: boolean = false;
-  //     let data = this.wisdomExerciseList.filter(x => x.completed == '1');
-  //     if (this.wisdomExerciseList.length == data.length) {
-  //       allCompletedScreen = true;
-  //     }
-  //     console.log(data.length);
-  //     let exercise: any
-  //     let emptyList = false;
-  //     let increaseExcercise = false;
-  // Any of the exercise is not completed
-  // if (data.length == 0) {
-  //   emptyList = true;
-  //   data = this.wisdomExerciseList;
-  //   exercise = data[0];
-  // }
-  // else {
-  //   var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
-  //   if (incomppletedExercise.length > 0) {
-  //     exercise = incomppletedExercise[0];
-  //   } else {
-  //     exercise = data[data.length - 1];
-  //   }
-  // It contains data may be some exercise is completed
-  //   var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
-  //   if (completed.length == 0) {
-  //     increaseExcercise = true;
-  //     emptyList = true;
-  //   }
-  // }
-  //Setting final title and Exercise no
-  // this.Title = exercise.Title;
+      //Pushing final list for display
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let obj = {
+          " SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+          "Title": item.Title
+        }
+        this.currentList.push(obj);
+      }
+      if (this.currentList.length > 0) {
+        this.Title = this.currentList[0].Title;
+      }
+      // Dynamic Scroll
+      setTimeout(() => {
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".ae_days")?.getBoundingClientRect().x;
+        if (document.querySelector(".ae_days")) {
+          document.querySelector(".ae_days").scrollLeft = editable - wediv;
+        }
 
-  // this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
-  //   : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+      }, 5000);
 
-  // if (allCompletedScreen) {
-  //   this.exerciseNo = "1";
-  // }
-  // if (this.exerciseNo == "13") {
-  //   this.exerciseNo = "1";
-  // }
-  //Checking the length if its less than 10  to append for current session number
-  // if (this.exerciseNo.length == 1) {
-  //   this.exerciseNo = "0" + this.exerciseNo;
-  // }
-  // if (incomppletedExercise && incomppletedExercise.length > 0) {
-  //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
-  // } else {
-  //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
-  // }
-  // var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+      
+    })
+  }
 
 
-  //Pushing final list for display
-  // for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
-  //   let obj = {
-  //     " SessionNo": item.SessionNo,
-  //     "ScreenNo": item.ScreenNo,
-  //     "completed": item.completed,
-  //     "day": item.ScreenNo.substring(6, item.ScreenNo.length),
-  //     "Title": item.Title
-  //   }
-  //   this.currentList.push(obj);
-  // }
-  // if (this.currentList.length > 0) {
-  //   this.Title = this.currentList[0].Title;
-  // }
-  //Dynamic Scroll
-  //     setTimeout(() => {
-  //       var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
-  //       var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
-  //       if (document.querySelector(".wediv")) {
-  //         document.querySelector(".wediv").scrollLeft = editable - wediv;
-  //       }
 
-  //     }, 3000);
-
-  //     
-  //   })
-  // }
-
-
-  // getWisdomClass(exercise) {
-  //   if (exercise.completed == '1') {
-  //     return 'inactive';
-  //   } else if (exercise.completed == '0' && this.day == exercise.day) {
-  //     return 'editable';
-  //   } else {
-  //     return 'active';
-  //   }
-  // }
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return ' uneditable';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return ' editable';
+    } else {
+      return ' inactive';
+    }
+  }
 
 
   DashboardLogevent(route, params, evtName) {
@@ -4120,6 +4130,50 @@ export class AdultDashboardPage implements OnInit {
   //         console.log(error)
   //       })
   // }
+
+
+  
+  RouteToWisdomExercise(exercise) {
+
+    this.logeventservice.logEvent("click_Awareness_exercise");
+    /*
+     var weR = exercise?.ScreenNo;
+     localStorage.setItem("moduleId", JSON.stringify(75))
+     this.aservice.clickModule(75, this.userId)
+       .subscribe(res => {
+         
+         this.qrList = res
+         weR = "s" + res.lastVisitedScreen
+         // continue where you left
+         if (res.lastVisitedScreen === '') {
+           localStorage.setItem("lastvisited", 'F')
+         }
+         else {
+           localStorage.setItem("lastvisited", 'T')
+         }
+         // /continue where you left
+         sessionStorage.setItem("weR", weR)
+         this.mediaPercent = parseInt(res.MediaPercent)
+         this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+         localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+         localStorage.setItem("qrList", JSON.stringify(this.qrList))
+
+       },
+         error => {
+           console.log(error)
+         });  */
+
+    if (exercise != null) {
+      this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+        state: {
+          day: exercise.day,
+        }
+      });
+    } else {
+      this.router.navigate(['adults/wisdom-exercise/']);
+    }
+  }
 
   routeForUser(res) {
     let sid = '';

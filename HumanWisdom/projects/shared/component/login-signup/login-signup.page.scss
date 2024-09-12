@@ -1,3 +1,47 @@
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
-    background:#120F40 !important;
+  background: #120F40 !important;
+}
+
+
+/* Using Attribute Selector */
+// div[pseudo="-ms-reveal"] {
+//     display: none !important;
+//   }
+
+
+//   input[type="password"] + div {
+//     display: none !important;
+//   }
+
+  input[type="password" i]::-ms-reveal {
+    display: none !important;
+  }
+
+#rc-anchor-container
+{
+  color: white;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: #120F40;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+}
+
+.rc-anchor-light .rc-anchor-logo-text, .rc-anchor-light div a:link, .rc-anchor-light div a:visited {
+  color: #555;
+  color: white;
+}
+
+.rc-anchor-logo-portrait
+{
+  margin: 10px 26px 0 0px;
+}
+
+.google-login-socialx {
+  opacity: 0;
+  top: 4px;
+  position: absolute;
+  left: 27px;
 }
