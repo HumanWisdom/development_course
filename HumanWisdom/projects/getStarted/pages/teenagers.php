@@ -55,7 +55,7 @@
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_m_none" alt="Boost workplace wellbeing, performance and productivity">
 
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
                 </div>
               </div>
         
@@ -1743,7 +1743,7 @@
                 <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
                   After your free trial, the yearly subscription is INR 5,999 and automatically 
                   renews each year until cancelled.
-                  <span class="">
+                  <!-- <span class="">
                     <a class="fc_000000">
                       Terms
                     </a>
@@ -1753,7 +1753,7 @@
                     <a class="fc_000000">
                       Cancel anytime
                     </a>
-                  </span>
+                  </span> -->
                 </h6>
               </div>
             </div>

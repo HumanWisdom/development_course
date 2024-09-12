@@ -67,7 +67,7 @@ h6 {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding: 100px 0 0 0;
+  padding: 80px 0 0 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -3802,6 +3802,35 @@ audio::-webkit-media-controls-enclosure
 {
   background: #183C79;
 }
+
+#text{
+  display:none;
+  }
+  .btn-container{
+    margin: auto;
+    height:44px;
+    width:166.23px;
+    
+  }
+  a:active{
+    color:#ffd323;
+  }
+  button{
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    cursor:pointer;
+    border:none;
+    background-color: #fff;
+    padding:8px;
+    font-size:18px;
+    line-height: 27px;
+    color:#CB6171;
+    text-align: center;
+    text-decoration: underline;
+  }
+
 
 /* a:visited
 {
