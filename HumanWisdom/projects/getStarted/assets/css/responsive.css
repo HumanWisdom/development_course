@@ -35,11 +35,11 @@
         font-size: 12px;
     }
 
-    .ta_lc 
+    /* .ta_lc 
     {
         text-align: center;
         text-align: -webkit-center;
-    }
+    } */
 
     .flex_block
     {
@@ -118,7 +118,7 @@
     /* /responsive_fonts */
 
     .div_price,
-    .div_dyk_l1,
+     .div_dyk_l1, 
     .div_inspire,
     .input_parent
     {

@@ -83,7 +83,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px blog_desc">
                 Meditation is a powerful tool that can help you improve your mental and physical health 
-                and the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/splash-options">
+                and the <a class="blog_highlight_peach td_underline" href="https://happierme.app/splash_options.html">
                 happiermeapp.</a> app can help you do this. It is a practice that has been used for centuries to reduce stress and anxiety, improve focus andoncentration, and promote overall well-being. In this blog, we will discuss how to meditate, including different techniques, tips, and benefits.                </h4>
 
                 

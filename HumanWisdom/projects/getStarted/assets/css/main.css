@@ -2911,9 +2911,9 @@ audio::-webkit-media-controls-enclosure
 
 .btn_blogp 
 {
-  margin: 0;
+  margin: 4px;
   padding: 4px 20px;
-  height: 30px;
+  height: 40px;
   border-radius: 21px;
   background: rgba(232, 168, 128, 0.20);  
   border: 0;
