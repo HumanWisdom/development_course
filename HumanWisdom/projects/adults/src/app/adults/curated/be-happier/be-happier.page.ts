@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 
 @Component({
   selector: 'HumanWisdom-be-happier',
@@ -74,11 +76,22 @@ export class BeHappierPage implements OnInit {
   ngOnInit() {
     localStorage.setItem("NaviagtedFrom", '/adults/curated/be-happier');
 
-    this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
-    this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
-    this.meta.updateTag({ property: 'description', content: 'Discover simple, practical tips for living a happier life and find joy in everyday moments.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Tips for Happiness,Developing a Positive Mindset,Practices for Happiness,Overcoming Negativity,Building Resilience,Mindfulness for Happiness,Increasing Joy and Fulfillment,Pursuing Happiness,Finding Happiness in Life' })
+    if(SharedService.ProgramId == ProgramType.Adults){
+      this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
+      this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
+      this.meta.updateTag({ property: 'description', content: 'Discover simple, practical tips for living a happier life and find joy in everyday moments.' })
+      this.meta.updateTag({ property: 'keywords', content: 'Tips for Happiness,Developing a Positive Mindset,Practices for Happiness,Overcoming Negativity,Building Resilience,Mindfulness for Happiness,Increasing Joy and Fulfillment,Pursuing Happiness,Finding Happiness in Life' })
+  
+    }
+    else if(SharedService.ProgramId == ProgramType.Teenagers){
+      this.title.setTitle('Inspiring Shorts for Teenagers')
+        this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Teenagers' })
+        this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy Teenagers who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
+        this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
+    }
 
+
+    
 
     localStorage.setItem('curated', 'happier');
     let rem = localStorage.getItem('remember');

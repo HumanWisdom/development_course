@@ -121,6 +121,8 @@ import { S228Page } from './s228/s228.page'; 
 import { S228p1Page } from './s228p1/s228p1.page'; 
 import { S228p2Page } from './s228p2/s228p2.page'; 
 import { S228p3Page } from './s228p3/s228p3.page';  
+import {  S228p3tPage } from './s228p3t/s228p3t.page';   ;  
+
 import { S229Page } from './s229/s229.page';  
 import { S230Page } from './s230/s230.page';  
 import { S230p1Page } from './s230p1/s230p1.page'; 
@@ -729,6 +731,11 @@ canActivate:[ActiveGuard],
     path: 's228p3',   
 canActivate:[ActiveGuard],
     component: S228p3Page,
+  },
+  {
+    path: 's228p3t',   
+canActivate:[ActiveGuard],
+    component: S228p3tPage,
   },
   {
     path: 's229',   
