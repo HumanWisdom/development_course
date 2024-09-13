@@ -17,7 +17,7 @@ jobs:
         mkdir -p builds/compressed
         tar -czf builds/compressed/website.tgz projects/getStarted
      - name: Upload artifact
-       uses: actions/upload-artifact@v2
+       uses: actions/upload-artifact@v4.4.0
        with:
         name: website-artifact
         path: HumanWisdom/builds/compressed/website.tgz
@@ -27,7 +27,7 @@ jobs:
      needs: build-website
      steps:
      - name: Download artifact
-       uses: actions/download-artifact@v2
+       uses: actions/download-artifact@v4.1.5
        with:
         name: website-artifact
 

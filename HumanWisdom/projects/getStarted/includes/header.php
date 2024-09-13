@@ -22,11 +22,13 @@
                 </h6>
               </div>
             </a>
-
-          </li> 
+            <!--
+          </li>
+          <li><a href="../blogs/blog_index.php" class="blog_main">Blog</a></li>
+          <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          </li> -->
           <li><a href="../blogs/blog_index.php" id="blogs" class="">Blog</a></li>
           <li class="dropdown"><a id="organisation"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-
             <ul>
               <li><a  id="work">HappierMe for Work</a></li>
               <li><a id="education" >HappierMe for Education</a></li>
