@@ -85,7 +85,7 @@
                 <h4 class="mtb0px blog_desc">
                 70-80% of workers report work related stress in most studies but the causes 
                 of it have not been studied in depth. According to a recent survey conducted by
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/splash-options">HappierMe</a>
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/splash_options.html">HappierMe</a>
                 here a self awareness platform for a happier and more successful life, the main reason for work stress among employees is too much work. The survey asked 1,000 workers from various industries and sectors to rank four possible causes of work stress: too much work, not enough recognition, conflict in relationships and our attitude to work. The results showed that 37% of the respondents chose too much work as the main reason, followed by 23% who selected not enough recognition, 21% who cited conflict in relationships and 18% who attributed work stress to our attitude to work.                </h4>
 
                 <h4 class="mtb0px blog_desc">
