@@ -16,7 +16,7 @@ export class S228p3Page implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/anger/audios/anger+4.1.mp3'
 
-  transcriptPage=""
+  transcriptPage="/anger/s228p3t"
   toc="anger/s162p0"
   bookmark=0
   path = setTimeout(() => {

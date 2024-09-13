@@ -350,9 +350,9 @@ export class AdultDashboardPage implements OnInit {
     }
     // Extract the query string from the URL
  
-    this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
-    this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
-    this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
+    this.title.setTitle('HappierMe App: Personal Growth & Self-Help')
+    this.meta.updateTag({ property: 'title', content: 'HappierMe App: Personal Growth & Self-Help' })
+    this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the HappierMe app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
     this.meta.updateTag({ property: 'keywords', content: 'human wisdom, app, personal growth, self-help, daily inspiration, mindfulness practices, anger management, stress management, relationships, self-esteem, addiction, work, workplace, leadership, money, love, food and health, living with peace, dealing with death, criticism, success and failure, decision making, opinions and beliefs' })
 
 
