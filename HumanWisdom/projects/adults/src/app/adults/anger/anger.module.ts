@@ -124,7 +124,9 @@ import { S227tPage } from './s227t/s227t.page'; 
 import { S228Page } from './s228/s228.page'; 
 import { S228p1Page } from './s228p1/s228p1.page'; 
 import { S228p2Page } from './s228p2/s228p2.page'; 
-import { S228p3Page } from './s228p3/s228p3.page';  
+import { S228p3Page } from './s228p3/s228p3.page';
+import { S228p3tPage } from './s228p3t/s228p3t.page';  
+  
 import { S229Page } from './s229/s229.page';  
 import { S230Page } from './s230/s230.page';  
 import { S230p1Page } from './s230p1/s230p1.page'; 
@@ -259,6 +261,7 @@ import { NgxCircularPlayerModule } from 'ngx-circular-player';
     S228p1Page,
     S228p2Page,
     S228p3Page, 
+    S228p3tPage, 
     S229Page,
     S230Page,
     S230p1Page,

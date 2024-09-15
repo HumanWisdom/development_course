@@ -19,7 +19,7 @@ export class AdvertsWorkPage implements OnInit {
   ngOnInit() {
     this.title.setTitle('Wisdom for Work - Self Motivation & Communication Skills')
     this.meta.updateTag({ property: 'title', content: 'Wisdom for Work - Self Motivation & Communication Skills'})
-    this.meta.updateTag({ property: 'description', content: 'Enhance your professional life with wisdom for work. Boost your self-motivation and confidence with our self-encouragement quotes. Improve your communication skills for business and workplace success with the guidance from Human Wisdom.'})
+    this.meta.updateTag({ property: 'description', content: 'Enhance your professional life with wisdom for work. Boost your self-motivation and confidence with our self-encouragement quotes. Improve your communication skills for business and workplace success with the guidance from HappierMe.'})
     this.meta.updateTag({ property: 'keywords', content: 'wisdom for work, self motivation words, self encouragement quotes, communication skills for business, communication skills for workplace, professional life, self-motivation, confidence, success, communication skills'})
 
 
