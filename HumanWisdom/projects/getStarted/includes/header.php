@@ -14,7 +14,7 @@
 
           <li><a href="../pages/about_us.php"  id="AboutUs" >About us</a></li>
           <li class="prelative">
-            <a href="../pages/teenagers.php" id=" Teenagers" >       
+            <a id="teenagersHeaderClick">       
               Teenagers
               <div class="badge_new">
                 <h6 class="mtb0px fs_6px fw_600 lh_130p fc_ffffff">
