@@ -46,11 +46,11 @@ export class NavigationService {
       's54001', 's92001', 'view-stories', 's42000',
      , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4',
      's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid',
-     '/curated/youtubelink/','why-do-i','how-can-i'
+     '/curated/youtubelink/','why-do-i','how-can-i','blog-article'
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','mp4'
+     'mp3','coach/profile/','coach/contact/','mp4','blog-article'
   ]
   var isValid = false;
   for(var item of wholeUrlCheckKeywords){
