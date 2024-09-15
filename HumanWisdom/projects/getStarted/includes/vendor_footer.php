@@ -323,8 +323,11 @@ jQuery(function($)
     $('li a').each(function() {
         if (this.href === path) {
             $(this).addClass('active_nav');
+            //$('.badge_new').addClass('bg_badge');
         }
+
     });
+    //$('.badge_new').removeClass('bg_badge');
 });
 
 $( document ).ready(function() {   
@@ -335,4 +338,37 @@ $( document ).ready(function() {
         // $(".navbar ul li a .blog_main").addClass('active_nav');
     });  
 });
+
+/*
+$( document ).ready(function() {  
+    $('.teens').click(function (e) {
+        e.preventDefault(); 
+        e.stopPropagation();
+        $('.badge_new').css({'background':'#834B66'});
+        $('.teens').css({'text-decoration':'none','color':'#834B66'});
+    });
+});
+*/
+
+
+const btnColor = document.querySelector(".teens");
+const badge_new = document.querySelector(".badge_new");
+const changeBtnColor = (e) => {
+    //alert('hi');
+    //e.preventDefault(); 
+    if(badge_new.classList.contains("bg_badge"))
+    {
+        badge_new.classList.remove("bg_badge");
+    }
+    else
+    {
+        e.preventDefault(); 
+        badge_new.classList.add("bg_badge");
+    }
+  
+  // or use:
+  // btnColor.classList.toggle("red");
+};
+
+btnColor.addEventListener('click', changeBtnColor);
 </script>

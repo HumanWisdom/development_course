@@ -37263,7 +37263,16 @@ a.fc_e58d82:hover
   margin-bottom: 30px;
 }
 
+.w-75 
+{
+  width:75px !important
+}
 
+.h-34
+{
+  height: 34px !important;
+}
+/* /version - 03 */
 
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
   background:#0C2B5F !important;
@@ -37288,5 +37297,3 @@ a.fc_e58d82:hover
 .abcRioButton:hover {
   box-shadow: none!important;
 }
-
-/* /version - 03 */
