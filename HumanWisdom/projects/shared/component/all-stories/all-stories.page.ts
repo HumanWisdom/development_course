@@ -29,8 +29,8 @@ export class AllStoriesPage implements OnInit {
 
   ngOnInit() {
     this.getStories()
-    this.title.setTitle('Transform Your Life with Wisdom Stories')
-    this.meta.updateTag({ property: 'title', content: 'Transform Your Life with Wisdom Stories' })
+    this.title.setTitle('Inspiring real-life stories')
+    this.meta.updateTag({ property: 'title', content: 'Inspiring real-life stories' })
     this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through the real-life stories of adults and find ways to apply it in your life.' })
     this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories for adults,Inspiring stories for adults,Life lessons from stories,Adult wisdom tales,Uplifting stories for adults,Motivational stories for grown-ups,Adult storytelling,Personal growth through stories,Life-changing stories for adults,Empowering adult stories' })
     let userid = localStorage.getItem('isloggedin');

@@ -1,50 +1,41 @@
-<!-- <app-toc-header [moduleName]="''" [tocColor]="tocColor"></app-toc-header> -->
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="goBack()">
+      <a (click)="goBack()">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        
       </h1>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"></div>
   </div>
 </div>
 <!-- /top navigation -->
 
-<!-- <app-bg-video></app-bg-video> -->
-
 <!-- page content -->
-<div class="right_col mc_02" #screen>
+<div class="right_col mc_02" #screen (swipeup)="onSwipeUp()"  (swipedown)="onSwipeDown()" >
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 bg_stake col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
+              <h1  *ngIf="!isSwiped" class="txt1">{{ videoTitle }}</h1>
 
-              <h1 class="txt1">
-                {{videoTitle}}
-              </h1>
-              
               <!-- video  -->
               <div class="row tcenter">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <video controls playinline autoplay [ngClass]="['cvideo_01']" controlsList="nodownload">
+                <div  *ngIf="!isSwiped" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <video  controls playinline autoplay [ngClass]="['cvideo_01']" controlsList="nodownload">
                     <source [src]="videoLink" type="video/mp4">
                   </video>
                 </div>
               </div>
               <!-- /video -->
-
             </form>
           </div>
         </div>
@@ -52,4 +43,5 @@
     </div>
   </div>
 </div>
+
 <!-- /page content -->

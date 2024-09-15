@@ -34,8 +34,8 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
 
   ngOnInit() {
 
-    this.title.setTitle('Give the Gift of Wisdom')
-    this.meta.updateTag({ property: 'title', content: 'Give the Gift of Wisdom'})
+    this.title.setTitle('Give the Gift of Happiness')
+    this.meta.updateTag({ property: 'title', content: 'Give the Gift of Happiness'})
     this.meta.updateTag({ property: 'description', content: 'Give the gift of personal growth and wellness with Human Wisdom. Share the life-changing wisdom and tools for self-improvement, mindfulness, and relationships with your loved ones.'})
     this.meta.updateTag({ property: 'keywords', content: 'give the gift of wisdom, personal growth, wellness, self-improvement, mindfulness, relationships, mental health, human wisdom, life coach'})
 

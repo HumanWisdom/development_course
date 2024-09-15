@@ -53,7 +53,7 @@ async function fetchData() {
         this.countryCode = data['country_code_iso3']
     }
 
-    const pricing = await fetch(`https://staging.humanwisdom.info/api/CountryRates/${this.countryCode}`);
+    const pricing = await fetch(`https://www.humanwisdom.info/api/CountryRates/${this.countryCode}`);
     
     if (!pricing.ok) 
     {
@@ -63,15 +63,15 @@ async function fetchData() {
     {
         const pricingData = await pricing.json();
         
-        this.pricingModel = pricingData.filter((d) => d["ProgID"] == "9")[0];
+        this.pricingModel = pricingData.filter((d) => d["ProgID"] == localStorage.getItem('programType'))[0];
         
         this.defaultCurrencySymbol = pricingModel["ISOCode"]
         
         this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal((this.pricingModel.Annual / 12));
+        console.log(this.pricingModel.PerMonthAmountOnAnnual);
         
         
-        
-        console.log("this.pricingModel");
+        console.log(this.pricingModel);
 
         const annualPricingModelHeading = document.getElementById('annualPricingModelHeading');
         
@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
         const requestDemo = document.getElementById('Request-Demo');
-       requestDemo.addEventListener('click', () => {
-        debugger;
+        if(requestDemo){
+            requestDemo.addEventListener('click', () => {
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value;
@@ -185,6 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('An error occurred. Please try again.');
             });
     });
+        }
+       
     }, 2000);
   
 
