@@ -28,7 +28,7 @@
                     {{getGiftCard()}}
                   </h4>
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="isLoggedIn && isSubscriber">
-                    You are already subscribed. You can use this subscription code when your current subscription ends
+                    You are already subscribed. You can use this subscription {{enabledGiftCard ? 'gift card' : 'code'}} when your current subscription ends
                   </h4>
                 </div>
               </div>
