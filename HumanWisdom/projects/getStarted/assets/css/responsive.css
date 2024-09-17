@@ -35,11 +35,11 @@
         font-size: 12px;
     }
 
-    /* .ta_lc 
+    .ta_lc 
     {
         text-align: center;
         text-align: -webkit-center;
-    } */
+    }
 
     .flex_block
     {
@@ -176,6 +176,17 @@
     #header-2
     {
         overflow-x: scroll;
+    }
+
+    .cpr_a 
+    {
+        padding-right: 0;
+    }
+
+    .div_au > [class^="col-"]:nth-child(2)
+    {
+        margin-top: 45px;
+        margin-bottom: 45px;
     }
 }
 

@@ -27161,7 +27161,7 @@ input[type="search"].pfy_search::-webkit-search-cancel-button {
   border-radius: 50em;
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/close.png) no-repeat 50% 50%;
   /* filter: opacity(0.5) drop-shadow(0 0 0 #5D5D5D); */
-  filter: invert(100%);
+  /* filter: invert(100%); */
   background-size: contain;
   opacity: 1;
   pointer-events: none;

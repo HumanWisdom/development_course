@@ -13,11 +13,19 @@ export class RedeemSubscriptionLandingPage implements OnInit {
   public isLoggedIn = false;
   public email = '';
   public enabledModal = false;
+  public enabledGiftCard = false;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
     this.getUserDetail();
+    let url: any = window.location.href;
+    if (url.toString().includes('landing')) {
+      localStorage.setItem("giftcard", 'F');
+    }else {
+      localStorage.setItem("giftcard", 'T');
+      this.enabledGiftCard = true;
+    }
   }
 
   route(type) {

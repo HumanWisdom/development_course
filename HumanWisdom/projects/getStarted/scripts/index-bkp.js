@@ -93,6 +93,14 @@ setTimeout(() => {
         }, false);
     }
 
+    // teenagersHeader 
+    var teenagersHeader = document.getElementById("teenagersHeaderClick");
+    if (teenagersHeader) {
+        teenagersHeader.addEventListener("click", function () {
+            localStorage.setItem("programType", '11');
+            window.location.href = "../pages/teenagers.php";
+        });
+    }
 
     // making tab active
     var tabName = window.location.href;
@@ -111,6 +119,8 @@ setTimeout(() => {
         pricing?.classList.add('active_nav');
     } if (tabName.includes('about')) {
         aboutUs?.classList.add('active_nav');
+    } if (tabName.includes('pages/teenagers.php')) {
+        teenagersHeader?.classList.add('active_nav');
     }
 
 }, 200);
@@ -138,8 +148,10 @@ if (teenagers) {
         // This function will be executed when the button is clicked
         window.location.href = "https://happierme.app/teenagers/intro-carousel";
     });
-
 }
+
+// Get the button element by its id
+
 
 
 const requestDemo = document.getElementById('Request-Demo');
