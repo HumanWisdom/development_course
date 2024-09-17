@@ -534,7 +534,8 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                <a href="/pages/teenagers.php" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach">
