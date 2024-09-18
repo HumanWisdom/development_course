@@ -11,15 +11,16 @@ import { Constant } from "../../services/constant";
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from "@abacritt/angularx-social-login";
 import { CommonModule } from "@angular/common";
+import { SharedModule } from "../../shared.module";
 
 @Component({
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
   styleUrls: ['./login-register-modal.component.scss'],
   standalone:true,
-  imports:[SocialLoginModule,CommonModule,FormsModule,ReactiveFormsModule],
+  imports:[SocialLoginModule,CommonModule,FormsModule,ReactiveFormsModule,SharedModule],
   providers:[
-    SocialAuthService, 
+    SocialAuthService,
     {
         provide: 'SocialAuthServiceConfig',
         useValue: {
@@ -165,7 +166,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
    // this.renderGoogle = true;
   }
 
-  
+
   private onSuccess(googleUser: any): void {
     console.log('Logged in as: ' + googleUser);
     this.idToken = googleUser.getAuthResponse().id_token;
@@ -234,8 +235,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
           this.content = "You have entered wrong credentials. Please try again.";
           this.enableAlert = true;
           this.email = "";
-        } 
-        else 
+        }
+        else
         {
           this.userId = this.loginResponse.UserId;
           this.userName = this.loginResponse.Name;
@@ -293,7 +294,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             localStorage.setItem("introoption", "F");
             localStorage.setItem("isloggedin", "T");
             this.router.navigate(["/intro/personalised-for-you"]);
-          } 
+          }
           else
           {
             if (acceptCookie === "T" || subscribePage === "T")
@@ -313,18 +314,18 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                 this.router.navigate(["/onboarding/viewcart"])
               }
             }
-            else 
+            else
             {
               localStorage.setItem("isloggedin", "T");
               if (pers && persub && pers === "T") {
                 this.router.navigate(["/onboarding/viewcart"], {
                   state: { quan: "1", plan: persub },
                 });
-              } 
-              else 
+              }
+              else
               {
                 localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                if (this.loginResponse?.NoOfVisits === 1) 
+                if (this.loginResponse?.NoOfVisits === 1)
                 {
                   localStorage.setItem(
                     "signupfirst", 'F'
@@ -349,8 +350,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                       }
                     });
 
-                } 
-                else 
+                }
+                else
                 {
                   /* if(SharedService.ProgramId === 9) {
                     this.router.navigate(["/adults/repeat-user"]);
@@ -380,7 +381,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         }
       }
     });
-    
+
   }
 
   private onFailure(error: any): void {
@@ -400,7 +401,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-   
+
     this.already(this.isLoggedIn ? 'login' : 'register');
   }
 
@@ -429,7 +430,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     }
     if (value === 'login') {
       setTimeout(() => {
-        this.loadGoogleScript();   
+        this.loadGoogleScript();
       }, 1000);
       this.firstpage = false;
       this.fourthpage = false;
@@ -439,7 +440,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.fifthpage = true;
     } else if (value === 'register') {
       setTimeout(() => {
-        this.loadGoogleScript();   
+        this.loadGoogleScript();
       }, 1000);
       this.firstpage = true;
       this.passwordhide = true;
@@ -475,7 +476,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         }
       },
         error => {
-          this.content = error.error.Message;
+          this.content = error.error['Message'];
           this.enableAlert = true;
           this.alertenabled = true;
           // window.alert(error.error.Message)
@@ -542,7 +543,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             localStorage.setItem("isloggedin", 'T')
             this.isLoggedIn = true
             this.loginResponse = res
-            
+
             localStorage.setItem('guest', 'F');
             localStorage.setItem("remember", 'T')
             localStorage.setItem('socialLogin', 'T');

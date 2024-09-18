@@ -47,6 +47,7 @@ export class RedeemSubscriptionPage implements OnInit {
   enabledModal = false;
   landingpage = '';
   public programName = '';
+  public enabledGiftCard = false;
 
   constructor(
     public platform: Platform,
@@ -58,6 +59,10 @@ export class RedeemSubscriptionPage implements OnInit {
   ) {
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
+    if(localStorage.getItem('giftcard') === 'T') {
+      this.enabledGiftCard = true;
+    }
+    
     this.landingpage = localStorage.getItem('redeemlanding');
     let firsttime = localStorage.getItem('first');
     if (firsttime === 'T' || !firsttime) {
