@@ -34,6 +34,284 @@
             </div>
             <!-- /search -->
 
+            <!-- find inspiration -->
+            <div class="row tour_find_inspiration">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                  Find inspiration
+                </h4>
+              </div>
+
+
+            <div class="mt30px div_fi_a">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('Click_life_stories', '/teenagers/wisdom-stories') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Life stories
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_audio_meditation', '/teenagers/audio-meditation') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_audio_meditation.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Audio meditation
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_blog', '/teenagers/blogs') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Blog
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_podcast', '/teenagers/podcast') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_podcast.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Podcast
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_short_video', '/teenagers/wisdom-shorts') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Short videos
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" (click)="tourIndex === 1 ? logEvent('click_Events', '/teenagers/events') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Events
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 float_none">
+                    <button class="float_left" (click)="tourIndex === 1 ? logEvent('click_Events', '/teenagers/teen-talk') : $event.preventDefault()">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_teen_talk.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Teen Talk
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div> -->
+
+                </div>
+              </div>
+
+            </div>
+            </div>
+            <!-- /find inspiration -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- awareness exercises -->
+            <!-- accordion -->
+            <div class="row accordion_row tour_exercises">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01 dpanel_01_ext">
+                    <div class="panel-heading p0">
+                      <h4 class="panel-title dpaneltitle">
+                        <a>
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex === 1" href="#ca_ae" aria-expanded="true">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                   Emotional Intelligence
+                                  </h2>
+                                </a>
+                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex !== 1" aria-expanded="true">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                   Emotional Intelligence
+                                  </h2>
+                                </a>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="tourIndex === 1 ? RouteToWisdomExercise(null) : $event.preventDefault()">
+                                <a>
+                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                                    View all
+                                  </h2>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="ca_ae" class="panel-collapse collapse in">
+                      <div class="panel-body aepanel">
+
+                        <div class="p20px">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mtb0px">
+                                Do one of these short exercises daily to improve your self awareness and emotional intelligence, which can contribute to your happiness and success.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <hr class="hr_style_v3_02">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-md-6 col-sm-6 col-xs-6 p0 center_flex">
+                                <div class="col-md-3 col-sm-3 col-xs-3 p0 circular-player-container">
+                                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_play.svg" class="w100"> -->
+                                  <ngx-circular-player
+                                    id="aud5"
+                                    strokeColor="#FFFFFF"
+                                    source="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/awareness_exercises.mp3"
+                                    progressStrokeColor=rgba(229,141,130,1)>
+                                  </ngx-circular-player>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                  <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                                    01:30
+                                  </h4>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                <a routerLink="/teenagers/awareness-exercises-transcript" *ngIf="tourIndex === 1">
+                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
+                                  </button>
+                                </a>
+
+                                <a *ngIf="tourIndex !== 1">
+                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
+                                  </button>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row pt20px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="fw_500 fs_15px lh_140p fc_ffffff mtb0px">
+                                #{{exerciseNo}} {{Title}}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row ml20px">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
+                            <ng-container *ngFor="let item of currentList">
+                              <div class="col-md-3 col-sm-3 col-xs-4">
+                                <a *ngIf="item.day =='0';else notIntro" (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
+                                  <button type="button" [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
+                                    Intro
+                                  </button>
+                                </a>
+
+                                <ng-template #notIntro>
+                                  <a (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
+                                    <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
+                                    Day  {{item.day}}
+                                    </button>
+                                  </a>
+                                </ng-template>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /awareness exercises -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
             <!-- contact a coach button -->
             <div class="row tour_fbn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -332,285 +610,6 @@
             <!-- /pathway -->
 
             <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
-
-            <!-- find inspiration -->
-            <div class="row tour_find_inspiration">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
-                  Find inspiration
-                </h4>
-              </div>
-
-
-            <div class="mt30px div_fi_a">
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="tourIndex === 1 ? logEvent('Click_life_stories', '/teenagers/wisdom-stories') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Life stories
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="tourIndex === 1 ? logEvent('click_audio_meditation', '/teenagers/audio-meditation') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_audio_meditation.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Audio meditation
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="tourIndex === 1 ? logEvent('click_blog', '/teenagers/blogs') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Blog
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="tourIndex === 1 ? logEvent('click_podcast', '/teenagers/podcast') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_podcast.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Podcast
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="tourIndex === 1 ? logEvent('click_short_video', '/teenagers/wisdom-shorts') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Short videos
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <button class="" (click)="tourIndex === 1 ? logEvent('click_Events', '/teenagers/events') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Events
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 float_none">
-                    <button class="float_left" (click)="tourIndex === 1 ? logEvent('click_Events', '/teenagers/teen-talk') : $event.preventDefault()">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_teen_talk.svg" class="img-responsive">
-                          </h4>
-
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
-                            Teen Talk
-                          </h4>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-            </div>
-            <!-- /find inspiration -->
-
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
-
-
-            <!-- awareness exercises -->
-            <!-- accordion -->
-            <div class="row accordion_row tour_exercises">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="panel-group dpanelgroup" id="accordion">
-                  <div class="panel panel-default dpanel dpanel_01 dpanel_01_ext">
-                    <div class="panel-heading p0">
-                      <h4 class="panel-title dpaneltitle">
-                        <a>
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex === 1" href="#ca_ae" aria-expanded="true">
-                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                   Emotional Intelligence
-                                  </h2>
-                                </a>
-                                <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex !== 1" aria-expanded="true">
-                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                   Emotional Intelligence
-                                  </h2>
-                                </a>
-                              </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="tourIndex === 1 ? RouteToWisdomExercise(null) : $event.preventDefault()">
-                                <a>
-                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
-                                    View all
-                                  </h2>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="ca_ae" class="panel-collapse collapse in">
-                      <div class="panel-body aepanel">
-
-                        <div class="p20px">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mtb0px">
-                                Do one of these short exercises daily to improve your self awareness and emotional intelligence, which can contribute to your happiness and success.
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <hr class="hr_style_v3_02">
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                              <div class="col-md-6 col-sm-6 col-xs-6 p0 center_flex">
-                                <div class="col-md-3 col-sm-3 col-xs-3 p0 circular-player-container">
-                                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_play.svg" class="w100"> -->
-                                  <ngx-circular-player
-                                    id="aud5"
-                                    strokeColor="#FFFFFF"
-                                    source="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/awareness_exercises.mp3"
-                                    progressStrokeColor=rgba(229,141,130,1)>
-                                  </ngx-circular-player>
-                                </div>
-                                <div class="col-md-9 col-sm-9 col-xs-9">
-                                  <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
-                                    01:30
-                                  </h4>
-                                </div>
-                              </div>
-
-                              <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                <a routerLink="/teenagers/awareness-exercises-transcript" *ngIf="tourIndex === 1">
-                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
-                                  </button>
-                                </a>
-
-                                <a *ngIf="tourIndex !== 1">
-                                  <button type="button" class="mb0px mr0px p0 bg_transparent">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_btn_transcript.svg" class="">
-                                  </button>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row pt20px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="fw_500 fs_15px lh_140p fc_ffffff mtb0px">
-                                #{{exerciseNo}} {{Title}}
-                              </h4>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row ml20px">
-                          <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
-                            <ng-container *ngFor="let item of currentList">
-                              <div class="col-md-3 col-sm-3 col-xs-4">
-                                <a *ngIf="item.day =='0';else notIntro" (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
-                                  <button type="button" [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
-                                    Intro
-                                  </button>
-                                </a>
-
-                                <ng-template #notIntro>
-                                  <a (click)="tourIndex === 1 ? RouteToWisdomExercise(item) : $event.preventDefault()">
-                                    <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec btn_wec_ext_01">
-                                    Day  {{item.day}}
-                                    </button>
-                                  </a>
-                                </ng-template>
-                              </div>
-                            </ng-container>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /accordion -->
-            <!-- /awareness exercises -->
-
-            <!-- hr -->
          <!--    <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_v3_01">
@@ -736,11 +735,6 @@
 
             </div> -->
             <!-- /get more out of HappierMe -->
-
-
-
-
-
 
             <!-- hr -->
             <div class="row">
