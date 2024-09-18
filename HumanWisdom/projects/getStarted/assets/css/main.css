@@ -78,7 +78,7 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 /* .section-header h2 {
@@ -98,13 +98,34 @@ section {
   font-weight: 400;
   font-family: var(--font-primary);
 }
-
+.input_parent1 > [class^="col-"]:last-child {
+  margin: 10px 55px 40px 159px;
+}
+.input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
 .section-header p span {
   color: var(--color-primary);
 }
-
-
-# Breadcrumbs
+.div_benifit {
+  background: #FCF2EC;
+    padding: 60px 0;
+  
+  /* background-repeat: no-repeat;
+  background-position: center;
+ 
+  text-align: center;
+  padding: 90px 20px; */
+}
+/*----------------------------------------------
+# Breadcr
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
@@ -3828,7 +3849,7 @@ audio::-webkit-media-controls-enclosure
     line-height: 27px;
     color:#CB6171;
     text-align: center;
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
 
 
@@ -3869,9 +3890,4 @@ audio::-webkit-media-controls-enclosure
     transform: scale(.9);
     box-shadow: 0 0 0 10px rgba(229,141,130, 0);
   }
-}
-
-.bg_badge 
-{
-  background: #834B66;
 }
