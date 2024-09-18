@@ -4414,4 +4414,10 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate([url]);
   }
 
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/adults/find-answers/' + param]);
+  }
+
 }
