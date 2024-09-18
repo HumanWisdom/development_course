@@ -32,14 +32,16 @@
 
               <!-- carousel -->
               <div class="container">
-                <div id="mdp_carousel" class="carousel slide" data-ride="carousel" data-interval="3000000">
+                <div id="mdp_carousel" class="carousel slide" data-ride="carousel" data-touch="true"
+                  data-interval="3000000">
 
                   <ol class="">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
-                            <a href="#mdp_carousel" data-slide="prev" class="skip" (click)="back('click_Breathingexercise_Previous')">
+                            <a href="#mdp_carousel" data-slide="prev" class="skip"
+                              (click)="back('click_Breathingexercise_Previous')">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 <!-- Skip -->
                                 Previous
@@ -63,7 +65,8 @@
                             </ol>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
-                            <a href="#mdp_carousel" data-slide="next" class="next" (click)="next('click_Breathingexercise_Next')">
+                            <a href="#mdp_carousel" data-slide="next" class="next"
+                              (click)="next('click_Breathingexercise_Next')">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
@@ -79,7 +82,55 @@
                     <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video_teens.svg"
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_teens.svg"
+                            alt="" class="img-responsive">
+                        </div>
+                      </div>
+
+                      <div class="row mb30px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                            Daily inspiration
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="row tcenter">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <!-- <video playinline class="cvideo cvideo_ext_di"  *ngIf="DailyInspirationLink !== '' && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
+                                onplay="Logevent('click_play_video_breathing_exercise')" controls
+                                poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_di.svg">
+                                <source [src]="DailyInspirationLink" type="video/mp4">
+                              </video> -->
+                              <video playinline class="cvideo cvideo_ext_di"
+                                *ngIf="DailyInspirationLink !== '' && enableVideo" #videoPlayer
+                                controlsList="nodownload" preload="metadata"
+                                onplay="Logevent('click_play_video_breathing_exercise')" controls>
+                                <source [src]="DailyInspirationLink" type="video/mp4">
+                              </video>
+                            </div>
+                          </div>
+
+                          <div class="row mt15px">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <h1 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff">
+                                {{dailyInspirationTitle}}
+                              </h1>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /video -->
+                    <!-- video -->
+                    <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
+                      <div class="row mtb10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -96,7 +147,8 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="row tcenter">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <video playinline class="cvideo"  *ngIf="videoLink !== '' && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
+                              <video playinline class="cvideo" *ngIf="videoLink !== '' && enableVideo" #videoPlayer
+                                controlsList="nodownload" preload="metadata"
                                 onplay="Logevent('click_play_video_breathing_exercise')" controls
                                 poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg">
                                 <source [src]="videoLink" type="video/mp4">
@@ -117,10 +169,11 @@
                     <!-- /video -->
 
                     <!-- journal -->
-                    <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
+                    <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal_teens.svg"
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -178,10 +231,11 @@
                     <!-- /journal -->
 
                     <!-- quotation -->
-                    <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
+                    <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_teens.svg"
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -227,10 +281,11 @@
                     <!-- /quotation -->
 
                     <!-- audio -->
-                    <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
+                    <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio_teens.svg"
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -267,10 +322,11 @@
                     <!-- /audio -->
 
                     <!-- exercise -->
-                    <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
+                    <div class="item" [ngClass]="[dailyid === '5' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise_teens.svg"
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise_teens.svg"
                             alt="" class="img-responsive">
                         </div>
                       </div>
@@ -292,50 +348,6 @@
                       </div>
                     </div>
                     <!-- /exercise -->
-
-                    <!-- video -->
-                    <div class="item" [ngClass]="[dailyid === '5' ? 'active' : '']">
-                      <div class="row mtb10px">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_teens.svg" alt="" class="img-responsive">
-                        </div>
-                      </div>
-
-                      <div class="row mb30px">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
-                            Daily inspiration
-                          </h4>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <div class="row tcenter">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <!-- <video playinline class="cvideo cvideo_ext_di"  *ngIf="DailyInspirationLink !== '' && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
-                                onplay="Logevent('click_play_video_breathing_exercise')" controls
-                                poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_di.svg">
-                                <source [src]="DailyInspirationLink" type="video/mp4">
-                              </video> -->
-                              <video playinline class="cvideo cvideo_ext_di"  *ngIf="DailyInspirationLink !== '' && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
-                                onplay="Logevent('click_play_video_breathing_exercise')" controls>
-                                <source [src]="DailyInspirationLink" type="video/mp4">
-                              </video>
-                            </div>
-                          </div>
-
-                          <div class="row mt15px">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff">
-                                {{dailyInspirationTitle}}
-                              </h1>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /video -->
                   </div>
                 </div>
               </div>
