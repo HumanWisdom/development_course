@@ -42,13 +42,13 @@
 
     <section class="hpt120px">
       <div class="row center_flex web_home_div">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
+        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             
               <img
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn-banner.webp"
-                class="img-responsive w100p display_m_none">
+                >
           
           </div>
 
@@ -70,7 +70,7 @@
 
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1 class="mtb0px fs_56px fw_600 lh_130p fc_834b66 ta_lc">
+                <h1 class="mtb0px fs_48px fw_600 lh_130p fc_834b66 ta_lc">
                 Support your family to succeed in life
                 </h1>
               </div>
@@ -78,7 +78,7 @@
 
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
+                <h2 class="mtb0px fs_24px fw_600 lh_140p fc_000000 ta_lcn">
                 40% discount for NFSN members
                 </h2>
               </div>
@@ -86,14 +86,13 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                </div>
+                
 
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                   HappierMe is delighted to partner with the National Family Support Network, to support families and staff to deal with life’s challenges, overcome stress and anxiety, and have happier relationships. Our mission is to reduce suffering and make the world a better place.
                   </h3>
-                </div>
+               
               </div>
             </div>
 
@@ -321,9 +320,14 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
 
-          <a href="https://www.youtube.com/watch?v=3hdc9uyZgaI"  lass="w100p">
+          <div style="position: relative; width: 100%; max-width: 100%;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/3hdc9uyZgaI?si=EdLqyl8kxtB5fjdF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<br/>
+<br/>
+          <!-- <a href="https://www.youtube.com/watch?v=3hdc9uyZgaI"  lass="w100p">
     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family-video.webp" width="100%" alt="Watch this amazing video!">
-</a>
+</a> -->
             
           </div>
         </div>
@@ -331,13 +335,13 @@
       <!-- /video -->
         <!-- subscription -->
       <section id="div_subscriptionvideo">
-        <div class="row center_flex div_subscription">
+        <div class="row center_flex div_subscriptionvideo">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                Use code TOGETHER4FAMILIES at checkout to get 40% discount on the annual subscription cost
+                <h2 class="mtb0px fs_24px fw_400 lh_120p fc_834b66">
+                Use code <span class="fw_600 fc_834b66 ">TOGETHER4FAMILIES</span> at checkout to get 40% discount on the annual subscription cost
                 </h2>
 
                 <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
@@ -694,12 +698,12 @@
             </div>
           
             <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                 <form action="javascript:void(0);">
                   <div class="row">
                  
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
-                      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 div_input">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         
                         <input type="text" class="form-control fc_01" id="name" name="name"  placeholder="Your Name">
                         <div class="fc_icons">
@@ -713,7 +717,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
-                      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 div_input">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         <input type="text" class="form-control fc_01" id="email" name="email"  placeholder="Work email">
                         <div class="fc_icons">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
@@ -726,7 +730,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
-                      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 div_input">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         <textarea id="subject"  class="form-control fc_01" name="subject" placeholder="Message" style="height:100px"></textarea>
                       </div>
 
@@ -737,7 +741,7 @@
                   <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                       <button  id="Request-Demo" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                        Request a demo
+                        Send
                       </button>
                     </div>
                   </div>
