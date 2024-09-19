@@ -99,7 +99,7 @@ section {
   font-family: var(--font-primary);
 }
 .input_parent1 > [class^="col-"]:last-child {
-  margin: 10px 55px 40px 159px;
+  margin: 10px 55px 40px 29px;
 }
 .input[type=text], select, textarea {
   width: 100%;
@@ -2514,6 +2514,20 @@ a
   opacity: 1;
 }
 
+
+
+.div_subscriptionvideo {
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
+  /* background: -webkit-linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%); */
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  /* padding: 90px 20px; */
+}
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
 .div_subscription 
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
