@@ -1,6 +1,8 @@
 import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import {Location } from '@angular/common'
+import { Meta, Title } from '@angular/platform-browser';
+
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
@@ -21,12 +23,18 @@ export class TocHeaderComponent implements OnInit {
   baseUrl:string;
   programName:'';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
-    private router: Router ,
+    private router: Router , public meta: Meta, private title: Title,
     private location: Location,
     private navigationService: NavigationService) { }
 
   ngOnInit() {
     this.path = this.router.url;
+
+    this.title.setTitle('Explore this HappierMe module on ' + this.moduleName)
+    this.meta.updateTag({ property: 'title', content: 'Explore this HappierMe module on ' + this.moduleName})
+    this.meta.updateTag({ property: 'description', content: 'Explore this HappierMe module on ' + this.moduleName })
+    this.meta.updateTag({ property: 'keywords', content: 'HappierMe modules, ' + this.moduleName + ','  })
+   // 
   }
 
   goBack(){
