@@ -25,7 +25,7 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row flex_jc_center slide carousel" id="mdp_carousel" data-ride="carousel" data-touch="true"
-    data-interval="false">
+      data-interval="false">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
@@ -123,6 +123,12 @@
                           </div>
                         </div>
                       </div>
+
+                      <button type="submit" *ngIf="enableBtn"
+                        class="btn mdp_add_to_journal">
+                        Add to journal
+                      </button>
+
                     </div>
                     <!-- /video -->
 
