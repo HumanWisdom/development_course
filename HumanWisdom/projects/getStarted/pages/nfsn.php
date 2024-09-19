@@ -329,27 +329,49 @@
         </div>
       </section>
       <!-- /video -->
+        <!-- subscription -->
+      <section id="div_subscriptionvideo">
+        <div class="row center_flex div_subscription">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
-      <div class="row center_flex mt100px">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
-            
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
-          <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-            Use code <span>TOGETHER4FAMILIES </span>at checkout to get 40% discount on the annual subscription cost
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+                <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                Use code TOGETHER4FAMILIES at checkout to get 40% discount on the annual subscription cost
                 </h2>
+
                 <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
                 (Now only $3/month, paid annually)
                 </h6>
-            <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <!-- <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <a href="splash_options.html" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-              <!-- Try HappierMe for free -->
-              <!-- Try for Free -->
-              Start your free trial now
-            </a>
+              </div>
+            </div>
+
+            <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
+
+                
+
+               
+
+              </div>
+            </div>
+
+           
+
+            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                Start your free trial now                </button>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
+      </section>
+      <!-- /subscription -->
+      
+
+      
 
         <!-- family benifit -->
       <section id="div_benifit">
@@ -741,7 +763,7 @@
      
 
       <!-- footer -->
-      <?php include('../includes/footer.php'); ?>
+      <?php include('../includes/footer_new.php'); ?>
       <!-- /footer -->
 
     </main>

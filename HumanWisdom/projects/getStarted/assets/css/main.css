@@ -2680,6 +2680,11 @@ a
 {
   margin-right: 0;
 }
+.dfooter1 {
+  background: #CB6171;
+  padding: 60px 0;
+  /* margin: 100px 0 0 0; */
+}
 
 #accordion_footer .panel-title>a[aria-expanded=true]:after 
 {
