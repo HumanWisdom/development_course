@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 import { AdultsService } from '../../adults.service';
 import { ProgramType } from '../../../../../../shared/models/program-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
@@ -21,10 +22,17 @@ export class ProfilePage implements OnInit {
   }, 1000);
 
   constructor(private service: AdultsService, private router: Router, private route: ActivatedRoute,
+    private meta: Meta, private title: Title,
      private ngNavigatorShareService: NgNavigatorShareService,private navigationService:NavigationService,private location:Location) { }
 
   ngOnInit() {
     this.getCoachBio();
+
+    this.title.setTitle('Contact ' +  this.coachBio[0]['CoachName'] +' for Personal Growth')
+    this.meta.updateTag({ property: 'title', content: 'Contact ' +  this.coachBio[0]['CoachName'] +' for Personal Growth'})
+    this.meta.updateTag({ property: 'description', content: this.coachBio[0]['Description'] })
+    this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' });
+
   }
 
   getCoachBio(){
