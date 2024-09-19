@@ -103,6 +103,9 @@ section {
   color: var(--color-primary);
 }
 
+
+# Breadcrumbs
+--------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
   background: rgba(55, 55, 63, 0.05);
