@@ -43,6 +43,7 @@ export class DailyPracticePage implements OnInit {
   dailyInspirationTitle = '';
   DailyInspirationLink = '';
   DailyInspirationImg = '';
+  enableBtn = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -73,6 +74,16 @@ export class DailyPracticePage implements OnInit {
 
     this.getdailyquestion();
 
+    setTimeout(() => {
+      let video = document?.getElementsByTagName('video')[0];
+ 
+      video?.addEventListener("timeupdate", (function () {
+        if(video.currentTime > 5 && !this.enableBtn) {
+          this.enableBtn = true;
+        }
+      }).bind(this));
+
+    }, 4000)
   }
 
   getdailyquestion() {
