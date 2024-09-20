@@ -44,18 +44,3 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1WBHRGL7VH');
-</script>
-
-<!-- Google tag (gtag.js) -->
-
-<script>
-   function logevent(eventname, ScreenName)
-   {
-    gtag('event', eventname, {
-  'screen_name': ScreenName});
-   }
-</script>
