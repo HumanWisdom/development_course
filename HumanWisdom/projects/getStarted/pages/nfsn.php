@@ -321,7 +321,7 @@
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
 
           <div style="position: relative; width: 100%; max-width: 100%;">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/3hdc9uyZgaI?si=EdLqyl8kxtB5fjdF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/3hdc9uyZgaI?si=EdLqyl8kxtB5fjdF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <br/>
 <br/>
@@ -550,14 +550,7 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <video controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adults.webp"
-              controlsList="nodownload">
-              <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_intro.mp4"
-                type="video/mp4">
-            </video>
-          </div>
+          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=oedk0Tg9PKmwHFDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          </div>
         </div>
       </section>
       <!-- /video -->
@@ -576,13 +569,14 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <video controls playinline class="w100p"
+          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=lG_xu3s-kZ4BOOtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- <video controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen.webp"
               controlsList="nodownload">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers.mp4"
                 type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
       </section>

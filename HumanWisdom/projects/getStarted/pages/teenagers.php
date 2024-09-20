@@ -2092,7 +2092,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
                 Explore our blog
               </h2>
             </div>
