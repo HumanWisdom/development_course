@@ -40,3 +40,22 @@
 <link href="../assets-min/css/style_hb.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1WBHRGL7VH');
+</script>
+
+<!-- Google tag (gtag.js) -->
+
+<script>
+   function logevent(eventname, ScreenName)
+   {
+    gtag('event', eventname, {
+  'screen_name': ScreenName});
+   }
+</script>
