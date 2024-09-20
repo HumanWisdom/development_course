@@ -176,8 +176,15 @@ if (teenagers) {
 const requestDemo = document.getElementById('Request-Demo');
 if (requestDemo) {
     requestDemo.addEventListener('click', () => {
-
-        logevent('click_Request_a_demo', 'work.php')        
+        var tabName = window.location.href;
+        if (tabName.includes('work.php')) {
+            logevent('click_Request_a_demo', 'work.php')     
+        } if (tabName.includes('healthcare.php')) {
+            logevent('click_Request_a_demo', 'healthcare.php')   
+        } if (tabName.includes('education.php')) {
+            logevent('click_Request_a_demo', 'education.php')   
+        }
+           
         const email = document.getElementById('email').value;
         const name = document.getElementById('name').value;
         const company = document.getElementById('company').value;
