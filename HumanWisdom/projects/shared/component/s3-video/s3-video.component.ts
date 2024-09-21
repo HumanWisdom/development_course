@@ -3,10 +3,30 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 @Component({
   selector: 'HumanWisdom-s3-video',
   templateUrl: './s3-video.component.html',
+  providers:[ provideAnimations()],
   styleUrls: ['./s3-video.component.scss'],
+  animations: [
+    trigger('slideUp', [
+      transition(':enter', [
+        style({ transform: 'translateY(100%)', opacity: 0 }),
+        animate('300ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in', style({ transform: 'translateY(100%)', opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class S3VideoComponent implements OnInit {
   public tocColor: string = 'white';
@@ -125,6 +145,14 @@ export class S3VideoComponent implements OnInit {
       setTimeout(() => {
         this.isSwiped = false;
       }, 200);
+  }
+}
+
+togglePlayPause(video: HTMLVideoElement) {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
   }
 }
 }
