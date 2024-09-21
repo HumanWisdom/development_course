@@ -40,6 +40,7 @@ export class S3VideoComponent implements OnInit {
   isSwiped: boolean = false;
   showSwipeUp :boolean = true;
   currentIndex = 0;
+  currentTime = 0;
   constructor(
     private route: ActivatedRoute,
     private _sanitizer: DomSanitizer,
@@ -113,6 +114,7 @@ export class S3VideoComponent implements OnInit {
   onSwipeUp() {
     if (this.wisdomshort) {
       this.isSwiped =  true;
+      this.currentTime = 0;
       this.showLoader();
       let data: any;
       if (this.currentIndex == this.wisdomShortOrderList.length - 1) {
@@ -148,6 +150,7 @@ export class S3VideoComponent implements OnInit {
   onSwipeDown() {
     if (this.wisdomshort) {
       let data: any;
+      this.currentTime = 0;
       this.showLoader();
       if (this.currentIndex == 0) {
         this.currentIndex = this.wisdomShortOrderList.length - 1;
@@ -165,6 +168,16 @@ export class S3VideoComponent implements OnInit {
         this.isSwiped = false;
       }, 200);
     }
+  }
+
+
+  updateProgress(video: HTMLVideoElement) {
+    this.currentTime = (video.currentTime / video.duration) * 100;
+  }
+
+  seek(video: HTMLVideoElement, event: any) {
+    const seekTime = (event.target.value / 100) * video.duration;
+    video.currentTime = seekTime;
   }
 
   togglePlayPause(video: HTMLVideoElement) {
