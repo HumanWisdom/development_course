@@ -55,7 +55,7 @@
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_m_none" alt="Boost workplace wellbeing, performance and productivity">
 
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
                 </div>
               </div>
         
@@ -1662,15 +1662,15 @@
         <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                Start your free trial of HappierMe Premium
+                  40% off HappierMe Premium
                 </h2>
 
-                <!--h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+                <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
                   Start your free trial today!
-                </h6-->
+                </h6>
               </div>
             </div>
 
@@ -1692,23 +1692,15 @@
                         Yearly
                       </h5>
 
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                        INR 5,999/yr
-                      </h4>
-
-                      <!--h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
+                      <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
                         <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
 
                         <span class="" id="annualPricingModelHeading"></span>
-                      </h6-->
+                      </h6>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 500/mo.
-                      </h4>
-
-                      <!--h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4-->
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
                     </div>
                   </div>
                 </button>
@@ -1726,9 +1718,9 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                         INR 700/mo.
-                      </h4> 
+                      </h4> -->
 
                       <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
                     </div>
@@ -1743,7 +1735,7 @@
                 <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
                   After your free trial, the yearly subscription is INR 5,999 and automatically 
                   renews each year until cancelled.
-                  <span class="">
+                  <!-- <span class="">
                     <a class="fc_000000">
                       Terms
                     </a>
@@ -1753,7 +1745,7 @@
                     <a class="fc_000000">
                       Cancel anytime
                     </a>
-                  </span>
+                  </span> -->
                 </h6>
               </div>
             </div>
@@ -2100,7 +2092,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
                 Explore our blog
               </h2>
             </div>

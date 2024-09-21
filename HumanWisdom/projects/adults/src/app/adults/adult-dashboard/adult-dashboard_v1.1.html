@@ -20,7 +20,9 @@
             <!-- search -->
             <div class="row prelative pt30px plr20px">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
+                <form action=".">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" (keydown.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
+                </form>
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
               </div>
@@ -39,7 +41,7 @@
             <!-- feel better now -->
             <div class="row tour_fbn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
-                <a (click)="tourIndex === 1 ? DashboardLogevent('/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
+                <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like.svg" class="img-responsive w100">
@@ -50,9 +52,9 @@
                         Feel better now
                       </h4>
 
-                      <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                        Quick tips to help you feel better right now
-                      </h4> -->
+                      <h4 class="mtb0px fc_ffffff_0_5 fs_12px fw_400 lh_140p">
+                        Quick tips to feel better
+                      </h4>
                     </div>
 
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
@@ -90,15 +92,15 @@
                                 </h2>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                <!-- <a> -->
-                                 <!--  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
+                                <a>
+                                  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
                                     </span>
                                     days
-                                  </h2> -->
-                                <!-- </a> -->
+                                  </h2>
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -112,9 +114,35 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_mdp">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/daily_checkin.svg" alt="" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily check-in
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1 w0p">
+                              <hr class="vhr_03">
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_daily_inspiration') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
+                                  alt="Testimonials" class="crimg">
+                                <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
+                                  Daily
+                                  <br>
+                                  inspiration
+                                </h4>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_v3.svg"
                                   alt="Wisdom Stories" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Breathing exercise
@@ -124,9 +152,9 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a
-                                (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day') : $event.preventDefault()">
+                                (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_v3.svg"
                                   alt="Journal" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Question
@@ -137,20 +165,20 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3','click_daily_quotation') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
                                   alt="Testimonials" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
-                                  Daily Quote
+                                  Quote  <br> of the day
                                 </h4>
                               </a>
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3', 'click_daily_meditation') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_meditation_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily meditation
@@ -159,9 +187,9 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_challenge_v3.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_15px lh_130p fc_ffffff mdpd_title">
                                   Daily
@@ -191,172 +219,107 @@
             </div>
             <!-- /hr -->
 
-            <!-- my progress -->
+            <!-- short videos -->
             <!-- accordion -->
             <div class="row accordion_row">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="panel-group dpanelgroup" id="accordion">
-                  <div class="panel panel-default dpanel dpanel_01">
+              <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default cpanel">
                     <div class="panel-heading">
-                      <h4 class="panel-title dpaneltitle">
-                        <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
-                        <div (click)="DashboardLogevent('', '', 'click_daily_pratice')" aria-expanded="true">
+                      <h4 class="panel-title">
+                        <a>
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                  My progress
+                                  Short videos
                                 </h2>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
-                                <a  (click)="viewDetails()">
-                                  <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tright underline">
-                                    View details
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                <a class="prelative" routerLink="">
+                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                                    View all
                                   </h2>
                                 </a>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </h4>
                     </div>
-                    <div id="ca_mdp" class="panel-collapse collapse in">
+                    <div id="" class="panel-collapse collapse in">
                       <div class="panel-body">
 
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                        <div class="row cmr-20pxi">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
 
-                            <div class="row" *ngIf="isloggedIn">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0px pr5px progress_box">
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="">
+                                <div class="prelative">
                                   <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_points.svg" class="img-responsive mb10px">
-
-                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                        {{loginResponse.Points}}
-                                      </h4>
-
-                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                        Points
-                                      </h4>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/02a.webp" class="img-responsive w100">
                                     </div>
                                   </div>
-                                </div>
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 plr5px progress_box">
                                   <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_streak.svg" class="img-responsive mb10px">
-
-                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                          {{loginResponse.Streak}} {{(loginResponse.Streak>1)?'days':'day'}}
-                                      </h4>
-
-                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                        Streak
-                                      </h4>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
                                     </div>
                                   </div>
                                 </div>
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl5px pr0px progress_box">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Climate change
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        06:27
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class=""  (click)="logEvent('click_Tackling_racism','/teenagers/solving-global-problems/s72001')">
+                                <div class="prelative">
                                   <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_certificates.svg" class="img-responsive mb10px">
-
-                                      <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                        {{loginResponse.Modules}}
-                                      </h4>
-
-                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                        Certificates
-                                      </h4>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/01a.webp" class="img-responsive w100">
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
 
-                            <div class="row mt10px progress_box_score" *ngIf="isloggedIn">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
-                                      {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
-                                      <!-- dash -->
-                                      <!-- -- -->
-                                      <!-- /dash -->
-                                    </h4>
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
                                   </div>
                                 </div>
 
                                 <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                        Happiness score
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Tackling racism
                                       </h4>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                      <a class="" (click)="survey()">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
-                                          Take the survey
-                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
-                                        </h4>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- happy points -->
-                            <div class="row progress_box_score tcenter pt30px pb30px" *ngIf="!isloggedIn">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
-                                  Happy points for a happier life
-                                </h4>
-
-                                <h4 class="mt10px mb0px fs_12px fw_500 lh_150p fc_e58d82">
-                                  <a class="mtb0px fs_12px fw_500 lh_150p fc_e58d82 underline" (click)="getLogin()">Login</a>
-                                  to view your progress
-                                </h4>
-                              </div>
-                            </div>
-
-                            <div class="row mt10px progress_box_score" *ngIf="!isloggedIn">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82">
-                                      --
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                        Happiness score
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        10:17
                                       </h4>
                                     </div>
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                      <a class="" (click)="survey()">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 jc_flex_end">
-                                          Take the survey
-                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_peach.svg" class="img-responsive ml10px">
-                                        </h4>
-                                      </a>
-                                    </div>
                                   </div>
                                 </div>
-                              </div>
+                              </a>
                             </div>
-                            <!-- /happy points -->
 
                           </div>
                         </div>
@@ -368,7 +331,7 @@
               </div>
             </div>
             <!-- /accordion -->
-            <!-- /my progress -->
+            <!-- /short videos -->
 
             <!-- hr -->
             <div class="row">
@@ -378,70 +341,71 @@
             </div>
             <!-- /hr -->
 
-            <!-- explore a topic in depth-for guest user -->
-            <div class="row tour_eatid" *ngIf="YourTopicofChoice.length === 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()"  >
-                  <!-- (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" -->
-                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
+            <!-- find answers -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 plr20px">
+                <div class="box_v3_05">
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                          Explore a topic in depth
-                        </h4>
-
-                        <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
-                        </h4> -->
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
+                        Find quick answers
+                      </h4>
                     </div>
                   </div>
-                </a>
-              </div>
-            </div>
-            <!-- /explore a topic in depth-for guest user -->
 
-            <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
-                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                          Your topic of choice:
-                        </h4>
-
-                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                          {{YourTopicofChoice[0]['name']}}
-                        </h4>
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px">
+                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                        Make sense of what you think and feel, find fresh ways to deal with life’s many challenges, and grow as a person.
+                      </h4>
                     </div>
                   </div>
-                </a>
-              </div>
-            </div>
-            <!-- /your topic of choice -->
 
-            <!-- change your topic of choice -->
-            <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
-                <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Explore a different topic in depth
-                </button>
+                  <div class="fas_div">
+                    <a (click)="routeToFindAnswer('why-do-i')">
+                      <div class="row fas_box">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                              Why do I ... ?
+                            </h4>
+
+                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                              Find answers to questions about why you feel the way you do
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a (click)="routeToFindAnswer('how-can-i')">
+                      <div class="row fas_box">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                              How can I ... ?
+                            </h4>
+
+                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                              Learn how to deal with challenges
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- /change your topic of choice -->
+            <!-- /find answers -->
 
             <!-- hr -->
             <div class="row">
@@ -474,6 +438,30 @@
                     </div>
                     <div id="ca_user" class="panel-collapse collapse in">
                       <div class="panel-body">
+
+                        <!-- intro box -->
+                        <div class="row tour_fbn mb15px tour_intro">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <a routerLink="/adults/intro-happierme">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_ad_intro">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs- p0">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ad_intro.svg" class="img-responsive w100">
+                                </div>
+            
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                                  <h4 class="mtb0px fc_ffffff fs_12px fw_600 lh_140p">
+                                    Introduction to HappierMe
+                                  </h4>
+                                </div>
+            
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                  <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- /intro box -->
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_user">
@@ -515,22 +503,24 @@
                               </a>
                             </div> -->
 
-                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro"> -->
                               <!-- <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()"> -->
-                                <div class="prelative">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
+                                <!-- <div class="prelative">
+                                  <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash"> </a>
                                 </div>
 
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
+
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
                                         INTRODUCTION
                                       </h4>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
                                       <a routerLink="/adults/intro-happierme">
                                         <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
@@ -538,7 +528,7 @@
                                         </h4>
                                       </a>
                                     </div> -->
-                                  </div>
+                                  <!-- </div>
                                 </div>
 
                                 <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/adults/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
@@ -557,15 +547,17 @@
                                       </h4>
                                     </div>
                                   </div>
-                                </a>
+                                </a> -->
                               <!-- </a> -->
-                            </div>
+                            <!-- </div> -->
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
                               <!-- <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative"> -->
                                 <!-- <a  href="{{resumeLastvisited[0]['ModuleUrl']}}s{{resumeLastvisited[0]['screenno']}}" class="prelative"> -->
                                 <div class="prelative">
+                                  <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
+                                   </a>
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -575,7 +567,9 @@
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
+
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
+
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
@@ -618,7 +612,8 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
                               <!-- <a (click)="routeForUser(res)" class="prelative"> -->
                                 <div class="prelative">
-                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash">
+                                  <a (click)="routeForUser(res)" class="prelative">
+                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash"></a>
                                   <!-- <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div> -->
@@ -635,7 +630,7 @@
                                       </h4>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                      <a href="{{res['ViewLink']}}">
+                                      <a (click)="routeToUrl(res['ViewLink'])">
                                         <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
                                           View more
                                         </h4>
@@ -916,6 +911,71 @@
             <!-- /accordion -->
             <!-- /for nidhi -->
 
+            <!-- explore a topic in depth-for guest user -->
+            <div class="row tour_eatid" *ngIf="YourTopicofChoice.length === 0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+                <a class="prelative box_v3_01" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()"  >
+                  <!-- (click)="DashboardLogevent('/adults/select-a-topic-to-explore', '','click_explore-a-topic')" -->
+                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-11">
+                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                          Explore a topic in depth
+                        </h4>
+
+                        <h4 class="mtb0px fc_ffffff_0_5 fs_12px fw_400 lh_140p">
+                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /explore a topic in depth-for guest user -->
+
+            <!-- your topic of choice -->
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+                <a class="prelative box_v3_01" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
+                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Your topic of choice:
+                        </h4>
+
+                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                          {{YourTopicofChoice[0]['name']}}
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /your topic of choice -->
+
+            <!-- change your topic of choice -->
+            <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
+                <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
+                  Explore a different topic
+                </button>
+              </div>
+            </div>
+            <!-- /change your topic of choice -->
+
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -924,78 +984,113 @@
             </div>
             <!-- /hr -->
 
-            <!-- find answers -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <div class="box_v3_05">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
-                        Find quick answers
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px">
-                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
-                        Make sense of what you think and feel, find fresh ways to deal with life’s many challenges, and grow as a person.
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div class="fas_div">
-                    <a (click)="routeToFindAnswer('why-do-i')">
-                      <div class="row fas_box">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                              Why do I ... ?
-                            </h4>
-
-                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                              Find answers to questions about why you feel the way you do
-                            </h4>
-                          </div>
-
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            <!-- my progress -->
+            <!-- v1.1 -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading">
+                      <h4 class="panel-title dpaneltitle">
+                        <div aria-expanded="true" (click)="DashboardLogevent('', '', 'click_daily_pratice')">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  My progress
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
+                                <a (click)="viewDetails()">
+                                  <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
+                                    View details
+                                  </h2>
+                                </a>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </a>
+                      </h4>
+                    </div>
+                    <div id="ca_mdp" class="panel-collapse collapse in">
+                      <div class="panel-body">
 
-                    <a (click)="routeToFindAnswer('how-can-i')">
-                      <div class="row fas_box">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                              How can I ... ?
-                            </h4>
+                        <div class="row" >
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
 
-                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                              Learn how to deal with challenges
-                            </h4>
-                          </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 td_points_box">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px tcenter">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/progress_points.svg" class="img-responsive">
+                              </div>
+                              
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                                  <!-- 5,499 -->
+                                  {{loginResponse.Points}}
+                                </h4>
+                              </div>
 
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                  Points
+                                </h4>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 td_points_box ml_10px">
+                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ee9596">
+                                    <!-- 74% -->
+                                    {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
+                                  </h4>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                    Wellness score
+                                  </h4>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
+                                  <a class="" (click)="survey()">
+                                    <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ee9596 flex_ai">
+                                      Take the survey
+                                      <span class="ml10px">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_arrow_right.svg" class="img-responsive">
+                                      </span>
+                                    </h4>
+                                  </a>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/emojis/4.svg" class="img-responsive">
+                                </div>
+                              </div>
+                            </div>
+
                           </div>
                         </div>
+
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- /v1.1 -->
+            <!-- /my progress -->
 
+            <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
             </div>
+            <!-- /hr -->
 
-            <!-- /find answers -->
             <!-- subscribe to premium -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -1461,11 +1556,16 @@
                 </div>
 
               </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
             </div>
             <!-- /testimonials -->
 
             <!-- partnership button -->
-            <div class="row mt30px" >
+         <!--    <div class="row mt30px" >
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="" routerLink="/partnership-webpage">
                   <div class="row btn_tff">
@@ -1477,7 +1577,7 @@
                   </div>
                 </a>
               </div>
-            </div>
+            </div> -->
             <!-- /partnership button -->
 
             <!-- test buttons -->
@@ -2294,7 +2394,7 @@
             <div class="row mt30px mb40px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
-                  Hi  {{name?.trim() === 'guest' ? 'Guest' : name + ','}}
+                  Hi  {{!isloggedIn ? 'Guest' : name + ','}}
                 </h4>
 
                 <h4 class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
@@ -2310,14 +2410,14 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <button #closetourmodal type="submit" class="btn_prompt_skip" data-dismiss="modal" (click)="closeTour()">
+                  <button #closetourmodal class="btn_prompt_skip" data-dismiss="modal" (click)="closeTour()">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hide_tips.svg" class="img-responsive mr5px">
                     Skip
                   </button>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright" (click)="continueTour()">
-                  <button type="submit" class="btn_prompt_continue">
+                  <button class="btn_prompt_continue">
                     Continue
                   </button>
                 </div>

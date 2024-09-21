@@ -87,7 +87,7 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                       <a href="#bring_happierme" class="">
-                        <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                        <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="requestDemoForWork"  >
                           Request a demo
                         </button>
                       </a>
@@ -115,12 +115,12 @@
             </div>
 
             <div class="row center_flex">
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc div_price">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div_price">
 
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
                         Bronze
                       </h4>
                     </div>
@@ -140,7 +140,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
                         Silver
                       </h4>
                     </div>
@@ -161,7 +161,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 plr20px" data-aos="fade-up" data-aos-delay="400">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
                         Gold
                       </h4>
                     </div>
@@ -182,7 +182,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p0 pl20px" data-aos="fade-up" data-aos-delay="500">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
                         Platinum
                       </h4>
                     </div>
@@ -221,7 +221,13 @@
           <section>
             <div class="row center_flex">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_block">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pl0px" data-aos="fade-up" data-aos-delay="100">
+                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
+                  <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
+                    Feel calm, capable, and better everyday, with HappierMe!
+                  </h2>
+                </div> -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pl0px cpr_a" data-aos="fade-up" data-aos-delay="100">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_app.webp" class="img-responsive" alt="Feel calm, capable, and better everyday, with HappierMe!">
                 </div>
 

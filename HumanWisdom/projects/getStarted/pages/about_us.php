@@ -62,7 +62,9 @@
     <section class="hpt120px">
       <div class="row" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_landing.webp" class="img-responsive w100p" alt="About Us">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_landing.webp" class="img-responsive w100p display_m_none" alt="About Us">
+
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_mobile.webp" class="img-responsive w100p display_d_none" alt="About Us">
         </div>
       </div>
 
@@ -98,9 +100,9 @@
       <!-- aspects -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter div_au">
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 pr20px cpr_a" data-aos="fade-up" data-aos-delay="100">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_01.svg" class="img-responsive img_aspects" alt="70+ modules">
@@ -217,7 +219,7 @@
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
-                <a href="https://happierme.app/adults/intro/intro-carousel">
+                <a href="../splash_options.html">
                   <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                     Try HappierMe for free
                   </button>

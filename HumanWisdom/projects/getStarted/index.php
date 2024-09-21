@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>HappierMe: Master your mind</title>
+    <title>HappierMe: For Teens & Adults</title>
     <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
     <meta property="description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
@@ -19,7 +19,10 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
+    })(window,document,'script','dataLayer','GTM-NHPHHF97');
+    
+    localStorage.setItem("programType",'9');
+    </script>
     <!-- End Google Tag Manager -->
 
   
@@ -37,6 +40,10 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+
+
+
+    
     <section class="hpt120px">
       <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
@@ -531,7 +538,8 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                <a href="/pages/teenagers.php" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach">

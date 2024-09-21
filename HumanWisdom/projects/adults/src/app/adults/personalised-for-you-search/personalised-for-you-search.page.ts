@@ -168,9 +168,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
-          // side: "right"
-          side: "right",
-          align: 'end'
+          side: "right"
         }
       },
        {

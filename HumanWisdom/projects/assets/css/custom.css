@@ -15552,7 +15552,8 @@ input[type="search"].dark::-webkit-search-cancel-button {
   text-align: left;
   padding-right: 20px;
   /* padding-left: 50px; */
-  padding-left: 15%;
+  /* padding-left: 15%; */
+  padding-left: 45px;
 }
 
 .h60px
@@ -27161,7 +27162,7 @@ input[type="search"].pfy_search::-webkit-search-cancel-button {
   border-radius: 50em;
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/close.png) no-repeat 50% 50%;
   /* filter: opacity(0.5) drop-shadow(0 0 0 #5D5D5D); */
-  filter: invert(100%);
+  /* filter: invert(100%); */
   background-size: contain;
   opacity: 1;
   pointer-events: none;
@@ -29484,7 +29485,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 
 .carousel-inner>.item
 {
-  transition: auto;
+  /* transition: auto; */
 }
 
 .pt6rem
@@ -37362,10 +37363,22 @@ span
 .box_ad_intro 
 {
   height: 50px;
-  padding: 16px 15px;
+  padding: 16px 20px;
   background: rgba(255, 255, 255, 0.10);
   display: flex;
   align-items: center;
+}
+
+.td_points_box
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 16px !important;
+}
+
+.ml_10px 
+{
+  margin-left: 10px;
 }
 /* /version - 03 */
 

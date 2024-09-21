@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from '../../adults.service';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ProgramType } from '../../../../../../shared/models/program-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
@@ -19,6 +20,7 @@ export class IndexPage implements OnInit {
   path:string='';
 
   constructor(private service: AdultsService, private router: Router, 
+    private meta: Meta, private title: Title,
     private ngNavigatorShareService: NgNavigatorShareService,
      public navigationService: NavigationService,
      private location: Location)
@@ -28,6 +30,12 @@ export class IndexPage implements OnInit {
 
   ngOnInit() {
     this.getAllCoachList();
+
+    this.title.setTitle('Contact a Life Coach for Personal Growth')
+    this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth' })
+    this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
+    this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' });
+
   }
 
   getAllCoachList(){

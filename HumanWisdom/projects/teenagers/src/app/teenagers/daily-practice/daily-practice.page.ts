@@ -14,14 +14,14 @@ declare var $: any;
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
-  enableVideo = true;
+  enableVideo = false;
   yellow = "#FFC455"
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink = ""
+  audioLink;
 
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_02.svg"
-  videoLink = '';
+  videoLink;
   dailyid = '0'
   dailyqus = ''
   dailyqusrefid = ''
@@ -42,7 +42,7 @@ export class DailyPracticePage implements OnInit {
   content = ''
   isAdults: boolean;
   dailyInspirationTitle = '';
-  DailyInspirationLink = '';
+  DailyInspirationLink;
 
   constructor(
     private route: ActivatedRoute,
@@ -82,12 +82,14 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
+        this.enableVideo = true;
       }
     })
     this.service.getDailyInspirationQuestion().subscribe((res) => {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+        this.enableVideo = true;
       }
     })
     this.service.getDailypractiseQuestionins().subscribe((res) => {
@@ -151,7 +153,7 @@ export class DailyPracticePage implements OnInit {
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
-    }, 200);
+    }, 500);
   }
 
   back(event) {
@@ -159,7 +161,7 @@ export class DailyPracticePage implements OnInit {
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
-    }, 200);
+    }, 500);
   }
 
   getAlertcloseEvent() {

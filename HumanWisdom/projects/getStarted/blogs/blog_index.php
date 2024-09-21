@@ -250,9 +250,9 @@
                 </div>
               </a>
             </div>
-
+        <!-- <view more> -->
             <div class="clearfix"></div>
-
+            <span id="text">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="700">
               <a class="" href="the_missed_opportunity_in_relationships.php">
                 <div class="row">
@@ -369,7 +369,7 @@
             
 
             <div class="clearfix"></div>
-
+           
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1000">
               <a class="" href="6_ways_to_transform_organisations.php">
@@ -804,29 +804,8 @@
     </div>
   </a>
 </div>
-
-        <div class="clearfix"></div>
-            <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title" style="text-decoration-line: underline;color:red; font-size:23px; text-align:center;">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c12">
-                           View More
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c12" class="panel-collapse collapse">
-                        <div class="panel-body">
-
-
-
-                        <div class="clearfix"></div>
-
-<br/>
-<br/>
-<br/>
-
-            
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+<div class="clearfix"></div>
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
              <a class="" href="transforming_the_lives_of_children_through_self-knowledge.php">
                <div class="row">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -898,7 +877,7 @@
   </a>
 </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
   <a class="" href="transforming_education_to_meet_the_needs_of_students_and_society.php">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -932,21 +911,13 @@
       </div>
     </div>
   </a>
-</div>
-</div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <hr class="hr_style_web_01">
-                      </div>
-                    </div>
-
-
-                    
-      
-          </div>
+  </div>
+    </span>
+      <div class="btn-container">
+         <button id="toggle" style="text-decoration:underline;">View More</button>
+      </div>
+<!-- <view less> -->
+      </div>
         </div>
       </section>
       <!-- /aspects -->

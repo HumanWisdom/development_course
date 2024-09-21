@@ -19,9 +19,9 @@ export class AdvertsHwpAppPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Human Wisdom App - Personal Growth & Wellness')
-    this.meta.updateTag({ property: 'title', content: 'Human Wisdom App - Personal Growth & Wellness'})
-    this.meta.updateTag({ property: 'description', content: 'Enhance your personal growth and wellness with the Human Wisdom applications. Discover mindfulness techniques, daily inspirational quotes, strong relationship quotes, and communication skills to improve your life. Get access to our mindfulness app to reduce anxiety and live a happier life.'})
+    this.title.setTitle('HappierMe App - Personal Growth & Wellness')
+    this.meta.updateTag({ property: 'title', content: 'HappierMe App - Personal Growth & Wellness'})
+    this.meta.updateTag({ property: 'description', content: 'Enhance your personal growth and wellness with the HappierMe applications. Discover mindfulness techniques, daily inspirational quotes, strong relationship quotes, and communication skills to improve your life. Get access to our mindfulness app to reduce anxiety and live a happier life.'})
     this.meta.updateTag({ property: 'keywords', content: 'human wisdom applications, mindfulness techniques, daily inspirational quotes, motivational quotes, communication skills, relationship quotes, reduce anxiety, mindfulness app, self-improvement, personal growth, wellness, mental health, human wisdom, life coach'})
 
 

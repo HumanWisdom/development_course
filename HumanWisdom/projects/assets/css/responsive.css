@@ -240,10 +240,10 @@
         background-image: none !important;
     }
 
-    .pfy_search
+    /* .pfy_search
     {
         padding-left: 55px !important;
-    }
+    } */
 }
 
 @media (min-width: 768px)

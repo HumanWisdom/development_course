@@ -68,6 +68,7 @@ export class VideoContentComponent implements OnInit {
     }
 
   }
+ 
   getCurrentTime(data) {
     this.currentTime = data.target.currentTime;
     this.sendAvDuration.emit(JSON.parse(data.target.currentTime))
