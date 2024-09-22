@@ -90,7 +90,9 @@ async function fetchData() {
 
         function strikeOutAnnualPricingModelHeadingDisplay() 
         {
-            strikeOutAnnualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`;
+            if(strikeOutAnnualPricingModelHeading){
+                strikeOutAnnualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`;
+            }
         }
         
         function spanAnnualLabelDisplay() 
@@ -352,8 +354,12 @@ $( document ).ready(function() {
 
 
 const btnColor = document.querySelector(".teens");
+if(btnColor){
+  btnColor.addEventListener('click', changeBtnColor);
+}
 const badge_new = document.querySelector(".badge_new");
-const changeBtnColor = (e) => {
+if(badge_new){
+    const changeBtnColor = (e) => {
     //alert('hi');
     //e.preventDefault(); 
     if(badge_new.classList.contains("bg_badge"))
@@ -369,6 +375,6 @@ const changeBtnColor = (e) => {
   // or use:
   // btnColor.classList.toggle("red");
 };
+}
 
-btnColor.addEventListener('click', changeBtnColor);
 </script>

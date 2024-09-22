@@ -98,9 +98,11 @@ section {
   font-weight: 400;
   font-family: var(--font-primary);
 }
+/* NSFN form */
 .input_parent1 > [class^="col-"]:last-child {
   margin: 10px 55px 40px 29px;
 }
+/* NSFN form */
 .input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
