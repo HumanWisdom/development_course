@@ -107,3 +107,14 @@ p {
       opacity: 1;
   }
 }
+
+video::-webkit-media-controls-volume-slider {
+  display: none !important; /* Hide the volume slider in WebKit browsers */
+}
+
+video::-webkit-media-controls-mute-button {
+  display: none !important; /* Hide the mute button in WebKit browsers */
+}
+video::-internal-media-controls-overflow-button {
+  display: none !important;
+}

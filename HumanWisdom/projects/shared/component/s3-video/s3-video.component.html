@@ -18,7 +18,7 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_02" #screen (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()"  [@slideUp]="swiped == 'up' ? 'up' : 'down'">
+<div class="right_col mc_02" #screen (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()"  [@slideUp]="isSwiped ? 'up' : 'down'">
   <div class="cw100p"  >
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 col_cw" style="background: black !important;">
@@ -35,7 +35,8 @@
                   </video> -->
                   <div *ngIf="isLoading" class="loader" style="position: absolute; top: 45%; left: 45%; transform: translate(-50%, -50%);"></div>
 
-                  <video #videoPlayer width="350px" height="450px" autoplay 
+                  <video #videoPlayer width="350px" height="450px" autoplay controls
+                  controlsList="nodownload nofullscreen"
                     disablePictureInPicture playsinline (waiting)="showLoader()" (loadeddata)="hideLoader()"
                     (ended)="onVideoEnded()">
                     <source [src]="videoLink" type="video/mp4" />
