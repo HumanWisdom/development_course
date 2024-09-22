@@ -3910,3 +3910,7 @@ audio::-webkit-media-controls-enclosure
     box-shadow: 0 0 0 10px rgba(229,141,130, 0);
   }
 }
+
+.bi-list::before {
+  color: #CB6171 !important;
+}
