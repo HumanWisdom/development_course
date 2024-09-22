@@ -78,8 +78,10 @@ export class DailyPracticePage implements OnInit {
       let video = document?.getElementsByTagName('video')[0];
 
       video?.addEventListener("timeupdate", (function () {
-        if (video.currentTime > 5 && !this.enableBtn) {
+        if ((video.duration - video.currentTime) <= 5) {
           this.enableBtn = true;
+        }else {
+          this.enableBtn = false;
         }
       }).bind(this));
 

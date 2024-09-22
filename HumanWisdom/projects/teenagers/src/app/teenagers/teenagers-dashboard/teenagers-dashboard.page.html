@@ -440,7 +440,7 @@
             <!--<div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Explore a 
+                  Explore a
               </div>
             </div>-->
             <!-- /find answers -->
@@ -485,13 +485,13 @@
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ad_intro.svg" class="img-responsive w100">
                                 </div>
-            
+
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
                                   <h4 class="mtb0px fc_ffffff fs_12px fw_600 lh_140p">
                                     Introduction to HappierMe
                                   </h4>
                                 </div>
-            
+
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                                   <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                 </div>
@@ -542,7 +542,7 @@
                             </div> -->
 
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                              <a class="prelative">
+                              <a class="prelative" (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
                                 <div class="prelative">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
                                   <div class="progress dprogress">
@@ -571,7 +571,7 @@
                                   </div>
                                 </div>
 
-                                <div class="row mb15px" (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
+                                <div class="row mb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                     <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
                                       Continue where you left
@@ -719,7 +719,7 @@
             <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Explore a different topic 
+                  Explore a different topic
                 </button>
               </div>
             </div>
@@ -941,7 +941,7 @@
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px tcenter">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_points.svg" class="img-responsive">
                               </div>
-                              
+
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                                 <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
                                   <!-- 5,499 -->
