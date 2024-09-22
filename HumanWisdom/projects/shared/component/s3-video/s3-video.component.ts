@@ -22,7 +22,7 @@ import {
         transform: 'translateY(0)'
       })),
       state('up', style({
-        transform: 'translateY(-100%)'
+        transform: 'translateY(100%)'
       })),
       transition('down => up', [
         animate('0.5s ease-in')
@@ -41,7 +41,7 @@ export class S3VideoComponent implements OnInit {
   public wisdomshort: boolean = true;
   public wisdomShortOrderList = [];
   public allWisdomShort = [];
-  public isLoading = true;
+  public isLoading = false;
   isSwiped: boolean = false;
   swiped = 'up';
   showSwipeUp: boolean = true;
@@ -105,7 +105,7 @@ export class S3VideoComponent implements OnInit {
 
 
   showLoader() {
-    this.isLoading = true;
+    this.isLoading = false;
   }
 
   hideLoader() {
@@ -114,7 +114,7 @@ export class S3VideoComponent implements OnInit {
 
   onVideoEnded() {
     this.onSwipeUp();
-    this.isLoading = true;
+    this.isLoading = false;
   }
 
   onSwipeUp() {
