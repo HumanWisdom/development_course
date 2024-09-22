@@ -14,11 +14,11 @@ declare var $: any;
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
-  enableVideo = true;
+  enableVideo = false;
   yellow = "#FFC455"
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink = ""
+  audioLink;
 
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_02.svg"
   videoLink = '';
@@ -41,7 +41,7 @@ export class DailyPracticePage implements OnInit {
   enableAlert = false;
   content = ''
   dailyInspirationTitle = '';
-  DailyInspirationLink = '';
+  DailyInspirationLink;
   DailyInspirationImg = '';
   enableBtn = false;
 
@@ -76,12 +76,13 @@ export class DailyPracticePage implements OnInit {
 
     setTimeout(() => {
       let video = document?.getElementsByTagName('video')[0];
- 
+
       video?.addEventListener("timeupdate", (function () {
-        if(video.currentTime > 5 && !this.enableBtn) {
+        if (video.currentTime > 5 && !this.enableBtn) {
           this.enableBtn = true;
         }
       }).bind(this));
+
 
     }, 4000)
   }
@@ -91,15 +92,15 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
+        this.enableVideo = true;
       }
     })
     this.service.getDailyInspirationQuestion().subscribe((res) => {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
-
-        this.DailyInspirationImg ="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4","webp")
-
+        this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
+        this.enableVideo = true;
       }
     })
     this.service.getDailypractiseQuestionins().subscribe((res) => {
@@ -163,7 +164,7 @@ export class DailyPracticePage implements OnInit {
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
-    }, 200);
+    }, 500);
   }
 
   back(event) {
@@ -171,7 +172,7 @@ export class DailyPracticePage implements OnInit {
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
-    }, 200);
+    }, 500);
   }
 
   getAlertcloseEvent() {

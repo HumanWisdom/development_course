@@ -28,6 +28,7 @@
       window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
     });
   }
+  // blog page
   /**
    * View more 
    */

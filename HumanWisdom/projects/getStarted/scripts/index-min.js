@@ -1,6 +1,16 @@
 
 
 const userAgent = navigator.userAgent;
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1WBHRGL7VH');
+
+function logevent(eventname, ScreenName)
+{
+ gtag('event', eventname, {
+'screen_name': ScreenName});
+}
 
 type = 'Desktop';
 if (/Mobi|Android/i.test(userAgent)) {
