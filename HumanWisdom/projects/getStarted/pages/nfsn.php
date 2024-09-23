@@ -71,7 +71,7 @@
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_48px fw_600 lh_130p fc_834b66 ta_lc">
-                Support your family to succeed in life
+                Supporting families and staff to succeed in life
                 </h1>
               </div>
             </div>
