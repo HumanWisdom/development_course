@@ -171,14 +171,22 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right"
         }
       },
-       {
+      {
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
+        }
+      },
+      /*{
         element: ".tour_exercises",
         popover: {
           title: 'Exercises',
           description: 'Tiny, guided exercises to improve your self-awareness',
           side: "right"
         }
-      }
+      }*/
     ];
 
     const driverObj = driver({
