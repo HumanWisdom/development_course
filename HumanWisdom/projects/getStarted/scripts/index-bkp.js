@@ -53,9 +53,22 @@ setTimeout(() => {
             !1
         );
     }
+
+    var viewAllBlogs = document.getElementById("viewAllBlogs");
+    if (viewAllBlogs) {
+        viewAllBlogs.addEventListener(
+            "click",
+            function (e) {
+                logevent("click_View_All_Blogs_web", "index.php");
+                window.location.href = "https://happierme.app/adults/blogs";
+            },
+            !1
+        );
+    }
+
     var organisation = document.getElementById("organisation");
     if (organisation) {
-        organisation.addEventListener("click", function (e) {}, !1);
+        organisation.addEventListener("click", function (e) { }, !1);
     }
     var work = document.getElementById("work");
     if (work) {
@@ -90,7 +103,6 @@ setTimeout(() => {
                 work.classList.add("active_nav");
                 window.location.href = "../pages/healthcare.php";
             },
-            !1
         );
     }
     var pricing = document.getElementById("pricing");
@@ -100,6 +112,7 @@ setTimeout(() => {
             function (e) {
                 localStorage.setItem("activeTab", "pricing");
                 work.classList.add("active_nav");
+                logevent("Click_Pricing", "index.php#div_subscription");
                 window.location.href = "../index.php#div_subscription";
             },
             !1
@@ -174,7 +187,7 @@ if (requestDemo) {
             alert("All fields must be filled out");
             return !1;
         }
-        const data = { Email_Id: email, Subject: "Request a demo", Body: `Name : ${name} Company: ${company} Country :${country}` };
+        const data = { Email_Id: 'team@happierme.app', Subject: "Request a demo", Body: `Name : ${name} Company: ${company} Country :${country}` };
         fetch("https://humanwisdom.info/api/SendMail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
             .then((response) => response.json())
             .then((data) => {
@@ -214,8 +227,8 @@ if (nfsnContactForm) {
         }
         // Prepare the data to be sent to the API
         const data = {
-            Email_Id: email,
-            Subject: 'NFSN',
+            Email_Id: 'team@happierme.app',
+            Subject: 'NFSN-Get in touch',
             Body: `Name : ${name} Work Email : ${email} Message :${message}`
         };
 
@@ -236,5 +249,57 @@ if (nfsnContactForm) {
                 console.error('Error:', error);
                 alert('An error occurred. Please try again.');
             });
+    });
+
+    const videoElement = document.getElementById('vid');
+    if (videoElement) {
+        // Add an event listener for the 'play' event
+        videoElement.addEventListener('play', function () {
+            logevent('click_play_app_preview_video', 'index.php')
+            console.log('Video play button was clicked');
+        });
+    }
+
+    const homeVideo = document.getElementById('homeVideo');
+    if (homeVideo) {
+        // Add an event listener for the 'play' event
+        homeVideo.addEventListener('play', function () {
+            logevent('click_play_video_home', 'index.php')
+            console.log('Video play button was clicked');
+        });
+    }
+
+    const teenagerVideo = document.getElementById('teenagerVideo');
+    if (teenagerVideo) {
+        // Add an event listener for the 'play' event
+        teenagerVideo.addEventListener('play', function () {
+            logevent('click_Video_play_teenagers', 'teenagers.php')
+            console.log('Video play button was clicked');
+        });
+    }
+    
+    const tabIds = ['feelbetterNow', 'pathWay', 'journal', 'podcast', 'community', 'HapinessScore'];
+    tabIds.forEach(id => {
+        const tabElement = document.getElementById(id);
+        if (tabElement) {
+            tabElement.addEventListener('click', function (event) {
+                if (id == 'feelbetterNow') {
+                    logevent('click_Feel_Better_Now_web', 'index.php')
+                } else if (id == 'pathWay') {
+                    logevent('click_Pathway_web', 'index.php')
+                } else if (id == 'journal') {
+                    logevent('click_Journal_web', 'index.php')
+                }
+                else if (id == 'HapinessScore') {
+                    logevent('click_Happiness_Score_web', 'index.php')
+                }
+                else if (id == 'podcast') {
+                    logevent('click_Podcast_web', 'index.php')
+                }
+                else if (id == 'community') {
+                    logevent('click_Community_web', 'index.php')
+                }
+            });
+        }
     });
 }

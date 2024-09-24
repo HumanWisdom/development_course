@@ -187,7 +187,7 @@ if (requestDemo) {
             alert("All fields must be filled out");
             return !1;
         }
-        const data = { Email_Id: email, Subject: "Request a demo", Body: `Name : ${name} Company: ${company} Country :${country}` };
+        const data = { Email_Id: 'team@happierme.app', Subject: "Request a demo", Body: `Name : ${name} Company: ${company} Country :${country}` };
         fetch("https://humanwisdom.info/api/SendMail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
             .then((response) => response.json())
             .then((data) => {
@@ -227,8 +227,8 @@ if (nfsnContactForm) {
         }
         // Prepare the data to be sent to the API
         const data = {
-            Email_Id: email,
-            Subject: 'NFSN',
+            Email_Id: 'team@happierme.app',
+            Subject: 'NFSN-Get in touch',
             Body: `Name : ${name} Work Email : ${email} Message :${message}`
         };
 
