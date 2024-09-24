@@ -56,22 +56,22 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-                
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/frame.webp" class="img-responsive img_aspects"  alt="wh_tick_black">
+                <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                     
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp" class=""  alt="wh_tick_black">
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_logo.webp" class=""  alt="wh_tick_black">
-                </div>
+                </div> -->
               </div>
             </div>
 
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_48px fw_600 lh_130p fc_834b66 ta_lc">
-                Support your family to succeed in life
+                Supporting families and staff to succeed in life
                 </h1>
               </div>
             </div>
@@ -364,8 +364,10 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <a href="https://happierme.app/adults/subscription/try-free-and-subscribe">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                Start your free trial now                </button>
+                Start your free trial now </button>
+             </a>
               </div>
             </div>
 
@@ -739,6 +741,7 @@
                       </button>
                     </div>
                   </div>
+                  
                 </form>
               </div>
             </div>
