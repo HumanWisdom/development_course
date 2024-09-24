@@ -2517,7 +2517,9 @@ a
   opacity: 1;
 }
 
-
+.div_subscriptionvideo {
+padding:20px;
+}
 
 .div_subscriptionvideo {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
