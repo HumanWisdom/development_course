@@ -18,12 +18,17 @@ import {
   styleUrls: ['./s3-video.component.scss'],
   animations: [
     trigger('slideUp', [
-      transition(':enter', [
-        style({ transform: 'translateY(100%)', opacity: 0 }),
-        animate('300ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+      state('down', style({
+        transform: 'translateY(0)'
+      })),
+      state('up', style({
+        transform: 'translateY(100%)'
+      })),
+      transition('down => up', [
+        animate('0.5s ease-in')
       ]),
-      transition(':leave', [
-        animate('300ms ease-in', style({ transform: 'translateY(100%)', opacity: 0 }))
+      transition('up => down', [
+        animate('0.5s ease-out')
       ])
     ])
   ]
@@ -36,9 +41,10 @@ export class S3VideoComponent implements OnInit {
   public wisdomshort: boolean = true;
   public wisdomShortOrderList = [];
   public allWisdomShort = [];
-  public isLoading = true;
+  public isLoading = false;
   isSwiped: boolean = false;
-  showSwipeUp :boolean = true;
+  swiped = 'up';
+  showSwipeUp: boolean = true;
   currentIndex = 0;
   currentTime = 0;
   constructor(
@@ -99,7 +105,7 @@ export class S3VideoComponent implements OnInit {
 
 
   showLoader() {
-    this.isLoading = true;
+    this.isLoading = false;
   }
 
   hideLoader() {
@@ -108,12 +114,12 @@ export class S3VideoComponent implements OnInit {
 
   onVideoEnded() {
     this.onSwipeUp();
-    this.isLoading = true;
+    this.isLoading = false;
   }
 
   onSwipeUp() {
     if (this.wisdomshort) {
-      this.isSwiped =  true;
+      this.isSwiped = true;
       this.currentTime = 0;
       this.showLoader();
       let data: any;
@@ -129,8 +135,10 @@ export class S3VideoComponent implements OnInit {
       const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
       this.videoLink = this.getSafeUrl(code);
       this.isSwiped = true;
+      this.swiped = 'up';
       setTimeout(() => {
         this.isSwiped = false;
+        this.swiped = '';
       }, 200);
       // Implement logic for swipe up gesture
       // Example: Navigate to the next video
@@ -164,6 +172,7 @@ export class S3VideoComponent implements OnInit {
       const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
       this.videoLink = this.getSafeUrl(code);
       this.isSwiped = true;
+      this.swiped = 'down';
       setTimeout(() => {
         this.isSwiped = false;
       }, 200);
