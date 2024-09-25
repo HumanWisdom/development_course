@@ -30,7 +30,8 @@
 <link href="../assets/font/line_height.css" rel="stylesheet" media="print" onload="this.media='all'">
 <link href="../assets/css/style_hb.css" rel="stylesheet" media="print" onload="this.media='all'"> -->
 
-<link href="../assets-min/css/main.css" rel="stylesheet" >
+<link href="../assets-min/css/style_hb.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
 <link href="../assets-min/css/responsive.css" rel="stylesheet">
 <link href="../assets-min/font/font_colour.css" rel="stylesheet">
 <link href="../assets-min/font/font_size.css" rel="stylesheet">

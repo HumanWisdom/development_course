@@ -112,6 +112,11 @@
         
     }
 
+    .fs_21px {
+        /* font-size: 21px; */
+        font-size: 15px !important;
+    }
+
     .fs_15px 
     {
         font-size: 12px !important;
@@ -122,6 +127,7 @@
      .div_dyk_l1, 
     .div_inspire,
     .input_parent
+    .input_parent1
     {
         display: block !important;
     }

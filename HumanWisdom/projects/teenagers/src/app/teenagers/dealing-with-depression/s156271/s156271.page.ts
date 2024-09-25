@@ -14,7 +14,8 @@ export class S156271Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/dealing-with-depression/videos/8.1.mp4' 
+  // videoLink=this.mediaVideo+'/dealing-with-depression/videos/8.1.mp4' 
+  videoLink="https://d1tenzemoxuh75.cloudfront.net/teenagers/teen_talk/videos/02.mp4"
   title="A conversation with a teenager about depression"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
