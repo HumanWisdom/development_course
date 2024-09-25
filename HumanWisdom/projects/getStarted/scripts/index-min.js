@@ -192,6 +192,10 @@ if (requestDemo) {
             .then((response) => response.json())
             .then((data) => {
                 console.log("Success:", data);
+                document.getElementById('email').value = '';
+                document.getElementById('name').value = '';
+                document.getElementById('company').value = '';
+                document.getElementById('country').value = '';
                 alert("Form submitted successfully!");
             })
             .catch((error) => {
@@ -243,6 +247,9 @@ if (nfsnContactForm) {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                document.getElementById('nfsn-message').value='';
+                document.getElementById('nfsn-email').value='';
+                document.getElementById('nfsn-name').value='';
                 alert('Form submitted successfully!');
             })
             .catch((error) => {
@@ -277,7 +284,7 @@ if (nfsnContactForm) {
             console.log('Video play button was clicked');
         });
     }
-    
+
     const tabIds = ['feelbetterNow', 'pathWay', 'journal', 'podcast', 'community', 'HapinessScore'];
     tabIds.forEach(id => {
         const tabElement = document.getElementById(id);
