@@ -1,6 +1,7 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" style="background-color: black !important;">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
+    [ngClass]="isAdults ? !isSwipeAllow ? 'bg_292d56' : 'bg_black'  : !isSwipeAllow ?  'bg_183c79' : 'bg_black'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
@@ -16,23 +17,53 @@
   </div>
 </div>
 <!-- /top navigation -->
-
+<div class="right_col mc_02" (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()"  *ngIf="isSwipeAllow">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 col_cw"
+        [ngClass]="'bg_black'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+              <div class="video-slider-container" >
+                <div
+                  class="video-wrapper"
+                  *ngFor="let video of wisdomShortOrderList; let i = index"
+                  [@slideAnimation]="currentIndex === i ? 'active' : (currentIndex > i ? 'previous' : 'next')"
+                  [style.zIndex]="currentIndex === i ? 1 : 0"
+                >
+                <video #videoPlayer  *ngIf="currentIndex === i"  style="margin-top: 3rem; margin-left: 7.5rem;" width="350px" height="450px" autoplay controls
+                controlsList="nodownload nofullscreen"
+                  disablePictureInPicture playsinline>
+                  <source [src]="video.url" type="video/mp4" />
+                </video>
+                <div  *ngIf="currentIndex === i" class="swipe-up-alt">
+                  <div class="chevron"></div>
+                  <span class="text">Swipe Up</span>
+               </div>
+                </div>
+              </div>
+         
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- page content -->
-<div class="right_col mc_02" #screen (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()"  [@slideUp]="isSwiped ? 'up' : 'down'">
+<!-- <div class="right_col mc_02" #screen (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()"  [@slideUp]="isSwiped ? 'up' : 'down'" *ngIf="isSwipeAllow">
   <div class="cw100p"  >
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 col_cw" style="background: black !important;">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 col_cw" [ngClass]="isAdults ? !isSwipeAllow ? 'bg_292d56' : 'bg_black'  : !isSwipeAllow ?  'bg_183c79' : 'bg_black'" >
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
               <h1 *ngIf="!isSwiped" class="txt1" style="color: white;">{{ videoTitle }}</h1>
 
-              <!-- video  -->
               <div class="row tcenter"  >
                 <div *ngIf="!isSwiped" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <!-- <video  controls playinline autoplay [ngClass]="['cvideo_01']" controlsList="nodownload">
-                    <source [src]="videoLink" type="video/mp4">
-                  </video> -->
+         
                   <div *ngIf="isLoading" class="loader" style="position: absolute; top: 45%; left: 45%; transform: translate(-50%, -50%);"></div>
 
                   <video #videoPlayer width="350px" height="450px" autoplay controls
@@ -41,13 +72,36 @@
                     (ended)="onVideoEnded()">
                     <source [src]="videoLink" type="video/mp4" />
                   </video>
+
                 </div>
               </div>
               <div class="swipe-up-alt" *ngIf="!isSwiped ">
                 <div class="chevron"></div>
                 <span class="text">Swipe Up</span>
-            </div>
-              <!-- /video -->
+             </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="right_col mc_02" #screen *ngIf="!isSwipeAllow">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 col_cw"
+        [ngClass]="isAdults ? !isSwipeAllow ? 'bg_292d56' : 'bg_black'  : !isSwipeAllow ?  'bg_183c79' : 'bg_black'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+              <h1 class="txt1" style="color: white;">{{ videoTitle }}</h1>
+              <div class="row tcenter">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <video controls playinline autoplay [ngClass]="['cvideo_01']" controlsList="nodownload">
+                    <source [src]="videoLink" type="video/mp4">
+                  </video>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -55,6 +109,5 @@
     </div>
   </div>
 </div>
-
 
 <!-- /page content -->
