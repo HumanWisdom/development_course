@@ -163,13 +163,21 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <video id="teenagerVideo" controls playinline class="w100p"
+          <iframe 
+          class="yt-embed"
+  src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  >
+</iframe>
+            <!-- <video id="teenagerVideo" controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
               controlsList="nodownload">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers.mp4"
                 type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
       </section>
