@@ -241,16 +241,20 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
       this.direction = 'up';
       this.currentIndex++;
-      if(this.currentIndex > 1 && !this.isSubscriber){
+      if(this.currentIndex > 2 && !this.isSubscriber){
         this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
       }
     }
   }
 
   onSwipeDown() {
-    if (this.currentIndex > 0) {
-      this.direction = 'down';
-      this.currentIndex--;
+    if(this.currentIndex ==  this.wisdomShortOrderList.length-1){
+      this.currentIndex = 0;
+    }else{
+      if (this.currentIndex > 0) {
+        this.direction = 'down';
+        this.currentIndex--;
+      }
     }
   }
 
