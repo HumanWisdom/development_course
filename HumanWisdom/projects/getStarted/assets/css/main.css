@@ -2520,6 +2520,10 @@ a
 .div_subscriptionvideo {
 padding:20px;
 }
+.yt-embed {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
 
 .div_subscriptionvideo {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
