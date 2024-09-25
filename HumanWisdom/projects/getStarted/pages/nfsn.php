@@ -689,7 +689,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         
-                        <input type="text" class="form-control fc_01" id="name" name="name"  placeholder="Your Name">
+                        <input type="text" class="form-control fc_01" id="nfsn-name" name="nfsn-name"  placeholder="Your Name">
                         <div class="fc_icons">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
                         </div>
@@ -702,7 +702,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                        <input type="text" class="form-control fc_01" id="email" name="email"  placeholder="Work email">
+                        <input type="text" class="form-control fc_01" id="nfsn-email" name="nfsn-email"  placeholder="Work email">
                         <div class="fc_icons">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
                         </div>
@@ -715,7 +715,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                        <textarea id="subject"  class="form-control fc_01" name="subject" placeholder="Message" style="height:100px"></textarea>
+                        <textarea id="nfsn-message"  class="form-control fc_01" name="nfsn-message" placeholder="Message" style="height:100px"></textarea>
                       </div>
 
                      
@@ -724,7 +724,7 @@
 
                   <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                      <button  id="Request-Demo" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                      <button  id="nfsn-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                         Send
                       </button>
                     </div>

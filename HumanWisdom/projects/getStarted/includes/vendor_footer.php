@@ -90,7 +90,9 @@ async function fetchData() {
 
         function strikeOutAnnualPricingModelHeadingDisplay() 
         {
-            strikeOutAnnualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`;
+            if(strikeOutAnnualPricingModelHeading){
+                strikeOutAnnualPricingModelHeading.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`;
+            }
         }
         
         function spanAnnualLabelDisplay() 
@@ -141,53 +143,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    setTimeout(() => {
-        const requestDemo = document.getElementById('Request-Demo');
-        if(requestDemo){
-            requestDemo.addEventListener('click', () => {
-            const email = document.getElementById('email').value;
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const country = document.getElementById('country').value;
-            if (!email || !name || !company || !country || name =='' || email=='' || company == '' || country == '') {
-                alert("All fields must be filled out");
-                return false;
-            }
-            // Prepare the data to be sent to the API
-            const data = {
-                Email_Id: 'team@happierme.app',
-                Subject: 'Request a demo',
-                Body: `Name :${name} Company:${company} Work Email:${email} Country:${country}`
-            };
+    // setTimeout(() => {
+    //     const requestDemo = document.getElementById('Request-Demo');
+    //     if(requestDemo){
+    //         requestDemo.addEventListener('click', () => {
+    //         const email = document.getElementById('email').value;
+    //         const name = document.getElementById('name').value;
+    //         const company = document.getElementById('company').value;
+    //         const country = document.getElementById('country').value;
+    //         if (!email || !name || !company || !country || name =='' || email=='' || company == '' || country == '') {
+    //             alert("All fields must be filled out");
+    //             return false;
+    //         }
+    //         // Prepare the data to be sent to the API
+    //         const data = {
+    //             Email_Id: 'team@happierme.app',
+    //             Subject: 'Request a demo',
+    //             Body: `Name :${name} Company:${company} Work Email:${email} Country:${country}`
+    //         };
 
-            // Send data to the API using Fetch API
-            fetch('https://www.humanwisdom.info/api/SendMail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
+    //         // Send data to the API using Fetch API
+    //         fetch('https://www.humanwisdom.info/api/SendMail', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify(data)
+    //         })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log('Success:', data);
                 
-                // Clear the form fields
-                document.getElementById('email').value = '';
-                document.getElementById('name').value = '';
-                 document.getElementById('company').value='';
-                document.getElementById('country').value = '';
-                alert('Form submitted successfully!');
+    //             // Clear the form fields
+    //             document.getElementById('email').value = '';
+    //             document.getElementById('name').value = '';
+    //              document.getElementById('company').value='';
+    //             document.getElementById('country').value = '';
+    //             alert('Form submitted successfully!');
                 
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            });
-    });
-        }
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error:', error);
+    //             alert('An error occurred. Please try again.');
+    //         });
+    // });
+    //     }
        
-    }, 2000);
+    // }, 2000);
   
 
     // const MonthlyType = document.getElementById('MonthlyType');
@@ -352,8 +354,12 @@ $( document ).ready(function() {
 
 
 const btnColor = document.querySelector(".teens");
+if(btnColor){
+  btnColor.addEventListener('click', changeBtnColor);
+}
 const badge_new = document.querySelector(".badge_new");
-const changeBtnColor = (e) => {
+if(badge_new){
+    const changeBtnColor = (e) => {
     //alert('hi');
     //e.preventDefault(); 
     if(badge_new.classList.contains("bg_badge"))
@@ -369,6 +375,6 @@ const changeBtnColor = (e) => {
   // or use:
   // btnColor.classList.toggle("red");
 };
+}
 
-btnColor.addEventListener('click', changeBtnColor);
 </script>

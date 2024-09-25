@@ -529,14 +529,14 @@ export class AdultDashboardPage implements OnInit {
           side: "bottom"
         }
       },
-      {
+      /*{
         element: ".tour_find_inspiration",
         popover: {
           title: 'Find Inspiration',
           description: 'Explore our rich library of motivational content.',
           side: "right"
         }
-      },
+      },*/
       {
         element: ".tour_explore",
         popover: {
@@ -4412,6 +4412,12 @@ export class AdultDashboardPage implements OnInit {
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
+  }
+
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/adults/find-answers/' + param]);
   }
 
 }

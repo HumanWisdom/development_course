@@ -6,6 +6,29 @@
     <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
     <meta property="description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
+    <meta property="og:title" content=HappierMe-Mental Health Care>
+    <meta property="og:site_name" content=HappierMe>
+    <meta property="og:url" content=https://happierme.app/>
+     <meta property="og:description" content="">
+     <meta property="og:type" content="">
+     <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp><meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp><meta property="og:image" content=""><meta property="og:image" content=""><meta property="og:image" content="">
+   <!--Schema tag for website -->
+   <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "HappierMe",
+        "url": "https://happierme.app/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://happierme.app/index.php{search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+
+
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
@@ -49,7 +72,7 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
-            <video controls playinline autoplay loop muted class="w100p"
+            <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
               <source
@@ -360,7 +383,7 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <video controls playinline class="w100p"
+            <video id="homeVideo" controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
@@ -1737,37 +1760,37 @@
 
             <ul class="nav nav-tabs flex_ai m0px tool_tabs">
               <li class="active">
-                <a data-toggle="tab" href="#fbn">
+                <a data-toggle="tab" id="feelbetterNow" href="#fbn">
                   Feel better now
                 </a>
               </li>
 
               <li>
-                <a data-toggle="tab" href="#pathway">
+                <a data-toggle="tab" id="pathWay" href="#pathway">
                   PATHWAY
                 </a>
               </li>
 
               <li>
-                <a data-toggle="tab" href="#journal">
+                <a data-toggle="tab" id="journal" href="#journal">
                   Journal
                 </a>
               </li>
 
               <li>
-                <a data-toggle="tab" href="#podcast">
+                <a data-toggle="tab"  id="podcast" href="#podcast">
                   Podcast
                 </a>
               </li>
 
               <li>
-                <a data-toggle="tab" href="#forum">
+                <a data-toggle="tab" id="community" href="#forum">
                   Community
                 </a>
               </li>
 
               <li>
-                <a data-toggle="tab" href="#survey">
+                <a data-toggle="tab" id="HapinessScore" href="#survey">
                   Happiness score
                 </a>
               </li>
@@ -2099,7 +2122,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/blogs">
+                    <a class="sap" id="viewAllBlogs" href="https://happierme.app/adults/blogs">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>

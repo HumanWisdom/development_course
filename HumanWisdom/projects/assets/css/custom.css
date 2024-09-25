@@ -15552,7 +15552,8 @@ input[type="search"].dark::-webkit-search-cancel-button {
   text-align: left;
   padding-right: 20px;
   /* padding-left: 50px; */
-  padding-left: 15%;
+  /* padding-left: 15%; */
+  padding-left: 45px;
 }
 
 .h60px
@@ -37362,10 +37363,22 @@ span
 .box_ad_intro 
 {
   height: 50px;
-  padding: 16px 15px;
+  padding: 16px 20px;
   background: rgba(255, 255, 255, 0.10);
   display: flex;
   align-items: center;
+}
+
+.td_points_box
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 16px !important;
+}
+
+.ml_10px 
+{
+  margin-left: 10px;
 }
 /* /version - 03 */
 

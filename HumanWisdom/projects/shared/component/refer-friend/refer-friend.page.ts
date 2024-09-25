@@ -30,6 +30,7 @@ export class ReferFriendPage implements OnInit {
   ngOnInit() {
   }
   sharewhatsapp(){
+    
     var url ='https://api.whatsapp.com/send'
    var text="Check out the HappierMe Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom";
     window.open(url + '?text='+encodeURIComponent(text))

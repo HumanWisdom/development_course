@@ -193,7 +193,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     SignupPage,
     ForgetPasswordPage,
     ChangePasswordPage,
-    SetPasswordPage
+    SetPasswordPage,
   ],
   imports: [
     CommonModule,
@@ -308,7 +308,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     SignupPage,
     ForgetPasswordPage,
     ChangePasswordPage,
-    SetPasswordPage
+    SetPasswordPage,
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },

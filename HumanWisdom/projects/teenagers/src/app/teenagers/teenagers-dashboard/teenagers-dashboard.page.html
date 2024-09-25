@@ -15,7 +15,7 @@
             <div class="row prelative pt30px plr20px">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                 <form action=".">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" (keydown.enter)="getinp($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)"   [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
                 </form>
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
@@ -46,9 +46,10 @@
                         Feel better now
                       </h4>
 
-                      <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                      <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        <!-- Quick tips to help you feel better right now -->
                         Quick tips to help you feel better right now
-                      </h4> -->
+                      </h4>
                     </div>
 
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
@@ -85,15 +86,15 @@
                                 </h2>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                <!-- <a> -->
-                                 <!--  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
+                                <a>
+                                  <h2 class="fw_400 fs_12px lh_18px fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
                                     </span>
                                     days
-                                  </h2> -->
-                                <!-- </a> -->
+                                  </h2>
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -120,7 +121,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise','5', 'click_daily_inspiration') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
@@ -133,7 +134,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '0', 'click_breathing_exercise') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg"
                                   alt="Wisdom Stories" class="crimg">
@@ -144,7 +145,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '1', 'click_question_of_the_day') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3_teens.svg"
                                   alt="Journal" class="crimg">
@@ -157,7 +158,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '2','click_daily_inspiration') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '3','click_daily_inspiration') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
@@ -169,7 +170,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '3', 'click_daily_meditation') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
                                   alt="Forum" class="crimg">
@@ -180,7 +181,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_challenge') : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3_teens.svg"
                                   alt="Forum" class="crimg">
@@ -212,9 +213,530 @@
             </div>
             <!-- /hr -->
 
-            <!-- my progress -->
+            <!-- short videos -->
             <!-- accordion -->
             <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default cpanel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a>
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  Short videos
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                <a class="prelative" routerLink="">
+                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                                    View all
+                                  </h2>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <div class="row cmr-20pxi">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/02a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Climate change
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        06:27
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/01a.webp" class="img-responsive w100">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Tackling racism
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        10:17
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /short videos -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- teen talk -->
+            <div class="row tour_fbn">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a routerLink="/teenagers/teen-talk">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teen_talk.svg" class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Teen Talk
+                      </h4>
+
+                      <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        Conversations with teens from around the world
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /teen talk -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- find answers -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <div class="box_v3_05">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
+                        Find quick answers
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px">
+                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                        Make sense of what you think and feel, find fresh ways to deal with life’s many challenges, and grow as a person.
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="fas_div">
+                    <a (click)="routeToFindAnswer('why-do-i')">
+                      <div class="row fas_box bg_a54265">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                              Why do I ... ?
+                            </h4>
+
+                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                              Find answers to questions about why you feel the way you do
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a (click)="routeToFindAnswer('how-can-i')">
+                      <div class="row fas_box bg_f1ac5e">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                              How can I ... ?
+                            </h4>
+
+                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                              Learn how to deal with challenges
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /your topic of choice -->
+
+            <!-- change your topic of choice -->
+            <!--<div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
+                <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
+                  Explore a
+              </div>
+            </div>-->
+            <!-- /find answers -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- for nidhi -->
+            <!-- accordion -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading p0">
+                      <h4 class="panel-title dpaneltitle">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#ca_user" aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  {{name?.trim() === 'guest' ? 'Featured' : 'For ' + name}}
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="ca_user" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <!-- intro box -->
+                        <div class="row tour_fbn mb15px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <a routerLink="/teenagers/intro-happierme">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_ad_intro">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ad_intro.svg" class="img-responsive w100">
+                                </div>
+
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                                  <h4 class="mtb0px fc_ffffff fs_12px fw_600 lh_140p">
+                                    Introduction to HappierMe
+                                  </h4>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                  <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- /intro box -->
+
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_user">
+
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
+                              <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
+                                </div>
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        INTRODUCTION
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Introduction to HappierMe
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      Video tour and key ideas
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div> -->
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
+                              <a class="prelative" (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
+                                <div class="prelative">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </div>
+
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        pathway
+                                      </h4>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                      <a routerLink="/teenagers/pathway">
+                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
+                                          View more
+                                        </h4>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      Continue where you left
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length !== 0">
+                                      {{resumeLastvisited[0]['ModuleName']}} • Session #{{resumeLastvisited[0]['SessionCnt']}} : {{resumeLastvisited[0]['SessionName']}}
+                                    </h4>
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length === 0">
+                                      Anger • Session #1 : The Nature Of Anger
+                                    </h4>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
+
+                                <div class="prelative">
+                                  <a (click)="routeForUser(res)" class="prelative">
+                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash" />
+                                 </a>
+                                  <!-- <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div> -->
+                                </div>
+
+                                <div class="row mtb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                      <img src="{{res['IconUrl']}}" class="img-responsive w100">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
+                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
+                                        {{res['FeatureType']}}
+                                      </h4>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                      <a (click)="routeToUrl(res['ViewLink'])">
+                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
+                                          View more
+                                        </h4>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <a (click)="routeForUser(res)" class="prelative">
+                                <div class="row mb15px">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
+                                      {{res['Title']}}
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
+                                      {{res['SubTitle']}}
+                                    </h4>
+                                  </div>
+                                </div>
+                                </a>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /accordion -->
+            <!-- /for nidhi -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- explore a topic in depth-for guest user -->
+            <div class="row tour_eatid" *ngIf="YourTopicofChoice.length === 0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="prelative box_v3_01 bg_ee9596" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                          Explore a topic in depth
+                        </h4>
+
+                        <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
+                        </h4> -->
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /explore a topic in depth-for guest user -->
+
+            <!-- your topic of choice -->
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a class="prelative box_v3_01 bg_ee9596" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
+                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                          Your topic of choice:
+                        </h4>
+
+                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                          {{YourTopicofChoice[0]['name']}}
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /your topic of choice -->
+
+            <!-- change your topic of choice -->
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
+                <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
+                  Explore a different topic
+                </button>
+              </div>
+            </div>
+            <!-- /change your topic of choice -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- my progress -->
+            <!-- accordion -->
+            <!-- <div class="row accordion_row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
@@ -380,8 +902,105 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- /accordion -->
+
+            <!-- v1.1 -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="panel-heading">
+                      <h4 class="panel-title dpaneltitle">
+                        <div aria-expanded="true" (click)="DashboardLogevent('', '', 'click_daily_pratice')">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  My progress
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
+                                <a (click)="viewDetails()">
+                                  <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
+                                    View details
+                                  </h2>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h4>
+                    </div>
+                    <div id="ca_mdp" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <div class="row" >
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 td_points_box">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px tcenter">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_points.svg" class="img-responsive">
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                                  <!-- 5,499 -->
+                                  {{loginResponse.Points}}
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                                <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                  Points
+                                </h4>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 td_points_box ml_10px">
+                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ee9596">
+                                    <!-- 74% -->
+                                    {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
+                                  </h4>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                    Wellness score
+                                  </h4>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
+                                  <a class="" (click)="survey()">
+                                    <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ee9596 flex_ai">
+                                      Take the survey
+                                      <span class="ml10px">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_arrow_right.svg" class="img-responsive">
+                                      </span>
+                                    </h4>
+                                  </a>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_smiley.svg" class="img-responsive">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /v1.1 -->
             <!-- /my progress -->
 
             <!-- hr -->
@@ -392,334 +1011,6 @@
             </div>
             <!-- /hr -->
 
-            <!-- explore a topic in depth-for guest user -->
-            <div class="row tour_eatid" *ngIf="YourTopicofChoice.length === 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01 bg_ee9596" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                          Explore a topic in depth
-                        </h4>
-
-                        <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
-                        </h4> -->
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- /explore a topic in depth-for guest user -->
-
-            <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a class="prelative box_v3_01 bg_ee9596" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
-                  <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                          Your topic of choice:
-                        </h4>
-
-                        <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                          {{YourTopicofChoice[0]['name']}}
-                        </h4>
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- /your topic of choice -->
-
-            <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0"  (click)="tourIndex === 1 ? DashboardLogevent('/change-topic', '','click_change-topic') : $event.preventDefault()">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
-                <button type="button" (click)="tourIndex === 1 ? changeTopic() : $event.preventDefault()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
-                  Explore a different topic 
-                </button>
-              </div>
-            </div>
-            <!-- /change your topic of choice -->
-
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
-
-            <!-- for nidhi -->
-            <!-- accordion -->
-            <div class="row accordion_row">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="panel-group dpanelgroup" id="accordion">
-                  <div class="panel panel-default dpanel dpanel_01">
-                    <div class="panel-heading p0">
-                      <h4 class="panel-title dpaneltitle">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#ca_user" aria-expanded="true">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="">
-                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                  {{name?.trim() === 'guest' ? 'Featured' : 'For ' + name}}
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="ca_user" class="panel-collapse collapse in">
-                      <div class="panel-body">
-
-                        <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_user">
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03 tour_intro">
-                              <a class="prelative" (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/intro-happierme', '','click_introduction-happierme') : $event.preventDefault()">
-                                <div class="prelative">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/us_10.svg" alt="Happiness" class="ctimg_dash">
-                                </div>
-
-                                <div class="row mtb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_overview_of_app.svg" class="img-responsive w100">
-                                    </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
-                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
-                                        INTRODUCTION
-                                      </h4>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="row mb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
-                                      Introduction to HappierMe
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
-                                      Video tour and key ideas
-                                    </h4>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                              <a class="prelative">
-                                <div class="prelative">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp" alt="Happiness" class="ctimg_dash">
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </div>
-
-
-                                <div class="row mtb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_pathway.svg" class="img-responsive w100">
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
-                                        pathway
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                      <a routerLink="/teenagers/pathway">
-                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
-                                          View more
-                                        </h4>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="row mb15px" (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
-                                      Continue where you left
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length !== 0">
-                                      {{resumeLastvisited[0]['ModuleName']}} • Session #{{resumeLastvisited[0]['SessionCnt']}} : {{resumeLastvisited[0]['SessionName']}}
-                                    </h4>
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px" *ngIf="resumeLastvisited.length === 0">
-                                      Anger • Session #1 : The Nature Of Anger
-                                    </h4>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
-
-                                <div class="prelative">
-                                  <a (click)="routeForUser(res)" class="prelative">
-                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash" />
-                                 </a>
-                                  <!-- <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div> -->
-                                </div>
-
-                                <div class="row mtb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="{{res['IconUrl']}}" class="img-responsive w100">
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                                      <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
-                                        {{res['FeatureType']}}
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                      <a (click)="routeToUrl(res['ViewLink'])">
-                                        <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff underline">
-                                          View more
-                                        </h4>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <a (click)="routeForUser(res)" class="prelative">
-                                <div class="row mb15px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_400 fs_18px lh_130p fc_ffffff mtb0px">
-                                      {{res['Title']}}
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                                    <h4 class="fw_400 fs_12px lh_130p fc_ffffff_0_5 mtb0px">
-                                      {{res['SubTitle']}}
-                                    </h4>
-                                  </div>
-                                </div>
-                                </a>
-                            </div>
-
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /accordion -->
-            <!-- /for nidhi -->
-
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
-
-            <!-- find answers -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <div class="box_v3_05">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
-                        Find quick answers
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px">
-                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
-                        Make sense of what you think and feel, find fresh ways to deal with life’s many challenges, and grow as a person.
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div class="fas_div">
-                    <a (click)="routeToFindAnswer('why-do-i')">
-                      <div class="row fas_box bg_a54265">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                              Why do I ... ?
-                            </h4>
-
-                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                              Find answers to questions about why you feel the way you do
-                            </h4>
-                          </div>
-
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-
-                    <a (click)="routeToFindAnswer('how-can-i')">
-                      <div class="row fas_box bg_f1ac5e">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                              How can I ... ?
-                            </h4>
-
-                            <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                              Learn how to deal with challenges
-                            </h4>
-                          </div>
-
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-
-            <!-- /find answers -->
             <!-- subscribe to premium -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -833,7 +1124,7 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Camille 
+                        Camille
                       </h4>
                     </div>
 
@@ -869,19 +1160,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Roshal Sebastian 
+                        Roshal Sebastian
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        Texas, USA 
+                        Texas, USA
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        Happier me has helped me build a better relationship with myself and others. This app provided a safe space for me to explore my thoughts and feelings, guided by insightful exercises and resources tailored to my needs. Through consistent use, I've cultivated a deeper understanding of myself and developed practical coping mechanisms that have significantly improved my mental well-being. I am grateful for the transformative impact this app has had on my life, empowering me to navigate challenges with greater resilience and self-awareness 
+                        Happier me has helped me build a better relationship with myself and others. This app provided a safe space for me to explore my thoughts and feelings, guided by insightful exercises and resources tailored to my needs. Through consistent use, I've cultivated a deeper understanding of myself and developed practical coping mechanisms that have significantly improved my mental well-being. I am grateful for the transformative impact this app has had on my life, empowering me to navigate challenges with greater resilience and self-awareness
                       </p>
                     </div>
 
@@ -905,19 +1196,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Leah Christensen 
+                        Leah Christensen
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        USA 
+                        USA
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime. HappierMe is a toolkit you can use for any personal or mental struggle you may face. 
+                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime. HappierMe is a toolkit you can use for any personal or mental struggle you may face.
                       </p>
                     </div>
 
@@ -941,19 +1232,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Samaira 
+                        Samaira
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        India 
+                        India
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine. 
+                        HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine.
                       </p>
                     </div>
 
@@ -977,7 +1268,7 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Sree 
+                        Sree
                       </h4>
                     </div>
 
@@ -989,7 +1280,7 @@
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial to me. It covers a wide range of topics, including anxiety, depression, and relationships and is truly impressive. 
+                        The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial to me. It covers a wide range of topics, including anxiety, depression, and relationships and is truly impressive.
                       </p>
                     </div>
 
@@ -1013,19 +1304,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Jondi Whitis 
+                        Jondi Whitis
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        Atlanta, USA 
+                        Atlanta, USA
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        Having trouble figuring it all out? The HappierMe app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma. 
+                        Having trouble figuring it all out? The HappierMe app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.
                       </p>
                     </div>
 
@@ -1049,19 +1340,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Roland Yeo 
+                        Roland Yeo
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        Singapore 
+                        Singapore
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        Whether you are seeking clarity or guidance over your mental, emotional or spiritual wellness, the HappierMe App can help you do that in a simple and easy way. The app has helped me to be more reflective inwardly and find my own answers rather than turning to the external world for solutions. 
+                        Whether you are seeking clarity or guidance over your mental, emotional or spiritual wellness, the HappierMe App can help you do that in a simple and easy way. The app has helped me to be more reflective inwardly and find my own answers rather than turning to the external world for solutions.
                       </p>
                     </div>
 
@@ -1085,19 +1376,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Julie Goodfellow 
+                        Julie Goodfellow
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        UK 
+                        UK
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        I subscribed to The HappierMe app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them. 
+                        I subscribed to The HappierMe app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them.
                       </p>
                     </div>
 
@@ -1121,19 +1412,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Garry Prigg 
+                        Garry Prigg
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        Australia 
+                        Australia
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        The HappierMe app is a pre-eminent asset for people of all ages. It changes peoples lives by assisting them to better know themselves and live with peace, love, harmony, and fulfilment. It is a wonderful gift to humanity. 
+                        The HappierMe app is a pre-eminent asset for people of all ages. It changes peoples lives by assisting them to better know themselves and live with peace, love, harmony, and fulfilment. It is a wonderful gift to humanity.
                       </p>
                     </div>
 
@@ -1157,19 +1448,19 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Saakshi Singla 
+                        Saakshi Singla
                       </h4>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
-                        New Delhi, India 
+                        New Delhi, India
                       </h6>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        HappierMe is what today's world which is full of stress, needs so so desperately. I have been using the HappierMe app in my counselling practice and it's helped me fast track recovery of childhood trauma parents have been carrying. The app guides me everyday to help parents raise children who won't have to recover from their childhoods. 
+                        HappierMe is what today's world which is full of stress, needs so so desperately. I have been using the HappierMe app in my counselling practice and it's helped me fast track recovery of childhood trauma parents have been carrying. The app guides me everyday to help parents raise children who won't have to recover from their childhoods.
                       </p>
                     </div>
 
@@ -1193,7 +1484,7 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Gopalan Nair 
+                        Gopalan Nair
                       </h4>
                     </div>
 
@@ -1205,7 +1496,7 @@
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="fw_400 fs_15px lh_140p fc_ffffff_0_5 italic tleft mb0px ttxt">
-                        The HappierMe app supports an individual's exploration in seeking positive outcomes through a journey of self- discovery, by applying our intelligence with common sense and insight. I believe this is truly a gift for every single human being to embrace. 
+                        The HappierMe app supports an individual's exploration in seeking positive outcomes through a journey of self- discovery, by applying our intelligence with common sense and insight. I believe this is truly a gift for every single human being to embrace.
                       </p>
                     </div>
 
@@ -1229,7 +1520,7 @@
                   <div class="row pt1">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
-                        Dr Tim Merrick 
+                        Dr Tim Merrick
                       </h4>
                     </div>
 
