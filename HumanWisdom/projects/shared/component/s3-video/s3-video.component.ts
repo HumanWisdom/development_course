@@ -10,6 +10,8 @@ import {
   style,
   animate,
   transition,
+  query,
+  group,
 } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
@@ -18,22 +20,45 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './s3-video.component.html',
   providers: [provideAnimations()],
   styleUrls: ['./s3-video.component.scss'],
-  animations: [
-    trigger('slideUp', [
-      state('down', style({
-        transform: 'translateY(0)'
-      })),
-      state('up', style({
-        transform: 'translateY(100%)'
-      })),
-      transition('down => up', [
-        animate('0.5s ease-in')
+  animations:  [
+    trigger('slideAnimation', [
+      state(
+        'previous',
+        style({
+          transform: 'translateY(-100%)',
+          opacity: 0,
+        })
+      ),
+      state(
+        'next',
+        style({
+          transform: 'translateY(100%)',
+          opacity: 0,
+        })
+      ),
+      state(
+        'active',
+        style({
+          transform: 'translateY(0)',
+          opacity: 1,
+        })
+      ),
+      transition('previous => active', [
+        style({ transform: 'translateY(-100%)', opacity: 0 }),
+        animate('0.5s ease-in-out', style({ transform: 'translateY(0)', opacity: 1 })),
       ]),
-      transition('up => down', [
-        animate('0.5s ease-out')
-      ])
-    ])
-  ]
+      transition('next => active', [
+        style({ transform: 'translateY(100%)', opacity: 0 }),
+        animate('0.5s ease-in-out', style({ transform: 'translateY(0)', opacity: 1 })),
+      ]),
+      transition('active => previous', [
+        animate('0.5s ease-in-out', style({ transform: 'translateY(-100%)', opacity: 0 })),
+      ]),
+      transition('active => next', [
+        animate('0.5s ease-in-out', style({ transform: 'translateY(100%)', opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class S3VideoComponent implements OnInit,OnDestroy {
   public tocColor: string = 'white';
@@ -45,6 +70,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
   public allWisdomShort = [];
   public isLoading = false;
   isSwiped: boolean = false;
+  direction: 'up' | 'down' = 'up';
   swiped = 'up';
   showSwipeUp: boolean = true;
   currentIndex = 0;
@@ -94,20 +120,26 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     const shortList = localStorage.getItem('wisdomShortData');
     if(localStorage.getItem('isSwipeAllow')=='true'){
       this.isSwipeAllow = true;
-    }
-    if (shortList) {
-      const wisdomShortList = JSON.parse(shortList);
-      this.wisdomShortOrderList = wisdomShortList.map((element, index) => {
-        return {
-          shortsData: element,
-          order: index
+      if (shortList) {
+        const wisdomShortList = JSON.parse(shortList);
+        this.wisdomShortOrderList = wisdomShortList.map((element, index) => {
+          let linklist = element.VideoUrl.split("/");
+          let linkcode = linklist[linklist.length - 1];
+          const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
+          let videoLink = this.getSafeUrl(code);
+          return {
+            url: videoLink,
+            order: index,
+            title:element.Title
+          }
+        });
+        this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.title.includes(this.videoTitle));
+        if(this.currentIndex > 1 && !this.isSubscriber){
+          this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
         }
-      });
-      this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.shortsData.Title.includes(this.videoTitle));
-      if(this.currentIndex > 1 && !this.isSubscriber){
-        this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
       }
     }
+  
   }
 
   ngOnInit() {
@@ -141,36 +173,36 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     this.isLoading = false;
   }
 
-  onSwipeUp() {
-    if (this.wisdomshort) {
-      this.isSwiped = true;
-      this.currentTime = 0;
-      this.showLoader();
-      let data: any;
-      if (this.currentIndex == this.wisdomShortOrderList.length - 1) {
-        this.currentIndex = 0;
-        data = this.wisdomShortOrderList[this.currentIndex];
-      } else {
-        data = this.wisdomShortOrderList[++this.currentIndex]
-      }
-      if(this.currentIndex > 2 && !this.isSubscriber){
-        this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
-      }
-      this.videoTitle = data.shortsData.Title;
-      let linklist = data.shortsData.VideoUrl.split("/");
-      this.linkcode = linklist[linklist.length - 1];
-      const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
-      this.videoLink = this.getSafeUrl(code);
-      this.isSwiped = true;
-      this.swiped = 'up';
-      setTimeout(() => {
-        this.isSwiped = false;
-        this.swiped = '';
-      }, 200);
-      // Implement logic for swipe up gesture
-      // Example: Navigate to the next video
-    }
-  }
+  // onSwipeUp() {
+  //   if (this.wisdomshort) {
+  //     this.isSwiped = true;
+  //     this.currentTime = 0;
+  //     this.showLoader();
+  //     let data: any;
+  //     if (this.currentIndex == this.wisdomShortOrderList.length - 1) {
+  //       this.currentIndex = 0;
+  //       data = this.wisdomShortOrderList[this.currentIndex];
+  //     } else {
+  //       data = this.wisdomShortOrderList[++this.currentIndex]
+  //     }
+  //     if(this.currentIndex > 2 && !this.isSubscriber){
+  //       this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+  //     }
+  //     this.videoTitle = data.shortsData.Title;
+  //     let linklist = data.shortsData.VideoUrl.split("/");
+  //     this.linkcode = linklist[linklist.length - 1];
+  //     const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
+  //     this.videoLink = this.getSafeUrl(code);
+  //     this.isSwiped = true;
+  //     this.swiped = 'up';
+  //     setTimeout(() => {
+  //       this.isSwiped = false;
+  //       this.swiped = '';
+  //     }, 200);
+  //     // Implement logic for swipe up gesture
+  //     // Example: Navigate to the next video
+  //   }
+  // }
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
@@ -181,27 +213,44 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     }
   }
 
-  onSwipeDown() {
-    if (this.wisdomshort) {
-      let data: any;
-      this.currentTime = 0;
-      this.showLoader();
-      if (this.currentIndex == 0) {
-        this.currentIndex = this.wisdomShortOrderList.length - 1;
-        data = this.wisdomShortOrderList[this.currentIndex];
-      } else {
-        data = this.wisdomShortOrderList[--this.currentIndex]
+  // onSwipeDown() {
+  //   if (this.wisdomshort) {
+  //     let data: any;
+  //     this.currentTime = 0;
+  //     this.showLoader();
+  //     if (this.currentIndex == 0) {
+  //       this.currentIndex = this.wisdomShortOrderList.length - 1;
+  //       data = this.wisdomShortOrderList[this.currentIndex];
+  //     } else {
+  //       data = this.wisdomShortOrderList[--this.currentIndex]
+  //     }
+  //     this.videoTitle = data.shortsData.Title;
+  //     let linklist = data.shortsData.VideoUrl.split("/");
+  //     this.linkcode = linklist[linklist.length - 1];
+  //     const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
+  //     this.videoLink = this.getSafeUrl(code);
+  //     this.isSwiped = true;
+  //     this.swiped = 'down';
+  //     setTimeout(() => {
+  //       this.isSwiped = false;
+  //     }, 200);
+  //   }
+  // }
+
+  onSwipeUp() {
+    if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
+      this.direction = 'up';
+      this.currentIndex++;
+      if(this.currentIndex > 1 && !this.isSubscriber){
+        this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
       }
-      this.videoTitle = data.shortsData.Title;
-      let linklist = data.shortsData.VideoUrl.split("/");
-      this.linkcode = linklist[linklist.length - 1];
-      const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
-      this.videoLink = this.getSafeUrl(code);
-      this.isSwiped = true;
-      this.swiped = 'down';
-      setTimeout(() => {
-        this.isSwiped = false;
-      }, 200);
+    }
+  }
+
+  onSwipeDown() {
+    if (this.currentIndex > 0) {
+      this.direction = 'down';
+      this.currentIndex--;
     }
   }
 
