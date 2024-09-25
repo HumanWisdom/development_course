@@ -35,10 +35,10 @@
 
               <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_m_none" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
                 </div>
               </div>
         
@@ -59,7 +59,7 @@
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" loading="lazy" alt="tick">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -72,7 +72,7 @@
             <div class="row mtb5px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" loading="lazy">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -85,7 +85,7 @@
             <div class="row mtb5px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" loading="lazy" alt="tick">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -98,7 +98,7 @@
             <div class="row mtb5px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" loading="lazy" alt="tick">
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -131,9 +131,9 @@
                     Adults,
                     </span>
                      on
-                  <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567 "><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px">
+                  <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567 "><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px" loading="lazy" alt="appstore">
                   </a>and
-                  <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US  "><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px"></a>
+                  <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US  "><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px" loading="lazy" alt="playstore"></a>
                 </h3>
               </div>
             </div>
@@ -190,7 +190,11 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp" class="img-responsive" alt="modules">
+            
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp" class="img-responsive w100p display_m_none" alt="modules" loading="lazy">
+            
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/bubble_mobile.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance and productivity">
+
           </div>
         </div>
       </section>
@@ -202,7 +206,7 @@
             <div class="row center_flex">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_block">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pl0px" data-aos="fade-up" data-aos-delay="100">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp" class="img-responsive" alt="Feel calm, capable, and better everyday, with HappierMe!">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp" class="img-responsive" loading="lazy" alt="Feel calm">
                 </div>
 
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -413,7 +417,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -439,7 +443,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -465,7 +469,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -492,7 +496,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -518,7 +522,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -544,7 +548,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -570,7 +574,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -626,7 +630,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_manage_exam_pressure.svg" class="img-responsive" alt="Improved productivity">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_manage_exam_pressure.svg" class="img-responsive" alt="Improved productivity" loading="lazy">
                     </div>
                   </div>
 
@@ -651,7 +655,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_manage_your_emotions.svg" class="img-responsive" alt="Emotional intelligence">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_manage_your_emotions.svg" class="img-responsive" alt="Emotional intelligence" loading="lazy">
                     </div>
                   </div>
 
@@ -676,7 +680,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_choosing_a_career.svg" class="img-responsive" alt="Well-being">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_choosing_a_career.svg" class="img-responsive" alt="Well-being" loading="lazy">
                     </div>
                   </div>
 
@@ -706,7 +710,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_success_and_failure.svg" class="img-responsive" alt="Success and Failure">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_success_and_failure.svg" class="img-responsive" alt="Success and Failure" loading="lazy">
                     </div>
                   </div>
 
@@ -733,7 +737,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_critical_thinking.svg" class="img-responsive" alt="Critical thinking">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_critical_thinking.svg" class="img-responsive" alt="Critical thinking" loading="lazy">
                     </div>
                   </div>
 
@@ -757,7 +761,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_addiction.svg" class="img-responsive" alt="Addiction">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_addiction.svg" class="img-responsive" alt="Addiction" loading="lazy">
                     </div>
                   </div>
 
@@ -787,7 +791,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="800">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_relationships.svg" class="img-responsive" alt="Relationships ">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_relationships.svg" class="img-responsive" alt="Relationships " loading="lazy">
                     </div>
                   </div>
 
@@ -811,7 +815,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="900">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_overcome_stress_and_anxiety.svg" class="img-responsive" alt="Attract and retain talent">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_overcome_stress_and_anxiety.svg" class="img-responsive" alt="Attract" loading="lazy">
                     </div>
                   </div>
 
@@ -834,7 +838,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1000">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_communication.svg" class="img-responsive" alt="Communication">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teens_communication.svg" class="img-responsive" alt="Communication" loading="lazy">
                     </div>
                   </div>
 
@@ -991,7 +995,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" class="img-responsive" alt=" Transforming the lives of children through self-knowledge">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" class="img-responsive" alt=" Transforming" loading="lazy">
                       </div>
                     </div>
 
@@ -1010,7 +1014,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive" alt="The Future of Education: A HappierMe Survey">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive" alt="The Future" loading="lazy">
                       </div>
                     </div>
 
@@ -1029,7 +1033,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" class="img-responsive" alt="Transforming education to meet the needs of students and society">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" class="img-responsive" alt="Transforming" loading="lazy">
                       </div>
                     </div>
 
@@ -1047,7 +1051,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" class="img-responsive" alt=" Does education make us intelligent?">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" class="img-responsive" alt=" make us intelligent?" loading="lazy">
                       </div>
                     </div>
 
@@ -1065,7 +1069,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive" alt=" How to manage your own mental health">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive" alt="  mental health" loading="lazy">
                       </div>
                     </div>
 
