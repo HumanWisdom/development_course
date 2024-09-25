@@ -57,7 +57,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row mt20px">
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_frame.png" class="img-responsive img_aspects"  alt="wh_tick_black">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_logo.webp" class="img-responsive img_aspects"  alt="wh_tick_black">
                 <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                     
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp" class=""  alt="wh_tick_black">
@@ -675,7 +675,7 @@
             </div>
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+              <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                 <h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000 ">
                 Contact the HappierMe team to explore collaboration opportunities where you are                </h4>
               </div>
