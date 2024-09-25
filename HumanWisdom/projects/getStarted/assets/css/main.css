@@ -67,7 +67,7 @@ h6 {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding: 80px 0 0 0;
+  padding: 70px 0 0 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -100,7 +100,7 @@ section {
 }
 /* NSFN form */
 .input_parent1 > [class^="col-"]:last-child {
-  margin: 10px 55px 40px 29px;
+  margin: 10px 55px 40px 10px;
 }
 /* NSFN form */
 .input[type=text], select, textarea {
@@ -601,7 +601,8 @@ section {
   }
 
   .mobile-nav-show {
-    color: var(--color-secondary);
+    color:#CB6171;
+
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -2516,7 +2517,9 @@ a
   opacity: 1;
 }
 
-
+.div_subscriptionvideo {
+padding:20px;
+}
 
 .div_subscriptionvideo {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
@@ -3911,4 +3914,8 @@ audio::-webkit-media-controls-enclosure
     transform: scale(.9);
     box-shadow: 0 0 0 10px rgba(229,141,130, 0);
   }
+}
+
+.bi-list::before {
+  color: #CB6171 !important;
 }
