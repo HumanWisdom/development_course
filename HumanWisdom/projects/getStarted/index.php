@@ -395,7 +395,7 @@
       </section>
       <!-- /video -->
 
-      <div class="row center_flex mt100px">
+      <div class="row center_flex mt_d100px_m60px">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
             <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
@@ -423,7 +423,9 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules.webp" class="img-responsive" alt="modules">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules.webp" class="img-responsive display_m_none" alt="modules">
+
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules">
           </div>
         </div>
       </section>

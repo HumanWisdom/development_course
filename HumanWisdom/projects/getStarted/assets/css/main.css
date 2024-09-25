@@ -2520,6 +2520,10 @@ a
 .div_subscriptionvideo {
 padding:20px;
 }
+.yt-embed {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
 
 .div_subscriptionvideo {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
@@ -3918,4 +3922,14 @@ audio::-webkit-media-controls-enclosure
 
 .bi-list::before {
   color: #CB6171 !important;
+}
+
+.mt_d100px_m60px
+{
+  padding: 100px 0 0 0;
+}
+
+.mt_d100px_m24px
+{
+  margin-top: 100px;
 }
