@@ -56,15 +56,15 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-                
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_frame.png" class="img-responsive img_aspects"  alt="wh_tick_black">
+                <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                     
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp" class=""  alt="wh_tick_black">
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_logo.webp" class=""  alt="wh_tick_black">
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -331,48 +331,38 @@
             
           </div>
         </div>
-      </section>
-      <!-- /video -->
-        <!-- subscription -->
-      <section id="div_subscriptionvideo">
         <div class="row center_flex div_subscriptionvideo">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <h2 class="mtb0px fs_24px fw_400 lh_120p fc_834b66">
+        <h2 class="mtb0px fs_24px fw_400 lh_120p fc_834b66">
                 Use code <span class="fw_600 fc_834b66 ">TOGETHER4FAMILIES</span> at checkout to get 40% discount on the annual subscription cost
                 </h2>
 
                 <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
                 (Now only $3/month, paid annually)
                 </h6>
+    </div>
+    </div>
+    <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <a href="https://happierme.app/adults/subscription/try-free-and-subscribe">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                Start your free trial now </button>
+             </a>
               </div>
             </div>
-
-            <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
+    </div>
+    </div>
+      </section>
+      <!-- /video -->
+       
 
                 
 
                
 
-              </div>
-            </div>
-
-           
-
-            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                Start your free trial now                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      <!-- /subscription -->
+     
       
 
       
@@ -685,8 +675,8 @@
             </div>
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
+              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000 ">
                 Contact the HappierMe team to explore collaboration opportunities where you are                </h4>
               </div>
             </div>
@@ -699,7 +689,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         
-                        <input type="text" class="form-control fc_01" id="name" name="name"  placeholder="Your Name">
+                        <input type="text" class="form-control fc_01" id="nfsn-name" name="nfsn-name"  placeholder="Your Name">
                         <div class="fc_icons">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
                         </div>
@@ -712,7 +702,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                        <input type="text" class="form-control fc_01" id="email" name="email"  placeholder="Work email">
+                        <input type="text" class="form-control fc_01" id="nfsn-email" name="nfsn-email"  placeholder="Work email">
                         <div class="fc_icons">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
                         </div>
@@ -725,7 +715,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                        <textarea id="subject"  class="form-control fc_01" name="subject" placeholder="Message" style="height:100px"></textarea>
+                        <textarea id="nfsn-message"  class="form-control fc_01" name="nfsn-message" placeholder="Message" style="height:100px"></textarea>
                       </div>
 
                      
@@ -734,11 +724,12 @@
 
                   <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                      <button  id="Request-Demo" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                      <button  id="nfsn-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                         Send
                       </button>
                     </div>
                   </div>
+                  
                 </form>
               </div>
             </div>
