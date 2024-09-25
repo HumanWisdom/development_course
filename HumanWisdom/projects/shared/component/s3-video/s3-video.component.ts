@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
@@ -11,6 +11,8 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'HumanWisdom-s3-video',
   templateUrl: './s3-video.component.html',
@@ -33,7 +35,7 @@ import {
     ])
   ]
 })
-export class S3VideoComponent implements OnInit {
+export class S3VideoComponent implements OnInit,OnDestroy {
   public tocColor: string = 'white';
   public videoLink: any;
   public videoTitle: any;
@@ -47,6 +49,9 @@ export class S3VideoComponent implements OnInit {
   showSwipeUp: boolean = true;
   currentIndex = 0;
   currentTime = 0;
+  isSubscriber =  false;
+  isSwipeAllow = false;
+  isAdults = true;
   constructor(
     private route: ActivatedRoute,
     private _sanitizer: DomSanitizer,
@@ -55,6 +60,19 @@ export class S3VideoComponent implements OnInit {
     private navigationService: NavigationService
   ) {
     this.initializeData();
+    
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
   }
 
   initializeData() {
@@ -74,6 +92,9 @@ export class S3VideoComponent implements OnInit {
       this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
     }
     const shortList = localStorage.getItem('wisdomShortData');
+    if(localStorage.getItem('isSwipeAllow')=='true'){
+      this.isSwipeAllow = true;
+    }
     if (shortList) {
       const wisdomShortList = JSON.parse(shortList);
       this.wisdomShortOrderList = wisdomShortList.map((element, index) => {
@@ -82,8 +103,11 @@ export class S3VideoComponent implements OnInit {
           order: index
         }
       });
+      this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.shortsData.Title.includes(this.videoTitle));
+      if(this.currentIndex > 1 && !this.isSubscriber){
+        this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+      }
     }
-    this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.shortsData.Title.includes(this.videoTitle));
   }
 
   ngOnInit() {
@@ -129,6 +153,9 @@ export class S3VideoComponent implements OnInit {
       } else {
         data = this.wisdomShortOrderList[++this.currentIndex]
       }
+      if(this.currentIndex > 2 && !this.isSubscriber){
+        this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+      }
       this.videoTitle = data.shortsData.Title;
       let linklist = data.shortsData.VideoUrl.split("/");
       this.linkcode = linklist[linklist.length - 1];
@@ -153,7 +180,6 @@ export class S3VideoComponent implements OnInit {
       this.router.navigate([url]);
     }
   }
-
 
   onSwipeDown() {
     if (this.wisdomshort) {
@@ -196,4 +222,9 @@ export class S3VideoComponent implements OnInit {
       video.pause();
     }
   }
+   
+  ngOnDestroy(): void {
+    localStorage.setItem('isSwipeAllow','false');
+  }
+
 }

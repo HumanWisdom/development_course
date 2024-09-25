@@ -108,6 +108,7 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
     let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
     let id = video.split("/")[3].split(".")[1]
+    localStorage.setItem('isSwipeAllow','true');
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
         this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
