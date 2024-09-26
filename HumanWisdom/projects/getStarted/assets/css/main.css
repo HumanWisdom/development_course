@@ -3933,3 +3933,13 @@ audio::-webkit-media-controls-enclosure
 {
   margin-top: 100px;
 }
+
+.cvideo_a
+{
+  width: 100%;
+  border-radius: 12px;
+  position:relative;
+  min-height: 43rem;
+  /* background: #120F40; */
+  border: 0;
+}
