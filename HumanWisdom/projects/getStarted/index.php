@@ -72,13 +72,16 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
-            <video id="vid" controls playinline autoplay loop muted class="w100p"
+            <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
                 type="video/mp4">
-            </video>
+            </video> -->
+
+            <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&autoplay=1&mute=1" class="cvideo_a" allow="autoplay"></iframe>
+              
           </div>
 
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
