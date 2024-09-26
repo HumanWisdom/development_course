@@ -45,13 +45,13 @@
               <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
                 <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0 tleft">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
-                  <h1 class="mtb0px fs_56px fw_600 lh_130p fc_183C79 ta_lc">
+                  <h1 class="mtb0px fs_56px fw_600 lh_130p fc_183C79 ta_lct">
                   HappierMe for Teenagers
                 </h1>
                      </div>
         
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
-                  <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
+                  <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lct">
                   Your guide to a happier and successful life
                 </h2>
                   </div>
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left;">
                   Manage your emotions
                   </h3>
                 </div>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left;">
                   Overcome stress and anxiety
                   </h3>
                 </div>
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left;">
                   Have happier relationships
                   </h3>
                 </div>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left;">
                   Feel good about yourself
                   </h3>
                 </div>

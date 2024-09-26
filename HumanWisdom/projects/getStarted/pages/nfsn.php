@@ -48,15 +48,14 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row mt20px">
               <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_logo.webp" class="img-responsive img_aspects"  alt="wh_tick_black"> -->
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/frame.webp" class="img-responsive img_aspects"  alt="wh_tick_black"> 
+                <!-- <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                     
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp"  class="img-responsive w100p display_m_none" alt="wh_tick_black">
                 </div>
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_trans.webp"  class="img-responsive w100p display_m_none"  alt="wh_tick_black">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_logo.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
-
+                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px"> -->
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_trans.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"> -->
+                
             </div> 
               </div>
             </div>
@@ -727,7 +726,7 @@
                     </div>
                   </div>
 
-                  <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
+                  <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                       <button  id="nfsn-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                         Send
