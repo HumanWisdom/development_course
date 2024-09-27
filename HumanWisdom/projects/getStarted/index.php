@@ -80,7 +80,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&autoplay=1&mute=1" class="cvideo_a" allow="autoplay"></iframe>
+            <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>
               
           </div>
 
