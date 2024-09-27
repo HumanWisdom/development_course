@@ -95,7 +95,7 @@
                         </div>
                       </div>
 
-                      <div class="row">
+                      <div class="row mb30px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="row tcenter center_flex">
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -104,9 +104,8 @@
             poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_di.svg">
             <source [src]="DailyInspirationLink" type="video/mp4">
           </video> -->
-                              <video playinline class="cvideo cvideo_ext_di"
-                                *ngIf="DailyInspirationLink && enableVideo" #videoPlayer
-                                controlsList="nodownload" preload="metadata"
+                              <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo"
+                                #videoPlayer controlsList="nodownload" preload="metadata"
                                 onplay="Logevent('click_play_video_daily_inspiration')" controls
                                 [poster]="DailyInspirationImg">
                                 <source [src]="DailyInspirationLink" type="video/mp4">
@@ -121,17 +120,17 @@
                               </h1>
                             </div>
                           </div>
+
+                          <div class="row mt15px">
+                            <button type="submit" *ngIf="enableBtn" class="btn mdp_add_to_journal">
+                              Add to journal
+                            </button>
+                          </div>
+
                         </div>
                       </div>
-
-                      <button type="submit" *ngIf="enableBtn"
-                        class="btn mdp_add_to_journal">
-                        Add to journal
-                      </button>
-
                     </div>
                     <!-- /video -->
-
 
                     <!-- video -->
                     <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
