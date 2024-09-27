@@ -85,7 +85,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     private router: Router,
     private navigationService: NavigationService
   ) {
-    this.initializeData();
+
     
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -99,6 +99,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     } else {
       this.isSubscriber = false;
     }
+    this.initializeData();
   }
 
   initializeData() {
@@ -134,7 +135,8 @@ export class S3VideoComponent implements OnInit,OnDestroy {
           }
         });
         this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.title.includes(this.videoTitle));
-        if(this.currentIndex > 1 && !this.isSubscriber){
+        if(this.currentIndex > 2){
+          
           this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
         }
       }

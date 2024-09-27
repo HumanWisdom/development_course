@@ -741,20 +741,6 @@
           </div>
         </div>
       </section>
-
-      <script>
-
-
-      </script>
-
-      
-     
-    
-
-    
-
-     
-
       <!-- footer -->
       <?php include('../includes/footer_new.php'); ?>
       <!-- /footer -->
