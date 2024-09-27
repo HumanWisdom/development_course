@@ -135,7 +135,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
           }
         });
         this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.title.includes(this.videoTitle));
-        if(this.currentIndex > 2){
+        if(this.currentIndex > 2 && !this.isSubscriber){
           
           this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
         }
