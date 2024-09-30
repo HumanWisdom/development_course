@@ -72,6 +72,13 @@ export class ManageYourEmotionsPage implements OnInit {
           id: 31,
           url: '/podcasts/31.mp3',
           title: 'Dealing with anger'
+        },
+        
+        pc05: 
+        {
+          id: 67,
+          url: '/podcasts/67.mp3',
+          title: 'How can we deal with crisis'
         }
       }
 
