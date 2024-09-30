@@ -386,13 +386,15 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <video id="homeVideo" controls playinline class="w100p"
+            <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_intro.mp4"
                 type="video/mp4">
-            </video>
+            </video> -->
+
+            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_a" allow="autoplay"></iframe>
           </div>
         </div>
       </section>
