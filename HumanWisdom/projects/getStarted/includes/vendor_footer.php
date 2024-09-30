@@ -15,12 +15,12 @@
 <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
 <!-- Template Main JS File -->
-<script defer src="../assets/js/main.js"></script>
-<script defer src="../scripts/index.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../scripts/index.js"></script>
 
 <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
-<script async type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
-<script async type="text/javascript" src="https:///code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script  type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https:///code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <script src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
