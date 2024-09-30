@@ -188,6 +188,10 @@ export class TeenagersService {
     return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
   }
 
+  getDashboardShorts(data): Observable<any> {
+    return this.http.get(this.path + `/GetDashboardShorts/${data}`)
+  }
+
   verifyactkey(data): Observable<any> {
     return this.http.get(this.path + `/VerifyActKey/${data}`)
   }

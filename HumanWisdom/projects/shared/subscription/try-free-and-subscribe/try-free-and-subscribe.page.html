@@ -182,12 +182,12 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw"  [ngClass]="isAdults ? '' : 'we_ft_cl'">
       <a>
-        <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'No Trial'">
+        <!-- <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'No Trial'">
           Try for free
         </button>
         <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'ended'">
           Proceed 
-        </button>
+        </button> -->
         <button type="button" (click)="dashboard()" class="btn btn_tfas" *ngIf="trialStatus == 'underway'">
           Continue to dashboard
         </button>

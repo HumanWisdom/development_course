@@ -35,11 +35,34 @@
         font-size: 12px;
     }
 
-     .ta_lc 
+    .ta_lc 
     {
         text-align: center;
         text-align: -webkit-center;
     } 
+  
+    .ta_lct 
+    {
+        text-align: left;
+        /* text-align: -webkit-center; */
+        font-size: 27px;
+    }  
+    
+    /*
+    .ta_lc 
+    {
+        text-align: center;
+        text-align: -webkit-center;
+        font-size: 27px;
+    }
+    */
+  
+    .div_testimonialst {
+       
+        width: 250px !important;
+        height: 100%;
+        
+    }
 
     .flex_block
     {
@@ -120,6 +143,7 @@
     .fs_15px 
     {
         font-size: 12px !important;
+        text-align: center;
     }
     /* /responsive_fonts */
 

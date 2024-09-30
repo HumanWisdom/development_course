@@ -14,16 +14,7 @@
 
    
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NHPHHF97');
-    
-    localStorage.setItem("programType",'9');
-    </script>
-    <!-- End Google Tag Manager -->
+   
 
   
     
@@ -56,15 +47,16 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row mt20px">
-              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_logo.webp" class="img-responsive img_aspects"  alt="wh_tick_black">
-                <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+              <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/frame.webp" class="img-responsive img_aspects"  alt="wh_tick_black"> 
+                <!-- <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
                     
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp" class=""  alt="wh_tick_black">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp"  class="img-responsive w100p display_m_none" alt="wh_tick_black">
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_logo.webp" class=""  alt="wh_tick_black">
-                </div> -->
+                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px"> -->
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_trans.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"> -->
+                
+            </div> 
               </div>
             </div>
 
@@ -321,8 +313,14 @@
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
 
           <div style="position: relative; width: 100%; max-width: 100%;">
-    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/3hdc9uyZgaI?si=EdLqyl8kxtB5fjdF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+          <iframe 
+          class="yt-embed"
+  src="https://www.youtube.com/embed/3hdc9uyZgaI?si=tYXF_U7mFZbpO5qa"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  >
+</iframe></div>
 <br/>
 <br/>
           <!-- <a href="https://www.youtube.com/watch?v=3hdc9uyZgaI"  lass="w100p">
@@ -540,8 +538,14 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=oedk0Tg9PKmwHFDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          </div>
-        </div>
+          <iframe 
+          class="yt-embed"
+  src="https://www.youtube.com/embed/MgsYk1SZh-w?si=IzvnMCna7jS8K80H"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  >
+</iframe>        </div>
       </section>
       <!-- /video -->
 
@@ -559,14 +563,14 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=lG_xu3s-kZ4BOOtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!-- <video controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen.webp"
-              controlsList="nodownload">
-              <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers.mp4"
-                type="video/mp4">
-            </video> -->
+          <iframe 
+          class="yt-embed"
+  src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  >
+</iframe>
           </div>
         </div>
       </section>
@@ -722,7 +726,7 @@
                     </div>
                   </div>
 
-                  <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300">
+                  <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                       <button  id="nfsn-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                         Send
@@ -737,20 +741,6 @@
           </div>
         </div>
       </section>
-
-      <script>
-
-
-      </script>
-
-      
-     
-    
-
-    
-
-     
-
       <!-- footer -->
       <?php include('../includes/footer_new.php'); ?>
       <!-- /footer -->

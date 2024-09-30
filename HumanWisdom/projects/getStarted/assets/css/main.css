@@ -100,7 +100,7 @@ section {
 }
 /* NSFN form */
 .input_parent1 > [class^="col-"]:last-child {
-  margin: 10px 55px 40px 10px;
+  margin: 1px 20px 30px 10px;
 }
 /* NSFN form */
 .input[type=text], select, textarea {
@@ -2519,6 +2519,10 @@ a
 
 .div_subscriptionvideo {
 padding:20px;
+}
+.yt-embed {
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }
 
 .div_subscriptionvideo {

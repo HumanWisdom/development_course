@@ -117,6 +117,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public isIos = false;
   public tourTotalIndex = 9;
   public tourIndex = 1;
+  dashboardShorts = [];
+
   constructor(
     public router: Router, public service: TeenagersService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
@@ -255,6 +257,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     if (userid === 'T') {
       this.isloggedIn = true;
     }
+    this.getDashboardShorts();
     if (rem === 'T' || guest === 'T') {
       if (guest === 'T') {
         localStorage.setItem("email", 'guest@humanwisdom.me');
@@ -296,6 +299,12 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }
 
 
+  }
+
+  getDashboardShorts() {
+    this.service.getDashboardShorts(this.isloggedIn).subscribe((res: any) => {
+      this.dashboardShorts = res;
+    })
   }
 
   encryptUserId() {
@@ -1984,6 +1993,12 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
     }
     this.router.navigate([url])
+  }
+
+  shortVideos(data) {
+    let id = data['VideoUrl'].split('/');
+    id = id[id.length - 1]
+    this.router.navigate(['/teenagers/wisdom-shorts/' + id])
   }
 
   searchEvent(module) {
