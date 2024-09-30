@@ -120,6 +120,7 @@ export class TryFreeAndSubscribePage implements OnInit {
       this.router.navigate([`/${SharedService.getprogramName()}/redeem-subscription`])
     }
     this.selectedSubscription = subscriptionType;
+    this.tryFreeSubscribe();
   }
 
   tryFreeSubscribe() {

@@ -35,7 +35,7 @@
               <li><a id="healthcare">HappierMe for Healthcare</a></li>
             </ul>
           </li>
-          <li><a id="pricing">Pricing</a></li>
+          <li><a id=" ">Pricing</a></li>
           <!-- <li><a href="../pages/partnership.php">Partnership</a></li> -->
           <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
         </ul>
