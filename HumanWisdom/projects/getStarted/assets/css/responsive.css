@@ -35,26 +35,35 @@
         font-size: 12px;
     }
 
-      .ta_lct 
+    .ta_lc 
+    {
+        text-align: center;
+        text-align: -webkit-center;
+    } 
+  
+    .ta_lct 
     {
         text-align: left;
         /* text-align: -webkit-center; */
         font-size: 27px;
     }  
+    
+    /*
     .ta_lc 
     {
         text-align: center;
         text-align: -webkit-center;
         font-size: 27px;
         padding: 10px;
-    }  
+    }
+    */
+  
     .div_testimonialst {
        
         width: 250px !important;
         height: 100%;
         
     }
-
 
     .flex_block
     {
@@ -180,6 +189,12 @@
         padding: 0;
     }
 
+    .work_edu_health_outer > [class^="col-"]:last-child
+    {
+        margin: 0 0 0 0;
+        padding: 0;
+    }
+
     .aspects_outer > [class^="col-"]
     {
         margin: 0 0 20px 0;
@@ -210,6 +225,74 @@
     {
         margin-top: 45px;
         margin-bottom: 45px;
+    }
+
+    section,
+    .mt_d100px_m60px
+    {
+        padding: 60px 0 0 0;
+    }
+
+    .section-header
+    {
+        padding-bottom: 24px;
+    }
+
+    .mt_d100px_m24px
+    {
+        margin-top: 24px;
+    }
+
+    #fbn 
+    {
+        padding-top: 40px;
+    }
+
+    .mt_m24px
+    {
+        margin-top: 24px;
+    }
+
+    .sap
+    {
+        margin-top: 0;
+    }
+
+    .div_dyk
+    {
+        display: block;
+        padding: 50px 0 50px 20px;
+    }
+
+    .div_dyk_l1
+    {
+        display: -webkit-inline-box !important;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0;
+    }
+
+    .div_dyk_l1 h5,
+    .div_dyk_l1 h6
+    {
+        white-space: normal !important;
+    }
+
+    .div_dyk_l1>[class^=col-]
+    {
+        width: 45%;
+        padding: 0;
+        padding: 0 10px 0 10px;
+        border-right: 1px solid rgba(0,0,0,0.2);
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+    }
+
+    .div_dyk_l1>[class^=col-]>.row
+    {
+        width: 100%;
     }
 }
 

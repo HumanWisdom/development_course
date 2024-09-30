@@ -70,7 +70,7 @@
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt100px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt_d100px_m24px">
             <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
               Welcome to HappierMe
             </h1>
