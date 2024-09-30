@@ -3943,3 +3943,12 @@ audio::-webkit-media-controls-enclosure
   /* background: #120F40; */
   border: 0;
 }
+
+.cvideo_b
+{
+  width: 100%;
+  border-radius: 12px;
+  position:relative;
+  /* background: #120F40; */
+  border: 0;
+}
