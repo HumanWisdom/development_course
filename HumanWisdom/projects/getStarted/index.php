@@ -394,7 +394,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_a" allow="autoplay"></iframe>
+            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay"></iframe>
           </div>
         </div>
       </section>
