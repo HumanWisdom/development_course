@@ -28,3 +28,10 @@
     height: 100%;
     
 }
+@media screen and (min-width: 480px) {
+    testimonialst {
+        width: 300px !important;
+        height: 100%;
+    }
+  }
+
