@@ -3,9 +3,9 @@
 
   <head>
     <title>HappierMe: Master your mind</title>
-    <meta property="title" content="HappierMe: Master your mind.">
-    <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
-    <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
+    <meta property="title" content="HappierMe for Teenagers">
+    <meta property="description" content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.>
+    <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
     
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
