@@ -234,7 +234,7 @@
         </div>
         
         <div class="row center_flex div_dyk">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div_dyk_l1">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 p0 div_dyk_l1">
 
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="100">
               <div class="row">
