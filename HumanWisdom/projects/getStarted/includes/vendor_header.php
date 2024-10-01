@@ -39,6 +39,15 @@
 <link href="../assets-min/font/line_height.css" rel="stylesheet">
 <link href="../assets-min/css/style_hb.css" rel="stylesheet"> -->
 
+<link href="../assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="../assets-min/css/responsive.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="../assets-min/font/font_colour.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="../assets-min/font/font_size.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="../assets-min/font/font_weight.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="../assets-min/font/line_height.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="../assets-min/css/style_hb.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" media="print" onload="this.media='all'" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
