@@ -197,7 +197,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.router.navigate(['/adults/guided-meditation/audiopage/', url, title, id,'Audio'])
     }
   }
-
+/* 
   routeBreathing(cont: any = 1) {
 
     var breathingR
@@ -230,14 +230,6 @@ export class OvercomeStressAnxietyPage implements OnInit {
           else
             this.router.navigate([`/adults/breathing/s29000`])
 
-          /* if(!breathingR)
-           {
-
-             this.router.navigate([`/adults/breathing`])
-
-           }
-           else
-             this.router.navigate([`/adults/breathing/s${breathingR}`])*/
 
         })
 
@@ -272,13 +264,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/stress/s44001`])
-          /* if(!this.goToPage)
-           {
-
-             this.router.navigate([`/adults/stress`])
-           }
-           else
-             this.router.navigate([`/adults/stress/s${stressResume}`])*/
+         
 
         })
 
@@ -314,13 +300,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/fear-anxiety/s486`])
-          /* if(!fearResume)
-           {
-
-             this.router.navigate([`/adults/fear-anxiety`])
-           }
-           else
-             this.router.navigate([`/adults/fear-anxiety/s${fearResume}`])*/
+        
 
         })
   }
@@ -355,13 +335,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/conditioning/s232`])
-          /*if(!conditioningResume)
-          {
-
-            this.router.navigate([`/adults/conditioning`])
-          }
-          else
-            this.router.navigate([`/adults/conditioning/s${conditioningResume}`])*/
+          
 
         })
 
@@ -397,14 +371,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/reactive-mind/s54001`])
-          /* if(!rmR)
-           {
-
-             this.router.navigate([`/adults/reactive-mind`])
-           }
-           else
-             this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
-
+          
         })
 
   }
@@ -473,7 +440,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
         })
   }
 
-
+ */
 
   getProgress() {
     this.service.getPoints(this.userId)

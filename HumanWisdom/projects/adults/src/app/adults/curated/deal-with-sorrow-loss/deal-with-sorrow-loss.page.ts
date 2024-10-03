@@ -162,7 +162,7 @@ export class DealWithSorrowLossPage implements OnInit {
 
         })
   }
-
+/* 
   routeSorrowandLoss(cont: any = 1) {
     var sorrowandlossResume
     localStorage.setItem("moduleId", JSON.stringify(60))
@@ -257,13 +257,7 @@ export class DealWithSorrowLossPage implements OnInit {
           else
             this.router.navigate([`/adults/emotional-needs/s18001`])
 
-          /*if(!sinR)
-          {
-
-            this.router.navigate([`/adults/self-interest`])
-          }
-          else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
+        
         })
   }
 
@@ -296,13 +290,7 @@ export class DealWithSorrowLossPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/without-language/s42000`])
-          /* if(!lwlResume)
-           {
-
-             this.router.navigate([`/adults/without-language`])
-           }
-           else
-             this.router.navigate([`/adults/without-language/s${lwlResume}`])*/
+         
         })
   }
 
@@ -338,17 +326,10 @@ export class DealWithSorrowLossPage implements OnInit {
           else
             this.router.navigate([`/adults/breathing/s29000`])
 
-          /* if(!breathingR)
-           {
-
-             this.router.navigate([`/adults/breathing`])
-
-           }
-           else
-             this.router.navigate([`/adults/breathing/s${breathingR}`])*/
+          
         })
   }
-
+ */
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {

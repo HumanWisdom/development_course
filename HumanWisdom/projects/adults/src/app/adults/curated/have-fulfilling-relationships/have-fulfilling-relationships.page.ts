@@ -198,7 +198,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
         })
   }
-
+/* 
   routeRelationships(cont: any = 1) {
     var relationshipResume
     localStorage.setItem("moduleId", JSON.stringify(47))
@@ -229,13 +229,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
           else
             this.router.navigate([`/adults/relationships/s47000`])
 
-          /*if(!relationshipResume)
-            {
-
-              this.router.navigate([`/adults/relationships`])
-            }
-            else
-              this.router.navigate([`/adults/relationships/s${relationshipResume}`])*/
+          
 
         })
   }
@@ -270,13 +264,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
           else
             this.router.navigate([`/adults/emotional-needs/s18001`])
 
-          /*if(!sinR)
-          {
-
-            this.router.navigate([`/adults/self-interest`])
-          }
-          else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
+        
 
         })
   }
@@ -310,13 +298,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/reactive-mind/s54001`])
-          /* if(!rmR)
-           {
-
-             this.router.navigate([`/adults/reactive-mind`])
-           }
-           else
-             this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
+         
 
         })
   }
@@ -351,13 +333,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
           else
             this.router.navigate([`/adults/communication/s53001`])
 
-          /* if(!communicationR)
-           {
-
-             this.router.navigate([`/adults/communication`])
-           }
-           else
-             this.router.navigate([`/adults/communication/s${communicationR}`])*/
+         
 
         })
   }
@@ -391,13 +367,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/love/s62001`])
-          /* if(!lonelinessResume)
-            {
-
-              this.router.navigate([`/adults/loneliness/s162p0`])
-            }
-            else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+          
 
         })
   }
@@ -433,7 +403,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
             this.router.navigate([`/adults/opinions-beliefs/s49001`])
         })
   }
-
+ */
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {
