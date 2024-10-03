@@ -10799,6 +10799,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
+  top:0;
 }
 
 .lab-modal-body h1 {
