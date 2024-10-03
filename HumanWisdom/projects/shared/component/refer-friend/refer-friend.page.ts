@@ -32,7 +32,7 @@ export class ReferFriendPage implements OnInit {
   sharewhatsapp(){
     
     var url ='https://api.whatsapp.com/send'
-   var text="Check out the HappierMe Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom";
+   var text="Check out the HappierMe Program: The Best Mental Health App for Stress, Anger & Depression Management";
     window.open(url + '?text='+encodeURIComponent(text))
   }
   keyname(value: any) {
