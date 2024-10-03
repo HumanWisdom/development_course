@@ -147,7 +147,7 @@ export class HaveCalmMindPage implements OnInit {
         })
   }
 
-  routeNature(cont: any = 1) {
+ /*  routeNature(cont: any = 1) {
     var natureR
     localStorage.setItem("moduleId", JSON.stringify(28))
     this.service.clickModule(28, this.userId)
@@ -178,13 +178,7 @@ export class HaveCalmMindPage implements OnInit {
           else
             this.router.navigate([`/adults/nature/s28001`])
 
-          /*if(!natureR)
-           {
-
-             this.router.navigate([`/adults/nature`])
-           }
-           else
-             this.router.navigate([`/adults/nature/s${natureR}`])*/
+        
         })
   }
 
@@ -220,14 +214,6 @@ export class HaveCalmMindPage implements OnInit {
           else
             this.router.navigate([`/adults/breathing/s29000`])
 
-          /* if(!breathingR)
-           {
-
-             this.router.navigate([`/adults/breathing`])
-
-           }
-           else
-             this.router.navigate([`/adults/breathing/s${breathingR}`])*/
         })
   }
 
@@ -240,15 +226,7 @@ export class HaveCalmMindPage implements OnInit {
         this.qrList = res
         ntR = "s" + res.lastVisitedScreen
         this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        /*if(res.lastVisitedScreen ==='')
-        {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else
-        {
-          localStorage.setItem("lastvisited", 'T')
-        }*/
+       
         // /continue where you left
         sessionStorage.setItem("ntR", ntR)
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -262,13 +240,7 @@ export class HaveCalmMindPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/noticing-thoughts/s30001`])
-          /*if(!ntR)
-          {
-
-            this.router.navigate([`/adults/noticing-thoughts`])
-          }
-          else
-            this.router.navigate([`/adults/noticing-thoughts/s${ntR}`])*/
+          
         })
   }
 
@@ -302,14 +274,7 @@ export class HaveCalmMindPage implements OnInit {
           else
             this.router.navigate([`/adults/guided-meditation/s51000`])
 
-          /* if(!gamR)
-           {
-
-             this.router.navigate([`/adults/guided-meditation`])
-
-           }
-           else
-             this.router.navigate([`/adults/guided-meditation/s${gamR}`])*/
+         
         })
   }
 
@@ -342,13 +307,7 @@ export class HaveCalmMindPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/meditation/s22001`])
-          /*if(!meditationResume)
-          {
-
-            this.router.navigate([`/adults/meditation`])
-          }
-          else
-            this.router.navigate([`/adults/meditation/s${meditationResume}`])*/
+        
         })
   }
 
@@ -381,13 +340,7 @@ export class HaveCalmMindPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/without-language/s42000`])
-          /* if(!lwlResume)
-           {
-
-             this.router.navigate([`/adults/without-language`])
-           }
-           else
-             this.router.navigate([`/adults/without-language/s${lwlResume}`])*/
+          
         })
   }
 
@@ -422,7 +375,7 @@ export class HaveCalmMindPage implements OnInit {
       else
             this.router.navigate([`/adults/awareness/s39000`])
       })
-}
+} */
 
   getProgress() {
     this.service.getPoints(this.userId)
