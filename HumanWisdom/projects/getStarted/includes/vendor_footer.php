@@ -19,7 +19,7 @@
 <script src="../scripts/index.js"></script>
 
 <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
-<script type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
+<script  type="text/javascript" src="https:///code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https:///code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <script src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>

@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 10;
+  public tourTotalIndex = 9;
   public tourIndex = 1;
   public isSkip = false;
 
@@ -299,7 +299,7 @@ export class AdultDashboardPage implements OnInit {
     this.userId = SharedService.getUserId();
     this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        
+
         if (res && res[0] && res[0]['ModuleId'] == 75) {
           res[0]['screenno'] = res[0]['screenno'].substring(0, res[0]['screenno'].length - 2)
         }
@@ -311,7 +311,7 @@ export class AdultDashboardPage implements OnInit {
     let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
-        
+
         this.dashboardFeature = res;
       });
   }
@@ -349,7 +349,7 @@ export class AdultDashboardPage implements OnInit {
       }
     }
     // Extract the query string from the URL
- 
+
     this.title.setTitle('HappierMe App: Personal Growth & Self-Help')
     this.meta.updateTag({ property: 'title', content: 'HappierMe App: Personal Growth & Self-Help' })
     this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the HappierMe app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
@@ -506,10 +506,10 @@ export class AdultDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_eatid",
+        element: ".tour_fbn",
         popover: {
-          title: 'Change your topic of choice',
-          description: 'Choose from 8 broad topics to explore in depth.',
+          title: 'Feel better now',
+          description: 'Find breathing exercises, meditations and videos to feel better now.',
           side: "bottom"
         }
       },
@@ -522,13 +522,15 @@ export class AdultDashboardPage implements OnInit {
         }
       },
       {
-        element: ".tour_fbn",
+        element: ".tour_eatid",
         popover: {
-          title: 'Feel better now',
-          description: 'Find breathing exercises, meditations and videos to feel better now.',
+          title: 'Change your topic of choice',
+          description: 'Choose from 8 broad topics to explore in depth.',
           side: "bottom"
         }
       },
+
+
       /*{
         element: ".tour_find_inspiration",
         popover: {
@@ -574,7 +576,7 @@ export class AdultDashboardPage implements OnInit {
 
 
     if(!this.isloggedIn) {
-      this.tourTotalIndex = 9;
+      this.tourTotalIndex = 8;
       stepList.splice(1, 1);
     }
 
@@ -928,7 +930,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   googleLogin(d=''){
-    
+
   }
   // fbLogin(d = '') {
   //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
@@ -1230,7 +1232,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1310,7 +1312,7 @@ export class AdultDashboardPage implements OnInit {
       this.name = res.Name
     }
     this.streak = res.Streak
-    
+
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1403,7 +1405,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = res.Name
           }
           this.streak = res.Streak
-          
+
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1494,7 +1496,7 @@ export class AdultDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
-          
+
           // this.getProgress()
           // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -3869,7 +3871,7 @@ export class AdultDashboardPage implements OnInit {
      localStorage.setItem("moduleId", JSON.stringify(75))
      this.service.clickModule(75, this.userId)
        .subscribe(res => {
-         
+
          this.qrList = res
          weR = "s" + res.lastVisitedScreen
          // continue where you left
@@ -4033,7 +4035,7 @@ export class AdultDashboardPage implements OnInit {
 
       }, 5000);
 
-      
+
     })
   }
 
@@ -4081,13 +4083,13 @@ export class AdultDashboardPage implements OnInit {
       SharedService.isFromAdults = true;
       this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
     }
-    else if(url.includes('eid=')) { 
+    else if(url.includes('eid=')) {
 
       this.logeventservice.logEvent("click_upcoming_event");
      let eid = url.split('eid=')[1];
-      this.router.navigate(['/adults/events/event'], { queryParams: { eid: `${eid}` } })    
-      
-    
+      this.router.navigate(['/adults/events/event'], { queryParams: { eid: `${eid}` } })
+
+
     }else{
       //window.location = url;
       this.router.navigate([`/${url}`])
@@ -4099,7 +4101,7 @@ export class AdultDashboardPage implements OnInit {
   //   localStorage.setItem("moduleId", JSON.stringify(75))
   //   this.service.clickModule(75, this.userId)
   //     .subscribe(res => {
-  //       
+  //
   //       this.qrList = res
   //       weR = "s" + res.lastVisitedScreen
   // continue where you left
@@ -4132,7 +4134,7 @@ export class AdultDashboardPage implements OnInit {
   // }
 
 
-  
+
   RouteToWisdomExercise(exercise) {
 
     this.logeventservice.logEvent("click_Awareness_exercise");
@@ -4141,7 +4143,7 @@ export class AdultDashboardPage implements OnInit {
      localStorage.setItem("moduleId", JSON.stringify(75))
      this.aservice.clickModule(75, this.userId)
        .subscribe(res => {
-         
+
          this.qrList = res
          weR = "s" + res.lastVisitedScreen
          // continue where you left
