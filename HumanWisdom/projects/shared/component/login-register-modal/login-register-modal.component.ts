@@ -464,7 +464,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         if (res > 0) {
           this.userId = res
           this.email = this.registrationForm.get('email').value
-          if (this.router.url.includes('/redeem-subscription')) {
+          if (this.router.url.includes('/redeem-subscription') || this.router.url.includes('/redeem-gift-card')) {
             localStorage.setItem("email", this.registrationForm.get('email').value)
             localStorage.setItem("pswd", this.registrationForm.get('password').value)
             this.emaillogin('second')
