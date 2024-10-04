@@ -202,7 +202,7 @@ export class BeHappierPage implements OnInit {
 
         })
   }
-
+/* 
   routeHappiness(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(23))
@@ -232,13 +232,7 @@ export class BeHappierPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/happiness/s23001`])
-          /* if(!identityResume)
-           {
-
-             this.router.navigate([`/adults/identity`])
-           }
-           else
-             this.router.navigate([`/adults/identity/s${identityResume}`])*/
+         
         })
   }
 
@@ -271,13 +265,7 @@ export class BeHappierPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/living-with-peace/s63001`])
-          /* if(!lonelinessResume)
-            {
-
-              this.router.navigate([`/adults/loneliness/s162p0`])
-            }
-            else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+        
         })
   }
 
@@ -347,13 +335,6 @@ export class BeHappierPage implements OnInit {
           else
             this.router.navigate([`/adults/inner-boredom/s56001`])
 
-          /*if(!sinR)
-          {
-
-            this.router.navigate([`/adults/self-interest`])
-          }
-          else
-            this.router.navigate([`/adults/self-interest/s${sinR}`])*/
         })
   }
 
@@ -390,7 +371,7 @@ export class BeHappierPage implements OnInit {
           else
             this.router.navigate([`/adults/comparison/s0`])
         })
-  }
+  } */
 
   getProgress() {
     this.service.getPoints(this.userId)
