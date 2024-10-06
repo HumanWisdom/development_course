@@ -2788,7 +2788,7 @@ padding:20px;
   border-radius: 12px;
   position:relative;
   min-height: 35rem;
-  background: #120F40;
+  /* background: #120F40; */
 }
 
 /*
@@ -3937,7 +3937,7 @@ audio::-webkit-media-controls-enclosure
 .cvideo_a
 {
   width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   position:relative;
   min-height: 43rem;
   /* background: #120F40; */
@@ -3947,7 +3947,7 @@ audio::-webkit-media-controls-enclosure
 .cvideo_b
 {
   width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   position:relative;
   /* background: #120F40; */
   border: 0;

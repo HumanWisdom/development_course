@@ -565,7 +565,7 @@
         </div>
 
         <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive" alt="Dr Manoj Krishna">
           </div>
         </div>
