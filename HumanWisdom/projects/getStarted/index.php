@@ -189,7 +189,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block">
+                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block ta_lc">
                   Start your free trial now. Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore" loading=lazy>
@@ -428,7 +428,7 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules.webp" class="img-responsive display_m_none" alt="modules" loading=lazy>
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
@@ -1779,13 +1779,13 @@
               </li>
 
               <li>
-                <a data-toggle="tab" id="journal" href="#journal">
+                <a data-toggle="tab" id="journal" href="#journal_tab">
                   Journal
                 </a>
               </li>
 
               <li>
-                <a data-toggle="tab"  id="podcast" href="#podcast">
+                <a data-toggle="tab"  id="podcast" href="#podcast_tab">
                   Podcast
                 </a>
               </li>
@@ -1871,7 +1871,7 @@
               <!-- /pathway -->
 
               <!-- journal -->
-              <div id="journal" class="tab-pane fade">
+              <div id="journal_tab" class="tab-pane fade">
                 <div class="row center_flex">
                   <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
@@ -1899,7 +1899,7 @@
               <!-- /journal -->
 
               <!-- podcast -->
-              <div id="podcast" class="tab-pane fade">
+              <div id="podcast_tab" class="tab-pane fade">
                 <div class="row center_flex">
                   <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
