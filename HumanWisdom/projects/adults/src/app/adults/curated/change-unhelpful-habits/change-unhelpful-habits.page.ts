@@ -145,7 +145,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
 
         })
   }
-
+/* 
   routeAddiction(cont: any = 1) {
     var addictionResume
     localStorage.setItem("moduleId", JSON.stringify(45))
@@ -243,13 +243,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/conditioning/s232`])
-          /*if(!conditioningResume)
-          {
-
-            this.router.navigate([`/adults/conditioning`])
-          }
-          else
-            this.router.navigate([`/adults/conditioning/s${conditioningResume}`])*/
+         
         })
   }
 
@@ -282,14 +276,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/stress/s44001`])
-          /* if(!this.goToPage)
-           {
-
-             this.router.navigate([`/adults/stress`])
-           }
-           else
-             this.router.navigate([`/adults/stress/s${stressResume}`])*/
-        })
+                 })
   }
 
   routeFood(cont: any = 1) {
@@ -322,7 +309,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
           else
             this.router.navigate([`/adults/food-health/s46001`])
         })
-  }
+  } */
 
   getProgress() {
     this.service.getPoints(this.userId)

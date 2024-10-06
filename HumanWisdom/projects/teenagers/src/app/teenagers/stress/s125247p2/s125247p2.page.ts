@@ -14,7 +14,7 @@ export class S125247p2Page implements OnInit {
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/14.mp4'
+  videoLink = this.mediaVideo + '/events/22.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "A Talk on Stress"
