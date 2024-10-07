@@ -315,10 +315,10 @@
           <div style="position: relative; width: 100%; max-width: 100%;">
           <iframe 
           class="yt-embed"
-  src="https://www.youtube.com/embed/3hdc9uyZgaI?si=tYXF_U7mFZbpO5qa"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+          src="https://www.youtube.com/embed/3hdc9uyZgaI?si=tYXF_U7mFZbpO5qa"
+          title="YouTube video player"
+          frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
   >
 </iframe></div>
 <br/>
@@ -334,7 +334,7 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
         <h2 class="mtb0px fs_24px fw_400 lh_120p fc_834b66">
-                Use code <span class="fw_600 fc_834b66 ">TOGETHER4FAMILIES</span> at checkout to get 40% discount on the annual subscription cost
+                Use code <span class="fw_600 fc_834b66 ">TOGETHER4FAMILIES</span> at checkout to get 40% discount on the annual subscription cost
                 </h2>
 
                 <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
