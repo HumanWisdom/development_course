@@ -70,7 +70,7 @@ export class DailyPracticePage implements OnInit {
     $('.carousel').bcSwipe({ threshold: 50 });
 
     if (this.guest || !this.isloggedIn || this.Subscriber === '0') {
-      this.placeholder = 'Please subscribe to access your online journal';
+      this.placeholder = 'Start your free trial to access your online journal';
     }
 
     this.getdailyquestion();
