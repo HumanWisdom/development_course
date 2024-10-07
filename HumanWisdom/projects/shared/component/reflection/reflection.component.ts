@@ -54,7 +54,7 @@ export class ReflectionComponent implements OnInit {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
     if (this.guest || !this.Subscriber) {
-      this.placeholder = 'Please subscribe to access your online journal'
+      this.placeholder = 'Start your free trial to access your online journal'
       this.textDisabled = true;
     }
     this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();

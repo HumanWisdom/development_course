@@ -72,7 +72,7 @@ export class CourseHeaderComponent implements OnInit {
 
   ngOnInit() {
     if(this.guest || !this.Subscriber) {
-      this.placeHolder = "Please subscribe to access your online journal";
+      this.placeHolder = "Start your free trial to access your online journal";
     }
     this.address = this.router.url;
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
@@ -103,7 +103,7 @@ export class CourseHeaderComponent implements OnInit {
   }
   toggleBookmark() {
     if (this.guest || !this.Subscriber) {
-      this.content = 'Please subscribe to activate this feature';
+      this.content = 'Start your free trial to activate this feature';
       this.enablecancel = true;
       this.enableAlert = true;
     } else {
