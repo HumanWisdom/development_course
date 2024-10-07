@@ -93,7 +93,7 @@ export class JournalWeComponent implements OnInit {
       }
     }else{
       this.guestEvent.emit(true);
-      // let retVal = confirm("Please subscribe to activate the Journal");
+      // let retVal = confirm("Start your free trial to activate the Journal");
       // if( retVal == true ) {
       //   this.router.navigate(['/log-in']);
       // } else {

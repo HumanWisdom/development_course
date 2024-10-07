@@ -56,7 +56,7 @@ export class TranscriptHeaderComponent implements OnInit {
   ngOnInit() {
     this.address=this.router.url;
     if(this.guest || !this.Subscriber) {
-      this.placeHolder = "Please subscribe to access your online journal";
+      this.placeHolder = "Start your free trial to access your online journal";
     }
 
     var lastSlash = this.path.lastIndexOf("/");
