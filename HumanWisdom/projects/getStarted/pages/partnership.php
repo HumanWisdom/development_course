@@ -3,9 +3,9 @@
 
   <head>
     <title>HappierMe: Master your mind</title>
-    <meta property="title" content="HappierMe: Master your mind.">
-    <meta property="description" content="Manage your emotions. Be happy.|HappierMe">
-    <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
+    <meta property="title" content="Become a Partner with HappierMe | Mental Wellness for All">
+    <meta property="description" content="Join HappierMe’s partnership program to promote emotional intelligence and mental wellness. Learn how to become a partner and make a difference today.">
+    <meta name="keywords" content="Smental health app, partnership, wellness, happiness, depression, anxiety, stress, emotional intelligence, development">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>

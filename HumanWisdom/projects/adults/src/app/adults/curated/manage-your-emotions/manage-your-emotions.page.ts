@@ -189,7 +189,7 @@ export class ManageYourEmotionsPage implements OnInit {
 
         })
   }
-
+/* 
   routeAnger(cont: any = 1) {
     var angerResume
     localStorage.setItem("moduleId", JSON.stringify(14))
@@ -219,13 +219,7 @@ export class ManageYourEmotionsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/anger/s162p0`])
-          /* if(!angerResume)
-            {
-
-              this.router.navigate([`/adults/anger/s162p0`])
-            }
-            else
-              this.router.navigate([`/adults/anger/s${angerResume}`])*/
+        
         })
   }
 
@@ -258,13 +252,7 @@ export class ManageYourEmotionsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/reactive-mind/s54001`])
-          /* if(!rmR)
-           {
-
-             this.router.navigate([`/adults/reactive-mind`])
-           }
-           else
-             this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
+          
         })
   }
 
@@ -400,16 +388,10 @@ export class ManageYourEmotionsPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/loneliness/s61001`])
-          /* if(!lonelinessResume)
-            {
-
-              this.router.navigate([`/adults/loneliness/s162p0`])
-            }
-            else
-              this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+        
         })
   }
-
+ */
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {

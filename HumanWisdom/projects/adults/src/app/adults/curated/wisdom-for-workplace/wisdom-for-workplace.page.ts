@@ -195,7 +195,7 @@ export class WisdomForWorkplacePage implements OnInit {
 
         })
   }
-
+/* 
   routeWork(cont: any = 1) {
     var wR
     localStorage.setItem("moduleId", JSON.stringify(58))
@@ -227,13 +227,13 @@ export class WisdomForWorkplacePage implements OnInit {
             this.router.navigate([`/adults/work/s58001`])
 
         })
-  }
+  } */
 
   toRead(obj) {
     let sId = obj;
     this.router.navigate(['/adults/wisdom-stories/view-stories'], { queryParams: { sId: `${sId}` } })
   }
-
+/* 
   routeLeadership(cont: any = 1) {
     var lR
     localStorage.setItem("moduleId", JSON.stringify(59))
@@ -296,13 +296,7 @@ export class WisdomForWorkplacePage implements OnInit {
           else
             this.router.navigate([`/adults/communication/s53001`])
 
-          /* if(!communicationR)
-           {
-
-             this.router.navigate([`/adults/communication`])
-           }
-           else
-             this.router.navigate([`/adults/communication/s${communicationR}`])*/
+         
         })
   }
 
@@ -368,13 +362,7 @@ export class WisdomForWorkplacePage implements OnInit {
           else
             this.router.navigate([`/adults/relationships/s47000`])
 
-          /*if(!relationshipResume)
-            {
-
-              this.router.navigate([`/adults/relationships`])
-            }
-            else
-              this.router.navigate([`/adults/relationships/s${relationshipResume}`])*/
+       
         })
   }
 
@@ -540,7 +528,7 @@ export class WisdomForWorkplacePage implements OnInit {
 
         })
   }
-
+ */
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {

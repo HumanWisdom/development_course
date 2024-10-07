@@ -10799,6 +10799,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
+  top:0 !important;
 }
 
 .lab-modal-body h1 {
@@ -31491,7 +31492,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 
 .ad_sclose_icon
 {
-  color: #5D5D5D;
+  /* color: #5D5D5D; */
+  color: #fff;
   font-size: 20px;
   right: 8% !important;
   text-align: center;

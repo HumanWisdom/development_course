@@ -54,6 +54,7 @@
         text-align: center;
         text-align: -webkit-center;
         font-size: 27px;
+        padding: 10px;
     }
     */
   
@@ -124,8 +125,8 @@
     /* responsive_fonts */
     .fs_36px 
     {
-        /* font-size: 27px !important; */
-        font-size: 24px !important;
+        font-size: 27px !important;
+        /* font-size: 24px !important; */
     }
 
     .fs_24px 
@@ -140,10 +141,15 @@
         font-size: 15px !important;
     }
 
+    .fs_18px 
+    {
+        font-size: 12px !important;
+    }
+
     .fs_15px 
     {
         font-size: 12px !important;
-        text-align: center;
+        /* text-align: center; */
     }
     /* /responsive_fonts */
 
@@ -293,6 +299,11 @@
     {
         width: 100%;
     }
+
+    .input_parent
+    {
+        display: block;
+    }
 }
 
 @media (min-width: 768px)
@@ -316,6 +327,11 @@
     .owl-nav .owl-next
     {
         display: none;
+    }
+
+    .owl-carousel.owl-drag .owl-item
+    {
+        margin-right: 14px !important;
     }
 
     .dflex_jc_lc

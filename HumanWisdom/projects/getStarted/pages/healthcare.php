@@ -178,8 +178,8 @@
         </div>
 
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 p0">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p0">
               <a href="#bring_happierme">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                   Request a demo

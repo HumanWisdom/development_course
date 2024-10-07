@@ -59,7 +59,7 @@ export class AudioHeaderComponent implements OnInit {
 
   ngOnInit() {
     if (this.guest || !this.Subscriber) {
-      this.placeHolder = "Please subscribe to access your online journal";
+      this.placeHolder = "Start your free trial to access your online journal";
     }
 
     this.progUrl = JSON.parse(JSON.stringify(this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1)));

@@ -3,8 +3,8 @@
 
   <head>
     <title>HappierMe: For Teens & Adults</title>
-    <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
-    <meta property="description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
+    <meta property="title" content="HappierMe & National Family Support Network">
+    <meta property="description" content="HappierMe partners with the National Family Support Network to offer discounts on the app for NFSN members. Strengthen family mental wellness today with exclusive access.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
