@@ -145,13 +145,18 @@ export class CourseHeaderComponent implements OnInit {
   courseNote() {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
-
   goToToc() {
-    this.naviagtorService.getBackLink();
-    if(this.toc.includes(this.programName))
-     this .router.navigate(['/' + this.toc])
-    else
-      this.router.navigate(['/' + this.programName + '/' + this.toc])
+    // this.naviagtorService.getBackLink();
+    // if(this.toc==""){
+      let lastSlashIndex = this.router.url.lastIndexOf('/');
+      let modifiedUrl = this.router.url.substring(0, lastSlashIndex);
+      this.router.navigate(['/' + modifiedUrl])
+    // }else{
+    //   if(this.toc.includes(this.programName))
+    //     this .router.navigate(['/' + this.toc])
+    //    else
+    //      this.router.navigate(['/' + this.programName + '/' + this.toc])
+    // }
   }
 
   goToDash() {
