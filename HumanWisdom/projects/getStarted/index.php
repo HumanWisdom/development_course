@@ -9,9 +9,12 @@
     <meta property="og:title" content=HappierMe-Mental Health Care>
     <meta property="og:site_name" content=HappierMe>
     <meta property="og:url" content=https://happierme.app/>
-     <meta property="og:description" content="">
      <meta property="og:type" content="">
-     <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp><meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp><meta property="og:image" content=""><meta property="og:image" content=""><meta property="og:image" content="">
+     <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp>
+     <!-- <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp>
+     <meta property="og:image" content="">
+     <meta property="og:image" content="">
+     <meta property="og:image" content=""> -->
    <!--Schema tag for website -->
    <script type="application/ld+json">
       {
@@ -2063,7 +2066,7 @@
                       </div>
                       <div id="c41" class="panel-collapse collapse in">
                         <div class="panel-body">
-                          There is a completely new section of the app dedicated to teenagers under development and will launch in Q2 2024. Teeangers are under so much pressure and need support to manage their mental health, make sense of their emotions, and develop the soft skills to succeed in life. 
+                           Teeangers are under so much pressure and need support to manage their mental health, make sense of their emotions, and develop the soft skills to succeed in life. We have a completely separate app designed for teenagers which can be accessed through the main menu in the app. It was  created in collaboration with experts around the world and teenagers themselves. It features a section called Teen Talk -illuminating conversations with teenagers on their common concerns.  
                         </div>
                       </div>
                     </div>
