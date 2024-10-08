@@ -202,13 +202,13 @@ export class SelectATopicToExplorePage implements OnInit {
       localStorage.setItem('storyNumber', id);
       if (name === 'Manage your emotions') {
         localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
-        this.logeventservice.logEvent('click_emotions');  
+        this.logeventservice.logEvent('click_emotions');
         this.route.navigate(['/teenagers/curated/manage-your-emotions'])
       } else if (name === 'Mental Health') {
         localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
         this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
-      } else if (name === 'Succeed in Life') {
+      } else if (name === 'Succeed in life') {
         localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
         this.logeventservice.logEvent('click_workplace');
         this.route.navigate(['/teenagers/curated/succeed-in-life'])
