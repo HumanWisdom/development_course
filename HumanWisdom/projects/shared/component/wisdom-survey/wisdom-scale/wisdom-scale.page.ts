@@ -9,7 +9,7 @@ import { NavigationService } from '../../../services/navigation.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from "../../../models/program-model";
-
+import { Constant } from "../../../services/constant";
 @Component({
   selector: 'app-wisdom-scale',
   templateUrl: './wisdom-scale.page.html',
@@ -320,14 +320,18 @@ export class WisdomScalePage implements OnInit {
         });
   }
 
-  goBack() {
-    // this.location.back()
+  goBack(){
     var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    }else{
+    if(url==null){
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if(url && url!=null && url != 'null'){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+     }else{
       this.router.navigate([url]);
-    }
+     }
   }
 
   viewClickEvent(url) {
