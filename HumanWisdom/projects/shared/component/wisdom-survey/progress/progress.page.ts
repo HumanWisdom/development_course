@@ -3,6 +3,10 @@ import { Location } from '@angular/common';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Color } from 'ng2-charts';
 import { OnboardingService } from '../../../services/onboarding.service';
+import { SharedService } from'../../../services/shared.service';
+import { Router } from '@angular/router';
+import { NavigationService } from '../../../services/navigation.service';
+import { Constant } from  '../../../services/constant';
 
 @Component({
   selector: 'app-progress',
@@ -129,8 +133,10 @@ export class ProgressPage implements OnInit {
 ];
 
   constructor(
+    private router: Router,
+    private service: OnboardingService,
     private location: Location,
-    private service: OnboardingService
+ private navigationService: NavigationService,
   )
   {
   let userId = JSON.parse(localStorage.getItem("userId"))
@@ -386,9 +392,17 @@ export class ProgressPage implements OnInit {
   ngOnInit() {
   }
 
-  goBack()
-  {
-    this.location.back();
+  goBack(){
+    var url = this.navigationService.navigateToBackLink();
+    if(url==null){
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if(url && url!=null && url != 'null'){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+     }else{
+      this.router.navigate([url]);
+     }
   }
-
 }

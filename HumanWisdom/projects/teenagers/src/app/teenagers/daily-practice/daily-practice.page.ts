@@ -43,6 +43,8 @@ export class DailyPracticePage implements OnInit {
   isAdults: boolean;
   dailyInspirationTitle = '';
   DailyInspirationLink;
+  dailyInsModule = '';
+  enableBtn = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -73,6 +75,20 @@ export class DailyPracticePage implements OnInit {
       this.placeholder = 'Start your free trial to access your online journal';
     }
 
+    setTimeout(() => {
+      let video = document?.getElementsByTagName('video')[0];
+
+      video?.addEventListener("timeupdate", (function () {
+        if ((video.duration - video.currentTime) <= 5) {
+          this.enableBtn = true;
+        }else {
+          this.enableBtn = false;
+        }
+      }).bind(this));
+
+
+    }, 4000)
+
     this.getdailyquestion();
 
   }
@@ -89,6 +105,7 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+        this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
         this.enableVideo = true;
       }
     })
@@ -146,6 +163,10 @@ export class DailyPracticePage implements OnInit {
 
   Logevent(evtName) {
     this.logeventservice.logEvent(evtName);
+  }
+
+  routeModule() {
+    this.router.navigate(["/teenagers/" + this.dailyInsModule])
   }
 
   next(event) {

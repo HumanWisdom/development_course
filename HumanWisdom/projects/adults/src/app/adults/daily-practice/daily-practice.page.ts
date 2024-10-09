@@ -44,6 +44,7 @@ export class DailyPracticePage implements OnInit {
   DailyInspirationLink;
   DailyInspirationImg = '';
   enableBtn = false;
+  dailyInsModule = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -101,6 +102,7 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+        this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
         this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
         this.enableVideo = true;
       }
@@ -159,6 +161,10 @@ export class DailyPracticePage implements OnInit {
 
   Logevent(evtName) {
     this.logeventservice.logEvent(evtName);
+  }
+
+  routeModule() {
+    this.router.navigate(["/adults/" + this.dailyInsModule])
   }
 
   next(event) {
