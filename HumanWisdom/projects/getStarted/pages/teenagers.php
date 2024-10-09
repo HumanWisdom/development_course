@@ -4,7 +4,7 @@
   <head>
     <title>HappierMe: Master your mind</title>
     <meta property="title" content="HappierMe for Teenagers">
-    <meta property="description" content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.>
+    <meta property="description" content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.">
     <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
     
     <!--Canonical Tag-->
@@ -466,7 +466,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        Sree, Duba
+                        Sree, Dubai
                         </h5>
                       </div>
                     </div>
