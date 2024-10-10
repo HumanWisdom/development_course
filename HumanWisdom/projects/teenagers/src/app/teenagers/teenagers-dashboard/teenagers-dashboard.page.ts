@@ -115,7 +115,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   dashboardShorts = [];
 
@@ -547,6 +547,14 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
           title: 'Change your topic of choice',
           description: 'Choose from 8 broad topics to explore in depth.',
           side: "bottom"
+        }
+      },
+      {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
         }
       },
       {
