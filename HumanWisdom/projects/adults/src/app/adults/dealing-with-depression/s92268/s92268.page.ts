@@ -47,7 +47,7 @@ export class S92268Page implements OnInit {
       this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/91.webp"
      
       this.moduleLink = "/adults/external-approval"
-      this.moduleName = "Need for approval"
+      this.moduleName = "External Approval"
       this.sectionName = "Explore How Your Mind Works";
       this.moduleId = 91
     

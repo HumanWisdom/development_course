@@ -1711,7 +1711,7 @@ export class AdultDashboardPage implements OnInit {
   // this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
   // this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
   // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
-  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "External Approval")?.Percentage
 
   //     })
 

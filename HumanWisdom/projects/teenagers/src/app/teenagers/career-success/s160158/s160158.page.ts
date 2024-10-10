@@ -15,7 +15,7 @@ export class S160158Page implements OnInit,OnDestroy {
   bg="dark_blue_w1"
    mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/7.1.mp4'  
-  title="In this video we explore how we can think more clearly about our careers"
+  title="What gets in the way of thinking clearly"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any
