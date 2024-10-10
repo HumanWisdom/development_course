@@ -4,13 +4,24 @@ import 'bcswipe';
 import { AdultsService } from '../adults.service';
 import { Router } from '@angular/router';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
-
+import { trigger, transition, style, animate } from '@angular/animations';
 
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
   templateUrl: './daily-practice.page.html',
   styleUrls: ['./daily-practice.page.scss'],
+  animations: [
+    trigger('slideInAnimation', [
+      transition(':enter', [
+        style({ transform: 'translateX(100%)', opacity: 0 }), // Start off-screen to the right
+        animate('300ms ease-in', style({ transform: 'translateX(0)', opacity: 1 })) // Slide in
+      ]),
+      transition(':leave', [
+        animate('300ms ease-out', style({ transform: 'translateX(-100%)', opacity: 0 })) // Slide out to the left
+      ])
+    ])
+  ]
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
@@ -22,7 +33,7 @@ export class DailyPracticePage implements OnInit {
 
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_02.svg"
   videoLink = '';
-  dailyid = '0'
+  dailyid ='0';
   dailyqus = ''
   dailyqusrefid = ''
   userId = ''
@@ -163,6 +174,7 @@ export class DailyPracticePage implements OnInit {
 
   next(event) {
     this.Logevent(event);
+    this.dailyid = ((+this.dailyid + 1) % 6).toString();
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
@@ -171,6 +183,7 @@ export class DailyPracticePage implements OnInit {
 
   back(event) {
     this.Logevent(event);
+    this.dailyid = ((+this.dailyid - 1 + 6) % 6).toString()
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
