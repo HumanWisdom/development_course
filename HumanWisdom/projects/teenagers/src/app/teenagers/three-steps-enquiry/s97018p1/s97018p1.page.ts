@@ -14,7 +14,7 @@ export class S97018p1Page implements OnInit {
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/20.mp4'
+  videoLink = this.mediaVideo + '/events/34.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "Exploring the Art of self enquiry"

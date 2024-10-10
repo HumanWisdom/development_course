@@ -14,7 +14,7 @@ export class S160166Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/career-success/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/9.1.mp4'  
   title="In this video we explore how we can have multiple careers And move easily from one to the next."
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
@@ -105,7 +105,7 @@ export class S160166Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/teenagers/career-success/s160165'])
+    this.router.navigate(['/teenagers/career-success/s160162'])
   }
 
   ngOnDestroy()

@@ -13,8 +13,8 @@ export class S160154Page implements OnInit,OnDestroy {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/career-success/videos/1.1.mp4'  
+    mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/6.1.mp4'  
   title="In this video we explore what a successful career looks like.What do you think"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
@@ -87,7 +87,7 @@ export class S160154Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/career-success/s160155'])
+    this.router.navigate(['/teenagers/career-success/s160158'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -105,7 +105,7 @@ export class S160154Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/teenagers/career-success/s160153'])
+    this.router.navigate(['/teenagers/career-success/s160150'])
   }
 
   ngOnDestroy()
