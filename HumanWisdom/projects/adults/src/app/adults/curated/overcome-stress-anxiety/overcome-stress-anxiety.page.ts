@@ -469,7 +469,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
         this.rmP = res.ModUserScrPc.find(e => e.Module == "Reactive Mind")?.Percentage
         this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
-        this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+        this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "External Approval")?.Percentage
       })
   }
 

@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
 
@@ -539,6 +539,14 @@ export class AdultDashboardPage implements OnInit {
           side: "right"
         }
       },*/
+      {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
+        }
+      },
       {
         element: ".tour_explore",
         popover: {
@@ -1703,7 +1711,7 @@ export class AdultDashboardPage implements OnInit {
   // this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
   // this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
   // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
-  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "External Approval")?.Percentage
 
   //     })
 

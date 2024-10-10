@@ -13,9 +13,11 @@ export class S112167p1Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w2"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/fear_anxiety/videos/7.1.mp4'
-  title="Fear and Anxiety"
+ /*  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/fear_anxiety/videos/7.1.mp4' */
+
+  videoLink='https://d1tenzemoxuh75.cloudfront.net/teenagers/teen_talk/videos/25.mp4'
+  title="Exploring anxiety"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/fear_anxiety/fear_anxiety_01.jpg"
   
   toc="teenagers/fear-anxiety/s112001"
