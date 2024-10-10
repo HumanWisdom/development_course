@@ -195,3 +195,20 @@ width: 100%;
 // .cvideo {
 //   object-fit: scale-down;
 // }
+
+.video-container {
+  position: relative;
+  width: fit-content;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
