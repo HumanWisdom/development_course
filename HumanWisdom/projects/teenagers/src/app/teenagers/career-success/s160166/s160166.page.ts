@@ -15,7 +15,7 @@ export class S160166Page implements OnInit,OnDestroy {
   bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/9.1.mp4'  
-  title="In this video we explore how we can have multiple careers And move easily from one to the next."
+  title="Having multiple careers"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any

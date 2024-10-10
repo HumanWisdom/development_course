@@ -15,7 +15,7 @@ export class S160150Page implements OnInit,OnDestroy {
   bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/5.1.mp4'  
-  title="Welcome"
+  title="Choosing a career"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any

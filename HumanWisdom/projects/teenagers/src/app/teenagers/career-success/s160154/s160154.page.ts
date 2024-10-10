@@ -15,7 +15,7 @@ export class S160154Page implements OnInit,OnDestroy {
   bg="dark_blue_w1"
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/6.1.mp4'  
-  title="In this video we explore what a successful career looks like.What do you think"
+  title="What is a successful career"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any

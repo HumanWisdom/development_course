@@ -17,7 +17,7 @@ export class S122080Page implements OnInit
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp"
   bg=""
   moduleLink="/external-approval"
-  moduleName="Need For Approval"
+  moduleName="External Approval"
   sectionName= "How the Mind Works";
   moduleId=123
   moduleList: any = [
