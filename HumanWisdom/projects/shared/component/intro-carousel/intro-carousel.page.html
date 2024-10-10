@@ -12,7 +12,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
-                    <video controls playinline class="cvideo_03 br_0px"
+                    <video controls onplay="Logevent('click_play_video_intro_carousel')" playinline class="cvideo_03 br_0px"
                       poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                       controlsList="nodownload">
                       <source
@@ -34,7 +34,7 @@
                       <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="isAdults">
                         <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
                         <p>
-                          Your guide for a happier life.                          
+                          Your guide for a happier life.
                         </p>
                         <p>
                           Manage your own emotions and mental health, have fulfilling relationships and succeed in life.
@@ -48,7 +48,7 @@
                       <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="!isAdults">
                         <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
                         <p>
-                          Your guide for a happier life.                          
+                          Your guide for a happier life.
                         </p>
                         <p>
                           Manage your own emotions and mental health, have fulfilling friendships and succeed in life.
@@ -69,8 +69,8 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
-                        Connect with
-                      </h4>
+                        Sign up with
+                        </h4>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                       <hr class="hr_style_v3_05">
@@ -80,7 +80,7 @@
 
                 <div class="row mt15px mb20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
-                  
+
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tleft pl0px">
                       <button type="submit" class="btn btn_login_signup tcenter">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg" (click)="fbLogin('login')" alt="" class="img-responsive">
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
-                        Or
+                     or
                       </h4>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -335,7 +335,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
-                          <video controls playinline class="cvideo_03 br_0px"
+                          <video controls onplay="Logevent('click_play_video_intro_carousel')" playinline class="cvideo_03 br_0px"
                             poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                             controlsList="nodownload">
                             <source
@@ -351,7 +351,7 @@
                             <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft">
                               <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
                               <p>
-                                HappierMe is your guide to understand your mind 
+                                HappierMe is your guide to understand your mind
                                 <br>and be happier.
                               </p>
 
