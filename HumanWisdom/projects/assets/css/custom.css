@@ -36127,9 +36127,9 @@ section > .row
 
 .cvideo_03
 {
-  width: 100%;
+  /* width: 100%; */
   max-height: 100%;
-  border-radius: 0px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
