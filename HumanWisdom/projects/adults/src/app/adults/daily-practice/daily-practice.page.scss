@@ -195,3 +195,34 @@ width: 100%;
 // .cvideo {
 //   object-fit: scale-down;
 // }
+
+
+.sliding-div {
+  position: absolute;
+  top: 50px;
+  left: -100%; /* Initially hidden off-screen */
+  width: 300px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  transition: left 0.6s ease-in-out; /* Smooth transition */
+}
+
+.sliding-div.slide-in {
+  left: 0; /* Moves into view */}
+.video-container {
+  position: relative;
+  width: fit-content;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}

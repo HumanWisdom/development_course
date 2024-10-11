@@ -1,25 +1,30 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import {  LogEventService } from '../../../../../shared/services/log-event.service';
-import { Location } from '@angular/common';
+// import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { AdultsService } from '../adults.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-import { TeenagersService } from '../teenagers.service';
-import { NavigationService } from '../../../../../shared/services/navigation.service';
+import { Location } from '@angular/common';
+import { ShareService } from 'ngx-sharebuttons';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
+import { Platform } from '@angular/cdk/platform';
 
 @Component({
-  selector: 'app-select-a-topic-to-explore',
-  templateUrl: './select-a-topic-to-explore.page.html',
-  styleUrls: ['./select-a-topic-to-explore.page.scss'],
+  selector: 'app-personalised-for-you-search',
+  templateUrl: './personalised-for-you-search.page.html',
+  styleUrls: ['./personalised-for-you-search.page.scss'],
 })
-export class SelectATopicToExplorePage implements OnInit {
+export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-
+  isIos = false;
   searchResult = [];
   personalisedforyou = []
 
   indList = []
+  isEnableHam = true;
   isloggedIn = false;
   searchinp = '';
   public user: any
@@ -39,6 +44,7 @@ export class SelectATopicToExplorePage implements OnInit {
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
+
   public alertMsg: any
   public qrList: any
   public goToPage: any
@@ -65,16 +71,27 @@ export class SelectATopicToExplorePage implements OnInit {
   public bookmarks = []
   public resume = []
   public bookmarkLength: any
+  wisdomExerciseList = [];
+  currentList = [];
+  public Title: string = '';
+  public day: string = '';
+  public bullyingP: any
+  public externalapprovalP: any;
+  public exerciseNo: any;
+  public tourTotalIndex = 3;
+  public tourIndex = 1;
 
-  constructor(private route: Router, private aservice: TeenagersService,
-    public service: OnboardingService, public logeventservice: LogEventService,
+  //static progress mapping
+  constructor(private route: Router, private aservice: AdultsService,
+ public service: OnboardingService, public logeventservice: LogEventService,
     public cd: ChangeDetectorRef,
     private location: Location,
     private router: Router,
-    private navigationService:NavigationService
+    private platform: Platform
   ) {
 
-    this.logeventservice.logEvent('View_For_you');
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
+    this.logeventservice.logEvent('View_search');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
@@ -82,22 +99,37 @@ export class SelectATopicToExplorePage implements OnInit {
       localStorage.setItem('acceptcookie', 'T')
       this.aservice.verifytoken(authtoken).subscribe((res) => {
         if (res) {
+          localStorage.setItem("Subscriber", res['Subscriber']);
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           localStorage.setItem("userId", res['UserId'])
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
-          this.loginteenager(res)
+          this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber", res['Subscriber'])
-
         }
       })
     }
   }
 
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
   ngOnInit() {
+    if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
+      this.isIos = true;
+    }
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
@@ -110,15 +142,109 @@ export class SelectATopicToExplorePage implements OnInit {
           this.welcome.nativeElement.click();
         }, 1000);
       }
+
       this.getModuleList();
-      this.getProgress()
+      this.getProgress();
     }
-     this.getUserPreference();
+    this.GetWisdomScreens();
+    this.getUserPreference();
+    this.isSubscribe = SharedService.isSubscriber();
+    let closetour = localStorage.getItem('closeTour');
+
+    if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
+      this.continueTour();
+    }
   }
+
+  closeTour(){
+    localStorage.setItem('firstTimeTour', 'T');
+  }
+
+  continueTour() {
+    const driver = window['driver'].js.driver;
+    let stepList = [
+      {
+        element: ".tour_pathway",
+        popover: {
+          title: 'PATHWAY',
+          description: 'A step-by-step guide for a happier life',
+          side: "top",
+          align: "end"
+        }
+      },
+      {
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
+        }
+      },
+      /*{
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
+        }
+      }*/
+    ];
+
+    const driverObj = driver({
+      onNextClick: () => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+        this.tourIndex++;
+        if (this.tourIndex >= this.tourTotalIndex) {
+          this.tourIndex = 1;
+          document.body.classList.remove('overflow_hidden');
+          document.body.classList.add('overflow_auto');
+          driverObj.destroy();
+        }
+        driverObj.moveNext();
+      },
+      onPrevClick: () => {
+        this.tourIndex--;
+        driverObj.movePrevious();
+        document.body.classList.remove('overflow_auto');
+        document.body.classList.add('overflow_hidden');
+      },
+      onCloseClick:() => {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+        this.tourIndex = 1;
+        document.body.classList.remove('overflow_hidden');
+        document.body.classList.add('overflow_auto');
+        console.log('Close Button Clicked');
+        driverObj.destroy();
+      },
+      allowClose: false,
+      showButtons: [
+        'next',
+        //'previous',
+        'close'
+      ],
+      nextBtnText: 'Next',
+      //prevBtnText: 'Prev',
+      doneBtnText: 'Done',
+      showProgress: true,
+      steps: stepList
+    });
+
+    driverObj.drive();
+
+    document.body.classList.remove('overflow_auto');
+    document.body.classList.add('overflow_hidden');
+
+  }
+
 
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
+                          {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
+                          {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
+
       if (isLoad) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
@@ -133,7 +259,7 @@ export class SelectATopicToExplorePage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
       }
     }
   }
@@ -150,48 +276,124 @@ export class SelectATopicToExplorePage implements OnInit {
 
 
 
-   /*  this.aservice.getUserpreference().subscribe((res) => {
-      let perd = this.aservice.getperList();
-     // let perd = []
-      this.personalisedforyou = []
-      this.indList = []
-      if (res && res !== "") {
-        let arr = res.split('').filter((d) => d !== ',');
-        arr.forEach((d) => {
-          perd.forEach((r) => {
-            if (d === r['id']) {
-              r['active'] = true;
-              this.personalisedforyou.push(r);
-            }
-          })
-        })
-        perd.forEach((r) => {
-          let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
-          if (!find) {
-            r['active'] = false;
-            this.personalisedforyou.push(r);
-          }
-        })
-        this.personalisedforyou.forEach((d) => {
-          if (d['active']) {
-            this.indList.push(d['id'])
-          }
-        })
-      } else {
-        perd.forEach((r) => {
-          r['active'] = false;
-          this.personalisedforyou.push(r);
-        })
-      }
-    }) */
+    /*  this.aservice.getUserpreference().subscribe((res) => {
+       let perd = this.aservice.getperList();
+      // let perd = []
+       this.personalisedforyou = []
+       this.indList = []
+       if (res && res !== "") {
+         let arr = res.split('').filter((d) => d !== ',');
+         arr.forEach((d) => {
+           perd.forEach((r) => {
+             if (d === r['id']) {
+               r['active'] = true;
+               this.personalisedforyou.push(r);
+             }
+           })
+         })
+         perd.forEach((r) => {
+           let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
+           if (!find) {
+             r['active'] = false;
+             this.personalisedforyou.push(r);
+           }
+         })
+         this.personalisedforyou.forEach((d) => {
+           if (d['active']) {
+             this.indList.push(d['id'])
+           }
+         })
+       } else {
+         perd.forEach((r) => {
+           r['active'] = false;
+           this.personalisedforyou.push(r);
+         })
+       }
+     }) */
   }
 
   getinp(event) {
-    let url = `/teenagers/site-search/${this.searchinp}`
+    let url=""
+    switch(event)
+    {
+      case "Events":{
+          url = `/adults/events`
+          break;
+      }
+      case "Blogs":{
+        url = `/adults/blogs`
+        break;
+      }
+      case "Life stories":
+      case "Stories":{
+        url = `/adults/wisdom-stories`
+        break;
+      }
+      case "Podcast":{
+        url = `/adults/podcast`
+        break;
+      }
+      case "Audio meditations":{
+        url = `/adults/audio-meditation`
+        break;
+      }
+      case ("Short videos"):
+      case ("Videos"):
+        {
+        url = `/adults/wisdom-shorts`
+        break;
+      }
+     case "Journal":{
+        url = `/adults/journal`
+        break;
+      }
+      case "Exercises":
+      case "Awareness Exercises":
+        {
+        url = `/adults/wisdom-exercise`
+        break;
+      }
+      case "Forum":{
+        url = `/adults/forum`
+        break;
+      }
+      case "Develop a calm mind":{
+        url = `/adults/pathway/develop-a-calm-mind`
+        break;
+      }
+      case "Understand yourself":{
+        url = `/adults/pathway/understand-yourself`
+        break;
+      }
+      case "Understand how your mind works":{
+        url = `/adults/pathway/understand-how-your-mind-works`
+        break;
+      }
+      case "Manage your emotions":{
+        url = `/adults/pathway/manage-your-emotions`
+        break;
+      }
+      case "Succeed in life":{
+        url = `/adults/pathway/live-your-best-life`
+        break;
+      }
+      case "Mental Health":{
+        url = `/adults/curated/overcome-stress-anxiety`
+        break;
+      }
+     default: {
+       url = `/adults/site-search/${this.searchinp}`
+        break;
+      }
+
+    }
+
     this.route.navigate([url])
   }
 
   searchEvent(module) {
+    this.logeventservice.logEvent("click_search");
+
     this.searchinp = module;
     this.searchResult = [];
     this.getinp(module);
@@ -201,43 +403,39 @@ export class SelectATopicToExplorePage implements OnInit {
     if (val === '') {
       localStorage.setItem('storyNumber', id);
       if (name === 'Manage your emotions') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
+        localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
-        this.route.navigate(['/teenagers/curated/manage-your-emotions'])
+        this.route.navigate(['/adults/curated/manage-your-emotions'])
       } else if (name === 'Mental Health') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
+        localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
-        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
-      } else if (name === 'Succeed in life') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
+        this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
+      } else if (name === 'Work and Leadership') {
+        localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
         this.logeventservice.logEvent('click_workplace');
-        this.route.navigate(['/teenagers/curated/succeed-in-life'])
-      } else if (name ==='Relationships') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
+        this.route.navigate(['/adults/curated/wisdom-for-workplace'])
+      } else if (name === 'Have fulfilling relationships') {
+        localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
-        this.route.navigate(['/teenagers/curated/have-fulfilling-relationships'])
+        this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
       } else if (name === 'Be happier') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
+        localStorage.setItem('curatedurl', '/adults/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
-        this.route.navigate(['/teenagers/curated/be-happier'])
-      } else if (name === 'Understand yourself') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
+        this.route.navigate(['/adults/curated/be-happier'])
+      } else if (name === 'Habits and Addiction') {
+        localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
         this.logeventservice.logEvent('click_be_happier');
-        this.route.navigate(['/teenagers/curated/understand-yourself'])
-      } else if (name.includes('Feel calm')) {
-        localStorage.setItem('curatedurl', '/teenagers/curated/feel-calm');
+        this.route.navigate(['/adults/curated/change-unhelpful-habits'])
+      } else if (name === 'Deal with sorrow and loss') {
+        localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
         this.logeventservice.logEvent('click_sorrow_loss');
-        this.route.navigate(['/teenagers/curated/feel-calm'])
-      } else if (name === 'Overcome unhelpful habits') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
+        this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
+      } else if (name === 'Meditation') {
+        localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
         this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
-      } else if (name === 'Manage your mental health') {
-        localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
-        this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+        this.route.navigate(['/adults/curated/have-calm-mind'])
       }
-    }else {
+    } else {
       if (this.isloggedIn) {
         let fill = this.personalisedforyou.filter((d) => d['name'] === name);
         const index = this.indList.indexOf(id);
@@ -276,7 +474,7 @@ export class SelectATopicToExplorePage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.route.navigate(['/onboarding/login'])
+    this.route.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   // googleLogin() {
@@ -555,10 +753,10 @@ export class SelectATopicToExplorePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.route.navigate([`/teenagers/discovering-wisdom/${discoveringWisdomResume}`])
+            this.route.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
           }
           else
-            this.route.navigate([`/teenagers/discovering-wisdom/s27001`])
+            this.route.navigate([`/adults/discovering-wisdom/s27001`])
         })
   }
 
@@ -587,10 +785,10 @@ export class SelectATopicToExplorePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.route.navigate([`/teenagers/benefits-of-wisdom/${benefitsWisdomResume}`])
+            this.route.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
           }
           else
-            this.route.navigate([`/teenagers/benefits-of-wisdom/s32001`])
+            this.route.navigate([`/adults/benefits-of-wisdom/s32001`])
         })
   }
 
@@ -619,10 +817,10 @@ export class SelectATopicToExplorePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.route.navigate([`/teenagers/five-circles/${fiveCirclesResume}`])
+            this.route.navigate([`/adults/five-circles/${fiveCirclesResume}`])
           }
           else
-            this.route.navigate([`/teenagers/five-circles/s33001`])
+            this.route.navigate([`/adults/five-circles/s33001`])
         })
 
 
@@ -656,10 +854,10 @@ export class SelectATopicToExplorePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.route.navigate([`/teenagers/how-can-wisdom-help/${hcwhR}`])
+            this.route.navigate([`/adults/how-can-wisdom-help/${hcwhR}`])
           }
           else
-            this.route.navigate([`/teenagers/how-can-wisdom-help/s74001`])
+            this.route.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
 
@@ -690,17 +888,17 @@ export class SelectATopicToExplorePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.route.navigate([`/teenagers/key-ideas/${keyIdeasResume}`])
+            this.route.navigate([`/adults/key-ideas/${keyIdeasResume}`])
           }
           else
-            this.route.navigate([`/teenagers/key-ideas/s34001`])
+            this.route.navigate([`/adults/key-ideas/s34001`])
           /*if(!this.goToPage)
           {
 
-            this.router.navigate([`/teenagers/key-ideas`])
+            this.router.navigate([`/adults/key-ideas`])
           }
           else
-            this.router.navigate([`/teenagers/key-ideas/s${keyIdeasResume}`])*/
+            this.router.navigate([`/adults/key-ideas/s${keyIdeasResume}`])*/
 
         })
 
@@ -732,15 +930,15 @@ export class SelectATopicToExplorePage implements OnInit {
         },
         () => {
           if (cont == "1") {
-            this.route.navigate([`/teenagers/program-guide/${pgResume}`])
+            this.route.navigate([`/adults/program-guide/${pgResume}`])
           }
           else
-            this.route.navigate([`/teenagers/program-guide/s35001`])
+            this.route.navigate([`/adults/program-guide/s35001`])
         })
   }
   // /introduction
 
-  loginteenager(res) {
+  loginadult(res) {
     this.loginResponse = res
     this.userId = res.UserId
     if (res.Subscriber === 0) {
@@ -845,12 +1043,7 @@ export class SelectATopicToExplorePage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    }else{
-      this.router.navigate([url]);
-    }
+    this.location.back()
   }
 
   Logevent(route, params, evtName) {
@@ -859,13 +1052,13 @@ export class SelectATopicToExplorePage implements OnInit {
     if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {
-      if (route == '/teenagers/adverts-work' ||
-        route == '/teenagers/adverts-student' ||
-        route == '/teenagers/adverts-about' ||
-        route == '/teenagers/help-support/faq' ||
-        route == '/teenagers/help-support/terms-conditions' ||
-        route == '/teenagers/help-support/support' ||
-        route == '/teenagers/partnership-webpage/partnership-index/') {
+      if (route == '/adults/adverts-work' ||
+        route == '/adults/adverts-student' ||
+        route == '/adults/adverts-about' ||
+        route == '/adults/help-support/faq' ||
+        route == '/adults/help-support/terms-conditions' ||
+        route == '/adults/help-support/support' ||
+        route == '/adults/partnership-webpage/partnership-index/') {
         this.navigate(route);
         return;
       }
@@ -874,6 +1067,174 @@ export class SelectATopicToExplorePage implements OnInit {
   }
 
   navigate(url) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+  }
+
+  GetWisdomScreens() {
+    this.aservice.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      var allCompletedScreen: boolean = false;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      if (this.wisdomExerciseList.length == data.length) {
+        allCompletedScreen = true;
+      }
+      console.log(data.length);
+      let exercise: any
+      let emptyList = false;
+      let increaseExcercise = false;
+      //   Any of the exercise is not completed
+      if (data.length == 0) {
+        emptyList = true;
+        data = this.wisdomExerciseList;
+        exercise = data[0];
+      }
+      else {
+        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+        if (incomppletedExercise.length > 0) {
+          exercise = incomppletedExercise[0];
+        } else {
+          exercise = data[data.length - 1];
+        }
+        // It contains data may be some exercise is completed
+        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+        if (completed.length == 0) {
+          increaseExcercise = true;
+          emptyList = true;
+        }
+      }
+      // Setting final title and Exercise no
+      this.Title = exercise.Title;
+
+      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+
+      if (allCompletedScreen) {
+        this.exerciseNo = "1";
+      }
+      if (this.exerciseNo == "13") {
+        this.exerciseNo = "1";
+      }
+      // Checking the length if its less than 10  to append for current session number
+      if (this.exerciseNo.length == 1) {
+        this.exerciseNo = "0" + this.exerciseNo;
+      }
+      if (incomppletedExercise && incomppletedExercise.length > 0) {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      } else {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      }
+      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+
+
+      //Pushing final list for display
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let obj = {
+          " SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+          "Title": item.Title
+        }
+        this.currentList.push(obj);
+      }
+      if (this.currentList.length > 0) {
+        this.Title = this.currentList[0].Title;
+      }
+      // Dynamic Scroll
+      setTimeout(() => {
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".ae_days")?.getBoundingClientRect().x;
+        if (document.querySelector(".ae_days")) {
+          document.querySelector(".ae_days").scrollLeft = editable - wediv;
+        }
+
+      }, 5000);
+
+      
+    })
+  }
+
+
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return ' uneditable';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return ' editable';
+    } else {
+      return ' inactive';
+    }
+  }
+
+  RouteToWisdomExercise(exercise) {
+
+    this.logeventservice.logEvent("click_Awareness_exercise");
+    /*
+     var weR = exercise?.ScreenNo;
+     localStorage.setItem("moduleId", JSON.stringify(75))
+     this.aservice.clickModule(75, this.userId)
+       .subscribe(res => {
+         
+         this.qrList = res
+         weR = "s" + res.lastVisitedScreen
+         // continue where you left
+         if (res.lastVisitedScreen === '') {
+           localStorage.setItem("lastvisited", 'F')
+         }
+         else {
+           localStorage.setItem("lastvisited", 'T')
+         }
+         // /continue where you left
+         sessionStorage.setItem("weR", weR)
+         this.mediaPercent = parseInt(res.MediaPercent)
+         this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+         localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+         localStorage.setItem("qrList", JSON.stringify(this.qrList))
+
+       },
+         error => {
+           console.log(error)
+         });  */
+
+    if (exercise != null) {
+      this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+        state: {
+          day: exercise.day,
+        }
+      });
+    } else {
+      this.router.navigate(['adults/wisdom-exercise/']);
+    }
+  }
+  navigateToPathway(url) {
+    this.logeventservice.logEvent("click_" + url.split("/")[3]);
+
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate([url]);
   }
+
+  rightToJournal(journal) {
+    if (journal) {
+      this.router.navigate(["/adults/journal"]);
+      this.logeventservice.logEvent("click_journal");
+    } else {
+      this.router.navigate(["/adults/journal"], { queryParams: { isGuided: true } });
+      this.logeventservice.logEvent("click_guided_questions");
+    }
+  }
+
+  logEvent(event, url) {
+    this.logeventservice.logEvent(event);
+    this.router.navigate([url]);
+  }
+
+
+
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/adults/find-answers/' + param]);
+  }
+
 }

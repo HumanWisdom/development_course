@@ -88,10 +88,10 @@ export class SucceedInLifePage implements OnInit {
   }
 
   goBack() {
-    // this.logeventservice.logEvent('click_back');
-    // var url = this.navigationService.navigateToBackLink();
-    // if (url == null) {
+    this.logeventservice.logEvent('click_back');
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
       this.location.back();
-    // }
+    }
   }
 }

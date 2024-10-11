@@ -13,12 +13,14 @@ export class S112167p2Page implements OnInit {
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w2"
-  mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/1.mp4'
+/*   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
+  videoLink = this.mediaVideo + '/events/1.mp4' */
+ videoLink ='https://d1tenzemoxuh75.cloudfront.net/teenagers/teen_talk/videos/01.mp4'
+
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
-  title = "A Talk on fear-anxiety"
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/fear_anxiety/fear_anxiety_01.jpg"
+  title = "How can I be free of anxiety- A dialogue"
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/teen_talk/images/01.webp"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")

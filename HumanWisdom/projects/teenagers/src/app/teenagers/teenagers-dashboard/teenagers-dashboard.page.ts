@@ -115,7 +115,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   dashboardShorts = [];
 
@@ -550,6 +550,14 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         }
       },
       {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
+        }
+      },
+      {
         element: ".tour_explore",
         popover: {
           title: 'Explore',
@@ -577,7 +585,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_intro",
         popover: {
           title: 'Introduction',
-          description: 'Learn how to make the most of the app and explore the key ideas',
+          description: 'Begin with this introduction. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
           side: "bottom"
         }
       },

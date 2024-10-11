@@ -14,7 +14,7 @@ export class S129027p1Page implements OnInit
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
-  hint = "  It could be your own expectations, or your need for approval from others "
+  hint = "  It could be your own expectations, or your external approval from others "
   toc = "teenagers/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
