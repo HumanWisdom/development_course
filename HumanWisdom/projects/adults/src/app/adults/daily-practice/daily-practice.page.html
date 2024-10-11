@@ -51,17 +51,17 @@
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
                             <ol class="carousel-indicators">
                               <li data-target="#mdp_carousel" data-slide-to="0"
-                                [ngClass]="[dailyid === '0' ? 'active' : '']"></li>
+                                [ngClass]="[dailyid === '0' ? '' : '']"></li>
                               <li data-target="#mdp_carousel" data-slide-to="1"
-                                [ngClass]="[dailyid === '1' ? 'active' : '']"></li>
+                                [ngClass]="[dailyid === '1' ? '' : '']"></li>
                               <li data-target="#mdp_carousel" data-slide-to="2"
-                                [ngClass]="[dailyid === '2' ? 'active' : '']"></li>
+                                [ngClass]="[dailyid === '2' ? '' : '']"></li>
                               <li data-target="#mdp_carousel" data-slide-to="3"
-                                [ngClass]="[dailyid === '3' ? 'active' : '']"></li>
+                                [ngClass]="[dailyid === '3' ? '' : '']"></li>
                               <li data-target="#mdp_carousel" data-slide-to="4"
-                                [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
+                                [ngClass]="[dailyid === '4' ? '' : '']"></li>
                               <li data-target="#mdp_carousel" data-slide-to="5"
-                                [ngClass]="[dailyid === '5' ? 'active' : '']"></li>
+                                [ngClass]="[dailyid === '5' ? '' : '']"></li>
                             </ol>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
@@ -79,7 +79,7 @@
 
                   <div class="carousel-inner">
                     <!-- video -->
-                    <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']"  @slideInAnimation>
+                    <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg"
@@ -94,7 +94,13 @@
                           </h4>
                         </div>
                       </div>
-
+                      <div class="row mb30px">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h1 class="fw_600 fs_15px lh_140p fc_ffffff mtb0px tcenter">
+                            {{dailyInspirationTitle}}
+                          </h1>
+                        </div>
+                      </div>
                       <div class="row mb30px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="row tcenter center_flex">
@@ -113,27 +119,22 @@
                             </div>
                           </div>
 
-                          <div class="row mt15px">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff">
-                                {{dailyInspirationTitle}}
-                              </h1>
-                            </div>
-                          </div>
+                         
 
                           <div class="row mt15px">
-                            <button type="submit" *ngIf="enableBtn" class="btn mdp_add_to_journal">
-                              Add to journal
+                            <button type="submit" (click)="routeModule()" *ngIf="enableBtn && dailyInsModule" class="btn mdp_add_to_journal">
+                              {{'Explore module' + '  -  ' + dailyInsModule}}
                             </button>
                           </div>
-
+                         <br/>
+                         <br/>
                         </div>
                       </div>
                     </div>
                     <!-- /video -->
 
                     <!-- video -->
-                    <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']"  @slideInAnimation>
+                    <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg"
@@ -148,7 +149,13 @@
                           </h4>
                         </div>
                       </div>
-
+                      <div class="row mb30px">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h1 class="fw_600 fs_15px lh_140p fc_ffffff mtb0px tcenter">
+                            {{dailybreathTitle}}
+                          </h1>
+                        </div>
+                      </div>
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="row tcenter">
@@ -162,20 +169,14 @@
                             </div>
                           </div>
 
-                          <div class="row mt15px">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff">
-                                {{dailybreathTitle}}
-                              </h1>
-                            </div>
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
                     <!-- /video -->
 
                     <!-- journal -->
-                    <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']"  @slideInAnimation>
+                    <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
@@ -236,7 +237,7 @@
                     <!-- /journal -->
 
                     <!-- quotation -->
-                    <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']"  @slideInAnimation>
+                    <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg"
@@ -285,7 +286,7 @@
                     <!-- /quotation -->
 
                     <!-- audio -->
-                    <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']"  @slideInAnimation>
+                    <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio.svg"
@@ -325,7 +326,7 @@
                     <!-- /audio -->
 
                     <!-- exercise -->
-                    <div class="item" [ngClass]="[dailyid === '5' ? 'active' : '']"  @slideInAnimation>
+                    <div class="item" [ngClass]="[dailyid === '5' ? 'active' : '']">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg"
