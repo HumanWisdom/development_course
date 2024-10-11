@@ -12,16 +12,16 @@ declare var $: any;
   templateUrl: './daily-practice.page.html',
   styleUrls: ['./daily-practice.page.scss'],
   animations: [
-    trigger('slideInAnimation', [
+    trigger('slideAnimation', [
       transition(':enter', [
-        style({ transform: 'translateX(100%)', opacity: 0 }), // Start off-screen to the right
-        animate('300ms ease-in', style({ transform: 'translateX(0)', opacity: 1 })) // Slide in
+        style({ opacity: 0, transform: 'translateX(-100%)' }),
+        animate('300ms ease-in', style({ opacity: 1, transform: 'translateX(0)' })),
       ]),
       transition(':leave', [
-        animate('300ms ease-out', style({ transform: 'translateX(-100%)', opacity: 0 })) // Slide out to the left
-      ])
-    ])
-  ]
+        animate('300ms ease-out', style({ opacity: 0, transform: 'translateX(100%)' })),
+      ]),
+    ]),
+  ],
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
@@ -56,6 +56,7 @@ export class DailyPracticePage implements OnInit {
   DailyInspirationImg = '';
   enableBtn = false;
   dailyInsModule = '';
+ currentSection = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,6 +66,7 @@ export class DailyPracticePage implements OnInit {
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
+
 
   ngOnInit() {
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
@@ -179,6 +181,10 @@ export class DailyPracticePage implements OnInit {
   }
 
   next(event) {
+    this.currentSection++;
+    if(this.currentSection>=6){
+      this.currentSection = 0;
+    }
     this.Logevent(event);
     this.dailyid = ((+this.dailyid + 1) % 6).toString();
     this.enableVideo = false;
@@ -194,6 +200,13 @@ export class DailyPracticePage implements OnInit {
     setTimeout(() => {
       this.enableVideo = true;
     }, 500);
+
+      if (this.currentSection > 0) {
+        this.currentSection--;
+      }
+      if(this.currentSection==0){
+        this.currentSection=5;
+      }
   }
 
   getAlertcloseEvent() {
