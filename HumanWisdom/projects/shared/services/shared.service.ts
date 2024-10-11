@@ -258,12 +258,6 @@ export class SharedService {
           active: true,
           name: 'All'
         },
-     {
-        id: "17",
-        active: false,
-        displayName: "Success",
-        name: 'Succeed in life'
-      },
       {
         id: "14",
         displayName: "Emotions",
@@ -305,6 +299,12 @@ export class SharedService {
         active: false,
         displayName: "Mental health",
         name: 'Manage your mental health'
+      },
+      {
+        id: "17",
+        active: false,
+        displayName: "Success",
+        name: 'Succeed in life'
       }
       ]
     }

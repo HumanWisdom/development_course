@@ -79,6 +79,16 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
         });
         this.wisdomshorts = res1;
         this.allwisdomshorts = res1;
+        this.allwisdomshorts.forEach((d) => {
+          this.prefData.forEach((h) => {
+            if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
+               h.active = true;
+            }else if(!d['PreferenceIDs']) {
+              h.active = true;
+            }
+          })
+        });
+
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
       }
     })
