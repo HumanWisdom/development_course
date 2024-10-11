@@ -26,11 +26,14 @@ export class WisdomShortsIndexPage implements OnInit {
   isSubscriber = false;
   searchedText:any='';
   isAdults = true;
+  prefData:any;
+  selectedPref = 'All'
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: CommonService, private meta: Meta, private title: Title) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
     this.getwisdomshorts()
+    this.prefData = SharedService.getPreferenceData();
   }
 
   ngOnInit() {
@@ -76,6 +79,16 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
         });
         this.wisdomshorts = res1;
         this.allwisdomshorts = res1;
+        this.allwisdomshorts.forEach((d) => {
+          this.prefData.forEach((h) => {
+            if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
+               h.active = true;
+            }else if(!d['PreferenceIDs']) {
+              h.active = true;
+            }
+          })
+        });
+
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
       }
     })
@@ -130,6 +143,20 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
       let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.wisdomshorts = filterlist;
     }
-
   }
+  
+  getUserPref(type) {
+    this.selectedPref = '';
+    this.wisdomshorts = this.allwisdomshorts;
+    if(type.name === 'All') {
+      this.wisdomshorts = this.allwisdomshorts;
+    }else{
+      if(type.name === 'Wisdom') {
+        this.wisdomshorts= this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
+      }else {
+        this.wisdomshorts= this.allwisdomshorts.filter((d) => d['PreferenceIDs'].includes(type.id));
+      }
+    }
+  }
+
 }
