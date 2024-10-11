@@ -226,3 +226,24 @@ width: 100%;
   padding: 0;
   cursor: pointer;
 }
+
+.section-container {
+  position: relative;  /* Makes sure sliding content stays within this container */
+  overflow: hidden;    /* Prevents content from overflowing the container */
+  width: 100%;         /* Ensure it takes up the full width */
+  height: 100%;        /* Set the appropriate height */
+}
+
+.slide {
+  /* Your existing animation properties */
+  animation: slidein 1s ease-in-out;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
