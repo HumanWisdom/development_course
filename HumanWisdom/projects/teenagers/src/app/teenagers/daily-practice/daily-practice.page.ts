@@ -174,7 +174,7 @@ export class DailyPracticePage implements OnInit {
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
-    }, 500);
+    }, 5000);
   }
 
   back(event) {
@@ -182,7 +182,7 @@ export class DailyPracticePage implements OnInit {
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
-    }, 500);
+    }, 5000);
   }
 
   getAlertcloseEvent() {
