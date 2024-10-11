@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
 
@@ -540,6 +540,14 @@ export class AdultDashboardPage implements OnInit {
         }
       },*/
       {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Exercises',
+          description: 'Tiny, guided exercises to improve your self-awareness',
+          side: "right"
+        }
+      },
+      {
         element: ".tour_explore",
         popover: {
           title: 'Explore',
@@ -567,7 +575,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_intro",
         popover: {
           title: 'Begin Here',
-          description: 'Begin with this introduction to make the most of the app and explore the key ideas.',
+          description: 'Begin with this introduction. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
           side: "bottom"
         }
       }
@@ -1703,7 +1711,7 @@ export class AdultDashboardPage implements OnInit {
   // this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
   // this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
   // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
-  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+  // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "External Approval")?.Percentage
 
   //     })
 

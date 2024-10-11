@@ -15,7 +15,7 @@ export class S106004Page implements OnInit {
   bg = "green_yellow_w2"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink = this.mediaVideo + '/nature/videos/1.2.mp4'
-  title = "Nature meditation 2"
+  title = "Perspective"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_02.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
