@@ -37416,7 +37416,7 @@ span
   box-shadow: none!important;
 }
 
-.carousel-inner > .item.prev.right > div:nth-child(2),
+/* .carousel-inner > .item.prev.right > div:nth-child(2),
 .carousel-inner > .item.prev.right > div:nth-child(3){
   display: none;
 }
@@ -37424,4 +37424,4 @@ span
 .carousel-inner > .item.active.left > div:nth-child(2),
 .carousel-inner > .item.active.left > div:nth-child(3){
   display: none;
-}
+} */
