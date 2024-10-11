@@ -228,17 +228,19 @@ width: 100%;
 }
 
 .section-container {
-  position: relative;  /* Makes sure sliding content stays within this container */
-  overflow: hidden;    /* Prevents content from overflowing the container */
-  width: 100%;         /* Ensure it takes up the full width */
-  height: 100%;        /* Set the appropriate height */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.slide {
-  /* Your existing animation properties */
-  animation: slidein 1s ease-in-out;
+div[ng-reflect-value] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
 // @keyframes slidein {
 //   from {
 //     transform: translateX(100%);

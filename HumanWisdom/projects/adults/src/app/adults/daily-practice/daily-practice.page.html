@@ -29,32 +29,41 @@
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
-              <div class="container">
+              <div class="container" (swipeleft)="next('click_Daily_Practice_Next')" (swiperight)="back('click_Daily_Practice_Previous')">
                 <div>
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
-                          <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff" (click)="back('click_Daily_Practice_Prev')">
-                            Previous
-                          </button>
+                          <a  class="skip"
+                            (click)="back('click_Breathingexercise_Previous')">
+                            <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                              <!-- Skip -->
+                              Previous
+                            </button>
+                          </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
                           <span>{{ currentSection + 1 }} / 6</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
-                          <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff" (click)="next('click_Daily_Practice_Next')">
-                            Next
-                          </button>
+                          <a  data-slide="next" class="next"
+                            (click)="next('click_Daily_Practice_Next')">
+                            <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                              Next
+                            </button>
+                          </a>
                         </div>
+
+
                       </div>
                     </div>
                   </div>
     
                   <!-- Sections -->
-                  <div  class="section-container">
+                  <div  class="section-container" >
                     <!-- Daily Inspiration -->
-                    <div [@slideAnimation] *ngIf="currentSection === 0">
+                    <div [@slideAnimation]="direction" *ngIf="currentSection === 0">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg" alt="" class="img-responsive">
@@ -86,7 +95,7 @@
                     </div>
     
                     <!-- Breathing Exercise -->
-                    <div [@slideAnimation] *ngIf="currentSection === 1">
+                    <div [@slideAnimation]="direction" *ngIf="currentSection === 1">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg" alt="" class="img-responsive">
@@ -108,7 +117,7 @@
                     </div>
     
                   <!-- journal -->
-                  <div  [@slideAnimation] *ngIf="currentSection === 2">
+                  <div  [@slideAnimation]="direction" *ngIf="currentSection === 2">
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
@@ -169,7 +178,7 @@
                   <!-- journal -->
 
                    <!-- quotation -->
-                   <div [@slideAnimation] *ngIf="currentSection === 3">
+                   <div [@slideAnimation]="direction" *ngIf="currentSection === 3">
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg"
@@ -218,7 +227,7 @@
                   <!-- /quotation -->
 
                    <!-- audio -->
-                   <div [@slideAnimation] *ngIf="currentSection === 4">
+                   <div [@slideAnimation]="direction" *ngIf="currentSection === 4">
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio.svg"
@@ -258,7 +267,7 @@
                   <!-- /audio -->
 
                   <!-- exercise -->
-                  <div [@slideAnimation] *ngIf="currentSection === 5">
+                  <div [@slideAnimation]="direction" *ngIf="currentSection === 5">
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg"

@@ -5,7 +5,7 @@ import { AdultsService } from '../adults.service';
 import { Router } from '@angular/router';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { trigger, transition, style, animate } from '@angular/animations';
-
+import { HammerGestureConfig } from '@angular/platform-browser';
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
@@ -13,15 +13,18 @@ declare var $: any;
   styleUrls: ['./daily-practice.page.scss'],
   animations: [
     trigger('slideAnimation', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(-100%)' }),
-        animate('300ms ease-in', style({ opacity: 1, transform: 'translateX(0)' })),
+      // Wildcard transition for swipe left (next)
+      transition('* => left', [
+        style({ transform: 'translateX(100%)' }), // start from right
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
       ]),
-      transition(':leave', [
-        animate('300ms ease-out', style({ opacity: 0, transform: 'translateX(100%)' })),
-      ]),
-    ]),
-  ],
+      // Wildcard transition for swipe right (previous)
+      transition('* => right', [
+        style({ transform: 'translateX(-100%)' }), // start from left
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
@@ -30,7 +33,7 @@ export class DailyPracticePage implements OnInit {
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink;
-
+  direction: string = '';
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_02.svg"
   videoLink = '';
   dailyid ='0';
@@ -185,6 +188,7 @@ export class DailyPracticePage implements OnInit {
     if(this.currentSection>=6){
       this.currentSection = 0;
     }
+    this.direction = 'left';
     this.Logevent(event);
     this.dailyid = ((+this.dailyid + 1) % 6).toString();
     this.enableVideo = false;
@@ -207,6 +211,7 @@ export class DailyPracticePage implements OnInit {
       if(this.currentSection==0){
         this.currentSection=5;
       }
+      this.direction = 'right';
   }
 
   getAlertcloseEvent() {
