@@ -575,7 +575,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_intro",
         popover: {
           title: 'Begin Here',
-          description: 'Begin with this introduction to make the most of the app and explore the key ideas.',
+          description: 'Begin with this introduction. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
           side: "bottom"
         }
       }

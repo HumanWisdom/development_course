@@ -17,8 +17,8 @@ export class S112167p1Page implements OnInit {
   videoLink=this.mediaVideo+'/fear_anxiety/videos/7.1.mp4' */
 
   videoLink='https://d1tenzemoxuh75.cloudfront.net/teenagers/teen_talk/videos/25.mp4'
-  title="Exploring anxiety"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/fear_anxiety/fear_anxiety_01.jpg"
+  title="Anxiety in Teenagers - a conversation"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/teen_talk/images/25.webp"
   
   toc="teenagers/fear-anxiety/s112001"
   userId:any
