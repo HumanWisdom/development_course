@@ -52,11 +52,15 @@ export class CommonService {
 
   verifytoken(encrypt) {
     return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${SharedService.ProgramId}`)
-    }
-  
-    verifyactkey(data): Observable<any> {
-      return this.http.get(this.path + `/VerifyActKey/${data}`)
-    }
+  }
+
+  verifyactkey(data): Observable<any> {
+    return this.http.get(this.path + `/VerifyActKey/${data}`)
+  }
+
+  checkGiftery(data): Observable<any> {
+    return this.http.post(this.path + `/checkGiftery`, data)
+  }
 
   AddGuidedQs_Response(data: any) {
     return this.http.post(this.path + `/AddGuidedQs_Response/`, data);

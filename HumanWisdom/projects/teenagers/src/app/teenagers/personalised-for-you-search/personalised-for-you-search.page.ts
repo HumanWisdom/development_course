@@ -132,20 +132,28 @@ export class PersonalisedForYouSearchPage implements OnInit {
     const driver = window['driver'].js.driver;
     let stepList = [
       {
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right",
+          align: 'end'
+        }
+      },
+      {
+       element: ".tour_exercises",
+       popover: {
+         title: 'Awareness Exercises',
+         description: 'Tiny, guided exercises to improve your self-awareness',
+         side: "right"
+       }
+     },
+      {
         element: ".tour_pathway",
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
           // side: "right"
-          side: "right",
-          align: 'end'
-        }
-      },
-       {
-        element: ".tour_exercises",
-        popover: {
-          title: 'Exercises',
-          description: 'Tiny, guided exercises to improve your self-awareness',
           side: "right"
         }
       }

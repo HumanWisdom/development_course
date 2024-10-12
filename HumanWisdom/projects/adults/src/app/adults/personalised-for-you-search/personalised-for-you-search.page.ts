@@ -168,7 +168,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life',
-          side: "right"
+          side: "right",
+          align: "end"
         }
       },
       {
@@ -178,8 +179,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
           description: 'Explore our rich library of motivational content.',
           side: "right"
         }
-      },
-      /*{
+      }
+      /*,
+      {
         element: ".tour_exercises",
         popover: {
           title: 'Exercises',
