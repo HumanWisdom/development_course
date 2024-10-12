@@ -39,6 +39,7 @@ export class SearchPopularItemsPage implements OnInit {
   searchDataDup: any;
   searchResult = [];
   public moduleList = [];
+  filterApplied =  true;
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -76,8 +77,14 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   searchEvent(moduleName:string) {
+    this.filterApplied = false;
+    this.post = [];
+    this.initializeSearchObject();
     this.search = moduleName;
-    this.getSearchData();
+    setTimeout(() => {
+      this.getSearchData();
+      this.filterApplied = true;
+    }, 300);
   }
   
   getLearningRecords() {
