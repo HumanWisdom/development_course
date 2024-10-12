@@ -315,4 +315,8 @@ export class CommonService {
   getDailyCheckins(): Observable<any> {
     return this.http.get(this.path + `/GetDailyCheckins/`);
   }
+  
+  getModuleList(): Observable<any> {
+    return this.http.get(this.path + '/modules/9');
+  }
 }

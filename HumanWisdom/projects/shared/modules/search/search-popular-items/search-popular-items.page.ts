@@ -17,6 +17,7 @@ import { CommonService } from '../../../services/common.service';
 })
 export class SearchPopularItemsPage implements OnInit {
   searchData: SearchDataModel;
+  searchinp:string='';
   search: string = "";
   totalRecords: number = 0;
   learningSearchRecords: number = 0;
@@ -36,7 +37,8 @@ export class SearchPopularItemsPage implements OnInit {
   enableShortViewMore: boolean = false;
   enableStoryViewMore: boolean = false;
   searchDataDup: any;
-
+  searchResult = [];
+  public moduleList = [];
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -73,9 +75,11 @@ export class SearchPopularItemsPage implements OnInit {
     } as SearchDataModel;
   }
 
-  searchEvent() {
+  searchEvent(moduleName:string) {
+    this.search = moduleName;
     this.getSearchData();
   }
+  
   getLearningRecords() {
     if (this.searchData) {
       return this.searchData.ModuleRes.length +
@@ -320,4 +324,59 @@ export class SearchPopularItemsPage implements OnInit {
     this.router.navigate([SharedService.getUrlfromFeatureName(url)]);
   }
 
+
+  // searchEvent(module) {
+  //   //this.eve.logEvent("click_search");
+  //   this.searchinp = module;
+  //   this.searchResult = [];
+  //   this.getinp(module);
+  // }
+
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  getModuleList(isLoad?) {
+    this.commonService.getModuleList().subscribe(res => {
+      this.moduleList = res;
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
+                          {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
+                          {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
+
+      if (isLoad) {
+        if (this.searchinp == '') {
+          this.searchResult = this.moduleList;
+        } else {
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
+    })
+  }
+
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  clearSearch() {
+    this.search = "";
+    this.searchResult = [];
+  }
 }
