@@ -70,7 +70,7 @@
                   </li>
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content" *ngIf="filterApplied">
 
                   <!-- learning -->
                   <div id="tab1" *ngIf="tabName=='Learning'" class="tab-pane fade in active">

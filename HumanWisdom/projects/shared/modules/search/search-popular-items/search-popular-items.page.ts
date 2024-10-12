@@ -39,6 +39,7 @@ export class SearchPopularItemsPage implements OnInit {
   searchDataDup: any;
   searchResult = [];
   public moduleList = [];
+  filterApplied =  true;
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -76,10 +77,95 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   searchEvent(moduleName:string) {
+    this.filterApplied = false;
+    this.post = [];
+    this.initializeSearchObject();
     this.search = moduleName;
-    this.getSearchData();
+    setTimeout(() => {
+      this.getSearchData();
+      this.filterApplied = true;
+    }, 300);
   }
   
+  getinp(event) {
+    let url=""
+    switch(event)
+    {
+      case "Events":{
+          url = `/adults/events`
+          break;
+      }
+      case "Blogs":{
+        url = `/adults/blogs`
+        break;
+      }
+      case "Life stories":
+      case "Stories":{
+        url = `/adults/wisdom-stories`
+        break;
+      }
+      case "Podcast":{
+        url = `/adults/podcast`
+        break;
+      }
+      case "Audio meditations":{
+        url = `/adults/audio-meditation`
+        break;
+      }
+      case ("Short videos"):
+      case ("Videos"):
+        {
+        url = `/adults/wisdom-shorts`
+        break;
+      }
+      case "Exercises":
+      case "Awareness Exercises":
+        {
+        url = `/adults/wisdom-exercise`
+        break;
+      }
+      case "Journal":{
+        url = `/adults/journal`
+        break;
+      }
+      case "Forum":{
+        url = `/adults/forum`
+        break;
+      }
+      case "Develop a calm mind":{
+        url = `/adults/pathway/develop-a-calm-mind`
+        break;
+      }
+      case "Understand yourself":{
+        url = `/adults/pathway/understand-yourself`
+        break;
+      }
+      case "Understand how your mind works":{
+        url = `/adults/pathway/understand-how-your-mind-works`
+        break;
+      }
+      case "Manage your emotions":{
+        url = `/adults/pathway/manage-your-emotions`
+        break;
+      }
+      case "Succeed in life":{
+        url = `/adults/pathway/live-your-best-life`
+        break;
+      }
+      case "Mental Health":{
+        url = `/adults/curated/overcome-stress-anxiety`
+        break;
+      }
+     default: {
+        this.searchEvent(this.search)
+        break;
+      }
+    }
+    if(!this.router.url.includes('site-search')){
+      this.router.navigate([url])
+    }
+  }
+
   getLearningRecords() {
     if (this.searchData) {
       return this.searchData.ModuleRes.length +
