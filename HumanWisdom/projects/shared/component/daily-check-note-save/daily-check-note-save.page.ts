@@ -22,7 +22,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
   isAdults:boolean = false;
   constructor(public commonService:CommonService,public router:Router,public navigationService:NavigationService,public location:Location,
     public logeventservice: LogEventService
-  ) { 
+  ) {
     this.rowData = this.initializeDailyCheckinList();
     this.t = new Date();
     this.minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate());
@@ -60,7 +60,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
       }else{
         this.enableAlert = true;
       }
-   
+
     }
 
     addZero(i) {

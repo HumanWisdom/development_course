@@ -21,7 +21,7 @@
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 pt80pxi col_cw"  [ngClass]="isAdults ? 'div_intro' : 'bg_stake'">
         <form>
-          
+
           <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji" *ngIf="isAdults">
@@ -43,10 +43,10 @@
           <div class="row mtb20px prelative">
             <div class="row prelative">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <textarea type="text" class="ta_dailycheckin" id="textArea" name="textArea" [(ngModel)]="checkInDescription" placeholder="Type here..." maxlength="256"></textarea>
+                <textarea type="text" [disabled]="!isloggedIn" class="ta_dailycheckin" id="textArea" name="textArea" [(ngModel)]="checkInDescription" [placeholder]="!isLoggedIn ? 'Login to use this feature' : 'Type here...'" maxlength="256"></textarea>
               </div>
             </div>
-            
+
            <!--  <div class="row ta_absolute_emoji bg_emoji_blur">
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                 <div class="row">
@@ -63,12 +63,12 @@
                 </div>
               </div>
             </div> -->
-            
+
           </div>
 
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0" (click)="SaveJournal()">
-              <button type="submit" class="btn mdp_add_to_journal">
+              <button type="submit" [disabled]="!isLoggedIn || !checkInDescription" class="btn mdp_add_to_journal">
                 Save to journal
               </button>
             </div>
@@ -90,9 +90,9 @@
   </div>
 </div>
 
-<div class="row" style="display: none;">                  
+<div class="row" style="display: none;">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 btn_post_anonymously">
-   <button type="button" #saveJournal class="btn btn_ctd center_flex" data-toggle="modal" data-target="#added"></button>  
+   <button type="button" #saveJournal class="btn btn_ctd center_flex" data-toggle="modal" data-target="#added"></button>
   </div>
 </div>
 
