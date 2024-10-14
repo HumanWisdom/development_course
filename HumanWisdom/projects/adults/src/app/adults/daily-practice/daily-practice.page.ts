@@ -4,13 +4,27 @@ import 'bcswipe';
 import { AdultsService } from '../adults.service';
 import { Router } from '@angular/router';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
-
-
+import { trigger, transition, style, animate } from '@angular/animations';
+import { HammerGestureConfig } from '@angular/platform-browser';
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
   templateUrl: './daily-practice.page.html',
   styleUrls: ['./daily-practice.page.scss'],
+  animations: [
+    trigger('slideAnimation', [
+      // Wildcard transition for swipe left (next)
+      transition('* => left', [
+        style({ transform: 'translateX(100%)' }), // start from right
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ]),
+      // Wildcard transition for swipe right (previous)
+      transition('* => right', [
+        style({ transform: 'translateX(-100%)' }), // start from left
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
@@ -19,10 +33,10 @@ export class DailyPracticePage implements OnInit {
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink;
-
+  direction: string = '';
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_02.svg"
   videoLink = '';
-  dailyid = '0'
+  dailyid ='0';
   dailyqus = ''
   dailyqusrefid = ''
   userId = ''
@@ -45,6 +59,7 @@ export class DailyPracticePage implements OnInit {
   DailyInspirationImg = '';
   enableBtn = false;
   dailyInsModule = '';
+ currentSection = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -54,6 +69,7 @@ export class DailyPracticePage implements OnInit {
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
+
 
   ngOnInit() {
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
@@ -168,7 +184,13 @@ export class DailyPracticePage implements OnInit {
   }
 
   next(event) {
+    this.currentSection++;
+    if(this.currentSection>=6){
+      this.currentSection = 0;
+    }
+    this.direction = 'left';
     this.Logevent(event);
+    this.dailyid = ((+this.dailyid + 1) % 6).toString();
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
@@ -177,10 +199,19 @@ export class DailyPracticePage implements OnInit {
 
   back(event) {
     this.Logevent(event);
+    this.dailyid = ((+this.dailyid - 1 + 6) % 6).toString()
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
     }, 500);
+
+      if (this.currentSection > 0) {
+        this.currentSection--;
+      }
+      if(this.currentSection==0){
+        this.currentSection=5;
+      }
+      this.direction = 'right';
   }
 
   getAlertcloseEvent() {

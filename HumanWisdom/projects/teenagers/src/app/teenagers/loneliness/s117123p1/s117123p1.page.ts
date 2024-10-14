@@ -14,7 +14,7 @@ export class S117123p1Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w2"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/events/1.mp4'
+  videoLink = this.mediaVideo + '/events/39.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "How can we overcome loneliness"

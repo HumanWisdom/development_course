@@ -17,6 +17,7 @@ import { CommonService } from '../../../services/common.service';
 })
 export class SearchPopularItemsPage implements OnInit {
   searchData: SearchDataModel;
+  searchinp:string='';
   search: string = "";
   totalRecords: number = 0;
   learningSearchRecords: number = 0;
@@ -36,7 +37,9 @@ export class SearchPopularItemsPage implements OnInit {
   enableShortViewMore: boolean = false;
   enableStoryViewMore: boolean = false;
   searchDataDup: any;
-
+  searchResult = [];
+  public moduleList = [];
+  filterApplied =  true;
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -73,9 +76,96 @@ export class SearchPopularItemsPage implements OnInit {
     } as SearchDataModel;
   }
 
-  searchEvent() {
-    this.getSearchData();
+  searchEvent(moduleName:string) {
+    this.filterApplied = false;
+    this.post = [];
+    this.initializeSearchObject();
+    this.search = moduleName;
+    setTimeout(() => {
+      this.getSearchData();
+      this.filterApplied = true;
+    }, 300);
   }
+  
+  getinp(event) {
+    let url=""
+    switch(event)
+    {
+      case "Events":{
+          url = `/adults/events`
+          break;
+      }
+      case "Blogs":{
+        url = `/adults/blogs`
+        break;
+      }
+      case "Life stories":
+      case "Stories":{
+        url = `/adults/wisdom-stories`
+        break;
+      }
+      case "Podcast":{
+        url = `/adults/podcast`
+        break;
+      }
+      case "Audio meditations":{
+        url = `/adults/audio-meditation`
+        break;
+      }
+      case ("Short videos"):
+      case ("Videos"):
+        {
+        url = `/adults/wisdom-shorts`
+        break;
+      }
+      case "Exercises":
+      case "Awareness Exercises":
+        {
+        url = `/adults/wisdom-exercise`
+        break;
+      }
+      case "Journal":{
+        url = `/adults/journal`
+        break;
+      }
+      case "Forum":{
+        url = `/adults/forum`
+        break;
+      }
+      case "Develop a calm mind":{
+        url = `/adults/pathway/develop-a-calm-mind`
+        break;
+      }
+      case "Understand yourself":{
+        url = `/adults/pathway/understand-yourself`
+        break;
+      }
+      case "Understand how your mind works":{
+        url = `/adults/pathway/understand-how-your-mind-works`
+        break;
+      }
+      case "Manage your emotions":{
+        url = `/adults/pathway/manage-your-emotions`
+        break;
+      }
+      case "Succeed in life":{
+        url = `/adults/pathway/live-your-best-life`
+        break;
+      }
+      case "Mental Health":{
+        url = `/adults/curated/overcome-stress-anxiety`
+        break;
+      }
+     default: {
+        this.searchEvent(this.search)
+        break;
+      }
+    }
+    if(!this.router.url.includes('site-search')){
+      this.router.navigate([url])
+    }
+  }
+
   getLearningRecords() {
     if (this.searchData) {
       return this.searchData.ModuleRes.length +
@@ -320,4 +410,59 @@ export class SearchPopularItemsPage implements OnInit {
     this.router.navigate([SharedService.getUrlfromFeatureName(url)]);
   }
 
+
+  // searchEvent(module) {
+  //   //this.eve.logEvent("click_search");
+  //   this.searchinp = module;
+  //   this.searchResult = [];
+  //   this.getinp(module);
+  // }
+
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  getModuleList(isLoad?) {
+    this.commonService.getModuleList().subscribe(res => {
+      this.moduleList = res;
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
+                          {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
+                          {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
+
+      if (isLoad) {
+        if (this.searchinp == '') {
+          this.searchResult = this.moduleList;
+        } else {
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
+    })
+  }
+
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  clearSearch() {
+    this.search = "";
+    this.searchResult = [];
+  }
 }

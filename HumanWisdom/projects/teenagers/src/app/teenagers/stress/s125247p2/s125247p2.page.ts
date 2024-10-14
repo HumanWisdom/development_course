@@ -17,7 +17,7 @@ export class S125247p2Page implements OnInit {
   videoLink = this.mediaVideo + '/events/22.mp4'
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
-  title = "A Talk on Stress"
+  title = "Five ways to prevent stress "
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/stress/stress_02.jpg"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

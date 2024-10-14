@@ -14,8 +14,8 @@ export class S160150Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/career-success/videos/1.1.mp4'  
-  title="Welcome"
+  videoLink=this.mediaVideo+'/teenagers/modules/career-success/videos/5.1.mp4'  
+  title="Choosing a career"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any
@@ -87,7 +87,7 @@ export class S160150Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/career-success/s160151'])
+    this.router.navigate(['/teenagers/career-success/s160154'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,10 +102,10 @@ export class S160150Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
   }
-
+s
   prev()
   {
-    this.router.navigate(['/teenagers/career-success/s160149'])
+    this.router.navigate(['/teenagers/career-success/s160148'])
   }
 
   ngOnDestroy()

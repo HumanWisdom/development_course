@@ -47,7 +47,7 @@ export class S156278Page implements OnInit {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp"
      
       this.moduleLink = "/external-approval"
-      this.moduleName = "Need for approval"
+      this.moduleName = "External Approval"
       this.sectionName = "Explore How Your Mind Works";
       this.moduleId = 123
     
