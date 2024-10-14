@@ -323,4 +323,37 @@ export class CommonService {
   getModuleList(): Observable<any> {
     return this.http.get(this.path + '/modules/9');
   }
+
+  getDailypractiseQuestion(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Question`)
+  }
+
+  getDailyInspirationQuestion(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyInspiration/${SharedService.ProgramId}`)
+  }
+
+  submitDailypractiseQuestion(data): Observable<any> {
+    return this.http.post(this.path + '/AddDailyQuestion_Response', data)
+  }
+
+  getDailypractiseQuestionbreath(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractiseBreath`)
+  }
+
+  getDailypractiseQuestionmeditation(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Med`)
+  }
+
+  getDailypractiseQuestionins(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Ins`)
+  }
+
+  getDailypractiseQuestiontoday(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Try`)
+  }
+
+  getDailypractiseQuestionoftheday(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Question`)
+  }
+
 }
