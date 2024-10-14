@@ -151,7 +151,7 @@ export class RedeemSubscriptionPage implements OnInit {
               this.showWarning = true;
               this.productNo = res.split('-')[1];
               if (res.split('-')[1] === '604') {
-                this.yearormonth = 'Annual';
+                this.yearormonth = 'Year';
                 this.programName = 'Teenagers';
                 res = this.yearormonth + '-' + this.programName;
                 localStorage.setItem('yearormonth', res);
@@ -166,7 +166,7 @@ export class RedeemSubscriptionPage implements OnInit {
                 res = this.yearormonth + '-' + this.programName;
                 localStorage.setItem('yearormonth', res);
               } else if (res.split('-')[1] === '610') {
-                this.yearormonth = 'Annual';
+                this.yearormonth = 'Year';
                 this.programName = 'Adults';
                 res = this.yearormonth + '-' + this.programName;
                 localStorage.setItem('yearormonth', res);

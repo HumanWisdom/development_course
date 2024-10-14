@@ -69,7 +69,7 @@ export class RedeemSubscriptionLandingPage implements OnInit {
     if (url.toString().includes('landing')) {
       return 'You have been given a gift subscription to the app.'
     }else {
-      return 'You have been given a Gift Card to subscribe to the HappierMe app. Begin by registering below.'
+      return this.isLoggedIn ? 'You have been given a Gift Card to subscribe to the HappierMe app.' : 'You have been given a Gift Card to subscribe to the HappierMe app. Begin by registering below.'
     }
   }
 
