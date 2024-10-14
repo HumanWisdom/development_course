@@ -1,8 +1,8 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" style="overflow-y: auto;">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/adults/adult-dashboard">
+      <a class="" (click)="routeToDashboard()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -25,7 +25,7 @@
   <!-- class -->
   <div class="cw100p" >
     <div class="row flex_jc_center slide" id="mdp_sections">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -44,7 +44,7 @@
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                          <!-- <span>{{ currentSection + 1 }} / 6</span> -->
+                          <span class="fc_ffffff">{{ currentSection + 1 }} / 6</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
                           <a  data-slide="next" class="next"
