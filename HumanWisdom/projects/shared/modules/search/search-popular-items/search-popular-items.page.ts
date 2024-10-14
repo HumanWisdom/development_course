@@ -89,71 +89,71 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     let url=""
-    switch(event)
+    switch(event.toLowerCase())
     {
-      case "Events":{
-          url = `/adults/events`
+      case "events":{
+          url = `/${SharedService.getprogramName()}/events`
           break;
       }
-      case "Blogs":{
-        url = `/adults/blogs`
+      case "blogs":{
+        url =`/${SharedService.getprogramName()}/blogs`
         break;
       }
-      case "Life stories":
+      case "life stories":
       case "Stories":{
-        url = `/adults/wisdom-stories`
+        url = `/${SharedService.getprogramName()}/wisdom-stories`
         break;
       }
-      case "Podcast":{
-        url = `/adults/podcast`
+      case "podcast":{
+        url = `/${SharedService.getprogramName()}/podcast`
         break;
       }
-      case "Audio meditations":{
-        url = `/adults/audio-meditation`
+      case "audio meditations":{
+        url = `/${SharedService.getprogramName()}/audio-meditation`
         break;
       }
-      case ("Short videos"):
-      case ("Videos"):
+      case ("short videos"):
+      case ("videos"):
         {
-        url = `/adults/wisdom-shorts`
+        url = `/${SharedService.getprogramName()}/wisdom-shorts`
         break;
       }
-      case "Exercises":
+      case "exercises":
       case "Awareness Exercises":
         {
-        url = `/adults/wisdom-exercise`
+        url = `/${SharedService.getprogramName()}/wisdom-exercise`
         break;
       }
-      case "Journal":{
-        url = `/adults/journal`
+      case "journal":{
+        url = `/${SharedService.getprogramName()}/journal`
         break;
       }
-      case "Forum":{
-        url = `/adults/forum`
+      case "forum":{
+        url = `/${SharedService.getprogramName()}/forum`
         break;
       }
-      case "Develop a calm mind":{
-        url = `/adults/pathway/develop-a-calm-mind`
+      case "develop a calm mind":{
+        url =`/${SharedService.getprogramName()}/pathway/develop-a-calm-mind`
         break;
       }
-      case "Understand yourself":{
-        url = `/adults/pathway/understand-yourself`
+      case "understand yourself":{
+        url = `/${SharedService.getprogramName()}/pathway/understand-yourself`
         break;
       }
-      case "Understand how your mind works":{
-        url = `/adults/pathway/understand-how-your-mind-works`
+      case "understand how your mind works":{
+        url = `/${SharedService.getprogramName()}/pathway/understand-how-your-mind-works`
         break;
       }
-      case "Manage your emotions":{
-        url = `/adults/pathway/manage-your-emotions`
+      case "manage your emotions":{
+        url = `/${SharedService.getprogramName()}/pathway/manage-your-emotions`
         break;
       }
-      case "Succeed in life":{
-        url = `/adults/pathway/live-your-best-life`
+      case "succeed in life":{
+        url = `/${SharedService.getprogramName()}/pathway/live-your-best-life`
         break;
       }
-      case "Mental Health":{
-        url = `/adults/curated/overcome-stress-anxiety`
+      case "mental health":{
+        url = `/${SharedService.getprogramName()}/curated/overcome-stress-anxiety`
         break;
       }
      default: {
@@ -161,7 +161,7 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
     }
-    if(!this.router.url.includes('site-search')){
+    if(this.router.url.includes('site-search')){
       this.router.navigate([url])
     }
   }
