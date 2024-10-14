@@ -280,7 +280,7 @@ const routes: Routes = [
   },
   {
     path: 'daily-practise/:id',
-    loadChildren: () => import('./daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
+    loadChildren: () => import('../../../../shared/component/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
   },
   {
     path: 'splash',
