@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
-import { AdultsService } from '../adults.service';
 import { Router } from '@angular/router';
-import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { LogEventService } from '../../../shared/services/log-event.service';
+import { CommonService } from '../../../shared/services/common.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { HammerGestureConfig } from '@angular/platform-browser';
+import { SharedService } from '../../services/shared.service';
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
@@ -60,10 +61,10 @@ export class DailyPracticePage implements OnInit {
   enableBtn = false;
   dailyInsModule = '';
  currentSection = 0;
-
+  isAdults = true;
   constructor(
     private route: ActivatedRoute,
-    private service: AdultsService,
+    private commonService: CommonService,
     public router: Router,
     public logeventservice: LogEventService
   ) {
@@ -72,10 +73,12 @@ export class DailyPracticePage implements OnInit {
 
 
   ngOnInit() {
+    this.isAdults = SharedService.isAdultProgram();
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
     this.dailyid = this.route.snapshot.paramMap.get('id')
+    this.currentSection = +this.dailyid;
     this.getdailyques();
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let islogin = localStorage.getItem("isloggedin");
@@ -107,14 +110,14 @@ export class DailyPracticePage implements OnInit {
   }
 
   getdailyquestion() {
-    this.service.getDailypractiseQuestionbreath().subscribe((res) => {
+    this.commonService.getDailypractiseQuestionbreath().subscribe((res) => {
       if (res) {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
         this.enableVideo = true;
       }
     })
-    this.service.getDailyInspirationQuestion().subscribe((res) => {
+    this.commonService.getDailyInspirationQuestion().subscribe((res) => {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
@@ -123,20 +126,20 @@ export class DailyPracticePage implements OnInit {
         this.enableVideo = true;
       }
     })
-    this.service.getDailypractiseQuestionins().subscribe((res) => {
+    this.commonService.getDailypractiseQuestionins().subscribe((res) => {
       if (res) {
         //this.dailyinstext = res;
         this.dailyinsAuthor = res.split(';')[0]
         this.dailyinstext = res.split(';')[1];
       }
     })
-    this.service.getDailypractiseQuestionmeditation().subscribe((res) => {
+    this.commonService.getDailypractiseQuestionmeditation().subscribe((res) => {
       if (res) {
         this.audioTitle = res.split(';')[0]
         this.audioLink = res.split(';')[1];
       }
     })
-    this.service.getDailypractiseQuestiontoday().subscribe((res) => {
+    this.commonService.getDailypractiseQuestiontoday().subscribe((res) => {
       if (res) {
         this.trythistoday = res;
       }
@@ -144,7 +147,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   getdailyques() {
-    this.service.getDailypractiseQuestion().subscribe((res) => {
+    this.commonService.getDailypractiseQuestion().subscribe((res) => {
       if (res) {
         this.dailyqus = res.split(':')[1]
         this.dailyqusrefid = res.split(':')[0]
@@ -164,7 +167,7 @@ export class DailyPracticePage implements OnInit {
         SubscriberId: this.userId,
         Resp: this.questext
       }
-      this.service.submitDailypractiseQuestion(obj).subscribe((res) => {
+      this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
         if (res) {
           this.content = "Successfully added daily question";
           this.enableAlert = true;
@@ -180,7 +183,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   routeModule() {
-    this.router.navigate(["/adults/" + this.dailyInsModule])
+    this.router.navigate(["/"+SharedService.getprogramName()+"/" + this.dailyInsModule])
   }
 
   next(event) {
@@ -204,18 +207,20 @@ export class DailyPracticePage implements OnInit {
     setTimeout(() => {
       this.enableVideo = true;
     }, 500);
-
-      if (this.currentSection > 0) {
-        this.currentSection--;
-      }
-      if(this.currentSection==0){
-        this.currentSection=5;
-      }
+    if(this.currentSection==0){
+      this.currentSection=5;
+    }else{
+      this.currentSection--;
+    }
       this.direction = 'right';
   }
 
   getAlertcloseEvent() {
     this.enableAlert = false;
     this.content = '';
+  }
+
+  routeToDashboard(){
+    this.router.navigate([SharedService.getDashboardUrls()])
   }
 }

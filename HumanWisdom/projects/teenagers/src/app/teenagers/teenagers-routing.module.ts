@@ -420,7 +420,7 @@ const routes: Routes = [
   },
   {
     path: 'daily-practise/:id',
-    loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
+    loadChildren: () => import('../../../../shared/component/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
   },
   {
     path: 'refer-friend',
