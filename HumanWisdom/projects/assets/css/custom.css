@@ -37388,6 +37388,34 @@ span
 {
   margin-left: 10px;
 }
+
+.hr_style_v3_13 
+{
+  border-top: 1px rgba(255, 255, 255, 0.5) dashed;
+  margin: 15px 0;
+}
+
+.dflex_start 
+{
+  display: flex;
+  align-items: start;
+}
+
+.v1_3_sfooter_ext_01
+{
+  background: #120F40;
+  box-shadow: unset;
+}
+
+.syft_ft_bg
+{
+  position: fixed;
+  bottom: 6%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  background: #292D56;
+}
 /* /version - 03 */
 
 
@@ -37422,7 +37450,7 @@ span
   box-shadow: none!important;
 }
 
-.carousel-inner > .item.prev.right > div:nth-child(2),
+/* .carousel-inner > .item.prev.right > div:nth-child(2),
 .carousel-inner > .item.prev.right > div:nth-child(3){
   display: none;
 }
@@ -37430,4 +37458,4 @@ span
 .carousel-inner > .item.active.left > div:nth-child(2),
 .carousel-inner > .item.active.left > div:nth-child(3){
   display: none;
-}
+} */
