@@ -12,7 +12,7 @@ export class S57035Page implements OnInit {
 
   bg_tn="bg_green"
   bg_cft="bg_green"
-  bg="green_w8"
+  bg="green_w6"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -55,12 +55,14 @@ export class S57035Page implements OnInit {
     }
     this.createScreen()
     this.startTime = Date.now();
+    if(this.qrList.ListOfQueOpts) {
+
     for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
     {
       this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
 
     }
-      
+  }
    
     this.questionA=this.qrList.ListOfQueOpts
     
@@ -68,9 +70,7 @@ export class S57035Page implements OnInit {
     this.optionList=this.findQuestion(287).optionList
     
    
-  
-   
-   
+     
 
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
@@ -121,14 +121,17 @@ export class S57035Page implements OnInit {
     return({"Question":question,"optionList":this.optionList})
   }
 
-  selectOption(id,e){
+  selectOption(id,e,  divid){
     console.log(id,e)
     if(e==true)
     {
+      document.getElementById(divid).style.backgroundColor = '#E58D82';
+
       this.sendOption.push(id)
     }
     if(e==false)
     {
+      document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
      this.sendOption.forEach((element,index)=>{
        if(element==id) this.sendOption.splice(index,1);
     });
