@@ -12,7 +12,8 @@ import {Meta,Title }  from '@angular/platform-browser';
 export class TeenTalkPage implements OnInit {
 
   public teenTalkList = [];
-
+  public unFilterTeenTalkList = [];
+  public searchedText ="";
   constructor(private router: Router, private service: TeenagersService, private meta: Meta, private title: Title) { }
 
   ngOnInit() {
@@ -25,12 +26,24 @@ export class TeenTalkPage implements OnInit {
 
     this.service.getTeenagerTalk().subscribe(res => {
        this.teenTalkList = res;
-       
+       this.unFilterTeenTalkList = JSON.parse(JSON.stringify(res));
     })
   }
 
   teentalkS3(id, title) {
     this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
   }
-
+ 
+  searchTeenTalk($event) 
+  {
+    if($event=='')
+    {
+      this.teenTalkList= this.unFilterTeenTalkList;
+    }
+    else
+    {
+      this.searchedText=$event;
+      this.teenTalkList =this.unFilterTeenTalkList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+    }
+  }
 }

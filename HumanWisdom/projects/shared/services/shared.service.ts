@@ -261,48 +261,48 @@ export class SharedService {
       {
         id: "14",
         displayName: "Emotions",
-        active: false,
+        active: true,
         name: 'Manage your emotions',
       },
       {
         id: "11",
-        active: false,
+        active: true,
         displayName: "Relationships",
         name: 'Relationships'
       },
       {
         id: "13",
-        active: false,
+        active: true,
         displayName: "Happiness",
         name: 'Be happier'
       },
       {
         id: "15",
         displayName: "Habits",
-        active: false,
+        active: true,
         name: 'Overcome unhelpful habits'
       },
       {
         id: "16",
-        active: false,
+        active: true,
         displayName: "Understand yourself",
         name: 'Understand yourself'
       },
       {
         id: "12",
-        active: false,
+        active: true,
         displayName: "Feel calm",
         name: 'Feel calm',
       },
       {
         id: "10",
-        active: false,
+        active: true,
         displayName: "Mental health",
         name: 'Manage your mental health'
       },
       {
         id: "17",
-        active: false,
+        active: true,
         displayName: "Success",
         name: 'Succeed in life'
       }
