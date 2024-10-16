@@ -141,6 +141,7 @@ export class SubscribedUnsubscribedPage implements OnInit {
       }
       UpgradeToPremium(){
         let val='Yearly';
+        localStorage.setItem('isMonthlySelectedForPayment','F'); 
         this.services.navigateToUpgradeToPremium=true;
         //localStorage.setItem("navigateToUpgradeToPremium","true")
         localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
