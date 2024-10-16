@@ -141,7 +141,7 @@ export class PaymentBankPage implements OnInit {
             this.location.back();
           }
           else {
-            this.router.navigate(["adults/partnership-app/payment-income"]);
+            this.router.navigate(["adults/partnership-report/income-report"]);
           }
         }
         }
