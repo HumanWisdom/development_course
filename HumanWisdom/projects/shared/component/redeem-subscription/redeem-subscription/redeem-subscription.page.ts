@@ -146,7 +146,7 @@ export class RedeemSubscriptionPage implements OnInit {
       this.service.checkGiftery(obj)
         .subscribe(
           res => {
-            if (res) {
+            if (res && !(res?.includes('already redeemed'))) {
               console.log('res');
               this.showWarning = true;
               this.productNo = res.split('-')[1];
