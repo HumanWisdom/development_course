@@ -494,6 +494,10 @@ export class OnboardingService {
     return this.http.post(this.path + '/AddScreen', data)
   }
 
+  signUpNewsLetter(data: any): Observable<any> {
+    return this.http.post(this.path + '/subscribe_newsletter', data)
+  }
+
   submitProgressQuestion(data: any): Observable<any> {
     return this.http.post(this.path + '/userProgressQuestion', data)
   }
