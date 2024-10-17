@@ -139,7 +139,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         event.preventDefault();
         console.log('production ' + this.isProduction);
         var url  = `/${SharedService.getprogramName()}/subscription/free-trial`;
-        if (localStorage.getItem('ispartnershipClick') == 'T') {
+        if (localStorage.getItem('ispartnershipClick') == 'T' && localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
           localStorage.setItem('ispartnershipClick', 'F');
           url = `/${SharedService.getprogramName()}/hwp-premium-congratulations`;
         }
