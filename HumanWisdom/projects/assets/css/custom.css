@@ -34312,7 +34312,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v1_3_sfooter 
 {
   height: 110px;
-  padding: 30px 20px;
+  padding: 20px 20px;
   background: #424675;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
