@@ -147,11 +147,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.ios = true;
     }
     let userId = JSON.parse(localStorage.getItem("userId"));
-     this.services.getuser(userId).subscribe((res) => {
-        localStorage.setItem("isPartner", res[0].IsPartner);
-        localStorage.setItem('PartnerOption', res[0].PartnerOption);
-        localStorage.setItem('SubscriberType', res[0].SubscriberType);
-      });
+     this.Onboardingservice.getuserDetail();
       if (localStorage.getItem("isPartner") != null) {
       this.isPartner = localStorage.getItem("isPartner");
     }
