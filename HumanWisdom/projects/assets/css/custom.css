@@ -15102,8 +15102,9 @@ input[type="number"] {
 .crimg
 {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
 }
 
 .txt28
@@ -32504,7 +32505,7 @@ body *
 .odiv_mdp > [class^="col-"]
 {
   width: 20%;
-  margin: 0 16px 0 0;
+  margin: 0 13px 0 0;
   padding: 0;
 }
 

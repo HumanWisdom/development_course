@@ -2002,7 +2002,7 @@
                       <div id="c32" class="panel-collapse collapse">
                         <div class="panel-body">
                           Once you subscribe you can join our partnership program, and be rewarded for sharing HappierMe with your network. Details can be found in the Partnership
-                          <a class="" href="https://happierme.app/adults/events">
+                          <a class="" href="https://happierme.app/adults/partnership-webpage/partnership-index">
 
                           Partnership program</a>
             </a>
