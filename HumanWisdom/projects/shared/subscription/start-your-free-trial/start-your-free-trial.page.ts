@@ -71,4 +71,8 @@ constructor(private router: Router,private location: Location, private servive: 
 
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
+
+  routeToTestimonial(){
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonial`)
+  }
 }
