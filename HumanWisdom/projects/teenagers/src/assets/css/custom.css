@@ -15102,8 +15102,9 @@ input[type="number"] {
 .crimg
 {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
 }
 
 .txt28
@@ -32475,8 +32476,8 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 25%;
-  margin: 0 20px 0 0;
+  width: 20%;
+  margin: 0 13px 0 0;
   padding: 0;
 }
 
@@ -36119,10 +36120,11 @@ section > .row
 
 .cvideo_03
 {
-  /* width: 100%; */
+   width: 100%; 
   max-height: 100%;
-  border-radius: 10px;
+  border-radius: 35px;
   object-fit: cover;
+  padding: 20px;
 }
 
 .v1_3_sfooter_rs 
