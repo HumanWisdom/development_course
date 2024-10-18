@@ -123,8 +123,8 @@ export class SharedService {
     return false;
   }
 
-   public isIOSApp(){
-   return this.iOS();
+   public static isIOSApp(){
+      return this.iOS();
    }
 
   public static formatToDecimal(value) {
