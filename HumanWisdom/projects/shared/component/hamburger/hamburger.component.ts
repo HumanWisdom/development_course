@@ -121,6 +121,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   setInitialData() {
+    if(this.Onboardingservice.userDetails){
+      this.userDetails = this.Onboardingservice.userDetails;
+      localStorage.setItem("isPartner", this.userDetails.IsPartner);
+      localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
+    }
     if (this.userDetails) {
       localStorage.setItem("isPartner", this.userDetails.IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);

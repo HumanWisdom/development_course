@@ -310,7 +310,8 @@ export class AppComponent implements OnDestroy {
    this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
     if(res){
       this.userdetail=res[0];
-    this.getFreeScreens();
+      this.onboardingService.userDetails = this.userdetail;
+      this.getFreeScreens();
     }
   });
  

@@ -32,6 +32,7 @@ export class OnboardingService {
   private authUrl = `https://api.instagram.com/oauth/authorize`;
   private accessToken: string | null = null;
   public countryData:any;
+  public userDetails:any;
   // Subscribe to the Subject
   constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone) {
     // this.http =  new HttpClient(handler);
