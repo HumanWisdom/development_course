@@ -121,13 +121,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   setInitialData() {
-    if(this.Onboardingservice.userDetails){
-      this.userDetails = this.Onboardingservice.userDetails;
-      localStorage.setItem("isPartner", this.userDetails.IsPartner);
-      localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
-    }
     if (this.userDetails) {
-      localStorage.setItem("isPartner", this.userDetails.IsPartner);
+       //localStorage.setItem("isPartner", this.userDetails.IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
       if (this.userDetails['UserImagePath'] != "") {
         this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
@@ -151,7 +146,13 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.ios = true;
     }
-    if (localStorage.getItem("isPartner") != null) {
+    let userId = JSON.parse(localStorage.getItem("userId"));
+     this.services.getuser(userId).subscribe((res) => {
+        localStorage.setItem("isPartner", res[0].IsPartner);
+        localStorage.setItem('PartnerOption', res[0].PartnerOption);
+        localStorage.setItem('SubscriberType', res[0].SubscriberType);
+      });
+      if (localStorage.getItem("isPartner") != null) {
       this.isPartner = localStorage.getItem("isPartner");
     }
     if (localStorage.getItem("PartnerOption") != null) {
