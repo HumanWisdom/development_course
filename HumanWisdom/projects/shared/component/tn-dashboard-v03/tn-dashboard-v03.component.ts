@@ -203,7 +203,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   Subscribe() {
-    if (!(this.platform.IOS || this.platform.SAFARI)) {
+    if (!(this.platform.IOS)) {
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.startFreeTrial)]);
     }
   }

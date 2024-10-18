@@ -2,14 +2,14 @@ import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
 import { Injectable, NgZone } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable, of, Subject } from "rxjs";
 import { environment } from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
 import { ToastrService } from "ngx-toastr";
 import { SharedService } from "./shared.service";
 import {  from, throwError } from 'rxjs';  // Import 'from' and 'throwError' here
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,7 @@ export class OnboardingService {
   private redirectUri = environment.clientUrl+"/adults/adult-dashboard";
   private authUrl = `https://api.instagram.com/oauth/authorize`;
   private accessToken: string | null = null;
+  public countryData:any;
   // Subscribe to the Subject
   constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone) {
     // this.http =  new HttpClient(handler);
@@ -348,9 +349,19 @@ export class OnboardingService {
     return this.http.post(this.path + `/LearnerSocial`, data)
   }
 
-  public getCountry() {
-    return this.http.get("https://ipapi.co/json");
+  public getCountry(): Observable<any> {
+    if (!this.countryData) {
+      // Fetch the data and store it in the countryData
+      return this.http.get("https://ipapi.co/json").pipe(
+        tap((data: any) => {
+          this.countryData = data; 
+        })
+      );
+    }
+    // If countryData already has data, return an observable of it
+    return of(this.countryData);
   }
+
   getToken() {
     return JSON.parse(localStorage.getItem("token"))
   }
