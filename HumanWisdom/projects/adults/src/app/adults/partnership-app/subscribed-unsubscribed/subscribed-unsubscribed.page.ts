@@ -35,7 +35,7 @@ export class SubscribedUnsubscribedPage implements OnInit {
 // Create a new Subject
 // Subscribe to the Subject
 
-  constructor(private router :Router,private services: OnboardingService,public location:Location,public adultService:AdultsService,, public platform: Platform) { }
+  constructor(private router :Router,private services: OnboardingService,public location:Location,public adultService:AdultsService, public platform: Platform) { }
 
   ngOnInit() {
     this.isSubscriber  = SharedService.isSubscriber();
