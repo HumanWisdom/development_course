@@ -156,8 +156,6 @@ export class SubscribedUnsubscribedPage implements OnInit {
           localStorage.setItem('partnership-app', val);
           localStorage.setItem('upgradeToPremium', 'T');
           this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: val}})
-        }else{
-          this.clickSubscribeToPremium();
         }
       }
       getPricing(){
