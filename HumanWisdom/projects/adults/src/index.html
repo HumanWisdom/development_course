@@ -468,6 +468,12 @@
       // Perform the download action here
     });
 
+    window.addEventListener('subscribeToPremium', function () {
+      if (window.webkit) {
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
+        }
+    });
+
     function triggerAngularEvent(data) {
       // Call the function exposed by Angular
       window['handleAngularEvent'](data);
