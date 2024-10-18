@@ -69,6 +69,7 @@ export class AppComponent implements OnDestroy {
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
+      this.onboardingService.getCountry();
       setTimeout(() => {
         this.getUserInformationById(SharedService.getUserId());
       }, 1000);
