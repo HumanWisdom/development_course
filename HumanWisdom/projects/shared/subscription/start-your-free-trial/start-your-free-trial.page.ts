@@ -73,6 +73,6 @@ constructor(private router: Router,private location: Location, private servive: 
   }
 
   routeToTestimonial(){
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonialsp`)
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonials`)
   }
 }
