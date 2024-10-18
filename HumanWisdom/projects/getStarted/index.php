@@ -1860,7 +1860,9 @@
                       </div>
                       <div id="c22" class="panel-collapse collapse">
                         <div class="panel-body">
-                          Our mind is reactive and we are usually not aware of, or in control of our reactions. These reactions often create the mental health problems we experience. By understanding our thoughts, feelings and emotions better, we can better manage our reactions, and so manage our own mental health(hyperlink this to the section on Mental health).
+                          Our mind is reactive and we are usually not aware of, or in control of our reactions. These reactions often create the mental health problems we experience. By understanding our thoughts, feelings and emotions better, we can better manage our reactions, and so manage our own 
+                          <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                          mental health </a>
                         </div>
                       </div>
                     </div>
@@ -1881,7 +1883,9 @@
                       </div>
                       <div id="c23" class="panel-collapse collapse">
                         <div class="panel-body">
-                          By understanding ourselves, our reactions and our own emotional needs we can understand others better, and this can help us to reduce conflict in our relationships. By learning to communicate with care we can have relationships with depth and meaning. By learning how to love ourselves and others, we can invite more love into our lives, and we can feel less lonely. Our relationships are the foundation of our long-term happiness. Getting them right is important and an art that we can all learn. The app has a section dedicated to Relationships(Hyperlink this to the relationship section).
+                          By understanding ourselves, our reactions and our own emotional needs we can understand others better, and this can help us to reduce conflict in our relationships. By learning to communicate with care we can have relationships with depth and meaning. By learning how to love ourselves and others, we can invite more love into our lives, and we can feel less lonely. Our relationships are the foundation of our long-term happiness. Getting them right is important and an art that we can all learn. The app has a section dedicated to 
+                          <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
+                          Relationships. </a>
                         </div>
                       </div>
                     </div>
@@ -1902,7 +1906,10 @@
                       </div>
                       <div id="c24" class="panel-collapse collapse">
                         <div class="panel-body">
-                          Many of our unconscious habits which can lead to addiction begin in our thinking, but we are not aware of them. One of them for example is our need to escape from our emotional distress, which we do not know how to deal with. By understanding our own mind we can find more intelligent ways of dealing with our distress, and this can help us avoid and overcome addiction. The app has a section dedicated to Addiction(hyperlink this)
+                          Many of our unconscious habits which can lead to addiction begin in our thinking, but we are not aware of them. One of them for example is our need to escape from our emotional distress, which we do not know how to deal with. By understanding our own mind we can find more intelligent ways of dealing with our distress, and this can help us avoid and overcome addiction. The app has a section dedicated to 
+                          <a class="" href="https://happierme.app/adults/curated/change-unhelpful-habits">
+
+                          Addiction </a>
                         </div>
                       </div>
                     </div>
@@ -1923,7 +1930,11 @@
                       </div>
                       <div id="c25" class="panel-collapse collapse">
                         <div class="panel-body">
-                          Studies suggest that our soft skills play a much greater role in our long term success than academic achievement. They include emotional intelligence, communication, leadership, empathy, resilience and integrity. All of these are enhanced by self-awareness and the app has a dedicated Work and Leadership(Hyperlink this) section to explore.
+                          Studies suggest that our soft skills play a much greater role in our long term success than academic achievement. They include emotional intelligence, communication, leadership, empathy, resilience and integrity. All of these are enhanced by self-awareness and the app has a dedicated Work and 
+                          <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
+
+                          Leadership</a>
+                         section to explore.
                         </div>
                       </div>
                     </div>
@@ -1944,7 +1955,10 @@
                       </div>
                       <div id="c26" class="panel-collapse collapse">
                         <div class="panel-body">
-                          There is a library of audio meditations(hyperlink this) included in the app. More are added regularly. There is also a module on Meditation with guidance on a good meditation practice.
+                          There is a library of audio 
+                          <a class="" href="https://happierme.app/adults/audio-meditation">
+
+                          meditations </a> included in the app. More are added regularly. There is also a module on Meditation with guidance on a good meditation practice.
                         </div>
                       </div>
                     </div>
@@ -1963,7 +1977,10 @@
                       </div>
                       <div id="c31" class="panel-collapse collapse in">
                         <div class="panel-body">
-                          We host a live event every two weeks on different subjects and explore how self-awareness can help with that. There is usually an invited guest and an opportunity to contribute and ask questions. You can access our library of past events through the Events(hyperlink this) tab.
+                          We host a live event every two weeks on different subjects and explore how self-awareness can help with that. There is usually an invited guest and an opportunity to contribute and ask questions. You can access our library of past events through the 
+                          <a class="" href="https://happierme.app/adults/events">
+
+                          Events</a>
                         </div>
                       </div>
                     </div>
@@ -1984,7 +2001,12 @@
                       </div>
                       <div id="c32" class="panel-collapse collapse">
                         <div class="panel-body">
-                          Once you subscribe you can join our partnership program, and be rewarded for sharing HappierMe with your network. Details can be found in the Partnership program(hyperlink this), in the app(click on the Menu - top right in the app).
+                          Once you subscribe you can join our partnership program, and be rewarded for sharing HappierMe with your network. Details can be found in the Partnership
+                          <a class="" href="https://happierme.app/adults/partnership-webpage/partnership-index">
+
+                          Partnership program</a>
+            </a>
+                           in the app(click on the Menu - top right in the app).
                         </div>
                       </div>
                     </div>
@@ -2005,7 +2027,10 @@
                       </div>
                       <div id="c33" class="panel-collapse collapse">
                         <div class="panel-body">
-                          We have trained coaches that can be accessed through the app. They are familiar with the app and can offer 1-2-1 coaching for an extra fee. You can ask a coach a question as part of your subscription through the Forum, and this can be done anonymously. To book an appointment with a coach fill out a form in the Contact a Coach (hyperlink this) section in the explore section of the app.
+                          We have trained coaches that can be accessed through the app. They are familiar with the app and can offer 1-2-1 coaching for an extra fee. You can ask a coach a question as part of your subscription through the Forum, and this can be done anonymously. To book an appointment with a coach fill out a form in the 
+                          <a class="" href="https://happierme.app/adults/coach">
+
+                          Contact a Coach </a> section in the explore section of the app.
                         </div>
                       </div>
                     </div>

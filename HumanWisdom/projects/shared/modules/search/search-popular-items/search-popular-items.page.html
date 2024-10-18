@@ -24,14 +24,14 @@
               </div>
             </div> -->
 
-            <!-- <div class="row mt30px mb30px prelative">
+            <div class="row prelative pt30px">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="search" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="How can we help you today?">
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
+                <span *ngIf=" search!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
               </div>
 
-              <div class="row adsearch">
+              <div class="row adsearch adsearch_ext_01 plr20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                   <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
                     <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
@@ -39,7 +39,7 @@
                   </ul>
                 </div>
               </div>
-            </div> -->
+            </div>
             <!-- /search -->
 
             <div class="row mt20px">
@@ -70,7 +70,7 @@
                   </li>
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content" *ngIf="filterApplied">
 
                   <!-- learning -->
                   <div id="tab1" *ngIf="tabName=='Learning'" class="tab-pane fade in active">

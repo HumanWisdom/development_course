@@ -43,7 +43,13 @@
                 </div>
               </div> -->
               <!-- /search -->
-
+              <!-- search -->
+              <div class="row prelative">
+                <app-hwp-search-bar [searchinp]="searchedText"  [placeholder]="'Search'" (textBoxEvent)="searchTeenTalk($event)" ></app-hwp-search-bar>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                </div>
+              </div>
+              <!-- /search -->
               <div class="row mtb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">

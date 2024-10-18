@@ -2,15 +2,30 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { Router } from '@angular/router';
-import { LogEventService } from '../../../../../shared/services/log-event.service';
-import { AdultsService } from '../../../../../adults/src/app/adults/adults.service';
-import { SharedService } from '../../../../../shared/services/shared.service';
-
+import { LogEventService } from '../../../shared/services/log-event.service';
+import { CommonService } from '../../../shared/services/common.service';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { HammerGestureConfig } from '@angular/platform-browser';
+import { SharedService } from '../../services/shared.service';
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
   templateUrl: './daily-practice.page.html',
   styleUrls: ['./daily-practice.page.scss'],
+  animations: [
+    trigger('slideAnimation', [
+      // Wildcard transition for swipe left (next)
+      transition('* => left', [
+        style({ transform: 'translateX(100%)' }), // start from right
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ]),
+      // Wildcard transition for swipe right (previous)
+      transition('* => right', [
+        style({ transform: 'translateX(-100%)' }), // start from left
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class DailyPracticePage implements OnInit {
   @ViewChild('videoPlayer') videoPlayer: ElementRef;
@@ -19,10 +34,10 @@ export class DailyPracticePage implements OnInit {
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink;
-
+  direction: string = '';
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_02.svg"
-  videoLink;
-  dailyid = '0'
+  videoLink = '';
+  dailyid ='0';
   dailyqus = ''
   dailyqusrefid = ''
   userId = ''
@@ -40,28 +55,30 @@ export class DailyPracticePage implements OnInit {
   placeholder = 'Answer here'
   enableAlert = false;
   content = ''
-  isAdults: boolean;
   dailyInspirationTitle = '';
   DailyInspirationLink;
-  dailyInsModule = '';
+  DailyInspirationImg = '';
   enableBtn = false;
-
+  dailyInsModule = '';
+ currentSection = 0;
+  isAdults = true;
   constructor(
     private route: ActivatedRoute,
-    private service: AdultsService,
+    private commonService: CommonService,
     public router: Router,
     public logeventservice: LogEventService
   ) {
-    this.isAdults = SharedService.isAdultProgram();
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
 
+
   ngOnInit() {
-    this.setAudioControlsBackground();
+    this.isAdults = SharedService.isAdultProgram();
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
     this.dailyid = this.route.snapshot.paramMap.get('id')
+    this.currentSection = +this.dailyid;
     this.getdailyques();
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let islogin = localStorage.getItem("isloggedin");
@@ -72,10 +89,12 @@ export class DailyPracticePage implements OnInit {
     $('.carousel').bcSwipe({ threshold: 50 });
 
     if (this.guest || !this.isloggedIn || this.Subscriber === '0') {
-      this.placeholder = 'Start your free trial to access your online journal';
+      this.placeholder = 'Please subscribe to access your online journal';
     }
 
-    setTimeout(() => {
+    this.getdailyquestion();
+
+   /*  setTimeout(() => {
       let video = document?.getElementsByTagName('video')[0];
 
       video?.addEventListener("timeupdate", (function () {
@@ -87,42 +106,40 @@ export class DailyPracticePage implements OnInit {
       }).bind(this));
 
 
-    }, 4000)
-
-    this.getdailyquestion();
-
+    }, 4000) */
   }
 
   getdailyquestion() {
-    this.service.getDailypractiseQuestionbreath().subscribe((res) => {
+    this.commonService.getDailypractiseQuestionbreath().subscribe((res) => {
       if (res) {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
         this.enableVideo = true;
       }
     })
-    this.service.getDailyInspirationQuestion().subscribe((res) => {
+    this.commonService.getDailyInspirationQuestion().subscribe((res) => {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
         this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
+        this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
         this.enableVideo = true;
       }
     })
-    this.service.getDailypractiseQuestionins().subscribe((res) => {
+    this.commonService.getDailypractiseQuestionins().subscribe((res) => {
       if (res) {
         //this.dailyinstext = res;
         this.dailyinsAuthor = res.split(';')[0]
         this.dailyinstext = res.split(';')[1];
       }
     })
-    this.service.getDailypractiseQuestionmeditation().subscribe((res) => {
+    this.commonService.getDailypractiseQuestionmeditation().subscribe((res) => {
       if (res) {
         this.audioTitle = res.split(';')[0]
         this.audioLink = res.split(';')[1];
       }
     })
-    this.service.getDailypractiseQuestiontoday().subscribe((res) => {
+    this.commonService.getDailypractiseQuestiontoday().subscribe((res) => {
       if (res) {
         this.trythistoday = res;
       }
@@ -130,7 +147,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   getdailyques() {
-    this.service.getDailypractiseQuestion().subscribe((res) => {
+    this.commonService.getDailypractiseQuestion().subscribe((res) => {
       if (res) {
         this.dailyqus = res.split(':')[1]
         this.dailyqusrefid = res.split(':')[0]
@@ -150,7 +167,7 @@ export class DailyPracticePage implements OnInit {
         SubscriberId: this.userId,
         Resp: this.questext
       }
-      this.service.submitDailypractiseQuestion(obj).subscribe((res) => {
+      this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
         if (res) {
           this.content = "Successfully added daily question";
           this.enableAlert = true;
@@ -166,11 +183,17 @@ export class DailyPracticePage implements OnInit {
   }
 
   routeModule() {
-    this.router.navigate(["/teenagers/" + this.dailyInsModule])
+    this.router.navigate(["/"+SharedService.getprogramName()+"/" + this.dailyInsModule])
   }
 
   next(event) {
+    this.currentSection++;
+    if(this.currentSection>=6){
+      this.currentSection = 0;
+    }
+    this.direction = 'left';
     this.Logevent(event);
+    this.dailyid = ((+this.dailyid + 1) % 6).toString();
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
@@ -179,10 +202,17 @@ export class DailyPracticePage implements OnInit {
 
   back(event) {
     this.Logevent(event);
+    this.dailyid = ((+this.dailyid - 1 + 6) % 6).toString()
     this.enableVideo = false;
     setTimeout(() => {
       this.enableVideo = true;
     }, 500);
+    if(this.currentSection==0){
+      this.currentSection=5;
+    }else{
+      this.currentSection--;
+    }
+      this.direction = 'right';
   }
 
   getAlertcloseEvent() {
@@ -190,18 +220,7 @@ export class DailyPracticePage implements OnInit {
     this.content = '';
   }
 
-  setAudioControlsBackground() {
-    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
-
-    // Create a new <style> element
-    const style = document.createElement('style');
-    style.textContent = `
-      audio::-webkit-media-controls-enclosure {
-        background: ${backgroundColor} !important;
-      }
-    `;
-
-    // Append the <style> element to the document head
-    document.head.appendChild(style);
+  routeToDashboard(){
+    this.router.navigate([SharedService.getDashboardUrls()])
   }
 }

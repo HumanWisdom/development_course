@@ -76,7 +76,7 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw">
       <a>
         <button type="button" class="btn btn_tfas" *ngIf="isLoggedIn && !isSubscriber" (click)="route('redeem')">
-          Redeem subscription
+          {{enabledGiftCard ? 'Redeem Gift Card' : 'Redeem subscription' }}
         </button>
 
         <button type="button" class="btn btn_tfas" *ngIf="!isLoggedIn" (click)="route('login')">

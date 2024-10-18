@@ -43,11 +43,12 @@ export class RedeemSubscriptionPage implements OnInit {
   enableAlert = false;
   content = '';
   enablecancel = false;
-  public registrationForm : any;
+  public registrationForm: any;
   enabledModal = false;
   landingpage = '';
   public programName = '';
   public enabledGiftCard = false;
+  productNo = '';
 
   constructor(
     public platform: Platform,
@@ -59,10 +60,10 @@ export class RedeemSubscriptionPage implements OnInit {
   ) {
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
-    if(localStorage.getItem('giftcard') === 'T') {
+    if (localStorage.getItem('giftcard') === 'T') {
       this.enabledGiftCard = true;
     }
-    
+
     this.landingpage = localStorage.getItem('redeemlanding');
     let firsttime = localStorage.getItem('first');
     if (firsttime === 'T' || !firsttime) {
@@ -138,33 +139,82 @@ export class RedeemSubscriptionPage implements OnInit {
   verifyactkey() {
     console.log('verify')
     this.showWarning = false
-    this.service.verifyactkey(this.activationCode)
-      .subscribe(
-        res => {
-          if (res) {
-            console.log('res');
-            this.showWarning = true
-            this.yearormonth = res.split('-')[0];
-            this.programName = res.split('-')[1];
-            localStorage.setItem('yearormonth', res);
-            this.subthirdpage = false
-            this.subfirstpage = false
-            this.subsecondpage = true;
-          } else {
-            console.log('false');
+    if (this.enabledGiftCard) {
+      let obj = {
+        "CertificateCode": this.activationCode
+      }
+      this.service.checkGiftery(obj)
+        .subscribe(
+          res => {
+            if (res && !(res?.includes('already redeemed'))) {
+              console.log('res');
+              this.showWarning = true;
+              this.productNo = res.split('-')[1];
+              if (res.split('-')[1] === '604') {
+                this.yearormonth = 'Year';
+                this.programName = 'Teenagers';
+                res = this.yearormonth + '-' + this.programName;
+                localStorage.setItem('yearormonth', res);
+              } else if (res.split('-')[1] === '608') {
+                this.yearormonth = 'Month';
+                this.programName = 'Adults';
+                res = this.yearormonth + '-' + this.programName;
+                localStorage.setItem('yearormonth', res);
+              } else if (res.split('-')[1] === '609') {
+                this.yearormonth = 'Month';
+                this.programName = 'Teenager';
+                res = this.yearormonth + '-' + this.programName;
+                localStorage.setItem('yearormonth', res);
+              } else if (res.split('-')[1] === '610') {
+                this.yearormonth = 'Year';
+                this.programName = 'Adults';
+                res = this.yearormonth + '-' + this.programName;
+                localStorage.setItem('yearormonth', res);
+              }
+              this.subthirdpage = false
+              this.subfirstpage = false
+              this.subsecondpage = true;
+            } else {
+              console.log('false');
+              this.subsecondpage = false;
+              this.subthirdpage = true
+            }
+          },
+          error => {
+            console.log('error');
+            this.subsecondpage = false;
+            this.subthirdpage = true
+          },
+          () => {
+          }
+        );
+    } else {
+      this.service.verifyactkey(this.activationCode)
+        .subscribe(
+          res => {
+            if (res) {
+              console.log('res');
+              this.showWarning = true
+              this.yearormonth = res.split('-')[0];
+              this.programName = res.split('-')[1];
+              localStorage.setItem('yearormonth', res);
+              this.subthirdpage = false
+              this.subfirstpage = false
+              this.subsecondpage = true;
+            } else {
+              console.log('false');
+              this.subsecondpage = false;
+              this.subthirdpage = true
+            }
+          },
+          error => {
+            console.log('error');
             this.subsecondpage = false;
             this.subthirdpage = true
           }
-        },
-        error => {
-          console.log('error');
-          this.subsecondpage = false;
-          this.subthirdpage = true
-        },
-        () => {
-        }
-      );
-    console.log('Warning')
+        );
+    }
+
     if (this.showWarning === false) {
       this.subsecondpage = false;
       this.subthirdpage = true
@@ -172,8 +222,14 @@ export class RedeemSubscriptionPage implements OnInit {
   }
 
   submitcode() {
-
-    this.services.verifyActivationKey(this.activationCode, this.userId, this.countryCode)
+    if(this.enabledGiftCard) {
+      let obj = {
+        "CertificateCode": this.activationCode,
+        "Amount":1,
+        "Product": this.productNo,
+        "ISOCode":"INR"
+        }
+      this.services.redeemGiftery(obj)
       .subscribe(
         res => {
           if (res) {
@@ -195,6 +251,30 @@ export class RedeemSubscriptionPage implements OnInit {
         () => {
         }
       );
+    }else {
+      this.services.verifyActivationKey(this.activationCode, this.userId, this.countryCode)
+      .subscribe(
+        res => {
+          if (res) {
+            this.showWarning = false
+            let code: any = 1
+            localStorage.setItem('Subscriber', code)
+            this.subthirdpage = false;
+            this.subsecondpage = false;
+            this.subfirstpage = true;
+            this.router.navigate(['/' + SharedService.getprogramName() + '/redeem-congratulation'])
+          } else {
+            this.subthirdpage = true
+          }
+        },
+        error => {
+          this.subthirdpage = true
+          console.log(error);
+        },
+        () => {
+        }
+      );
+    }
     console.log('Warning')
     if (this.showWarning === false) {
       this.subthirdpage = true
@@ -202,13 +282,13 @@ export class RedeemSubscriptionPage implements OnInit {
   }
 
   already() {
-    if(!this.enabledModal) {
+    if (!this.enabledModal) {
       this.enabledModal = true;
     }
   }
 
   route_adverts_hwp() {
-    this.router.navigate(['/' + SharedService.getprogramName()+ '/adverts-hwp'])
+    this.router.navigate(['/' + SharedService.getprogramName() + '/adverts-hwp'])
   }
 
   Logevent() {
@@ -217,12 +297,12 @@ export class RedeemSubscriptionPage implements OnInit {
       this.content = "Are you sure you want to logout ?";
       this.enableAlert = true;
     } else {
-      this.router.navigate(['/' + SharedService.getprogramName()+ "/onboarding/login"]);
+      this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/login"]);
     }
   }
 
-  navigate(url, event){
-    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  navigate(url, event) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
     this.logeventservice.logEvent(event)
   }
 
@@ -234,7 +314,7 @@ export class RedeemSubscriptionPage implements OnInit {
     this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
   }
 
-  goBack(){
+  goBack() {
     this.location.back()
   }
 

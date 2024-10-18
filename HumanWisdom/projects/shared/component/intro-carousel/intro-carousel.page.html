@@ -2,7 +2,8 @@
 <div class="right_col mc_03">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 col_cw" [ngClass]="isAdults ? 'div_intro' : 'v1_3_bg_splash_teens'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 col_cw"
+        [ngClass]="isAdults ? 'div_intro' : 'v1_3_bg_splash_teens'">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -12,18 +13,16 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
-                    <video controls onplay="Logevent('click_play_video_intro_carousel')" playinline class="cvideo_03 br_0px"
+                    <video controls onplay="Logevent('click_play_video_intro_carousel')" playinline
+                      class="cvideo_03 br_0px"
                       poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                       controlsList="nodownload">
-                      <source
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction.mp4"
-                        type="video/mp4"
-                        *ngIf="isAdults">
+                      <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction.mp4"
+                        type="video/mp4" *ngIf="isAdults">
 
                       <source
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction_teens.mp4"
-                        type="video/mp4"
-                        *ngIf="!isAdults">
+                        type="video/mp4" *ngIf="!isAdults">
                     </video>
                   </div>
                 </div>
@@ -32,35 +31,57 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                       <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="isAdults">
+
                         <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
-                        <p  style="font-size:20px; font-weight:500">
-                          Your guide for a happier life.
-                        </p>
-                        <p style="font-size:15px">
+                        <div class="row mt15px">
+                        <h1 class="fw_500 fs_18px lh_140p fc_ffffff mtb0px ">
+                         
+                        
+                        Your guide for a happier life.
+                        </h1>
+                       </div>
+                       <div class="row mt15px">
+                        <h4 class="mtb0px fs_15px  lh_150p fc_ffffff">
                           Manage your own emotions and mental health, have fulfilling relationships and succeed in life.
-                        </p>
+                        </h4>
+                        </div>
                         <!-- <hr> -->
-                        <p style="font-size:12px">
-                          Register and start your free trial. We do not share your data with anyone.
-                        </p>
+                        <div class="row mt15px">
+
+                        <h4 class="mtb0px fs_12px  lh_150p fc_ffffff_0_7">
+                          Register today and try HappierMe for free.   
+                          <br/>
+                          We do not share your data with anyone.                          </h4>
+                        </div>
                       </h4>
 
                       <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="!isAdults">
                         <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
-                        <p  style="font-size:20px; font-weight:500">
-                          Your guide for a happier life.
-                        </p>
-                        <p style="font-size:15px">
-                          Manage your own emotions and mental health, have fulfilling friendships and succeed in life.
-                        </p>
+                        <div class="row mt15px">
+                          <h1 class="fw_500 fs_18px lh_140p fc_ffffff mtb0px ">
+                            Your guide for a happier life.
+                          </h1>
+                        </div>
+                        <div class="row mt15px">
+                          <h4 class="mtb0px fs_15px  lh_150p fc_ffffff">
+                            Manage your own emotions and mental health, have fulfilling friendships and succeed in life.
+                          </h4>
+                        </div>
                         <!-- <hr> -->
-                        <p style="font-size:12px">
-                          Register and start your free trial. We do not share your data with anyone.
-                        </p>
-                      </h4>
-                    </div>
-                  </div>
+                          <div class="row mt15px">
+
+                            <h4 class="mtb0px fs_12px  lh_150p fc_ffffff_0_7">
+                              Register today and try HappierMe for free.   
+                              <br/>
+                              We do not share your data with anyone.                         
+                            </h4>
+                          </div>
+                    </h4>
+                  </div>  
                 </div>
+              </div>  
+               
+
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
@@ -70,7 +91,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
                         Sign up with
-                        </h4>
+                      </h4>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                       <hr class="hr_style_v3_05">
@@ -83,7 +104,8 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tleft pl0px">
                       <button type="submit" class="btn btn_login_signup tcenter">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg" (click)="fbLogin('login')" alt="" class="img-responsive">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg"
+                          (click)="fbLogin('login')" alt="" class="img-responsive">
                       </button>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  tcenter">
@@ -94,7 +116,8 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tright pr0px">
                       <button type="submit" class="btn btn_login_signup tcenter">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg" (click)="signInWithApple('login')" alt="" class="img-responsive">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg"
+                          (click)="signInWithApple('login')" alt="" class="img-responsive">
                       </button>
                     </div>
                   </div>
@@ -107,7 +130,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
-                     or
+                        or
                       </h4>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -119,14 +142,14 @@
                 <div class="row mt15px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 tcenter pl0px">
-                      <button type="submit" class="btn btn_login_signup tcenter w100pi" (click)="login()">
+                      <button type="submit" class="btn btn_login_signup_new tcenter w100pi" (click)="login()">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                           Sign up with email
                         </h4>
                       </button>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
-                      <button type="submit" class="btn btn_login_signup tcenter" (click)="login()">
+                      <button type="submit" class="btn btn_login_signup_new tcenter" (click)="login()">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                           Login
                         </h4>
@@ -138,7 +161,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px tcenter">
                     <a class="" (click)="routedashboard()">
-                      <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                      <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff underline">
                         Continue as a guest
                       </h4>
                     </a>
@@ -156,7 +179,8 @@
                   <ol class="m0px" *ngIf="!nextBtnDis">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext col_cw">
+                        <div
+                          class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext col_cw">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
                             <a data-slide="prev" class="skip" (click)="skip()">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
@@ -172,7 +196,8 @@
                             </ol>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="!nextBtnDis">
-                            <a href="#ic_carousel" data-slide="next" class="next" (click)="Logevent('', '', 'click_next_onboarding')">
+                            <a href="#ic_carousel" data-slide="next" class="next"
+                              (click)="Logevent('', '', 'click_next_onboarding')">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
@@ -191,7 +216,8 @@
                       <div class="row mt40px center_flex">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 p0">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/intro_01.svg" class="img-responsive" (load)="onLoad()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/intro_01.svg"
+                              class="img-responsive" (load)="onLoad()">
                           </div>
                         </div>
                       </div>
@@ -335,7 +361,8 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
-                          <video controls onplay="Logevent('click_play_video_intro_carousel')" playinline class="cvideo_03 br_0px"
+                          <video controls onplay="Logevent('click_play_video_intro_carousel')" playinline
+                            class="cvideo_03 br_0px"
                             poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                             controlsList="nodownload">
                             <source
@@ -387,17 +414,23 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tleft pl0px">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google_01.svg" (click)="googleLogin('login')"  alt="" class="img-responsive">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google_01.svg"
+                                (click)="googleLogin('login')" alt="" class="img-responsive">
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg" (click)="fbLogin('login')" alt="" class="img-responsive">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg"
+                                (click)="fbLogin('login')" alt="" class="img-responsive">
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tright pr0px">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg" (click)="signInWithApple('login')" alt="" class="img-responsive">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg"
+                                (click)="signInWithApple('login')" alt="" class="img-responsive">
                             </button>
                           </div>
                         </div>
@@ -422,14 +455,14 @@
                       <div class="row mt15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 tcenter pl0px">
-                            <button type="submit" class="btn btn_login_signup tcenter w100pi" (click)="login()">
+                            <button type="submit" class="btn btn_login_signup_tnew tcenter w100pi" (click)="login()">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                Sign up with email
+                                Sign up with  email
                               </h4>
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
-                            <button type="submit" class="btn btn_login_signup tcenter" (click)="login()">
+                            <button type="submit" class="btn btn_login_signup_tnew tcenter" (click)="login()">
                               <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                 Login
                               </h4>
@@ -441,7 +474,7 @@
                       <div class="row mt20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px tright">
                           <a class="" (click)="routedashboard()">
-                            <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                            <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff underline">
                               Continue as a guest
                             </h4>
                           </a>
@@ -453,8 +486,8 @@
                     </div>
 
                     <!-- <div class="item 3"> -->
-                      <!-- slide 4 -->
-                      <!-- <div class="row mt70px">
+                    <!-- slide 4 -->
+                    <!-- <div class="row mt70px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/intro_04.svg" class="img-responsive">
                         </div>
@@ -479,7 +512,7 @@
                           </div>
                         </div>
                       </div> -->
-                      <!-- /slide 4 -->
+                    <!-- /slide 4 -->
                     <!-- </div> -->
                   </div>
 

@@ -115,7 +115,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 10;
+  public tourTotalIndex = 9;
   public tourIndex = 1;
   dashboardShorts = [];
 
@@ -549,14 +549,14 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
           side: "bottom"
         }
       },
-      {
+      /* {
         element: ".tour_exercises",
         popover: {
           title: 'Exercises',
           description: 'Tiny, guided exercises to improve your self-awareness',
           side: "right"
         }
-      },
+      }, */
       {
         element: ".tour_explore",
         popover: {

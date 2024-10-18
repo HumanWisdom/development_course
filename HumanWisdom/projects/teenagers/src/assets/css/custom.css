@@ -9998,6 +9998,31 @@ btn:active
     text-align: center !important;
     text-align: -webkit-center !important;
 }
+.btn_login_signup_new {
+  border: 0;
+  margin: 0;
+  height: 50px;
+  background:transparent;
+
+  
+  box-shadow: 1px 1px 2px #00000040;
+  border-radius: 12px;
+  width: 101px;
+  height: 52px;
+}
+.btn_login_signup_tnew {
+  border: 0;
+  margin: 0;
+  height: 50px;
+  background: transparent;
+
+
+  
+  box-shadow: 1px 1px 2px #00000040;
+  border-radius: 12px;
+  width: 101px;
+  height: 52px;
+}
 
 a.img-btn:hover
 {
@@ -10792,13 +10817,15 @@ body,
   /* bottom: 0;
   opacity: 1; */
 
-  bottom: 0;
+  /* bottom: 0; */
   opacity: 1;
   right: 0;
   left: 0;
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
+  top: 25% !important; 
+  height: fit-content;
 }
 
 .lab-modal-body h1 {
@@ -10851,7 +10878,7 @@ body,
   /* transition: opacity 0.3s ease-out, bottom 0.3s ease-out; */
   overflow: hidden;
   /* border-radius: 10px 10px 0 0; */
-  border-radius: 24px 24px 0 0;
+  border-radius: 24px 24px 24px 24px ;
   z-index: 999;
   transition: all 1s;
 }
@@ -15100,8 +15127,9 @@ input[type="number"] {
 .crimg
 {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
 }
 
 .txt28
@@ -32473,8 +32501,8 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 25%;
-  margin: 0 20px 0 0;
+  width: 20%;
+  margin: 0 13px 0 0;
   padding: 0;
 }
 
@@ -36117,10 +36145,11 @@ section > .row
 
 .cvideo_03
 {
-  /* width: 100%; */
+   width: 100%; 
   max-height: 100%;
-  border-radius: 10px;
+  border-radius: 35px;
   object-fit: cover;
+  padding: 20px;
 }
 
 .v1_3_sfooter_rs 
@@ -37295,6 +37324,34 @@ a.fc_e58d82:hover
 .ml_10px 
 {
   margin-left: 10px;
+}
+
+.hr_style_v3_13 
+{
+  border-top: 1px rgba(255, 255, 255, 0.5) dashed;
+  margin: 15px 0;
+}
+
+.dflex_start 
+{
+  display: flex;
+  align-items: start;
+}
+
+.v1_3_sfooter_ext_01
+{
+  background: #120F40;
+  box-shadow: unset;
+}
+
+.syft_ft_bg
+{
+  position: fixed;
+  bottom: 6%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  background: #292D56;
 }
 /* /version - 03 */
 

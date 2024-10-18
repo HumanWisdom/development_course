@@ -7,6 +7,7 @@ import { ActiveGuard } from '../authGuard/active.guard';
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 import { AuthGuard } from '../authGuard/auth.guard';
+import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
 
 const routes: Routes = [
   {
@@ -420,7 +421,7 @@ const routes: Routes = [
   },
   {
     path: 'daily-practise/:id',
-    loadChildren: () => import('../teenagers/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
+    loadChildren: () => import('../../../../shared/component/daily-practice/daily-practice.module').then(m => m.DailyPracticePageModule)
   },
   {
     path: 'refer-friend',
@@ -510,6 +511,10 @@ const routes: Routes = [
   {
     path: 'redeem-gift-card',
     loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+  },
+  {
+    path: 'newsletter-signup',
+    component: NewsletterComponent
   }
 ];
 

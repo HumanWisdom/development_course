@@ -122,7 +122,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   setInitialData() {
     if (this.userDetails) {
-      localStorage.setItem("isPartner", this.userDetails.IsPartner);
+       //localStorage.setItem("isPartner", this.userDetails.IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
       if (this.userDetails['UserImagePath'] != "") {
         this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
@@ -146,7 +146,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.ios = true;
     }
-    if (localStorage.getItem("isPartner") != null) {
+    let userId = JSON.parse(localStorage.getItem("userId"));
+     this.Onboardingservice.getuserDetail();
+      if (localStorage.getItem("isPartner") != null) {
       this.isPartner = localStorage.getItem("isPartner");
     }
     if (localStorage.getItem("PartnerOption") != null) {

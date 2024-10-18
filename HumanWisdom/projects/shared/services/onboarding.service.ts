@@ -2,14 +2,14 @@ import {
   HttpBackend, HttpClient, HttpParams
 } from "@angular/common/http";
 import { Injectable, NgZone } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable, of, Subject } from "rxjs";
 import { environment } from '../../environments/environment'
 import { Number } from '../../adults/src/app/onboarding/interfaces/number';
 import { paymentIntentModel } from "../models/search-data-model";
 import { ToastrService } from "ngx-toastr";
 import { SharedService } from "./shared.service";
 import {  from, throwError } from 'rxjs';  // Import 'from' and 'throwError' here
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,11 @@ export class OnboardingService {
   updateUserDetails = new Subject<any>();
   getUserDetails = new Subject<any>();
   private clientId = '1840609876679041'; // Replace with your Instagram App Client ID
-  private redirectUri = environment.clientUrl+"/adults/adult-dashboard"; 
+  private redirectUri = environment.clientUrl+"/adults/adult-dashboard";
   private authUrl = `https://api.instagram.com/oauth/authorize`;
   private accessToken: string | null = null;
+  public countryData:any;
+  public userDetails:any;
   // Subscribe to the Subject
   constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone) {
     // this.http =  new HttpClient(handler);
@@ -51,7 +53,7 @@ export class OnboardingService {
           });
         }
       }
-      
+
     })
   }
 
@@ -61,22 +63,22 @@ export class OnboardingService {
   //     const popupHeight = 500;
   //     const popupLeft = (window.screen.width - popupWidth) / 2;
   //     const popupTop = (window.screen.height - popupHeight) / 2;
-  
+
   //     const authUrl = `https://api.instagram.com/oauth/authorize?client_id=${instagramClientId}&redirect_uri=${instagramRedirectUri}&response_type=code&scope=user_profile,user_media`;
-  
+
   //     const popup = window.open(
   //       authUrl,
   //       'Instagram Auth',
   //       `width=${popupWidth},height=${popupHeight},left=${popupLeft},top=${popupTop}`
   //     );
-  
+
   //     if (popup) {
   //       const interval = setInterval(() => {
   //         try {
   //           if (popup.location.href.indexOf(instagramRedirectUri) === 0) {
   //             const urlParams = new URLSearchParams(popup.location.search);
   //             const authCode = urlParams.get('code');
-  
+
   //             if (authCode) {
   //               popup.close();
   //               clearInterval(interval);
@@ -94,8 +96,8 @@ export class OnboardingService {
   //     }
   //   });
   // }
-  
-  
+
+
 
   // // Function to handle Instagram login and fetch user data
   // loginWithInstagram(): Observable<any> {
@@ -157,11 +159,11 @@ export class OnboardingService {
 
 
 
-  
+
   // verifyRepatcha(){
   //   this.http.post("")
   // }
-  
+
   private pollPopup(popup): void {
     const intervalId = setInterval(() => {
       if (popup && !popup.closed) {
@@ -187,14 +189,14 @@ export class OnboardingService {
       }
     }, 1000); // Poll every 500 milliseconds
   }
-  
+
 
   handleAuthCallback(code: string) {
 
     const tokenUrl = `https://api.instagram.com/oauth/access_token`;
     const body = {
       client_id: this.clientId,
-      client_secret: '1b498f77e08b26728741d12e247ab2a3', 
+      client_secret: '1b498f77e08b26728741d12e247ab2a3',
       grant_type: 'authorization_code',
       redirect_uri: this.redirectUri,
       code: code
@@ -316,6 +318,10 @@ export class OnboardingService {
     return this.http.get(this.path + `/VerifyActKey/${userId}/${data}/${code}`)
   }
 
+  redeemGiftery(data: any): Observable<any> {
+    return this.http.post(this.path + `/RedeemGiftery`, data)
+  }
+
   sendPasswordLink(data: any): Observable<any> {
     let param1 = new HttpParams().set("email", data).set("ProgramId", SharedService.ProgramId)
     return this.http.get(this.path + `/PasswordLink`, { params: param1 })
@@ -344,9 +350,19 @@ export class OnboardingService {
     return this.http.post(this.path + `/LearnerSocial`, data)
   }
 
-  public getCountry() {
-    return this.http.get("https://ipapi.co/json");
+  public getCountry(): Observable<any> {
+    if (!this.countryData) {
+      // Fetch the data and store it in the countryData
+      return this.http.get("https://ipapi.co/json").pipe(
+        tap((data: any) => {
+          this.countryData = data; 
+        })
+      );
+    }
+    // If countryData already has data, return an observable of it
+    return of(this.countryData);
   }
+
   getToken() {
     return JSON.parse(localStorage.getItem("token"))
   }
@@ -488,6 +504,10 @@ export class OnboardingService {
 
   createScreen(data: any): Observable<any> {
     return this.http.post(this.path + '/AddScreen', data)
+  }
+
+  signUpNewsLetter(data: any): Observable<any> {
+    return this.http.post(this.path + '/subscribe_newsletter', data)
   }
 
   submitProgressQuestion(data: any): Observable<any> {

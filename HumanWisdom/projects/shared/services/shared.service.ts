@@ -15,13 +15,13 @@ export class SharedService {
   constructor() {
   }
 
-  public static isAdultProgram(){
+  public static isAdultProgram() {
     if (SharedService.ProgramId == ProgramType.Adults) {
-     return true;
-    } 
+      return true;
+    }
     return false;
   }
-   
+
 
   public static setDataInLocalStorage(key: string, value: string) {
     if (key && key != null) {
@@ -42,12 +42,12 @@ export class SharedService {
     }
   }
 
- public static getPartnerInfo(){
-  if(localStorage.getItem('isPartner')){
-    return localStorage.getItem('isPartner');
+  public static getPartnerInfo() {
+    if (localStorage.getItem('isPartner')) {
+      return localStorage.getItem('isPartner');
+    }
+    return '0';
   }
-  return '0';
- }
 
   public static getDataFromSessionStorage(key: string): string {
     if (key && key != null) {
@@ -123,6 +123,10 @@ export class SharedService {
     return false;
   }
 
+   public static isIOSApp(){
+      return this.iOS();
+   }
+
   public static formatToDecimal(value) {
     if (Number.isInteger(value)) {
       return `${value}.00`;
@@ -161,7 +165,7 @@ export class SharedService {
     }
   }
 
-  public static getDashboardUrls(){
+  public static getDashboardUrls() {
     switch (this.ProgramId) {
       case ProgramType.Adults:
         return '/adults/adult-dashboard';
@@ -174,7 +178,7 @@ export class SharedService {
     }
   }
 
-  public static getUrlfromFeatureName(name:UrlConstant){
+  public static getUrlfromFeatureName(name: UrlConstant) {
     switch (this.ProgramId) {
       case ProgramType.Adults:
         return `/adults/${name}`;
@@ -186,16 +190,141 @@ export class SharedService {
         return `/adults/${name}`;
     }
   }
-
+  public static getPreferenceData() {
+    if (this.ProgramId == ProgramType.Adults) {
+      return [
+        {
+          id: "999",
+          displayName: "All",
+          active: true,
+          name: 'All'
+        },
+        {
+          id: "1",
+          displayName: "Work",
+          active: false,
+          name: 'Work and Leadership'
+        },
+        {
+          id: "2",
+          displayName: "Mental health",
+          active: false,
+          name: 'Manage your mental health'
+        },
+        {
+          id: "3",
+          displayName: "Relationships",
+          active: false,
+          name: 'Relationships'
+        },
+        {
+          id: "4",
+          displayName: "Happiness",
+          active: false,
+          name: 'Be happier'
+        },
+        {
+          id: "5",
+          displayName: "Addiction",
+          active: false,
+          name: 'Addiction'
+        },
+        {
+          id: "6",
+          displayName: "Sorrow and Loss",
+          active: false,
+          name: 'Deal with loss'
+        },
+        {
+          id: "7",
+          displayName: "Meditation",
+          active: false,
+          name: 'Meditation',
+        },
+        {
+          id: "8",
+          displayName: "Emotions",
+          active: false,
+          name: 'Manage your emotions',
+        },
+        {
+          id: "",
+          active: false,
+          displayName: "Wisdom",
+          name: 'Wisdom',
+        }
+      ]
+    } else {
+      return [
+        {
+          id: "999",
+          displayName: "All",
+          active: true,
+          name: 'All'
+        },
+      {
+        id: "14",
+        displayName: "Emotions",
+        active: true,
+        name: 'Manage your emotions',
+      },
+      {
+        id: "11",
+        active: true,
+        displayName: "Relationships",
+        name: 'Relationships'
+      },
+      {
+        id: "13",
+        active: true,
+        displayName: "Happiness",
+        name: 'Be happier'
+      },
+      {
+        id: "15",
+        displayName: "Habits",
+        active: true,
+        name: 'Overcome unhelpful habits'
+      },
+      {
+        id: "16",
+        active: true,
+        displayName: "Understand yourself",
+        name: 'Understand yourself'
+      },
+      {
+        id: "12",
+        active: true,
+        displayName: "Feel calm",
+        name: 'Feel calm',
+      },
+      {
+        id: "10",
+        active: true,
+        displayName: "Mental health",
+        name: 'Manage your mental health'
+      },
+      {
+        id: "17",
+        active: true,
+        displayName: "Success",
+        name: 'Succeed in life'
+      }
+      ]
+    }
+  }
 }
 
+
+
+
 export class UrlConstant {
- public static journal="journal";
- public static search='search';
- public static login='onboarding/login';
- public static userProfile='onboarding/user-profile';
- public static forum ='forum';
- public static sitesearch='site-search';
- public static notification ='notification';
- public static startFreeTrial ='/subscription/start-your-free-trial';
+  public static journal = "journal";
+  public static search = 'search';
+  public static login = 'onboarding/login';
+  public static userProfile = 'onboarding/user-profile';
+  public static forum = 'forum';
+  public static sitesearch = 'site-search';
+  public static notification = 'notification';
+  public static startFreeTrial = '/subscription/start-your-free-trial';
 }
