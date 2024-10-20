@@ -18,17 +18,17 @@ export class ProgressSliderComponent implements OnInit {
     ceil:5
   }
   value=100
-  
+
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
   selectRating(r)
   {
-    
-    
+
+
     this.sendRating.emit(JSON.stringify({"Id":this.r,"Rating":this.rating}))
 
   }
