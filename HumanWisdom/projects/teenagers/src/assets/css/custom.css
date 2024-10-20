@@ -9998,6 +9998,31 @@ btn:active
     text-align: center !important;
     text-align: -webkit-center !important;
 }
+.btn_login_signup_new {
+  border: 0;
+  margin: 0;
+  height: 50px;
+  background:transparent;
+
+  
+  box-shadow: 1px 1px 2px #00000040;
+  border-radius: 12px;
+  width: 101px;
+  height: 52px;
+}
+.btn_login_signup_tnew {
+  border: 0;
+  margin: 0;
+  height: 50px;
+  background: transparent;
+
+
+  
+  box-shadow: 1px 1px 2px #00000040;
+  border-radius: 12px;
+  width: 101px;
+  height: 52px;
+}
 
 a.img-btn:hover
 {
@@ -14641,7 +14666,7 @@ input[type="number"] {
 
 .pt30px
 {
-  padding-top: 10px !important;
+  padding-top: 30px !important;
 }
 
 .pt40px
@@ -15102,8 +15127,9 @@ input[type="number"] {
 .crimg
 {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
 }
 
 .txt28
@@ -32463,7 +32489,7 @@ body *
 {
   border: 1px solid #FFFFFF;
   opacity: 0.1;
-  margin: 15px 0;
+  margin: 30px 0;
 }
 
 .hr_style_v3_02
@@ -32475,8 +32501,8 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 25%;
-  margin: 0 20px 0 0;
+  width: 20%;
+  margin: 0 13px 0 0;
   padding: 0;
 }
 
@@ -36119,10 +36145,11 @@ section > .row
 
 .cvideo_03
 {
-  /* width: 100%; */
+   width: 100%; 
   max-height: 100%;
-  border-radius: 10px;
+  border-radius: 35px;
   object-fit: cover;
+  padding: 20px;
 }
 
 .v1_3_sfooter_rs 

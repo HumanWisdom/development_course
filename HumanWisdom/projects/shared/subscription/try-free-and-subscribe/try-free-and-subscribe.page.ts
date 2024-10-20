@@ -8,7 +8,7 @@ import { DatePipe, Location } from '@angular/common';
 import { paymentIntentModel } from '../../models/search-data-model';
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from '../../models/program-model';
-
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-try-free-and-subscribe',
   templateUrl: './try-free-and-subscribe.page.html',
@@ -17,7 +17,7 @@ import { ProgramType } from '../../models/program-model';
 export class TryFreeAndSubscribePage implements OnInit {
 
   selectedSubscription: string;
-  countryCode: string;
+  countryCode: string='USA';
   defaultCountry: string;
   defaultCurrencySymbol: string;
   Monthly: string;
@@ -34,6 +34,7 @@ export class TryFreeAndSubscribePage implements OnInit {
   isAdults = true;
   constructor(private router: Router, private onboardingService: OnboardingService,
     public logeventservice: LogEventService,
+    private navigateService:NavigationService,
     private location: Location) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
@@ -56,9 +57,9 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   ngOnInit() {
-    this.getUserDetails();
     this.logeventservice.logEvent('view_try_free_subscribe');
     this.InitializeDefaultValues();
+    this.getUserDetails();
     this.getCountry();
   }
 
@@ -172,7 +173,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.Checkout,'T')
     this.router.navigate([`/${SharedService.getprogramName()}/onboarding/payment`], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId:this.pricingModel.RateID }})
   }
-  getCountry() {
+ getCountry() {
     this.onboardingService.getCountry().subscribe((res: any) => {
       if (res[Constant.In_eu]) {
         this.countryCode = Constant.EUR;
@@ -184,6 +185,7 @@ export class TryFreeAndSubscribePage implements OnInit {
     },
       error => {
         console.log(error)
+        this.getPricing();
       },
       () => {
       });
@@ -233,8 +235,10 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   back() {
-    this.location.back();
-  }
+    var url = this.navigateService.goBack();
+    this.router.navigateByUrl(url);
+    }
+    
   routeToDashboard() {
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }

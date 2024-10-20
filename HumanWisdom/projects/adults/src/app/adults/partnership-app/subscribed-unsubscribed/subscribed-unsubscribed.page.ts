@@ -6,6 +6,7 @@ import { SubscriptionType } from '../../../../../../shared/models/program-model'
 import { Constant } from '../../../../../../shared/services/constant';
 import { paymentIntentModel } from '../../../../../../shared/models/search-data-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Platform } from '@angular/cdk/platform';
 import {AdultsService} from '../../adults.service';
 @Component({
   selector: 'app-subscribed-unsubscribed',
@@ -34,7 +35,7 @@ export class SubscribedUnsubscribedPage implements OnInit {
 // Create a new Subject
 // Subscribe to the Subject
 
-  constructor(private router :Router,private services: OnboardingService,public location:Location,public adultService:AdultsService) { }
+  constructor(private router :Router,private services: OnboardingService,public location:Location,public adultService:AdultsService, public platform: Platform) { }
 
   ngOnInit() {
     this.isSubscriber  = SharedService.isSubscriber();
@@ -139,15 +140,23 @@ export class SubscribedUnsubscribedPage implements OnInit {
       goBack(){
     this.location.back();
       }
+
+      clickSubscribeToPremium() {
+        const customEvent = new CustomEvent('subscribeToPremium');
+        window.dispatchEvent(customEvent);
+      }
+
       UpgradeToPremium(){
-        let val='Yearly';
-        localStorage.setItem('isMonthlySelectedForPayment','F'); 
-        this.services.navigateToUpgradeToPremium=true;
-        //localStorage.setItem("navigateToUpgradeToPremium","true")
-        localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
-        localStorage.setItem('partnership-app', val);
-        localStorage.setItem('upgradeToPremium', 'T');
-        this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: val}})
+        if (!(this.platform.IOS || this.platform.SAFARI)) {
+          let val='Yearly';
+          localStorage.setItem('isMonthlySelectedForPayment','F'); 
+          this.services.navigateToUpgradeToPremium=true;
+          //localStorage.setItem("navigateToUpgradeToPremium","true")
+          localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
+          localStorage.setItem('partnership-app', val);
+          localStorage.setItem('upgradeToPremium', 'T');
+          this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: val}})
+        }
       }
       getPricing(){
         this.services.getPricing(this.countryCode).subscribe(res=>

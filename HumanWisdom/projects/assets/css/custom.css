@@ -15102,8 +15102,9 @@ input[type="number"] {
 .crimg
 {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
 }
 
 .txt28
@@ -32503,8 +32504,8 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 25%;
-  margin: 0 20px 0 0;
+  width: 20%;
+  margin: 0 13px 0 0;
   padding: 0;
 }
 
@@ -34312,7 +34313,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v1_3_sfooter 
 {
   height: 110px;
-  padding: 30px 20px;
+  padding: 20px 20px;
   background: #424675;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
