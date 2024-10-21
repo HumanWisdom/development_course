@@ -59,7 +59,7 @@
                       </div>
                     </div>
                   </div>
-    
+
                   <!-- Sections -->
                   <div  class="section-container">
                     <!-- Daily Inspiration -->
@@ -85,7 +85,7 @@
                       <div class="row ">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
-                            onplay="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
+                            (paly)="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
                             <source [src]="DailyInspirationLink" type="video/mp4">
                           </video>
                         </div>
@@ -102,7 +102,7 @@
                       <br/>
                       <br/>
                     </div>
-    
+
                     <!-- Breathing Exercise -->
                     <div [@slideAnimation]="direction" *ngIf="currentSection === 1">
                       <div class="row mtb10px">
@@ -128,13 +128,13 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <video playinline class="cvideo" *ngIf="videoLink && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
-                            onplay="Logevent('click_play_video_breathing_exercise')" controls [poster]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg'">
+                            (paly)="Logevent('click_play_video_breathing_exercise')" controls [poster]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg'">
                             <source [src]="videoLink" type="video/mp4">
                           </video>
                         </div>
                       </div>
                     </div>
-    
+
                   <!-- journal -->
                   <div  [@slideAnimation]="direction" *ngIf="currentSection === 2">
                     <div class="row mtb10px">
@@ -324,7 +324,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
   <!--/class -->
 </div>
