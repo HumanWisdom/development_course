@@ -94,7 +94,7 @@ export class DailyPracticePage implements OnInit {
 
     this.getdailyquestion();
 
-    setTimeout(() => {
+   /*  setTimeout(() => {
       let video = document?.getElementsByTagName('video')[0];
 
       video?.addEventListener("timeupdate", (function () {
@@ -106,7 +106,7 @@ export class DailyPracticePage implements OnInit {
       }).bind(this));
 
 
-    }, 4000)
+    }, 4000) */
   }
 
   getdailyquestion() {

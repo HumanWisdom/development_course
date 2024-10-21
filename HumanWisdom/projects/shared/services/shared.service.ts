@@ -123,6 +123,10 @@ export class SharedService {
     return false;
   }
 
+   public static isIOSApp(){
+      return this.iOS();
+   }
+
   public static formatToDecimal(value) {
     if (Number.isInteger(value)) {
       return `${value}.00`;
