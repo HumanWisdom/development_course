@@ -364,7 +364,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     console.log(error);
   }
 
-  logEvent(event) {
+  LogEvent(event) {
     this.logeventservice.logEvent(event);
   }
 
