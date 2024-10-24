@@ -33,7 +33,7 @@
                   [style.zIndex]="currentIndex === i ? 1 : 0"
                 >
                 <video #videoPlayer  *ngIf="currentIndex === i"  width="400px" height="450px" autoplay controls
-                controlsList="nodownload nofullscreen"
+                controlsList="nodownload"
                   disablePictureInPicture playsinline>
                   <source [src]="video.url" type="video/mp4" />
                 </video>
