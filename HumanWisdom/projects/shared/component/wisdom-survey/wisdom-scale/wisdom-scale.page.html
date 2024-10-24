@@ -33,7 +33,7 @@
           <div class="x_content p0">
             <form>
 
-              <div class="row" id="div_graph" *ngIf="enablebtn">
+              <div class="row" id="div_graph" *ngIf="enablebtn && this.lineChartData[0]['data'].length !== 0">
                 <div class="col-md-12 col-sm-12 col-xs-12">
 
                   <canvas baseChart width="400" height="400"
@@ -58,7 +58,7 @@
                 </div>
               </div>
 
-              <div class="row mtb30px">
+              <div class="row mtb30px" *ngIf="this.lineChartData[0]['data'].length !== 0">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <button type="button" class="btn btn_e58d82" (click)="viewClickEvent('/wisdom-survey/progress')">                    View your progress
                   </button>

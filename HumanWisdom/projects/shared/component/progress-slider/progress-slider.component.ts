@@ -12,9 +12,9 @@ export class ProgressSliderComponent implements OnInit {
   @Input() pFilter:string
   @Input() nFilter:string
   @Output() sendRating = new EventEmitter<string>();
-  rating=0
+  rating=1
   options: Options={
-    floor:0,
+    floor:1,
     ceil:5
   }
   value=100
