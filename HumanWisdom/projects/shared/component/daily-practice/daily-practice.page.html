@@ -98,15 +98,24 @@
                           <button type="submit" (click)="routeModule()" *ngIf="dailyInsModule" class="btn mdp_add_to_journal_new">
                             {{ 'Explore module - ' + dailyInsModule }}
                           </button>
+                          
+                          <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82"  style="text-decoration:underline">Breathing Exercise</h4>
+
+                          </a> 
+
                           </div>
                         </div>
-                          <div class="row mb20px">
+
+                          <!-- <div class="row mb20px">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
+
                               <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">Breathing Exercise</h4>
                             </div>
-                            </div>
+                            </div> -->
 
                       </div>
+                    
                       <div class="row">
                        
                       </div>
