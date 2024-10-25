@@ -227,3 +227,11 @@ nav
   .invisible {
     visibility: hidden;
   }
+
+
+  @media (min-width: 1920px) {
+    .mdpd_title {
+      margin-right: 4rem;
+    }
+  }
+  
