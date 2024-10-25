@@ -69,18 +69,18 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg" alt="" class="img-responsive" width="30">
                         </div>
                       </div>
-                      <div class="row mb30px">
+                      <div class="row mb20px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_15px fw_600 lh_150p fc_e58d82">Daily inspiration</h4>
 
                         </div>
                         </div>
-                        <div class="row mb10px">
+                        
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <h1 class="fw_600 fs_12px lh_140p fc_ffffff mtb0px tcenter">
                             {{ dailyInspirationTitle }}</h1>
                         </div>
-                        </div>
+                       
                       
                       <!-- <div class="row">
                        
@@ -96,11 +96,12 @@
                        
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <button type="submit" (click)="routeModule()" *ngIf="dailyInsModule" class="btn mdp_add_to_journal_new">
-                            {{ 'Explore module - ' + dailyInsModule }}
+                            {{ 'Explore related module - ' + dailyInsModule }}
                           </button>
                           
-                          <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82"  style="text-decoration:underline">Breathing Exercise</h4>
+                          <a (click)="next('click_Daily_Practice_Next')">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82"
+                              style="text-decoration:underline">Breathing Exercise</h4>
 
                           </a> 
 
