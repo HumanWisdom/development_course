@@ -26299,10 +26299,10 @@ h1
   border: 0;
   height: 50px;
   /* margin-bottom: 24px; */
-  /* width: 100%; */
+   width: 100%; 
   overflow:visible;
-  /* border-radius: 100px; */
-  background: transparent;
+   border-radius: 100px; 
+  background: #E58D82;
   font-size: 15px;
   position: static;
   font-weight: 600;
