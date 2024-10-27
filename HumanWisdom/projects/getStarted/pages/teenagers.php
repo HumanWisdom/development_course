@@ -966,10 +966,12 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+              <a href="https://happierme.app/teenagers/subscription/try-free-and-subscribe"> 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Continue
                 </button>
               </div>
+    </a>
             </div>
 
           </div>
