@@ -50,7 +50,7 @@ p {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
 }
 
@@ -81,6 +81,7 @@ p {
   margin-top: 8px;
   opacity: 0.5;
   animation: fadeInOut 1.5s infinite;
+  margin-left: -22px;
 }
 
 /* Animation */
