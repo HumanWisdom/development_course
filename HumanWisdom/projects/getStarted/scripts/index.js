@@ -12,6 +12,7 @@ if (loginClick) {
     // Add an event listener for the 'play' event
     loginClick.addEventListener('click', function () {
         localStorage.setItem('login',true);
+        localStorage.setItem('pricing',false);
         window.location.href = "../pages/splash_options.php";
     });
 }
@@ -21,6 +22,7 @@ if (pricingSelectBtn) {
     // Add an event listener for the 'play' event
     pricingSelectBtn.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
+        localStorage.setItem('login',false);
         window.location.href = "../pages/splash_options.php";
     });
 }
@@ -30,11 +32,9 @@ if (teenagersClick) {
     // Add an event listener for the 'play' event
     teenagersClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-            localStorage.setItem('pricing',false);
            window.location.href = "https://happierme.app/teenagers/subscription/try-free-and-subscribe";
         }
         if(localStorage.getItem('login')=='true'){
-            localStorage.setItem('login',false);
            window.location.href = "https://happierme.app/teenagers/onboarding/login";
         }
     });
