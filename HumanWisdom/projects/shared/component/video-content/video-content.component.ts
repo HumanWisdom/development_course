@@ -62,12 +62,29 @@ export class VideoContentComponent implements OnInit {
     if (this.pageaction === 'next') {
       setTimeout(() => {
         this.enablevideo = true;
+        this.checkVideoOrientation();
       }, 1000)
     } else {
       this.enablevideo = true;
+      this.checkVideoOrientation();
     }
-
+     
   }
+
+    // Called when the video's metadata is loaded
+    checkVideoOrientation() {
+      this.video.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
+      setTimeout(() => {
+        const videoElement = this.video.nativeElement;
+        const videoWidth = videoElement.videoWidth;
+        const videoHeight = videoElement.videoHeight;
+        if (videoHeight > videoWidth) {
+          this.video.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
+        } else {
+          this.video.nativeElement.setAttribute('controlsList', 'nodownload');
+        }
+      }, 500);
+    }
  
   getCurrentTime(data) {
     this.currentTime = data.target.currentTime;
