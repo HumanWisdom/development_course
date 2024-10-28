@@ -1,4 +1,7 @@
 const userAgent = navigator.userAgent;
+const isLoggedIn = localStorage.getItem('isloggedin') == 'T';
+//const url = "https://happierme.app";
+const url ="https://staging.happierme.app"
 function gtag() {
     dataLayer.push(arguments);
 }
@@ -9,6 +12,7 @@ function logevent(e, t) {
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
+    document.getElementById("loginClick").style.display = "none";
     // Add an event listener for the 'play' event
     loginClick.addEventListener('click', function () {
         localStorage.setItem('login',true);
@@ -32,10 +36,10 @@ if (teenagersClick) {
     // Add an event listener for the 'play' event
     teenagersClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-           window.location.href = "https://happierme.app/teenagers/subscription/try-free-and-subscribe";
+           window.location.href = url+"/teenagers/subscription/try-free-and-subscribe";
         }
         if(localStorage.getItem('login')=='true'){
-           window.location.href = "https://happierme.app/teenagers/onboarding/login";
+           window.location.href = url+"/teenagers/onboarding/login";
         }
     });
 }
@@ -46,11 +50,11 @@ if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
             localStorage.setItem('pricing',false);
-           window.location.href = "https://happierme.app/adults/subscription/try-free-and-subscribe";
+           window.location.href = url+"/adults/subscription/try-free-and-subscribe";
         }
         if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
-           window.location.href = "https://happierme.app/adults/onboarding/login";
+           window.location.href = url+"/adults/onboarding/login";
         }
     });
 }
@@ -138,12 +142,12 @@ requestDemoForWork &&
 var adults = document.getElementById("adults");
 adults &&
     adults.addEventListener("click", function () {
-        window.location.href = "https://happierme.app/adults/intro/intro-carousel";
+        window.location.href = url+"/adults/intro/intro-carousel";
     });
 var teenagers = document.getElementById("teenagers");
 teenagers &&
     teenagers.addEventListener("click", function () {
-        window.location.href = "https://happierme.app/teenagers/intro-carousel";
+        window.location.href = url+"/teenagers/intro-carousel";
     });
 const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
@@ -220,7 +224,7 @@ nfsnContactForm &&
             o.addEventListener(
                 "click",
                 function (e) {
-                    logevent("click_View_All_Blogs_web", "index.php"), (window.location.href = "https://happierme.app/adults/blogs");
+                    logevent("click_View_All_Blogs_web", "index.php"), (window.location.href = url+"/adults/blogs");
                 },
                 !1
             );
@@ -287,10 +291,10 @@ function getIsoCode() {
 document.addEventListener("DOMContentLoaded", () => {
     // const e = document.getElementById("AnnualType");
     // e?.addEventListener("click", () => {
-    //     window.location.href = "https://happierme.app/adults/subscription/try-free-and-subscribe";
+    //     window.location.href = url+"/adults/subscription/try-free-and-subscribe";
     // });
     // const t = document.getElementById("teenagers-AnnualType");
     // t?.addEventListener("click", () => {
-    //     window.location.href = "https://happierme.app/teenagers/subscription/try-free-and-subscribe";
+    //     window.location.href = url+"/teenagers/subscription/try-free-and-subscribe";
     // });
 });
