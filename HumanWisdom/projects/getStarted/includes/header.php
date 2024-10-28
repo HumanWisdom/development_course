@@ -37,7 +37,7 @@
           </li>
           <li><a id="pricing">Pricing</a></li>
           <!-- <li><a href="../pages/partnership.php">Partnership</a></li> -->
-          <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
+          <li><a id="loginClick">Login</a></li>
         </ul>
       </nav>
 
