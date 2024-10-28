@@ -96,14 +96,14 @@
                        
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <button type="submit" (click)="routeModule()" *ngIf="dailyInsModule" class="btn mdp_add_to_journal_new">
-                            {{ 'Explore related module - ' + dailyInsModule }}
+                            {{ 'Explore related module ' }}
                           </button>
                           
-                          <a (click)="next('click_Daily_Practice_Next')">
+                          <!-- <a (click)="next('click_Daily_Practice_Next')"> -->
                             <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82"
-                              style="text-decoration:underline">Breathing Exercise</h4>
+                              style="text-decoration:underline">{{ dailyInsModule }}</h4>
 
-                          </a> 
+                          <!-- </a>  -->
 
                           </div>
                         </div>
