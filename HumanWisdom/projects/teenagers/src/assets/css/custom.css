@@ -37284,10 +37284,21 @@ a.fc_e58d82:hover
 .cvideo_ext_di
 {
   /* width: auto; */
-  width: 100%;
-  max-height: 48vh;
+  width: 70%;
+  max-height: 58vh;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 46px;
+  padding: 20px;
+}
+.mdp_add_to_journal_new {
+  border: 0;
+  overflow: visible;
+  background: transparent;
+  font-size: 15px;
+  position: static;
+  font-weight: 600;
+  line-height: 150%;
+  color: #fff;
 }
 
 .toc_adiv_mp

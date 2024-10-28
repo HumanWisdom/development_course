@@ -71,7 +71,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="Self-Awareness can help relationships flourish">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21_new.webp" class="img-responsive" alt="Self-Awareness can help relationships flourish">
               </div>
             </div>
 
