@@ -12,9 +12,6 @@ function logevent(e, t) {
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
-    if(isLoggedIn){
-      //  document.getElementById("loginClick").style.display = "none";
-    }
     // Add an event listener for the 'play' event
     loginClick.addEventListener('click', function () {
         localStorage.setItem('login',true);
