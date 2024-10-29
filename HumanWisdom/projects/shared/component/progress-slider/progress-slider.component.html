@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 p0">
             <h6 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tcenter">
-               {{this.rating && this.rating !== 1 ? this.rating : ''}}
+               {{this.rating && slideChange ? this.rating : ''}}
             </h6>
           </div>
           <div class="col-md-5 col-sm-5 col-xs-5 p0 tright">
@@ -26,7 +26,7 @@
           </div>
         </div>
 
-         <ngx-slider name="slider" [(value)]="value" [options]="options" [(ngModel)]="this.rating" (userChange)="selectRating(this.rating)"></ngx-slider>
+         <ngx-slider name="slider" [ngStyle]="{'opacity': slideChange ? '1' : '0.5'}" [(value)]="value" [options]="options" (userChangeStart)="getSlideChange($event)" [(ngModel)]="this.rating" (userChange)="selectRating(this.rating)"></ngx-slider>
 
         <!-- range slider -->
         <!-- <div id="pmd-slider" class="pmd-range-slider"></div> -->
