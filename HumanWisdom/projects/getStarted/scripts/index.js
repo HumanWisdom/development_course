@@ -35,7 +35,7 @@ if (teenagersClick) {
     // Add an event listener for the 'play' event
     teenagersClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/teenagers/subscription/try-free-and-subscribe";
+           window.location.href = url+"/teenagers/subscription/start-your-free-trial";
         }
         if(localStorage.getItem('login')=='true'){
            window.location.href = url+"/teenagers/onboarding/login";
@@ -49,7 +49,7 @@ if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
             localStorage.setItem('pricing',false);
-           window.location.href = url+"/adults/subscription/try-free-and-subscribe";
+           window.location.href = url+"/adults/subscription/start-your-free-trial";
         }
         if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
@@ -290,10 +290,10 @@ function getIsoCode() {
 document.addEventListener("DOMContentLoaded", () => {
     // const e = document.getElementById("AnnualType");
     // e?.addEventListener("click", () => {
-    //     window.location.href = url+"/adults/subscription/try-free-and-subscribe";
+    //     window.location.href = url+"/adults/subscription/start-your-free-trial";
     // });
     // const t = document.getElementById("teenagers-AnnualType");
     // t?.addEventListener("click", () => {
-    //     window.location.href = url+"/teenagers/subscription/try-free-and-subscribe";
+    //     window.location.href = url+"/teenagers/subscription/start-your-free-trial";
     // });
 });
