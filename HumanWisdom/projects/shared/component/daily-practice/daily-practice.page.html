@@ -95,15 +95,19 @@
                         </div>
                        
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <button type="submit" (click)="routeModule()" *ngIf="dailyInsModule" class="btn mdp_add_to_journal_new">
+                          <!-- <button type="submit"  *ngIf="dailyInsModule" class="btn mdp_add_to_journal_new">
                             {{ 'Explore related module ' }}
-                          </button>
+                          </button> -->
                           
-                          <!-- <a (click)="next('click_Daily_Practice_Next')"> -->
+                            <h1 class="fw_600 fs_15px lh_140p fc_ffffff mtb0px tcenter" *ngIf="dailyInsModule">
+                              {{ 'Explore related module ' }}</h1>
+                          
+                          
+                          <a (click)="routeModule()"> 
                             <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82"
                               style="text-decoration:underline">{{ dailyInsModule }}</h4>
 
-                          <!-- </a>  -->
+                           </a>  
 
                           </div>
                         </div>
