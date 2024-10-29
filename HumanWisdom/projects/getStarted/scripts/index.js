@@ -30,6 +30,16 @@ if (pricingSelectBtn) {
     });
 }
 
+const discoverSectionPricingClick = document.getElementById('discoverSectionPricingClick');
+if (discoverSectionPricingClick) {
+    // Add an event listener for the 'play' event
+    discoverSectionPricingClick.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
+        localStorage.setItem('login',false);
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
 const teenagersClick = document.getElementById('teenagersClick');
 if (teenagersClick) {
     // Add an event listener for the 'play' event
