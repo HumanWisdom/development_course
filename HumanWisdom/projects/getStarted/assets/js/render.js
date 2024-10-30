@@ -1,5 +1,5 @@
 //const url = "https://happierme.app";
-const url ="https://staging.happierme.app"
+//const url ="https://staging.happierme.app"
 
 $(".owl_container .owl-carousel").owlCarousel({
     stagePadding: 50,
