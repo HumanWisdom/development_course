@@ -13,6 +13,7 @@ export class NewsletterComponent implements OnInit {
   public enableAlert = false;
   public enableErrorAlert = false;
   public errMsg = '';
+  public successMsg = '';
 
   ngOnInit() {
     this.newsletterForm = this.fb.group({
@@ -29,6 +30,7 @@ export class NewsletterComponent implements OnInit {
     }
     this.service.signUpNewsLetter(data).subscribe((res) => {
       if (res) {
+        this.successMsg = res;
          this.enableAlert = true;
          this.newsletterForm.reset();
          setTimeout(()=> {
