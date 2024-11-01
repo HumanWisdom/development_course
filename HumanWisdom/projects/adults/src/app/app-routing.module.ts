@@ -6,6 +6,7 @@ import { authLoginGuard } from './auth-login.guard'
 
 import{BlogIndexPage}  from './../../../shared/component/blogs/blog-index/blog-index.page';
 import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
+import { NewsletterComponent } from '../../../shared/component/newsletter/newsletter.component';
 
 const routes: Routes = [
   // {
@@ -25,6 +26,10 @@ const routes: Routes = [
     path: "course/adults",
     redirectTo:"adults",
   },
+  {
+    path: 'newsletter-signup',
+    component: NewsletterComponent
+  }
 ];
 
 @NgModule({
