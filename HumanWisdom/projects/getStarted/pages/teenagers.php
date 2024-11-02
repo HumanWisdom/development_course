@@ -111,7 +111,7 @@
                  
                   <div class="row mt20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                      <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                      <a id="teenagerCoverClick" class="">
                         <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1" >
                         Start your free trial now
                         </button>
