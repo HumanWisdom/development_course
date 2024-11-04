@@ -111,7 +111,7 @@
                  
                   <div class="row mt20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                      <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                      <a id="teenagerCoverClick" class="">
                         <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1" >
                         Start your free trial now
                         </button>
@@ -891,7 +891,7 @@
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
 
-                <button class="btn btn_subscription">
+                <button class="btn_subscription">
                   <div class="row center_flex btn_subscription_trial">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
@@ -919,7 +919,7 @@
                   </div>
                 </button>
 
-                <button class="btn btn_subscription mt20pxi">
+                <button class="btn_subscription mt20pxi">
                   <div class="row center_flex">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
                       <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">

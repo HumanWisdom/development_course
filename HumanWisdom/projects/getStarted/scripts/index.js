@@ -53,6 +53,14 @@ if (teenagersClick) {
     });
 }
 
+const teenagerCoverClick = document.getElementById('teenagerCoverClick');
+if (teenagerCoverClick) {
+    // Add an event listener for the 'play' event
+    teenagerCoverClick.addEventListener('click', function () {
+           window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+    });
+}
+
 const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
     // Add an event listener for the 'play' event

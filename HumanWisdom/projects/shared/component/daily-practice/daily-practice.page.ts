@@ -47,7 +47,7 @@ export class DailyPracticePage implements OnInit {
   dailyinstext = ''
   audioTitle = ''
   dailybreathTitle = ''
-  isloggedIn = false
+  isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   enablepopup = false;
   isSubscribe = false;
   Subscriber: any;
@@ -85,10 +85,12 @@ export class DailyPracticePage implements OnInit {
     if (islogin === 'T') {
       this.isloggedIn = true;
       this.Subscriber = localStorage.getItem('Subscriber')
-    };
+    }
     $('.carousel').bcSwipe({ threshold: 50 });
 
-    if (this.guest || !this.isloggedIn || this.Subscriber === '0') {
+    if (this.guest || !this.isloggedIn) {
+      this.placeholder = 'Login to use this feature' ;
+    }else if(this.Subscriber === '0') {
       this.placeholder = 'Please subscribe to access your online journal';
     }
 
@@ -124,7 +126,7 @@ export class DailyPracticePage implements OnInit {
         this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
        // this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
         this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().split('.')[1].toString()  +".webp"
-       
+
        this.enableVideo = true;
       }
     })
