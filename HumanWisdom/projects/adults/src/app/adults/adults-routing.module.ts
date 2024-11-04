@@ -670,10 +670,6 @@ const routes: Routes = [
     path: 'note-add',
     loadChildren: () => import('./note-add/note-add.module').then( m => m.NoteAddPageModule)
   },
-  {
-    path: 'newsletter-signup',
-    loadChildren: () => import('../../../../shared/component/newsletter/').then( m => m.NoteAddPageModule)
-  },
 ];
 
  @NgModule({
