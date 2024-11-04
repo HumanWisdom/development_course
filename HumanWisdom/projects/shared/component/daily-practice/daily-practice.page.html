@@ -85,42 +85,26 @@
                       <!-- <div class="row">
 
                       </div> -->
-                      <div class="row ">
-                        <div class="row tcenter">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
-                            (paly)="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
-                            <source [src]="DailyInspirationLink" type="video/mp4">
-                          </video>
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <!-- <button type="submit"  *ngIf="dailyInsModule" class="btn mdp_add_to_journal_new">
-                            {{ 'Explore related module ' }}
-                          </button> -->
-
+                      <div class="video-section">
+                        <div class="video-container tcenter">
+                          <div class="video-wrapper">
+                            <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
+                                   (play)="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
+                              <source [src]="DailyInspirationLink" type="video/mp4">
+                            </video>
+                          </div>
+                          <div class="text-content">
                             <h1 class="fw_600 fs_15px lh_140p fc_ffffff mtb0px tcenter" *ngIf="dailyInsModule">
-                              {{ 'Explore related module ' }}</h1>
-
-
-                          <a (click)="routeModule()">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82"
-                              style="text-decoration:underline">{{ dailyInsModule }}</h4>
-
-                           </a>
-
+                              {{ 'Explore related module ' }}
+                            </h1>
+                            <a (click)="routeModule()"> 
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82" style="text-decoration:underline">{{ dailyInsModule }}</h4>
+                            </a>
                           </div>
                         </div>
-
-                          <!-- <div class="row mb20px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">Breathing Exercise</h4>
-                            </div>
-                            </div> -->
-
                       </div>
-
+                      
+                    
                       <div class="row">
 
                       </div>
