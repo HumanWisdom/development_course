@@ -27,59 +27,8 @@ export class PodcastTocPage implements OnInit {
   @Input() isdefaultShow = false;
   isSubscriber = false;
   address: any;
-  searchedText:'';
-  prefData = [
-    {
-      id: "999",
-      active: true,
-      name: 'All'
-    },
-    {
-      id: "1",
-      active: false,
-      name: 'Work'
-    },
-    {
-      id: "2",
-      active: false,
-      name: 'Mental Health'
-    },
-    {
-      id: "3",
-      active: false,
-      name: 'Relationships'
-    },
-    {
-      id: "4",
-      active: false,
-      name: 'Happiness'
-    },
-    {
-      id: "5",
-      active: false,
-      name: 'Addiction'
-    },
-    {
-      id: "6",
-      active: false,
-      name: 'Sorrow and loss'
-    },
-    {
-      id: "7",
-      active: false,
-      name: 'Meditation',
-    },
-    {
-      id: "8",
-      active: false,
-      name: 'Emotions',
-    },
-    {
-      id: "",
-      active: false,
-      name: 'Wisdom',
-    }
-  ];
+  searchedText: '';
+  prefData = [];
   selectedPref = 'All'
   isAdults = true;
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
@@ -90,13 +39,14 @@ export class PodcastTocPage implements OnInit {
     private sanitizer: DomSanitizer,
     private meta: Meta, private title: Title,
     private service: CommonService,
-    private navigationService:NavigationService
+    private navigationService: NavigationService
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
+    this.prefData = SharedService.getPreferenceData();
   }
 
   ngOnInit() {
@@ -135,7 +85,7 @@ export class PodcastTocPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
   }
@@ -156,14 +106,14 @@ export class PodcastTocPage implements OnInit {
   getPodcast() {
     this.service.GetPodcastList().subscribe((res) => {
       if (res) {
-        var filteredData = res.filter(x=>x.ProgIDs.includes(SharedService.ProgramId.toString()));
+        var filteredData = res.filter(x => x.ProgIDs.includes(SharedService.ProgramId.toString()));
         this.podcastList = filteredData;
         this.allpodcastList = filteredData;
         this.allpodcastList.forEach((d) => {
           this.prefData.forEach((h) => {
-            if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
-               h.active = true;
-            }else if(!d['PreferenceIDs']) {
+            if (d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
+              h.active = true;
+            } else if (!d['PreferenceIDs']) {
               h.active = true;
             }
           })
@@ -175,7 +125,7 @@ export class PodcastTocPage implements OnInit {
   audioevent(data) {
     let sub: any = localStorage.getItem("Subscriber")
     if (sub == 0 && data['PodcastID'] >= 4) {
-      this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+      this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
     } else {
       if (data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')) {
         data['MediaUrl'] = data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
@@ -183,26 +133,23 @@ export class PodcastTocPage implements OnInit {
       let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/', '~'));
       const title = data['Title']?.replaceAll(' ', '-')
 
-     if( this.isAdults == true)      
-      this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', title])
-    else
-      this.router.navigate(['teenagers/audiopage/', concat, data['PodcastID'], 'T', title])
+      if (this.isAdults == true)
+        this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', title])
+      else
+        this.router.navigate(['teenagers/audiopage/', concat, data['PodcastID'], 'T', title])
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
       // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
   }
 
-  searchPodcast($event) 
-  {
-    if($event=='')
-    {
-      this.podcastList= this.allpodcastList;
+  searchPodcast($event) {
+    if ($event == '') {
+      this.podcastList = this.allpodcastList;
     }
-    else
-    {
-      this.searchedText=$event;
-      let filterlist =this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
-      this.podcastList=filterlist;
+    else {
+      this.searchedText = $event;
+      let filterlist = this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      this.podcastList = filterlist;
       //this.secondstoryList=filterlist.slice(10);
     }
   }
@@ -222,13 +169,13 @@ export class PodcastTocPage implements OnInit {
   getUserPref(type) {
     this.selectedPref = '';
     this.podcastList = this.allpodcastList;
-    if(type.name === 'All') {
+    if (type.name === 'All') {
       this.podcastList = this.allpodcastList;
-    }else{
-      if(type.name === 'Wisdom') {
-        this.podcastList= this.podcastList.filter((d) => (!d['PreferenceIDs']));
-      }else {
-        this.podcastList= this.podcastList.filter((d) => d['PreferenceIDs'].includes(type.id));
+    } else {
+      if (type.name === 'Wisdom') {
+        this.podcastList = this.podcastList.filter((d) => (!d['PreferenceIDs']));
+      } else {
+        this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].includes(type.id));
       }
     }
   }
@@ -239,13 +186,13 @@ export class PodcastTocPage implements OnInit {
        return;
      } */
     console.log("url")
-    this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
+    this.path = environment.production ? "https://happierme.app" + this.address : "https://staging.happierme.app" + this.address;
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
       text: 'Hey, check out the HappierMe Program',
       url: this.path
     }).then((response) => {
-      
+
     })
       .catch((error) => {
         console.log(error);
