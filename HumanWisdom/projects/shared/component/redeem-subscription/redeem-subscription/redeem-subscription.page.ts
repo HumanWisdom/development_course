@@ -49,6 +49,7 @@ export class RedeemSubscriptionPage implements OnInit {
   public programName = '';
   public enabledGiftCard = false;
   productNo = '';
+  redeemErrMsg = '';
 
   constructor(
     public platform: Platform,
@@ -174,15 +175,17 @@ export class RedeemSubscriptionPage implements OnInit {
               this.subthirdpage = false
               this.subfirstpage = false
               this.subsecondpage = true;
-            } else {
-              console.log('false');
-              this.subsecondpage = false;
-              this.subthirdpage = true
-            }
+            } 
+            // else {
+            //   console.log('false');
+            //   this.subsecondpage = false;
+            //   this.subthirdpage = true
+            // }
           },
           error => {
             console.log('error');
             this.subsecondpage = false;
+            this.redeemErrMsg = error['error']['Message'];
             this.subthirdpage = true
           },
           () => {
