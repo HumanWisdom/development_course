@@ -85,12 +85,12 @@ export class DailyPracticePage implements OnInit {
     if (islogin === 'T') {
       this.isloggedIn = true;
       this.Subscriber = localStorage.getItem('Subscriber')
-    }else {
-      this.placeholder = 'Login to use this feature' ;
     }
     $('.carousel').bcSwipe({ threshold: 50 });
 
-    if (this.guest || !this.isloggedIn || this.Subscriber === '0') {
+    if (this.guest || !this.isloggedIn) {
+      this.placeholder = 'Login to use this feature' ;
+    }else if(this.Subscriber === '0') {
       this.placeholder = 'Please subscribe to access your online journal';
     }
 
