@@ -13732,7 +13732,7 @@ and (orientation : portrait)
 
 .ob_txt8
 {
-  /* font-family: Roboto; */
+  
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13831,7 +13831,7 @@ label > input[type="radio"]:checked + *::before {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   height: 22px;
 
-  /* font-family: Roboto; */
+  
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
