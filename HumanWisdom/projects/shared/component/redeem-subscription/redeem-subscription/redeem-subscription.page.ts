@@ -175,12 +175,12 @@ export class RedeemSubscriptionPage implements OnInit {
               this.subthirdpage = false
               this.subfirstpage = false
               this.subsecondpage = true;
-            } 
-            // else {
-            //   console.log('false');
-            //   this.subsecondpage = false;
-            //   this.subthirdpage = true
-            // }
+            } else {
+              console.log('false');
+              this.subsecondpage = false;
+              this.redeemErrMsg = res;
+              this.subthirdpage = true
+            }
           },
           error => {
             console.log('error');
