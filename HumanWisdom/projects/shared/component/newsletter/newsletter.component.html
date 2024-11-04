@@ -1,6 +1,12 @@
+<section id="bring_happierme">
+  <div class="row center_flex div_subscription">
+    <div class="col-lg-6 col-md-16 col-sm-10 col-xs-10 p0">
+  <div class="cw100p" style="background: #f9e9df;"> 
+    
 <div id="mlb2-5755373" class="ml-subscribe-form ml-subscribe-form-5755373">
   <div class="ml-vertical-align-center">
     <div class="subscribe-form ml-block-success" *ngIf="enableAlert">
+
       <div class="form-section">
         <!-- <p>Thank you! You will receive an email to this address to confirm your subscription .</p> -->
         <p>{{successMsg}}</p>
@@ -13,6 +19,7 @@
     </div>
     <!-- <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/v8a6h0" data-id="515169"
       data-code="v8a6h0" method="POST" target="_blank"> -->
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 bg_aliceblue sc_01">
     <form class="ml-block-form" [formGroup]="newsletterForm">
       <div class="subscribe-form">
         <div class="form-section">
@@ -22,17 +29,22 @@
           <strong *ngIf="Name.errors?.minlength && Name.touched"> Name must be at least 2 characters</strong>
 
           <div class="form-group ml-field-name">
-            <input type="text" formControlName="Name" class="form-control" placeholder="Your name" autocomplete="name"
+            <input type="text"  formControlName="Name" class="form-control fc_01" placeholder="Your name" autocomplete="name"form-control fc_01
               x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off" required>
-          </div>
+              <!-- <div class="fc_icons">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
+              </div> -->
+            </div>
+            
           <div class="form-group ml-field-email ml-validate-required ml-validate-email">
-            <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" formControlName="EmailID" type="email" class="form-control"
+            <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" formControlName="EmailID" type="email" class="form-control fc_01"
               placeholder="Your e-mail address*" autocomplete="email" x-autocompletetype="email" spellcheck="false"
               autocapitalize="off" autocorrect="off" required>
 
           </div>
 
         </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <input type="hidden" name="ml-submit" value="1" />
         <button type="submit" class="primary" (click)="submitNewsletter()" [disabled]="newsletterForm.invalid">
           Sign up for newsletter
@@ -42,7 +54,59 @@
             style="width: 20px; height: 20px;">
         </button> -->
       </div>
+      </div>
     </form>
-
+    </div>
   </div>
 </div>
+</div>
+</div>
+</div>
+<!-- successfully saved -->
+<div class="modal fade in" id="added" data-keyboard="false" data-backdrop="false" data-dismiss="modal">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body lab-modal-body_dc col_cw">
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/daily_checkin_save_tick.svg" class="img-responsive">
+        </div>
+      </div>
+
+      <div class="row mtb20px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+            Successfully saved
+          </h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+            Your note has been added to your journal. There are many resources in the app to help you flourish in life.
+          </h4>
+        </div>
+      </div>
+
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+            <button (click)="findOutMore()" type="btn" class="btn btn_ctd">
+              Find out more
+            </button>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
+            <button  (click)="goToHome()" type="btn" class="btn btn_ctd">
+              Go to Home
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- /successfully saved -->
+</section>
