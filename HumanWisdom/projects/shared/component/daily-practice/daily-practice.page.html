@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="fw_600 fs_12px lh_140p fc_ffffff mtb0px tcenter">
+                          <h1 class="fw_500 fs_12px lh_140p fc_ffffff mtb0px tcenter">
                             {{ dailyInspirationTitle }}</h1>
                         </div>
 
@@ -94,11 +94,11 @@
                             </video>
                           </div>
                           <div class="text-content">
-                            <h1 class="fw_600 fs_15px lh_140p fc_ffffff mtb0px tcenter" *ngIf="dailyInsModule">
+                            <h1 class="fw_500 fs_12px lh_140p fc_ffffff mtb0px tcenter" *ngIf="dailyInsModule">
                               {{ 'Explore related module ' }}
                             </h1>
                             <a (click)="routeModule()"> 
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82" style="text-decoration:underline">{{ dailyInsModule }}</h4>
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82" style="text-decoration:underline"> {{ capitalizeFirstLetter(dailyInsModule)}}</h4>
                             </a>
                           </div>
                         </div>
