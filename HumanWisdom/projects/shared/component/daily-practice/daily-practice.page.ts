@@ -111,6 +111,10 @@ export class DailyPracticePage implements OnInit {
     }, 4000) */
   }
 
+  capitalizeFirstLetter(inputString: string): string {
+    return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+  }
+
   getdailyquestion() {
     this.commonService.getDailypractiseQuestionbreath().subscribe((res) => {
       if (res) {
