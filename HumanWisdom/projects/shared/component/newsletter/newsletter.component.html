@@ -2,8 +2,10 @@
 
   <div class="row center_flex div_subscription">
     <div class="col-lg-6 col-md-16 col-sm-10 col-xs-10 p0">
+
   <div class="cw100p" style="background: #f9e9df;"> 
    
+
 <div id="mlb2-5755373" class="ml-subscribe-form ml-subscribe-form-5755373">
   <div class="ml-vertical-align-center">
     <div class="subscribe-form ml-block-success" *ngIf="enableAlert">
@@ -42,7 +44,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
               </div> -->
             </div>
-            
+
           <div class="form-group ml-field-email ml-validate-required ml-validate-email">
             <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" formControlName="EmailID" type="email" class="form-control fc_01"
               placeholder="Your e-mail address*" autocomplete="email" x-autocompletetype="email" spellcheck="false"
@@ -71,3 +73,6 @@
 </div>
 
 </section>
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)"
+  [content]="content"></app-modal>

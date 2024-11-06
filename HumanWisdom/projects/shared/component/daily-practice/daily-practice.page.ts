@@ -90,9 +90,10 @@ export class DailyPracticePage implements OnInit {
 
     if (this.guest || !this.isloggedIn) {
       this.placeholder = 'Login to use this feature' ;
-    }else if(this.Subscriber === '0') {
-      this.placeholder = 'Please subscribe to access your online journal';
     }
+    // else if(this.Subscriber === '0') {
+    //   this.placeholder = 'Please subscribe to access your online journal';
+    // }
 
     this.getdailyquestion();
 
@@ -165,7 +166,7 @@ export class DailyPracticePage implements OnInit {
 
   subdailyques() {
     this.logeventservice.logEvent('click_add_answer_here');
-    if (!this.isloggedIn || !this.isSubscribe) {
+    if (!this.isloggedIn) {
       this.content = "Subscribe to activate your online journal";
       this.enableAlert = true;
       // alert("Subscribe to activate your online journal");
