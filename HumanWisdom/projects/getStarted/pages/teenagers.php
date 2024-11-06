@@ -113,7 +113,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                       <a id="teenagerCoverClick" class="">
                         <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1" >
-                        Start your free trial now
+                        Try HappierMe for free
                         </button>
                       </a>
                     </div>
@@ -966,9 +966,9 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-              <a href="https://happierme.app/teenagers/subscription/try-free-and-subscribe"> 
+              <a href="https://happierme.app/teenagers/onboarding/login"> 
               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                  Continue
+                  Start your free trial
                 </button>
               </div>
     </a>

@@ -20,6 +20,16 @@ if (loginClick) {
     });
 }
 
+const tryhappiermeClick = document.getElementsByClassName('tryhappiermeClick');
+if (tryhappiermeClick[0]) {
+    // Add an event listener for the 'play' event
+    tryhappiermeClick[0].addEventListener('click', function () {
+        localStorage.setItem('login',true);
+        localStorage.setItem('pricing',false);
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
 const pricingSelectBtn = document.getElementById('PricingSelectBtn');
 if (pricingSelectBtn) {
     // Add an event listener for the 'play' event
@@ -47,8 +57,11 @@ if (teenagersClick) {
         if(localStorage.getItem('pricing')=='true'){
            window.location.href = url+"/teenagers/subscription/start-your-free-trial";
         }
-        if(localStorage.getItem('login')=='true'){
+        else if(localStorage.getItem('login')=='true'){
            window.location.href = url+"/teenagers/onboarding/login";
+        }
+        else {
+            window.location.href = url + "/teenagers/onboarding/login";
         }
     });
 }
@@ -69,9 +82,11 @@ if (adultsClick) {
             localStorage.setItem('pricing',false);
            window.location.href = url+"/adults/subscription/start-your-free-trial";
         }
-        if(localStorage.getItem('login')=='true'){
+        else if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
            window.location.href = url+"/adults/onboarding/login";
+        } else {
+            window.location.href = url + "/teenagers/onboarding/login";
         }
     });
 }
