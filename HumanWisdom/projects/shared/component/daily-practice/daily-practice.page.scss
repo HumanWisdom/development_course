@@ -270,19 +270,21 @@ div[ng-reflect-value] {
 }
 
 .video-wrapper {
-  width: 90%;
+  width: 83%;
   display: flex;
   justify-content: center;
+
 }
 
 .cvideo {
   width: 100%; 
-  max-height: 74vh; 
+  max-height: 67vh; 
   object-fit: contain;
-  border-radius: 3rem; 
+  border-radius: 34px !important; 
 }
 
 .text-content {
   margin-top: 20px;
   text-align: center;
 }
+

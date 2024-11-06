@@ -158,7 +158,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
       if (videoHeight > videoWidth) {
         this.videoPlayer.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
       } else {
-        this.videoPlayer.nativeElement.setAttribute('controlsList', 'nodownload');
+        this.videoPlayer.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
       }
     }, 500);
   }
