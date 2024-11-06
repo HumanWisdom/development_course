@@ -35,11 +35,11 @@ $(".owl_container .owl-carousel").owlCarousel({
         responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 3 } },
     }),
     $(window).resize(function () {
-        window.matchMedia("(max-width: 768px)").matches, $(".btn_tff").attr("href", "https://happierme.app/splash_options.html");
+        window.matchMedia("(max-width: 768px)").matches, $(".btn_tff").attr("href", "../pages/splash_options.php");
     }),
     $(window).resize(),
     $(window).resize(function () {
-        window.matchMedia("(max-width: 768px)").matches ? $(".btn_tff_tn").attr("href", "https://onelink.to/qsptex") : $(".btn_tff_tn").attr("href", "https://happierme.app/splash_options.html");
+        window.matchMedia("(max-width: 768px)").matches ? $(".btn_tff_tn").attr("href", "https://onelink.to/qsptex") : $(".btn_tff_tn").attr("href", "../pages/splash_options.php");
     }),
     $(window).resize(),
     $(".search-button").click(function () {
