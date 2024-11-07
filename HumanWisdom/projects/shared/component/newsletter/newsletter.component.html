@@ -1,10 +1,9 @@
-<section id="bring_happierme">
 
-  <div class="row center_flex div_subscription">
-    <div class="col-lg-6 col-md-16 col-sm-10 col-xs-10 p0">
-
-  <div class="cw100p" style="background: #f9e9df;"> 
-   
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 v1_3_bg_splash center_flex col_cw">
+        <!-- <a href="https://happierme.app/adults/onboarding/login"><h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82 underline tright">
+          Home
+        </h4></a>  -->
 
 <div id="mlb2-5755373" class="ml-subscribe-form ml-subscribe-form-5755373">
   <div class="ml-vertical-align-center">
@@ -24,13 +23,13 @@
     
     <!-- <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/v8a6h0" data-id="515169"
       data-code="v8a6h0" method="POST" target="_blank"> -->
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 bg_aliceblue sc_01">
+     
         <a href="https://happierme.app/adults/onboarding/login"><h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82 underline tright">
-          Back
+          Home
         </h4></a> 
         
     <form class="ml-block-form" [formGroup]="newsletterForm">
-      <div class="subscribe-form">
+      <div class="subscribe-form1">
         <div class="form-section">
           <strong *ngIf="EmailID.errors?.required && EmailID?.touched">Email is required. </strong>
           <strong *ngIf="EmailID.errors?.pattern && EmailID?.touched">Error! Please enter a vaid email. </strong>
@@ -39,10 +38,11 @@
 
           <div class="form-group ml-field-name">
             <input type="text"  formControlName="Name" class="form-control fc_01" placeholder="Your name" autocomplete="name"form-control fc_01
-              x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off" required>
+              x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off"  required>
+              
               <!-- <div class="fc_icons">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-              </div> -->
+              </div>  -->
             </div>
 
           <div class="form-group ml-field-email ml-validate-required ml-validate-email">
@@ -68,11 +68,9 @@
     </div>
   </div>
 </div>
-</div>
-</div>
+
 </div>
 
-</section>
 
 <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)"
   [content]="content"></app-modal>
