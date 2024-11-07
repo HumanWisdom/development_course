@@ -573,7 +573,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-                  <a  class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex tryhappiermeClick">
+                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a>
                 </div>
