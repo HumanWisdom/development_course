@@ -226,7 +226,7 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc aspects_outer">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
@@ -334,7 +334,7 @@
         </div>
 
         <div class="row center_flex display_m_none">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc aspects_outer">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -452,7 +452,7 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter work_edu_health_outer">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tcenter work_edu_health_outer">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <a class="" href="./pages/work.php">
@@ -534,7 +534,7 @@
       <!-- teenagers -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_block">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="100">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
             </div>
@@ -1310,7 +1310,7 @@
         </div>
 
         <div class="row center_flex prelative" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 p0">
 
             <ul class="nav nav-tabs flex_ai m0px tool_tabs">
               <li class="active">
@@ -1705,7 +1705,7 @@
 
         <!-- desktop -->
         <div class="row center_flex prelative display_m_none">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <ul class="nav nav-tabs m0px tab_faqs">
