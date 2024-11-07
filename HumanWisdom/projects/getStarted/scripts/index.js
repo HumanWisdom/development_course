@@ -20,6 +20,16 @@ if (loginClick) {
     });
 }
 
+const happiermeTryForFree =  document.getElementById('happiermeTryForFree');
+if (happiermeTryForFree) {
+    // Add an event listener for the 'play' event
+    happiermeTryForFree.addEventListener('click', function () {
+        localStorage.setItem('login',true);
+        localStorage.setItem('pricing',false);
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
 const tryhappiermeClick = document.getElementsByClassName('tryhappiermeClick');
 if (tryhappiermeClick[0]) {
     // Add an event listener for the 'play' event
@@ -50,6 +60,20 @@ if (discoverSectionPricingClick) {
     });
 }
 
+const teenagersLogin = document.getElementById('teenagersLogin');
+if (teenagersLogin) {
+    teenagersLogin.addEventListener('click', function () {
+        window.location.href = url+"/teenagers/onboarding/login";
+    });
+}
+
+const teenagersPricing = document.getElementById('teenagersPricing');
+if (teenagersPricing) {
+    teenagersPricing.addEventListener('click', function () {
+        window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+    });
+}
+
 const teenagersClick = document.getElementById('teenagersClick');
 if (teenagersClick) {
     // Add an event listener for the 'play' event
@@ -70,7 +94,7 @@ const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
     // Add an event listener for the 'play' event
     teenagerCoverClick.addEventListener('click', function () {
-           window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+           window.location.href = url+"/teenagers/onboarding/login/";
     });
 }
 
