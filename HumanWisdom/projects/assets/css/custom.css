@@ -31565,13 +31565,13 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 #mlb2-5755373 a:focus,
 #mlb2-5755373 a:active {
     overflow: visible;
-    position: static;
+    /* position: static; */
     background: none;
     border: none;
     bottom: auto;
     clear: none;
     cursor: default;
-    float: none;
+    /* float: none; */
     letter-spacing: normal;
     line-height: normal;
     text-align: left;
@@ -31584,16 +31584,32 @@ input[type="search"].hide_search::-webkit-search-cancel-button
     left: auto;
     min-height: 0;
     min-width: 0;
-    right: auto;
-    top: auto;
-    width: 100%;
+    /* right: auto; */
+    top: auto; 
+    /* width: auto;  */
     padding: 10px;
     z-index: auto;
     text-shadow: none;
     box-shadow: none;
     outline: medium none;
 }
-
+.fc_img {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
 #mlb2-5755373 a:hover {
     cursor: pointer !important;
 }
@@ -31606,7 +31622,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button
     /* padding: 20px; */
     padding: 0;
     border: 0px solid #F6F6F6 !important;
-    background: #FFFFFF none !important;
+    /* background: #FFFFFF none !important; */
     border-radius: 0px !important;
     box-sizing: border-box !important;
 }
@@ -31614,7 +31630,29 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 #mlb2-5755373 .ml-block-form {
     margin-bottom: 0px;
 }
-
+.div_subscription {
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
+  background: -webkit-linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding: 90px 20px;
+}
+.input_parent1 > [class^="col-"]:last-child {
+  margin: 1px 20px 20px 10px;
+}
+.div_input {
+  position: relative;
+}
+.div_input .fa, .div_input .fc_icons {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
 #mlb2-5755373 .subscribe-form .form-section {
     margin-bottom: 20px;
     width: 100%;
@@ -34427,7 +34465,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   position: absolute;
   right: 20px;
-  top: 0;
+  top: 18px;
   bottom: 0;
   margin: 0 auto;
   display: flex;
