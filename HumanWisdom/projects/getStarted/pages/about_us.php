@@ -219,7 +219,7 @@
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
-                <a href="../splash_options.html">
+                <a id="happiermeTryForFree">
                   <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                     Try HappierMe for free
                   </button>
