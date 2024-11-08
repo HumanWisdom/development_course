@@ -1,7 +1,8 @@
 const userAgent = navigator.userAgent;
 const isLoggedIn = localStorage.getItem('isloggedin') == 'T';
 //const url = "https://happierme.app";
-const url ="https://staging.happierme.app"
+//const url ="https://staging.happierme.app"
+const url ="http://localhost:4200"
 function gtag() {
     dataLayer.push(arguments);
 }
