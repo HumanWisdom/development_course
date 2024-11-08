@@ -259,6 +259,7 @@ div[ng-reflect-value] {
   overflow-y: auto; 
   padding: 20px;
   box-sizing: border-box;
+  padding-top: 0px !important;
 }
 
 .video-container {
@@ -283,7 +284,10 @@ div[ng-reflect-value] {
 }
 
 .text-content {
-  margin-top: 20px;
+  // margin-top: 20px;
   text-align: center;
+}
+.m-b4 {
+  margin-bottom: -4px !important;
 }
 
