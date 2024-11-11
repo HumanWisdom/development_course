@@ -2,8 +2,8 @@
   <div class="row center_flex div_subscription">
   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-        Signup Our  newsletter  </h4>
+      <!-- <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+        Signup Our  newsletter  </h4> -->
     </div>
     <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
@@ -11,13 +11,9 @@
   <div class="ml-vertical-align-center">
     <div class="col-lg-10 col-md-10 col-sm-5 col-xs-12 p0 dnone">
 
+      <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+        Signup Our  newsletter  </h4>
     
-    <div class="subscribe-form ml-block-success" *ngIf="enableAlert">
-      <div class="form-section">
-        <!-- <p>Thank you! You will receive an email to this address to confirm your subscription .</p> -->
-        <p>{{successMsg}}</p>
-      </div>
-    </div>
     <div class="subscribe-form ml-block-success" *ngIf="enableErrorAlert">
       <div class="form-section">
         <p>{{errMsg}}</p>
@@ -28,10 +24,8 @@
     <form class="ml-block-form" [formGroup]="newsletterForm">
       <div class="subscribe-form">
         <div class="form-section">
-          <strong *ngIf="EmailID.errors?.required && EmailID?.touched">Email is required. </strong>
-          <strong *ngIf="EmailID.errors?.pattern && EmailID?.touched">Error! Please enter a vaid email. </strong>
-          <strong *ngIf="Name.errors?.required && Name.touched"> Name is required. </strong>
-          <strong *ngIf="Name.errors?.minlength && Name.touched"> Name must be at least 2 characters</strong>
+         
+         
           <!-- <div class="row mb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
               <input type="text" class="sp_fc" formControlName="fname" placeholder="First Name" required>
@@ -46,6 +40,8 @@
             </div>
           </div> -->
           <div class="form-group ml-field-name">
+            <strong *ngIf="Name.errors?.required && Name.touched"> Name is required. </strong>
+            <strong *ngIf="Name.errors?.minlength && Name.touched"> Name must be at least 2 characters</strong>
             <input type="text" formControlName="Name" class="form-control fc_01" placeholder="Your name" autocomplete="name"
               x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off" required>
               <div class="fc_img">
@@ -54,6 +50,8 @@
               </div>
             </div>
           <div class="form-group ml-field-email ml-validate-required ml-validate-email">
+            <strong *ngIf="EmailID.errors?.required && EmailID?.touched">Email is required. </strong>
+            <strong *ngIf="EmailID.errors?.pattern && EmailID?.touched">Error! Please enter a vaid email. </strong>
             <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" formControlName="EmailID" type="email" class="form-control fc_01"
               placeholder="Your e-mail address*" autocomplete="email" x-autocompletetype="email" spellcheck="false"
               autocapitalize="off" autocorrect="off" required>
@@ -65,17 +63,19 @@
 
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <input type="hidden" name="ml-submit" value="1" />
-        <button type="submit" class="primary" (click)="submitNewsletter()" [disabled]="newsletterForm.invalid">
-           Back
-        </button>
-        </div>
+        
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <button type="submit" class="primary" (click)="submitNewsletter()" [disabled]="newsletterForm.invalid">
           Sign up for newsletter
         </button>
+        
         </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <input type="hidden" name="ml-submit" value="1" />
+          <button type="submit" class="primary" (click)="submitNewsletter()">
+             Back
+          </button>
+          </div>
         <!-- <button disabled="disabled" style="display: none;" type="button" class="loading">
           <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20"
             style="width: 20px; height: 20px;">

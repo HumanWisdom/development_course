@@ -49,6 +49,7 @@ export class NewsletterComponent implements OnInit {
     })
   }
 
+ 
   get Name() {
     return this.newsletterForm?.get("Name");
   }

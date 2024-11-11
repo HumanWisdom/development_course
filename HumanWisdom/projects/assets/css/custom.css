@@ -31616,6 +31616,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 
 #mlb2-5755373 h4 {
     font-weight: normal;
+    text-align: center;
 }
 
 #mlb2-5755373 .subscribe-form {
@@ -31636,7 +31637,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  padding: 90px 20px;
+  /* padding: 90px 20px; */
 }
 .input_parent1 > [class^="col-"]:last-child {
   margin: 1px 20px 20px 10px;
