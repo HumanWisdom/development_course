@@ -49,6 +49,7 @@ export class RedeemSubscriptionPage implements OnInit {
   public programName = '';
   public enabledGiftCard = false;
   productNo = '';
+  redeemErrMsg = '';
 
   constructor(
     public platform: Platform,
@@ -146,7 +147,7 @@ export class RedeemSubscriptionPage implements OnInit {
       this.service.checkGiftery(obj)
         .subscribe(
           res => {
-            if (res && !(res?.includes('already redeemed'))) {
+            if (res && (!(res?.includes('already')) && !(res?.includes('invalid')))) {
               console.log('res');
               this.showWarning = true;
               this.productNo = res.split('-')[1];
@@ -177,12 +178,14 @@ export class RedeemSubscriptionPage implements OnInit {
             } else {
               console.log('false');
               this.subsecondpage = false;
+              this.redeemErrMsg = res;
               this.subthirdpage = true
             }
           },
           error => {
             console.log('error');
             this.subsecondpage = false;
+            this.redeemErrMsg = error['error']['Message'];
             this.subthirdpage = true
           },
           () => {
