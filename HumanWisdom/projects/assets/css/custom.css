@@ -34466,7 +34466,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   position: absolute;
   right: 20px;
-  top: 18px;
+  top: 0px;
   bottom: 0;
   margin: 0 auto;
   display: flex;
