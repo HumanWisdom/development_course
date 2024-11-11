@@ -47,7 +47,7 @@ export class DailyPracticePage implements OnInit {
   dailyinstext = ''
   audioTitle = ''
   dailybreathTitle = ''
-  isloggedIn = false
+  isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   enablepopup = false;
   isSubscribe = false;
   Subscriber: any;
@@ -85,12 +85,15 @@ export class DailyPracticePage implements OnInit {
     if (islogin === 'T') {
       this.isloggedIn = true;
       this.Subscriber = localStorage.getItem('Subscriber')
-    };
+    }
     $('.carousel').bcSwipe({ threshold: 50 });
 
-    if (this.guest || !this.isloggedIn || this.Subscriber === '0') {
-      this.placeholder = 'Please subscribe to access your online journal';
+    if (this.guest || !this.isloggedIn) {
+      this.placeholder = 'Login to use this feature' ;
     }
+    // else if(this.Subscriber === '0') {
+    //   this.placeholder = 'Please subscribe to access your online journal';
+    // }
 
     this.getdailyquestion();
 
@@ -109,6 +112,10 @@ export class DailyPracticePage implements OnInit {
     }, 4000) */
   }
 
+  capitalizeFirstLetter(inputString: string): string {
+    return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+  }
+
   getdailyquestion() {
     this.commonService.getDailypractiseQuestionbreath().subscribe((res) => {
       if (res) {
@@ -122,8 +129,10 @@ export class DailyPracticePage implements OnInit {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
         this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
-        this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
-        this.enableVideo = true;
+       // this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
+        this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().split('.')[1].toString()  +".webp"
+
+       this.enableVideo = true;
       }
     })
     this.commonService.getDailypractiseQuestionins().subscribe((res) => {
@@ -157,7 +166,7 @@ export class DailyPracticePage implements OnInit {
 
   subdailyques() {
     this.logeventservice.logEvent('click_add_answer_here');
-    if (!this.isloggedIn || !this.isSubscribe) {
+    if (!this.isloggedIn) {
       this.content = "Subscribe to activate your online journal";
       this.enableAlert = true;
       // alert("Subscribe to activate your online journal");
@@ -171,6 +180,8 @@ export class DailyPracticePage implements OnInit {
         if (res) {
           this.content = "Successfully added daily question";
           this.enableAlert = true;
+          this.questext='';
+          
           // window.alert('Successfully added daily question')
         }
       })
