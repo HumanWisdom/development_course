@@ -617,14 +617,14 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> -->
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dan_reidenberg.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        "HappierMe is a well-designed app that provides many useful tools and resources for anyone wanting to improve their life, resilience and well-being. Built upon the belief that the more you know, the stronger you will be in moments of crisis, HappierMe increases your knowledge, awareness and internal strengths in an easy to use format."                        </h5>
+                        HappierMe is a well-designed app that provides many useful tools and resources for anyone wanting to improve their life, resilience and well-being. Built upon the belief that the more you know, the stronger you will be in moments of crisis, HappierMe increases your knowledge, awareness and internal strengths in an easy to use format.</h5>
                       </div>
                     </div>
 
@@ -642,14 +642,14 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions. It has helped me to make better decisions. It is my solution machine. 
+                        HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms. 
                         </h5>
                       </div>
                     </div>
@@ -657,7 +657,8 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Samaira, India
+                        Brenda McChesney, Director, 
+                        National Family Support Network, USA.
                         </h5>
                       </div>
                     </div>
