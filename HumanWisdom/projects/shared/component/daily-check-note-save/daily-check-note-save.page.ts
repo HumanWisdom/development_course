@@ -55,6 +55,9 @@ export class DailyCheckinNoteSavePage implements OnInit {
         this.commonService.submitJournal(obj).subscribe(res=>{
           if(res){
               this.saveJournal.nativeElement.click();
+              setTimeout(() => {
+                this.findOutMore();
+              }, 2000)
           }
         })
       }else{
@@ -98,8 +101,10 @@ export class DailyCheckinNoteSavePage implements OnInit {
         this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~77.mp3/77/T/Feeling-embarassed`)]);
       else if(this.rowData.Expression=="Disappointed")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~76.mp3/76/T/Feeling-Disappointed`)]);
-      else
+      else if(this.rowData.SearchTerm)
         this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
+      else
+        this.goToHome();
     }
 
     getAlertcloseEvent(event) {
