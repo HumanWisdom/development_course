@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { OnboardingService } from '../../services/onboarding.service';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
   styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent implements OnInit {
-  constructor(public fb: UntypedFormBuilder, private service: OnboardingService) { }
+  constructor(public fb: UntypedFormBuilder, private service: OnboardingService, private location:Location) { }
 
   public newsletterForm: any;
   public enableAlert = false;
@@ -49,6 +51,10 @@ export class NewsletterComponent implements OnInit {
     })
   }
 
+  goBack(){
+    this.location.back()
+  }
+
  
   get Name() {
     return this.newsletterForm?.get("Name");
@@ -57,8 +63,13 @@ export class NewsletterComponent implements OnInit {
     return this.newsletterForm?.get("EmailID");
   }
 
-  getAlertcloseEvent() {
-    this.enableAlert = false;
-    this.content = '';
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.location.back;
+      
+    }else{
+      this.enableAlert = false;
+    }
   }
 }
