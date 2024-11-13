@@ -11,7 +11,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-            <a href="../pages/about_us.php">
+            <a id="ourStory">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Our story
               </h4>
@@ -23,7 +23,7 @@
               </h4>
             </a> -->
 
-            <a href="https://happierme.app/adults/testimonials">
+            <a id="testimonialFooter" >
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Testimonials
               </h4>
@@ -109,7 +109,7 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/contact-us">
+            <a id="contactUsFooter">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Contact us
               </h4>
