@@ -6,6 +6,14 @@
     <meta property="title" content="HappierMe & National Family Support Network">
     <meta property="description" content="HappierMe partners with the National Family Support Network to offer discounts on the app for NFSN members. Strengthen family mental wellness today with exclusive access.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
+    <meta property="og:title" content="HappierMe:For Teens & Adults">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg>
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
+    
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
