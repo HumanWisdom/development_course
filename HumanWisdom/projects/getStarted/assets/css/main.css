@@ -2321,8 +2321,8 @@ a
   background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%));
   background: -webkit-linear-gradient(bottom, #CB6171 0%, #E58D82 100%);
   padding: 20px;
-  /* width: 300px !important; */
-  width: 255px !important;
+   width: 300px !important; 
+  /* width: 255px !important; */
   height: 100%;
   max-height: 377px;
 }
