@@ -6,7 +6,15 @@
     <meta property="title" content="HappierMe for Teenagers">
     <meta property="description" content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.">
     <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
-    
+    <meta property="og:title" content="HappierMe:For Teens & Adults">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg>
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
+
+
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
@@ -113,7 +121,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                       <a id="teenagerCoverClick" class="">
                         <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1" >
-                        Start your free trial now
+                        Try HappierMe for free
                         </button>
                       </a>
                     </div>
@@ -966,9 +974,9 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-              <a href="https://happierme.app/teenagers/subscription/try-free-and-subscribe"> 
+              <a id="teenagersPricing"> 
               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                  Continue
+                  Start your free trial
                 </button>
               </div>
     </a>

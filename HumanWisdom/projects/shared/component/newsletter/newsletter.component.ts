@@ -10,7 +10,6 @@ import { Location } from '@angular/common';
 })
 export class NewsletterComponent implements OnInit {
   constructor(public fb: UntypedFormBuilder, private service: OnboardingService, public location:Location) { }
-
   public newsletterForm: any;
   public enableAlert = false;
   public enableErrorAlert = false;
@@ -52,6 +51,11 @@ export class NewsletterComponent implements OnInit {
     })
   }
 
+  goBack(){
+    this.location.back()
+  }
+
+ 
   get Name() {
     return this.newsletterForm?.get("Name");
   }
@@ -59,8 +63,13 @@ export class NewsletterComponent implements OnInit {
     return this.newsletterForm?.get("EmailID");
   }
 
-  getAlertcloseEvent() {
-    this.enableAlert = false;
-    this.content = '';
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.location.back;
+      
+    }else{
+      this.enableAlert = false;
+    }
   }
 }

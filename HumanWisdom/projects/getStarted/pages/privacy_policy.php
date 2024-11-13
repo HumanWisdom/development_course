@@ -2,14 +2,17 @@
 <html lang="en">
 
   <head>
-    <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
+    <meta property="og:title" id="tag1" content="HappierMe:For Teens & Adults" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Master your mind and be happier" />
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
     <meta property="og:image:height" content="232" />
-
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->

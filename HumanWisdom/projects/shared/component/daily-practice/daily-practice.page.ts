@@ -180,6 +180,8 @@ export class DailyPracticePage implements OnInit {
         if (res) {
           this.content = "Successfully added daily question";
           this.enableAlert = true;
+          this.questext='';
+          
           // window.alert('Successfully added daily question')
         }
       })
