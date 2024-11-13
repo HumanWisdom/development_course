@@ -7,7 +7,7 @@
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="facebook-domain-verification" content="zxnan2nc1tyzk3dayx6ef3iluoo8hy" />
-      <meta property="og:title" id="tag1" content="HappierMe: Feel at peace" />
+      <meta property="og:title" id="tag1" content="HappierMe:For Teens & Adults" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://happierme.app/" />
       <meta property="og:description" content="Understand your mind, have happier relationships and succeed in life" />
@@ -22,7 +22,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-      <title> HappierMe: Feel at peace </title>
+      <title> HappierMe:For Teens & Adults </title>
       <meta name="robots" content="index, follow">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable = no" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
