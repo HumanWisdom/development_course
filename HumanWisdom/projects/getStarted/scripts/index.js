@@ -48,6 +48,7 @@ if (pricingSelectBtn) {
     pricingSelectBtn.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
+        logevent("click_continue_web", "index.php");
         window.location.href = "../pages/splash_options.php";
     });
 }
