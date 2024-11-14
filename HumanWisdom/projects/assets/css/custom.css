@@ -29963,6 +29963,17 @@ svg path
   margin: 0 -10px 0 -10px;
 }
 
+
+.pt2 {
+  /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
+  background: #120F40;
+   border-radius: 10px; 
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+   /* height: 289px;  */
+  /* text-align: center; */
+  /* margin-top: -12%; */
+  padding: 20px;
+}
 .pt1
 {
   /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
