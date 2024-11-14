@@ -27,6 +27,7 @@ if (happiermeTryForFree) {
     happiermeTryForFree.addEventListener('click', function () {
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
+        logevent("click_start_your_free_trial_now", "index.php")
         window.location.href = "../pages/splash_options.php";
     });
 }
@@ -285,21 +286,27 @@ nfsnContactForm &&
                 },
                 !1
             );
-        ["feelbetterNow", "pathWay", "journal", "podcast", "community", "HapinessScore"].forEach((e) => {
+        ["feelbetterNow", "pathWay", "journal", "podcast", "community",
+             "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp",
+             "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter"].forEach((e) => {
             const t = document.getElementById(e);
             t &&
                 t.addEventListener("click", function (t) {
-                    "feelbetterNow" == e
-                        ? logevent("click_Feel_Better_Now_web", "index.php")
-                        : "pathWay" == e
-                        ? logevent("click_Pathway_web", "index.php")
-                        : "journal" == e
-                        ? logevent("click_Journal_web", "index.php")
-                        : "HapinessScore" == e
-                        ? logevent("click_Happiness_Score_web", "index.php")
-                        : "podcast" == e
-                        ? logevent("click_Podcast_web", "index.php")
-                        : "community" == e && logevent("click_Community_web", "index.php");
+                         "feelbetterNow" == e? logevent("click_Feel_Better_Now_web", "index.php")
+                        : "pathWay" == e ? logevent("click_Pathway_web", "index.php")
+                        : "journal" == e ? logevent("click_Journal_web", "index.php")
+                        : "HapinessScore" == e ? logevent("click_Happiness_Score_web", "index.php")
+                        : "podcast" == e ? logevent("click_Podcast_web", "index.php")
+                        : "community" == e ? logevent("click_Community_web", "index.php")
+                        :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , (window.location.href="https://happierme.app/adults/intro/intro-carousel"))
+                        : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,(window.location.href="https://happierme.app/teenagers/intro-carousel"))
+                        : "openInApp1" == e ? (logevent("click_open_in_app_web", "index.php") ,(window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"))
+                        : "openInApp2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"))
+                        : "openInApp3" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"))
+                        : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , ( window.location.href="https://happierme.app/adults/feel-better-now"))
+                        : "ourStory" == e ? (logevent("click_our_story_footer_web", "index.php") ,   (window.location.href = "../pages/about_us.php") )
+                        : "testimonialFooter" == e ? (logevent("click_testimonial_footer_web", "index.php") , (window.location.href = "https://happierme.app/adults/testimonials"))
+                        : "contactUsFooter" == e ? (logevent("click_contact_us_footer_web", "index.php") , (window.location.href="https://happierme.app/adults/contact-us")) : ''
                 });
         });
     }, 1e3),

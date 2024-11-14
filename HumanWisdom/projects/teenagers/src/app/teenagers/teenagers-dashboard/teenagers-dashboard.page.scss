@@ -231,4 +231,19 @@ nav
     border-radius: 10px; 
     overflow: hidden; 
   }
+  @media (min-width: 1500px) {
+    .crimg {
+      margin-left: 31px;
+      width: 72px;
+      height: 72px;
+    }
+  }
+  @media (min-width: 1500px) {
+    .mdpd_title {
+      margin-left: 16px;
+      max-width: 10rem;
+      font-size: 18px;
+    }
+  }
+
   
