@@ -137,6 +137,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
+    this.VerifyGoogle();
   }
 
   @HostListener('document:mousedown', ['$event'])
@@ -145,6 +146,38 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.actclosemodal?.nativeElement?.click();
       this.closeModal.emit(false);
     }
+  }
+
+  private VerifyGoogle() {
+    this.authService.authState.subscribe(
+      (user) => {
+        if (user.provider?.toLowerCase() == 'google') {
+          this.user = user;
+          this.idToken = user.idToken;
+          this.socialFirstName = user.firstName;
+          this.socialLastName = user.lastName;
+          this.socialEmail = user.email;
+
+          this.services
+            .verifyGoogle({
+              TokenID: this.idToken,
+              FName: this.socialFirstName,
+              LName: this.socialLastName,
+              Email: this.socialEmail,
+              VCode: "",
+              Pwd: "",
+            })
+            .subscribe((res) => {
+              if(res){
+                this.setUpLoginConfiguration(res);
+              }
+            });
+        }
+      },
+      (error) => console.log(error),
+      () => {
+      }
+    );
   }
 
   googleLogin(d = '') {
@@ -784,6 +817,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     });
   }
 
+
   public setUpLoginConfiguration(res: any) {
     if (res.UserId === 0) {
       this.content = "You have entered wrong credentials. Please try again.";
@@ -986,11 +1020,30 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                     }
 
                   } else {
+                    if (this.router.url.includes('/redeem-subscription') || this.router.url.includes('/redeem-gift-card')) {
+                        this.secondpage = false;
+                        this.thirdpage = false;
+                        this.fifthpage = false;
+                        this.actclosemodal?.nativeElement?.click();
+                        this.closeModal.emit(false);
+                        this.enabledModal = false;
+                        let type = 'adults'
+                        if( SharedService.ProgramId == 11){
+                          type='teenagers';
+                        }
+                        if(this.router.url.includes('/redeem-subscription')){
+                          this.router.navigate([`/${type}/redeem-subscription`]);
+                        }
+                        else if(this.router.url.includes('/redeem-gift-card')){
+                          this.router.navigate([`/${type}/redeem-gift-card`]);
+                        } 
+                    }else{
                     if (SharedService.ProgramId === 9) {
                       this.router.navigate(["/adults/repeat-user"]);
                     } else if (SharedService.ProgramId === 11) {
-                      this.router.navigate(["/teenagers/repeat-user"]);
+                      this.router.navigate(["/teenazgers/repeat-user"]);
                     }
+                  }
                   }
                 }
               }
