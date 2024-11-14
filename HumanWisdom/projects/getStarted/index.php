@@ -254,7 +254,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                <a class="item" data-aos="fade-up" data-aos-delay="300">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -281,7 +281,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                <a class="item" data-aos="fade-up" data-aos-delay="400">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -307,7 +307,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300">
+                <a class="item" data-aos="fade-up" data-aos-delay="500">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -333,7 +333,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400">
+                <a class="item" data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -359,7 +359,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="500">
+                <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -385,7 +385,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="600">
+                <a class="item">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
