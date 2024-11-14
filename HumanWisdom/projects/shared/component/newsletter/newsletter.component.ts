@@ -9,8 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent implements OnInit {
-  constructor(public fb: UntypedFormBuilder, private service: OnboardingService, private location:Location) { }
-
+  constructor(public fb: UntypedFormBuilder, private service: OnboardingService, public location:Location) { }
   public newsletterForm: any;
   public enableAlert = false;
   public enableErrorAlert = false;
@@ -35,11 +34,12 @@ export class NewsletterComponent implements OnInit {
       if (res) {
         this.content = res;
          this.enableAlert = true;
-         this.newsletterForm.reset();
-         setTimeout(()=> {
           this.enableAlert = false;
           this.content = ''
-         }, 5000)
+         this.newsletterForm.reset();
+         this.location.back();
+        //  setTimeout(()=> {
+        //  }, 5000)
       }
     },(err)=> {
       this.content = err['error']['Message'];
