@@ -34,10 +34,7 @@ export class NewsletterComponent implements OnInit {
       if (res) {
         this.content = res;
          this.enableAlert = true;
-          this.enableAlert = false;
-          this.content = ''
          this.newsletterForm.reset();
-         this.location.back();
         //  setTimeout(()=> {
         //  }, 5000)
       }
@@ -55,7 +52,7 @@ export class NewsletterComponent implements OnInit {
     this.location.back()
   }
 
- 
+
   get Name() {
     return this.newsletterForm?.get("Name");
   }
@@ -66,8 +63,9 @@ export class NewsletterComponent implements OnInit {
   getAlertcloseEvent(event) {
     if(event=='ok'){
       this.enableAlert = false;
-      this.location.back;
-      
+      this.content = '';
+      this.location.back();
+
     }else{
       this.enableAlert = false;
     }
