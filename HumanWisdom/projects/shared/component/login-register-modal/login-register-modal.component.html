@@ -117,34 +117,42 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                <button type="button" class="btn btn_connect_with"  (click)="fbLogin()">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_facebook.svg"
-                    class="">
-                </button>
-              </div>
-
-          
-
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
-                <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter"></div>
-                <!-- <button type="button" class="btn btn_connect_with" (click)="googleLogin()" >
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_google.svg"
-                    class="">
-                </button> -->
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft">
-                <button type="button" class="btn btn_connect_with">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_apple.svg"
-                    class="">
-                </button>
-              </div>
-             
+          <div class="row center_flex mt15px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="fbLogin('signup')">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+              </button>
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+            
+             
+              <div class="google-login-socialx" id="googleLoginbtn">
+                <asl-google-signin-button  type='icon' size='large' class="googlelogin">
+                </asl-google-signin-button>
+               </div>
+               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginGoogle()">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
+             
+              </button>
+              <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
+              <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
+              </button> -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="signInWithApple('signup')">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">
+              </button>
+            </div>
+            <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tcenter pr0px">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginWithInstagram()">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
+              </button>
+              
+            </div> -->
           </div>
+        </div>
 
           <div class="row mtb30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -292,31 +300,43 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row center_flex mt15px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-              <button type="button" class="btn btn_connect_with" (click)="fbLogin()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_facebook.svg" class="">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="fbLogin('signup')">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
               </button>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
-              <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter"></div>
-              <!-- <button type="button" class="btn btn_connect_with" (click)="googleLogin()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_google.svg" class="">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+            
+             
+              <div class="google-login-socialx" id="googleLoginbtn">
+                <asl-google-signin-button  type='icon' size='large' class="googlelogin">
+                </asl-google-signin-button>
+               </div>
+               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginGoogle()">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
+             
+              </button>
+              <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
+              <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
               </button> -->
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft">
-              <button type="button" class="btn btn_connect_with">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_apple.svg" class="">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="signInWithApple('signup')">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">
               </button>
             </div>
-
-
-          
+            <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tcenter pr0px">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginWithInstagram()">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
+              </button>
+              
+            </div> -->
           </div>
         </div>
+
 
         <div class="row mtb30px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">

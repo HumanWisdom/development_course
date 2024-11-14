@@ -171,7 +171,7 @@
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
-                  <a href="https://happierme.app/adults/intro/intro-carousel" class="">
+                  <a id="adultsWeb"  class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Adults
                     </button>
@@ -179,7 +179,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
-                  <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                  <a id ="teensWeb" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
                     </button>
@@ -572,7 +572,7 @@
 
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                  <a class="" id="openInApp1" >
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -606,7 +606,7 @@
 
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
+                  <a class="" id="openInApp2">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -640,7 +640,7 @@
 
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
+                  <a class="" id="openInApp3">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -1423,7 +1423,7 @@
                         No matter what the challenge you face, we have breathing exercises, mediations and videos to help you feel better now.
                       </h5>
 
-                      <a href="https://happierme.app/adults/feel-better-now">
+                      <a id="exploreAppWeb">
                         <h4 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                           Explore on app
                         </h4>

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { OnboardingService } from '../../services/onboarding.service';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
   styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent implements OnInit {
-  constructor(public fb: UntypedFormBuilder, private service: OnboardingService) { }
-
+  constructor(public fb: UntypedFormBuilder, private service: OnboardingService, public location:Location) { }
   public newsletterForm: any;
   public enableAlert = false;
   public enableErrorAlert = false;
@@ -34,10 +35,8 @@ export class NewsletterComponent implements OnInit {
         this.content = res;
          this.enableAlert = true;
          this.newsletterForm.reset();
-         setTimeout(()=> {
-          this.enableAlert = false;
-          this.content = ''
-         }, 5000)
+        //  setTimeout(()=> {
+        //  }, 5000)
       }
     },(err)=> {
       this.content = err['error']['Message'];
@@ -49,7 +48,11 @@ export class NewsletterComponent implements OnInit {
     })
   }
 
- 
+  goBack(){
+    this.location.back()
+  }
+
+
   get Name() {
     return this.newsletterForm?.get("Name");
   }
@@ -57,8 +60,14 @@ export class NewsletterComponent implements OnInit {
     return this.newsletterForm?.get("EmailID");
   }
 
-  getAlertcloseEvent() {
-    this.enableAlert = false;
-    this.content = '';
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.content = '';
+      this.location.back();
+
+    }else{
+      this.enableAlert = false;
+    }
   }
 }

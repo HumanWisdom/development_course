@@ -6,7 +6,15 @@
     <meta property="title" content="HappierMe for Teenagers">
     <meta property="description" content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.">
     <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
-    
+    <meta property="og:title" content="HappierMe:For Teens & Adults">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg>
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
+
+
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
