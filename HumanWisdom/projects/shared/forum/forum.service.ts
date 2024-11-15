@@ -41,6 +41,9 @@ export class ForumService {
     },
     {
       value: 5, label: 'Ask a coach'
+    },
+    {
+      value: 6, label: 'School'
     }];
   }
 
