@@ -1,43 +1,72 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_03" role="main">				
-  <!-- Class -->  
+<div class="right_col mc_03" role="main">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex bg_stake col_cw">
         <div class="x_panel p0 center_flex">
           <div class="x_content p0">
-            <form>             
 
-              <div class="row">
+            <form>
+
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive animate_rotate_scale se_owl ">                  
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive animate_rotate_scale se_owl ">
                   <div class="prelative center_flex">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_02.svg" alt="" class="prelative">
                     <h6 class="fw_700 fs_30px lh_35px fc_ffffff se_wpts_count center_flex">
                       {{points}}
                     </h6>
-                  </div>   
+                  </div>
                 </div>
-              </div>             
+              </div>
 
               <h1 class="fw_500 fs_30px lh_35px fc_ffffff tcenter wp_txt">
                 Well done!
-              </h1>           
+              </h1> -->
 
-              <h1 class="fw_500 fs_16px lh_19px fc_ffffff tcenter">
+              <!-- <h1 class="fw_500 fs_16px lh_19px fc_ffffff tcenter">
                 You’ve earned {{points}} points. Check your Profile for more details.
-              </h1>    
-                            
-              <ng-content></ng-content>   
-              
+              </h1> -->
+
+              <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                <!-- <div class="prelative center_flex"> -->
+                <circle-progress [percent]="points" [radius]="56" [space]="-10" [outerStrokeWidth]="10"
+                  [innerStrokeWidth]="10" [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'"
+                  [innerStrokeColor]="'rgba(255,255,255,0.2)'" [showSubtitle]="false" [animation]="true" [showTitle]="true"
+                  [animationDuration]="300">
+                </circle-progress>
+
+                <!-- </div> -->
+              </div>
+
+              <h1 class="fw_500 fs_30px lh_35px m-b-30 fc_ffffff tcenter wp_txt">
+                Your wellness score is {{points}}
+              </h1>
+
+              <h1 class="fw_500 m-b-30 fs_16px lh_19px fc_ffffff tcenter" *ngIf="parseint(points) < 40">
+                Sorry that you’re not feeling great. You’ve come to the right place. There are many resources in the app
+                to help you boost your wellbeing and feel happier.
+              </h1>
+
+              <h1 class="fw_500 m-b-30 fs_16px lh_19px fc_ffffff tcenter" *ngIf="parseint(points) > 41 && parseint(points) < 60">
+                Your wellness journey begins here. There are so many resources in the app to help you be happier and
+                succeed in life
+              </h1>
+
+              <h1 class="fw_500 m-b-30 fs_16px lh_19px fc_ffffff tcenter" *ngIf="parseint(points) > 60">
+                You’re doing great! Your wellness score is above average. There are many resources in the app to help
+                you to grow even further as a person and succeed in every way in life </h1>
+
+              <ng-content></ng-content>
+
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class --> 
-</div>
-<!-- /page content -->
+  <!--/Class -->
+  <!-- /page content -->
