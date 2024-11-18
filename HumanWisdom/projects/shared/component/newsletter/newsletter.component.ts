@@ -16,15 +16,18 @@ export class NewsletterComponent implements OnInit {
   public errMsg = '';
   public successMsg = '';
   public content = ''
+  showWarning = false;
+
 
   ngOnInit() {
     this.newsletterForm = this.fb.group({
       EmailID: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      Name: ['', [Validators.required, Validators.minLength(2)]],
+      Name: ['', [Validators.required, Validators.minLength(3)]],
     },)
   }
 
   submitNewsletter() {
+   
     this.enableErrorAlert = false;
     let data = {
       "Name": this.newsletterForm.get('Name').value,
@@ -40,6 +43,9 @@ export class NewsletterComponent implements OnInit {
       }
     },(err)=> {
       this.content = err['error']['Message'];
+      this.showWarning=true;
+
+
       this.enableAlert = true;
       setTimeout(()=> {
         this.enableAlert = false;
@@ -61,7 +67,7 @@ export class NewsletterComponent implements OnInit {
   }
 
   getAlertcloseEvent(event) {
-    if(event=='ok'){
+    if(event=='ok' && this.showWarning==false ){
       this.enableAlert = false;
       this.content = '';
       this.location.back();
