@@ -218,7 +218,6 @@ export class MyHammerConfig extends HammerGestureConfig {
       "imageSrc": "",
       "imageHeight": 105,
       "imageWidth": 105,
-      "showImage": true,
       "showBackground": false
     })
   ],

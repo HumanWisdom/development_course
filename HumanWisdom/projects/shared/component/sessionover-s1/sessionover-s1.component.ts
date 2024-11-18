@@ -9,11 +9,15 @@ export class SessionoverS1Component implements OnInit {
   @Input() bg: string;
   @Input() points: string;
   @Input() progress: string;
- 
+
 
 
   constructor() { }
 
   ngOnInit() {}
+
+  parseint(val) {
+    return parseInt(val)
+  }
 
 }
