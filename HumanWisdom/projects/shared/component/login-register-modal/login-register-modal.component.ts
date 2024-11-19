@@ -1061,7 +1061,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    const REDIRECT_API_URL = "https://staging.humanwisdom.info/api/verifyAppleToken_html";
+    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/verifyAppleToken_html";
     var popup = window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL
@@ -1090,12 +1090,12 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         }
       } else {
         clearInterval(intervalId);
-        const token = localStorage.getItem('token');
-        if(token!=null || token!=''){
-          popup.close();
-          this.handleAppleLoginResponse();
-        }
-        console.log('Popup was closed');
+        // const token = localStorage.getItem('token');
+        // if(token!=null || token!=''){
+        //   popup.close();
+        //   this.handleAppleLoginResponse();
+        // }
+        // console.log('Popup was closed');
       
       }
     }, 1000); // Poll every 500 milliseconds
