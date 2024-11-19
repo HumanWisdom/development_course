@@ -12,6 +12,7 @@ import { CommonModule } from "@angular/common";
 import { SharedModule } from "../../shared.module";
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,SocialAuthService, SocialLoginModule } from "@abacritt/angularx-social-login";
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { environment } from "../../../../projects/environments/environment";
 @Component({
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
@@ -1060,16 +1061,64 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    const REDIRECT_API_URL =
-      "https://www.humanwisdom.info/api/verifyAppleToken_html";
-
-    window.open(
+    const REDIRECT_API_URL = "https://staging.humanwisdom.info/api/verifyAppleToken_html";
+    var popup = window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL
       )}&response_type=code id_token&scope=name email&response_mode=form_post`,
-      "_self"
+    '_blank',
+    'width=500,height=600'
     );
+    this.pollPopup(popup);
+
   }
+
+  private pollPopup(popup): void {
+    const intervalId = setInterval(() => {
+      if (popup && !popup.closed) {
+        try {
+         if(localStorage.getItem('isloggedin')=='T'){
+           popup.close();
+           this.actclosemodal?.nativeElement?.click();
+           this.closeModal.emit(false);
+           this.handleAppleLoginResponse();
+         }
+        } catch (e) {
+          clearInterval(intervalId);
+          // Handle cross-origin access errors
+          console.error('Unable to access popup location:', e);
+        }
+      } else {
+        clearInterval(intervalId);
+        const token = localStorage.getItem('token');
+        if(token!=null || token!=''){
+          popup.close();
+          this.handleAppleLoginResponse();
+        }
+        console.log('Popup was closed');
+      
+      }
+    }, 1000); // Poll every 500 milliseconds
+  }
+
+  handleAppleLoginResponse() {
+    const token = localStorage.getItem('token');
+    let programType='adults';
+    if(SharedService.ProgramId==11){
+      programType = 'teenagers';
+    }
+     if (token) {
+      if(this.router.url.includes('/redeem-subscription')){
+        this.router.navigate([`/${programType}/redeem-subscription`]);
+      }
+      else if(this.router.url.includes('/redeem-gift-card')){
+        this.router.navigate([`/${programType}/redeem-gift-card`]);
+      } 
+    } 
+  }
+  
+
+
 
   getAlertcloseEvent(event) {
     this.content = '';
