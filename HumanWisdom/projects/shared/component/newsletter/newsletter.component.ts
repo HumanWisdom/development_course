@@ -37,6 +37,7 @@ export class NewsletterComponent implements OnInit {
       if (res) {
         this.content = res;
          this.enableAlert = true;
+         this.showWarning=false;
          this.newsletterForm.reset();
         //  setTimeout(()=> {
         //  }, 5000)

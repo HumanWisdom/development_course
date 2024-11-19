@@ -61,7 +61,8 @@ constructor(private router: Router,private location: Location, private servive: 
   readMore(str) {
     this.logeventservice.logEvent('click_testimonial_' + str);
     SharedService.setDataInLocalStorage(Constant.TestimonialId, str);
-    this.router.navigate(['/adults/testimonials']);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonials`)
+
   }
   CheckIfUserIsLoggedIn() {
     if (SharedService.getDataFromLocalStorage(Constant.Isloggedin) == Constant.ShortTrue) {
@@ -81,6 +82,7 @@ constructor(private router: Router,private location: Location, private servive: 
   }
 
   routeToTestimonial(){
+    
     this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonials`)
   }
 }
