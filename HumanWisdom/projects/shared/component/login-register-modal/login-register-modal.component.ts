@@ -1078,10 +1078,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       if (popup && !popup.closed) {
         try {
          if(localStorage.getItem('isloggedin')=='T'){
-           popup.close();
-           this.actclosemodal?.nativeElement?.click();
-           this.closeModal.emit(false);
+        
+           setTimeout(() => {
+            this.actclosemodal?.nativeElement?.click();
+            this.closeModal.emit(false);
+           // popup.close();
            this.handleAppleLoginResponse();
+           },500);
          }
         } catch (e) {
           clearInterval(intervalId);
@@ -1090,14 +1093,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         }
       } else {
         clearInterval(intervalId);
-        // const token = localStorage.getItem('token');
-        // if(token!=null || token!=''){
-        //   popup.close();
-        //   this.handleAppleLoginResponse();
-        // }
-        // console.log('Popup was closed');
+        const token = localStorage.getItem('token');
+        if(token!=null || token!=''){
+         // popup.close();
+        }
+        console.log('Popup was closed');
       
-      }
+    }
     }, 1000); // Poll every 500 milliseconds
   }
 
