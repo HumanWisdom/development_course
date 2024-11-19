@@ -47,20 +47,22 @@
           </div> -->
           <div class="form-group ml-field-name">
             
+            <p style="color: red !important;" *ngIf="(Name.errors?.required || Name.errors?.minlength) && Name?.touched">Error! Please enter a name of min. 3 characters. </p>
+
             <input type="text" formControlName="Name" class="form-control fc_01" placeholder="Your name" autocomplete="name"
               x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off" required>
               <div class="fc_img">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg"style="margin-top:-70px;"
                   class="img-responsive">
               </div>
-             
+
                 <!-- <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name is required</small> -->
                 <!-- <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name must be at least 6 characters</small> -->
               
             </div>
           <div class="form-group ml-field-email ml-validate-required ml-validate-email">
-            <p *ngIf="EmailID.errors?.required && EmailID?.touched">Email is required. </p>
-            <strong *ngIf="EmailID.errors?.pattern && EmailID?.touched">Error! Please enter a vaid email. </strong>
+            <!-- <p *ngIf="EmailID.errors?.required && EmailID?.touched">Email is required. </p> -->
+            <p  style="color: red !important;" *ngIf="(EmailID.errors?.required || EmailID.errors?.pattern) && EmailID?.touched">Error! Please enter a vaid email. </p>
             <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" formControlName="EmailID" type="email" class="form-control fc_01"
               placeholder="Your e-mail address*" autocomplete="email" x-autocompletetype="email" spellcheck="false"
               autocapitalize="off" autocorrect="off" required>
@@ -74,7 +76,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
         
         <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
-        <button type="submit" class="primary" (click)="submitNewsletter()" [disabled]="newsletterForm.invalid">
+        <button type="submit" class="primary" (click)="submitNewsletter()" [disabled]="!newsletterForm.valid">
           Signup 
         </button>
         

@@ -46,7 +46,7 @@ isUseCloseButton:boolean;
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
       const {isUseCloseButton} = window.history.state;
       this.isUseCloseButton=isUseCloseButton;
-       
+
       if (this.service.previousUrl === '/' + SharedService.getprogramName() + '/wisdom-survey') {
         this.enableDash = true;
       }
@@ -69,6 +69,10 @@ isUseCloseButton:boolean;
   prev(){
     this.router.navigateByUrl('/' + SharedService.getprogramName() + '/discovering-wisdom/s27020');
 
+  }
+
+  parseint(val) {
+    return parseInt(val)
   }
 
 }

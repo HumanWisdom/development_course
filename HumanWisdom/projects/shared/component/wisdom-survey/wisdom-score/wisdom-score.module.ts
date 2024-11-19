@@ -8,6 +8,7 @@ import { WisdomScorePageRoutingModule } from './wisdom-score-routing.module';
 
 import { WisdomScorePage } from './wisdom-score.page';
 import { SharedModule } from '../../../shared.module';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   imports: [
@@ -15,7 +16,19 @@ import { SharedModule } from '../../../shared.module';
     FormsModule,
     IonicModule,
     WisdomScorePageRoutingModule,
-    SharedModule
+    SharedModule,
+    NgCircleProgressModule.forRoot({
+      "radius": 75,
+      "space": -5,
+      "outerStrokeWidth": 5,
+      "outerStrokeColor": "#76C2AF",
+      "innerStrokeColor": "#ffffff",
+      "innerStrokeWidth": 5,
+      "imageSrc": "",
+      "imageHeight": 105,
+      "imageWidth": 105,
+      "showBackground": false
+    })
   ],
   declarations: [WisdomScorePage]
 })
