@@ -1115,6 +1115,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       }
       else if(this.router.url.includes('/redeem-gift-card')){
         this.router.navigate([`/${programType}/redeem-gift-card`]);
+      }else{
+        this.router.navigate([SharedService.getDashboardUrls()]);
       } 
     } 
   }
