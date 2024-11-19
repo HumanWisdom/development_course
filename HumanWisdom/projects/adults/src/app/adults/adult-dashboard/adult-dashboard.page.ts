@@ -1356,6 +1356,16 @@ export class AdultDashboardPage implements OnInit {
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("token", JSON.stringify(res.access_token))
+      const queryString = this.router.url.split('?')[1];
+      if(queryString){
+        const params = new URLSearchParams(queryString);
+        const code = params.get('authtoken');
+        if(code && code != null){
+          setTimeout(() => {
+          window.close();
+          }, 200);
+        }
+      }
       if (this.saveUsername == true) {
         localStorage.setItem("userId", JSON.stringify(this.userId))
         localStorage.setItem("userEmail", JSON.stringify(res.Email))
