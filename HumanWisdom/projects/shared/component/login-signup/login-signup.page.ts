@@ -362,16 +362,12 @@ export class LoginSignupPage implements OnInit {
     this.renderGoogle = true;
   }
 
-
-
-
   private onSuccess(googleUser: any): void {
     console.log('Logged in as: ' + googleUser);
     this.idToken = googleUser.getAuthResponse().id_token;
     this.socialFirstName = googleUser.getBasicProfile().getGivenName();
     this.socialLastName = googleUser.getBasicProfile().getFamilyName()
     this.socialEmail = googleUser.getBasicProfile().getEmail()
-    // this.VerifyGoogle();
     this.service
       .verifyGoogle({
         TokenID: this.idToken,
@@ -383,197 +379,12 @@ export class LoginSignupPage implements OnInit {
       })
       .subscribe((res) => {
         if (res) {
-          this.loginResponse = res;
-          this.service.getuser(res.UserId).subscribe(userInfo => {
-            if (userInfo) {
-              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-            }
-          })
-          localStorage.setItem("guest", "F");
-          localStorage.setItem("remember", "T");
-          localStorage.setItem("socialLogin", "T");
-          localStorage.setItem(
-            "mediaAudio",
-            JSON.stringify(this.mediaAudio)
-          );
-          localStorage.setItem(
-            "mediaVideo",
-            JSON.stringify(this.mediaVideo)
-          );
-          localStorage.setItem("video", JSON.stringify(this.video));
-          localStorage.setItem("audio", JSON.stringify(this.audio));
-          localStorage.setItem("btnclick", "F");
-          localStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          sessionStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          localStorage.setItem(
-            "token",
-            JSON.stringify(this.loginResponse.access_token)
-          );
-          localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-          localStorage.setItem("userId", JSON.stringify(this.userId));
-          localStorage.setItem("email", this.socialEmail);
-          localStorage.setItem("FnName", this.socialFirstName);
-          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-          localStorage.setItem("LName", this.socialLastName);
-          localStorage.setItem("pswd", "");
-          localStorage.setItem("name", this.loginResponse.Name);
-          localStorage.setItem("first", "T");
-          if (parseInt(this.loginResponse.UserId) == 0) {
-            this.showAlert = true;
-            this.content = "You have entered wrong credentials. Please try again.";
-            this.enableAlert = true;
-            this.email = "";
-            this.password = "";
-          }
-          else {
-            this.showAlert = false;
-            this.userId = this.loginResponse.UserId;
-            this.userName = this.loginResponse.Name;
-            localStorage.setItem(
-              "loginResponse",
-              JSON.stringify(this.loginResponse)
-            );
-            sessionStorage.setItem(
-              "loginResponse",
-              JSON.stringify(this.loginResponse)
-            );
-            localStorage.setItem("userId", JSON.stringify(this.userId));
-            localStorage.setItem(
-              "token",
-              JSON.stringify(this.loginResponse.access_token)
-            );
-            if (this.saveUsername == true) {
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem(
-                "userEmail",
-                JSON.stringify(this.socialEmail)
-              );
-              localStorage.setItem(
-                "userName",
-                JSON.stringify(this.userName)
-              );
-            } else {
-              sessionStorage.setItem("userId", JSON.stringify(this.userId));
-              sessionStorage.setItem(
-                "userEmail",
-                JSON.stringify(this.socialEmail)
-              );
-              sessionStorage.setItem(
-                "userName",
-                JSON.stringify(this.userName)
-              );
-            }
-            this.service.getuser(res.UserId).subscribe(userInfo => {
-              if (userInfo) {
-                localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-              }
-            })
-            let pers = localStorage.getItem("personalised");
-            let persub = localStorage.getItem("personalised subscription");
-            let acceptCookie = localStorage.getItem("activeCode");
-            let subscribePage = localStorage.getItem("subscribepage");
-            let option = localStorage.getItem("introoption");
-            let giftwisdom = localStorage.getItem("giftwisdom");
-            const url = SharedService.UrlToRedirect;
-            if (url != null) {
-              SharedService.UrlToRedirect = null;
-              this.router.navigate([url]);
-            }
-            else if (option === "T") {
-              localStorage.setItem("introoption", "F");
-              localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/intro/personalised-for-you"]);
-            }
-            else {
-              if (acceptCookie === "T" || subscribePage === "T") {
-                localStorage.setItem("isloggedin", "T");
-                if (acceptCookie === "T") {
-                  localStorage.setItem("activeCode", "F");
-                }
-                if (subscribePage === "T") {
-                  localStorage.setItem("subscribepage", "F");
-                }
-                if (giftwisdom === 'T') {
-                  this.router.navigate(["/onboarding/add-to-cart"]);
-                } else if (this.loginResponse.Subscriber === 0) {
-                  this.router.navigate(["/onboarding/add-to-cart"]);
-                } else {
-                  this.router.navigate(["/onboarding/viewcart"])
-                }
-              }
-              else {
-                localStorage.setItem("isloggedin", "T");
-                if (pers && persub && pers === "T") {
-                  this.router.navigate(["/onboarding/viewcart"], {
-                    state: { quan: "1", plan: persub },
-                  });
-                }
-                else {
-                  localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                  if (this.loginResponse?.NoOfVisits === 1) {
-                    localStorage.setItem(
-                      "signupfirst", 'F'
-                    );
-                    /* if(SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
-                    }else if(SharedService.ProgramId === 11) {
-                      // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                      this.router.navigate(["/teenagers/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
-                    } */
-                    this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
-                      state: {
-                        routedFromLogin: true,
-                      }
-                    });
-
-                  }
-                  else {
-                    /* if(SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/repeat-user"]);
-                    }else if(SharedService.ProgramId === 11) {
-                   //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                      this.router.navigate(["/teenagers/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
-                    }
-                    } */
-
-                    this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
-                  }
-                }
-              }
-
-              /* if(this.urlEmail)
-              {
-                this.service.verifyUser(this.userId)
-                .subscribe(res=>{
-  
-                })
-              }*/
-            }
-          }
+          this.setUpLoginConfiguration(res);
         }
-      });
-
+      })
   }
 
-  signInWithGoogle(){
+  signInWithGoogle() {
     var element = document.getElementById('googleLoginbtn');
     element.click();
   }
@@ -602,192 +413,8 @@ export class LoginSignupPage implements OnInit {
               Pwd: "",
             })
             .subscribe((res) => {
-              if (res) {
-                this.loginResponse = res;
-                this.service.getuser(res.UserId).subscribe(userInfo => {
-                  if (userInfo) {
-                    localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-                  }
-                })
-                localStorage.setItem("guest", "F");
-                localStorage.setItem("remember", "T");
-                localStorage.setItem("socialLogin", "T");
-                localStorage.setItem(
-                  "mediaAudio",
-                  JSON.stringify(this.mediaAudio)
-                );
-                localStorage.setItem(
-                  "mediaVideo",
-                  JSON.stringify(this.mediaVideo)
-                );
-                localStorage.setItem("video", JSON.stringify(this.video));
-                localStorage.setItem("audio", JSON.stringify(this.audio));
-                localStorage.setItem("btnclick", "F");
-                localStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                sessionStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                localStorage.setItem(
-                  "token",
-                  JSON.stringify(this.loginResponse.access_token)
-                );
-                localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-                localStorage.setItem("userId", JSON.stringify(this.userId));
-                localStorage.setItem("email", this.socialEmail);
-                localStorage.setItem("FnName", this.socialFirstName);
-                localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-                localStorage.setItem("LName", this.socialLastName);
-                localStorage.setItem("pswd", "");
-                localStorage.setItem("name", this.loginResponse.Name);
-                localStorage.setItem("first", "T");
-                if (parseInt(this.loginResponse.UserId) == 0) {
-                  this.showAlert = true;
-                  this.content = "You have entered wrong credentials. Please try again.";
-                  this.enableAlert = true;
-                  this.email = "";
-                  this.password = "";
-                }
-                else {
-                  this.showAlert = false;
-                  this.userId = this.loginResponse.UserId;
-                  this.userName = this.loginResponse.Name;
-                  localStorage.setItem(
-                    "loginResponse",
-                    JSON.stringify(this.loginResponse)
-                  );
-                  sessionStorage.setItem(
-                    "loginResponse",
-                    JSON.stringify(this.loginResponse)
-                  );
-                  localStorage.setItem("userId", JSON.stringify(this.userId));
-                  localStorage.setItem(
-                    "token",
-                    JSON.stringify(this.loginResponse.access_token)
-                  );
-                  if (this.saveUsername == true) {
-                    localStorage.setItem("userId", JSON.stringify(this.userId));
-                    localStorage.setItem(
-                      "userEmail",
-                      JSON.stringify(this.socialEmail)
-                    );
-                    localStorage.setItem(
-                      "userName",
-                      JSON.stringify(this.userName)
-                    );
-                  } else {
-                    sessionStorage.setItem("userId", JSON.stringify(this.userId));
-                    sessionStorage.setItem(
-                      "userEmail",
-                      JSON.stringify(this.socialEmail)
-                    );
-                    sessionStorage.setItem(
-                      "userName",
-                      JSON.stringify(this.userName)
-                    );
-                  }
-                  this.service.getuser(res.UserId).subscribe(userInfo => {
-                    if (userInfo) {
-                      localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-                    }
-                  })
-                  let pers = localStorage.getItem("personalised");
-                  let persub = localStorage.getItem("personalised subscription");
-                  let acceptCookie = localStorage.getItem("activeCode");
-                  let subscribePage = localStorage.getItem("subscribepage");
-                  let option = localStorage.getItem("introoption");
-                  let giftwisdom = localStorage.getItem("giftwisdom");
-                  const url = SharedService.UrlToRedirect;
-                  if (url != null) {
-                    SharedService.UrlToRedirect = null;
-                    this.router.navigate([url]);
-                  }
-                  else if (option === "T") {
-                    localStorage.setItem("introoption", "F");
-                    localStorage.setItem("isloggedin", "T");
-                    this.router.navigate(["/intro/personalised-for-you"]);
-                  }
-                  else {
-                    if (acceptCookie === "T" || subscribePage === "T") {
-                      localStorage.setItem("isloggedin", "T");
-                      if (acceptCookie === "T") {
-                        localStorage.setItem("activeCode", "F");
-                      }
-                      if (subscribePage === "T") {
-                        localStorage.setItem("subscribepage", "F");
-                      }
-                      if (giftwisdom === 'T') {
-                        this.router.navigate(["/onboarding/add-to-cart"]);
-                      } else if (this.loginResponse.Subscriber === 0) {
-                        this.router.navigate(["/onboarding/add-to-cart"]);
-                      } else {
-                        this.router.navigate(["/onboarding/viewcart"])
-                      }
-                    }
-                    else {
-                      localStorage.setItem("isloggedin", "T");
-                      if (pers && persub && pers === "T") {
-                        this.router.navigate(["/onboarding/viewcart"], {
-                          state: { quan: "1", plan: persub },
-                        });
-                      }
-                      else {
-                        localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                        if (this.loginResponse?.NoOfVisits === 1) {
-                          localStorage.setItem(
-                            "signupfirst", 'F'
-                          );
-                          /* if(SharedService.ProgramId === 9) {
-                            this.router.navigate(["/adults/change-topic"], {
-                              state: {
-                                routedFromLogin: true,
-                              }
-                            });
-                          }else if(SharedService.ProgramId === 11) {
-                            // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                            this.router.navigate(["/teenagers/change-topic"], {
-                              state: {
-                                routedFromLogin: true,
-                              }
-                            });
-                          } */
-                          this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-
-                        }
-                        else {
-                          /* if(SharedService.ProgramId === 9) {
-                            this.router.navigate(["/adults/repeat-user"]);
-                          }else if(SharedService.ProgramId === 11) {
-                         //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                            this.router.navigate(["/teenagers/change-topic"], {
-                              state: {
-                                routedFromLogin: true,
-                              }
-                            });
-                          }
-                          } */
-
-                          this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
-                        }
-                      }
-                    }
-
-                    /* if(this.urlEmail)
-                    {
-                      this.service.verifyUser(this.userId)
-                      .subscribe(res=>{
-  
-                      })
-                    }*/
-                  }
-                }
+              if(res){
+                this.setUpLoginConfiguration(res);
               }
             });
         }
@@ -797,7 +424,6 @@ export class LoginSignupPage implements OnInit {
       }
     );
   }
-
 
   fbLogin(reqtype) {
     if (reqtype == "signup")
@@ -825,175 +451,9 @@ export class LoginSignupPage implements OnInit {
             Pwd: "",
           })
           .subscribe((res) => {
-            if (res) {
-
-              this.loginResponse = res;
-              localStorage.setItem("socialLogin", "T");
-              localStorage.setItem(
-                "mediaAudio",
-                JSON.stringify(this.mediaAudio)
-              );
-              localStorage.setItem(
-                "mediaVideo",
-                JSON.stringify(this.mediaVideo)
-              );
-              localStorage.setItem("video", JSON.stringify(this.video));
-              localStorage.setItem("audio", JSON.stringify(this.audio));
-              localStorage.setItem("remember", "T");
-              localStorage.setItem("guest", "F");
-              localStorage.setItem("btnclick", "F");
-              localStorage.setItem("FnName", this.socialFirstName);
-              localStorage.setItem("LName", this.socialLastName);
-              localStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              sessionStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              localStorage.setItem(
-                "token",
-                JSON.stringify(this.loginResponse.access_token)
-              );
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-              localStorage.setItem("email", this.socialEmail);
-              localStorage.setItem("pswd", "");
-              localStorage.setItem("name", this.loginResponse.Name);
-              localStorage.setItem("first", "T");
-              if (parseInt(this.loginResponse.UserId) == 0) {
-                this.showAlert = true;
-                this.content = "You have entered wrong credentials. Please try again.";
-                this.enableAlert = true;
-                this.email = "";
-                this.password = "";
-              } else {
-                this.showAlert = false;
-                this.userId = this.loginResponse.UserId;
-                this.userName = this.loginResponse.Name;
-                localStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                sessionStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                localStorage.setItem("userId", JSON.stringify(this.userId));
-                localStorage.setItem(
-                  "token",
-                  JSON.stringify(this.loginResponse.access_token)
-                );
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId));
-                  localStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  localStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                } else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
-                  sessionStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  sessionStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                }
-                this.service.getuser(res.UserId).subscribe(userInfo => {
-                  if (userInfo) {
-                    localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-                  }
-                })
-                let pers = localStorage.getItem("personalised");
-                let persub = localStorage.getItem("personalised subscription");
-                let acceptCookie = localStorage.getItem("activeCode");
-                let subscribePage = localStorage.getItem("subscribepage");
-                let option = localStorage.getItem("introoption");
-                let giftwisdom = localStorage.getItem("giftwisdom");
-                const url = SharedService.UrlToRedirect;
-                if (url != null) {
-                  SharedService.UrlToRedirect = null;
-                  this.router.navigate([url]);
-                }
-                else if (option === "T") {
-                  localStorage.setItem("introoption", "F");
-                  localStorage.setItem("isloggedin", "T");
-                  this.router.navigate(["/intro/personalised-for-you"]);
-                } else {
-                  if (acceptCookie === "T" || subscribePage === "T") {
-                    localStorage.setItem("isloggedin", "T");
-                    if (acceptCookie === "T") {
-                      localStorage.setItem("activeCode", "F");
-                    }
-                    if (subscribePage === "T") {
-                      localStorage.setItem("subscribepage", "F");
-                    }
-                    if (giftwisdom === 'T') {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === 0) {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else {
-                      this.router.navigate(["/onboarding/viewcart"])
-                    }
-                  } else {
-                    localStorage.setItem("isloggedin", "T");
-                    if (pers && persub && pers === "T") {
-                      this.router.navigate(["/onboarding/viewcart"], {
-                        state: { quan: "1", plan: persub },
-                      });
-                    } else {
-                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) {
-                        localStorage.setItem(
-                          "signupfirst", 'F'
-                        );
-                        if (SharedService.ProgramId === 9) {
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        } else if (SharedService.ProgramId === 11) {
-                          //window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        }
-                      } else {
-                        if (SharedService.ProgramId === 9) {
-                          this.router.navigate(["/adults/repeat-user"]);
-                        } else if (SharedService.ProgramId === 11) {
-                          // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          this.router.navigate(["/teenagers/repeat-user"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        }
-                      }
-                    }
-                  }
-                }
-
-                /* if(this.urlEmail)
-                  {
-                    this.service.verifyUser(this.userId)
-                    .subscribe(res=>{
-
-                    })
-                  }*/
-              }
-            }
+               if(res){
+                this.setUpLoginConfiguration(res);
+               }
           });
       } else {
         this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
@@ -1009,297 +469,243 @@ export class LoginSignupPage implements OnInit {
     }
     this.service.emailLogin(this.email, this.password).subscribe(
       (res) => {
-        if (res.UserId === 0) {
-          this.showAlert = true;
-          this.content = "You have entered wrong credentials. Please try again.";
-          this.enableAlert = true;
-          this.email = "";
-          this.password = "";
-        } else if (res.UserId === -1) {
-          this.showAlert = true;
-          this.content = "Email was Not Verified. Please signup again with the same Email ID to verify it.";
-          this.enableAlert = true;
-          this.email = "";
-          this.password = "";
-        } else {
-          const accessObj: any = window;
-          (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
-            (accessObj)?.Moengage.add_email(this.email);
-            (accessObj)?.Moengage.add_first_name(res.Name);
-          })
-          this.loginResponse = res;
+        this.setUpLoginConfiguration(res);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
 
-          localStorage.setItem("socialLogin", "F");
+      }
+    );
+  }
+
+  public setUpLoginConfiguration(res: any) {
+    if (res.UserId === 0) {
+      this.showAlert = true;
+      this.content = "You have entered wrong credentials. Please try again.";
+      this.enableAlert = true;
+      this.email = "";
+      this.password = "";
+    } else if (res.UserId === -1) {
+      this.showAlert = true;
+      this.content = "Email was Not Verified. Please signup again with the same Email ID to verify it.";
+      this.enableAlert = true;
+      this.email = "";
+      this.password = "";
+    } else {
+      const accessObj: any = window;
+      (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
+        (accessObj)?.Moengage.add_email(this.email);
+        (accessObj)?.Moengage.add_first_name(res.Name);
+      })
+      this.loginResponse = res;
+
+      localStorage.setItem("socialLogin", "F");
+      localStorage.setItem("isloggedin", "T");
+      localStorage.setItem("guest", "F");
+      localStorage.setItem("btnclick", "F");
+      localStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+      localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+      sessionStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem("token", JSON.stringify(res.access_token));
+      localStorage.setItem("Subscriber", res.Subscriber);
+      localStorage.setItem("SubscriberType", res.SubscriberType);
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+      localStorage.setItem("email", this.email);
+      localStorage.setItem("pswd", this.password);
+      localStorage.setItem("name", res.Name);
+      localStorage.setItem("first", "T");
+      localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+      localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+      localStorage.setItem("video", JSON.stringify(this.video));
+      localStorage.setItem("audio", JSON.stringify(this.audio));
+      localStorage.setItem("isPartner", res.IsPartner);
+      this.showAlert = false;
+      this.userId = res.UserId;
+      this.userName = res.Name;
+      localStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      sessionStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("token", JSON.stringify(res.access_token));
+      if (this.saveUsername == true) {
+        localStorage.setItem("userId", JSON.stringify(this.userId));
+        localStorage.setItem("userEmail", JSON.stringify(this.email));
+        localStorage.setItem("userName", JSON.stringify(this.userName));
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(this.userId));
+        sessionStorage.setItem("userEmail", JSON.stringify(this.email));
+        sessionStorage.setItem("userName", JSON.stringify(this.userName));
+      }
+      this.service.getuser(res.UserId).subscribe(userInfo => {
+        if (userInfo) {
+          localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+        }
+      })
+      this.freescreens();
+      let roleid = JSON.parse(localStorage.getItem("RoleID"));
+      let emailcode = localStorage.getItem("emailCode");
+      if (localStorage.getItem("btnClickBecomePartner") == "T") {
+        if (
+          localStorage.getItem("SubscriberType") == "Monthly" ||
+          localStorage.getItem("SubscriberType") == "Free" ||
+          localStorage.getItem("SubscriberType") == "Annual"
+        ) {
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(['adults/partnership-app']);
+        }
+      }
+      let acceptCookie = localStorage.getItem("activeCode");
+      let subscribePage = localStorage.getItem("subscribepage");
+      let pers = localStorage.getItem("personalised");
+      let persub = localStorage.getItem("personalised subscription");
+      let option = localStorage.getItem("introoption");
+      let giftwisdom = localStorage.getItem("giftwisdom");
+      const url = SharedService.UrlToRedirect;
+      if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
+        this.router.navigate(['adults/adult-dashboard']);
+        return;
+      }
+      else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
+        this.router.navigate(['/teenagers/teenager-dashboard']);
+        return;
+      }
+      else if (url != null) {
+        SharedService.UrlToRedirect = null;
+        this.router.navigate([url]);
+      }
+      else if (option === "T") {
+        localStorage.setItem("introoption", "F");
+        localStorage.setItem("isloggedin", "T");
+        this.router.navigate(["/intro/personalised-for-you"]);
+      } else {
+        if (pers && persub && pers === "T") {
           localStorage.setItem("isloggedin", "T");
-          localStorage.setItem("guest", "F");
-          localStorage.setItem("btnclick", "F");
-          localStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
-          localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
-          sessionStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          localStorage.setItem("token", JSON.stringify(res.access_token));
-          localStorage.setItem("Subscriber", res.Subscriber);
-          localStorage.setItem("SubscriberType", res.SubscriberType);
-          localStorage.setItem("userId", JSON.stringify(this.userId));
-          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-          localStorage.setItem("email", this.email);
-          localStorage.setItem("pswd", this.password);
-          localStorage.setItem("name", res.Name);
-          localStorage.setItem("first", "T");
-          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
-          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
-          localStorage.setItem("video", JSON.stringify(this.video));
-          localStorage.setItem("audio", JSON.stringify(this.audio));
-          localStorage.setItem("isPartner", res.IsPartner);
-          this.showAlert = false;
-          this.userId = res.UserId;
-          this.userName = res.Name;
-          localStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          sessionStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          localStorage.setItem("userId", JSON.stringify(this.userId));
-          localStorage.setItem("token", JSON.stringify(res.access_token));
-          if (this.saveUsername == true) {
-            localStorage.setItem("userId", JSON.stringify(this.userId));
-            localStorage.setItem("userEmail", JSON.stringify(this.email));
-            localStorage.setItem("userName", JSON.stringify(this.userName));
-          } else {
-            sessionStorage.setItem("userId", JSON.stringify(this.userId));
-            sessionStorage.setItem("userEmail", JSON.stringify(this.email));
-            sessionStorage.setItem("userName", JSON.stringify(this.userName));
-          }
-          this.service.getuser(res.UserId).subscribe(userInfo => {
-            if (userInfo) {
-              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-            }
-          })
-          this.freescreens();
-          let roleid = JSON.parse(localStorage.getItem("RoleID"));
-          let emailcode = localStorage.getItem("emailCode");
-          if (localStorage.getItem("btnClickBecomePartner") == "T") {
-            if (
-              localStorage.getItem("SubscriberType") == "Monthly" ||
-              localStorage.getItem("SubscriberType") == "Free" ||
-              localStorage.getItem("SubscriberType") == "Annual"
-            ) {
-              localStorage.setItem("btnClickBecomePartner", "false");
-              this.router.navigate(['adults/partnership-app']);
-            }
-          }
-          let acceptCookie = localStorage.getItem("activeCode");
-          let subscribePage = localStorage.getItem("subscribepage");
-          let pers = localStorage.getItem("personalised");
-          let persub = localStorage.getItem("personalised subscription");
-          let option = localStorage.getItem("introoption");
-          let giftwisdom = localStorage.getItem("giftwisdom");
-          const url = SharedService.UrlToRedirect;
-          if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
-            this.router.navigate(['adults/adult-dashboard']);
-            return;
-          }
-          else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
-            this.router.navigate(['/teenagers/teenager-dashboard']);
-            return;
-          }
-          else if (url != null) {
-            SharedService.UrlToRedirect = null;
-            this.router.navigate([url]);
-          }
-          else if (option === "T") {
-            localStorage.setItem("introoption", "F");
-            localStorage.setItem("isloggedin", "T");
-            this.router.navigate(["/intro/personalised-for-you"]);
-          } else {
-            if (pers && persub && pers === "T") {
-              localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/onboarding/payment"], {
-                state: { quan: "1", plan: persub },
-              });
-            }
+          this.router.navigate(["/onboarding/payment"], {
+            state: { quan: "1", plan: persub },
+          });
+        }
 
-            if (acceptCookie === "T" || subscribePage === "T") {
-              localStorage.setItem("isloggedin", "T");
-              if (acceptCookie === "T") {
-                localStorage.setItem("activeCode", "F");
-              }
-              if (subscribePage === "T") {
-                localStorage.setItem("subscribepage", "F");
-              }
-              if (roleid === 8 && emailcode === "T") {
-                localStorage.setItem("isloggedin", "T");
-                this.router.navigate(["/onboarding/change-password"]);
-              } else {
-                if (localStorage.getItem("emailCode") === "T") {
-                  localStorage.setItem("emailCode", "F");
-                }
-                if (giftwisdom === 'T') {
-                  this.router.navigate(["/onboarding/add-to-cart"]);
-                } else if (this.loginResponse.Subscriber === 0) {
-                  this.router.navigate(["/onboarding/add-to-cart"]);
-                } else {
-                  this.router.navigate(["/onboarding/viewcart"])
-                }
+        if (acceptCookie === "T" || subscribePage === "T") {
+          localStorage.setItem("isloggedin", "T");
+          if (acceptCookie === "T") {
+            localStorage.setItem("activeCode", "F");
+          }
+          if (subscribePage === "T") {
+            localStorage.setItem("subscribepage", "F");
+          }
+          if (roleid === 8 && emailcode === "T") {
+            localStorage.setItem("isloggedin", "T");
+            this.router.navigate(["/onboarding/change-password"]);
+          } else {
+            if (localStorage.getItem("emailCode") === "T") {
+              localStorage.setItem("emailCode", "F");
+            }
+            if (giftwisdom === 'T') {
+              this.router.navigate(["/onboarding/add-to-cart"]);
+            } else if (this.loginResponse.Subscriber === 0) {
+              this.router.navigate(["/onboarding/add-to-cart"]);
+            } else {
+              this.router.navigate(["/onboarding/viewcart"])
+            }
+          }
+        } else {
+          if (roleid === 8 && emailcode === "T") {
+            localStorage.setItem("isloggedin", "T");
+            this.router.navigate(["/onboarding/change-password"]);
+          } else {
+            if (localStorage.getItem("emailCode") === "T") {
+              localStorage.setItem("emailCode", "F");
+            }
+            localStorage.setItem("isloggedin", "T");
+            if (localStorage.getItem("btnClickBecomePartner") == "T") {
+              if (
+                localStorage.getItem("SubscriberType") == "Monthly" ||
+                localStorage.getItem("SubscriberType") == "Free" ||
+                localStorage.getItem("SubscriberType") == "Annual"
+              ) {
+                localStorage.setItem("btnClickBecomePartner", "F");
+                this.router.navigate(['adults/partnership-app']);
               }
             } else {
-              if (roleid === 8 && emailcode === "T") {
+              if (pers && persub && pers === "T") {
                 localStorage.setItem("isloggedin", "T");
-                this.router.navigate(["/onboarding/change-password"]);
+                this.router.navigate(["/onboarding/viewcart"], {
+                  state: { quan: "1", plan: persub },
+                });
               } else {
-                if (localStorage.getItem("emailCode") === "T") {
-                  localStorage.setItem("emailCode", "F");
-                }
-                localStorage.setItem("isloggedin", "T");
-                if (localStorage.getItem("btnClickBecomePartner") == "T") {
-                  if (
-                    localStorage.getItem("SubscriberType") == "Monthly" ||
-                    localStorage.getItem("SubscriberType") == "Free" ||
-                    localStorage.getItem("SubscriberType") == "Annual"
-                  ) {
-                    localStorage.setItem("btnClickBecomePartner", "F");
+                if (this.service.navigateToUpgradeToPremium
+                ) {
+                  if (localStorage.getItem("IsPartner") == "1") {
+                    if (
+                      localStorage.getItem("PartnerOption") ==
+                      "ReceiveIncome"
+                    ) {
+                      this.service.navigateToUpgradeToPremium = false;
+                      this.router.navigate([
+                        "/adults/partnership-report/income-activity"]);
+                    } else {
+                      this.service.navigateToUpgradeToPremium = false;
+                      this.router.navigate([
+                        "/adults/partnership-report/tree-plantation-report"]);
+                    }
+                  } else {
+                    this.service.navigateToUpgradeToPremium = false;
                     this.router.navigate(['adults/partnership-app']);
                   }
                 } else {
-                  if (pers && persub && pers === "T") {
-                    localStorage.setItem("isloggedin", "T");
-                    this.router.navigate(["/onboarding/viewcart"], {
-                      state: { quan: "1", plan: persub },
-                    });
-                  } else {
-                    if (this.service.navigateToUpgradeToPremium
-                      //localStorage.getItem("navigateToUpgradeToPremium") == "true"
-                    ) {
-                      if (localStorage.getItem("IsPartner") == "1") {
-                        if (
-                          localStorage.getItem("PartnerOption") ==
-                          "ReceiveIncome"
-                        ) {
-                          this.service.navigateToUpgradeToPremium = false;
-                          //localStorage.setItem("navigateToUpgradeToPremium", "false");
-                          this.router.navigate([
-                            "/adults/partnership-report/income-activity"]);
-                        } else {
-                          //localStorage.setItem("navigateToUpgradeToPremium", "false");
-                          this.service.navigateToUpgradeToPremium = false;
-                          this.router.navigate([
-                            "/adults/partnership-report/tree-plantation-report"]);
+                  localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                  if (this.loginResponse?.NoOfVisits === 1) {
+                    localStorage.setItem(
+                      "signupfirst", 'F'
+                    );
+                    if (SharedService.ProgramId === 9) {
+                      this.router.navigate(["/adults/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
                         }
-                      } else {
-                        this.service.navigateToUpgradeToPremium = false;
-                        // localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate(['adults/partnership-app']);
-                      }
-                    } else {
-                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) {
-                        localStorage.setItem(
-                          "signupfirst", 'F'
-                        );
-                        if (SharedService.ProgramId === 9) {
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        } else if (SharedService.ProgramId === 11) {
-                          //  window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
+                      });
+                    } else if (SharedService.ProgramId === 11) {
+                      this.router.navigate(["/teenagers/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
                         }
+                      });
+                    }
 
-                      } else {
-                        if (SharedService.ProgramId === 9) {
-                          this.router.navigate(["/adults/repeat-user"]);
-                        } else if (SharedService.ProgramId === 11) {
-                          this.router.navigate(["/teenagers/repeat-user"]);
-                          // window.location.href = environment.clientUrl+"/teenagers/repeat-user";
-                          // this.router.navigate(["/teenagers/change-topic"], {
-                          //   state: {
-                          //     routedFromLogin: true,
-                          //   }
-                          // });
-                        }
-                      }
+                  } else {
+                    if (SharedService.ProgramId === 9) {
+                      this.router.navigate(["/adults/repeat-user"]);
+                    } else if (SharedService.ProgramId === 11) {
+                      this.router.navigate(["/teenagers/repeat-user"]);
                     }
                   }
                 }
               }
             }
           }
-
-          /* if(this.urlEmail)
-             {
-               this.service.verifyUser(this.userId)
-               .subscribe(res=>{
-
-               })
-             }*/
         }
-      },
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        // this.freeScreens()
-        // localStorage.setItem("userId",JSON.stringify(this.userId))
-        // console.log("urlKey",this.urlKey)
-        // if(this.showAlert==false)
-        // {
-        //   console.log("showAlert is false",this.loginResponse.Subscriber,"subscriber")
-        //   if((this.loginResponse.Subscriber==0) && this.urlKey)
-        //   {
-        //     console.log("key and not subscriber")
-        //     sessionStorage.setItem("urlKey",JSON.stringify(this.urlKey))
-        //     this.router.navigate(['/onboarding/activationkey'])
-        //   }
-        //  else if((this.loginResponse.Subscriber==0) && !this.urlKey)
-        //  {
-        //  console.log("no key no subscriber")
-        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
-        //    this.router.navigate(['/adults/adult-dashboard'])
-        //   }
-        //  else if(this.loginResponse.Subscriber==1)
-        //  {
-        //    console.log("subscriber")
-        //    this.router.navigate(['/adults/adult-dashboard'])
-        //  }
-        // }
       }
-    );
+    }
   }
 
   getfreeuser() {
     this.freescreens();
   }
-
-  // myMethod(){
-  //   const google= (window as any).google
-  //   if(google){
-  //      google.accounts.id.initialize({
-  //       client_id: '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com',
-  //       callback: this.handleCredentialResponse.bind(this),
-  //     });
-  //     google.accounts.id.renderButton(
-  //       document.getElementById('my-signin2'),
-  //       { theme: 'outline', size: 'large' }  // customization attributes
-  //     );
-  //     google.accounts.id.prompt(); // also display the One Tap dialog
-  //   }; // also display the One Tap dialog
-  // }
-
 
   handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
@@ -1341,22 +747,55 @@ export class LoginSignupPage implements OnInit {
     });
   }
 
+ 
   signInWithApple(reqtype) {
     if (reqtype == "signup")
       this.logeventservice.logEvent('apple_signup');
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    const REDIRECT_API_URL =
-      "https://www.humanwisdom.info/api/verifyAppleToken_html";
-
-    window.open(
+    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/verifyAppleToken_html";
+    var popup = window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL
       )}&response_type=code id_token&scope=name email&response_mode=form_post`,
-      "_self"
+    '_blank',
+    'width=500,height=600'
     );
+    this.pollPopup(popup);
   }
+  private pollPopup(popup): void {
+    const intervalId = setInterval(() => {
+      if (popup && !popup.closed) {
+        try {
+         if(localStorage.getItem('isloggedin')=='T'){
+           setTimeout(() => {
+             this.handleAppleLoginResponse();
+           },200);
+         }
+        } catch (e) {
+          clearInterval(intervalId);
+          console.error('Unable to access popup location:', e);
+        }
+      } else {
+        clearInterval(intervalId);
+        const token = localStorage.getItem('token');
+        if(token!=null || token!=''){
+          popup.close();
+        }
+        console.log('Popup was closed');
+      
+      }
+    }, 1000); // Poll every 500 milliseconds
+  }
+
+  handleAppleLoginResponse() {
+    const token = localStorage.getItem('token');
+     if (token) {
+        this.router.navigate([SharedService.getDashboardUrls()]);
+      }
+    } 
+  
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
@@ -1448,214 +887,212 @@ export class LoginSignupPage implements OnInit {
     }, 1000);
   }
 
-  private pollPopup(popup) {
-    const intervalId = setInterval(() => {
-      if (popup && !popup.closed) {
-        try {
+  // private pollPopup(popup) {
+  //   const intervalId = setInterval(() => {
+  //     if (popup && !popup.closed) {
+  //       try {
 
-        } catch (e) {
-          clearInterval(intervalId);
-          // Handle cross-origin access errors
-          console.error('Unable to access popup location:', e);
-        }
-      } else {
-        clearInterval(intervalId);
-        console.log('Popup was closed');
-        this.service.verifyInstagramLogin(localStorage.getItem('instaToken')).subscribe((res) => {
-          if (res) {
-            this.loginResponse = res;
-            this.service.getuser(res.UserId).subscribe(userInfo => {
-              if (userInfo) {
-                localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-              }
-            })
-            localStorage.setItem("guest", "F");
-            localStorage.setItem("remember", "T");
-            localStorage.setItem("socialLogin", "T");
-            localStorage.setItem(
-              "mediaAudio",
-              JSON.stringify(this.mediaAudio)
-            );
-            localStorage.setItem(
-              "mediaVideo",
-              JSON.stringify(this.mediaVideo)
-            );
-            localStorage.setItem("video", JSON.stringify(this.video));
-            localStorage.setItem("audio", JSON.stringify(this.audio));
-            localStorage.setItem("btnclick", "F");
-            localStorage.setItem(
-              "loginResponse",
-              JSON.stringify(this.loginResponse)
-            );
-            sessionStorage.setItem(
-              "loginResponse",
-              JSON.stringify(this.loginResponse)
-            );
-            localStorage.setItem(
-              "token",
-              JSON.stringify(this.loginResponse.access_token)
-            );
-            localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-            localStorage.setItem("userId", JSON.stringify(this.userId));
-            localStorage.setItem("email", this.socialEmail);
-            localStorage.setItem("FnName", this.socialFirstName);
-            localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-            localStorage.setItem("LName", this.socialLastName);
-            localStorage.setItem("pswd", "");
-            localStorage.setItem("name", this.loginResponse.Name);
-            localStorage.setItem("first", "T");
-            if (parseInt(this.loginResponse.UserId) == 0) {
-              this.showAlert = true;
-              this.content = "You have entered wrong credentials. Please try again.";
-              this.enableAlert = true;
-              this.email = "";
-              this.password = "";
-            }
-            else {
-              this.showAlert = false;
-              this.userId = this.loginResponse.UserId;
-              this.userName = this.loginResponse.Name;
-              localStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              sessionStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem(
-                "token",
-                JSON.stringify(this.loginResponse.access_token)
-              );
-              if (this.saveUsername == true) {
-                localStorage.setItem("userId", JSON.stringify(this.userId));
-                localStorage.setItem(
-                  "userEmail",
-                  JSON.stringify(this.socialEmail)
-                );
-                localStorage.setItem(
-                  "userName",
-                  JSON.stringify(this.userName)
-                );
-              } else {
-                sessionStorage.setItem("userId", JSON.stringify(this.userId));
-                sessionStorage.setItem(
-                  "userEmail",
-                  JSON.stringify(this.socialEmail)
-                );
-                sessionStorage.setItem(
-                  "userName",
-                  JSON.stringify(this.userName)
-                );
-              }
-              this.service.getuser(res.UserId).subscribe(userInfo => {
-                if (userInfo) {
-                  localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-                }
-              })
-              let pers = localStorage.getItem("personalised");
-              let persub = localStorage.getItem("personalised subscription");
-              let acceptCookie = localStorage.getItem("activeCode");
-              let subscribePage = localStorage.getItem("subscribepage");
-              let option = localStorage.getItem("introoption");
-              let giftwisdom = localStorage.getItem("giftwisdom");
-              const url = SharedService.UrlToRedirect;
-              if (url != null) {
-                SharedService.UrlToRedirect = null;
-                this.router.navigate([url]);
-              }
-              else if (option === "T") {
-                localStorage.setItem("introoption", "F");
-                localStorage.setItem("isloggedin", "T");
-                this.router.navigate(["/intro/personalised-for-you"]);
-              }
-              else {
-                if (acceptCookie === "T" || subscribePage === "T") {
-                  localStorage.setItem("isloggedin", "T");
-                  if (acceptCookie === "T") {
-                    localStorage.setItem("activeCode", "F");
-                  }
-                  if (subscribePage === "T") {
-                    localStorage.setItem("subscribepage", "F");
-                  }
-                  if (giftwisdom === 'T') {
-                    this.router.navigate(["/onboarding/add-to-cart"]);
-                  } else if (this.loginResponse.Subscriber === 0) {
-                    this.router.navigate(["/onboarding/add-to-cart"]);
-                  } else {
-                    this.router.navigate(["/onboarding/viewcart"])
-                  }
-                }
-                else {
-                  localStorage.setItem("isloggedin", "T");
-                  if (pers && persub && pers === "T") {
-                    this.router.navigate(["/onboarding/viewcart"], {
-                      state: { quan: "1", plan: persub },
-                    });
-                  }
-                  else {
-                    localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                    if (this.loginResponse?.NoOfVisits === 1) {
-                      localStorage.setItem(
-                        "signupfirst", 'F'
-                      );
-                      /* if(SharedService.ProgramId === 9) {
-                        this.router.navigate(["/adults/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
-                      }else if(SharedService.ProgramId === 11) {
-                        // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                        this.router.navigate(["/teenagers/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
-                      } */
-                      this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+  //       } catch (e) {
+  //         clearInterval(intervalId);
+  //         // Handle cross-origin access errors
+  //         console.error('Unable to access popup location:', e);
+  //       }
+  //     } else {
+  //       clearInterval(intervalId);
+  //       console.log('Popup was closed');
+  //       this.service.verifyInstagramLogin(localStorage.getItem('instaToken')).subscribe((res) => {
+  //         if (res) {
+  //           this.loginResponse = res;
+  //           this.service.getuser(res.UserId).subscribe(userInfo => {
+  //             if (userInfo) {
+  //               localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+  //             }
+  //           })
+  //           localStorage.setItem("guest", "F");
+  //           localStorage.setItem("remember", "T");
+  //           localStorage.setItem("socialLogin", "T");
+  //           localStorage.setItem(
+  //             "mediaAudio",
+  //             JSON.stringify(this.mediaAudio)
+  //           );
+  //           localStorage.setItem(
+  //             "mediaVideo",
+  //             JSON.stringify(this.mediaVideo)
+  //           );
+  //           localStorage.setItem("video", JSON.stringify(this.video));
+  //           localStorage.setItem("audio", JSON.stringify(this.audio));
+  //           localStorage.setItem("btnclick", "F");
+  //           localStorage.setItem(
+  //             "loginResponse",
+  //             JSON.stringify(this.loginResponse)
+  //           );
+  //           sessionStorage.setItem(
+  //             "loginResponse",
+  //             JSON.stringify(this.loginResponse)
+  //           );
+  //           localStorage.setItem(
+  //             "token",
+  //             JSON.stringify(this.loginResponse.access_token)
+  //           );
+  //           localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+  //           localStorage.setItem("userId", JSON.stringify(this.userId));
+  //           localStorage.setItem("email", this.socialEmail);
+  //           localStorage.setItem("FnName", this.socialFirstName);
+  //           localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+  //           localStorage.setItem("LName", this.socialLastName);
+  //           localStorage.setItem("pswd", "");
+  //           localStorage.setItem("name", this.loginResponse.Name);
+  //           localStorage.setItem("first", "T");
+  //           if (parseInt(this.loginResponse.UserId) == 0) {
+  //             this.showAlert = true;
+  //             this.content = "You have entered wrong credentials. Please try again.";
+  //             this.enableAlert = true;
+  //             this.email = "";
+  //             this.password = "";
+  //           }
+  //           else {
+  //             this.showAlert = false;
+  //             this.userId = this.loginResponse.UserId;
+  //             this.userName = this.loginResponse.Name;
+  //             localStorage.setItem(
+  //               "loginResponse",
+  //               JSON.stringify(this.loginResponse)
+  //             );
+  //             sessionStorage.setItem(
+  //               "loginResponse",
+  //               JSON.stringify(this.loginResponse)
+  //             );
+  //             localStorage.setItem("userId", JSON.stringify(this.userId));
+  //             localStorage.setItem(
+  //               "token",
+  //               JSON.stringify(this.loginResponse.access_token)
+  //             );
+  //             if (this.saveUsername == true) {
+  //               localStorage.setItem("userId", JSON.stringify(this.userId));
+  //               localStorage.setItem(
+  //                 "userEmail",
+  //                 JSON.stringify(this.socialEmail)
+  //               );
+  //               localStorage.setItem(
+  //                 "userName",
+  //                 JSON.stringify(this.userName)
+  //               );
+  //             } else {
+  //               sessionStorage.setItem("userId", JSON.stringify(this.userId));
+  //               sessionStorage.setItem(
+  //                 "userEmail",
+  //                 JSON.stringify(this.socialEmail)
+  //               );
+  //               sessionStorage.setItem(
+  //                 "userName",
+  //                 JSON.stringify(this.userName)
+  //               );
+  //             }
+  //             this.service.getuser(res.UserId).subscribe(userInfo => {
+  //               if (userInfo) {
+  //                 localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+  //               }
+  //             })
+  //             let pers = localStorage.getItem("personalised");
+  //             let persub = localStorage.getItem("personalised subscription");
+  //             let acceptCookie = localStorage.getItem("activeCode");
+  //             let subscribePage = localStorage.getItem("subscribepage");
+  //             let option = localStorage.getItem("introoption");
+  //             let giftwisdom = localStorage.getItem("giftwisdom");
+  //             const url = SharedService.UrlToRedirect;
+  //             if (url != null) {
+  //               SharedService.UrlToRedirect = null;
+  //               this.router.navigate([url]);
+  //             }
+  //             else if (option === "T") {
+  //               localStorage.setItem("introoption", "F");
+  //               localStorage.setItem("isloggedin", "T");
+  //               this.router.navigate(["/intro/personalised-for-you"]);
+  //             }
+  //             else {
+  //               if (acceptCookie === "T" || subscribePage === "T") {
+  //                 localStorage.setItem("isloggedin", "T");
+  //                 if (acceptCookie === "T") {
+  //                   localStorage.setItem("activeCode", "F");
+  //                 }
+  //                 if (subscribePage === "T") {
+  //                   localStorage.setItem("subscribepage", "F");
+  //                 }
+  //                 if (giftwisdom === 'T') {
+  //                   this.router.navigate(["/onboarding/add-to-cart"]);
+  //                 } else if (this.loginResponse.Subscriber === 0) {
+  //                   this.router.navigate(["/onboarding/add-to-cart"]);
+  //                 } else {
+  //                   this.router.navigate(["/onboarding/viewcart"])
+  //                 }
+  //               }
+  //               else {
+  //                 localStorage.setItem("isloggedin", "T");
+  //                 if (pers && persub && pers === "T") {
+  //                   this.router.navigate(["/onboarding/viewcart"], {
+  //                     state: { quan: "1", plan: persub },
+  //                   });
+  //                 }
+  //                 else {
+  //                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+  //                   if (this.loginResponse?.NoOfVisits === 1) {
+  //                     localStorage.setItem(
+  //                       "signupfirst", 'F'
+  //                     );
+  //                     /* if(SharedService.ProgramId === 9) {
+  //                       this.router.navigate(["/adults/change-topic"], {
+  //                         state: {
+  //                           routedFromLogin: true,
+  //                         }
+  //                       });
+  //                     }else if(SharedService.ProgramId === 11) {
+  //                       // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+  //                       this.router.navigate(["/teenagers/change-topic"], {
+  //                         state: {
+  //                           routedFromLogin: true,
+  //                         }
+  //                       });
+  //                     } */
+  //                     this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
+  //                       state: {
+  //                         routedFromLogin: true,
+  //                       }
+  //                     });
 
-                    }
-                    else {
-                      /* if(SharedService.ProgramId === 9) {
-                        this.router.navigate(["/adults/repeat-user"]);
-                      }else if(SharedService.ProgramId === 11) {
-                     //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                        this.router.navigate(["/teenagers/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
-                      }
-                      } */
+  //                   }
+  //                   else {
+  //                     /* if(SharedService.ProgramId === 9) {
+  //                       this.router.navigate(["/adults/repeat-user"]);
+  //                     }else if(SharedService.ProgramId === 11) {
+  //                    //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
+  //                       this.router.navigate(["/teenagers/change-topic"], {
+  //                         state: {
+  //                           routedFromLogin: true,
+  //                         }
+  //                       });
+  //                     }
+  //                     } */
 
-                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
-                    }
-                  }
-                }
+  //                     this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+  //                   }
+  //                 }
+  //               }
 
-                /* if(this.urlEmail)
-                {
-                  this.service.verifyUser(this.userId)
-                  .subscribe(res=>{
+  //               /* if(this.urlEmail)
+  //               {
+  //                 this.service.verifyUser(this.userId)
+  //                 .subscribe(res=>{
     
-                  })
-                }*/
-              }
-            }
-          }
-        });
+  //                 })
+  //               }*/
+  //             }
+  //           }
+  //         }
+  //       });
 
-      }
-    }, 1000); // Poll every 500 milliseconds
-  }
-
-
+  //     }
+  //   }, 1000); // Poll every 500 milliseconds
+  // }
 
   resolved(captchaResponse: string) {
     this.service.verifyCaptcha(captchaResponse).subscribe(res => {

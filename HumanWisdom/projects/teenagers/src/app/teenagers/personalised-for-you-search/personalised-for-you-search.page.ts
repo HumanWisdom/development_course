@@ -137,7 +137,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           title: 'Find Inspiration',
           description: 'Explore our rich library of motivational content.',
           side: "right",
-          align: 'end'
+          align: "end"
         }
       },
       {

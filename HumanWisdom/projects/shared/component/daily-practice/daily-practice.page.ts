@@ -178,7 +178,7 @@ export class DailyPracticePage implements OnInit {
       }
       this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
         if (res) {
-          this.content = "Successfully added daily question";
+          this.content = "Successfully added to journal";
           this.enableAlert = true;
           this.questext='';
           
@@ -228,6 +228,8 @@ export class DailyPracticePage implements OnInit {
 
   getAlertcloseEvent() {
     this.enableAlert = false;
+    this.questext="";
+
     this.content = '';
   }
 

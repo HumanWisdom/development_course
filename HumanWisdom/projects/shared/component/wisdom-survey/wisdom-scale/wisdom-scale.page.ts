@@ -91,6 +91,14 @@ export class WisdomScalePage implements OnInit {
   ];
   public lineChartLabels: Label[] = [];
   public lineChartOptions: ChartOptions = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 100
+      }
+      }],
+    },
     responsive: true,
     maintainAspectRatio: false
   };

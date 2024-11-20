@@ -3,22 +3,28 @@ import { UntypedFormBuilder, Validators, AbstractControl, ReactiveFormsModule, F
 // import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { LogEventService } from "../../services/log-event.service";
-import { Platform } from '@angular/cdk/platform';
-import { Router } from "@angular/router";
+import { Platform, PlatformModule } from '@angular/cdk/platform';
+import { Router, RouterModule } from "@angular/router";
 import { OnboardingService } from "../../services/onboarding.service";
 import { SharedService } from "../../services/shared.service";
 import { Constant } from "../../services/constant";
-import { SocialAuthService } from "angularx-social-login";
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from "@abacritt/angularx-social-login";
 import { CommonModule } from "@angular/common";
 import { SharedModule } from "../../shared.module";
-
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,SocialAuthService, SocialLoginModule } from "@abacritt/angularx-social-login";
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { environment } from "../../../../projects/environments/environment";
 @Component({
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
   styleUrls: ['./login-register-modal.component.scss'],
+  imports: [SocialLoginModule, CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    PlatformModule,
+    GoogleSigninButtonModule,
+    SharedModule],
   standalone: true,
-  imports: [SocialLoginModule, CommonModule, FormsModule, ReactiveFormsModule, SharedModule],
   providers: [
     SocialAuthService,
     {
@@ -37,7 +43,7 @@ import { SharedModule } from "../../shared.module";
         ]
       } as SocialAuthServiceConfig,
     },
-  ]
+  ],
 })
 export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
@@ -132,6 +138,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
+    this.VerifyGoogle();
   }
 
   @HostListener('document:mousedown', ['$event'])
@@ -140,6 +147,38 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.actclosemodal?.nativeElement?.click();
       this.closeModal.emit(false);
     }
+  }
+
+  private VerifyGoogle() {
+    this.authService.authState.subscribe(
+      (user) => {
+        if (user.provider?.toLowerCase() == 'google') {
+          this.user = user;
+          this.idToken = user.idToken;
+          this.socialFirstName = user.firstName;
+          this.socialLastName = user.lastName;
+          this.socialEmail = user.email;
+
+          this.services
+            .verifyGoogle({
+              TokenID: this.idToken,
+              FName: this.socialFirstName,
+              LName: this.socialLastName,
+              Email: this.socialEmail,
+              VCode: "",
+              Pwd: "",
+            })
+            .subscribe((res) => {
+              if(res){
+                this.setUpLoginConfiguration(res);
+              }
+            });
+        }
+      },
+      (error) => console.log(error),
+      () => {
+      }
+    );
   }
 
   googleLogin(d = '') {
@@ -166,6 +205,10 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     // this.renderGoogle = true;
   }
 
+  loginGoogle(){
+    let lg = document.getElementById('googleLoginbtn');
+    lg.click();
+  }
 
   private onSuccess(googleUser: any): void {
     console.log('Logged in as: ' + googleUser);
@@ -723,111 +766,363 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   //     });
   // }
 
-  fbLogin(d = '') {
+  fbLogin(reqtype) {
+    if (reqtype == "signup")
+      this.logeventservice.logEvent('facebook_signup');
+    else
+      this.logeventservice.logEvent('facebook_login');
+
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       // this.user = user;
       this.user = user;
-      this.idToken = user.authToken
-      this.socialFirstName = user.firstName
-      this.socialLastName = user.lastName
-      this.socialEmail = user.email
-      if (user.email !== undefined) {
-        this.services.verifyFb({
-          "TokenID": this.idToken,
-          "FName": this.socialFirstName,
-          "LName": this.socialLastName,
-          "Email": this.socialEmail,
-          "VCode": "",
-          "Pwd": ""
-        })
-          .subscribe(res => {
-            if (res) {
-              this.firstpage = false
-              this.fifthpage = false
-              this.thirdpage = true
-              this.enabledModal = false
-              this.loginResponse = res
-              localStorage.setItem('guest', 'F');
-              localStorage.setItem("remember", 'T')
-              localStorage.setItem('socialLogin', 'T');
-              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
-              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-              localStorage.setItem("video", JSON.stringify(this.video))
-              localStorage.setItem("audio", JSON.stringify(this.audio))
-              localStorage.setItem('btnclick', 'F')
-              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-              localStorage.setItem("userId", JSON.stringify(this.userId))
-              localStorage.setItem("email", this.socialEmail)
-              localStorage.setItem("FnName", this.socialFirstName)
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
-              localStorage.setItem("LName", this.socialLastName)
-              localStorage.setItem("pswd", '')
-              localStorage.setItem("name", this.loginResponse.Name)
-              localStorage.setItem("first", 'T')
-              let namedata = localStorage.getItem('name').split(' ')
-              this.modaldata['email'] = localStorage.getItem('email');
-              this.modaldata['firstname'] = namedata[0];
-              this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-              if (parseInt(this.loginResponse.UserId) == 0) {
 
+      this.idToken = user.authToken;
+      this.socialFirstName = user.firstName;
+      this.socialLastName = user.lastName;
+      this.socialEmail = user.email;
+      if (user.email !== undefined) {
+        this.
+        services.verifyFb({
+            TokenID: this.idToken,
+            FName: this.socialFirstName,
+            LName: this.socialLastName,
+            Email: this.socialEmail,
+            VCode: "",
+            Pwd: "",
+          })
+          .subscribe((res) => {
+               if(res){
+                this.setUpLoginConfiguration(res);
+               }
+          });
+      } else {
+        this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
+        this.enableAlert = true;
+      }
+    });
+  }
+
+  freescreens() {
+    this.service.freeScreens().subscribe((res) => {
+      let x = [];
+      let result = res.map((a) => a.FreeScrs);
+      let arr;
+      result = result.forEach((element) => {
+        if (element && element.length !== 0) {
+          x.push(element.map((a) => parseInt(a.ScrNo)));
+          arr = Array.prototype.concat.apply([], x);
+        }
+      });
+      localStorage.setItem("freeScreens", JSON.stringify(arr));
+    });
+  }
+
+
+  public setUpLoginConfiguration(res: any) {
+    if (res.UserId === 0) {
+      this.content = "You have entered wrong credentials. Please try again.";
+      this.enableAlert = true;
+      this.email = "";
+    } else if (res.UserId === -1) {
+      this.content = "Email was Not Verified. Please signup again with the same Email ID to verify it.";
+      this.enableAlert = true;
+      this.email = "";
+    } else {
+      const accessObj: any = window;
+      (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
+        (accessObj)?.Moengage.add_email(this.email);
+        (accessObj)?.Moengage.add_first_name(res.Name);
+      })
+      this.loginResponse = res;
+
+      localStorage.setItem("socialLogin", "F");
+      localStorage.setItem("isloggedin", "T");
+      localStorage.setItem("guest", "F");
+      localStorage.setItem("btnclick", "F");
+      localStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+      localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+      sessionStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem("token", JSON.stringify(res.access_token));
+      localStorage.setItem("Subscriber", res.Subscriber);
+      localStorage.setItem("SubscriberType", res.SubscriberType);
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+      localStorage.setItem("email", this.email);
+      localStorage.setItem("name", res.Name);
+      localStorage.setItem("first", "T");
+      localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+      localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+      localStorage.setItem("video", JSON.stringify(this.video));
+      localStorage.setItem("audio", JSON.stringify(this.audio));
+      localStorage.setItem("isPartner", res.IsPartner);
+      this.userId = res.UserId;
+      this.userName = res.Name;
+      localStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      sessionStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("token", JSON.stringify(res.access_token));
+      if (this.saveUsername == true) {
+        localStorage.setItem("userId", JSON.stringify(this.userId));
+        localStorage.setItem("userEmail", JSON.stringify(this.email));
+        localStorage.setItem("userName", JSON.stringify(this.userName));
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(this.userId));
+        sessionStorage.setItem("userEmail", JSON.stringify(this.email));
+        sessionStorage.setItem("userName", JSON.stringify(this.userName));
+      }
+      this.services.getuser(res.UserId).subscribe(userInfo => {
+        if (userInfo) {
+          localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+        }
+      })
+      this.freescreens();
+      let roleid = JSON.parse(localStorage.getItem("RoleID"));
+      let emailcode = localStorage.getItem("emailCode");
+      if (localStorage.getItem("btnClickBecomePartner") == "T") {
+        if (
+          localStorage.getItem("SubscriberType") == "Monthly" ||
+          localStorage.getItem("SubscriberType") == "Free" ||
+          localStorage.getItem("SubscriberType") == "Annual"
+        ) {
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(['adults/partnership-app']);
+        }
+      }
+      let acceptCookie = localStorage.getItem("activeCode");
+      let subscribePage = localStorage.getItem("subscribepage");
+      let pers = localStorage.getItem("personalised");
+      let persub = localStorage.getItem("personalised subscription");
+      let option = localStorage.getItem("introoption");
+      let giftwisdom = localStorage.getItem("giftwisdom");
+      const url = SharedService.UrlToRedirect;
+      if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
+        this.router.navigate(['adults/adult-dashboard']);
+        return;
+      }
+      else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
+        this.router.navigate(['/teenagers/teenager-dashboard']);
+        return;
+      }
+      else if (url != null) {
+        SharedService.UrlToRedirect = null;
+        this.router.navigate([url]);
+      }
+      else if (option === "T") {
+        localStorage.setItem("introoption", "F");
+        localStorage.setItem("isloggedin", "T");
+        this.router.navigate(["/intro/personalised-for-you"]);
+      } else {
+        if (pers && persub && pers === "T") {
+          localStorage.setItem("isloggedin", "T");
+          this.router.navigate(["/onboarding/payment"], {
+            state: { quan: "1", plan: persub },
+          });
+        }
+
+        if (acceptCookie === "T" || subscribePage === "T") {
+          localStorage.setItem("isloggedin", "T");
+          if (acceptCookie === "T") {
+            localStorage.setItem("activeCode", "F");
+          }
+          if (subscribePage === "T") {
+            localStorage.setItem("subscribepage", "F");
+          }
+          if (roleid === 8 && emailcode === "T") {
+            localStorage.setItem("isloggedin", "T");
+            this.router.navigate(["/onboarding/change-password"]);
+          } else {
+            if (localStorage.getItem("emailCode") === "T") {
+              localStorage.setItem("emailCode", "F");
+            }
+            if (giftwisdom === 'T') {
+              this.router.navigate(["/onboarding/add-to-cart"]);
+            } else if (this.loginResponse.Subscriber === 0) {
+              this.router.navigate(["/onboarding/add-to-cart"]);
+            } else {
+              this.router.navigate(["/onboarding/viewcart"])
+            }
+          }
+        } else {
+          if (roleid === 8 && emailcode === "T") {
+            localStorage.setItem("isloggedin", "T");
+            this.router.navigate(["/onboarding/change-password"]);
+          } else {
+            if (localStorage.getItem("emailCode") === "T") {
+              localStorage.setItem("emailCode", "F");
+            }
+            localStorage.setItem("isloggedin", "T");
+            if (localStorage.getItem("btnClickBecomePartner") == "T") {
+              if (
+                localStorage.getItem("SubscriberType") == "Monthly" ||
+                localStorage.getItem("SubscriberType") == "Free" ||
+                localStorage.getItem("SubscriberType") == "Annual"
+              ) {
+                localStorage.setItem("btnClickBecomePartner", "F");
+                this.router.navigate(['adults/partnership-app']);
               }
-              else {
-                this.userId = this.loginResponse.UserId
-                this.userName = this.loginResponse.Name
-                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-                localStorage.setItem("userId", JSON.stringify(this.userId))
-                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId))
-                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  localStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
-                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
-                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
-                }
-                let acceptCookie = localStorage.getItem('activeCode');
-                let subscribePage = localStorage.getItem('subscribepage');
-                if (acceptCookie === 'T' || subscribePage === 'T') {
-                  localStorage.setItem("isloggedin", 'T')
-                  if (acceptCookie === 'T') {
-                    localStorage.setItem("activeCode", 'F')
-                  }
-                  if (subscribePage === 'T') {
-                    localStorage.setItem("subscribepage", 'F')
-                  }
-                } else {
-                  localStorage.setItem("isloggedin", 'T')
-                }
-              }
-              this.actclosemodal.nativeElement.click();
-              this.closeModal.emit(false);
-              if (this.isAdvertpage) {
-                if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-                  SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+            } else {
+              if (pers && persub && pers === "T") {
+                localStorage.setItem("isloggedin", "T");
+                this.router.navigate(["/onboarding/viewcart"], {
+                  state: { quan: "1", plan: persub },
+                });
+              } else {
+                if (this.services.navigateToUpgradeToPremium
                 ) {
-                  this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+                  if (localStorage.getItem("IsPartner") == "1") {
+                    if (
+                      localStorage.getItem("PartnerOption") ==
+                      "ReceiveIncome"
+                    ) {
+                      this.services.navigateToUpgradeToPremium = false;
+                      this.router.navigate([
+                        "/adults/partnership-report/income-activity"]);
+                    } else {
+                      this.services.navigateToUpgradeToPremium = false;
+                      this.router.navigate([
+                        "/adults/partnership-report/tree-plantation-report"]);
+                    }
+                  } else {
+                    this.services.navigateToUpgradeToPremium = false;
+                    this.router.navigate(['adults/partnership-app']);
+                  }
                 } else {
-                  this.router.navigate(['/adults/redeem-subscription']);
+                  localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                  if (this.loginResponse?.NoOfVisits === 1) {
+                    localStorage.setItem(
+                      "signupfirst", 'F'
+                    );
+                    if (SharedService.ProgramId === 9) {
+                      this.router.navigate(["/adults/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
+                        }
+                      });
+                    } else if (SharedService.ProgramId === 11) {
+                      this.router.navigate(["/teenagers/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
+                        }
+                      });
+                    }
+
+                  } else {
+                    if (this.router.url.includes('/redeem-subscription') || this.router.url.includes('/redeem-gift-card')) {
+                        this.secondpage = false;
+                        this.thirdpage = false;
+                        this.fifthpage = false;
+                        this.actclosemodal?.nativeElement?.click();
+                        this.closeModal.emit(false);
+                        this.enabledModal = false;
+                        let type = 'adults'
+                        if( SharedService.ProgramId == 11){
+                          type='teenagers';
+                        }
+                        if(this.router.url.includes('/redeem-subscription')){
+                          this.router.navigate([`/${type}/redeem-subscription`]);
+                        }
+                        else if(this.router.url.includes('/redeem-gift-card')){
+                          this.router.navigate([`/${type}/redeem-gift-card`]);
+                        } 
+                    }else{
+                    if (SharedService.ProgramId === 9) {
+                      this.router.navigate(["/adults/repeat-user"]);
+                    } else if (SharedService.ProgramId === 11) {
+                      this.router.navigate(["/teenazgers/repeat-user"]);
+                    }
+                  }
+                  }
                 }
               }
             }
-          })
-      } else {
-        this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
-        this.enableAlert = true;
-        this.alertenabled = true;
-        // window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+          }
+        }
       }
-    });
+    }
+  }
+
+  signInWithApple(reqtype) {
+    if (reqtype == "signup")
+      this.logeventservice.logEvent('apple_signup');
+    else
+      this.logeventservice.logEvent('apple_login');
+    const CLIENT_ID = "humanwisdom.web.service";
+    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/verifyAppleToken_html";
+    var popup = window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+        REDIRECT_API_URL
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`,
+    '_blank',
+    'width=500,height=600'
+    );
+    this.pollPopup(popup);
 
   }
+
+  private pollPopup(popup): void {
+    const intervalId = setInterval(() => {
+      if (popup && !popup.closed) {
+        try {
+         if(localStorage.getItem('isloggedin')=='T'){
+        
+           setTimeout(() => {
+            this.actclosemodal?.nativeElement?.click();
+            this.closeModal.emit(false);
+           // popup.close();
+           this.handleAppleLoginResponse();
+           },500);
+         }
+        } catch (e) {
+          clearInterval(intervalId);
+          // Handle cross-origin access errors
+          console.error('Unable to access popup location:', e);
+        }
+      } else {
+        clearInterval(intervalId);
+        const token = localStorage.getItem('token');
+        if(token!=null || token!=''){
+         // popup.close();
+        }
+        console.log('Popup was closed');
+      
+    }
+    }, 1000); // Poll every 500 milliseconds
+  }
+
+  handleAppleLoginResponse() {
+    const token = localStorage.getItem('token');
+    let programType='adults';
+    if(SharedService.ProgramId==11){
+      programType = 'teenagers';
+    }
+     if (token) {
+      if(this.router.url.includes('/redeem-subscription')){
+        this.router.navigate([`/${programType}/redeem-subscription`]);
+      }
+      else if(this.router.url.includes('/redeem-gift-card')){
+        this.router.navigate([`/${programType}/redeem-gift-card`]);
+      }else{
+        this.router.navigate([SharedService.getDashboardUrls()]);
+      } 
+    } 
+  }
+  
+
+
 
   getAlertcloseEvent(event) {
     this.content = '';
