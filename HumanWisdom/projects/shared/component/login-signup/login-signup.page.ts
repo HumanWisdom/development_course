@@ -792,10 +792,23 @@ export class LoginSignupPage implements OnInit {
   handleAppleLoginResponse() {
     const token = localStorage.getItem('token');
      if (token) {
+      const url = SharedService.UrlToRedirect;
+      if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
+        this.router.navigate(['adults/adult-dashboard']);
+        return;
+      }
+      else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
+        this.router.navigate(['/teenagers/teenager-dashboard']);
+        return;
+      }
+      else if (url != null) {
+        SharedService.UrlToRedirect = null;
+        this.router.navigate([url]);
+      }else{
         this.router.navigate([SharedService.getDashboardUrls()]);
       }
     } 
-  
+  }
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
