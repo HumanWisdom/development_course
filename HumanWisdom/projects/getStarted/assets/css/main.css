@@ -71,6 +71,10 @@ h6 {
   column-gap: 4.8rem;
 }
 
+.land-iframe-sec {
+  border-radius: 20px;
+}
+
 
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -186,6 +190,12 @@ section {
   
   .land-happierMe-gap {
     column-gap: 0rem;
+  }
+
+  .land-video-sec {
+    display: grid;
+        justify-content: center;
+        width: 35rem;
   }
 }
 
