@@ -905,12 +905,12 @@
       <!-- teenagers -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cpl40px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 <!-- COMING SOON! -->
                 NEW!
