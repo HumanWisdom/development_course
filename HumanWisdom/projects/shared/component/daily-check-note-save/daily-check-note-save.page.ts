@@ -57,7 +57,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
               this.saveJournal.nativeElement.click();
               setTimeout(() => {
                 this.findOutMore();
-              }, 2000)
+              }, 3000)
           }
         })
       }else{
