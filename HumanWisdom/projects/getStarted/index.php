@@ -838,7 +838,6 @@
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_weh">
                       <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
                         HappierMe for 
-                        <br>
                         <span class="fw_600">
                           Work
                         </span>
@@ -861,9 +860,7 @@
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_weh">
                       <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for 
-                        <br>
-                        <span class="fw_600">
+                        HappierMe for  <span class="fw_600">
                           Education
                         </span>
                       </h3>
@@ -885,9 +882,7 @@
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_weh">
                       <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for 
-                        <br>
-                        <span class="fw_600">
+                        HappierMe for <span class="fw_600">
                           Healthcare
                         </span>
                       </h3>
