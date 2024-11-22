@@ -84,24 +84,19 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       })
     }
 
-    this.isAdults = SharedService.ProgramId === 9;
-  }
-
-  ngAfterViewInit() {
-    if (document.getElementById('inactivenext')) {
-      document.getElementById('inactivenext').style.display = 'none';
-    }
     $('#ic_carousel').on('slid.bs.carousel', (data) => {
       let arr = data['relatedTarget']['classList'];
       let istrue = false;
       carouselId = parseFloat(arr[1]) + 1;
+      console.log(carouselId);
+      console.log(arr)
       arr.forEach((d) => {
-        if (d === '2') {
+        if (d === '1') {
           this.nextBtnDis = true;
         }
       })
       arr.forEach((d, ind) => {
-        if (d === '4') {
+        if (d === '2') {
           istrue = true;
         }
       })
@@ -113,6 +108,15 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         document.getElementById('inactivenext') ? document.getElementById('inactivenext').style.display = 'none' : '';
       }
     })
+    
+    this.isAdults = SharedService.ProgramId === 9;
+  }
+
+  ngAfterViewInit() {
+    if (document.getElementById('inactivenext')) {
+      document.getElementById('inactivenext').style.display = 'none';
+    }
+   
 
     $('.carousel').bcSwipe({ threshold: 50 });
     this.loadGoogleScript();
