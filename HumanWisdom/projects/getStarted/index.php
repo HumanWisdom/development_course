@@ -242,7 +242,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        HappierMe is a well-designed app that provides many useful tools and resources for anyone wanting to improve their life, resilience and well-being...</h5>
+                        HappierMe is a well-designed app that provides many useful tools and resources for anyone wanting to improve their life, resilience and well-being. Built upon the belief that the more you know, the stronger you will be in moments of crisis, HappierMe increases your knowledge. </h5>
                       </div>
                     </div>
 
@@ -270,7 +270,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb25px fs_15px fw_500 lh_150p fc_ffffff">
                         HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms. 
                         </h5>
                       </div>
@@ -278,7 +278,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff_0_5">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
                         Brenda McChesney
                         </h5>
 
@@ -310,15 +310,13 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                           Samaira, 
                         </h5>
-                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
-                        Student.
+                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        Student. India.
                       </p>
-                      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5 flex_ai">
-                        India.
-                      </h4>
+                     
                       </div>
                     </div>
                   </div>
