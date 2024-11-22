@@ -1082,7 +1082,9 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
            setTimeout(() => {
             this.actclosemodal?.nativeElement?.click();
             this.closeModal.emit(false);
-           // popup.close();
+            setTimeout(() => {
+              popup.close()
+             }, 800);
            this.handleAppleLoginResponse();
            },500);
          }
@@ -1095,7 +1097,9 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         clearInterval(intervalId);
         const token = localStorage.getItem('token');
         if(token!=null || token!=''){
-         // popup.close();
+         setTimeout(() => {
+          popup.close()
+         }, 800);
         }
         console.log('Popup was closed');
       
