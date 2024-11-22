@@ -310,10 +310,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
                           Samaira, 
                         </h5>
-                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
                         Student. India.
                       </p>
                      
