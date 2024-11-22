@@ -518,7 +518,7 @@ export class AdultDashboardPage implements OnInit {
         popover: {
           title: 'Daily practice',
           description: 'Short exercises for better everyday living. Come back for new exercises everyday.',
-          side: "top"
+          side: "bottom"
         }
       },
       {
@@ -526,7 +526,7 @@ export class AdultDashboardPage implements OnInit {
         popover: {
           title: 'Change your topic of choice',
           description: 'Choose from 8 broad topics to explore in depth.',
-          side: "top"
+          side: "bottom"
         }
       },
 
@@ -1075,7 +1075,7 @@ export class AdultDashboardPage implements OnInit {
         }
       },
         error => {
-          window.alert(error.error.Message)
+       //   window.alert(error.error.Message)
         },
         () => {
         }
@@ -1356,16 +1356,6 @@ export class AdultDashboardPage implements OnInit {
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("token", JSON.stringify(res.access_token))
-      const queryString = this.router.url.split('?')[1];
-      if(queryString){
-        const params = new URLSearchParams(queryString);
-        const code = params.get('authtoken');
-        if(code && code != null){
-          setTimeout(() => {
-          window.close();
-          }, 200);
-        }
-      }
       if (this.saveUsername == true) {
         localStorage.setItem("userId", JSON.stringify(this.userId))
         localStorage.setItem("userEmail", JSON.stringify(res.Email))
