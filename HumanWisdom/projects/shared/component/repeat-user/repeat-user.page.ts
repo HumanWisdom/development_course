@@ -77,16 +77,11 @@ export class RepeatUserPage implements OnInit {
   }
 
   ngOnInit() {
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.isAdults = true;
-    } else {
-      this.isAdults = false;
-    }
     setTimeout(() => {
-      if (this.isAdults) {
-        this.router.navigate(['/adults/adult-dashboard'])
-      } else {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
+      if(SharedService.FirstLoginOfTheDay){
+        this.router.navigate([`${SharedService.getprogramName()}/daily-checkin`])
+      }else{
+        this.router.navigate([`${SharedService.getDashboardUrls()}`])
       }
     }, 5000);
   }
