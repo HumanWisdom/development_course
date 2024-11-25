@@ -62,6 +62,20 @@ h6 {
   font-family: var(--font-secondary);
 }
 
+.land-happierMe-section {
+  justify-content: center;
+  display: flex;
+}
+
+.land-happierMe-gap {
+  column-gap: 4.8rem;
+}
+
+.land-iframe-sec {
+  border-radius: 20px;
+}
+
+
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
@@ -165,6 +179,24 @@ section {
   padding-right: 10px;
   color: #676775;
   content: "/";
+}
+
+@media (min-width: 2560px) {
+  .land-happierMe-section {
+    justify-content: center;
+    display: flex;
+    margin-right: -8rem;
+  }
+  
+  .land-happierMe-gap {
+    column-gap: 0rem;
+  }
+
+  .land-video-sec {
+    display: grid;
+        justify-content: center;
+        width: 35rem;
+  }
 }
 
 @media (max-width: 992px) {
