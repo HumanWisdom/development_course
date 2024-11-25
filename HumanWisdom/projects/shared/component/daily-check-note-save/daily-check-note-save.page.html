@@ -66,7 +66,7 @@
 
           </div>
           
-          <div class="row mtb20px">
+          <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0" (click)="SaveJournal()">
               <button type="submit" [disabled]="!isLoggedIn || !checkInDescription" class="btn mdp_add_to_journal">
                 Save to journal
@@ -74,7 +74,7 @@
             </div>
           </div>
 
-          <div class="row mt15px">
+          <div class="row mb15px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7 tcenter">
                 Your online journal is secure and private to you.
@@ -82,7 +82,16 @@
             </div>
           </div>
 
-          <div class="pagebreak"></div>
+          <div  > </div>
+          <div class="row center_flex">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="this.logeventservice.logEvent('click_emoji_Save_findOutmore'); findOutMore();">
+              <a>
+                <h4 class="mtb10px fs_15px fw_400 lh_130p fc_ffffff td_underline tcenter">
+                  Skip and explore further
+                </h4>
+              </a>
+            </div>
+          </div>
 
         </form>
       </div>
@@ -96,16 +105,8 @@
   </div>
 </div>
 
-<div class="mfooter" (click)="goToHome()">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_dailycheckin col_cw">
-      <a>
-        <h4 class="mtb0px fs_15px fw_400 lh_130p fc_ffffff td_underline tcenter">
-          Skip and explore further
-        </h4>
-      </a>
-    </div>
-  </div>
+<div class="mfooter">
+ 
 </div>
 
 <!-- successfully saved -->
