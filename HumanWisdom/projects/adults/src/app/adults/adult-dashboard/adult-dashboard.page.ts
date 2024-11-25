@@ -471,13 +471,6 @@ export class AdultDashboardPage implements OnInit {
 
     setTimeout(() => {
       this.GetDashboardFeatures();
-      if(queryString){
-        const params = new URLSearchParams(queryString);
-        const code = params.get('authtoken');
-        if(code && code != null){
-          window.close();
-        }
-      }
     }, 1000)
   }
 

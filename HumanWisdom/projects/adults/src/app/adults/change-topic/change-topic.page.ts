@@ -118,9 +118,10 @@ export class ChangeTopicPage implements OnInit {
       if (res) {
             if(this.isRoutedFromLogin==true)
             {
+              SharedService.isRoutedFromLogin = true;
               this.logeventservice.logEvent('click_pick_topic_'+this.selectedname);
               // this.url="/subscription/start-your-free-trial"
-              this.url="/adults/adult-dashboard"
+              this.url=`${SharedService.getprogramName()}/wisdom-survey`
 
             }
             else{
