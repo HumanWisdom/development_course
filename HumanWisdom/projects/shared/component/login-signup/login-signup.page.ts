@@ -501,7 +501,7 @@ export class LoginSignupPage implements OnInit {
       })
       debugger;
       this.loginResponse = res;
-      if(this.loginResponse.LastVisit){
+      if(this.loginResponse.LastVisit &&  new Date(this.loginResponse.LastVisit).getDate()){
         if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
           SharedService.FirstLoginOfTheDay =true;
         }
