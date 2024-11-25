@@ -499,8 +499,13 @@ export class LoginSignupPage implements OnInit {
         (accessObj)?.Moengage.add_email(this.email);
         (accessObj)?.Moengage.add_first_name(res.Name);
       })
+      debugger;
       this.loginResponse = res;
-
+      if(this.loginResponse.LastVisit){
+        if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
+          SharedService.FirstLoginOfTheDay =true;
+        }
+      }
       localStorage.setItem("socialLogin", "F");
       localStorage.setItem("isloggedin", "T");
       localStorage.setItem("guest", "F");
@@ -688,11 +693,7 @@ export class LoginSignupPage implements OnInit {
                     }
 
                   } else {
-                    if (SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/repeat-user"]);
-                    } else if (SharedService.ProgramId === 11) {
-                      this.router.navigate(["/teenagers/repeat-user"]);
-                    }
+                      this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
                   }
                 }
               }

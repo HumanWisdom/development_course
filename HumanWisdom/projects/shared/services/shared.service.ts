@@ -13,6 +13,7 @@ export class SharedService {
   public static isIos = false;
   public static isFromAdults = false;
   public static isRoutedFromLogin = false;
+  public static FirstLoginOfTheDay = false;
   constructor() {
   }
 
