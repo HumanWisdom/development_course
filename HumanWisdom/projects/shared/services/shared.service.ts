@@ -12,6 +12,7 @@ export class SharedService {
   public static enablebanner = false;
   public static isIos = false;
   public static isFromAdults = false;
+  public static isRoutedFromLogin = false;
   constructor() {
   }
 

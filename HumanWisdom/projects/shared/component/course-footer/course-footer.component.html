@@ -1,39 +1,54 @@
 <!-- footer  -->
-<div  *ngIf="!shared && !enableDashboard"  class="mfooter">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_stake col_cw" [ngClass]="bg_cft">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-        <a (click)="previous()">
-          <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
-            <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
-            Previous
-          </button>
-        </a>
+<ng-container *ngIf="!enabledDailyCheckin;else dailyCheckin"> 
+  <div  *ngIf="!shared && !enableDashboard"  class="mfooter">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_stake col_cw" [ngClass]="bg_cft">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+          <a (click)="previous()">
+            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+              Previous
+            </button>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+          <a (click)="next()">
+            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+              Next
+              <i class="fa fa-angle-right fs_16px ml10px"></i>
+            </button>
+          </a>
+        </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"></div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-        <a (click)="next()">
-          <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
-            Next
-            <i class="fa fa-angle-right fs_16px ml10px"></i>
+    </div>
+  </div>
+  <!-- /footer -->
+  
+  <!-- footer  -->
+  <div class="mfooter" *ngIf="shared || enableDashboard">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? 'v1_3_sfooter' : ''">
+        <a (click)="routeDashboard()">
+          <button type="button" class="btn btn_tfas">
+            Continue to Dashboard
           </button>
         </a>
       </div>
     </div>
   </div>
-</div>
-<!-- /footer -->
-
-<!-- footer  -->
-<div class="mfooter" *ngIf="shared || enableDashboard">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? 'v1_3_sfooter' : ''">
-      <a (click)="routeDashboard()">
-        <button type="button" class="btn btn_tfas">
-          Continue to Dashboard
-        </button>
-      </a>
+</ng-container>
+<ng-template #dailyCheckin>
+  <div class="mfooter">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? 'v1_3_sfooter' : ''">
+        <a (click)="routeDashboard()">
+          <button type="button" class="btn btn_tfas">
+          Continue to Daily Checkin
+          </button>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</ng-template>
 <!-- /footer -->

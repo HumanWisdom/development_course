@@ -26,6 +26,7 @@ export class CourseFooterComponent implements OnInit {
   shared=false;
   programName="";
   isAdults:boolean = false;
+  enabledDailyCheckin:boolean = false;
   //@ViewChild('screen', { static: true }) screen: any;
   @Input() screenName: any = '';
 
@@ -49,6 +50,10 @@ export class CourseFooterComponent implements OnInit {
     {
       this.shared=true
     }
+
+    if(this.router.url.includes('wisdom-score') && SharedService.isRoutedFromLogin){
+      this.enabledDailyCheckin=true;
+    }
     if (this.urlT)
     {
       this.shared=true
@@ -69,11 +74,16 @@ export class CourseFooterComponent implements OnInit {
 
   }
   routeDashboard(){
-    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
-    if(this.programName=='teenagers'){
-      this.programName='';
+    if(this.enabledDailyCheckin){
+       this.router.navigate([`${SharedService.getprogramName()}/daily-checkin`])
+    }else{
+      this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
+      if(this.programName=='teenagers'){
+        this.programName='';
+      }
+     this.goToDash();
     }
-   this.goToDash();
+
   }
 
   goToDash() {
