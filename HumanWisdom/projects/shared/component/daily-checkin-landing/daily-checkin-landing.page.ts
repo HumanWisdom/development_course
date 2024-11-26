@@ -46,5 +46,9 @@ export class DailyCheckInLandingPage implements OnInit {
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
 
+  routetoBlog(){
+    this.router.navigate([SharedService.getUrlfromFeatureName(`/blog-article?sId=66`)]);
+  }
+
   }
 
