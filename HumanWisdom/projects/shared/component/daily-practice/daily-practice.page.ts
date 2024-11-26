@@ -7,6 +7,10 @@ import { CommonService } from '../../../shared/services/common.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { HammerGestureConfig } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../../shared/models/program-model';
+import { NgNavigatorShareService } from 'ng-navigator-share';
+
+
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
@@ -60,13 +64,20 @@ export class DailyPracticePage implements OnInit {
   DailyInspirationImg = '';
   enableBtn = false;
   dailyInsModule = '';
+  path:any;
+  address:any;
+  token = localStorage.getItem("shareToken")
+
+
+
  currentSection = 0;
   isAdults = true;
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
     public router: Router,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private ngNavigatorShareService: NgNavigatorShareService,
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
@@ -235,5 +246,31 @@ export class DailyPracticePage implements OnInit {
 
   routeToDashboard(){
     this.router.navigate([SharedService.getDashboardUrls()])
+  }
+  share() {
+    this.shareUrl(SharedService.ProgramId);
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text:  "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
+      url: this.path
+    }).then((response) => {
+      
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  shareUrl(programType:ProgramType) {
+    switch (programType) {
+      case ProgramType.Adults:
+          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
+        break;
+      case ProgramType.Teenagers:
+        this.path = SharedService.TeenagerBaseUrl + this.address + `?t=${this.token}`
+        break;
+      default:
+          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
+    }
   }
 }
