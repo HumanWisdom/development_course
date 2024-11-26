@@ -37,7 +37,6 @@ export class DailyCheckInLandingPage implements OnInit {
 
    dailyCheckInRowClick(item){
     this.logeventservice.logEvent('click_emoji_'+ item.Expression.toString());
-
       SharedService.setDataInLocalStorage('dailyCheckIn',JSON.stringify(item));
       this.router.navigate([ SharedService.getUrlfromFeatureName('daily-checkin-save')])
    }
@@ -47,7 +46,10 @@ export class DailyCheckInLandingPage implements OnInit {
   }
 
   routetoBlog(){
-    this.router.navigate([SharedService.getUrlfromFeatureName(`/blog-article?sId=66`)]);
+   console.log(SharedService.getUrlfromFeatureName('blog-article?sId=66'))
+   console.log(["/"+SharedService.getprogramName()+"/blog-article?sId=66"])
+
+   this.router.navigateByUrl('/'+ SharedService.getprogramName() + '/blog-article?sId=66')
   }
 
   }
