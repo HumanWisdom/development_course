@@ -112,10 +112,10 @@ export class ChangeTopicPage implements OnInit {
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
         if (this.isRoutedFromLogin == true) {
-          this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
-          // this.url = "/teenagers/subscription/start-your-free-trial"
-           this.url = "/teenagers/teenager-dashboard"
-          this.router.navigate([this.url]);
+          SharedService.isRoutedFromLogin = true;
+          this.logeventservice.logEvent('click_pick_topic_'+this.selectedname);
+          // this.url="/subscription/start-your-free-trial"
+          this.url=`${SharedService.getprogramName()}/wisdom-survey`
         }
         else {
 
