@@ -7,12 +7,28 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { SharedService } from '../../services/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+
 declare var $: any;
-var carouselId: any = 1;
+// var carouselId: any = 1;
 @Component({
   selector: 'app-intro-carousel',
   templateUrl: './intro-carousel.page.html',
   styleUrls: ['./intro-carousel.page.scss'],
+  animations: [
+    trigger('slideAnimation', [
+      // Wildcard transition for swipe left (next)
+      transition('* => left', [
+        style({ transform: 'translateX(100%)' }), // start from right
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ]),
+      // Wildcard transition for swipe right (previous)
+      transition('* => right', [
+        style({ transform: 'translateX(-100%)' }), // start from left
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class IntroCarouselPage implements OnInit, AfterViewInit {
   public loading = false;
@@ -57,6 +73,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   audio = 4;
   carouselId = 1;
   isAdults: boolean = true;
+  direction = '';
+  currentSection = 0;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -84,31 +102,35 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       })
     }
 
+    $('.carousel').bcSwipe({ threshold: 50 });
+
     $('#ic_carousel').on('slid.bs.carousel', (data) => {
-      let arr = data['relatedTarget']['classList'];
-      let istrue = false;
-      carouselId = parseFloat(arr[1]) + 1;
-      console.log(carouselId);
-      console.log(arr)
-      arr.forEach((d) => {
-        if (d === '1') {
-          this.nextBtnDis = true;
-        }
-      })
-      arr.forEach((d, ind) => {
-        if (d === '2') {
-          istrue = true;
-        }
-      })
-      if (istrue) {
-        document.getElementById('activenext').style.display = 'none';
-        document.getElementById('inactivenext').style.display = 'flex';
-      } else {
-        document.getElementById('activenext') ? document.getElementById('activenext').style.display = 'flex' : '';
-        document.getElementById('inactivenext') ? document.getElementById('inactivenext').style.display = 'none' : '';
-      }
+      // let arr = data['relatedTarget']['classList'];
+      // let istrue = false;
+      // carouselId = parseFloat(arr[1]) + 1;
+      // console.log(carouselId);
+      // console.log(arr)
+      // arr.forEach((d) => {
+      //   if (d === '1') {
+      //     this.nextBtnDis = true;
+      //   }else if(d === '0') {
+      //     this.nextBtnDis = false;
+      //   }
+      // })
+      // arr.forEach((d, ind) => {
+      //   if (d === '2') {
+      //     istrue = true;
+      //   }
+      // })
+      // if (istrue) {
+      //   document.getElementById('activenext').style.display = 'none';
+      //   document.getElementById('inactivenext').style.display = 'flex';
+      // } else {
+      //   document.getElementById('activenext') ? document.getElementById('activenext').style.display = 'flex' : '';
+      //   document.getElementById('inactivenext') ? document.getElementById('inactivenext').style.display = 'none' : '';
+      // }
     })
-    
+
     this.isAdults = SharedService.ProgramId === 9;
   }
 
@@ -116,7 +138,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     if (document.getElementById('inactivenext')) {
       document.getElementById('inactivenext').style.display = 'none';
     }
-   
+
 
     $('.carousel').bcSwipe({ threshold: 50 });
     this.loadGoogleScript();
@@ -130,7 +152,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
-    this.logeventservice.logEvent('click_skip_onboarding' + ' ' + carouselId);
+    this.logeventservice.logEvent('click_skip_onboarding' + ' ' + this.carouselId);
   }
 
   onLoad() {
@@ -589,11 +611,22 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   Logevent(route, params, evtName) {
-    this.carouselId += 1;
-    if (this.carouselId === 3) {
-      this.nextBtnDis = true;
+    if (evtName === 'click_next_onboarding') {
+      this.currentSection++;
+      if (this.currentSection >= 2) {
+        this.currentSection = 0;
+      }
+      this.direction = 'left';
+    } else {
+      this.direction = 'right';
+      if (this.currentSection == 0) {
+        this.currentSection = 1;
+      } else {
+        this.currentSection--;
+      }
     }
-    this.logeventservice.logEvent(evtName + ' ' + carouselId);
+
+    this.logeventservice.logEvent(evtName + ' ' + this.currentSection);
     if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {

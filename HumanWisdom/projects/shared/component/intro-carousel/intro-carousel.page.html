@@ -8,42 +8,41 @@
           <div class="x_content p0 tcenter">
             <form>
 
-       
+
 
               <!-- carousel -->
-              <div class="container" >
+              <div class="container" (swipeleft)="Logevent('', '', 'click_next_onboarding')" (swiperight)="Logevent('', '', 'click_prev_onboarding')">
                 <div id="ic_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
                   <ol class="m0px">
                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex" >
-                        <div  
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div
                           class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext col_cw">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex" >
-                            <a data-slide="skip" class="skip" (click)="skip()" *ngIf="!nextBtnDis">
-                              <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
-                                <!-- Skip -->
-                              </button>
-                            </a>
-
-                            <a  href="#ic_carousel" data-slide="prev" class="prev"  
-                            (click)="Logevent('', '', 'click_prev_onboarding')"  *ngIf="nextBtnDis">
+                          <div (click)="Logevent('', '', 'click_prev_onboarding')"
+                            class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
+                            <a href="#ic_carousel" data-slide="prev" class="prev">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Previous
                               </button>
                             </a>
                           </div>
-                        
+
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                            <ol class="carousel-indicators" [ngStyle]="{'visibility': loading ? 'visible' : 'hidden'}">
-                              <li data-target="#ic_carousel" data-slide-to="0" class="active"></li>
-                              <li data-target="#ic_carousel" data-slide-to="1"></li>
-                              <!-- <li data-target="#ic_carousel" data-slide-to="2"></li> -->
-                            </ol>
+                            <span class="fc_ffffff">{{ currentSection + 1 }} / 2</span>
                           </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="!nextBtnDis">
-                            <a href="#ic_carousel" data-slide="next" class="next"
-                              (click)="Logevent('', '', 'click_next_onboarding')">
+
+                          <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex"> -->
+                          <!-- <ol class="carousel-indicators" [ngStyle]="{'visibility': loading ? 'visible' : 'hidden'}">
+                              <li data-target="#ic_carousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#ic_carousel" data-slide-to="1"></li> -->
+                          <!-- <li data-target="#ic_carousel" data-slide-to="2"></li> -->
+                          <!-- </ol> -->
+                          <!-- </div> -->
+
+                          <div (click)="Logevent('', '', 'click_next_onboarding')"
+                            class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
+                            <a href="#ic_carousel" data-slide="next" class="next">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
@@ -57,10 +56,10 @@
                   <div class="carousel-inner">
                     <app-splash *ngIf="!loading"></app-splash>
 
-                    <div class="item 0 active" [hidden]="loading">
+                    <div class="item 0 active"  [@slideAnimation]="direction" [hidden]="loading">
                       <!-- slide 1 -->
 
-                      
+
                       <div class="row mt40px center_flex">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                           <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 p0">
@@ -74,7 +73,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
                             <h4 class="mtb0px fs_21px fw_500 lh_130p fc_ffffff tcenter">
-                              Welcome to HappierMe!<br/>
+                              Welcome to HappierMe!<br />
                               Find lasting solutions.
                             </h4>
                           </div>
@@ -92,19 +91,21 @@
                       </div> -->
                       <div class="row  mt50px mb5px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Adults.webp" class="">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Adults.webp"
+                            class="">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Teens.webp" class="">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Teens.webp"
+                            class="">
                         </div>
                       </div>
-                      
+
 
                       <div class="pagebreak"></div>
                       <!-- /slide 1 -->
                     </div>
 
-                    <div class="item 1">
+                    <div class="item 1" [@slideAnimation]="direction">
                       <!-- slide 2 -->
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -113,44 +114,45 @@
                             class="cvideo_03 br_0px"
                             poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                             controlsList="nodownload">
-                            <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction.mp4"
+                            <source
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction.mp4"
                               type="video/mp4" *ngIf="isAdults">
-      
+
                             <source
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction_teens.mp4"
                               type="video/mp4" *ngIf="!isAdults">
                           </video>
                         </div>
                       </div>
-      
+
                       <div class="row mt15px mb15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                             <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="isAdults">
-      
+
                               <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
-                              <!-- <div class="row mt15px">
+                              <div class="row mt15px">
                               <h1 class="fw_500 fs_18px lh_140p fc_ffffff mtb0px ">
       
       
                               Your guide for a happier life.
                               </h1>
-                             </div> -->
+                             </div>
                              <div class="row mt15px">
-                              <h4 class="mtb0px fs_21px fw_500 lh_140p fc_ffffff tcenter">
+                              <h4 class="mtb0px fs_15px  lh_150p fc_ffffff">
                                 Manage your own emotions and mental health, have fulfilling relationships and succeed in life.
                               </h4>
                               </div>
                               <!-- <hr> -->
                               <div class="row mt15px">
       
-                              <h4 class="mtb0px fs_12px  lh_150p fc_ffffff_0_7 tcenter">
+                              <h4 class="mtb0px fs_12px  lh_150p fc_ffffff_0_7">
                                 Register today and try HappierMe for free.
                                 <br/>
                                 We do not share your data with anyone.                          </h4>
                               </div>
                             </h4>
-      
+
                             <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="!isAdults">
                               <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
                               <div class="row mt15px">
@@ -160,25 +162,26 @@
                               </div>
                               <div class="row mt15px">
                                 <h4 class="mtb0px fs_15px  lh_150p fc_ffffff">
-                                  Manage your own emotions and mental health, have fulfilling friendships and succeed in life.
+                                  Manage your own emotions and mental health, have fulfilling friendships and succeed in
+                                  life.
                                 </h4>
                               </div>
                               <!-- <hr> -->
-                                <div class="row mt15px">
-      
-                                  <h4 class="mtb0px fs_12px  lh_150p fc_ffffff_0_7">
-                                    Register today and try HappierMe for free.
-                                    <br/>
-                                    We do not share your data with anyone.
-                                  </h4>
-                                </div>
-                          </h4>
+                              <div class="row mt15px">
+
+                                <h4 class="mtb0px fs_12px  lh_150p fc_ffffff_0_7">
+                                  Register today and try HappierMe for free.
+                                  <br />
+                                  We do not share your data with anyone.
+                                </h4>
+                              </div>
+                            </h4>
+                          </div>
                         </div>
                       </div>
-                    </div>
-      
-      
-      
+
+
+
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -194,13 +197,14 @@
                           </div>
                         </div>
                       </div>
-      
+
                       <div class="row mt15px mb20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
-      
+
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tleft pl0px">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg"
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg"
                                 (click)="fbLogin('login')" alt="" class="img-responsive">
                             </button>
                           </div>
@@ -212,13 +216,14 @@
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tright pr0px">
                             <button type="submit" class="btn btn_login_signup tcenter">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg"
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg"
                                 (click)="signInWithApple('login')" alt="" class="img-responsive">
                             </button>
                           </div>
                         </div>
                       </div>
-      
+
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -234,7 +239,7 @@
                           </div>
                         </div>
                       </div>
-      
+
                       <div class="row mt15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 tcenter pl0px">
@@ -253,7 +258,7 @@
                           </div>
                         </div>
                       </div>
-      
+
                       <div class="row mt20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px tcenter">
                           <a class="" (click)="routedashboard()">
@@ -263,12 +268,12 @@
                           </a>
                         </div>
                       </div>
-      
+
                       <div class="pagebreak"></div>
                       <!-- /slide 3 -->
                     </div>
 
-<!-- 
+                    <!--
                     <div class="item 2">
                       slide 3
                       <div class="row">
