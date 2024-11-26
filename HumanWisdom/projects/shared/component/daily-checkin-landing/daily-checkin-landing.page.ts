@@ -36,7 +36,7 @@ export class DailyCheckInLandingPage implements OnInit {
    }
 
    dailyCheckInRowClick(item){
-    this.logeventservice.logEvent('click_daily_checkin_'+ JSON.stringify(item.Expression));
+    this.logeventservice.logEvent('click_emoji_'+ item.Expression.toString());
 
       SharedService.setDataInLocalStorage('dailyCheckIn',JSON.stringify(item));
       this.router.navigate([ SharedService.getUrlfromFeatureName('daily-checkin-save')])

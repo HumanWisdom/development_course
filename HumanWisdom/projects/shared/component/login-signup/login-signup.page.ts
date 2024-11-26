@@ -499,7 +499,6 @@ export class LoginSignupPage implements OnInit {
         (accessObj)?.Moengage.add_email(this.email);
         (accessObj)?.Moengage.add_first_name(res.Name);
       })
-      debugger;
       this.loginResponse = res;
       if(this.loginResponse.LastVisit &&  new Date(this.loginResponse.LastVisit).getDate()){
         if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
