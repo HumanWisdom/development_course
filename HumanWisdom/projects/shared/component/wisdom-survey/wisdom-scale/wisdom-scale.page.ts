@@ -10,6 +10,8 @@ import { OnboardingService } from '../../../services/onboarding.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from "../../../models/program-model";
 import { Constant } from "../../../services/constant";
+// import { AdultsService } from '../../../../adults/src/app/adults/adults.service';
+import { AdultsService } from '../../../../adults/src/app/adults/adults.service';
 @Component({
   selector: 'app-wisdom-scale',
   templateUrl: './wisdom-scale.page.html',
@@ -65,7 +67,6 @@ export class WisdomScalePage implements OnInit {
   s8: any
   s9: any
   s10: any
-  question: any
   optionList = []
   questionA: any
   checkedRight = false
@@ -96,7 +97,7 @@ export class WisdomScalePage implements OnInit {
         ticks: {
           min: 0,
           max: 100
-      }
+        }
       }],
     },
     responsive: true,
@@ -112,9 +113,19 @@ export class WisdomScalePage implements OnInit {
   public lineChartType: ChartType = 'line';
   isAdults = true;
 
+  public text = 2
+  public video = 3
+  public audio = 4
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
+  public mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
+
   constructor(private router: Router,
     private service: OnboardingService,
     private location: Location,
+    private services: AdultsService,
     public logeventservice: LogEventService,
     private ac: ActivatedRoute, private navigationService: NavigationService,
     private meta: Meta, private title: Title) {
@@ -131,11 +142,84 @@ export class WisdomScalePage implements OnInit {
 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+    let authtoken = JSON.parse(localStorage.getItem("token"));
+    if (authtoken) {
+      this.service.setDataRecievedState(false);
+      localStorage.setItem('socialLogin', 'T');
+      this.services.verifytoken(authtoken).subscribe((res) => {
+        if (res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          this.userId = res['UserId']
+          this.loginadult(res);
+          this.service.setDataRecievedState(true);
         } else {
-         this.isAdults = false;
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
+          this.service.setDataRecievedState(true);
+          // this.router.navigate(['/adults/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
+      }, error => {
+        localStorage.setItem("email", 'guest@humanwisdom.me');
+        localStorage.setItem("pswd", '12345');
+        localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
+
+      },
+      )
+    } else {
+      this.service.setDataRecievedState(true);
+    }
+
+  }
 
 
+  loginadult(res) {
+    let loginResponse = res
+    this.userId = res.UserId
+    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+    else localStorage.setItem("guest", 'F')
+    sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+    localStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+    localStorage.setItem("token", JSON.stringify(res.access_token))
+    localStorage.setItem("Subscriber", res.Subscriber)
+    localStorage.setItem("userId", JSON.stringify(this.userId))
+    localStorage.setItem("email", res['Email'])
+    localStorage.setItem("name", res.Name)
+    localStorage.setItem("text", JSON.stringify(this.text))
+    localStorage.setItem("video", JSON.stringify(this.video))
+    localStorage.setItem("audio", JSON.stringify(this.audio))
+    localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+    localStorage.setItem("question", JSON.stringify(this.question))
+    localStorage.setItem("reflection", JSON.stringify(this.reflection))
+    localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
+    localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    if (res.UserId == 0) {
+    } else {
+      sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+      localStorage.setItem("userId", JSON.stringify(res.UserId))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      if (this.saveUsername == true) {
+        localStorage.setItem("userId", JSON.stringify(res.UserId))
+        localStorage.setItem("userEmail", JSON.stringify(res.Email))
+        localStorage.setItem("userName", JSON.stringify(res.Name))
+
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(res.UserId))
+        sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
+        sessionStorage.setItem("userName", JSON.stringify(res.Name))
+      }
+    }
   }
 
   ngOnInit() {
@@ -321,25 +405,25 @@ export class WisdomScalePage implements OnInit {
           this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
           const { isUseCloseButton } = window.history.state;
           if (isUseCloseButton) {
-            this.router.navigate(["/" + SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
+            this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
           } else {
-            this.router.navigate(["/"+SharedService.getprogramName()+ "/wisdom-survey/wisdom-score"]);
+            this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"]);
           }
         });
   }
 
-  goBack(){
+  goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if(url==null){
+    if (url == null) {
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
-      if(url && url!=null && url != 'null'){
+      if (url && url != null && url != 'null') {
         this.router.navigate([url]);
-      }else{
+      } else {
         this.location.back();
       }
-     }else{
+    } else {
       this.router.navigate([url]);
-     }
+    }
   }
 
   viewClickEvent(url) {
