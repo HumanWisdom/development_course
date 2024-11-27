@@ -29953,6 +29953,14 @@ svg path
 {
   margin: 0 -10px 0 -10px;
 }
+.link{
+  text-decoration: underline;
+      color: rgba(255, 255, 255, 0.7);
+  }
+  a:hover{
+    text-decoration: underline;
+      color: rgba(255, 255, 255, 0.7);
+  }
 
 .pt1
 {
