@@ -29957,10 +29957,14 @@ svg path
   text-decoration: underline;
       color: rgba(255, 255, 255, 0.7);
   }
-  a:hover{
+  .link:hover{
+    text-decoration: underline;
+        color: rgba(255, 255, 255, 0.7);
+    }
+  /* a:hover{
     text-decoration: underline;
       color: rgba(255, 255, 255, 0.7);
-  }
+  } */
 
 .pt1
 {
