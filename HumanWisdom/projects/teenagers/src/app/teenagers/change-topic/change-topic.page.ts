@@ -155,6 +155,8 @@ export class ChangeTopicPage implements OnInit {
           }
 
         }
+        localStorage.setItem('lastRoute', null);
+        this.router.navigate([this.url]);
 
       }
     });

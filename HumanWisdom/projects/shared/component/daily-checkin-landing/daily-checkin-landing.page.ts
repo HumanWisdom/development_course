@@ -46,8 +46,8 @@ export class DailyCheckInLandingPage implements OnInit {
   }
 
   routetoBlog(){
-   console.log(SharedService.getUrlfromFeatureName('blog-article?sId=66'))
-   console.log(["/"+SharedService.getprogramName()+"/blog-article?sId=66"])
+  //  console.log(SharedService.getUrlfromFeatureName('blog-article?sId=66'))
+  //  console.log(["/"+SharedService.getprogramName()+"/blog-article?sId=66"])
 
    this.router.navigateByUrl('/'+ SharedService.getprogramName() + '/blog-article?sId=66')
   }
