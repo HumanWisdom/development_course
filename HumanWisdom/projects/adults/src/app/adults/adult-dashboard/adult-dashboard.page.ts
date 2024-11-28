@@ -335,7 +335,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
-
+    SharedService.isRoutedFromLogin = false;
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }

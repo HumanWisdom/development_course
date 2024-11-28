@@ -29,7 +29,11 @@ const routes: Routes = [
   {
     path: 'newsletter-signup',
     component: NewsletterComponent
+  },  {
+    path: 'survey',
+    loadChildren: () => import('./survey/survey.module').then( m => m.SurveyPageModule)
   }
+
 ];
 
 @NgModule({

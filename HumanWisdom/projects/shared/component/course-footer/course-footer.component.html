@@ -1,5 +1,4 @@
 <!-- footer  -->
-<ng-container *ngIf="!enabledDailyCheckin;else dailyCheckin"> 
   <div  *ngIf="!shared && !enableDashboard"  class="mfooter">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_stake col_cw" [ngClass]="bg_cft">
@@ -31,24 +30,10 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? 'v1_3_sfooter' : ''">
         <a (click)="routeDashboard()">
           <button type="button" class="btn btn_tfas">
-            Continue to Dashboard
+            Continue
           </button>
         </a>
       </div>
     </div>
   </div>
-</ng-container>
-<ng-template #dailyCheckin>
-  <div class="mfooter">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? 'v1_3_sfooter' : ''">
-        <a (click)="routeDashboard()">
-          <button type="button" class="btn btn_tfas">
-          Continue to Daily Checkin
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</ng-template>
 <!-- /footer -->
