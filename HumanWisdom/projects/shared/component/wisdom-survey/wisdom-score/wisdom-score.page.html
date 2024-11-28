@@ -30,31 +30,31 @@
 
               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                 <!-- <div class="prelative center_flex"> -->
-                <circle-progress [percent]="points" [radius]="56" [space]="-10" [outerStrokeWidth]="10"
-                  [innerStrokeWidth]="10" [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'"
+                <circle-progress [percent]="points" [radius]="64" [space]="-15" [outerStrokeWidth]="15" 
+                  [innerStrokeWidth]="15" [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32" [titleFontWeight]="600"
                   [innerStrokeColor]="'rgba(255,255,255,0.2)'" [showSubtitle]="false" [animation]="true" [showTitle]="true"
-                  [animationDuration]="300">
+                  [animationDuration]="100">
                 </circle-progress>
 
                 <!-- </div> -->
               </div>
 
-              <h1 class="fw_500 fs_18px lh_35px m-b-30 fc_ffffff tcenter wp_txt">
+              <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt">
                 Your wellness score is {{points}}
               </h1>
 
-              <h1 class="fw_500 m-b-30 fs_12px lh_19px fc_ffffff tcenter" *ngIf="parseint(points) < 40">
+              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) < 40">
                 Sorry that you’re not feeling great. You’ve come to the right place. There are many resources in the app
                 to help you boost your wellbeing and feel happier.
               </h1>
 
 
-              <h1 class="fw_500 m-b-30 fs_12px lh_19px fc_ffffff tcenter" *ngIf="parseint(points) >= 41 && parseint(points) < 60">
+              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                 Your wellness journey begins here. There are so many resources in the app to help you be happier and
                 succeed in life
               </h1>
 
-              <h1 class="fw_500 m-b-30 fs_12px lh_19px fc_ffffff tcenter" *ngIf="parseint(points) >= 60">
+              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) >= 60">
                 You’re doing great! Your wellness score is above average. There are many resources in the app to help
                 you to grow even further as a person and succeed in every way in life </h1>
 

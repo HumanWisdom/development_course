@@ -29962,11 +29962,19 @@ svg path
 {
   margin: 0 -10px 0 -10px;
 }
+
 .link{
 text-decoration: underline;
     color: rgba(255, 255, 255, 0.7);
 }
-
+.link:hover{
+  text-decoration: underline;
+      color: rgba(255, 255, 255, 0.7);
+  }
+ /* a:hover{
+  text-decoration: underline;
+    color: rgba(255, 255, 255, 0.7);
+} */
 .pt2 {
   /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
   background: #120F40;

@@ -29953,6 +29953,18 @@ svg path
 {
   margin: 0 -10px 0 -10px;
 }
+.link{
+  text-decoration: underline;
+      color: rgba(255, 255, 255, 0.7);
+  }
+  .link:hover{
+    text-decoration: underline;
+        color: rgba(255, 255, 255, 0.7);
+    }
+  /* a:hover{
+    text-decoration: underline;
+      color: rgba(255, 255, 255, 0.7);
+  } */
 
 .pt1
 {
@@ -34379,7 +34391,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   height: 110px;
   padding: 30px 20px;
-  background: #424675;
+  background: #183C79;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -35386,7 +35398,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   left: 0;
   margin: 0 auto;
   z-index: 999;
-  background: #1e1544;
+  /* background: #1e1544; */
   padding: 30px 0 70px 0;
 }
 
@@ -35827,26 +35839,33 @@ li ol > li:before {
 .h4_blogs p span,
 .h4_blogs h2 font,
 .h4_blogs p font,
-.h4_blogs
+.h4_blogs,
+.h4_blogs p,
+.h4_blogs h2
 {
   font-size: 16px !important;
   font-weight: 400;
   line-height: 150%;
   font-style: normal;
   color: #FFFFFF !important;
+  background-color: transparent !important;
 }
 
 .Body span.Hyperlink0 a span,
 .Body span.Hyperlink1 a span,
 .h4_blogs a span,
-.h4_blogs p a font
+.h4_blogs p a font,
+h3_blogs p a font,
+.h4_blogs p a
 {
   font-size: 16px !important;
   font-weight: 600 !important;
   line-height: 150%;
   font-style: normal;
   color: #E58D82 !important;
+  word-wrap: break-word;
 }
+
 
 #docs-internal-guid-38acf24b-7fff-8dd9-6b65-ed171b049403 p,
 .h4_blogs p
