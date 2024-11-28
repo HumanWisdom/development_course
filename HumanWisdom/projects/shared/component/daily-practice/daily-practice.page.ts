@@ -66,7 +66,6 @@ export class DailyPracticePage implements OnInit {
   dailyInsModule = '';
   path:any;
   address:any;
-  token = localStorage.getItem("shareToken")
 
 
 
@@ -98,6 +97,7 @@ export class DailyPracticePage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber')
     }
     $('.carousel').bcSwipe({ threshold: 50 });
+    this.address =  this.router.url;
 
     if (this.guest || !this.isloggedIn) {
       this.placeholder = 'Login to use this feature' ;
@@ -264,13 +264,13 @@ export class DailyPracticePage implements OnInit {
   shareUrl(programType:ProgramType) {
     switch (programType) {
       case ProgramType.Adults:
-          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
+          this.path = SharedService.AdultsBaseUrl + this.address 
         break;
       case ProgramType.Teenagers:
-        this.path = SharedService.TeenagerBaseUrl + this.address + `?t=${this.token}`
+        this.path = SharedService.TeenagerBaseUrl + this.address 
         break;
       default:
-          this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
+          this.path = SharedService.AdultsBaseUrl + this.address
     }
   }
 }
