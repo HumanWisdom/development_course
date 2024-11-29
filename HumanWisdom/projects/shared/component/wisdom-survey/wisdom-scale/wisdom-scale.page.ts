@@ -122,6 +122,8 @@ export class WisdomScalePage implements OnInit {
   public mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   public mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
 
+  public disableBtn = true;
+
   constructor(private router: Router,
     private service: OnboardingService,
     private location: Location,
@@ -352,6 +354,10 @@ export class WisdomScalePage implements OnInit {
       default: {
         break;
       }
+    }
+
+    if(this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9) {
+      this.disableBtn = false;
     }
   }
 
