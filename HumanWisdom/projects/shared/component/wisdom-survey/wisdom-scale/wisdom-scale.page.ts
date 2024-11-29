@@ -160,6 +160,7 @@ export class WisdomScalePage implements OnInit {
           this.userId = res['UserId']
           this.loginadult(res);
           this.service.setDataRecievedState(true);
+          SharedService.isRoutedFromLogin =true
         } else {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
