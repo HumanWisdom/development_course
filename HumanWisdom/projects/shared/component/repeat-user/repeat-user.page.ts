@@ -41,7 +41,7 @@ export class RepeatUserPage implements OnInit {
   public moduleId = 7
   searchinp = '';
   public moduleList = [];
-  isAdults = true;
+  isAdults = false;
 
   constructor(public service: AdultsService, public router: Router, public logeventservice: LogEventService, private route: ActivatedRoute) {
     let authtoken;
@@ -84,6 +84,12 @@ export class RepeatUserPage implements OnInit {
         this.router.navigate([`${SharedService.getDashboardUrls()}`])
       }
     }, 5000);
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   getProgress() {

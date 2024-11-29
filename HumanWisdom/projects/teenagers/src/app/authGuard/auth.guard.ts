@@ -73,6 +73,9 @@ export class AuthGuard implements CanActivate, OnInit {
     if (token[1] !== undefined && token[1] !== '') {
       if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard') || m.includes('wisdom-survey')) {
         localStorage.setItem("isPWA", 'APP')
+        if( m.includes('wisdom-survey'))
+          SharedService.isRoutedFromLogin =true
+
       }
       let persub = localStorage.getItem('personalised subscription');
       let pers = localStorage.getItem('personalised');
