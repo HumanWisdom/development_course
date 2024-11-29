@@ -160,6 +160,8 @@ export class WisdomScalePage implements OnInit {
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           localStorage.setItem("Subscriber", res['Subscriber']);
           this.userId = res['UserId']
+          localStorage.setItem("userId", JSON.stringify(this.userId))
+          this.apiCall();
           this.loginadult(res);
           this.service.setDataRecievedState(true);
         } else {
@@ -233,8 +235,16 @@ export class WisdomScalePage implements OnInit {
 
 
     this.createScreen()
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    if (this.saveUsername == false) { this.userId = JSON.parse(localStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+
+    if(this.userId) {
+      this.apiCall();
+    }
+
+  }
+
+  apiCall() {
     this.service.clickModule(50, this.userId)
       .subscribe(res => {
         this.qrList = res
@@ -355,7 +365,7 @@ export class WisdomScalePage implements OnInit {
       }
     }
 
-    if(this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9) {
+    if (this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9 && this.s10) {
       this.disableBtn = false;
     }
   }
