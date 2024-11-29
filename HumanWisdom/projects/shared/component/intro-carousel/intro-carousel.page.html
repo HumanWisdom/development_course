@@ -56,7 +56,7 @@
                   <div class="carousel-inner">
                     <app-splash *ngIf="!loading"></app-splash>
 
-                    <div class="item 0 active" [ngStyle]="{'display': currentSection==0 ? 'none' : ''}" [@slideAnimation]="direction" [hidden]="loading">
+                    <div class="item 0 active" [ngStyle]="{'display': currentSection==1 ? 'none' : ''}" [@slideAnimation]="direction" [hidden]="loading">
                       <!-- slide 1 -->
 
 
@@ -105,7 +105,7 @@
                       <!-- /slide 1 -->
                     </div>
 
-                    <div class="item 1 active" [ngStyle]="{'display': currentSection==1 ? 'none' : ''}" [@slideAnimation]="direction">
+                    <div class="item 1 active" [ngStyle]="{'display': currentSection==0 ? 'none' : ''}" [@slideAnimation]="direction">
                       <!-- slide 2 -->
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -140,7 +140,7 @@
                               </h1>
                              </div> -->
                              <div class="row mt15px">
-                                <h4 class="mtb0px fs_21px fw_500 lh_140p fc_ffffff tcenter">
+                                <h4 class="mtb0px fs_18px fw_500 lh_140p fc_ffffff tcenter">
                                   Manage your own emotions and mental health, have fulfilling relationships and succeed in life.
                                 </h4>
                               </div>
