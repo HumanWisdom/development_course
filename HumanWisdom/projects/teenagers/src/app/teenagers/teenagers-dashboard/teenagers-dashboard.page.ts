@@ -366,6 +366,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   }
 
   ngOnInit() {
+    SharedService.isRoutedFromLogin = false;
 
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
@@ -538,7 +539,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         popover: {
           title: 'Daily practice',
           description: 'Short exercises for better everyday living. Come back for new exercises everyday.',
-          side: "bottom"
+          side: "top"
         }
       },
       {
@@ -546,7 +547,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         popover: {
           title: 'Change your topic of choice',
           description: 'Choose from 8 broad topics to explore in depth.',
-          side: "bottom"
+          side: "top"
         }
       },
       /* {

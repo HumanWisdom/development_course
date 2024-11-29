@@ -50,8 +50,9 @@ p {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
+  right:4px
 }
 
 .chevron {
@@ -63,6 +64,7 @@ p {
   margin: -3px;
   opacity: 1;
   animation: fadeInOut 1.5s infinite;
+  margin-left:0.4px
 }
 
 .chevron:nth-child(1) {
@@ -81,6 +83,7 @@ p {
   margin-top: 8px;
   opacity: 0.5;
   animation: fadeInOut 1.5s infinite;
+  margin-left: -22px;
 }
 
 /* Animation */

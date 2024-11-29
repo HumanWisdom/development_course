@@ -3,7 +3,7 @@
 
   <!-- desktop -->
   <div class="row center_flex display_m_none">
-    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
         <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           About us
@@ -11,7 +11,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
-            <a href="../pages/about_us.php">
+            <a id="ourStory">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Our story
               </h4>
@@ -23,7 +23,7 @@
               </h4>
             </a> -->
 
-            <a href="https://happierme.app/adults/testimonials">
+            <a id="testimonialFooter" >
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Testimonials
               </h4>
@@ -87,7 +87,7 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/newsletter.html">
+            <a href="https://staging.happierme.app/adults/newsletter-signup">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Sign up for our newsletter
               </h4>
@@ -109,7 +109,7 @@
               </h4>
             </a>
 
-            <a href="https://happierme.app/adults/contact-us">
+            <a id="contactUsFooter">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Contact us
               </h4>

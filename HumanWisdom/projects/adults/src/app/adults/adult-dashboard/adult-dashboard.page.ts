@@ -335,7 +335,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
-
+    SharedService.isRoutedFromLogin = false;
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
@@ -347,6 +347,8 @@ export class AdultDashboardPage implements OnInit {
         localStorage.setItem('instaToken',code)
         window.close();
       }
+
+
     }
     // Extract the query string from the URL
 
@@ -1075,7 +1077,7 @@ export class AdultDashboardPage implements OnInit {
         }
       },
         error => {
-          window.alert(error.error.Message)
+       //   window.alert(error.error.Message)
         },
         () => {
         }

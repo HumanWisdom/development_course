@@ -7,6 +7,10 @@ import { CommonService } from '../../../shared/services/common.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { HammerGestureConfig } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../../shared/models/program-model';
+import { NgNavigatorShareService } from 'ng-navigator-share';
+
+
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
@@ -60,13 +64,19 @@ export class DailyPracticePage implements OnInit {
   DailyInspirationImg = '';
   enableBtn = false;
   dailyInsModule = '';
+  path:any;
+  address:any;
+
+
+
  currentSection = 0;
   isAdults = true;
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
     public router: Router,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private ngNavigatorShareService: NgNavigatorShareService,
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
@@ -87,6 +97,7 @@ export class DailyPracticePage implements OnInit {
       this.Subscriber = localStorage.getItem('Subscriber')
     }
     $('.carousel').bcSwipe({ threshold: 50 });
+    this.address =  this.router.url;
 
     if (this.guest || !this.isloggedIn) {
       this.placeholder = 'Login to use this feature' ;
@@ -178,7 +189,7 @@ export class DailyPracticePage implements OnInit {
       }
       this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
         if (res) {
-          this.content = "Successfully added daily question";
+          this.content = "Successfully added to journal";
           this.enableAlert = true;
           this.questext='';
           
@@ -228,10 +239,38 @@ export class DailyPracticePage implements OnInit {
 
   getAlertcloseEvent() {
     this.enableAlert = false;
+    this.questext="";
+
     this.content = '';
   }
 
   routeToDashboard(){
     this.router.navigate([SharedService.getDashboardUrls()])
+  }
+  share() {
+    this.shareUrl(SharedService.ProgramId);
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text:  "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
+      url: this.path
+    }).then((response) => {
+      
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  shareUrl(programType:ProgramType) {
+    switch (programType) {
+      case ProgramType.Adults:
+          this.path = SharedService.AdultsBaseUrl + this.address 
+        break;
+      case ProgramType.Teenagers:
+        this.path = SharedService.TeenagerBaseUrl + this.address 
+        break;
+      default:
+          this.path = SharedService.AdultsBaseUrl + this.address
+    }
   }
 }

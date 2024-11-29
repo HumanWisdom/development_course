@@ -41,7 +41,7 @@ export class RepeatUserPage implements OnInit {
   public moduleId = 7
   searchinp = '';
   public moduleList = [];
-  isAdults = true;
+  isAdults = false;
 
   constructor(public service: AdultsService, public router: Router, public logeventservice: LogEventService, private route: ActivatedRoute) {
     let authtoken;
@@ -64,6 +64,16 @@ export class RepeatUserPage implements OnInit {
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
+            if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
+              SharedService.FirstLoginOfTheDay =true;
+            }
+            else 
+            {
+              SharedService.FirstLoginOfTheDay =false;
+            }
+            console.log(SharedService.FirstLoginOfTheDay)
+          }
 
         }
       })
@@ -77,18 +87,19 @@ export class RepeatUserPage implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      if(SharedService.FirstLoginOfTheDay){
+        this.router.navigate([`${SharedService.getprogramName()}/daily-checkin`])
+      }else{
+        this.router.navigate([`${SharedService.getDashboardUrls()}`])
+      }
+    }, 5000);
+
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
       this.isAdults = false;
     }
-    setTimeout(() => {
-      if (this.isAdults) {
-        this.router.navigate(['/adults/adult-dashboard'])
-      } else {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
-      }
-    }, 5000);
   }
 
   getProgress() {

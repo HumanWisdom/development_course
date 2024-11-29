@@ -21,7 +21,7 @@ export class LogEventService {
     let deviceInfo = localStorage.getItem('fromapp');
     const isDesktopDevice = this.deviceService.isDesktop();
     let eventName = (!deviceInfo || deviceInfo !== 'T') && this.isBrowser(device_info?.browser) ? eventname + '_' + 'Web' : eventname + '_' + 'App';
-    eventName = SharedService.getprogramName() + '_' + eventName;
+    eventName = SharedService.getprogramName() + '_' + eventName.replace("-","_").toString();
     // let eventName = isMobile && !isDesktopDevice ? eventname + '_' + device_info.os : eventname + '_' + 'Web';
     // gtag('event', eventname + '_' + device_info.os, { UserName: name })
     // gtag('event', eventname + '_' + device_info.os, { DeviceOS: device_info.os })

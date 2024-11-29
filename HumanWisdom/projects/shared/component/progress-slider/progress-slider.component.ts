@@ -14,23 +14,27 @@ export class ProgressSliderComponent implements OnInit {
   @Output() sendRating = new EventEmitter<string>();
   rating=0
   options: Options={
-    floor:0,
+    floor:1,
     ceil:5
   }
   value=100
-  
+  slideChange = false;
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
   selectRating(r)
   {
-    
-    
+
+
     this.sendRating.emit(JSON.stringify({"Id":this.r,"Rating":this.rating}))
 
+  }
+
+  getSlideChange(event) {
+     this.slideChange = true;
   }
 
 }
