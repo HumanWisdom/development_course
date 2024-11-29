@@ -62,8 +62,8 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
           this.isDataRecieved = true;
           if (this.userdetail && this.userdetail['UserImagePath'] != '') {
             this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
-            this.isDataRecieved = false;
           }
+          this.isDataRecieved = false;
         }
       });
 
