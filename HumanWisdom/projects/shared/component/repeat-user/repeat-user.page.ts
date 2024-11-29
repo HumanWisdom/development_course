@@ -64,6 +64,16 @@ export class RepeatUserPage implements OnInit {
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
+            if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
+              SharedService.FirstLoginOfTheDay =true;
+            }
+            else 
+            {
+              SharedService.FirstLoginOfTheDay =false;
+            }
+            console.log(SharedService.FirstLoginOfTheDay)
+          }
 
         }
       })
