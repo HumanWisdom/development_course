@@ -91,7 +91,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      this.logeventservice.logEvent('click_daily_checkin_Save_findOutmore');
+      
 
       if(this.rowData.Expression=="Tired")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);

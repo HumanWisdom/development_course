@@ -335,7 +335,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
-
+    SharedService.isRoutedFromLogin = false;
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;
     }
@@ -471,13 +471,6 @@ export class AdultDashboardPage implements OnInit {
 
     setTimeout(() => {
       this.GetDashboardFeatures();
-      if(queryString){
-        const params = new URLSearchParams(queryString);
-        const code = params.get('authtoken');
-        if(code && code != null){
-          window.close();
-        }
-      }
     }, 1000)
   }
 

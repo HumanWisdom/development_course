@@ -113,7 +113,7 @@ if (adultsClick) {
             localStorage.setItem('login',false);
            window.location.href = url+"/adults/onboarding/login";
         } else {
-            window.location.href = url + "/teenagers/onboarding/login";
+            window.location.href = url + "/adults/onboarding/login";
         }
     });
 }
