@@ -195,7 +195,7 @@ export class RedeemSubscriptionPage implements OnInit {
       this.service.verifyactkey(this.activationCode)
         .subscribe(
           res => {
-            if (res) {
+            if (res && (!(res?.includes('already')) && !(res?.includes('invalid')))) {
               console.log('res');
               this.showWarning = true
               this.yearormonth = res.split('-')[0];
@@ -206,11 +206,13 @@ export class RedeemSubscriptionPage implements OnInit {
               this.subsecondpage = true;
             } else {
               console.log('false');
+              this.redeemErrMsg = res;
               this.subsecondpage = false;
               this.subthirdpage = true
             }
           },
           error => {
+            this.redeemErrMsg = error['error']['Message'];
             console.log('error');
             this.subsecondpage = false;
             this.subthirdpage = true
