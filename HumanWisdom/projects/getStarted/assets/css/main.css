@@ -3181,7 +3181,7 @@ audio::-webkit-media-controls-enclosure
   color: #000;
   border-radius: 12px;
   background: #FFF;
-  border: 0;
+  border: 1px solid #00000080;
 }
 
 .div_input
@@ -3827,6 +3827,11 @@ audio::-webkit-media-controls-enclosure
 .web_home_div 
 {
   background: #FCF2EC;
+  padding: 60px 0;
+}
+.web_home_div1 
+{
+  background: #FFF;
   padding: 60px 0;
 }
 
