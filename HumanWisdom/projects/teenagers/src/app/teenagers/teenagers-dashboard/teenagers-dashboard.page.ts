@@ -494,7 +494,11 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
     }, 3000)
     localStorage.setItem("pageaction", 'next');
-
+    setTimeout(() => {
+      if(this.router.url.toLowerCase().includes('token'.toLowerCase())){
+        window.close();
+      }
+     }, 1000);
   }
 
   getplaystore(event) {
