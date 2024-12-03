@@ -212,9 +212,13 @@ const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
     var e = document.getElementById("closeableElement");
-    (e.style.display = "none"), e.classList.remove("display_df_none");
+    if(e){
+        (e.style.display = "none"), e.classList.remove("display_df_none");
+    }
     var t = document.getElementById("scrollTopArrow");
-    "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
+    if(t){
+        "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
+    }
 }
 
 
@@ -350,7 +354,21 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
-
+const newsLetterForm = document.getElementById("news-contact-form");
+newsLetterForm.addEventListener("click", () => {
+          const  email = document.getElementById("news-email").value;
+          const  name = document.getElementById("news-name").value;
+            const o = { Name: name, EmailID: email };
+            fetch("https://staging.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+                .then((e) => e.json())
+                .then((e) => {
+                    (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
+                })
+                .catch((e) => {
+                    let content = e['error']['Message'];
+                    console.error("Error:", e), alert(content);
+                });
+    })
 
 
 document.addEventListener("DOMContentLoaded", () => {
