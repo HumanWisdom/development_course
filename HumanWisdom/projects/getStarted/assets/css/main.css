@@ -83,7 +83,7 @@ section {
   overflow: hidden;
   padding: 70px 0 0 0;
   scroll-margin-top: 90px;
-  overflow: clip;
+  overflow: visible;
 }
 
 .section-bg {
