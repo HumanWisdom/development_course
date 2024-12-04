@@ -2366,6 +2366,7 @@ a
   -webkit-line-clamp: 9;
   -webkit-box-orient: vertical;
   word-break: break-word;
+  font-style: italic;
 }
 
 .div_coaches 
@@ -3823,7 +3824,11 @@ audio::-webkit-media-controls-enclosure
   align-items: center;
   justify-content: center;
 }
-
+.web_home_divcircle 
+{
+  background: #FFF9EE;
+  padding: 60px 0;
+}
 .web_home_div 
 {
   background: #FCF2EC;
