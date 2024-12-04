@@ -251,10 +251,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Dr Dan Reidenberg, 
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Director, Mental health coalition.  USA.
                       </p>
                    
@@ -281,12 +281,12 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Brenda McChesney
                         </h5>
 
                        
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Associate Director, National Family Suport Network. USA.
                       </p>
                  
@@ -313,10 +313,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Samaira, 
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Student. India.
                       </p>
                      
@@ -343,10 +343,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Sree,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Student. Dubai.
                       </p>
                       </div>
@@ -372,10 +372,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Jondi Whitis,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         EFT trainer and Coach. USA.
                       </p>
                      
@@ -402,10 +402,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Roland Yeo, 
                         </h5>
-                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Life Coach. Singapore.
                       </p>
                     
@@ -432,10 +432,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Julie Goodfellow, UK
                         </h5>
-                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Headteacher. UK.
                       </p>
                      
@@ -463,10 +463,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Garry Prigg, 
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         CEO, Who I am dynamics. Australia.
                       </p>
                      
@@ -494,10 +494,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Adam Beagley,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Student. UK.
                       </p>
                       </div>
@@ -524,10 +524,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Saakshi Singla,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Psychotherapist. India.
                       </p>
                       </div>
