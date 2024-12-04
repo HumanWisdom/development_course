@@ -122,7 +122,8 @@ export class WisdomScalePage implements OnInit {
   public mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   public mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
 
-  public disableBtn = true;
+  public enableAlert = false;
+   public content = '';
 
   constructor(private router: Router,
     private service: OnboardingService,
@@ -238,7 +239,7 @@ export class WisdomScalePage implements OnInit {
     if (this.saveUsername == false) { this.userId = JSON.parse(localStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
 
-    if(this.userId) {
+    if (this.userId) {
       this.apiCall();
     }
 
@@ -364,10 +365,6 @@ export class WisdomScalePage implements OnInit {
         break;
       }
     }
-
-    if (this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9 && this.s10) {
-      this.disableBtn = false;
-    }
   }
 
   createScreen() {
@@ -396,36 +393,42 @@ export class WisdomScalePage implements OnInit {
   }
 
   submitProgress() {
-    this.logeventservice.logEvent('click_survey_submit');
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
-    this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
-    localStorage.setItem("wisdomScore", this.wisdomScore)
+    if(this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9 && this.s10) {
+      this.logeventservice.logEvent('click_survey_submit');
+      this.endTime = Date.now();
+      this.totalTime = this.endTime - this.startTime;
+      var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
+      this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
+      localStorage.setItem("wisdomScore", this.wisdomScore)
 
-    this.option = optionT.join()
-    this.service.submitProgressQuestion({
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "ScrNumber": this.screenNumber,
-      "Bookmark": this.bookmark,
-      "UserId": this.userId,
-      "timeSpent": this.totalTime,
-      "OptionIDs": this.option
-    })
-      .subscribe((res) => { },
-        error => {
-          console.log(error)
-        },
-        () => {
-          this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
-          const { isUseCloseButton } = window.history.state;
-          if (isUseCloseButton) {
-            this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
-          } else {
-            this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"]);
-          }
-        });
+      this.option = optionT.join()
+      this.service.submitProgressQuestion({
+        "ModuleId": this.moduleId,
+        "screenType": this.screenType,
+        "ScrNumber": this.screenNumber,
+        "Bookmark": this.bookmark,
+        "UserId": this.userId,
+        "timeSpent": this.totalTime,
+        "OptionIDs": this.option
+      })
+        .subscribe((res) => { },
+          error => {
+            console.log(error)
+          },
+          () => {
+            this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
+            const { isUseCloseButton } = window.history.state;
+            if (isUseCloseButton) {
+              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
+            } else {
+              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"]);
+            }
+          });
+    }else {
+      this.content = 'Please complete the survey';
+      this.enableAlert = true;
+    }
+
   }
 
   goBack() {
@@ -448,6 +451,15 @@ export class WisdomScalePage implements OnInit {
       this.router.navigate(["/" + SharedService.getprogramName() + url]);
     } else {
       this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
+    }
+  }
+
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.content = '';
+    }else{
+      this.enableAlert = false;
     }
   }
 }
