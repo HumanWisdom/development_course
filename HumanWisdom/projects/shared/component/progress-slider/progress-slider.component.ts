@@ -34,6 +34,7 @@ export class ProgressSliderComponent implements OnInit {
   }
 
   getSlideChange(event) {
+    this.sendRating.emit(JSON.stringify({"Id":this.r,"Rating":this.rating}))
      this.slideChange = true;
   }
 
