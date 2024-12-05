@@ -27,7 +27,7 @@ export class PodcastTocPage implements OnInit {
   @Input() isdefaultShow = false;
   isSubscriber = false;
   address: any;
-  searchedText: '';
+  searchedText= '';
   prefData = [];
   selectedPref = 'All'
   isAdults = true;
