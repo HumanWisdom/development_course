@@ -60,10 +60,11 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <img style="float:right ; margin:60px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
+          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mobile.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity"> -->
 
        </div>
     
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
      <div class="row center_flex">
      <div class="row mt30px">
               <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
