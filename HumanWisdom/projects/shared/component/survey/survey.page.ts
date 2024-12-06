@@ -53,16 +53,29 @@ export class SurveyPage implements OnInit,OnDestroy {
     this.commonService.AddSurveyRes(body).subscribe(res=>{
       if(res){
         this.isSubmitted =  true;
-      }
+      }''
     })
   }
 
+  
+  iOSMobile() {
+    return [
+      'iPhone Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+  }
+
   GoToAppStore(){
-      if (this.platform.IOS || this.platform.SAFARI) {
-        window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
-      } else if (this.platform.ANDROID) {
+      if (this.platform.ANDROID) {
         window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+      }else if(this.iOSMobile()){
+        window.open("https://onelink.to/qsptex");
+      }else{
+        window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
       }
+
       document.getElementById('btnSurveyDismiss').click();
     }
     ngOnDestroy(): void {
