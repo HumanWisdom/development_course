@@ -7,6 +7,7 @@ import { TeenagersService } from './teenagers/teenagers.service';
 import moengage from "@moengage/web-sdk";
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,7 @@ export class AppComponent implements OnDestroy {
 
   constructor(private navigationService: NavigationService,
     private router: Router,
-    private services: TeenagersService) {
+    private services: TeenagersService,private commonService:CommonService) {
     SharedService.ProgramId = 11;
     moengage.initialize({
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
@@ -54,6 +55,10 @@ export class AppComponent implements OnDestroy {
       setTimeout(() => {
         this.pageLoaded = true;
       }, 2000)
+
+      setTimeout(() => {
+        this.commonService.updateSurveyData(1);
+      }, 50000);
       //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;

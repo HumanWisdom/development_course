@@ -1,0 +1,28 @@
+.ta_new_thread
+{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+  color: #FFF;
+}
+
+.ta_new_thread::-webkit-input-placeholder
+{
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.ta_new_thread:focus
+{
+  color: #FFF;
+  outline: none;
+}
+
+.mtb20px {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}

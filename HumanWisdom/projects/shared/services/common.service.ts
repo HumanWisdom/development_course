@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment'
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { OnboardingService } from './onboarding.service';
 import { Router } from '@angular/router';
@@ -12,6 +12,8 @@ import { SharedService } from './shared.service';
 export class CommonService {
   //path="http://18.132.47.231/api";
   path = environment.apiURL;
+  private surveySubject = new BehaviorSubject<string | null>(null);
+  surveySubs = this.surveySubject.asObservable();
   constructor(private http: HttpClient,
     handler: HttpBackend,
     private services: OnboardingService,
@@ -356,4 +358,15 @@ export class CommonService {
     return this.http.get(this.path + `/GetDailyPractise_Question`)
   }
 
+  getSurveyList(type:number): Observable<any> {
+    return this.http.get(this.path + `/GetSurveyOptions/${type}`)
+  } 
+
+  AddSurveyRes(body): Observable<any> {
+    return this.http.post(this.path + '/AddSurveyRes', body)
+  }
+
+  updateSurveyData(data: any): void {
+    this.surveySubject.next(data);
+  }
 }

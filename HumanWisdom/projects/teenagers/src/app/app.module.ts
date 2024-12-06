@@ -31,6 +31,7 @@ import { BlogArticlePage } from './../../../shared/component/blogs/blog-article/
 import { FormsModule } from '@angular/forms';
 import { SplashPage } from './teenagers/splash/splash.page';
 import * as Hammer from 'hammerjs';
+import { SurveyPageModule } from '../../../shared/component/survey/survey.module';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -63,6 +64,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
+    SurveyPageModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

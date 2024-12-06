@@ -16,6 +16,7 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 // import { MoengageService } from './moengage.service';
 import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -63,6 +64,7 @@ export class AppComponent implements OnDestroy {
     private title: Title,
     private services: AdultsService,
     private onboardingService:OnboardingService,
+    private commonService:CommonService,
     // public moengageService: MoengageService,
     private navigationService:NavigationService
   ) {
@@ -76,6 +78,7 @@ export class AppComponent implements OnDestroy {
     }else{
       this.getUserInformationById(SharedService.getUserId());
     }
+
     localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId = 9;
     SharedService.ClientUrl = environment.clientUrl;
@@ -312,6 +315,9 @@ export class AppComponent implements OnDestroy {
       this.userdetail=res[0];
       this.onboardingService.userDetails = this.userdetail;
       this.getFreeScreens();
+      setTimeout(() => {
+        this.commonService.updateSurveyData(1);
+      }, 50000);
     }
   });
  

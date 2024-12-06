@@ -31,6 +31,8 @@ import{ SharedModule } from './../../../shared/shared.module'
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import{BlogIndexPage}  from './../../../shared/component/blogs/blog-index/blog-index.page';
 import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
+import{SurveyPageModule}  from './../../../shared/component/survey/survey.module';
+
 // Import library module
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
@@ -79,7 +81,8 @@ export class MyHammerConfig extends HammerGestureConfig {
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule,
         NgxJsonLdModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        SurveyPageModule 
     ],
     providers: [
         StatusBar,
