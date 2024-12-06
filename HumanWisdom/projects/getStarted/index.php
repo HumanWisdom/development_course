@@ -242,7 +242,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb25px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb30px fs_15px fw_500 lh_150p fc_ffffff">
                         HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms. 
                         </h5>
                       </div>
@@ -250,7 +250,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt5px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Brenda McChesney
                         </h5>
 
@@ -308,7 +308,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime. HappierMe is a toolkit you can use for any personal or mental struggle you may face.</div>
+                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime.</div>
                     </div>
 
                     <div class="row">
@@ -387,7 +387,7 @@
 
            
                                 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600" >
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -417,7 +417,7 @@
                   </div>
                 </a>
 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -448,7 +448,7 @@
                   </div>
                 </a>
 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -464,7 +464,7 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" >
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Roland Yeo, 
@@ -478,7 +478,7 @@
                   </div>
                 </a>
 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -508,7 +508,7 @@
                   </div>
                 </a>
 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -579,7 +579,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        Through its modules, awareness exercises and life stories the HappierMe app has helped me better understand why I think and act the way I do.This gave me a new perspective on how to handle various situations like stress, peer pressure.
+                        Through its modules, awareness exercises and life stories the HappierMe app has helped me better understand why I think and act the way I do.This gave me a new perspective on how to handle various situations like stress and peer pressure.
                       </div>
                     </div>
 
