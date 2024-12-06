@@ -112,8 +112,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
-                One app to manage your emotions, have happier relationships and succeed at work.                </h2>
-              </div>
+                HappierMe empowers you to feel better, have happier relationships, manage your emotions and succeed in life. </div>
             </div>
 
             <div class="row">
@@ -1925,7 +1924,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" id="viewAllBlogs" href="https://happierme.app/adults/blogs">
+                    <a class="sap" id="viewAllBlogs" href="https://staging.happierme.app/blogs/blog_index.php">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>
