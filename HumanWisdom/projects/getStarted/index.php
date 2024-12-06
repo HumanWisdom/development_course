@@ -1924,7 +1924,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" id="viewAllBlogs" href="https://staging.happierme.app/blogs/blog_index.php">
+                    <a class="sap" id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>
