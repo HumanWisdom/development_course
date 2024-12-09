@@ -359,8 +359,11 @@ newsLetterForm.addEventListener("click", () => {
           const  email = document.getElementById("news-email").value;
           const  name = document.getElementById("news-name").value;
             const o = { Name: name, EmailID: email };
+          
             if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
-
+            if(!validateEmail(email)){
+                return alert("Please enter valid email"), !1;
+            }
             fetch("https://staging.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
@@ -372,6 +375,10 @@ newsLetterForm.addEventListener("click", () => {
                 });
     })
 
+function validateEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     // const e = document.getElementById("AnnualType");
