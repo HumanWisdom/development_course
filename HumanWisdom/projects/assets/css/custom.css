@@ -5113,8 +5113,9 @@ table
 input[type=checkbox], input[type=radio]
 {
 	vertical-align:bottom!important;
-	width:2.5rem !important;
-	height:2rem;
+	width:2rem !important;
+	height:1.5rem;
+  margin: 5px;
 }
 
 .table>tbody>tr>td
@@ -10799,7 +10800,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   top:25% !important; 
+   top:10% !important; 
    height: fit-content;
 }
 
@@ -34044,8 +34045,9 @@ body *
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #120F40;
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 15px;
+  margin-top: 10px;
   font-weight: 400;
   line-height: 140%;
   color: #FFF;
