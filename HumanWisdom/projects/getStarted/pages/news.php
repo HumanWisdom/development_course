@@ -86,7 +86,8 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                 Sign up for regular updates from HappierMe, and get some happiness and inspiration straight to your inbox.                  </h3>
              </div>
-
+             <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
              <form action="javascript:void(0);">
                   <div class="row">
@@ -128,7 +129,8 @@
                   
                 </form>
 
-
+  </div>
+  </div>
                   </div>
         
                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -157,7 +159,6 @@
           
 
           <!-- footer -->
-          <?php include('../includes/footer.php'); ?>
           <!-- /footer -->
 
         </main>
@@ -166,7 +167,6 @@
     </div> -->
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>
