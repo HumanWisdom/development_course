@@ -15133,10 +15133,10 @@ input[type="number"] {
 
 .crimg
 {
-  display: block;
+  /* display: block; */
   width: 48px;
   height: 48px;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .txt28
@@ -32645,6 +32645,9 @@ body *
   width: 20%;
   margin: 0 13px 0 0;
   padding: 0;
+  text-align: center;
+  display: inline-grid;
+
 }
 
 .btn_cytoc
