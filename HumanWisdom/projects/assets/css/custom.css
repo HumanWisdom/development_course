@@ -10800,7 +10800,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   top:65% !important; 
+   top:25% !important; 
    height: fit-content;
 }
 .modal.fade.in .lab-modal-body_new {
