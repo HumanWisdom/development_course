@@ -234,7 +234,10 @@ requestDemo &&
             o = document.getElementById("company").value,
             a = document.getElementById("country").value;
         if (!(t && n && o && a && "" != n && "" != t && "" != o && "" != a)) return alert("All fields must be filled out"), !1;
-        const i = { Email_Id: "team@happierme.app", Subject: "Request a demo", Body: `Name : ${n} Company: ${o} Country :${a}` };
+        if(!validateEmail(t)){
+            return alert("Please enter valid email"), !1;
+        }
+        const i = { Email_Id: "team@happierme.app", Subject: "Request a demo", Body: `Name : ${n} Company: ${o} Country :${a}  Email :${t}` };
         fetch("https://humanwisdom.info/api/SendMail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(i) })
             .then((e) => e.json())
             .then((e) => {
