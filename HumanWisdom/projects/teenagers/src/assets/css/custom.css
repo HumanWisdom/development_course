@@ -32572,9 +32572,9 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 20%;
-  margin: 0 13px 0 0;
-  padding: 0;
+  width: 30%;
+/*   margin: 0 13px 0 0;
+  padding: 0; */
   text-align: center;
   display: inline-grid;
 }
