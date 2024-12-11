@@ -2646,6 +2646,17 @@ padding:20px;
   padding: 90px 20px;
 }
 
+.div_subscriptionnews 
+{
+   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/cover.png); 
+   background: linear-gradient(90deg, #E58D82, #CB6171);
+  /* background: -webkit-linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%); */
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding: 90px 20px;
+}
+
 .btn_continue 
 {
   width: 380px;
