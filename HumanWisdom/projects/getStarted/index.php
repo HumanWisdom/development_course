@@ -76,6 +76,23 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
          
+         
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100">
+            <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
+              poster=""
+              controlsList="nodownload" id="vid">
+              <source
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
+                type="video/mp4">
+            </video> -->
+            <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
+            <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+
+
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mobile_home.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -192,23 +209,6 @@
             </div>
 
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100">
-            <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
-              poster=""
-              controlsList="nodownload" id="vid">
-              <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
-                type="video/mp4">
-            </video> -->
-            <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
-            <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
-
-
-             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mobile_home.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
-          </div>
-
         </div>
       </div>
     </section>
