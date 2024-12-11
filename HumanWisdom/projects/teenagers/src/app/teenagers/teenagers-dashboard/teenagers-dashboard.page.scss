@@ -248,10 +248,10 @@ nav
 
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .crimg {
+  /*   .crimg {
         width: 40%;
         height: 40%;
-    }
+    } */
     .mdpd_title {
         max-width: 100%;
         font-size: 12px;
@@ -260,10 +260,10 @@ nav
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .crimg {
+  /*   .crimg {
         width: 45%;
         height: 45%;
-    }
+    } */
     .mdpd_title {
         max-width: 100%;
         font-size: 14px;
@@ -272,10 +272,10 @@ nav
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .crimg {
+    /* .crimg {
         width: 50%;
         height: 50%;
-    }
+    } */
     .mdpd_title {
         max-width: 100%;
         font-size: 15px;
@@ -284,10 +284,10 @@ nav
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .crimg {
+  /*   .crimg {
         width: 50%;
         height: 50%;
-    }
+    } */
     .mdpd_title {
         max-width: 100%;
         font-size: 16px;
@@ -296,10 +296,10 @@ nav
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1499.98px) {
-    .crimg {
+/*     .crimg {
         width: 55%;
         height: 55%;
-    }
+    } */
     .mdpd_title {
        
         max-width: 100%;
@@ -309,10 +309,10 @@ nav
 
 /* Ultra wide devices (1500px and up) */
 @media (min-width: 1500px) {
-    .crimg {
-        width: 60%;
-        height: 60%;
-    }
+   /*  .crimg {
+        width: 50%;
+        height: 50%;
+    } */
     .mdpd_title {
        
         max-width: 100%;
@@ -321,11 +321,11 @@ nav
 }
 /* Extra wide screens (1920px and up) */
 @media (min-width: 1920px) and (max-width: 2559.98px) {
-    .crimg {
+   /*  .crimg {
         
         width: 70%;
         height: 70%;
-    }
+    } */
     .mdpd_title {
       
         max-width: 100%;
@@ -335,11 +335,11 @@ nav
 
 /* Ultra-wide screens (2560px and up) */
 @media (min-width: 2560px) and (max-width: 3199.98px) {
-    .crimg {
+  /*   .crimg {
         
         width: 80%;
         height: 80%;
-    }
+    } */
     .mdpd_title {
         
         max-width: 100%;
@@ -349,11 +349,11 @@ nav
 
 /* 4K and beyond (3200px and up) */
 @media (min-width: 3200px) {
-    .crimg {
+   /*  .crimg {
       
         width: 100%;
         height: 100%;
-    }
+    } */
     .mdpd_title {
      
         max-width: 100%;
