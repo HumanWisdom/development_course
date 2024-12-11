@@ -889,7 +889,7 @@
               Our happiness depends on many factors.
               </h2>
 
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy>
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 
               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
               HappierMe addresses them all.
