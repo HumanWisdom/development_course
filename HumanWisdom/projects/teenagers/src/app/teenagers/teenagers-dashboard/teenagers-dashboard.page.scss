@@ -249,13 +249,11 @@ nav
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {
     .crimg {
-        margin-left: 17px;
-        width: 40px;
-        height: 50px;
+        width: 40%;
+        height: 40%;
     }
     .mdpd_title {
-        margin-left: 0px;
-        max-width: 15rem;
+        max-width: 100%;
         font-size: 12px;
     }
 }
@@ -263,13 +261,11 @@ nav
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .crimg {
-        margin-left: 10px;
-        width: 50px;
-        height: 60px;
+        width: 45%;
+        height: 45%;
     }
     .mdpd_title {
-        margin-left: 5px;
-        max-width: 20rem;
+        max-width: 100%;
         font-size: 14px;
     }
 }
@@ -277,13 +273,11 @@ nav
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .crimg {
-        margin-left: 15px;
-        width: 60px;
-        height: 70px;
+        width: 50%;
+        height: 50%;
     }
     .mdpd_title {
-        margin-left: 2px;
-        max-width: 30rem;
+        max-width: 100%;
         font-size: 15px;
     }
 }
@@ -291,13 +285,11 @@ nav
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .crimg {
-        margin-left: 20px;
-        width: 64px;
-        height: 72px;
+        width: 50%;
+        height: 50%;
     }
     .mdpd_title {
-        margin-left: 12px;
-        max-width: 23rem;
+        max-width: 100%;
         font-size: 16px;
     }
 }
@@ -305,13 +297,12 @@ nav
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1499.98px) {
     .crimg {
-        margin-left: 1px;
-        width: 53px;
-        height: 73px;
+        width: 55%;
+        height: 55%;
     }
     .mdpd_title {
-        margin-left: -28%;
-        max-width: 50rem;
+       
+        max-width: 100%;
         font-size: 14px;
     }
 }
@@ -319,26 +310,25 @@ nav
 /* Ultra wide devices (1500px and up) */
 @media (min-width: 1500px) {
     .crimg {
-        margin-left: 20px;
-        width: 56px;
-        height: 73px;
+        width: 60%;
+        height: 60%;
     }
     .mdpd_title {
-        margin-left: 0px;
-        max-width: 25rem;
+       
+        max-width: 100%;
         font-size: 16px;
     }
 }
 /* Extra wide screens (1920px and up) */
 @media (min-width: 1920px) and (max-width: 2559.98px) {
     .crimg {
-        margin-left: 17px;
-        width: 80px;
-        height: 100px;
+        
+        width: 70%;
+        height: 70%;
     }
     .mdpd_title {
-        margin-left: 7px;
-        max-width: 10rem;
+      
+        max-width: 100%;
         font-size: 18px;
     }
 }
@@ -346,13 +336,13 @@ nav
 /* Ultra-wide screens (2560px and up) */
 @media (min-width: 2560px) and (max-width: 3199.98px) {
     .crimg {
-        margin-left: -5px;
-        width: 100px;
-        height: 120px;
+        
+        width: 80%;
+        height: 80%;
     }
     .mdpd_title {
-        margin-left: -25px;
-        max-width: 35rem;
+        
+        max-width: 100%;
         font-size: 20px;
     }
 }
@@ -360,13 +350,13 @@ nav
 /* 4K and beyond (3200px and up) */
 @media (min-width: 3200px) {
     .crimg {
-        margin-left: -10px;
-        width: 120px;
-        height: 140px;
+      
+        width: 100%;
+        height: 100%;
     }
     .mdpd_title {
-        margin-left: -30px;
-        max-width: 40rem;
+     
+        max-width: 100%;
         font-size: 22px;
     }
 }
