@@ -202,8 +202,11 @@
             </video> -->
             <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
+
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mobile_home.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
           </div>
 
         </div>
@@ -866,7 +869,14 @@
       <div class="row center_flex web_home_divcircle">
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
+
+            
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle_mobile.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+            
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -879,7 +889,7 @@
               Our happiness depends on many factors.
               </h2>
 
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy>
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 
               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
               HappierMe addresses them all.
@@ -1037,7 +1047,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_user.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
         </div>
       </section>
