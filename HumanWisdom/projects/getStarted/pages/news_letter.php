@@ -725,7 +725,7 @@
      <div class="row mt30px">
               <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
                 
-                <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
+                <h1 class="mtb0px fs_24px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1>
                 <div class="row mt15px">
