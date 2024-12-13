@@ -315,9 +315,11 @@ export class AppComponent implements OnDestroy {
       this.userdetail=res[0];
       this.onboardingService.userDetails = this.userdetail;
       this.getFreeScreens();
-      setTimeout(() => {
-        this.commonService.updateSurveyData(1);
-      }, 0);
+      if(res[0]?.SurveyDone=='0'){
+        setTimeout(() => {
+          this.commonService.updateSurveyData(1);
+        }, 0);
+      }
     }
   });
  
