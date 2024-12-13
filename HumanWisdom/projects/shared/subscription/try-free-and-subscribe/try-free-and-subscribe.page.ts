@@ -9,6 +9,7 @@ import { paymentIntentModel } from '../../models/search-data-model';
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from '../../models/program-model';
 import { NavigationService } from '../../services/navigation.service';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-try-free-and-subscribe',
   templateUrl: './try-free-and-subscribe.page.html',
@@ -35,7 +36,8 @@ export class TryFreeAndSubscribePage implements OnInit {
   constructor(private router: Router, private onboardingService: OnboardingService,
     public logeventservice: LogEventService,
     private navigateService:NavigationService,
-    private location: Location) {
+    private location: Location,
+  private commonService:CommonService) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     this.Redeem = Constant.Redeem;
@@ -235,6 +237,7 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   back() {
+    this.commonService.updateSurveyData(2);
     var url = this.navigateService.goBack();
     this.router.navigateByUrl(url);
     }

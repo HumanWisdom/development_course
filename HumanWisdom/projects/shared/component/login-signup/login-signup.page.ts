@@ -21,6 +21,7 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
 
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { Constant } from "../../services/constant";
+import { CommonService } from "../../services/common.service";
 declare var $: any;
 @Component({
   selector: "app-common-login",
@@ -159,7 +160,8 @@ export class LoginSignupPage implements OnInit {
     private authService: SocialAuthService,
     private service: OnboardingService,
     private navigtionService: NavigationService,
-    private renderer: Renderer2, private el: ElementRef
+    private renderer: Renderer2, private el: ElementRef,
+    private commonService:CommonService
   ) {
     this.initializeRegistrationForm();
     this.VerifyGoogle();
@@ -558,6 +560,12 @@ export class LoginSignupPage implements OnInit {
       this.service.getuser(res.UserId).subscribe(userInfo => {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+          if(userInfo[0]?.SurveyDone=='0'){
+            setTimeout(() => {
+              this.commonService.updateSurveyData(1);
+            }, 50000);
+           // document.getElementById('test1').click();
+          }
         }
       })
       this.freescreens();

@@ -3,7 +3,7 @@ import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
-import { LogEventService } from '../../services/log-event.service';
+import { CommonService } from '../../services/common.service';
 import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
@@ -24,7 +24,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   isProduction: boolean = true;
   isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
-  constructor(private datePipe: DatePipe, private router: Router, private logEventService: LogEventService,
+  constructor(private datePipe: DatePipe, private router: Router, private commonService:CommonService,
     private location: Location) {
     this.selectedSubscription =
       this.Monthly = Constant.MonthlyPlan;
@@ -172,6 +172,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   back() {
+    this.commonService.updateSurveyData(2);
     this.location.back();
   }
 

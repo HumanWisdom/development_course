@@ -317,8 +317,8 @@ export class AppComponent implements OnDestroy {
       this.getFreeScreens();
       if(res[0]?.SurveyDone=='0'){
         setTimeout(() => {
-          this.commonService.updateSurveyData(1);
-        }, 50000);
+         this.commonService.updateSurveyData(1); 
+        }, 0);
       }
     }
   });

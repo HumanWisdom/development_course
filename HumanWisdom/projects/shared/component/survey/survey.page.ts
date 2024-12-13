@@ -18,11 +18,12 @@ export class SurveyPage implements OnInit,OnDestroy {
   private subscription!: Subscription;
   constructor(private commonService:CommonService,private platform:Platform) {
     this.subscription = this.commonService.surveySubs.subscribe((data:any) => {
-      this.commonService.getSurveyList(data).subscribe(res=>{
+      this.commonService.getSurveyList(data== null ? 1: data).subscribe(res=>{
         if(res){
           this.feedbackList = res;
-          document.getElementById('test1').click();
-          
+          if(data != null){
+            document.getElementById('test1').click();
+          }
         }
       })
     });
