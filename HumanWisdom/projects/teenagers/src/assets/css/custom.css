@@ -10827,7 +10827,37 @@ body,
   top: 25% !important; 
   height: fit-content;
 }
+.modal.fade.in .lab-modal-body_new {
+  /* bottom: 0;
+  opacity: 1; */
 
+  /* bottom: 0; */
+  opacity: 1;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  /* width: 98%; */
+  position: absolute;
+   top:18% !important; 
+   height: fit-content;
+}
+.lab-modal-body_new {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 20px;
+  height: auto;
+  background: #183C79;
+  color: #fff;
+  border: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  z-index: 999;
+  transition: all 1s;
+}
 .lab-modal-body h1 {
   font-size: 4rem;
 }
@@ -15126,10 +15156,10 @@ input[type="number"] {
 
 .crimg
 {
-  display: block;
+  /* display: block; */
   width: 48px;
   height: 48px;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .txt28
@@ -32572,9 +32602,11 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 20%;
-  margin: 0 13px 0 0;
-  padding: 0;
+  width: 30%;
+/*   margin: 0 13px 0 0;
+  padding: 0; */
+  text-align: center;
+  display: inline-grid;
 }
 
 .btn_cytoc
@@ -34013,9 +34045,10 @@ body *
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #0C2B5F;
+  background: #183c79;
   padding: 20px;
   font-size: 15px;
+  margin-top: 10px;
   font-weight: 400;
   line-height: 140%;
   color: #FFF;
