@@ -129,7 +129,8 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
-                HappierMe empowers you to feel better, have happier relationships, manage your emotions and succeed in life. </div>
+                One app for relationships, mental health and success at work.            </h2>
+              </div>
             </div>
 
             <div class="row">
