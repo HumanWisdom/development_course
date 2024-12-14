@@ -365,6 +365,11 @@ export class CommonService {
   AddSurveyRes(body): Observable<any> {
     return this.http.post(this.path + '/AddSurveyRes', body)
   }
+  
+  SkipFeedBkSurvey(): Observable<any> {
+    return this.http.post(this.path + '/SkipFeedBkSurvey',null)
+  }
+   
 
   updateSurveyData(data: any): void {
     this.surveySubject.next(data);

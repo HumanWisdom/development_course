@@ -315,6 +315,12 @@ export class SharedService {
       ]
     }
   }
+
+  public static isMobileDevice(): boolean {
+    const userAgent = window.navigator.userAgent || window.navigator.vendor;
+    return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(userAgent);
+  }
+  
 }
 
 
