@@ -44,7 +44,9 @@ export class AppComponent implements OnDestroy {
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
       swPath: '/teenagers/serviceworker.js'
     });
-
+    if (localStorage.getItem("isloggedin") == 'T') {
+      this.getUserInformationById(SharedService.getUserId())
+    }
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
@@ -56,8 +58,7 @@ export class AppComponent implements OnDestroy {
       setTimeout(() => {
         this.pageLoaded = true;
       }, 2000)
-
-     this.getUserInformationById(SharedService.getUserId())
+   
       //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
@@ -66,7 +67,7 @@ export class AppComponent implements OnDestroy {
     //  this.setDynamicCSS();
   }
 
-  async getUserInformationById(loggedInUserId){
+   getUserInformationById(loggedInUserId){
     this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
      if(res){
        if(res[0]?.SurveyDone=='0'){

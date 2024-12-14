@@ -48,6 +48,7 @@ export class SurveyPage implements OnInit, OnDestroy {
   }
 
   onCloseClick() {
+    this.isSubmitted = false;
     if (!this.isPaymentSurvey) {
       this.commonService.SkipFeedBkSurvey().subscribe(res => {
         //
@@ -84,14 +85,21 @@ export class SurveyPage implements OnInit, OnDestroy {
   }
 
   GoToAppStore() {
-    if (SharedService.isMobileDevice()) {
-      window.open("https://onelink.to/qsptex");
-    } else if (this.isNotSafari()) {
-      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
-    } else {
-      window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
-    }
+    this.isSubmitted = false;
+    this.clickbanner();
     document.getElementById('btnSurveyDismiss').click();
+  }
+
+
+  clickbanner(url = '') {
+    if (this.isNotSafari()) {
+      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+    }
+    else if (this.platform.IOS || this.platform.SAFARI) {
+      window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
+    } else if (this.platform.ANDROID) {
+      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+    }
   }
 
   ngOnDestroy(): void {
