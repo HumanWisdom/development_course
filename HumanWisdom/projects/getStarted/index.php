@@ -121,7 +121,7 @@
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_56px fw_600 lh_130p fc_834b66 ta_lc">
-                Your guide to a happier life
+                HappierMe for a happier you
                 </h1>
               </div>
             </div>
@@ -129,7 +129,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
-                One app for relationships, mental health and success at work.            </h2>
+                We help you to find the happiness within yourself, and lead a fulfilling life.            </h2>
               </div>
             </div>
 
