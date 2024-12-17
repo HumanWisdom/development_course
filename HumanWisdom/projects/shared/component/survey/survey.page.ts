@@ -39,12 +39,16 @@ export class SurveyPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.userName = localStorage.getItem('name')
+    this.userName =localStorage.getItem('name');
     //document.getElementById('test1').click();
   }
 
   closeModalevent() {
 
+  }
+
+  getUserName(){
+    return localStorage.getItem('name');
   }
 
   onCloseClick() {
