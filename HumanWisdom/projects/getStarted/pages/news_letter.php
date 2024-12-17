@@ -689,7 +689,7 @@
         <div class="row center_flex div_subscriptionnews">
 
           <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-             <div class="back">
+             <div class=" row mt30px back">
             <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
@@ -708,7 +708,7 @@
 
             <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+               <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0">
              </div>  
               <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0">
 
