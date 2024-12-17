@@ -689,7 +689,7 @@
         <div class="row center_flex div_subscriptionnews">
 
           <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-             <div class=" row mt30px back">
+             <div class=" back">
             <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
@@ -769,6 +769,7 @@
                       <button  id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                       Subscribe
                       </button>
+                      
                     </div>
                   </div>
                   
@@ -784,7 +785,7 @@
 </div>
         </div>
       </section>
-
+      <?php include('../includes/vendor_footer.php'); ?>
       <script>
 
 
