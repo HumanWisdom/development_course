@@ -708,7 +708,7 @@
 
             <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0">
+               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
              </div>  
               <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0">
 
