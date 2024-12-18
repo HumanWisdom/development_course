@@ -129,7 +129,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
-                We help you to find the happiness within yourself, and lead a fulfilling life.            </h2>
+                We support you to find the happiness within yourself, and lead a fulfilling life.            </h2>
               </div>
             </div>
 
@@ -892,9 +892,9 @@
 
               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 
-              <!-- <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
-              Our happiness depends on many factors. HappierMe addresses them all.
-              </h3> -->
+               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
+              <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
+              </h3> 
 
                <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                Our happiness depends on many factors. HappierMe addresses them all.
