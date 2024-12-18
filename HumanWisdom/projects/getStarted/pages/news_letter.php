@@ -708,7 +708,7 @@
 
             <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+               <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1 p0">
              </div>  
               <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0">
 
@@ -730,7 +730,7 @@
                 </h1>
                 <div class="row mt15px">
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left";>
-                Sign up for regular updates from HappierMe, and get some happiness and inspiration straight to your inbox.                  </h3>
+                Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3>
     </div>
     <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -753,7 +753,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                        <input type="text" class="form-control fc_01" id="news-email" name="news-email"  placeholder="Work email">
+                        <input type="text" class="form-control fc_01" id="news-email" name="news-email"  placeholder="Your email">
                         <div class="fc_icons">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
                         </div>
