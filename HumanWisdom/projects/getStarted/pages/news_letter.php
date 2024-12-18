@@ -715,7 +715,7 @@
               <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy"  alt="performance">
 
 
-              <img style="width:260px;height:210px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mobile.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance"> 
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance"> 
                 
 </div>
 <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0">
