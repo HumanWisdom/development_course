@@ -95,7 +95,7 @@
                 
 
                 
-                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc">
                   HappierMe is delighted to partner with the National Family Support Network, to support families and staff to deal with life’s challenges, overcome stress and anxiety, and have happier relationships. Our mission is to reduce suffering and make the world a better place.
                   </h3>
                
