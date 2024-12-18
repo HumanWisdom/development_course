@@ -722,16 +722,33 @@
              </div>  
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
 <div class="row ">
-     <div class="row mt30px">
+<div class="row mt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h1 class="mtb0px fs_48px fw_600 lh_130p fc_834b66 ta_lc">
+                Subscribe to our newsletter!
+                </h1>
+              </div>
+            </div>
+            <div class="row mtb15px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                
+
+                
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc">
+                  Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3>
+               
+              </div>
+            </div>
+     <!-- <div class="row mt30px">
               <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
                 
-              <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc" style="text-align:left;">
+              <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1>
                 <div class="row mt15px">
-                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left";>
+                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3>
-    </div>
+    </div> -->
     <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 <form action="javascript:void(0);">

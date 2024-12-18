@@ -2653,7 +2653,7 @@ padding:20px;
   /* background: -webkit-linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%); */
   background-repeat: no-repeat;
   background-position: center;
-  text-align: center;
+  /* text-align: center; */
   background-size: cover;
   padding: 90px 20px;
 }
