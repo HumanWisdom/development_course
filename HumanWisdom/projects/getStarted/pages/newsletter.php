@@ -737,7 +737,7 @@
 <form action="javascript:void(0);">
                   <div class="row">
                  
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         
                         <input type="text" class="form-control fc_01" id="news-name" name="newsname"  placeholder="Your Name">
@@ -751,7 +751,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         <input type="text" class="form-control fc_01" id="news-email" name="news-email"  placeholder="Your email">
                         <div class="fc_icons">
