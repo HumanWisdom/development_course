@@ -154,7 +154,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                  Created by experts.
+                  Created by experts from around the world.
                   </h3>
                 </div>
               </div>
@@ -168,7 +168,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Online journal, podcasts, meditations, stories and more.  
+                    Online journal, forum, podcasts, meditations, stories and more.  
                   </h3>
                 </div>
               </div>
@@ -665,7 +665,7 @@
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                We are here to help you succeed in all aspects of life
+                We are here to support you succeed in all aspects of life
               </h2>
             </div>
           </div>
@@ -887,17 +887,18 @@
               </h2> -->
 
               <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
-              Our happiness depends on many factors.
+              Address the root cause of problems for lasting change.
               </h2>
 
               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 
-              <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
-              HappierMe addresses them all.
-              </h3>
+              <!-- <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
+              Our happiness depends on many factors. HappierMe addresses them all.
+              </h3> -->
 
-              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-              HappierMe tackles the root cause of problems, and not just the symptoms. This brings lasting change.              </h5>
+               <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+               Our happiness depends on many factors. HappierMe addresses them all.
+               </h5> 
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
