@@ -32632,6 +32632,18 @@ body *
   padding: 20px;
 }
 
+.box_v3_01ex {
+  background: #120F40;
+  border: 1px solid #384079;
+  border-radius: 12px;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  height: 115px;
+  padding: 20px;
+}
+
 .box_v3_02
 {
   position: absolute;
