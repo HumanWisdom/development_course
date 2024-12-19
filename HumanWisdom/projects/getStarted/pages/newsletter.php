@@ -710,7 +710,7 @@
               <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
                <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
              </div>   -->
-              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
 
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy"  alt="performance">
 
@@ -718,13 +718,13 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance"> 
                 
 </div>
-<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0">
-             </div>  
+<!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0">
+             </div>   -->
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
 <div class="row ">
 <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1 class="mtb0px fs_48px fw_600 lh_130p fc_834b66 ta_lc">
+                <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1>
               </div>
@@ -767,7 +767,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         <input type="text" class="form-control fc_01" id="news-email" name="news-email"  placeholder="Your email">
@@ -779,14 +779,14 @@
                      
                     </div>
                   </div>
-
+                  <div class="row mt30px">
                   
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent1">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                       <button  id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                       Subscribe
                       </button>
-                      
+  </div>
                     </div>
                   </div>
                   
