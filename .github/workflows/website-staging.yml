@@ -32,7 +32,7 @@ jobs:
         name: website-artifact
 
      - name: Copy the artifact to remote server
-       uses: appleboy/scp-action@master
+       uses: appleboy/scp-action@v0.1.3
        with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
@@ -41,7 +41,7 @@ jobs:
         target: "builds/compressed/${{ github.run_id }}"
         
      - name: Setup the build on remote server
-       uses: appleboy/ssh-action@master
+       uses: appleboy/ssh-action@v0.1.3
        with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
