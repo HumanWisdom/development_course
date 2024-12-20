@@ -438,9 +438,9 @@
                     <a class="item" data-aos="fade-up" data-aos-delay="200">
                       <div class="div_testimonials">
                         <div class="row">
-                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
-                          </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" class="img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
+                      </div>
                         </div>
 
                         <div class="row">
@@ -453,7 +453,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
                               Julie Goodfellow, UK
                             </h5>
                           </div>
@@ -465,7 +465,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tinamarie_rodriguez.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                           </div>
                         </div>
 
@@ -479,7 +479,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
                               Tinamarie Rodriguez, USA
                             </h5>
                           </div>
@@ -491,7 +491,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
                           </div>
                         </div>
 
@@ -505,7 +505,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
                               Jondi Whitis, Atlanta, USA
                             </h5>
                           </div>
@@ -517,7 +517,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
                           </div>
                         </div>
 
@@ -531,7 +531,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
                               Garry Prigg, Australia
                             </h5>
                           </div>
@@ -543,7 +543,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_suzanne_oades.webp" class="img-responsive width_unseti" alt="Quotation">
                           </div>
                         </div>
 
@@ -557,7 +557,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
                               Suzanne Oades, UK
                             </h5>
                           </div>
@@ -569,7 +569,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_gopalan_nair.webp" class="img-responsive width_unseti" alt="Quotation"> -->
                           </div>
                         </div>
 
@@ -583,7 +583,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                               Gopalan Nair, Singapore
                             </h5>
                           </div>
@@ -595,7 +595,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_lynne_staley.webp" class="img-responsive width_unseti" alt="Quotation"> -->
                           </div>
                         </div>
 
@@ -609,7 +609,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff"style="font-style:italic";>
                               Lynne Staley, USA
                             </h5>
                           </div>
@@ -621,7 +621,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation"> -->
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/1.webp" class="img-responsive" alt="Carolyn King" loading=lazy>
                           </div>
                         </div>
 
@@ -635,7 +635,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                               Carolyn King, Melbourne
                             </h5>
                           </div>

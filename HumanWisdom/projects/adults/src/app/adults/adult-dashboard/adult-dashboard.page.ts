@@ -348,7 +348,7 @@ export class AdultDashboardPage implements OnInit {
         window.close();
       }
 
-
+    
     }
     // Extract the query string from the URL
 
@@ -472,6 +472,11 @@ export class AdultDashboardPage implements OnInit {
     setTimeout(() => {
       this.GetDashboardFeatures();
     }, 1000)
+    setTimeout(() => {
+      if(this.router.url.toLowerCase().includes('token'.toLowerCase())){
+        window.close();
+      }
+     }, 1000);
   }
 
   getplaystore(event) {

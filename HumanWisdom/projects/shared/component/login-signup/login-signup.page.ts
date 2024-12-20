@@ -21,6 +21,7 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
 
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { Constant } from "../../services/constant";
+import { CommonService } from "../../services/common.service";
 declare var $: any;
 @Component({
   selector: "app-common-login",
@@ -159,7 +160,8 @@ export class LoginSignupPage implements OnInit {
     private authService: SocialAuthService,
     private service: OnboardingService,
     private navigtionService: NavigationService,
-    private renderer: Renderer2, private el: ElementRef
+    private renderer: Renderer2, private el: ElementRef,
+    private commonService:CommonService
   ) {
     this.initializeRegistrationForm();
     this.VerifyGoogle();
@@ -558,6 +560,12 @@ export class LoginSignupPage implements OnInit {
       this.service.getuser(res.UserId).subscribe(userInfo => {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+          if(userInfo[0]?.SurveyDone=='0'){
+            setTimeout(() => {
+              this.commonService.updateSurveyData(1);
+            }, 50000);
+           // document.getElementById('test1').click();
+          }
         }
       })
       this.freescreens();
@@ -754,7 +762,8 @@ export class LoginSignupPage implements OnInit {
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/verifyAppleToken_html";
+    //https://staging.humanwisdom.info/api/VerifyAppleToken_htmlLocal
+    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/VerifyAppleToken_htmlLocal";
     var popup = window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL

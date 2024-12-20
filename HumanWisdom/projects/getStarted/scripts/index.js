@@ -212,9 +212,13 @@ const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
     var e = document.getElementById("closeableElement");
-    (e.style.display = "none"), e.classList.remove("display_df_none");
+    if(e){
+        (e.style.display = "none"), e.classList.remove("display_df_none");
+    }
     var t = document.getElementById("scrollTopArrow");
-    "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
+    if(t){
+        "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
+    }
 }
 
 
@@ -230,7 +234,10 @@ requestDemo &&
             o = document.getElementById("company").value,
             a = document.getElementById("country").value;
         if (!(t && n && o && a && "" != n && "" != t && "" != o && "" != a)) return alert("All fields must be filled out"), !1;
-        const i = { Email_Id: "team@happierme.app", Subject: "Request a demo", Body: `Name : ${n} Company: ${o} Country :${a}` };
+        if(!validateEmail(t)){
+            return alert("Please enter valid email"), !1;
+        }
+        const i = { Email_Id: "team@happierme.app", Subject: "Request a demo", Body: `Name : ${n} Company: ${o} Country :${a}  Email :${t}` };
         fetch("https://humanwisdom.info/api/SendMail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(i) })
             .then((e) => e.json())
             .then((e) => {
@@ -350,8 +357,31 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
+const newsLetterForm = document.getElementById("news-contact-form");
+newsLetterForm.addEventListener("click", () => {
+          const  email = document.getElementById("news-email").value;
+          const  name = document.getElementById("news-name").value;
+            const o = { Name: name, EmailID: email };
+          
+            if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
+            if(!validateEmail(email)){
+                return alert("Please enter valid email"), !1;
+            }
+            fetch("https://staging.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+                .then((e) => e.json())
+                .then((e) => {
+                    (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
+                })
+                .catch((e) => {
+                    let content = e['error']['Message'];
+                    console.error("Error:", e), alert(content);
+                });
+    })
 
-
+function validateEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     // const e = document.getElementById("AnnualType");

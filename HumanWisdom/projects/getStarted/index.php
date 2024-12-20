@@ -6,9 +6,10 @@
     <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
     <meta property="description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
-    <meta property="og:title" content=HappierMe-Mental Health Care>
-    <meta property="og:site_name" content=HappierMe>
-    <meta property="og:url" content=https://happierme.app/>
+    <meta property="og:title" content="HappierMe: For Teens & Adults">
+    <meta property="og:description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app">
      <meta property="og:type" content="">
      <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp>
      <!-- <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp>
@@ -74,6 +75,8 @@
       <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
 
+         
+         
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100">
             <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
@@ -82,11 +85,14 @@
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video> -->
-            <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe>
+            <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
-              
-          </div>
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
+
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mobile_home.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -115,7 +121,7 @@
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_56px fw_600 lh_130p fc_834b66 ta_lc">
-                Your guide to a happier life
+                HappierMe for a happier you
                 </h1>
               </div>
             </div>
@@ -123,7 +129,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
-                One app to manage your emotions, have happier relationships and succeed at work.                </h2>
+                We support you to find the happiness within yourself, and lead a fulfilling life.            </h2>
               </div>
             </div>
 
@@ -148,7 +154,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                  Created by experts.
+                  Created by experts from around the world.
                   </h3>
                 </div>
               </div>
@@ -162,7 +168,7 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Online journal, podcasts, meditations, stories and more.  
+                    Online journal, forum, podcasts, meditations, stories and more.  
                   </h3>
                 </div>
               </div>
@@ -204,7 +210,6 @@
             </div>
 
           </div>
-
         </div>
       </div>
     </section>
@@ -216,7 +221,7 @@
     <!-- testimonials -->
     <section>
         <div class="section-header">
-          <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 Users love HappierMe
@@ -230,36 +235,6 @@
 
             <div class="owl_container owl_testimonials">
               <div class="owl-carousel owl-theme">
-              
-              <a class="item" data-aos="fade-up" data-aos-delay="200">
-                  <div class="div_testimonials">
-                    <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dan_reidenberg.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        HappierMe is a well-designed app that provides many useful tools and resources for anyone wanting to improve their life, resilience and well-being. Built upon the belief that the more you know, the stronger you will be in moments of crisis, HappierMe increases your knowledge. </h5>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                        Dr Dan Reidenberg, 
-                        </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                        Director, Mental health coalition.  USA.
-                      </p>
-                   
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
                 <a class="item" data-aos="fade-up" data-aos-delay="300">
                   <div class="div_testimonials">
                     <div class="row">
@@ -270,7 +245,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb25px fs_15px fw_500 lh_150p fc_ffffff">
+                        <h5 class="mt20px mb30px fs_15px fw_500 lh_150p fc_ffffff">
                         HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms. 
                         </h5>
                       </div>
@@ -278,12 +253,12 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Brenda McChesney
                         </h5>
 
                        
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Associate Director, National Family Suport Network. USA.
                       </p>
                  
@@ -291,61 +266,93 @@
                     </div>
                   </div>
                 </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="400">
-                  <div class="div_testimonials">
+              
+                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                 <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dan_reidenberg.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
-                    </div>
 
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb12px fs_14px fw_400 lh_150p fc_ffffff">
-                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app.
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                          Samaira, 
-                        </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                        Student. India.
-                      </p>
-                     
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="500">
-                  <div class="div_testimonials">
-                    <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
-                      </div>
+                      
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial.
-                        </h5>
-                      </div>
+                        HappierMe is a well-designed app that provides many useful tools and resources 
+                        for anyone wanting to improve their life, resilience and well-being. HappierMe increases your knowledge, awareness and internal strength.</div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                          Sree,
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Dr Dan Reidenberg, 
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                        Student. Dubai.
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Director, Mental health coalition.  USA.
                       </p>
+                   
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                 <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                      </div>
+
+                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime.</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Leah Christensen, 
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Student. USA.
+                      </p>
+                   
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                 <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tinamarie_rodriguez.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                      </div>
+
+                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        This app is exactly what each and every person in the world needs every day. It will give each person the tools to leads a purposeful and fulfilling life.</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Tinamarie Rodriguez, 
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Wisdom coach.  USA.
+                      </p>
+                   
                       </div>
                     </div>
                   </div>
@@ -369,10 +376,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Jondi Whitis,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         EFT trainer and Coach. USA.
                       </p>
                      
@@ -381,68 +388,9 @@
                   </div>
                 </a>
 
-                <a class="item">
-                  <div class="div_testimonials">
-                    <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_roland_yeo.webp" class="img-responsive width_unseti" alt="Roland Yeo" loading=lazy> 
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          Whether you are seeking clarity or guidance over your mental, emotional or spiritual wellness, the HappierMe App can help you do that in a simple and easy way. The app has helped me to be more reflective.
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Roland Yeo, 
-                        </h5>
-                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        Life Coach. Singapore.
-                      </p>
-                    
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item">
-                  <div class="div_testimonials">
-                    <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" class="img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          I subscribed to The Human Wisdom app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. 
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                          Julie Goodfellow, UK
-                        </h5>
-                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        Headteacher. UK.
-                      </p>
-                     
-
-                      </div>
-                    </div>
-                  </div>
-                </a>
+           
                                 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600" >
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -460,10 +408,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Garry Prigg, 
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         CEO, Who I am dynamics. Australia.
                       </p>
                      
@@ -472,7 +420,98 @@
                   </div>
                 </a>
 
-                <a class="item">
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" class="img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          I subscribed to The Human Wisdom app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety & depression. 
+                        </h5>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                          Julie Goodfellow, UK
+                        </h5>
+                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Headteacher. UK.
+                      </p>
+                     
+
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_roland_yeo.webp" class="img-responsive width_unseti" alt="Roland Yeo" loading=lazy> 
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          Whether you are seeking clarity or guidance over your mental, emotional or spiritual wellness, the HappierMe App can help you do that in a simple and easy way. The app has helped me to be more reflective.
+                        </h5>
+                      </div>
+                    </div>
+
+                    <div class="row" >
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                          Roland Yeo, 
+                        </h5>
+                        <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Life Coach. Singapore.
+                      </p>
+                    
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        HappierMe is what today's world which is full of stress, needs so so desperately. I have been using the HappierMe app in my counselling practice to help parents raise children who won't have to recover from their childhoods.
+                        </h5>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                          Saakshi Singla,
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Psychotherapist. India.
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item"  data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -491,10 +530,10 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Adam Beagley,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                         Student. UK.
                       </p>
                       </div>
@@ -502,35 +541,101 @@
                   </div>
                 </a>
 
-                <a class="item">
+                <a class="item" data-aos="fade-up" data-aos-delay="400">
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                      </div>
+                    </div>
 
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_14px fw_400 lh_150p fc_ffffff">
+                          HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app.
+                        </h5>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                          Samaira, 
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Student. India.
+                      </p>
+                     
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="500">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_swati_nair.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                          HappierMe is what today's world which is full of stress, needs so so desperately. I have been using the HappierMe app in my counselling practice .
+                        Through its modules, awareness exercises and life stories the HappierMe app has helped me better understand why I think and act the way I do.This gave me a new perspective on how to handle various situations like stress and peer pressure.
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Swati,
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Student. UAE.
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+
+                <a class="item" data-aos="fade-up" data-aos-delay="500">
+                  <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                          The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial.
                         </h5>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                          Saakshi Singla,
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                          Sree,
                         </h5>
-                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
-                        Psychotherapist. India.
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Student. Dubai.
                       </p>
                       </div>
                     </div>
                   </div>
                 </a>
+
+              
+
+               
+
+             
+
+               
 
                 
               </div>
@@ -552,26 +657,7 @@
         </div>
       </section>
       <!-- /testimonials -->
-    <!-- happyuser -->
-    <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-              Findings from a survey of 1,000 HappierMe app users </h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_user.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
-
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
-          </div>
-        </div>
-      </section>
-      <!-- /happyuser -->
+   
 
       <!-- aspects -->
       <section>
@@ -579,7 +665,7 @@
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                We are here to help you succeed in all aspects of life
+                We are here to support you succeed in all aspects of life
               </h2>
             </div>
           </div>
@@ -778,7 +864,69 @@
       </div>
 
       <!-- topics -->
+
+      <!-- teenagers -->
       <section>
+      <div class="row center_flex web_home_divcircle">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
+
+            
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle_mobile.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+            
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+              <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                
+                Our happiness depends on many factors.
+              </h2> -->
+
+              <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
+              Address the root cause of problems for lasting change.
+              </h2>
+
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
+
+               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
+              <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
+              </h3> 
+
+               <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+               Our happiness depends on many factors. HappierMe addresses them all.
+               </h5> 
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+                <a href="/pages/teenagers.php" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                    </h4> -->
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                    Try HappierMe for free
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      <!-- /teenagers -->
+
+      <!-- <section>
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -796,7 +944,7 @@
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- /topics -->
 
       <!-- work_education_healtcare -->
@@ -885,6 +1033,29 @@
         </div>
       </section>
       <!-- /work_education_healtcare -->
+      
+       <!-- happyuser -->
+    <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              Findings from a survey of 1,000 HappierMe app users </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_user.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
+
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
+          </div>
+        </div>
+      </section>
+      <!-- /happyuser -->
+
+
 
       <!-- teenagers -->
       <section>
@@ -1765,7 +1936,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" id="viewAllBlogs" href="https://happierme.app/adults/blogs">
+                    <a class="sap" id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>

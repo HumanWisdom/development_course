@@ -49,7 +49,8 @@ export class RepeatUserPage implements OnInit {
       authtoken = params?.authtoken
     });
     let app = localStorage.getItem("fromapp")
-    if (authtoken && app && app === 'T') {
+    // if (authtoken && app && app === 'T') {
+    if (authtoken) {
       localStorage.setItem('socialLogin', 'T');
       localStorage.setItem('acceptcookie', 'T')
       this.service.verifytoken(authtoken).subscribe((res) => {

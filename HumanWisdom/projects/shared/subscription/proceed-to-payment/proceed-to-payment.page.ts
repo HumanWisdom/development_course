@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { paymentIntentModel } from '../../models/search-data-model';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-proceed-to-payment',
   templateUrl: './proceed-to-payment.page.html',
@@ -41,6 +42,7 @@ export class ProceedToPaymentPage implements OnInit {
     private logEventService: LogEventService,
     private location: Location,
     private onboardingService: OnboardingService,
+    private commonService:CommonService
   ) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
@@ -116,6 +118,7 @@ export class ProceedToPaymentPage implements OnInit {
   }
 
   back() {
+    this.commonService.updateSurveyData(2);
     this.location.back();
   }
 

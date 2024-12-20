@@ -7,6 +7,8 @@ import { TeenagersService } from './teenagers/teenagers.service';
 import moengage from "@moengage/web-sdk";
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { CommonService } from '../../../shared/services/common.service';
+import { OnboardingService } from '../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-root',
@@ -36,13 +38,15 @@ export class AppComponent implements OnDestroy {
 
   constructor(private navigationService: NavigationService,
     private router: Router,
-    private services: TeenagersService) {
+    private services: TeenagersService,private commonService:CommonService,private onboardingService:OnboardingService) {
     SharedService.ProgramId = 11;
     moengage.initialize({
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
       swPath: '/teenagers/serviceworker.js'
     });
-
+    if (localStorage.getItem("isloggedin") == 'T') {
+      this.getUserInformationById(SharedService.getUserId())
+    }
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
@@ -54,6 +58,7 @@ export class AppComponent implements OnDestroy {
       setTimeout(() => {
         this.pageLoaded = true;
       }, 2000)
+   
       //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
@@ -61,6 +66,19 @@ export class AppComponent implements OnDestroy {
     });
     //  this.setDynamicCSS();
   }
+
+   getUserInformationById(loggedInUserId){
+    this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
+     if(res){
+       if(res[0]?.SurveyDone=='0'){
+         setTimeout(() => {
+           this.commonService.updateSurveyData(1);
+         }, 50000);
+       }
+     }
+   });
+  
+ }
 
 
   setDynamicCSS() {

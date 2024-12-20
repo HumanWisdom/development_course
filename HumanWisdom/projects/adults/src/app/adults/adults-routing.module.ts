@@ -48,6 +48,7 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-survey',
+    canActivate: [AuthGuard],
     loadChildren: () => import('../../../../shared/component/wisdom-survey/wisdom-survey.module').then(m => m.WisdomSurveyModule)
   },
   {

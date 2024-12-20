@@ -97,7 +97,6 @@ import { SignupPage } from './component/signup/signup.page';
 import { ForgetPasswordPage } from './component/forget-password/forget-password.page';
 import { ChangePasswordPage } from './component/change-password/change-password.page';
 import { SetPasswordPage } from './component/set-password/set-password.page';
-import { CommonService } from './services/common.service';
 import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.page';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 export class MyHammerConfig extends HammerGestureConfig {
@@ -312,7 +311,6 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
-    CommonService
   ]
 })
 export class SharedModule { }

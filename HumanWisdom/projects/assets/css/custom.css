@@ -5113,8 +5113,9 @@ table
 input[type=checkbox], input[type=radio]
 {
 	vertical-align:bottom!important;
-	width:2.5rem !important;
-	height:2rem;
+	width:2rem !important;
+	height:1.5rem;
+  margin: 5px;
 }
 
 .table>tbody>tr>td
@@ -10802,6 +10803,38 @@ body,
    top:25% !important; 
    height: fit-content;
 }
+.modal.fade.in .lab-modal-body_new {
+  /* bottom: 0;
+  opacity: 1; */
+
+  /* bottom: 0; */
+  opacity: 1;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  /* width: 98%; */
+  position: absolute;
+   top:18% !important; 
+   height: fit-content;
+}
+.lab-modal-body_new {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 20px;
+  height: auto;
+  background: #292D56;
+  color: #fff;
+  
+  border: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  z-index: 999;
+  transition: all 1s;
+}
 
 .lab-modal-body h1 {
   font-size: 4rem;
@@ -15101,10 +15134,10 @@ input[type="number"] {
 
 .crimg
 {
-  display: block;
+  /* display: block; */
   width: 48px;
   height: 48px;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .txt28
@@ -19508,7 +19541,7 @@ share-buttons button
 .ws_view_story
 {
   object-fit: cover;
-  height: 280px;
+  /* height: 280px; */
   border-radius: 0px 0px 20px 20px;
   padding: 0 !important;
 }
@@ -27179,8 +27212,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 
 .pfy_search::placeholder
 {
-  /* color: #5D5D5D !important; */
-  color: rgba(255, 255, 255, 0.50) !important;
+  color: rgba(255, 255, 255, 0.70) !important;
+  /* color: rgba(255, 255, 255, 0.5) !important; */
 }
 
 input[type="search"].pfy_search::-webkit-search-cancel-button {
@@ -28803,6 +28836,25 @@ video::-webkit-media-controls-panel
   color: #FFFFFF;
   font-size: 20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn_aan1 {
+  height: 50px;
+  width: 125px;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #e58d82;
+  border-radius: 100px;
+  /* border: 2px solid white; */
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 140%;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -32580,6 +32632,18 @@ body *
   padding: 20px;
 }
 
+.box_v3_01ex {
+  background: #120F40;
+  border: 1px solid #384079;
+  border-radius: 12px;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  height: 115px;
+  padding: 20px;
+}
+
 .box_v3_02
 {
   position: absolute;
@@ -32610,9 +32674,12 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 20%;
-  margin: 0 13px 0 0;
-  padding: 0;
+  width: 30%;
+/*   margin: 0 13px 0 0;
+  padding: 0; */
+  text-align: center;
+  display: inline-grid;
+
 }
 
 .btn_cytoc
@@ -34044,8 +34111,9 @@ body *
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #120F40;
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 15px;
+  margin-top: 10px;
   font-weight: 400;
   line-height: 140%;
   color: #FFF;
