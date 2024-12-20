@@ -335,11 +335,13 @@ export class ForumLandingPage implements OnInit {
   }
 
 
-  filterBasedOnTags(tagId){
+  filterBasedOnTags(tagId,name){
     const data = this.categoryList.filter(x=>x.value==tagId);
-    if(data!=null && data.length>0){
+    /* if(data!=null && data.length>0){
       this.buttonText =  data[0].label;
-    }
+    } */
+    this.buttonText =name;
+
     setTimeout(() => {
       this.closeCategoryModal();
     }, 100);
