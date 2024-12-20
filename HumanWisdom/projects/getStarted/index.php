@@ -872,10 +872,10 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
 
             
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/circle.svg" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle_mobile.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/circle_mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
             
             <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
             </div>
