@@ -721,14 +721,25 @@
 <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0">
              </div>   -->
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-<div class="row ">
+<div class="box">
 <div class="row mt30px">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+<div class="row mt30px">
+                <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
+                <!-- Subscribe to our newsletter! -->
+                </h1>
+              </div>
+            </div>
+  </div>
+  <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                
                 <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1>
               </div>
             </div>
+  </div>
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 
@@ -767,7 +778,7 @@
                     </div>
                   </div>
 
-                  <div class="row mt15px">
+                  <!-- <div class="row mt15px"> -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                         <input type="text" class="form-control fc_01" id="news-email" name="news-email"  placeholder="Your email">
@@ -778,11 +789,12 @@
 
                      
                     </div>
-                  </div>
-                  <div class="row mt30px">
+                  <!-- </div> -->
+                 
                   
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
+                    <div class="row mt15px">
                       <button  id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                       Subscribe
                       </button>

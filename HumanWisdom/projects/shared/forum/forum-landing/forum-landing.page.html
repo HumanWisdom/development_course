@@ -791,94 +791,214 @@
         </div>
       </div>
 
-      <a class="" (click)="filterBasedOnTags(1)">
-        <div class="row mb5px">
+      <a class="" (click)="filterBasedOnTags(3,'Work and Leadership')" *ngIf="isAdults">
+        <div class="row mb10px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
-              Mental health
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Work and Leadership
             </h3>
           </div>
         </div>
 
-        <div class="row" >
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-              Stress, anxiety, depression and mental health issues
-            </h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <hr class="hr_style_v3_04 mtb10pxi">
-          </div>
-        </div>
-      </a>
-
-      <a class="" (click)="filterBasedOnTags(2)">
-        <div class="row mb5px">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
-              Relationships
-            </h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-              The many different relationships we have, with ourselves and others
-            </h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <hr class="hr_style_v3_04 mtb10pxi">
-          </div>
-        </div>
-      </a>
-
-      <a class="" (click)="filterBasedOnTags(3)" *ngIf="isAdults">
-        <div class="row mb5px">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
-              Work
-            </h3>
-          </div>
-        </div>
-
-        <div class="row">
+       <!--  <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
               Work related issues
             </h3>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <hr class="hr_style_v3_04 mtb10pxi">
+            <hr class="hr_style_v3_04 mtb0px">
           </div>
         </div>
       </a>
 
-      <a class="" (click)="filterBasedOnTags(6)" *ngIf="!isAdults">
-        <div class="row mb5px">
+      <a class="" (click)="filterBasedOnTags(1,'Manage your mental health')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
-              School
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Manage your mental health
             </h3>
           </div>
         </div>
 
+      
+
         <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(2,'Relationships')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Relationships
+            </h3>
+          </div>
+        </div>
+
+       <!--  <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              The many different relationships we have, with ourselves and others
+            </h3>
+          </div>
+        </div> -->
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(11,'Be happier')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Be happier
+            </h3>
+          </div>
+        </div>    
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(12,'Habits and Addiction')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Habits and Addiction
+            </h3>
+          </div>
+        </div>    
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(13,'Deal with loss')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Deal with loss
+            </h3>
+          </div>
+        </div>    
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(14,'Meditation')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Meditation
+            </h3>
+          </div>
+        </div>    
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(15,'Manage your emotions')" *ngIf="isAdults">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Manage your emotions
+            </h3>
+          </div>
+        </div>    
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb0px">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(16,'Manage your mental health')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Manage your mental health
+            </h3>
+          </div>
+        </div>
+
+       <!--  <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
               School related issues
             </h3>
           </div>
+        </div> -->
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
         </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(17,'Relationships')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Relationships
+            </h3>
+          </div>
+        </div>
+
+      
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(18,'Feel calm')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Feel calm
+            </h3>
+          </div>
+        </div>
+
+      
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+      <a class="" (click)="filterBasedOnTags(19,'Be happier')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Be happier
+            </h3>
+          </div>
+        </div>
+
+      
 
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -887,61 +1007,152 @@
         </div>
       </a>
 
-      <a class="" (click)="filterBasedOnTags(4)">
+      <a class="" (click)="filterBasedOnTags(20,'Manage your emotions')" *ngIf="!isAdults">
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Manage your emotions
+            </h3>
+          </div>
+        </div>
+
+      
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(21,'Overcome unhelpful habits')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Overcome unhelpful habits
+            </h3>
+          </div>
+        </div>
+
+      
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(22,'Understand yourself')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Understand yourself
+            </h3>
+          </div>
+        </div>
+
+      
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(23,'Succeed in life')" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              Succeed in life
+            </h3>
+          </div>
+        </div>
+
+      
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+    <!--   <a class="" (click)="filterBasedOnTags(6)" *ngIf="!isAdults">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+              School
+            </h3>
+          </div>
+        </div>
+
+      
+         
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a> -->
+
+      <a class="" (click)="filterBasedOnTags(4,'Nuggets of Inspiration')">
+        <div class="row mtb10pxi">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
               Nuggets of Inspiration
             </h3>
           </div>
         </div>
 
-        <div class="row">
+       <!--  <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
               Stories, quotes, and what makes you happy
             </h3>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <hr class="hr_style_v3_04 mtb10pxi">
+            <hr class="hr_style_v3_04 mtb0px">
           </div>
         </div>
       </a>
 
-      <a class="" (click)="filterBasedOnTags(5)">
-        <div class="row mb5px">
+      <a class="" (click)="filterBasedOnTags(5,'Ask our expert coaches')">
+        <div class="row mtb10pxi">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
               Ask our expert coaches
             </h3>
           </div>
         </div>
-
+<!-- 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
               Questions for our team of HappierMe coaches
             </h3>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <hr class="hr_style_v3_04 mtb10pxi">
+            <hr class="hr_style_v3_04 mb5px">
           </div>
         </div>
       </a>
 
-      <div class="row mb20px">
+   <!--    <div class="row mb20px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
             Other
           </h3>
         </div>
-      </div>
+      </div> -->
 
       <div class="forum_all_threads" >
         <a class=""  (click)="onChange(1)">

@@ -45,7 +45,7 @@
 <link href="../assets-min/font/font_weight.css" rel="stylesheet" media="print" onload="this.media='all'">
 <link href="../assets-min/font/line_height.css" rel="stylesheet" media="print" onload="this.media='all'">
 <link href="../assets-min/css/style_hb.css" rel="stylesheet" media="print" onload="this.media='all'"> -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
