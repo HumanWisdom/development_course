@@ -87,7 +87,7 @@
               </h4>
             </a>
 
-            <a href="https://staging.happierme.app/pages/newsletter.php">
+            <a href="https://happierme.app/pages/newsletter.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Sign up for our newsletter
               </h4>
@@ -289,7 +289,7 @@
                     </h4>
                   </a>
 
-                  <a href="https://happierme.app/newsletter.html">
+                  <a href="https://happierme.app/pages/newsletter.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Sign up for our newsletter
                     </h4>
