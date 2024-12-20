@@ -183,12 +183,14 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   closeCategoryModal(){
     this.closeCategory.nativeElement.click();
   }
-  filterBasedOnTags(value){
+  filterBasedOnTags(value, name){
     this.selectedOption = parseInt(value);
     const data = this.categoryList.filter(x=>x.value== this.selectedOption);
-    if(data!=null && data.length>0){
+    /* if(data!=null && data.length>0){
       this.buttonText =  data[0].label;
-    }
+    } */
+      this.buttonText =name;
+
     setTimeout(() => {
       this.closeCategoryModal();
     }, 100);
