@@ -1202,10 +1202,10 @@
         margin-top: 0;
         margin-bottom: 0;
     }
-    .col_cw
+   /*  .col_cw
     {
         width: 30% !important;
-    }
+    } */
 }
 
 @media (max-width: 353px)
@@ -1214,8 +1214,8 @@
     {
       font-size: 10px;
     }
-    .col_cw
+    /* .col_cw
     {
         width: 30% !important;
-    }
+    } */
 }
