@@ -1061,51 +1061,17 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/verifyAppleToken_html";
-    var popup = window.open(
+    let REDIRECT_API_URL = environment.appleSignInAPIAdults;
+    if(!SharedService.isAdultProgram()){
+      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
+    }
+     window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL
-      )}&response_type=code id_token&scope=name email&response_mode=form_post`,
-    '_blank',
-    'width=500,height=600'
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
     );
-    this.pollPopup(popup);
-
   }
 
-  private pollPopup(popup): void {
-    const intervalId = setInterval(() => {
-      if (popup && !popup.closed) {
-        try {
-         if(localStorage.getItem('isloggedin')=='T'){
-        
-           setTimeout(() => {
-            this.actclosemodal?.nativeElement?.click();
-            this.closeModal.emit(false);
-            setTimeout(() => {
-              popup.close()
-             }, 800);
-           this.handleAppleLoginResponse();
-           },500);
-         }
-        } catch (e) {
-          clearInterval(intervalId);
-          // Handle cross-origin access errors
-          console.error('Unable to access popup location:', e);
-        }
-      } else {
-        clearInterval(intervalId);
-        const token = localStorage.getItem('token');
-        if(token!=null || token!=''){
-         setTimeout(() => {
-          popup.close()
-         }, 800);
-        }
-        console.log('Popup was closed');
-      
-    }
-    }, 1000); // Poll every 500 milliseconds
-  }
 
   handleAppleLoginResponse() {
     const token = localStorage.getItem('token');

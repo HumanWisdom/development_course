@@ -321,6 +321,9 @@ export class SharedService {
     return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(userAgent);
   }
   
+
+  
+
 }
 
 

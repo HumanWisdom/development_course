@@ -3,7 +3,7 @@ import { SharedService } from '../../../../../shared/services/shared.service';
 import { TeenagersService } from '../teenagers.service';
 import { UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Platform } from '@angular/cdk/platform';
 // import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { Constant } from '../../../../../shared/services/constant';
@@ -122,7 +122,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   constructor(
     public router: Router, public service: TeenagersService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
-    public platform: Platform,
+    public platform: Platform,private route:ActivatedRoute,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
     // let remem = localStorage.getItem("remember")
@@ -167,8 +167,12 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
+    this.route.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
+      console.log("APPPLE LOGIN");
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
@@ -494,11 +498,6 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
     }, 3000)
     localStorage.setItem("pageaction", 'next');
-    setTimeout(() => {
-      if(this.router.url.toLowerCase().includes('token'.toLowerCase())){
-        window.close();
-      }
-     }, 1000);
   }
 
   getplaystore(event) {

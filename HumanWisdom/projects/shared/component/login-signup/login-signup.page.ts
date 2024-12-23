@@ -23,7 +23,6 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
 declare var $: any;
-declare var AppleID: any; 
 @Component({
   selector: "app-common-login",
   imports: [SocialLoginModule, CommonModule,
@@ -162,7 +161,7 @@ export class LoginSignupPage implements OnInit {
     private service: OnboardingService,
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
-    private commonService: CommonService
+    private commonService:CommonService
   ) {
     this.initializeRegistrationForm();
     this.VerifyGoogle();
@@ -186,10 +185,8 @@ export class LoginSignupPage implements OnInit {
   }
 
   ngOnInit() {
-
     if (document.getElementById('password-reveal')) {
       document.getElementById('password-reveal').style.display = 'none';
-  
     }
 
     setTimeout(() => {
@@ -418,7 +415,7 @@ export class LoginSignupPage implements OnInit {
               Pwd: "",
             })
             .subscribe((res) => {
-              if (res) {
+              if(res){
                 this.setUpLoginConfiguration(res);
               }
             });
@@ -456,9 +453,9 @@ export class LoginSignupPage implements OnInit {
             Pwd: "",
           })
           .subscribe((res) => {
-            if (res) {
-              this.setUpLoginConfiguration(res);
-            }
+               if(res){
+                this.setUpLoginConfiguration(res);
+               }
           });
       } else {
         this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
@@ -505,9 +502,9 @@ export class LoginSignupPage implements OnInit {
         (accessObj)?.Moengage.add_first_name(res.Name);
       })
       this.loginResponse = res;
-      if (this.loginResponse.LastVisit && new Date(this.loginResponse.LastVisit).getDate()) {
-        if (new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()) {
-          SharedService.FirstLoginOfTheDay = true;
+      if(this.loginResponse.LastVisit &&  new Date(this.loginResponse.LastVisit).getDate()){
+        if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
+          SharedService.FirstLoginOfTheDay =true;
         }
       }
       localStorage.setItem("socialLogin", "F");
@@ -563,11 +560,11 @@ export class LoginSignupPage implements OnInit {
       this.service.getuser(res.UserId).subscribe(userInfo => {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-          if (userInfo[0]?.SurveyDone == '0') {
+          if(userInfo[0]?.SurveyDone=='0'){
             setTimeout(() => {
               this.commonService.updateSurveyData(1);
             }, 50000);
-            // document.getElementById('test1').click();
+           // document.getElementById('test1').click();
           }
         }
       })
@@ -703,7 +700,7 @@ export class LoginSignupPage implements OnInit {
                     }
 
                   } else {
-                    this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
+                      this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
                   }
                 }
               }
@@ -758,58 +755,33 @@ export class LoginSignupPage implements OnInit {
     });
   }
 
-
-  async signInWithApple(reqtype) {
-    const options = {
-      clientID: 'humanwisdom.web.service',
-      redirectUri: 'https://staging.humanwisdom.info/api/verifyAppleToken_html',
-    };
-    document.addEventListener("AppleIDSignInOnSuccess", this._onAppleSignInOnSuccess.bind(this));
-    AppleID.auth.init({
-      clientId: options.clientID, 
-      scope: 'email name',          
-      redirectURI: 'https://staging.humanwisdom.info/api/verifyAppleToken_html',
-      state : 'SignInUserAuthenticationRequest',
-      usePopup: true                
-    });
-    await AppleID.auth.signIn();
-  }
-
-  private _onAppleSignInOnSuccess(event: any): void {
-    const { state } = event.detail.authorization;
-    const { email, name } = event.detail.user;
-
-    // We are checking that the request we send matches the one we receive.
-    if (state === "SignInUserAuthenticationRequest") {
-      const { code, id_token } = event.detail.authorization;
-      
-      // Do something with id_token and code...
-      console.log("Code:", code);
-      console.log("ID Token:", id_token);
-
-      // User details email, name...
-      console.log("User email:", email);
-      console.log("User name:", name);
-    } else {
-      this.onError(new Error('state property is not the one expected'));
+ 
+  signInWithApple(reqtype) {
+    if (reqtype == "signup")
+      this.logeventservice.logEvent('apple_signup');
+    else
+      this.logeventservice.logEvent('apple_login');
+    const CLIENT_ID = "humanwisdom.web.service";
+    let REDIRECT_API_URL = environment.appleSignInAPIAdults;
+    if(!SharedService.isAdultProgram()){
+      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
     }
+     window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+        REDIRECT_API_URL
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
+    );
+   // this.pollPopup(popup);
   }
-
-
-  private onError(error: Error): void {
-    console.error(error.message);
-    // Handle error logic here...
-  }
-
   private pollPopup(popup): void {
     const intervalId = setInterval(() => {
       if (popup && !popup.closed) {
         try {
-          if (localStorage.getItem('isloggedin') == 'T') {
-            setTimeout(() => {
-              this.handleAppleLoginResponse();
-            }, 200);
-          }
+         if(localStorage.getItem('isloggedin')=='T'){
+           setTimeout(() => {
+             this.handleAppleLoginResponse();
+           },200);
+         }
         } catch (e) {
           clearInterval(intervalId);
           console.error('Unable to access popup location:', e);
@@ -817,22 +789,22 @@ export class LoginSignupPage implements OnInit {
       } else {
         clearInterval(intervalId);
         const token = localStorage.getItem('token');
-        if (token != null || token != '') {
+        if(token!=null || token!=''){
           popup.close();
         }
         console.log('Popup was closed');
-
+      
       }
     }, 1000); // Poll every 500 milliseconds
   }
 
   handleAppleLoginResponse() {
     const token = localStorage.getItem('token');
-    if (token) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
-    }
-  }
-
+     if (token) {
+        this.router.navigate([SharedService.getDashboardUrls()]);
+      }
+    } 
+  
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
@@ -1119,7 +1091,7 @@ export class LoginSignupPage implements OnInit {
   //               {
   //                 this.service.verifyUser(this.userId)
   //                 .subscribe(res=>{
-
+    
   //                 })
   //               }*/
   //             }
