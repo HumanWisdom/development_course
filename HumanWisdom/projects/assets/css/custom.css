@@ -32643,6 +32643,17 @@ body *
   height: 115px;
   padding: 20px;
 }
+.boxf_v3_01 {
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 12px;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  padding: 20px;
+}
 
 .box_v3_02
 {
