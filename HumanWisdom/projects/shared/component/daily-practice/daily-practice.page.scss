@@ -255,9 +255,9 @@ div[ng-reflect-value] {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  height: 80vh;
   overflow-y: auto; 
-  padding: 20px;
+  // padding: 20px;
   box-sizing: border-box;
   padding-top: 0px !important;
 }
@@ -272,15 +272,17 @@ div[ng-reflect-value] {
 
 .video-wrapper {
   width: 83%;
+  // background: #120F40;
   display: flex;
+  border-radius: 12px;
   justify-content: center;
 
 }
 
 .cvideo {
-  width: 100%; 
+  width: 96%; 
   max-height: 67vh; 
-  border-radius: 34px !important; 
+  // border-radius: 34px !important; 
 }
 
 .text-content {
