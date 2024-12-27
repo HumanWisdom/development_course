@@ -51,8 +51,8 @@
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             
-              <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn-banner.webp"
+              <img style="height:550px;width:370px"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive"
                 >
           
           </div>
