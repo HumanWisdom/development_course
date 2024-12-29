@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/change-topic/change-topic.module').then(m => m.ChangeTopicPageModule)
   },
   {
+    path: 'social-login',
+    loadChildren: () => import('../../../../shared/component/social-login/social-login.module').then(m => m.SocialLoginPageModule)
+  },
+  {
     path: 'start-here',
     loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
   },

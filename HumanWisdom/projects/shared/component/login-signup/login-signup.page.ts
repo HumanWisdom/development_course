@@ -762,6 +762,7 @@ export class LoginSignupPage implements OnInit {
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
+    localStorage.setItem('appleLogin','T');
     let REDIRECT_API_URL = environment.appleSignInAPIAdults;
     if(!SharedService.isAdultProgram()){
       REDIRECT_API_URL = environment.appleSignInAPITeenagers;
