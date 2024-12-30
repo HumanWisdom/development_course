@@ -27,7 +27,7 @@ export class WisdomShortsIndexPage implements OnInit {
   searchedText:any='';
   isAdults = true;
   prefData:any;
-  selectedPref = 'All'
+  selectedPref = 'Voices'
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: CommonService, private meta: Meta, private title: Title) {
     this.ngNavigatorShareService = ngNavigatorShareService;
@@ -77,7 +77,7 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
           res.splice(res.indexOf(element), 1)
           res.unshift(element)
         });
-        this.wisdomshorts = res1;
+        this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
         this.allwisdomshorts = res1;
         this.allwisdomshorts.forEach((d) => {
           this.prefData.forEach((h) => {
@@ -150,6 +150,8 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
     this.wisdomshorts = this.allwisdomshorts;
     if(type.name === 'All') {
       this.wisdomshorts = this.allwisdomshorts;
+    }else if(type.name === 'Voices'){
+      this.wisdomshorts= this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
     }else{
       if(type.name === 'Wisdom') {
         this.wisdomshorts= this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));

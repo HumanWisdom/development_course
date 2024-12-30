@@ -196,9 +196,15 @@ export class SharedService {
     if (this.ProgramId == ProgramType.Adults) {
       return [
         {
+          id: "88",
+          displayName: "Voices",
+          active: true,
+          name: 'Voices'
+        },
+        {
           id: "999",
           displayName: "All",
-          active: true,
+          active: false,
           name: 'All'
         },
         {
