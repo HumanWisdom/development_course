@@ -52,9 +52,10 @@
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             
               <img style="height:550px;width:370px"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive w100p display_m_none"
                 >
-          
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           </div>
 
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">

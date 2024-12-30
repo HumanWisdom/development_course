@@ -91,7 +91,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
-             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mobile_home.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
