@@ -207,6 +207,10 @@ export class DailyPracticePage implements OnInit {
   routeModule() {
     this.router.navigate(["/"+SharedService.getprogramName()+"/" + this.dailyInsModule])
   }
+  routeToUrl(link) {
+    this.router.navigate(["/"+SharedService.getprogramName()+"/" + link])
+  }
+  
 
   next(event) {
     this.currentSection++;
