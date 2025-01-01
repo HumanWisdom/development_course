@@ -2782,6 +2782,13 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     this.moduleData = new Array<ProgramModel>();
     this.service.getModules(this.programType).subscribe(res => {
       this.moduleData = res;
+      this.moduleData.forEach((d) => {
+        this.moduleList.forEach((s, index) => {
+          if(d['moduleId'] === s['id']){
+            this.moduleList[index]['SessionCnt'] = d['SessionCnt'];
+          }
+        })
+      })
     });
   }
 
