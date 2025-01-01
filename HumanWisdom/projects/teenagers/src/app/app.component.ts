@@ -47,9 +47,13 @@ export class AppComponent implements OnDestroy {
     if (localStorage.getItem("isloggedin") == 'T') {
       this.getUserInformationById(SharedService.getUserId())
     }
-    if (localStorage.getItem("isloggedin") !== 'T') {
-      this.services.emaillogin();
+    let urls = this.router.url.split('authtoken=');
+    if(!urls && urls[1] == undefined){
+      if (localStorage.getItem("isloggedin") !== 'T') {
+        this.services.emaillogin();
+      }
     }
+  
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {

@@ -765,7 +765,7 @@ export class LoginSignupPage implements OnInit {
     localStorage.setItem('appleLogin','T');
     let REDIRECT_API_URL = environment.appleSignInAPIAdults;
     if(!SharedService.isAdultProgram()){
-      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
+      REDIRECT_API_URL = environment.appleSignInHtmlLocal;
     }
      window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(

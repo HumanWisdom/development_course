@@ -173,16 +173,16 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
       authtoken = params?.authtoken
     });
    let authtoken = JSON.parse(localStorage.getItem("token"))
-     if(localStorage.getItem('appleLogin')=='T'){
-      this.commonService.loginUrlSubs.subscribe(res=>{
-        if(res){
-          localStorage.setItem('appleLogin','F');
-          this.commonService.loginSubjectUnsubscribe();
-          this.router.navigate([res]);
-        }
-      })
-     // this.commonService.verifyTokenAndHandleResponse(authtoken);
-    }
+    //  if(localStorage.getItem('appleLogin')=='T'){
+    //   this.commonService.loginUrlSubs.subscribe(res=>{
+    //     if(res){
+    //       localStorage.setItem('appleLogin','F');
+    //       this.commonService.loginSubjectUnsubscribe();
+    //       this.router.navigate([res]);
+    //     }
+    //   })
+    //  // this.commonService.verifyTokenAndHandleResponse(authtoken);
+    // }
     
     if (authtoken) {
       console.log("APPPLE LOGIN");

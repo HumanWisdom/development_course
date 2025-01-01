@@ -113,20 +113,15 @@ export class SocialLoginPage implements OnInit {
         } else {
           this.isAdults = false;
         }
-      this.route.queryParams.subscribe(params => {
-          authtoken = params?.authtoken
-        });
-       let authtoken = JSON.parse(localStorage.getItem("token"))
+         let authtoken = this.router.url.split('authtoken=')[1];
          if(localStorage.getItem('appleLogin')=='T'){
-          this.commonService.loginUrlSubs.subscribe(res=>{
-            if(res){
-              localStorage.setItem('appleLogin','F');
-              setTimeout(() => {
-              this.commonService.loginSubjectUnsubscribe();
-            }, 500); 
-            this.router.navigate([res]);
-            }
-          })
+          // this.commonService.loginUrlSubs.subscribe(res=>{
+          //   if(res){
+          //   localStorage.setItem('appleLogin','F');
+          //   this.router.navigate([res]);
+          //   this.commonService.loginSubjectUnsubscribe();
+          //   }
+          // })
          // this.commonService.verifyTokenAndHandleResponse(authtoken);
         }
         
@@ -144,8 +139,6 @@ export class SocialLoginPage implements OnInit {
               localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
               localStorage.setItem("Subscriber", res['Subscriber']);
               this.isSubscriber = SharedService.isSubscriber();
-              this.loginadult(res);
-              this.services.setDataRecievedState(true);
               if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
                 if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
                   SharedService.FirstLoginOfTheDay =true;
@@ -156,6 +149,9 @@ export class SocialLoginPage implements OnInit {
                 }
                 console.log(SharedService.FirstLoginOfTheDay)
               }
+              this.loginadult(res);
+              this.services.setDataRecievedState(true);
+         
             } else {
               localStorage.setItem("email", 'guest@humanwisdom.me');
               localStorage.setItem("pswd", '12345');
@@ -240,11 +236,6 @@ export class SocialLoginPage implements OnInit {
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("token", JSON.stringify(res.access_token))
-      if(isRoutedFromLogin){
-        this.commonService.loginSubject(`${SharedService.getprogramName()}/changetopic`);
-      }else{
-        this.commonService.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
-      }
       if (this.saveUsername == true) {
         localStorage.setItem("userId", JSON.stringify(this.userId))
         localStorage.setItem("userEmail", JSON.stringify(res.Email))
@@ -255,6 +246,14 @@ export class SocialLoginPage implements OnInit {
         sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
       }
+      if(isRoutedFromLogin){
+        this.router.navigateByUrl(`${SharedService.getprogramName()}/change-topic`);
+        // this.commonService.loginSubject(`${SharedService.getprogramName()}/change-topic`);
+      }else{
+        this.router.navigateByUrl(`${SharedService.getprogramName()}/repeat-user`);
+        // this.commonService.loginSubject();
+      }
+    
 
     }
 

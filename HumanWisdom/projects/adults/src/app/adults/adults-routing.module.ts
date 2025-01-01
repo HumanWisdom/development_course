@@ -528,6 +528,10 @@ const routes: Routes = [
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
   },
   {
+    path: 'social-login',
+    loadChildren: () => import('../../../../shared/component/social-login/social-login.module').then(m => m.SocialLoginPageModule)
+  },
+  {
     path: 'social-media',
     loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
   },
