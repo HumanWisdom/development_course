@@ -27,7 +27,7 @@ export class WisdomShortsIndexPage implements OnInit {
   searchedText:any='';
   isAdults = true;
   prefData:any;
-  selectedPref = 'Voices'
+  selectedPref = 'All'
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: CommonService, private meta: Meta, private title: Title) {
     this.ngNavigatorShareService = ngNavigatorShareService;
@@ -124,10 +124,18 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
     localStorage.setItem('isSwipeAllow','true');
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
-        this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
+        if(val['IsVoices'] === '1') {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName())], {queryParams:{pref: 'voices'}})
+        }else {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
+        }
       } else {
         if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
+          if(val['IsVoices'] === '1') {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName())], {queryParams:{pref: 'voices'}})
+          }else {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
+          }
         } else {
           this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
         }
