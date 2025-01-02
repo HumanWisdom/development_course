@@ -28860,8 +28860,8 @@ video::-webkit-media-controls-panel
 }
 
 .btn_daily {
-  height: 38px;
-  width: 75px;
+  height: 30px;
+  width: 61px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -32742,7 +32742,7 @@ body *
   /* height: 412px; */
   height: auto;
     background: #120F40;  
-   border: 1px solid rgba(255, 255, 255, 0.25); 
+   /* border: 1px solid rgba(255, 255, 255, 0.25);  */
   border-radius: 12px;
    padding: 15px !important;
   margin-right: 10px;
@@ -32760,12 +32760,12 @@ body *
 }
 .box_journal_v3_03 {
   /* height: 412px; */
-  min-height: 322px; 
+  /* min-height: 322px;  */
   background: #120F40;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  /* border: 2px solid rgba(255, 255, 255, 0.25); */
   border-radius: 16px;
-  padding: 25px !important;
-  margin-right: 10px;
+  padding: 20px !important;
+  /* margin-right: 10px; */
   white-space: normal;
 }
 
@@ -34383,7 +34383,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 12px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
-  padding: 20px;
+  padding: 12px;
 }
 
 .v3_reflection_ta 
