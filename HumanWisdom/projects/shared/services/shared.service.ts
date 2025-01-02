@@ -198,13 +198,13 @@ export class SharedService {
         {
           id: "88",
           displayName: "Voices",
-          active: true,
+          active: false,
           name: 'Voices'
         },
         {
           id: "999",
           displayName: "All",
-          active: false,
+          active: true,
           name: 'All'
         },
         {
