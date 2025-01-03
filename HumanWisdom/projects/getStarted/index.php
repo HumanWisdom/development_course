@@ -843,7 +843,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay"></iframe>
+            <iframe id="vid" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" ></iframe>
           </div>
         </div>
       </section>
@@ -1841,25 +1841,25 @@
                     </div>
                   </div>
                 </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/difficult_emotions.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
                   <div class="div_blog">
                     <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive" alt="difficult_emotions_blog" loading=lazy>
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="flourish_relationships_blog" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Difficult emotions: a guide to freedom
+                          Self-Awareness can help relationships flourish
                         </h4>
                       </div>
                     </div>
                   </div>
                 </a>
 
+              
                 <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/real_success.php">
                   <div class="div_blog">
                     <div class="row">
@@ -1878,18 +1878,18 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/difficult_emotions.php">
                   <div class="div_blog">
                     <div class="row">
-                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="flourish_relationships_blog" loading=lazy>
+                      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive" alt="difficult_emotions_blog" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Self-Awareness can help relationships flourish
+                          Difficult emotions: a guide to freedom
                         </h4>
                       </div>
                     </div>
