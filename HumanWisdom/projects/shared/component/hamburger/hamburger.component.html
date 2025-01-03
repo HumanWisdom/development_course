@@ -25,7 +25,7 @@
             </h4>
             <a  (click)="Logevent('/onboarding/user-profile', '', 'click_profile')"  *ngIf="enableprofile">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 hc_profile" *ngIf="isloggedIn">
-                View Profile
+                Subscribe now
               </h4>
             </a>
           </div>
@@ -259,6 +259,25 @@
       </li>
       <!-- /multilayer li for partnership -->
 
+
+      <li *ngIf="!ios">
+        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness')"  class="p0 b0px">
+        <!-- <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px"> -->
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/07_new.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="giftwisdom()">
+                  Subscribe for family & friends
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
       <li *ngIf="!ios">
         <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness')"  class="p0 b0px">
         <!-- <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px"> -->
@@ -432,7 +451,7 @@
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Signup for our newsletter
+                  Sign up for our newsletter
                 </h4>
               </div>
             </div>
