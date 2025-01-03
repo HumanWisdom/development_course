@@ -265,6 +265,12 @@ export class SharedService {
     } else {
       return [
         {
+          id: "88",
+          displayName: "Voices",
+          active: false,
+          name: 'Voices'
+        },
+        {
           id: "999",
           displayName: "All",
           active: true,
