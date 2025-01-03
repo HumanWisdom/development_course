@@ -963,7 +963,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tcenter work_edu_health_outer">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <a class="" href="./pages/work.php">
+              <a id="forwork" class="" href="./pages/work.php">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -986,7 +986,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
-              <a class="" href="./pages/education.php">
+              <a id="foredu" class="" href="./pages/education.php">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1008,7 +1008,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
-              <a class="" href="./pages/healthcare.php">
+              <a  class="" href="./pages/healthcare.php" onclick="return logevent('click_for_healthcare_home', 'index.php')" >
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
