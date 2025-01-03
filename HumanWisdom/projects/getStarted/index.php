@@ -843,7 +843,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe id="vid" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" ></iframe>
+            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
           </div>
         </div>
       </section>
@@ -963,7 +963,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tcenter work_edu_health_outer">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <a id="forwork" class="" href="./pages/work.php">
+              <a  class="" href="./pages/work.php"  onclick="return logevent('click_for_work_home', 'index.php')">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -986,7 +986,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
-              <a id="foredu" class="" href="./pages/education.php">
+              <a class="" href="./pages/education.php" onclick="return logevent('click_for_education_home', 'index.php')" >
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
