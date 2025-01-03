@@ -79,6 +79,7 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
         });
         let m: any = window.location.href;
         if(m?.includes('voices')) {
+          this.selectedPref = 'Voices';
           this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
           this.prefData.forEach((d) => {
             if(d['displayName'] === 'Voices') {
