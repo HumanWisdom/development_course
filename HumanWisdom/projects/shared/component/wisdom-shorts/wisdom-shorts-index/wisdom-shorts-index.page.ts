@@ -77,7 +77,20 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
           res.splice(res.indexOf(element), 1)
           res.unshift(element)
         });
-        this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
+        let m: any = window.location.href;
+        if(m?.includes('voices')) {
+          this.selectedPref = 'Voices';
+          this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
+          this.prefData.forEach((d) => {
+            if(d['displayName'] === 'Voices') {
+              d['active'] = true;
+            }else if(d['displayName'] === 'All') {
+              d['active'] = false;
+            }
+          })
+        }else {
+          this.wisdomshorts = res1;
+        }
         this.allwisdomshorts = res1;
         this.allwisdomshorts.forEach((d) => {
           this.prefData.forEach((h) => {
@@ -125,14 +138,14 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
         if(val['IsVoices'] === '1') {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName())], {queryParams:{pref: 'voices'}})
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
         }else {
           this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
         }
       } else {
         if (loggedin && loggedin === 'T' && sub && sub === '1') {
           if(val['IsVoices'] === '1') {
-            this.router.navigate([video.replace('adults',SharedService.getprogramName())], {queryParams:{pref: 'voices'}})
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
           }else {
             this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
           }
