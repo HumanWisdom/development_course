@@ -102,7 +102,7 @@ export class ViewcartPage implements OnInit {
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('upgradeToPremium', 'F');
 
-    
+
   }
 
   viewCart() {
@@ -344,7 +344,7 @@ export class ViewcartPage implements OnInit {
           })
       }
     }
-    
+
     this.totalPrice()
 
   }
@@ -383,7 +383,7 @@ export class ViewcartPage implements OnInit {
     for (var i = 0; i < this.cartList.length; i++) {
       this.totalCartValue += this.cartList[i].Amt;
     }
-    
+
     this.totalCartAmount = this.totalCartValue;
     if(this.couponCodeApplied) {
       this.totalCartValueDiscount = this.totalCartValue - this.discount
@@ -399,7 +399,7 @@ export class ViewcartPage implements OnInit {
       "CartAmt": this.totalCartValue
     }).subscribe(
       res => {
-        if (res.length !== 0) {
+        if (res.length !== 0 && this.couponCheck(res)) {
           this.couponCodeApplied = true;
           this.forumservice.toastrService.success('', 'Coupon applied successfully');
           this.msg = 'Coupon applied successfully'
@@ -408,9 +408,7 @@ export class ViewcartPage implements OnInit {
           this.totalCartValueDiscount = this.totalCartValue - this.discount
           localStorage.setItem('totalAmount', this.totalCartValueDiscount)
           this.percentage = res[0].Percentage
-        }
-
-        else {
+        } else {
           this.forumservice.toastrService.success('', 'Please enter a valid coupon code. ');
           this.msg = 'Please enter a valid coupon code. '
         }
@@ -420,6 +418,15 @@ export class ViewcartPage implements OnInit {
         }, 3000)
       }
     )
+  }
+
+  couponCheck(data) {
+    let result = this.cartListResult.some((d) => d?.LearnerEmail?.length !== 0 && d?.Plan === 'Monthly');
+    if(result && data[0]['IsAnnual'] === '1') {
+      return false;
+    }else {
+      return true;
+    }
   }
 
   getKey() {
@@ -481,7 +488,7 @@ export class ViewcartPage implements OnInit {
         "LearnerMsg": this.learnermsg,
       })
         .subscribe(res => {
-          
+
           for (var i = 0; i < this.cartList.length; i++) {
             if (this.cartList[i].ProgID === pid) {
               this.cartList[i].cartId = res
@@ -505,7 +512,7 @@ export class ViewcartPage implements OnInit {
             console.log(error)
           },
           () => {
-            
+
             this.totalPrice()
           })
 
@@ -550,7 +557,7 @@ export class ViewcartPage implements OnInit {
       this.service.isActivationFlow = true;
       this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
     }
-    
+
   }
 
   ValidateEmail() {

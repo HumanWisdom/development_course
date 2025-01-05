@@ -78,6 +78,8 @@ export class S3VideoComponent implements OnInit,OnDestroy {
   isSubscriber =  false;
   isSwipeAllow = false;
   isAdults = true;
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef;
+
   constructor(
     private route: ActivatedRoute,
     private _sanitizer: DomSanitizer,
@@ -135,6 +137,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
           }
         });
         this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.title.includes(this.videoTitle));
+        
         if(this.currentIndex > 2 && !this.isSubscriber){
           
           this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
@@ -142,6 +145,22 @@ export class S3VideoComponent implements OnInit,OnDestroy {
       }
     }
   
+  }
+
+
+  // Called when the video's metadata is loaded
+  checkVideoOrientation() {
+    this.videoPlayer.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
+    setTimeout(() => {
+      const videoElement = this.videoPlayer.nativeElement;
+      const videoWidth = videoElement.videoWidth;
+      const videoHeight = videoElement.videoHeight;
+      if (videoHeight > videoWidth) {
+        this.videoPlayer.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
+      } else {
+        this.videoPlayer.nativeElement.setAttribute('controlsList', 'nodownload nofullscreen');
+      }
+    }, 500);
   }
 
   ngOnInit() {
@@ -246,6 +265,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
       if(this.currentIndex > 2 && !this.isSubscriber){
         this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
       }
+      this.checkVideoOrientation();
     }
   }
 
@@ -258,6 +278,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
         this.currentIndex--;
       }
     }
+    this.checkVideoOrientation();
   }
 
 

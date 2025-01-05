@@ -6,6 +6,13 @@
     <meta property="title" content="Become a Partner with HappierMe | Mental Wellness for All">
     <meta property="description" content="Join HappierMe’s partnership program to promote emotional intelligence and mental wellness. Learn how to become a partner and make a difference today.">
     <meta name="keywords" content="Smental health app, partnership, wellness, happiness, depression, anxiety, stress, emotional intelligence, development">
+    <meta property="og:title" content="HappierMe:For Teens & Adults">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg>
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>

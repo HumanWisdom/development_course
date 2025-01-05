@@ -12,6 +12,8 @@ export class SharedService {
   public static enablebanner = false;
   public static isIos = false;
   public static isFromAdults = false;
+  public static isRoutedFromLogin = false;
+  public static FirstLoginOfTheDay = false;
   constructor() {
   }
 
@@ -194,6 +196,12 @@ export class SharedService {
     if (this.ProgramId == ProgramType.Adults) {
       return [
         {
+          id: "88",
+          displayName: "Voices",
+          active: false,
+          name: 'Voices'
+        },
+        {
           id: "999",
           displayName: "All",
           active: true,
@@ -257,6 +265,12 @@ export class SharedService {
     } else {
       return [
         {
+          id: "88",
+          displayName: "Voices",
+          active: false,
+          name: 'Voices'
+        },
+        {
           id: "999",
           displayName: "All",
           active: true,
@@ -313,6 +327,15 @@ export class SharedService {
       ]
     }
   }
+
+  public static isMobileDevice(): boolean {
+    const userAgent = window.navigator.userAgent || window.navigator.vendor;
+    return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(userAgent);
+  }
+  
+
+  
+
 }
 
 

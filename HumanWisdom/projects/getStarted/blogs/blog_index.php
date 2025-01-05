@@ -881,7 +881,7 @@
   <a class="" href="transforming_education_to_meet_the_needs_of_students_and_society.php">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/32.webp" 
+        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" 
         class="img-responsive img_blogs" alt="
         Transforming education to meet the needs of students and society.">
       </div>

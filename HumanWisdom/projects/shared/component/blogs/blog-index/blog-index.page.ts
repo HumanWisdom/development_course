@@ -14,7 +14,8 @@ import { ProgramType } from '../../../models/program-model';
 })
 export class BlogIndexPage implements OnInit {
   blogList:any;
-  searchedTitle:'';
+  filteredblogList:any;
+  searchedTitle='';
   path:any;
   isAdults= true;
   constructor(private service: OnboardingService, private router: Router, 
@@ -44,6 +45,7 @@ export class BlogIndexPage implements OnInit {
         if(res) {
           this.blogList=res
           this.blogList =  this.blogList.filter(x=>x.ProgIDs.includes(SharedService.ProgramId));
+          this.filteredblogList = this.blogList
         }
       },
       error=>console.log(error),
@@ -73,13 +75,13 @@ export class BlogIndexPage implements OnInit {
   {
     if($event=='')
     {
-      this.blogList= this.blogList;
+      this.filteredblogList= this.blogList;
     }
     else
     {
       this.searchedTitle=$event;
-      let filterlist =this.blogList.filter(it => it.Title.toLowerCase().includes(this.searchedTitle.toLowerCase()));
-      this.blogList=filterlist.slice(0, 10);
+      this.filteredblogList =this.blogList.filter(it => it.Title.toLowerCase().includes(this.searchedTitle.toLowerCase()));
+     // this.filteredblogList=this.filteredblogList.slice(0, 10);
     }
   }
   

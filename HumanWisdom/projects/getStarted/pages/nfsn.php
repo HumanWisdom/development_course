@@ -6,13 +6,27 @@
     <meta property="title" content="HappierMe & National Family Support Network">
     <meta property="description" content="HappierMe partners with the National Family Support Network to offer discounts on the app for NFSN members. Strengthen family mental wellness today with exclusive access.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
+    <meta property="og:title" content="HappierMe:For Teens & Adults">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg>
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
+    
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
 
-   
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
+      <!-- End Google Tag Manager -->
 
    
 
@@ -37,10 +51,11 @@
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             
-              <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn-banner.webp"
+              <img style="height:550px;width:370px"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive w100p display_m_none"
                 >
-          
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           </div>
 
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
@@ -81,7 +96,7 @@
                 
 
                 
-                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc">
                   HappierMe is delighted to partner with the National Family Support Network, to support families and staff to deal with life’s challenges, overcome stress and anxiety, and have happier relationships. Our mission is to reduce suffering and make the world a better place.
                   </h3>
                
@@ -343,10 +358,10 @@
     </div>
     </div>
     <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="https://happierme.app/adults/subscription/try-free-and-subscribe">
+              <div  id="happiermeTryForFree" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <a>
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                Start your free trial now </button>
+                Try HappierMe for free </button>
              </a>
               </div>
             </div>

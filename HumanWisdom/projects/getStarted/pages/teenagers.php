@@ -6,7 +6,15 @@
     <meta property="title" content="HappierMe for Teenagers">
     <meta property="description" content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.">
     <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
-    
+    <meta property="og:title" content="HappierMe:For Teens & Adults">
+    <meta property="og:site_name" content="HappierMe">
+    <meta property="og:url" content="https://happierme.app/">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg>
+    <meta property="og:image:width" content="414" />
+    <meta property="og:image:height" content="232" />
+
+
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
@@ -111,9 +119,9 @@
                  
                   <div class="row mt20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                      <a href="https://happierme.app/teenagers/intro-carousel" class="">
+                      <a id="teenagerCoverClick" class="">
                         <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1" >
-                        Start your free trial now
+                        Try HappierMe for free
                         </button>
                       </a>
                     </div>
@@ -891,7 +899,7 @@
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
 
-                <button class="btn btn_subscription">
+                <button class="btn_subscription">
                   <div class="row center_flex btn_subscription_trial">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
@@ -919,7 +927,7 @@
                   </div>
                 </button>
 
-                <button class="btn btn_subscription mt20pxi">
+                <button class="btn_subscription mt20pxi">
                   <div class="row center_flex">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
                       <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
@@ -966,10 +974,12 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                  Continue
+              <a id="teenagersPricing"> 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                  Start your free trial
                 </button>
               </div>
+    </a>
             </div>
 
           </div>

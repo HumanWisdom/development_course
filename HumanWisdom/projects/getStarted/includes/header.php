@@ -36,12 +36,12 @@
             </ul>
           </li>
           <li><a id="pricing">Pricing</a></li>
-          <!-- <li><a href="../pages/partnership.php">Partnership</a></li> -->
-          <li><a href="https://happierme.app/adults/onboarding/login">Login</a></li>
+          <li><a href="../pages/partnership.php">Partnership</a></li>
+          <li><a id="loginClick">Login</a></li>
         </ul>
       </nav>
 
-      <a class="btn_tff btn_tff_tn" href="https://onelink.to/qsptex">Free trial</a>
+      <a class="btn_tff btn_tff_tn" href="https://onelink.to/qsptex">Try for free</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>

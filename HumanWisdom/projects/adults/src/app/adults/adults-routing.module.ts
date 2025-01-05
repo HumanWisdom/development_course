@@ -9,7 +9,7 @@ import { authLoginGuard } from '../auth-login.guard';
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { IntroGuard } from '../intro.guard';
-
+import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
 const routes: Routes = [
   {
     path: '',
@@ -48,6 +48,7 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-survey',
+    canActivate: [AuthGuard],
     loadChildren: () => import('../../../../shared/component/wisdom-survey/wisdom-survey.module').then(m => m.WisdomSurveyModule)
   },
   {
@@ -527,6 +528,10 @@ const routes: Routes = [
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
   },
   {
+    path: 'social-login',
+    loadChildren: () => import('../../../../shared/component/social-login/social-login.module').then(m => m.SocialLoginPageModule)
+  },
+  {
     path: 'social-media',
     loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
   },
@@ -670,6 +675,10 @@ const routes: Routes = [
     path: 'note-add',
     loadChildren: () => import('./note-add/note-add.module').then( m => m.NoteAddPageModule)
   },
+  {
+    path: 'newsletter-signup',
+    component: NewsletterComponent
+  }
 ];
 
  @NgModule({

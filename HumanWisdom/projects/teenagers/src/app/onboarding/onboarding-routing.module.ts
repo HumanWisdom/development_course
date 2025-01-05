@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { autoLoginGuard } from '../onboarding/auto-login-guard';
 import {EnableRouteGuard} from '../../../../shared/enable-route.guard'
 const routes: Routes = [
   {
     path: 'login',
+    canActivate: [autoLoginGuard],
     loadChildren: () => import('./login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
   },
   {

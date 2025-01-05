@@ -106,14 +106,14 @@
                       <div class="panel-body">
 
                         <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_mdp">
+                          <div class="odiv odiv_mdp">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg" alt="" class="crimg">
 
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                  Daily check-in
+                                  Daily <br/> check-in
                                 </h4>
                               </a>
                             </div>
@@ -141,7 +141,7 @@
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg"
                                   alt="Wisdom Stories" class="crimg">
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                  Breathing exercise
+                                  Breathing <br/>  exercise
                                 </h4>
                               </a>
                             </div>
@@ -153,7 +153,7 @@
                                   alt="Journal" class="crimg">
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
                                   Question
-                                  <br>
+                                  <br/> 
                                   of the day
                                 </h4>
                               </a>
@@ -165,7 +165,7 @@
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                  Quote <br>
+                                  Quote <br/> 
                                   of the day
                                 </h4>
                               </a>
@@ -177,7 +177,7 @@
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                  Daily meditation
+                                  Daily <br/>  meditation
                                 </h4>
                               </a>
                             </div>
@@ -189,7 +189,7 @@
                                   alt="Forum" class="crimg">
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
                                   Daily
-                                  <br>
+                                  <br/> 
                                   challenge
                                 </h4>
                               </a>
@@ -245,26 +245,30 @@
                     </div>
                     <div id="" class="panel-collapse collapse in">
                       <div class="panel-body">
-
                         <div class="row cmr-20pxi">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
-
                             <div class="col-md-6 col-sm-7 col-xs-7 p0" *ngFor="let data of dashboardShorts">
                               <a class="" (click)="shortVideos(data)">
                                 <div class="prelative">
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                      <img src="{{data['ImgUrl']}}" class="img-responsive w100">
+                                      <img 
+                                        src="{{data['ImgUrl']}}" 
+                                        class="img-responsive w100 img-rounded"
+                                      >
                                     </div>
                                   </div>
-
+                    
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      <img 
+                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" 
+                                        class="img-responsive"
+                                      >
                                     </div>
                                   </div>
                                 </div>
-
+                    
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -272,7 +276,7 @@
                                         {{data['Title']}}
                                       </h4>
                                     </div>
-
+                    
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                       <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
                                         {{data['Timing']}}
@@ -282,12 +286,11 @@
                                 </div>
                               </a>
                             </div>
-
                           </div>
                         </div>
-
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>
@@ -642,9 +645,10 @@
                           Explore a topic in depth
                         </h4>
 
-                        <!-- <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                          Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
-                        </h4> -->
+                        <h4 class="mtb0px fc_ffffff_0_5 fs_12px fw_400 lh_140p">
+                          Emotions. Mental health. Success. Addiction. Happiness. Relationships. Mindfulness.
+                         
+                        </h4>
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
@@ -658,7 +662,7 @@
             <!-- /explore a topic in depth-for guest user -->
 
             <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
+            <div class="row tour_eatid" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a class="prelative box_v3_01 bg_ee9596" (click)="activeTopicRoute(YourTopicofChoice[0]['name'])">
                   <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100"> -->
