@@ -762,16 +762,17 @@ export class LoginSignupPage implements OnInit {
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    //https://staging.humanwisdom.info/api/VerifyAppleToken_htmlLocal
-    const REDIRECT_API_URL = environment.production ?"https://www.humanwisdom.info/api/verifyAppleToken_html": "https://staging.humanwisdom.info/api/VerifyAppleToken_htmlLocal";
-    var popup = window.open(
+    localStorage.setItem('appleLogin','T');
+    let REDIRECT_API_URL = environment.appleSignInAPIAdults;
+    if(!SharedService.isAdultProgram()){
+      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
+    }
+     window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL
-      )}&response_type=code id_token&scope=name email&response_mode=form_post`,
-    '_blank',
-    'width=500,height=600'
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
     );
-    this.pollPopup(popup);
+   // this.pollPopup(popup);
   }
   private pollPopup(popup): void {
     const intervalId = setInterval(() => {

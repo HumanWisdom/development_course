@@ -2,7 +2,7 @@ import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 // import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
@@ -124,7 +124,7 @@ export class AdultDashboardPage implements OnInit {
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
-    public platform: Platform,
+    public platform: Platform,private route:ActivatedRoute,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
     localStorage.setItem("fromlandingpage", 'F')
@@ -152,6 +152,9 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
+    this.route.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
       this.services.setDataRecievedState(false);
@@ -472,11 +475,6 @@ export class AdultDashboardPage implements OnInit {
     setTimeout(() => {
       this.GetDashboardFeatures();
     }, 1000)
-    setTimeout(() => {
-      if(this.router.url.toLowerCase().includes('token'.toLowerCase())){
-        window.close();
-      }
-     }, 1000);
   }
 
   getplaystore(event) {

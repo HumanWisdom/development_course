@@ -14,6 +14,38 @@ export class CommonService {
   path = environment.apiURL;
   private surveySubject = new BehaviorSubject<string | null>(null);
   surveySubs = this.surveySubject.asObservable();
+  private loginUrlSubject = new BehaviorSubject<string | null>(null);
+  loginUrlSubs = this.loginUrlSubject.asObservable();
+  public percentage: any
+  public bookmarks = []
+  public resume = [];
+  public userId = 100;
+  searchResult = [];
+  mediaPercent: any
+  public qrList: any
+  public goToPage: any
+  public points: any
+  public daysVisited: any
+  public name;
+  public loginResponse: any
+  public socialFirstName: any
+  public socialLastName: any
+  public socialEmail: any
+  public userName: any
+  public video = 3
+  public audio = 4
+  public password: any
+  public saveUsername = false
+  public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public text = 2
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public moduleId = 7
+  searchinp = '';
+  public moduleList = [];
+  isAdults = false;
   constructor(private http: HttpClient,
     handler: HttpBackend,
     private services: OnboardingService,
@@ -221,7 +253,7 @@ export class CommonService {
           //this.getBookmarks()
           setTimeout(() => {
             // this.getProgress()
-            this.getBookmark(userId)
+            this.getBookmark()
           }, 1000);
 
           if (res.UserId == 0) {
@@ -277,7 +309,8 @@ export class CommonService {
     )
   }
 
-  getBookmark(userid) {
+
+  getBookmarkConfiguration(userid) {
     this.getBookmarks(userid)
       .subscribe(res => {
         let bookmarks = res
@@ -374,4 +407,145 @@ export class CommonService {
   updateSurveyData(data: any): void {
     this.surveySubject.next(data);
   }
+
+  loginSubject(data: any): void {
+    this.loginUrlSubject.next(data);
+  }
+
+  loginSubjectUnsubscribe(){
+    this.loginUrlSubject.unsubscribe();
+  }
+
+
+  verifyTokenAndHandleResponse(authtoken:any){
+    if (authtoken) {
+      localStorage.setItem('socialLogin', 'T');
+      localStorage.setItem('acceptcookie', 'T')
+      this.verifytoken(authtoken).subscribe((res) => {
+        if (res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          localStorage.setItem("userId", res['UserId'])
+          let namedata = localStorage.getItem('name').split(' ')
+          this.userId = res['UserId']
+          localStorage.setItem("Subscriber", res['Subscriber'])
+          this.name = res['Name'];
+          this.loginadult(res)
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
+            if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
+              SharedService.FirstLoginOfTheDay =true;
+            }
+            else 
+            {
+              SharedService.FirstLoginOfTheDay =false;
+            }
+            console.log(SharedService.FirstLoginOfTheDay)
+          }
+
+        }
+      })
+    } else if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
+      this.name = localStorage.getItem("name");
+      this.userName = this.name;
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.getProgress(SharedService.ProgramId);
+      this.getBookmarks(this.userId);
+    }
+  }
+
+  loginadult(res) {
+    this.loginResponse = res
+    this.userId = res.UserId
+    if (res['Email'] === "guest@humanwisdom.me") {
+      localStorage.setItem('guest', 'T')
+    }else {
+      localStorage.setItem("guest", 'F')
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      localStorage.setItem("Subscriber", res.Subscriber)
+      localStorage.setItem("userId", JSON.stringify(this.userId))
+      localStorage.setItem("email", res['Email'])
+      localStorage.setItem("name", res.Name)
+      this.userName = res.Name;
+      localStorage.setItem("text", JSON.stringify(this.text))
+      localStorage.setItem("video", JSON.stringify(this.video))
+      localStorage.setItem("audio", JSON.stringify(this.audio))
+      localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+      localStorage.setItem("question", JSON.stringify(this.question))
+      localStorage.setItem("reflection", JSON.stringify(this.reflection))
+      localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+      localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    }
+    if (localStorage.getItem("token") && (this.saveUsername == true)) {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.userName = JSON.parse(localStorage.getItem("userName"))
+    } else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.userName = JSON.parse(localStorage.getItem("userName"))
+    }
+
+    this.getBookmarks(this.userId)
+    this.getProgress(SharedService.ProgramId)
+
+    let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+    let NoOfVisits = loginResponse.NoOfVisits
+    console.log("NoofVisits:" + NoOfVisits )
+    let isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
+
+
+    if (res.UserId == 0) {
+    }
+    else {
+      this.userId = res.UserId
+      this.userName = res.Name
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("userId", JSON.stringify(this.userId))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      if (this.saveUsername == true) {
+        localStorage.setItem("userId", JSON.stringify(this.userId))
+        localStorage.setItem("userEmail", JSON.stringify(res.Email))
+        localStorage.setItem("userName", JSON.stringify(this.userName))
+
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(this.userId))
+        sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
+        sessionStorage.setItem("userName", JSON.stringify(this.userName))
+      }
+
+      if(isRoutedFromLogin){
+        this.loginSubject(`${SharedService.getprogramName()}/changetopic`);
+        // this.router.navigate([]);
+      }else{
+        this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
+        // this.router.navigate([]);tlo
+      }
+    }
+  }
+
+  getBookmark() {
+    this.getBookmarks(this.userId)
+      .subscribe(res => {
+        this.bookmarks = res
+        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
+      })
+  }
+ 
+  GetLastVisitedScreen(data: any,programId:any): Observable<any> {
+    return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${programId}`)
+  }
+
+  
+  getProgress(programID:string) {
+    this.GetLastVisitedScreen(this.userId,programID)
+      .subscribe(res => {
+        this.resume = res;
+      });
+  }
+
 }

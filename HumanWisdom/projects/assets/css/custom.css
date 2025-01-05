@@ -28859,6 +28859,25 @@ video::-webkit-media-controls-panel
   justify-content: center;
 }
 
+.btn_daily {
+  height: 30px;
+  width: 61px;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #292d56;
+  border-radius: 100px;
+  /* border: 2px solid white; */
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 140%;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+}
 .gqtns_search
 {
   height: 50px;
@@ -32643,6 +32662,17 @@ body *
   height: 115px;
   padding: 20px;
 }
+.boxf_v3_01 {
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 12px;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  padding: 20px;
+}
 
 .box_v3_02
 {
@@ -32705,6 +32735,37 @@ body *
   border-radius: 12px;
   padding: 15px !important;
   margin-right: 10px;
+  white-space: normal;
+}
+.box_new_v3_03
+{
+  /* height: 412px; */
+  height: auto;
+    background: #120F40;  
+   /* border: 1px solid rgba(255, 255, 255, 0.25);  */
+  border-radius: 12px;
+   padding: 15px !important;
+  margin-right: 10px;
+  white-space: normal; 
+}
+.box_breath_v3_03 {
+  /* height: 412px; */
+  height: 370px;
+  background: #120F40;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 15px !important;
+  margin-right: 10px;
+  white-space: normal;
+}
+.box_journal_v3_03 {
+  /* height: 412px; */
+  /* min-height: 322px;  */
+  background: #120F40;
+  /* border: 2px solid rgba(255, 255, 255, 0.25); */
+  border-radius: 16px;
+  padding: 20px !important;
+  /* margin-right: 10px; */
   white-space: normal;
 }
 
@@ -34321,8 +34382,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v3_reflection_qtn
 {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  padding: 12px;
 }
 
 .v3_reflection_ta 
@@ -37489,7 +37550,7 @@ span
   /* width: auto; */
    width: 70%; 
   /* height:auto; */
-  max-height: 46vh;
+  max-height: 86vh;
   
   object-fit: cover;
   border-radius: 46px;

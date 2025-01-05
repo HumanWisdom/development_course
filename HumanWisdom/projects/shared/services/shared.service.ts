@@ -196,6 +196,12 @@ export class SharedService {
     if (this.ProgramId == ProgramType.Adults) {
       return [
         {
+          id: "88",
+          displayName: "Voices",
+          active: false,
+          name: 'Voices'
+        },
+        {
           id: "999",
           displayName: "All",
           active: true,
@@ -259,6 +265,12 @@ export class SharedService {
     } else {
       return [
         {
+          id: "88",
+          displayName: "Voices",
+          active: false,
+          name: 'Voices'
+        },
+        {
           id: "999",
           displayName: "All",
           active: true,
@@ -321,6 +333,9 @@ export class SharedService {
     return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(userAgent);
   }
   
+
+  
+
 }
 
 

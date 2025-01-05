@@ -97,12 +97,13 @@ export class SurveyPage implements OnInit, OnDestroy {
 
   clickbanner(url = '') {
     if (this.isNotSafari()) {
-      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+      //window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me");
     }
     else if (this.platform.IOS || this.platform.SAFARI) {
       window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
     } else if (this.platform.ANDROID) {
-      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me");
     }
   }
 

@@ -101,6 +101,8 @@ export class DailyCheckinNoteSavePage implements OnInit {
         this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~77.mp3/77/T/Feeling-embarassed`)]);
       else if(this.rowData.Expression=="Disappointed")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~76.mp3/76/T/Feeling-Disappointed`)]);
+      else if(this.rowData.Expression=="Guilty")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~81.mp3/81/T/Feeling-guilty`)]);
       else if(this.rowData.SearchTerm)
         this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
       else

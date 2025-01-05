@@ -6,6 +6,9 @@ export const environment = {
   production: false,
   apiURL: "https://staging.humanwisdom.info/api",
   clientUrl:"https://staging.happierme.app/",
+  appleSignInAPIAdults:"https://staging.humanwisdom.info/api/verifyAppleToken_htmlAdults",
+  appleSignInAPITeenagers:"https://staging.humanwisdom.info/api/verifyAppleToken_htmlTeens",
+  appleSignInHtmlLocal:"https://staging.humanwisdom.info/api/verifyAppleToken_htmlLocal",
   stripeKey: "pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl",
   firebase: {
     apiKey: "AIzaSyD4ll7dKbi1JtHBr7Raqmgpz_Xve2bDDX0",

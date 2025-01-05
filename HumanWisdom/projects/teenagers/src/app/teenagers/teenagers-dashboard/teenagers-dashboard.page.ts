@@ -3,12 +3,13 @@ import { SharedService } from '../../../../../shared/services/shared.service';
 import { TeenagersService } from '../teenagers.service';
 import { UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Platform } from '@angular/cdk/platform';
 // import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { Constant } from '../../../../../shared/services/constant';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { CommonService } from '../../../../../shared/services/common.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -122,7 +123,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   constructor(
     public router: Router, public service: TeenagersService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
-    public platform: Platform,
+    public platform: Platform,private route:ActivatedRoute,
+    private commonService:CommonService,
     public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
     // let remem = localStorage.getItem("remember")
@@ -167,8 +169,23 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
-    let authtoken = JSON.parse(localStorage.getItem("token"))
+    this.route.queryParams.subscribe(params => {
+      authtoken = params?.authtoken
+    });
+   let authtoken = JSON.parse(localStorage.getItem("token"))
+    //  if(localStorage.getItem('appleLogin')=='T'){
+    //   this.commonService.loginUrlSubs.subscribe(res=>{
+    //     if(res){
+    //       localStorage.setItem('appleLogin','F');
+    //       this.commonService.loginSubjectUnsubscribe();
+    //       this.router.navigate([res]);
+    //     }
+    //   })
+    //  // this.commonService.verifyTokenAndHandleResponse(authtoken);
+    // }
+    
     if (authtoken) {
+      console.log("APPPLE LOGIN");
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
@@ -183,6 +200,16 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
           this.isSubscriber = SharedService.isSubscriber();
           this.loginadult(res);
           this.services.setDataRecievedState(true);
+          if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
+            if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
+              SharedService.FirstLoginOfTheDay =true;
+            }
+            else 
+            {
+              SharedService.FirstLoginOfTheDay =false;
+            }
+            console.log(SharedService.FirstLoginOfTheDay)
+          }
         } else {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
@@ -494,11 +521,6 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
     }, 3000)
     localStorage.setItem("pageaction", 'next');
-    setTimeout(() => {
-      if(this.router.url.toLowerCase().includes('token'.toLowerCase())){
-        window.close();
-      }
-     }, 1000);
   }
 
   getplaystore(event) {
@@ -1096,7 +1118,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     let socialFirstName = localStorage.getItem("FnName");
     let socialLastName = localStorage.getItem("LName");
     let socialEmail = localStorage.getItem("email");
-    this.services.socialLearner({
+  this.services.socialLearner({
       "FnName": socialFirstName,
       "LName": socialLastName,
       "Email": socialEmail
@@ -1195,6 +1217,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
   loginadult(res) {
     this.loginResponse = res
+    let NoOfVisits = this.loginResponse.NoOfVisits
     this.userId = res.UserId
     if (res.Subscriber === 0) {
       this.isSubscribe = true;
@@ -1239,6 +1262,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     this.cd.detectChanges();
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    let isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.userName = JSON.parse(localStorage.getItem("userName"))
@@ -1256,6 +1280,11 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("token", JSON.stringify(res.access_token))
+      if(isRoutedFromLogin){
+        this.commonService.loginSubject(`${SharedService.getprogramName()}/changetopic`);
+      }else{
+        this.commonService.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
+      }
       if (this.saveUsername == true) {
         localStorage.setItem("userId", JSON.stringify(this.userId))
         localStorage.setItem("userEmail", JSON.stringify(res.Email))
@@ -1266,7 +1295,9 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
       }
+
     }
+
   }
 
 
