@@ -11,7 +11,7 @@
 
 
               <!-- carousel -->
-              <div class="container" (swipeleft)="Logevent('', '', 'click_next_onboarding')" (swiperight)="Logevent('', '', 'click_prev_onboarding')">
+              <div class="container" (swipe)="onSwipe($event)">
                 <div id="ic_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
                   <ol class="m0px">
