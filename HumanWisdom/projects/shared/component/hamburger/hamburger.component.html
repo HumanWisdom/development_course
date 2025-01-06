@@ -25,8 +25,8 @@
               {{getName()}}
             </h4>
             </a>
-            <a  (click)="Logevent('/subscription/try-free-and-subscribe', '', 'Subscribe now')"  *ngIf="enableprofile">
-              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe" *ngIf="isloggedIn">
+            <a  id="liSubscribe" *ngIf="!subscriber"  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe" >
                 Subscribe now
               </h4>
             </a>

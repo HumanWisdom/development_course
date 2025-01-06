@@ -248,6 +248,11 @@ export class DailyPracticePage implements OnInit {
     this.content = '';
   }
 
+  routetovoices(){
+       
+      this.router.navigate(["/"+SharedService.getprogramName()+"/" + "wisdom-shorts"], { queryParams: { "pref": "voices" } })
+  
+  }
   routeToDashboard(){
     this.router.navigate([SharedService.getDashboardUrls()])
   }
