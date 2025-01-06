@@ -195,12 +195,12 @@ export class SharedService {
   public static getPreferenceData() {
     if (this.ProgramId == ProgramType.Adults) {
       return [
-        {
+       /*  {
           id: "88",
           displayName: "Voices",
           active: false,
           name: 'Voices'
-        },
+        }, */
         {
           id: "999",
           displayName: "All",
@@ -211,7 +211,7 @@ export class SharedService {
           id: "1",
           displayName: "Work",
           active: false,
-          name: 'Work and Leadership'
+          c: 'Work and Leadership'
         },
         {
           id: "2",
@@ -235,13 +235,13 @@ export class SharedService {
           id: "5",
           displayName: "Addiction",
           active: false,
-          name: 'Addiction'
+          name: 'Habits and Addictions'
         },
         {
           id: "6",
           displayName: "Sorrow and Loss",
           active: false,
-          name: 'Deal with loss'
+          name: 'Deal with Sorrow and loss'
         },
         {
           id: "7",
