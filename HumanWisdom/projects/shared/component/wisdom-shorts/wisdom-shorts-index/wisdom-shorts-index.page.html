@@ -70,9 +70,19 @@
                      {{data['displayName']}}
                    </button> -->
 
-                    <button type="button" class="btn" id="{{data['displayName'] | lowercase }}"  (click)="getUserPref(data['displayName'])" [ngClass]="isAdults ? '' : 'bg-clr'">
+                    <!-- <button type="button" class="btn" id="{{data['displayName'] | lowercase }}"  (click)="getUserPref(data['id'])" [ngClass]="isAdults ? '' : 'bg-clr'">
                      {{data['displayName']}} 
-                   </button>
+                   </button> -->
+
+                   <button type="button" class="btn" id="all"  *ngIf="data['active'] && data['displayName'] === 'All'" 
+                   (click)="getUserPref('all')">
+                    {{data['displayName']}}
+                  </button>
+
+                  <button type="button" class="btn" id="{{data['id'] | lowercase }}"  *ngIf="data['active'] && data['displayName'] !== 'All'" (click)="getUserPref(data['id'])" [ngClass]="isAdults ? '' : 'bg-clr'">
+                   {{data['displayName']}}
+                 </button>
+
 
                   </ng-container>
                 </div>
