@@ -34,7 +34,6 @@ export class WisdomShortsIndexPage implements OnInit {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
     this.prefData = SharedService.getPreferenceData();
-    this.getwisdomshorts()
    /*  this.prefData.unshift({
       id: "88",
       displayName: "Voices",
@@ -75,6 +74,9 @@ export class WisdomShortsIndexPage implements OnInit {
         } else {
          this.isAdults = false;
         }
+
+        this.getwisdomshorts()
+
   }
 
   getwisdomshorts() {
@@ -88,6 +90,16 @@ export class WisdomShortsIndexPage implements OnInit {
         });
         this.allwisdomshorts = res1.sort((a,b)=>b.display - a.display);
         let m: any = window.location.href;
+     
+        this.allwisdomshorts.forEach((d) => {
+              this.prefData.forEach((h) => {
+                if(d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes( h.id))) {
+                   h.active = true;
+                }else if(!d['PreferenceIDs']) {
+                  h.active = true;
+                }
+              })
+            });
         // if(m?.includes('voices')) {
         //  this.getVoicesData();
         //   /* this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
@@ -116,6 +128,9 @@ export class WisdomShortsIndexPage implements OnInit {
 
           this.getUserPref(type[1])
 
+        }
+        else {          
+           this.getUserPref("all")
         }
 
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
@@ -193,25 +208,29 @@ export class WisdomShortsIndexPage implements OnInit {
     }
 
     type=type.toLowerCase()
-    document.getElementById(type).style.backgroundColor = '#FFFFFF';
-    document.getElementById(type).style.color = '#000000';
+   
     
-    this.selectedPref = 'type';
+    this.selectedPref = type;
     this.wisdomshorts = this.allwisdomshorts;
-    if(type === 'all') {
+    if(type === "all") {
       this.wisdomshorts = this.allwisdomshorts;
+      document.getElementById("all").style.backgroundColor = '#FFFFFF';
+      document.getElementById("all").style.color = '#000000';
     }else if(type === 'voices'){
       this.wisdomshorts= this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
       document.getElementById("voices").style.backgroundColor = '#E58D82';
       document.getElementById("voices").style.color = '#FFFFFF';
 
     }else{
-      if(type === 'wisdom') {
+      document.getElementById(type).style.backgroundColor = '#FFFFFF';
+      document.getElementById(type).style.color = '#000000';
+
+      if(type === '0') {  //wisdom
         this.wisdomshorts= this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
       }else {
                 //this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].includes(type.id + ',') || d['PreferenceIDs'].includes(','+ type.id + ',') || d['PreferenceIDs'].includes(','+type.id))));
-           this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['Preferences'] && d['Preferences'].toLowerCase().includes(type)));
-          
+          //  this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['Preferences'] && d['Preferences'].toLowerCase().includes(type)));
+                this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
       }
     }
 
