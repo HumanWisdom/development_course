@@ -433,7 +433,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -459,7 +459,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -485,7 +485,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -512,7 +512,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -538,7 +538,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -564,7 +564,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -590,7 +590,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti" alt="Quotation" loading="lazy"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
