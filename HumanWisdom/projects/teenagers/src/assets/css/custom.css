@@ -10838,7 +10838,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   top:18% !important; 
+   top:18% ; 
    height: fit-content;
 }
 .lab-modal-body_new {
