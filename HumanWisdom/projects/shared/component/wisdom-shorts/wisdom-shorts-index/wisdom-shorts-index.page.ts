@@ -88,7 +88,9 @@ export class WisdomShortsIndexPage implements OnInit {
           res.splice(res.indexOf(element), 1)
           res.unshift(element)
         });
-        this.allwisdomshorts = res1.sort((a,b)=>b.display - a.display);
+        //this.allwisdomshorts = res1.sort((a,b)=>b.display - a.display);
+        this.allwisdomshorts = res1;
+
         let m: any = window.location.href;
      
         this.allwisdomshorts.forEach((d) => {

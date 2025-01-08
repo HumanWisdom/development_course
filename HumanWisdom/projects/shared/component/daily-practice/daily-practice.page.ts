@@ -60,6 +60,7 @@ export class DailyPracticePage implements OnInit {
   enableAlert = false;
   content = ''
   dailyInspirationTitle = '';
+  isVoices=false;
   DailyInspirationLink;
   DailyInspirationImg = '';
   enableBtn = false;
@@ -139,6 +140,13 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+       if(res.split(';')[3]==="6")
+       { 
+        this.isVoices = true; 
+
+       }
+
+
         this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
        // this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
         this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().split('.')[1].toString()  +".webp"
