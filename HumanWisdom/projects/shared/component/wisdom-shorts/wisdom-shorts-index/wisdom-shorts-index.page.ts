@@ -203,7 +203,11 @@ export class WisdomShortsIndexPage implements OnInit {
 
     for (const b of btns) {
         const y = <HTMLElement> b;
-        y.style.backgroundColor = '#424675';
+        if (this.isAdults ==true)
+          y.style.backgroundColor = '#424675';
+        else
+          y.style.backgroundColor = '#4267A5';
+
         y.style.color = '#FFFFFF';
     }
 

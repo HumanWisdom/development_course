@@ -75,7 +75,7 @@
                    </button> -->
 
                    <button type="button" class="btn" id="all"  *ngIf="data['active'] && data['displayName'] === 'All'" 
-                   (click)="getUserPref('all')">
+                   (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
                     {{data['displayName']}}
                   </button>
 
