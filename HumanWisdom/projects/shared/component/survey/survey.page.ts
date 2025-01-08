@@ -19,6 +19,7 @@ export class SurveyPage implements OnInit, OnDestroy {
   isPaymentSurvey: boolean = false;
   private subscription!: Subscription;
   constructor(private commonService: CommonService, private platform: Platform) {
+    this.userName =localStorage.getItem('name');
     this.subscription = this.commonService.surveySubs.subscribe((data: any) => {
       this.commonService.getSurveyList(data == null ? '1' : data).subscribe(res => {
         if (res) {
@@ -39,7 +40,7 @@ export class SurveyPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.userName =localStorage.getItem('name');
+  
     //document.getElementById('test1').click();
   }
 
