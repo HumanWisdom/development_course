@@ -10838,7 +10838,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   top:18% !important; 
+   top:18% ; 
    height: fit-content;
 }
 .lab-modal-body_new {
@@ -30946,15 +30946,16 @@ svg path
 }
 
 .bg-clr{
-  background: #4267A5 !important;
+  background: #4267A5;
+  color: #fff;
 }
-
+/* 
 .bg-clr:hover,
 .bg-clr:focus
 {
-  background: #fff !important ;
-  color: #000 !important;
-}
+  background: #fff  ;
+  color: #000 ;
+} */
 
 .we_ft::-webkit-scrollbar
 {

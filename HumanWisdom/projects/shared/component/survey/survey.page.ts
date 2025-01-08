@@ -90,7 +90,7 @@ export class SurveyPage implements OnInit, OnDestroy {
 
   GoToAppStore() {
     this.isSubmitted = false;
-    this.clickbanner();
+   // this.clickbanner();
     document.getElementById('btnSurveyDismiss').click();
   }
 
