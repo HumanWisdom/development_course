@@ -221,6 +221,7 @@ export class DailyPracticePage implements OnInit {
   
 
   next(event) {
+    window.scrollTo(0,0);
     this.currentSection++;
     if(this.currentSection>=6){
       this.currentSection = 0;
@@ -235,6 +236,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   back(event) {
+    window.scrollTo(0,0);
     this.Logevent(event);
     this.dailyid = ((+this.dailyid - 1 + 6) % 6).toString()
     this.enableVideo = false;

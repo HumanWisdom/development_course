@@ -112,6 +112,7 @@ export class S157016Page implements OnInit {
   }
 
   next() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
     //  this.router.navigate(['/wisdom-exercise/s157001']);
@@ -184,6 +185,7 @@ export class S157016Page implements OnInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < 1) {
