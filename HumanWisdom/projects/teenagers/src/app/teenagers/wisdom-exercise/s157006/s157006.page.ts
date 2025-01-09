@@ -220,6 +220,7 @@ export class S157006Page implements OnInit {
   }
 
   next() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
     setTimeout(() => {
@@ -309,6 +310,8 @@ export class S157006Page implements OnInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
+    window.scrollTo(0,0);
+
     this.nextDay = null;
     this.resetHintValue();
     setTimeout(() => {

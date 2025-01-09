@@ -318,6 +318,7 @@ export class S157004Page implements OnInit {
   }
 
   next() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
     setTimeout(() => {
@@ -372,6 +373,7 @@ export class S157004Page implements OnInit {
   }
   
   back() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
     setTimeout(() => {

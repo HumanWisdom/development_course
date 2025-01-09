@@ -99,6 +99,7 @@ export class S157015Page implements OnInit {
   }
 
   next() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       // this.router.navigate(['/wisdom-exercise/s157016']);
@@ -173,6 +174,7 @@ export class S157015Page implements OnInit {
   }
   
   back() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < 1) {
