@@ -106,6 +106,7 @@ export class QuestionsPage implements OnInit {
     }else{
       this.route.navigate([url]);
     }
+    window.scrollTo(0,0);
   }
 
   getClass(questionNo) {
@@ -116,6 +117,7 @@ export class QuestionsPage implements OnInit {
   }
 
   forward() {
+    window.scrollTo(0,0);
     this.isChanged = false;
     this.counter = (this.counter + 1);
     if (this.counter > this.data.length) {
