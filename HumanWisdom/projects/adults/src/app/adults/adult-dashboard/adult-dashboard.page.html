@@ -39,18 +39,20 @@
             
             <div class="row prelative pt30px plr20px"  *ngIf="isloggedIn && resumeLastvisited.length !== 0">
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="fw_400 fs_12px lh_130p fc_ffffff mtb0px">
                     CONTINUE WHERE YOU LEFT
                   </h4>
                 </div>
-              </div>
+              </div> -->
 
-
+              <h4 class="fw_400 fs_12px lh_130p fc_ffffff mb10px">
+                CONTINUE WHERE YOU LEFT
+              </h4>
               <!-- CONTINUE WHERE YOU LEFT -->
               <a  (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
-                <div class="row div_is_01 mtb10pxi">
+                <div class="row div_is_02">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
@@ -93,7 +95,7 @@
             </div>
           <!-- hr -->
           <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
               <hr class="hr_style_v3_01">
             </div>
           </div>
