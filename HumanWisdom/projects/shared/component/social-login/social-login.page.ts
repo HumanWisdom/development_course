@@ -114,6 +114,7 @@ export class SocialLoginPage implements OnInit {
           this.isAdults = false;
         }
          let authtoken = this.router.url.split('authtoken=')[1];
+         localStorage.setItem('token',JSON.stringify(authtoken));
          if(localStorage.getItem('appleLogin')=='T'){
           // this.commonService.loginUrlSubs.subscribe(res=>{
           //   if(res){
@@ -132,6 +133,7 @@ export class SocialLoginPage implements OnInit {
           this.service.verifytoken(authtoken).subscribe((res) => {
     
             if (res) {
+              localStorage.setItem('guest','F');
               localStorage.setItem("email", res['Email'])
               localStorage.setItem("name", res['Name'])
               let namedata = localStorage.getItem('name').split(' ')

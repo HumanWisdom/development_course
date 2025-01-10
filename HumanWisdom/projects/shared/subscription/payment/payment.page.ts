@@ -172,8 +172,13 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   back() {
-    this.commonService.updateSurveyData(2);
-    this.location.back();
+    if(sessionStorage.getItem('isPaymentBackClicked') && sessionStorage.getItem('isPaymentBackClicked')=='T'){
+      this.location.back();
+    }else{
+      sessionStorage.setItem('isPaymentBackClicked','T');
+      this.commonService.updateSurveyData(2);
+      this.location.back();
+    }
   }
 
   GetAmount() {
