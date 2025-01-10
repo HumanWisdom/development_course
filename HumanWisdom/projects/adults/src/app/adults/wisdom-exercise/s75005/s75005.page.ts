@@ -484,6 +484,7 @@ export class S75005Page implements OnInit {
   }
 
   next() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
@@ -534,6 +535,7 @@ export class S75005Page implements OnInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < 1) {

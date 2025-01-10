@@ -36,9 +36,73 @@
             </div>
             <!-- /search -->
 
+            
+            <div class="row prelative pt30px plr20px"  *ngIf="isloggedIn && resumeLastvisited.length !== 0">
+
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="fw_400 fs_12px lh_130p fc_ffffff mtb0px">
+                    CONTINUE WHERE YOU LEFT
+                  </h4>
+                </div>
+              </div> -->
+
+              <h4 class="fw_400 fs_12px lh_130p fc_ffffff mb10px">
+                CONTINUE WHERE YOU LEFT
+              </h4>
+              <!-- CONTINUE WHERE YOU LEFT -->
+              <a  (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" class="prelative">
+                <div class="row div_is_02">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                    <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp"  alt="" class="p0 session_img">
+
+                      <div class="progress dprogress">
+                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  
+
+                    <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                      <div class="row">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                        {{resumeLastvisited[0]['ModuleName']}}
+                      </h4>
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        Session #{{resumeLastvisited[0]['SessionCnt']}}     
+                                      </h4>
+                      <h4 class="mt0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+
+                        {{resumeLastvisited[0]['SessionName']}}
+                      </h4>
+                      
+                      <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                        01:01
+                      </h4> -->
+                    </div>
+                    </div>
+                
+
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+
+                  </div>
+                </div>
+              </a>
+              <!-- CONTINUE WHERE YOU LEFT -->
+            </div>
+          <!-- hr -->
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+              <hr class="hr_style_v3_01">
+            </div>
+          </div>
+          <!-- /hr -->
             <!-- feel better now -->
             <div class="row tour_fbn">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01" style="background:#E58D82;">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">

@@ -94,9 +94,9 @@
                           <h1 class="fw_500 fs_12px lh_140p fc_ffffff mtb0px tcenter m-b4">
                             {{ dailyInspirationTitle }}</h1>
                         </div>
-                        <div class="row mt30px">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <button type="btn" class="btn btn_daily"style="color:#fff;">
+                        <div class="row mt30px"  >
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isVoices">
+                            <button type="btn" class="btn btn_daily"style="color:#fff;" (click)="routetovoices()" >
                               Voices
                             </button>
                           </div>
@@ -108,7 +108,7 @@
                       <div class="video-section">
                         <div class="video-container tcenter">
                           <div class="video-wrapper">
-                            <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
+                            <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload nofullscreen" preload="metadata"
                                    (play)="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
                               <source [src]="DailyInspirationLink" type="video/mp4">
                             </video>

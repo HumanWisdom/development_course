@@ -75,6 +75,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   isAdults: boolean = true;
   direction = '';
   currentSection = 0;
+  methodSTartTime: any;
+  methodEndTime: any;
+  delay = 20;
+  lastClick = 0;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -103,34 +107,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
     $('.carousel').bcSwipe({ threshold: 50 });
-
-    $('#ic_carousel').on('slid.bs.carousel', (data) => {
-      // let arr = data['relatedTarget']['classList'];
-      // let istrue = false;
-      // carouselId = parseFloat(arr[1]) + 1;
-      // console.log(carouselId);
-      // console.log(arr)
-      // arr.forEach((d) => {
-      //   if (d === '1') {
-      //     this.nextBtnDis = true;
-      //   }else if(d === '0') {
-      //     this.nextBtnDis = false;
-      //   }
-      // })
-      // arr.forEach((d, ind) => {
-      //   if (d === '2') {
-      //     istrue = true;
-      //   }
-      // })
-      // if (istrue) {
-      //   document.getElementById('activenext').style.display = 'none';
-      //   document.getElementById('inactivenext').style.display = 'flex';
-      // } else {
-      //   document.getElementById('activenext') ? document.getElementById('activenext').style.display = 'flex' : '';
-      //   document.getElementById('inactivenext') ? document.getElementById('inactivenext').style.display = 'none' : '';
-      // }
-    })
-
+   
     this.isAdults = SharedService.ProgramId === 9;
   }
 
@@ -390,8 +367,66 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     console.log(error);
   }
 
+  onSwipe($event) {
+    if (this.lastClick >= (Date.now() - this.delay))
+  {
+    return;
+  }
+    this.lastClick = Date.now();
+    $event.srcEvent.stopPropagation()
+    $event.srcEvent.cancelBubble=true;
+    this.methodSTartTime=Date.now();
+    let eventText="";
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+
+    eventText += `${x} ${y}<br/>`;
+    if(eventText.includes("right")){
+      $('#mdp_carousel').carousel('prev');
+    this.back();
+    }else if(eventText.includes("left")){
+      $('#mdp_carousel').carousel('next');
+      this.next();
+    }
+    else if(eventText.includes('down')){
+      window.scrollTo({
+        behavior:'smooth',
+        top:0
+      });
+      return;
+    }
+    else if(eventText.includes('up')){
+      window.scrollTo({
+        behavior:'smooth',
+        top:800
+      });
+    }
+    else{
+      this.next();
+      $('#mdp_carousel').carousel('next');
+    }
+}
+
   LogEvent(event) {
     this.logeventservice.logEvent(event);
+  }
+
+  next() {
+    this.currentSection++;
+      if (this.currentSection >= 2) {
+        this.currentSection = 0;
+      }
+      this.direction = 'left';
+  }
+
+
+  back() {
+    this.direction = 'right';
+    if (this.currentSection == 0) {
+      this.currentSection = 1;
+    } else {
+      this.currentSection--;
+    }
   }
 
   private VerifyGoogle() {

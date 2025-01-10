@@ -118,8 +118,13 @@ export class ProceedToPaymentPage implements OnInit {
   }
 
   back() {
+  if(sessionStorage.getItem('isPaymentBackClicked') && sessionStorage.getItem('isPaymentBackClicked')=='T'){
+    this.location.back();
+  }else{
+    sessionStorage.setItem('isPaymentBackClicked','T');
     this.commonService.updateSurveyData(2);
     this.location.back();
+  }
   }
 
   createSetupIntent() {

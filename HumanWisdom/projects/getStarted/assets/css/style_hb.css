@@ -21,7 +21,7 @@
 }
 .div_testimonialst {
     border-radius: 10px;
-    background: var(--Linear, linear-gradient(180deg, #60BEC2 100%, #3C9B9F 0%));
+    background: var(--Linear, linear-gradient(180deg, #60BEC2 0%, #3C9B9F 100%)) !important;
     background: -webkit-linear-gradient(bottom, #60BEC2 0%, #3C9B9F 100%);
     padding: 20px;
     width: 300px !important;

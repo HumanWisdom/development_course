@@ -240,6 +240,7 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
 
   next() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
@@ -295,6 +296,7 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
 
   back() {
+    window.scrollTo(0,0);
     this.nextDay = null;
     setTimeout(() => {
       if (this.slideStart < 1) {

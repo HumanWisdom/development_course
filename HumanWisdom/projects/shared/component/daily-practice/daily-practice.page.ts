@@ -60,6 +60,7 @@ export class DailyPracticePage implements OnInit {
   enableAlert = false;
   content = ''
   dailyInspirationTitle = '';
+  isVoices=false;
   DailyInspirationLink;
   DailyInspirationImg = '';
   enableBtn = false;
@@ -139,6 +140,13 @@ export class DailyPracticePage implements OnInit {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+       if(res.split(';')[3]==="6")
+       { 
+        this.isVoices = true; 
+
+       }
+
+
         this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
        // this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
         this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().split('.')[1].toString()  +".webp"
@@ -213,6 +221,7 @@ export class DailyPracticePage implements OnInit {
   
 
   next(event) {
+    window.scrollTo(0,0);
     this.currentSection++;
     if(this.currentSection>=6){
       this.currentSection = 0;
@@ -227,6 +236,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   back(event) {
+    window.scrollTo(0,0);
     this.Logevent(event);
     this.dailyid = ((+this.dailyid - 1 + 6) % 6).toString()
     this.enableVideo = false;
@@ -248,6 +258,11 @@ export class DailyPracticePage implements OnInit {
     this.content = '';
   }
 
+  routetovoices(){
+       
+      this.router.navigate(["/"+SharedService.getprogramName()+"/" + "wisdom-shorts"], { queryParams: { "pref": "voices" } })
+  
+  }
   routeToDashboard(){
     this.router.navigate([SharedService.getDashboardUrls()])
   }

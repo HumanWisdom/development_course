@@ -52,7 +52,14 @@
 
               <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
+                  <button id="voices" type="button" class="btn" (click)="getUserPref('Voices')" >
+                    Voices
+                  </button>
+                  <span > | </span>
                   <ng-container *ngFor="let data of prefData"> 
+                  
+
+<!-- 
                     <button type="button" class="btn" *ngIf="data['active'] && data['name'] === 'All' && data['name'] !== 'Voices'" 
                      [ngStyle]="{'color': selectedPref === 'All' ? '#000' : '', 'background': selectedPref === 'All' ? '#fff' : '' }" (click)="getUserPref(data)">
                       {{data['displayName']}}
@@ -61,11 +68,21 @@
                     <button type="button" class="btn" *ngIf="data['active'] && data['name'] === 'Voices' && data['name'] !== 'All'" 
                     [ngStyle]="{'color': selectedPref === 'Voices' ? '#000' : '', 'background': selectedPref === 'Voices' ? '#fff' : '' }" (click)="getUserPref(data)">
                      {{data['displayName']}}
-                   </button>
+                   </button> -->
 
-                    <button type="button" class="btn" *ngIf="data['active'] && data['name'] !== 'All' && data['name'] !== 'Voices'" (click)="getUserPref(data)" [ngClass]="isAdults ? '' : 'bg-clr'">
-                     {{data['displayName']}}
-                   </button>
+                    <!-- <button type="button" class="btn" id="{{data['displayName'] | lowercase }}"  (click)="getUserPref(data['id'])" [ngClass]="isAdults ? '' : 'bg-clr'">
+                     {{data['displayName']}} 
+                   </button> -->
+
+                   <button type="button" class="btn" id="all"  *ngIf="data['active'] && data['displayName'] === 'All'" 
+                   (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
+                    {{data['displayName']}}
+                  </button>
+
+                  <button type="button" class="btn" id="{{data['id'] | lowercase }}"  *ngIf="data['active'] && data['displayName'] !== 'All'" (click)="getUserPref(data['id'])" [ngClass]="isAdults ? '' : 'bg-clr'">
+                   {{data['displayName']}}
+                 </button>
+
 
                   </ng-container>
                 </div>
@@ -102,7 +119,7 @@
 
                         </div>
 
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i <= 2">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID']<=7">
                           <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                         </div>
 
@@ -110,7 +127,7 @@
                           <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                         </div>
 
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && i > 2">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] >7">
                           <!-- lock -->
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
                           <!-- /lock -->
