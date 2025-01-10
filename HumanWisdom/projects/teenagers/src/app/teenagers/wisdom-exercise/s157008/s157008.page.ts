@@ -294,6 +294,8 @@ export class S157008Page implements OnInit {
     }
   }
   next() {
+    window.scrollTo(0,0);
+
     this.nextDay = null;
 
     setTimeout(() => {
@@ -392,6 +394,8 @@ export class S157008Page implements OnInit {
   }
   
   back() {
+    window.scrollTo(0,0);
+
     this.nextDay = null;
 
     setTimeout(() => {

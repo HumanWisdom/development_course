@@ -195,16 +195,16 @@ export class SharedService {
   public static getPreferenceData() {
     if (this.ProgramId == ProgramType.Adults) {
       return [
-        {
+       /*  {
           id: "88",
           displayName: "Voices",
-          active: true,
+          active: false,
           name: 'Voices'
-        },
+        }, */
         {
           id: "999",
           displayName: "All",
-          active: false,
+          active: true,
           name: 'All'
         },
         {
@@ -235,13 +235,13 @@ export class SharedService {
           id: "5",
           displayName: "Addiction",
           active: false,
-          name: 'Addiction'
+          name: 'Habits and Addictions'
         },
         {
           id: "6",
           displayName: "Sorrow and Loss",
           active: false,
-          name: 'Deal with loss'
+          name: 'Deal with Sorrow and loss'
         },
         {
           id: "7",
@@ -256,7 +256,7 @@ export class SharedService {
           name: 'Manage your emotions',
         },
         {
-          id: "",
+          id: "0",
           active: false,
           displayName: "Wisdom",
           name: 'Wisdom',
@@ -264,6 +264,12 @@ export class SharedService {
       ]
     } else {
       return [
+       /*  {
+          id: "88",
+          displayName: "Voices",
+          active: false,
+          name: 'Voices'
+        }, */
         {
           id: "999",
           displayName: "All",
@@ -273,50 +279,56 @@ export class SharedService {
       {
         id: "14",
         displayName: "Emotions",
-        active: true,
+        active: false,
         name: 'Manage your emotions',
       },
       {
         id: "11",
-        active: true,
+        active: false,
         displayName: "Relationships",
         name: 'Relationships'
       },
       {
         id: "13",
-        active: true,
+        active: false,
         displayName: "Happiness",
         name: 'Be happier'
       },
       {
         id: "15",
         displayName: "Habits",
-        active: true,
+        active: false,
         name: 'Overcome unhelpful habits'
       },
       {
         id: "16",
-        active: true,
+        active: false,
         displayName: "Understand yourself",
         name: 'Understand yourself'
       },
       {
         id: "12",
-        active: true,
+        active: false,
         displayName: "Feel calm",
         name: 'Feel calm',
       },
       {
         id: "10",
-        active: true,
+        active: false,
         displayName: "Mental health",
         name: 'Manage your mental health'
       },
       {
         id: "17",
-        active: true,
+        active: false,
         displayName: "Success",
         name: 'Succeed in life'
+      },
+      {
+        id: "0",
+        active: false,
+        displayName: "Wisdom",
+        name: 'Wisdom',
       }
       ]
     }

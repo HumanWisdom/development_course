@@ -2450,6 +2450,12 @@ a
   display: flex;
 }
 
+.quotation {
+  width: 50.93px !important;
+  height: 34px !important;
+  opacity: 25% !important;
+}
+
 .owl-prev.disabled,
 .owl-next.disabled
 {
@@ -4077,5 +4083,9 @@ audio::-webkit-media-controls-enclosure
   position:relative;
   /* background: #120F40; */
   border: 0;
+}
+
+.col-xs-12 {
+  float: none !important;
 }
 

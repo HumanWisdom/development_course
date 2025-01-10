@@ -27,30 +27,38 @@ export class WisdomShortsIndexPage implements OnInit {
   searchedText:any='';
   isAdults = true;
   prefData:any;
-  selectedPref = 'Voices'
+
+  selectedPref = 'All'
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: CommonService, private meta: Meta, private title: Title) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
-    this.getwisdomshorts()
     this.prefData = SharedService.getPreferenceData();
+   /*  this.prefData.unshift({
+      id: "88",
+      displayName: "Voices",
+      active: false,
+      name: 'Voices'
+    })
+ */
+  
   }
 
   ngOnInit() {
 
-   
-if(SharedService.ProgramId == ProgramType.Adults){
-  this.title.setTitle('Inspiring Shorts for Adults')
-    this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Adults' })
-    this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy adults who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
-}
-else if(SharedService.ProgramId == ProgramType.Teenagers){
-  this.title.setTitle('Inspiring Shorts for Teenagers')
-    this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Teenagers' })
-    this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy Teenagers who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
-}
+    
+  if(SharedService.ProgramId == ProgramType.Adults){
+    this.title.setTitle('Inspiring Shorts for Adults')
+      this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Adults' })
+      this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy adults who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
+      this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
+  }
+  else if(SharedService.ProgramId == ProgramType.Teenagers){
+    this.title.setTitle('Inspiring Shorts for Teenagers')
+      this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Teenagers' })
+      this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy Teenagers who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
+      this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
+  }
 
 
     let userid = localStorage.getItem('isloggedin');
@@ -66,6 +74,9 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
         } else {
          this.isAdults = false;
         }
+
+        this.getwisdomshorts()
+
   }
 
   getwisdomshorts() {
@@ -77,17 +88,52 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
           res.splice(res.indexOf(element), 1)
           res.unshift(element)
         });
-        this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
+        //this.allwisdomshorts = res1.sort((a,b)=>b.display - a.display);
         this.allwisdomshorts = res1;
+
+        let m: any = window.location.href;
+     
         this.allwisdomshorts.forEach((d) => {
-          this.prefData.forEach((h) => {
-            if(d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
-               h.active = true;
-            }else if(!d['PreferenceIDs']) {
-              h.active = true;
-            }
-          })
-        });
+              this.prefData.forEach((h) => {
+                if(d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes( h.id))) {
+                   h.active = true;
+                }else if(!d['PreferenceIDs']) {
+                  h.active = true;
+                }
+              })
+            });
+        // if(m?.includes('voices')) {
+        //  this.getVoicesData();
+        //   /* this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
+        //   this.prefData.forEach((d) => {
+        //     if(d['displayName'] === 'Voices') {
+        //       d['active'] = true;
+        //     }else if(d['displayName'] === 'All') {
+        //       d['active'] = false;
+        //     }
+        //   }) */
+        // }else {
+        //   this.wisdomshorts = res1;
+        //  /*  this.allwisdomshorts.forEach((d) => {
+        //     this.prefData.forEach((h) => {
+        //       if(d['PreferenceIDs'] && (d['PreferenceIDs'].includes(','+ h.id) || d['PreferenceIDs'].includes(','+ h.id +',') || d['PreferenceIDs'].includes(h.id +','))) {
+        //          h.active = true;
+        //       }else if(!d['PreferenceIDs']) {
+        //         h.active = true;
+        //       }
+        //     })
+        //   }); */
+        // }
+       
+        if(m?.includes('pref')){
+          let type = m.split('pref=')
+
+          this.getUserPref(type[1])
+
+        }
+        else {          
+           this.getUserPref("all")
+        }
 
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
       }
@@ -124,10 +170,18 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
     localStorage.setItem('isSwipeAllow','true');
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
-        this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
+        if(val['IsVoices'] === '1') {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
+        }else {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
+        }
       } else {
         if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
+          if(val['IsVoices'] === '1') {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
+          }else {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
+          }
         } else {
           this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
         }
@@ -146,19 +200,57 @@ else if(SharedService.ProgramId == ProgramType.Teenagers){
   }
   
   getUserPref(type) {
-    this.selectedPref = '';
+    
+    const btns = Array.from(document.getElementsByClassName('btn'));
+
+    for (const b of btns) {
+        const y = <HTMLElement> b;
+        if (this.isAdults ==true)
+          y.style.backgroundColor = '#424675';
+        else
+          y.style.backgroundColor = '#4267A5';
+
+        y.style.color = '#FFFFFF';
+    }
+
+    type=type.toLowerCase()
+   
+    
+    this.selectedPref = type;
     this.wisdomshorts = this.allwisdomshorts;
-    if(type.name === 'All') {
+    if(type === "all") {
       this.wisdomshorts = this.allwisdomshorts;
-    }else if(type.name === 'Voices'){
+      document.getElementById("all").style.backgroundColor = '#FFFFFF';
+      document.getElementById("all").style.color = '#000000';
+    }else if(type === 'voices'){
       this.wisdomshorts= this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
+      document.getElementById("voices").style.backgroundColor = '#E58D82';
+      document.getElementById("voices").style.color = '#FFFFFF';
+
     }else{
-      if(type.name === 'Wisdom') {
+      document.getElementById(type).style.backgroundColor = '#FFFFFF';
+      document.getElementById(type).style.color = '#000000';
+
+      if(type === '0') {  //wisdom
         this.wisdomshorts= this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
       }else {
-        this.wisdomshorts= this.allwisdomshorts.filter((d) => d['PreferenceIDs'].includes(type.id));
+                //this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].includes(type.id + ',') || d['PreferenceIDs'].includes(','+ type.id + ',') || d['PreferenceIDs'].includes(','+type.id))));
+          //  this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['Preferences'] && d['Preferences'].toLowerCase().includes(type)));
+                this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
       }
     }
+
+         
+
   }
+
+
+ /*  getVoicesData() {
+    this.selectedPref = 'Voices';
+        this.wisdomshorts= this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
+    document.getElementById("VoiceBtn").style.backgroundColor = '#E58D82';
+
+  } */
+
 
 }

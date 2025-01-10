@@ -45,14 +45,12 @@ p {
 /* Container */
 .swipe-up-alt {
   position: relative;
-  width: 80px;
+  width: 64px;
   height: 100px;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  //align-items: center;
   justify-content: center;
-  right:4px
 }
 
 .chevron {
@@ -61,10 +59,9 @@ p {
   border-left: 3px solid white;
   border-bottom: 3px solid white;
   transform: rotate(134deg);
-  margin: -3px;
   opacity: 1;
   animation: fadeInOut 1.5s infinite;
-  margin-left:0.4px
+  margin-left:20px
 }
 
 .chevron:nth-child(1) {
@@ -83,7 +80,6 @@ p {
   margin-top: 8px;
   opacity: 0.5;
   animation: fadeInOut 1.5s infinite;
-  margin-left: -22px;
 }
 
 /* Animation */
@@ -134,7 +130,7 @@ video::-internal-media-controls-overflow-button {
 }
 
 .video-wrapper {
-  position: absolute;
+  //position: absolute;
   // width: 100%;
   // height: 100%;
   // display: flex;

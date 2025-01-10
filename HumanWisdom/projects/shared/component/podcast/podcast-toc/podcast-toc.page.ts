@@ -175,7 +175,7 @@ export class PodcastTocPage implements OnInit {
       if (type.name === 'Wisdom') {
         this.podcastList = this.podcastList.filter((d) => (!d['PreferenceIDs']));
       } else {
-        this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].includes(type.id));
+        this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].split(",").includes(type.id));
       }
     }
   }
