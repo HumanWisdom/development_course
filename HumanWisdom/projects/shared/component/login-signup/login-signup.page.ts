@@ -763,9 +763,9 @@ export class LoginSignupPage implements OnInit {
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
     localStorage.setItem('appleLogin','T');
-    let REDIRECT_API_URL = environment.appleSignInHtmlLocal;
+    let REDIRECT_API_URL = environment.appleSignInAPIAdults;
     if(!SharedService.isAdultProgram()){
-      REDIRECT_API_URL = environment.appleSignInHtmlLocal;
+      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
     }
      window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
