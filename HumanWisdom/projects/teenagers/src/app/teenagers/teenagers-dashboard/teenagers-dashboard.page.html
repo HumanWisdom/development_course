@@ -35,17 +35,20 @@
 
             <div class="row prelative pt30px plr20px" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
 
-              <div class="row mb15px">
+              <!-- <div class="row mb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="fw_400 fs_12px lh_130p fc_ffffff mtb0px">
                     CONTINUE WHERE YOU LEFT
                   </h4>
                 </div>
-              </div>
+              </div> -->
+              <h4 class="fw_400 fs_12px lh_130p fc_ffffff mb10px">
+                CONTINUE WHERE YOU LEFT
+              </h4>
                <!-- CONTINUE WHERE YOU LEFT -->
            
               <a  (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)" >
-                <div class="row div_is_01 mtb20pxi">
+                <div class="row div_is_02">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-md-4 col-sm-4 col-xs-4 p0">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp"  alt="" class="w100 c120px">
