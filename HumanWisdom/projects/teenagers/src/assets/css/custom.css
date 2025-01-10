@@ -35254,7 +35254,12 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 12px;
   margin-bottom: 10px;
 }
-
+.div_is_02 {
+  border-radius: 12px;
+  background: #120F40;
+  padding: 12px;
+  /* margin-bottom: 10px; */
+}
 .pl12px
 {
   padding-left: 12px;
