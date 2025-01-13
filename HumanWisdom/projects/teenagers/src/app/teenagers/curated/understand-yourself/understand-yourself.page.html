@@ -904,7 +904,7 @@
                               </div>
                             </a>
 
-                            <a (click)="enableRoute('/teenagers/journal/inner-critic')" *ngIf="!enableGuidedQuesViewMore">
+                            <a (click)="enableRoute('/teenagers/journal/inner-critic')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -925,7 +925,7 @@
 
                         </div>
 
-                        <a (click)="enableViewMore('guidedQues')" *ngIf="enableGuidedQuesViewMore">
+                     <!--    <a (click)="enableViewMore('guidedQues')" *ngIf="enableGuidedQuesViewMore">
                           <div class="row mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -945,7 +945,7 @@
                               </h4>
                             </div>
                           </div>
-                        </a>
+                        </a> -->
 
                       </div>
                     </div>
@@ -1982,7 +1982,7 @@
                   
                                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                                     <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
-                                      Understadning ourselves
+                                      Understanding ourselves
                                     </h4>
                                     <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
                                       Title: Master the Art of Positive Thinking Using Wisdom“If you look the right way, you can see that the whole world is a garden.” - Frances Hodgson Burnett
@@ -1993,7 +1993,7 @@
                               </div>
                             </a>
 
-                            <a (click)="viewblog('25')">
+                            <a (click)="viewblog('25')"  *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -2014,7 +2014,7 @@
                               </div>
                             </a>
 
-                            <a (click)="viewblog('24')">
+                            <a (click)="viewblog('24')"  *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -2034,7 +2034,7 @@
                                 </div>
                               </div>
                             </a>
-                            <a (click)="viewblog('1')">
+                            <a (click)="viewblog('1')"  *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -2057,7 +2057,7 @@
 
                           </div>
 
-                          <!-- <a (click)="enableViewMore('blog')" *ngIf="enableblogViewMore">
+                          <a (click)="enableViewMore('blog')" *ngIf="enableblogViewMore">
                             <div class="row mt30px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -2077,7 +2077,7 @@
                                 </h4>
                               </div>
                             </div>
-                          </a> -->
+                          </a>
 
                         </div>
                       </div>
@@ -2098,7 +2098,7 @@
 
               <!-- explore other topics -->
               <a routerLink="/teenagers/select-a-topic-to-explore">
-                <div class="row mt60px">
+                <div class="row mt30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
                     <h4 class="mtb0px fs_15px lh_140p fc_ffffff tcenter underline">
                       Explore other topics
