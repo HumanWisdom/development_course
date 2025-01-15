@@ -140,6 +140,7 @@ export class SocialLoginPage implements OnInit {
               localStorage.setItem("FnName", namedata[0])
               localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
               localStorage.setItem("Subscriber", res['Subscriber']);
+              localStorage.setItem('isloggedin', 'T');
               this.isSubscriber = SharedService.isSubscriber();
               if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
                 if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
