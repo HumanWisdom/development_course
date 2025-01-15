@@ -514,7 +514,7 @@
                               </div>
                             </a>
 
-                            <a routerLink="/teenagers/feel-better-now/boredom">
+                            <a routerLink="/teenagers/feel-better-now/boredom"  *ngIf="!enablefbnViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -532,6 +532,28 @@
                               </div>
                             </a>
                           </div>
+
+                          <a (click)="enableViewMore('fbn')" *ngIf="enablefbnViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                                  View More
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
+            
+                          <a (click)="enableViewLess('fbn')" *ngIf="!enablefbnViewMore">
+                            <div class="row mt30px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                                  View Less
+                                </h4>
+                              </div>
+                            </div>
+                          </a>
 
                           <!-- <a (click)="enableViewMore('fbn')" *ngIf="enablefbnViewMore">
                             <div class="row mt30px">
@@ -566,6 +588,13 @@
               
               <!-- /feel better now -->
 
+               <!-- hr -->
+               <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
               <!-- life stories -->
               <!-- accordion -->
               <div class="row accordion_row">
@@ -1907,7 +1936,7 @@
 
               <!-- explore other topics -->
               <a routerLink="/teenagers/select-a-topic-to-explore">
-                <div class="row mt60px">
+                <div class="row mt30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
                     <h4 class="mtb0px fs_15px lh_140p fc_ffffff tcenter underline">
                       Explore other topics
