@@ -56,7 +56,7 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
       {
         id: 17,
         url: '/podcasts/17.mp3',
-        title: 'Navigating Sorrow and Loss'
+        title: 'Sorrow and Loss'
       }
     }
   }
