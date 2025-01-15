@@ -157,6 +157,7 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
      default: {
+       url=`/${SharedService.getprogramName()}/site-search/${this.search}`
         this.searchEvent(this.search)
         break;
       }
