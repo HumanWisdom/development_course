@@ -151,7 +151,7 @@ export class ProfileEditPage implements OnInit {
   }
 
   updateUser() {
-    let name = this.fullname.split(' ')
+    let name = this.fullname.toString().trim().split(' ')
     let obj = {
       "UserID": this.userdetail['UserID'],
       "RoleID": this.userdetail['RoleId'],
@@ -171,7 +171,7 @@ export class ProfileEditPage implements OnInit {
         this.onboardingService.uploaderAvatar(this.object).subscribe((r) => {
           if (r) {
            this.onboardingService.updateUserDetails.next(true); 
-           console.log("image uplodaed successfully");
+           console.log("image uploaded successfully");
           }})
         localStorage.setItem(
           "nameupdate",
@@ -236,5 +236,7 @@ export class ProfileEditPage implements OnInit {
   clearSearch() {
     this.country = '';
     this.searchResult = [];
+    this.isdcode='';
+    
   }
 }
