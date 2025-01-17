@@ -63,7 +63,10 @@ export class savedPage implements OnInit {
     }
 
   SubmitButton() {
-    this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
+    // this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
+    this.router.navigate([SharedService.getUrlfromFeatureName('journal')]);
+    
+  
   }
 
   

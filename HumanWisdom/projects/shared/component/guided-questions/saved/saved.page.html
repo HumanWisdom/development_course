@@ -70,12 +70,15 @@
               <h4 class="fw_400 fs_12px lh_130p fc_ffffff mb10px">
                 YOU MIGHT ALSO LIKE </h4>
               <!-- CONTINUE WHERE YOU LEFT -->
-              <a *ngFor="let item of moduleData" (click)="routeResume(item['moduleId'],item['path'])">
+              <!-- <a *ngFor="let item of moduleData" (click)="routeResume(item['moduleId'],item['path'])"> -->
+                <a *ngFor="let item of moduleData" routerLink="{{item['path']}}"  >
                 <div class="row div_is_02">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                      <img src="{{item['']}}" alt=""
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{item['moduleId']}}.webp" *ngIf="isAdults" alt=""
+                        class="p0 session_img">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{item['moduleId']}}.webp" *ngIf="!isAdults" alt=""
                         class="p0 session_img">
 
                       <!-- <div class="progress dprogress">
