@@ -7,6 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: QuestionsPage
+  },
+  {
+    path: "saved",
+    // canActivate: [JournalGuard],
+    loadChildren: () => import("../saved/saved.module").then(m => m.SavedPageModule)
   }
 ];
 

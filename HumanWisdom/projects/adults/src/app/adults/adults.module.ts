@@ -6,10 +6,9 @@ import { TokenInterceptorService} from '../token-interceptor.service'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons'
 import { BrowserModule } from '@angular/platform-browser';
-import { savedPage } from '../../../../shared/component/guided-questions/saved/saved.page';
 
 @NgModule({
-  declarations: [savedPage],
+  declarations: [],
   imports: [
     CommonModule,
     //ComparisonModule,

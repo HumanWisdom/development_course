@@ -170,7 +170,7 @@ export class QuestionsPage implements OnInit {
       };
     }
     this.commonService.AddGuidedQs_Response(data).subscribe(res => {
-      this.route.navigate([SharedService.getUrlfromFeatureName('saved')])
+      this.route.navigate([SharedService.getUrlfromFeatureName('guidedquestions/saved')])
       // this.saveBtn.nativeElement.click();
     }, (e) =>{
       console.log(e?.Message);
