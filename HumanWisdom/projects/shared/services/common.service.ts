@@ -80,6 +80,10 @@ export class CommonService {
     return this.http.get(this.path + `/GetGuidedQs_Topics`)
   }
 
+  GetGuidedQs_TopicsId(id): Observable<any> {
+    return this.http.get(this.path + `/GetGuidedQs_Topics/${id}`)
+  }
+
   GetGuidedQs_Response(id: any, attempt: any): Observable<any> {
     return this.http.get(this.path + `/GetGuidedQs_Response/` + id + '/' + attempt)
   }
@@ -548,4 +552,7 @@ export class CommonService {
       });
   }
 
+  getModules(id): Observable<any> {
+    return this.http.get(this.path + `/GetModules/` + id)
+  }
 }

@@ -10,6 +10,7 @@ import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blo
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { IntroGuard } from '../intro.guard';
 import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
+import { savedPage } from '../../../../shared/component/guided-questions/saved/saved.page';
 const routes: Routes = [
   {
     path: '',
@@ -678,6 +679,10 @@ const routes: Routes = [
   {
     path: 'newsletter-signup',
     component: NewsletterComponent
+  },
+  {
+    path: 'saved',
+    component: savedPage
   }
 ];
 
