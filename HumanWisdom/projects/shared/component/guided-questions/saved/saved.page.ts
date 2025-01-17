@@ -48,6 +48,13 @@ export class savedPage implements OnInit {
     });
   }
 
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if(url == `/${SharedService.getprogramName()}/search`){
+     this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
+    }
+  }
+
    GetModuleDataBasedOnProgramType() {
       this.service.getModules(this.programType).subscribe(res => {
         res = res.filter((d) => this.moduleIds.find((e) => e === d['moduleId'].toString()));
