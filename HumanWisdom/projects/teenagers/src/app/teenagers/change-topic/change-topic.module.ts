@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../shared/shared.module';
+
 import { ChangeTopicPageRoutingModule } from './change-topic-routing.module';
 
 import { ChangeTopicPage } from './change-topic.page';
@@ -13,6 +15,7 @@ import { ChangeTopicPage } from './change-topic.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     ChangeTopicPageRoutingModule
   ],
   declarations: [ChangeTopicPage]
