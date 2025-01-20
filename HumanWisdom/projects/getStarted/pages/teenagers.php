@@ -432,8 +432,8 @@
                 <a class="item" data-aos="fade-up" data-aos-delay="200">
                   <div class="div_testimonialst">
                     <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
@@ -458,8 +458,8 @@
                 <a class="item" data-aos="fade-up" data-aos-delay="300">
                   <div class="div_testimonialst">
                     <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -484,8 +484,8 @@
                 <a class="item" data-aos="fade-up" data-aos-delay="400">
                   <div class="div_testimonialst">
                     <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -511,8 +511,8 @@
                 <a class="item" data-aos="fade-up" data-aos-delay="600">
                   <div class="div_testimonialst">
                     <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -537,8 +537,8 @@
                 <a class="item">
                   <div class="div_testimonialst">
                     <div class="row">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -564,7 +564,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_camille_hoffheinz.webp"  alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -590,7 +590,7 @@
                   <div class="div_testimonialst">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_quotation.svg" class="img-responsive width_unseti quotation" alt="Quotation" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp" alt="Quotation" loading="lazy">
                       </div>
                     </div>
 
@@ -617,7 +617,13 @@
 
               <div class="owl-theme">
                 <div class="owl-controls">
-                  <div class="owl-nav"></div>
+                  <div class="owl-nav">
+                  <a class="sap" href="https://happierme.app/teenagers/testimonials">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                        View all testimonials
+                      </h4>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1108,7 +1114,7 @@
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://staging.happierme.app/teenagers/blogs">
+                    <a class="sap" href="https://happierme.app/blogs/blog_index.php">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all blogs
                       </h4>
