@@ -26342,6 +26342,22 @@ h1
   line-height: 150%;
   color: #FFF;
 }
+.mdp_add_to_saved
+{
+   margin: -9px; 
+  border: 0;
+  height: 50px;
+  /* margin-bottom: 24px; */
+   width: 300px; 
+  overflow:visible;
+   border-radius: 100px; 
+  background: #E58D82;
+  font-size: 15px;
+  position: static;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+}
 
 .mdp_answer_here
 {
@@ -28879,12 +28895,12 @@ video::-webkit-media-controls-panel
 }
 
 .btn_daily {
-  height: 30px;
-  width: 61px;
+  height: 35px;
+  width: 71px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #292d56;
+  background: rgb(255 255 255 / 20%);
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
@@ -33507,7 +33523,7 @@ body *
 {
   width: 100%;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 .session_img_play
