@@ -1112,7 +1112,14 @@
 
               <div class="owl-theme">
                 <div class="owl-controls">
-                  <div class="owl-nav"></div>
+                  <div class="owl-nav">
+
+                  <a class="sap" href="https://happierme.app/adults/testimonials">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                        View all testimonials
+                      </h4>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
