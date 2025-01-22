@@ -129,6 +129,10 @@ video::-internal-media-controls-overflow-button {
   background-color: #000;
 }
 
+.video-width {
+  width: -webkit-fill-available !important;
+}
+
 .video-wrapper {
   //position: absolute;
   // width: 100%;
