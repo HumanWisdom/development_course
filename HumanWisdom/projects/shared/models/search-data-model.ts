@@ -6,6 +6,8 @@ export interface SearchDataModel {
   JournalRes: any[];
   PodCastRes: PodCastRe[];
   WisdomShortsRes: WisdomShortsRe[];
+  EventsRes: EventsRe[];
+
   FeelBetterNowRes:string;
 }
 
@@ -13,6 +15,13 @@ interface WisdomShortsRe {
   RowID: number;
   Title: string;
   VideoUrl: string;
+}
+
+interface EventsRe {
+  RowID: number;
+  Title: string;
+  VideoUrl: string;
+  EventDate: string;
 }
 
 interface PodCastRe {
