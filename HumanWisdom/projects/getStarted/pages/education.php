@@ -540,7 +540,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_camille_hoffheinz.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_camille_hoffheinz.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -569,7 +569,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="Quotation">
                       </div>
                     </div>
 
