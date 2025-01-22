@@ -881,7 +881,9 @@
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
-              <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <div class="land-happierme-margin">
+            
+            <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 
                 Our happiness depends on many factors.
               </h2> -->
@@ -921,6 +923,7 @@
               </div>
             </div>
             
+           </div>
           </div>
         </div>
       </section>
@@ -1066,7 +1069,8 @@
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+             <div class="land-happierme-margin"> 
+             <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 <!-- COMING SOON! -->
                 NEW!
               </h2>
@@ -1105,7 +1109,7 @@
                 </div>
               </div>
             </div>
-            
+           </div>
           </div>
         </div>
       </section>
