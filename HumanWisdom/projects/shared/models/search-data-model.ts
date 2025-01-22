@@ -7,7 +7,7 @@ export interface SearchDataModel {
   PodCastRes: PodCastRe[];
   WisdomShortsRes: WisdomShortsRe[];
   EventsRes: EventsRe[];
-
+  AudioMeditationRes: AudioMedRe[];
   FeelBetterNowRes:string;
 }
 
@@ -22,6 +22,7 @@ interface EventsRe {
   Title: string;
   VideoUrl: string;
   EventDate: string;
+  Timing: string;
 }
 
 interface PodCastRe {
@@ -29,6 +30,15 @@ interface PodCastRe {
   Title: string;
   URL: any;
   iframeURL:any;
+}
+
+interface AudioMedRe {
+  RowID: number;
+  Title: string;
+  AudioUrl: any;
+  ImgUrl: string;
+  Timing: string;
+
 }
 
 interface WisdomStoriesRe {
