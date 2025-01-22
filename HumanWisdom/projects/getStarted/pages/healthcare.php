@@ -399,8 +399,11 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Jondi Whitis, Atlanta, USA
+                          Jondi Whitis, Atlanta, 
                         </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        EFT trainer and Coach. USA.
+                      </p>
                       </div>
                     </div>
                   </div>
@@ -425,8 +428,11 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Garry Prigg, Australia
+                          Garry Prigg, 
                         </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        CEO,. Australia.
+                      </p>
                       </div>
                     </div>
                   </div>
@@ -451,8 +457,11 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Saakshi Singla, New Delhi, India
+                          Saakshi Singla, 
                         </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Psychotherapist. India.
+                      </p>
                       </div>
                     </div>
                   </div>
@@ -477,7 +486,10 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Dr Tim Merrick, USA
+                          Dr Tim Merrick, 
+                        </h5>
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Executive Coach., USA
                         </h5>
                       </div>
                     </div>
@@ -488,7 +500,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -503,7 +515,10 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Dominic Curran, England
+                          Dominic Curran, 
+                        </h5>
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                           England
                         </h5>
                       </div>
                     </div>
@@ -514,7 +529,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -529,7 +544,10 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Sir Anthony Seldon, UK
+                          Sir Anthony Seldon, 
+                        </h5>
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        vice chancellor. UK
                         </h5>
                       </div>
                     </div>
@@ -540,7 +558,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rod_berger.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rod_berger.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -556,6 +574,9 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
                           Rod Berger, USA
+                        </h5>
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Journalist., USA
                         </h5>
                       </div>
                     </div>
@@ -581,7 +602,10 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                          Laura Toop, London
+                          Laura Toop, 
+                        </h5>
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Leadership consultant., London
                         </h5>
                       </div>
                     </div>

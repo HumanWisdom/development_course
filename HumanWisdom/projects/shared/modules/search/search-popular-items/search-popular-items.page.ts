@@ -35,7 +35,12 @@ export class SearchPopularItemsPage implements OnInit {
   isAdults: boolean = true;
   enableBlogViewMore: boolean = false;
   enableShortViewMore: boolean = false;
+  enableEventsViewMore: boolean = false;
   enableStoryViewMore: boolean = false;
+  enableModuleViewMore: boolean = false;
+  enablePodcastViewMore: boolean = false;
+
+
   searchDataDup: any;
   searchResult = [];
   public moduleList = [];
@@ -71,6 +76,7 @@ export class SearchPopularItemsPage implements OnInit {
       PodCastRes: [],
       SessionRes: [],
       WisdomShortsRes: [],
+      EventsRes: [],
       WisdomStoriesRes: [],
       FeelBetterNowRes: null
     } as SearchDataModel;
@@ -173,6 +179,7 @@ export class SearchPopularItemsPage implements OnInit {
         this.searchData.SessionRes.length +
         this.searchData.PodCastRes.length +
         this.searchData.WisdomShortsRes.length +
+        this.searchData.EventsRes.length +
         this.searchData.WisdomStoriesRes.length +
         this.searchData.BlogRes.length;
     }
@@ -209,8 +216,31 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData = res;
         }
 
+        if (res.EventsRes && res.EventsRes.length > 2) {
+          res.EventsRes = res.EventsRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+
         if (res.WisdomStoriesRes && res.WisdomStoriesRes.length > 2) {
           res.WisdomStoriesRes = res.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.PodCastRes && res.PodCastRes.length > 2) {
+          res.PodCastRes = res.PodCastRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+
+        if (res.ModuleRes && res.ModuleRes.length > 2) {
+          res.ModuleRes = res.ModuleRes.filter((d, i) => (i === 0 || i === 1));
           this.searchData = res;
         } else {
           this.searchData = res;
@@ -226,6 +256,7 @@ export class SearchPopularItemsPage implements OnInit {
       this.searchData.SessionRes.length +
       this.searchData.PodCastRes.length +
       this.searchData.WisdomShortsRes.length +
+      this.searchData.EventsRes.length +
       this.searchData.WisdomStoriesRes.length +
       this.searchData.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
 
@@ -279,6 +310,18 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enableShortViewMore = false;
       }
+    }else if(section === 'events') {
+      if (type === 'more') {
+        if (this.searchDataDup.EventsRes && this.searchDataDup.EventsRes.length > 2) {
+          this.searchData.EventsRes = this.searchDataDup.EventsRes;
+        }
+        this.enableEventsViewMore = true;
+      }else {
+        if (this.searchDataDup.EventsRes && this.searchDataDup.EventsRes.length > 2) {
+          this.searchData.EventsRes = this.searchDataDup.EventsRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableEventsViewMore = false;
+      }
     }else if(section === 'story') {
       if (type === 'more') {
         if (this.searchDataDup.WisdomStoriesRes && this.searchDataDup.WisdomStoriesRes.length > 2) {
@@ -290,6 +333,31 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData.WisdomStoriesRes = this.searchDataDup.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
         }
         this.enableStoryViewMore = false;
+      }
+    }else if(section === 'module') {
+      if (type === 'more') {
+        if (this.searchDataDup.ModuleRes && this.searchDataDup.ModuleRes.length > 2) {
+          this.searchData.ModuleRes = this.searchDataDup.ModuleRes;
+        }
+        this.enableModuleViewMore = true;
+      }else {
+        if (this.searchDataDup.ModuleRes && this.searchDataDup.ModuleRes.length > 2) {
+          this.searchData.ModuleRes = this.searchDataDup.ModuleRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableModuleViewMore = false;
+      }
+    }
+    else if(section === 'podcast') {
+      if (type === 'more') {
+        if (this.searchDataDup.PodCastRes && this.searchDataDup.PodCastRes.length > 2) {
+          this.searchData.PodCastRes = this.searchDataDup.PodCastRes;
+        }
+        this.enablePodcastViewMore = true;
+      }else {
+        if (this.searchDataDup.PodCastRes && this.searchDataDup.PodCastRes.length > 2) {
+          this.searchData.PodCastRes = this.searchDataDup.PodCastRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enablePodcastViewMore = false;
       }
     }
 
