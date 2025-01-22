@@ -17,8 +17,8 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="prelative" (click)="proceedcart()">
-        <h6 class="mtb0px fs_12px fw_500 lh_140p fc_e58d82 cart_cnt" *ngIf="totalCount !== 0">
-          {{totalCount}}
+        <h6 class="mtb0px fs_12px fw_500 lh_140p fc_e58d82 cart_cnt" *ngIf="cartitemList.length !== 0">
+          {{cartitemList.length}}
         </h6>
         <div class="">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_cart.svg" alt="" class="p0">
@@ -35,11 +35,11 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="row mb30px">
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount.svg"
                     class="p0">
@@ -51,72 +51,74 @@
                   </h4>
                 </div>
               </div>
-            </div> 
+            </div>
 
-              <div class="row mb10px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
-                    Support your friends and family to be happier and succeed in life.  </h4>
-                </div>
+            <div class="row mb10px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
+                  Support your friends and family to be happier and succeed in life. </h4>
               </div>
+            </div>
 
-              <div class="row mb10px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                    Give your friends and family a subscription to the HappierMe app, and help them overcome their challenges, be mentally healthy and happy, and have successful relationships.
-                  </h4>
-                </div>
+            <div class="row mb10px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                  Give your friends and family a subscription to the HappierMe app, and help them overcome their
+                  challenges, be mentally healthy and happy, and have successful relationships.
+                </h4>
               </div>
+            </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff">
-                    To subscribe for yourself:
-                    <a class="fs_12px fw_600 lh_150p fc_e58d82 underline" href="#" >
-                     
-                      click here
-                      
-                    </a>
-                  </h4>
-                </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff">
+                  To subscribe for yourself:
+                  <a class="fs_12px fw_600 lh_150p fc_e58d82 underline" href="#">
+
+                    click here
+
+                  </a>
+                </h4>
               </div>
-          
-              <!-- <div class="row mtb30px">
+            </div>
+
+            <!-- <div class="row mtb30px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                    <hr class="hr_style_v3_01"> 
                 </div>
               </div> -->
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback mb0px">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback mb0px"
+              *ngIf="!enableAddMemForm">
 
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  </div> 
-                  <div class="row mtb15px">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+              </div>
+              <div class="row mtb15px">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
-                  <button id="noteId" type="button" (click)="enableEmailboxEvent(true, 'Annual', 'Adults')" class="btn btn_aan2"> + Add member
-                    
+                  <button id="noteId" type="button" (click)="EnableAddMemForm()" class="btn btn_aan2"> + Add member
+
                     <!-- <i class="fa fa-plus">New note</i> -->
                   </button>
-                  </div>
                 </div>
-                </div> 
-                <br/>
-                <br/>
-                <br/>
-                 <br/>
-                <br/>
-                <br/>
-              <!-- <Add member> -->
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <!-- <Add member> -->
 
-                <div class="raf_div_01">
-                  <!-- <div class="row center_flex mb15px">
+            <div class="raf_div_01" *ngIf="enableAddMemForm">
+              <!-- <div class="row center_flex mb15px">
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
                         Introduce a friend to HappierMe
                       </h4>
                     </div>
                   </div> -->
-  
-                  <!-- <div class="row center_flex">
+
+              <!-- <div class="row center_flex">
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
                         We will plant a tree for every friend who subscribes.
@@ -127,434 +129,539 @@
                       </h4>
                     </div>
                   </div> -->
-  
-                  <div class="mtb30px mregister">
-                    <div class="row mb10px">
-                      
-  
-  
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                        <input type="text" id="email"  class="sp_fc" placeholder="Friend email">
-                       
-                      </div>
-                    </div>
-                    <div class="row mtb10px">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                        
-                        <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
-                        <select type="text" id="program" class="sp_fc">
-                          <option value="Adults" class="sp_fc">Choose program</option>
-                          <option value="Adults" class="sp_fc">Adults - Annual (INR 699/mo.)</option>
-                          <option value="Adults" class="sp_fc">Adults - Monthly (INR 999/mo.)</option>
-                          <option value="Adults" class="sp_fc">Teenagers - Annual (INR 699/mo.)</option>
-                          <option value="Adults" class="sp_fc">Teenagers - Monthly (INR 999/mo.)</option>
-                        </select>
-                       
-                      </div>
-                    </div>
-                  </div>
-  
-                  <!-- <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <button type="submit"   class="btn btn_raf_submit w100">
-                        Add to cart
-                      </button>
-                    </div>
-                  </div> -->
+
+              <div class="mtb30px mregister">
+                <div class="row mb10px">
+
+
+
                 </div>
-                <br/>
-                
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback mb0px">
 
-                  <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 p0">
-                    </div> 
-                    <div class="row mb15px">
-                  <div class="col-lg-6 col-md-6 col-sm-4 col-xs-4 p0 tright">
-                    <button id="noteId" type="button"  class="btn_forum_ask_a_gift">Add to cart
-                      
-                      <!-- <i class="fa fa-plus">New note</i> -->
-                    </button>
-                    </div>
-                  </div>
-                  </div>
-                <!-- <Add member> -->
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+                    <input type="text" id="email" [(ngModel)]="learnermail" class="sp_fc" placeholder="Friend email">
 
-                <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                  </div>
+                </div>
+                <div class="row mtb10px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+
+                    <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
+                    <select type="text" id="program" class="sp_fc" (change)="selectProgram($event.target.value)">
+                      <option value="" class="sp_fc">Choose program</option>
+                      <option value="699,Annual,Adults" class="sp_fc">Adults -
+                        Annual (INR 699/mo.)</option>
+                      <option value="999,Monthly,Adults" class="sp_fc">Adults -
+                        Monthly (INR 999/mo.)</option>
+                      <option value="699,Annual,Teenagers" class="sp_fc">
+                        Teenagers - Annual (INR 699/mo.)</option>
+                      <option value="999,Monthly,Teenagers" class="sp_fc">
+                        Teenagers - Monthly (INR 999/mo.)</option>
+                    </select>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback mb0px"
+              *ngIf="enableAddMemForm">
+
+              <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 p0">
+              </div>
+              <div class="row mb15px">
+                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-4 p0 tright">
+                  <button id="noteId" type="button" (click)="addToCartForm()" class="btn_forum_ask_a_gift">Add to cart
+
+                    <!-- <i class="fa fa-plus">New note</i> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- <Add member> -->
+
+            <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                   <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(0,'','','Adults')">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg" class="img-responsive" />
                   </button>
                 </div> -->
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v3_01">
-                </div>
-              </div>
-
-
-
-              <div class="raf_div_01">
-                <div class="row center_flex mb15px">
-                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
-                      Introduce a friend to HappierMe
-                    </h4> -->
-                  </div>
-                </div>
-
-                <div class="row center_flex">
-                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <div class="row center_flex mb15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                          hellohuman@gmail.com
-
-                        </h4>
-                      </div>
-                    </div>
-                    <div class="row mb15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                          
-                          Adults - Annual subscription
-                        </h4>
-                      </div>
-                    </div>
-                    
-
-                      <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
-                      Adults - Annual subscription
-                    </h4> -->
-                  </div>
-                  <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" class="img-responsive img_close_delete">
-
-                  </div>
-                </div>
-            
-                <!-- <div class="mtb30px mregister">
-                  <div class="row mb10px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                      <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" required [(ngModel)]="name" placeholder="Friend name">
-                      <div class="fc_img">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
-                      </div>
-                    </div>
-
-                    <small class="text danger">{{namevalidation()}}</small>
-
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                      <input type="text" id="email" (keyup)="keyemail($event.target)" required [(ngModel)]="email" class="sp_fc" placeholder="Friend email">
-                      <div class="fc_img">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
-                      </div>
-                    </div>
-                    <small class="text danger">{{emailvalidation()}}</small>
-                  </div>
-                </div> -->
-
-                <!-- <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <button type="submit" [disabled]="disabled()"  class="btn btn_raf_submit w100" (click)="submitrefer()">
-                      Submit
-                    </button>
-                  </div>
-                </div> -->
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <hr class="hr_style_v3_01">
-                  </div>
-                </div>
-
-                <div class="row ">
-                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
-                      ₹8,388.00 <span class="mtb0px fs_15px fw_700 lh_150p fc_e58d82" > (INR 699/mo.)</span>
-                    </h4>
-                  </div>
-              </div>
-            </div>
-
-
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_v3_01">
               </div>
             </div>
-              <div *ngIf="isAdultsEnable">
-                <div class="row mb10px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
-                      HappierMe Premium for Adults
-                    </h4>
-                  </div>
+
+
+
+            <div class="raf_div_01" *ngFor="let data of cartitemList">
+              <div class="row center_flex mb15px">
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+                      Introduce a friend to HappierMe
+                    </h4> -->
                 </div>
-
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      Subscribe to HappierMe Premium and unlock access to all our content to help you lead a happier
-                      life and succeed in the world - 70+ modules, videos, stories, blogs, podcasts, your online
-                      journal, a forum, and get invitations to our live events.
-                    </h4>
-                  </div>
-                </div>
-
-                <!-- adults -->
-                <!-- annual -->
-                <div class="subscription_box mt30px">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_adults.svg" class="img-responsive w100">
-                      </div>
-
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                              Annual
-                            </h4>
-                          </div>
-                        </div>
-
-                        <div class="row mb15px">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                              HappierMe Premium
-                            </h4>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                              <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
-                                {{cartList.length !== 0 ? cartList[0].CurSymbol : ''}}{{cartList.length !== 0 ?cartList[0].Annual : ''}}
-                              </h4>
-                            </div>
-
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                              <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
-                                {{cartListResult[0]?.Qty}}
-                              </h4>
-                            </div>
-
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                              <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(true, 'Annual', 'Adults')">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg" class="img-responsive" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="div_subscription_emails_01">
-                    <div class="row" *ngFor="let c of cartListResult[0]?.LearnerEmail">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                          <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                          <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Adults', 'Annual')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt20px" *ngIf="aaenableEmailbox">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
-                        <div class="prelative">
-                          <input type="text" class="sr_fc_01" [(ngModel)]="learnermail" placeholder="Friend’s email address">
-                          <div class="absolute_checkmark">
-                            <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Adults', 'Annual')">
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                Save
-                              </h4>
-                              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                            </a>
-
-                            <a class="" *ngIf="ValidateEmail()">
-                              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                Save
-                              </h4>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(false, 'Annual', 'Adults')">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" class="img-responsive img_close_delete">
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /annual -->
-
-                <!-- monthly -->
-                <div class="mt30px">
-                  <div class="row subscription_box">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_adults.svg" class="img-responsive w100">
-                        </div>
-
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                Monthly
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row mb15px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                HappierMe Premium
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                                <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
-                                  {{cartList.length !== 0 ? cartList[0].CurSymbol : ''}}{{cartList.length !== 0 ?cartList[0].Monthly : ''}}
-                                </h4>
-                              </div>
-
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                                <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
-                                  {{cartListResult[1]?.Qty}}
-                                </h4>
-                              </div>
-
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(true, 'Monthly', 'Adults')">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg" class="img-responsive" />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="div_subscription_emails_01">
-                      <div class="row" *ngFor="let c of cartListResult[1]?.LearnerEmail">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                          </div>
-
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Adults', 'Monthly')">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row mt20px" *ngIf="aenableMonthEmailbox">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
-                          <div class="prelative">
-                            <input type="text" class="sr_fc_01" [(ngModel)]="learnermail" placeholder="Friend’s email address">
-                            <div class="absolute_checkmark">
-                              <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Adults', 'Monthly')">
-                                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                  Save
-                                </h4>
-                              </a>
-  
-                              <a class="" *ngIf="ValidateEmail()">
-                                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                  Save
-                                </h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                          <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(false, 'Monthly', 'Adults')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" class="img-responsive img_close_delete">
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /monthly -->
-                <!-- /adults -->
               </div>
+
+              <div class="row center_flex">
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <div class="row center_flex mb15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        {{data['LearnerEmail']}}
+
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="row mb15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+
+                        {{data['Program']}} - {{data['Plan']}} subscription
+                      </h4>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 p0" (click)="removeFromCart(data['CartId'])">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
+                    class="img-responsive img_close_delete">
+
+                </div>
+              </div>
+
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <hr class="hr_style_v3_01">
                 </div>
               </div>
-              <div *ngIf="isTeenagerEnable">
-                <div class="row mb10px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
-                      NEWLY LAUNCHED
-                    </h4>
-                  </div>
-                </div>
 
-                <div class="row mb10px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
-                      HappierMe Premium for Teenagers
-                    </h4>
-                  </div>
+              <div class="row ">
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                    {{data['Symbol']}}{{totalCartValue}} <span class="mtb0px fs_15px fw_700 lh_150p fc_e58d82">
+                      ({{data['Symbol']}} {{data['Amt']}}/{{data['Plan']}}.)</span>
+                  </h4>
                 </div>
+              </div>
+            </div>
 
+
+            <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div> -->
+            <!-- <div *ngIf="isAdultsEnable"> -->
+            <!-- <div class="row mb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                    HappierMe Premium for Adults
+                  </h4>
+                </div>
+              </div> -->
+
+            <!-- <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    Subscribe to HappierMe Premium and unlock access to all our content to help you lead a happier
+                    life and succeed in the world - 70+ modules, videos, stories, blogs, podcasts, your online
+                    journal, a forum, and get invitations to our live events.
+                  </h4>
+                </div>
+              </div> -->
+
+            <!-- adults -->
+            <!-- annual -->
+            <!-- <div class="subscription_box mt30px">
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      Subscribe to HappierMe Premium for Teenagers. It's a completely new edition especially designed to
-                      help teenagers meet the challenges of growing up and develop the skills to succeed in life. Unlock
-                      access to 70+ modules, videos, stories, blogs, podcasts, an online journal and an online forum where they can contact a
-                      coach.
-                    </h4>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_adults.svg"
+                        class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                            Annual
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row mb15px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                            HappierMe Premium
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                              {{cartList.length !== 0 ? cartList[0].CurSymbol : ''}}{{cartList.length !== 0
+                              ?cartList[0].Annual : ''}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                            <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
+                              {{cartListResult[0]?.Qty}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <button type="button" class="btn subscription_btn_mp"
+                              (click)="enableEmailboxEvent(true, 'Annual', 'Adults')">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg"
+                                class="img-responsive" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- teenagers -->
-                <!-- annual -->
-                <div class="subscription_box mt30px">
+                <div class="div_subscription_emails_01">
+                  <div class="row" *ngFor="let c of cartListResult[0]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp"
+                          (click)="removeFromCart(c.CartId, 'Adults', 'Annual')">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg"
+                            class="img-responsive">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt20px" *ngIf="aaenableEmailbox">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
+                      <div class="prelative">
+                        <input type="text" class="sr_fc_01" [(ngModel)]="learnermail"
+                          placeholder="Friend’s email address">
+                        <div class="absolute_checkmark">
+                          <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Adults', 'Annual')">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              Save
+                            </h4> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- </a> -->
+
+            <!-- <a class="" *ngIf="ValidateEmail()"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              Save
+                            </h4>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <button type="button" class="btn subscription_btn_mp"
+                        (click)="enableEmailboxEvent(false, 'Annual', 'Adults')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
+                          class="img-responsive img_close_delete">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            <!-- /annual -->
+
+            <!-- monthly -->
+            <!-- <div class="mt30px">
+              <div class="row subscription_box">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_adults.svg"
+                        class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                            Monthly
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row mb15px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                            HappierMe Premium
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                              {{cartList.length !== 0 ? cartList[0].CurSymbol : ''}}{{cartList.length !== 0
+                              ?cartList[0].Monthly : ''}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                            <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
+                              {{cartListResult[1]?.Qty}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <button type="button" class="btn subscription_btn_mp"
+                              (click)="enableEmailboxEvent(true, 'Monthly', 'Adults')">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg"
+                                class="img-responsive" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="div_subscription_emails_01">
+                  <div class="row" *ngFor="let c of cartListResult[1]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp"
+                          (click)="removeFromCart(c.CartId, 'Adults', 'Monthly')">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg"
+                            class="img-responsive">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt20px" *ngIf="aenableMonthEmailbox">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
+                      <div class="prelative">
+                        <input type="text" class="sr_fc_01" [(ngModel)]="learnermail"
+                          placeholder="Friend’s email address">
+                        <div class="absolute_checkmark">
+                          <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Adults', 'Monthly')"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              Save
+                            </h4>
+                          </a> -->
+
+            <!-- <a class="" *ngIf="ValidateEmail()"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              Save
+                            </h4>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <button type="button" class="btn subscription_btn_mp"
+                        (click)="enableEmailboxEvent(false, 'Monthly', 'Adults')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
+                          class="img-responsive img_close_delete">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- /monthly -->
+            <!-- /adults -->
+            <!-- </div> -->
+
+            <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div> -->
+            <!-- <div *ngIf="isTeenagerEnable"> -->
+            <!-- <div class="row mb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                    NEWLY LAUNCHED
+                  </h4>
+                </div>
+              </div> -->
+
+            <!-- <div class="row mb10px"> -->
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                    HappierMe Premium for Teenagers
+                  </h4>
+                </div>
+              </div> -->
+
+            <!-- <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    Subscribe to HappierMe Premium for Teenagers. It's a completely new edition especially designed to
+                    help teenagers meet the challenges of growing up and develop the skills to succeed in life. Unlock
+                    access to 70+ modules, videos, stories, blogs, podcasts, an online journal and an online forum where
+                    they can contact a
+                    coach.
+                  </h4>
+                </div>
+              </div> -->
+
+            <!-- teenagers -->
+            <!-- annual -->
+            <!-- <div class="subscription_box mt30px">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_teenagers.svg"
+                        class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                            Annual
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row mb15px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                            HappierMe Premium
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                              {{cartList.length !== 0 ? cartList[1].CurSymbol : ''}}{{cartList.length !== 0
+                              ?cartList[1].Annual : ''}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                            <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
+                              {{cartListResult[2]?.Qty}}
+                            </h4>
+                          </div>
+
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                            <button type="button" class="btn subscription_btn_mp"
+                              (click)="enableEmailboxEvent(true, 'Annual', 'Teenagers')">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg"
+                                class="img-responsive" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="div_subscription_emails_01">
+                  <div class="row" *ngFor="let c of cartListResult[2]?.LearnerEmail">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn subscription_btn_mp"
+                          (click)="removeFromCart(c.CartId, 'Teenagers', 'Annual')">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg"
+                            class="img-responsive">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt20px" *ngIf="teenageraenableEmailbox">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
+                      <div class="prelative">
+                        <input type="text" class="sr_fc_01" [(ngModel)]="learnermail"
+                          placeholder="Friend’s email address">
+                        <div class="absolute_checkmark">
+                          <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Teenagers', 'Annual')"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive" /> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              Save
+                            </h4>
+                          </a>
+
+                          <a class="" *ngIf="ValidateEmail()"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              Save
+                            </h4>
+                          </a>
+                        </div>
+                      </div>
+                    </div> -->
+
+            <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <button type="button" class="btn subscription_btn_mp"
+                        (click)="enableEmailboxEvent(false, 'Annual', 'Teenagers')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
+                          class="img-responsive img_close_delete">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            <!-- /annual -->
+
+            <!-- monthly -->
+            <!-- <div class="mt30px">
+                <div class="row subscription_box">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_teenagers.svg" class="img-responsive w100">
+                        <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_teenagers.svg"
+                          class="img-responsive w100">
                       </div>
 
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                              Annual
+                              Monthly
                             </h4>
                           </div>
                         </div>
@@ -571,19 +678,23 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                               <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
-                                {{cartList.length !== 0 ? cartList[1].CurSymbol : ''}}{{cartList.length !== 0 ?cartList[1].Annual : ''}}
+                                {{cartList.length !== 0 ? cartList[1].CurSymbol : ''}}{{cartList.length !== 0
+                                ?cartList[1].Monthly : ''}}
                               </h4>
                             </div>
 
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
                               <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
-                                {{cartListResult[2]?.Qty}}
+                                {{cartListResult[3]?.Qty}}
                               </h4>
                             </div>
 
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                              <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(true, 'Annual', 'Teenagers')">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg" class="img-responsive" />
+                              <button type="button" class="btn subscription_btn_mp"
+                                (click)="enableEmailboxEvent(true, 'Monthly', 'Teenagers')">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg"
+                                  class="img-responsive" />
                               </button>
                             </div>
                           </div>
@@ -593,37 +704,41 @@
                   </div>
 
                   <div class="div_subscription_emails_01">
-                    <div class="row" *ngFor="let c of cartListResult[2]?.LearnerEmail">
+                    <div class="row" *ngFor="let c of cartListResult[3]?.LearnerEmail">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
                         </div>
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                          <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Teenagers', 'Annual')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
+                          <button type="button" class="btn subscription_btn_mp"
+                            (click)="removeFromCart(c.CartId, 'Teenagers', 'Monthly')">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg"
+                              class="img-responsive">
                           </button>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="row mt20px" *ngIf="teenageraenableEmailbox">
+                  <div class="row mt20px" *ngIf="teenagerenableMonthEmailbox">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
                         <div class="prelative">
-                          <input type="text" class="sr_fc_01" [(ngModel)]="learnermail" placeholder="Friend’s email address">
+                          <input type="text" class="sr_fc_01" [(ngModel)]="learnermail"
+                            placeholder="Friend’s email address">
                           <div class="absolute_checkmark">
-                            <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Teenagers', 'Annual')">
-                              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive" /> -->
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                            <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Teenagers', 'Monthly')"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                                 Save
                               </h4>
                             </a>
 
-                            <a class="" *ngIf="ValidateEmail()">
-                              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                            <a class="" *ngIf="ValidateEmail()"> -->
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
+            <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                                 Save
                               </h4>
                             </a>
@@ -632,136 +747,40 @@
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(false, 'Annual', 'Teenagers')">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" class="img-responsive img_close_delete">
+                        <button type="button" class="btn subscription_btn_mp"
+                          (click)="enableEmailboxEvent(false, 'Monthly', 'Teenagers')">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
+                            class="img-responsive img_close_delete">
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- /annual -->
-
-                <!-- monthly -->
-                <div class="mt30px">
-                  <div class="row subscription_box">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_teenagers.svg" class="img-responsive w100">
-                        </div>
-
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                Monthly
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row mb15px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                HappierMe Premium
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                                <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
-                                  {{cartList.length !== 0 ? cartList[1].CurSymbol : ''}}{{cartList.length !== 0 ?cartList[1].Monthly : ''}}
-                                </h4>
-                              </div>
-
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-                                <h4 class="mtb0px fs_12px fw_600 lh_140p fc_e58d82">
-                                  {{cartListResult[3]?.Qty}}
-                                </h4>
-                              </div>
-
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(true, 'Monthly', 'Teenagers')">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_plus.svg" class="img-responsive" />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="div_subscription_emails_01">
-                      <div class="row" *ngFor="let c of cartListResult[3]?.LearnerEmail">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <input type="text" disabled="true" id="name" class="sr_fc_01" [placeholder]="c?.LearnerEmail">
-                          </div>
-
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <button type="button" class="btn subscription_btn_mp" (click)="removeFromCart(c.CartId, 'Teenagers', 'Monthly')">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_minus.svg" class="img-responsive">
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row mt20px" *ngIf="teenagerenableMonthEmailbox">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 div-box">
-                          <div class="prelative">
-                            <input type="text" class="sr_fc_01" [(ngModel)]="learnermail" placeholder="Friend’s email address">
-                            <div class="absolute_checkmark">
-                              <a class="" *ngIf="!ValidateEmail()" (click)="addToCart('Teenagers', 'Monthly')">
-                                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                  Save
-                                </h4>
-                              </a>
-  
-                              <a class="" *ngIf="ValidateEmail()">
-                                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/checkmark_peach.svg" alt="" class="img-responsive"> -->
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                                  Save
-                                </h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                          <button type="button" class="btn subscription_btn_mp" (click)="enableEmailboxEvent(false, 'Monthly', 'Teenagers')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" class="img-responsive img_close_delete">
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /monthly -->
-                <!-- teenagers -->
-              </div>
-              <div class="pagebreak"></div>
-            </div>
+              </div> -->
+            <!-- /monthly -->
+            <!-- teenagers -->
+            <!-- </div>
+            <div class="pagebreak"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- /page content -->
+</div> -->
+            <!-- /page content -->
 
-  <!-- footer  -->
-  <div class="mfooter">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext col_cw" [ngClass]="isAdults ? '' : 'we_ft_cl'">
-        <a>
-          <button [disabled]="cartitemList.length === 0" (click)="proceedcart()" type="button" class="btn btn_tfas">
-            View cart
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <!-- /footer -->
+            <!-- footer  -->
+            <div class="mfooter">
+              <div class="row center_flex">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext col_cw"
+                  [ngClass]="isAdults ? '' : 'we_ft_cl'">
+                  <a>
+                    <button [disabled]="cartitemList.length === 0" (click)="proceedcart()" type="button"
+                      class="btn btn_tfas">
+                      View cart
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- /footer -->
