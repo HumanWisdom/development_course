@@ -111,135 +111,132 @@ export class ViewcartPage implements OnInit {
 
         this.cartList = res
 
-        let obj = [
-          {
-            "CartId": 698,
-            "RateId": "2",
-            "UserId": "107",
-            "Program": "Adults",
-            "Plan": "Annual",
-            "Symbol": "₹",
-            "Amt": "3600",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail": [],
-            "LearnerMsg": ""
-          },
-          {
-            "CartId": 700,
-            "RateId": "2",
-            "UserId": "107",
-            "Program": "Adults",
-            "Plan": "Monthly",
-            "Symbol": "₹",
-            "Amt": "500",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail":[],
-            "LearnerMsg": ""
-          },
-          {
-            "CartId": 709,
-            "RateId": "6",
-            "UserId": "107",
-            "Program": "Teenagers",
-            "Plan": "Annual",
-            "Symbol": "₹",
-            "Amt": "3600",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail": [],
-            "LearnerMsg": ""
-          },
-          {
-            "CartId": 710,
-            "RateId": "6",
-            "UserId": "107",
-            "Program": "Teenagers",
-            "Plan": "Monthly",
-            "Symbol": "₹",
-            "Amt": "500",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail": [],
-            "LearnerMsg": ""
-          }
-        ]
+        // let obj = [
+        //   {
+        //     "CartId": 698,
+        //     "RateId": "2",
+        //     "UserId": "107",
+        //     "Program": "Adults",
+        //     "Plan": "Annual",
+        //     "Symbol": "₹",
+        //     "Amt": "3600",
+        //     "Qty": 0,
+        //     "MySelf": "False",
+        //     "LearnerEmail": [],
+        //     "LearnerMsg": ""
+        //   },
+        //   {
+        //     "CartId": 700,
+        //     "RateId": "2",
+        //     "UserId": "107",
+        //     "Program": "Adults",
+        //     "Plan": "Monthly",
+        //     "Symbol": "₹",
+        //     "Amt": "500",
+        //     "Qty": 0,
+        //     "MySelf": "False",
+        //     "LearnerEmail": [],
+        //     "LearnerMsg": ""
+        //   },
+        //   {
+        //     "CartId": 709,
+        //     "RateId": "6",
+        //     "UserId": "107",
+        //     "Program": "Teenagers",
+        //     "Plan": "Annual",
+        //     "Symbol": "₹",
+        //     "Amt": "3600",
+        //     "Qty": 0,
+        //     "MySelf": "False",
+        //     "LearnerEmail": [],
+        //     "LearnerMsg": ""
+        //   },
+        //   {
+        //     "CartId": 710,
+        //     "RateId": "6",
+        //     "UserId": "107",
+        //     "Program": "Teenagers",
+        //     "Plan": "Monthly",
+        //     "Symbol": "₹",
+        //     "Amt": "500",
+        //     "Qty": 0,
+        //     "MySelf": "False",
+        //     "LearnerEmail": [],
+        //     "LearnerMsg": ""
+        //   }
+        // ]
 
-        res.forEach((d) =>{
-          if(d['Program'] === 'Adults') {
-            if(d['Plan'] === 'Annual') {
-              obj[0]['RateId'] = d['RateId']
-              obj[0]['UserId'] = d['UserId']
-              obj[0]['Plan'] = d['Plan']
-              obj[0]['Symbol'] = d['Symbol']
-              obj[0]['Amt'] = d['Amt']
-              obj[0]['Program'] = d['Program']
-              obj[0]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[0]['Qty'] += 1
-            }else {
-              obj[1]['RateId'] = d['RateId']
-              obj[1]['UserId'] = d['UserId']
-              obj[1]['Plan'] = d['Plan']
-              obj[1]['Symbol'] = d['Symbol']
-              obj[1]['Amt'] = d['Amt']
-              obj[1]['Program'] = d['Program']
-              obj[1]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[1]['Qty'] += 1
-            }
-          } else if(d['Program'] === 'Teenagers') {
-            if(d['Plan'] === 'Annual'){
-              obj[2]['RateId'] = d['RateId']
-              obj[2]['UserId'] = d['UserId']
-              obj[2]['Plan'] = d['Plan']
-              obj[2]['Symbol'] = d['Symbol']
-              obj[2]['Amt'] = d['Amt']
-              obj[2]['Program'] = d['Program']
-              obj[2]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[2]['Qty'] += 1
-            }else {
-              obj[3]['RateId'] = d['RateId']
-              obj[3]['UserId'] = d['UserId']
-              obj[3]['Plan'] = d['Plan']
-              obj[3]['Symbol'] = d['Symbol']
-              obj[3]['Amt'] = d['Amt']
-              obj[3]['Program'] = d['Program']
-              obj[3]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[3]['Qty'] += 1
-            }
-          }
-        })
+        // res.forEach((d) => {
+        //   if (d['Program'] === 'Adults') {
+        //     if (d['Plan'] === 'Annual') {
+        //       obj[0]['RateId'] = d['RateId']
+        //       obj[0]['UserId'] = d['UserId']
+        //       obj[0]['Plan'] = d['Plan']
+        //       obj[0]['Symbol'] = d['Symbol']
+        //       obj[0]['Amt'] = d['Amt']
+        //       obj[0]['Program'] = d['Program']
+        //       obj[0]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
+        //       obj[0]['Qty'] += 1
+        //     } else {
+        //       obj[1]['RateId'] = d['RateId']
+        //       obj[1]['UserId'] = d['UserId']
+        //       obj[1]['Plan'] = d['Plan']
+        //       obj[1]['Symbol'] = d['Symbol']
+        //       obj[1]['Amt'] = d['Amt']
+        //       obj[1]['Program'] = d['Program']
+        //       obj[1]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
+        //       obj[1]['Qty'] += 1
+        //     }
+        //   } else if (d['Program'] === 'Teenagers') {
+        //     if (d['Plan'] === 'Annual') {
+        //       obj[2]['RateId'] = d['RateId']
+        //       obj[2]['UserId'] = d['UserId']
+        //       obj[2]['Plan'] = d['Plan']
+        //       obj[2]['Symbol'] = d['Symbol']
+        //       obj[2]['Amt'] = d['Amt']
+        //       obj[2]['Program'] = d['Program']
+        //       obj[2]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
+        //       obj[2]['Qty'] += 1
+        //     } else {
+        //       obj[3]['RateId'] = d['RateId']
+        //       obj[3]['UserId'] = d['UserId']
+        //       obj[3]['Plan'] = d['Plan']
+        //       obj[3]['Symbol'] = d['Symbol']
+        //       obj[3]['Amt'] = d['Amt']
+        //       obj[3]['Program'] = d['Program']
+        //       obj[3]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
+        //       obj[3]['Qty'] += 1
+        //     }
+        //   }
+        // })
 
-        this.cartListResult = obj
+        // this.cartListResult = obj
 
-        if (this.cartList.length > 0) {
-          this.symbol = this.cartList[0].Symbol;
-          localStorage.setItem('Currsymbol', this.symbol);
-          this.isMonthlySelected = this.cartList.filter(x => x.Plan == 'Annual').length == 0;
-        }
+        // if (this.cartList.length > 0) {
+        //   this.symbol = this.cartList[0].Symbol;
+        //   localStorage.setItem('Currsymbol', this.symbol);
+        //   this.isMonthlySelected = this.cartList.filter(x => x.Plan == 'Annual').length == 0;
+        // }
 
-        for (var i = 0; i < this.cartList.length; i++) {
-          this.cartList[i].Qty = parseFloat(this.cartList[i].Qty)
-          this.cartList[i].Amt = parseFloat(this.cartList[i].Amt)
-          this.cartList[i].RateId = parseFloat(this.cartList[i].RateId)
-          this.cartList[i].price = parseFloat(this.cartList[i].Qty) * parseFloat(this.cartList[i].Amt)
+        // for (var i = 0; i < this.cartList.length; i++) {
+        //   this.cartList[i].Qty = parseFloat(this.cartList[i].Qty)
+        //   this.cartList[i].Amt = parseFloat(this.cartList[i].Amt)
+        //   this.cartList[i].RateId = parseFloat(this.cartList[i].RateId)
+        //   this.cartList[i].price = parseFloat(this.cartList[i].Qty) * parseFloat(this.cartList[i].Amt)
 
-          this.cartList[i].ProgID = 9
-        }
+        //   this.cartList[i].ProgID = 9
+        // }
 
-        if (res && res.length !== 0) {
-          if (res.some((d) => d['MySelf'] === "True")) {
-            this.enableMySelf = false
-          } else {
-            if (localStorage.getItem('giftwisdom') === 'F') {
-              this.myself = 1
-              this.enableMySelf = true
-            }
-          }
-        }
-
-
-
+        // if (res && res.length !== 0) {
+        //   if (res.some((d) => d['MySelf'] === "True")) {
+        //     this.enableMySelf = false
+        //   } else {
+        //     if (localStorage.getItem('giftwisdom') === 'F') {
+        //       this.myself = 1
+        //       this.enableMySelf = true
+        //     }
+        //   }
+        // }
 
       },
         error => {
@@ -349,45 +346,45 @@ export class ViewcartPage implements OnInit {
 
   }
 
-  removeFromCart(cartId, program, plan) {
+  removeFromCart(cartId) {
     console.log(cartId)
-    for (var i = 0; i < this.cartList.length; i++) {
+    this.service.deleteItem({ "Id": parseFloat(cartId) })
+      .subscribe(res => {
+        this.totalPrice();
+        if (this.cartList.length === 0) this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
+      })
+    // for (var i = 0; i < this.cartList.length; i++) {
 
-      if (this.cartList[i].CartId == cartId) {
-        for (var j = 0; j < this.cartListResult.length; j++) {
-          if(this.cartListResult[j]['Program'] === program && this.cartListResult[j]['Plan'] === plan) {
-            for (var m = 0; m < this.cartListResult[j]['LearnerEmail'].length; m++) {
-              if(this.cartListResult[j]['LearnerEmail'][m].CartId === cartId) {
-                this.cartListResult[j]['LearnerEmail'].splice(m, 1)
-                this.cartListResult[j]['Qty'] = this.cartListResult[j]['LearnerEmail'].length
-              }
-            }
-          }
-        }
-        this.cartList[i].Qty == 1
-        this.cartList.splice(i, 1)
-        this.isMonthlySelected = this.cartList.filter(x => x.Plan == 'Annual').length == 0;
-        //call service to delete
-        this.service.deleteItem({ "Id": parseFloat(cartId) })
-          .subscribe(res => {
-            this.totalPrice();
-            if (this.cartList.length === 0) this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
-          })
-      }
-    }
+    //   if (this.cartList[i].CartId == cartId) {
+    //     for (var j = 0; j < this.cartListResult.length; j++) {
+    //       if (this.cartListResult[j]['Program'] === program && this.cartListResult[j]['Plan'] === plan) {
+    //         for (var m = 0; m < this.cartListResult[j]['LearnerEmail'].length; m++) {
+    //           if (this.cartListResult[j]['LearnerEmail'][m].CartId === cartId) {
+    //             this.cartListResult[j]['LearnerEmail'].splice(m, 1)
+    //             this.cartListResult[j]['Qty'] = this.cartListResult[j]['LearnerEmail'].length
+    //           }
+    //         }
+    //       }
+    //     }
+    //     this.cartList[i].Qty == 1
+    //     this.cartList.splice(i, 1)
+    //     this.isMonthlySelected = this.cartList.filter(x => x.Plan == 'Annual').length == 0;
+
+    //   }
+    // }
   }
 
   totalPrice() {
     this.totalCartValue = 0;
 
     for (var i = 0; i < this.cartList.length; i++) {
-      this.totalCartValue += this.cartList[i].Amt;
+      this.totalCartValue += Number(this.cartList[i].Amt);
     }
 
     this.totalCartAmount = this.totalCartValue;
-    if(this.couponCodeApplied) {
+    if (this.couponCodeApplied) {
       this.totalCartValueDiscount = this.totalCartValue - this.discount
-    }else {
+    } else {
       this.totalCartValueDiscount = this.totalCartValue
     }
     localStorage.setItem('totalAmount', this.totalCartValue)
@@ -422,9 +419,9 @@ export class ViewcartPage implements OnInit {
 
   couponCheck(data) {
     let result = this.cartListResult.some((d) => d?.LearnerEmail?.length !== 0 && d?.Plan === 'Monthly');
-    if(result && data[0]['IsAnnual'] === '1') {
+    if (result && data[0]['IsAnnual'] === '1') {
       return false;
-    }else {
+    } else {
       return true;
     }
   }
@@ -465,14 +462,14 @@ export class ViewcartPage implements OnInit {
       let activecart = this.cartListResult.filter((d) => d['Program'] === program)
       if (this.cartList[0].Plan == "Monthly") {
         this.cartList[0].planId = 1
-      }else {
+      } else {
         this.cartList[0].planId = 2
       }
 
-      if(plan ==='Annual') {
+      if (plan === 'Annual') {
         this.cartList[0].planId = 2
         activecart[0].planId = 2
-      }else {
+      } else {
         activecart[0].planId = 1
         this.cartList[0].planId = 1
       }
@@ -500,10 +497,10 @@ export class ViewcartPage implements OnInit {
             this.learnermail = '',
             this.learnermsg = '',
             this.enableemail = false
-            this.aaenableEmailbox = false;
-            this.teenageraenableEmailbox = false;
-            this.teenagerenableMonthEmailbox = false;
-            this.aenableMonthEmailbox = false
+          this.aaenableEmailbox = false;
+          this.teenageraenableEmailbox = false;
+          this.teenagerenableMonthEmailbox = false;
+          this.aenableMonthEmailbox = false
           // this.cd.detectChanges()
           this.forumservice.toastrService.success('', 'Updated Successfully !');
           this.viewCart()
@@ -584,18 +581,18 @@ export class ViewcartPage implements OnInit {
 
   enableEmailboxEvent(enable, program, plan) {
     this.learnermail = '';
-    if(program === 'Adults' && plan ==='Annual') {
+    if (program === 'Adults' && plan === 'Annual') {
       this.aaenableEmailbox = enable;
-    }else if(program === 'Adults' && plan ==='Monthly') {
+    } else if (program === 'Adults' && plan === 'Monthly') {
       this.aenableMonthEmailbox = enable;
-    }else if(program === 'Teenagers' && plan ==='Annual') {
+    } else if (program === 'Teenagers' && plan === 'Annual') {
       this.teenageraenableEmailbox = enable;
-    }else if(program === 'Teenagers' && plan ==='Monthly') {
+    } else if (program === 'Teenagers' && plan === 'Monthly') {
       this.teenagerenableMonthEmailbox = enable;
     }
   }
 
-  back(){
+  back() {
     this.location.back();
   }
 
