@@ -39,6 +39,7 @@ export class SearchPopularItemsPage implements OnInit {
   enableStoryViewMore: boolean = false;
   enableModuleViewMore: boolean = false;
   enablePodcastViewMore: boolean = false;
+  enableAudioMedViewMore: boolean = false;
 
 
   searchDataDup: any;
@@ -78,6 +79,7 @@ export class SearchPopularItemsPage implements OnInit {
       WisdomShortsRes: [],
       EventsRes: [],
       WisdomStoriesRes: [],
+      AudioMeditationRes:[],
       FeelBetterNowRes: null
     } as SearchDataModel;
   }
@@ -174,14 +176,15 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   getLearningRecords() {
-    if (this.searchData) {
-      return this.searchData.ModuleRes.length +
-        this.searchData.SessionRes.length +
-        this.searchData.PodCastRes.length +
-        this.searchData.WisdomShortsRes.length +
-        this.searchData.EventsRes.length +
-        this.searchData.WisdomStoriesRes.length +
-        this.searchData.BlogRes.length;
+    if (this.searchDataDup) {
+      return this.searchDataDup.ModuleRes.length +
+        this.searchDataDup.SessionRes.length +
+        this.searchDataDup.PodCastRes.length +
+        this.searchDataDup.WisdomShortsRes.length +
+        this.searchDataDup.EventsRes.length +
+        this.searchDataDup.WisdomStoriesRes.length +
+        this.searchDataDup.AudioMeditationRes.length +
+        this.searchDataDup.BlogRes.length;
     }
     return 0;
 
@@ -209,6 +212,13 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData = res;
         }
 
+        if (res.AudioMeditationRes && res.AudioMeditationRes.length > 2) {
+          res.AudioMeditationRes = res.AudioMeditationRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
         if (res.WisdomShortsRes && res.WisdomShortsRes.length > 2) {
           res.WisdomShortsRes = res.WisdomShortsRes.filter((d, i) => (i === 0 || i === 1));
           this.searchData = res;
@@ -226,6 +236,13 @@ export class SearchPopularItemsPage implements OnInit {
 
         if (res.WisdomStoriesRes && res.WisdomStoriesRes.length > 2) {
           res.WisdomStoriesRes = res.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.AudioMeditationRes && res.AudioMeditationRes.length > 2) {
+          res.AudioMeditationRes = res.AudioMeditationRes.filter((d, i) => (i === 0 || i === 1));
           this.searchData = res;
         } else {
           this.searchData = res;
@@ -252,13 +269,14 @@ export class SearchPopularItemsPage implements OnInit {
     this.getForumSearchData();
   }
   getTotalRecords() {
-    return this.searchData.ModuleRes.length +
-      this.searchData.SessionRes.length +
-      this.searchData.PodCastRes.length +
-      this.searchData.WisdomShortsRes.length +
-      this.searchData.EventsRes.length +
-      this.searchData.WisdomStoriesRes.length +
-      this.searchData.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
+    return this.searchDataDup.ModuleRes.length +
+      this.searchDataDup.SessionRes.length +
+      this.searchDataDup.PodCastRes.length +
+      this.searchDataDup.AudioMeditationRes.length +
+      this.searchDataDup.WisdomShortsRes.length +
+      this.searchDataDup.EventsRes.length +
+      this.searchDataDup.WisdomStoriesRes.length +
+      this.searchDataDup.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
 
   }
   pageChangeEvent(tabName) {
@@ -359,9 +377,39 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enablePodcastViewMore = false;
       }
+    }else if(section === 'audiomed') {
+      if (type === 'more') {
+        if (this.searchDataDup.AudioMeditationRes && this.searchDataDup.AudioMeditationRes.length > 2) {
+          this.searchData.AudioMeditationRes = this.searchDataDup.AudioMeditationRes;
+        }
+        this.enableAudioMedViewMore = true;
+      }else {
+        if (this.searchDataDup.AudioMeditationRes && this.searchDataDup.AudioMeditationRes.length > 2) {
+          this.searchData.AudioMeditationRes = this.searchDataDup.AudioMeditationRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableAudioMedViewMore = false;
+      }
     }
 
 
+  }
+
+  audioevent(data) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if (sub == 0 && data['RowID'] >= 4) {
+      this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
+    } else {
+      let url = data['AudioUrl'].replaceAll(':', '_');
+       url = encodeURIComponent(url.replaceAll('/', '~'));
+      let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
+      const prgType=SharedService.ProgramId;
+      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
+      if(prgType == 9){
+        this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      }else{
+        this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      }
+    }
   }
 
   like(item, index) {
