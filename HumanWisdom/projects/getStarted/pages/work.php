@@ -456,6 +456,9 @@
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
                               Julie Goodfellow, UK
                             </h5>
+                            <p class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Headteacher. UK.
+                      </p>
                           </div>
                         </div>
                       </div>
@@ -480,8 +483,11 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
-                              Tinamarie Rodriguez, USA
+                              Tinamarie Rodriguez, 
                             </h5>
+                            <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Wisdom coach.  USA.
+                      </p>
                           </div>
                         </div>
                       </div>
@@ -506,8 +512,11 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
-                              Jondi Whitis, Atlanta, USA
+                              Jondi Whitis, Atlanta, 
                             </h5>
+                            <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        EFT trainer and Coach, USA.
+                      </p>
                           </div>
                         </div>
                       </div>
@@ -532,8 +541,11 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
-                              Garry Prigg, Australia
+                              Garry Prigg, 
                             </h5>
+                            <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        CEO,  Australia.
+                      </p>
                           </div>
                         </div>
                       </div>
@@ -558,7 +570,10 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
-                              Suzanne Oades, UK
+                              Suzanne Oades, 
+                            </h5>
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic">
+                            Psychotherapist, UK
                             </h5>
                           </div>
                         </div>
@@ -569,7 +584,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_gopalan_nair.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_gopalan_nair.webp" class="img-responsive width_unseti" alt="Quotation"> 
                           </div>
                         </div>
 
@@ -584,7 +599,10 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                              Gopalan Nair, Singapore
+                              Gopalan Nair, 
+                            </h5>
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                            Life coach, Singapore
                             </h5>
                           </div>
                         </div>
@@ -595,7 +613,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_lynne_staley.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_lynne_staley.webp" class="img-responsive width_unseti" alt="Quotation"> 
                           </div>
                         </div>
 
@@ -610,7 +628,10 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff"style="font-style:italic";>
-                              Lynne Staley, USA
+                              Lynne Staley, 
+                            </h5>
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff"style="font-style:italic";>
+                            life and loss coach, USA
                             </h5>
                           </div>
                         </div>
@@ -636,7 +657,10 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
-                              Carolyn King, Melbourne
+                              Carolyn King, 
+                            </h5>
+                            <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                            Kinesiologist, Australia
                             </h5>
                           </div>
                         </div>
