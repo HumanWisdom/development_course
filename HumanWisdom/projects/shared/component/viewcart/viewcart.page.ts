@@ -109,7 +109,8 @@ export class ViewcartPage implements OnInit {
     this.service.viewCart({ "Id": this.userId })
       .subscribe(res => {
 
-        this.cartList = res
+        this.cartList = res;
+        this.symbol = this.cartList[0].Symbol;
 
         // let obj = [
         //   {
@@ -238,11 +239,13 @@ export class ViewcartPage implements OnInit {
         //   }
         // }
 
+        this.totalPrice()
+
       },
         error => {
           console.log(error)
         },
-        () => this.totalPrice())
+        () => null)
 
   }
 
