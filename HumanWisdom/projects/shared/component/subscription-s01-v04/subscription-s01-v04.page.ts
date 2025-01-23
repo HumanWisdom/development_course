@@ -581,7 +581,7 @@ export class SubscriptionS01V04Page implements OnInit {
   }
 
   addToCartForm() {
-    if (!this.ValidateEmail()) {
+    if (!this.ValidateEmail() && this.selectedProgram) {
       this.logeventservice.logEvent('click_done');
       this.loggedUser()
       let pid = this.cartList.filter((d) => d['Program'] === this.selectedProgram);
