@@ -21947,6 +21947,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   background: #120F40;
   border-radius: 16px;
   padding: 20px;
+  margin: 8px;
 }
 
 @media (min-width: 1024px)
@@ -34084,13 +34085,13 @@ body *
   justify-content: center;
 }
 .btn_forum_ask_a_gift {
-  height: 40px;
+  height: 43px;
   width: 115px;
   border-radius: 80px;
   background: #FFF;
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 22px;
   color: #E58D82;
@@ -35851,6 +35852,12 @@ li ol > li:before {
 {
   width: 30px;
   height: 30px;
+}
+.img_close_delete1
+{
+  width: 30px;
+  height: 30px;
+  margin-top: -20px;
 }
 
 .div_subscription_emails_01 .row 
