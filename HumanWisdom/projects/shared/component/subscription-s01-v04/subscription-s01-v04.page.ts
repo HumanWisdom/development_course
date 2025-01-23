@@ -220,6 +220,7 @@ export class SubscriptionS01V04Page implements OnInit {
         this.totalCount = 0
         this.cartitemList = res;
         this.totalPrice();
+
       },
         error => {
           console.log(error)
@@ -448,23 +449,111 @@ export class SubscriptionS01V04Page implements OnInit {
   getPricing() {
     this.service.getPricing(this.countryCode).subscribe(res => {
 
-      this.cartList = res.filter((d) => d['ActiveProgram'] === "1");
-      this.cartList.forEach((element, i) => {
-        element.Monthly = parseInt(element.Monthly)
-        element.Annual = parseInt(element.Annual)
-        element.selectedSubscription = "null"
-        element.price = 0
-        element.planId = 0
-        element.cartId = 0
-        element.later = 0
-        if (element['Program'] === 'Adults' && element['ActiveProgram'] === '1') {
-          this.isAdultsEnable = true;
-        }
-        if (element['Program'] === 'Teenagers' && element['ActiveProgram'] === '1') {
-          this.isTeenagerEnable = true;
-        }
+      res = res.filter((d) => d['ActiveProgram'] === "1");
 
+      let obj = [
+        {
+          "CartId": 698,
+          "RateId": "2",
+          "UserId": "107",
+          "Program": "Adults",
+          "Plan": "Annual",
+          "Symbol": "₹",
+          "Amt": "3600",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": ""
+        },
+        {
+          "CartId": 700,
+          "RateId": "2",
+          "UserId": "107",
+          "Program": "Adults",
+          "Plan": "Monthly",
+          "Symbol": "₹",
+          "Amt": "500",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": ""
+        },
+        {
+          "CartId": 709,
+          "RateId": "6",
+          "UserId": "107",
+          "Program": "Teenagers",
+          "Plan": "Annual",
+          "Symbol": "₹",
+          "Amt": "3600",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": ""
+        },
+        {
+          "CartId": 710,
+          "RateId": "6",
+          "UserId": "107",
+          "Program": "Teenagers",
+          "Plan": "Monthly",
+          "Symbol": "₹",
+          "Amt": "500",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": ""
+        }
+      ]
+
+      res.forEach((d) => {
+        if (d['Program'] === 'Adults') {
+          // if (d['Plan'] === 'Annual') {
+            obj[0]['RateId'] = d['RateID']
+            obj[0]['Symbol'] = d['CurSymbol']
+            obj[0]['Amt'] = d['Annual']
+            obj[0]['Program'] = d['Program']
+            // obj[0]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
+            // obj[0]['Qty'] += 1
+          // } else {
+            obj[1]['RateId'] = d['RateID']
+            obj[1]['Symbol'] = d['CurSymbol']
+            obj[1]['Amt'] = d['Monthly']
+            obj[1]['Program'] = d['Program']
+          // }
+        } else if (d['Program'] === 'Teenagers') {
+          // if (d['Plan'] === 'Annual') {
+            obj[2]['RateId'] = d['RateID']
+            obj[2]['Symbol'] = d['CurSymbol']
+            obj[2]['Amt'] = d['Annual']
+            obj[2]['Program'] = d['Program']
+          // } else {
+            obj[3]['RateId'] = d['RateID']
+            obj[3]['Symbol'] = d['CurSymbol']
+            obj[3]['Amt'] = d['Monthly']
+            obj[3]['Program'] = d['Program']
+          // }
+        }
       });
+
+      this.cartList = obj;
+
+      // this.cartList.forEach((element, i) => {
+      //   element.Monthly = parseInt(element.Monthly)
+      //   element.Annual = parseInt(element.Annual)
+      //   element.selectedSubscription = "null"
+      //   element.price = 0
+      //   element.planId = 0
+      //   element.cartId = 0
+      //   element.later = 0
+      //   if (element['Program'] === 'Adults' && element['ActiveProgram'] === '1') {
+      //     this.isAdultsEnable = true;
+      //   }
+      //   if (element['Program'] === 'Teenagers' && element['ActiveProgram'] === '1') {
+      //     this.isTeenagerEnable = true;
+      //   }
+
+      // });
       this.defaultCurrencySymbol = res[0]['ISOCode'];
       let symbol = res[0]['CurSymbol'];
       this.getAmount();
@@ -514,7 +603,7 @@ export class SubscriptionS01V04Page implements OnInit {
       }
       this.service.addItem({
         "UserId": this.userId,
-        "RateId": pid[0].RateID,
+        "RateId": pid[0].RateId,
         "Qty": 1,
         "PlanId": pid[0].planId,
         "MySelf": 0,
