@@ -40,6 +40,7 @@ export class SearchPopularItemsPage implements OnInit {
   enableModuleViewMore: boolean = false;
   enablePodcastViewMore: boolean = false;
   enableAudioMedViewMore: boolean = false;
+  isSubscriber = false;
 
 
   searchDataDup: any;
@@ -60,6 +61,8 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.isSubscriber = SharedService.isSubscriber();
+
     this.search = this.route.snapshot.paramMap.get('word')
     this.UserID = localStorage.getItem('userId');
     this.initializeSearchObject();
@@ -410,6 +413,16 @@ export class SearchPopularItemsPage implements OnInit {
         this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
       }
     }
+  }
+
+  youtube(link, RowID) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if(RowID>=4 && sub==0)
+    this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+    else if (RowID<=3)
+      this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=rdtfghjhfdg"])
+    else
+       this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=vncbxdfchgvxd"])
   }
 
   like(item, index) {
