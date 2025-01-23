@@ -32765,8 +32765,23 @@ body *
   border-radius: 12px;
    padding: 15px !important;
   margin-right: 10px;
-  white-space: normal; 
+  white-space: normal;
+  transform: translateZ(0); 
 }
+
+.box_new_v3_03::after {
+  position: absolute;
+  top: -2px; /* border: 1px + offset: 1px */
+  right: -2px; /* border: 1px + offset: 1px */
+  bottom: -2px; /* border: 1px + offset: 1px */
+  left: -2px; /* border: 1px + offset: 1px */
+  background: #120F40;
+  border-radius: 13px;
+  padding: 15px !important;
+  margin-right: 10px;
+  white-space: normal;
+}
+
 .box_breath_v3_03 {
   /* height: 412px; */
   height: 370px;
