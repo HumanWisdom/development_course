@@ -353,28 +353,15 @@ export class ViewcartPage implements OnInit {
     console.log(cartId)
     this.service.deleteItem({ "Id": parseFloat(cartId) })
       .subscribe(res => {
+        for (var i = 0; i < this.cartList.length; i++) {
+          if (this.cartList[i].CartId == cartId) {
+            this.cartList.splice(i, 1)
+          }
+        }
         this.totalPrice();
         if (this.cartList.length === 0) this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
       })
-    // for (var i = 0; i < this.cartList.length; i++) {
-
-    //   if (this.cartList[i].CartId == cartId) {
-    //     for (var j = 0; j < this.cartListResult.length; j++) {
-    //       if (this.cartListResult[j]['Program'] === program && this.cartListResult[j]['Plan'] === plan) {
-    //         for (var m = 0; m < this.cartListResult[j]['LearnerEmail'].length; m++) {
-    //           if (this.cartListResult[j]['LearnerEmail'][m].CartId === cartId) {
-    //             this.cartListResult[j]['LearnerEmail'].splice(m, 1)
-    //             this.cartListResult[j]['Qty'] = this.cartListResult[j]['LearnerEmail'].length
-    //           }
-    //         }
-    //       }
-    //     }
-    //     this.cartList[i].Qty == 1
-    //     this.cartList.splice(i, 1)
-    //     this.isMonthlySelected = this.cartList.filter(x => x.Plan == 'Annual').length == 0;
-
-    //   }
-    // }
+   
   }
 
   totalPrice() {
