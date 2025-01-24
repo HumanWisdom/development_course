@@ -21947,7 +21947,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   background: #120F40;
   border-radius: 16px;
   padding: 20px;
-  margin: 8px;
+  /* margin: 8px; */
 }
 
 @media (min-width: 1024px)
