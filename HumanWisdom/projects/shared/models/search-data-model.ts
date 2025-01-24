@@ -20,7 +20,7 @@ interface WisdomShortsRe {
 interface EventsRe {
   RowID: number;
   Title: string;
-  VideoUrl: string;
+  YoutubeLink: string;
   EventDate: string;
   Timing: string;
 }

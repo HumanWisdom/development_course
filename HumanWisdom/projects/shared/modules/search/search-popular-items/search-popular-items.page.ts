@@ -272,6 +272,7 @@ export class SearchPopularItemsPage implements OnInit {
     this.getForumSearchData();
   }
   getTotalRecords() {
+    if(this.searchDataDup){
     return this.searchDataDup.ModuleRes.length +
       this.searchDataDup.SessionRes.length +
       this.searchDataDup.PodCastRes.length +
@@ -280,6 +281,8 @@ export class SearchPopularItemsPage implements OnInit {
       this.searchDataDup.EventsRes.length +
       this.searchDataDup.WisdomStoriesRes.length +
       this.searchDataDup.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
+    }
+    else return 0;
 
   }
   pageChangeEvent(tabName) {
@@ -423,6 +426,33 @@ export class SearchPopularItemsPage implements OnInit {
       this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=rdtfghjhfdg"])
     else
        this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=vncbxdfchgvxd"])
+  }
+
+ 
+  wisdoshortsevent(val, video, title) {
+    // localStorage.setItem('wisdomvideotitle', title);
+    let loggedin = localStorage.getItem("isloggedin")
+    let sub: any = localStorage.getItem("Subscriber")
+    let id = video.split("/")[3].split(".")[1]
+    this.commonService.CheckShortsIsFree(id).subscribe(res => {
+      if (res === true) {
+        if(val['IsVoices'] === '1') {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
+        }else {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
+        }
+      } else {
+        if (loggedin && loggedin === 'T' && sub && sub === '1') {
+          if(val['IsVoices'] === '1') {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
+          }else {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
+          }
+        } else {
+          this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+        }
+      }
+    })
   }
 
   like(item, index) {

@@ -34,7 +34,7 @@
               <div class="row adsearch adsearch_ext_01 plr20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                   <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
-                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                    <li *ngFor="let item of searchResult" (click)="getinp(item.ModuleName)" name="list"
                       class="is-search list-group-item">{{item.ModuleName}}</li>
                   </ul>
                 </div>
@@ -215,7 +215,7 @@
   
                       <div class="toc_adiv_01 row" *ngIf="searchData && searchData.WisdomShortsRes.length>0">
                         <!-- video row -->
-                        <a routerLink="{{item.VideoUrl}}" *ngFor="let item of searchData.WisdomShortsRes">
+                        <a (click)="wisdoshortsevent(item, item['VideoUrl'], item['Title'])"  *ngFor="let item of searchData.WisdomShortsRes">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                               <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
