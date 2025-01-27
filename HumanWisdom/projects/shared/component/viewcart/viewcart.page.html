@@ -411,8 +411,8 @@
               </div> -->
               <!-- /monthly -->
               <!-- /teenagers -->
-
-              <div class="raf_div_01" *ngFor="let data of cartList">
+              <div class="row" *ngFor="let data of cartList">
+              <div class="raf_div_01" >
                 <div class="row center_flex mb15px">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
                     <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
@@ -421,30 +421,34 @@
                   </div>
                 </div>
   
-                <div class="row center_flex">
+                <div class="row">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <div class="row center_flex mb15px">
+                    <div class="row center_flex mb0px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                           {{data['LearnerEmail']}}
   
                         </h4>
-                      </div>
-                    </div>
-                    <div class="row mb15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
   
                           {{data['Program']}} - {{data['Plan']}} subscription
                         </h4>
                       </div>
                     </div>
+                    <!-- <div class="row mb15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+  
+                          {{data['Program']}} - {{data['Plan']}} subscription
+                        </h4>
+                      </div>
+                    </div> -->
   
   
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-2 p0" (click)="removeFromCart(data['CartId'])">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
-                      class="img-responsive img_close_delete">
+                      class="img-responsive img_close_delete1">
   
                   </div>
                 </div>
@@ -452,7 +456,7 @@
   
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <hr class="hr_style_v3_01">
+                    <hr class="hr_style_v3_02">
                   </div>
                 </div>
   
@@ -464,6 +468,12 @@
                     </h4>
                   </div>
                 </div>
+              </div>
+              <div class="row mtb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                   <hr class="hr_style_v3_02"> 
+                </div>
+              </div>
               </div>
 
               <div class="row">
