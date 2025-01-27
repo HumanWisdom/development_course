@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_18px fw_600 lh_140p fc_000000">
                   Address the root cause. Find lasting solutions.  </h3>
                 </div>
               </div>
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_18px fw_600 lh_140p fc_000000">
                   Created by experts from around the world.
                   </h3>
                 </div>
@@ -167,7 +167,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_18px fw_600 lh_140p fc_000000">
                     Online journal, forum, podcasts, meditations, stories and more.  
                   </h3>
                 </div>
