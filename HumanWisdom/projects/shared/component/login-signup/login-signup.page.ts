@@ -57,7 +57,7 @@ declare var $: any;
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: '6LelvDIqAAAAAG6RPFwaKk7XgnhYruDwK-FzXjwd',
+        siteKey: '6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR',
       } as RecaptchaSettings,
     },
   ],
