@@ -34087,7 +34087,19 @@ body *
   box-shadow: unset;
   color: #E58D82;
 }
-
+.btn_forum_ask_a_gift {
+  height: 43px;
+  width: 115px;
+  border-radius: 80px;
+  background: #FFF;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #cb6171;
+  text-align: center;
+}
 .btn_fpfy
 {
   height: 22px;
