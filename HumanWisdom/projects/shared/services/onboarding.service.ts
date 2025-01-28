@@ -667,7 +667,7 @@ export class OnboardingService {
   verifyCaptcha(token:any): Observable<any> {
     console.log("Recaptacha");
     console.log(token);
-    return this.http.post(this.path + `/VerifyCaptcha?token=${token}`, null)
+    return this.http.post(this.path + `/VerifyCaptcha`, {token:token})
   }
 
 }

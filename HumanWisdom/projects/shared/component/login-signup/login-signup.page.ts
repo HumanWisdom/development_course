@@ -874,16 +874,21 @@ export class LoginSignupPage implements OnInit {
 
   }
 
-  public send(form: NgForm): void {
-    if (form.invalid) {
-      for (const control of Object.keys(form.controls)) {
-        form.controls[control].markAsTouched();
-      }
-      return;
-    }
-
-    console.debug(`Token [${this.token}] generated`);
+  public verifyCaptcha(): void {
+    const self = this;  // Store the component's 'this' context
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
+        self.service.verifyCaptcha(token).subscribe(res => {
+          if (res) {
+            self.signup();
+          }else{
+            alert("Unexpected error ocurred ,try again after refreshing the page.");
+          }
+        });
+      });
+    });
   }
+  
 
   loginWithInstagram() {
     const url = `${this.authUrl}?client_id=${this.clientId}&redirect_uri=${encodeURIComponent(this.redirectUri)}&scope=user_profile,user_media&response_type=code`;
