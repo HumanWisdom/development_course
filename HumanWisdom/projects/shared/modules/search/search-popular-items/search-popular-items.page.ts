@@ -168,8 +168,10 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
      default: {
-       url=`/${SharedService.getprogramName()}/site-search/${this.search}`
-        this.searchEvent(this.search)
+      let searchInpt = (' ' + this.search).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url=`/${SharedService.getprogramName()}/site-search/${searchInpt}`
+        this.searchEvent(searchInpt)
         break;
       }
     }
@@ -204,7 +206,9 @@ export class SearchPopularItemsPage implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
   }
   getSearchData() {
-    this.commonService.getSearchDataForSearchSite(this.search).subscribe(res => {
+    let searchInpt = (' ' + this.search).slice(1);
+    searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+    this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
         this.searchDataDup = JSON.parse(JSON.stringify(res));
 
