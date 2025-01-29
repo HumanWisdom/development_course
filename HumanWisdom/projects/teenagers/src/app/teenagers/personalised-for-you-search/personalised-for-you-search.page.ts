@@ -411,7 +411,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
      default: {
-       url = `/teenagers/site-search/${this.searchinp}`
+      let searchInpt = (' ' + this.searchinp).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url = `/teenagers/site-search/${searchInpt}`
         break;
       }
 
@@ -421,9 +423,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   searchEvent(module) {
-    this.searchinp = module;
+    let searchInpt = (' ' + module).slice(1);
+    searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+    this.searchinp = searchInpt;
     this.searchResult = [];
-    this.getinp(module);
+    this.getinp(searchInpt);
   }
 
   clickbtn(name, val = '', event, ind, id) {
