@@ -1,7 +1,7 @@
 import {
   Platform
 } from '@angular/cdk/platform';
-import { Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, ViewChild,Renderer2  } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -65,6 +65,7 @@ export class AppComponent implements OnDestroy {
     private services: AdultsService,
     private onboardingService:OnboardingService,
     private commonService:CommonService,
+    private renderer: Renderer2,
     // public moengageService: MoengageService,
     private navigationService:NavigationService
   ) {
@@ -89,6 +90,9 @@ export class AppComponent implements OnDestroy {
     }
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
+        if(!event.url.includes('/login')){
+         this.removeRecaptchaScript();      
+        }
         this.UpdateMeta(event.url);
       }
     });
@@ -105,6 +109,18 @@ export class AppComponent implements OnDestroy {
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
+  removeRecaptchaScript() {
+    const recaptchaElement = document.querySelector('.grecaptcha-badge');
+    if (recaptchaElement) {
+      // Remove the element from the DOM
+      this.renderer.removeChild(document.body, recaptchaElement);
+    }
+    const script = document.getElementById('recaptcha-script');
+    if (script) {
+      document.head.removeChild(script);
+    }
   }
 
 

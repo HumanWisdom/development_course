@@ -163,6 +163,7 @@ export class LoginSignupPage implements OnInit {
     private renderer: Renderer2, private el: ElementRef,
     private commonService:CommonService
   ) {
+    this.loadRecaptchaScript();
     this.initializeRegistrationForm();
     this.VerifyGoogle();
     // let acceptCookie = localStorage.getItem('acceptcookie');
@@ -182,6 +183,17 @@ export class LoginSignupPage implements OnInit {
     });
     localStorage.setItem("remember", "T");
     localStorage.setItem("firsttime", "T");
+  }
+
+  loadRecaptchaScript() {
+    if (!document.getElementById('recaptcha-script')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js?render=6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR';
+      script.id = 'recaptcha-script'; // Set an ID for easy identification
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   }
 
   ngOnInit() {

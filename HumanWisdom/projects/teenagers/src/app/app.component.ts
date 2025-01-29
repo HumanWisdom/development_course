@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy,Renderer2 } from '@angular/core';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { NavigationService } from '../../../shared/services/navigation.service';
@@ -38,6 +38,7 @@ export class AppComponent implements OnDestroy {
 
   constructor(private navigationService: NavigationService,
     private router: Router,
+    private renderer: Renderer2,
     private services: TeenagersService,private commonService:CommonService,private onboardingService:OnboardingService) {
     SharedService.ProgramId = 11;
     moengage.initialize({
@@ -62,13 +63,27 @@ export class AppComponent implements OnDestroy {
       setTimeout(() => {
         this.pageLoaded = true;
       }, 2000)
-   
+      if(!event.url.includes('/login')){
+        this.removeRecaptchaScript();      
+       }
       //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
     });
     //  this.setDynamicCSS();
+  }
+
+  removeRecaptchaScript() {
+    const recaptchaElement = document.querySelector('.grecaptcha-badge');
+    if (recaptchaElement) {
+      // Remove the element from the DOM
+      this.renderer.removeChild(document.body, recaptchaElement);
+    }
+    const script = document.getElementById('recaptcha-script');
+    if (script) {
+      document.head.removeChild(script);
+    }
   }
 
    getUserInformationById(loggedInUserId){
