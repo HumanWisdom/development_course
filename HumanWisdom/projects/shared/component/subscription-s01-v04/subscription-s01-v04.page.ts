@@ -146,6 +146,10 @@ export class SubscriptionS01V04Page implements OnInit {
     this.enableAddMemForm = true;
   }
 
+  clickFreeTrial() {
+    this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
+  }
+
   enableEmailboxEvent(enable, plan, type) {
     if (enable) {
       this.loggedUser()
