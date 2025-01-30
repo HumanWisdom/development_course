@@ -364,6 +364,10 @@ export class ViewcartPage implements OnInit {
    
   }
 
+  getAnnualVal(annual) {
+    return (Number(annual) / 12);
+   }
+
   totalPrice() {
     this.totalCartValue = 0;
 

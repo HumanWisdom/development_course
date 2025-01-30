@@ -467,7 +467,8 @@ export class SubscriptionS01V04Page implements OnInit {
           "Qty": 0,
           "MySelf": "False",
           "LearnerEmail": [],
-          "LearnerMsg": ""
+          "LearnerMsg": "",
+          "ISOCode":""
         },
         {
           "CartId": 700,
@@ -480,7 +481,8 @@ export class SubscriptionS01V04Page implements OnInit {
           "Qty": 0,
           "MySelf": "False",
           "LearnerEmail": [],
-          "LearnerMsg": ""
+          "LearnerMsg": "",
+          "ISOCode":""
         },
         {
           "CartId": 709,
@@ -493,7 +495,8 @@ export class SubscriptionS01V04Page implements OnInit {
           "Qty": 0,
           "MySelf": "False",
           "LearnerEmail": [],
-          "LearnerMsg": ""
+          "LearnerMsg": "",
+          "ISOCode":""
         },
         {
           "CartId": 710,
@@ -506,7 +509,8 @@ export class SubscriptionS01V04Page implements OnInit {
           "Qty": 0,
           "MySelf": "False",
           "LearnerEmail": [],
-          "LearnerMsg": ""
+          "LearnerMsg": "",
+          "ISOCode":""
         }
       ]
 
@@ -515,8 +519,9 @@ export class SubscriptionS01V04Page implements OnInit {
           // if (d['Plan'] === 'Annual') {
             obj[0]['RateId'] = d['RateID']
             obj[0]['Symbol'] = d['CurSymbol']
-            obj[0]['Amt'] = d['Annual']
+            obj[0]['Amt'] = (Number(d['Annual']) / 12).toString()
             obj[0]['Program'] = d['Program']
+            obj[0]['ISOCode'] = d['ISOCode']
             // obj[0]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
             // obj[0]['Qty'] += 1
           // } else {
@@ -524,18 +529,21 @@ export class SubscriptionS01V04Page implements OnInit {
             obj[1]['Symbol'] = d['CurSymbol']
             obj[1]['Amt'] = d['Monthly']
             obj[1]['Program'] = d['Program']
+            obj[1]['ISOCode'] = d['ISOCode']
           // }
         } else if (d['Program'] === 'Teenagers') {
           // if (d['Plan'] === 'Annual') {
             obj[2]['RateId'] = d['RateID']
             obj[2]['Symbol'] = d['CurSymbol']
-            obj[2]['Amt'] = d['Annual']
+            obj[2]['Amt'] = (Number(d['Annual']) / 12).toString()
             obj[2]['Program'] = d['Program']
+            obj[2]['ISOCode'] = d['ISOCode']
           // } else {
             obj[3]['RateId'] = d['RateID']
             obj[3]['Symbol'] = d['CurSymbol']
             obj[3]['Amt'] = d['Monthly']
             obj[3]['Program'] = d['Program']
+            obj[3]['ISOCode'] = d['ISOCode']
           // }
         }
       });
@@ -575,6 +583,10 @@ export class SubscriptionS01V04Page implements OnInit {
       window.alert(err.error['Message'])
     }
     )
+  }
+
+  getAnnualVal(annual) {
+   return (Number(annual) / 12);
   }
 
   selectProgram(value) {
