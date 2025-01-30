@@ -34625,6 +34625,20 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   margin-top: 100px;
 }
+.sp_fc1 {
+  height: 50px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: #120F40;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  text-align: left;
+  padding: 12px 10px;
+}
 
 .btn_ctd 
 {

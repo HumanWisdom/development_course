@@ -4088,9 +4088,12 @@ audio::-webkit-media-controls-enclosure
   /* background: #120F40; */
   border: 0;
 }
-.product_view .modal-dialog{max-width: 1200px; width: 100%; height:600px;}
+.product_view .modal-dialog{max-width: 1200px; width: 90%; height:650px; top:100px;}
 .pre-cost{text-decoration: line-through; color: #a5a5a5;}
 .space-ten{padding: 10px 0;}
+.modal-content{
+  border-radius: 12px;
+}
 
 /* .col-xs-12 {
   float: none !important;
