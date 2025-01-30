@@ -216,7 +216,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
 
                     <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
-                    <select type="text" id="program" class="sp_fc1" (change)="selectProgram($event.target.value)">
+                    <select type="text" id="program" class="sp_fc" (change)="selectProgram($event.target.value)">
                       <option value="" class="sp_fc">Choose program</option>
                       <option *ngFor="let data of cartList" value="{{data['Amt']+','+data['Plan']+','+data['Program']}}" class="sp_fc">
                         {{data['Program']}} - {{data['Plan']}} ({{defaultCurrencySymbol}} {{data['Amt']}}/{{data['Plan'].slice(0, 2)}}.)</option>
