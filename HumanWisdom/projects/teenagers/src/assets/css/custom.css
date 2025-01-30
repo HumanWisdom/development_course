@@ -32677,20 +32677,6 @@ body *
   padding: 15px !important;
   margin-right: 10px;
   white-space: normal;
-  transform: translateZ(0);
-}
-
-.box_new_v3_03::after {
-  position: absolute;
-  top: -2px; /* border: 1px + offset: 1px */
-  right: -2px; /* border: 1px + offset: 1px */
-  bottom: -2px; /* border: 1px + offset: 1px */
-  left: -2px; /* border: 1px + offset: 1px */
-  background: #0C2B5F;
-  border-radius: 13px;
-  padding: 15px !important;
-  margin-right: 10px;
-  white-space: normal;
 }
 
 .box_journal_v3_03 {
