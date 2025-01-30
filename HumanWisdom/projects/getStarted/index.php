@@ -2911,16 +2911,16 @@
                 <span class="glyphicon glyphicon-remove"></span>
               </a>
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class=" back">
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                  <div class=" back1">
                     <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   Bring HappierMe to your organization
                 </h4></div></div> -->
                     <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
                   Connect with our specialists today and see how we can help you
                 </h4></div></div> -->
-                    <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                    <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
