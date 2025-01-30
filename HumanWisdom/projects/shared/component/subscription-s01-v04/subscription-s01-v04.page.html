@@ -134,8 +134,8 @@
               <div class="row ">
                 <div class="col-md-10 col-sm-10 col-xs-10 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
-                    {{data['Symbol']}}{{totalCartValue}} <span class="mtb0px fs_15px fw_700 lh_150p fc_e58d82">
-                      ({{data['Symbol']}} {{data['Amt']}}/{{data['Plan']}}.)</span>
+                    {{data['Symbol'] + ' ' + (data['Amt'])}} <span *ngIf="data['Plan'] === 'Annual'" class="mtb0px fs_15px fw_700 lh_150p fc_e58d82">
+                      ({{cartList[0]['ISOCode']}} {{getAnnualVal(data['Amt'])}}/{{'mo'}}.)</span>
                   </h4>
                 </div>
                 
@@ -219,7 +219,7 @@
                     <select type="text" id="program" class="sp_fc" (change)="selectProgram($event.target.value)">
                       <option value="" class="sp_fc">Choose program</option>
                       <option *ngFor="let data of cartList" value="{{data['Amt']+','+data['Plan']+','+data['Program']}}" class="sp_fc">
-                        {{data['Program']}} - {{data['Plan']}} ({{defaultCurrencySymbol}} {{data['Amt']}}/{{data['Plan'].slice(0, 2)}}.)</option>
+                        {{data['Program']}} - {{data['Plan']}} ({{defaultCurrencySymbol}} {{data['Amt']}}/{{'mo'}}.)</option>
                       <!-- <option value="999,Monthly,Adults" class="sp_fc">Adults -
                         Monthly (INR 999/mo.)</option>
                       <option value="699,Annual,Teenagers" class="sp_fc">
@@ -242,7 +242,7 @@
               </div>
               <div class="row mb15px">
                 <div class="col-lg-6 col-md-6 col-sm-4 col-xs-4 p0 tright">
-                  <button type="button" (click)="addToCartForm()" class="btn btn_forum_ask_a_gift">Add to cart
+                  <button type="button" *ngIf="learnermail && selectedProgram" (click)="addToCartForm()" class="btn btn_forum_ask_a_gift">Add to cart
 
                     <!-- <i class="fa fa-plus">New note</i> -->
                   </button>
