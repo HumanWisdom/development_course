@@ -34713,7 +34713,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .mregister .sp_fc 
 {
-  padding: 13px 50px 13px 20px;
+  padding: 13px 8px 13px 13px;
 }
 
 .mregister .sp_fc.active::-webkit-input-placeholder
