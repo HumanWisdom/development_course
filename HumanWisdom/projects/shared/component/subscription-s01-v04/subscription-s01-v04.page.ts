@@ -68,6 +68,10 @@ export class SubscriptionS01V04Page implements OnInit {
   teenagerenableMonthEmailbox = false
   cartListResult = []
   totalCount = 0
+  enableAddMemForm = false;
+  selectedProgram = '';
+  selectedMonth = '';
+  selectedPrice = '';
 
   constructor(
     private router: Router,
@@ -98,15 +102,15 @@ export class SubscriptionS01V04Page implements OnInit {
         this.ActivationFlow();
       }, 300);
     }
-    var data  = SharedService.getDataFromLocalStorage('BuyAgain');
-    if(data && data!=null){
-     var cart = JSON.parse(data);
-     setTimeout(() => {
-      this.cartListResult[0].planId=parseInt(cart.PlanID);
-      this.cartListResult[0].RateId=cart.RateID;
-      this.learnermail= cart.ConsumerEmail
-      this.addToCart('Adults','Annual');
-     }, 5000);
+    var data = SharedService.getDataFromLocalStorage('BuyAgain');
+    if (data && data != null) {
+      var cart = JSON.parse(data);
+      setTimeout(() => {
+        this.cartListResult[0].planId = parseInt(cart.PlanID);
+        this.cartListResult[0].RateId = cart.RateID;
+        this.learnermail = cart.ConsumerEmail
+        this.addToCart('Adults', 'Annual');
+      }, 5000);
 
     }
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -133,9 +137,17 @@ export class SubscriptionS01V04Page implements OnInit {
     this.viewCart();
 
     setTimeout(() => {
-      
+
     }, 7000)
 
+  }
+
+  EnableAddMemForm() {
+    this.enableAddMemForm = true;
+  }
+
+  clickFreeTrial() {
+    this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
   }
 
   enableEmailboxEvent(enable, plan, type) {
@@ -160,10 +172,10 @@ export class SubscriptionS01V04Page implements OnInit {
             this.cartList[i].price = this.cartList[i].Monthly
         }
       }
-      
+
     }
     this.learnermail = '';
-    if(enable) {
+    if (enable) {
       if (type === 'Adults') {
         if (plan === 'Annual') {
           this.aaenableEmailbox = enable;
@@ -189,7 +201,7 @@ export class SubscriptionS01V04Page implements OnInit {
           this.teenagerenableMonthEmailbox = enable
         }
       }
-    }else {
+    } else {
       if (type === 'Adults') {
         if (plan === 'Annual') {
           this.aaenableEmailbox = enable;
@@ -210,126 +222,8 @@ export class SubscriptionS01V04Page implements OnInit {
     this.service.viewCart({ "Id": this.userId })
       .subscribe(res => {
         this.totalCount = 0
-          let obj = [
-          {
-            "CartId": 698,
-            "RateId": "2",
-            "UserId": "107",
-            "Program": "Adults",
-            "Plan": "Annual",
-            "Symbol": "₹",
-            "Amt": "3600",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail": [],
-            "LearnerMsg": ""
-          },
-          {
-            "CartId": 700,
-            "RateId": "2",
-            "UserId": "107",
-            "Program": "Adults",
-            "Plan": "Monthly",
-            "Symbol": "₹",
-            "Amt": "500",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail":[],
-            "LearnerMsg": ""
-          },
-          {
-            "CartId": 709,
-            "RateId": "6",
-            "UserId": "107",
-            "Program": "Teenagers",
-            "Plan": "Annual",
-            "Symbol": "₹",
-            "Amt": "3600",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail": [],
-            "LearnerMsg": ""
-          },
-          {
-            "CartId": 710,
-            "RateId": "6",
-            "UserId": "107",
-            "Program": "Teenagers",
-            "Plan": "Monthly",
-            "Symbol": "₹",
-            "Amt": "500",
-            "Qty": 0,
-            "MySelf": "False",
-            "LearnerEmail": [],
-            "LearnerMsg": ""
-          }
-        ]
-
-        res.forEach((d) =>{
-          this.totalCount += 1
-          if(d['Program'] === 'Adults') {
-            if(d['Plan'] === 'Annual') {
-              obj[0]['RateId'] = d['RateId']
-              obj[0]['UserId'] = d['UserId']
-              obj[0]['Plan'] = d['Plan']
-              obj[0]['Symbol'] = d['Symbol']
-              obj[0]['Amt'] = d['Amt']
-              obj[0]['Program'] = d['Program']
-              obj[0]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[0]['Qty'] += 1
-            }else {
-              obj[1]['RateId'] = d['RateId']
-              obj[1]['UserId'] = d['UserId']
-              obj[1]['Plan'] = d['Plan']
-              obj[1]['Symbol'] = d['Symbol']
-              obj[1]['Amt'] = d['Amt']
-              obj[1]['Program'] = d['Program']
-              obj[1]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[1]['Qty'] += 1
-            }
-          } else if(d['Program'] === 'Teenagers') {
-            if(d['Plan'] === 'Annual'){
-              obj[2]['RateId'] = d['RateId']
-              obj[2]['UserId'] = d['UserId']
-              obj[2]['Plan'] = d['Plan']
-              obj[2]['Symbol'] = d['Symbol']
-              obj[2]['Amt'] = d['Amt']
-              obj[2]['Program'] = d['Program']
-              obj[2]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[2]['Qty'] += 1
-            }else {
-              obj[3]['RateId'] = d['RateId']
-              obj[3]['UserId'] = d['UserId']
-              obj[3]['Plan'] = d['Plan']
-              obj[3]['Symbol'] = d['Symbol']
-              obj[3]['Amt'] = d['Amt']
-              obj[3]['Program'] = d['Program']
-              obj[3]['LearnerEmail'].push({'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail']})
-              obj[3]['Qty'] += 1
-            }
-          }
-        })
-
-
-        if (res && res.length !== 0) {
-          this.cartListResult = obj
-          this.cartitemList = res;
-          if (res[0]['Plan'] === 'Annual') this.typeList.splice(1, 1);
-          else this.typeList.splice(0, 1);
-          if (res.some((d) => d['MySelf'] === "True")) {
-            this.enableMySelf = false
-          } else {
-            if (localStorage.getItem('giftwisdom') === 'F') {
-              this.myself = 1
-              this.enableMySelf = true
-            }
-          }
-        } else {
-          if (localStorage.getItem('giftwisdom') === 'F') {
-            this.myself = 1
-            this.enableMySelf = true
-          }
-        }
+        this.cartitemList = res;
+        this.totalPrice();
 
       },
         error => {
@@ -520,7 +414,7 @@ export class SubscriptionS01V04Page implements OnInit {
     this.service.getCurrencies().subscribe(res => {
 
       this.countryList = res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId === item.CountryId) === i);
-      
+
       let found = this.countryList.find(o => o.Country == this.defaultCountry)
       if (found) {
         console.log("found")
@@ -542,87 +436,232 @@ export class SubscriptionS01V04Page implements OnInit {
     // console.log(country)
     // this.selectedCountryId=this.countryList.filter(r=>{return r.Country==country})[0].CID
     this.selectedCountryId = countryId
-    
+
 
     this.getPricing()
   }
 
-  /* selectPriceBracket(p){
-     console.log(p)
-     this.selectedBracket=p
-     if(this.selectedBracket=="monthly")
-     {
-       this.cartProdutionList=this.productList.map(({ProgID,Program,CountryID,Monthly})=>({ProgID,Program,CountryID,Monthly}))
-       this.cartList = this.cartList.map(elm => ({ProgID: elm.ProgID,
-         Program:elm.Program,
-         CountryID:elm.CountryID,
-         price: elm.Monthly,
-         qty:0}));
-       
-     }
-     else{
-       this.cartList=this.productList.map(({ProgID,Program,CountryID,Annual})=>({ProgID,Program,CountryID,Annual}))
-       this.cartList = this.cartList.map(elm => ({ProgID: elm.ProgID,
-         Program:elm.Program,
-         CountryID:elm.CountryID,
-         price: elm.Annual,
-       qty:0}));
-       
-     }
 
-
-
-
-   }*/
   loggedUser() {
     if (!this.userId) {
       console.log("login first")
       this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`])
     }
 
-
-
   }
-
-
 
   getPricing() {
     this.service.getPricing(this.countryCode).subscribe(res => {
-      
-      this.cartList = res.filter((d) => d['ActiveProgram'] === "1");
-      this.cartList.forEach((element, i) => {
-        element.Monthly = parseInt(element.Monthly)
-        element.Annual = parseInt(element.Annual)
-        element.selectedSubscription = "null"
-        element.price = 0
-        element.planId = 0
-        element.cartId = 0
-        element.later = 0
-        if (element['Program'] === 'Adults' && element['ActiveProgram'] === '1') {
-          this.isAdultsEnable = true;
-        }
-        if (element['Program'] === 'Teenagers' && element['ActiveProgram'] === '1') {
-          this.isTeenagerEnable = true;
-        }
 
+      res = res.filter((d) => d['ActiveProgram'] === "1");
+
+      let obj = [
+        {
+          "CartId": 698,
+          "RateId": "2",
+          "UserId": "107",
+          "Program": "Adults",
+          "Plan": "Annual",
+          "Symbol": "₹",
+          "Amt": "3600",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": "",
+          "ISOCode":""
+        },
+        {
+          "CartId": 700,
+          "RateId": "2",
+          "UserId": "107",
+          "Program": "Adults",
+          "Plan": "Monthly",
+          "Symbol": "₹",
+          "Amt": "500",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": "",
+          "ISOCode":""
+        },
+        {
+          "CartId": 709,
+          "RateId": "6",
+          "UserId": "107",
+          "Program": "Teenagers",
+          "Plan": "Annual",
+          "Symbol": "₹",
+          "Amt": "3600",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": "",
+          "ISOCode":""
+        },
+        {
+          "CartId": 710,
+          "RateId": "6",
+          "UserId": "107",
+          "Program": "Teenagers",
+          "Plan": "Monthly",
+          "Symbol": "₹",
+          "Amt": "500",
+          "Qty": 0,
+          "MySelf": "False",
+          "LearnerEmail": [],
+          "LearnerMsg": "",
+          "ISOCode":""
+        }
+      ]
+
+      res.forEach((d) => {
+        if (d['Program'] === 'Adults') {
+          // if (d['Plan'] === 'Annual') {
+            obj[0]['RateId'] = d['RateID']
+            obj[0]['Symbol'] = d['CurSymbol']
+            obj[0]['Amt'] = (Number(d['Annual']) / 12).toString()
+            obj[0]['Program'] = d['Program']
+            obj[0]['ISOCode'] = d['ISOCode']
+            // obj[0]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
+            // obj[0]['Qty'] += 1
+          // } else {
+            obj[1]['RateId'] = d['RateID']
+            obj[1]['Symbol'] = d['CurSymbol']
+            obj[1]['Amt'] = d['Monthly']
+            obj[1]['Program'] = d['Program']
+            obj[1]['ISOCode'] = d['ISOCode']
+          // }
+        } else if (d['Program'] === 'Teenagers') {
+          // if (d['Plan'] === 'Annual') {
+            obj[2]['RateId'] = d['RateID']
+            obj[2]['Symbol'] = d['CurSymbol']
+            obj[2]['Amt'] = (Number(d['Annual']) / 12).toString()
+            obj[2]['Program'] = d['Program']
+            obj[2]['ISOCode'] = d['ISOCode']
+          // } else {
+            obj[3]['RateId'] = d['RateID']
+            obj[3]['Symbol'] = d['CurSymbol']
+            obj[3]['Amt'] = d['Monthly']
+            obj[3]['Program'] = d['Program']
+            obj[3]['ISOCode'] = d['ISOCode']
+          // }
+        }
       });
+
+      this.cartList = obj;
+
+      // this.cartList.forEach((element, i) => {
+      //   element.Monthly = parseInt(element.Monthly)
+      //   element.Annual = parseInt(element.Annual)
+      //   element.selectedSubscription = "null"
+      //   element.price = 0
+      //   element.planId = 0
+      //   element.cartId = 0
+      //   element.later = 0
+      //   if (element['Program'] === 'Adults' && element['ActiveProgram'] === '1') {
+      //     this.isAdultsEnable = true;
+      //   }
+      //   if (element['Program'] === 'Teenagers' && element['ActiveProgram'] === '1') {
+      //     this.isTeenagerEnable = true;
+      //   }
+
+      // });
       this.defaultCurrencySymbol = res[0]['ISOCode'];
       let symbol = res[0]['CurSymbol'];
       this.getAmount();
-      if(this.cartListResult && this.cartListResult.length !== 0) {
-        this.cartListResult.forEach((d) => {
-          if(d['Symbol'] !== symbol) {
-            d['LearnerEmail'].forEach((m) => {
-              this.removeFromCart(m['CartId'], d['Program'], d['Plan'])
-            });
-          }
-        })
-      }
+      // if (this.cartListResult && this.cartListResult.length !== 0) {
+      //   this.cartListResult.forEach((d) => {
+      //     if (d['Symbol'] !== symbol) {
+      //       d['LearnerEmail'].forEach((m) => {
+      //         this.removeFromCart(m['CartId'], d['Program'], d['Plan'])
+      //       });
+      //     }
+      //   })
+      // }
 
     }, (err) => {
       window.alert(err.error['Message'])
     }
     )
+  }
+
+  getAnnualVal(annual) {
+   return (Number(annual) / 12);
+  }
+
+  selectProgram(value) {
+    value = value.split(",");
+    this.selectedProgram = value[2];
+    this.selectedMonth = value[1];
+    this.selectedPrice = value[0];
+  }
+
+  addToCartForm() {
+    if (!this.ValidateEmail() && this.selectedProgram) {
+      this.logeventservice.logEvent('click_done');
+      this.loggedUser()
+      let pid = this.cartList.filter((d) => d['Program'] === this.selectedProgram);
+      // let activeId = null;
+      // for (var i = 0; i < this.cartList.length; i++) {
+      // if (this.cartList[i].ProgID === pid[0]['ProgID']) {
+      // if (!activeId) {
+      //   activeId = i
+      // }
+      // this.checkPopup(this.cartList[i])
+      // this.showCart = true
+      // this.planWarning = false
+      // this.totalItemCount += 1
+      // this.cartList[i].qty += 1;
+      if (this.selectedMonth == "Monthly") {
+        pid[0].planId = 1
+      } else {
+        pid[0].planId = 2
+      }
+      this.service.addItem({
+        "UserId": this.userId,
+        "RateId": pid[0].RateId,
+        "Qty": 1,
+        "PlanId": pid[0].planId,
+        "MySelf": 0,
+        "LearnerEmail": this.learnermail,
+        "LearnerMsg": this.learnermsg,
+      })
+        .subscribe(res => {
+          localStorage.removeItem('BuyAgain');
+          // this.cartId = res
+          // for (var i = 0; i < this.cartList.length; i++) {
+          //   if (this.cartList[i].ProgID === pid[0]['ProgID']) {
+          //     this.cartList[i].cartId = res
+          //   }
+
+          // }
+          // if (this.enableMySelf) this.enableMySelf = false;
+          // this.enableadd = true;
+          this.myself = 0,
+            this.learnermail = '',
+            this.learnermsg = '',
+            this.enableemail = false
+          this.enableAddMemForm = false;
+          this.selectedProgram = '';
+          this.selectedMonth = '';
+          this.selectedPrice = '';
+          this.forumservice.toastrService.success('', 'Updated Successfully !');
+          this.cd.detectChanges()
+          this.viewCart()
+        },
+          error => {
+            this.forumservice.toastrService.success('', error['error']['Message']);
+            console.log(error)
+          },
+          () => {
+            this.totalPrice()
+          })
+      // }
+
+      // }
+    } else {
+      this.forumservice.toastrService.success('', 'Email address is invalid');
+    }
   }
 
   addToCart(program, plan) {
@@ -633,7 +672,7 @@ export class SubscriptionS01V04Page implements OnInit {
       let activeId = null;
       for (var i = 0; i < this.cartList.length; i++) {
         if (this.cartList[i].ProgID === pid[0]['ProgID']) {
-          if(!activeId) {
+          if (!activeId) {
             activeId = i
           }
           this.checkPopup(this.cartList[i])
@@ -693,16 +732,15 @@ export class SubscriptionS01V04Page implements OnInit {
               }
 
               this.cd.detectChanges()
-              this.viewCart()
+              this.viewCart();
             },
               error => {
                 this.forumservice.toastrService.success('', error['error']['Message']);
                 console.log(error)
               },
               () => {
-                
-                
-                this.totalPrice()
+
+
               })
         }
 
@@ -724,22 +762,12 @@ export class SubscriptionS01V04Page implements OnInit {
 
   }
 
-  removeFromCart(cid, program, plan) {
-        for (var j = 0; j < this.cartListResult.length; j++) {
-          if(this.cartListResult[j]['Program'] === program && this.cartListResult[j]['Plan'] === plan) {
-            for (var m = 0; m < this.cartListResult[j]['LearnerEmail'].length; m++) {
-              if(this.cartListResult[j]['LearnerEmail'][m].CartId === cid) {
-                this.cartListResult[j]['LearnerEmail'].splice(m, 1)
-                this.cartListResult[j]['Qty'] = this.cartListResult[j]['LearnerEmail'].length
-              }
-            }
-          }
-        }
-
-        this.service.deleteItem({ "Id": parseFloat(cid) })
-        .subscribe((res) => {
-          this.totalCount -= 1
-         });
+  removeFromCart(cid) {
+    
+    this.service.deleteItem({ "Id": parseFloat(cid) })
+      .subscribe((res) => {
+        this.viewCart();
+      });
   }
 
   ValidateEmail() {
@@ -754,10 +782,10 @@ export class SubscriptionS01V04Page implements OnInit {
   totalPrice() {
     //this.selectedSubscription="annual"
     this.totalCartValue = 0;
-    for (var i = 0; i < this.cartList.length; i++) {
-      this.totalCartValue += (this.cartList[i].price);
+    for (var i = 0; i < this.cartitemList.length; i++) {
+      this.totalCartValue += Number(this.cartitemList[i].Amt);
     }
-    
+
   }
 
   getAmount() {
@@ -834,14 +862,14 @@ export class SubscriptionS01V04Page implements OnInit {
 
   getValue(res = '', type = '', program = '') {
     let result: any = '';
-    if(res === 'qty') {
+    if (res === 'qty') {
       let fil = this.cartitemList.filter((d) => d['Program'] === program && type === d['Plan'])
       result = fil.length;
     }
     return result;
   }
 
-  goBack(){
+  goBack() {
     this.location.back()
   }
 }

@@ -28852,7 +28852,24 @@ video::-webkit-media-controls-panel
   align-items: center;
   justify-content: center;
 }
-
+.btn_aan2 {
+    height: 60px;
+    width: 155px;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    box-shadow: 2px 2px 4px #00000040;
+    background: #e58d82;
+    border-radius: 100px;
+    text-align: center;
+    color: #fff;
+    line-height: 140%;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
 
 .btn_daily {
   height: 30px;
@@ -34056,7 +34073,19 @@ body *
   box-shadow: unset;
   color: #E58D82;
 }
-
+.btn_forum_ask_a_gift {
+  height: 43px;
+  width: 115px;
+  border-radius: 80px;
+  background: #FFF;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #cb6171;
+  text-align: center;
+}
 .btn_fpfy
 {
   height: 22px;
@@ -34596,6 +34625,20 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   margin-top: 100px;
 }
+.sp_fc1 {
+  height: 50px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: #120F40;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  text-align: left;
+  padding: 12px 10px;
+}
 
 .btn_ctd 
 {
@@ -34638,7 +34681,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .mregister .sp_fc 
 {
-  padding: 13px 50px 13px 20px;
+  padding: 13px 8px 13px 13px;
 }
 
 .mregister .sp_fc.active::-webkit-input-placeholder
@@ -34706,7 +34749,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   width: 98px;
   height: 50px;
-  border-radius: 16px;
+  border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #E58D82;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;

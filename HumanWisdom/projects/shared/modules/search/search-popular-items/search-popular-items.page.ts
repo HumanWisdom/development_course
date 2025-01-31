@@ -35,7 +35,14 @@ export class SearchPopularItemsPage implements OnInit {
   isAdults: boolean = true;
   enableBlogViewMore: boolean = false;
   enableShortViewMore: boolean = false;
+  enableEventsViewMore: boolean = false;
   enableStoryViewMore: boolean = false;
+  enableModuleViewMore: boolean = false;
+  enablePodcastViewMore: boolean = false;
+  enableAudioMedViewMore: boolean = false;
+  isSubscriber = false;
+
+
   searchDataDup: any;
   searchResult = [];
   public moduleList = [];
@@ -54,6 +61,8 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.isSubscriber = SharedService.isSubscriber();
+
     this.search = this.route.snapshot.paramMap.get('word')
     this.UserID = localStorage.getItem('userId');
     this.initializeSearchObject();
@@ -71,7 +80,9 @@ export class SearchPopularItemsPage implements OnInit {
       PodCastRes: [],
       SessionRes: [],
       WisdomShortsRes: [],
+      EventsRes: [],
       WisdomStoriesRes: [],
+      AudioMeditationRes:[],
       FeelBetterNowRes: null
     } as SearchDataModel;
   }
@@ -157,8 +168,11 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
      default: {
-       url=`/${SharedService.getprogramName()}/site-search/${this.search}`
-        this.searchEvent(this.search)
+      let regexp =  this.search.repeat(1);
+      let searchInpt = regexp;
+      searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+       url=`/${SharedService.getprogramName()}/site-search/${searchInpt}`
+        this.searchEvent(searchInpt)
         break;
       }
     }
@@ -168,13 +182,15 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   getLearningRecords() {
-    if (this.searchData) {
-      return this.searchData.ModuleRes.length +
-        this.searchData.SessionRes.length +
-        this.searchData.PodCastRes.length +
-        this.searchData.WisdomShortsRes.length +
-        this.searchData.WisdomStoriesRes.length +
-        this.searchData.BlogRes.length;
+    if (this.searchDataDup) {
+      return this.searchDataDup.ModuleRes.length +
+        this.searchDataDup.SessionRes.length +
+        this.searchDataDup.PodCastRes.length +
+        this.searchDataDup.WisdomShortsRes.length +
+        this.searchDataDup.EventsRes.length +
+        this.searchDataDup.WisdomStoriesRes.length +
+        this.searchDataDup.AudioMeditationRes.length +
+        this.searchDataDup.BlogRes.length;
     }
     return 0;
 
@@ -191,12 +207,24 @@ export class SearchPopularItemsPage implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
   }
   getSearchData() {
-    this.commonService.getSearchDataForSearchSite(this.search).subscribe(res => {
+    // let searchInpt = (' ' + this.search).slice(1);
+    let regexp =  this.search.repeat(1);
+    let searchInpt = regexp;
+
+    searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+    this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
         this.searchDataDup = JSON.parse(JSON.stringify(res));
 
         if (res.BlogRes && res.BlogRes.length > 2) {
           res.BlogRes = res.BlogRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.AudioMeditationRes && res.AudioMeditationRes.length > 2) {
+          res.AudioMeditationRes = res.AudioMeditationRes.filter((d, i) => (i === 0 || i === 1));
           this.searchData = res;
         } else {
           this.searchData = res;
@@ -209,8 +237,38 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData = res;
         }
 
+        if (res.EventsRes && res.EventsRes.length > 2) {
+          res.EventsRes = res.EventsRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+
         if (res.WisdomStoriesRes && res.WisdomStoriesRes.length > 2) {
           res.WisdomStoriesRes = res.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.AudioMeditationRes && res.AudioMeditationRes.length > 2) {
+          res.AudioMeditationRes = res.AudioMeditationRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+        if (res.PodCastRes && res.PodCastRes.length > 2) {
+          res.PodCastRes = res.PodCastRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
+
+        if (res.ModuleRes && res.ModuleRes.length > 2) {
+          res.ModuleRes = res.ModuleRes.filter((d, i) => (i === 0 || i === 1));
           this.searchData = res;
         } else {
           this.searchData = res;
@@ -222,12 +280,17 @@ export class SearchPopularItemsPage implements OnInit {
     this.getForumSearchData();
   }
   getTotalRecords() {
-    return this.searchData.ModuleRes.length +
-      this.searchData.SessionRes.length +
-      this.searchData.PodCastRes.length +
-      this.searchData.WisdomShortsRes.length +
-      this.searchData.WisdomStoriesRes.length +
-      this.searchData.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
+    if(this.searchDataDup){
+    return this.searchDataDup.ModuleRes.length +
+      this.searchDataDup.SessionRes.length +
+      this.searchDataDup.PodCastRes.length +
+      this.searchDataDup.AudioMeditationRes.length +
+      this.searchDataDup.WisdomShortsRes.length +
+      this.searchDataDup.EventsRes.length +
+      this.searchDataDup.WisdomStoriesRes.length +
+      this.searchDataDup.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
+    }
+    else return 0;
 
   }
   pageChangeEvent(tabName) {
@@ -279,6 +342,18 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enableShortViewMore = false;
       }
+    }else if(section === 'events') {
+      if (type === 'more') {
+        if (this.searchDataDup.EventsRes && this.searchDataDup.EventsRes.length > 2) {
+          this.searchData.EventsRes = this.searchDataDup.EventsRes;
+        }
+        this.enableEventsViewMore = true;
+      }else {
+        if (this.searchDataDup.EventsRes && this.searchDataDup.EventsRes.length > 2) {
+          this.searchData.EventsRes = this.searchDataDup.EventsRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableEventsViewMore = false;
+      }
     }else if(section === 'story') {
       if (type === 'more') {
         if (this.searchDataDup.WisdomStoriesRes && this.searchDataDup.WisdomStoriesRes.length > 2) {
@@ -291,9 +366,101 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enableStoryViewMore = false;
       }
+    }else if(section === 'module') {
+      if (type === 'more') {
+        if (this.searchDataDup.ModuleRes && this.searchDataDup.ModuleRes.length > 2) {
+          this.searchData.ModuleRes = this.searchDataDup.ModuleRes;
+        }
+        this.enableModuleViewMore = true;
+      }else {
+        if (this.searchDataDup.ModuleRes && this.searchDataDup.ModuleRes.length > 2) {
+          this.searchData.ModuleRes = this.searchDataDup.ModuleRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableModuleViewMore = false;
+      }
+    }
+    else if(section === 'podcast') {
+      if (type === 'more') {
+        if (this.searchDataDup.PodCastRes && this.searchDataDup.PodCastRes.length > 2) {
+          this.searchData.PodCastRes = this.searchDataDup.PodCastRes;
+        }
+        this.enablePodcastViewMore = true;
+      }else {
+        if (this.searchDataDup.PodCastRes && this.searchDataDup.PodCastRes.length > 2) {
+          this.searchData.PodCastRes = this.searchDataDup.PodCastRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enablePodcastViewMore = false;
+      }
+    }else if(section === 'audiomed') {
+      if (type === 'more') {
+        if (this.searchDataDup.AudioMeditationRes && this.searchDataDup.AudioMeditationRes.length > 2) {
+          this.searchData.AudioMeditationRes = this.searchDataDup.AudioMeditationRes;
+        }
+        this.enableAudioMedViewMore = true;
+      }else {
+        if (this.searchDataDup.AudioMeditationRes && this.searchDataDup.AudioMeditationRes.length > 2) {
+          this.searchData.AudioMeditationRes = this.searchDataDup.AudioMeditationRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableAudioMedViewMore = false;
+      }
     }
 
 
+  }
+
+  audioevent(data) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if (sub == 0 && data['RowID'] >= 4) {
+      this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
+    } else {
+      let url = data['AudioUrl'].replaceAll(':', '_');
+       url = encodeURIComponent(url.replaceAll('/', '~'));
+      let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
+      const prgType=SharedService.ProgramId;
+      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
+      if(prgType == 9){
+        this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      }else{
+        this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
+      }
+    }
+  }
+
+  youtube(link, RowID) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if(RowID>=4 && sub==0)
+    this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+    else if (RowID<=3)
+      this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=rdtfghjhfdg"])
+    else
+       this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=vncbxdfchgvxd"])
+  }
+
+ 
+  wisdoshortsevent(val, video, title) {
+    // localStorage.setItem('wisdomvideotitle', title);
+    let loggedin = localStorage.getItem("isloggedin")
+    let sub: any = localStorage.getItem("Subscriber")
+    let id = video.split("/")[3].split(".")[1]
+    this.commonService.CheckShortsIsFree(id).subscribe(res => {
+      if (res === true) {
+        if(val['IsVoices'] === '1') {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
+        }else {
+          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
+        }
+      } else {
+        if (loggedin && loggedin === 'T' && sub && sub === '1') {
+          if(val['IsVoices'] === '1') {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
+          }else {
+            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
+          }
+        } else {
+          this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+        }
+      }
+    })
   }
 
   like(item, index) {

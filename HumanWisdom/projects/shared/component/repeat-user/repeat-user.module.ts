@@ -8,6 +8,7 @@ import { RepeatUserPageRoutingModule } from './repeat-user-routing.module';
 
 import { RepeatUserPage } from './repeat-user.page';
 import { SharedModule } from '../../shared.module';
+import { MyDailyPracticePage } from'./my-daily-practice/my-daily-practice.page'
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { SharedModule } from '../../shared.module';
     SharedModule,
     RepeatUserPageRoutingModule
   ],
-  declarations: [RepeatUserPage]
+  declarations: [RepeatUserPage, MyDailyPracticePage]
 })
 export class RepeatUserPageModule {}

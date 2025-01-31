@@ -21947,6 +21947,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   background: #120F40;
   border-radius: 16px;
   padding: 20px;
+  /* margin: 8px; */
 }
 
 @media (min-width: 1024px)
@@ -26342,6 +26343,22 @@ h1
   line-height: 150%;
   color: #FFF;
 }
+.mdp_add_to_saved
+{
+   margin: -9px; 
+  border: 0;
+  height: 50px;
+  /* margin-bottom: 24px; */
+   width: 300px; 
+  overflow:visible;
+   border-radius: 100px; 
+  background: #E58D82;
+  font-size: 15px;
+  position: static;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+}
 
 .mdp_answer_here
 {
@@ -28839,6 +28856,25 @@ video::-webkit-media-controls-panel
   align-items: center;
   justify-content: center;
 }
+.btn_aan2 {
+  height: 60px;
+  width: 155px;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #e58d82;
+  border-radius: 100px;
+  /* border: 2px solid white; */
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 140%;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+}
 .btn_aan1 {
   height: 50px;
   width: 125px;
@@ -28860,12 +28896,12 @@ video::-webkit-media-controls-panel
 }
 
 .btn_daily {
-  height: 30px;
-  width: 61px;
+  height: 35px;
+  width: 71px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #292d56;
+  background: rgb(255 255 255 / 20%);
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
@@ -32746,8 +32782,9 @@ body *
   border-radius: 12px;
    padding: 15px !important;
   margin-right: 10px;
-  white-space: normal; 
+  white-space: normal;
 }
+
 .box_breath_v3_03 {
   /* height: 412px; */
   height: 370px;
@@ -33487,8 +33524,8 @@ body *
 .session_img
 {
   width: 100%;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 .session_img_play
@@ -34048,7 +34085,19 @@ body *
   align-items: center;
   justify-content: center;
 }
-
+.btn_forum_ask_a_gift {
+  height: 43px;
+  width: 115px;
+  border-radius: 80px;
+  background: #FFF;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #CB6171;
+  text-align: center;
+}
 .btn_forum_ask_a_coach 
 {
   height: 32px;
@@ -34594,7 +34643,20 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   text-align: left;
   padding: 12px 10px;
 }
-
+.sp_fc1 {
+  height: 50px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: #120F40;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  text-align: left;
+  padding: 12px 10px;
+}
 .sp_fc::-webkit-input-placeholder 
 {
   color: rgba(255, 255, 255, 0.50);
@@ -34651,7 +34713,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .mregister .sp_fc 
 {
-  padding: 13px 50px 13px 20px;
+  padding: 13px 8px 13px 13px;
 }
 
 .mregister .sp_fc.active::-webkit-input-placeholder
@@ -34719,7 +34781,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   width: 98px;
   height: 50px;
-  border-radius: 16px;
+  border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #E58D82;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
@@ -35582,7 +35644,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .mdp_oli_tray_ext01 
 {
   bottom: 109px;
-  padding-bottom: 20px;
+  padding: 30px;
 }
 
 .container_v3_01 
@@ -35804,6 +35866,12 @@ li ol > li:before {
 {
   width: 30px;
   height: 30px;
+}
+.img_close_delete1
+{
+  width: 30px;
+  height: 35px;
+  margin-top: -7px;
 }
 
 .div_subscription_emails_01 .row 

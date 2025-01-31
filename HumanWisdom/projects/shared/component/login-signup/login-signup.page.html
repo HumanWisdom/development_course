@@ -172,7 +172,7 @@
                         </div>
                       </div>
                     </div>
-                        <re-captcha (resolved)="resolved($event)" siteKey="6LelvDIqAAAAAG6RPFwaKk7XgnhYruDwK-FzXjwd"></re-captcha>
+                        <!-- <re-captcha (resolved)="resolved($event)" siteKey="6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></re-captcha> -->
 
                     <!-- <button class="g-recaptcha"
                     data-sitekey="6LdEcDIqAAAAACAcbDxCLhQOIePbpfZdSeuXORRM"
@@ -197,7 +197,7 @@
                     <!-- [disabled]="!registrationForm.valid && !isValidCaptach" -->
                     <div class="row mt40px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid || !isValidCaptach" (click)="signup()">
+                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid" (click)="verifyCaptcha()">
                           Sign up
                         </button>
                       </div>

@@ -34,7 +34,7 @@
               <div class="row adsearch adsearch_ext_01 plr20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                   <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
-                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                    <li *ngFor="let item of searchResult" (click)="getinp(item.ModuleName)" name="list"
                       class="is-search list-group-item">{{item.ModuleName}}</li>
                   </ul>
                 </div>
@@ -76,9 +76,7 @@
                   <div id="tab1" *ngIf="tabName=='Learning'" class="tab-pane fade in active">
 
 
-                    <!-- podcasts -->
-
-                    <!-- /podcasts -->
+              
 
                     <!-- feel better now -->
                     <div class="row mt30px mb15px" *ngIf="feelBetterNowTopic && feelBetterNowTopic != ''">
@@ -111,6 +109,95 @@
                     <!-- feel better now -->
 
                     
+     <!-- Events -->
+     <div class="row mt30px mb15px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+          Events
+        </h4>
+
+        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+          *ngIf="searchData.EventsRes.length==0">
+          No Record Found
+        </h4>
+      </div>
+    </div>
+
+    <div class="toc_adiv_01 row" *ngIf="searchData && searchData.EventsRes.length>0">
+      <!-- video row -->
+      <a (click)="youtube(item.YoutubeLink, item.RowID)"  *ngFor="let item of searchData.EventsRes">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="{{item.ImgUrl}}" alt="" class="p0 session_img">
+                <img
+                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+                  alt="" class="p0 session_img_play">
+              </div>
+
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  {{item.Title}}
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  {{item['Timing']}} min
+                </h4>
+              </div>
+
+            </div>
+
+            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div> -->
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.RowID <= 3">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.RowID > 3">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a (click)="enableViewMore('events','more')"
+        *ngIf="!enableEventsViewMore  && searchDataDup.EventsRes.length>2">
+        <div class="mt30px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                class="img-responsive mb10px">
+              View More
+            </h4>
+          </div>
+        </div>
+      </a>
+
+      <a (click)="enableViewMore('events','less')"
+        *ngIf="enableEventsViewMore  && searchDataDup.EventsRes.length>2">
+        <div class="mt30px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                class="img-responsive mb10px">
+              View Less
+            </h4>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+    </div>
+    <!-- /Events -->
+
+
+
 
                       <!-- short videos -->
                       <div class="row mt30px mb15px">
@@ -126,9 +213,9 @@
                         </div>
                       </div>
   
-                      <div class="toc_adiv_01" *ngIf="searchData && searchData.WisdomShortsRes.length>0">
+                      <div class="toc_adiv_01 row" *ngIf="searchData && searchData.WisdomShortsRes.length>0">
                         <!-- video row -->
-                        <a routerLink="{{item.VideoUrl}}" *ngFor="let item of searchData.WisdomShortsRes">
+                        <a (click)="wisdoshortsevent(item, item['VideoUrl'], item['Title'])"  *ngFor="let item of searchData.WisdomShortsRes">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                               <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
@@ -150,15 +237,27 @@
   
                               </div>
   
-                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                              <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                                 <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                              </div> -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.RowID<=7">
+                                <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                              </div>
+      
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                                <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                              </div>
+      
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.RowID >7">
+                                <!-- lock -->
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                                <!-- /lock -->
                               </div>
                             </div>
                           </div>
                         </a>
   
-                        <a (click)="enableViewMore('short','more')"
-                          *ngIf="!enableShortViewMore  && searchData.WisdomShortsRes.length>1">
+                        <a (click)="enableViewMore('short','more')" *ngIf="!enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -170,8 +269,7 @@
                           </div>
                         </a>
   
-                        <a (click)="enableViewMore('short','less')"
-                          *ngIf="enableShortViewMore  && searchData.WisdomShortsRes.length>1">
+                        <a (click)="enableViewMore('short','less')" *ngIf="enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -232,7 +330,7 @@
                         </div>
 
                         <a (click)="enableViewMore('story','more')"
-                          *ngIf="!enableStoryViewMore && searchData.WisdomStoriesRes.length>1">
+                          *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -246,7 +344,7 @@
                         </a>
 
                         <a (click)="enableViewMore('story','less')"
-                          *ngIf="enableStoryViewMore  && searchData.WisdomStoriesRes.length>1">
+                          *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -319,7 +417,7 @@
     </a>
 
     <a (click)="enableViewMore('blog','more')"
-      *ngIf="!enableBlogViewMore && searchData.BlogRes.length>1">
+      *ngIf="!enableBlogViewMore && searchDataDup.BlogRes.length>2">
       <div class="mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -332,7 +430,7 @@
     </a>
 
     <a (click)="enableViewMore('blog','less')"
-      *ngIf="enableBlogViewMore && searchData.BlogRes.length>1">
+      *ngIf="enableBlogViewMore && searchDataDup.BlogRes.length>2">
       <div class="mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -364,10 +462,131 @@
                       </div>
                     </div>
 
-                    <ng-container *ngIf="searchData.PodCastRes.length>0">
+                    <div class="row" *ngIf="searchData.PodCastRes.length>0">
+                    <ng-container >
                       <app-podcast-toc [isdefaultShow]="true" [podcastList]="searchData.PodCastRes"></app-podcast-toc>
+                    
+                      <a (click)="enableViewMore('podcast','more')"  *ngIf="!enablePodcastViewMore && searchDataDup.PodCastRes.length>2">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                class="img-responsive mb10px">
+                              View More
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+  
+                      <a (click)="enableViewMore('podcast','less')" 
+                        *ngIf="enablePodcastViewMore && searchData.PodCastRes.length > 2">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                class="img-responsive mb10px">
+                              View Less
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
                     </ng-container>
+                  </div>
                     <!-- /podcasts -->
+
+
+
+                    <!-- AudioMeditations -->
+                    <div class="row mt30px mb15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          Audio Meditations
+                        </h4>
+
+                        <h4 class="mt5px mb0px fs_12px fw_400 lh_150p fc_ffffff_0_5"
+                          *ngIf="searchData.AudioMeditationRes.length==0">
+                          No Record Found
+                        </h4>
+                      </div>
+                    </div>
+                    <div class="toc_adiv_01 row" *ngIf="searchData && searchData.AudioMeditationRes.length>0">
+                      <!-- video row -->
+                      <a  (click)="audioevent(item)" *ngFor="let item of searchData.AudioMeditationRes">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+                              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                                <img src="{{item.ImgUrl}}" alt="" class="p0 session_img">
+                                <!-- <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+                                  alt="" class="p0 session_img_play"> -->
+                              </div>
+                
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                                  {{item.Title}}
+                                </h4>
+                                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                                  {{item.Timing}} min
+                                </h4>
+                              </div>
+                
+                            </div>
+                
+                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                            </div> -->
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.RowID <= 3">
+                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                            </div>
+      
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                            </div>
+      
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.RowID > 3">
+                              <!-- lock -->
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                              <!-- /lock -->
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                
+                      <a (click)="enableViewMore('audiomed','more')"
+                        *ngIf="!enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                class="img-responsive mb10px">
+                              View More
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                
+                      <a (click)="enableViewMore('audiomed','less')"
+                        *ngIf="enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
+                        <div class="mt30px">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                class="img-responsive mb10px">
+                              View Less
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- /video row -->
+                    </div>
+                    
+                 
+                
+                    <!-- /AudioMeditations -->
+
 
                     <!-- modules -->
                     <div class="row mt30px mb15px">
@@ -414,38 +633,37 @@
                               </h4>
                             </div>
                           </div>
-                        </div>
-
-                        <a (click)="enableViewMore('key_ideas')"
-                          *ngIf="enablekeyideasViewMore && searchData.ModuleRes.length > 2 && i === 2">
-                          <div class="mt30px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
-                                <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
-                                  class="img-responsive mb10px">
-                                View More
-                              </h4>
-                            </div>
-                          </div>
-                        </a>
-
-                        <a (click)="enableViewLess('key_ideas')"
-                          *ngIf="!enablekeyideasViewMore && searchData.ModuleRes.length > 2 && i === 2">
-                          <div class="mt30px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
-                                <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
-                                  class="img-responsive mb10px">
-                                View Less
-                              </h4>
-                            </div>
-                          </div>
-                        </a>
+                        </div>                
 
                       </a>
                       <!-- /video row -->
+                      <a (click)="enableViewMore('module','more')"  *ngIf="!enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
+                      <div class="mt30px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                              class="img-responsive mb10px">
+                            View More
+                          </h4>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a (click)="enableViewMore('module','less')" 
+                      *ngIf="enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
+                      <div class="mt30px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                              class="img-responsive mb10px">
+                            View Less
+                          </h4>
+                        </div>
+                      </div>
+                    </a>
+
                     </div>
                     <!-- /modules -->
 

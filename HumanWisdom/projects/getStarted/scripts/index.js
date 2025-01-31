@@ -10,6 +10,32 @@ function logevent(e, t) {
     gtag("event", e, { screen_name: t });
 }
 
+setTimeout(() => {
+    if(sessionStorage.getItem('newsLetterOpened')!='true'){
+        sessionStorage.setItem('newsLetterOpened','true')
+        const newsLetterForm = document.getElementById("news-contact-form");
+        newsLetterForm.addEventListener("click", () => {
+                  const  email = document.getElementById("news-email").value;
+                  const  name = document.getElementById("news-name").value;
+                    const o = { Name: name, EmailID: email };
+                  
+                    if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
+                    if(!validateEmail(email)){
+                        return alert("Please enter valid email"), !1;
+                    }
+                    fetch("https://staging.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+                        .then((e) => e.json())
+                        .then((e) => {
+                            (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
+                        })
+                        .catch((e) => {
+                            let content = e['error']['Message'];
+                            console.error("Error:", e), alert(content);
+                        });
+            })
+        document.getElementById('newsPopup').click();
+    }
+}, 5000);
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
@@ -357,8 +383,13 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
+
+
 const newsLetterForm = document.getElementById("news-contact-form");
 newsLetterForm.addEventListener("click", () => {
+          if(document.getElementById('closebtn')){
+            document.getElementById('closebtn').click();
+          }
           const  email = document.getElementById("news-email").value;
           const  name = document.getElementById("news-name").value;
             const o = { Name: name, EmailID: email };

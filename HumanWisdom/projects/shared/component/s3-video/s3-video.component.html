@@ -32,7 +32,7 @@
                   [@slideAnimation]="currentIndex === i ? 'active' : (currentIndex > i ? 'previous' : 'next')"
                   [style.zIndex]="currentIndex === i ? 1 : 0"
                 >
-                <video #videoPlayer  *ngIf="currentIndex === i"  width="400px" height="450px" autoplay controls
+                <video #videoPlayer class="video-width" *ngIf="currentIndex === i"  width="400px" height="450px" autoplay controls
                 controlsList="nodownload nofullscreen"
                   disablePictureInPicture playsinline>
                   <source [src]="video.url" type="video/mp4" />

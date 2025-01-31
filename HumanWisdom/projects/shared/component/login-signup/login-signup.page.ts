@@ -57,7 +57,7 @@ declare var $: any;
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: '6LelvDIqAAAAAG6RPFwaKk7XgnhYruDwK-FzXjwd',
+        siteKey: '6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR',
       } as RecaptchaSettings,
     },
   ],
@@ -163,6 +163,7 @@ export class LoginSignupPage implements OnInit {
     private renderer: Renderer2, private el: ElementRef,
     private commonService:CommonService
   ) {
+    this.loadRecaptchaScript();
     this.initializeRegistrationForm();
     this.VerifyGoogle();
     // let acceptCookie = localStorage.getItem('acceptcookie');
@@ -182,6 +183,17 @@ export class LoginSignupPage implements OnInit {
     });
     localStorage.setItem("remember", "T");
     localStorage.setItem("firsttime", "T");
+  }
+
+  loadRecaptchaScript() {
+    if (!document.getElementById('recaptcha-script')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js?render=6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR';
+      script.id = 'recaptcha-script'; // Set an ID for easy identification
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   }
 
   ngOnInit() {
@@ -874,16 +886,21 @@ export class LoginSignupPage implements OnInit {
 
   }
 
-  public send(form: NgForm): void {
-    if (form.invalid) {
-      for (const control of Object.keys(form.controls)) {
-        form.controls[control].markAsTouched();
-      }
-      return;
-    }
-
-    console.debug(`Token [${this.token}] generated`);
+  public verifyCaptcha(): void {
+    const self = this;  // Store the component's 'this' context
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
+        self.service.verifyCaptcha(token).subscribe(res => {
+          if (res) {
+            self.signup();
+          }else{
+            alert("Unexpected error ocurred ,try again after refreshing the page.");
+          }
+        });
+      });
+    });
   }
+  
 
   loginWithInstagram() {
     const url = `${this.authUrl}?client_id=${this.clientId}&redirect_uri=${encodeURIComponent(this.redirectUri)}&scope=user_profile,user_media&response_type=code`;

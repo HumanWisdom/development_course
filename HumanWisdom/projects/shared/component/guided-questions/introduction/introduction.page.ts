@@ -73,6 +73,7 @@ export class IntroductionPage implements OnInit {
     this.service.GetGuidedQs_Topics().subscribe(res => {
       if (res) {
         this.data = res.filter(x => (x.Landing_URL) == '/' + url)[0];
+        localStorage.setItem("topicId", this.data['RowID']);
       }
     });
   }
