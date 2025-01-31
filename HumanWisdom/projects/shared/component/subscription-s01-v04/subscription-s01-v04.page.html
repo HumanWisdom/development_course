@@ -242,7 +242,7 @@
               </div>
               <div class="row mb15px">
                 <div class="col-lg-6 col-md-6 col-sm-4 col-xs-4 p0 tright">
-                  <button type="button" *ngIf="learnermail && selectedProgram" (click)="addToCartForm()" class="btn btn_forum_ask_a_gift">Add to cart
+                  <button type="button" [disabled]="!learnermail || !selectedProgram" (click)="addToCartForm()" class="btn btn_forum_ask_a_gift">Add to cart
 
                     <!-- <i class="fa fa-plus">New note</i> -->
                   </button>
