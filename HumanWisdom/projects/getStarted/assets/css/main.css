@@ -4088,7 +4088,7 @@ audio::-webkit-media-controls-enclosure
   /* background: #120F40; */
   border: 0;
 }
-.product_view .modal-dialog{max-width: 1200px; width: 980px; height:550px; top:2%;}
+.product_view .modal-dialog{max-width: 1200px; width: 980px; height:550px; top:4%;}
 .pre-cost{text-decoration: line-through; color: #a5a5a5;}
 .space-ten{padding: 10px 0;}
 .modal-content{
