@@ -176,7 +176,7 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px">
                   <a id="adultsWeb"  class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Adults
@@ -184,7 +184,7 @@
                   </a>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px">
                   <a id ="teensWeb" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
