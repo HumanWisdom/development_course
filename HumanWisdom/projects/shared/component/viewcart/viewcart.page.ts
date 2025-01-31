@@ -392,6 +392,7 @@ export class ViewcartPage implements OnInit {
   }
 
   couponValidation() {
+    this.errMsg = ''
     this.service.couponValidation({
       "CouponCode": this.couponCode,
       "CartAmt": this.totalCartValue
@@ -409,7 +410,11 @@ export class ViewcartPage implements OnInit {
           this.percentage = res[0].Percentage
         } else {
           // this.forumservice.toastrService.success('', 'Please enter a valid coupon code. ');
-          this.errMsg = 'This code is valid only for an annual subscription '
+          // this.errMsg = 'This code is valid only for an annual subscription '
+          if(this.errMsg='')
+          { 
+            this.errMsg = 'Please enter a valid coupon code.'
+          }
           this.enableAlert = true;
         }
 
@@ -423,6 +428,8 @@ export class ViewcartPage implements OnInit {
   couponCheck(data) {
     let result = this.cartList.some((d) => d?.LearnerEmail?.length !== 0 && d?.Plan === 'Monthly');
     if (result && data[0]['IsAnnual'] === '1') {
+      this.errMsg = 'This code is valid only for an annual subscription '
+      this.enableAlert = true;
       return false;
     } else {
       return true;
