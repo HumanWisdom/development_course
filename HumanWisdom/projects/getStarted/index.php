@@ -2911,7 +2911,7 @@
                 <span class="glyphicon glyphicon-remove"></span>
               </a>
               <div class="row center_flex">
-                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                   <div class=" back1">
                     <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   Bring HappierMe to your organization
@@ -2929,14 +2929,8 @@
                         <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                           <div class="box">
-                            <div class="row mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="row mt30px">
-                                  <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                                    <!-- Subscribe to our newsletter! -->
-                                  </h1>
-                                </div>
-                              </div>
+                            <div class="row">
+                              
                             </div>
                             <div class="row mt30px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
