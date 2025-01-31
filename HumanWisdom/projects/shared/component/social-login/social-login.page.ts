@@ -237,6 +237,7 @@ export class SocialLoginPage implements OnInit {
       this.userId = res.UserId
       this.userName = res.Name
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("token", JSON.stringify(res.access_token))
       if (this.saveUsername == true) {

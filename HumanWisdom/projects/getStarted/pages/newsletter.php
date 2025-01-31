@@ -287,8 +287,8 @@
         </div>
         </div>
         </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view">
-          <i class="fa fa-search"></i> News popup </button>
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view">
+          <i class="fa fa-search"></i> News popup </button> -->
       </section>
       <!-- /inspiring -->
       <div class="modal fade product_view" id="product_view">
