@@ -613,6 +613,10 @@
 </div>
 <!-- /page content -->
 
+<app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="false"
+[content]="errMsg">
+</app-modal>
+
 
 <!-- footer  -->
 <div class="mfooter">
