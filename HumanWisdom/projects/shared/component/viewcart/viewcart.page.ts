@@ -411,7 +411,7 @@ export class ViewcartPage implements OnInit {
         } else {
           // this.forumservice.toastrService.success('', 'Please enter a valid coupon code. ');
           // this.errMsg = 'This code is valid only for an annual subscription '
-          if(this.errMsg='')
+          if(this.errMsg=='')
           { 
             this.errMsg = 'Please enter a valid coupon code.'
           }
