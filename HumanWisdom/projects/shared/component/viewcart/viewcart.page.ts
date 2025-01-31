@@ -54,6 +54,9 @@ export class ViewcartPage implements OnInit {
   totalCartAmount = 0;
   cartListResult = []
   isAdults = false;
+  enableAlert = false;
+  errMsg= "";
+
   constructor(
     private router: Router,
     private service: OnboardingService,
@@ -103,6 +106,10 @@ export class ViewcartPage implements OnInit {
     localStorage.setItem('upgradeToPremium', 'F');
 
 
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
   }
 
   viewCart() {
@@ -392,27 +399,29 @@ export class ViewcartPage implements OnInit {
       res => {
         if (res.length !== 0 && this.couponCheck(res)) {
           this.couponCodeApplied = true;
-          this.forumservice.toastrService.success('', 'Coupon applied successfully');
-          this.msg = 'Coupon applied successfully'
+          // this.forumservice.toastrService.success('', 'Coupon applied successfully');
+          this.errMsg = 'Coupon applied successfully';
+          this.enableAlert = true;
           this.discount = parseFloat(res[0].Discount)
           localStorage.setItem("couponid", res[0]['CouponID'])
           this.totalCartValueDiscount = this.totalCartValue - this.discount
           localStorage.setItem('totalAmount', this.totalCartValueDiscount)
           this.percentage = res[0].Percentage
         } else {
-          this.forumservice.toastrService.success('', 'Please enter a valid coupon code. ');
-          this.msg = 'Please enter a valid coupon code. '
+          // this.forumservice.toastrService.success('', 'Please enter a valid coupon code. ');
+          this.errMsg = 'This code is valid only for an annual subscription '
+          this.enableAlert = true;
         }
 
         setTimeout(() => {
-          this.msg = ''
+          // this.errMsg = ''
         }, 3000)
       }
     )
   }
 
   couponCheck(data) {
-    let result = this.cartListResult.some((d) => d?.LearnerEmail?.length !== 0 && d?.Plan === 'Monthly');
+    let result = this.cartList.some((d) => d?.LearnerEmail?.length !== 0 && d?.Plan === 'Monthly');
     if (result && data[0]['IsAnnual'] === '1') {
       return false;
     } else {
