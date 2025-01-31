@@ -70,16 +70,20 @@ export class AppComponent implements OnDestroy {
     private navigationService:NavigationService
   ) {
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
-    if (localStorage.getItem("isloggedin") !== 'T') {
-      this.services.emaillogin();
-      this.onboardingService.getCountry();
-      setTimeout(() => {
-        this.getUserInformationById(SharedService.getUserId());
-      }, 1000);
-    }else{
-      this.getUserInformationById(SharedService.getUserId());
-    }
 
+    let urls = this.router.url.split('authtoken=');
+    if(!urls && urls[1] == undefined){
+      if (localStorage.getItem("isloggedin") !== 'T') {
+        this.services.emaillogin();
+        this.onboardingService.getCountry();
+        setTimeout(() => {
+          this.getUserInformationById(SharedService.getUserId());
+        }, 1000);
+      }
+      else{
+        this.getUserInformationById(SharedService.getUserId());
+      }
+    }
     localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId = 9;
     SharedService.ClientUrl = environment.clientUrl;
@@ -334,7 +338,7 @@ export class AppComponent implements OnDestroy {
       if(res[0]?.SurveyDone=='0'){
         setTimeout(() => {
          this.commonService.updateSurveyData(1); 
-        }, 50000);
+        }, 120000);
       }
     }
   });

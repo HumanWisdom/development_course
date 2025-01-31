@@ -73,8 +73,12 @@ export class ChangeTopicPage implements OnInit {
   }
 
   ngOnInit() {
+    debugger;
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-
+    if(loginResponse==null){
+      loginResponse = JSON.parse(sessionStorage.getItem("loginResponse"))
+      localStorage.setItem("loginResponse",JSON.stringify(loginResponse));
+    }
     let NoOfVisits = loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits )
     this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
