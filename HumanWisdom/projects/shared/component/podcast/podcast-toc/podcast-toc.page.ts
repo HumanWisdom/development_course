@@ -47,6 +47,12 @@ export class PodcastTocPage implements OnInit {
       this.isAdults = false;
     }
     this.prefData = SharedService.getPreferenceData();
+    this.prefData.push({
+      id: "01",
+      active: false,
+      displayName: "Mini Podcast",
+      name: 'Mini Podcast',
+    })
   }
 
   ngOnInit() {
@@ -174,6 +180,8 @@ export class PodcastTocPage implements OnInit {
     } else {
       if (type.name === 'Wisdom') {
         this.podcastList = this.podcastList.filter((d) => (!d['PreferenceIDs']));
+      } else if (type.name === "Mini Podcast") {
+        this.podcastList = this.podcastList.filter((d) => (d['IsMiniPodcast'] === '1'));
       } else {
         this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].split(",").includes(type.id));
       }
