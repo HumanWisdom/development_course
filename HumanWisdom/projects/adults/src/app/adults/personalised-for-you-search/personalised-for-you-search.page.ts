@@ -315,70 +315,70 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   getinp(event) {
     let url=""
-    switch(event)
+    switch(event.toLowerCase())
     {
-      case "Events":{
+      case "events":{
           url = `/adults/events`
           break;
       }
-      case "Blogs":{
+      case "blogs":{
         url = `/adults/blogs`
         break;
       }
-      case "Life stories":
-      case "Stories":{
+      case "life stories":
+      case "stories":{
         url = `/adults/wisdom-stories`
         break;
       }
-      case "Podcast":{
+      case "podcast":{
         url = `/adults/podcast`
         break;
       }
-      case "Audio meditations":{
+      case "audio meditations":{
         url = `/adults/audio-meditation`
         break;
       }
-      case ("Short videos"):
-      case ("Videos"):
+      case ("short videos"):
+      case ("videos"):
         {
         url = `/adults/wisdom-shorts`
         break;
       }
-     case "Journal":{
+     case "journal":{
         url = `/adults/journal`
         break;
       }
-      case "Exercises":
-      case "Awareness Exercises":
+      case "exercises":
+      case "awareness Exercises":
         {
         url = `/adults/wisdom-exercise`
         break;
       }
-      case "Forum":{
+      case "forum":{
         url = `/adults/forum`
         break;
       }
-      case "Develop a calm mind":{
+      case "develop a calm mind":{
         url = `/adults/pathway/develop-a-calm-mind`
         break;
       }
-      case "Understand yourself":{
+      case "understand yourself":{
         url = `/adults/pathway/understand-yourself`
         break;
       }
-      case "Understand how your mind works":{
+      case "understand how your mind works":{
         url = `/adults/pathway/understand-how-your-mind-works`
         break;
       }
-      case "Manage your emotions":{
+      case "manage your emotions":{
         url = `/adults/pathway/manage-your-emotions`
         break;
       }
-      case "Succeed in life":{
+      case "succeed in life":{
         url = `/adults/pathway/live-your-best-life`
         break;
       }
-      case "Mental Health":{
+      case "mental health":{
         url = `/adults/curated/overcome-stress-anxiety`
         break;
       }
