@@ -15139,6 +15139,13 @@ input[type="number"] {
   height: 48px;
   /* margin: 10px; */
 }
+.crimg1 {
+  /* display: block; */
+  width: 30px;
+  height: 30px;
+  /* margin: 10px; */
+  margin-top: 10px;
+}
 
 .txt28
 {
@@ -26364,7 +26371,7 @@ h1
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #4c2c44;
+  background: #4b2c451f;
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
@@ -33536,6 +33543,11 @@ body *
 {
   width: 100%;
   border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+}
+.session_imgnew {
+  width: 100px;
+  border-radius: 6px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 

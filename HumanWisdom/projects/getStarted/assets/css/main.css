@@ -3069,6 +3069,8 @@ audio::-webkit-media-controls-enclosure
 .hpt120px 
 {
   padding-top: 120px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .bl_text 
@@ -3114,8 +3116,8 @@ audio::-webkit-media-controls-enclosure
 
 .blog_sub_title 
 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
   line-height: 180%;
   color: #000;
   margin-bottom: 20px;
@@ -3125,8 +3127,9 @@ audio::-webkit-media-controls-enclosure
 {
   font-size: 18px;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 32.4px;
   color: #000;
+  text-align: justify;
   margin-bottom: 20px;
 }
 
