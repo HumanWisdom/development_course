@@ -100,6 +100,8 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     let url=""
+    this.search= event;
+
     switch(event.toLowerCase())
     {
       case "events":{
