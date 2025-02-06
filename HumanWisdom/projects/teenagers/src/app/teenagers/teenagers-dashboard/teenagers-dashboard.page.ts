@@ -1964,69 +1964,69 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
   getinp(event) {
     let url = ""
-    switch (event) {
-      case "Events": {
+    switch (event.toLowerCase()) {
+      case "events": {
         url = `/teenagers/events`
         break;
       }
-      case "Blogs": {
+      case "blogs": {
         url = `/teenagers/blogs`
         break;
       }
-      case "Life stories":
-      case "Stories": {
+      case "life stories":
+      case "stories": {
         url = `/teenagers/wisdom-stories`
         break;
       }
-      case "Podcast": {
+      case "podcast": {
         url = `/teenagers/podcast`
         break;
       }
-      case "Audio meditations": {
+      case "audio meditations": {
         url = `/teenagers/audio-meditation`
         break;
       }
-      case ("Short videos"):
-      case ("Videos"):
+      case ("short videos"):
+      case ("videos"):
         {
           url = `/teenagers/wisdom-shorts`
           break;
         }
-      case "Journal": {
+      case "journal": {
         url = `/teenagers/journal`
         break;
       }
-      case "Exercises":
-      case "Awareness Exercises":
+      case "exercises":
+      case "awareness exercises":
         {
           url = `/teenagers/wisdom-exercise`
           break;
         }
-      case "Forum": {
+      case "forum": {
         url = `/teenagers/forum`
         break;
       }
-      case "Develop a calm mind":{
+      case "develop a calm mind":{
         url = `/teenagers/pathway/develop-a-calm-mind`
         break;
       }
-      case "Understand yourself":{
+      case "understand yourself":{
         url = `/teenagers/pathway/learn-to-question-yourself`
         break;
       }
-      case "Understand how your mind works":{
+      case "understand how your mind works":{
         url = `/teenagers/pathway/understand-how-your-mind-works`
         break;
       }
-      case "Manage your emotions":{
+      case "manage your emotions":{
         url = `/teenagers/pathway/manage-your-emotions`
         break;
       }
-      case "Succeed in life":{
+      case "succeed in life":{
         url = `/teenagers/pathway/succeed-in-life`
         break;
       }
-      case "Mental Health":{
+      case "mental Health":{
         url = `/teenagers/curated/overcome-stress-anxiety`
         break;
       }
