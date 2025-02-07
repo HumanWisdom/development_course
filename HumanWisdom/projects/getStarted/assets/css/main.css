@@ -3069,8 +3069,8 @@ audio::-webkit-media-controls-enclosure
 .hpt120px 
 {
   padding-top: 120px;
-  padding-left: 10%;
-  padding-right: 10%;
+  /* padding-left: 10%;
+  padding-right: 10%; */
 }
 
 .bl_text 
