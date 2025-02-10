@@ -363,34 +363,43 @@
               <!-- /hr -->
 
                <!-- visit fouram -->
-            <div class="row tour_fbn">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+            <div class="row div_is_01">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <a routerLink="/adults/forum">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boxf_v3_01">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fourm_icon.svg"
-                        class="img-responsive w100">
+                  
+                    <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_new.svg"
+                        class="p0 session_imgnew">
                     </div>
 
-                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 pl15px">
+                    <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                       <!-- <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
                                     Teen Talk
                       </h4> -->
+                      <div class="row mtb10px">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" class="img-responsive" style="width:12px; height:12px">
+                      </div>
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
 
-                      <h4 class="mtb0px fc_e58d82 fs_12px fw_600 lh_140p">
-                        Visit the forum. Ask questions, share your thoughts, and learn from others
+                      <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                        FORUM
                       </h4>
+                      </div>
+                      </div>
+                      <h4 class="mt0px mb5px fw_600 fs_12px lh_130p fc_ffffff">
+                        Visit the forum. Ask questions, share thoughts, and learn from others.                      </h4>
                     </div>
 
                     <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                     </div> -->
-                  </div>
+                 
                 </a>
               </div>
             </div>
             <!-- /visit fouram -->
-
+          
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1118,7 +1127,7 @@
                             <div class="toc_adiv_02">
 
                               <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc01)">
+                              <!-- <a (click)="audioevent(mediaUrl.pc01)">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -1148,63 +1157,20 @@
                                     </div>
 
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                      *ngIf="!isSubscriber">
+                                      *ngIf="!isSubscriber"> -->
                                       <!-- lock -->
-                                      <img
+                                      <!-- <img
                                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
+                                        class="img-responsive"> -->
                                       <!-- /lock -->
-                                    </div>
+                                    <!-- </div>
 
                                   </div>
                                 </div>
-                              </a>
+                              </a> -->
                               <!-- /audio row -->
 
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc02)">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc02.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc02.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        56:48
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                      *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
+                             
                               <!-- audio row -->
                               <a (click)="audioevent(mediaUrl.pc03)"  *ngIf="!enablePodcastViewMore">
                                 <div class="row">
@@ -1248,6 +1214,96 @@
                                 </div>
                               </a>
                               <!-- /audio row -->
+
+
+                               <!-- audio row -->
+                               <a (click)="audioevent(mediaUrl.pc04)">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                      <div class="prelative">
+                                        <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="getimage(mediaUrl.pc04.id)"
+                                              class="img-responsive w100 img_podcast_01">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
+                                        {{mediaUrl.pc04.title}}
+                                      </h4>
+                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                                        21:21
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                                    </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </a>
+                              <!-- /audio row -->
+
+                               <!-- audio row -->
+                               <a (click)="audioevent(mediaUrl.pc05)">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                      <div class="prelative">
+                                        <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="getimage(mediaUrl.pc05.id)"
+                                              class="img-responsive w100 img_podcast_01">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
+                                        {{mediaUrl.pc05.title}}
+                                      </h4>
+                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                                        40:54
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                                    </div>
+
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
+                                      <!-- lock -->
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                        class="img-responsive">
+                                      <!-- /lock -->
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </a>
+                              <!-- /audio row -->
+
 
                             </div>
                           </div>

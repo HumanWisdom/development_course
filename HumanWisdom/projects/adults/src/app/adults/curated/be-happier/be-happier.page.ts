@@ -60,6 +60,18 @@ export class BeHappierPage implements OnInit {
           id: 45,
           url: '/podcasts/45.mp3',
           title: 'The resilient mindset'
+        },
+        pc04:
+        {
+          id: 12,
+          url: '/podcasts/12.mp3',
+          title: 'Happiness at work'
+        },
+        pc05:
+        {
+          id: 54,
+          url: '/podcasts/54.mp3',
+          title: 'How can we be happier?'
         }
 
       }
