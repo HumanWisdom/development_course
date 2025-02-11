@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
+import { HttpClient } from '@angular/common/http';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'HumanWisdom-single-audio-content',
@@ -15,10 +17,15 @@ export class SingleAudioContentComponent implements OnInit {
   imageUrl= '';
   enableImage = true;
   isAdults= false;
-  constructor(private route: ActivatedRoute, private router: Router) {
+  enableTextContent = false;
+  textContent= "";
+  audioLinkUrl= "";
+
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient,private service: CommonService) {
     // debugger;
     const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
+    this.audioLinkUrl = audioUrl.replace(/\~/g, '/');;
     this.audioTitle = this.route.snapshot.paramMap.get('title');
     if(this.audioTitle){
      this.audioTitle = this.audioTitle.replaceAll('-', ' ');
@@ -38,6 +45,26 @@ export class SingleAudioContentComponent implements OnInit {
     this.isAdults = SharedService.isAdultProgram();
     this.setAudioControlsBackground();
 }
+
+readText() {
+  let spt = this.audioLinkUrl.lastIndexOf('/');
+  let txt = this.audioLinkUrl.slice(spt + 1, this.audioLinkUrl.length);
+  txt = txt.replace('mp3', 'txt');
+  let s3 = this.audioLinkUrl.slice(1, spt);
+  s3 = s3.replace('audios', 'transcripts')
+  let obj = {
+    "S3Directory": s3 + '/',
+    "FileName":txt
+    }
+  this.service.GetAudioTranscript(obj).subscribe((res) => {
+    if (res) {
+      this.textContent = res;
+      this.enableTextContent = true;
+    }
+  })
+  
+}
+
 
 setAudioControlsBackground() {
   const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';

@@ -19,6 +19,12 @@
                 </div>
               </div> -->
 
+              <div class="row" (click)="readText()" *ngIf="audioLink !== ''">
+                <p class="txt1 mt40px mb30px">
+                  {{!enableTextContent ? 'Read Text' : textContent }}
+                </p>
+              </div>
+
               <div class="row" *ngIf="enableImage">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <img [src]="imageUrl" class="img-responsive img_podcast_02">
@@ -30,8 +36,8 @@
               </h1>
 
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0"  *ngIf="audioLink !== ''">
-                  <audio autoplay id="aud1" controls controlsList="nodownload" #audio >
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0" *ngIf="audioLink !== ''">
+                  <audio autoplay id="aud1" controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
                 </div>
