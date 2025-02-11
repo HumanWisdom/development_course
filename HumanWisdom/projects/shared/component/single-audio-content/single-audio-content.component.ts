@@ -46,22 +46,27 @@ export class SingleAudioContentComponent implements OnInit {
     this.setAudioControlsBackground();
 }
 
-readText() {
-  let spt = this.audioLinkUrl.lastIndexOf('/');
-  let txt = this.audioLinkUrl.slice(spt + 1, this.audioLinkUrl.length);
-  txt = txt.replace('mp3', 'txt');
-  let s3 = this.audioLinkUrl.slice(1, spt);
-  s3 = s3.replace('audios', 'transcripts')
-  let obj = {
-    "S3Directory": s3 + '/',
-    "FileName":txt
-    }
-  this.service.GetAudioTranscript(obj).subscribe((res) => {
-    if (res) {
-      this.textContent = res;
-      this.enableTextContent = true;
-    }
-  })
+readText(text) {
+  if(text === 'Read Text') {
+    let spt = this.audioLinkUrl.lastIndexOf('/');
+    let txt = this.audioLinkUrl.slice(spt + 1, this.audioLinkUrl.length);
+    txt = txt.replace('mp3', 'txt');
+    let s3 = this.audioLinkUrl.slice(1, spt);
+    s3 = s3.replace('audios', 'transcripts')
+    let obj = {
+      "S3Directory": s3 + '/',
+      "FileName":txt
+      }
+    this.service.GetAudioTranscript(obj).subscribe((res) => {
+      if (res) {
+        this.textContent = res;
+        this.enableTextContent = true;
+      }
+    })
+  }else {
+    this.enableTextContent = false;
+  }
+  
   
 }
 
