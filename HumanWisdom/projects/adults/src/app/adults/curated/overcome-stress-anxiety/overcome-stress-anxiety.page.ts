@@ -81,7 +81,13 @@ export class OvercomeStressAnxietyPage implements OnInit {
           id: 72,
           url: '/podcasts/72.mp3',
           title: 'Preventing self-harm and suicide'
-        }
+        },
+        pc07:
+        {
+          id: 40,
+          url: '/podcasts/40.mp3',
+          title: 'Overcoming Depression'
+        },
       }
 
       let userid = localStorage.getItem('isloggedin');
