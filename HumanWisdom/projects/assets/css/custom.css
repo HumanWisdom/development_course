@@ -33552,6 +33552,12 @@ body *
    border: 1px solid rgba(255, 255, 255, 0.25); 
    
 }
+.session_imgforum {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+}
 
 .session_img_play
 {
