@@ -35367,6 +35367,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border-radius: 12px;
   background: #120F40;
   padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   margin-bottom: 10px;
 }
 .div_is_02 {
