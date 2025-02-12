@@ -35448,7 +35448,17 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 12px;
   /* margin: 0 10px 10px 10px; */
 }
-
+.session_imgnew {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, .25);
+}
+.crimg1 {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
 .toc_adiv_01 .session_img
 {
   border: 0;
