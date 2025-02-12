@@ -189,7 +189,7 @@ section {
   }
 
   .land-happierme-margin {
-    margin-left: 8rem;
+    margin-left: 15rem;
   }
   
   .land-happierMe-gap {
@@ -4108,8 +4108,17 @@ audio::-webkit-media-controls-enclosure
 }
 
 
-/* .col-xs-12 {
-  float: none !important;
-} */
 
 
+@media (min-width: 1024px) {
+  .element {
+    width: 60%; /* Keeps the element at 60% width */
+  }
+}
+
+/* For very large screens (e.g., large desktop monitors) */
+@media (min-width: 1440px) {
+  .element {
+    width: 50%; /* Optionally decrease the width to make it look better on ultra-wide screens */
+  }
+}
