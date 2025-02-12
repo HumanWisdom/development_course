@@ -47,12 +47,12 @@ export class PodcastTocPage implements OnInit {
       this.isAdults = false;
     }
     this.prefData = SharedService.getPreferenceData();
-    this.prefData.push({
-      id: "01",
-      active: false,
-      displayName: "Mini Podcast",
-      name: 'Mini Podcast',
-    })
+    // this.prefData.push({
+    //   id: "01",
+    //   active: false,
+    //   displayName: "Mini Podcast",
+    //   name: 'Mini Podcast',
+    // })
   }
 
   ngOnInit() {
@@ -174,16 +174,26 @@ export class PodcastTocPage implements OnInit {
 
   getUserPref(type) {
     this.selectedPref = '';
+    this.selectedPref = type;
+
     this.podcastList = this.allpodcastList;
-    if (type.name === 'All') {
+    if (type === 'All') {
+      "MiniPodcast"
       this.podcastList = this.allpodcastList;
     } else {
-      if (type.name === 'Wisdom') {
+      if (type === '0') {  //for Wisdom
         this.podcastList = this.podcastList.filter((d) => (!d['PreferenceIDs']));
-      } else if (type.name === "Mini Podcast") {
+      } else if (type === "MiniPodcast") {
+        
         this.podcastList = this.podcastList.filter((d) => (d['IsMiniPodcast'] === '1'));
+        // const y = document.getElementById('mini_podcast');
+        // if (this.isAdults ==true)
+        //   y.style.backgroundColor = '#424675';
+        // else
+        //   y.style.backgroundColor = '#4267A5';
+        //  y.style.color = '#FFFFFF';
       } else {
-        this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].split(",").includes(type.id));
+        this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].split(",").includes(type));
       }
     }
   }
