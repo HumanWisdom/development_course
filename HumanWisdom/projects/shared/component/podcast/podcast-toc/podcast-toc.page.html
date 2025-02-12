@@ -94,13 +94,18 @@
               <!-- overflow buttons -->
               <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <ng-container *ngFor="let data of prefData"> 
+                  <button id="mini_podcast" type="button" class="btn" (click)="getUserPref('MiniPodcast')" 
+                  [ngStyle]="{'color': selectedPref === 'MiniPodcast' ? '#fff' : '', 'background': selectedPref === 'MiniPodcast' ?  '#E58D82': '' }">
+                    Mini podcasts
+                  </button>
+                 
+                  <ng-container *ngFor="let data of prefData">                    
                     <button type="button" class="btn" *ngIf="data['active'] && data['displayName'] === 'All'" 
-                     [ngStyle]="{'color': selectedPref === 'All' ? '#000' : '', 'background': selectedPref === 'All' ? '#fff' : '' }" (click)="getUserPref(data)">
+                     [ngStyle]="{'color': selectedPref === 'All' ? '#000' : '', 'background': selectedPref === 'All' ? '#fff' : '' }" (click)="getUserPref('All')">
                       {{data['displayName']}}
                     </button>
 
-                    <button type="button" class="btn" *ngIf="data['active'] && data['displayName'] !== 'All'" (click)="getUserPref(data)" >
+                    <button type="button" class="btn" *ngIf="data['active'] && data['displayName'] !== 'All'" (click)="getUserPref(data['id'])" >
                      {{data['displayName']}}
                    </button>
 
