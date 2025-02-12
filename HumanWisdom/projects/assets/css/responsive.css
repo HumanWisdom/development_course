@@ -1119,7 +1119,7 @@
     } */
     .col_cw
     {
-        width: 30% !important;
+        width: 20% !important;
     }
 }
 
@@ -1153,7 +1153,7 @@
     }
     .col_cw
     {
-        width: 30% !important;
+        width: 20% !important;
     }
 
     /* #modal_cookie .lab-modal-body
@@ -1177,11 +1177,12 @@
     }
 }
 
+
 @media (min-width: 2560px)
 {
     .col_cw
     {
-        width: 30% !important;
+        width: 20%;
     }
 }
 
