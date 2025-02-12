@@ -52,9 +52,8 @@
 
               <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <button id="voices" type="button" class="btn" 
-                  [ngStyle]="{'color': selectedPref === 'voices' ? '' : '#fff', 'background': selectedPref === 'voices' ?  '': '#E58D82' }"
-                  (click)="getUserPref('Voices')" >
+                  <button id="voices" type="button" class="btn" style="background-color:#E58D82;color:#fff;"
+                               (click)="getUserPref('Voices')" >
                     Voices
                   </button>
                   <!-- <span > | </span> -->

@@ -174,11 +174,27 @@ export class PodcastTocPage implements OnInit {
 
   getUserPref(type) {
     this.selectedPref = '';
+
+    const btns = Array.from(document.getElementsByClassName('btn'));
+
+    for (const b of btns) {
+        const y = <HTMLElement> b;
+        if(y.id=="MiniPodcast")
+           y.style.backgroundColor = '#E58D82';
+        else{
+              if(this.isAdults ==true)
+                y.style.backgroundColor = '#424675';
+              else
+                y.style.backgroundColor = '#4267A5';
+            }
+            y.style.color = '#FFFFFF';
+    }
+
+
     this.selectedPref = type;
 
     this.podcastList = this.allpodcastList;
     if (type === 'All') {
-      "MiniPodcast"
       this.podcastList = this.allpodcastList;
     } else {
       if (type === '0') {  //for Wisdom
@@ -196,6 +212,9 @@ export class PodcastTocPage implements OnInit {
         this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].split(",").includes(type));
       }
     }
+
+    document.getElementById(type).style.backgroundColor = '#FFFFFF';
+    document.getElementById(type).style.color = '#000000';
   }
 
   share() {
