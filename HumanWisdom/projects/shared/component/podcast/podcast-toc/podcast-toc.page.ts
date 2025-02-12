@@ -117,7 +117,7 @@ export class PodcastTocPage implements OnInit {
         this.allpodcastList = filteredData;
         this.allpodcastList.forEach((d) => {
           this.prefData.forEach((h) => {
-            if (d['PreferenceIDs'] && d['PreferenceIDs'].includes(h.id)) {
+            if (d['PreferenceIDs'] && d['PreferenceIDs'].split(",").includes( h.id)) {
               h.active = true;
             } else if (!d['PreferenceIDs']) {
               h.active = true;
