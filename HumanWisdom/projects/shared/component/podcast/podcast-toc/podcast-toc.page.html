@@ -99,7 +99,7 @@
                   </button>
                  
                   <ng-container *ngFor="let data of prefData">                    
-                    <button type="button"  id="All" class="btn" *ngIf="data['active'] && data['displayName'] === 'All'"  (click)="getUserPref('All')"  [ngClass]="isAdults ? '' : 'bg-clr'">
+                    <button type="button"  id="All" class="btn" *ngIf="data['active'] && data['displayName'] === 'All'"  style="background-color:#FFFFFF;color:#000000;" (click)="getUserPref('All')"  [ngClass]="isAdults ? '' : 'bg-clr'">
                       {{data['displayName']}}
                     </button>
 
