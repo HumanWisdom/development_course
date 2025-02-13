@@ -15144,7 +15144,7 @@ input[type="number"] {
   width: 30px;
   height: 30px;
   /* margin: 10px; */
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .txt28
@@ -34647,7 +34647,19 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: #424675;
   box-shadow: unset;
 }
-
+.btn_tfasnew {
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  background: #E58D82;
+  padding: 10px 20px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
 .btn_tfas 
 {
   margin: 0;
@@ -34940,7 +34952,20 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   align-items: center;
   justify-content: center;
 }
-
+.btn_subscription_cancelnew {
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid #E58D82;
+  background: transparent;
+  padding: 10px 20px;
+  color: #E58D82 !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
 .btn_subscription_cancel 
 {
   margin: 0;
@@ -35367,6 +35392,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border-radius: 12px;
   background: #120F40;
   padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   margin-bottom: 10px;
 }
 .div_is_02 {

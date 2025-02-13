@@ -40,7 +40,9 @@
         height: 40px;
         font-size: 12px;
     }
-
+    .blog_sub_title{
+        font-size: 20px;
+    }
     .ta_lc 
     {
         text-align: center;
@@ -146,6 +148,7 @@
         font-size: 27px !important;
         /* font-size: 24px !important; */
     }
+    
 
     .fs_24px 
     {
@@ -170,7 +173,7 @@
         /* text-align: center; */
     }
     /* /responsive_fonts */
-
+    
     .div_price,
      .div_dyk_l1, 
     .div_inspire,

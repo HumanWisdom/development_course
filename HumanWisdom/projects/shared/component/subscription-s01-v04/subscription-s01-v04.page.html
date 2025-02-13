@@ -199,7 +199,7 @@
                     </div>
                   </div> -->
 
-              <div class=" mregister">
+              <div >
                 <div class="row">
 
 
@@ -214,19 +214,16 @@
                 </div>
                 <div class="row mtb10px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-
+                    <div class="dropdown dropdown_outer">
+                      <label class="select_label m0px w100">
                     <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
-                    <select type="text" id="program" class="sp_fc" (change)="selectProgram($event.target.value)">
+                    <select type="text" id="program" class="sp_fc btn_select" (change)="selectProgram($event.target.value)">
                       <option value="" class="sp_fc">Choose program</option>
                       <option *ngFor="let data of cartList" value="{{data['Amt']+','+data['Plan']+','+data['Program']}}" class="sp_fc">
                         {{data['Program']}} - {{data['Plan']}} ({{defaultCurrencySymbol}} {{data['Amt']}}/{{'mo'}}.)</option>
-                      <!-- <option value="999,Monthly,Adults" class="sp_fc">Adults -
-                        Monthly (INR 999/mo.)</option>
-                      <option value="699,Annual,Teenagers" class="sp_fc">
-                        Teenagers - Annual (INR 699/mo.)</option>
-                      <option value="999,Monthly,Teenagers" class="sp_fc">
-                        Teenagers - Monthly (INR 999/mo.)</option> -->
-                    </select>
+                        </select>   
+                      </label>
+                    </div>
 
                   </div>
                 </div>

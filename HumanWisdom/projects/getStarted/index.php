@@ -672,7 +672,7 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
@@ -780,7 +780,7 @@
         </div>
 
         <div class="row center_flex display_m_none">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -868,7 +868,7 @@
       <!-- teenagers -->
       <section>
       <div class="row center_flex web_home_divcircle">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap element">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
 
             
@@ -1063,7 +1063,7 @@
       <!-- teenagers -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap element">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
             </div>

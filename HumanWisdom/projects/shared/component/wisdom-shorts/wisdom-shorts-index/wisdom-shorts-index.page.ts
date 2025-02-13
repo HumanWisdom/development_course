@@ -205,12 +205,15 @@ export class WisdomShortsIndexPage implements OnInit {
 
     for (const b of btns) {
         const y = <HTMLElement> b;
-        if (this.isAdults ==true)
-          y.style.backgroundColor = '#424675';
-        else
-          y.style.backgroundColor = '#4267A5';
-
-        y.style.color = '#FFFFFF';
+        if(y.id=="voices")
+           y.style.backgroundColor = '#E58D82';
+        else{
+              if(this.isAdults ==true)
+                y.style.backgroundColor = '#424675';
+              else
+                y.style.backgroundColor = '#4267A5';
+            }
+            y.style.color = '#FFFFFF';
     }
 
     type=type.toLowerCase()
@@ -220,16 +223,17 @@ export class WisdomShortsIndexPage implements OnInit {
     this.wisdomshorts = this.allwisdomshorts;
     if(type === "all") {
       this.wisdomshorts = this.allwisdomshorts;
-      document.getElementById("all").style.backgroundColor = '#FFFFFF';
-      document.getElementById("all").style.color = '#000000';
+      // document.getElementById("all").style.backgroundColor = '#FFFFFF';
+      // document.getElementById("all").style.color = '#000000';
     }else if(type === 'voices'){
       this.wisdomshorts= this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
-      document.getElementById("voices").style.backgroundColor = '#E58D82';
-      document.getElementById("voices").style.color = '#FFFFFF';
+      // document.getElementById("voices").style.backgroundColor = '#E58D82';
+      // document.getElementById("voices").style.color = '#FFFFFF';
 
-    }else{
-      document.getElementById(type).style.backgroundColor = '#FFFFFF';
-      document.getElementById(type).style.color = '#000000';
+    }
+    else{
+      // document.getElementById(type).style.backgroundColor = '#FFFFFF';
+      // document.getElementById(type).style.color = '#000000';
 
       if(type === '0') {  //wisdom
         this.wisdomshorts= this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
@@ -239,7 +243,8 @@ export class WisdomShortsIndexPage implements OnInit {
                 this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
       }
     }
-
+    document.getElementById(type).style.backgroundColor = '#FFFFFF';
+    document.getElementById(type).style.color = '#000000';
          
 
   }

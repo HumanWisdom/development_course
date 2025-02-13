@@ -34563,6 +34563,19 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-weight: 600;
   line-height: 150%;
 }
+.btn_tfasnew {
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  background: #E58D82;
+  padding: 10px 20px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
 
 .btn_tfas.disabled 
 {
@@ -34880,7 +34893,21 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-weight: 600;
   line-height: 150%;
 }
-
+.btn_subscription_cancelnew 
+{
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid #E58D82;
+  background: transparent;
+  padding: 10px 20px;
+  color: #E58D82;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
 .rgdiv .row
 {
   border-radius: 16px;
@@ -35448,7 +35475,17 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 12px;
   /* margin: 0 10px 10px 10px; */
 }
-
+.session_imgnew {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, .25);
+}
+.crimg1 {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
 .toc_adiv_01 .session_img
 {
   border: 0;
