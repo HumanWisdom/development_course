@@ -34647,7 +34647,19 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: #424675;
   box-shadow: unset;
 }
-
+.btn_tfasnew {
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  background: #E58D82;
+  padding: 10px 20px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
 .btn_tfas 
 {
   margin: 0;
@@ -34658,7 +34670,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: #E58D82;
   padding: 10px 20px;
   color: #FFF;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 150%;
 }
@@ -34940,7 +34952,20 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   align-items: center;
   justify-content: center;
 }
-
+.btn_subscription_cancelnew {
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid #E58D82;
+  background: transparent;
+  padding: 10px 20px;
+  color: #E58D82 !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
 .btn_subscription_cancel 
 {
   margin: 0;
@@ -34952,7 +34977,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: transparent;
   padding: 10px 20px;
   color: #E58D82 !important;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 150%;
 }
