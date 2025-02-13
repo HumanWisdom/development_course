@@ -1,5 +1,9 @@
 .div-box {
   position: relative;
 }
+.select-selected:after {
+  position: absolute;
+  right: 50px !important;
+}
 
 // .div-box img { position: absolute; top: 2px; right: 5px }
