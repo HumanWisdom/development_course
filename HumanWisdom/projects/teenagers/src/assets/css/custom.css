@@ -34559,7 +34559,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: #E58D82;
   padding: 10px 20px;
   color: #FFF;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 150%;
 }
@@ -34876,7 +34876,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: transparent;
   padding: 10px 20px;
   color: #E58D82;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 150%;
 }
