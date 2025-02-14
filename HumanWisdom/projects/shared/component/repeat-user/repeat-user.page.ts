@@ -65,16 +65,18 @@ export class RepeatUserPage implements OnInit {
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
-            if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
-              SharedService.FirstLoginOfTheDay =true;
-            }
-            else 
-            {
-              SharedService.FirstLoginOfTheDay =false;
-            }
-            console.log(SharedService.FirstLoginOfTheDay)
-          }
+          // if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
+          //  console.log(new Date().getDate())
+          //  console.log(new Date(res["LastVisit"]).getDate())
+          //   if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
+          //     SharedService.FirstLoginOfTheDay =true;
+          //   }
+          //   else 
+          //   {
+          //     SharedService.FirstLoginOfTheDay =false;
+          //   }
+          //   console.log(SharedService.FirstLoginOfTheDay)
+          // }
 
         }
       })
@@ -85,6 +87,19 @@ export class RepeatUserPage implements OnInit {
       this.getProgress();
       this.getBookmarks();
     }
+
+    this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+    if(this.loginResponse.LastVisit &&  new Date(this.loginResponse.LastVisit).getDate()){
+      
+       if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
+         SharedService.FirstLoginOfTheDay =true;
+       }
+       else 
+       {
+         SharedService.FirstLoginOfTheDay =false;
+       }
+       console.log(SharedService.FirstLoginOfTheDay)
+     }
   }
 
   ngOnInit() {
