@@ -32693,6 +32693,17 @@ body *
   justify-content: center;
 }
 
+.box_v3_01new {
+  /* background: #9B526A; */
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  border-radius: 12px;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 20px;
+}
 .box_v3_01
 {
   background: #9B526A;
