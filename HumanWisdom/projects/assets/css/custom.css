@@ -32702,7 +32702,7 @@ body *
   align-items: center;
   justify-content: center;
   height: 100px;
-  padding: 20px;
+  /* padding: 20px; */
 }
 .box_v3_01
 {
