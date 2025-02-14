@@ -26334,7 +26334,18 @@ h1
   line-height: 150%;
   color: #FFF;
 }
-
+.mdp_answer_heremy {
+  height: 130px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  background: #4b2c451f;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+  color: #ffffffb3;
+}
 .mdp_answer_here
 {
   height: 163px;
