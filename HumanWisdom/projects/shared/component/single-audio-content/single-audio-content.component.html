@@ -19,7 +19,7 @@
                 </div>
               </div> -->
 
-              <div class="row" (click)="readText(!enableTextContent ? 'Read Text' : 'Back To Audio')" *ngIf="audioLink !== ''">
+              <div class="row" (click)="readText(!enableTextContent ? 'Read Text' : 'Back To Audio')" *ngIf="audioLink !== '' && textContent !== ''">
                 <p class="txt1 mt40px mb30px">
                   {{!enableTextContent ? 'Read Text' : 'Back To Audio' }}
                 </p>
