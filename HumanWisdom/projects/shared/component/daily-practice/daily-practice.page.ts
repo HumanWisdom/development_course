@@ -292,4 +292,6 @@ export class DailyPracticePage implements OnInit {
           this.path = SharedService.AdultsBaseUrl + this.address
     }
   }
+
+
 }

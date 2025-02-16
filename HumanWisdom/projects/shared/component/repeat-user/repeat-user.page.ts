@@ -105,7 +105,7 @@ export class RepeatUserPage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       if(SharedService.FirstLoginOfTheDay){
-        this.router.navigate([`${SharedService.getprogramName()}/daily-checkin`])
+        this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
       }else{
         this.router.navigate([`${SharedService.getDashboardUrls()}`])
       }
