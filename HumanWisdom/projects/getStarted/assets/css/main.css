@@ -4122,3 +4122,23 @@ audio::-webkit-media-controls-enclosure
     width: 50%; /* Optionally decrease the width to make it look better on ultra-wide screens */
   }
 }
+
+/* Reduce button width on larger screens */
+@media (min-width: 2080px) {
+  .btn-res {
+    width: 30rem;
+  }
+  .btn_pricing , .btn_tff {
+    width:30rem;
+  }
+
+  .w-header{
+    width:35%
+  }
+  .owl-stage-outer{
+    margin-left: -40rem;
+    display: flex
+;
+
+  }
+}
