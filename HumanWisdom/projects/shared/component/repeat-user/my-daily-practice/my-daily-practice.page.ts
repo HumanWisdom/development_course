@@ -29,8 +29,12 @@ export class MyDailyPracticePage implements OnInit {
   questext:string='';
   enableAlert:boolean = false;
   content:string='';
+  DailyInspirationTime :string='';
+  audioTime:string='';
+  DailyInspirationImage:string= '';
   userId = JSON.parse(localStorage.getItem("userId"))
   isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
+  breatheTime:string = '';
   constructor(private  commonService:CommonService,private router:Router) { }
 
   ngOnInit() {
@@ -49,12 +53,15 @@ export class MyDailyPracticePage implements OnInit {
         this.dailybreathTitle = res.split(';')[0]
         this.videoLink = res.split(';')[1];
         this.enableVideo = true;
+        this.breatheTime =  res.split(';')[2];
       }
     })
     this.commonService.getDailyInspirationQuestion().subscribe((res) => {
       if (res) {
         this.dailyInspirationTitle = res.split(';')[0]
         this.DailyInspirationLink = res.split(';')[1];
+        this.DailyInspirationImage = res.split(';')[2];
+        this.DailyInspirationTime = res.split(';')[4];
        if(res.split(';')[3]==="6")
        { 
         this.isVoices = true; 
@@ -80,6 +87,7 @@ export class MyDailyPracticePage implements OnInit {
       if (res) {
         this.audioTitle = res.split(';')[0]
         this.audioLink = res.split(';')[1];
+        this.audioTime = res.split(';')[2];
       }
     })
     this.commonService.getDailypractiseQuestiontoday().subscribe((res) => {
@@ -125,5 +133,10 @@ export class MyDailyPracticePage implements OnInit {
   routeDailyPractice(id){
     this.router.navigate([SharedService.getprogramName()+'/'+'daily-practise/'+id])
   }
-
+  routeToDailyCheckIn(){
+    this.router.navigate([SharedService.getprogramName()+'/daily-checkin'])
+  }
+  routeToDashboard(){
+    this.router.navigate([SharedService.getDashboardUrls()]);
+  }
 }
