@@ -133,7 +133,7 @@ export class AllStoriesPage implements OnInit {
     else
     {
       this.searchedText=$event;
-      let filterlist =this.searchstoryList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      let filterlist =this.searchstoryList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()) || it.searchtags.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.storyList=filterlist.slice(0, 10)
       this.secondstoryList=filterlist.slice(10);
     }
