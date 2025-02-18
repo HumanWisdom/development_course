@@ -73,7 +73,7 @@
     
     <section class="hpt120px">
       <div class="row center_flex web_home_div">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
 
          
          
@@ -176,7 +176,7 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
                   <a id="adultsWeb"  class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Adults
@@ -184,7 +184,7 @@
                   </a>
                 </div>
 
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px btn-res">
                   <a id ="teensWeb" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
