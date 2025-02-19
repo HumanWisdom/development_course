@@ -80,7 +80,7 @@ export class BlogIndexPage implements OnInit {
     else
     {
       this.searchedTitle=$event;
-      this.filteredblogList =this.blogList.filter(it => it.Title.toLowerCase().includes(this.searchedTitle.toLowerCase()));
+      this.filteredblogList =this.blogList.filter(it => it.Title.toLowerCase().includes(this.searchedTitle.toLowerCase()) || it.searchtags.toLowerCase().includes(this.searchedTitle.toLowerCase()));
      // this.filteredblogList=this.filteredblogList.slice(0, 10);
     }
   }
