@@ -4,7 +4,7 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw"
-        [ngClass]="isAdults ? 'v1_3_bg_splash' : 'v1_3_bg_splash_teens'">
+        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="row  mt50px mb5px">
@@ -128,11 +128,11 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                      <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                      <h4 class="mt0px mb5px fw_400 fs_12px  fc_e58d82" style="line-height: 15.6px ;">
                         DAILY CHECK-IN
                       </h4>
-                      <h4 class="mt0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                      <h4 class="mt0px fs_15px fw_500  fc_ffffff ellipsis"  style="line-height: 19.5px ;">
 
                         How are you feeling today?
                       </h4>
@@ -231,9 +231,9 @@
             </a> -->
               <a (click)=routeDailyPractice(0)>
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex ">
 
-                    <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 p0">
                       <div class="prelative">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -249,7 +249,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 
                       <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
 
@@ -257,27 +257,32 @@
                       <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
                       <img
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
-                        alt="Testimonials" class="crimg1"> <!-- </div> -->
-                      <div class="row mt10px">
+                        alt="insp" class="crimg1"> <!-- </div> -->
+                      <div class="row va_middle ">
                         <div id="photo">
-                          <img style="vertical-align:middle"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dailymy.svg" alt="">
+                          
+                          <h4 class="mtb5px fw_400 fs_12px  fc_e58d82 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play">
+                            DAILY INSPIRATION
+                          </h4>
+                          <!-- <img  
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dailymy.svg" alt=""> -->
                           <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff plr5px"> DAILY INSPIRATION</span> -->
                         </div>
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
-                      </div> -->
-                        <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
+                          </div> -->
+                            <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
 
-                      <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
-                        DAILY INSPIRATION
-                      </h4>
-                      </div> -->
+                          <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                            DAILY INSPIRATION
+                          </h4>
+                          </div> -->
                       </div>
-                      <h4 class="mtb0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                      <h4 class="mt0px mb5px fs_15px fw_500  fc_ffffff ellipsis" style="line-height: 19.5px;">
                         {{dailyInspirationTitle}}
                       </h4>
-                      <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                      <h4 class="mt0px mb5px fs_12px  fc_ffffff_0_5 " style="line-height: 15.6px;">
                         {{DailyInspirationTime}}
                       </h4>
                     </div>
@@ -314,18 +319,22 @@
                       </div>
                     </div>
 
-                    <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="col-md-8 col-sm-8 col-xs-8 ">
                       <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
 
                       </div> -->
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_v3.svg"
-                        alt="Wisdom Stories" class="crimg1">
-                      <div class="row mt10px">
+                        alt="breathingExercise" class="crimg1">
+                      <div class="row va_middle">
 
                         <div id="photo">
-                          <img style="vertical-align:middle"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/videomy.svg" alt="">
+                          <h4 class="mtb5px fw_400 fs_12px  fc_e58d82 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play">
+                            BREATHING EXERCISE
+                          </h4>
+
+                          <!-- <img    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/videomy.svg" alt=""> -->
                           <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff plr5px"> 
                             BREATHING EXERCISE</span> -->
                         </div>
@@ -339,10 +348,10 @@
                       </h4>
                       </div> -->
                       </div>
-                      <h4 class="mtb0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis">
                         {{dailybreathTitle}}
                       </h4>
-                      <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                      <h4 class="mt0px mb5px fs_12px lh_140p fc_ffffff_0_5 ">
                         {{breatheTime}}
                       </h4>
                     </div>
@@ -359,7 +368,7 @@
               <!-- /hr -->
               <a (click)=routeDailyPractice(2)>
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-md-4 col-sm-4 col-xs-4 p0">
                       <div class="prelative">
@@ -385,13 +394,17 @@
 
                       <img
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_meditation_v3.svg"
-                        alt="Forum" class="crimg" style="width:30px;height: 30px;">
+                        alt="med" class="crimg1" >
 
 
-                      <div class="row mt10px">
+                      <div class="row va_middle">
                         <div id="photo">
-                          <img style="vertical-align:middle"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audiomy.svg" alt="">
+                          <h4 class="mtb5px fw_400 fs_12px  fc_e58d82 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg" alt="play">
+                            DAILY MEDITATION
+                          </h4>
+                          <!-- <img  
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audiomy.svg" alt=""> -->
                           <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff plr5px"> 
                         DAILY MEDITATION</span> -->
                         </div>
@@ -405,10 +418,10 @@
                   </h4>
                   </div> -->
                       </div>
-                      <h4 class="mtb0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis">
                         {{audioTitle}}
                       </h4>
-                      <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                      <h4 class="mt0px mb5px fs_12px lh_140p fc_ffffff_0_5 ">
                         {{audioTime}}
                       </h4>
                     </div>
@@ -427,14 +440,14 @@
               <a>
                 <div class="row mtb10px">
                   <div class="row mtb10px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 ">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
                         alt="" class="img-responsive" style="width:30px; height:30px">
                     </div>
                   </div>
-                  <div class="row mb20px">
+                  <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      <h4 class="mtb0px fs_12px fw_400 fc_e58d82" style="line-height: 16.8px ;">
                         QUESTION OF THE DAY
                       </h4>
                     </div>
@@ -443,7 +456,7 @@
                   <div class="box_journalmy">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500 lh_150p fc_e58d82 tleft">
+                        <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500 fc_ffffff tleft" style="line-height:19.5px;">
                           {{dailyqus}}
                         </h4>
                       </div>
@@ -467,7 +480,7 @@
 
                     <div class="row mt15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7 tcenter">
                           Your online HappierMe journal is secure and private to you.
                         </h4>
                       </div>
@@ -498,7 +511,7 @@
                   </div>
                   <div class="row mb20px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      <h4 class="mtb0px fs_12px fw_400 fc_e58d82" style="line-height: 16.8px ;">
                         QUOTE OF THE DAY
                       </h4>
                     </div>
@@ -515,7 +528,7 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
+                        <h4 class="mtb0px fs_15px fw_500  fc_ffffff" style="line-height:22.5px;">
                           {{dailyinstext}}
                         </h4>
                       </div>
@@ -529,8 +542,8 @@
 
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_16px fw_500 lh_150p fc_e58d82  tright">
-                          -{{dailyinsAuthor}}
+                        <h4 class="mt5px mb0px fs_15px fw_500 fc_ffffff  tright" style="line-height:22.5px;">
+                          - {{dailyinsAuthor}}
                         </h4>
                       </div>
                     </div>
@@ -561,16 +574,16 @@
                   </div>
                   <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      <h4 class="mtb0px fs_12px fw_400  fc_e58d82" style="line-height: 16.8px ;">
                         DAILY CHALLENGE
                       </h4>
                     </div>
                   </div>
 
                   <div class="box_journal">
-                    <div class="row">
+                    <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82"> {{trythistoday}}
+                        <h4 class="mtb0px fs_15px fw_500  fc_ffffff" style="line-height:22.5px;"> {{trythistoday}}
                         </h4>
                       </div>
                     </div>
