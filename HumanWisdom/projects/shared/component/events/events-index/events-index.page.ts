@@ -40,6 +40,7 @@ export class EventsIndexPage implements OnInit {
     setTimeout(() => {
       this.eventList=this.backupList.filter
       (x=>x.Title.toLocaleLowerCase().includes
+        (this.searchinp.toLocaleLowerCase()) || x.searchtags.toLocaleLowerCase().includes
         (this.searchinp.toLocaleLowerCase()));
     }, 30);
   }
