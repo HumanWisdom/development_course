@@ -194,7 +194,7 @@ export class WisdomShortsIndexPage implements OnInit {
       this.wisdomshorts = this.allwisdomshorts;
     }else{
       this.searchedText=$event;
-      let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()) || it.searchtags.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.wisdomshorts = filterlist;
     }
   }
