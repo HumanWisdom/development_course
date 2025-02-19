@@ -1134,7 +1134,7 @@
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  40% off HappierMe Premium
+                   HappierMe Premium
                 </h2>
 
                 <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
@@ -1166,7 +1166,7 @@
                       </h4> -->
 
                       <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
-                        <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
+                        <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
 
                         <span class="" id="annualPricingModelHeading"></span>
                       </h6>
