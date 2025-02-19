@@ -107,7 +107,8 @@ export class RepeatUserPage implements OnInit {
       if(SharedService.FirstLoginOfTheDay){
         this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
       }else{
-        this.router.navigate([`${SharedService.getDashboardUrls()}`])
+         this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+       // this.router.navigate([`${SharedService.getDashboardUrls()}`])
       }
     }, 5000);
 
