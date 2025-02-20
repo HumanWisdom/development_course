@@ -464,15 +464,15 @@
 
                     <div class="row mtb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"
-                          placeholder="Tap to answer" required="required" class="mdp_answer_heremy"
+                        <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"  [placeholder]="placeholder"
+                          required="required" class="mdp_answer_here"
                           maxlength="200"></textarea>
                       </div>
                     </div>
 
                     <div class="row mtb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <button type="submit" class="btn mdp_add_to_journal">
+                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()" [disabled]="guest || !isloggedIn" >
                           Add to journal
                         </button>
                       </div>
@@ -638,6 +638,9 @@
   <!--/class -->
 </div>
 <!-- /page content -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
+  [content]="content"></app-modal>
 
 <!-- footer  -->
 <app-bottom-navigation [dash]="true"></app-bottom-navigation>
