@@ -4,6 +4,9 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
+
 
 @Component({
   selector: 'HumanWisdom-wisdom-for-workplace',
@@ -128,6 +131,9 @@ export class WisdomForWorkplacePage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
   }
 
   goBack() {
