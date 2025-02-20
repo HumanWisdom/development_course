@@ -26376,7 +26376,8 @@ h1
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.70);
+  color: #ffffff !important;
+  outline:none !important;
 }
 .mdp_answer_here
 {
