@@ -6,6 +6,8 @@ import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { ProgramType } from '../../../../../../shared/models/program-model';
 import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
+
 
 @Component({
   selector: 'HumanWisdom-be-happier',
@@ -87,6 +89,7 @@ export class BeHappierPage implements OnInit {
 
   ngOnInit() {
     localStorage.setItem("NaviagtedFrom", '/adults/curated/be-happier');
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     if(SharedService.ProgramId == ProgramType.Adults){
       this.title.setTitle('Tips for Happiness: How to Live a Happier Life')

@@ -11,8 +11,11 @@ import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
 import { ForumService } from '../forum.service';
 import { ProgramType } from "../../models/program-model";
+import { NavigationService } from "../../../shared/services/navigation.service";
+
 import { SharedService } from '../../services/shared.service';
 import { ShareService } from "ngx-sharebuttons";
+import { Constant } from '../../../shared/services/constant';
 @Component({
   selector: 'app-forum-landing',
   templateUrl: './forum-landing.page.html',
@@ -105,7 +108,7 @@ export class ForumLandingPage implements OnInit {
   public isLoading:boolean = false;
   public programType :ProgramType.Adults;
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
-    private ngNavigatorShareService: NgNavigatorShareService, private location: Location,
+    private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService,
     private meta: Meta, private title: Title, public service: OnboardingService, public logeventservice: LogEventService,
     public cd: ChangeDetectorRef) {
       this.router.events
@@ -140,6 +143,8 @@ export class ForumLandingPage implements OnInit {
     }else{
         this.getForumSearchData();
     }
+
+     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
   }
   like(item, index) {
     if (this.isLoggedIn) {
@@ -438,7 +443,13 @@ export class ForumLandingPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    // this.location.back();
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   getclcickevent(event) {

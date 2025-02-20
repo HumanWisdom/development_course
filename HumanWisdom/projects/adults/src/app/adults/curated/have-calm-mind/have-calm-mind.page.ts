@@ -4,6 +4,10 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
+
+
 
 @Component({
   selector: 'HumanWisdom-have-calm-mind',
@@ -71,7 +75,8 @@ export class HaveCalmMindPage implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-calm-mind');
+    // localStorage.setItem("NaviagtedFrom", '/adults/curated/have-calm-mind');
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     this.title.setTitle('Mindfulness Practices for a Calm Mind')
     this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })

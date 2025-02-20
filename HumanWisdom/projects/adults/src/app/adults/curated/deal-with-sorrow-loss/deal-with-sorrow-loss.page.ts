@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 @Component({
   selector: 'HumanWisdom-deal-with-sorrow-loss',
@@ -77,8 +79,8 @@ export class DealWithSorrowLossPage implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/deal-with-sorrow-loss');
-
+    // localStorage.setItem("NaviagtedFrom", '/adults/curated/deal-with-sorrow-loss');
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     this.title.setTitle('Ways to Deal with Sorrow and Loss')
     this.meta.updateTag({ property: 'title', content: 'Ways to Deal with Sorrow and Loss' })
