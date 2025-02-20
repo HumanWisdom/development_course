@@ -4121,6 +4121,7 @@ audio::-webkit-media-controls-enclosure
   .element {
     width: 50%; /* Optionally decrease the width to make it look better on ultra-wide screens */
   }
+
 }
 
 /* Reduce button width on larger screens */
@@ -4137,8 +4138,21 @@ audio::-webkit-media-controls-enclosure
   }
   .owl-stage-outer{
     margin-left: -40rem;
-    display: flex
-;
-
+    display: flex;
   }
+  .p35{
+    padding-left: 35rem;
+  } 
+  .tab_faqs{
+    padding-left: 40rem;
+  }
+
+
+  #main > section:nth-child(11) > div.row.center_flex.prelative.aos-init.aos-animate > div{
+    width: 45%; 
+  }
+    .btn_subscription {
+      width: 70%;
+    }
+  
 }
