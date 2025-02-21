@@ -850,18 +850,17 @@
       <!-- /video -->
 
       <div class="row center_flex mt_d100px_m60px">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-            <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <!-- <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing">
-              <!-- Try HappierMe for free -->
-              <!-- Try for Free -->
-              Try HappierMe for free
-            </a>
-          </div>
-        </div>
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 center_flex">
+      <div>
+        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
+          Try HappierMe for free
+        </a>
       </div>
+    </div>
+  </div>
+</div>
+
 
       <!-- topics -->
 
