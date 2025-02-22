@@ -13,6 +13,7 @@ export class MyDailyPracticePage implements OnInit {
   isAdults = false;
   dailybreathTitle:string ='';
   videoLink:string ='';
+  userName:string ='';
   enableVideo:boolean;
   dailyInspirationTitle:string='';
   DailyInspirationLink:string='';
@@ -38,6 +39,7 @@ export class MyDailyPracticePage implements OnInit {
   constructor(private  commonService:CommonService,private router:Router) { }
 
   ngOnInit() {
+    this.userName = localStorage.getItem('userName');
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {

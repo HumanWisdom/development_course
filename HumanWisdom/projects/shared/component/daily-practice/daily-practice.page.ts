@@ -9,8 +9,8 @@ import { HammerGestureConfig } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-
-
+import { NavigationService } from '../../services/navigation.service';
+import {Location } from '@angular/common'
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
@@ -77,7 +77,9 @@ export class DailyPracticePage implements OnInit {
     private commonService: CommonService,
     public router: Router,
     public logeventservice: LogEventService,
+    public navigationService: NavigationService,
     private ngNavigatorShareService: NgNavigatorShareService,
+    private location:Location
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
@@ -264,7 +266,12 @@ export class DailyPracticePage implements OnInit {
   
   }
   routeToDashboard(){
-    this.router.navigate([SharedService.getDashboardUrls()])
+    var url = this.navigationService.getBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
   share() {
     this.shareUrl(SharedService.ProgramId);
