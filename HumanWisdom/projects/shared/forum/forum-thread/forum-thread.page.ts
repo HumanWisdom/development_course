@@ -8,7 +8,9 @@ import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { SharedService } from '../../services/shared.service';
-
+import { Constant } from '../../../shared/services/constant';
+import { NavigationService } from "../../../shared/services/navigation.service";
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-forum-thread',
   templateUrl: './forum-thread.page.html',
@@ -63,7 +65,8 @@ export class ForumThreadPage implements OnInit {
   isReportPost = false;
   isAdults: boolean = true; 
 
-  constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService,) {
+  constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute,
+     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService) {
     this.userID = localStorage.getItem('userId');
     this.token = localStorage.getItem("shareToken");
     this.sharedPostId = this.activateRoute.snapshot.paramMap.get('sharedPostId');
@@ -86,6 +89,7 @@ export class ForumThreadPage implements OnInit {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.getPostData()
   }
   enableCommentTextBox() {
@@ -159,7 +163,13 @@ export class ForumThreadPage implements OnInit {
 
   }
   routeToLanding(){
-    this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+    // this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
   like(PostID, ParentPOstID = null, index: number) {
     if (this.isLoggedIn) {

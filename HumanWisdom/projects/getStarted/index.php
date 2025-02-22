@@ -850,18 +850,17 @@
       <!-- /video -->
 
       <div class="row center_flex mt_d100px_m60px">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-            <!-- <a href="https://happierme.app/adults/intro/intro-carousel" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <!-- <a href="#div_subscription" class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex"> -->
-            <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing">
-              <!-- Try HappierMe for free -->
-              <!-- Try for Free -->
-              Try HappierMe for free
-            </a>
-          </div>
-        </div>
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 center_flex">
+      <div>
+        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
+          Try HappierMe for free
+        </a>
       </div>
+    </div>
+  </div>
+</div>
+
 
       <!-- topics -->
 
@@ -1134,7 +1133,7 @@
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  40% off HappierMe Premium
+                   HappierMe Premium
                 </h2>
 
                 <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
@@ -1166,7 +1165,7 @@
                       </h4> -->
 
                       <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
-                        <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
+                        <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
 
                         <span class="" id="annualPricingModelHeading"></span>
                       </h6>

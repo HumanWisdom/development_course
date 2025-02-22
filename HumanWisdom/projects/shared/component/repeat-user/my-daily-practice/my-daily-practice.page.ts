@@ -36,7 +36,13 @@ export class MyDailyPracticePage implements OnInit {
   userId = JSON.parse(localStorage.getItem("userId"))
   isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   breatheTime:string = '';
-  constructor(private  commonService:CommonService,private router:Router) { }
+  placeholder = 'Answer here'
+  guest = true;
+
+  constructor(private  commonService:CommonService,private router:Router) { 
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+
+  }
 
   ngOnInit() {
     this.userName = localStorage.getItem('userName');
@@ -47,6 +53,9 @@ export class MyDailyPracticePage implements OnInit {
     }
     this.getdailyquestion();
     this.getdailyques();
+    if (this.guest || !this.isloggedIn) {
+      this.placeholder = 'Login to use this feature' ;
+    }
   }
 
   getdailyquestion() {

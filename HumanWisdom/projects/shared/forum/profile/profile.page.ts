@@ -9,6 +9,8 @@ import { ProgramType } from "../../models/program-model";
 import { environment } from '../../../environments/environment';
 import { SharedService } from '../../services/shared.service';
 import { NavigationService } from '../../services/navigation.service';
+import { Constant } from '../../../shared/services/constant';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -76,6 +78,8 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
     this.isAdults = SharedService.isAdultProgram();
     this.getAllPosts(2, this.userId);
   }

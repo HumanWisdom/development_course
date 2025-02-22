@@ -26376,7 +26376,8 @@ h1
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.70);
+  color: #ffffff !important;
+  outline:none !important;
 }
 .mdp_answer_here
 {
@@ -32697,11 +32698,10 @@ body *
   /* background: #9B526A; */
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
   border-radius: 12px;
-  display: flex
-;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  /* height: 100px; */
   /* padding: 20px; */
 }
 .box_v3_01

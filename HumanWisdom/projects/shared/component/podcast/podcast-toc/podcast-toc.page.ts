@@ -154,7 +154,7 @@ export class PodcastTocPage implements OnInit {
     }
     else {
       this.searchedText = $event;
-      let filterlist = this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      let filterlist = this.allpodcastList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()) || it.searchtags.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.podcastList = filterlist;
       //this.secondstoryList=filterlist.slice(10);
     }
