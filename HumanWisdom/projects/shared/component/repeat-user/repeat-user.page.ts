@@ -89,9 +89,9 @@ export class RepeatUserPage implements OnInit {
     }
 
     this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-    if(this.loginResponse.LastVisit &&  new Date(this.loginResponse.LastVisit).getDate()){
+    if(this.loginResponse?.LastVisit &&  new Date(this.loginResponse?.LastVisit).getDate()){
       
-       if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
+       if(new Date().getDate() > new Date(this.loginResponse?.LastVisit).getDate()){
          SharedService.FirstLoginOfTheDay =true;
        }
        else 

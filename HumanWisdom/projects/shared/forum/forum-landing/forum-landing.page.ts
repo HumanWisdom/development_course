@@ -443,13 +443,12 @@ export class ForumLandingPage implements OnInit {
   }
 
   goBack() {
-    // this.location.back();
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    }else{
-      this.router.navigate([url]);
-    }
+      var url = this.navigationService.goBack();
+      if (url == null) {
+        this.location.back();
+      }else{
+        this.router.navigate([url]);
+      }
   }
 
   getclcickevent(event) {

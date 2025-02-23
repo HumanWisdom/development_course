@@ -226,7 +226,7 @@ export class ProfilePage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    var url = this.navigationService.goBack();
     if (url == null) {
       this.location.back();
     }else{
