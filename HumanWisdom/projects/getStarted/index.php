@@ -128,7 +128,7 @@
 
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
+                <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
                 Understand your mind. Live your best life. </h2>
               </div>
             </div>
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_600 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                   Addresses the root cause, for lasting change.  </h3>
                 </div>
               </div>
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                   Created by experts from around the world.
                   </h3>
                 </div>
@@ -167,7 +167,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Online journal, forum, podcasts, meditations, stories and more.  
                   </h3>
                 </div>
