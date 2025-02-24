@@ -472,7 +472,7 @@
 
                     <div class="row mtb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()" [disabled]="guest || !isloggedIn" >
+                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()" [disabled]="guest || !isloggedIn || (questext=='')" >
                           Add to journal
                         </button>
                       </div>
