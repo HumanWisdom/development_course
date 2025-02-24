@@ -97,7 +97,8 @@
                   <button id="MiniPodcast" type="button" class="btn"  style="background-color:#E58D82;color:#fff;" (click)="getUserPref('MiniPodcast')" >
                     Mini podcasts
                   </button>
-                 
+                  <span style="border-left: 1px solid #fff; height:20px; margin:10px" >  </span> 
+
                   <ng-container *ngFor="let data of prefData">                    
                     <button type="button"  id="All" class="btn" *ngIf="data['active'] && data['displayName'] === 'All'"  style="background-color:#FFFFFF;color:#000000;" (click)="getUserPref('All')"  [ngClass]="isAdults ? '' : 'bg-clr'">
                       {{data['displayName']}}
