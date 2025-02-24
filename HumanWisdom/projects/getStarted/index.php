@@ -88,7 +88,7 @@
             <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+              <img style="width:470px;height:430px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
@@ -128,7 +128,7 @@
 
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
+                <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
                 Understand your mind. Live your best life. </h2>
               </div>
             </div>
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_600 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                   Addresses the root cause, for lasting change.  </h3>
                 </div>
               </div>
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                   Created by experts from around the world.
                   </h3>
                 </div>
@@ -167,7 +167,7 @@
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_18px fw_400 lh_140p fc_000000">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     Online journal, forum, podcasts, meditations, stories and more.  
                   </h3>
                 </div>
