@@ -26344,7 +26344,7 @@ h1
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: #ffffffb3;
+  color: #ffffffb3 !important;
 }
 .toc_adiv_imgmy a>.row {
   border-radius: 12px;
