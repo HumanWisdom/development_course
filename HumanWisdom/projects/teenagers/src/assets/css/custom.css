@@ -15087,7 +15087,7 @@ input[type="number"] {
 
 .odiv
 {
-  display: flex;
+  display: block;
   overflow-x: auto;
   white-space: nowrap;
   /* padding-bottom: 5px; */
