@@ -53,7 +53,7 @@
               <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
                 <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 p0 tleft">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
-                  <h1 class="mtb0px fs_56px fw_600 lh_130p fc_183C79 ta_lct">
+                  <h1 class="mtb0px fs_36px fw_600 lh_130p fc_183C79 ta_lct">
                   HappierMe for Teenagers
                 </h1>
                      </div>
