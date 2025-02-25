@@ -129,7 +129,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_24px fw_400 lh_140p fc_000000 ta_lc">
-                Have happier relationships, manage your emotions and succeed in life. </h2>
+                Have fulfilling relationships, manage your emotions and succeed in life. </h2>
               </div>
             </div>
 
