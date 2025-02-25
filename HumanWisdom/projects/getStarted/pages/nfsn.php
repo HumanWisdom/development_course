@@ -51,7 +51,7 @@
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             
-              <img style="height:500px;width:327px;"
+              <img style="height:auto;width:100%;"
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive w100p display_m_none"
                 >
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
@@ -61,7 +61,7 @@
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <div class="row mb20px">
+              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black"> 
                 <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px">
