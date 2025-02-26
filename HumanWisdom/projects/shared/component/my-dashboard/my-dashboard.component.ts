@@ -22,13 +22,13 @@ export class MyDashboardComponent implements OnInit {
   isAdults:boolean = true;
   urlT:any
   userId:any
-  userName=JSON.parse(localStorage.getItem("userName"))
+  userName=localStorage.getItem("userName")
   cardList:SectionCard[] = [];
-  groupedCardList: { [key: string]: SectionCard[] } = {};
+  groupedCardList=[]
   metadata = [
-    { section_name: "Start here", priority: 1 },
-    { section_name: "Skills", priority: 2 },
-    { section_name: "Community", priority: 3 }
+    { section_name: "Start here", priority: 1,data : new Array<any>() },
+    { section_name: "Skills", priority: 2,data: new Array<any>() },
+    { section_name: "Community", priority: 3,data: new Array<any>()  }
   ];
   constructor(private router: Router,
     private service:CommonService,private ngNavigatorShareService: NgNavigatorShareService,
@@ -36,33 +36,15 @@ export class MyDashboardComponent implements OnInit {
       this.service.GetIntroContents(1).subscribe(res=>{
         if(res){
           this.cardList = res;
-          this.groupCardList();
+          for(var item of this.metadata){
+            item.data = this.cardList.filter(x=>x.section_name == item.section_name)
+          }
         }
       });
      }
 
   ngOnInit() {
    
-  }
-
-  groupCardList() {
-    const grouped = this.cardList.reduce((groups, card: SectionCard) => {
-      const section = card.section_name;
-      if (!groups[section]) {
-        groups[section] = [];
-      }
-      groups[section].push(card);
-      return groups;
-    }, {});
-
-    this.groupedCardList = this.metadata
-      .sort((a, b) => b.priority - a.priority)
-      .reduce((orderedGroups, meta) => {
-        if (grouped[meta.section_name]) {
-          orderedGroups[meta.section_name] = grouped[meta.section_name];
-        }
-        return orderedGroups;
-      }, {});
   }
 
     goBack(){

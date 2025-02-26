@@ -3,19 +3,17 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw"
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"
         [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row  mt50px mb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+            <div class="row mt50px mb5px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fw_600 fs_24px lh_140p fc_ffffff">
-                 Hi, {{userName}} !
+                  Hi, {{userName}}!
                 </h4>
-
               </div>
             </div>
-
             <div class="row mb20px mt10px">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff_0_5">
@@ -23,53 +21,28 @@
                 </h4>
               </div>
             </div>
-
-            <div class="toc_adiv_imgmy  mb30px">
-              <div *ngFor="let section of groupedCardList | keyvalue">
+            <div class="toc_adiv_imgmy mb30px">
+              <ng-container *ngFor="let item of metadata">
                 <div class="row mb15px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_18px fw_600 lh_140p fc_ffffff">
-                      {{ section.key }}
+                      {{ item.section_name }}
                     </h4>
                   </div>
                 </div>
-                <div *ngFor="let card of section.value">
+                <div *ngFor="let card of item.data">
                   <app-section-card [section]="card"></app-section-card>
                 </div>
-              </div>
-
+              </ng-container>
               <div class="row mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <button  (click)="routeToDashboard()" type="submit" class="btn mdp_add_to_journal">
+                  <button (click)="routeToDashboard()" type="submit" class="btn mdp_add_to_journal">
                     Proceed to Home
                   </button>
                 </div>
               </div>
-              <!-- <a (click)="enableViewMore('key_ideas')" *ngIf="enablekeyideasViewMore">
-                <div class="mt30px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
-                      View More
-                    </h4>
-                  </div>
-                </div>
-              </a> -->
-
-              <!-- <a (click)="enableViewLess('key_ideas')" *ngIf="!enablekeyideasViewMore">
-                <div class="mt30px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
-                      View Less
-                    </h4>
-                  </div>
-                </div>
-              </a> -->
             </div>
-
             <div class="pagebreak"></div>
-
           </div>
         </div>
       </div>
@@ -79,6 +52,6 @@
 </div>
 <!-- /page content -->
 
-<!-- footer  -->
+<!-- footer -->
 <app-bottom-navigation [dash]="true"></app-bottom-navigation>
 <!-- /footer -->
