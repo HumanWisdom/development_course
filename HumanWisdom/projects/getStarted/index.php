@@ -129,7 +129,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
-                Understand your mind. Live your best life. </h2>
+                Manage your emotions, have happier relationships, and succeed in life. </h2>
               </div>
             </div>
 
@@ -218,7 +218,279 @@
      
 
     
-    <!-- testimonials -->
+    
+   
+
+      <!-- aspects -->
+      <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                We are here to support you succeed in all aspects of life
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mental_health.webp" class="img-responsive img_aspects" alt="Mental Health" loading=lazy>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
+                    Mental health
+                  </h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
+                    Find long-term solutions to stress, anxiety and depression by understanding and managing your emotions.
+                  </h5>
+                </div>
+              </div>
+
+              <div class="row display_d_none">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" id="openInApp1" >
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happier_relationships.webp" class="img-responsive img_aspects" alt="Happier relationships" loading=lazy>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
+                    Happier relationships
+                  </h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
+                    Overcome loneliness by having relationships with depth, meaning and less conflict.
+                  </h5>
+                </div>
+              </div>
+
+              <div class="row display_d_none">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" id="openInApp2">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_leadership.webp" class="img-responsive img_aspects" alt="Work & Leadership" loading=lazy>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
+                    Work & Leadership
+                  </h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
+                    Learn soft skills, emotional intelligence, communication, leadership and resilience to thrive at work.
+                  </h5>
+                </div>
+              </div>
+
+              <div class="row display_d_none">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" id="openInApp3">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row center_flex display_m_none">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      Open in app
+                    </h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /aspects -->
+
+      <!-- video -->
+      <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                Discover HappierMe in just 1 minute
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
+            <!-- <video id="homeVideo" controls playinline class="w100p"
+              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
+              controlsList="nodownload">
+              <source
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_intro.mp4"
+                type="video/mp4">
+            </video> -->
+
+            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+          </div>
+        </div>
+      </section>
+      <!-- /video -->
+
+      <div class="row center_flex mt_d100px_m60px">
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+      <div>
+        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
+          Try HappierMe for free
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- topics -->
+
+      <!-- teenagers -->
+      <section>
+      <div class="row center_flex web_home_divcircle">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap element">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
+
+            
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Design.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/circle_mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+            
+            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+              <div class="land-happierme-margin">
+            
+            <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                
+                Our happiness depends on many factors.
+              </h2> -->
+
+              <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
+              Address the root cause of problems for lasting change.
+              </h2>
+
+              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
+
+               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
+              <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
+              </h3> 
+
+               <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+               Our happiness depends on many factors. HappierMe addresses them all.
+               </h5> 
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+                <a href="/pages/teenagers.php" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                    </h4> -->
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                    Try HappierMe for free
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+           </div>
+          </div>
+        </div>
+      </section>
+      <!-- /teenagers -->
+
+      <!-- testimonials -->
     <section>
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
@@ -657,276 +929,6 @@
         </div>
       </section>
       <!-- /testimonials -->
-   
-
-      <!-- aspects -->
-      <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                We are here to support you succeed in all aspects of life
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mental_health.webp" class="img-responsive img_aspects" alt="Mental Health" loading=lazy>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                    Mental health
-                  </h3>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Find long-term solutions to stress, anxiety and depression by understanding and managing your emotions.
-                  </h5>
-                </div>
-              </div>
-
-              <div class="row display_d_none">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" id="openInApp1" >
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                      Open in app
-                    </h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happier_relationships.webp" class="img-responsive img_aspects" alt="Happier relationships" loading=lazy>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                    Happier relationships
-                  </h3>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Overcome loneliness by having relationships with depth, meaning and less conflict.
-                  </h5>
-                </div>
-              </div>
-
-              <div class="row display_d_none">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" id="openInApp2">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                      Open in app
-                    </h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_leadership.webp" class="img-responsive img_aspects" alt="Work & Leadership" loading=lazy>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                    Work & Leadership
-                  </h3>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Learn soft skills, emotional intelligence, communication, leadership and resilience to thrive at work.
-                  </h5>
-                </div>
-              </div>
-
-              <div class="row display_d_none">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" id="openInApp3">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                      Open in app
-                    </h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="row center_flex display_m_none">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                      Open in app
-                    </h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                      Open in app
-                    </h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" href="https://happierme.app/adults/curated/wisdom-for-workplace">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                      Open in app
-                    </h4>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /aspects -->
-
-      <!-- video -->
-      <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                Discover HappierMe in just 1 minute
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <!-- <video id="homeVideo" controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
-              controlsList="nodownload">
-              <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_intro.mp4"
-                type="video/mp4">
-            </video> -->
-
-            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
-          </div>
-        </div>
-      </section>
-      <!-- /video -->
-
-      <div class="row center_flex mt_d100px_m60px">
-  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-      <div>
-        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
-          Try HappierMe for free
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-      <!-- topics -->
-
-      <!-- teenagers -->
-      <section>
-      <div class="row center_flex web_home_divcircle">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap element">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
-
-            
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Design.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
-
-
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/circle_mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
-            
-            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
-            </div>
-
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
-              <div class="land-happierme-margin">
-            
-            <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                
-                Our happiness depends on many factors.
-              </h2> -->
-
-              <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
-              Address the root cause of problems for lasting change.
-              </h2>
-
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
-
-               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
-              <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
-              </h3> 
-
-               <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-               Our happiness depends on many factors. HappierMe addresses them all.
-               </h5> 
-
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" class="">
-                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
-                      Find out more
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
-                    </h4> -->
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                    Try HappierMe for free
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-           </div>
-          </div>
-        </div>
-      </section>
-      <!-- /teenagers -->
 
       <!-- <section>
         <div class="section-header">

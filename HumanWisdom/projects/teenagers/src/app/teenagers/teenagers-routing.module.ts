@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
   },
   {
+    path: 'my-dashboard',
+    component: MyDashboardComponent
+  },
+  {
     path: 'what-is-wisdom',
     loadChildren: () => import('../teenagers/what-is-wisdom/what-is-wisdom.module').then(m => m.WhatIsWisdomModule)
   },

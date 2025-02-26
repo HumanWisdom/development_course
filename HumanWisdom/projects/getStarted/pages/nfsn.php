@@ -47,7 +47,7 @@
 
     <section class="hpt120px">
       <div class="row center_flex web_home_div">
-        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10 p0 ddflex_mblock">
+        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
             
@@ -62,7 +62,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ddflex_mblock_a">
                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black"> 
                 <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px">
                     

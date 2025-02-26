@@ -15084,7 +15084,13 @@ input[type="number"] {
   left: 0;
   /* top: -75px; */
 }
-
+.odivprod {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  /* padding-bottom: 5px; */
+  padding: 0 20px 10px 20px;
+}
 .odiv
 {
   display: block;
