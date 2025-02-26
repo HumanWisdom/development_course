@@ -465,7 +465,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" class="">
+                <a href="/pages/teenagers.php" aria-label="Explore more about the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -1092,7 +1092,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" class="">
+                <a href="/pages/teenagers.php" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -2956,7 +2956,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                       <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
                                       <div class="fc_icons">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
                                       </div>
                                     </div>
                                   </div>
@@ -2966,7 +2966,7 @@
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
                                     <div class="fc_icons">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
                                     </div>
                                   </div>
                                 </div>
