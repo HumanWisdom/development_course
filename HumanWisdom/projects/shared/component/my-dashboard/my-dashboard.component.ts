@@ -33,10 +33,18 @@ export class MyDashboardComponent implements OnInit {
   constructor(private router: Router,
     private service:CommonService,private ngNavigatorShareService: NgNavigatorShareService,
     private navigationService: NavigationService) {
-      this.service.GetIntroContents(1).subscribe(res=>{
+      SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
+      var data:any; 
+      if(this.isAdults){
+        data =  SharedService.contentIdData('adult-dashboard');
+      }else{
+        data =  SharedService.contentIdData('teenager-dashboard');
+      }
+      this.service.GetIntroContents(data.id).subscribe(res=>{
         if(res){
           this.cardList = res;
           for(var item of this.metadata){
+
             item.data = this.cardList.filter(x=>x.section_name == item.section_name)
           }
         }
@@ -56,5 +64,8 @@ export class MyDashboardComponent implements OnInit {
     }
    } 
 
+   routeToDashboard(){
+    this.router.navigate([SharedService.getDashboardUrls()]);
+   }
 
 }
