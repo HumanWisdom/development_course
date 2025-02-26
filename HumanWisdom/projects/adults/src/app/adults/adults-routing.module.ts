@@ -10,6 +10,7 @@ import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blo
 import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article/blog-article.page';
 import { IntroGuard } from '../intro.guard';
 import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
+import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
 const routes: Routes = [
   {
     path: '',
@@ -635,6 +636,10 @@ const routes: Routes = [
   {
     path: 'daily-checkin-save',
     loadChildren: () => import('../../../../shared/component/daily-check-note-save/daily-check-note-save.module').then( m => m.DailyCheckinNoteSavePageModule)
+  },
+  {
+    path: 'my-dashboard',
+    component: MyDashboardComponent
   },
   {
     path: 'give-the-gift-of-wisdom',

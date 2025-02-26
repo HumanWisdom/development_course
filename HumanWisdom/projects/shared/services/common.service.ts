@@ -560,4 +560,8 @@ export class CommonService {
   getModules(id): Observable<any> {
     return this.http.get(this.path + `/GetModules/` + id)
   }
+
+  GetIntroContents(id): Observable<any> {
+    return this.http.get(this.path + `/GetIntroContents/` + id)
+  }
 }

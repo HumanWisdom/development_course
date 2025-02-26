@@ -99,6 +99,8 @@ import { ChangePasswordPage } from './component/change-password/change-password.
 import { SetPasswordPage } from './component/set-password/set-password.page';
 import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.page';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { SectionCard } from './component/section-card/section-card.page';
+import { MyDashboardComponent } from './component/my-dashboard/my-dashboard.component';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -193,6 +195,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     ForgetPasswordPage,
     ChangePasswordPage,
     SetPasswordPage,
+    SectionCard,
+    MyDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -308,6 +312,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     ForgetPasswordPage,
     ChangePasswordPage,
     SetPasswordPage,
+    SectionCard,
+    MyDashboardComponent
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
