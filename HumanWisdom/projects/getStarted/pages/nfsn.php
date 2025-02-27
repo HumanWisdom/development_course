@@ -63,15 +63,15 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ddflex_mblock_a">
-               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black"> 
-                <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px">
+               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black">  -->
+                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px">
                     
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_m_none" alt="wh_tick_black" style="width:177px;height:50px;">
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px plr20px"> 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/trans1.svg"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"style="width:225px;height:60px;"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px"> 
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"style="width:225px;height:60px;"> 
                 
-            </div>  -->
+            </div>  
               </div>
             </div>
 
