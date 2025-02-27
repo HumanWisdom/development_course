@@ -85,7 +85,7 @@
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video> -->
-            <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
+            <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
               <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
@@ -405,7 +405,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+            <iframe loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
           </div>
         </div>
       </section>
