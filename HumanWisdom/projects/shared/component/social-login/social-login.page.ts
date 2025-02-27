@@ -134,6 +134,7 @@ export class SocialLoginPage implements OnInit {
     
             if (res) {
               localStorage.setItem('guest','F');
+
               localStorage.setItem("email", res['Email'])
               localStorage.setItem("name", res['Name'])
               let namedata = localStorage.getItem('name').split(' ')
@@ -178,7 +179,7 @@ export class SocialLoginPage implements OnInit {
   loginadult(res) {
     this.loginResponse = res
     let NoOfVisits = this.loginResponse.NoOfVisits
-    this.userId = res.UserId
+    this.userId = this.loginResponse.UserId
     if (res.Subscriber === 0) {
       this.isSubscribe = true;
     }
