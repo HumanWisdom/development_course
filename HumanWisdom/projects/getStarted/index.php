@@ -1619,14 +1619,14 @@
               <!-- fbn -->
               <div id="fbn" class="tab-pane fade in active">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                       </video>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Feel better now
                       </h3>
@@ -1649,12 +1649,12 @@
               <!-- pathway -->
               <div id="pathway" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         PATHWAY
                       </h3>
@@ -1685,12 +1685,12 @@
               <!-- journal -->
               <div id="journal_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Your private journal
                       </h3>
@@ -1713,12 +1713,12 @@
               <!-- podcast -->
               <div id="podcast_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         HappierMe Podcast
                       </h3>
@@ -1749,12 +1749,12 @@
               <!-- forum -->
               <div id="forum" class="tab-pane fade">
                 <div class="row center_flex tools_forum">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Community forum
                       </h3>
@@ -1777,12 +1777,12 @@
               <!-- survey -->
               <div id="survey" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_survey.webp" class="img-responsive" alt="Survey" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Track your wellness score
                       </h3>
@@ -1792,7 +1792,7 @@
                       </h5>
 
                       <div class="row mtb15px">
-                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <a href="https://happierme.app/adults/wisdom-survey">
                             <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                               Check your wellness score
