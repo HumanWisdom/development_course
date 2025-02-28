@@ -129,7 +129,7 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
-                Manage your emotions, have happier relationships, and succeed in life. </h2>
+                Manage your emotions, have happier relationships and succeed in life. </h2>
               </div>
             </div>
 
@@ -463,7 +463,7 @@
                Our happiness depends on many factors. HappierMe addresses them all.
                </h5> 
 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb10px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                 <a href="/pages/teenagers.php" aria-label="Explore more about the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
