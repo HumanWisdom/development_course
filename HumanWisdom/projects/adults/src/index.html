@@ -437,6 +437,9 @@
         if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
         }
+        if (window.AndroidHandler) {
+          window.AndroidHandler.subscribe();
+        }
       });
 
 

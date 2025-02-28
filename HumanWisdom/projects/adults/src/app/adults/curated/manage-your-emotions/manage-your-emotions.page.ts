@@ -85,7 +85,8 @@ export class ManageYourEmotionsPage implements OnInit {
 
   ngOnInit() {
 
- 
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
     this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
     this.meta.updateTag({ property: 'title', content: 'Managing Emotions with Mindfulness & Positive Psychology' })
     this.meta.updateTag({ property: 'description', content: 'Gain mastery over your emotions with our expert-guided coping strategies for anger management, stress management, and mood regulation. Learn how to practice emotional self-regulation and self-awareness techniques that promote mindfulness and positive psychology.' })

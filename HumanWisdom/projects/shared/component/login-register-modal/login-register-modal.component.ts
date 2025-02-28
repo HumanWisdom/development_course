@@ -1071,8 +1071,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         REDIRECT_API_URL
       )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
     );
+   // this.pollPopup(popup);
   }
-
 
   handleAppleLoginResponse() {
     const token = localStorage.getItem('token');

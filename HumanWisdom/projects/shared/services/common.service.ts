@@ -172,6 +172,11 @@ export class CommonService {
         })
   }
 
+  
+  GetAudioTranscript(data): Observable<any> {
+    return this.http.post(this.path + '/GetAudioTranscript', data);
+  }
+
 
   GetPodcastList(): Observable<any> {
     return this.http.get(this.path + '/GetPodcastsListing');
@@ -554,5 +559,9 @@ export class CommonService {
 
   getModules(id): Observable<any> {
     return this.http.get(this.path + `/GetModules/` + id)
+  }
+
+  GetIntroContents(id): Observable<any> {
+    return this.http.get(this.path + `/GetIntroContents/` + id)
   }
 }

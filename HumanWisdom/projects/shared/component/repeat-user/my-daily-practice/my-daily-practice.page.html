@@ -1,9 +1,647 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>my_daily_practice</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- page content -->
+<div class="right_col mc_03">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw"
+        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <div class="row  mt50px mb5px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+                <h4 class="mtb0px fw_600 fs_24px lh_140p fc_ffffff">
+                  Welcome back, {{userName}}
+                </h4>
 
-<ion-content>
+              </div>
+            </div>
 
-</ion-content>
+            <div class="row mb20px mt10px">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff_0_5">
+                  Here’s your daily dose of happiness :)
+                </h4>
+              </div>
+            </div>
+
+            <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                  Here’s your daily dose of happiness :)                </h4>
+              </div>
+            </div> -->
+
+            <!-- <div class="row mtb30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="routeVideoaudio('video','/adults/videopage/introduction_to_happierme-videos-welcome_to_happierme.mp4', 'Welcome to HappierMe')">
+                <a class="">
+                  <div class="prelative">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/welcome_to_happierme.webp" class="img-responsive w100">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title" >
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                          Welcome to HappierMe
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                          00:30
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div> -->
+
+            <!-- <div class="row mtb30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="routeVideoaudio('video','/adults/videopage/introduction_to_happierme-videos-video_tour_of_the_app.mp4', 'Video tour of the app')">
+                <a class="">
+                  <div class="prelative">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/overview_of_app.webp" class="img-responsive w100">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title" >
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                          Video tour of the app
+                        </h4>
+                      </div>
+
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                          02:25
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
+            </div> -->
+
+
+            <div class="toc_adiv_imgmy mb30px">
+
+              <a (click)="routeToDailyCheckIn()">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="prelative">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/daily.svg"
+                              class="p0 session_imgnew" style="border: none;">
+                          </div>
+                        </div>
+
+                        <!-- <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                      <h4 class="mt0px mb5px fw_400 fs_12px  fc_e58d82" style="line-height: 15.6px ;">
+                        DAILY CHECK-IN
+                      </h4>
+                      <h4 class="mt0px fs_15px fw_500  fc_ffffff ellipsis"  style="line-height: 19.5px ;">
+
+                        How are you feeling today?
+                      </h4>
+                      <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+
+                      </h4>
+                    </div>
+
+                  </div>
+                </div>
+              </a>
+
+              <!-- <a>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex" >
+                    
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                      <div class="prelative">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_different_ways_to_use_this_app.webp" class="img-responsive w100 img_ki_bmp">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                      <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff">
+                        Different ways to use this app
+                      </h4>
+                      <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                        02:24
+                      </h4>
+                    </div>
+    
+                  </div>
+                </div>
+              </a> -->
+            </div>
+
+            <div class="row mb15px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_18px fw_600 lh_140p fc_ffffff">
+                  Daily practice
+                </h4>
+              </div>
+            </div>
+
+            <div class="toc_adiv_imgmy">
+              <!-- <a>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                  <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.webp"  alt="" class="p0 session_img"> -->
+
+              <!-- <div class="progress dprogress">
+                      <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> -->
+              <!-- </div>
+                
+
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                    <div class="row">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                     hhhh
+                    </h4>
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      hhh   
+                                    </h4>
+                    <h4 class="mt0px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+
+                    ppp
+                    </h4> -->
+
+              <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_7">
+                      01:01
+                    </h4> -->
+              <!-- </div>
+                  </div>
+              
+
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                    <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                  </div>
+
+                </div>
+              </div>
+              
+            </a> -->
+              <a (click)=routeDailyPractice(0)>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex ">
+
+                    <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="prelative">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <img [src]="DailyInspirationImg" class="p0 session_imgnew">
+                          </div>
+                        </div>
+
+                        <!-- <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+
+                      </div> -->
+                      <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
+                        alt="insp" class="crimg1"> <!-- </div> -->
+                      <div class="row va_middle ">
+                        <div id="photo">
+                          
+                          <h4 class="mtb5px fw_400 fs_12px  fc_e58d82 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play">
+                            DAILY INSPIRATION
+                          </h4>
+                          <!-- <img  
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dailymy.svg" alt=""> -->
+                          <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff plr5px"> DAILY INSPIRATION</span> -->
+                        </div>
+                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
+                          </div> -->
+                            <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+
+                          <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                            DAILY INSPIRATION
+                          </h4>
+                          </div> -->
+                      </div>
+                      <h4 class="mt0px mb5px fs_15px fw_500  fc_ffffff ellipsis" style="line-height: 19.5px;">
+                        {{dailyInspirationTitle}}
+                      </h4>
+                      <h4 class="mt0px mb5px fs_12px  fc_ffffff_0_5 " style="line-height: 15.6px;">
+                        {{DailyInspirationTime}}
+                      </h4>
+                    </div>
+
+                  </div>
+                </div>
+              </a>
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+
+              <a (click)=routeDailyPractice(1)>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                    <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="prelative">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png"
+                              class="p0 session_imgnew">
+                          </div>
+                        </div>
+
+                        <!-- <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-8 ">
+                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+
+                      </div> -->
+
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_v3.svg"
+                        alt="breathingExercise" class="crimg1">
+                      <div class="row va_middle">
+
+                        <div id="photo">
+                          <h4 class="mtb5px fw_400 fs_12px  fc_e58d82 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play">
+                            BREATHING EXERCISE
+                          </h4>
+
+                          <!-- <img    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/videomy.svg" alt=""> -->
+                          <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff plr5px"> 
+                            BREATHING EXERCISE</span> -->
+                        </div>
+                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
+                      </div>
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+
+                      <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                        BREATHING EXERCISE
+                      </h4>
+                      </div> -->
+                      </div>
+                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis">
+                        {{dailybreathTitle}}
+                      </h4>
+                      <h4 class="mt0px mb5px fs_12px lh_140p fc_ffffff_0_5 ">
+                        {{breatheTime}}
+                      </h4>
+                    </div>
+
+                  </div>
+                </div>
+              </a>
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+              <a (click)=routeDailyPractice(4)>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                    <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="prelative">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
+                              class="p0 session_imgnew">
+                          </div>
+                        </div>
+
+                        <!-- <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                      </div>
+                    </div> -->
+                      </div>
+                    </div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-8 ">
+                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+
+                  </div> -->
+
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_meditation_v3.svg"
+                        alt="med" class="crimg1" >
+
+
+                      <div class="row va_middle">
+                        <div id="photo">
+                          <h4 class="mtb5px fw_400 fs_12px  fc_e58d82 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg" alt="play">
+                            DAILY MEDITATION
+                          </h4>
+                          <!-- <img  
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audiomy.svg" alt=""> -->
+                          <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff plr5px"> 
+                        DAILY MEDITATION</span> -->
+                        </div>
+                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
+                  </div>
+                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+
+                  <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                    DAILY MEDITATION
+                  </h4>
+                  </div> -->
+                      </div>
+                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis">
+                        {{audioTitle}}
+                      </h4>
+                      <h4 class="mt0px mb5px fs_12px lh_140p fc_ffffff_0_5 ">
+                        {{audioTime}}
+                      </h4>
+                    </div>
+
+                  </div>
+                </div>
+              </a>
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+
+              <a>
+                <div class="row mtb10px">
+                  <div class="row mtb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 ">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
+                        alt="" class="img-responsive" style="width:30px; height:30px">
+                    </div>
+                  </div>
+                  <div class="row mb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 fc_e58d82" style="line-height: 16.8px ;">
+                        QUESTION OF THE DAY
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="box_journalmy">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500 fc_ffffff tleft" style="line-height:19.5px;">
+                          {{dailyqus}}
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row mtb20px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"  [placeholder]="placeholder"
+                          required="required" class="mdp_answer_heremy"
+                          maxlength="200"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row mtb20px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()" [disabled]="guest || !isloggedIn || (questext=='')" >
+                          Add to journal
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="row mt15px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7 tcenter">
+                          Your online journal is secure and private to you.
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </a>
+
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+              <!-- quotation -->
+              <a>
+
+                <div class="row mtb10px">
+                  <div class="row mtb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
+                        style="width:30px;height:30px;" alt="" class="img-responsive">
+                    </div>
+                  </div>
+                  <div class="row mb20px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 fc_e58d82" style="line-height: 16.8px ;">
+                        QUOTE OF THE DAY
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="box_journal">
+                    <!-- <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_a.svg"
+                          alt="" class="img-responsive">
+                      </div>
+                    </div> -->
+
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_500  fc_ffffff" style="line-height:22.5px;">
+                          {{dailyinstext}}
+                        </h4>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row mtb20px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_v3_04">
+                      </div>
+                    </div> -->
+
+                    <div class="row mtb10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mt5px mb0px fs_15px fw_500 fc_ffffff  tright" style="line-height:22.5px;">
+                          - {{dailyinsAuthor}}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+              </a>
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+
+
+              <!-- /hr -->
+              <!-- /quotation -->
+              <a>
+                <div class="row mtb10px">
+                  <div class="row mtb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg"
+                        style="width:30px;height:30px;" alt="" class="img-responsive">
+                    </div>
+                  </div>
+                  <div class="row mb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400  fc_e58d82" style="line-height: 16.8px ;">
+                        DAILY CHALLENGE
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="box_journal">
+                    <div class="row mtb10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_15px fw_500  fc_ffffff" style="line-height:22.5px;"> {{trythistoday}}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+              <div class="row mtb20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <button  (click)="routeToDashboard()" type="submit" class="btn mdp_add_to_journal">
+                    Proceed to Home
+                  </button>
+                </div>
+              </div>
+              <!-- <a (click)="enableViewMore('key_ideas')" *ngIf="enablekeyideasViewMore">
+                <div class="mt30px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg" class="img-responsive mb10px">
+                      View More
+                    </h4>
+                  </div>
+                </div>
+              </a> -->
+
+              <!-- <a (click)="enableViewLess('key_ideas')" *ngIf="!enablekeyideasViewMore">
+                <div class="mt30px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg" class="img-responsive mb10px">
+                      View Less
+                    </h4>
+                  </div>
+                </div>
+              </a> -->
+            </div>
+
+            <div class="pagebreak"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
+  [content]="content"></app-modal>
+
+<!-- footer  -->
+<app-bottom-navigation [dash]="true"></app-bottom-navigation>
+<!-- /footer -->

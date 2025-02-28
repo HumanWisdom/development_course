@@ -52,11 +52,25 @@
 
               <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <button id="voices" type="button" class="btn" (click)="getUserPref('Voices')" >
+                <div class="col-md-3 col-sm-3 col-xs-3 p0" > 
+
+
+              
+                  <button id="voices" type="button" class="btn" style="background-color:#E58D82;color:#fff;"
+                               (click)="getUserPref('Voices')" >
                     Voices
                   </button>
-                  <!-- <span > | </span> -->
-                  <ng-container *ngFor="let data of prefData"> 
+                  <!-- <div class="vl"></div> -->
+                  <div style="border-left: 2px solid rgb(255 255 255 / 25%); height: 35px;float: right; margin-right: 12px;"></div>
+
+            <!--       <span style="border-left: 2px solid rgb(255 255 255 / 25%); height: 35px;
+                  margin: 10px;
+                  margin-top: 0px;
+                  margin-left: 0px;" >  </span>    -->
+                    </div>    
+                    <div class="col-md-9 col-sm-9 col-xs-9" > 
+             
+                   <ng-container *ngFor="let data of prefData"> 
                   
 
 <!-- 
@@ -85,6 +99,7 @@
 
 
                   </ng-container>
+                    </div>
                 </div>
               </div>
 

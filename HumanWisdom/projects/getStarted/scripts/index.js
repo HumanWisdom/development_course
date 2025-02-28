@@ -23,7 +23,7 @@ setTimeout(() => {
                     if(!validateEmail(email)){
                         return alert("Please enter valid email"), !1;
                     }
-                    fetch("https://staging.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+                    fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                         .then((e) => e.json())
                         .then((e) => {
                             (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
@@ -398,7 +398,7 @@ newsLetterForm.addEventListener("click", () => {
             if(!validateEmail(email)){
                 return alert("Please enter valid email"), !1;
             }
-            fetch("https://staging.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+            fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
                     (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );

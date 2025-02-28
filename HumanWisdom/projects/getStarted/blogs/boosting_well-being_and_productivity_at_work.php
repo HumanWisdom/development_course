@@ -38,7 +38,7 @@
       </div>
     </section> -->  
 
-    <main id="main" class="hpt120px">
+    <main id="main" class="hptblog120px">
 
       <!-- aspects -->
       <section class="rpt_01">

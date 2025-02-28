@@ -189,7 +189,7 @@ section {
   }
 
   .land-happierme-margin {
-    margin-left: 8rem;
+    margin-left: 15rem;
   }
   
   .land-happierMe-gap {
@@ -3069,6 +3069,19 @@ audio::-webkit-media-controls-enclosure
 .hpt120px 
 {
   padding-top: 120px;
+  /* padding-left: 10%;
+  padding-right: 10%; */
+}
+.hptblog120px 
+{
+  padding-top: 120px;
+   /* padding-left: 10%;
+  padding-right: 10%;  */
+}
+.rpt_01
+{
+  padding-left: 10%;
+  padding-right: 10%;  
 }
 
 .bl_text 
@@ -3087,7 +3100,7 @@ audio::-webkit-media-controls-enclosure
 .btn_blogp 
 {
   margin: 4px;
-  padding: 4px 20px;
+  padding: 4px 16px;
   height: 40px;
   border-radius: 21px;
   background: rgba(232, 168, 128, 0.20);  
@@ -3114,8 +3127,8 @@ audio::-webkit-media-controls-enclosure
 
 .blog_sub_title 
 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
   line-height: 180%;
   color: #000;
   margin-bottom: 20px;
@@ -3125,8 +3138,9 @@ audio::-webkit-media-controls-enclosure
 {
   font-size: 18px;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 32.4px;
   color: #000;
+  /* text-align: justify; */
   margin-bottom: 20px;
 }
 
@@ -3882,7 +3896,7 @@ audio::-webkit-media-controls-enclosure
 .appstore_a 
 {
   font-size: 20px;
-  margin: 0 5px 0 12px;
+  margin: 0 0px 0 8px;
 }
 
 .ddflex_mblock
@@ -4099,8 +4113,51 @@ audio::-webkit-media-controls-enclosure
 }
 
 
-/* .col-xs-12 {
-  float: none !important;
-} */
 
 
+@media (min-width: 1024px) {
+  .element {
+    width: 60%; /* Keeps the element at 60% width */
+  }
+}
+
+/* For very large screens (e.g., large desktop monitors) */
+@media (min-width: 1440px) {
+  .element {
+    width: 50%; /* Optionally decrease the width to make it look better on ultra-wide screens */
+  }
+
+}
+
+/* Reduce button width on larger screens */
+@media (min-width: 2080px) {
+  .btn-res {
+    width: 30rem;
+  }
+  .btn_pricing , .btn_tff {
+    width:30rem;
+  }
+
+  .w-header{
+    width:35%
+  }
+  .owl-stage-outer{
+    margin-left: -40rem;
+    display: flex;
+  }
+  .p35{
+    padding-left: 35rem;
+  } 
+  .tab_faqs{
+    padding-left: 40rem;
+  }
+
+
+  #main > section:nth-child(11) > div.row.center_flex.prelative.aos-init.aos-animate > div{
+    width: 45%; 
+  }
+    .btn_subscription {
+      width: 70%;
+    }
+  
+}

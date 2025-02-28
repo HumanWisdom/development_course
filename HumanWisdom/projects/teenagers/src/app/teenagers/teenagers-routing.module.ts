@@ -8,7 +8,7 @@ import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 import { AuthGuard } from '../authGuard/auth.guard';
 import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
-
+import {MyDashboardComponent} from '../../../../shared/component/my-dashboard/my-dashboard.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'start-here',
     loadChildren: () => import('../teenagers/start-here/start-here.module').then(m => m.StartHereModule)
+  },
+  {
+    path: 'my-dashboard',
+    component: MyDashboardComponent
   },
   {
     path: 'what-is-wisdom',

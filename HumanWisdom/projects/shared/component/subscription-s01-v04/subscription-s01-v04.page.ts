@@ -771,7 +771,7 @@ export class SubscriptionS01V04Page implements OnInit {
   }
 
   ValidateEmail() {
-    var validRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    var validRegex = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
     if (this.learnermail.match(validRegex)) {
       return false;
     } else {

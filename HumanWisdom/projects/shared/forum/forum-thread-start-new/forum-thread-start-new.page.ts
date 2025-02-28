@@ -4,6 +4,9 @@ import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
+import { Constant } from '../../../shared/services/constant';
+import { NavigationService } from "../../../shared/services/navigation.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-forum-thread-start-new',
@@ -33,7 +36,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   PostImgAndroid='';
   isAdults: boolean = true; 
 
-  constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
+  constructor(private service: ForumService, private router: Router, private route: ActivatedRoute, 
+    private location: Location,  private navigationService:NavigationService) {
     this.userID = localStorage.getItem('userId');
     this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
@@ -61,6 +65,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
    this.exposeFunction();
    setTimeout(() => {
     this.myTextarea.nativeElement.focus();
@@ -86,7 +91,13 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   routeToLanding(){
-    this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+    // this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   post() {

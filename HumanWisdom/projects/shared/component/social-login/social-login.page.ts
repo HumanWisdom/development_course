@@ -134,6 +134,7 @@ export class SocialLoginPage implements OnInit {
     
             if (res) {
               localStorage.setItem('guest','F');
+
               localStorage.setItem("email", res['Email'])
               localStorage.setItem("name", res['Name'])
               let namedata = localStorage.getItem('name').split(' ')
@@ -178,7 +179,7 @@ export class SocialLoginPage implements OnInit {
   loginadult(res) {
     this.loginResponse = res
     let NoOfVisits = this.loginResponse.NoOfVisits
-    this.userId = res.UserId
+    this.userId = this.loginResponse.UserId
     if (res.Subscriber === 0) {
       this.isSubscribe = true;
     }
@@ -240,7 +241,13 @@ export class SocialLoginPage implements OnInit {
       localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("token", JSON.stringify(res.access_token))
-      if (this.saveUsername == true) {
+      localStorage.setItem("userId", JSON.stringify(this.userId))
+      localStorage.setItem("userEmail", JSON.stringify(res.Email))
+      localStorage.setItem("userName", JSON.stringify(this.userName))
+      sessionStorage.setItem("userId", JSON.stringify(this.userId))
+      sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
+      sessionStorage.setItem("userName", JSON.stringify(this.userName))
+      /* if (this.saveUsername == true) {
         localStorage.setItem("userId", JSON.stringify(this.userId))
         localStorage.setItem("userEmail", JSON.stringify(res.Email))
         localStorage.setItem("userName", JSON.stringify(this.userName))
@@ -249,7 +256,9 @@ export class SocialLoginPage implements OnInit {
         sessionStorage.setItem("userId", JSON.stringify(this.userId))
         sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
-      }
+      } */
+
+
       if(isRoutedFromLogin){
         this.router.navigateByUrl(`${SharedService.getprogramName()}/change-topic`);
         // this.commonService.loginSubject(`${SharedService.getprogramName()}/change-topic`);

@@ -4,6 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety',
@@ -81,7 +83,13 @@ export class OvercomeStressAnxietyPage implements OnInit {
           id: 72,
           url: '/podcasts/72.mp3',
           title: 'Preventing self-harm and suicide'
-        }
+        },
+        pc07:
+        {
+          id: 40,
+          url: '/podcasts/40.mp3',
+          title: 'Overcoming Depression'
+        },
       }
 
       let userid = localStorage.getItem('isloggedin');
@@ -112,6 +120,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.lifestoriesList = res
       }
     })
+
+        SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    
   }
 
   getimage(id) {

@@ -217,7 +217,7 @@
                     <div class="row mtb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <button type="submit" (click)="subdailyques()"
-                          [disabled]="guest || !isloggedIn" class="btn mdp_add_to_journal">
+                          [disabled]="guest || !isloggedIn  || (questext=='')" class="btn mdp_add_to_journal">
                           Add to journal
                         </button>
                       </div>
@@ -226,7 +226,7 @@
                     <div class="row mt15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
-                          Your online HappierMe journal is secure and private to you.
+                          Your online journal is secure and private to you.
                         </h4>
                       </div>
                     </div>
@@ -245,8 +245,8 @@
                    <div [@slideAnimation]="direction" *ngIf="currentSection === 3">
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg"
-                          alt="" class="img-responsive">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
+                          alt="" class="img-responsive" style="width:45px;height:45px;">
                       </div>
                     </div>
 
@@ -262,7 +262,7 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_a.svg"
-                          alt="" class="img-responsive">
+                          alt="" class="img-responsive" >
                       </div>
                     </div>
 
