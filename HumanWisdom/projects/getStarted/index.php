@@ -128,8 +128,10 @@
 
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
                 <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
                 Manage your emotions, have happier relationships and succeed in life. </h2>
+
               </div>
             </div>
 
