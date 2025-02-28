@@ -63,7 +63,7 @@
     <!-- /header -->
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
+    <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -85,7 +85,7 @@
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video> -->
-            <!-- <iframe width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
+            <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
               <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
@@ -128,8 +128,10 @@
 
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
                 <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
-                Manage your emotions, have happier relationships, and succeed in life. </h2>
+                Manage your emotions, have happier relationships and succeed in life. </h2>
+
               </div>
             </div>
 
@@ -405,7 +407,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+            <iframe loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
           </div>
         </div>
       </section>
@@ -463,9 +465,9 @@
                Our happiness depends on many factors. HappierMe addresses them all.
                </h5> 
 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb10px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" class="">
+                <a href="/pages/teenagers.php" aria-label="Explore more about the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -1092,7 +1094,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" class="">
+                <a href="/pages/teenagers.php" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -1619,14 +1621,14 @@
               <!-- fbn -->
               <div id="fbn" class="tab-pane fade in active">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                       </video>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Feel better now
                       </h3>
@@ -1649,12 +1651,12 @@
               <!-- pathway -->
               <div id="pathway" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         PATHWAY
                       </h3>
@@ -1685,12 +1687,12 @@
               <!-- journal -->
               <div id="journal_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Your private journal
                       </h3>
@@ -1713,12 +1715,12 @@
               <!-- podcast -->
               <div id="podcast_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         HappierMe Podcast
                       </h3>
@@ -1749,12 +1751,12 @@
               <!-- forum -->
               <div id="forum" class="tab-pane fade">
                 <div class="row center_flex tools_forum">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Community forum
                       </h3>
@@ -1777,12 +1779,12 @@
               <!-- survey -->
               <div id="survey" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_survey.webp" class="img-responsive" alt="Survey" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Track your wellness score
                       </h3>
@@ -1792,7 +1794,7 @@
                       </h5>
 
                       <div class="row mtb15px">
-                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <a href="https://happierme.app/adults/wisdom-survey">
                             <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                               Check your wellness score
@@ -2956,7 +2958,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                       <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
                                       <div class="fc_icons">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
                                       </div>
                                     </div>
                                   </div>
@@ -2966,7 +2968,7 @@
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
                                     <div class="fc_icons">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
                                     </div>
                                   </div>
                                 </div>
