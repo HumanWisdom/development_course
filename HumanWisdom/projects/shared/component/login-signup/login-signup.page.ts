@@ -548,6 +548,8 @@ export class LoginSignupPage implements OnInit {
       localStorage.setItem("audio", JSON.stringify(this.audio));
       localStorage.setItem("isPartner", res.IsPartner);
       localStorage.setItem("userName", res.Name);
+      localStorage.setItem("userEmail", JSON.stringify(this.email));
+      localStorage.setItem("userID", res.UserId);
       this.showAlert = false;
       this.userId = res.UserId;
       this.userName = res.Name;
