@@ -128,7 +128,7 @@ export class MyDailyPracticePage implements OnInit {
     } else {
       let obj = {
         ReflectionId: this.dailyqusrefid,
-        SubscriberId: this.userId,
+        SubscriberId: localStorage.getItem("userId"),
         Resp: this.questext
       }
       this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
