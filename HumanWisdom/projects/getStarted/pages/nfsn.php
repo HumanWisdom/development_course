@@ -64,7 +64,7 @@
               <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ddflex_mblock_a">
                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black">  -->
-                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px ">
+                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-6 p0 mb15px mr15px ">
                     
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_m_none" alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_d_none" alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px">
@@ -72,7 +72,7 @@
               </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px"> 
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"style="width:225px;height:60px;"> 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:50px;"> 
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:0px;"> 
 
             </div>  
               </div>
