@@ -1667,9 +1667,13 @@
 
                       <div class="row">
                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-                          <audio id="aud1" controls controlsList="nodownload">
+                        <!-- <audio controls>
+                          <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                        </audio> -->
+
+                           <audio controls>
                             <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
-                          </audio>
+                             </audio> 
                         </div>
                       </div>
 
