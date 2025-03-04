@@ -33,7 +33,7 @@ export class MyDailyPracticePage implements OnInit {
   DailyInspirationTime :string='';
   audioTime:string='';
   DailyInspirationImage:string= '';
-  userId = JSON.parse(localStorage.getItem("userId"))
+  userId = JSON.parse(localStorage.getItem("userID"))
   isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   breatheTime:string = '';
   placeholder = 'Answer here'
@@ -128,7 +128,7 @@ export class MyDailyPracticePage implements OnInit {
     } else {
       let obj = {
         ReflectionId: this.dailyqusrefid,
-        SubscriberId: localStorage.getItem("userId"),
+        SubscriberId: localStorage.getItem("userID"),
         Resp: this.questext
       }
       this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
