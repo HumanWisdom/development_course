@@ -72,7 +72,7 @@
               </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px"> 
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"style="width:225px;height:60px;"> 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:0px;"> 
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:60px;"> 
 
             </div>  
               </div>

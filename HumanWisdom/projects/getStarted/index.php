@@ -478,7 +478,7 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0">
                   <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a>
@@ -1105,7 +1105,7 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 p0">
                   <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a>
@@ -1230,7 +1230,7 @@
             </div>
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
-              <div id="PricingSelectBtn" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 p0">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Start your free trial
                 </button>
@@ -1651,7 +1651,7 @@
               <!-- pathway -->
               <div id="pathway" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  mtb20px flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
                     </div>
@@ -1666,14 +1666,17 @@
                       </h5>
 
                       <div class="row">
-                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 mtb20px">
                         <!-- <audio controls>
                           <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                         </audio> -->
 
-                           <audio controls>
+                           <!-- <audio controls>
                             <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
-                             </audio> 
+                             </audio>  -->
+                             <audio id="aud1" controls="" controlslist="nodownload">
+                            <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                          </audio>
                         </div>
                       </div>
 
@@ -1691,7 +1694,7 @@
               <!-- journal -->
               <div id="journal_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
                     </div>
@@ -1719,7 +1722,7 @@
               <!-- podcast -->
               <div id="podcast_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
                     </div>
@@ -1734,7 +1737,7 @@
                       </h5>
 
                       <div class="row">
-                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 mtb20px">
                           <audio id="aud1" controls controlsList="nodownload">
                             <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                           </audio>
@@ -1754,8 +1757,8 @@
 
               <!-- forum -->
               <div id="forum" class="tab-pane fade">
-                <div class="row center_flex tools_forum">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
                     </div>
@@ -1798,7 +1801,7 @@
                       </h5>
 
                       <div class="row mtb15px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 mtb15px">
                           <a href="https://happierme.app/adults/wisdom-survey">
                             <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                               Check your wellness score
@@ -1988,7 +1991,7 @@
 
                 <li>
                   <a data-toggle="tab" href="#how_can_the_app_help">
-                    How can the app help?
+                    How can the app help you?
                   </a>
                 </li>
 
