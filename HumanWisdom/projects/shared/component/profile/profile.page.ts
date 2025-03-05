@@ -12,11 +12,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  overallPercentage = JSON.parse(localStorage.getItem("overallPercentage"))
-  actKeys = this.loginResponse.ActKeys
+  loginResponse:any;
+  overallPercentage :any;
+  actKeys:any;
   myPrograms = []
-  weekDays = this.loginResponse.WkDays.split(",")
+  weekDays :any;
   sun = false
   mon = false
   tue = false
@@ -44,8 +44,14 @@ export class ProfilePage implements OnInit {
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     public platform: Platform, public logeventservice: LogEventService,private location:Location) {
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
+     if(this.loginResponse){
+      this. actKeys = this.loginResponse?.ActKeys
+      this. weekDays = this.loginResponse?.WkDays.split(",")
+      this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
+     }
+     this. myPrograms = []
+    let userId = localStorage.getItem("userID");
+    this.RoleID = +localStorage.getItem("RoleID");
     this.Onboardingservice.getpaymentdetail(userId).subscribe((res) => {
       if (res) {
         this.paymentDetail = res[0]
@@ -55,7 +61,7 @@ export class ProfilePage implements OnInit {
     if (this.platform.IOS || this.iOS()) {
       this.enablepayment = false;
     }
-    this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
+    
 
     if (this.score > 0 || this.score == 0) {
       this.direction = "up";
@@ -73,7 +79,7 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.email = localStorage.getItem("email")
-    this.myPrograms = this.actKeys.filter(x => x.MySelf == "1")
+    this.myPrograms = this.actKeys?.filter(x => x.MySelf == "1")
     if (this.weekDays.includes("Sunday"))
       this.sun = true
     if (this.weekDays.includes("Monday"))

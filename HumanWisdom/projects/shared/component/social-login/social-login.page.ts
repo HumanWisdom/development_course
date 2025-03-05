@@ -195,7 +195,7 @@ export class SocialLoginPage implements OnInit {
     localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("token", JSON.stringify(res.access_token))
     localStorage.setItem("Subscriber", res.Subscriber)
-    localStorage.setItem("userId", JSON.stringify(this.userId))
+    localStorage.setItem("userID", JSON.stringify(this.userId))
     localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
     let nameupdate = localStorage.getItem(
