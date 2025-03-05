@@ -35759,7 +35759,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: rgb(0 0 0 / 25%);
   min-height: 130px;
   /* margin-bottom: 10px; */
-  padding: 20px;
+  padding: 12px;
   /* margin: 0 10px 10px 10px; */
 }
 .toc_adiv_imgmy a:last-child>.row
