@@ -4,7 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
-
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 @Component({
   selector: 'HumanWisdom-have-fulfilling-relationships',
@@ -94,7 +95,8 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
      }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/have-fulfilling-relationships');
+    // localStorage.setItem("NaviagtedFrom", '/adults/curated/have-fulfilling-relationships');
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     this.title.setTitle('Building Healthy Relationships')
     this.meta.updateTag({ property: 'title', content: 'Building Healthy Relationships' })

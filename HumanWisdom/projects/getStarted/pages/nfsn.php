@@ -47,7 +47,7 @@
 
     <section class="hpt120px">
       <div class="row center_flex web_home_div">
-        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10 p0 ddflex_mblock">
+        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
 
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
@@ -61,21 +61,25 @@
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <div class="row mt20px">
-              <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/frame.webp" class="img-responsive img_aspects"  alt="wh_tick_black"> 
-                <!-- <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
-                    
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happierme_logo.webp"  class="img-responsive w100p display_m_none" alt="wh_tick_black">
-                </div>
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px"> -->
-                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family_trans.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"> -->
+              <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ddflex_mblock_a">
                 
-            </div> 
+               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black">  -->
+                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-6 p0 mb15px mr15px ">
+                    
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p " alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px">
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_d_none" alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px"> -->
+
+              </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px"> 
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p "  alt="wh_tick_black"style="width:225px;"> 
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:60px;">  -->
+
+            </div>  
               </div>
             </div>
 
-            <div class="row mt30px">
+            <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_48px fw_600 lh_130p fc_834b66 ta_lc">
                 Supporting families and staff to succeed in life
@@ -109,15 +113,15 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px">
-                  <a href="https://happierme.app/adults/intro/intro-carousel" class="">
+              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
+              <a href="https://happierme.app/adults/intro/intro-carousel" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Adults
                     </button>
                   </a>
                 </div>
 
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 p0 mb15px">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
                   <a href="https://happierme.app/teenagers/intro-carousel" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
@@ -398,7 +402,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teene.webp" class="img-responsive img_aspects" alt="Mental Health">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teene.webp" class="img-responsive " alt="Mental Health">
                 </div>
               </div>
 
@@ -431,7 +435,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family.webp" class="img-responsive img_aspects" alt="Happier relationships">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/family.webp" class="img-responsive " alt="Happier relationships">
                 </div>
               </div>
 
@@ -464,7 +468,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/staff.webp" class="img-responsive img_aspects" alt="Work & Leadership">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/staff.webp" class="img-responsive " alt="Work & Leadership">
                 </div>
               </div>
 

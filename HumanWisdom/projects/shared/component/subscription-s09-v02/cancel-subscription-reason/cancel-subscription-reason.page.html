@@ -156,7 +156,7 @@
 <!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? ' v1_3_sfooter v1_3_sfooter_ext' : 'ftray'"> 
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  col_cw" [ngClass]="isAdults ? ' v1_3_sfooter v1_3_sfooter_ext' : ' v1_3_sfooter ftray'"> 
       <a>
         <button type="button" data-toggle="modal" data-target="#cancel_subscription_add_info" class="btn btn_tfas">
           Continue
@@ -170,7 +170,7 @@
 <!-- cancel subscription-additional info -->
 <div class="modal fade in" id="cancel_subscription_add_info" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw lab-modal-body">
 
       <div class="row">                    
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -191,13 +191,13 @@
       <div class="row">                    
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-            <button type="button" data-dismiss="modal" class="btn btn_subscription_cancel">
+            <button type="button" data-dismiss="modal" class="btn btn_subscription_cancelnew">
               Keep subscription
             </button>
           </div>
 
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px" (click)="cancelSubscription()">
-            <button type="button" class="btn btn_tfas" >
+            <button type="button" class="btn btn_tfasnew" >
               Cancel subscription
             </button>
           </div>

@@ -960,6 +960,16 @@ section {
   color: rgba(255, 255, 255, 0.6);
 }
 
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
 /*--------------------------------------------------------------
 # Menu Section
 --------------------------------------------------------------*/
@@ -2246,8 +2256,13 @@ a
 /* hr */
 .hr_style_web_01
 {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  margin: 20px -16px;
+}
+.hr_style_web_01new
+{
   border: 1px solid rgba(255, 255, 255, 0.25);
-  margin: 20px 0;
+  margin: 20px -16px;
 }
 
 .hr_style_web_02
@@ -2450,7 +2465,7 @@ a
 
 .owl-carousel .owl-stage 
 {
-  left: 16%;
+  left: 10%;
   display: flex;
 }
 
@@ -2767,7 +2782,7 @@ padding:20px;
 
 #accordion_faq .panel-title>a
 {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 150%;
   color: #000;
@@ -2783,7 +2798,7 @@ padding:20px;
 #accordion_faq .panel-default>.panel-heading+.panel-collapse>.panel-body
 {
   border: 0;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 150%;
   color: #000;
@@ -2914,19 +2929,17 @@ padding:20px;
   border-radius: 12px;
   position:relative;
   min-height: 35rem;
-  /* background: #120F40; */
+   background: #120F40; 
 }
 
-/*
 video::-webkit-media-controls-panel 
 {
-  background: orange !important;
+  background: #120F40 !important;
   bottom: 0;
   position: absolute;
   right: 0;
   left: 0;
 }
-*/
 
 .tools_forum
 {
@@ -3002,14 +3015,14 @@ audio::-webkit-media-controls-panel
 
 audio::-webkit-media-controls-play-button 
 {
-  color: white; /* For Chrome and Safari */
+  color: #000; /* For Chrome and Safari */
 }
 
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display 
 {
-  color: white;
+  color: rgb(16, 16, 16);
 } 
 
 /* Customize the play and pause icons */
@@ -3029,7 +3042,7 @@ audio::-webkit-media-controls-play-button::after
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 22px;
-  color: white; /* Set the color of the play icon */
+  color: 000; /* Set the color of the play icon */
 }
 
 /* Custom pause button */
@@ -3042,12 +3055,12 @@ audio::-webkit-media-controls-pause-button::after
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 22px;
-  color: white; /* Set the color of the pause icon */
+  color: rgb(21, 21, 21); /* Set the color of the pause icon */
 }
 
 audio::-webkit-media-controls-enclosure 
 {
-  background: rgb(18, 15, 64);
+   background: rgb(18, 15, 64); 
 }
 
 #aud1
@@ -3075,8 +3088,13 @@ audio::-webkit-media-controls-enclosure
 .hptblog120px 
 {
   padding-top: 120px;
-   padding-left: 10%;
-  padding-right: 10%; 
+   /* padding-left: 10%;
+  padding-right: 10%;  */
+}
+.rpt_01
+{
+  padding-left: 10%;
+  padding-right: 10%;  
 }
 
 .bl_text 
@@ -3095,7 +3113,7 @@ audio::-webkit-media-controls-enclosure
 .btn_blogp 
 {
   margin: 4px;
-  padding: 4px 20px;
+  padding: 4px 16px;
   height: 40px;
   border-radius: 21px;
   background: rgba(232, 168, 128, 0.20);  
@@ -3135,7 +3153,7 @@ audio::-webkit-media-controls-enclosure
   font-weight: 400;
   line-height: 32.4px;
   color: #000;
-  text-align: justify;
+  /* text-align: justify; */
   margin-bottom: 20px;
 }
 
@@ -3891,7 +3909,7 @@ audio::-webkit-media-controls-enclosure
 .appstore_a 
 {
   font-size: 20px;
-  margin: 0 5px 0 12px;
+  margin: 0 0px 0 8px;
 }
 
 .ddflex_mblock
@@ -4071,7 +4089,7 @@ audio::-webkit-media-controls-enclosure
 
 .mt_d100px_m60px
 {
-  padding: 100px 0 0 0;
+  padding: 60px 0 0 0;
 }
 
 .mt_d100px_m24px
@@ -4130,7 +4148,7 @@ audio::-webkit-media-controls-enclosure
     width: 30rem;
   }
   .btn_pricing , .btn_tff {
-    width:30rem;
+     width:30rem; 
   }
 
   .w-header{
@@ -4144,7 +4162,7 @@ audio::-webkit-media-controls-enclosure
     padding-left: 35rem;
   } 
   .tab_faqs{
-    padding-left: 40rem;
+    padding-left: 20rem;
   }
   .pd-left{
     padding-left: 25%;

@@ -3,6 +3,7 @@ import { CommonService } from '../../services/common.service';
 import { SharedService } from '../../services/shared.service';
 import { Router } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
+import { NavigationService } from "../../../shared/services/navigation.service";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class DailyCheckInLandingPage implements OnInit {
   name :string = '';
   isAdults = false;
   constructor(public commonService:CommonService,public router:Router, 
+    private navigationService:NavigationService,
     public logeventservice: LogEventService) { 
     this.initializeDailyCheckinList();
     this.name = localStorage.getItem("name");
@@ -42,7 +44,14 @@ export class DailyCheckInLandingPage implements OnInit {
    }
 
    goToHome(){
-    this.router.navigate([SharedService.getDashboardUrls()]);
+    
+
+    var url = this.navigationService.goBack();
+    if (url == null) {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   routetoBlog(){

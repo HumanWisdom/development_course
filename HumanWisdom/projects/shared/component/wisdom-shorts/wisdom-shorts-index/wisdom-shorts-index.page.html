@@ -51,12 +51,26 @@
               <!-- /search -->
 
               <div class="row mr-20pxi mtb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <button id="voices" type="button" class="btn" (click)="getUserPref('Voices')" >
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter" > 
+
+
+              
+                  <button id="voices" type="button" class="btn" sstyle="background-color:#E58D82;color:#fff;"
+                               (click)="getUserPref('Voices')" >
                     Voices
                   </button>
-                  <!-- <span > | </span> -->
-                  <ng-container *ngFor="let data of prefData"> 
+                  <!-- <div class="vl"></div> -->
+                  <div style="border-left: 2px solid rgb(255 255 255 / 25%); height: 35px;float: right; width: 17px;"></div>
+
+            <!--       <span style="border-left: 2px solid rgb(255 255 255 / 25%); height: 35px;
+                  margin: 10px;
+                  margin-top: 0px;
+                  margin-left: 0px;" >  </span>    -->
+                    </div>    
+                    <div class="col-md-8 col-sm-8 col-xs-8" > 
+             
+                   <ng-container *ngFor="let data of prefData"> 
                   
 
 <!-- 
@@ -85,6 +99,7 @@
 
 
                   </ng-container>
+                    </div>
                 </div>
               </div>
 

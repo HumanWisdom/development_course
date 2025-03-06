@@ -4,6 +4,9 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
+
 
 @Component({
   selector: 'HumanWisdom-change-unhelpful-habits',
@@ -62,8 +65,9 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     }
 
   ngOnInit() {
-    localStorage.setItem("NaviagtedFrom", '/adults/curated/change-unhelpful-habits');
-
+    // localStorage.setItem("NaviagtedFrom", '/adults/curated/change-unhelpful-habits');
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    
     this.title.setTitle('Change Unhelpful Habits: Transform Your Life with Positive Behavior Change')
     this.meta.updateTag({ property: 'title', content: 'Change Unhelpful Habits: Transform Your Life with Positive Behavior Change' })
     this.meta.updateTag({ property: 'description', content: 'Ready to overcome negative habits and transform your life? Discover effective strategies to break bad habits and develop healthy ones with our curated collection of self-improvement tips and mindset shift techniques.' })

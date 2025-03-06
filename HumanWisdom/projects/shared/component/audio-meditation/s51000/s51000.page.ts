@@ -256,7 +256,7 @@ export class S51000Page implements OnInit, OnDestroy {
     else
     {
       this.searchedText=$event;
-      let filterlist =this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      let filterlist =this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()) || it.searchtags.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.audiomeditation=filterlist;
       //this.secondstoryList=filterlist.slice(10);
     }

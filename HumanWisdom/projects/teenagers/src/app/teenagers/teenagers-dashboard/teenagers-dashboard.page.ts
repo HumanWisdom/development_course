@@ -611,8 +611,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
       {
         element: ".tour_intro",
         popover: {
-          title: 'Introduction',
-          description: 'Begin with this introduction. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
+          title: 'Begin Here',
+          description: 'Begin with this guide to HappierMe. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
           side: "bottom"
         }
       },

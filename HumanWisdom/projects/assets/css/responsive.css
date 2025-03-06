@@ -762,7 +762,10 @@
 
 @media (min-width: 1200px)
 {
-
+    .col_cw {
+        width: 30%;
+    } 
+    
     .nav_menu_02 
     {
         position: absolute;
@@ -995,11 +998,7 @@
         top: 0;
         overflow: auto;
     }
-
-    .col_cw
-    {
-        width: 30% !important;
-    }
+ 
 
     .blog_static .limit_charactersfv
     {
@@ -1117,10 +1116,7 @@
         height: 400px !important;
         overflow: overlay;
     } */
-    .col_cw
-    {
-        width: 20% !important;
-    }
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) 
@@ -1137,10 +1133,7 @@
     {
         height: 430px;
     }
-    .col_cw
-    {
-        width: 30% !important;
-    }
+
 }
 
 @media (min-width: 1367px)
@@ -1151,10 +1144,7 @@
         top: unset !important;
         overflow: auto;
     }
-    .col_cw
-    {
-        width: 20% !important;
-    }
+
 
     /* #modal_cookie .lab-modal-body
     {

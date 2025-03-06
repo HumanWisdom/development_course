@@ -284,6 +284,7 @@ export class AppComponent implements OnDestroy {
     let firstTimeTour = localStorage.getItem("firstTimeTour");
     let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
     if (remember === 'F' && first === 'T') {
+      ;
       localStorage.clear()
       localStorage.setItem('guest', 'T');
       localStorage.setItem('personalised', 'T');
