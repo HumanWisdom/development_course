@@ -1622,10 +1622,24 @@
               <div id="fbn" class="tab-pane fade in active">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
+
+                    
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+    <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4" />
+    <source src="how-it-works-short.webm" type="video/webm" />
+    Your browser does not support the video tag.
+</video>  
+                  
+                  <!-- <video width="320" height="240" controls>
+
+  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
+  <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" type="video/ogg">
+  
+</video> -->
+                    <!-- <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-                      </video>
+                      </video> -->
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
