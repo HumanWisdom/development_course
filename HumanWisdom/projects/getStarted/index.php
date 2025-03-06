@@ -1622,10 +1622,24 @@
               <div id="fbn" class="tab-pane fade in active">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
+
+                    
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+    <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4" />
+    <source src="how-it-works-short.webm" type="video/webm" />
+    Your browser does not support the video tag.
+</video>  
+                  
+                  <!-- <video width="320" height="240" controls>
+
+  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
+  <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" type="video/ogg">
+  
+</video> -->
+                    <!-- <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-                      </video>
+                      </video> -->
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -2558,26 +2572,7 @@
                 </h5>
 
                 <div class="panel-group" id="accordion_faq">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm21">
-                          What is self-awareness?
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="cm21" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                        Self-awareness is a simple way of noticing what you are thinking and feeling, in your mind and in your body. These thoughts and feelings decide our behaviour. By noticing them we can be curious, learn more about them and explore where they come from. 
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <hr class="hr_style_web_01">
-                    </div>
-                  </div>
+                  
 
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -2590,6 +2585,26 @@
                     <div id="cm22" class="panel-collapse collapse">
                       <div class="panel-body">
                         Our mind is reactive and we are usually not aware of, or in control of our reactions. These reactions often create the mental health problems we experience. By understanding our thoughts, feelings and emotions better, we can better manage our reactions, and so manage our own mental health(hyperlink this to the section on Mental health).
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <hr class="hr_style_web_01">
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm21">
+                          What is self-awareness?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="cm21" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        Self-awareness is a simple way of noticing what you are thinking and feeling, in your mind and in your body. These thoughts and feelings decide our behaviour. By noticing them we can be curious, learn more about them and explore where they come from. 
                       </div>
                     </div>
                   </div>
@@ -2694,7 +2709,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="cm31" class="panel-collapse collapse in">
+                    <div id="cm31" class="panel-collapse collapse">
                       <div class="panel-body">
                         We host a live event every two weeks on different subjects and explore how self-awareness can help with that. There is usually an invited guest and an opportunity to contribute and ask questions. You can access our library of past events through the Events(hyperlink this) tab.
                       </div>
@@ -2801,7 +2816,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="cm41" class="panel-collapse collapse in">
+                    <div id="cm41" class="panel-collapse collapse">
                       <div class="panel-body">
                         There is a completely new section of the app dedicated to teenagers under development and will launch in Q2 2024. Teeangers are under so much pressure and need support to manage their mental health, make sense of their emotions, and develop the soft skills to succeed in life.
                       </div>
@@ -2824,7 +2839,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="cm51" class="panel-collapse collapse in">
+                    <div id="cm51" class="panel-collapse collapse">
                       <div class="panel-body">
                         Please email us: support@happierme.app
                       </div>

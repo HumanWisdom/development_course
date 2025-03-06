@@ -2256,8 +2256,13 @@ a
 /* hr */
 .hr_style_web_01
 {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  margin: 20px -16px;
+}
+.hr_style_web_01new
+{
   border: 1px solid rgba(255, 255, 255, 0.25);
-  margin: 20px 0;
+  margin: 20px -16px;
 }
 
 .hr_style_web_02
