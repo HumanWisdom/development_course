@@ -157,13 +157,18 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <video controls playinline class="w100p"
+          <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_partnership.webp">
+    <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/partnership.mp4" type="video/mp4" />
+    <source src="how-it-works-short.webm" type="video/webm" />
+    Your browser does not support the video tag.
+</video>  
+            <!-- <video controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_partnership.webp"
               controlsList="nodownload">
               <source
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/partnership.mp4"
                 type="video/mp4">
-            </video>
+            </video> -->
           </div>
         </div>
       </section>
