@@ -25,6 +25,7 @@ export class MyDashboardComponent implements OnInit {
   userName=localStorage.getItem("userName")
   cardList:SectionCard[] = [];
   groupedCardList=[]
+  introTitle:string = '';
   metadata = [
     { section_name: "Start here", priority: 1,data : new Array<any>() },
     { section_name: "Skills", priority: 2,data: new Array<any>() },
@@ -42,7 +43,8 @@ export class MyDashboardComponent implements OnInit {
       }
       this.service.GetIntroContents(data.id).subscribe(res=>{
         if(res){
-          this.cardList = res;
+          this.cardList = res.content;
+          this.introTitle = res.introPara;
           for(var item of this.metadata){
 
             item.data = this.cardList.filter(x=>x.section_name == item.section_name)
