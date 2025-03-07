@@ -75,7 +75,7 @@ export class CourseFooterComponent implements OnInit {
   }
   routeDashboard(){
     if(this.enabledDailyCheckin){
-       this.router.navigate([`${SharedService.getprogramName()}/daily-checkin`])
+       this.router.navigate([`${SharedService.getprogramName()}/my-dashboard`])
     }else{
       this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
       if(this.programName=='teenagers'){
