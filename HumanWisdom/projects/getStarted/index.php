@@ -39,7 +39,12 @@
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
 
-   
+   <script>
+ $('#myCarousel').carousel({
+    interval: 3000,
+ })
+    
+    </script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,6 +77,59 @@
 
     
     <section class="hpt120px">
+
+    <!-- <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="mask flex-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-12 order-md-1 order-2">
+              <h4>Present your <br>
+                awesome product</h4>
+              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+              <a href="#">BUY NOW</a> </div>
+            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto" alt="slide"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="mask flex-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-12 order-md-1 order-2">
+              <h4>Present your <br>
+                awesome product</h4>
+              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+              <a href="#">BUY NOW</a> </div>
+            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto" alt="slide"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="mask flex-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-12 order-md-1 order-2">
+              <h4>Present your <br>
+                awesome product</h4>
+              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+              <a href="#">BUY NOW</a> </div>
+            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div> -->
+<!--slide end--> 
+
+
       <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
 
@@ -1625,11 +1683,17 @@
 
                     
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                  <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+                  <!-- <video width="100%" playsinline autoplay loop muted id="myVideo"poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/webm; codecs="vp8.0, vorbis"'>
+        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/ogg; codecs="theora, vorbis"'>
+        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
+    </video> -->
+                  
+                   <!-- <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
     <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4" />
     <source src="how-it-works-short.webm" type="video/webm" />
     Your browser does not support the video tag.
-</video>  
+</video>   -->
                   
                   <!-- <video width="320" height="240" controls>
 
@@ -1637,9 +1701,9 @@
   <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" type="video/ogg">
   
 </video> -->
-                    <!-- <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
+                     <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-                      </video> -->
+                      </video> 
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -2487,14 +2551,14 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm11">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm12">
                           What is HappierMe?
                         </a>
                       </h4>
                     </div>
                     <div id="cm11" class="panel-collapse collapse in">
                       <div class="panel-body">
-                        HappierMe is an app that you canuse on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
+                        HappierMe is an app that you can use on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
                       </div>
                     </div>
                   </div>
