@@ -362,7 +362,7 @@
     </div>
     </div>
     <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-              <div  id="happiermeTryForFree" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div  id="happiermeTryForFree" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
                 <a>
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                 Try HappierMe for free </button>
@@ -746,7 +746,7 @@
                   </div>
 
                   <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
                       <button  id="nfsn-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                         Send
                       </button>
