@@ -49,12 +49,12 @@
       <div class="row center_flex web_home_div">
         <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
 
-          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
-              <img style="height:auto;width:100%;"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive w100p display_m_none"
+              <img
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp" class="img-responsive w100p display_m_none max-width-px" loading="lazy"  alt="performance"
                 >
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
 
           </div>
 
