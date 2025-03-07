@@ -37863,3 +37863,12 @@ span
 .carousel-inner > .item.active.left > div:nth-child(3){
   display: none;
 } */
+.scroll-y{
+  overflow-y: hidden;
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .cvideo_ext_di {
+      padding: 18px;
+  }
+}
+
