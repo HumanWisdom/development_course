@@ -44,11 +44,19 @@ export class ProfilePage implements OnInit {
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     public platform: Platform, public logeventservice: LogEventService,private location:Location) {
-     if(this.loginResponse){
-      this. actKeys = this.loginResponse?.ActKeys
-      this. weekDays = this.loginResponse?.WkDays.split(",")
-      this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
-     }
+      // this.initialize();
+      let data = localStorage.getItem('loginResponse');
+      if(data){
+        this.loginResponse = JSON.parse(data);
+        if(this.loginResponse){
+          this. actKeys = this.loginResponse?.ActKeys
+          this. weekDays = this.loginResponse?.WkDays.split(",")
+          this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
+         }
+      }else{
+        this.initialize();
+      }
+  
      this. myPrograms = []
     let userId = localStorage.getItem("userID");
     this.RoleID = +localStorage.getItem("RoleID");
@@ -75,6 +83,19 @@ export class ProfilePage implements OnInit {
       this.isAdults = false;
     }
   }
+
+initialize(){
+  this.loginResponse= {
+    Streak:'',
+    WkHours:'',
+    hwScore:'',
+    Surveys:'',
+    Notes:'',
+    Modules:'',
+    Points:'',
+    Name:''
+  }
+}
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
