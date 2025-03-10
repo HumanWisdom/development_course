@@ -83,6 +83,7 @@ export class RepeatUserPage implements OnInit {
     } else if (localStorage.getItem("isloggedin") === 'T' && localStorage.getItem("userId")) {
       this.name = localStorage.getItem("name");
       this.userName = this.name;
+    
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
       this.getBookmarks();
@@ -151,6 +152,9 @@ export class RepeatUserPage implements OnInit {
       this.userId = JSON.parse(localStorage.getItem("userId"))
       localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
       localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+      SharedService.setUserId(res.UserId.toString());
+      SharedService.setUsername(res.Name);
+     SharedService.setEmail(res.Email);
     }
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"))

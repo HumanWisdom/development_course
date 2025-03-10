@@ -62,13 +62,7 @@ export class SharedService {
     return this.getDataFromLocalStorage(Constant.subscriber) == Constant.One.toString();
   }
 
-  public static getUserId() {
-    let userId = this.getDataFromLocalStorage(Constant.userId);
-    if (userId && userId != null) {
-      return parseInt(userId);
-    }
-    return 0
-  }
+
 
   public static GetExerciseClassName(day, currentDay, vistedScreens, nextDay) {
     var dayclass = "";
@@ -364,6 +358,41 @@ export class SharedService {
    return data.filter(x=>x.name == name)[0];
   }
   
+ public static setUserId(userId:string){
+   localStorage.setItem('userID',userId)
+  }
+  
+  public static setUsername(username:string){
+    localStorage.setItem('userName',username)
+  }
+ 
+  public static setEmail(email:string){
+    localStorage.setItem('email',email)
+  }
+
+  public static getUserId() {
+    let userId = this.getDataFromLocalStorage(Constant.userId);
+    if (userId && userId != null) {
+      return parseInt(userId);
+    }
+    return 0
+  }
+
+  public static getUserName() {
+    let username = this.getDataFromLocalStorage('username');
+    if (username && username != null) {
+      return username;
+    }
+    return '';
+  }
+
+  public static getEmail() {
+    let email = this.getDataFromLocalStorage('email');
+    if (email && email != null) {
+      return email;
+    }
+    return '';
+  }
 
 }
 
