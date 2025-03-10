@@ -2107,7 +2107,7 @@
                       </div>
                       <div id="c11" class="panel-collapse collapse in">
                         <div class="panel-body">
-                          HappierMe is an app that you canuse on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
+                          HappierMe is an app that you can use on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
                         </div>
                       </div>
                     </div>
