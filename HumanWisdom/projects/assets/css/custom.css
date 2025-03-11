@@ -15550,7 +15550,7 @@ and (orientation : portrait)
 } */
 
 input[type="search"] {
-  -webkit-appearance: none;
+  -webkit-appearance: textfield;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
