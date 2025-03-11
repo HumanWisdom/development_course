@@ -67,9 +67,7 @@ export class DailyPracticePage implements OnInit {
   dailyInsModule = '';
   path:any;
   address:any;
-
-
-
+  isIOS:boolean = false;
  currentSection = 0;
   isAdults = true;
   constructor(
@@ -92,6 +90,7 @@ export class DailyPracticePage implements OnInit {
     } else {
       this.isAdults = false;
     }
+    this.isIOS = SharedService.initializeIosCheck();
     this.setAudioControlsBackground(); 
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true

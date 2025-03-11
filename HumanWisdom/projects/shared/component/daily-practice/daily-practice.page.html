@@ -108,7 +108,7 @@
                       <div class="video-section">
                         <div class="video-container tcenter">
                           <div class="video-wrapper">
-                            <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload nofullscreen" preload="metadata"
+                            <video playinline class="cvideo" [ngClass]="isIOS ? 'cvideo_ext_di_no_radius':'cvideo_ext_di'" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload nofullscreen" preload="metadata"
                                    (play)="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
                               <source [src]="DailyInspirationLink" type="video/mp4">
                             </video>
