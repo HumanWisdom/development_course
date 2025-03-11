@@ -38,14 +38,15 @@ export class MyDailyPracticePage implements OnInit {
   breatheTime:string = '';
   placeholder = 'Answer here'
   guest = true;
-
+  isFirstLogin:boolean = false;
   constructor(private  commonService:CommonService,private router:Router) { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-
+     this.isFirstLogin = SharedService.isRoutedFromLogin;
   }
 
   ngOnInit() {
     this.userName = localStorage.getItem('userName');
+    this.userName = this.userName ? this.userName.replaceAll('""',''): this.userName;
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {

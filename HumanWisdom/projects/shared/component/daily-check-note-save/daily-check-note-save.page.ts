@@ -20,6 +20,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
   enableAlert:boolean =false;
   isLoggedIn:boolean;
   isAdults:boolean = false;
+  isFirstLogin:any;
   constructor(public commonService:CommonService,public router:Router,public navigationService:NavigationService,public location:Location,
     public logeventservice: LogEventService
   ) {
@@ -28,6 +29,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
     this.minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate());
     this.isLoggedIn = localStorage.getItem("isloggedin") == 'T';
     this.isAdults = SharedService.isAdultProgram();
+    this.isFirstLogin = SharedService.isRoutedFromLogin;
   }
 
   ngOnInit() {
@@ -75,8 +77,15 @@ export class DailyCheckinNoteSavePage implements OnInit {
 
     goToHome(){
       this.logeventservice.logEvent('click_daily_checkin_Save_home');
+      if(this.isFirstLogin){
+        this.continue();
+      }else{
+        this.router.navigate([SharedService.getDashboardUrls()]);
+      }
+    }
 
-      this.router.navigate([SharedService.getDashboardUrls()]);
+    continue(){
+      this.router.navigate([`${SharedService.getprogramName()}/my-dashboard`]);
     }
 
     goBack() {
