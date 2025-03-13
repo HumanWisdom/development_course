@@ -45,50 +45,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 46,
-          url: '/podcasts/46.mp3',
-          title: 'Understand your ego'
-        },
-        pc02:
-        {
-          id: 47,
-          url: '/podcasts/47.mp3',
-          title: 'Overcome anxiety'
-        },
-        pc03:
-        {
-          id: 58,
-          url: '/podcasts/58.mp3',
-          title: 'Overcoming loneliness'
-        },
-        pc04:
-        {
-          id: 37,
-          url: '/podcasts/37.mp3',
-          title: 'Five ways to avoid stress'
-        },
-        pc05:
-        {
-          id: 71,
-          url: '/podcasts/71.mp3',
-          title: 'Acceptance can dissolve stress'
-        },
-        pc06:
-        {
-          id: 72,
-          url: '/podcasts/72.mp3',
-          title: 'Preventing self-harm and suicide'
-        },
-        pc07:
-        {
-          id: 40,
-          url: '/podcasts/40.mp3',
-          title: 'Overcoming Depression'
-        },
-      }
+      this.service.GetPodcastsListing('2').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
+        }
+      })
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');

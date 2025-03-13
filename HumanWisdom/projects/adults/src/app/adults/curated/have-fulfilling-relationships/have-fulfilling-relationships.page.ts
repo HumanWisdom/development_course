@@ -45,44 +45,12 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 46,
-          url: '/podcasts/46.mp3',
-          title: 'Understand your ego'
-        },
-        pc02:
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
-        },
-        pc03:
-        {
-          id: 5,
-          url: '/podcasts/5.mp3',
-          title: 'Feeling hurt'
-        },
-        pc04:
-        {
-          id: 9,
-          url: '/podcasts/9.mp3',
-          title: 'Living with Compassion'
-        },
-        pc05:
-        {
-          id: 57,
-          url: '/podcasts/57.mp3',
-          title: 'Managing expectations'
-        },
-        pc06:
-        {
-          id: 56,
-          url: '/podcasts/56.mp3',
-          title: 'Exploring kindness'
+      
+      this.service.GetPodcastsListing('3').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-      }
+      })
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
