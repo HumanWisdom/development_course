@@ -616,10 +616,10 @@ export class SearchPopularItemsPage implements OnInit {
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
 
       if (isLoad) {
-        if (this.searchinp == '') {
+        if (this.search == '') {
           this.searchResult = this.moduleList;
         } else {
-          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.search?.toLocaleLowerCase()));
         }
       }
     })

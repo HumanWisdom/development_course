@@ -75,7 +75,7 @@
                     </h1>
                   </div>
         
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                     <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_ffffff">
                       Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
                     </h5>

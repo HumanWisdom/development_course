@@ -22,7 +22,7 @@ export class SingleAudioContentComponent implements OnInit {
   audioLinkUrl = "";
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private service: CommonService) {
-    // debugger;
+    // ;
     const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
     this.audioLinkUrl = audioUrl.replace(/\~/g, '/');;

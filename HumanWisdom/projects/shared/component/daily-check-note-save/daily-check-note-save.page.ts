@@ -20,6 +20,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
   enableAlert:boolean =false;
   isLoggedIn:boolean;
   isAdults:boolean = false;
+  isFirstLogin:any;
   constructor(public commonService:CommonService,public router:Router,public navigationService:NavigationService,public location:Location,
     public logeventservice: LogEventService
   ) {
@@ -28,6 +29,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
     this.minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate());
     this.isLoggedIn = localStorage.getItem("isloggedin") == 'T';
     this.isAdults = SharedService.isAdultProgram();
+    this.isFirstLogin = SharedService.isRoutedFromLogin;
   }
 
   ngOnInit() {
@@ -55,9 +57,11 @@ export class DailyCheckinNoteSavePage implements OnInit {
         this.commonService.submitJournal(obj).subscribe(res=>{
           if(res){
               this.saveJournal.nativeElement.click();
-              setTimeout(() => {
-                this.findOutMore();
-              }, 3000)
+              if(!this.isFirstLogin){
+                setTimeout(() => {
+                  this.findOutMore();
+                }, 3000)
+              }
           }
         })
       }else{
@@ -75,8 +79,15 @@ export class DailyCheckinNoteSavePage implements OnInit {
 
     goToHome(){
       this.logeventservice.logEvent('click_daily_checkin_Save_home');
+      if(this.isFirstLogin){
+        this.continue();
+      }else{
+        this.router.navigate([SharedService.getDashboardUrls()]);
+      }
+    }
 
-      this.router.navigate([SharedService.getDashboardUrls()]);
+    continue(){
+      this.router.navigate([`${SharedService.getprogramName()}/my-dashboard`]);
     }
 
     goBack() {
@@ -103,6 +114,8 @@ export class DailyCheckinNoteSavePage implements OnInit {
         this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~76.mp3/76/T/Feeling-Disappointed`)]);
       else if(this.rowData.Expression=="Guilty")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~81.mp3/81/T/Feeling-guilty`)]);
+      else if(this.rowData.Expression=="Unwell")
+        this.router.navigate([SharedService.getUrlfromFeatureName(`/audiopage/~podcasts~115.mp3/115/T/Feeling-unwell`)]);
       else if(this.rowData.SearchTerm)
         this.router.navigate([SharedService.getUrlfromFeatureName(`/site-search/${this.rowData.SearchTerm}`)]);
       else

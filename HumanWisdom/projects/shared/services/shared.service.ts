@@ -62,13 +62,7 @@ export class SharedService {
     return this.getDataFromLocalStorage(Constant.subscriber) == Constant.One.toString();
   }
 
-  public static getUserId() {
-    let userId = this.getDataFromLocalStorage(Constant.userId);
-    if (userId && userId != null) {
-      return parseInt(userId);
-    }
-    return 0
-  }
+
 
   public static GetExerciseClassName(day, currentDay, vistedScreens, nextDay) {
     var dayclass = "";
@@ -339,8 +333,66 @@ export class SharedService {
     return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(userAgent);
   }
   
+  public static contentIdData(name){
+  let data =  [
+      { "id": 1, "name": "adult-dashboard" },
+      { "id": 2, "name": "teenager-dashboard" },
+      { "id": 3, "name": "adults-Work and Leadership" },
+      { "id": 4, "name": "adults-Manage your mental health" },
+      { "id": 5, "name": "adults-Relationships" },
+      { "id": 6, "name": "adults-Be happier" },
+      { "id": 7, "name": "adults-Habits and Addiction" },
+      { "id": 8, "name": "adults-Deal with loss" },
+      { "id": 9, "name": "adults-Meditation" },
+      { "id": 10, "name": "adults-Manage your emotions" },
+      { "id": 11, "name": "teenagers-Manage your mental health" },
+      { "id": 12, "name": "teenagers-Relationships" },
+      { "id": 13, "name": "teenagers-Feel calm" },
+      { "id": 14, "name": "teenagers-Be happier" },
+      { "id": 15, "name": "teenagers-Manage your emotions" },
+      { "id": 16, "name": "teenagers-Overcome unhelpful habits" },
+      { "id": 17, "name": "teenagers-Understand yourself" },
+      { "id": 18, "name": "teenagers-Succeed in life" }
+    ]
 
+   return data.filter(x=>x.name == name)[0];
+  }
   
+ public static setUserId(userId:string){
+   localStorage.setItem('userID',userId)
+  }
+  
+  public static setUsername(username:string){
+    localStorage.setItem('userName',username)
+  }
+ 
+  public static setEmail(email:string){
+    localStorage.setItem('email',email)
+  }
+
+  public static getUserId() {
+    let userId = this.getDataFromLocalStorage(Constant.userId);
+    if (userId && userId != null) {
+      return parseInt(userId);
+    }
+    return 0
+  }
+
+  public static getUserName() {
+    let username = this.getDataFromLocalStorage('username');
+    if (username && username != null) {
+      return username;
+    }
+    return '';
+  }
+
+  public static getEmail() {
+    let email = this.getDataFromLocalStorage('email');
+    if (email && email != null) {
+      return email;
+    }
+    return '';
+  }
 
 }
 

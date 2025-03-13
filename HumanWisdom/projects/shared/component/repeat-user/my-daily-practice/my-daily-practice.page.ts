@@ -13,6 +13,7 @@ export class MyDailyPracticePage implements OnInit {
   isAdults = false;
   dailybreathTitle:string ='';
   videoLink:string ='';
+  userName:string ='';
   enableVideo:boolean;
   dailyInspirationTitle:string='';
   DailyInspirationLink:string='';
@@ -32,12 +33,20 @@ export class MyDailyPracticePage implements OnInit {
   DailyInspirationTime :string='';
   audioTime:string='';
   DailyInspirationImage:string= '';
-  userId = JSON.parse(localStorage.getItem("userId"))
+  userId = JSON.parse(localStorage.getItem("userID"))
   isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   breatheTime:string = '';
-  constructor(private  commonService:CommonService,private router:Router) { }
+  placeholder = 'Answer here'
+  guest = true;
+  isFirstLogin:boolean = false;
+  constructor(private  commonService:CommonService,private router:Router) { 
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+     this.isFirstLogin = SharedService.isRoutedFromLogin;
+  }
 
   ngOnInit() {
+    this.userName = localStorage.getItem('userName');
+    this.userName = this.userName ? this.userName.replaceAll('""',''): this.userName;
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -45,6 +54,9 @@ export class MyDailyPracticePage implements OnInit {
     }
     this.getdailyquestion();
     this.getdailyques();
+    if (this.guest || !this.isloggedIn) {
+      this.placeholder = 'Login to use this feature' ;
+    }
   }
 
   getdailyquestion() {
@@ -117,7 +129,7 @@ export class MyDailyPracticePage implements OnInit {
     } else {
       let obj = {
         ReflectionId: this.dailyqusrefid,
-        SubscriberId: this.userId,
+        SubscriberId: localStorage.getItem("userID"),
         Resp: this.questext
       }
       this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {

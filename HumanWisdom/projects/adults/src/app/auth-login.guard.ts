@@ -55,10 +55,12 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (this.onboarding.navigateToUpgradeToPremium
       //  localStorage.getItem("navigateToUpgradeToPremium")=="true"
     ) {
+      ;
       localStorage.clear()
       //localStorage.setItem("navigateToUpgradeToPremium","true")
     }
     else {
+      ;
       localStorage.clear()
     }
 

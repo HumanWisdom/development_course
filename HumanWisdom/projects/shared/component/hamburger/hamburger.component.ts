@@ -420,6 +420,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             let acceptCookie = localStorage.getItem("acceptcookie");
             let firstTimeTour = localStorage.getItem("firstTimeTour");
             let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
+            ;
             localStorage.clear();
             if (firstTimeTour === 'T') {
               localStorage.setItem('firstTimeTour', 'T');

@@ -108,7 +108,7 @@
                       <div class="video-section">
                         <div class="video-container tcenter">
                           <div class="video-wrapper">
-                            <video playinline class="cvideo cvideo_ext_di" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload nofullscreen" preload="metadata"
+                            <video playinline class="cvideo" [ngClass]="isIOS ? 'cvideo_ext_di_no_radius':'cvideo_ext_di'" *ngIf="DailyInspirationLink && enableVideo" #videoPlayer controlsList="nodownload nofullscreen" preload="metadata"
                                    (play)="Logevent('click_play_video_daily_inspiration')" controls [poster]="DailyInspirationImg">
                               <source [src]="DailyInspirationLink" type="video/mp4">
                             </video>
@@ -217,7 +217,7 @@
                     <div class="row mtb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <button type="submit" (click)="subdailyques()"
-                          [disabled]="guest || !isloggedIn" class="btn mdp_add_to_journal">
+                          [disabled]="guest || !isloggedIn  || (questext=='')" class="btn mdp_add_to_journal">
                           Add to journal
                         </button>
                       </div>
@@ -226,7 +226,7 @@
                     <div class="row mt15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
-                          Your online HappierMe journal is secure and private to you.
+                          Your online journal is secure and private to you.
                         </h4>
                       </div>
                     </div>

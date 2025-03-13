@@ -19,16 +19,19 @@
                 </div>
               </div> -->
 
-              <div class="row" (click)="readText(!enableTextContent ? 'Read Text' : 'Back To Audio')" *ngIf="audioLink !== '' && textContent !== ''">
-                <p class="txt1 mt40px mb30px">
-                  {{!enableTextContent ? 'Read Text' : 'Back To Audio' }}
-                </p>
+              <div class="row tcenter" (click)="readText(!enableTextContent ? 'Read Text' : 'Back To Audio')" *ngIf="audioLink !== '' && textContent !== ''">
+                <!-- <p class="txt1 mt40px mb30px"> -->
+                  <a class="">
+                  <h6 class="fs_15px fw_400 lh_140p fc_e58d82 underline">
+                  {{!enableTextContent ? 'Read Text' : 'Back To Audio' }} </h6> </a>
+                <!-- </p> -->
               </div>
 
               <div class="row" (click)="readText()" *ngIf="enableTextContent">
-                <p class="txt1 mt40px mb30px">
-                  {{textContent }}
-                </p>
+                <!-- <p class="txt1 mt40px mb30px"> -->
+                  <h3 class="transcript_txt">
+                  {{textContent }} </h3>
+                <!-- </p> -->
               </div>
 
               <div class="row" *ngIf="enableImage">

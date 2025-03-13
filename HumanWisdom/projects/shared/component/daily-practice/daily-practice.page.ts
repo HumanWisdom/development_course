@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { Router } from '@angular/router';
+import { Platform } from '@angular/cdk/platform';
 import { LogEventService } from '../../../shared/services/log-event.service';
 import { CommonService } from '../../../shared/services/common.service';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -9,8 +10,8 @@ import { HammerGestureConfig } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-
-
+import { NavigationService } from '../../services/navigation.service';
+import {Location } from '@angular/common'
 declare var $: any;
 @Component({
   selector: 'app-daily-practice',
@@ -67,9 +68,7 @@ export class DailyPracticePage implements OnInit {
   dailyInsModule = '';
   path:any;
   address:any;
-
-
-
+  isIOS:boolean = false;
  currentSection = 0;
   isAdults = true;
   constructor(
@@ -77,14 +76,24 @@ export class DailyPracticePage implements OnInit {
     private commonService: CommonService,
     public router: Router,
     public logeventservice: LogEventService,
+    public navigationService: NavigationService,
     private ngNavigatorShareService: NgNavigatorShareService,
+    private location:Location,
+    private platform:Platform
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
 
 
   ngOnInit() {
-    this.isAdults = SharedService.isAdultProgram();
+    // this.isAdults = SharedService.isAdultProgram();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+    this.isIOS = SharedService.initializeIosCheck(this.platform);
+    this.setAudioControlsBackground(); 
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
@@ -264,7 +273,12 @@ export class DailyPracticePage implements OnInit {
   
   }
   routeToDashboard(){
-    this.router.navigate([SharedService.getDashboardUrls()])
+    var url = this.navigationService.getBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
   share() {
     this.shareUrl(SharedService.ProgramId);
@@ -278,6 +292,21 @@ export class DailyPracticePage implements OnInit {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  setAudioControlsBackground() {
+    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+  
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+  
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
   }
 
   shareUrl(programType:ProgramType) {
