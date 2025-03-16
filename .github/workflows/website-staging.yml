@@ -26,7 +26,7 @@ jobs:
       # Step 4: Minify all CSS files in projects/getStarted
       - name: Minify CSS files
         run: |
-          cd HumanWisdom/projects/getStarted/assets
+          cd HumanWisdom/projects/getStarted/assets-min
           # Assuming CSS files are in a 'css' subfolder; adjust the path as needed
           if [ -d "css" ]; then
             for file in css/*.css; do
