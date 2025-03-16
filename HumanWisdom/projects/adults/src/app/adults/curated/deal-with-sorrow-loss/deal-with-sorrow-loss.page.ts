@@ -42,32 +42,11 @@ export class DealWithSorrowLossPage implements OnInit {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01: 
-        {
-          id: 44,
-          url: '/podcasts/44.mp3',
-          title: 'Coping with an illness'
-        },
-        pc02: 
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
-        },
-        pc03: 
-        {
-          id: 28,
-          url: '/podcasts/28.mp3',
-          title: 'Healing Emotional Pain'
-        },
-        pc04: 
-        {
-          id: 10,
-          url: '/podcasts/10.mp3',
-          title: 'Overcoming grief'
+      this.service.GetPodcastsListing('6').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-      }
+      })
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
