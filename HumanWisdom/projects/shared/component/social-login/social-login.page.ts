@@ -250,7 +250,7 @@ export class SocialLoginPage implements OnInit {
       localStorage.setItem("token", JSON.stringify(res.access_token))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("userEmail", JSON.stringify(res.Email))
-      localStorage.setItem("userName", JSON.stringify(this.userName))
+      localStorage.setItem("userName", this.userName);
       sessionStorage.setItem("userId", JSON.stringify(this.userId))
       sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
       sessionStorage.setItem("userName", JSON.stringify(this.userName))

@@ -578,7 +578,7 @@ export class LoginSignupPage implements OnInit {
           if(userInfo[0]?.SurveyDone=='0'){
             setTimeout(() => {
               this.commonService.updateSurveyData(1);
-            }, 50000);
+            }, 16000);
            // document.getElementById('test1').click();
           }
         }

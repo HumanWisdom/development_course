@@ -130,9 +130,12 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-            Here are some resources from the app to explore.
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="isFirstLogin">
+            Your note was successfully saved to your HappierMe journal. You can access it in the app.
           </h4>
+
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!isFirstLogin">
+            You can continue to explore the app.</h4>
         </div>
       </div>
 

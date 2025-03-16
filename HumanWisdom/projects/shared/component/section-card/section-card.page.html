@@ -16,6 +16,9 @@
                 <h4 class="mt0px mb5px fs_15px fw_500  fc_ffffff ellipsis" style="line-height: 19.5px;">
                     {{section.title}}
                 </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500  fc_ffffff ellipsis" *ngIf="section.subtitle && section.subtitle!=''" style="line-height: 19.5px;">
+                    {{section.subtitle}}
+                </h4>
                 <h4 class="mt0px mb5px fs_12px  fc_ffffff_0_5 " style="line-height: 15.6px;">
                     {{section.timing}}
                 </h4>
