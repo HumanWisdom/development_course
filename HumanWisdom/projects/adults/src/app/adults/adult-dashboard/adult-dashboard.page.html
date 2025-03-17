@@ -506,7 +506,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="">
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                   {{name?.trim() === 'guest' ? 'Featured' : 'For ' + name}}
+                                   {{(name?.trim() === 'guest' || name?.trim() === '') ? 'Featured' : 'For ' + name}}
                                 </h2>
                               </div>
                             </div>
@@ -926,7 +926,7 @@
 
                     <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
                       <!-- Quick tips to help you feel better right now -->
-                      Short exercises to improve your emotional intelligence and mental health
+                      To improve your emotional intelligence and mental health
                     </h4>
                   </div>
 
