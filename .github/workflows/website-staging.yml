@@ -36,12 +36,12 @@ jobs:
               // Process and output files from 'assets-min/css/'
               return gulp.src('assets-min/css/*.css')
                   .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
-                  .pipe(gulp.dest('assets-min/css/'));  // Output to 'assets-min/css/'
+                  .pipe(gulp.dest('/getStarted/assets-min/css/'));  // Output to 'assets-min/css/'
 
               // Process and output files from 'assets-min/font/'
               return gulp.src('assets-min/font/*.css')
                   .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
-                  .pipe(gulp.dest('assets-min/font/'));  // Output to 'assets-min/font/'
+                  .pipe(gulp.dest('/getStarted/assets-min/font/'));  // Output to 'assets-min/font/'
           }
 
           // Use gulp.series to ensure task completion
