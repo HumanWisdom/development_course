@@ -34,7 +34,7 @@ jobs:
           // Define the CSS minify task for each folder
           function minifyCSS() {
               // Process and output files from 'assets-min/css/'
-              return gulp.src('assets-min/css/*.css')
+              return gulp.src('/getStarted/assets-min/css/*.css')
                   .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
                   .pipe(gulp.dest('/getStarted/assets-min/css/'));  // Output to 'assets-min/css/'
 
