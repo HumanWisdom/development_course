@@ -9,7 +9,11 @@ function minifyCSS() {
 
         .pipe(gulp.src('assets-min/font/*.css'))  // Process CSS in 'assets-min/font/'
         .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
-        .pipe(gulp.dest('assets-min/font/'));  // Output to 'assets-min/font/'
+        .pipe(gulp.dest('assets-min/font/'))  // Output to 'assets-min/font/'
+
+        .pipe(gulp.src('assets/css/*.css'))  // Process CSS in 'assets-min/font/'
+        .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
+        .pipe(gulp.dest('assets/css/'));  // Output to 'assets-min/font/'
 }
 
 // Use gulp.series to ensure task completion
