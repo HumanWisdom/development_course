@@ -1,16 +1,13 @@
-// Load Gulp and the CSS minification plugin
 const gulp = require('gulp');
 const cleanCSS = require('gulp-clean-css');
 
 // Define the CSS minify task for each folder
 function minifyCSS() {
-    // Process and output files from 'assets-min/css/'
-    gulp.src('assets-min/css/*.css')
+    return gulp.src('assets-min/css/*.css')  // Process CSS in 'assets-min/css/'
         .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
-        .pipe(gulp.dest('assets-min/css/'));  // Output to 'assets-min/css/'
+        .pipe(gulp.dest('assets-min/css/'))  // Output to 'assets-min/css/'
 
-    // Process and output files from 'assets-min/font/'
-    gulp.src('assets-min/font/*.css')
+        .pipe(gulp.src('assets-min/font/*.css'))  // Process CSS in 'assets-min/font/'
         .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
         .pipe(gulp.dest('assets-min/font/'));  // Output to 'assets-min/font/'
 }
