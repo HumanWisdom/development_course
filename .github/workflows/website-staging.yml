@@ -13,39 +13,57 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js (required for clean-css-cli)
+      # Step 2: Set up Node.js (required for Gulp and Gulp plugins)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
-      # Step 3: Install clean-css-cli
-      - name: Install clean-css
-        run: npm install -g clean-css-cli
-
-      # Step 4: Minify all CSS files in projects/getStarted
-      - name: Minify CSS files
+      # Step 3: Install dependencies (Gulp and Gulp plugins)
+      - name: Install dependencies
         run: |
-          cd HumanWisdom/projects/getStarted/assets-min
-          # Assuming CSS files are in a 'css' subfolder; adjust the path as needed
-          if [ -d "css" ]; then
-            for file in css/*.css; do
-              if [ -f "$file" ]; then
-                cleancss -o "$file" "$file"
-              fi
-            done
-          else
-            echo "No 'css' directory found in projects/getStarted"
-          fi
+          npm install --save-dev gulp gulp-clean-css
 
-      # Step 5: Compress the build artifacts
+      # Step 4: Create gulpfile.js to define the task
+      - name: Create gulpfile.js
+        run: |
+          echo "
+          const gulp = require('gulp');
+          const cleanCSS = require('gulp-clean-css');
+
+          // Define the CSS minify task for each folder
+          function minifyCSS() {
+              // Process and output files from 'assets-min/css/'
+              return gulp.src('assets-min/css/*.css')
+                  .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
+                  .pipe(gulp.dest('assets-min/css/'));  // Output to 'assets-min/css/'
+
+              // Process and output files from 'assets-min/font/'
+              return gulp.src('assets-min/font/*.css')
+                  .pipe(cleanCSS({ compatibility: 'ie8' }))  // Minify CSS
+                  .pipe(gulp.dest('assets-min/font/'));  // Output to 'assets-min/font/'
+          }
+
+          // Use gulp.series to ensure task completion
+          gulp.task('minify-css', minifyCSS);
+
+          // Default task (run when you execute `gulp` without any task name)
+          gulp.task('default', gulp.series('minify-css'));
+          " > gulpfile.js
+
+      # Step 5: Run the Gulp task to minify CSS files
+      - name: Minify CSS files using Gulp
+        run: |
+          npx gulp
+
+      # Step 6: Compress the build artifacts
       - name: Compress the build artifacts
         run: |
           cd HumanWisdom
           mkdir -p builds/compressed
           tar -czf builds/compressed/website.tgz projects/getStarted
 
-      # Step 6: Upload artifact
+      # Step 7: Upload artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v4.4.0
         with:
