@@ -9,39 +9,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js (required for Gulp and Gulp plugins)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
-      # Step 3: Install dependencies (Gulp and Gulp plugins)
       - name: Install dependencies
         run: |
-          npm install --save-dev
+          cd HumanWisdom/projects/getStarted
+          npm install
 
-      # Step 3: Install dependencies (Gulp and Gulp plugins)
-      - name: Install dependencies
-        run: |
-          npm install --save-dev gulp gulp-clean-css
+      - name: Ensure CSS directory exists
+        run: mkdir -p HumanWisdom/projects/getStarted/assets-min/css
 
-      # Step 5: Run the Gulp task to minify CSS files
-      - name: Minify CSS files using Gulp
+      - name: Run Gulp to minify CSS
         run: |
+          cd HumanWisdom/projects/getStarted
           npx gulp
 
-      # Step 6: Compress the build artifacts
-      - name: Compress the build artifacts
+      - name: Compress build artifacts
         run: |
           cd HumanWisdom
           mkdir -p builds/compressed
           tar -czf builds/compressed/website.tgz projects/getStarted
 
-      # Step 7: Upload artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v4.4.0
         with:
@@ -53,14 +47,12 @@ jobs:
     needs: build-website
 
     steps:
-      # Step 1: Download the artifact
       - name: Download artifact
         uses: actions/download-artifact@v4.1.5
         with:
           name: website-artifact
 
-      # Step 2: Copy the artifact to remote server
-      - name: Copy the artifact to remote server
+      - name: Copy artifact to remote server
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.STAGING_HOST }}
@@ -69,8 +61,7 @@ jobs:
           source: "website.tgz"
           target: "builds/compressed/${{ github.run_id }}"
 
-      # Step 3: Setup the build on remote server
-      - name: Setup the build on remote server
+      - name: Deploy on remote server
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.STAGING_HOST }}
@@ -82,4 +73,4 @@ jobs:
             tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
             sudo rm -rf /var/www/html/getStarted/
             sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/
-            sudo chown ubuntu:ubuntu /var/www/html/getStarted
+            sudo chown -R ubuntu:ubuntu /var/www/html/getStarted
