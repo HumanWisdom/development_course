@@ -144,6 +144,8 @@ export class DailyCheckInLandingPage implements OnInit {
   }
 
   goToHome() {
+    this.logeventservice.logEvent('click_emoji_skip');
+
     if (this.isFirstLogin) {
       this.continue();
     } else {
