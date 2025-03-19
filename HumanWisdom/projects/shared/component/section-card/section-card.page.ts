@@ -22,8 +22,10 @@ export class SectionCard implements OnInit {
 
   }
 
-  rouetToPath(path:string){
-    this.router.navigate([path]); 
+  rouetToPath(section){
+    this.logeventservice.logEvent('click_' + section.title );
+    this.router.navigate([section.path]); 
+
   }
 
 }
