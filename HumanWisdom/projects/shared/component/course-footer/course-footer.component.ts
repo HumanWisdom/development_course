@@ -20,7 +20,7 @@ export class CourseFooterComponent implements OnInit {
   @Input() bg: string;
   @Input() bg_cft: string;
   @Input() isUseCloseButton:boolean=false;
-  @Input() enableDashboard:boolean=false;
+  @Input() enableDashboard:boolean=false;     //(For Wisdom-survey) For continue button to be true, (For Module Screens) for Prev Next button to be false
   progUrl: string;
   urlT:any
   shared=false;
@@ -48,19 +48,22 @@ export class CourseFooterComponent implements OnInit {
     this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
     if(location.href.includes("t="))
     {
-      this.shared=true
+      this.shared=true;
+      
     }
 
-    if(this.router.url.includes('wisdom-score') && SharedService.isRoutedFromLogin){
-      this.enabledDailyCheckin=true;
+    if(this.router.url.includes('wisdom-score')){
+      // this.enabledDailyCheckin=true;
+      this.shared=false;
+      
     }
-    if (this.urlT)
-    {
-      this.shared=true
-    }
-   if(this.isUseCloseButton){
-    this.shared=true;
-   }
+    // if (this.urlT)
+    // {
+    //   this.shared=true
+    // }
+  //  if(this.isUseCloseButton){
+  //   this.shared=true;
+  //  }
   }
 
   next(){

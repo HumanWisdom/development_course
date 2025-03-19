@@ -1,5 +1,5 @@
 <!-- footer  -->
-<div  *ngIf="!shared && !enableDashboard"  class="mfooter">
+<div  *ngIf="!enableDashboard"  class="mfooter">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_stake col_cw" [ngClass]="bg_cft">
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
@@ -25,7 +25,7 @@
 <!-- /footer -->
 
 <!-- footer  -->
-<div class="mfooter" *ngIf="shared || enableDashboard || enabledDailyCheckin">
+<div class="mfooter" *ngIf="enableDashboard">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw">
       <a (click)="routeDashboard()">
