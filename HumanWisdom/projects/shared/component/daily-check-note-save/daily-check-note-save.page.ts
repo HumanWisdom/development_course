@@ -42,7 +42,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     SaveJournal(){
-      this.logeventservice.logEvent('click_daily_checkin_save '+ this.rowData.Expression);
+      this.logeventservice.logEvent('click_daily_checkin_save_'+ this.rowData.Expression);
 
       if(this.isLoggedIn){
         let userId = JSON.parse(localStorage.getItem("userId"));
