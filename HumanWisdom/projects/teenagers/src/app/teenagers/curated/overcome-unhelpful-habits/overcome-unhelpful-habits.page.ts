@@ -45,20 +45,11 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-    this.mediaUrl = {
-      pc01: 
-      {
-        id: 11,
-        url: '/podcasts/11.mp3',
-        title: 'Avoiding and overcoming addiction'
-      },
-      pc02: 
-      {
-        id: 17,
-        url: '/podcasts/17.mp3',
-        title: 'Sorrow and Loss'
-      }
-    }
+      this.service.GetPodcastsListing('15').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
+        }
+})
   }
 
   ngOnInit() {
