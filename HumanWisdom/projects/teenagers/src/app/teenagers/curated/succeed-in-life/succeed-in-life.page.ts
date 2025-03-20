@@ -43,41 +43,11 @@ export class SucceedInLifePage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 46,
-          url: '/podcasts/46.mp3',
-          title: 'Understanding our own ego '
-        },
-        pc02:
-        {
-          id: 47,
-          url: '/podcasts/47.mp3',
-          title: 'How can we overcome anxiety?'
-        },
-        pc03:
-        {
-          id: 45,
-          url: '/podcasts/45.mp3',
-          title: 'The Resilient Mindset'
-        },
-        pc04:
-        {
-          id: 60,
-          url: '/podcasts/60.mp3',
-          title: ' How can we be successful?'
-        },
-        pc05: 
-        {
-          id: 75,
-          url: '/podcasts/75.mp3',
-          title: 'Making better decisions'
+      this.service.GetPodcastsListing('17').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-
-
-      }
-
+})
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
       if (userid === 'T' && sub === '1') {
