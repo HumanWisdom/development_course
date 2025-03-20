@@ -39,7 +39,12 @@
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
 
-   
+   <script>
+ $('#myCarousel').carousel({
+    interval: 3000,
+ })
+    
+    </script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,6 +77,59 @@
 
     
     <section class="hpt120px">
+
+    <!-- <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="mask flex-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-12 order-md-1 order-2">
+              <h4>Present your <br>
+                awesome product</h4>
+              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+              <a href="#">BUY NOW</a> </div>
+            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto" alt="slide"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="mask flex-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-12 order-md-1 order-2">
+              <h4>Present your <br>
+                awesome product</h4>
+              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+              <a href="#">BUY NOW</a> </div>
+            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto" alt="slide"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="mask flex-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-12 order-md-1 order-2">
+              <h4>Present your <br>
+                awesome product</h4>
+              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+              <a href="#">BUY NOW</a> </div>
+            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div> -->
+<!--slide end--> 
+
+
       <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
 
@@ -415,7 +473,7 @@
 
       <div class="row center_flex mt_d100px_m60px">
   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
       <div>
         <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
           Try HappierMe for free
@@ -478,7 +536,7 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0">
                   <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a>
@@ -1105,7 +1163,7 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 p0">
                   <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a>
@@ -1230,7 +1288,7 @@
             </div>
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
-              <div id="PricingSelectBtn" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 p0">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Start your free trial
                 </button>
@@ -1621,14 +1679,34 @@
               <!-- fbn -->
               <div id="fbn" class="tab-pane fade in active">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+
+                    
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <!-- <video width="100%" playsinline autoplay loop muted id="myVideo"poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/webm; codecs="vp8.0, vorbis"'>
+        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/ogg; codecs="theora, vorbis"'>
+        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
+    </video> -->
+                  
+                   <!-- <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+    <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4" />
+    <source src="how-it-works-short.webm" type="video/webm" />
+    Your browser does not support the video tag.
+</video>   -->
+                  
+                  <!-- <video width="320" height="240" controls>
+
+  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
+  <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" type="video/ogg">
+  
+</video> -->
+                     <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-                      </video>
+                      </video> 
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Feel better now
                       </h3>
@@ -1651,12 +1729,12 @@
               <!-- pathway -->
               <div id="pathway" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  mtb20px flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         PATHWAY
                       </h3>
@@ -1666,8 +1744,15 @@
                       </h5>
 
                       <div class="row">
-                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-                          <audio id="aud1" controls controlsList="nodownload">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 mtb20px">
+                        <!-- <audio controls>
+                          <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                        </audio> -->
+
+                           <!-- <audio controls>
+                            <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                             </audio>  -->
+                             <audio id="aud1" controls="" controlslist="nodownload">
                             <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                           </audio>
                         </div>
@@ -1687,12 +1772,12 @@
               <!-- journal -->
               <div id="journal_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px flex_fd_cr mtb20px">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Your private journal
                       </h3>
@@ -1715,12 +1800,12 @@
               <!-- podcast -->
               <div id="podcast_tab" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr mtb20px">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         HappierMe Podcast
                       </h3>
@@ -1730,7 +1815,7 @@
                       </h5>
 
                       <div class="row">
-                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0 mtb20px">
                           <audio id="aud1" controls controlsList="nodownload">
                             <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                           </audio>
@@ -1750,13 +1835,13 @@
 
               <!-- forum -->
               <div id="forum" class="tab-pane fade">
-                <div class="row center_flex tools_forum">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr mtb20px">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Community forum
                       </h3>
@@ -1779,12 +1864,12 @@
               <!-- survey -->
               <div id="survey" class="tab-pane fade">
                 <div class="row center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 flex_fd_cr">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_survey.webp" class="img-responsive" alt="Survey" loading=lazy>
                     </div>
 
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Track your wellness score
                       </h3>
@@ -1794,7 +1879,7 @@
                       </h5>
 
                       <div class="row mtb15px">
-                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 mtb15px">
                           <a href="https://happierme.app/adults/wisdom-survey">
                             <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                               Check your wellness score
@@ -1984,7 +2069,7 @@
 
                 <li>
                   <a data-toggle="tab" href="#how_can_the_app_help">
-                    How can the app help?
+                    How can the app help you?
                   </a>
                 </li>
 
@@ -2022,7 +2107,7 @@
                       </div>
                       <div id="c11" class="panel-collapse collapse in">
                         <div class="panel-body">
-                          HappierMe is an app that you canuse on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
+                          HappierMe is an app that you can use on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
                         </div>
                       </div>
                     </div>
@@ -2466,14 +2551,14 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm11">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm12">
                           What is HappierMe?
                         </a>
                       </h4>
                     </div>
                     <div id="cm11" class="panel-collapse collapse in">
                       <div class="panel-body">
-                        HappierMe is an app that you canuse on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
+                        HappierMe is an app that you can use on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
                       </div>
                     </div>
                   </div>
@@ -2551,26 +2636,7 @@
                 </h5>
 
                 <div class="panel-group" id="accordion_faq">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm21">
-                          What is self-awareness?
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="cm21" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                        Self-awareness is a simple way of noticing what you are thinking and feeling, in your mind and in your body. These thoughts and feelings decide our behaviour. By noticing them we can be curious, learn more about them and explore where they come from. 
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <hr class="hr_style_web_01">
-                    </div>
-                  </div>
+                  
 
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -2583,6 +2649,26 @@
                     <div id="cm22" class="panel-collapse collapse">
                       <div class="panel-body">
                         Our mind is reactive and we are usually not aware of, or in control of our reactions. These reactions often create the mental health problems we experience. By understanding our thoughts, feelings and emotions better, we can better manage our reactions, and so manage our own mental health(hyperlink this to the section on Mental health).
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <hr class="hr_style_web_01">
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm21">
+                          What is self-awareness?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="cm21" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        Self-awareness is a simple way of noticing what you are thinking and feeling, in your mind and in your body. These thoughts and feelings decide our behaviour. By noticing them we can be curious, learn more about them and explore where they come from. 
                       </div>
                     </div>
                   </div>
@@ -2687,7 +2773,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="cm31" class="panel-collapse collapse in">
+                    <div id="cm31" class="panel-collapse collapse">
                       <div class="panel-body">
                         We host a live event every two weeks on different subjects and explore how self-awareness can help with that. There is usually an invited guest and an opportunity to contribute and ask questions. You can access our library of past events through the Events(hyperlink this) tab.
                       </div>
@@ -2794,7 +2880,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="cm41" class="panel-collapse collapse in">
+                    <div id="cm41" class="panel-collapse collapse">
                       <div class="panel-body">
                         There is a completely new section of the app dedicated to teenagers under development and will launch in Q2 2024. Teeangers are under so much pressure and need support to manage their mental health, make sense of their emotions, and develop the soft skills to succeed in life.
                       </div>
@@ -2817,7 +2903,7 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="cm51" class="panel-collapse collapse in">
+                    <div id="cm51" class="panel-collapse collapse">
                       <div class="panel-body">
                         Please email us: support@happierme.app
                       </div>

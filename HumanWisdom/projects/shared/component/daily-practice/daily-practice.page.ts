@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { Router } from '@angular/router';
+import { Platform } from '@angular/cdk/platform';
 import { LogEventService } from '../../../shared/services/log-event.service';
 import { CommonService } from '../../../shared/services/common.service';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -67,9 +68,7 @@ export class DailyPracticePage implements OnInit {
   dailyInsModule = '';
   path:any;
   address:any;
-
-
-
+  isIOS:boolean = false;
  currentSection = 0;
   isAdults = true;
   constructor(
@@ -79,7 +78,8 @@ export class DailyPracticePage implements OnInit {
     public logeventservice: LogEventService,
     public navigationService: NavigationService,
     private ngNavigatorShareService: NgNavigatorShareService,
-    private location:Location
+    private location:Location,
+    private platform:Platform
   ) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
@@ -92,6 +92,7 @@ export class DailyPracticePage implements OnInit {
     } else {
       this.isAdults = false;
     }
+    this.isIOS = SharedService.initializeIosCheck(this.platform);
     this.setAudioControlsBackground(); 
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true

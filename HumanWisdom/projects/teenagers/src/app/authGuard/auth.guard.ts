@@ -80,7 +80,6 @@ export class AuthGuard implements CanActivate, OnInit {
       let persub = localStorage.getItem('personalised subscription');
       let pers = localStorage.getItem('personalised');
       let persdata = localStorage.getItem('personalisedlist');
-      localStorage.clear()
       localStorage.setItem('personalised', 'T');
       if(firstTimeTour === 'T') {
         localStorage.setItem('firstTimeTour', 'T');

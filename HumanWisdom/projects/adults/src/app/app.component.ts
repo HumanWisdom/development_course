@@ -284,6 +284,7 @@ export class AppComponent implements OnDestroy {
     let firstTimeTour = localStorage.getItem("firstTimeTour");
     let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
     if (remember === 'F' && first === 'T') {
+      ;
       localStorage.clear()
       localStorage.setItem('guest', 'T');
       localStorage.setItem('personalised', 'T');
@@ -338,7 +339,7 @@ export class AppComponent implements OnDestroy {
       if(res[0]?.SurveyDone=='0'){
         setTimeout(() => {
          this.commonService.updateSurveyData(1); 
-        }, 120000);
+        }, 180000);
       }
     }
   });

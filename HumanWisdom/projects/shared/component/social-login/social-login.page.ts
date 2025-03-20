@@ -142,6 +142,9 @@ export class SocialLoginPage implements OnInit {
               localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
               localStorage.setItem("Subscriber", res['Subscriber']);
               localStorage.setItem('isloggedin', 'T');
+              localStorage.setItem("userName", res['Name']);
+              localStorage.setItem("userEmail",res['Email']);
+              localStorage.setItem("userID", res['UserId']);
               this.isSubscriber = SharedService.isSubscriber();
               if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
                 if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
@@ -192,7 +195,7 @@ export class SocialLoginPage implements OnInit {
     localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("token", JSON.stringify(res.access_token))
     localStorage.setItem("Subscriber", res.Subscriber)
-    localStorage.setItem("userId", JSON.stringify(this.userId))
+    localStorage.setItem("userID", JSON.stringify(this.userId))
     localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
     let nameupdate = localStorage.getItem(
@@ -220,6 +223,10 @@ export class SocialLoginPage implements OnInit {
     localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
     this.userId = JSON.parse(localStorage.getItem("userId"))
     this.Subscriber = localStorage.getItem('Subscriber')
+    SharedService.setUserId(res.UserId.toString());
+    SharedService.setUsername(res.Name);
+    
+    SharedService.setEmail(res.Email);
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     let isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
@@ -243,7 +250,7 @@ export class SocialLoginPage implements OnInit {
       localStorage.setItem("token", JSON.stringify(res.access_token))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("userEmail", JSON.stringify(res.Email))
-      localStorage.setItem("userName", JSON.stringify(this.userName))
+      localStorage.setItem("userName", this.userName);
       sessionStorage.setItem("userId", JSON.stringify(this.userId))
       sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
       sessionStorage.setItem("userName", JSON.stringify(this.userName))

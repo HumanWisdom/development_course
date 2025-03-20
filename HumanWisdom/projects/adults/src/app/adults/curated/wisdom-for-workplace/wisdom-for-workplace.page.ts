@@ -49,63 +49,11 @@ export class WisdomForWorkplacePage implements OnInit {
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
-
-      this.mediaUrl = {
-        pc01: 
-        {
-          id: 46,
-          url: '/podcasts/46.mp3',
-          title: 'Understand your ego'
-        },
-        pc02: 
-        {
-          id: 47,
-          url: '/podcasts/47.mp3',
-          title: 'Overcome anxiety'
-        },
-        pc03: 
-        {
-          id: 45,
-          url: '/podcasts/45.mp3',
-          title: 'The resilient mindset'
-        },
-        pc04: 
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
-        },
-        pc05: 
-        {
-          id: 4,
-          url: '/podcasts/4.mp3',
-          title: 'The Wise Leader'
-        },
-        pc06: 
-        {
-          id: 55,
-          url: '/podcasts/55.mp3',
-          title: 'Resilience podcast with Brad Hook'
-        },
-        pc07: 
-        {
-          id: 60,
-          url: '/podcasts/60.mp3',
-          title: 'How can we be successful?'
-        },
-        pc08: 
-        {
-          id: 41,
-          url: '/podcasts/41.mp3',
-          title: 'People management'
-        },
-        pc09: 
-        {
-          id: 75,
-          url: '/podcasts/75.mp3',
-          title: 'Making better decisions'
+      this.service.GetPodcastsListing('1').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-      }
+      })
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');

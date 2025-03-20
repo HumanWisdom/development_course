@@ -46,10 +46,10 @@ isUseCloseButton:boolean;
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
       const {isUseCloseButton} = window.history.state;
       this.isUseCloseButton=isUseCloseButton;
-
-      if (this.service.previousUrl === '/' + SharedService.getprogramName() + '/wisdom-survey') {
-        this.enableDash = true;
-      }
+      this.enableDash = true;
+      // if (this.service.previousUrl === '/' + SharedService.getprogramName() + '/wisdom-survey') {
+      //   this.enableDash = true;
+      // }
   }
   receiveBookmark(e)
 {

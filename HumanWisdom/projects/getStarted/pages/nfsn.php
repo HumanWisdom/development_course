@@ -49,12 +49,12 @@
       <div class="row center_flex web_home_div">
         <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
 
-          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
-              <img style="height:auto;width:100%;"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp"class="img-responsive w100p display_m_none"
+              <img
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/nfsn.webp" class="img-responsive w100p display_m_none max-width-px" loading="lazy"  alt="performance"
                 >
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/nfsn_new.webp" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
 
           </div>
 
@@ -63,16 +63,17 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ddflex_mblock_a">
+                
                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nfsnboth.svg" class="img-responsive img_aspects"  alt="wh_tick_black">  -->
-                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px ">
+                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-6 p0 mb15px ">
                     
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_m_none" alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_d_none" alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_m_none " alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/happierme1.svg"  class="img-responsive w100p display_d_none" alt="wh_tick_black" style="width:177px;height:50px; margin-left:-14px"> 
 
               </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px mr15px"> 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_m_none"  alt="wh_tick_black"style="width:225px;height:60px;"> 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:50px;"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 mb15px"> 
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_m_none "  alt="wh_tick_black"style="width:225px;"> 
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/family.png"  class="img-responsive w100p display_d_none"  alt="wh_tick_black"style="width:150px;height:45px; padding-top:10px;"> 
 
             </div>  
               </div>
@@ -361,7 +362,7 @@
     </div>
     </div>
     <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-              <div  id="happiermeTryForFree" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div  id="happiermeTryForFree" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
                 <a>
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                 Try HappierMe for free </button>
@@ -745,7 +746,7 @@
                   </div>
 
                   <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
                       <button  id="nfsn-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                         Send
                       </button>

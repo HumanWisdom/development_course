@@ -171,7 +171,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     ngOnDestroy(): void {
-      this.toursubscription.unsubscribe();
+      this.toursubscription?.unsubscribe();
     }
 
 
