@@ -245,7 +245,8 @@ initialize(){
       localStorage.setItem("guest", "T");
       localStorage.setItem("navigateToUpgradeToPremium", "false");
       localStorage.setItem("btnClickBecomePartner", "false");
-      this.router.navigate(["/adults/onboarding/login"]);
+      // this.router.navigate(["/adults/onboarding/login"]);
+      this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login'])
     } else {
 
       this.clickButtonById("liLogout");
