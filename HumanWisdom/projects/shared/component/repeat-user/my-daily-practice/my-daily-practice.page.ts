@@ -150,11 +150,11 @@ export class MyDailyPracticePage implements OnInit {
 
   
   routeDailyPractice(id){
-    if(id=0) 
+    if(id==0) 
       this.logeventservice.logEvent('click_daily_insiration' );
-    else if(id=1) 
+    else if(id==1) 
       this.logeventservice.logEvent('click_breathing_exercise' );
-    else if(id=4) 
+    else if(id==4) 
       this.logeventservice.logEvent('click_daily_meditation' );
    
 
