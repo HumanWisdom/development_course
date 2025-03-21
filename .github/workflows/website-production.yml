@@ -9,7 +9,7 @@ jobs:
      runs-on: ubuntu-latest
     
      steps:
-   - name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -30,17 +30,17 @@ jobs:
           cd HumanWisdom/projects/getStarted
           npx gulp
 
-     - name: Compress the build artifacts
-       run: |
-        cd HumanWisdom
-        mkdir -p builds/compressed
-        tar -czf builds/compressed/website.tgz projects/getStarted
+      - name: Compress the build artifacts
+        run: |
+          cd HumanWisdom
+          mkdir -p builds/compressed
+          tar -czf builds/compressed/website.tgz projects/getStarted
         
-     - name: Upload artifact
-       uses: actions/upload-artifact@v4
-       with:
-        name: website-artifact
-        path: HumanWisdom/builds/compressed/website.tgz
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+             name: website-artifact
+             path: HumanWisdom/builds/compressed/website.tgz
   
   website-deploy:
      runs-on: ubuntu-latest
