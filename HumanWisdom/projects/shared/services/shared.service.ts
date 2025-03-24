@@ -397,8 +397,14 @@ export class SharedService {
 
 
 public static getDashboardId(type:string){
-  if(type.toString().toLocaleLowerCase() == 'mental-health'){
-     return 4;
+  if(this.ProgramId == ProgramType.Adults){
+    if(type.toString().toLocaleLowerCase() == 'mental-health'){
+      return 4;
+   }
+  }else{
+    if(type.toString().toLocaleLowerCase() == 'mental-health'){
+      return 4;
+   }
   }
 }
 }
