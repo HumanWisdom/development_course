@@ -394,8 +394,14 @@ export class SharedService {
     return '';
   }
 
-}
 
+
+public static getDashboardId(type:string){
+  if(type.toString().toLocaleLowerCase() == 'mental-health'){
+     return 4;
+  }
+}
+}
 
 
 
