@@ -9,19 +9,38 @@ jobs:
      runs-on: ubuntu-latest
     
      steps:
-     - name: Checkout code
-       uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-     - name: Compress the build artifacts
-       run: |
-        cd HumanWisdom
-        mkdir -p builds/compressed
-        tar -czf builds/compressed/website.tgz projects/getStarted
-     - name: Upload artifact
-       uses: actions/upload-artifact@v4
-       with:
-        name: website-artifact
-        path: HumanWisdom/builds/compressed/website.tgz
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          cd HumanWisdom/projects/getStarted
+          npm install
+
+      - name: Ensure CSS directory exists
+        run: mkdir -p HumanWisdom/projects/getStarted/assets-min/css
+
+      - name: Run Gulp to minify CSS
+        run: |
+          cd HumanWisdom/projects/getStarted
+          npx gulp
+
+      - name: Compress the build artifacts
+        run: |
+          cd HumanWisdom
+          mkdir -p builds/compressed
+          tar -czf builds/compressed/website.tgz projects/getStarted
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+             name: website-artifact
+             path: HumanWisdom/builds/compressed/website.tgz
   
   website-deploy:
      runs-on: ubuntu-latest

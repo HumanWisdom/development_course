@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { HttpClient } from '@angular/common/http';
 import { CommonService } from '../../services/common.service';
+import { NavigationService } from '../../services/navigation.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'HumanWisdom-single-audio-content',
@@ -21,7 +24,9 @@ export class SingleAudioContentComponent implements OnInit {
   textContent = "";
   audioLinkUrl = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private service: CommonService) {
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, 
+     private location: Location, private navigationService: NavigationService, 
+    private service: CommonService) {
     // ;
     const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
@@ -29,7 +34,7 @@ export class SingleAudioContentComponent implements OnInit {
     this.audioTitle = this.route.snapshot.paramMap.get('title');
     this.callText();
     if (this.audioTitle) {
-      this.audioTitle = this.audioTitle.replaceAll('-', ' ');
+      this.audioTitle = this.audioTitle.replace('-', ' ');
     }
     let rowid: any = this.route.snapshot.paramMap.get('RowId');
     rowid = parseInt(rowid);
@@ -89,5 +94,14 @@ export class SingleAudioContentComponent implements OnInit {
 
     // Append the <style> element to the document head
     document.head.appendChild(style);
+  }
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
   }
 }

@@ -47,81 +47,11 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 46,
-          url: '/podcasts/46.mp3',
-          title: 'Understand your own ego'
-        },
-        pc02:
-        {
-          id: 47,
-          url: '/podcasts/47.mp3',
-          title: 'Overcome anxiety'
-        },
-        pc03:
-        {
-          id: 58,
-          url: '/podcasts/58.mp3',
-          title: 'Overcoming loneliness'
-        },
-        pc04:
-        {
-          id: 37,
-          url: '/podcasts/37.mp3',
-          title: 'Five ways to avoid stress'
-        },
-        pc05:
-        {
-          id: 32,
-          url: '/podcasts/32.mp3',
-          title: ' Overcoming grief'
-        },
-        pc06:
-        {
-          id: 15,
-          url: '/podcasts/15.mp3',
-          title: 'Why do we follow trends'
-        },
-        pc07:
-        {
-          id: 28,
-          url: '/podcasts/28.mp3',
-          title: 'Healing emotional pain'
-        },
-        pc08:
-        {
-          id: 33,
-          url: '/podcasts/33.mp3',
-          title: 'Preventing suicide'
-        },
-        pc09:
-        {
-          id: 38,
-          url: '/podcasts/38.mp3',
-          title: 'Deal with bullying'
-        },
-        pc10:
-        {
-          id: 40,
-          url: '/podcasts/40.mp3',
-          title: 'Overcoming depression'
-        },
-        pc11:
-        {
-          id: 45,
-          url: '/podcasts/45.mp3',
-          title: 'The resilient mindset'
-        },
-        pc12:
-        {
-          id: 58,
-          url: '/podcasts/58.mp3',
-          title: 'Overcoming loneliness'
-        },
-    
-      }
+      this.service.GetPodcastsListing('10').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
+        }
+})
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');

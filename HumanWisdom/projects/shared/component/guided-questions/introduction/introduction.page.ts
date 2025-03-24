@@ -13,6 +13,8 @@ import { ProgramType } from '../../../models/program-model';
 export class IntroductionPage implements OnInit {
   data: any
   isAdults = true;
+  guest = false;
+  Subscriber = false;
   private currentUrl:string='';
   private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
@@ -33,6 +35,9 @@ export class IntroductionPage implements OnInit {
     } else {
       this.isAdults = false;
     }
+
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
   }
 
   private initializeData(){
@@ -62,10 +67,13 @@ export class IntroductionPage implements OnInit {
 
   NavigateToQuestions() {
     let log = localStorage.getItem("isloggedin");
-    if (log === 'T') {
-      this.router.navigate([SharedService.getUrlfromFeatureName('guidedquestions')], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+    // if (log === 'T') {
+      if (this.guest || !this.Subscriber) {
+        this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
+
     }else{
-      this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
+      this.router.navigate([SharedService.getUrlfromFeatureName('guidedquestions')], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+
     }
   }
 

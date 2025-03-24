@@ -3,6 +3,8 @@ import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
+import { LogEventService } from '../../../services/log-event.service'
+
 
 @Component({
   selector: 'app-my-daily-practice',
@@ -39,14 +41,14 @@ export class MyDailyPracticePage implements OnInit {
   placeholder = 'Answer here'
   guest = true;
   isFirstLogin:boolean = false;
-  constructor(private  commonService:CommonService,private router:Router) { 
+  constructor(private  commonService:CommonService, public logeventservice: LogEventService, private router:Router) { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
      this.isFirstLogin = SharedService.isRoutedFromLogin;
   }
 
   ngOnInit() {
     this.userName = localStorage.getItem('userName');
-    this.userName = this.userName ? this.userName.replaceAll('""',''): this.userName;
+    this.userName = this.userName ? this.userName.replace('"',''): this.userName;
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -122,6 +124,8 @@ export class MyDailyPracticePage implements OnInit {
   }
 
   subdailyques() {
+    this.logeventservice.logEvent('click_add_to_journal' );    
+
     if (!this.isloggedIn) {
       this.content = "Subscribe to activate your online journal";
       this.enableAlert = true;
@@ -146,12 +150,23 @@ export class MyDailyPracticePage implements OnInit {
 
   
   routeDailyPractice(id){
+    if(id==0) 
+      this.logeventservice.logEvent('click_daily_insiration' );
+    else if(id==1) 
+      this.logeventservice.logEvent('click_breathing_exercise' );
+    else if(id==4) 
+      this.logeventservice.logEvent('click_daily_meditation' );
+   
+
     this.router.navigate([SharedService.getprogramName()+'/'+'daily-practise/'+id])
   }
   routeToDailyCheckIn(){
+    this.logeventservice.logEvent('click_daily_checkin' );
+
     this.router.navigate([SharedService.getprogramName()+'/daily-checkin'])
   }
   routeToDashboard(){
+    this.logeventservice.logEvent('click_proceed_to_home' );    
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
 }
