@@ -429,7 +429,7 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .navbar {
     padding: 0;
     min-height: unset !important;
@@ -595,7 +595,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -668,8 +668,7 @@ section {
   }
 
   .mobile-nav-show {
-    color:#CB6171;
-
+    color: #CB6171;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;

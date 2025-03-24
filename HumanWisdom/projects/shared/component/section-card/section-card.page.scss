@@ -1,0 +1,24 @@
+@media (max-width: 767px) { /* Targets mobile view (Bootstrap's xs and sm breakpoints) */
+    .session_imgnew {
+      right: 10px; /* Adds space to the right of the image */
+    }
+    .col-xs-8.p0 {
+      left: 10px; /* Adds space to the left of the text */
+    }
+  }
+  @media (max-width: 768px) { /* Slightly larger than 767px */
+    .session_imgnew {
+      right: 10px;
+    }
+    .col-xs-8.p0 {
+      left: 10px;
+    }
+  }
+  @media (max-width: 991px) { /* Covers xs and sm, up to md */
+    .session_imgnew {
+      right: 10px;
+    }
+    .col-xs-8.p0 {
+      left: 10px;
+    }
+  }
