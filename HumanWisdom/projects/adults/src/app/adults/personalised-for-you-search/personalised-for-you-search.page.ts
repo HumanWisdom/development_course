@@ -32,7 +32,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public idToken: any
   public email: any;
   public showAlert = false
-  public loginResponse: any
+  public loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   public socialFirstName: any
   public socialLastName: any
   public socialEmail: any
@@ -80,6 +80,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public exerciseNo: any;
   public tourTotalIndex = 3;
   public tourIndex = 1;
+
 
   //static progress mapping
   constructor(private route: Router, private aservice: AdultsService,
@@ -1237,5 +1238,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.logeventservice.logEvent("click_find-answers-" + param);
     this.router.navigate(['/adults/find-answers/' + param]);
   }
+
+    viewDetails() {
+      this.router.navigate(["/adults/onboarding/user-profile"]);
+    }
 
 }
