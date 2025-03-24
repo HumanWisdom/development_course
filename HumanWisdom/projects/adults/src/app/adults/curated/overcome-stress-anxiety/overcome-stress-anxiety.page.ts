@@ -520,4 +520,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+  routeToMentalHealthDash(){
+    this.router.navigate(['/adults/dashboard/mental-health']);
+  }
 }
