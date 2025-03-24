@@ -11,6 +11,7 @@ import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article
 import { IntroGuard } from '../intro.guard';
 import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
 import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
+import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 const routes: Routes = [
   {
     path: '',
@@ -683,7 +684,11 @@ const routes: Routes = [
   {
     path: 'newsletter-signup',
     component: NewsletterComponent
-  }
+  },
+  {
+    path: "dashboard/:type",
+    component: DashboardComponent
+  },
 ];
 
  @NgModule({

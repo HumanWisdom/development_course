@@ -1668,15 +1668,15 @@
                           <div class="">
                             <div class="toc_adiv_02">
                               <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc01)">
-                                <div class="row">
+                              <a (click)="audioevent(data.MediaUrl)" *ngFor="let data of mediaUrl; let i=index">
+                                <div class="row" *ngIf="i === 0 && enablePodcastViewMore">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                                       <div class="prelative">
                                         <div class="row">
                                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc01.id)"
+                                            <img [src]="getimage(data.PodcastID)"
                                               class="img-responsive w100 img_podcast_01">
                                           </div>
                                         </div>
@@ -1685,10 +1685,10 @@
 
                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc01.title}}
+                                        {{data.Title}}
                                       </h4>
                                       <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        55:55
+                                        {{data.Timing}}
                                       </h4>
                                     </div>
 
@@ -1696,7 +1696,8 @@
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
 
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
                                       <!-- lock -->
                                       <img
                                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
@@ -1707,19 +1708,15 @@
 
                                   </div>
                                 </div>
-                              </a>
-                              <!-- /audio row -->
 
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc02)">
-                                <div class="row">
+                                <div class="row" *ngIf="i === 1 && enablePodcastViewMore">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                                       <div class="prelative">
                                         <div class="row">
                                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc02.id)"
+                                            <img [src]="getimage(data.PodcastID)"
                                               class="img-responsive w100 img_podcast_01">
                                           </div>
                                         </div>
@@ -1728,10 +1725,10 @@
 
                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc02.title}}
+                                        {{data.Title}}
                                       </h4>
                                       <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        30:37
+                                        {{data.Timing}}
                                       </h4>
                                     </div>
 
@@ -1739,7 +1736,8 @@
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
 
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
                                       <!-- lock -->
                                       <img
                                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
@@ -1750,19 +1748,15 @@
 
                                   </div>
                                 </div>
-                              </a>
-                              <!-- /audio row -->
 
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc03)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
+                                <div class="row" *ngIf="!enablePodcastViewMore">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                                       <div class="prelative">
                                         <div class="row">
                                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc03.id)"
+                                            <img [src]="getimage(data.PodcastID)"
                                               class="img-responsive w100 img_podcast_01">
                                           </div>
                                         </div>
@@ -1771,10 +1765,10 @@
 
                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc03.title}}
+                                        {{data.Title}}
                                       </h4>
                                       <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        50:30
+                                        {{data.Timing}}
                                       </h4>
                                     </div>
 
@@ -1782,7 +1776,8 @@
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
 
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="!isSubscriber">
                                       <!-- lock -->
                                       <img
                                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
@@ -1790,341 +1785,6 @@
                                       <!-- /lock -->
                                     </div>
 
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc04)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc04.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc04.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc05)"  *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc05.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc05.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc06)"  *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc06.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc06.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc07)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc07.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc07.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc08)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc08.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc08.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc09)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc09.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc09.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc10)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc10.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc10.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </a>
-                              <!-- /audio row -->
-                              <!-- audio row -->
-                              <a (click)="audioevent(mediaUrl.pc11)" *ngIf="!enablePodcastViewMore">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                                      <div class="prelative">
-                                        <div class="row">
-                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                            <img [src]="getimage(mediaUrl.pc11.id)"
-                                              class="img-responsive w100 img_podcast_01">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
-                                        {{mediaUrl.pc11.title}}
-                                      </h4>
-                                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                                        54:56
-                                      </h4>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                                    </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
-                                      <!-- lock -->
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                                        class="img-responsive">
-                                      <!-- /lock -->
-                                    </div>
 
                                   </div>
                                 </div>
