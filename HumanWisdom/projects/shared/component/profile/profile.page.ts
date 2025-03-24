@@ -6,6 +6,10 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../services/navigation.service';
+
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -43,7 +47,8 @@ export class ProfilePage implements OnInit {
   isAdults: boolean = true;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
-    public platform: Platform, public logeventservice: LogEventService,private location:Location) {
+    public platform: Platform, public logeventservice: LogEventService,private location:Location , 
+      private navigationService: NavigationService) {
       // this.initialize();
       let data = localStorage.getItem('loginResponse');
       if(data){
@@ -168,12 +173,22 @@ initialize(){
   }
 
     back(){
+      let url =  this.navigationService.navigateToBackLink();
+      if(url){
+        this.location.back();
+
+      }else{
+        url = SharedService.getDashboardUrls();
+        this.router.navigate([url]);
+      } 
+
+/* 
       let url = SharedService.getDashboardUrls();
       if(url){
         this.router.navigate([url]);
       }else{
         this.location.back();
-      }
+      } */
     }
 
 

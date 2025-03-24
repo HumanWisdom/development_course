@@ -3,7 +3,7 @@ export const environment = {
   apiURL: "https://www.humanwisdom.info/api",
   clientUrl: "https://happierme.app/",
   appleSignInAPIAdults:"https://www.humanwisdom.info/api/verifyAppleToken_htmlAdults",
-  appleSignInAPITeenagers:"https://www.humanwisdom.info/api/verifyAppleToken_htmlTeenagers",
+  appleSignInAPITeenagers:"https://www.humanwisdom.info/api/verifyAppleToken_htmlTeens",
   appleSignInHtmlLocal:"",
   stripeKey: "pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a",
   firebase: {

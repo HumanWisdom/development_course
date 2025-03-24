@@ -287,9 +287,7 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
-  viewDetails() {
-    this.router.navigate(["/adults/onboarding/user-profile"]);
-  }
+
 
   loginpage() {
     // $("#signuplogin").modal("hide");

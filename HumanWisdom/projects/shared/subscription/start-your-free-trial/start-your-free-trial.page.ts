@@ -30,12 +30,15 @@ constructor(private router: Router,private location: Location, private servive: 
 
   tryFreeSubscribe(){
     this.logeventservice.logEvent('click_start_trial');
+    if (!(SharedService.isIOSApp())) {
       if (this.CheckIfUserIsLoggedIn()) {
         this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
       } else {
         SharedService.UrlToRedirect=`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
         this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
       }
+
+    }
   }
 
   back(){
