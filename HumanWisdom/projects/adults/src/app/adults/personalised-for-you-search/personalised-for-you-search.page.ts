@@ -1240,7 +1240,16 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
     viewDetails() {
+      this.logeventservice.logEvent("click_view_details");
+
       this.router.navigate(["/adults/onboarding/user-profile"]);
     }
+
+     survey() {
+      this.logeventservice.logEvent("click_take_survey");
+
+        this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
+      }
+    
 
 }
