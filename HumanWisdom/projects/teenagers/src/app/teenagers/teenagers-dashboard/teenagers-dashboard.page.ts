@@ -340,13 +340,6 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     })
   }
 
-  survey() {
-    this.router.navigate(["/teenagers/wisdom-survey"], { state: { 'isUseCloseButton': true } });
-  }
-
-  viewDetails() {
-    this.router.navigate(["teenagers/onboarding/user-profile"]);
-  }
 
   loginpage() {
     // $("#signuplogin").modal("hide");
