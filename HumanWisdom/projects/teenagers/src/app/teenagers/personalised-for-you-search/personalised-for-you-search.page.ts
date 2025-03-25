@@ -29,7 +29,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public idToken: any
   public email: any;
   public showAlert = false
-  public loginResponse: any
+  public loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   public socialFirstName: any
   public socialLastName: any
   public socialEmail: any
@@ -1100,6 +1100,15 @@ export class PersonalisedForYouSearchPage implements OnInit {
     } else {
       this.route.navigate(['teenagers/wisdom-exercise/']);
     }
+  }
+
+  
+  survey() {
+    this.route.navigate(["/teenagers/wisdom-survey"], { state: { 'isUseCloseButton': true } });
+  }
+
+  viewDetails() {
+    this.route.navigate(["teenagers/onboarding/user-profile"]);
   }
 
 }
