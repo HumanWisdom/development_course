@@ -3,7 +3,7 @@
             <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 p0 ">
                 <img [src]="section.image_path"  class="p0 session_imgnew" >
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8  p0">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8  p0" [ngStyle]="getStyles()">
                 <div class="row mt10px mb5px">
                     <div id="photo">
                         <img style="vertical-align:middle" [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com' + section.icon_path"  alt="" >
@@ -24,3 +24,4 @@
             </div>
         </a>
     </div>
+
