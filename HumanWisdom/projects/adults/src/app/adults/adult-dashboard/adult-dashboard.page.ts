@@ -575,6 +575,14 @@ export class AdultDashboardPage implements OnInit {
         },
       },
       {
+        element: ".tour_profile",
+        popover: {
+          title: 'Profile',
+          description: 'Please update your profile to help us serve you better',
+          side: "top"
+        },
+      },
+      {
         element: ".tour_intro",
         popover: {
           title: 'Begin Here',
@@ -587,8 +595,9 @@ export class AdultDashboardPage implements OnInit {
 
 
     if(!this.isloggedIn) {
-      this.tourTotalIndex = 8;
+      this.tourTotalIndex = 7;
       stepList.splice(1, 1);
+      stepList.splice(7, 1);
     }
 
     const driverObj = driver({
