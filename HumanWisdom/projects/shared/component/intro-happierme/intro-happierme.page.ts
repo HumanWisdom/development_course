@@ -52,6 +52,10 @@ export class IntroHappiermePage implements OnInit {
     }
    if(type==='link'){
 
+    if(!this.isAdults) {
+      url = url.replaceAll('adults','teenagers')
+    }
+
     this.router.navigate([url])
    }
     else if(type === 'video') {
