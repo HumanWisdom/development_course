@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
     private navigationService: NavigationService,private route: ActivatedRoute) {
       SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
         this.dashboardType = this.route.snapshot.paramMap.get('type');
-        this.dashboardId = SharedService.getDashboardId(this.dashboardType);
+        this.dashboardId = SharedService.contentIdData(this.dashboardType).id;
         this.service.GetIntroContents(this.dashboardId).subscribe(res=>{
           if(res){
             this.cardList = res.content;
