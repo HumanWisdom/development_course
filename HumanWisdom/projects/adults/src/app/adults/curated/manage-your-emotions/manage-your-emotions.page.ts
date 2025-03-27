@@ -477,4 +477,7 @@ export class ManageYourEmotionsPage implements OnInit {
     }
   }
 
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/manage-your-emotions']);
+  }
 }

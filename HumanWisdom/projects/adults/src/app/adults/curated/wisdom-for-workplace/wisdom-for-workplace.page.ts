@@ -591,4 +591,8 @@ export class WisdomForWorkplacePage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/work-and-leadership']);
+  }
 }

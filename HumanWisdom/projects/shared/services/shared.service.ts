@@ -352,13 +352,13 @@ export class SharedService {
     else {
       let data = [
         { "id": 11, "name": "mental-health" },
-        { "id": 12, "name": "teenagers-Relationships" },
-        { "id": 13, "name": "teenagers-Feel calm" },
-        { "id": 14, "name": "teenagers-Be happier" },
-        { "id": 15, "name": "teenagers-Manage your emotions" },
-        { "id": 16, "name": "teenagers-Overcome unhelpful habits" },
-        { "id": 17, "name": "teenagers-Understand yourself" },
-        { "id": 18, "name": "teenagers-Succeed in life" }]
+        { "id": 12, "name": "relationships" },
+        { "id": 13, "name": "feel-calm" },
+        { "id": 14, "name": "be-happier" },
+        { "id": 15, "name": "manage-your-emotions" },
+        { "id": 16, "name": "overcome-unhelpful-habits" },
+        { "id": 17, "name": "understand-yourself" },
+        { "id": 18, "name": "succeed-in-life" }]
       return data.filter(x => x.name == name)[0];
     }
   }

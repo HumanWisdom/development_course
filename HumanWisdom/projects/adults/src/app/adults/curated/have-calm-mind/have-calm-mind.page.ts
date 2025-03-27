@@ -448,4 +448,8 @@ export class HaveCalmMindPage implements OnInit {
     }
   }
 
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/meditation']);
+  }
+
 }
