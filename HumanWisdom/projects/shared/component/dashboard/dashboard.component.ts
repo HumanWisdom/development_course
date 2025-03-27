@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     { section_name: "Skills", priority: 2,data: new Array<any>() },
     { section_name: "Community", priority: 3,data: new Array<any>()  }
   ];
-  constructor(private router: Router,
+  constructor(private router: Router, private location:Location,
     private service:CommonService,private ngNavigatorShareService: NgNavigatorShareService,
     private navigationService: NavigationService,private route: ActivatedRoute) {
       SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
@@ -57,7 +57,8 @@ export class DashboardComponent implements OnInit {
     goBack(){
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
+      // this.router.navigate([SharedService.getDashboardUrls()]);
+      this.location.back();
     }else{
       this.router.navigate([url]);
     }

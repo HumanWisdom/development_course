@@ -33,9 +33,9 @@ export class SectionCard implements OnInit {
   }
   updateStyles() {
     if (window.innerWidth <= 767) {
-      this.leftSpacing = '10px'; // Adjust for mobile
+      this.leftSpacing = '2%'; // Adjust for mobile
     } else {
-      this.leftSpacing = '18px'; // Default for larger screens
+      this.leftSpacing = '2%'; // Default for larger screens
     }
   }
 
