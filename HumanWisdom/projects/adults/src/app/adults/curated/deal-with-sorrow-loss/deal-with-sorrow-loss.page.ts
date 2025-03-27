@@ -406,4 +406,8 @@ export class DealWithSorrowLossPage implements OnInit {
     }
   }
 
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/deal-with-loss']);
+  }
+
 }

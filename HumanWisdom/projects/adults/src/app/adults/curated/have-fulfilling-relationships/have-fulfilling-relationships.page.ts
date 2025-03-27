@@ -477,4 +477,8 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/relationships']);
+  }
 }
