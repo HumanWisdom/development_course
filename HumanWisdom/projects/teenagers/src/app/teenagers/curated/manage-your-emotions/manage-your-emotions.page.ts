@@ -574,4 +574,8 @@ export class ManageYourEmotionsPage implements OnInit {
     }
   }
 
+     routeTointroDash(){
+        this.router.navigate(['/teenagers/dashboard/manage-your-emotions']);
+      }
+
 }

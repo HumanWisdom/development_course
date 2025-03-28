@@ -700,4 +700,8 @@ export class OvercomeUnhelpfulHabitsPage implements OnInit {
     }
   }
 
+     routeTointroDash(){
+        this.router.navigate(['/teenagers/dashboard/overcome-unhelpful-habits']);
+      }
+
 }
