@@ -605,7 +605,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_profile",
         popover: {
           title: 'Profile',
-          description: 'Please update your profile to help us serve you better',
+          description: 'Please update your profile to help us serve you better.',
           side: "top"
         },
       },
