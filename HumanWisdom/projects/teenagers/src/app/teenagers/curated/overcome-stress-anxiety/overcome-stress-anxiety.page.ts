@@ -555,4 +555,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+     routeTointroDash(){
+        this.router.navigate(['/teenagers/dashboard/mental-health']);
+      }
 }
