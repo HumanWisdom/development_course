@@ -670,4 +670,7 @@ export class OnboardingService {
     return this.http.post(this.path + `/VerifyCaptcha`, {token:token})
   }
 
+getHappierMeQuotation(id): Observable<any> {
+  return this.http.get(this.path + `/GetQuotation/${id}`)
 }
+} 

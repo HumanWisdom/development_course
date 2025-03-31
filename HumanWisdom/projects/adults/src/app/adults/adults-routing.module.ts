@@ -12,6 +12,7 @@ import { IntroGuard } from '../intro.guard';
 import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
 import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
+import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
 const routes: Routes = [
   {
     path: '',
@@ -688,6 +689,10 @@ const routes: Routes = [
   {
     path: "dashboard/:type",
     component: DashboardComponent
+  },
+  {
+    path: "quotation/:id",
+    component: HappierMeQuotationPage
   },
 ];
 

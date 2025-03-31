@@ -8,8 +8,9 @@ import { BlogArticlePage } from '../../../../shared/component/blogs/blog-article
 import { BlogIndexPage } from '../../../../shared/component/blogs/blog-index/blog-index.page';
 import { AuthGuard } from '../authGuard/auth.guard';
 import { NewsletterComponent } from '../../../../shared/component/newsletter/newsletter.component';
-import {MyDashboardComponent} from '../../../../shared/component/my-dashboard/my-dashboard.component';
+import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
+import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
 const routes: Routes = [
   {
     path: '',
@@ -472,23 +473,23 @@ const routes: Routes = [
   },
   {
     path: 'faqs',
-    loadChildren: () => import('../../../../shared/component/help-support/faq/faq.module').then( m => m.FaqPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/faq/faq.module').then(m => m.FaqPageModule)
   },
   {
     path: 'contact-us',
-    loadChildren: () => import('../../../../shared/component/help-support/support/support.module').then( m => m.SupportPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/support/support.module').then(m => m.SupportPageModule)
   },
   {
     path: 'terms-and-conditions',
-    loadChildren: () => import('../../../../shared/component/help-support/terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/terms-conditions/terms-conditions.module').then(m => m.TermsConditionsPageModule)
   },
   {
     path: 'privacy-policy',
-    loadChildren: () => import('../../../../shared/component/help-support/privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyPageModule)
   },
   {
     path: 'cookies-policy',
-    loadChildren: () => import('../../../../shared/component/help-support/cookie-policy/cookie-policy.module').then( m => m.CookiePolicyPageModule)
+    loadChildren: () => import('../../../../shared/component/help-support/cookie-policy/cookie-policy.module').then(m => m.CookiePolicyPageModule)
   },
   {
     path: 'help-support',
@@ -496,15 +497,15 @@ const routes: Routes = [
   },
   {
     path: 'awareness-exercises-transcript',
-    loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
+    loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then(m => m.AwarenessExercisesTranscriptPageModule)
   },
   {
     path: 'daily-checkin',
-    loadChildren: () => import('../../../../shared/component/daily-checkin-landing/daily-checkin-landing.module').then( m => m.DailyCheckInLandingPageModule)
+    loadChildren: () => import('../../../../shared/component/daily-checkin-landing/daily-checkin-landing.module').then(m => m.DailyCheckInLandingPageModule)
   },
   {
     path: 'daily-checkin-save',
-    loadChildren: () => import('../../../../shared/component/daily-check-note-save/daily-check-note-save.module').then( m => m.DailyCheckinNoteSavePageModule)
+    loadChildren: () => import('../../../../shared/component/daily-check-note-save/daily-check-note-save.module').then(m => m.DailyCheckinNoteSavePageModule)
   },
   {
     path: 'redeem-subscription',
@@ -516,11 +517,11 @@ const routes: Routes = [
   },
   {
     path: 'redeem-subscription-landing',
-    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then(m => m.RedeemSubscriptionLandingPageModule)
   },
   {
     path: 'redeem-gift-card',
-    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
+    loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then(m => m.RedeemSubscriptionLandingPageModule)
   },
   {
     path: 'newsletter-signup',
@@ -529,6 +530,10 @@ const routes: Routes = [
   {
     path: "dashboard/:type",
     component: DashboardComponent
+  },
+  {
+    path: "quotation/:id",
+    component: HappierMeQuotationPage
   },
 ];
 
