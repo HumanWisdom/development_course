@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
   groupedCardList=[]
   introTitle:string = '';
   dashboardType:string = '';
-  dashboardId:number =0;
+  dashboardData:any = {};
   metadata = [
     { section_name: "Start here", priority: 1,data : new Array<any>() },
     { section_name: "Skills", priority: 2,data: new Array<any>() },
@@ -38,8 +38,8 @@ export class DashboardComponent implements OnInit {
     private navigationService: NavigationService,private route: ActivatedRoute) {
       SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
         this.dashboardType = this.route.snapshot.paramMap.get('type');
-        this.dashboardId = SharedService.contentIdData(this.dashboardType).id;
-        this.service.GetIntroContents(this.dashboardId).subscribe(res=>{
+        this.dashboardData = SharedService.contentIdData(this.dashboardType);
+        this.service.GetIntroContents(this.dashboardData.id).subscribe(res=>{
           if(res){
             this.cardList = res.content;
             this.introTitle = res.introPara;

@@ -403,6 +403,6 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
 
   routeTointroDash(){
-    this.router.navigate(['/adults/dashboard/deal-with-loss']);
+    this.router.navigate(['/adults/dashboard/habits-and-addiction']);
   }
 }

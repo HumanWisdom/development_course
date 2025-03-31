@@ -340,7 +340,7 @@ export class SharedService {
         { "id": 2, "name": "teenager-dashboard" ,"title":"Teenager Dashboard"},
         { "id": 3, "name": "work-and-leadership" ,"title":"Work and Leadership" },
         { "id": 4, "name": "mental-health" ,"title":"Manage your mental health" },
-        { "id": 5, "name": "relationships" ,"title":"Relationship" },
+        { "id": 5, "name": "relationships" ,"title":"Relationships" },
         { "id": 6, "name": "be-happier" ,"title":"Be happier" },
         { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
