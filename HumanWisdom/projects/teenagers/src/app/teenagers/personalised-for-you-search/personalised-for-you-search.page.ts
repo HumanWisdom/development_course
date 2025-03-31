@@ -143,8 +143,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       {
        element: ".tour_exercises",
        popover: {
-         title: 'Awareness Exercises',
-         description: 'Tiny, guided exercises to improve your self-awareness',
+         title: 'Healthy mind.',
+         description: 'You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
          side: "right"
        }
      },

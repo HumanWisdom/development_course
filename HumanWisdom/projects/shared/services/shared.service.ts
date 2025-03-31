@@ -338,27 +338,27 @@ export class SharedService {
       let data = [
         { "id": 1, "name": "adult-dashboard" },
         { "id": 2, "name": "teenager-dashboard" },
-        { "id": 3, "name": "adults-Work and Leadership" },
+        { "id": 3, "name": "work-and-leadership" },
         { "id": 4, "name": "mental-health" },
-        { "id": 5, "name": "adults-Relationships" },
-        { "id": 6, "name": "adults-Be happier" },
-        { "id": 7, "name": "adults-Habits and Addiction" },
-        { "id": 8, "name": "adults-Deal with loss" },
-        { "id": 9, "name": "adults-Meditation" },
-        { "id": 10, "name": "adults-Manage your emotions" }
+        { "id": 5, "name": "relationships" },
+        { "id": 6, "name": "be-happier" },
+        { "id": 7, "name": "habits-and-addiction" },
+        { "id": 8, "name": "deal-with-loss" },
+        { "id": 9, "name": "meditation" },
+        { "id": 10, "name": "manage-your-emotions" }
       ]
       return data.filter(x => x.name == name)[0];
     }
     else {
       let data = [
         { "id": 11, "name": "mental-health" },
-        { "id": 12, "name": "teenagers-Relationships" },
-        { "id": 13, "name": "teenagers-Feel calm" },
-        { "id": 14, "name": "teenagers-Be happier" },
-        { "id": 15, "name": "teenagers-Manage your emotions" },
-        { "id": 16, "name": "teenagers-Overcome unhelpful habits" },
-        { "id": 17, "name": "teenagers-Understand yourself" },
-        { "id": 18, "name": "teenagers-Succeed in life" }]
+        { "id": 12, "name": "relationships" },
+        { "id": 13, "name": "feel-calm" },
+        { "id": 14, "name": "be-happier" },
+        { "id": 15, "name": "manage-your-emotions" },
+        { "id": 16, "name": "overcome-unhelpful-habits" },
+        { "id": 17, "name": "understand-yourself" },
+        { "id": 18, "name": "succeed-in-life" }]
       return data.filter(x => x.name == name)[0];
     }
   }

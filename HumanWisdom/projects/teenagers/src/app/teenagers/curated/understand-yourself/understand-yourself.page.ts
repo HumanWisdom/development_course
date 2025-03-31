@@ -580,4 +580,8 @@ export class UnderstandYourselfPage implements OnInit {
   // audioevent(audioContent) {
   //   this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
+
+   routeTointroDash(){
+      this.router.navigate(['/teenagers/dashboard/understand-yourself']);
+    }
 }

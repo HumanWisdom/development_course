@@ -505,4 +505,8 @@ routeGuided() {
     }
   }
 
+     routeTointroDash(){
+        this.router.navigate(['/teenagers/dashboard/feel-calm']);
+      }
+
 }
