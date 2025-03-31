@@ -336,16 +336,16 @@ export class SharedService {
   public static contentIdData(name) {
     if (this.ProgramId == ProgramType.Adults) {
       let data = [
-        { "id": 1, "name": "adult-dashboard" },
-        { "id": 2, "name": "teenager-dashboard" },
-        { "id": 3, "name": "work-and-leadership" },
-        { "id": 4, "name": "mental-health" },
-        { "id": 5, "name": "relationships" },
-        { "id": 6, "name": "be-happier" },
-        { "id": 7, "name": "habits-and-addiction" },
-        { "id": 8, "name": "deal-with-loss" },
-        { "id": 9, "name": "meditation" },
-        { "id": 10, "name": "manage-your-emotions" }
+        { "id": 1, "name": "adult-dashboard" ,"title":"Adult Dashboard"},
+        { "id": 2, "name": "teenager-dashboard" ,"title":"Teenager Dashboard"},
+        { "id": 3, "name": "work-and-leadership" ,"title":"Work and Leadership" },
+        { "id": 4, "name": "mental-health" ,"title":"Manage your mental health" },
+        { "id": 5, "name": "relationships" ,"title":"Relationship" },
+        { "id": 6, "name": "be-happier" ,"title":"Be happier" },
+        { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
+        { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
+        { "id": 9, "name": "meditation" ,"title":"Meditation" },
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
       ]
       return data.filter(x => x.name == name)[0];
     }
