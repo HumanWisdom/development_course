@@ -32930,6 +32930,23 @@ body *
   margin: 0 auto;
 }
 
+.tn_title_back_change_topic
+{
+  height: 80px;
+  background: #183C79;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+
 .div_fbn a .row
 {
   height: 60px;
