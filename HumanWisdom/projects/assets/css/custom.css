@@ -32988,6 +32988,23 @@ body *
   margin: 0 auto;
 }
 
+.tn_title_back_change_topic
+{
+  height: 80px;
+  background: #292D56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+
 .div_fbn a .row
 {
   height: 60px;
@@ -37401,11 +37418,16 @@ a.fc_e58d82:hover
 
 .cvideo_coach
 {
-  width: 100%;
+/*   width: 100%;
   max-height: 100%;
   border-radius: 12px;
   height: 190px;
+  background: black; */
+  width:65%;
+  border-radius: 12px;
+  height: auto;
   background: black;
+  object-fit: cover;
 }
 
 .v3_ta_coach 
