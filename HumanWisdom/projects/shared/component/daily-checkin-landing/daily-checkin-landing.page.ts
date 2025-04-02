@@ -93,7 +93,8 @@ export class DailyCheckInLandingPage implements OnInit {
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
     let NoOfVisits = this.loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits)
-    this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
+    //this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
+    this.isRoutedFromLogin =true;
     SharedService.isRoutedFromLogin = this.isRoutedFromLogin;
 
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
@@ -108,6 +109,7 @@ export class DailyCheckInLandingPage implements OnInit {
     } else {
       this.userId = res.UserId;
       this.userName = res.Name;
+      localStorage.setItem("isloggedin",'T');
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("token", JSON.stringify(res.access_token));

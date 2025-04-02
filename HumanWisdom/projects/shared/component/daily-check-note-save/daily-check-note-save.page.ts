@@ -55,7 +55,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
          "Title":'Daily check-in'
         };
         this.commonService.submitJournal(obj).subscribe(res=>{
-          if(res){
+          if(res == 0 || res){
               this.saveJournal.nativeElement.click();
               if(!this.isFirstLogin){
                 setTimeout(() => {
