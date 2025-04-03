@@ -255,17 +255,17 @@ initialize(){
     const accessObj: any = window;
     (accessObj)?.Moengage?.destroy_session();
     this.logeventservice.logEvent('click_logout_Hamburger');
-    if (this.platform.isBrowser) {
+    // if (this.platform.isBrowser) {
       localStorage.setItem("isloggedin", "F");
       localStorage.setItem("guest", "T");
       localStorage.setItem("navigateToUpgradeToPremium", "false");
       localStorage.setItem("btnClickBecomePartner", "false");
       // this.router.navigate(["/adults/onboarding/login"]);
       this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login'])
-    } else {
+    // } else {
 
       this.clickButtonById("liLogout");
-    }
+    // }
   }
 
   clickButtonById(buttonId: string): void {
