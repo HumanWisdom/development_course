@@ -223,6 +223,10 @@ export class SocialLoginPage implements OnInit {
     localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
     this.userId = JSON.parse(localStorage.getItem("userId"))
     this.Subscriber = localStorage.getItem('Subscriber')
+    SharedService.setUserId(res.UserId.toString());
+    SharedService.setUsername(res.Name);
+    
+    SharedService.setEmail(res.Email);
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     let isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
@@ -246,7 +250,7 @@ export class SocialLoginPage implements OnInit {
       localStorage.setItem("token", JSON.stringify(res.access_token))
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("userEmail", JSON.stringify(res.Email))
-      localStorage.setItem("userName", JSON.stringify(this.userName))
+      localStorage.setItem("userName", this.userName);
       sessionStorage.setItem("userId", JSON.stringify(this.userId))
       sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
       sessionStorage.setItem("userName", JSON.stringify(this.userName))

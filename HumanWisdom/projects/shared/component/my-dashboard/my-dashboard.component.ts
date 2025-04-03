@@ -8,6 +8,7 @@ import { ProgramType } from '../../models/program-model';
 import { NavigationService } from '../../services/navigation.service';
 import { CommonService } from '../../services/common.service';
 import { SectionCard } from '../section-card/section-card.page';
+import { LogEventService } from '../../services/log-event.service';
 
 
 
@@ -25,12 +26,13 @@ export class MyDashboardComponent implements OnInit {
   userName=localStorage.getItem("userName")
   cardList:SectionCard[] = [];
   groupedCardList=[]
+  introTitle:string = '';
   metadata = [
     { section_name: "Start here", priority: 1,data : new Array<any>() },
     { section_name: "Skills", priority: 2,data: new Array<any>() },
     { section_name: "Community", priority: 3,data: new Array<any>()  }
   ];
-  constructor(private router: Router,
+  constructor(private router: Router,public logeventservice: LogEventService, 
     private service:CommonService,private ngNavigatorShareService: NgNavigatorShareService,
     private navigationService: NavigationService) {
       SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
@@ -42,7 +44,8 @@ export class MyDashboardComponent implements OnInit {
       }
       this.service.GetIntroContents(data.id).subscribe(res=>{
         if(res){
-          this.cardList = res;
+          this.cardList = res.content;
+          this.introTitle = res.introPara;
           for(var item of this.metadata){
 
             item.data = this.cardList.filter(x=>x.section_name == item.section_name)
@@ -65,6 +68,8 @@ export class MyDashboardComponent implements OnInit {
    } 
 
    routeToDashboard(){
+
+    this.logeventservice.logEvent('click_Proceed_to_home' );
     this.router.navigate([SharedService.getDashboardUrls()]);
    }
 

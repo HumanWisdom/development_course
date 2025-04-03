@@ -287,9 +287,7 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
-  viewDetails() {
-    this.router.navigate(["/adults/onboarding/user-profile"]);
-  }
+
 
   loginpage() {
     // $("#signuplogin").modal("hide");
@@ -531,7 +529,7 @@ export class AdultDashboardPage implements OnInit {
         popover: {
           title: 'Change your topic of choice',
           description: 'Choose from 8 broad topics to explore in depth.',
-          side: "bottom"
+          side: "top"
         }
       },
 
@@ -547,9 +545,9 @@ export class AdultDashboardPage implements OnInit {
       {
         element: ".tour_exercises",
         popover: {
-          title: 'Exercises',
-          description: 'Tiny, guided exercises to improve your self-awareness',
-          side: "right"
+          title: 'Healthy mind',
+          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health',
+          side: "top"
         }
       },
       {
@@ -577,6 +575,14 @@ export class AdultDashboardPage implements OnInit {
         },
       },
       {
+        element: ".tour_profile",
+        popover: {
+          title: 'Profile',
+          description: 'Please update your profile to help us serve you better.',
+          side: "top"
+        },
+      },
+      {
         element: ".tour_intro",
         popover: {
           title: 'Begin Here',
@@ -591,6 +597,7 @@ export class AdultDashboardPage implements OnInit {
     if(!this.isloggedIn) {
       this.tourTotalIndex = 8;
       stepList.splice(1, 1);
+      stepList.splice(8, 1);
     }
 
     const driverObj = driver({

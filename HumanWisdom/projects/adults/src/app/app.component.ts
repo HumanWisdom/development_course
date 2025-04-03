@@ -339,7 +339,7 @@ export class AppComponent implements OnDestroy {
       if(res[0]?.SurveyDone=='0'){
         setTimeout(() => {
          this.commonService.updateSurveyData(1); 
-        }, 120000);
+        }, 180000);
       }
     }
   });

@@ -44,39 +44,11 @@ export class BeHappierPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 44,
-          url: '/podcasts/44.mp3',
-          title: 'Coping with an illness'
-        },
-        pc02:
-        {
-          id: 40,
-          url: '/podcasts/40.mp3',
-          title: 'Overcoming Depression'
-        },
-        pc03:
-        {
-          id: 45,
-          url: '/podcasts/45.mp3',
-          title: 'The resilient mindset'
-        },
-        pc04:
-        {
-          id: 12,
-          url: '/podcasts/12.mp3',
-          title: 'Happiness at work'
-        },
-        pc05:
-        {
-          id: 54,
-          url: '/podcasts/54.mp3',
-          title: 'How can we be happier?'
+      this.service.GetPodcastsListing('4').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-
-      }
+      })
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
@@ -457,4 +429,9 @@ export class BeHappierPage implements OnInit {
   // audioevent(audioContent) {
   //   this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/be-happier']);
+  }
+
 }

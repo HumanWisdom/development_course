@@ -1,6 +1,25 @@
-<app-tn-close></app-tn-close>
+<!-- <app-tn-close></app-tn-close>
 
-<app-bg-video></app-bg-video>
+<app-bg-video></app-bg-video> -->
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
+    [ngClass]="isAdults ?'bg_292d56':'bg_183c79'">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a (click)="goBack()">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"></div>
+  </div>
+</div>
+<!-- /top navigation -->
 
 <!-- page content -->
 <div class="right_col mc_02">

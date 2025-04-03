@@ -33,7 +33,7 @@
           <div class="x_content p0">
             <form>
 
-              <div class="row" (click)="backRoute()">
+              <div class="row"  routerLink="/adults/coach">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_left_orange.svg" class="img-responsive">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p fc_e58d82 ml10px">
@@ -43,7 +43,7 @@
               </div>
 
               <div class="row mtb30px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <video controls playinline class="cvideo_coach" controlsList="nodownload" *ngIf="coachBio && coachBio.length !== 0" preload="metadata">
                     <source src="{{coachBio[0]['VideoURL']}}#t=0.5" type="video/mp4">
                   </video>

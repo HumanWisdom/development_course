@@ -43,33 +43,11 @@ export class BeHappierPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 7,
-          url: '/podcasts/7.mp3',
-          title: 'The positive mindset'
-        },
-        pc02:
-        {
-          id: 27,
-          url: '/podcasts/27.mp3',
-          title: 'Living with compassion'
-        },
-        pc03:
-        {
-          id: 14,
-          url: '/podcasts/14.mp3',
-          title: 'Conversation with an 8 year old'
-        },
-        pc04:
-        {
-          id: 54,
-          url: '/podcasts/54.mp3',
-          title: 'How can we be happier'
-        },
-       
-      }
+      this.service.GetPodcastsListing('13').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
+        }
+})
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
@@ -499,4 +477,10 @@ export class BeHappierPage implements OnInit {
   // audioevent(audioContent) {
   //   this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
+
+  routeTointroDash(){
+      this.router.navigate(['/teenagers/dashboard/be-happier']);
+    }
+
+
 }

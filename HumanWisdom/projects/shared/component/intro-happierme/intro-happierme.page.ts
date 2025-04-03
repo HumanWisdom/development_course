@@ -3,6 +3,10 @@ import { Location } from "@angular/common";
 import { Router } from '@angular/router';
 import { SharedService } from '../.././services/shared.service';
 import { ProgramType } from '../.././models/program-model';
+import { LogEventService } from '../../services/log-event.service';
+
+
+
 
 @Component({
   selector: 'app-intro-happierme',
@@ -13,7 +17,7 @@ export class IntroHappiermePage implements OnInit {
   isAdults = true;
   enablekeyideasViewMore = true;
 
-  constructor(private location: Location,private router: Router) {
+  constructor(private location: Location,private router: Router,  public logeventservice: LogEventService) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
         } else {
@@ -41,7 +45,20 @@ export class IntroHappiermePage implements OnInit {
   }
 
   routeVideoaudio(type, url, title = '') {
-    if(type === 'video') {
+    if(title != ''){
+      this.logeventservice.logEvent('click_'+ title);
+
+
+    }
+   if(type==='link'){
+
+    if(!this.isAdults) {
+      url = url.replaceAll('adults','teenagers')
+    }
+
+    this.router.navigate([url])
+   }
+    else if(type === 'video') {
       if(!this.isAdults) {
         url = url.replaceAll('adults','teenagers')
       }
