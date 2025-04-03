@@ -67,6 +67,8 @@
     <?php include('./includes/header.php'); ?>
     <!-- /header -->
 
+    
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -77,65 +79,18 @@
 
     
     <section class="hpt120px">
-
-    <!-- <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="mask flex-center">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-7 col-12 order-md-1 order-2">
-              <h4>Present your <br>
-                awesome product</h4>
-              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-              <a href="#">BUY NOW</a> </div>
-            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto" alt="slide"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="mask flex-center">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-7 col-12 order-md-1 order-2">
-              <h4>Present your <br>
-                awesome product</h4>
-              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-              <a href="#">BUY NOW</a> </div>
-            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto" alt="slide"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="mask flex-center">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-7 col-12 order-md-1 order-2">
-              <h4>Present your <br>
-                awesome product</h4>
-              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-              <a href="#">BUY NOW</a> </div>
-            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div> -->
-<!--slide end--> 
+       <!-- header -->
+      <!-- header -->
+      <?php include('./includes/slider-index.php'); ?>
+          <!-- /header -->
 
 
-      <div class="row center_flex web_home_div">
+      <!-- <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
 
          
          
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100"> -->
             <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
@@ -146,7 +101,7 @@
             <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
               <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
-              <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+              <!-- <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
@@ -272,7 +227,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <main id="main">
      
@@ -2979,6 +2934,15 @@
         </div>
         <!-- /mobile -->
 
+        <div class="video-popup">
+    <div class="popup-bg"></div>
+      <div class="popup-content">
+<!--         <p class="popup-title">Youtube</p> -->
+        <iframe src="https://youtube.com/embed/gQojMIhELvM?autoplay=0" class="video"></iframe>
+        <button class="close-btn">close</button>
+      </div>
+  </div>
+
       </section>
       <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> News popup</button>
   
@@ -3080,3 +3044,5 @@
         </div>
       </div>
 </html>
+
+
