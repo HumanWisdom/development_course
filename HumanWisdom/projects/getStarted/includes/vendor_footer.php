@@ -14,6 +14,8 @@
 <script defer src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script defer src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <!-- Template Main JS File -->
 <script src="../assets/js/main.js"></script>
 <script src="../scripts/index.js"></script>
@@ -26,3 +28,17 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
 <script defer src="../assets/js/render.js"></script>
+
+<!-- Vendor JS Files -->
+<script src="./assets_new/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets_new/vendor/php-email-form/validate.js"></script>
+  <script src="./assets_new/vendor/aos/aos.js"></script>
+  <script src="./assets_new/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets_new/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="./assets_new/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="./assets_new/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets_new/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="./assets_new/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="./assets_new/js/main.js"></script>
