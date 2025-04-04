@@ -41,7 +41,7 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>be happier and live in peace</h2>
 </div>
- <div class="row">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
                   Find long-term solutions by addressing the root cause                  </h5>
@@ -116,7 +116,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               
               <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
@@ -129,10 +129,12 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>overcome stress and anxiety</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
 </div>
             <div class="row">
 
@@ -149,11 +151,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
@@ -199,7 +201,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
                 With HappierMe you can
@@ -211,9 +213,12 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>build fulfilling relationships</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
             <div class="row">
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
@@ -228,11 +233,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
@@ -275,7 +280,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
                 With HappierMe you can
@@ -287,9 +292,12 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>break free from unhealthy habits</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
             <div class="row">
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
@@ -304,11 +312,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
@@ -351,7 +359,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
                 With HappierMe you can
@@ -364,9 +372,12 @@
 
             <h2>support children to flourish in life</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
             <div class="row">
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
@@ -381,11 +392,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
@@ -429,7 +440,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
                 With HappierMe you can
@@ -441,9 +452,12 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>develop your emotional intelligence</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
             <div class="row">
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
@@ -458,11 +472,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
@@ -505,7 +519,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
                 With HappierMe you can
@@ -517,9 +531,12 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>communicate better</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
             <div class="row">
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
@@ -534,11 +551,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
@@ -580,7 +597,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt30px">
+                <div class="row mt10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
                 With HappierMe you can
@@ -592,9 +609,12 @@
             <div class="w3-container  w3-animate-bottom">
             <h2>make better decisions</h2>
 </div>
-            <p style="text-align:left;"> 
-            Find long-term solutions by addressing the root cause
-            </p>
+<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h5 class="mtb12px fs_21px fw_400 lh_150p fc_ffffff">
+                  Find long-term solutions by addressing the root cause                  </h5>
+                </div>
+              </div> 
             <div class="row">
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
@@ -609,11 +629,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:20px;height:20px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14px;height:auto" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a>
                   and start your free trial
                 </h3>
