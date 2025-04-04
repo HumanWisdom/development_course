@@ -222,9 +222,9 @@ export class OnboardingService {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {
       this.getuser(userId).subscribe((res: any) => {
-        localStorage.setItem("isPartner", res[0].IsPartner);
-        localStorage.setItem('PartnerOption', res[0].PartnerOption);
-        localStorage.setItem("SubscriberType", res[0].SubscriberType)
+        localStorage.setItem("isPartner", res[0]?.IsPartner);
+        localStorage.setItem('PartnerOption', res[0]?.PartnerOption);
+        localStorage.setItem("SubscriberType", res[0]?.SubscriberType)
       });
     }
   }
@@ -670,4 +670,7 @@ export class OnboardingService {
     return this.http.post(this.path + `/VerifyCaptcha`, {token:token})
   }
 
+getHappierMeQuotation(id): Observable<any> {
+  return this.http.get(this.path + `/GetQuotation/${id}`)
 }
+} 

@@ -429,7 +429,7 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .navbar {
     padding: 0;
     min-height: unset !important;
@@ -595,7 +595,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -668,8 +668,7 @@ section {
   }
 
   .mobile-nav-show {
-    color:#CB6171;
-
+    color: #CB6171;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -4666,6 +4665,12 @@ padding: 15px;
   .tab_faqs{
     padding-left: 20rem;
   }
+  .pd-left{
+    padding-left: 25%;
+  }
+  .max-width-px {
+    max-width: 300px !important;
+  }
 
 
   #main > section:nth-child(11) > div.row.center_flex.prelative.aos-init.aos-animate > div{
@@ -4812,3 +4817,4 @@ padding: 15px;
 	}
 	}
 }
+

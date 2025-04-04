@@ -47,32 +47,12 @@ export class ManageYourEmotionsPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01: 
-        {
-          id: 46,
-          url: '/podcasts/46.mp3',
-          title: 'Understand your ego'
-        },
-        pc02: 
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
-        },
-        pc03: 
-        {
-          id: 37,
-          url: '/podcasts/37.mp3',
-          title: 'Five ways to avoid stress'
-        },
-        pc04: 
-        {
-          id: 31,
-          url: '/podcasts/31.mp3',
-          title: 'Dealing with anger'
+      
+      this.service.GetPodcastsListing('8').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-      }
+      })
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
@@ -497,4 +477,7 @@ export class ManageYourEmotionsPage implements OnInit {
     }
   }
 
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/manage-your-emotions']);
+  }
 }

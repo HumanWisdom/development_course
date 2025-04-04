@@ -6,6 +6,10 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../services/navigation.service';
+
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -43,12 +47,21 @@ export class ProfilePage implements OnInit {
   isAdults: boolean = true;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
-    public platform: Platform, public logeventservice: LogEventService,private location:Location) {
-     if(this.loginResponse){
-      this. actKeys = this.loginResponse?.ActKeys
-      this. weekDays = this.loginResponse?.WkDays.split(",")
-      this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
-     }
+    public platform: Platform, public logeventservice: LogEventService,private location:Location , 
+      private navigationService: NavigationService) {
+      // this.initialize();
+      let data = localStorage.getItem('loginResponse');
+      if(data){
+        this.loginResponse = JSON.parse(data);
+        if(this.loginResponse){
+          this. actKeys = this.loginResponse?.ActKeys
+          this. weekDays = this.loginResponse?.WkDays.split(",")
+          this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
+         }
+      }else{
+        this.initialize();
+      }
+  
      this. myPrograms = []
     let userId = localStorage.getItem("userID");
     this.RoleID = +localStorage.getItem("RoleID");
@@ -75,6 +88,19 @@ export class ProfilePage implements OnInit {
       this.isAdults = false;
     }
   }
+
+initialize(){
+  this.loginResponse= {
+    Streak:'',
+    WkHours:'',
+    hwScore:'',
+    Surveys:'',
+    Notes:'',
+    Modules:'',
+    Points:'',
+    Name:''
+  }
+}
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -147,12 +173,22 @@ export class ProfilePage implements OnInit {
   }
 
     back(){
+      let url =  this.navigationService.navigateToBackLink();
+      if(url){
+        this.location.back();
+
+      }else{
+        url = SharedService.getDashboardUrls();
+        this.router.navigate([url]);
+      } 
+
+/* 
       let url = SharedService.getDashboardUrls();
       if(url){
         this.router.navigate([url]);
       }else{
         this.location.back();
-      }
+      } */
     }
 
 
@@ -219,16 +255,17 @@ export class ProfilePage implements OnInit {
     const accessObj: any = window;
     (accessObj)?.Moengage?.destroy_session();
     this.logeventservice.logEvent('click_logout_Hamburger');
-    if (this.platform.isBrowser) {
+    // if (this.platform.isBrowser) {
       localStorage.setItem("isloggedin", "F");
       localStorage.setItem("guest", "T");
       localStorage.setItem("navigateToUpgradeToPremium", "false");
       localStorage.setItem("btnClickBecomePartner", "false");
-      this.router.navigate(["/adults/onboarding/login"]);
-    } else {
+      // this.router.navigate(["/adults/onboarding/login"]);
+      this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login'])
+    // } else {
 
       this.clickButtonById("liLogout");
-    }
+    // }
   }
 
   clickButtonById(buttonId: string): void {

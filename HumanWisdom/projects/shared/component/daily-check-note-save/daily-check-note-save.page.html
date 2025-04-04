@@ -84,7 +84,7 @@
 
           <div  > </div>
           <div class="row center_flex">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="this.logeventservice.logEvent('click_emoji_Save_findOutmore'); findOutMore();">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="this.logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();">
               <a>
                 <h4 class="mtb10px fs_15px fw_400 lh_130p fc_ffffff td_underline tcenter">
                   Skip and explore further
@@ -130,27 +130,30 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-            Here are some resources from the app to explore.
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="isFirstLogin">
+            Your note was successfully saved to your HappierMe journal. You can access it in the app.
           </h4>
+
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!isFirstLogin">
+            You can continue to explore the app.</h4>
         </div>
       </div>
 
-      <!-- <div class="row mt30px">
+      <div class="row mt30px" *ngIf="isFirstLogin">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-            <button (click)="findOutMore()" type="btn" class="btn btn_ctd">
-              Find out more
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0px">
+            <button (click)="continue()" type="btn" class="btn btn_ctd">
+              Continue
             </button>
           </div>
 
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
+          <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
             <button  (click)="goToHome()" type="btn" class="btn btn_ctd">
               Go to Home
             </button>
-          </div>
+          </div> -->
         </div>
-      </div> -->
+      </div>
 
     </div>
   </div>

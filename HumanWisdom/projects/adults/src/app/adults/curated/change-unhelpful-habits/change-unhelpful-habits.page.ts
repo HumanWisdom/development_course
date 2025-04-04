@@ -42,26 +42,11 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
-      this.mediaUrl = {
-        pc01: 
-        {
-          id: 42,
-          url: '/podcasts/42.mp3',
-          title: 'Exploring Mortality'
-        },
-        pc02: 
-        {
-          id: 1,
-          url: '/podcasts/1.mp3',
-          title: 'Introduction'
-        },
-        pc03: 
-        {
-          id: 17,
-          url: '/podcasts/17.mp3',
-          title: 'Sorrow and loss'
+      this.service.GetPodcastsListing('5').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
         }
-      }
+      })
     }
 
   ngOnInit() {
@@ -415,5 +400,9 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     }else if(type === 'blog') {
       this.enableblogViewMore = true
     }
+  }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/habits-and-addiction']);
   }
 }

@@ -1,0 +1,43 @@
+<!-- top navigation -->
+<div class="row center_flex" >
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_stake col_cw" [ngClass]="bg_tn">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+      <div class="p0">
+        <a class="tcenter"  (click)="back()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<app-quotation [bg]="bg">
+  <form *ngIf="quoationtext">
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 mb20px">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/quotation_01.svg" alt="">
+      </div>
+    </div>
+
+    <h1 class="mtb0px quotation_txt">
+   {{quoationtext}}
+       </h1>
+
+    <hr class="hr_style_v3_05 mtb20px">
+
+    <h1 class="mtb0px quotation_writer">
+     {{quotationAuthor}}
+    </h1>
+
+  </form>
+</app-quotation>
+
+<!-- footer -->
+<app-bottom-navigation [dash]="true"></app-bottom-navigation>
+<!-- /footer -->
+
+

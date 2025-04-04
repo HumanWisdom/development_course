@@ -43,40 +43,11 @@ export class UnderstandYourselfPage implements OnInit {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.mediaUrl = {
-        pc01:
-        {
-          id: 18,
-          url: '/podcasts/18.mp3',
-          title: 'Asking questions'
-        },
-        pc02:
-        {
-          id: 27,
-          url: '/podcasts/27.mp3',
-          title: 'Living with peace'
-        },
-        pc03:
-        {
-          id: 64,
-          url: '/podcasts/64.mp3',
-          title: 'Exploring our inner silence'
-        },
-        pc04:
-        {
-          id: 52,
-          url: '/podcasts/52.mp3',
-          title: 'Emotional intelligence - how to begin'
-        },
-        pc05:
-        {
-          id: 3,
-          url: '/podcasts/3.mp3',
-          title: 'Social media addiction'
-        },
-        
-
-      }
+      this.service.GetPodcastsListing('16').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
+        }
+})
 
       let userid = localStorage.getItem('isloggedin');
       let sub: any = localStorage.getItem('Subscriber');
@@ -609,4 +580,8 @@ export class UnderstandYourselfPage implements OnInit {
   // audioevent(audioContent) {
   //   this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
+
+   routeTointroDash(){
+      this.router.navigate(['/teenagers/dashboard/understand-yourself']);
+    }
 }

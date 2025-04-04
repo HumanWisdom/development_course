@@ -62,13 +62,7 @@ export class SharedService {
     return this.getDataFromLocalStorage(Constant.subscriber) == Constant.One.toString();
   }
 
-  public static getUserId() {
-    let userId = this.getDataFromLocalStorage(Constant.userId);
-    if (userId && userId != null) {
-      return parseInt(userId);
-    }
-    return 0
-  }
+
 
   public static GetExerciseClassName(day, currentDay, vistedScreens, nextDay) {
     var dayclass = "";
@@ -125,9 +119,9 @@ export class SharedService {
     return false;
   }
 
-   public static isIOSApp(){
-      return this.iOS();
-   }
+  public static isIOSApp() {
+    return this.iOS();
+  }
 
   public static formatToDecimal(value) {
     if (Number.isInteger(value)) {
@@ -195,12 +189,12 @@ export class SharedService {
   public static getPreferenceData() {
     if (this.ProgramId == ProgramType.Adults) {
       return [
-       /*  {
-          id: "88",
-          displayName: "Voices",
-          active: false,
-          name: 'Voices'
-        }, */
+        /*  {
+           id: "88",
+           displayName: "Voices",
+           active: false,
+           name: 'Voices'
+         }, */
         {
           id: "999",
           displayName: "All",
@@ -264,72 +258,72 @@ export class SharedService {
       ]
     } else {
       return [
-       /*  {
-          id: "88",
-          displayName: "Voices",
-          active: false,
-          name: 'Voices'
-        }, */
+        /*  {
+           id: "88",
+           displayName: "Voices",
+           active: false,
+           name: 'Voices'
+         }, */
         {
           id: "999",
           displayName: "All",
           active: true,
           name: 'All'
         },
-      {
-        id: "14",
-        displayName: "Emotions",
-        active: false,
-        name: 'Manage your emotions',
-      },
-      {
-        id: "11",
-        active: false,
-        displayName: "Relationships",
-        name: 'Relationships'
-      },
-      {
-        id: "13",
-        active: false,
-        displayName: "Happiness",
-        name: 'Be happier'
-      },
-      {
-        id: "15",
-        displayName: "Habits",
-        active: false,
-        name: 'Overcome unhelpful habits'
-      },
-      {
-        id: "16",
-        active: false,
-        displayName: "Understand yourself",
-        name: 'Understand yourself'
-      },
-      {
-        id: "12",
-        active: false,
-        displayName: "Feel calm",
-        name: 'Feel calm',
-      },
-      {
-        id: "10",
-        active: false,
-        displayName: "Mental health",
-        name: 'Manage your mental health'
-      },
-      {
-        id: "17",
-        active: false,
-        displayName: "Success",
-        name: 'Succeed in life'
-      },
-      {
-        id: "0",
-        active: false,
-        displayName: "Wisdom",
-        name: 'Wisdom',
-      }
+        {
+          id: "14",
+          displayName: "Emotions",
+          active: false,
+          name: 'Manage your emotions',
+        },
+        {
+          id: "11",
+          active: false,
+          displayName: "Relationships",
+          name: 'Relationships'
+        },
+        {
+          id: "13",
+          active: false,
+          displayName: "Happiness",
+          name: 'Be happier'
+        },
+        {
+          id: "15",
+          displayName: "Habits",
+          active: false,
+          name: 'Overcome unhelpful habits'
+        },
+        {
+          id: "16",
+          active: false,
+          displayName: "Understand yourself",
+          name: 'Understand yourself'
+        },
+        {
+          id: "12",
+          active: false,
+          displayName: "Feel calm",
+          name: 'Feel calm',
+        },
+        {
+          id: "10",
+          active: false,
+          displayName: "Mental health",
+          name: 'Manage your mental health'
+        },
+        {
+          id: "17",
+          active: false,
+          displayName: "Success",
+          name: 'Succeed in life'
+        },
+        {
+          id: "0",
+          active: false,
+          displayName: "Wisdom",
+          name: 'Wisdom',
+        }
       ]
     }
   }
@@ -338,35 +332,87 @@ export class SharedService {
     const userAgent = window.navigator.userAgent || window.navigator.vendor;
     return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(userAgent);
   }
-  
-  public static contentIdData(name){
-  let data =  [
-      { "id": 1, "name": "adult-dashboard" },
-      { "id": 2, "name": "teenager-dashboard" },
-      { "id": 3, "name": "adults-Work and Leadership" },
-      { "id": 4, "name": "adults-Manage your mental health" },
-      { "id": 5, "name": "adults-Relationships" },
-      { "id": 6, "name": "adults-Be happier" },
-      { "id": 7, "name": "adults-Habits and Addiction" },
-      { "id": 8, "name": "adults-Deal with loss" },
-      { "id": 9, "name": "adults-Meditation" },
-      { "id": 10, "name": "adults-Manage your emotions" },
-      { "id": 11, "name": "teenagers-Manage your mental health" },
-      { "id": 12, "name": "teenagers-Relationships" },
-      { "id": 13, "name": "teenagers-Feel calm" },
-      { "id": 14, "name": "teenagers-Be happier" },
-      { "id": 15, "name": "teenagers-Manage your emotions" },
-      { "id": 16, "name": "teenagers-Overcome unhelpful habits" },
-      { "id": 17, "name": "teenagers-Understand yourself" },
-      { "id": 18, "name": "teenagers-Succeed in life" }
-    ]
 
-   return data.filter(x=>x.name == name)[0];
+  public static contentIdData(name) {
+    if (this.ProgramId == ProgramType.Adults) {
+      let data = [
+        { "id": 1, "name": "adult-dashboard" ,"title":"Adult Dashboard"},
+        { "id": 2, "name": "teenager-dashboard" ,"title":"Teenager Dashboard"},
+        { "id": 3, "name": "work-and-leadership" ,"title":"Work and Leadership" },
+        { "id": 4, "name": "mental-health" ,"title":"Manage your mental health" },
+        { "id": 5, "name": "relationships" ,"title":"Relationships" },
+        { "id": 6, "name": "be-happier" ,"title":"Be happier" },
+        { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
+        { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
+        { "id": 9, "name": "meditation" ,"title":"Meditation" },
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
+      ]
+      return data.filter(x => x.name == name)[0];
+    }
+    else {
+      let data = [
+        { "id": 11, "name": "mental-health" },
+        { "id": 12, "name": "relationships" },
+        { "id": 13, "name": "feel-calm" },
+        { "id": 14, "name": "be-happier" },
+        { "id": 15, "name": "manage-your-emotions" },
+        { "id": 16, "name": "overcome-unhelpful-habits" },
+        { "id": 17, "name": "understand-yourself" },
+        { "id": 18, "name": "succeed-in-life" }]
+      return data.filter(x => x.name == name)[0];
+    }
   }
-  
 
+  public static setUserId(userId: string) {
+    localStorage.setItem('userID', userId)
+  }
+
+  public static setUsername(username: string) {
+    localStorage.setItem('userName', username)
+  }
+
+  public static setEmail(email: string) {
+    localStorage.setItem('email', email)
+  }
+
+  public static getUserId() {
+    let userId = this.getDataFromLocalStorage(Constant.userId);
+    if (userId && userId != null) {
+      return parseInt(userId);
+    }
+    return 0
+  }
+
+  public static getUserName() {
+    let username = this.getDataFromLocalStorage('username');
+    if (username && username != null) {
+      return username;
+    }
+    return '';
+  }
+
+  public static getEmail() {
+    let email = this.getDataFromLocalStorage('email');
+    if (email && email != null) {
+      return email;
+    }
+    return '';
+  }
+
+
+
+  public static getDashboardId(type: string) {
+    if (this.ProgramId == ProgramType.Adults) {
+      if (type.toString().toLocaleLowerCase() == 'mental-health') {
+        return 4;
+      }
+    } else {
+      if (type.toString().toLocaleLowerCase() == 'mental-health') {
+        return 4;
+      }
+    }
+  }
 }
-
 
 
 

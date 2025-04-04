@@ -538,7 +538,7 @@ export class LoginSignupPage implements OnInit {
       localStorage.setItem("SubscriberType", res.SubscriberType);
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-      localStorage.setItem("email", this.email);
+      localStorage.setItem("email", res.Email);
       localStorage.setItem("pswd", this.password);
       localStorage.setItem("name", res.Name);
       localStorage.setItem("first", "T");
@@ -548,7 +548,7 @@ export class LoginSignupPage implements OnInit {
       localStorage.setItem("audio", JSON.stringify(this.audio));
       localStorage.setItem("isPartner", res.IsPartner);
       localStorage.setItem("userName", res.Name);
-      localStorage.setItem("userEmail", JSON.stringify(this.email));
+      localStorage.setItem("userEmail", JSON.stringify(res.Email));
       localStorage.setItem("userID", res.UserId);
       this.showAlert = false;
       this.userId = res.UserId;
@@ -578,7 +578,7 @@ export class LoginSignupPage implements OnInit {
           if(userInfo[0]?.SurveyDone=='0'){
             setTimeout(() => {
               this.commonService.updateSurveyData(1);
-            }, 50000);
+            }, 160000);
            // document.getElementById('test1').click();
           }
         }
@@ -778,9 +778,9 @@ export class LoginSignupPage implements OnInit {
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
     localStorage.setItem('appleLogin','T');
-    let REDIRECT_API_URL = environment.appleSignInHtmlLocal;
+    let REDIRECT_API_URL = environment.appleSignInAPIAdults;
     if(!SharedService.isAdultProgram()){
-      REDIRECT_API_URL = environment.appleSignInHtmlLocal;
+      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
     }
      window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(

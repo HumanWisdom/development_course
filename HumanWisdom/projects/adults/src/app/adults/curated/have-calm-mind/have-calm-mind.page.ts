@@ -46,32 +46,11 @@ export class HaveCalmMindPage implements OnInit {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-    this.mediaUrl = {
-      pc01: 
-      {
-        id: 46,
-        url: '/podcasts/46.mp3',
-        title: 'Understand your ego'
-      },
-      pc02: 
-      {
-        id: 47,
-        url: '/podcasts/47.mp3',
-        title: 'Overcome anxiety'
-      },
-      pc03: 
-      {
-        id: 24,
-        url: '/podcasts/24.mp3',
-        title: 'Living with peace'
-      },
-      pc04: 
-      {
-        id: 64,
-        url: '/podcasts/64.mp3',
-        title: 'Exploring our inner silence '
-      }
-    }
+      this.service.GetPodcastsListing('7').subscribe((res) => {
+        if (res) {
+          this.mediaUrl = res
+        }
+      })
   }
 
   ngOnInit() {
@@ -467,6 +446,10 @@ export class HaveCalmMindPage implements OnInit {
     }else if(type === 'blog') {
       this.enableblogViewMore = true
     }
+  }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/meditation']);
   }
 
 }

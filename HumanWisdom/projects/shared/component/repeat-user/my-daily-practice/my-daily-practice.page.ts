@@ -3,6 +3,8 @@ import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
+import { LogEventService } from '../../../services/log-event.service'
+
 
 @Component({
   selector: 'app-my-daily-practice',
@@ -38,14 +40,15 @@ export class MyDailyPracticePage implements OnInit {
   breatheTime:string = '';
   placeholder = 'Answer here'
   guest = true;
-
-  constructor(private  commonService:CommonService,private router:Router) { 
+  isFirstLogin:boolean = false;
+  constructor(private  commonService:CommonService, public logeventservice: LogEventService, private router:Router) { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-
+     this.isFirstLogin = SharedService.isRoutedFromLogin;
   }
 
   ngOnInit() {
     this.userName = localStorage.getItem('userName');
+    this.userName = this.userName ? this.userName.replace('"',''): this.userName;
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -81,7 +84,7 @@ export class MyDailyPracticePage implements OnInit {
 
 
         this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
-       // this.DailyInspirationImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
+       // this.DailyInspirationImg = "https://d1tenzemoxuh75.cloudfront.net/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
        
        //https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_109.webp 
        
@@ -121,6 +124,8 @@ export class MyDailyPracticePage implements OnInit {
   }
 
   subdailyques() {
+    this.logeventservice.logEvent('click_add_to_journal' );    
+
     if (!this.isloggedIn) {
       this.content = "Subscribe to activate your online journal";
       this.enableAlert = true;
@@ -145,12 +150,23 @@ export class MyDailyPracticePage implements OnInit {
 
   
   routeDailyPractice(id){
+    if(id==0) 
+      this.logeventservice.logEvent('click_daily_insiration' );
+    else if(id==1) 
+      this.logeventservice.logEvent('click_breathing_exercise' );
+    else if(id==4) 
+      this.logeventservice.logEvent('click_daily_meditation' );
+   
+
     this.router.navigate([SharedService.getprogramName()+'/'+'daily-practise/'+id])
   }
   routeToDailyCheckIn(){
+    this.logeventservice.logEvent('click_daily_checkin' );
+
     this.router.navigate([SharedService.getprogramName()+'/daily-checkin'])
   }
   routeToDashboard(){
+    this.logeventservice.logEvent('click_proceed_to_home' );    
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
 }
