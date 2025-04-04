@@ -64,7 +64,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -146,7 +146,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -225,7 +225,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -301,7 +301,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -378,7 +378,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -455,7 +455,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -531,7 +531,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -606,7 +606,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
     
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
