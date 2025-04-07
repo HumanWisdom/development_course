@@ -351,14 +351,14 @@ export class SharedService {
     }
     else {
       let data = [
-        { "id": 11, "name": "mental-health" },
-        { "id": 12, "name": "relationships" },
-        { "id": 13, "name": "feel-calm" },
-        { "id": 14, "name": "be-happier" },
-        { "id": 15, "name": "manage-your-emotions" },
-        { "id": 16, "name": "overcome-unhelpful-habits" },
-        { "id": 17, "name": "understand-yourself" },
-        { "id": 18, "name": "succeed-in-life" }]
+        { "id": 11, "name": "mental-health" ,"title":"Manage your mental health"},
+        { "id": 12, "name": "relationships"  ,"title":"Relationshipsd"},
+        { "id": 13, "name": "feel-calm"  ,"title":"Feel Calm"},
+        { "id": 14, "name": "be-happier" ,"title":"Be happier"},
+        { "id": 15, "name": "manage-your-emotions"  ,"title":"Managing your emotions"},
+        { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome Unhelpful Habits"},
+        { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"}]
       return data.filter(x => x.name == name)[0];
     }
   }
