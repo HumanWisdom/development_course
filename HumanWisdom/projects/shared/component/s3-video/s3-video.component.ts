@@ -115,6 +115,7 @@ export class S3VideoComponent implements OnInit,OnDestroy {
       if (this.linkcode.includes('teenagers')) {
         this.linkcode = this.linkcode.replaceAll('-', '/');
       }
+      this.linkcode=this.linkcode.replaceAll('~', '-');
       this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
     } else {
       this.linkcode = this.route.snapshot.paramMap.get('videolink');
