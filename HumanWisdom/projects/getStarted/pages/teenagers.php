@@ -647,7 +647,7 @@
                   <div class="owl-nav">
                   <a class="sap" href="https://happierme.app/teenagers/testimonials">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        View all testimonials
+                      View all Success stories
                       </h4>
                     </a>
                   </div>
