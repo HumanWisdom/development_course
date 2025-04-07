@@ -352,7 +352,7 @@ export class SharedService {
       let data = [
         { "id": 2, "name": "teenager-dashboard" ,"title":"Teenager Dashboard"},
         { "id": 11, "name": "mental-health" ,"title":"Manage your mental health"},
-        { "id": 12, "name": "relationships"  ,"title":"Relationshipsd"},
+        { "id": 12, "name": "relationships"  ,"title":"Relationships"},
         { "id": 13, "name": "feel-calm"  ,"title":"Feel Calm"},
         { "id": 14, "name": "be-happier" ,"title":"Be happier"},
         { "id": 15, "name": "manage-your-emotions"  ,"title":"Managing your emotions"},
