@@ -355,7 +355,7 @@ export class SharedService {
         { "id": 12, "name": "relationships"  ,"title":"Relationships"},
         { "id": 13, "name": "feel-calm"  ,"title":"Feel Calm"},
         { "id": 14, "name": "be-happier" ,"title":"Be happier"},
-        { "id": 15, "name": "manage-your-emotions"  ,"title":"Managing your emotions"},
+        { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
         { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome Unhelpful Habits"},
         { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
         { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"}]
