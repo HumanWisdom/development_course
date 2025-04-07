@@ -8,7 +8,7 @@
           <div class="carousel-container">
           <div class="top">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -27,7 +27,7 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
               <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
@@ -97,7 +97,7 @@
           <div class="carousel-container">
           <div class="top">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -116,14 +116,16 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               
-              <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
              
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -182,7 +184,7 @@
           <div class="carousel-container">
           <div class="top">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -201,13 +203,15 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
               </div>
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -261,7 +265,7 @@
           <div class="carousel-container">
           <div class="top">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class="fs_12px fw_400 lh_140p fc_ffffff">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -280,13 +284,15 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
               </div>
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -340,7 +346,7 @@
           <div class="carousel-container">
           <div class="top">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class="fs_12px fw_400 lh_140p fc_ffffff">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -359,13 +365,15 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
               </div>
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -421,7 +429,7 @@
           <div class="carousel-container">
           <div class="top">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -440,13 +448,15 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
               </div>
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -500,7 +510,7 @@
           <div class="carousel-container">
           <div class="top">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -519,13 +529,15 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
               </div>
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -597,13 +609,15 @@
 
                   App store rating
                 </h6>
-                <div class="row mt10px">
+                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="fs_54px fw_500 lh_130p fc_ffffff ta_lc">
+              <div class="w3-container">
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" style="margin-left:-10px;">
                 With HappierMe you can
                
               
                 </h3>
+</div>
               </div>
             </div>
             <div class="w3-container  w3-animate-bottom">
@@ -668,7 +682,8 @@
         <ol class="carousel-indicators"></ol>
 
       </div>
-
+<br/>
+<br/>
     </section><!-- /Hero Section -->
 
     
