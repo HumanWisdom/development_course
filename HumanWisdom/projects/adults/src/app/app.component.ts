@@ -3,7 +3,7 @@ import {
 } from '@angular/cdk/platform';
 import { Component, ElementRef, HostListener, OnDestroy, ViewChild,Renderer2  } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AdultsService } from './adults/adults.service';
@@ -55,6 +55,7 @@ export class AppComponent implements OnDestroy {
   isEnableHam = true;
   enablebanner = false;
   isShowHeader = false;
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
   userdetail:any;
   constructor(
@@ -62,6 +63,7 @@ export class AppComponent implements OnDestroy {
     private router: Router,
     private meta: Meta,
     private title: Title,
+    private activatedRoute: ActivatedRoute, 
     private services: AdultsService,
     private onboardingService:OnboardingService,
     private commonService:CommonService,
@@ -70,7 +72,7 @@ export class AppComponent implements OnDestroy {
     private navigationService:NavigationService
   ) {
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
-
+  
     let urls = this.router.url.split('authtoken=');
     if(!urls && urls[1] == undefined){
       if (localStorage.getItem("isloggedin") !== 'T') {
