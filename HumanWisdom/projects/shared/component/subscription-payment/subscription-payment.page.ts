@@ -9,6 +9,16 @@ import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { Location } from '@angular/common';
 
+var ADT = ADT || {};
+ADT.Tag = ADT.Tag || {};
+ADT.Tag.t = 3;
+ADT.Tag.c = "GBP";
+ADT.Tag.tp = 1963208868;
+ADT.Tag.am = 1138.50;
+ADT.Tag.ti = "abc123";
+ADT.Tag.xd = "b58996c504c5638798eb6b511e6f49af";
+ADT.Tag.cpn = "summer";	
+
 @Component({
   selector: 'app-subscription-payment',
   templateUrl: './subscription-payment.page.html',
@@ -224,6 +234,11 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                       }
                     } else {
+                      ADT.Tag.am = parseFloat(this.amount)*100;
+                      ADT.Tag.ti = ev.paymentMethod.id;
+                      ADT.Tag.cpn = this.obj.DiscountCode;
+                      ADT.Tag.t = this.obj.Quantity;
+                      ADT.Tag.c = this.defaultCountryname;
                       this.content = 'Your Payment Is Successfully Submitted';
                       this.enableAlert = true;
                       // alert('Your Payment Is Successfully Submitted');
