@@ -11,13 +11,13 @@ import { Location } from '@angular/common';
 
 var ADT = ADT || {};
 ADT.Tag = ADT.Tag || {};
-ADT.Tag.t = 3;
-ADT.Tag.c = "GBP";
-ADT.Tag.tp = 1963208868;
-ADT.Tag.am = 1138.50;
-ADT.Tag.ti = "abc123";
-ADT.Tag.xd = "b58996c504c5638798eb6b511e6f49af";
-ADT.Tag.cpn = "summer";	
+ADT.Tag.t = 0;
+ADT.Tag.c = "";
+ADT.Tag.tp = 0;
+ADT.Tag.am = 0;
+ADT.Tag.ti = "";
+ADT.Tag.xd = "";
+ADT.Tag.cpn = "";	
 
 @Component({
   selector: 'app-subscription-payment',
