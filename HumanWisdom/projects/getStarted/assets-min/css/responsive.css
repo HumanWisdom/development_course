@@ -3,6 +3,27 @@
 @media (max-width: 767px) {.tool_tabs {display: block;overflow-x: scroll;white-space: nowrap;padding: 0 20px;top: -2%;}
 .product_view .modal-dialog{max-width: 1200px; width: 90%; height:auto; padding: 21px; top:2%;}
 
+    .btn_pricing {
+       margin: 15px; 
+      border: 0;
+      /* width: 100%; */
+      /* margin-left: -12px; */
+      height: 48px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #E58D82, #CB6171);
+  }
+  .btn_pricingslider {
+    margin: 15px;
+    border: 0;
+    /* float: right; */
+    /* margin-left: 88px;
+    width: 100%; */
+    height: 48px;
+    border-radius: 24px;
+    /* border: 1px solid #fff; */
+    background: rgba(255, 255, 255, .1);
+}
+
 .div_subscription {padding: 60px 20px;} .web_home_div1{border:30px solid #b63a5f}.header {padding: 15px 20px;}.header .btn_tff {width: 106px;height: 40px;font-size: 12px;}.ta_lc {text-align: center;text-align: -webkit-center;}.ta_lct {text-align: left;font-size: 27px;}.div_testimonialst {width: 250px !important;height: 100%;}.flex_block {display: block;}.desktop, .display_m_none {display: none !important;}.mobile {display: block;}.flex_fd_cr {flex-direction: column-reverse;}.tab-content {padding: 20px;}.sap {position: unset;margin-top: 20px;}.hpt120px {padding-top: 70px;}.rp0 {padding: 0;}.rpt_01 {padding-top: 60px;}.rmb80px {margin-bottom: 40px;}.img_bl {height: 300px;}
 .blog_sub_title{
     font-size: 22px;
