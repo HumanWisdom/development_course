@@ -1775,21 +1775,36 @@ div.scroll-container img {
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 39px;
-    margin-left: 50px;
+    font-size: 39px !important;
+    margin-left: 7px;
+  }
+}
+@media (max-width: 768px) {
+  .hero h3 {
+    font-size: 39px !important;
+    margin-left: 7px;
   }
 }
 
 @media (max-width: 768px) {
+  .hero h5 {
+    font-size: 15px !important;
+    margin-left: 7px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
   .hero p {
     font-size: 15px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 }
 @media (max-width: 768px){
   .hero .carousel-container {
     position: absolute;
-    inset: 90px 164px 64px 4px;
+    inset: 53px 154px 374px 124px;
     /* display: flex
 ; */
     justify-content: center;
@@ -1803,7 +1818,7 @@ div.scroll-container img {
   .btn_pricingslider {
     margin: 0;
     border: 0;
-     float: right; 
+     /* float: right;  */
     margin-left: 200px; 
      width: 100%; 
     height: 48px;
