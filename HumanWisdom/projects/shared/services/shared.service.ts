@@ -363,6 +363,37 @@ export class SharedService {
     }
   }
 
+  public static contentIdDataUsingTitle(name) {
+    if (this.ProgramId == ProgramType.Adults) {
+      let data = [
+        { "id": 1, "name": "adult-dashboard" ,"title":"Adult Dashboard"},       
+        { "id": 3, "name": "work-and-leadership" ,"title":"Work and Leadership" },
+        { "id": 4, "name": "mental-health" ,"title":"Manage your mental health" },
+        { "id": 5, "name": "relationships" ,"title":"Relationships" },
+        { "id": 6, "name": "be-happier" ,"title":"Be happier" },
+        { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
+        { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
+        { "id": 9, "name": "meditation" ,"title":"Meditation" },
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
+      ]
+      return data.filter(x => x.title == name)[0];
+    }
+    else {
+      let data = [
+        { "id": 2, "name": "teenager-dashboard" ,"title":"Teenager Dashboard"},
+        { "id": 11, "name": "mental-health" ,"title":"Manage your mental health"},
+        { "id": 12, "name": "relationships"  ,"title":"Relationships"},
+        { "id": 13, "name": "feel-calm"  ,"title":"Feel Calm"},
+        { "id": 14, "name": "be-happier" ,"title":"Be happier"},
+        { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
+        { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome Unhelpful Habits"},
+        { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"}]
+      return data.filter(x => x.title == name)[0];
+    }
+  }
+
+
   public static setUserId(userId: string) {
     localStorage.setItem('userID', userId)
   }
