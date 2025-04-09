@@ -25,6 +25,8 @@
 <!-- <link href="../assets/vendor/aos/aos.css" rel="stylesheet"> -->
 <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+
 
 <!-- Template Main CSS File -->
 <!-- <link href="../assets/css/style_hb.css" rel="stylesheet"> -->
@@ -44,7 +46,7 @@
 <link href="../assets-min/font/line_height.css" rel="stylesheet">
 <link href="../assets-min/css/style_hb.css" rel="stylesheet"> 
  <!-- Vendor CSS Files -->
- <link href="./assets_new/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+ <!-- <link href="./assets_new/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  -->
   <!-- <link href="./assets_new/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
   <!-- <link href="./assets_new/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
 
