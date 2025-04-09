@@ -11,7 +11,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -58,17 +58,17 @@
 
 
             
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+            <div class="row mt10px">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
-        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35 ta_lc">
+        <a class="btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
           Try HappierMe for free
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12   display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -81,11 +81,11 @@
                 </h3>
               
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
       <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:20px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -110,7 +110,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -157,7 +157,7 @@
 
 
             
-            <div class="row">
+            <div class="row mt10px">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -165,9 +165,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12   display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12   display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc ">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct ">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -207,7 +207,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -262,9 +262,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -304,7 +304,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -360,9 +360,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -400,7 +400,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -456,9 +456,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -500,7 +500,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -548,17 +548,17 @@
 
 
             
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <div class="row mt10px">       
+                   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
           Try HappierMe for free
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none ">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none ">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -597,7 +597,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -653,9 +653,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -694,7 +694,7 @@
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lct">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -750,9 +750,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
