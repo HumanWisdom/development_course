@@ -57,6 +57,9 @@ export class DailyCheckInLandingPage implements OnInit {
       this.commonService.verifytoken(authtoken).subscribe((res) => {
         if (res) {
           this.isRoutedFromLogin = true;
+          SharedService.isRoutedFromLogin = this.isRoutedFromLogin;
+          this.isFirstLogin = SharedService.isRoutedFromLogin;
+
           localStorage.setItem("email", res['Email']);
           localStorage.setItem("name", res['Name']);
           localStorage.setItem("userId", res['UserId']);
