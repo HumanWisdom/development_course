@@ -4,12 +4,14 @@
       <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
 
         <div class="carousel-item active">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new1.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new1.webp" alt=""class="img-responsive w100p display_m_none">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm1.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -31,7 +33,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff " >
                 With HappierMe you can
                
               
@@ -57,14 +59,14 @@
 
             
             <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
       <div>
-        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
+        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35 ta_lc">
           Try HappierMe for free
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12   display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -79,7 +81,7 @@
                 </h3>
               
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
       <div>
 
       <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
@@ -100,12 +102,15 @@
 
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new2.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new2.webp" alt="" class="img-responsive w100p display_m_none">
+          
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm2.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -127,7 +132,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff" >
                 With HappierMe you can
                
               
@@ -160,9 +165,9 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12   display_m_none">
     
-                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
+                <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc ">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
@@ -194,12 +199,15 @@
         
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new4.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new4.webp" alt="" class="img-responsive w100p display_m_none">
+         
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm3.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -221,7 +229,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff " >
                 With HappierMe you can
                
               
@@ -254,7 +262,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -288,12 +296,15 @@
        
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new5.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new5.webp" alt="" class="img-responsive w100p display_m_none">
+          
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm4.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -315,7 +326,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff" >
                 With HappierMe you can
                
               
@@ -349,13 +360,13 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
                     <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
-                  </a>
+                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
@@ -382,12 +393,14 @@
 </div>
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new8.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new8.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm5.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -409,7 +422,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff" >
                 With HappierMe you can
                
               
@@ -443,7 +456,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -479,12 +492,15 @@
 
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new3.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new3.webp" alt="" class="img-responsive w100p display_m_none">
+          
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm6.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -506,7 +522,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff " >
                 With HappierMe you can
                
               
@@ -540,7 +556,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none ">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -573,12 +589,15 @@
 </div>
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new6.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new6.webp" alt="" class="img-responsive w100p display_m_none">
+          
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm7.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -600,7 +619,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff " >
                 With HappierMe you can
                
               
@@ -634,7 +653,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
@@ -667,12 +686,15 @@
 </div>
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new7.webp" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new7.webp" alt="" class="img-responsive w100p display_m_none">
+          
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm8.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+
           <div class="carousel-container">
           <div class="top">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff">
+          <h6 class=" fs_12px fw_400 lh_140p fc_ffffff ta_lc">
                   <span class="rating_a">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -694,7 +716,7 @@
                
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <div class="w3-container">
-              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff ta_lc" >
+              <h3 class=" mtb0px fs_54px fw_500 lh_130p fc_ffffff" >
                 With HappierMe you can
                
               
@@ -728,7 +750,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lc">
                 Download the app on
