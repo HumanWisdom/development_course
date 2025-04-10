@@ -1899,7 +1899,7 @@ img {
   }
   
   h1 {
-    text-align: center;  
+    /* text-align: center;   */
     margin-bottom: 30px;
     font-size: 30px;
     /* font-weight: bold; */
