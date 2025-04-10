@@ -145,7 +145,7 @@ export class ChangeTopicPage implements OnInit {
                     console.log("Intro dashboard logs updated successfully");
                   }
                 });
-                this.router.navigate(['/adults/'+data.data.name]);
+                this.router.navigate(['/adults/dashboard/'+data.data.name]);
               }else{
                 this.logeventservice.logEvent('click_change_topic_'+this.selectedname);
                 this.url = localStorage.getItem('lastRoute')?.toString();

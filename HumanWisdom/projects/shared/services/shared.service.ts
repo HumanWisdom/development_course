@@ -371,7 +371,7 @@ export class SharedService {
         { "id": 4, "name": "mental-health" ,"title":"Manage your mental health" },
         { "id": 5, "name": "relationships" ,"title":"Relationships" },
         { "id": 6, "name": "be-happier" ,"title":"Be happier" },
-        { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
+        { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addiction" },
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
         { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
