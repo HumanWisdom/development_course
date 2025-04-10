@@ -66,7 +66,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -76,7 +76,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -165,7 +165,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12   display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12   display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct ">
                 Download the app on
@@ -175,7 +175,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -262,7 +262,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -272,7 +272,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -360,7 +360,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -370,7 +370,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -456,7 +456,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -466,7 +466,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -556,7 +556,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none ">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none ">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -566,7 +566,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -653,7 +653,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -663,7 +663,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
@@ -750,7 +750,7 @@
         </a>
       </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
@@ -760,7 +760,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a>
+                  </a><br>
                   and start your free trial
                 </h3>
               
