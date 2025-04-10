@@ -6135,6 +6135,6 @@ export class AdultsService {
   }
 
   setIntroDashboardlogs(id):Observable<any>{
-    return this.http.get(this.path+'SetIntroDashboardlogs/'+id)
+    return this.http.get(this.path+'/SetIntroDashboardlogs/'+id)
   }
 }
