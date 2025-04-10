@@ -84,8 +84,8 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:20px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -183,7 +183,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
@@ -280,7 +280,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
@@ -378,7 +378,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
@@ -474,7 +474,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
@@ -574,7 +574,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
@@ -671,7 +671,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
@@ -760,7 +760,7 @@
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                     <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
-                  </a><br>
+                  </a><br/>
                   and start your free trial
                 </h3>
               
@@ -768,7 +768,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div>
 
-      <a href="#" data-videourl="bottohttps://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?m" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
