@@ -34292,10 +34292,10 @@ label
 /* forum post anonymously checkbox */
 label.chkb_post_anonymously > input[type="checkbox"] + *::before
 {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  min-height: 20px;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 1%;
   border-radius: 4px;
   /* background: #E58D82;
   border: 0; */
