@@ -43,7 +43,9 @@
               <div class="row">
             
             <div class="w3-container  w3-animate-bottom">
-            <h2>be happier and live in peace</h2>
+            <h2>be happier and live in peace
+
+            </h2>
 </div>
           
                 
@@ -58,15 +60,15 @@
 
 
             
-            <div class="row mt10px">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <div class="row mt10px">       
+                   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
-        <a class="btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
+        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
           Try HappierMe for free
         </a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  display_m_none ">
     
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lct">
                 Download the app on
