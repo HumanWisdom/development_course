@@ -531,6 +531,9 @@
       if (window.webkit) {
         window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
       }
+      if (window.AndroidHandler) {
+          window.AndroidHandler.manage_subscr();
+        }
     })
 
     window.addEventListener('nativeEvent', function () {
