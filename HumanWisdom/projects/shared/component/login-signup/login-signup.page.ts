@@ -726,6 +726,11 @@ export class LoginSignupPage implements OnInit {
     }
   }
 
+  routetoUrl(url){
+
+    // this.router.navigate(["/" + SharedService.getprogramName() + url]);
+    window.open("/" + SharedService.getprogramName() + url,"_blank")
+  }
   getfreeuser() {
     this.freescreens();
   }
@@ -769,6 +774,7 @@ export class LoginSignupPage implements OnInit {
       // this.router.navigate(['/adults/adult-dashboard'])
     });
   }
+
 
  
   signInWithApple(reqtype) {
