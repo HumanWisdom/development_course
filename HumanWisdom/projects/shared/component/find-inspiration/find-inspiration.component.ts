@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'app-find-inspiration',
@@ -14,14 +15,16 @@ export class FindInspiration  {
       img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_audio_meditation.svg',
       icon: 'headphones', 
       height:'',
-      color: '#191d3a' 
+      color: '#191d3a',
+      url:'podcast' 
     },
     { 
       title: 'Guided questions', 
       icon: 'map', 
       color: '#191d3a',
       height:'',
-      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_guided_questions.svg"
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_guided_questions.svg",
+    url:'journal'
     },    
     
     { 
@@ -29,7 +32,8 @@ export class FindInspiration  {
       icon: 'play-circle', 
       color: '#191d3a',
       height:'',
-      img:'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg'
+      img:'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg',
+      url:'wisdom-shorts'
     },  
     { 
       title: 'Life Stories', 
@@ -37,6 +41,7 @@ export class FindInspiration  {
       color: '#191d3a',
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg',
+      url:'wisdom-stories'
     },
     { 
       title: 'Audio meditation', 
@@ -44,6 +49,7 @@ export class FindInspiration  {
       color: '#191d3a',
       height:'',
       img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_audio_meditation.svg',
+      url:'audio-meditation'
     },
     { 
       title: 'Blog', 
@@ -51,6 +57,7 @@ export class FindInspiration  {
       color: '#191d3a',
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg',
+      url:'blogs'
     },
     { 
       title: 'Events', 
@@ -58,6 +65,7 @@ export class FindInspiration  {
       color: '#191d3a',
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg',
+      url:'events'
     },
     
     { 
@@ -65,14 +73,24 @@ export class FindInspiration  {
       icon: 'star', 
       color: '#191d3a',
       height:'',
-      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dots.svg"
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dots.svg",
+      url:'pathway'
     },
     { 
       title: 'Contact a coach', 
       icon: 'message-circle', 
       color: '#191d3a',
       height:'h-24',
-      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach_teens.svg"
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach_teens.svg",
+      url:'coach'
     }
   ];
+
+
+  constructor(private router: Router, private location: Location) {}
+  
+  routeTo(item: any) {
+    this.router.navigate([SharedService.getprogramName()+'/' +item]);
+  }
+
 }

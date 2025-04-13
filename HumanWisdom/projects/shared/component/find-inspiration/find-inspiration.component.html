@@ -1,11 +1,11 @@
 <div class="inspiration-container">
-  <h2 class="inspiration-title">Find inspiration</h2>
+
   
   <div class="inspiration-grid">
     <div *ngFor="let item of inspirationItems" 
          class="inspiration-item" 
        >
-      <div class="icon-container">
+      <div class="icon-container" (click)="routeTo(item.url)">
         <img src={{item.img}} class="img-responsive" [class]="item.height"/>
         <!-- <i [ngClass]="'icon-' + item.icon"></i> -->
       </div>
