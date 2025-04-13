@@ -35,6 +35,16 @@ var style = {
   }
 };
 
+var ADT = ADT || {};
+ADT.Tag = ADT.Tag || {};
+ADT.Tag.t = 0;
+ADT.Tag.c = "";
+ADT.Tag.tp = 0;
+ADT.Tag.am = 0;
+ADT.Tag.ti = "";
+ADT.Tag.xd = "";
+ADT.Tag.cpn = "";
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -57,6 +67,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   stripeId: string;
   enableAlert = false;
   content = '';
+  obj = {};
 
   constructor(private cd: ChangeDetectorRef,
     private service: OnboardingService,
@@ -68,7 +79,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
     let plan = this.router.getCurrentNavigation().extras.state.plan;
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
-    let obj = {
+    this.obj = {
       UserID: userId,
       ProgramID: '9',
       PlanId: plan === 'Annual' ? '2' : '1',
@@ -76,7 +87,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
       Quantity: quan,
       AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : ''
     }
-    this.service.stripe(obj)
+    this.service.stripe(this.obj)
       .subscribe(res => {
 
         this.stripeId = res;
@@ -136,6 +147,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
             } else {
               this.logeventservice.logEvent('click_confirm_payment');
               this.content = 'Your Payment Is Successfully Submitted';
+              ADT.Tag.cpn = this.obj['DiscountCode'];
+              ADT.Tag.t = this.obj['Quantity'];
               this.enableAlert = true;
               // alert('Your Payment Is Successfully Submitted');
               if (localStorage.getItem('ispartnershipClick') == 'T') {

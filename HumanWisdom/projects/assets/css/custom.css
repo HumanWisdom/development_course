@@ -34346,10 +34346,10 @@ label
 /* forum post anonymously checkbox */
 label.chkb_post_anonymously > input[type="checkbox"] + *::before
 {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  min-height: 20px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
   border-radius: 4px;
   /* background: #E58D82;
   border: 0; */
