@@ -18,38 +18,31 @@
     grid-auto-flow: column; /* Items flow into columns */
     gap: 10px; /* Space between items */
     max-height: 200px; /* Adjust based on your item height */
-    overflow-x: auto; /* Horizontal scrolling */
-    overflow-y: hidden; /* No vertical scrolling */
     white-space: nowrap; /* Prevents wrapping */
-    scrollbar-width: none; /* Firefox */
    -ms-overflow-style: none; /* Internet Explorer and Edge */
 }
 
 .inspiration-grid::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+  //display: none; /* Hide scrollbar for Chrome, Safari, Edge */
 }
   
   .inspiration-item {
-    background-color: #191d3a;
-    border-radius: 12px;
+    background-color: #120f40;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 12px;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
     min-height: 80px;
-    min-width: 125px;
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
+    //min-width: 125px;
+
     &.highlight {
-      background-color: #191d3a;
+      background-color: #120f40;
       position: relative;
       
       &::before {
@@ -76,14 +69,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     font-size: 24px;
     height: 28px;
   }
   
   .item-title {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
   }
 .h-24{
   height:24px !important
