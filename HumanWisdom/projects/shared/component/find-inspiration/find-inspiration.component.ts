@@ -23,7 +23,7 @@ export class FindInspiration  {
       icon: 'map', 
       color: '#191d3a',
       height:'',
-      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_guided_questions.svg",
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/guided_without_bg.png",
     url:'journal'
     },    
     
@@ -32,7 +32,7 @@ export class FindInspiration  {
       icon: 'play-circle', 
       color: '#191d3a',
       height:'',
-      img:'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg',
+      img:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/shortVideos_without_bg.png',
       url:'wisdom-shorts'
     },  
     { 
@@ -40,7 +40,7 @@ export class FindInspiration  {
       icon: 'star', 
       color: '#191d3a',
       height:'',
-      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dots.svg",
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/pathway_without_bg.png",
       url:'pathway'
     },
     { 
@@ -48,15 +48,15 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_audio_meditation.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/audioMeditation_without_bg.svg',
       url:'audio-meditation'
     },
     { 
       title: 'Contact a coach', 
       icon: 'message-circle', 
       color: '#191d3a',
-      height:'h-24',
-      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach_teens.svg",
+      height:'',
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/contactacouch_without_bg.png",
       url:'coach'
     },
     { 
@@ -64,7 +64,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/blog_without_bg.png',
       url:'wisdom-stories'
     },
     
@@ -73,7 +73,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/blog_without_bg.png',
       url:'blogs'
     },
     { 
@@ -81,7 +81,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/events_without_bg.png',
       url:'events'
     },   
     
