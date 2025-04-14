@@ -3,13 +3,13 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 
 function minifyCss() {
-    return gulp.src('assets-min/css/*.css')  
+    return gulp.src('assets/css/*.css')  
         .pipe(cleanCSS({ compatibility: 'ie8' }))  
-        .pipe(gulp.dest('assets-min/css/'))  
+        .pipe(gulp.dest('assets/css/'))  
 
-        .pipe(gulp.src('assets-min/font/*.css'))  
+        .pipe(gulp.src('assets/font/*.css'))  
         .pipe(cleanCSS({ compatibility: 'ie8' }))  
-        .pipe(gulp.dest('assets-min/font/'))  
+        .pipe(gulp.dest('assets/font/'))  
 
         .pipe(gulp.src('assets/css/*.css'))  
         .pipe(cleanCSS({ compatibility: 'ie8' })) 
