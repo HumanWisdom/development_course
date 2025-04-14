@@ -1,7 +1,7 @@
 <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false" >
 
         <div class="carousel-item active">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new1.webp" alt=""class="img-responsive w100p display_m_none">
