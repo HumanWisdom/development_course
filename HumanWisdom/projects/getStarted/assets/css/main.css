@@ -1713,7 +1713,7 @@ div.scroll-container img {
 
 @media (max-width: 1200px) {
   .hero .carousel {
-    min-height: calc(100vh - 66px);
+    min-height: calc(80vh - 66px);
   }
 }
 
