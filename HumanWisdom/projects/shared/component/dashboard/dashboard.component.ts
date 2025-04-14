@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
   introTitle:string = '';
   dashboardType:string = '';
   dashboardData:any = {};
+  introData : any = {};
   metadata = [
     { section_name: "Start here", priority: 1,data : new Array<any>() },
     { section_name: "Skills", priority: 2,data: new Array<any>() },
@@ -42,6 +43,7 @@ export class DashboardComponent implements OnInit {
         this.service.GetIntroContents(this.dashboardData.id).subscribe(res=>{
           if(res){
             this.cardList = res.content;
+            this.introData =  res;
             this.introTitle = res.introPara;
             for(var item of this.metadata){
               item.data = this.cardList.filter(x=>x.section_name == item.section_name)
@@ -52,6 +54,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  explore(url:any){
+    this.router.navigate([url]);
   }
 
     goBack(){

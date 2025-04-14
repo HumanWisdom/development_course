@@ -6101,4 +6101,12 @@ export class TeenagersService {
       })
 
   }
+
+  getIntroDashboardStatus(): Observable<any> {
+    return this.http.get(this.path + '/GetIntroDashboardlogs');
+   }
+ 
+   setIntroDashboardlogs(id):Observable<any>{
+     return this.http.get(this.path+'/SetIntroDashboardlogs/'+id)
+   }
 }

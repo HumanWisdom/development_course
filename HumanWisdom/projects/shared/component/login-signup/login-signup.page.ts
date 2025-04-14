@@ -132,12 +132,15 @@ export class LoginSignupPage implements OnInit {
   get passwordvalid() {
     return this.registrationForm?.get("ogpassword");
   }
-  get confirmpasswordvalid() {
-    return this.registrationForm?.get("confirmPassword");
-  }
+
   get passwordvalidation() {
     return this.registrationForm?.get("confirmPassword").value !== this.registrationForm.get("ogpassword").value;
   }
+
+  get confirmpasswordvalid() {
+    return this.registrationForm?.get("confirmPassword");
+  }
+
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
   //   lastName:new FormControl(''),
@@ -236,6 +239,8 @@ export class LoginSignupPage implements OnInit {
       ? { misMatch: true }
       : null;
   }
+
+
 
   addZero(i) {
     if (i < 10) {
@@ -726,6 +731,11 @@ export class LoginSignupPage implements OnInit {
     }
   }
 
+  routetoUrl(url){
+
+    // this.router.navigate(["/" + SharedService.getprogramName() + url]);
+    window.open("/" + SharedService.getprogramName() + url,"_blank")
+  }
   getfreeuser() {
     this.freescreens();
   }
@@ -769,6 +779,7 @@ export class LoginSignupPage implements OnInit {
       // this.router.navigate(['/adults/adult-dashboard'])
     });
   }
+
 
  
   signInWithApple(reqtype) {
@@ -866,6 +877,7 @@ export class LoginSignupPage implements OnInit {
         email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         ogpassword: ["", [Validators.required, Validators.minLength(6)]],
         confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
+        privacychk: [false, [Validators.requiredTrue]],
       }
       ,
       { validator: this.PasswordValidator }

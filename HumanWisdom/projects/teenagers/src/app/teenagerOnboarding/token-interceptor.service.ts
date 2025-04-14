@@ -8,13 +8,18 @@ import { catchError } from 'rxjs/internal/operators/catchError';
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {
-  token = JSON.parse(localStorage.getItem("token"))
+  token = '';
 
   constructor() {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.token = JSON.parse(localStorage.getItem("token"))
+    try{
+      this.token=JSON.parse(localStorage.getItem("token"))
+   }
+   catch(e){ 
+     this.token = localStorage.getItem("token");
+   }
     let tokenizedReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ` + this.token
