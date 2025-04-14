@@ -14,7 +14,7 @@ export class S127040Page implements OnInit,OnDestroy {
   bg_cft="bg_purple"
   bg="purple_11"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/habit-addiction/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/habit-addiction/videos/1.5.mp4'  
   title="Smartphone addiction"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/addiction/addiction_05.jpg"
   userId:any

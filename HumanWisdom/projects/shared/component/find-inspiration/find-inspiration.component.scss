@@ -1,0 +1,83 @@
+/* inspiration-grid.component.scss */
+.inspiration-container {
+    background-color: #292D56; 
+    color: white;
+    padding: 20px;
+  }
+  
+  .inspiration-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .inspiration-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    grid-auto-flow: column; /* Items flow into columns */
+    gap: 10px; /* Space between items */
+    max-height: 200px; /* Adjust based on your item height */
+    white-space: nowrap; /* Prevents wrapping */
+   -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.inspiration-grid::-webkit-scrollbar {
+  //display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+}
+  
+  .inspiration-item {
+    background-color: #120f40;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    min-height: 80px;
+    //min-width: 125px;
+
+    &.highlight {
+      background-color: #120f40;
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        background: linear-gradient(to bottom right, #5e5df0, #9966ff);
+        opacity: 0.8;
+        z-index: 1;
+      }
+      
+      .icon-container, .item-title {
+        z-index: 2;
+        position: relative;
+      }
+    }
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    font-size: 24px;
+    height: 28px;
+  }
+  
+  .item-title {
+    font-size: 12px;
+    font-weight: 400;
+  }
+.h-24{
+  height:24px !important
+}

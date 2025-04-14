@@ -45,14 +45,21 @@ export class DailyCheckInLandingPage implements OnInit {
     let authtoken;
     this.activatedRoute.queryParams.subscribe(params => {
       authtoken = params?.authtoken;
+     
     });
     let app = localStorage.getItem("fromapp");
     if (authtoken) {
+
+      localStorage.setItem("token", authtoken);
+      sessionStorage.setItem("token", authtoken);      
       localStorage.setItem('socialLogin', 'T');
       localStorage.setItem('acceptcookie', 'T');
       this.commonService.verifytoken(authtoken).subscribe((res) => {
         if (res) {
           this.isRoutedFromLogin = true;
+          SharedService.isRoutedFromLogin = this.isRoutedFromLogin;
+          this.isFirstLogin = SharedService.isRoutedFromLogin;
+
           localStorage.setItem("email", res['Email']);
           localStorage.setItem("name", res['Name']);
           localStorage.setItem("userId", res['UserId']);

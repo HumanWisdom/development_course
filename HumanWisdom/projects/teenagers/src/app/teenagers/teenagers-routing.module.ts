@@ -534,7 +534,7 @@ const routes: Routes = [
   {
     path: "quotation/:id",
     component: HappierMeQuotationPage
-  },
+  }
 ];
 
 

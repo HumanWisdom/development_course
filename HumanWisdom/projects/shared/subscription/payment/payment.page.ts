@@ -8,6 +8,18 @@ import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
+
+var ADT = ADT || {};
+ADT.Tag = ADT.Tag || {};
+ADT.Tag.t = 0;
+ADT.Tag.c = "";
+ADT.Tag.tp = 0;
+ADT.Tag.am = 0;
+ADT.Tag.ti = "";
+ADT.Tag.xd = "";
+ADT.Tag.cpn = "";
+
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
@@ -165,6 +177,10 @@ export class PaymentPage implements OnInit, AfterViewInit {
           messageContainer.textContent = error.message;
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
         } else {
+
+          ADT.Tag.am = this.GetAmount();
+          ADT.Tag.c = this.getIsoCode();
+
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
         }
       });

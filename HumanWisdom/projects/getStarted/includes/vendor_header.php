@@ -39,12 +39,12 @@
 <link href="../assets/css/style_hb.css" rel="stylesheet" > -->
 
 <link href="../assets/css/main.css" rel="stylesheet">
-<link href="../assets-min/css/responsive.css" rel="stylesheet">
-<link href="../assets-min/font/font_colour.css" rel="stylesheet">
-<link href="../assets-min/font/font_size.css" rel="stylesheet">
-<link href="../assets-min/font/font_weight.css" rel="stylesheet">
-<link href="../assets-min/font/line_height.css" rel="stylesheet">
-<link href="../assets-min/css/style_hb.css" rel="stylesheet"> 
+<link href="../assets/css/responsive.css" rel="stylesheet">
+<link href="../assets/font/font_colour.css" rel="stylesheet">
+<link href="../assets/font/font_size.css" rel="stylesheet">
+<link href="../assets/font/font_weight.css" rel="stylesheet">
+<link href="../assets/font/line_height.css" rel="stylesheet">
+<link href="../assets/css/style_hb.css" rel="stylesheet"> 
  <!-- Vendor CSS Files -->
  <!-- <link href="./assets_new/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  -->
   <!-- <link href="./assets_new/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
@@ -53,13 +53,6 @@
   <!-- Main CSS File -->
   <!-- <link href="./assets_new/css/main.css" rel="stylesheet">  -->
 
-<!-- <link href="../assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="../assets-min/css/responsive.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="../assets-min/font/font_colour.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="../assets-min/font/font_size.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="../assets-min/font/font_weight.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="../assets-min/font/line_height.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="../assets-min/css/style_hb.css" rel="stylesheet" media="print" onload="this.media='all'"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  /> -->
 <!-- Google tag (gtag.js) -->

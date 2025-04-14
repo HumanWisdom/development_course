@@ -57,7 +57,7 @@ export class AdultsService {
   constructor(private http: HttpClient,
     handler: HttpBackend,
     private services: OnboardingService,
-    private router: Router
+    private router: Router,
   ) {
     if (SharedService.ProgramId === 11) {
       this.programId = ProgramType.Teenagers;
@@ -6129,4 +6129,12 @@ export class AdultsService {
     return list;
   }
 
+
+  getIntroDashboardStatus(): Observable<any> {
+   return this.http.get(this.path + '/GetIntroDashboardlogs');
+  }
+
+  setIntroDashboardlogs(id):Observable<any>{
+    return this.http.get(this.path+'/SetIntroDashboardlogs/'+id)
+  }
 }

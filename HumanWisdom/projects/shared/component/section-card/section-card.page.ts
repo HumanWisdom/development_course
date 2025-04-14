@@ -43,6 +43,9 @@ export class SectionCard implements OnInit {
     return { left: this.leftSpacing };
   }
 
+  getForumClass(){
+    return this.section.title.length>40 ? '':'mt10px mb5px';
+  }
 }
 
 export interface SectionCard {

@@ -23,7 +23,9 @@ export class MyDashboardComponent implements OnInit {
   isAdults:boolean = true;
   urlT:any
   userId:any
-  userName=localStorage.getItem("userName")
+  // userName=localStorage.getItem("userName")
+  userName=localStorage.getItem("name")
+
   cardList:SectionCard[] = [];
   groupedCardList=[]
   introTitle:string = '';
