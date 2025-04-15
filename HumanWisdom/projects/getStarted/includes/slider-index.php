@@ -78,7 +78,7 @@
                 </div>
                 <h5 class="fs_21px fw_400 lh_150p fc_ffffff">Find long-term solutions by addressing the root cause</h5>
               </div>
-              <div class="row mt10px">
+              <div class="row mtb20px">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                   <div>
                     <a href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing_slider p-35">Try HappierMe for free</a>
@@ -88,19 +88,20 @@
                   <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                     Download the app on
                     <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                      <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg" alt="appstore" loading="lazy">
+                      <img style="width:13.5px;height:auto;margin:5px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg" alt="appstore" loading="lazy">
                     </a>
                     and
                     <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                      <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" alt="playstore" loading="lazy">
+                      <img style="width:14.5px;height:auto; margin:5px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" alt="playstore" loading="lazy">
                     </a><br>and start your free trial
                   </h3>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                   <div>
-                    <a href="#" data-videourl="https://www.youtube.com/watch?v=Da7CKigesTc" class="btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider">
-                      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive"> Why we created HappierMe
-                    </a>
+                  <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
+      Why we created HappierMe</a>
+
                   </div>
                 </div>
               </div>
