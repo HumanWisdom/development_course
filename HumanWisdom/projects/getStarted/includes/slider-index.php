@@ -154,7 +154,9 @@ var youtubeVideo = {
                     ID = url;
                 }
 
-                var videoElement = $('<div class="video-popup-model">' + '<div class="video-layer">' + '<div class="video-model-close-layer">' + '</div>' + '<div class="model-wrapper">' + '<div class="videomodel">' + '<div class="videoscreen">' + '<iframe width="100%" height="auto" class="videlement"' + 'src="https://www.youtube.com/embed/' + ID + '?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1' + '" frameborder="0"' + 'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"' + 'allowfullscreen></iframe>' + '</div>' + '<div class="modelCloseBtn">' + '</div>' + '</div>' + '</div>' + '</div>' + '</div>');
+                var videoElement = $('<div class="video-popup-model">' + 
+                '<div class="video-layer">' +
+                   '<div class="model-wrapper">' + '<div class="videomodel">' + '<div class="videoscreen">' + '<iframe width="100%" height="auto" class="videlement"' + 'src="https://www.youtube.com/embed/' + ID + '?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1' + '" frameborder="0"' + 'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"' + 'allowfullscreen></iframe>' + '</div>' + '<div class="modelCloseBtn">' + '</div>' + '</div>' + '</div>' + '</div>' + '</div>');
 
                 $('body').prepend(videoElement);
                 var videoWidth = $('.video-popup-model .videlement').width();
@@ -177,12 +179,12 @@ var youtubeVideo = {
         }
         modelClose();
 
-        function modelLayerClose() {
-            $('body').on('click', '.video-model-close-layer', function(event) {
-                $(".modelCloseBtn").trigger('click');
-            });
-        }
-        modelLayerClose();
+        // function modelLayerClose() {
+        //     $('body').on('click', '.video-model-close-layer', function(event) {
+        //         $(".modelCloseBtn").trigger('click');
+        //     });
+        // }
+        // modelLayerClose();
     },
     init: function() {
         youtubeVideo.model();
