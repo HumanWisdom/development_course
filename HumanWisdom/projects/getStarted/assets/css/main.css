@@ -75,7 +75,6 @@ h6 {
   border-radius: 20px;
 }
 
-
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
@@ -2711,6 +2710,15 @@ animation-name: slideInRight;
   background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 
+.btn_pricing_slider {
+  margin: 3px;
+  height: 48px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #E58D82, #CB6171);
+}
+
+
+
 
 .btn_pricingslider {
   margin: 0;
@@ -4838,5 +4846,46 @@ padding: 15px;
 		}
 	}
 	}
+}
+
+/*--------------------------------------------------------------
+# Height Carousel Responsiveness
+--------------------------------------------------------------*/
+.height-carousel-reponsiveness {
+  height: 93vh; /* Full viewport height for large screens */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+@media (max-width: 1200px) {
+  .height-carousel-reponsiveness {
+    height: 80vh; /* Adjust height for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .height-carousel-reponsiveness {
+    height: 60vh; /* Adjust height for small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .height-carousel-reponsiveness {
+    height: 50vh; /* Adjust height for extra small screens */
+  }
+}
+@media (max-width: 540px) {
+    .height-carousel-reponsiveness {
+      height: 70vh; /* Adjust height for extra small screens */
+}
+}
+
+.slider-heading {
+  font-size: 54px;
+}
+
+@media (max-width: 540px) {
+ .slider-heading {
+    font-size: 25px; /* Adjust height for extra small screens */
+}
 }
 

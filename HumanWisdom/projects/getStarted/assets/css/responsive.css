@@ -13,9 +13,9 @@
       background: linear-gradient(180deg, #E58D82, #CB6171);
   }
   .btn_pricingslider {
-     margin: 15px; 
     border: 0;
      float: right; 
+     margin-top: 8px;
     /* margin-left: 88px; */
     width: 100%; 
     height: 48px;
