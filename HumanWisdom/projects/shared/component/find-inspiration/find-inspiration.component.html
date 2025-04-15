@@ -2,11 +2,9 @@
 
   
   <div class="inspiration-grid">
-    <div *ngFor="let item of inspirationItems" 
-         class="inspiration-item" 
-       >
+    <div *ngFor="let item of inspirationItems"  class="inspiration-item" >
       <div class="icon-container" (click)="routeTo(item.url)">
-        <img src={{item.img}} class="img-responsive img-grid" />
+        <img src={{item.img}} class="img-responsive " />
         <!-- <i [ngClass]="'icon-' + item.icon"></i> -->
       </div>
       <div class="item-title">{{ item.title }}</div>
