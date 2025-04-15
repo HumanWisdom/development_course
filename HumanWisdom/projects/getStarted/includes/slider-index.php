@@ -4,8 +4,8 @@
       <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false" >
 
         <div class="carousel-item active">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new1.webp" alt=""class="img-responsive w100p display_m_none">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm1.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new1.webp" alt=""class="img-responsive w100p display_m_none" loading="lazy">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm1.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -73,11 +73,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -87,7 +87,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -104,9 +104,9 @@
 
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new2.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new2.webp" alt="" class="img-responsive w100p display_m_none"loading="lazy">
           
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm2.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm2.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -159,7 +159,7 @@
 
 
             
-            <div class="row mt10px">
+            <div class="row mt20px"> 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a href="https://happierme.app/pages/splash_options.php"class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -172,11 +172,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew ">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -186,7 +186,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -201,9 +201,9 @@
         
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new4.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new4.webp" alt="" class="img-responsive w100p display_m_none"loading="lazy">
          
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm3.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm3.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -256,7 +256,7 @@
 
 
             
-            <div class="row">
+            <div class="row mt20px"> 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a  href="https://happierme.app/pages/splash_options.php"class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -269,11 +269,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -283,7 +283,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -298,9 +298,9 @@
        
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new5.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new5.webp" alt="" class="img-responsive w100p display_m_none"loading="lazy">
           
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm4.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm4.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -354,7 +354,7 @@
 
 
             
-            <div class="row">
+            <div class="row mt20px"> 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a  href="https://happierme.app/pages/splash_options.php"class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -367,11 +367,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                    </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -381,7 +381,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -395,8 +395,8 @@
 </div>
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new8.webp" alt="" class="img-responsive w100p display_m_none">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm5.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new8.webp" alt="" class="img-responsive w100p display_m_none"loading="lazy">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm5.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -450,7 +450,7 @@
 
 
             
-            <div class="row">
+            <div class="row mt20px"> 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a  href="https://happierme.app/pages/splash_options.php"class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -463,11 +463,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -477,7 +477,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -494,9 +494,9 @@
 
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new3.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new3.webp" alt="" class="img-responsive w100p display_m_none"loading="lazy">
           
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm6.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm6.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -550,7 +550,7 @@
 
 
             
-            <div class="row mt10px">       
+            <div class="row mt20px">       
                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a  href="https://happierme.app/pages/splash_options.php"class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -563,11 +563,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -577,7 +577,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -591,9 +591,9 @@
 </div>
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new6.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new6.webp" alt="" class="img-responsive w100p display_m_none" loading="lazy">
           
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm7.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm7.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -647,7 +647,7 @@
 
 
             
-            <div class="row">
+            <div class="row mt20px"> 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a  href="https://happierme.app/pages/splash_options.php"class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -660,11 +660,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br>
                   and start your free trial
                 </h3>
@@ -674,7 +674,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -688,9 +688,9 @@
 </div>
 
 <div class="carousel-item">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/slider_new7.webp" alt="" class="img-responsive w100p display_m_none">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new7.webp" alt="" class="img-responsive w100p display_m_none"loading="lazy">
           
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/sliderm8.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm8.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
 
           <div class="carousel-container">
           <div class="top">
@@ -744,7 +744,7 @@
 
 
             
-            <div class="row">
+            <div class="row mt20px"> 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
       <div>
         <a  href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
@@ -757,11 +757,11 @@
                 <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
                 Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img style="width:13.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
+                    <img style="width:13.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg"  alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img style="width:14.5px;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
+                    <img style="width:14.5px;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg"  alt="playstore" loading=lazy>
                   </a><br/>
                   and start your free trial
                 </h3>
@@ -771,7 +771,7 @@
       <div>
 
       <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
-      <img style="width:10px;height:10px; margin:10px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video_slider.svg" class="img-responsive">  
+      <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
       </div>
     </div>
@@ -817,7 +817,7 @@
     <div class="popup-bg"></div>
       <div class="popup-content">
 <!--         <p class="popup-title">Youtube</p> -->
-        <iframe src="https://youtube.com/embed/gQojMIhELvM?autoplay=0" class="video"></iframe>
+        <iframe src="https://youtube.com/embed/gQojMIhELvM?autoplay=0" class="video" loading="lazy"></iframe>
         <button class="close-btn">close</button>
       </div>
   </div>
