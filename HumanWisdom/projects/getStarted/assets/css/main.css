@@ -4995,18 +4995,21 @@ padding: 15px;
   }
 }
 
-@media (max-width: 768px) {
+@media(min-width: 412px){
   .height-carousel-reponsiveness {
-    height: 60vh; /* Adjust height for small screens */
+    height: 90vh; /* Adjust height for medium screens */
   }
 }
 
-@media (max-width: 576px) {
+
+@media (max-width: 768px) {
   .height-carousel-reponsiveness {
-    height: 50vh; /* Adjust height for extra small screens */
+    height: 75vh; /* Adjust height for small screens */
   }
 }
-@media (max-width: 540px) {
+
+
+@media (min-width:478px) and (max-width: 540px) {
     .height-carousel-reponsiveness {
       height: 70vh; /* Adjust height for extra small screens */
 }
