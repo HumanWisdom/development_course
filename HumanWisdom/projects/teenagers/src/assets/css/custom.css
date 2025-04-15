@@ -15282,7 +15282,7 @@ input[type="number"] {
 .dpanel>.panel-heading
 {
   /* background-color: white; */
-  background-color: #183C79;
+  background-color: transparent;
   border-color: transparent;
 }
 
