@@ -594,7 +594,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1024px) {
+@media (min-width:300px) and (max-width: 1024px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -605,7 +605,7 @@ section {
     bottom: 0;
     transition: 0.3s;
     z-index: 9997;
-    display: flow !important;
+    display: block;
   }
 
   .navbar ul {
@@ -617,6 +617,7 @@ section {
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
+    display: block;
   }
 
   .navbar a,
