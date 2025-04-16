@@ -4985,13 +4985,13 @@ padding: 15px;
 # Height Carousel Responsiveness
 --------------------------------------------------------------*/
 .height-carousel-reponsiveness {
-  height: 93vh; /* Full viewport height for large screens */
+  height: 100vh; /* Full viewport height for large screens */
   object-fit: cover; /* Ensure the image covers the container */
 }
 
 @media (max-width: 1200px) {
   .height-carousel-reponsiveness {
-    height: 80vh; /* Adjust height for medium screens */
+    height: 90vh; /* Adjust height for medium screens */
   }
 }
 
@@ -5021,7 +5021,7 @@ padding: 15px;
 
 @media (max-width: 540px) {
  .slider-heading {
-    font-size: 39px; /* Adjust height for extra small screens */
+    font-size: 25px; /* Adjust height for extra small screens */
 }
 }
 @media (max-width: 540px) {
