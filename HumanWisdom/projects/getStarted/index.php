@@ -7,7 +7,7 @@
     <meta property="description" content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
     <meta property="og:title" content="HappierMe: For Teens & Adults">
-    <meta property="og:description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
+    <meta property="og:description" content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
     <meta property="og:site_name" content="HappierMe">
     <meta property="og:url" content="https://happierme.app">
      <meta property="og:type" content="">
