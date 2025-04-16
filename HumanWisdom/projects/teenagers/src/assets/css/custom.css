@@ -32762,7 +32762,7 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 30%;
+  width: 27%;
 /*   margin: 0 13px 0 0;
   padding: 0; */
   text-align: center;
@@ -37756,4 +37756,8 @@ a.fc_e58d82:hover
   padding: 70px 0 0 0;
   scroll-margin-top: 90px;
   overflow: clip;
+}
+
+.inspiration-item {
+  background-color: #0C2B5F !important; 
 }
