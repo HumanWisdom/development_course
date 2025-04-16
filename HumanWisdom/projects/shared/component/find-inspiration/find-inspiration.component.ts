@@ -12,7 +12,7 @@ export class FindInspiration  {
   inspirationItems = [
     { 
       title: 'Podcasts', 
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.png',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.svg',
       icon: 'headphones', 
       height:'',
       color: '#191d3a',
@@ -23,7 +23,7 @@ export class FindInspiration  {
       icon: 'map', 
       color: '#191d3a',
       height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.png",
+      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg",
     url:'journal'
     },    
     
@@ -32,7 +32,7 @@ export class FindInspiration  {
       icon: 'play-circle', 
       color: '#191d3a',
       height:'',
-      img:'https://d1tenzemoxuh75.cloudfront.net/assets/icons/shortVideos_without_bg.png',
+      img:'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg',
       url:'wisdom-shorts'
     },  
     { 
@@ -40,7 +40,7 @@ export class FindInspiration  {
       icon: 'star', 
       color: '#191d3a',
       height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.png",
+      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.svg",
       url:'pathway'
     },
     { 
@@ -56,8 +56,25 @@ export class FindInspiration  {
       icon: 'message-circle', 
       color: '#191d3a',
       height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/contactacouch_without_bg.png",
+      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg",
       url:'coach'
+    },
+     { 
+      title: 'Events', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg',
+      url:'events'
+    },   
+    
+    { 
+      title: 'Blog', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg',
+      url:'blogs'
     },
     { 
       title: 'Life Stories', 
@@ -67,23 +84,6 @@ export class FindInspiration  {
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/lifeStories_without_bg.png',
       url:'wisdom-stories'
     },
-    
-    { 
-      title: 'Blog', 
-      icon: 'volume-2', 
-      color: '#191d3a',
-      height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.png',
-      url:'blogs'
-    },
-    { 
-      title: 'Events', 
-      icon: 'volume-2', 
-      color: '#191d3a',
-      height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.png',
-      url:'events'
-    },   
     { 
       title: 'Wellness Survey', 
       icon: 'volume-2', 

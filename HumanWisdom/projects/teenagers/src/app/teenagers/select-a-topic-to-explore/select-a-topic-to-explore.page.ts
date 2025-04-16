@@ -228,7 +228,7 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
        // this.route.navigate(['/teenagers/curated/be-happier'])
-       this.route.navigate(['/teenagers/curated/be-happier'])
+       this.route.navigate(['/teenagers/dashboard/be-happier'])
 
       } else if (name === 'Understand yourself') {
         localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
