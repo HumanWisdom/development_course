@@ -2,8 +2,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 <!-- Favicons -->
-<link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
-<link href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/../assets/images/logo/logo_favicon_transparent.png" rel="apple-touch-icon">
+<link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
+<link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" >
