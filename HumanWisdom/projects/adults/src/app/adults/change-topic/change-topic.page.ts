@@ -138,7 +138,7 @@ export class ChangeTopicPage implements OnInit {
 
             }
             else{
-              let data = this.redirectToDashboard(this.selectedname);
+               let data = this.redirectToDashboard(this.selectedname);
               if(data.status){
                 this.service.setIntroDashboardlogs(data.data.id).subscribe(res => {
                   if(res){
