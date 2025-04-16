@@ -203,39 +203,57 @@ export class SelectATopicToExplorePage implements OnInit {
       if (name === 'Manage your emotions') {
         localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
-        this.route.navigate(['/teenagers/curated/manage-your-emotions'])
+        // this.route.navigate(['/teenagers/curated/manage-your-emotions'])
+        this.route.navigate(['/teenagers/dashboard/manage-your-emotions'])
+
       } else if (name === 'Mental Health') {
         localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
-        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+        // this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+        this.route.navigate(['/teenagers/dashboard/mental-health'])
+
       } else if (name === 'Succeed in life') {
         localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
         this.logeventservice.logEvent('click_workplace');
-        this.route.navigate(['/teenagers/curated/succeed-in-life'])
+        // this.route.navigate(['/teenagers/curated/succeed-in-life'])
+        this.route.navigate(['/teenagers/dashboard/succeed-in-life'])
+
       } else if (name ==='Relationships') {
         localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
-        this.route.navigate(['/teenagers/curated/have-fulfilling-relationships'])
+        // this.route.navigate(['/teenagers/curated/have-fulfilling-relationships'])
+        this.route.navigate(['/teenagers/dashboard/relationships'])
+
       } else if (name === 'Be happier') {
         localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
-        this.route.navigate(['/teenagers/curated/be-happier'])
+       // this.route.navigate(['/teenagers/curated/be-happier'])
+       this.route.navigate(['/teenagers/curated/be-happier'])
+
       } else if (name === 'Understand yourself') {
         localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
-        this.logeventservice.logEvent('click_be_happier');
-        this.route.navigate(['/teenagers/curated/understand-yourself'])
+        this.logeventservice.logEvent('click_understand_yourself');
+        //this.route.navigate(['/teenagers/curated/understand-yourself'])
+        this.route.navigate(['/teenagers/dashboard/understand-yourself'])
+
       } else if (name.includes('Feel calm')) {
         localStorage.setItem('curatedurl', '/teenagers/curated/feel-calm');
-        this.logeventservice.logEvent('click_sorrow_loss');
-        this.route.navigate(['/teenagers/curated/feel-calm'])
+        this.logeventservice.logEvent('click_feel_calm');
+        //this.route.navigate(['/teenagers/curated/feel-calm'])
+        this.route.navigate(['/teenagers/dashboard/feel-calm'])
+
       } else if (name === 'Overcome unhelpful habits') {
         localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
-        this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+        this.logeventservice.logEvent('click_unhelpful_habits');
+        //this.route.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+        this.route.navigate(['/teenagers/dashboard/overcome-unhelpful-habits'])
+
       } else if (name === 'Manage your mental health') {
         localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
-        this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+        this.logeventservice.logEvent('click_mental_health');
+       // this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+       this.route.navigate(['/teenagers/dashboard/mental-health'])
+
       }
     }else {
       if (this.isloggedIn) {
