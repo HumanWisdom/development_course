@@ -5,13 +5,7 @@
     padding: 18px;
   }
   
-  .inspiration-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: white;
-  }
-  
+ 
   .inspiration-grid {
     display: grid;
     grid-template-rows: repeat(2, 1fr); /* Two rows */
@@ -38,7 +32,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    min-height: 80px;
+    // min-height: 80px;
     //min-width: 125px;
 
     &.highlight {
