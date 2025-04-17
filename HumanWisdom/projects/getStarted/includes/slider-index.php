@@ -68,7 +68,7 @@
                 <span class="fs_15px fw_700 lh_140p fc_ffffff">4.8</span> App store rating
               </h6>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="row mt20px">
+                <div class="w3-container">
                   <span class="mt20px slider-heading  fw_500 lh_130p fc_ffffff">With HappierMe you can</span>
                 </div>
               </div>
@@ -98,7 +98,7 @@
                     </a><br>and start your free trial
                   </h3>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                   <div>
                   <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_400 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
