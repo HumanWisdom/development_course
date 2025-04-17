@@ -68,7 +68,7 @@
                 <span class="fs_15px fw_700 lh_140p fc_ffffff">4.8</span> App store rating
               </h6>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="rom mt20">
+                <div class="row mt20px">
                   <span class="mt20px slider-heading  fw_500 lh_130p fc_ffffff">With HappierMe you can</span>
                 </div>
               </div>
