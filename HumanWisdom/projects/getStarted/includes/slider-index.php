@@ -98,7 +98,7 @@
                     </a><br>and start your free trial
                   </h3>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  p0">
                   <div>
                   <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_400 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
