@@ -2745,7 +2745,7 @@ animation-name: slideInRight;
   margin: 0;
   border: 0;
   /* float:right; */
-  /* margin-left: 88px; */
+   margin-left: 88px; 
    width: 300px; 
   height: 48px;
   border-radius: 24px;
@@ -4933,7 +4933,7 @@ padding: 15px;
   height: 48px;
   border: none;
   margin-left: -10px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   width: 330px;
   border-radius: 24px;
   background: linear-gradient(180deg, #E58D82, #CB6171);
