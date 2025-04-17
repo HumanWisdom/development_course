@@ -53,7 +53,7 @@
       <div class="carousel-container">
         <div class="top">
           <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h6 class="fs_12px fw_400 lh_140p fc_ffffff ta_lctnewnew">
                 <span class="rating_a">
                   <i class="fa fa-star"></i>
@@ -68,8 +68,8 @@
                 <span class="fs_15px fw_700 lh_140p fc_ffffff">4.8</span> App store rating
               </h6>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="w3-container">
-                  <span class="mtb0px slider-heading  fw_500 lh_130p fc_ffffff">With HappierMe you can</span>
+                <div class="rom mt20px">
+                  <span class="mt20px slider-heading  fw_500 lh_130p fc_ffffff">With HappierMe you can</span>
                 </div>
               </div>
               <div class="row">
@@ -80,7 +80,7 @@
                 
                 <h5 class="fs_21px fw_400 lh_150p fc_ffffff">Find long-term solutions by addressing the root cause</h5>
               </div>
-              <div class="row mt10px">
+              <div class="row mtb10px">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                   <div>
                     <a href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing_slider p-35">Try HappierMe for free</a>
@@ -98,9 +98,9 @@
                     </a><br>and start your free trial
                   </h3>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
                   <div>
-                  <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+                  <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_400 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
       <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
 
