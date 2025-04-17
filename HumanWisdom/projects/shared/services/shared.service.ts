@@ -383,12 +383,12 @@ export class SharedService {
         { "id": 2, "name": "teenager-dashboard" ,"title":"Teenager Dashboard"},
         { "id": 11, "name": "mental-health" ,"title":"Manage your mental health"},
         { "id": 12, "name": "relationships"  ,"title":"Relationships"},
-        { "id": 13, "name": "feel-calm"  ,"title":"Feel Calm"},
+        { "id": 13, "name": "feel-calm"  ,"title":"Feel calm"},
         { "id": 14, "name": "be-happier" ,"title":"Be happier"},
         { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
-        { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome Unhelpful Habits"},
+        { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome unhelpful habits"},
         { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
-        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"}]
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in life"}]
       return data.filter(x => x.title == name)[0];
     }
   }

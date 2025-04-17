@@ -189,7 +189,9 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    // this.location.back();
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
+
   }
 
   buyAgain(item) {

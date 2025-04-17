@@ -168,7 +168,7 @@ export class ChangeTopicPage implements OnInit {
               this.router.navigate(['/teenagers/curated/feel-calm'])
             } else if (name === 'Overcome unhelpful habits') {
               localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
-              this.logeventservice.logEvent('click_calm_mind');
+              this.logeventservice.logEvent('click_overcome_unhelpful_habits');
               this.router.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
             }
           }
