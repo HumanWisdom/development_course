@@ -81,7 +81,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/lifeStories_without_bg.png',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
       url:'wisdom-stories'
     },
     { 
@@ -89,7 +89,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.png',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg',
       url:'wisdom-survey'
     },   
     
