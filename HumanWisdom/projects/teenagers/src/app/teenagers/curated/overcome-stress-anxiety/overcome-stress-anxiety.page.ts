@@ -61,7 +61,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
         this.isSubscriber = false;
       }
     }
-
+    routeToMentalHealthDash(){
+      this.router.navigate(['/teenagers/dashboard/mental-health']);
+    }
   ngOnInit() {
     localStorage.setItem("NaviagtedFrom", '/teenagers/curated/overcome-stress-anxiety');
 
@@ -553,4 +555,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+     routeTointroDash(){
+        this.router.navigate(['/teenagers/dashboard/mental-health']);
+      }
 }

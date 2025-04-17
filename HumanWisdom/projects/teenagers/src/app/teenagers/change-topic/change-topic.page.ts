@@ -40,7 +40,7 @@ export class ChangeTopicPage implements OnInit {
   public moduleId = 7
   public bookmarks = []
   public userId = 100;
-
+  public introLogs = [];
   constructor(private location: Location, private service: TeenagersService, public logeventservice: LogEventService,
     public router: Router, public activatedRoute: ActivatedRoute, private navigation: NavigationService) {
     let authtoken;
@@ -71,13 +71,14 @@ export class ChangeTopicPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getIntroDashboardStatus();
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
     let NoOfVisits = loginResponse.NoOfVisits
-    console.log("NoofVisits:" + NoOfVisits )
-    
+    console.log("NoofVisits:" + NoOfVisits)
+
     this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
-    
+
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
@@ -91,6 +92,14 @@ export class ChangeTopicPage implements OnInit {
     })
   }
 
+  getIntroDashboardStatus() {
+    this.service.getIntroDashboardStatus().subscribe(res => {
+      if (res) {
+        this.introLogs = res;
+      }
+    });
+  }
+
   getclcickevent(event) {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
@@ -102,10 +111,10 @@ export class ChangeTopicPage implements OnInit {
     var url = this.navigation.navigateToBackLink();
     if (url == null) {
       this.location.back();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
-}
+  }
 
   update(id, name) {
     console.log("update")
@@ -113,48 +122,56 @@ export class ChangeTopicPage implements OnInit {
       if (res) {
         if (this.isRoutedFromLogin == true) {
           SharedService.isRoutedFromLogin = true;
-          this.logeventservice.logEvent('click_pick_topic_'+this.selectedname);
+          this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
           // this.url="/subscription/start-your-free-trial"
-          this.url=`${SharedService.getprogramName()}/daily-checkin`;
+          this.url = `${SharedService.getprogramName()}/daily-checkin`;
           this.router.navigate([this.url]);
         }
         else {
-
-          localStorage.setItem('storyNumber', this.selectedId);
-          if (name === 'Manage your emotions') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
-            this.logeventservice.logEvent('click_emotions');
-            this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-          } else if (name === 'Manage your mental health') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
-            this.logeventservice.logEvent('click_stress_anxiety');
-            this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
-          } else if (name === 'Succeed in life') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
-            this.logeventservice.logEvent('click_workplace');
-            this.router.navigate(['/teenagers/curated/succeed-in-life'])
-          } else if (name === 'Relationships') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
-            this.logeventservice.logEvent('click_relationships');
-            this.router.navigate(['/teenagers/curated/have-fulfilling-relationships'])
-          } else if (name === 'Be happier') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
-            this.logeventservice.logEvent('click_be_happier');
-            this.router.navigate(['/teenagers/curated/be-happier'])
-          } else if (name === 'Understand yourself') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
-            this.logeventservice.logEvent('click_be_happier');
-            this.router.navigate(['/teenagers/curated/understand-yourself'])
-          } else if (name.includes('Feel calm')) {
-            localStorage.setItem('curatedurl', '/teenagers/curated/feel-calm');
-            this.logeventservice.logEvent('click_sorrow_loss');
-            this.router.navigate(['/teenagers/curated/feel-calm'])
-          } else if (name === 'Overcome unhelpful habits') {
-            localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
-            this.logeventservice.logEvent('click_calm_mind');
-            this.router.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+          let data = this.redirectToDashboard(this.selectedname);
+          if (data.status) {
+            this.service.setIntroDashboardlogs(data.data.id).subscribe(res => {
+              if (res) {
+                console.log("Intro dashboard logs updated successfully");
+                this.router.navigate(['/teenagers/dashboard/' + data.data.name]);
+              }
+            });
+          } else {
+            localStorage.setItem('storyNumber', this.selectedId);
+            if (name === 'Manage your emotions') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
+              this.logeventservice.logEvent('click_emotions');
+              this.router.navigate(['/teenagers/curated/manage-your-emotions'])
+            } else if (name === 'Manage your mental health') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
+              this.logeventservice.logEvent('click_stress_anxiety');
+              this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+            } else if (name === 'Succeed in life') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
+              this.logeventservice.logEvent('click_workplace');
+              this.router.navigate(['/teenagers/curated/succeed-in-life'])
+            } else if (name === 'Relationships') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
+              this.logeventservice.logEvent('click_relationships');
+              this.router.navigate(['/teenagers/curated/have-fulfilling-relationships'])
+            } else if (name === 'Be happier') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
+              this.logeventservice.logEvent('click_be_happier');
+              this.router.navigate(['/teenagers/curated/be-happier'])
+            } else if (name === 'Understand yourself') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
+              this.logeventservice.logEvent('click_be_happier');
+              this.router.navigate(['/teenagers/curated/understand-yourself'])
+            } else if (name.includes('Feel calm')) {
+              localStorage.setItem('curatedurl', '/teenagers/curated/feel-calm');
+              this.logeventservice.logEvent('click_sorrow_loss');
+              this.router.navigate(['/teenagers/curated/feel-calm'])
+            } else if (name === 'Overcome unhelpful habits') {
+              localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
+              this.logeventservice.logEvent('click_overcome_unhelpful_habits');
+              this.router.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+            }
           }
-
         }
         localStorage.setItem('lastRoute', null);
         this.router.navigate([this.url]);
@@ -171,6 +188,27 @@ export class ChangeTopicPage implements OnInit {
       this.isSelected = true;
     }
     this.update(id, name);
+  }
+
+  redirectToDashboard(name) {
+    let data = SharedService.contentIdDataUsingTitle(name);
+    if (data) {
+      let status = this.introLogs.filter(a => a.dashboardID.toString() == data.id.toString());
+      if (status.length > 0 && status[0].Visited == 0) {
+        return {
+          status: true,
+          data: data
+        };
+      }
+      return {
+        status: false,
+        data: null
+      };
+    }
+    return {
+      status: false,
+      data: null
+    };
   }
 
   loginadult(res) {

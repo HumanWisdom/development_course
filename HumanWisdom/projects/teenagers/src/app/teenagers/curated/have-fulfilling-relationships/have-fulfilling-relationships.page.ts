@@ -509,4 +509,8 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+     routeTointroDash(){
+        this.router.navigate(['/teenagers/dashboard/relationships']);
+      }
 }

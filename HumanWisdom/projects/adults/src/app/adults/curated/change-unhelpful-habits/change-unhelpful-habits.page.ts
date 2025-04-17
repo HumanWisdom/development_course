@@ -401,4 +401,8 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
       this.enableblogViewMore = true
     }
   }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/habits-and-addiction']);
+  }
 }

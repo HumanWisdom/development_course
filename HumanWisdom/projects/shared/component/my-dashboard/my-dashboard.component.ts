@@ -8,6 +8,7 @@ import { ProgramType } from '../../models/program-model';
 import { NavigationService } from '../../services/navigation.service';
 import { CommonService } from '../../services/common.service';
 import { SectionCard } from '../section-card/section-card.page';
+import { LogEventService } from '../../services/log-event.service';
 
 
 
@@ -22,7 +23,9 @@ export class MyDashboardComponent implements OnInit {
   isAdults:boolean = true;
   urlT:any
   userId:any
-  userName=localStorage.getItem("userName")
+  // userName=localStorage.getItem("userName")
+  userName=localStorage.getItem("name")
+
   cardList:SectionCard[] = [];
   groupedCardList=[]
   introTitle:string = '';
@@ -31,7 +34,7 @@ export class MyDashboardComponent implements OnInit {
     { section_name: "Skills", priority: 2,data: new Array<any>() },
     { section_name: "Community", priority: 3,data: new Array<any>()  }
   ];
-  constructor(private router: Router,
+  constructor(private router: Router,public logeventservice: LogEventService, 
     private service:CommonService,private ngNavigatorShareService: NgNavigatorShareService,
     private navigationService: NavigationService) {
       SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
@@ -67,6 +70,8 @@ export class MyDashboardComponent implements OnInit {
    } 
 
    routeToDashboard(){
+
+    this.logeventservice.logEvent('click_Proceed_to_home' );
     this.router.navigate([SharedService.getDashboardUrls()]);
    }
 

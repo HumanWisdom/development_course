@@ -57,7 +57,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                    <div class="col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                       <div class="row">
                         <h4 class="mtb0px fs_18px fw_600  lh_28px fc_ffffff">
                           {{resumeLastvisited[0]['ModuleName']}}
@@ -76,7 +76,7 @@
                   </div> 
                     
 
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                     </div>
 
@@ -133,8 +133,8 @@
 
             <!-- daily practice -->
             <!-- accordion -->
-            <div class="row accordion_row">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <div class="row accordion_row bg_profile_t">
+              <div class="col-md-12 col-sm-12 col-xs-12 mt20px p0">
                 <div class="panel-group dpanelgroup tour_dp" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
                     <div class="panel-heading">
@@ -150,7 +150,7 @@
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                 <a>
 
-                                  <h2  class="fw_500 fs_12px lh_140p fc_ffffff mtb0px tright">
+                                  <h2  class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
@@ -168,7 +168,7 @@
                       <div class="panel-body">
 
                         <div class="row">
-                          <div class="odiv odiv_mdp">
+                          <div class="odiv odiv_mdp pl0px">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
@@ -276,6 +276,24 @@
               </div>
             </div>
             <!-- /hr -->
+            <!-- Find Inspiration -->
+
+            <div class="row  p-bt">
+              <h2 class="inspiration-title">Find Inspiration
+              </h2>
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 odiv p-section">
+                <app-find-inspiration></app-find-inspiration>
+              
+                </div>
+               
+          </div>
+            <!-- /hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- Find Inspiration -->
 
             <!-- short videos -->
             <!-- accordion -->
@@ -517,7 +535,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="">
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                  {{(name?.trim() === 'guest' || name?.trim() === '') ? 'Featured' : 'For ' + name}}
+                                  {{(name?.toLowerCase().trim() === 'guest' || name?.trim() === '') ? 'For You' : 'For ' + name}}
                                 </h2>
                               </div>
                             </div>
@@ -533,8 +551,8 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <a routerLink="/teenagers/intro-happierme">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_ad_intro">
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ad_intro.svg" class="img-responsive w100">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ad_intro.svg" class="img-responsive ">
                                 </div>
 
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
@@ -543,7 +561,7 @@
                                   </h4>
                                 </div>
 
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                                   <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                 </div>
                               </div>
@@ -956,118 +974,14 @@
             </div> -->
             <!-- /accordion -->
 
-            <!-- v1.1 -->
-            <div class="row accordion_row">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="panel-group dpanelgroup" id="accordion">
-                  <div class="panel panel-default dpanel dpanel_01">
-                    <div class="panel-heading">
-                      <h4 class="panel-title dpaneltitle">
-                        <div aria-expanded="true" (click)="DashboardLogevent('', '', 'click_daily_pratice')">
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                  My progress
-                                </h2>
-                              </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
-                                <a (click)="viewDetails()">
-                                  <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
-                                    View details
-                                  </h2>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </h4>
-                    </div>
-                    <div id="ca_mdp" class="panel-collapse collapse in">
-                      <div class="panel-body">
-
-                        <div class="row" >
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 td_points_box">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_points.svg" class="img-responsive">
-                              </div>
-
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
-                                  <!-- 5,499 -->
-                                  {{loginResponse.Points}}
-                                </h4>
-                              </div>
-
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                  Points
-                                </h4>
-                              </div>
-                            </div>
-
-                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 td_points_box ml_10px">
-                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ee9596">
-                                    <!-- 74% -->
-                                    {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
-                                  </h4>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                    Wellness score
-                                  </h4>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
-                                  <a class="" (click)="survey()">
-                                    <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ee9596 flex_ai">
-                                      Take the survey
-                                      <span class="ml10px">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_arrow_right.svg" class="img-responsive">
-                                      </span>
-                                    </h4>
-                                  </a>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_smiley.svg" class="img-responsive">
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /v1.1 -->
-            <!-- /my progress -->
-
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
+        
 
             <!-- subscribe to premium -->
-            <div class="row">
+        <!--     <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <app-subscribe-to-premium-block></app-subscribe-to-premium-block>
               </div>
-            </div>
+            </div> -->
             <!-- /subscribe to premium -->
 
             <!-- what people are saying -->
@@ -1075,7 +989,9 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
                   <h2 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
-                    Testimonials
+                    <!-- Testimonials -->
+                    Success stories
+
                   </h2>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
@@ -1338,6 +1254,40 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a (click)="readMore('Sree')">
                         <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_5 ttuppercase mt20px mb0px tright">
+                          READ MORE
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_rahul_bagale.webp" alt="" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <div class="row pt1">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_400 fs_15px lh_140p fc_e58d82 mt10px mb5px ">
+                        Dr. Rahul Bagale
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h6 class="fw_400 fs_12px lh_140p fc_e58d82 ttuppercase mt0px mb20px">
+                        Psychiatrist, Symbiosis University
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <p class="fw_400 fs_15px lh_140p fc_ffffff_0_7 italic tleft mb0px ttxt">
+                        The HappierMe App has been introduced to Symbiosis University students. I think it is an absolute necessity to provide this amazing platform to students in Universities worldwide, to help them develop their emotional intelligence, take charge of their own wellbeing and succeed in life in every way.                      </p>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a (click)="readMore('Bagale')">
+                        <h4 class="fw_600 fs_12px lh_140p fc_ffffff_0_7 ttuppercase mt20px mb0px tright">
                           READ MORE
                         </h4>
                       </a>

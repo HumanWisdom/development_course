@@ -15,9 +15,9 @@ import { ProgramType } from '../../models/program-model';
 })
 export class StartYourFreeTrialPage implements OnInit {
   isAdults = false;
-constructor(private router: Router,private location: Location, private servive: AdultsService,
- public logeventservice: LogEventService,
-    private navigateService:NavigationService) { }
+  constructor(private router: Router, private location: Location, private servive: AdultsService,
+    public logeventservice: LogEventService,
+    private navigateService: NavigationService) { }
 
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -28,33 +28,35 @@ constructor(private router: Router,private location: Location, private servive: 
     this.logeventservice.logEvent('view_start_trial');
   }
 
-  tryFreeSubscribe(){
+  tryFreeSubscribe() {
     this.logeventservice.logEvent('click_start_trial');
+    if (!(SharedService.isIOSApp())) {
       if (this.CheckIfUserIsLoggedIn()) {
         this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
       } else {
-        SharedService.UrlToRedirect=`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+        SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
         this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
       }
+
+    }
   }
 
-  back(){
+  back() {
     this.logeventservice.logEvent('click_back');
     let curr = this.servive.previousUrl;
-    let loggedin = localStorage.getItem("isloggedin")
-    if((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))){
-      window.history.go(-2)
-    }else {
-
-
     var url = this.navigateService.goBack();
-
-
-      if(url==null ||(url !=null &&  url.includes("start-your-free-trial"))){
+    if (curr == "" || curr == null) {
+      curr = url;
+    }
+    let loggedin = localStorage.getItem("isloggedin")
+    if ((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))) {
+      window.history.go(-2)
+    } else {
+      if (url == null || (url != null && url.includes("start-your-free-trial"))) {
         this.router.navigateByUrl(SharedService.getDashboardUrls());
       }
       else
-      this.router.navigateByUrl(url);
+        this.router.navigateByUrl(url);
     }
   }
 
@@ -73,16 +75,16 @@ constructor(private router: Router,private location: Location, private servive: 
   getEnableBanner() {
     return SharedService.enablebanner;
   }
-  
 
-  routeToDashboard(){
+
+  routeToDashboard() {
     this.logeventservice.logEvent('click_will_do_later');
 
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 
-  routeToTestimonial(){
-    
+  routeToTestimonial() {
+
     this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonials`)
   }
 }

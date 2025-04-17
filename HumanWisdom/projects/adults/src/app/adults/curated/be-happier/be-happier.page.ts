@@ -429,4 +429,9 @@ export class BeHappierPage implements OnInit {
   // audioevent(audioContent) {
   //   this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
+
+  routeTointroDash(){
+    this.router.navigate(['/adults/dashboard/be-happier']);
+  }
+
 }

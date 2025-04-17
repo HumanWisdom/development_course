@@ -1,5 +1,5 @@
 import { AdultsService } from './../../../adults/src/app/adults/adults.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { SharedService } from "../../services/shared.service";
 import { LogEventService } from '../../services/log-event.service';
@@ -10,7 +10,11 @@ import { ProgramType } from "../../models/program-model";
   templateUrl: './section-card.page.html'
 })
 export class SectionCard implements OnInit {
-
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updateStyles();
+  }
+  leftSpacing: string = '18px';
   @Input() section: SectionCard;
 
   constructor(public service: AdultsService, 
@@ -19,15 +23,29 @@ export class SectionCard implements OnInit {
   }
 
   ngOnInit() {
-
+    this.updateStyles();
   }
 
   rouetToPath(section){
     this.logeventservice.logEvent('click_' + section.title );
-    this.router.navigate([section.path]); 
+    this.router.navigateByUrl(section.path); 
 
   }
+  updateStyles() {
+    if (window.innerWidth <= 767) {
+      this.leftSpacing = '2%'; // Adjust for mobile
+    } else {
+      this.leftSpacing = '2%'; // Default for larger screens
+    }
+  }
 
+  getStyles() {
+    return { left: this.leftSpacing };
+  }
+
+  getForumClass(){
+    return this.section.title.length>40 ? '':'mt10px mb5px';
+  }
 }
 
 export interface SectionCard {

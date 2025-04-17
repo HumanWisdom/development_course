@@ -101,6 +101,9 @@ import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.pag
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { SectionCard } from './component/section-card/section-card.page';
 import { MyDashboardComponent } from './component/my-dashboard/my-dashboard.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { HappierMeQuotationPage } from './component/happierme-quotation/happierme-quotation.page';
+import { FindInspiration } from './component/find-inspiration/find-inspiration.component';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -196,7 +199,10 @@ export class MyHammerConfig extends HammerGestureConfig {
     ChangePasswordPage,
     SetPasswordPage,
     SectionCard,
-    MyDashboardComponent
+    MyDashboardComponent,
+    DashboardComponent,
+    HappierMeQuotationPage,
+    FindInspiration
   ],
   imports: [
     CommonModule,
@@ -313,7 +319,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     ChangePasswordPage,
     SetPasswordPage,
     SectionCard,
-    MyDashboardComponent
+    MyDashboardComponent,
+    FindInspiration
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },

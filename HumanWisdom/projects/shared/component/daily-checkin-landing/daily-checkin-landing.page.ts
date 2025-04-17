@@ -18,19 +18,19 @@ export class DailyCheckInLandingPage implements OnInit {
   isRoutedFromLogin: boolean = false;
   userName: string = ''; // Declare userName variable
   loginResponse: any; // Declare loginResponse variable
-   public video = 3
-   public audio = 4
-   public password: any
-   public saveUsername = false
-   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-   public text = 2
-   public question = 6
-   public reflection = 5
-   public feedbackSurvey = 7
-   public moduleId = 7
-   public bookmarks = []
-   public userId = 100;
+  public video = 3
+  public audio = 4
+  public password: any
+  public saveUsername = false
+  public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public text = 2
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public moduleId = 7
+  public bookmarks = []
+  public userId = 100;
   constructor(
     public commonService: CommonService,
     public router: Router,
@@ -45,14 +45,21 @@ export class DailyCheckInLandingPage implements OnInit {
     let authtoken;
     this.activatedRoute.queryParams.subscribe(params => {
       authtoken = params?.authtoken;
+     
     });
     let app = localStorage.getItem("fromapp");
-    if (authtoken && app && app === 'T') {
+    if (authtoken) {
+
+      localStorage.setItem("token", authtoken);
+      sessionStorage.setItem("token", authtoken);      
       localStorage.setItem('socialLogin', 'T');
       localStorage.setItem('acceptcookie', 'T');
       this.commonService.verifytoken(authtoken).subscribe((res) => {
         if (res) {
           this.isRoutedFromLogin = true;
+          SharedService.isRoutedFromLogin = this.isRoutedFromLogin;
+          this.isFirstLogin = SharedService.isRoutedFromLogin;
+
           localStorage.setItem("email", res['Email']);
           localStorage.setItem("name", res['Name']);
           localStorage.setItem("userId", res['UserId']);
@@ -93,8 +100,9 @@ export class DailyCheckInLandingPage implements OnInit {
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
     let NoOfVisits = this.loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits)
-    this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
-    SharedService.isRoutedFromLogin =  this.isRoutedFromLogin; 
+    //this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
+    this.isRoutedFromLogin =true;
+    SharedService.isRoutedFromLogin = this.isRoutedFromLogin;
 
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"));
@@ -103,23 +111,22 @@ export class DailyCheckInLandingPage implements OnInit {
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
       this.userName = JSON.parse(sessionStorage.getItem("userName"));
     }
-//    this.getBookmarks();
+    //    this.getBookmarks();
     if (res.UserId == 0) {
     } else {
       this.userId = res.UserId;
       this.userName = res.Name;
+      localStorage.setItem("isloggedin",'T');
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("token", JSON.stringify(res.access_token));
-      if (this.saveUsername == true) {
-        localStorage.setItem("userId", JSON.stringify(this.userId));
-        localStorage.setItem("userEmail", JSON.stringify(res.Email));
-        localStorage.setItem("userName", JSON.stringify(this.userName));
-      } else {
-        sessionStorage.setItem("userId", JSON.stringify(this.userId));
-        sessionStorage.setItem("userEmail", JSON.stringify(res.Email));
-        sessionStorage.setItem("userName", JSON.stringify(this.userName));
-      }
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("userEmail", JSON.stringify(res.Email));
+      localStorage.setItem("userName", JSON.stringify(this.userName));
+      sessionStorage.setItem("userId", JSON.stringify(this.userId));
+      sessionStorage.setItem("userEmail", JSON.stringify(res.Email));
+      sessionStorage.setItem("userName", JSON.stringify(this.userName));
+      localStorage.setItem('guest', 'F');
     }
   }
 

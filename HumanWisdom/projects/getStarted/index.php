@@ -4,15 +4,15 @@
   <head>
     <title>HappierMe: For Teens & Adults</title>
     <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
-    <meta property="description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
+    <meta property="description" content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
     <meta name="keywords" content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
     <meta property="og:title" content="HappierMe: For Teens & Adults">
-    <meta property="og:description" content="HappierMe is an emotional intelligence app for teens and adults, created to help people deal with mental health, relationships, friendships, addiction, learn skills needed to succeed in life and improve your overall well-being.">
+    <meta property="og:description" content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
     <meta property="og:site_name" content="HappierMe">
     <meta property="og:url" content="https://happierme.app">
      <meta property="og:type" content="">
-     <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/landing.webp>
-     <!-- <meta property="og:image" content=https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp>
+     <meta property="og:image" content=https://d1tenzemoxuh75.cloudfront.net/website/webp/landing.webp>
+     <!-- <meta property="og:image" content=https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp>
      <meta property="og:image" content="">
      <meta property="og:image" content="">
      <meta property="og:image" content=""> -->
@@ -67,6 +67,8 @@
     <?php include('./includes/header.php'); ?>
     <!-- /header -->
 
+    
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -77,79 +79,32 @@
 
     
     <section class="hpt120px">
-
-    <!-- <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="mask flex-center">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-7 col-12 order-md-1 order-2">
-              <h4>Present your <br>
-                awesome product</h4>
-              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-              <a href="#">BUY NOW</a> </div>
-            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto" alt="slide"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="mask flex-center">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-7 col-12 order-md-1 order-2">
-              <h4>Present your <br>
-                awesome product</h4>
-              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-              <a href="#">BUY NOW</a> </div>
-            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto" alt="slide"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="mask flex-center">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-7 col-12 order-md-1 order-2">
-              <h4>Present your <br>
-                awesome product</h4>
-              <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-              <a href="#">BUY NOW</a> </div>
-            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div> -->
-<!--slide end--> 
+       <!-- header -->
+      <!-- header -->
+      <?php include('./includes/slider-index.php'); ?>
+          <!-- /header -->
 
 
-      <div class="row center_flex web_home_div">
+      <!-- <div class="row center_flex web_home_div">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
 
          
          
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100"> -->
             <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/launch.mp4#t=1"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video> -->
             <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
-              <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+              <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+              <!-- <img style="width:100%;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
-             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
@@ -196,7 +151,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -209,7 +164,7 @@
             <div class="row mtb5px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -223,7 +178,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
                 </div>
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
@@ -259,11 +214,11 @@
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block ta_lc">
                   Start your free trial now. Download the app on
                   <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore" loading=lazy>
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore" loading=lazy>
                   </a>
                   and
                   <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore" loading=lazy>
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore" loading=lazy>
                   </a>
                 </h3>
               </div>
@@ -272,7 +227,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <main id="main">
      
@@ -299,7 +254,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/mental_health.webp" class="img-responsive img_aspects" alt="Mental Health" loading=lazy>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mental_health.webp" class="img-responsive img_aspects" alt="Mental Health" loading=lazy>
                 </div>
               </div>
 
@@ -333,7 +288,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happier_relationships.webp" class="img-responsive img_aspects" alt="Happier relationships" loading=lazy>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happier_relationships.webp" class="img-responsive img_aspects" alt="Happier relationships" loading=lazy>
                 </div>
               </div>
 
@@ -367,7 +322,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_leadership.webp" class="img-responsive img_aspects" alt="Work & Leadership" loading=lazy>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_leadership.webp" class="img-responsive img_aspects" alt="Work & Leadership" loading=lazy>
                 </div>
               </div>
 
@@ -458,10 +413,10 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
             <!-- <video id="homeVideo" controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/intro_happierme.webp"
+              poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/adults_intro.mp4"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
                 type="video/mp4">
             </video> -->
 
@@ -493,12 +448,12 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
 
             
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Design.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Design.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/circle_mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/circle_mobile.svg" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
             
-            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+            <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -513,7 +468,7 @@
               Address the root cause of problems for lasting change.
               </h2>
 
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
+              <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 
                <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
               <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
@@ -529,7 +484,7 @@
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
                     </h4> -->
                   </a>
                 </div>
@@ -571,7 +526,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
@@ -598,12 +553,70 @@
                     </div>
                   </div>
                 </a>
-              
                 <a class="item" data-aos="fade-up" data-aos-delay="200">
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dan_reidenberg.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_rahul_bagale.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                      </div>
+
+                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        The HappierMe App has been introduced to Symbiosis University students. I think it is an absolute necessity to provide this amazing platform to students in Universities worldwide, to help them take charge of their own wellbeing and succeed in life.</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Dr Rahul Bagale,
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                         Psychiatrist, Symbiosis University.   India                   </p>
+                   
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                 <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                      </div>
+
+                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
+                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime.</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Leah Christensen, 
+                        </h5>
+                        <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic";>
+                        Student. USA.
+                      </p>
+                   
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="item" data-aos="fade-up" data-aos-delay="200">
+                 <div class="div_testimonials">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dan_reidenberg.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -634,7 +647,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -664,7 +677,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tinamarie_rodriguez.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tinamarie_rodriguez.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -694,7 +707,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
                       </div>
                     </div>
 
@@ -726,7 +739,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
                       </div>
                     </div>
 
@@ -756,7 +769,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" class="img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" class="img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
                       </div>
                     </div>
 
@@ -787,7 +800,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_roland_yeo.webp" class="img-responsive width_unseti" alt="Roland Yeo" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_roland_yeo.webp" class="img-responsive width_unseti" alt="Roland Yeo" loading=lazy> 
                       </div>
                     </div>
 
@@ -817,7 +830,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
 
                       </div>
                     </div>
@@ -847,7 +860,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="Adam Beagley" loading=lazy> 
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="Adam Beagley" loading=lazy> 
 
                       </div>
                     </div>
@@ -877,7 +890,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_samaira_giri.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
@@ -907,7 +920,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_swati_nair.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_swati_nair.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -936,7 +949,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -977,7 +990,7 @@
                   <div class="owl-nav">
                     <a class="sap" href="https://happierme.app/adults/testimonials">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                        View all testimonials
+                      View all Success stories
                       </h4>
                     </a>
                   </div>
@@ -1003,9 +1016,9 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/modules.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/modules_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
         </div>
       </section> -->
@@ -1031,7 +1044,7 @@
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_work.webp" class="img-responsive" alt="Work" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_work.webp" class="img-responsive" alt="Work" loading=lazy>
                     </div>
                   </div>
 
@@ -1054,7 +1067,7 @@
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_education.webp" class="img-responsive" alt="Education" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_education.webp" class="img-responsive" alt="Education" loading=lazy>
                     </div>
                   </div>
 
@@ -1076,7 +1089,7 @@
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tile_healthcare.webp" class="img-responsive" alt="Healthcare" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_healthcare.webp" class="img-responsive" alt="Healthcare" loading=lazy>
                     </div>
                   </div>
 
@@ -1111,9 +1124,9 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_user+.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_user+.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
         </div>
       </section>
@@ -1126,7 +1139,7 @@
         <div class="row center_flex">
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 flex_block land-happierMe-gap element">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-happierMe-section" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app_01.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -1140,7 +1153,7 @@
                 HappierMe for Teenagers
               </h2>
 
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy>
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy>
 
               <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
                 Guiding teenagers to flourish in life
@@ -1156,7 +1169,7 @@
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
                     </h4>
                   </a>
                 </div>
@@ -1321,7 +1334,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/1.webp" class="img-responsive" alt="Carolyn King" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/1.webp" class="img-responsive" alt="Carolyn King" loading=lazy>
                       </div>
                     </div>
 
@@ -1347,7 +1360,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/2.webp" class="img-responsive" alt="Deyvis  Bebicaci" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/2.webp" class="img-responsive" alt="Deyvis  Bebicaci" loading=lazy>
                       </div>
                     </div>
 
@@ -1373,7 +1386,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/10.webp" class="img-responsive" alt="Saakshi  Singla" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/10.webp" class="img-responsive" alt="Saakshi  Singla" loading=lazy>
                       </div>
                     </div>
 
@@ -1399,7 +1412,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/3.webp" class="img-responsive" alt="Dominic  Curran" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/3.webp" class="img-responsive" alt="Dominic  Curran" loading=lazy>
                       </div>
                     </div>
 
@@ -1425,7 +1438,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/4.webp" class="img-responsive" alt="Gopalan  Nair" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/4.webp" class="img-responsive" alt="Gopalan  Nair" loading=lazy>
                       </div>
                     </div>
 
@@ -1451,7 +1464,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/5.webp" class="img-responsive" alt="Jondi  Whitis" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/5.webp" class="img-responsive" alt="Jondi  Whitis" loading=lazy>
                       </div>
                     </div>
 
@@ -1477,7 +1490,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/11.webp" class="img-responsive" alt="Sam  Dossa" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/11.webp" class="img-responsive" alt="Sam  Dossa" loading=lazy>
                       </div>
                     </div>
 
@@ -1503,7 +1516,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/6.webp" class="img-responsive" alt="Maria  Vieira" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/6.webp" class="img-responsive" alt="Maria  Vieira" loading=lazy>
                       </div>
                     </div>
 
@@ -1529,7 +1542,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/7.webp" class="img-responsive" alt="Natasha  Zervaas" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/7.webp" class="img-responsive" alt="Natasha  Zervaas" loading=lazy>
                       </div>
                     </div>
 
@@ -1555,7 +1568,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/8.webp" class="img-responsive" alt="Robin  Johnson" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/8.webp" class="img-responsive" alt="Robin  Johnson" loading=lazy>
                       </div>
                     </div>
 
@@ -1581,7 +1594,7 @@
                   <div class="div_coaches">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/9.webp" class="img-responsive" alt="Roland  Yeo" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/9.webp" class="img-responsive" alt="Roland  Yeo" loading=lazy>
                       </div>
                     </div>
 
@@ -1683,13 +1696,13 @@
 
                     
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                  <!-- <video width="100%" playsinline autoplay loop muted id="myVideo"poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+                  <!-- <video width="100%" playsinline autoplay loop muted id="myVideo"poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp">
         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/webm; codecs="vp8.0, vorbis"'>
         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/ogg; codecs="theora, vorbis"'>
         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
     </video> -->
                   
-                   <!-- <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp">
+                   <!-- <video width="100%" height="auto" controls autoplay loop poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp">
     <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4" />
     <source src="how-it-works-short.webm" type="video/webm" />
     Your browser does not support the video tag.
@@ -1698,10 +1711,10 @@
                   <!-- <video width="320" height="240" controls>
 
   <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-  <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" type="video/ogg">
+  <source src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp" type="video/ogg">
   
 </video> -->
-                     <video controls playinline poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
+                     <video controls playinline poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp" controlsList="nodownload" class="cvideo">
                         <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                       </video> 
                     </div>
@@ -1731,7 +1744,7 @@
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  mtb20px flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -1774,7 +1787,7 @@
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb20px flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -1802,7 +1815,7 @@
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -1838,7 +1851,7 @@
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -1866,7 +1879,7 @@
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/tools_survey.webp" class="img-responsive" alt="Survey" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_survey.webp" class="img-responsive" alt="Survey" loading=lazy>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
@@ -2979,6 +2992,15 @@
         </div>
         <!-- /mobile -->
 
+        <div class="video-popup">
+    <div class="popup-bg"></div>
+      <div class="popup-content">
+<!--         <p class="popup-title">Youtube</p> -->
+        <iframe src="https://youtube.com/embed/gQojMIhELvM?autoplay=0" class="video"></iframe>
+        <button class="close-btn">close</button>
+      </div>
+  </div>
+
       </section>
       <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> News popup</button>
   
@@ -3012,8 +3034,8 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
                         </div>
                         <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
@@ -3044,7 +3066,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                       <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
                                       <div class="fc_icons">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
+                                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
                                       </div>
                                     </div>
                                   </div>
@@ -3054,7 +3076,7 @@
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
                                     <div class="fc_icons">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
+                                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
                                     </div>
                                   </div>
                                 </div>
@@ -3080,3 +3102,5 @@
         </div>
       </div>
 </html>
+
+

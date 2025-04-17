@@ -15261,7 +15261,7 @@ input[type="number"] {
 .dpanel>.panel-heading
 {
   /* background-color: white; */
-  background-color: #292D56;
+  background-color: transparent;
   border-color: transparent;
 }
 
@@ -32776,7 +32776,7 @@ body *
 
 .odiv_mdp > [class^="col-"]
 {
-  width: 30%;
+  width:23%;
 /*   margin: 0 13px 0 0;
   padding: 0; */
   text-align: center;
@@ -32987,6 +32987,23 @@ body *
   left: 0;
   margin: 0 auto;
 }
+
+.tn_title_back_change_topic
+{
+  height: 80px;
+  background: #292D56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
 
 .div_fbn a .row
 {
@@ -34329,10 +34346,10 @@ label
 /* forum post anonymously checkbox */
 label.chkb_post_anonymously > input[type="checkbox"] + *::before
 {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  min-height: 20px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
   border-radius: 4px;
   /* background: #E58D82;
   border: 0; */
@@ -37401,11 +37418,16 @@ a.fc_e58d82:hover
 
 .cvideo_coach
 {
-  width: 100%;
+/*   width: 100%;
   max-height: 100%;
   border-radius: 12px;
   height: 190px;
+  background: black; */
+  width:65%;
+  border-radius: 12px;
+  height: auto;
   background: black;
+  object-fit: cover;
 }
 
 .v3_ta_coach 

@@ -21,15 +21,15 @@
   <meta name="twitter:title" content="HumanWisdom: Mental Well-being">
   <meta name="twitter:description" property="twitter:description"
     content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom">
-  <meta name="twitter:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg">
+  <meta name="twitter:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg">
 
 
     <meta property="og:title" id="tag1" content="HappierMe: Master your mind" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://happierme.app/" />
   <meta property="og:description" content="Manage your emotions. Be happy." />
-  <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
- <meta property="og:image:alt"  content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+  <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg" />
+ <meta property="og:image:alt"  content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg" />
 
 
   <meta name="title" property="title" content="HumanWisdom: Mental Well-being">
@@ -42,7 +42,7 @@
   <meta name="google-site-verification" content="buM8gRBCbgoR1Mzr06i_CWNtSYhwRsmPTow7XhIDCYk" />
   <link rel="apple-touch-startup-image" href="assets/images/splash.jpg" />
   <link rel="icon" type="image/x-icon"
-    href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_transparent.png" />
+    href="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <script src="https://accounts.google.com/gsi/client" async></script>
@@ -413,6 +413,15 @@
         }
         if (window.AndroidHandler) {
           window.AndroidHandler.subscribe();
+        }
+      });
+
+      $(document).on('click', '#liProgSwap', function () {
+        if (window.webkit) {
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("ProgSwap");
+        }
+        if (window.AndroidHandler) {
+          window.AndroidHandler.progSwap();
         }
       });
 
