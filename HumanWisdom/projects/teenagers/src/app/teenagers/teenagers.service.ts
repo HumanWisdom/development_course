@@ -373,6 +373,10 @@ export class TeenagersService {
       return this.http.get(this.path + `/GetPodcastsListing/${SharedService.ProgramId}/${data}`)
     }
 
+    GetWisdomShortsListing(data): Observable<any> {
+      return this.http.get(this.path + `/GetWisdomShortsListing/${SharedService.ProgramId}/${data}`)
+    }
+
 
   getTeenagerTalk(): Observable<any> {
     return this.http.get(this.path + '/GetTeenTalks')
