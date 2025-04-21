@@ -24251,6 +24251,19 @@ a
   bottom: 0;
 }
 
+#accordion_make .panel-title > a:after
+{
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_white.svg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  bottom: 0;
+}
+#accordion_make .panel-title > a[aria-expanded="true"]:after {
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_white.svg);
+}
+
 #accordion_faq .panel-title > a[aria-expanded="true"]:after {
   content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_peach.svg);
 }
@@ -33154,32 +33167,32 @@ body *
 
 .div_fi_a .col-lg-6:nth-child(1) button
 {
-  background: #834B66;
+  background: #191d3a;
 }
 
 .div_fi_a .col-lg-6:nth-child(2) button
 {
-  background: #CB6171;
+  background: #191d3a;
 }
 
 .div_fi_a .col-lg-6:nth-child(3) button
 {
-  background: #E58D82;
+  background: #191d3a;
 }
 
 .div_fi_a .col-lg-6:nth-child(4) button
 {
-  background: #834B66;
+  background: #191d3a;
 }
 
 .div_fi_a .col-lg-6:nth-child(5) button
 {
-  background: #CB6171;
+  background: #191d3a;
 }
 
 .div_fi_a .col-lg-6:nth-child(6) button
 {
-  background: #E58D82;
+  background: #191d3a;
 }
 
 .div_fi_b button
