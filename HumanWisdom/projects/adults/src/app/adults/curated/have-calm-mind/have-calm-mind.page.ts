@@ -39,6 +39,7 @@ export class HaveCalmMindPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
+  wisdomShortsDynamic: any;
 
   constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title,
     private navigationService:NavigationService) 
@@ -49,6 +50,12 @@ export class HaveCalmMindPage implements OnInit {
       this.service.GetPodcastsListing('7').subscribe((res) => {
         if (res) {
           this.mediaUrl = res
+        }
+      })
+
+      this.service.GetWisdomShortsListing('7').subscribe((res) => {
+        if (res) {
+          this.wisdomShortsDynamic = res
         }
       })
   }
@@ -97,7 +104,7 @@ export class HaveCalmMindPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate([link])
     }
   }
 

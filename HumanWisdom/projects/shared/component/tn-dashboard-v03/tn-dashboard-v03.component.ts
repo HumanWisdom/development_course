@@ -10,6 +10,8 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService, UrlConstant } from '../../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
 import { ProgramType } from '../../models/program-model';
+import { LogEventService } from '../../services/log-event.service';
+
 @Component({
   selector: 'app-tn-dashboard-v03',
   templateUrl: './tn-dashboard-v03.component.html',
@@ -46,7 +48,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   disableClick = false;
   isAdults = false;
 
-  constructor(private router: Router, public Onboardingservice: OnboardingService, public platform: Platform) {
+  constructor(private router: Router, public Onboardingservice: OnboardingService,public logeventservice: LogEventService, public platform: Platform) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -89,6 +91,8 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
       if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
         this.enableHamburger = changes.enableHamburger.currentValue;
+        this.logeventservice.logEvent("click_Hamburger_Menu");
+
       }
     }
 
@@ -204,6 +208,8 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
 
   Subscribe() {
     // if (!(SharedService.isIOSApp())) {
+      this.logeventservice.logEvent("click_Free_Trial");
+
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.startFreeTrial)]);
     // }
   }
@@ -220,6 +226,8 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     }
   }
   goToNotification() {
+    this.logeventservice.logEvent("click_Notifications");
+
     this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.notification)]);
   }
 

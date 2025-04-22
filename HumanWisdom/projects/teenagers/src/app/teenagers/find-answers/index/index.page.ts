@@ -2,6 +2,9 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
+import { LogarithmicScale } from 'chart.js';
+
 
 @Component({
   selector: 'app-index',
@@ -14,7 +17,11 @@ export class IndexPage implements OnInit {
 
   defaultUrl = 'how-can-i';
   activeClass = 'active';
-  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute,private navigationService:NavigationService) {
+  constructor(private location: Location, 
+    private router:Router,
+    private activatedRoute: ActivatedRoute,
+    private logeventservice:LogEventService,
+    private navigationService:NavigationService) {
    var data = this.activatedRoute.snapshot.paramMap.get('url');
     if(data != null){
       this.defaultUrl= data;
@@ -50,6 +57,8 @@ export class IndexPage implements OnInit {
   }
 
   routeToTab(param){
+    this.logeventservice.logEvent("click"+param);
+
     this.defaultUrl = param;
     localStorage.setItem('lastRoute',param);
     this.changeURLParams(param);
