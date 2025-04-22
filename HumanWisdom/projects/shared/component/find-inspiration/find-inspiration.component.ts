@@ -2,6 +2,8 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../../shared/services/shared.service';
+import { LogEventService } from '../../services/log-event.service';
+
 
 @Component({
   selector: 'app-find-inspiration',
@@ -96,9 +98,10 @@ export class FindInspiration  {
   ];
 
 
-  constructor(private router: Router, private location: Location) {}
+  constructor(private router: Router, private location: Location,public logeventservice: LogEventService) {}
   
   routeTo(item: any) {
+    this.logeventservice.logEvent("click_FI_"+item);
     this.router.navigate([SharedService.getprogramName()+'/' +item]);
   }
 
