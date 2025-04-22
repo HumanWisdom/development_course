@@ -35,7 +35,7 @@
               </h4>
             </a>
 
-            <a href="../pages/partnership.php">
+            <a id ="partnershipfooter">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Partnership Program
               </h4>

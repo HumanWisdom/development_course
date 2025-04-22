@@ -237,7 +237,7 @@
    
 
       <!-- aspects -->
-      <section>
+      <section class="support_section">
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -973,22 +973,12 @@
                     </div>
                   </div>
                 </a>
-
-              
-
-               
-
-             
-
-               
-
-                
               </div>
 
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/testimonials">
+                    <a class="sap" id="viewallsuccessstories">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       View all Success stories
                       </h4>
@@ -1165,7 +1155,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" aria-label="Explore the teenagers app" class="">
+                <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -1302,7 +1292,7 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="startyourfreetrial">
                   Start your free trial
                 </button>
               </div>
@@ -1617,10 +1607,10 @@
                 </a>
               </div>
 
-              <div class="owl-theme">
+              <div class="owl-theme" >
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/coach">
+                    <a class="sap" id="view-all-coaches">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all coaches
                       </h4>
