@@ -36,23 +36,30 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
+  wisdomShortsDynamic: any;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
-    private navigationService:NavigationService,
+    private navigationService: NavigationService,
     private meta: Meta, private title: Title) {
-      this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
-      this.service.GetPodcastsListing('5').subscribe((res) => {
-        if (res) {
-          this.mediaUrl = res
-        }
-      })
-    }
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    this.service.GetPodcastsListing('5').subscribe((res) => {
+      if (res) {
+        this.mediaUrl = res
+      }
+    })
+
+    this.service.GetWisdomShortsListing('5').subscribe((res) => {
+      if (res) {
+        this.wisdomShortsDynamic = res
+      }
+    })
+  }
 
   ngOnInit() {
     // localStorage.setItem("NaviagtedFrom", '/adults/curated/change-unhelpful-habits');
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-    
+
     this.title.setTitle('Change Unhelpful Habits: Transform Your Life with Positive Behavior Change')
     this.meta.updateTag({ property: 'title', content: 'Change Unhelpful Habits: Transform Your Life with Positive Behavior Change' })
     this.meta.updateTag({ property: 'description', content: 'Ready to overcome negative habits and transform your life? Discover effective strategies to break bad habits and develop healthy ones with our curated collection of self-improvement tips and mindset shift techniques.' })
@@ -75,7 +82,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
   }
@@ -86,29 +93,29 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
-    }else{
-       this.router.navigate(['/adults/curated/youtubelink', link])
+    } else {
+      this.router.navigate(['/adults/curated/youtubelink', link])
     }
   }
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
-    }else{
-     this.router.navigate(['/adults/wisdom-shorts', link])
+    } else {
+      this.router.navigate([link])
     }
   }
 
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
-    }else{
+    } else {
 
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    let url = audioLink.replaceAll(':', '_');
-    url = encodeURIComponent(url.replaceAll('/', '~'));
-    this.router.navigate(['/adults/guided-meditation/audiopage/', url, title, id,'Audio'])
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      let url = audioLink.replaceAll(':', '_');
+      url = encodeURIComponent(url.replaceAll('/', '~'));
+      this.router.navigate(['/adults/guided-meditation/audiopage/', url, title, id, 'Audio'])
     }
   }
 
@@ -134,171 +141,171 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
 
         })
   }
-/* 
-  routeAddiction(cont: any = 1) {
-    var addictionResume
-    localStorage.setItem("moduleId", JSON.stringify(45))
-    this.service.clickModule(45, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        addictionResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("addictionResume", addictionResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/habit-addiction/${addictionResume}`])
+  /* 
+    routeAddiction(cont: any = 1) {
+      var addictionResume
+      localStorage.setItem("moduleId", JSON.stringify(45))
+      this.service.clickModule(45, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          addictionResume = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
           }
-          else
-            this.router.navigate([`/adults/habit-addiction/s45001`])
-        })
-  }
-
-  routePleasure(cont: any = 1) {
-    var pleasureResume
-    localStorage.setItem("moduleId", JSON.stringify(20))
-    this.service.clickModule(20, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        pleasureResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("pleasureResume", pleasureResume)
-        // this.mediaPercent=parseInt(res.MediaPercent)
-        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
-        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
-        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/pleasure/${pleasureResume}`])
+          else {
+            localStorage.setItem("lastvisited", 'T')
           }
-          else
-            this.router.navigate([`/adults/pleasure/s20001`])
-        })
-  }
-
-  routeConditioning(cont: any = 1) {
-    var conditioningResume
-    localStorage.setItem("moduleId", JSON.stringify(15))
-    this.service.clickModule(15, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        conditioningResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("conditioningResume", conditioningResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
+          // /continue where you left
+          sessionStorage.setItem("addictionResume", addictionResume)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
         },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/conditioning/${conditioningResume}`])
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/habit-addiction/${addictionResume}`])
+            }
+            else
+              this.router.navigate([`/adults/habit-addiction/s45001`])
+          })
+    }
+  
+    routePleasure(cont: any = 1) {
+      var pleasureResume
+      localStorage.setItem("moduleId", JSON.stringify(20))
+      this.service.clickModule(20, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          pleasureResume = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
           }
-          else
-            this.router.navigate([`/adults/conditioning/s232`])
-         
-        })
-  }
-
-  routeStress(cont: any = 1) {
-    var stressResume
-    localStorage.setItem("moduleId", JSON.stringify(44))
-    this.service.clickModule(44, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        stressResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("stressResume", stressResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("pleasureResume", pleasureResume)
+          // this.mediaPercent=parseInt(res.MediaPercent)
+          // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+          // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+          // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
         },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/stress/${stressResume}`])
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/pleasure/${pleasureResume}`])
+            }
+            else
+              this.router.navigate([`/adults/pleasure/s20001`])
+          })
+    }
+  
+    routeConditioning(cont: any = 1) {
+      var conditioningResume
+      localStorage.setItem("moduleId", JSON.stringify(15))
+      this.service.clickModule(15, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          conditioningResume = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
           }
-          else
-            this.router.navigate([`/adults/stress/s44001`])
-                 })
-  }
-
-  routeFood(cont: any = 1) {
-    var foodResume
-    localStorage.setItem("moduleId", JSON.stringify(46))
-    this.service.clickModule(46, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        foodResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("foodResume", foodResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("conditioningResume", conditioningResume)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
         },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/food-health/${foodResume}`])
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/conditioning/${conditioningResume}`])
+            }
+            else
+              this.router.navigate([`/adults/conditioning/s232`])
+           
+          })
+    }
+  
+    routeStress(cont: any = 1) {
+      var stressResume
+      localStorage.setItem("moduleId", JSON.stringify(44))
+      this.service.clickModule(44, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          stressResume = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
           }
-          else
-            this.router.navigate([`/adults/food-health/s46001`])
-        })
-  } */
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("stressResume", stressResume)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        },
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/stress/${stressResume}`])
+            }
+            else
+              this.router.navigate([`/adults/stress/s44001`])
+                   })
+    }
+  
+    routeFood(cont: any = 1) {
+      var foodResume
+      localStorage.setItem("moduleId", JSON.stringify(46))
+      this.service.clickModule(46, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          foodResume = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("foodResume", foodResume)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        },
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/food-health/${foodResume}`])
+            }
+            else
+              this.router.navigate([`/adults/food-health/s46001`])
+          })
+    } */
 
   getProgress() {
     this.service.getPoints(this.userId)
@@ -347,9 +354,9 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
 
   enableRoute(route) {
-  
-      this.router.navigate([route]);
-   
+
+    this.router.navigate([route]);
+
   }
 
   getclcickevent(event) {
@@ -362,47 +369,47 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     if (!this.Subscriber && audioContent.id >= 4) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
-    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+      this.router.navigate(['adults/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
     }
   }
 
   enableViewMore(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = false;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = false;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = false
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = false
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = false
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = false
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = false
     }
   }
 
   enableViewLess(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = true;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = true;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = true
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = true
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = true
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = true
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = true
     }
   }
 
-  routeTointroDash(){
+  routeTointroDash() {
     this.router.navigate(['/adults/dashboard/habits-and-addiction']);
   }
 }
