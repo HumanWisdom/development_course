@@ -341,7 +341,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
-
+    this.logeventservice.logEvent("search_"+ event)
     let url=""
     switch(event.toLowerCase())
     {
@@ -1065,7 +1065,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   navigateToPathway(url) {
-    this.logeventservice.logEvent("click_" + url.split("/")[3]);
+    this.logeventservice.logEvent(url.split("/")[3].toString().substring(0,15));
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.route.url);
     this.route.navigate([url]);
@@ -1083,7 +1083,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
-    this.route.navigate([url]);
+    if(url != ''){
+      this.route.navigate([url]);
+    }
   }
 
 

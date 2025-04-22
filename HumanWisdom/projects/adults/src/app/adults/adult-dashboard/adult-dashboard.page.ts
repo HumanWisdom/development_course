@@ -1748,7 +1748,9 @@ export class AdultDashboardPage implements OnInit {
 
   // }
   routeResume(r, enableLastVisited = false) {
-    console.log(r);
+    // console.log(r);
+    this.logeventservice.logEvent("click_continue_where_left");
+
     let id = '', url='', screenNo='';
     if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['ModuleId'].toString() : '23';

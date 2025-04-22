@@ -2048,6 +2048,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   }
 
   shortVideos(data) {
+    this.logeventservice.logEvent("click_"+data['Title'].substring(0,15));
+
     let id = data['VideoUrl'].split('/');
     id = id[id.length - 1]
     this.router.navigate(['/teenagers/wisdom-shorts/' + id])
