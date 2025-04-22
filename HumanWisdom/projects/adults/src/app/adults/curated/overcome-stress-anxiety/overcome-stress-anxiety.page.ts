@@ -37,6 +37,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
+  wisdomShortsDynamic: any;
 
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
@@ -50,6 +51,12 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.service.GetPodcastsListing('2').subscribe((res) => {
         if (res) {
           this.mediaUrl = res
+        }
+      })
+
+      this.service.GetWisdomShortsListing('2').subscribe((res) => {
+        if (res) {
+          this.wisdomShortsDynamic = res
         }
       })
 
@@ -154,7 +161,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
-      this.router.navigate(['/adults/wisdom-shorts', link])
+      this.router.navigate([link])
     }
   }
 

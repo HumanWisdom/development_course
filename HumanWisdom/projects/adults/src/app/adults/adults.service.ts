@@ -381,6 +381,10 @@ export class AdultsService {
     return this.http.get(this.path + `/GetPodcastsListing/${SharedService.ProgramId}/${data}`)
   }
 
+   GetWisdomShortsListing(data): Observable<any> {
+        return this.http.get(this.path + `/GetWisdomShortsListing/${SharedService.ProgramId}/${data}`)
+    }
+
   setmoduleID(id, lastVisitedurl = '', indexUrl = '') {
     if (localStorage.getItem("isloggedin") === 'T') {
       this.activateModule(id, lastVisitedurl, indexUrl);

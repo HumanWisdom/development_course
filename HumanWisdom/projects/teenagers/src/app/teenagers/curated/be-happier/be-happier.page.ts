@@ -37,26 +37,33 @@ export class BeHappierPage implements OnInit {
   enablefbnViewMore = true;
   enableblogViewMore = true;
   isAdults = true;
-  
+  wisdomShortsDynamic: any;
+
   constructor(private service: TeenagersService, private router: Router, private location: Location,
-    private meta: Meta, private title: Title,private navigationService:NavigationService) {
-      this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    private meta: Meta, private title: Title, private navigationService: NavigationService) {
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.service.GetPodcastsListing('13').subscribe((res) => {
-        if (res) {
-          this.mediaUrl = res
-        }
-})
-
-      let userid = localStorage.getItem('isloggedin');
-      let sub: any = localStorage.getItem('Subscriber');
-      if (userid === 'T' && sub === '1') {
-        this.isSubscriber = true;
-      } else {
-        this.isSubscriber = false;
+    this.service.GetPodcastsListing('13').subscribe((res) => {
+      if (res) {
+        this.mediaUrl = res
       }
+    })
+
+    this.service.GetWisdomShortsListing('13').subscribe((res) => {
+      if (res) {
+        this.wisdomShortsDynamic = res
+      }
+    })
+
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
     }
+  }
 
   ngOnInit() {
     localStorage.setItem("NaviagtedFrom", '/teenagers/curated/be-happier');
@@ -74,9 +81,9 @@ export class BeHappierPage implements OnInit {
     }
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
   }
 
   getimage(id) {
@@ -91,58 +98,58 @@ export class BeHappierPage implements OnInit {
     }
     this.router.navigate([url]);
   }
-  
+
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/curated/youtubelink', link])
+    } else {
+      this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/wisdom-shorts', link])
+    } else {
+      this.router.navigate([link])
     }
   }
 
   enableViewMore(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = false;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = false;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = false
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = false
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = false
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = false
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = false
     }
   }
 
   enableViewLess(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = true;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = true;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = true
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = true
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = true
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = true
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = true
     }
   }
@@ -150,12 +157,12 @@ export class BeHappierPage implements OnInit {
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    let url = audioLink.replaceAll(':', '_');
-    url = encodeURIComponent(url.replaceAll('/', '~'));
-    this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
+    } else {
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      let url = audioLink.replaceAll(':', '_');
+      url = encodeURIComponent(url.replaceAll('/', '~'));
+      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id, 'Audio'])
     }
   }
 
@@ -456,7 +463,7 @@ export class BeHappierPage implements OnInit {
   }
 
   enableRoute(route) {
-        this.router.navigate([route]);
+    this.router.navigate([route]);
 
   }
 
@@ -470,7 +477,7 @@ export class BeHappierPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['teenagers/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+      this.router.navigate(['teenagers/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
     }
   }
 
@@ -478,9 +485,9 @@ export class BeHappierPage implements OnInit {
   //   this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   // }
 
-  routeTointroDash(){
-      this.router.navigate(['/teenagers/dashboard/be-happier']);
-    }
+  routeTointroDash() {
+    this.router.navigate(['/teenagers/dashboard/be-happier']);
+  }
 
 
 }

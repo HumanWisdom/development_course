@@ -43,6 +43,7 @@ export class WisdomForWorkplacePage implements OnInit {
   enableGuidedMediViewMore = true;
   enablefbnViewMore = true;
   enableblogViewMore = true;
+  wisdomShortsDynamic: any;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private navigationService:NavigationService,
@@ -52,6 +53,12 @@ export class WisdomForWorkplacePage implements OnInit {
       this.service.GetPodcastsListing('1').subscribe((res) => {
         if (res) {
           this.mediaUrl = res
+        }
+      })
+
+      this.service.GetWisdomShortsListing('1').subscribe((res) => {
+        if (res) {
+          this.wisdomShortsDynamic = res
         }
       })
 
@@ -115,7 +122,7 @@ export class WisdomForWorkplacePage implements OnInit {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     }else{
 
-      this.router.navigate(['/adults/wisdom-shorts', link])
+      this.router.navigate([link])
     }
   
   }
