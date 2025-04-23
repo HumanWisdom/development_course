@@ -553,7 +553,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_exercises",
         popover: {
           title: 'Healthy mind',
-          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health',
+          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
           side: "top"
         }
       },
@@ -569,7 +569,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_journal",
         popover: {
           title: 'Journal',
-          description: 'Your private journal with guided questions (visible only to you)',
+          description: 'Your private journal with guided questions (visible only to you).',
           side: "top"
         }
       },
@@ -577,7 +577,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_forum",
         popover: {
           title: 'Forum',
-          description: 'Join our community discussions. Ask a coach a question',
+          description: 'Join our community discussions. Ask a coach a question.',
           side: "top"
         },
       },

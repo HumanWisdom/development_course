@@ -143,7 +143,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       {
        element: ".tour_exercises",
        popover: {
-         title: 'Healthy mind.',
+         title: 'Healthy mind',
          description: 'You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
          side: "right"
        }
@@ -152,7 +152,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         element: ".tour_pathway",
         popover: {
           title: 'PATHWAY',
-          description: 'A step-by-step guide for a happier life',
+          description: 'A step-by-step guide for a happier life.',
           // side: "right"
           side: "right"
         }

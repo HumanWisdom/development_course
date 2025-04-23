@@ -595,7 +595,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_journal",
         popover: {
           title: 'Journal',
-          description: 'Your private journal with guided questions (visible only to you)',
+          description: 'Your private journal with guided questions (visible only to you).',
           side: "top"
         }
       },
@@ -603,7 +603,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_forum",
         popover: {
           title: 'Forum',
-          description: 'Join our community discussions. Ask a coach a question',
+          description: 'Join our community discussions. Ask a coach a question.',
           side: "top"
         },
       },
