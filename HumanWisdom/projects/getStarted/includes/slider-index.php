@@ -89,11 +89,11 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 display_m_none downloadApp_slider ">
                   <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew downloadApp_slider_text">
                     Download the app on
-                    <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
+                    <a id="appleStore" >
                       <img style="width:13.5px;height:auto;margin:5px;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg" alt="appstore" loading="lazy">
                     </a>
                     and
-                    <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
+                    <a id="googlePlayStore" >
                       <img style="width:14.5px;height:auto; margin:5px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" alt="playstore" loading="lazy">
                     </a><br>and start your free trial
                   </h3>

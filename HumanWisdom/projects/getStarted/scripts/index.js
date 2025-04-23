@@ -333,7 +333,7 @@ nfsnContactForm &&
         ["feelbetterNow", "pathWay", "journal", "podcast", "community","partnership",
              "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp",
              "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter",
-             "partnershipfooter" ,"view-all-coaches","whywecreatedvideo"
+             "partnershipfooter" ,"view-all-coaches","whywecreatedvideo","findoutMore","youtubeIntro","appleStore","googlePlayStore"
             ].forEach((e) => {
             const t = document.getElementById(e);
             t &&
@@ -343,12 +343,16 @@ nfsnContactForm &&
                         : "journal" == e ? logevent("click_Journal_web", "index.php")
                         : "HapinessScore" == e ? logevent("click_Happiness_Score_web", "index.php")
                         : "podcast" == e ? logevent("click_Podcast_web", "index.php")
+                        : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,(window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"))
+                        : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,(window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"))
                         : "community" == e ? logevent("click_Community_web", "index.php")
+                        : "youtubeIntro" == e ? logevent("click_youtube_intro_web", "index.php")
                         :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , (window.location.href="https://happierme.app/adults/intro/intro-carousel"))
                         : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,(window.location.href="https://happierme.app/teenagers/intro-carousel"))
-                        : "partnership" == e ? (logevent("click_partnership_web", "index.php") ,(window.location. href="../pages/partnership.php"))
+                        : "findoutMore" == e ? (logevent("click_find_out_More_web", "index.php") ,(window.location.href="../pages/teenagers.php"))
+                        : "partnership" == e ? (logevent("click_partnership_web", "index.php") ,(window.location.href="../pages/partnership.php"))
                         : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
-                        :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,(window.location. href="../pages/partnership.php"))
+                        :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,(window.location.href="../pages/partnership.php"))
                          :"view-all-coaches" == e ? (logevent("click_view_all_coaches", "index.php") ,(window.location.href="https://happierme.app/adults/coach"))
                         : "openInApp1" == e ? (logevent("click_open_in_app_web", "index.php") ,(window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"))
                         : "openInApp2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"))
