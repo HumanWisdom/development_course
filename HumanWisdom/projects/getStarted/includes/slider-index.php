@@ -30,7 +30,7 @@
       [
         "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new3.webp",
         "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm6.webp",
-        "heading" => "develop your emotional intelligence",
+        "heading" => "be emotionally intelligent",
       ],
       [
         "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new6.webp",
