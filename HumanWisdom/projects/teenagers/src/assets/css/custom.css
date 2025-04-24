@@ -26453,7 +26453,7 @@ h1
   height: unset;
   /* padding: 16px 10px!important;   */
   /* padding: 40px 10px 16px 10px!important; */
-  padding: 0px 20px 15px 5px!important;
+  padding: 0px 20px 15px 15px!important;
 }
 
 .dpanel_01_ext>.panel-heading,
@@ -36201,6 +36201,7 @@ h3_blogs p a font,
   color: #FFF !important;
 }
 
+
 .h4_blogs p
 {
   padding: 0;
@@ -37617,6 +37618,11 @@ a.fc_e58d82:hover
 }
 
 .h4_blogs ol li
+{
+  color: #FFF !important;
+  background: transparent !important;
+}
+.h4_blogs ul li
 {
   color: #FFF !important;
   background: transparent !important;
