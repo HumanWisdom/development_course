@@ -117,7 +117,7 @@
 
             <a href="../pages/terms_conditions.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                Terms & conditions
+                User Agreement
               </h4>
             </a>
 

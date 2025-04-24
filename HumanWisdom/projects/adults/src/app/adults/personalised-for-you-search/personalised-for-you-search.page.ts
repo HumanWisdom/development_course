@@ -1230,7 +1230,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
-    this.router.navigate([url]);
+    if(url!="") this.router.navigate([url]);
   }
 
 

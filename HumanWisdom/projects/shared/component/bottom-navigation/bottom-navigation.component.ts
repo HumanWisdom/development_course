@@ -4,6 +4,7 @@ import { ProgramType } from '../../models/program-model';
 import { SharedService, UrlConstant } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { Subscription } from 'rxjs';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-bottom-navigation',
@@ -31,7 +32,9 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   disableClick = false;
   isAdults = false;
   isDataRecieved = false;
-  constructor(private router: Router,private onboardingService: OnboardingService) {
+  constructor(private router: Router,private onboardingService: OnboardingService, 
+    private logeventservice: LogEventService
+  ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -135,25 +138,30 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     routeDash() {
+      this.logeventservice.logEvent("footer_home")
       this.router.navigateByUrl(SharedService.getDashboardUrls());
     }
 
     routeJournal() {
+      this.logeventservice.logEvent("footer_Journal")
+
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.journal)]);
     }
 
 
     routeSearch() {
+      this.logeventservice.logEvent("footer_Explore")
+
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
     }
     profileclickevent() {
 
       if (localStorage.getItem('isloggedin') === 'T') {
-        //this.logeventservice.logEvent('click_profile')
+        this.logeventservice.logEvent('footer_profile')
         this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.userProfile)]);
       } else {
         // if(localStorage.getItem('acceptcookie') !== null)  {
-        //this.logeventservice.logEvent('click_login')
+        this.logeventservice.logEvent('footer_login')
         localStorage.setItem('btnclick', 'F')
         this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.login)]);
         // }
@@ -162,6 +170,8 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     routeForum() {
+      this.logeventservice.logEvent("footer_Forum")
+
       // if(localStorage.getItem('isloggedin') === 'T')
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.forum)], { state: { programType: this.programType } })
     }
