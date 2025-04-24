@@ -15,7 +15,8 @@ export class IndexPage implements OnInit {
 
   defaultUrl = 'how-can-i';
   activeClass = 'active';
-  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute,  public logeventservice: LogEventService) {
+  constructor(private location: Location, private router:Router,
+    private activatedRoute: ActivatedRoute,  public logeventservice: LogEventService) {
    var data = this.activatedRoute.snapshot.paramMap.get('url');
     if(data != null){
       this.defaultUrl= data;
@@ -49,6 +50,7 @@ export class IndexPage implements OnInit {
   } 
 
   routeToTab(param){
+    this.logeventservice.logEvent("click_"+param)
     this.defaultUrl = param;
     localStorage.setItem('lastRoute',param);
     this.changeURLParams(param);

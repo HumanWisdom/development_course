@@ -73,7 +73,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  Except as set out below, we do not share, or sell, or disclose to a third party, any information collected through our website.
+                  We do not share, or sell, or disclose to a third party, any information collected through our website or app.
                 </h6>
 
                 <h2 class="hs_title">
@@ -113,7 +113,8 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  Technical data includes your internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website.
+                  Technical data includes your internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website. Health/Wellness data includes the data in the wellbeing survey that you complete within the app.
+
                 </h6>
 
                 <h6 class="hs_desc">
@@ -227,7 +228,8 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  If you have given us explicit permission to do so, we may from time to time pass your name and contact information to selected associates whom we consider may provide services or products you would find useful.
+                We do not share your data with any third parties.
+
                 </h6>
 
                 <h6 class="hs_desc">
@@ -235,7 +237,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  You may withdraw your consent at any time by instructing us info@humanwisdom.me. However, if you do so, you may not be able to use our website or our services further.
+                  You may withdraw your consent at any time by instructing us team@happierme.app. However, if you do so, you may not be able to use our website or our services further.
                 </h6>
 
                 <h2 class="hs_title">
@@ -353,7 +355,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  Provided your request is reasonable and there is no legal basis for us to retain it, then at our discretion we may agree to your request to delete personal information that you have posted. You can make a request by contacting us at info@humanwisdom.me.
+                  Provided your request is reasonable and there is no legal basis for us to retain it, then at our discretion we may agree to your request to delete personal information that you have posted. You can make a request by contacting us at team@happierme.app.
                 </h6>
 
                 <h2 class="hs_title">
@@ -361,7 +363,7 @@
                 </h2>
 
                 <h6 class="hs_desc">
-                  Our website is a publishing medium. Anyone may register and then publish information about himself, herself or some other person.
+                  Our website and app is a publishing medium. Anyone may register and then publish information about himself, herself or some other person.
                 </h6>
 
                 <h6 class="hs_desc">
@@ -459,6 +461,10 @@
                 <h6 class="hs_desc">
                   We may also compile statistics showing information obtained from this source to assess the level of service we provide, but not in a way that could identify you or any other person.
                 </h6>
+                <h6 class="hs_desc">
+                You can write to us via email: team@happierme.app or contact us by phone: +44 1642 788631
+                  </h6>
+
 
                 <h2 class="hs_title">
                   16. Affiliate and business partner information
@@ -595,7 +601,7 @@
                 </h2>
 
                 <h6 class="hs_desc">
-                  Third parties may advertise on our website. In doing so, those parties, their agents or other companies working for them may use technology that automatically collects information about you when their advertisement is displayed on our website.
+                We do not allow any third party advertising on our website.
                 </h6>
 
                 <h6 class="hs_desc">
@@ -619,7 +625,7 @@
                 </h2>
 
                 <h6 class="hs_desc">
-                  Our websites are hosted on Amazon Web Severs.
+                  Our websites are hosted on Amazon Web Servers.
                 </h6>
 
                 <h6 class="hs_desc">
@@ -693,7 +699,7 @@
                 </h2>
 
                 <h6 class="hs_desc">
-                  If you wish us to remove personally identifiable information from our website, you should contact us to make your request.
+                  If you wish us to remove personally identifiable information from our app, you can do that via your profile.
                 </h6>
 
                 <h6 class="hs_desc">
@@ -735,9 +741,32 @@
                 <h6 class="hs_desc">
                   Such child users and visitors will inevitably visit other parts of the site and will be subject to whatever on-site marketing they find, wherever they visit.
                 </h6>
+                <h2 class="hs_title">
+                  29. This policy complies with International Data Management Standards
+                </h2>
+
+                <h6 class="hs_desc">
+                We conform to Cyber Essentials standards: https://bit.ly/4k3Xqqb                
+                </h6>
+                <h2 class="hs_title">
+                  30. Re-obtaining consent
+                </h2>
+
+                <h6 class="hs_desc">
+                This policy will be updated if there is a significant change in the purpose of data collection and consent in that case will be re-obtained.
+                </h6>
+                <h2 class="hs_title">
+                  31. Minimum data
+
+                </h2>
+
+                <h6 class="hs_desc">
+                We only collect the minimum data items that are necessary to provide the services we need for you.  
+         
+                </h6>
 
                 <h2 class="hs_title">
-                  29. Encryption of data sent between us
+                  32. Encryption of data sent between us
                 </h2>
 
                 <h6 class="hs_desc">
@@ -749,7 +778,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  30. How you can complain
+                  33. How you can complain
                 </h2>
 
                 <h6 class="hs_desc">
@@ -769,7 +798,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  31. Retention period for personal data
+                  34. Retention period for personal data
                 </h2>
 
                 <h6 class="hs_desc">
@@ -791,7 +820,7 @@
                 </ul>
 
                 <h2 class="hs_title">
-                  32. Compliance with the law
+                  35. Compliance with the law
                 </h2>
 
                 <h6 class="hs_desc">
@@ -803,7 +832,15 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  33. Review of this privacy policy
+                  36. Time frame to respond to requests
+                </h2>
+
+                <h6 class="hs_desc">
+                We will respond to any requests to exercise your rights within 14 days. Please write   to team@happierme.app.
+                </h6>
+
+                <h2 class="hs_title">
+                  37. Review of this privacy policy
                 </h2>
 
                 <h6 class="hs_desc">
@@ -811,7 +848,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  If you have any question regarding our privacy policy, please contact us via email, info@humanwisdom.me.
+                  If you have any question regarding our privacy policy, please contact us via email, team@happierme.app.
                 </h6>
               </div>
             </div>

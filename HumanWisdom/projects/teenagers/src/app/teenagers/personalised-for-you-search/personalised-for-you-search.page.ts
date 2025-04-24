@@ -134,7 +134,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       {
         element: ".tour_find_inspiration",
         popover: {
-          title: 'Find Inspiration',
+          title: 'Get more out of HappierMe',
           description: 'Explore our rich library of motivational content.',
           side: "right",
           align: "end"

@@ -63,6 +63,12 @@ export class IndexPage implements OnInit {
     localStorage.setItem('lastRoute',param);
     this.changeURLParams(param);
   }
+  
+ logEvent(event){
+   
+    this.logeventservice.logEvent(event);
+    // this.router.navigate(['/'+url], { replaceUrl: true, skipLocationChange: true });
+   }
 
   changeURLParams(parameter: string) {
     const newUrl = this.location.path().split('/')[0] + `${parameter}`;
