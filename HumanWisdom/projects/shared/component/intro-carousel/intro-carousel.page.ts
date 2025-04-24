@@ -405,7 +405,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.next();
       $('#mdp_carousel').carousel('next');
     }
-}
+ }
 
   LogEvent(event) {
     this.logeventservice.logEvent(event);
@@ -1081,6 +1081,11 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       }
     });
   }
+   routetoUrl(url){
+  
+      // this.router.navigate(["/" + SharedService.getprogramName() + url]);
+      window.open("/" + SharedService.getprogramName() + url,"_blank")
+    }
 
   signInWithApple(reqtype) {
     if (reqtype == "signup")
