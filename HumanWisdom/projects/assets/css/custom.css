@@ -37848,6 +37848,8 @@ span
 {
   border-radius: 12px;
   background: #120F40;
+  height: 115px;
+  margin-left: -25px;
   padding: 16px !important;
 }
 
