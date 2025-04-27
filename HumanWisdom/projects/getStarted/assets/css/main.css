@@ -4747,7 +4747,8 @@ padding: 15px;
 }
 .top{
   top:50%;
-  height:475px;
+  height:100%;
+  /* margin-right:50% ; */
 }
 .video-popup-model {
 	width: 100%;
@@ -4942,9 +4943,6 @@ padding: 15px;
     font-size: 15px !important  ;
   }
   
-  .top {
-   margin-left:6rem !important;
-  }
  }
 
  @media only screen and (width: 320px) and (height: 658px) {
@@ -4967,7 +4965,8 @@ padding: 15px;
 
  .btn_try_happierme{
   margin: 3px;
-  height: 48px;
+  width: 263px;
+  height: 55px;
   border:none;
   margin-left: -10px;
   border-radius: 24px;
@@ -4976,9 +4975,9 @@ padding: 15px;
 
 .btn_happiermeyoutube {
   margin: 3px;
-  height: 48px;
+  height: 55px;
   border:none;
-  width: 30rem;
+  width: 263px;
   margin-left: 88px;
   border-radius: 24px;
   background: rgba(255, 255, 255, .1);
@@ -4997,7 +4996,6 @@ padding: 15px;
   margin-top: 19rem !important;
 }
 .btn_happiermeyoutube {
-  width: auto;
   margin-left: -10px;
 }
 .btn_happiermeyoutube_wrapper {
@@ -5016,7 +5014,18 @@ padding: 15px;
 }
 
 .downloadApp_slider_text {
-  padding-left: 12px;
+  padding-left: 30px;
+}
+
+.pd21 {
+  padding-right: 21px;
+}
+
+
+@media (min-width: 345px) and (max-width: 760px) {
+  .top {
+  margin-right: 47%;
+  }
 }
 
 
