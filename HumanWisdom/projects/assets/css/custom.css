@@ -5047,7 +5047,7 @@ th,td, .form-group
 label
 {
 	margin-bottom:unset!important;
-	margin-top:10px!important;
+	margin-top:2px!important;
 }
 
 input[type=checkbox]
