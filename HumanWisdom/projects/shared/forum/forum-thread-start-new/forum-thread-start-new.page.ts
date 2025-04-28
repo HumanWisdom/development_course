@@ -7,6 +7,8 @@ import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../../shared/services/constant';
 import { NavigationService } from "../../../shared/services/navigation.service";
 import { Location } from '@angular/common';
+import { LogEventService } from "./../../services/log-event.service";
+
 
 @Component({
   selector: 'app-forum-thread-start-new',
@@ -37,6 +39,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   isAdults: boolean = true; 
 
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute, 
+    private logeventservice: LogEventService,
     private location: Location,  private navigationService:NavigationService) {
     this.userID = localStorage.getItem('userId');
     this.router.events
@@ -195,6 +198,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     this.closeCategory.nativeElement.click();
   }
   filterBasedOnTags(value, name){
+    this.logeventservice.logEvent("chooseCategory")
     this.selectedOption = parseInt(value);
     const data = this.categoryList.filter(x=>x.value== this.selectedOption);
     /* if(data!=null && data.length>0){

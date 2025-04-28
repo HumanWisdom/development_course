@@ -47,14 +47,14 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+   <!--  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NHPHHF97');
     
     localStorage.setItem("programType",'9');
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
 
   
@@ -70,8 +70,8 @@
     
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
 
 
@@ -237,7 +237,7 @@
    
 
       <!-- aspects -->
-      <section>
+      <section class="support_section">
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -418,7 +418,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
           </div>
         </div>
       </section>
@@ -971,22 +971,12 @@
                     </div>
                   </div>
                 </a>
-
-              
-
-               
-
-             
-
-               
-
-                
               </div>
 
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/testimonials">
+                    <a class="sap" id="viewallsuccessstories">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       View all Success stories
                       </h4>
@@ -1163,7 +1153,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" aria-label="Explore the teenagers app" class="">
+                <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -1300,7 +1290,7 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="startyourfreetrial">
                   Start your free trial
                 </button>
               </div>
@@ -1615,10 +1605,10 @@
                 </a>
               </div>
 
-              <div class="owl-theme">
+              <div class="owl-theme" >
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/coach">
+                    <a class="sap" id="view-all-coaches">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all coaches
                       </h4>

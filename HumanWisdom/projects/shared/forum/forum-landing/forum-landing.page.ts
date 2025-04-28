@@ -266,6 +266,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   onFocusOutEvent(){
+    this.logeventservice.logEvent("Search")
     if(this.searchInput==''){
        this.getAllRecords();
     }else{
@@ -299,6 +300,7 @@ export class ForumLandingPage implements OnInit {
     //localStorage.setItem('forumUserID',item.UserId);
 
     //this.router.navigate(['/forum/profile', concat, '1', 'T', title])
+    this.logeventservice.logEvent("click_UserProfile")
     this.router.navigate([SharedService.getUrlfromFeatureName('/forum/profile/'),item.UserId]);
   }
 
@@ -341,6 +343,7 @@ export class ForumLandingPage implements OnInit {
 
 
   filterBasedOnTags(tagId,name){
+    this.logeventservice.logEvent("click_AllThread")
     const data = this.categoryList.filter(x=>x.value==tagId);
     /* if(data!=null && data.length>0){
       this.buttonText =  data[0].label;
@@ -693,6 +696,11 @@ export class ForumLandingPage implements OnInit {
   }
 
   startNewThread(tagId){
+    if(tagId==5)
+      this.logeventservice.logEvent("click_AskExpert")
+    else
+      this.logeventservice.logEvent("click_NewThread")
+
     if(this.isLoggedIn){
       localStorage.setItem('tagId',tagId);
       this.router.navigate([SharedService.getUrlfromFeatureName('forum/forum-thread-start-new')]);

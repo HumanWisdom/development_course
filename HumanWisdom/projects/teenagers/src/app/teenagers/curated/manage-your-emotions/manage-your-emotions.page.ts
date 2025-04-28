@@ -41,30 +41,39 @@ export class ManageYourEmotionsPage implements OnInit {
   enablefbnViewMore = true;
   enableblogViewMore = true;
   isAdults = true;
-  
-  constructor(private service: TeenagersService, private router: Router, private location: Location,
-    private navigationService:NavigationService,
-    private meta: Meta, private title: Title) {
-      this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+  wisdomShortsDynamic: any;
 
-      this.service.GetPodcastsListing('14').subscribe((res) => {
-        if (res) {
-          this.mediaUrl = res
-        }
-})
-      let userid = localStorage.getItem('isloggedin');
-      let sub: any = localStorage.getItem('Subscriber');
-      if (userid === 'T' && sub === '1') {
-        this.isSubscriber = true;
-      } else {
-        this.isSubscriber = false;
+  constructor(private service: TeenagersService, private router: Router, private location: Location,
+    private navigationService: NavigationService,
+    private meta: Meta, private title: Title) {
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+    this.service.GetPodcastsListing('14').subscribe((res) => {
+      if (res) {
+        this.mediaUrl = res
       }
+    })
+
+    this.service.GetWisdomShortsListing('14').subscribe((res) => {
+      if (res) {
+        this.wisdomShortsDynamic = res
+      }
+    })
+
+
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
     }
+  }
 
   ngOnInit() {
 
- 
+
     this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
     this.meta.updateTag({ property: 'title', content: 'Managing Emotions with Mindfulness & Positive Psychology' })
     this.meta.updateTag({ property: 'description', content: 'Gain mastery over your emotions with our expert-guided coping strategies for anger management, stress management, and mood regulation. Learn how to practice emotional self-regulation and self-awareness techniques that promote mindfulness and positive psychology.' })
@@ -83,12 +92,12 @@ export class ManageYourEmotionsPage implements OnInit {
         this.lifestoriesList = res
       }
     })
-    
+
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
   }
 
   /*
@@ -125,35 +134,35 @@ export class ManageYourEmotionsPage implements OnInit {
     }
     this.router.navigate([url]);
   }
-  
+
   routeGuided() {
     this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
   }
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/curated/youtubelink', link])
+    } else {
+      this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/wisdom-shorts', link])
+    } else {
+      this.router.navigate([link])
     }
   }
 
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-    let audioLink = mediaAudio + audiofile
-    let url = audioLink.replaceAll(':', '_');
-    url = encodeURIComponent(url.replaceAll('/', '~'));
-    this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
+    } else {
+      let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+      let audioLink = mediaAudio + audiofile
+      let url = audioLink.replaceAll(':', '_');
+      url = encodeURIComponent(url.replaceAll('/', '~'));
+      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id, 'Audio'])
     }
   }
 
@@ -513,9 +522,9 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   enableRoute(route) {
-   
-      this.router.navigate([route]);
-    
+
+    this.router.navigate([route]);
+
   }
 
   getclcickevent(event) {
@@ -528,7 +537,7 @@ export class ManageYourEmotionsPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['teenagers/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+      this.router.navigate(['teenagers/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
     }
   }
 
@@ -539,43 +548,43 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   enableViewMore(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = false;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = false;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = false
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = false
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = false
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = false
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = false
     }
   }
 
   enableViewLess(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = true;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = true;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = true
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = true
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = true
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = true
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = true
     }
   }
 
-     routeTointroDash(){
-        this.router.navigate(['/teenagers/dashboard/manage-your-emotions']);
-      }
+  routeTointroDash() {
+    this.router.navigate(['/teenagers/dashboard/manage-your-emotions']);
+  }
 
 }

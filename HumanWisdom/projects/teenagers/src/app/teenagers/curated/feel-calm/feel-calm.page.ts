@@ -38,18 +38,24 @@ export class FeelCalmPage implements OnInit {
   enablefbnViewMore = true;
   enableblogViewMore = true;
   isAdults = true;
-  
-  constructor(private service: TeenagersService, private router: Router, private location: Location, private meta: Meta, private title: Title,
-    private navigationService:NavigationService) 
-  { 
-    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+  wisdomShortsDynamic: any;
 
-      this.service.GetPodcastsListing('12').subscribe((res) => {
-        if (res) {
-          this.mediaUrl = res
-        }
-})
+  constructor(private service: TeenagersService, private router: Router, private location: Location, private meta: Meta, private title: Title,
+    private navigationService: NavigationService) {
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+    this.service.GetPodcastsListing('12').subscribe((res) => {
+      if (res) {
+        this.mediaUrl = res
+      }
+    })
+
+    this.service.GetWisdomShortsListing('12').subscribe((res) => {
+      if (res) {
+        this.wisdomShortsDynamic = res
+      }
+    })
   }
 
   ngOnInit() {
@@ -68,9 +74,9 @@ export class FeelCalmPage implements OnInit {
     }
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
   }
 
   goBack() {
@@ -84,8 +90,8 @@ export class FeelCalmPage implements OnInit {
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/curated/youtubelink', link])
+    } else {
+      this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
@@ -98,32 +104,32 @@ export class FeelCalmPage implements OnInit {
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/wisdom-shorts', link])
+    } else {
+      this.router.navigate(['/teenagers/wisdom-shorts', link])
     }
   }
 
-  audiopage(audiofile, title, id, isfree=0) {
-    if ((isfree==0) && (this.guest || !this.Subscriber)) {
+  audiopage(audiofile, title, id, isfree = 0) {
+    if ((isfree == 0) && (this.guest || !this.Subscriber)) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
+    } else {
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
       let url = audioLink.replaceAll(':', '_');
       url = encodeURIComponent(url.replaceAll('/', '~'));
-      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
+      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id, 'Audio'])
     }
   }
 
   enableRoute(route) {
-   
-    this.router.navigate([route]);
-  
-}
 
-routeGuided() {
-  this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
-}
+    this.router.navigate([route]);
+
+  }
+
+  routeGuided() {
+    this.router.navigate(['/teenagers/journal'], { queryParams: { "isGuided": true } })
+  }
 
   getsupport(url, id, ind = 0) {
     let index = ind + 1
@@ -387,38 +393,37 @@ routeGuided() {
         })
   }
 
-  routeAwareness(cont: any = 1) 
-{
-      var awarenessResume
-      localStorage.setItem("moduleId", JSON.stringify(100))
-      this.service.clickModule(100, this.userId)
-            .subscribe(res => {
-            localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-            this.qrList = res
-            awarenessResume = "s" + res.lastVisitedScreen
-            this.goToPage = res.lastVisitedScreen
-            // continue where you left
-            if (res.lastVisitedScreen === '') {
-                  localStorage.setItem("lastvisited", 'F')
-            }
-            else {
-                  localStorage.setItem("lastvisited", 'T')
-            }
-            // /continue where you left
-            sessionStorage.setItem("awarenessResume", awarenessResume)
-            localStorage.setItem("qrList", JSON.stringify(this.qrList))
-       },
-      error => {
-            console.log(error)
+  routeAwareness(cont: any = 1) {
+    var awarenessResume
+    localStorage.setItem("moduleId", JSON.stringify(100))
+    this.service.clickModule(100, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        awarenessResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("awarenessResume", awarenessResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
-      () => {
-      if (cont == "1") {
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
             this.router.navigate([`/teenagers/awareness/${awarenessResume}`])
-      }
-      else
+          }
+          else
             this.router.navigate([`/teenagers/awareness/s100001`])
-      })
-}
+        })
+  }
 
   getProgress() {
     this.service.getPoints(this.userId)
@@ -452,7 +457,7 @@ routeGuided() {
   viewblog(id) {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
-    this.router.navigate(['/teenagers/blog-article'], {  queryParams: { sId: `${id}` } })
+    this.router.navigate(['/teenagers/blog-article'], { queryParams: { sId: `${id}` } })
   }
 
   getclcickevent(event) {
@@ -465,48 +470,48 @@ routeGuided() {
     if (!this.Subscriber && audioContent.id >= 4) {
       this.router.navigate(['teenagers/subscription/start-your-free-trial']);
     } else {
-    this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+      this.router.navigate(['teenagers/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
     }
   }
 
   enableViewMore(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = false;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = false;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = false
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = false
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = false
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = false
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = false
     }
   }
 
   enableViewLess(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = true;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = true;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = true
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = true
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = true
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = true
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = true
     }
   }
 
-     routeTointroDash(){
-        this.router.navigate(['/teenagers/dashboard/feel-calm']);
-      }
+  routeTointroDash() {
+    this.router.navigate(['/teenagers/dashboard/feel-calm']);
+  }
 
 }

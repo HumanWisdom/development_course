@@ -52,7 +52,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  Our contact email address is info@humanwisdom.me. All correspondence to HumanWisdom including any queries you may have regarding your use of the Products or these Terms should be sent to this contact email address.
+                  Our contact email address is team@happierme.app. All correspondence to HumanWisdom including any queries you may have regarding your use of the Products or these Terms should be sent to this contact email address.
                 </h6>
 
                 <h4 class="hs_sub_title">
@@ -138,7 +138,7 @@
                 </h4>
 
                 <h6 class="hs_desc">
-                  You must be 18 years of age, or the age of majority in your province, territory or country, to sign up as a registered user of the Products. Individuals under the age of 18, or the applicable age of majority, may utilize the Products only with the involvement and consent of a parent or legal guardian, under such person's account and otherwise subject to these Terms.
+                The HappierMe app has a separate section for Teenagers and if you are under 18 years of age, you should use this section of the app only with the approval of your parent or guardian or carer.
                 </h6>
 
                 <h4 class="hs_sub_title">
@@ -250,7 +250,7 @@
                 </h4>
 
                 <h6 class="hs_desc">
-                  a. You may cancel a Monthly subscription at any time. Cancellation is effective at the end of the applicable monthly period. Please make any such cancellation by emailing info@HumanWisdom.me
+                  a. You may cancel a Monthly subscription at any time. Cancellation is effective at the end of the applicable monthly period. Please make any such cancellation by emailing team@happierme.app
                 </h6>
 
                 <h6 class="hs_desc">
@@ -342,11 +342,11 @@
                 </h2>
 
                 <h6 class="hs_desc">
-                  6.1. Although we aim to offer you the best service possible, we make no promise that the Products will meet your requirements and we cannot guarantee that the Products will be fault free. If a fault occurs in the Products, please report it to us at info@Humanwisdom.me and we will review your complaint and, where we determine it is appropriate to do so, correct the fault. If the need arises, we may suspend access to the Products while we address the fault. We will not be liable to you if the Products are unavailable for a commercially reasonable period of time.
+                  6.1. Although we aim to offer you the best service possible, we make no promise that the Products will meet your requirements and we cannot guarantee that the Products will be fault free. If a fault occurs in the Products, please report it to us at team@happierme.app and we will review your complaint and, where we determine it is appropriate to do so, correct the fault. If the need arises, we may suspend access to the Products while we address the fault. We will not be liable to you if the Products are unavailable for a commercially reasonable period of time.
                 </h6>
 
                 <h6 class="hs_desc">
-                  6.2. Your access to the Products may be occasionally restricted to allow for repairs, maintenance or the introduction of new facilities or Products. We will restore the Products as soon as we reasonably can. In the event that the Products are unavailable, our usual Order and cancellation deadlines apply; please notify us of changes to your Order by emailing info@Humanwisdom.me.
+                  6.2. Your access to the Products may be occasionally restricted to allow for repairs, maintenance or the introduction of new facilities or Products. We will restore the Products as soon as we reasonably can. In the event that the Products are unavailable, our usual Order and cancellation deadlines apply; please notify us of changes to your Order by emailing team@happierme.app.
                 </h6>
 
                 <h2 class="hs_title">
@@ -434,7 +434,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  8.2. You may link to our home page, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it, but you must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists. You must not establish a link from any website that is not owned by you. The Products must not be framed on any other website, nor may you create a link to any part of the Products unless you have written permission to do so from HumanWisdom. We reserve the right to withdraw linking permission with written notice. The website from which you are linking must comply in all respects with the content standards set out in our acceptable use policy. If you wish to make any use of material on or in the Products other than that set out above, please address your request to info@Humanwisdom.me.
+                  8.2. You may link to our home page, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it, but you must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists. You must not establish a link from any website that is not owned by you. The Products must not be framed on any other website, nor may you create a link to any part of the Products unless you have written permission to do so from HumanWisdom. We reserve the right to withdraw linking permission with written notice. The website from which you are linking must comply in all respects with the content standards set out in our acceptable use policy. If you wish to make any use of material on or in the Products other than that set out above, please address your request to team@happierme.app.
                 </h6>
 
                 <h2 class="hs_title">
@@ -550,7 +550,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  g. Our designated agent for notice of claims of copyright infringement can be reached as follows: By E-Mail: info@humanwisdom.me
+                  g. Our designated agent for notice of claims of copyright infringement can be reached as follows: By E-Mail: team@happierme.app
                 </h6>
 
                 <h2 class="hs_title">
@@ -638,7 +638,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  c. You have the right to receive a paper copy of the communications. To receive a paper copy, please request it by emailing us at info@Humanwisdom.me
+                  c. You have the right to receive a paper copy of the communications. To receive a paper copy, please request it by emailing us at team@happierme.app
                 </h6>
 
                 <h6 class="hs_desc">
@@ -664,7 +664,7 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  g. You can also contact us via email at info@Humanwisdom.me to unsubscribe from further communications. Unsubscribing from communication may impact your ability to use the Products.
+                  g. You can also contact us via email at team@happierme.app to unsubscribe from further communications. Unsubscribing from communication may impact your ability to use the Products.
                 </h6>
 
                 <h6 class="hs_desc">
@@ -676,7 +676,7 @@
                 </h4>
 
                 <h6 class="hs_desc">
-                  Unless otherwise specifically indicated, all notices given by you to us must be given to HumanWisdom at info@Humanwisdom.me. We may give notice to you at the e-mail address you provide to us when you register, or in any of the ways specified in section 13.7 above. Notice will be deemed received and properly served immediately when posted on the Products or when an e-mail or other electronic communication is sent. In proving the service of any notice via email, it will be sufficient to prove that such e-mail was sent to the specified e-mail address of the addressee.
+                  Unless otherwise specifically indicated, all notices given by you to us must be given to HumanWisdom at team@happierme.app. We may give notice to you at the e-mail address you provide to us when you register, or in any of the ways specified in section 13.7 above. Notice will be deemed received and properly served immediately when posted on the Products or when an e-mail or other electronic communication is sent. In proving the service of any notice via email, it will be sufficient to prove that such e-mail was sent to the specified e-mail address of the addressee.
                 </h6>
 
                 <h4 class="hs_sub_title">
@@ -767,7 +767,7 @@
                   <span class="hs_sub_title">
                     e. Opt-out. 
                   </span>
-                  YOU MAY OPT-OUT OF THIS ARBITRATION AGREEMENT. If you do so, neither you nor HumanWisdom/HappierMe can force the other to arbitrate. To opt-out, you must notify HumanWisdom in writing no later than 30 days after first becoming subject to this arbitration agreement. Your notice must include your name and address, and the email address you used to set up your HumanWisdom account (if you have one), and an unequivocal statement that you want to opt-out of this arbitration agreement. You must send your opt-out notice to our email addresses info@humanwisdom.me
+                  YOU MAY OPT-OUT OF THIS ARBITRATION AGREEMENT. If you do so, neither you nor HumanWisdom/HappierMe can force the other to arbitrate. To opt-out, you must notify HumanWisdom in writing no later than 30 days after first becoming subject to this arbitration agreement. Your notice must include your name and address, and the email address you used to set up your HumanWisdom account (if you have one), and an unequivocal statement that you want to opt-out of this arbitration agreement. You must send your opt-out notice to our email addresses team@happierme.app
                 </h6>
 
                 <h6 class="hs_desc">
@@ -807,8 +807,44 @@
                   If any provision of these Terms is found unenforceable, then that provision will be severed from these Terms and not affect the validity and enforceability of any remaining provisions.
                 </h6>
 
+                <h4 class="hs_sub_title">
+                  13.14. SERVICE LEVEL AGREEMENT
+
+                </h4>
+
                 <h6 class="hs_desc">
-                  These Terms are effective and were last updated on September 25th, 2023.
+                We will endeavour to provide 99.9% uptime for all our users. We will endeavour to respond to service requests within 24 hours, during the working week. Latency is typically 14.28 milliseconds  on recent testing. Website speed index is typically 8.7 seconds on desktop. For support please email team@happierme.app or call +44 1642 788631
+                </h6>
+
+                <h4 class="hs_sub_title">
+                  14. DESIGN GUIDELINES
+
+                </h4>
+
+                <h6 class="hs_desc">
+                The app has been designed to comply with the WCAG 21. AA guidelines
+                </h6>
+                <h4 class="hs_sub_title">
+                  15. RISKS
+
+                </h4>
+
+                <h6 class="hs_desc">
+                In general there are very few risks associated with using the app. If you are mentally distressed and are having thoughts of self-harm or suicide you should consult a professional immediately. 
+The app is based on looking and learning about yourself, and not on a book, philosophy or religion. Anything you read in the app should be counter checked against your own observation.
+
+                </h6>
+                <h4 class="hs_sub_title">
+                  16. CLINICAL SAFETY OFFICER
+
+                </h4>
+
+                <h6 class="hs_desc">
+                The clinical safety officer is Dr Manoj Krishna, and can be reached on manoj@happierme.app
+                </h6>
+
+                <h6 class="hs_desc">
+                  These Terms are effective and were last updated on March 4th, 2025.
                 </h6>
               </div>
             </div>

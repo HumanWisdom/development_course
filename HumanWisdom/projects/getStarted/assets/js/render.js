@@ -1,11 +1,5 @@
 //const url = "https://happierme.app";
 //const url ="https://staging.happierme.app"
-function gtag() {
-    dataLayer.push(arguments);
-}
-function logevent(e, t) {
-    gtag("event", e, { screen_name: t });
-}
 
 $(".owl_container .owl-carousel").owlCarousel({
     stagePadding: 50,
@@ -46,7 +40,11 @@ $(".owl_container .owl-carousel").owlCarousel({
     }),
     $(window).resize(),
     $(window).resize(function () {
-        window.matchMedia("(max-width: 768px)").matches ?  (logevent("click_free_trial_menu_web", "index.php") , $(".btn_tff_tn").attr("href", "https://onelink.to/qsptex"))   :   (logevent("click_free_trial_menu_web", "index.php") ,$(".btn_tff_tn").attr("href", "../pages/splash_options.php"));
+        window.matchMedia("(max-width: 768px)").matches ? 
+       //  (logevent("click_free_trial_menu_web", "index.php") 
+          $(".btn_tff_tn").attr("href", "https://onelink.to/qsptex")   :  
+          // (logevent("click_free_trial_menu_web", "index.php") 
+           $(".btn_tff_tn").attr("href", "../pages/splash_options.php");
     }),
     $(window).resize(),
     $(".search-button").click(function () {

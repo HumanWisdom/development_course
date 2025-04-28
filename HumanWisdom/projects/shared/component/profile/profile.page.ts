@@ -148,11 +148,15 @@ initialize(){
   }
 
   handleReferFriendClick() {
+    this.logeventservice.logEvent('click_invite_friends');
+
     const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
     this.router.navigate([url]);
   }
 
   survey() {
+    this.logeventservice.logEvent('click_happiness_survey');
+
     this.router.navigate(['/' + SharedService.getprogramName() + "/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
@@ -167,6 +171,8 @@ initialize(){
   }
 
   deleteMyData() {
+    this.logeventservice.logEvent('click_deleteMyData');
+
     this.contentText = 'Are you sure you want to delete your data? Your entire account, including content and purchases will be deleted.';
     this.isCancel = true;
     this.enableAlert = true;
@@ -218,6 +224,8 @@ initialize(){
       isSubscribe = false;
     }
     if (event === 'ok' && this.contentText === 'Are you sure you want to delete your data? Your entire account, including content and purchases will be deleted.') {
+      this.logeventservice.logEvent('click_deleteMyData_Ok');
+
       this.Onboardingservice.deleteMyData({
         UserID: localStorage.getItem("userId").toString(),
         Email: localStorage.getItem("email")

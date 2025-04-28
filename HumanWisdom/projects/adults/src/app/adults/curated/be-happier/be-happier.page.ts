@@ -30,6 +30,7 @@ export class BeHappierPage implements OnInit {
   guest = false;
   Subscriber = false;
   mediaUrl: any;
+  wisdomShortsDynamic: any;
   isSubscriber = false;
   enablepathwayViewMore = true;
   enablelifestoriesViewMore = true;
@@ -47,6 +48,12 @@ export class BeHappierPage implements OnInit {
       this.service.GetPodcastsListing('4').subscribe((res) => {
         if (res) {
           this.mediaUrl = res
+        }
+      })
+
+      this.service.GetWisdomShortsListing('4').subscribe((res) => {
+        if (res) {
+          this.wisdomShortsDynamic = res
         }
       })
 
@@ -115,7 +122,7 @@ export class BeHappierPage implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
     }else{
-    this.router.navigate(['/adults/wisdom-shorts', link])
+    this.router.navigate([link])
     }
   }
 

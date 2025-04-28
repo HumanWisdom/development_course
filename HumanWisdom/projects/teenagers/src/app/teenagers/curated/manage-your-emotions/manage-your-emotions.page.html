@@ -152,16 +152,16 @@
 
                           <div class="row cmr-20pxi">
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
-  
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.42.mp4')">
+
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0" *ngFor="let data of wisdomShortsDynamic">
+                                <a class="" (click)="s3video(data['VideoUrl'])">
                                   <div class="prelative">
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_42.webp" class="img-responsive w100 img_cbr_01">
+                                        <img src="{{data['ImgUrl']}}" class="img-responsive w100 img_cbr_01">
                                       </div>
                                     </div>
-    
+
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
@@ -173,258 +173,19 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                                         <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          #5 ways to deal with anger
+                                          {{data['Title']}}
                                         </h4>
                                       </div>
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          00:33
+                                          {{data['Timing']}}
                                         </h4>
                                       </div>
                                     </div>
                                   </div>
                                 </a>
                               </div>
-  
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.43.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_43.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Thinking patterns that trigger anger
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          00:29
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.9.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_09.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Exploring feelings
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          01:58
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.18.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_18.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Don't compare
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          00:34
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.21.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_21.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Overcome fear
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          00:30
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.52.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_52.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          3 tips to deal with loneliness
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          00:27
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.70.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_70.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Manage your emotions
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          01:41
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.73.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_73.webp" class="img-responsive w100 img_cbr_01">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          5 tips to deal with boredom
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          00:34
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
                             </div>
                           </div>
 

@@ -1747,7 +1747,7 @@ div.scroll-container img {
 
 .hero .carousel-container {
   position: absolute;
-  inset: 90px 164px 64px 164px;
+  inset: 72px 164px 64px 164px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4747,7 +4747,8 @@ padding: 15px;
 }
 .top{
   top:50%;
-  height:475px;
+  height:100%;
+  /* margin-right:50% ; */
 }
 .video-popup-model {
 	width: 100%;
@@ -4872,36 +4873,6 @@ padding: 15px;
 /*--------------------------------------------------------------
 # Height Carousel Responsiveness
 --------------------------------------------------------------*/
-.height-carousel-reponsiveness {
-  height: 100vh; /* Full viewport height for large screens */
-  object-fit: cover; /* Ensure the image covers the container */
-}
-
-@media (max-width: 1200px) {
-  .height-carousel-reponsiveness {
-    height: 90vh; /* Adjust height for medium screens */
-  }
-}
-
-@media(min-width: 412px){
-  .height-carousel-reponsiveness {
-    height: 90vh; /* Adjust height for medium screens */
-  }
-}
-
-
-@media (max-width: 768px) {
-  .height-carousel-reponsiveness {
-    height: 75vh; /* Adjust height for small screens */
-  }
-}
-
-
-@media (min-width:478px) and (max-width: 540px) {
-    .height-carousel-reponsiveness {
-      height: 70vh; /* Adjust height for extra small screens */
-}
-}
 
 .slider-heading {
   font-size: 54px;
@@ -4939,3 +4910,123 @@ padding: 15px;
   background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 }
+
+@media only screen and (width: 600px) and (height: 1024px) {
+ .slider-heading {
+  font-size: 45px !important;
+ }
+ .top {
+  margin-top:15rem !important;
+ }
+}
+
+@media only screen and (width: 360px) and (height: 640px) {
+  .slider-heading {
+   font-size: 35px !important;
+  }
+ 
+  .fs_15px {
+    font-size: 15px !important  ;
+  }
+  
+  .top {
+   margin-left:6rem !important;
+  }
+ }
+
+ @media only screen and (width: 360px) and (height: 740px) {
+  .slider-heading {
+   font-size: 35px !important;
+  }
+ 
+  .fs_15px {
+    font-size: 15px !important  ;
+  }
+  
+ }
+
+ @media only screen and (width: 320px) and (height: 658px) {
+  .slider-heading {
+   font-size: 29px !important;
+  }
+ 
+  .fs_15px {
+    font-size: 15px !important  ;
+  }
+  
+  .top {
+   margin-left:7rem !important;
+  }
+ }
+
+ .p-2rem {
+  padding: 2rem !important;
+ }
+
+ .btn_try_happierme{
+  margin: 3px;
+  width: 263px;
+  height: 55px;
+  border:none;
+  margin-left: -10px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #E58D82, #CB6171);
+}
+
+.btn_happiermeyoutube {
+  margin: 3px;
+  height: 55px;
+  border:none;
+  width: 263px;
+  margin-left: 88px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .1);
+}
+
+.mt2rem {
+  margin-top: 2rem !important;
+}
+
+.support_section {
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 820px) {
+.support_section {
+  margin-top: 19rem !important;
+}
+.btn_happiermeyoutube {
+  margin-left: -10px;
+}
+.btn_happiermeyoutube_wrapper {
+  padding: 0px !important;
+}  
+}
+
+.height-carousel-reponsiveness {
+  height: 100vh; 
+  object-fit: cover;
+}
+
+.downloadApp_slider {
+  margin-top: 2rem;
+  padding: 0px;
+}
+
+.downloadApp_slider_text {
+  padding-left: 30px;
+}
+
+.pd21 {
+  padding-right: 21px;
+}
+
+
+@media (min-width: 345px) and (max-width: 760px) {
+  .top {
+  margin-right: 47%;
+  }
+}
+
+
+

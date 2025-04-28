@@ -6,42 +6,7 @@
         "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new1.webp",
         "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm1.webp",
         "heading" => "be happier and live in peace",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new2.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm2.webp",
-        "heading" => "overcome stress and anxiety",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new4.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm3.webp",
-        "heading" => "build fulfilling relationships",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new5.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm4.webp",
-        "heading" => "break free from unhealthy habits",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new8.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm5.webp",
-        "heading" => "support children to flourish in life",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new3.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm6.webp",
-        "heading" => "develop your emotional intelligence",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new6.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm7.webp",
-        "heading" => "communicate better",
-      ],
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new7.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm8.webp",
-        "heading" => "make better decisions",
-      ],
+      ]
     ];
 
     foreach ($slides as $index => $slide) {
@@ -81,26 +46,26 @@
                 <h5 class="fs_21px fw_400 lh_150p fc_ffffff">Find long-term solutions by addressing the root cause</h5>
               </div>
               <div class="row mt10px">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0 mt2rem">
                   <div>
-                    <a href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing_slider p-35">Try HappierMe for free</a>
+                    <a href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick btn_try_happierme fs_15px fw_600 lh_140p fc_ffffff center_flex p-2rem">Try HappierMe for free</a>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 display_m_none downloadApp_slider">
-                  <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 display_m_none downloadApp_slider ">
+                  <h3 class="mtb5px fs_15px fw_400 lh_140p fc_ffffff dinline_block ta_lctnewnew downloadApp_slider_text">
                     Download the app on
-                    <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
+                    <a id="appleStore" >
                       <img style="width:13.5px;height:auto;margin:5px;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/white_apple.svg" alt="appstore" loading="lazy">
                     </a>
                     and
-                    <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
+                    <a id="googlePlayStore" >
                       <img style="width:14.5px;height:auto; margin:5px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" alt="playstore" loading="lazy">
                     </a><br>and start your free trial
                   </h3>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  p0">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt2rem btn_happiermeyoutube_wrapper">
                   <div>
-                  <a href="#" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick mtb10px fs_15px fw_400 lh_140p fc_ffffff center_flex btn_pricingslider p-35">
+                  <a href="#" id="whywecreatedvideo" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick btn_happiermeyoutube mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex pd21">
       <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
 
