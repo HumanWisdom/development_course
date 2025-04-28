@@ -88,17 +88,17 @@
                 <h4 class="mtb0px blog_desc">
                 The impact of work doesn’t stop when you leave the office. For many professionals,               
 
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/success-failure">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
                 stress
                   </a>and
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/success-failure">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/anxiety">
                   anxiety
                   </a>
 
                
                   
                   follow them home, affecting one of the most critical aspects of well-being: 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/success-failure">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/sleep">
                   sleep.
                   </a>
                                 </h4>
@@ -119,16 +119,16 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                Adequate sleep is essential for focus,<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/success-failure">
+                Adequate sleep is essential for focus,<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/decision">
                     decision-making,
                   </a>  and 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/success-failure">
-                    decision-making,
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Emotional%20Needs">
+                  emotional regulation.
                   </a> 
                   emotional regulation. However, stress and anxiety can keep the mind racing, making it difficult to unwind. When sleep deprivation becomes chronic, it affects cognitive function, 
                   
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/success-failure">
-                    decision-making,
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/productivity">
+                  productivity,
                   </a> productivity, and long-term health.
                 </h4>
 
@@ -184,16 +184,16 @@
                
                   <ul>
                     <li>
-                    Breathing exercises to activate the body’s relaxation response                    </li>
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">Breathing exercises </a>to activate the body’s relaxation response                    </li>
 
-                    <li>
-                    Guided meditations to calm an anxious mind before bedtime                    </li>
+                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/meditation">
+                    Guided meditations</a> to calm an anxious mind before bedtime                    </li>
 
-                    <li>
-                    Journaling prompts to release worries and promote mental clarity                    </li>
+                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
+                    Journaling </a>prompts to release worries and promote mental clarity                    </li>
 
-                   <li>
-                   Tapping exercises to calm the mind
+                   <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
+                   Tapping exercises</a> to calm the mind
                 </li>
                   </ul>
                 </h4>
@@ -207,15 +207,15 @@
                
                   <ul>
                     <li>
-                    Building self-awareness: Recognizing stress triggers and reframing responses
+                    Building<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness"> self-awareness:</a> Recognizing stress triggers and reframing responses
                     </li>
 
-                    <li>
-                    Emotional intelligence training: Learning how to manage stress more effectively
+                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
+                    Emotional intelligence </a>training: Learning how to manage stress more effectively
                     </li>
 
-                    <li>
-                    A regular meditation practice: This can help make the mind less reactive and better able to cope with the challenges of work
+                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/meditation">
+                    A regular meditation practice:</a> This can help make the mind less reactive and better able to cope with the challenges of work
                     </li>
 
                    
