@@ -3,7 +3,7 @@
 
   <head>
     <title>Real success</title>
-    <meta property="title" content="Real success">
+    <meta property="title" content="If Teens Says This, They Might Be Struggling">
     <meta property="description" content="Real success lies in how you are on the inside">
     <meta property="keyword" content="success">
 
@@ -384,40 +384,46 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                  
                 When teens feel heard, supported, and safe to be themselves; they thrive.                </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    If you do want to begin your journey to discover this sense of peace and happiness within you, 
-                  </span>
-                  the 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
-                    HappierMe app 
-                  </a>
-                  (formerly HumanWisdom) has all the 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/awareness">
-                    self-awareness tools 
-                  </a>
-                  to help you do so. The additional benefit of this deeper self-understanding is that it helps you understand others better, which leads to 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
-                    happier relationships. 
-                  </a>
-                  It also makes you emotionally intelligent, 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
-                    a better communicator 
-                  </a>
-                  and more resilient, and this contributes to your success in the world.
-                </h4>
+               
 
                 <h4 class="mtb0px blog_desc">
-                  If you are happy, content with who you are and what you have, and have a peaceful relationship with yourself and others, you can count yourself as successful already. If not, you can get started on that journey.
-                </h4>
+                Not instantly. Not perfectly. But steadily.                </h4>
+
+                <div class="row mt20px rmb80px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/68_1.webp" class="img-responsive" alt="How to meditate">
+              </div>
+            </div>
+
+                <h4 class="mtb0px blog_title">
+                Connection begins with understanding                </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In summary, this deeper self-understanding can help you feel happier on the inside, and contribute to your success in the world.
-                </h4>
+                Here’s what you can do today:                </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  Take the first step, and begin. Your happiness (and success) depends on it.
-                </h4>
+                <ul>
+                    <li>Instead of correcting or advising, try listening more.</li>
+
+                    <li>Instead of asking “What’s wrong?”, try “What’s been on your mind lately?”</li>
+                    <li>Instead of reacting with worry or frustration, respond with warmth.
+                    </li>
+</ul>
+
+<h4 class="mtb0px blog_desc">
+And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
+            </h4>
+            <h4 class="mtb0px blog_desc">
+            Explore the HappierMe app for science-backed tools, relatable stories, and reflective modules to deepen your connection with your teen.
+            </h4>
+            <h4 class="mtb0px blog_desc">
+And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
+            </h4>
+            <h4 class="mtb0px blog_desc">
+            Because mental health doesn’t begin with therapy — it begins with understanding.
+            </h4>
+
+
+
               </div>
             </div>
 
