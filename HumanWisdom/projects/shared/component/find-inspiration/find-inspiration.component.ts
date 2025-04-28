@@ -19,16 +19,7 @@ export class FindInspiration  {
       height:'',
       color: '#191d3a',
       url:'podcast' 
-    },
-    { 
-      title: 'Guided questions', 
-      icon: 'map', 
-      color: '#191d3a',
-      height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg",
-    url:'journal'
     },    
-    
     { 
       title: 'Short videos', 
       icon: 'play-circle', 
@@ -38,6 +29,16 @@ export class FindInspiration  {
       url:'wisdom-shorts'
     },  
     { 
+      title: 'Life Stories', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
+      url:'wisdom-stories'
+    },
+      
+    
+    { 
       title: 'PATHWAY', 
       icon: 'star', 
       color: '#191d3a',
@@ -46,22 +47,6 @@ export class FindInspiration  {
       url:'pathway'
     },
     { 
-      title: 'Audio meditation', 
-      icon: 'volume-2', 
-      color: '#191d3a',
-      height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg',
-      url:'audio-meditation'
-    },
-    { 
-      title: 'Contact a coach', 
-      icon: 'message-circle', 
-      color: '#191d3a',
-      height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg",
-      url:'coach'
-    },
-     { 
       title: 'Events', 
       icon: 'volume-2', 
       color: '#191d3a',
@@ -77,15 +62,31 @@ export class FindInspiration  {
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg',
       url:'blogs'
-    },
+    },  
     { 
-      title: 'Life Stories', 
+      title: 'Audio meditation', 
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
-      url:'wisdom-stories'
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg',
+      url:'audio-meditation'
     },
+    { 
+      title: 'Contact a coach', 
+      icon: 'message-circle', 
+      color: '#191d3a',
+      height:'',
+      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg",
+      url:'coach'
+    },      
+    { 
+      title: 'Guided questions', 
+      icon: 'map', 
+      color: '#191d3a',
+      height:'',
+      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg",
+    url:'journal'
+    },  
     { 
       title: 'Wellness Survey', 
       icon: 'volume-2', 
