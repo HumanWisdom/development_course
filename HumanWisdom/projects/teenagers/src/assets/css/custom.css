@@ -5042,12 +5042,13 @@ table.dataTable>tbody>tr.child span.dtr-title
 th,td, .form-group
 {
 	word-wrap:break-word;
+  
 }
 
 label
 {
 	margin-bottom:unset!important;
-	margin-top:10px!important;
+	margin-top:2px!important;
 }
 
 input[type=checkbox]
