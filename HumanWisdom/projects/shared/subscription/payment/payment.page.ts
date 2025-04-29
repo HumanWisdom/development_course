@@ -9,15 +9,15 @@ import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
 
-var ADT = ADT || {};
-ADT.Tag = ADT.Tag || {};
-ADT.Tag.t = 0;
-ADT.Tag.c = "";
-ADT.Tag.tp = 0;
-ADT.Tag.am = 0;
-ADT.Tag.ti = "";
-ADT.Tag.xd = "";
-ADT.Tag.cpn = "";
+// var ADT = ADT || {};
+// ADT.Tag = ADT.Tag || {};
+// ADT.Tag.t = 0;
+// ADT.Tag.c = "";
+// ADT.Tag.tp = 0;
+// ADT.Tag.am = 0;
+// ADT.Tag.ti = "";
+// ADT.Tag.xd = "";
+// ADT.Tag.cpn = "";
 
 
 @Component({
@@ -36,6 +36,8 @@ export class PaymentPage implements OnInit, AfterViewInit {
   isProduction: boolean = true;
   isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
+   @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+
   constructor(private datePipe: DatePipe, private router: Router, private commonService:CommonService,
     private location: Location) {
     this.selectedSubscription =
@@ -178,8 +180,22 @@ export class PaymentPage implements OnInit, AfterViewInit {
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
         } else {
 
-          ADT.Tag.am = this.GetAmount();
-          ADT.Tag.c = this.getIsoCode();
+          // ADT.Tag.am = this.GetAmount();
+          // ADT.Tag.c = this.getIsoCode();
+
+          let am = this.GetAmount();
+          // let ti = ev.paymentMethod.id;
+          // let cpn = this.obj.DiscountCode;
+          // let t = this.obj.Quantity;
+          let c = this.getIsoCode();
+
+          localStorage.setItem('stripeamount', am.toString());
+          // localStorage.setItem('stripeid', ti);
+          // localStorage.setItem('stripeDiscountCode', cpn);
+          // localStorage.setItem('stripeqty', t);
+          localStorage.setItem('stripecountrycode', c);
+
+          this.payementSubmitBtnClick.nativeElement.click();
 
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
         }
