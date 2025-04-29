@@ -109,7 +109,10 @@
 
                 <h4 class="mtb0px blog_desc">
                  
-                A recent HappierMe poll of 4115 people found that 44% of respondents experience significant sleep disturbance due to work-related stress and anxiety. Another 32% report moderate effects, while only 16% say their sleep is minimally or not at all affected.                </h4>
+                A recent <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                  
+                  
+                HappierMe </a>poll of 4115 people found that 44% of respondents experience significant sleep disturbance due to work-related stress and anxiety. Another 32% report moderate effects, while only 16% say their sleep is minimally or not at all affected.                </h4>
 
                 <h4 class="mtb0px blog_desc">
                 Prominent figures like Arianna Huffington, who collapsed due to extreme exhaustion, have spoken about the dangers of sleep deprivation. Similarly, Jeff Bezos attributes his decision-making and leadership success to prioritizing a good night’s sleep. Their experiences highlight that sleep isn’t just a personal issue — it directly affects productivity, innovation, and well-being.                </h4>
@@ -119,7 +122,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                Adequate sleep is essential for focus,<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/decision">
+                Adequate sleep is essential for focus, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/decision">
                     decision-making,
                   </a>  and 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Emotional%20Needs">
@@ -140,10 +143,19 @@
                     </li>
 
                     <li>
-                    Frequent wake-ups: Anxiety keeps the body in a state of alertness, leading to disrupted sleep.                    </li>
+                    Frequent wake-ups:
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/anxiety">
+                  
+                   
+                    Anxiety </a>keeps the body in a state of alertness, leading to disrupted sleep.                    </li>
 
                     <li>
-                    Early morning awakenings: Stress hormones may cause people to wake up too early, leaving them tired throughout the day.
+                    Early morning awakenings: 
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
+                  
+                   
+                  
+                    Stress </a> hormones may cause people to wake up too early, leaving them tired throughout the day.
                     </li>
 
                     <li>
@@ -157,7 +169,17 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                When work stress disrupts sleep, it creates a vicious cycle. Poor sleep leads to decreased focus, higher irritability, and increased stress levels the next day. Over time, this can lead to burnout, reduced job performance, and physical health issues such as high blood pressure and weakened immunity.                </h4>
+                When work stress disrupts sleep, it creates a vicious cycle. Poor sleep leads to decreased 
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/focus">
+                  
+                   
+                  
+                focus,</a> higher irritability, and increased stress levels the next day. Over time, this can lead to 
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">
+                  
+                   
+                  
+                burnout,</a> reduced job performance, and physical health issues such as high blood pressure and weakened immunity.                </h4>
 
                 <h4 class="mtb0px blog_title">
                 Implications for organisations
@@ -165,16 +187,31 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                This survey has many implications for organisations. 76% of employees report disturbed sleep as a result of work-related issues and this is impacting their performance, and their physical and mental health, leading to burnout, days off work and productivity.                </h4>
+                This survey has many implications for organisations. 76% of employees report disturbed sleep as a result of work-related issues and this is impacting their performance, and their physical and mental health, leading to burnout, days off work and 
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/productivity">
+                  
+                   
+                  
+                productivity.</a>                </h4>
 
                 <h4 class="mtb0px blog_desc">
-                Enlightened organisations will proactively support the wellbeing of their staff by creating a happier work environment and offering them tools to proactively manage their stress and anxiety.
+                Enlightened organisations will proactively support the wellbeing of their staff by creating a 
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/work.php">
+                  
+                   
+                  
+                happier work </a> environment and offering them tools to proactively manage their stress and anxiety.
 
 </h4>
 
                 <h4 class="mtb0px blog_title">
                 How to improve sleep despite work stress
                 </h4>
+                <h4 class="mtb0px blog_desc">
+                Managing stress effectively is key to improving sleep quality. The                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                HappierMe</a> app offers science-backed techniques to help users break the stress-sleep cycle and regain control of their well-being.
+              
+              </h4>
 
 
                 <h4 class="mtb0px blog_desc">
@@ -227,23 +264,35 @@
                 The HappierMe Approach              
                 
                 <h4 class="mtb0px blog_desc">
-                At HappierMe, we believe that sleep and mental well-being are deeply connected.
+                At                 <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                HappierMe, </a>we believe that
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/sleep">
+
+                sleep </a>and 
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                mental well-being </a>are deeply connected.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                We cannot always control our work environment, but we can take charge of how we react to those challenges, and this can create lasting change.
+                We cannot always control our work environment, but we can take charge of how we                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">
+                react </a>to those challenges, and this can create lasting change.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                  
-                The HappierMe app has many resources to help including a detailed mental health section, a feel better now section, and mini workouts for developing a healthy mind.
+                The HappierMe app has many resources to help including a detailed                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                mental health section,</a> a                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/feel-better-now">
+                feel better now </a> section, and mini workouts for developing a healthy mind.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                  
-                Sleep shouldn’t be a casualty of work-related stress. With the right tools and mindset, professionals can regain control, sleep better, and wake up ready to face the day with clarity and confidence.
+                Sleep shouldn’t be a casualty of work-related                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
+                stress.</a> With the right tools and mindset, professionals can regain control, sleep better, and wake up ready to face the day with clarity and confidence.
                 </h4>
-
+                <h4 class="mtb0px blog_title">
+                Find out how HappierMe can help: <a class="blog_highlight_peach td_underline" href="https://happierme.app/"> https://happierme.app   </a>
+                </h4>
                
 
             <div class="row">

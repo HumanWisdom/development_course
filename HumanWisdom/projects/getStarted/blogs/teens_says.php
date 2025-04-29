@@ -2,7 +2,8 @@
 <html lang="en">
 
   <head>
-    <title>Real success</title>
+    <title>If Teens Says This, They Might Be Struggling
+    </title>
     <meta property="title" content="If Teens Says This, They Might Be Struggling">
     <meta property="description" content="Real success lies in how you are on the inside">
     <meta property="keyword" content="success">
@@ -78,7 +79,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+              <h4 class="mtb0px blog_title">
                 “I’m fine.”
 
                  
@@ -99,8 +100,8 @@ Let’s decode a few common phrases — and talk about what you can do if you he
 
               
                 
-                  Just ask 
-                  <h4 class="blog_highlight_black">
+                  
+                <h4 class="mtb0px blog_title">
                   1. “I’m just tired.”
 
 </h4>
@@ -350,11 +351,24 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                    </li>
                   </ul>
                 </h4>
+<div class="row mt20px rmb80px">
+<div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+</div>
+              <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8 p0">
+
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/68_2.webp" class="img-responsive" alt="How to meditate">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+</div>
+            </div>
+
 
  <h4 class="mtb0px blog_desc">
- What makes HappierMe different
+ <span class="blog_highlight_black">
+ What makes HappierMe different :
+                  </span>
 
-:
+
                
                   <ul>
                     <li>
@@ -399,7 +413,7 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 Connection begins with understanding                </h4>
 
                 <h4 class="mtb0px blog_desc">
-                Here’s what you can do today:                </h4>
+                Here’s what you can do today:               
 
                 <ul>
                     <li>Instead of correcting or advising, try listening more.</li>
@@ -408,6 +422,7 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                     <li>Instead of reacting with worry or frustration, respond with warmth.
                     </li>
 </ul>
+</h4>
 
 <h4 class="mtb0px blog_desc">
 And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
