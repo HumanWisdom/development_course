@@ -291,22 +291,41 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                     <li>
                     Validate their emotions, even if their logic doesn’t make sense to you.
 
-                   <li>
+                   <!-- <li>
                    Reflect on your own response. Do you truly listen? Or are you rushing to fix things?
                    </li>
                    <li>
                    What sounds dismissive is often protective.
 
-                   </li>
+                   </li> -->
                   </ul>
                 </h4>
 
+                <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <iframe 
+          class="yt-embed"
+  src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  >
+</iframe>
+</div>
+</div>  <h4 class="mtb0px blog_title">
+
+What sounds dismissive is often protective.
+</h4>
+
                 <h4 class="mtb0px blog_desc">
+
+
                 Many teens hide pain behind sarcasm, silence, or eye rolls. But it’s not that they don’t want to be seen — it’s that they’re afraid of being judged once they are. And this is where the right support can make all the difference.</h4>
                 
 
                 <h4 class="mtb0px blog_title">
-                How the HappierMe app can help                </h4>
+                How the                     <a class="blog_highlight_peach td_underline" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en_IN">
+                HappierMe app</a> can help                </h4>
 
                 <h4 class="mtb0px blog_desc">
                 
@@ -391,7 +410,10 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 </h4>
                 <h4 class="mtb0px blog_desc">
                  
-                This approach is gaining traction. HappierMe recently partnered with the National Family Support Network to enhance the well-being of millions of families across the U.S. This is an interview with their founder.
+                This approach is gaining traction.                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                HappierMe </a>recently partnered with the                     <a class="blog_highlight_peach td_underline" href="https://www.nationalfamilysupportnetwork.org/">
+                National Family Support Network</a> to enhance the well-being of millions of families across the U.S.                    <a class="blog_highlight_peach td_underline" href="https://www.youtube.com/watch?v=8clTAjUeYaw">
+                This is an interview with their founder.</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -425,10 +447,17 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
 </h4>
 
 <h4 class="mtb0px blog_desc">
-And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
+And if you’re not sure where to start, 
+
+<span class="blog_highlight_black">
+                  
+                  we’re here to help. </span>Post a question on the                   
+                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/forum">
+HappierMe forum.</a>
             </h4>
             <h4 class="mtb0px blog_desc">
-            Explore the HappierMe app for science-backed tools, relatable stories, and reflective modules to deepen your connection with your teen.
+            Explore the                     <a class="blog_highlight_peach td_underline" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en_IN">
+            HappierMe app</a> for science-backed tools, relatable stories, and reflective modules to deepen your connection with your teen.
             </h4>
             <h4 class="mtb0px blog_desc">
 And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
@@ -436,8 +465,43 @@ And if you’re not sure where to start, we’re here to help. Post a question o
             <h4 class="mtb0px blog_desc">
             Because mental health doesn’t begin with therapy — it begins with understanding.
             </h4>
+            <h4 class="mtb0px blog_title">
+            Want to learn more?
+            </h4>
+            <h4 class="mtb0px blog_desc">
+            Discover the app that’s helping teens and families communicate better, feel safer, and grow emotionally — together.           
+           </h4>
+           <ul>
+            <li>
+           <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/teenagers.php">
 
+           HappierMe for Teens website
+ </a>
+ </li>
+ <li>
+ <a class="blog_highlight_peach td_underline" href="https://www.youtube.com/watch?v=VxgN-L36z2w">
 
+ Introduction to the Teen app (video, 1 min)
+</a></li>
+<li>
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/teen-talk">
+
+Teen Talk — conversations with teens from around the world
+</a>
+ </li>
+<li>
+<a class="blog_highlight_peach td_underline" href="https://www.youtube.com/watch?v=4BEN3ree5vY">
+
+Leah talks about overcoming anxiety (1 min)
+</a>
+ </li>
+
+<li>
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/adult-dashboard">
+
+Download HappierMe
+</a></li>
+ </ul>
 
               </div>
             </div>
