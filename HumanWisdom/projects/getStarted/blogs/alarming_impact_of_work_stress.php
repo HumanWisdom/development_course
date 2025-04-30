@@ -3,9 +3,10 @@
 
   <head>
     <title>Real success</title>
-    <meta property="title" content="Real success">
-    <meta property="description" content="Real success lies in how you are on the inside">
-    <meta property="keyword" content="success">
+    <meta property="title" content="Work Stress & Sleep: Breaking the Cycle for Better Rest
+">
+    <meta property="description" content="Work-related stress affects sleep for 76% of employees, leading to burnout and poor health. Discover solutions to improve sleep and manage stress with HappierMe.">
+    <meta property="keyword" content="work stress, sleep problems, stress and sleep, workplace stress, sleep deprivation solutions, better sleep tips, HappierMe app">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -88,17 +89,17 @@
                 <h4 class="mtb0px blog_desc">
                 The impact of work doesn’t stop when you leave the office. For many professionals,               
 
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
                 stress
                   </a>and
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/anxiety">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">
                   anxiety
                   </a>
 
                
                   
                   follow them home, affecting one of the most critical aspects of well-being: 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/sleep">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-shorts/1.122.mp4/T/Here%20are%20some%20tips%20to%20help%20you%20sleep%20better">
                   sleep.
                   </a>
                                 </h4>
@@ -122,15 +123,15 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                Adequate sleep is essential for focus, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/decision">
+                Adequate sleep is essential for focus, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~6.mp3/6/T/Better%20Decision-Making">
                     decision-making,
                   </a>  and 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Emotional%20Needs">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/emotional-needs">
                   emotional regulation.
                   </a> 
                   emotional regulation. However, stress and anxiety can keep the mind racing, making it difficult to unwind. When sleep deprivation becomes chronic, it affects cognitive function, 
                   
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/productivity">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/youtubelink/8zqPEQhWPMI%3Dvncbxdfchgvxd">
                   productivity,
                   </a> productivity, and long-term health.
                 </h4>
@@ -144,14 +145,14 @@
 
                     <li>
                     Frequent wake-ups:
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/anxiety">
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">
                   
                    
                     Anxiety </a>keeps the body in a state of alertness, leading to disrupted sleep.                    </li>
 
                     <li>
                     Early morning awakenings: 
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
                   
                    
                   
@@ -170,12 +171,12 @@
 
                 <h4 class="mtb0px blog_desc">
                 When work stress disrupts sleep, it creates a vicious cycle. Poor sleep leads to decreased 
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/focus">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-shorts/1.119.mp4/T/5%20tips%20to%20improve%20your%20focus">
                   
                    
                   
                 focus,</a> higher irritability, and increased stress levels the next day. Over time, this can lead to 
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-shorts/1.82.mp4/T/Burnout">
                   
                    
                   
@@ -188,7 +189,7 @@
 
                 <h4 class="mtb0px blog_desc">
                 This survey has many implications for organisations. 76% of employees report disturbed sleep as a result of work-related issues and this is impacting their performance, and their physical and mental health, leading to burnout, days off work and 
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/productivity">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/youtubelink/FIAb3U28OOY%3Dvncbxdfchgvxd">
                   
                    
                   
@@ -196,7 +197,7 @@
 
                 <h4 class="mtb0px blog_desc">
                 Enlightened organisations will proactively support the wellbeing of their staff by creating a 
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/work.php">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/youtubelink/FIAb3U28OOY%3Dvncbxdfchgvxd">
                   
                    
                   
@@ -221,9 +222,9 @@
                
                   <ul>
                     <li>
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">Breathing exercises </a>to activate the body’s relaxation response                    </li>
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app//adults/breathing">Breathing exercises </a>to activate the body’s relaxation response                    </li>
 
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/meditation">
+                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/guided-meditation/audiopage/https_~~d1tenzemoxuh75.cloudfront.net~guided-meditation~audios~guided-meditation%252B1.7.mp3/Releasing-Fear-a-Meditation/7/Audio">
                     Guided meditations</a> to calm an anxious mind before bedtime                    </li>
 
                     <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
@@ -244,15 +245,16 @@
                
                   <ul>
                     <li>
-                    Building<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness"> self-awareness:</a> Recognizing stress triggers and reframing responses
+                    Building<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/awareness"> self-awareness:</a> Recognizing stress triggers and reframing responses
                     </li>
 
                     <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
                     Emotional intelligence </a>training: Learning how to manage stress more effectively
                     </li>
 
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/meditation">
-                    A regular meditation practice:</a> This can help make the mind less reactive and better able to cope with the challenges of work
+                    <li> A regular
+                      <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/guided-meditation">
+                    meditation practice:</a> This can help make the mind less reactive and better able to cope with the challenges of work
                     </li>
 
                    
@@ -266,7 +268,7 @@
                 <h4 class="mtb0px blog_desc">
                 At                 <a class="blog_highlight_peach td_underline" href="https://happierme.app">
                 HappierMe, </a>we believe that
-                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/sleep">
+                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-shorts/1.122.mp4/T/Here%20are%20some%20tips%20to%20help%20you%20sleep%20better">
 
                 sleep </a>and 
                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
@@ -274,7 +276,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                We cannot always control our work environment, but we can take charge of how we                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">
+                We cannot always control our work environment, but we can take charge of how we                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">
                 react </a>to those challenges, and this can create lasting change.
                 </h4>
 
@@ -287,12 +289,12 @@
 
                 <h4 class="mtb0px blog_desc">
                  
-                Sleep shouldn’t be a casualty of work-related                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
+                Sleep shouldn’t be a casualty of work-related                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
                 stress.</a> With the right tools and mindset, professionals can regain control, sleep better, and wake up ready to face the day with clarity and confidence.
                 </h4>
-                <h4 class="mtb0px blog_title">
+                <!-- <h4 class="mtb0px blog_title">
                 Find out how HappierMe can help: <a class="blog_highlight_peach td_underline" href="https://happierme.app/"> https://happierme.app   </a>
-                </h4>
+                </h4> -->
                
 
             <div class="row">

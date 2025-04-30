@@ -4,9 +4,11 @@
   <head>
     <title>If Teens Says This, They Might Be Struggling
     </title>
-    <meta property="title" content="If Teens Says This, They Might Be Struggling">
-    <meta property="description" content="Real success lies in how you are on the inside">
-    <meta property="keyword" content="success">
+    <meta property="title" content="Decode Teen Struggles: Recognizing Signs & Offering Support">
+    <meta property="description" content="Learn to decode what teens truly mean when they say, “I’m fine” or “I don’t care.” Discover ways to support their emotional health and build trust with HappierMe.
+">
+    <meta property="keyword" content="teen emotional health, understanding teens, teen struggles, emotional support for teens, helping teenagers, decoding teen behavior, HappierMe app
+">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -273,15 +275,16 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
 
                
 
-                <h4 class="mtb0px blog_desc">
-                What helps:
+                <h4 class="mtb20px blog_desc">
+                <span class="blog_highlight_black">
+                What helps:                  </span>
 
-:
+
                
                   <ul>
                     <li>
                     Acknowledge their reality. “You’re right — I might not fully understand. But I want to.”
-                    :</li>
+                    </li>
 
                     <li>
                     Ask more questions than you offer solutions.
@@ -312,7 +315,7 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
   >
 </iframe>
 </div>
-</div>  <h4 class="mtb0px blog_title">
+</div>  <h4 class="mtb20px blog_title">
 
 What sounds dismissive is often protective.
 </h4>
@@ -324,8 +327,8 @@ What sounds dismissive is often protective.
                 
 
                 <h4 class="mtb0px blog_title">
-                How the                     <a class="blog_highlight_peach td_underline" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en_IN">
-                HappierMe app</a> can help                </h4>
+                How the                    
+                HappierMe app can help                </h4>
 
                 <h4 class="mtb0px blog_desc">
                 
