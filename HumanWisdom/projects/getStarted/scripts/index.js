@@ -370,6 +370,7 @@ var countryCode = "",
     pricingModel = "",
     defaultCurrencySymbol = "";
 async function fetchData() {
+    localStorage.setItem("programType",9)
     const e = await fetch("https://ipapi.co/json");
     if (!e.ok) throw new Error("Network response was not ok " + e.statusText);
     const t = await e.json();
@@ -378,7 +379,7 @@ async function fetchData() {
     if (!n.ok) throw new Error("Network response was not ok " + n.statusText);
     {
         const e = await n.json();
-        (this.pricingModel = e.filter((e) => e.ProgID == localStorage.getItem("programType"))[0]),
+        (this.pricingModel = e.filter((e) => e.ProgID == parseInt(localStorage.getItem("programType")))[0]),
             (this.defaultCurrencySymbol = pricingModel.ISOCode),
             (this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal(this.pricingModel.Annual / 12)),
             console.log(this.pricingModel.PerMonthAmountOnAnnual),
