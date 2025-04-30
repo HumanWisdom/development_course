@@ -61,7 +61,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Work and Leadership
+                   Relationships
                   </button>
                 </div>
 
@@ -120,8 +120,11 @@ Tiredness isn’t always physical. It’s often emotional exhaustion, especially
 
 
                 <h4 class="mtb0px blog_desc">
-                What helps:
-:
+
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
+
                
                   <ul>
                     <li>
@@ -165,8 +168,10 @@ Teens may shut down emotionally because caring feels risky. So they build walls 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                What helps:
-:
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
+
                
                   <ul>
                     <li>
@@ -223,9 +228,11 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                What helps:
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
 
-:
+
                
                   <ul>
                     <li>
@@ -277,7 +284,8 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
 
                 <h4 class="mtb20px blog_desc">
                 <span class="blog_highlight_black">
-                What helps:                  </span>
+                What helps: 
+              </span>
 
 
                
@@ -315,7 +323,7 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
   >
 </iframe>
 </div>
-</div>  <h4 class="mtb20px blog_title">
+</div>  <h4 class="mtb30px blog_title">
 
 What sounds dismissive is often protective.
 </h4>
@@ -345,9 +353,13 @@ What sounds dismissive is often protective.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                What is inside HappierMe
 
-:
+                <span class="blog_highlight_black">
+                What is inside HappierMe: 
+              </span>
+                
+
+
                
                   <ul>
                     <li>
