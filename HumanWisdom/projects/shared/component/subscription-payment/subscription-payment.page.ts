@@ -237,13 +237,13 @@ export class SubscriptionPaymentPage implements OnInit {
                     } else {
                       let am = parseFloat(this.amount)*100;
                       let ti = ev.paymentMethod.id;
-                      let cpn = this.obj.DiscountCode;
+                      // let cpn = this.obj.DiscountCode;
                       let t = this.obj.Quantity;
                       let c = this.defaultCountryname;
 
                       localStorage.setItem('stripeamount', am.toString());
                       localStorage.setItem('stripeid', ti);
-                      localStorage.setItem('stripeDiscountCode', cpn);
+                      localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
                       localStorage.setItem('stripeqty', t);
                       localStorage.setItem('stripecountrycode', c);
 
@@ -278,13 +278,13 @@ export class SubscriptionPaymentPage implements OnInit {
 
                   let am = parseFloat(this.amount)*100;
                   let ti = ev.paymentMethod.id;
-                  let cpn = this.obj.DiscountCode;
+                  // let cpn = this.obj.DiscountCode;
                   let t = this.obj.Quantity;
                   let c = this.defaultCountryname;
 
                   localStorage.setItem('stripeamount', am.toString());
                   localStorage.setItem('stripeid', ti);
-                  localStorage.setItem('stripeDiscountCode', cpn);
+                  localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
                   localStorage.setItem('stripeqty', t);
                   localStorage.setItem('stripecountrycode', c);
                       
@@ -368,13 +368,13 @@ export class SubscriptionPaymentPage implements OnInit {
 
                 let am = parseFloat(this.amount)*100;
                 let ti = this.stripeId;
-                let cpn = this.obj.DiscountCode;
+                // let cpn = this.obj.DiscountCode;
                 let t = this.obj.Quantity;
                 let c = this.defaultCountryname;
 
                 localStorage.setItem('stripeamount', am.toString());
                 localStorage.setItem('stripeid', ti);
-                localStorage.setItem('stripeDiscountCode', cpn);
+                localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
                 localStorage.setItem('stripeqty', t);
                 localStorage.setItem('stripecountrycode', c);
 

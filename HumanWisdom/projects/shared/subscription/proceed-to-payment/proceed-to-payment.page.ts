@@ -196,6 +196,7 @@ export class ProceedToPaymentPage implements OnInit {
             this.msg = 'Coupon applied successfully'
             this.discount = parseFloat(res[0].Discount)
             localStorage.setItem("couponid", res[0]['CouponID'])
+            localStorage.setItem("discountCode", this.discountCode)
             this.totalCartValueDiscount = this.totalCartValue - this.discount;
             this.percentage = res[0].Percentage
           }

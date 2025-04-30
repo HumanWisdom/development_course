@@ -405,6 +405,7 @@ export class ViewcartPage implements OnInit {
           this.enableAlert = true;
           this.discount = parseFloat(res[0].Discount)
           localStorage.setItem("couponid", res[0]['CouponID'])
+          localStorage.setItem("discountCode", this.couponCode)
           this.totalCartValueDiscount = this.totalCartValue - this.discount
           localStorage.setItem('totalAmount', this.totalCartValueDiscount)
           this.percentage = res[0].Percentage
