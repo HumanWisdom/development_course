@@ -315,18 +315,18 @@
                   The HappierMe app is packed with resources to help you to do this.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Explore the Feel Better Now section
+                <h4 class="mtb0px blog_desc ">
+                  Explore the <span class="blog_highlight_black">Feel Better Now section</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/feel-better-now">
                     here.
                   </a>
                   <br>
-                  Explore the Mental Health section
+                  Explore the <span class="blog_highlight_black">Mental Health section </span></a>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
                     here.
                   </a>
                   <br>
-                  Explore the Awareness exercises
+                  Explore the <span class="blog_highlight_black">Awareness exercises</span></a>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
                     here.
                   </a>

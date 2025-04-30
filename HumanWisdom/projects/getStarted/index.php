@@ -3023,7 +3023,7 @@
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
                         </div>
                         <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
