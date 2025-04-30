@@ -4922,9 +4922,7 @@ padding: 15px;
  .slider-heading {
   font-size: 45px !important;
  }
- .top {
-  margin-top:15rem !important;
- }
+
 }
 
 @media only screen and (width: 360px) and (height: 640px) {
@@ -5032,6 +5030,7 @@ padding: 15px;
 @media (min-width: 345px) and (max-width: 760px) {
   .top {
   margin-left: 33%;
+  margin-top: 90%;
   }
 
    .btn_try_happierme , .btn_happiermeyoutube{

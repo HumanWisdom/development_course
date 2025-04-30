@@ -493,7 +493,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
-                  <a id="happiermeTryForFree"  class="tryhappiermeClick"> 
+                  <a href="https://happierme.app/pages/splash_options.php"   class="tryhappiermeClick"> 
               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
               Try HappierMe for free
                 </button>
@@ -1169,7 +1169,7 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 center_flex p0">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 center_flex p0" style="margin-left: 12px;">
                   <!-- <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a> -->
