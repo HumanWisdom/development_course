@@ -5024,9 +5024,23 @@ padding: 15px;
 
 @media (min-width: 345px) and (max-width: 760px) {
   .top {
-  margin-right: 47%;
+  margin-left: 33%;
   }
+
+   .btn_try_happierme , .btn_happiermeyoutube{
+    width: 335px !important;
+    height: 51px !important;
+   }
 }
+
+
+@media (min-width: 360px) and (max-height: 740px) {
+  .top {
+  margin-left: 50%;
+  }
+
+}
+
 
 
 
