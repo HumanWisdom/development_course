@@ -3569,7 +3569,7 @@ audio::-webkit-media-controls-enclosure
 .img_blogs
 {
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: fill;
   height: 300px;
 }
 
