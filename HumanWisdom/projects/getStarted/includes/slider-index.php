@@ -6,7 +6,42 @@
           "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new1.webp",
           "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm1.webp",
           "heading" => "be happier and live in peace",
-        ]
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new2.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm2.webp",
+          "heading" => "overcome stress and anxiety",
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new4.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm3.webp",
+          "heading" => "build fulfilling relationships",
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new5.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm4.webp",
+          "heading" => "break free from unhealthy habits",
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new8.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm5.webp",
+          "heading" => "support children to flourish in life",
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new3.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm6.webp",
+          "heading" => "be emotionally intelligent",
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new6.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm7.webp",
+          "heading" => "communicate better",
+        ],
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new7.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm8.webp",
+          "heading" => "make better decisions",
+        ],
     
     ];
 
