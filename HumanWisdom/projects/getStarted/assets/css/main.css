@@ -5034,7 +5034,7 @@ padding: 15px;
 }
 
 
-@media (min-width: 360px) and (max-height: 740px) {
+@media (min-width: 360px) {
   .top {
   margin-left: 50%;
   }
