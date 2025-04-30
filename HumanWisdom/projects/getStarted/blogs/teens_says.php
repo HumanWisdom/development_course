@@ -2,10 +2,13 @@
 <html lang="en">
 
   <head>
-    <title>Real success</title>
-    <meta property="title" content="If Teens Says This, They Might Be Struggling">
-    <meta property="description" content="Real success lies in how you are on the inside">
-    <meta property="keyword" content="success">
+    <title>If Teens Says This, They Might Be Struggling
+    </title>
+    <meta property="title" content="Decode Teen Struggles: Recognizing Signs & Offering Support">
+    <meta property="description" content="Learn to decode what teens truly mean when they say, “I’m fine” or “I don’t care.” Discover ways to support their emotional health and build trust with HappierMe.
+">
+    <meta property="keyword" content="teen emotional health, understanding teens, teen struggles, emotional support for teens, helping teenagers, decoding teen behavior, HappierMe app
+">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -58,7 +61,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Work and Leadership
+                   Relationships
                   </button>
                 </div>
 
@@ -78,7 +81,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+              <h4 class="mtb0px blog_title">
                 “I’m fine.”
 
                  
@@ -99,8 +102,8 @@ Let’s decode a few common phrases — and talk about what you can do if you he
 
               
                 
-                  Just ask 
-                  <h4 class="blog_highlight_black">
+                  
+                <h4 class="mtb0px blog_title">
                   1. “I’m just tired.”
 
 </h4>
@@ -117,8 +120,11 @@ Tiredness isn’t always physical. It’s often emotional exhaustion, especially
 
 
                 <h4 class="mtb0px blog_desc">
-                What helps:
-:
+
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
+
                
                   <ul>
                     <li>
@@ -162,8 +168,10 @@ Teens may shut down emotionally because caring feels risky. So they build walls 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                What helps:
-:
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
+
                
                   <ul>
                     <li>
@@ -220,9 +228,11 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                What helps:
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
 
-:
+
                
                   <ul>
                     <li>
@@ -272,15 +282,17 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
 
                
 
-                <h4 class="mtb0px blog_desc">
-                What helps:
+                <h4 class="mtb20px blog_desc">
+                <span class="blog_highlight_black">
+                What helps: 
+              </span>
 
-:
+
                
                   <ul>
                     <li>
                     Acknowledge their reality. “You’re right — I might not fully understand. But I want to.”
-                    :</li>
+                    </li>
 
                     <li>
                     Ask more questions than you offer solutions.
@@ -290,22 +302,41 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                     <li>
                     Validate their emotions, even if their logic doesn’t make sense to you.
 
-                   <li>
+                   <!-- <li>
                    Reflect on your own response. Do you truly listen? Or are you rushing to fix things?
                    </li>
                    <li>
                    What sounds dismissive is often protective.
 
-                   </li>
+                   </li> -->
                   </ul>
                 </h4>
 
+                <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <iframe 
+          class="yt-embed"
+  src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  >
+</iframe>
+</div>
+</div>  <h4 class="mtb30px blog_title">
+
+What sounds dismissive is often protective.
+</h4>
+
                 <h4 class="mtb0px blog_desc">
+
+
                 Many teens hide pain behind sarcasm, silence, or eye rolls. But it’s not that they don’t want to be seen — it’s that they’re afraid of being judged once they are. And this is where the right support can make all the difference.</h4>
                 
 
                 <h4 class="mtb0px blog_title">
-                How the HappierMe app can help                </h4>
+                How the                    
+                HappierMe app can help                </h4>
 
                 <h4 class="mtb0px blog_desc">
                 
@@ -322,9 +353,13 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                What is inside HappierMe
 
-:
+                <span class="blog_highlight_black">
+                What is inside HappierMe: 
+              </span>
+                
+
+
                
                   <ul>
                     <li>
@@ -350,11 +385,24 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                    </li>
                   </ul>
                 </h4>
+<div class="row mt20px rmb80px">
+<div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+</div>
+              <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8 p0">
+
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/68_2.webp" class="img-responsive" alt="How to meditate">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+</div>
+            </div>
+
 
  <h4 class="mtb0px blog_desc">
- What makes HappierMe different
+ <span class="blog_highlight_black">
+ What makes HappierMe different :
+                  </span>
 
-:
+
                
                   <ul>
                     <li>
@@ -377,7 +425,10 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 </h4>
                 <h4 class="mtb0px blog_desc">
                  
-                This approach is gaining traction. HappierMe recently partnered with the National Family Support Network to enhance the well-being of millions of families across the U.S. This is an interview with their founder.
+                This approach is gaining traction.                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                HappierMe </a>recently partnered with the                     <a class="blog_highlight_peach td_underline" href="https://www.nationalfamilysupportnetwork.org/">
+                National Family Support Network</a> to enhance the well-being of millions of families across the U.S.                    <a class="blog_highlight_peach td_underline" href="https://www.youtube.com/watch?v=8clTAjUeYaw">
+                This is an interview with their founder.</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -399,7 +450,7 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                 Connection begins with understanding                </h4>
 
                 <h4 class="mtb0px blog_desc">
-                Here’s what you can do today:                </h4>
+                Here’s what you can do today:               
 
                 <ul>
                     <li>Instead of correcting or advising, try listening more.</li>
@@ -408,12 +459,20 @@ If we interrupt, problem-solve too quickly, or minimize their feelings, they shu
                     <li>Instead of reacting with worry or frustration, respond with warmth.
                     </li>
 </ul>
+</h4>
 
 <h4 class="mtb0px blog_desc">
-And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
+And if you’re not sure where to start, 
+
+<span class="blog_highlight_black">
+                  
+                  we’re here to help. </span>Post a question on the                   
+                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/forum">
+HappierMe forum.</a>
             </h4>
             <h4 class="mtb0px blog_desc">
-            Explore the HappierMe app for science-backed tools, relatable stories, and reflective modules to deepen your connection with your teen.
+            Explore the                     <a class="blog_highlight_peach td_underline" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en_IN">
+            HappierMe app</a> for science-backed tools, relatable stories, and reflective modules to deepen your connection with your teen.
             </h4>
             <h4 class="mtb0px blog_desc">
 And if you’re not sure where to start, we’re here to help. Post a question on the HappierMe forum.
@@ -421,8 +480,43 @@ And if you’re not sure where to start, we’re here to help. Post a question o
             <h4 class="mtb0px blog_desc">
             Because mental health doesn’t begin with therapy — it begins with understanding.
             </h4>
+            <h4 class="mtb0px blog_title">
+            Want to learn more?
+            </h4>
+            <h4 class="mtb0px blog_desc">
+            Discover the app that’s helping teens and families communicate better, feel safer, and grow emotionally — together.           
+           </h4>
+           <ul>
+            <li>
+           <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/teenagers.php">
 
+           HappierMe for Teens website
+ </a>
+ </li>
+ <li>
+ <a class="blog_highlight_peach td_underline" href="https://www.youtube.com/watch?v=VxgN-L36z2w">
 
+ Introduction to the Teen app (video, 1 min)
+</a></li>
+<li>
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/teen-talk">
+
+Teen Talk — conversations with teens from around the world
+</a>
+ </li>
+<li>
+<a class="blog_highlight_peach td_underline" href="https://www.youtube.com/watch?v=4BEN3ree5vY">
+
+Leah talks about overcoming anxiety (1 min)
+</a>
+ </li>
+
+<li>
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/adult-dashboard">
+
+Download HappierMe
+</a></li>
+ </ul>
 
               </div>
             </div>

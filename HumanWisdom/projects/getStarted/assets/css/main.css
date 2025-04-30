@@ -2719,6 +2719,11 @@ animation-name: slideInRight;
   background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 
+.btn_tff_width 
+{
+  width: 314px !important;
+}
+
 .btn_pricing {
   margin: 3px;
   border: 0;
@@ -3564,7 +3569,7 @@ audio::-webkit-media-controls-enclosure
 .img_blogs
 {
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: fill;
   height: 300px;
 }
 
@@ -4747,6 +4752,7 @@ padding: 15px;
 }
 .top{
   top:50%;
+  margin-top:15%;
   height:100%;
   /* margin-right:50% ; */
 }
@@ -4969,7 +4975,7 @@ padding: 15px;
   height: 55px;
   border:none;
   margin-left: -10px;
-  border-radius: 24px;
+  border-radius: 30px;
   background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 
@@ -4979,7 +4985,7 @@ padding: 15px;
   border:none;
   width: 263px;
   margin-left: 88px;
-  border-radius: 24px;
+  border-radius: 30px;
   background: rgba(255, 255, 255, .1);
 }
 
@@ -5009,7 +5015,7 @@ padding: 15px;
 }
 
 .downloadApp_slider {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding: 0px;
 }
 
@@ -5024,9 +5030,19 @@ padding: 15px;
 
 @media (min-width: 345px) and (max-width: 760px) {
   .top {
-  margin-right: 47%;
+  margin-left: 33%;
+  }
+
+   .btn_try_happierme , .btn_happiermeyoutube{
+    width: 335px !important;
+    height: 51px !important;
+    
+  }.btn_happiermeyoutube {
+   margin-top: 5% !important;
   }
 }
+
+
 
 
 

@@ -1,12 +1,13 @@
 <section id="hero" class="hero section dark-background">
   <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="true">
     <?php 
-    $slides = [
-      [
-        "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new1.webp",
-        "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm1.webp",
-        "heading" => "be happier and live in peace",
-      ]
+      $slides = [
+        [
+          "image_desktop" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/slider_new1.webp",
+          "image_mobile" => "https://d1tenzemoxuh75.cloudfront.net/website/webp/sliderm1.webp",
+          "heading" => "be happier and live in peace",
+        ]
+    
     ];
 
     foreach ($slides as $index => $slide) {
@@ -46,7 +47,7 @@
                 <h5 class="fs_21px fw_400 lh_150p fc_ffffff">Find long-term solutions by addressing the root cause</h5>
               </div>
               <div class="row mt10px">
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0 mt2rem">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
                   <div>
                     <a href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick btn_try_happierme fs_15px fw_600 lh_140p fc_ffffff center_flex p-2rem">Try HappierMe for free</a>
                   </div>
@@ -63,7 +64,7 @@
                     </a><br>and start your free trial
                   </h3>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt2rem btn_happiermeyoutube_wrapper">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  btn_happiermeyoutube_wrapper">
                   <div>
                   <a href="#" id="whywecreatedvideo" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick btn_happiermeyoutube mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex pd21">
       <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
