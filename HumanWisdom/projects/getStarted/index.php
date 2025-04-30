@@ -425,13 +425,16 @@
       <!-- /video -->
 
       <div class="row center_flex mt_d100px_m60px">
-  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
       <div>
-        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
-          Try HappierMe for free
-        </a>
+      <a class="tryhappiermeClick"  id="happiermeTryForFree" > 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
       </div>
+     
     </div>
   </div>
 </div>
@@ -489,10 +492,12 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0">
-                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                    Try HappierMe for free
-                  </a>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
+                  <a id="happiermeTryForFree"  class="tryhappiermeClick"> 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
                 </div>
               </div>
             </div>
@@ -1164,10 +1169,16 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 p0">
-                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 center_flex p0">
+                  <!-- <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
-                  </a>
+                  </a> -->
+
+                  <a id="happiermeTryForFree" href="https://happierme.app/teenagers/intro-carousel" class="tryhappiermeClick"> 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
                 </div>
               </div>
             </div>

@@ -2719,6 +2719,11 @@ animation-name: slideInRight;
   background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 
+.btn_tff_width 
+{
+  width: 314px !important;
+}
+
 .btn_pricing {
   margin: 3px;
   border: 0;
@@ -4747,6 +4752,7 @@ padding: 15px;
 }
 .top{
   top:50%;
+  margin-top:15%;
   height:100%;
   /* margin-right:50% ; */
 }
@@ -5009,7 +5015,7 @@ padding: 15px;
 }
 
 .downloadApp_slider {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding: 0px;
 }
 
@@ -5030,7 +5036,10 @@ padding: 15px;
    .btn_try_happierme , .btn_happiermeyoutube{
     width: 335px !important;
     height: 51px !important;
-   }
+    
+  }.btn_happiermeyoutube {
+   margin-top: 5% !important;
+  }
 }
 
 
