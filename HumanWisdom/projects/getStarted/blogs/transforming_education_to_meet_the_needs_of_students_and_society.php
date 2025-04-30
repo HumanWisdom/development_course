@@ -250,14 +250,14 @@
                   <span class="blog_highlight_black">
                   If we are to change the future of humanity, we need to begin by having a fresh approach to education.                                </span>
                   We need to change education so it no longer adds to the stress and anxiety young people feel, but helps them be happy, mentally and physically healthy, and have the wisdom and skills to deal with the many challenges the coming century will bring. This is what we are trying to do with the Human Wisdom Project. To find out more listen to this podcast 
-                </h4>
+                
 
-                <h4 class="mtb0px blog_desc">
+                
                   
                 and visit . You can also download the HappierMe app from the Apple or Google store.</h4>
                 <h4 class="mtb0px blog_desc">
                   
-                If you would like to begin a conversation or get involved, please contact:
+                If you would like to begin a conversation or get involved, please contact:<br/>
                 Dominic Curran,
                 <br/>
                 Head of Education, HumanWisdom Project.
