@@ -254,7 +254,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   
-                <a href="https://humanwisdom.podbean.com/e/human-wisdom-project/"</a>, and visit <a href=https://humanwisdom.me</a>. You can also download the HumanWisdom app from the Apple or Google store.</h4>
+                and visit . You can also download the HappierMe app from the Apple or Google store.</h4>
                 <h4 class="mtb0px blog_desc">
                   
                 If you would like to begin a conversation or get involved, please contact:
