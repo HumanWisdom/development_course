@@ -5047,7 +5047,7 @@ th,td, .form-group
 label
 {
 	margin-bottom:unset!important;
-	margin-top:10px!important;
+	margin-top:2px!important;
 }
 
 input[type=checkbox]
@@ -24261,6 +24261,42 @@ a
 }
 /* /faq accordion  */
 
+/* /make world  */
+
+ #accordion_make .panel-default>.panel-heading
+{
+  background: transparent;
+  border: 0; 
+   /* padding: 0 0 16px 0;  */
+   padding: 0;
+} 
+
+ #accordion_make.panel-group .panel
+{
+  border: 0;
+  box-shadow: unset;
+}
+#accordion_make .panel-default
+{
+  background: transparent;
+} 
+#accordion_make .panel-title > a:after
+{
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_white.svg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  bottom: 0;
+}
+#accordion_make .panel-title > a[aria-expanded="true"]:after {
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_white.svg);
+}
+
+
+
+/* /make world  */
+
 .divider_01
 {
   border: 1px solid #DADADA;
@@ -26444,7 +26480,7 @@ h1
   height: unset;
   /* padding: 16px 10px!important;   */
   /* padding: 40px 10px 16px 10px!important; */
-  padding: 0px 20px 15px 20px!important;
+  padding: 0px 20px 15px !important;
 }
 
 .dpanel_01_ext>.panel-heading,
@@ -33124,7 +33160,7 @@ body *
   box-shadow: unset;
   margin: 0;
   background: #834B66;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -33154,32 +33190,32 @@ body *
 
 .div_fi_a .col-lg-6:nth-child(1) button
 {
-  background: #834B66;
+  background: #120F40;
 }
 
 .div_fi_a .col-lg-6:nth-child(2) button
 {
-  background: #CB6171;
+  background: #120F40;
 }
 
 .div_fi_a .col-lg-6:nth-child(3) button
 {
-  background: #E58D82;
+  background: #120F40;
 }
 
 .div_fi_a .col-lg-6:nth-child(4) button
 {
-  background: #834B66;
+  background: #120F40;
 }
 
 .div_fi_a .col-lg-6:nth-child(5) button
 {
-  background: #CB6171;
+  background: #120F40;
 }
 
 .div_fi_a .col-lg-6:nth-child(6) button
 {
-  background: #E58D82;
+  background: #120F40;
 }
 
 .div_fi_b button
@@ -37812,7 +37848,10 @@ span
 {
   border-radius: 12px;
   background: #120F40;
-  padding: 16px !important;
+  height: 115px;
+  /* margin-left: -25px; */
+  padding: 10px !important;
+  align-content: center;
 }
 
 .ml_10px 

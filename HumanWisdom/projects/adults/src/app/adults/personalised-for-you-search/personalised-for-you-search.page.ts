@@ -168,7 +168,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         element: ".tour_pathway",
         popover: {
           title: 'PATHWAY',
-          description: 'A step-by-step guide for a happier life',
+          description: 'A step-by-step guide for a happier life.',
           side: "right",
           align: "end"
         }
@@ -176,7 +176,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       {
         element: ".tour_find_inspiration",
         popover: {
-          title: 'Find Inspiration',
+          title: 'Get more out of HappierMe',
           description: 'Explore our rich library of motivational content.',
           side: "right"
         }
@@ -315,6 +315,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
+    this.logeventservice.logEvent("search_"+ event)
+    
     let url=""
     switch(event.toLowerCase())
     {
@@ -1228,7 +1230,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
-    this.router.navigate([url]);
+    if(url!="") this.router.navigate([url]);
   }
 
 

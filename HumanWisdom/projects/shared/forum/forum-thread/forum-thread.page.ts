@@ -11,6 +11,10 @@ import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../../shared/services/constant';
 import { NavigationService } from "../../../shared/services/navigation.service";
 import { Location } from '@angular/common';
+import { LogEventService } from "./../../services/log-event.service";
+
+
+
 @Component({
   selector: 'app-forum-thread',
   templateUrl: './forum-thread.page.html',
@@ -65,7 +69,7 @@ export class ForumThreadPage implements OnInit {
   isReportPost = false;
   isAdults: boolean = true; 
 
-  constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute,
+  constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, public logeventservice: LogEventService,
      private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService) {
     this.userID = localStorage.getItem('userId');
     this.token = localStorage.getItem("shareToken");

@@ -47,14 +47,14 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+   <!--  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NHPHHF97');
     
     localStorage.setItem("programType",'9');
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
 
   
@@ -70,8 +70,8 @@
     
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
 
 
@@ -237,7 +237,7 @@
    
 
       <!-- aspects -->
-      <section>
+      <section class="support_section">
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -295,7 +295,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                    Happier relationships
+                  Relationships
                   </h3>
                 </div>
               </div>
@@ -303,8 +303,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Overcome loneliness by having relationships with depth, meaning and less conflict.
-                  </h5>
+                  Have happier relationships with depth, meaning and less conflict.                  </h5>
                 </div>
               </div>
 
@@ -329,7 +328,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                    Work & Leadership
+                  Work
                   </h3>
                 </div>
               </div>
@@ -337,8 +336,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Learn soft skills, emotional intelligence, communication, leadership and resilience to thrive at work.
-                  </h5>
+                  Be happier at work and develop your resilience, communication, and leadership skills.                  </h5>
                 </div>
               </div>
 
@@ -420,20 +418,23 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
           </div>
         </div>
       </section>
       <!-- /video -->
 
       <div class="row center_flex mt_d100px_m60px">
-  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
       <div>
-        <a class="btn tryhappiermeClick fs_15px fw_600 lh_140p fc_ffffff center_flex btn_pricing p-35">
-          Try HappierMe for free
-        </a>
+      <a class="tryhappiermeClick"  id="happiermeTryForFree" > 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
       </div>
+     
     </div>
   </div>
 </div>
@@ -491,10 +492,12 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0">
-                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                    Try HappierMe for free
-                  </a>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
+                  <a href="https://happierme.app/pages/splash_options.php"   class="tryhappiermeClick"> 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
                 </div>
               </div>
             </div>
@@ -973,22 +976,12 @@
                     </div>
                   </div>
                 </a>
-
-              
-
-               
-
-             
-
-               
-
-                
               </div>
 
               <div class="owl-theme">
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/testimonials">
+                    <a class="sap" id="viewallsuccessstories">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       View all Success stories
                       </h4>
@@ -1165,7 +1158,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                <a href="/pages/teenagers.php" aria-label="Explore the teenagers app" class="">
+                <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
                       Find out more
@@ -1176,10 +1169,16 @@
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 p0">
-                  <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 center_flex p0" style="margin-left: 12px;">
+                  <!-- <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
-                  </a>
+                  </a> -->
+
+                  <a id="happiermeTryForFree" href="https://happierme.app/teenagers/intro-carousel" class="tryhappiermeClick"> 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
                 </div>
               </div>
             </div>
@@ -1302,7 +1301,7 @@
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="startyourfreetrial">
                   Start your free trial
                 </button>
               </div>
@@ -1617,10 +1616,10 @@
                 </a>
               </div>
 
-              <div class="owl-theme">
+              <div class="owl-theme" >
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" href="https://happierme.app/adults/coach">
+                    <a class="sap" id="view-all-coaches">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         View all coaches
                       </h4>

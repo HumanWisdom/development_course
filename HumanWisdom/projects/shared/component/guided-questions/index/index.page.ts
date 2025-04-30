@@ -101,6 +101,8 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     });
   }
   showGuidedQuestions() {
+    this.logeventservice.logEvent("click_GuidedQsTab")
+
     this.enableTab = 'Guided';
     if (this.searchedText) {
       this.jrList = this.jrListC.filter(
@@ -119,6 +121,12 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   }
 
   goToNote(jId, jTitle, jNotes, type) {
+    if(jId==0)
+         this.logeventservice.logEvent("click_new_note")
+    else
+      this.logeventservice.logEvent("click_tapToAnswer")
+
+
     if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
@@ -271,6 +279,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   }
 
   showAll() {
+    this.logeventservice.logEvent("click_AllNotesTab")
     this.enableTab = 'All';
     if (this.searchedText) {
       this.jrList = this.jrListC.filter(
@@ -288,6 +297,8 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   }
 
   showReflections() {
+    this.logeventservice.logEvent("click_reflectionsTab")
+
     this.enableTab = 'Reflections';
     if (this.searchedText) {
       this.jrList = this.jrListC.filter(
@@ -305,6 +316,8 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     }
   }
   showNotes() {
+    this.logeventservice.logEvent("click_diaryTab")
+
     this.enableTab = 'Diary';
     if (this.searchedText) {
       this.jrList = this.jrListC.filter(
@@ -325,6 +338,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
   }
 
   GetGuidedQs_Topics() {
+
     this.service.GetGuidedQs_Topics().subscribe((res) => {
       this.viewMore = res.filter((d, i) => i < 6);
       this.viewLess = res.filter((d, i) => i > 6);

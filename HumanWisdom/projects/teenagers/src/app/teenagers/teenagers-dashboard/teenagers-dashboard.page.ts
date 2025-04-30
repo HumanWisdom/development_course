@@ -595,7 +595,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_journal",
         popover: {
           title: 'Journal',
-          description: 'Your private journal with guided questions (visible only to you)',
+          description: 'Your private journal with guided questions (visible only to you).',
           side: "top"
         }
       },
@@ -603,7 +603,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_forum",
         popover: {
           title: 'Forum',
-          description: 'Join our community discussions. Ask a coach a question',
+          description: 'Join our community discussions. Ask a coach a question.',
           side: "top"
         },
       },
@@ -2048,6 +2048,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   }
 
   shortVideos(data) {
+    this.logeventservice.logEvent("click_"+data['Title'].substring(0,15));
+
     let id = data['VideoUrl'].split('/');
     id = id[id.length - 1]
     this.router.navigate(['/teenagers/wisdom-shorts/' + id])

@@ -405,7 +405,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.next();
       $('#mdp_carousel').carousel('next');
     }
-}
+ }
 
   LogEvent(event) {
     this.logeventservice.logEvent(event);
@@ -691,9 +691,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
 
   googleLogin(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('facebook_signup');
+      this.logeventservice.logEvent('google_signup');
     else
-      this.logeventservice.logEvent('facebook_login');
+      this.logeventservice.logEvent('google_login');
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe(
       (user) => {
@@ -1081,12 +1081,17 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       }
     });
   }
+   routetoUrl(url){
+  
+      // this.router.navigate(["/" + SharedService.getprogramName() + url]);
+      window.open("/" + SharedService.getprogramName() + url,"_blank")
+    }
 
   signInWithApple(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('facebook_signup');
+      this.logeventservice.logEvent('apple_signup');
     else
-      this.logeventservice.logEvent('facebook_login');
+      this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
     const REDIRECT_API_URL =
       "https://www.humanwisdom.info/api/verifyAppleToken_html";

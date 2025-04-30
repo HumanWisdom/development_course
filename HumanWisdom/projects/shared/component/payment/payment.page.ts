@@ -35,15 +35,15 @@ var style = {
   }
 };
 
-var ADT = ADT || {};
-ADT.Tag = ADT.Tag || {};
-ADT.Tag.t = 0;
-ADT.Tag.c = "";
-ADT.Tag.tp = 0;
-ADT.Tag.am = 0;
-ADT.Tag.ti = "";
-ADT.Tag.xd = "";
-ADT.Tag.cpn = "";
+// var ADT = ADT || {};
+// ADT.Tag = ADT.Tag || {};
+// ADT.Tag.t = 0;
+// ADT.Tag.c = "";
+// ADT.Tag.tp = 0;
+// ADT.Tag.am = 0;
+// ADT.Tag.ti = "";
+// ADT.Tag.xd = "";
+// ADT.Tag.cpn = "";
 
 @Component({
   selector: 'app-payment',
@@ -57,6 +57,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
 
   cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
+  @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
 
   stripe;
   enable = false;
@@ -147,8 +148,24 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
             } else {
               this.logeventservice.logEvent('click_confirm_payment');
               this.content = 'Your Payment Is Successfully Submitted';
-              ADT.Tag.cpn = this.obj['DiscountCode'];
-              ADT.Tag.t = this.obj['Quantity'];
+
+              // ADT.Tag.cpn = this.obj['DiscountCode'];
+              // ADT.Tag.t = this.obj['Quantity'];
+
+              // let am = parseFloat(this.amount)*100;
+              let ti = this.stripeId;
+              // let cpn = this.obj['DiscountCode'];
+              let t = this.obj['Quantity'];
+              // let c = this.defaultCountryname;
+
+              // localStorage.setItem('stripeamount', am.toString());
+              localStorage.setItem('stripeid', ti);
+              localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
+              localStorage.setItem('stripeqty', t);
+              // localStorage.setItem('stripecountrycode', c);
+
+              this.payementSubmitBtnClick.nativeElement.click();
+
               this.enableAlert = true;
               // alert('Your Payment Is Successfully Submitted');
               if (localStorage.getItem('ispartnershipClick') == 'T') {

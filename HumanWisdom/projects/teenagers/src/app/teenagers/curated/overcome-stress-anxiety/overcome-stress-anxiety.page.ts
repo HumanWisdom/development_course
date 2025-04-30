@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit,  ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
@@ -38,32 +38,39 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enablefbnViewMore = true;
   enableblogViewMore = true;
   isAdults = true;
+  wisdomShortsDynamic: any;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private service: TeenagersService, private router: Router, private location: Location,
-    private navigationService:NavigationService,
+    private navigationService: NavigationService,
     private meta: Meta, private title: Title) {
-      this.guest = localStorage.getItem('guest') === 'T' ? true : false;
-      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
 
-      this.service.GetPodcastsListing('10').subscribe((res) => {
-        if (res) {
-          this.mediaUrl = res
-        }
-})
-
-      let userid = localStorage.getItem('isloggedin');
-      let sub: any = localStorage.getItem('Subscriber');
-      if (userid === 'T' && sub === '1') {
-        this.isSubscriber = true;
-      } else {
-        this.isSubscriber = false;
+    this.service.GetPodcastsListing('10').subscribe((res) => {
+      if (res) {
+        this.mediaUrl = res
       }
+    })
+
+    this.service.GetWisdomShortsListing('10').subscribe((res) => {
+      if (res) {
+        this.wisdomShortsDynamic = res
+      }
+    })
+
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
     }
-    routeToMentalHealthDash(){
-      this.router.navigate(['/teenagers/dashboard/mental-health']);
-    }
+  }
+  routeToMentalHealthDash() {
+    this.router.navigate(['/teenagers/dashboard/mental-health']);
+  }
   ngOnInit() {
     localStorage.setItem("NaviagtedFrom", '/teenagers/curated/overcome-stress-anxiety');
 
@@ -85,9 +92,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
     })
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
   }
 
   getimage(id) {
@@ -139,7 +146,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
   }
@@ -149,28 +156,28 @@ export class OvercomeStressAnxietyPage implements OnInit {
   youtube(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
-    }else{
-    this.router.navigate(['/teenagers/curated/youtubelink', link])
+    } else {
+      this.router.navigate(['/teenagers/curated/youtubelink', link])
     }
   }
 
   s3video(link) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
-      this.router.navigate(['/teenagers/wisdom-shorts', link])
+    } else {
+      this.router.navigate([link])
     }
   }
 
   audiopage(audiofile, title, id) {
     if (this.guest || !this.Subscriber) {
       this.router.navigate(['/subscription/start-your-free-trial']);
-    }else{
+    } else {
       let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
       let audioLink = mediaAudio + audiofile
       let url = audioLink.replaceAll(':', '_');
       url = encodeURIComponent(url.replaceAll('/', '~'));
-      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id,'Audio'])
+      this.router.navigate(['/teenagers/guided-meditation/audiopage/', audioLink, title, id, 'Audio'])
     }
   }
 
@@ -490,7 +497,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
 
   enableRoute(route) {
 
-      this.router.navigate([route]);
+    this.router.navigate([route]);
 
   }
 
@@ -516,47 +523,47 @@ export class OvercomeStressAnxietyPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['teenagers/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['teenagers/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+      this.router.navigate(['teenagers/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
     }
   }
 
   enableViewMore(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = false;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = false;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = false
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = false
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = false
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = false
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = false
     }
   }
 
   enableViewLess(type) {
-    if(type==='pathway') {
+    if (type === 'pathway') {
       this.enablepathwayViewMore = true;
-    }else if(type === 'lifestories'){
+    } else if (type === 'lifestories') {
       this.enablelifestoriesViewMore = true;
-    }else if(type === 'guidedQues') {
+    } else if (type === 'guidedQues') {
       this.enableGuidedQuesViewMore = true
-    }else if(type === 'podcast') {
+    } else if (type === 'podcast') {
       this.enablePodcastViewMore = true
-    }else if(type === 'guidedMedidation') {
+    } else if (type === 'guidedMedidation') {
       this.enableGuidedMediViewMore = true
-    }else if(type === 'fbn') {
+    } else if (type === 'fbn') {
       this.enablefbnViewMore = true
-    }else if(type === 'blog') {
+    } else if (type === 'blog') {
       this.enableblogViewMore = true
     }
   }
 
-     routeTointroDash(){
-        this.router.navigate(['/teenagers/dashboard/mental-health']);
-      }
+  routeTointroDash() {
+    this.router.navigate(['/teenagers/dashboard/mental-health']);
+  }
 }

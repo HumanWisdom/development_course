@@ -1,12 +1,21 @@
+
 const userAgent = navigator.userAgent;
 const isLoggedIn = localStorage.getItem('isloggedin') == 'T';
 const url = "https://happierme.app";
 //const url ="https://staging.happierme.app"
 //const url ="http://localhost:4200"
+
+
+(window.dataLayer = window.dataLayer || []),
+    gtag("js", new Date()),
+    gtag("config", "G-1WBHRGL7VH"),
+    (type = "Desktop"),
+    /Mobi|Android/i.test(userAgent) ? (type = "Mobile") : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent)) ? (type = "Tablet") : (type = "Desktop");
+
 function gtag() {
     dataLayer.push(arguments);
 }
-function logevent(e, t) {
+ function logevent(e, t) {
     gtag("event", e, { screen_name: t });
 }
 
@@ -39,28 +48,26 @@ setTimeout(() => {
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
-    // Add an event listener for the 'play' event
     loginClick.addEventListener('click', function () {
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
+        logevent("click_login_header_web", "index.php");
         window.location.href = "../pages/splash_options.php";
     });
 }
 
 const happiermeTryForFree =  document.getElementById('happiermeTryForFree');
 if (happiermeTryForFree) {
-    // Add an event listener for the 'play' event
     happiermeTryForFree.addEventListener('click', function () {
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
-        logevent("click_start_your_free_trial_now", "index.php")
+        logevent("click_start_your_free_trial_now", "index.php");
         window.location.href = "../pages/splash_options.php";
     });
 }
 
 const tryhappiermeClick = document.getElementsByClassName('tryhappiermeClick');
 if (tryhappiermeClick[0]) {
-    // Add an event listener for the 'play' event
     tryhappiermeClick[0].addEventListener('click', function () {
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
@@ -70,18 +77,16 @@ if (tryhappiermeClick[0]) {
 
 const pricingSelectBtn = document.getElementById('PricingSelectBtn');
 if (pricingSelectBtn) {
-    // Add an event listener for the 'play' event
     pricingSelectBtn.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        logevent("click_continue_web", "index.php");
+        logevent("start_your_free_trial_button_click", "index.php");
         window.location.href = "../pages/splash_options.php";
     });
 }
 
 const discoverSectionPricingClick = document.getElementById('discoverSectionPricingClick');
 if (discoverSectionPricingClick) {
-    // Add an event listener for the 'play' event
     discoverSectionPricingClick.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
@@ -105,7 +110,6 @@ if (teenagersPricing) {
 
 const teenagersClick = document.getElementById('teenagersClick');
 if (teenagersClick) {
-    // Add an event listener for the 'play' event
     teenagersClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
            window.location.href = url+"/teenagers/subscription/start-your-free-trial";
@@ -121,7 +125,6 @@ if (teenagersClick) {
 
 const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
-    // Add an event listener for the 'play' event
     teenagerCoverClick.addEventListener('click', function () {
            window.location.href = url+"/teenagers/onboarding/login/";
     });
@@ -129,7 +132,6 @@ if (teenagerCoverClick) {
 
 const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
-    // Add an event listener for the 'play' event
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
             localStorage.setItem('pricing',false);
@@ -144,11 +146,6 @@ if (adultsClick) {
     });
 }
 
-(window.dataLayer = window.dataLayer || []),
-    gtag("js", new Date()),
-    gtag("config", "G-1WBHRGL7VH"),
-    (type = "Desktop"),
-    /Mobi|Android/i.test(userAgent) ? (type = "Mobile") : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent)) ? (type = "Tablet") : (type = "Desktop");
 var element = document.getElementById("scrollTopArrow");
 element && ("Desktop" == type ? element.classList.add("mb15px") : element.classList.add("mb-8rem"));
 const requestDemoForWork = document.getElementById("requestDemoForWork");
@@ -182,7 +179,9 @@ requestDemoForWork &&
             o.addEventListener(
                 "click",
                 function (e) {
-                    localStorage.setItem("activeTab", "org-work"), o.classList.add("active_nav"), (window.location.href = "../pages/work.php");
+                    localStorage.setItem("activeTab", "org-work"),
+                    logevent("click_Happierme_For_Work", "index.php"),
+                    o.classList.add("active_nav"), (window.location.href = "../pages/work.php");
                 },
                 !1
             );
@@ -191,14 +190,18 @@ requestDemoForWork &&
             a.addEventListener(
                 "click",
                 function (e) {
-                    localStorage.setItem("activeTab", "org-work"), a.classList.add("active_nav"), (window.location.href = "../pages/education.php");
+                    localStorage.setItem("activeTab", "org-work"), a.classList.add("active_nav"),
+                    logevent("click_Happierme_For_education", "index.php"),
+                    (window.location.href = "../pages/education.php");
                 },
                 !1
             );
         var i = document.getElementById("healthcare");
         i &&
             i.addEventListener("click", function (e) {
-                localStorage.setItem("activeTab", "org-healthcare"), o.classList.add("active_nav"), (window.location.href = "../pages/healthcare.php");
+                localStorage.setItem("activeTab", "org-healthcare"),
+                logevent("click_Happierme_For_healthcare", "index.php"),
+                o.classList.add("active_nav"), (window.location.href = "../pages/healthcare.php");
             });
         var c = document.getElementById("pricing");
         c &&
@@ -212,7 +215,9 @@ requestDemoForWork &&
         var l = document.getElementById("teenagersHeaderClick");
         l &&
             l.addEventListener("click", function () {
-                localStorage.setItem("programType", "11"), (window.location.href = "../pages/teenagers.php");
+                localStorage.setItem("programType", "11"),
+                logevent("click_teenagers_click", "index.php"),
+                (window.location.href = "../pages/teenagers.php");
             });
         var s = window.location.href;
         s.includes("blogs") && t?.classList.add("active_nav"),
@@ -234,6 +239,13 @@ teenagers &&
     teenagers.addEventListener("click", function () {
         window.location.href = url+"/teenagers/intro-carousel";
     });
+
+var viewAllSucessStories = document.getElementById("viewallsuccessstories");
+viewAllSucessStories && viewAllSucessStories.addEventListener("click", function () {
+    logevent("click_ViewAll_Success_Stories", "index.php");
+    window.location.href = url+"/adults/testimonials";
+}) ;   
+
 const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
@@ -246,8 +258,6 @@ function closeElement() {
         "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
     }
 }
-
-
 
 requestDemo &&
     requestDemo.addEventListener("click", () => {
@@ -320,9 +330,11 @@ nfsnContactForm &&
                 },
                 !1
             );
-        ["feelbetterNow", "pathWay", "journal", "podcast", "community",
+        ["feelbetterNow", "pathWay", "journal", "podcast", "community","partnership",
              "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp",
-             "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter"].forEach((e) => {
+             "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter",
+             "partnershipfooter" ,"view-all-coaches","whywecreatedvideo","findoutMore","youtubeIntro","appleStore","googlePlayStore"
+            ].forEach((e) => {
             const t = document.getElementById(e);
             t &&
                 t.addEventListener("click", function (t) {
@@ -331,9 +343,17 @@ nfsnContactForm &&
                         : "journal" == e ? logevent("click_Journal_web", "index.php")
                         : "HapinessScore" == e ? logevent("click_Happiness_Score_web", "index.php")
                         : "podcast" == e ? logevent("click_Podcast_web", "index.php")
+                        : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,(window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"))
+                        : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,(window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"))
                         : "community" == e ? logevent("click_Community_web", "index.php")
+                        : "youtubeIntro" == e ? logevent("click_youtube_intro_web", "index.php")
                         :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , (window.location.href="https://happierme.app/adults/intro/intro-carousel"))
                         : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,(window.location.href="https://happierme.app/teenagers/intro-carousel"))
+                        : "findoutMore" == e ? (logevent("click_find_out_More_web", "index.php") ,(window.location.href="../pages/teenagers.php"))
+                        : "partnership" == e ? (logevent("click_partnership_web", "index.php") ,(window.location.href="../pages/partnership.php"))
+                        : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
+                        :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,(window.location.href="../pages/partnership.php"))
+                         :"view-all-coaches" == e ? (logevent("click_view_all_coaches", "index.php") ,(window.location.href="https://happierme.app/adults/coach"))
                         : "openInApp1" == e ? (logevent("click_open_in_app_web", "index.php") ,(window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"))
                         : "openInApp2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"))
                         : "openInApp3" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"))
@@ -341,6 +361,7 @@ nfsnContactForm &&
                         : "ourStory" == e ? (logevent("click_our_story_footer_web", "index.php") ,   (window.location.href = "../pages/about_us.php") )
                         : "testimonialFooter" == e ? (logevent("click_testimonial_footer_web", "index.php") , (window.location.href = "https://happierme.app/adults/testimonials"))
                         : "contactUsFooter" == e ? (logevent("click_contact_us_footer_web", "index.php") , (window.location.href="https://happierme.app/adults/contact-us")) : ''
+                        
                 });
         });
     }, 1e3),
@@ -383,10 +404,8 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
-
-
 const newsLetterForm = document.getElementById("news-contact-form");
-newsLetterForm.addEventListener("click", () => {
+newsLetterForm && newsLetterForm.addEventListener("click", () => {
           if(document.getElementById('closebtn')){
             document.getElementById('closebtn').click();
           }
@@ -425,7 +444,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 });
 
-
 $(document).ready(function(){
   
     $('.popup-btn').on('click', function(){
@@ -443,4 +461,4 @@ $(document).ready(function(){
         return false;
      });
     
-  });
+});

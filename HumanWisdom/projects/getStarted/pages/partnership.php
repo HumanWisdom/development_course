@@ -29,11 +29,11 @@
     </script>-->
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
+    })(window,document,'script','dataLayer','GTM-NHPHHF97');</script> -->
     <!-- End Google Tag Manager -->
 
 
@@ -157,7 +157,7 @@
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-          <video width="100%" height="auto" controls autoplay loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_partnership.webp">
+          <video width="100%" height="auto" controls  loop poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/website_partnership.webp">
     <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/partnership.mp4" type="video/mp4" />
     <source src="how-it-works-short.webm" type="video/webm" />
     Your browser does not support the video tag.

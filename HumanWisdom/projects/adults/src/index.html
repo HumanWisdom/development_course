@@ -172,6 +172,8 @@
       src="https://www.facebook.com/tr?id=806018844533100&ev=PageView&noscript=1" />
   </noscript>
 
+
+
   <script defer src="https://pin.happierme.app/jsTag?ap=1963207209"></script>
 
 
@@ -220,6 +222,33 @@
     });
   </script>
   <!-- /on scroll blur header -->
+
+  <script>
+
+    $(document).on('click', '#hiddenSubmit', function () {
+      // var ADT = ADT || {};
+      // ADT.Tag = ADT.Tag || {};
+
+      let t = localStorage.getItem('stripeqty');
+      let c = localStorage.getItem('stripecountrycode');
+      let am = localStorage.getItem('stripeamount');
+      let cpn = localStorage.getItem('stripeDiscountCode');
+      let ti = localStorage.getItem('stripeid');
+
+      // window.ADT.Tag.t = t ? t : 0;
+      window.ADT.Tag.t =3;
+
+      window.ADT.Tag.c = c ? c : "";
+      window.ADT.Tag.am = am ? [am] : 0;
+      window.ADT.Tag.ti = ti ? ti : "";
+      window.ADT.Tag.cpn = cpn ? cpn : "";
+      window.ADT.Tag.tp = 1963208868;
+      // window.ADT.Tag.xd = "XD";
+
+      window.ADT.Tag.doEvent();
+    });
+    
+  </script>
 
   <!-- accordion -->
   <script>
