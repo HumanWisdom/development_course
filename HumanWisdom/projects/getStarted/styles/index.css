@@ -11273,10 +11273,10 @@ body .container.body .right_col {
 }
 .backcolor{
 background: rgb(0 0 0 / 20%);
-    padding-top: 31px;
+    padding-top: 25px;
     width: 307px;
     height: 197px;
-    border-radius: 24px;
+    border-radius: 14px;
 }
 body {
   color: #73879C;
