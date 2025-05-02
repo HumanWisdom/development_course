@@ -38,6 +38,24 @@ export class FindInspiration  {
     },
       
     
+    
+    { 
+      title: 'Audio meditation', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg',
+      url:'audio-meditation'
+    },
+    
+    { 
+      title: 'Contact a coach', 
+      icon: 'message-circle', 
+      color: '#191d3a',
+      height:'',
+      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg",
+      url:'coach'
+    },    
     { 
       title: 'PATHWAY', 
       icon: 'star', 
@@ -45,7 +63,7 @@ export class FindInspiration  {
       height:'',
       img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.svg",
       url:'pathway'
-    },
+    },  
     { 
       title: 'Events', 
       icon: 'volume-2', 
@@ -63,22 +81,7 @@ export class FindInspiration  {
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg',
       url:'blogs'
     },  
-    { 
-      title: 'Audio meditation', 
-      icon: 'volume-2', 
-      color: '#191d3a',
-      height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg',
-      url:'audio-meditation'
-    },
-    { 
-      title: 'Contact a coach', 
-      icon: 'message-circle', 
-      color: '#191d3a',
-      height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg",
-      url:'coach'
-    },      
+   
     { 
       title: 'Guided questions', 
       icon: 'map', 
@@ -94,6 +97,14 @@ export class FindInspiration  {
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg',
       url:'wisdom-survey'
+    },   
+    { 
+      title: 'Find answers', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg',
+      url:'find-answers/why-do-i'
     },   
     
   ];
