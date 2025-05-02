@@ -7,11 +7,14 @@
   
  
   .inspiration-grid {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr); /* Two rows */
-    grid-auto-flow: column; /* Items flow into columns */
+    // display: grid;
+    // grid-template-rows: repeat(2, 1fr); /* Two rows */
+    // grid-auto-flow: column; /* Items flow into columns */
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
     gap: 10px; /* Space between items */
-    max-height: 200px; /* Adjust based on your item height */
+    // max-height: 200px; /* Adjust based on your item height */
     white-space: nowrap; /* Prevents wrapping */
    -ms-overflow-style: none; /* Internet Explorer and Edge */
 }
