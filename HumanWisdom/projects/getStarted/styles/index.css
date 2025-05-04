@@ -11271,6 +11271,13 @@ body .container.body .right_col {
 .top_nav .nav>li>a:focus, .top_nav .nav>li>a:hover, .top_nav .nav .open>a, .top_nav .nav .open>a:focus, .top_nav .nav .open>a:hover {
   background: #D9DEE4;
 }
+.backcolor{
+background: rgb(0 0 0 / 20%);
+    padding-top: 25px;
+    width: 307px;
+    height: 197px;
+    border-radius: 14px;
+}
 body {
   color: #73879C;
   /* background: #2A3F54; */
@@ -48152,7 +48159,6 @@ span
   -o-background-size: cover !important;
   font-family: 'Roboto', sans-serif;
   z-index: 0 !important;
-  min-height: 100vh !important;
+  min-height: 120vh !important;
 }
 /* /version - 03 */
->>>>>>> af77f48c78c01330023343247f1137cd1deb8eb6
