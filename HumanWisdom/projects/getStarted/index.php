@@ -359,7 +359,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class=""  id="openInApp1" href="https://happierme.app/adults/curated/overcome-stress-anxiety">
+                  <a class=""  id="openInApp1" >
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -371,7 +371,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class=""  id="openInApp2" href="https://happierme.app/adults/curated/have-fulfilling-relationships">
+                  <a class=""  id="openInApp2">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -383,7 +383,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class=""  id="openInApp3" href="https://happierme.app/adults/curated/wisdom-for-workplace">
+                  <a class=""  id="openInApp3" >
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
