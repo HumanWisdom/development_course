@@ -333,7 +333,7 @@ nfsnContactForm &&
                 !1
             );
         ["feelbetterNow", "pathWay", "journal", "podcast", "community","partnership",
-             "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp1","openInApp2","openInApp3",
+             "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp1_1","openInApp1_2","openInApp2_1","openInApp2_2","openInApp3_1","openInApp3_2",
              "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter",
              "partnershipfooter" ,"view-all-coaches","whywecreatedvideo","findoutMore","youtubeIntro","appleStore","googlePlayStore"
             ].forEach((e) => {
@@ -356,9 +356,9 @@ nfsnContactForm &&
                         : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
                         :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,(window.location.href="../pages/partnership.php"))
                          :"view-all-coaches" == e ? (logevent("click_view_all_coaches", "index.php") ,(window.location.href="https://happierme.app/adults/coach"))
-                        : "openInApp1" == e ? (logevent("click_open_in_app_web", "index.php") ,(window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"))
-                        : "openInApp2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"))
-                        : "openInApp3" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"))
+                        : "openInApp1_1" == e || "openInApp1_2" == e ? (logevent("click_open_in_app_web", "index.php") ,(window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"))
+                        : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"))
+                        : "openInApp3_1" == e  || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"))
                         : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , ( window.location.href="https://happierme.app/adults/feel-better-now"))
                         : "ourStory" == e ? (logevent("click_our_story_footer_web", "index.php") ,   (window.location.href = "../pages/about_us.php") )
                         : "testimonialFooter" == e ? (logevent("click_testimonial_footer_web", "index.php") , (window.location.href = "https://happierme.app/adults/testimonials"))
@@ -366,7 +366,7 @@ nfsnContactForm &&
                         
                 });
         });
-    }, 1e3),
+    }, 200),
     fetchData();
 var countryCode = "",
     pricingModel = "",

@@ -276,7 +276,7 @@
 
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" id="openInApp1" >
+                  <a class="openInApp" id="openInApp1_1" >
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -309,7 +309,7 @@
 
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" id="openInApp2">
+                  <a class="openInApp" id="openInApp2_2">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -342,7 +342,7 @@
 
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="" id="openInApp3">
+                  <a class="openInApp" id="openInApp3_2">
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
@@ -359,8 +359,8 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class=""  id="openInApp1" >
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                  <a class="openInApp"  id="openInApp1_2" >
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline ">
                       Open in app
                     </h4>
                   </a>
@@ -371,8 +371,8 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class=""  id="openInApp2">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                  <a class="openInApp"  id="openInApp2_1">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline ">
                       Open in app
                     </h4>
                   </a>
@@ -383,7 +383,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class=""  id="openInApp3" >
+                  <a class="openInApp"  id="openInApp3_1" >
                     <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                       Open in app
                     </h4>
