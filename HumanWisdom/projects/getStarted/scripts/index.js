@@ -159,6 +159,7 @@ requestDemoForWork &&
             e.addEventListener(
                 "click",
                 function (e) {
+                    logevent("click_AboutUs", "index.php");
                     localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about_us.php");
                 },
                 !1
@@ -168,6 +169,7 @@ requestDemoForWork &&
             t.addEventListener(
                 "click",
                 function (e) {
+                    logevent("click_blogs", "index.php");
                     localStorage.setItem("activeTab", "blogs"), (window.location.href = "../blogs/blog_index.php");
                 },
                 !1
@@ -331,7 +333,7 @@ nfsnContactForm &&
                 !1
             );
         ["feelbetterNow", "pathWay", "journal", "podcast", "community","partnership",
-             "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp",
+             "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp1","openInApp2","openInApp3",
              "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter",
              "partnershipfooter" ,"view-all-coaches","whywecreatedvideo","findoutMore","youtubeIntro","appleStore","googlePlayStore"
             ].forEach((e) => {
