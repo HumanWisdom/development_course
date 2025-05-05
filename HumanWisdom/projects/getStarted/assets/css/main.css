@@ -4815,6 +4815,11 @@ padding: 15px;
     margin-left: -40rem;
     display: flex;
   }
+
+  .owl_testimonials >.owl-carousel> .owl-stage-outer {
+    margin-left: 3% !important;
+  }
+
   .p35{
     padding-left: 35rem;
   } 
