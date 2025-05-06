@@ -59,10 +59,11 @@ export class SubscriptionPaymentPage implements OnInit {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount');
 
-    this.getGBPcuurency();
 
     this.symbol = localStorage.getItem('Currsymbol');
     this.isoCode = localStorage.getItem('ISOCode');
+    this.getGBPcuurency();
+
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let rateId = this.router.getCurrentNavigation()?.extras?.state?.rateId;
@@ -116,7 +117,7 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   getGBPcuurency() {
-    this.service.getGBPcuurency(this.amount, this.defaultCountryname).subscribe((res: any) => {
+    this.service.getGBPcuurency(this.amount, this.isoCode).subscribe((res: any) => {
      this.amountGBP = res;
     },
       error => {
