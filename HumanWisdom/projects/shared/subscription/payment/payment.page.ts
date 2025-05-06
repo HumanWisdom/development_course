@@ -73,7 +73,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   ngOnInit() {
    let am = this.GetAmount();
 
-   let c = this.getIsoCode();
+   let c = this.getCurrCode();
 
    this.commonService.getGBPcuurency(am, c).subscribe((res: any) => {
     this.amountGBP = res;
@@ -241,6 +241,10 @@ export class PaymentPage implements OnInit, AfterViewInit {
       return ` (${this.pricingModel.ISOCode})`;
     }
     return '';
+  }
+
+  getCurrCode(){
+    return this.pricingModel.ISOCode;
   }
 
 }
