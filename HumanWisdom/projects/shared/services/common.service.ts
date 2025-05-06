@@ -177,6 +177,10 @@ export class CommonService {
     return this.http.post(this.path + '/GetAudioTranscript', data);
   }
 
+  getGBPcuurency(data: any): Observable<any> {
+  
+      return this.http.get(this.path + `/ConvertCurrency/INR/GBP/${data}`)
+  }
 
   GetPodcastList(): Observable<any> {
     return this.http.get(this.path + '/GetPodcastsListing');

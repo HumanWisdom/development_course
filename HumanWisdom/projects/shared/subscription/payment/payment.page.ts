@@ -37,6 +37,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
    @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+   amountGBP = "";
 
   constructor(private datePipe: DatePipe, private router: Router, private commonService:CommonService,
     private location: Location) {
@@ -70,7 +71,14 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+   let am = this.GetAmount();
 
+   this.commonService.getGBPcuurency(am).subscribe((res: any) => {
+    this.amountGBP = res;
+   },
+     error => {
+       console.log(error)
+     });
   }
 
 
@@ -183,7 +191,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           // ADT.Tag.am = this.GetAmount();
           // ADT.Tag.c = this.getIsoCode();
 
-          let am = this.GetAmount();
+          let am = this.amountGBP;
           // let ti = ev.paymentMethod.id;
           // let cpn = this.obj.DiscountCode;
           // let t = this.obj.Quantity;
