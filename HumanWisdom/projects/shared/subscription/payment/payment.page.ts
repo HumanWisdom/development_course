@@ -73,7 +73,9 @@ export class PaymentPage implements OnInit, AfterViewInit {
   ngOnInit() {
    let am = this.GetAmount();
 
-   this.commonService.getGBPcuurency(am).subscribe((res: any) => {
+   let c = this.getIsoCode();
+
+   this.commonService.getGBPcuurency(am, c).subscribe((res: any) => {
     this.amountGBP = res;
    },
      error => {
