@@ -363,6 +363,11 @@ export class OnboardingService {
     return of(this.countryData);
   }
 
+  getGBPcuurency(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/ConvertCurrency/INR/GBP/${data}`)
+  }
+
   getToken() {
     return JSON.parse(localStorage.getItem("token"))
   }

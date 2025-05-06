@@ -50,12 +50,17 @@ export class SubscriptionPaymentPage implements OnInit {
   symbol: any
   isoCode:any;
   isAdults = false;
+  amountGBP = "";
+
   constructor(private service: OnboardingService,
     private location:Location,
     public logeventservice: LogEventService,
     private router: Router) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount');
+
+    this.getGBPcuurency();
+
     this.symbol = localStorage.getItem('Currsymbol');
     this.isoCode = localStorage.getItem('ISOCode');
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
@@ -108,6 +113,15 @@ export class SubscriptionPaymentPage implements OnInit {
         } else {
           this.isAdults = false;
         }
+  }
+
+  getGBPcuurency() {
+    this.service.getGBPcuurency(this.amount).subscribe((res: any) => {
+     this.amountGBP = res;
+    },
+      error => {
+        console.log(error)
+      });
   }
 
   getCountry() {
@@ -235,7 +249,7 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                       }
                     } else {
-                      let am = parseFloat(this.amount)*100;
+                      let am = this.amountGBP;
                       let ti = ev.paymentMethod.id;
                       // let cpn = this.obj.DiscountCode;
                       let t = this.obj.Quantity;
@@ -276,7 +290,7 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.content = 'Your Payment Is Successfully Submitted';
                   this.enableAlert = true;
 
-                  let am = parseFloat(this.amount)*100;
+                  let am = this.amountGBP;
                   let ti = ev.paymentMethod.id;
                   // let cpn = this.obj.DiscountCode;
                   let t = this.obj.Quantity;
@@ -366,7 +380,7 @@ export class SubscriptionPaymentPage implements OnInit {
                 this.content = 'Your Payment Is Successfully Submitted';
                 this.enableAlert = true;
 
-                let am = parseFloat(this.amount)*100;
+                let am = this.amountGBP;
                 let ti = this.stripeId;
                 // let cpn = this.obj.DiscountCode;
                 let t = this.obj.Quantity;
