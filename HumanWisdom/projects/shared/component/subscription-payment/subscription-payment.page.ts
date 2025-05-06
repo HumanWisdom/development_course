@@ -116,7 +116,7 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   getGBPcuurency() {
-    this.service.getGBPcuurency(this.amount).subscribe((res: any) => {
+    this.service.getGBPcuurency(this.amount, this.defaultCountryname).subscribe((res: any) => {
      this.amountGBP = res;
     },
       error => {

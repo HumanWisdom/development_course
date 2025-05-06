@@ -363,9 +363,9 @@ export class OnboardingService {
     return of(this.countryData);
   }
 
-  getGBPcuurency(data: any): Observable<any> {
+  getGBPcuurency(data: any, c): Observable<any> {
 
-    return this.http.get(this.path + `/ConvertCurrency/INR/GBP/${data}`)
+    return this.http.get(this.path + `/ConvertCurrency/${c}/GBP/${data}`)
   }
 
   getToken() {
