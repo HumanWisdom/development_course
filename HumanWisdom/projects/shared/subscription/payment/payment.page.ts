@@ -168,7 +168,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: 'http://localhost:4200/' + url,
+            return_url: environment.clientUrl + url,
             payment_method_data: {             
               billing_details: {
                 name: (<HTMLInputElement>document.getElementById('name')).value,
