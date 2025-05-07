@@ -267,7 +267,9 @@
   /* background: #000000 !important; */
   background: #f9e9df !important
 }
-
+.bg_ffffff{
+  background: #FFFFFF;
+}
 .bg_292d56,
 .bg_stake
 {
