@@ -4820,6 +4820,14 @@ padding: 15px;
     margin-left: 3% !important;
   }
 
+  .owl_blog >.owl-carousel> .owl-stage-outer {
+    margin-left: 10% !important;
+  }
+
+  .owl_coach >.owl-carousel> .owl-stage-outer {
+    margin-left: 10% !important;
+  }
+
   .p35{
     padding-left: 35rem;
   } 
