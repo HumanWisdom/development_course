@@ -392,6 +392,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   }
 
   ngOnInit() {
+    localStorage.setItem('callAddtraction', "N");
     SharedService.isRoutedFromLogin = false;
 
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {

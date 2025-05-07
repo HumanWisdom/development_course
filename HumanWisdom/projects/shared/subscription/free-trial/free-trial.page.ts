@@ -1,6 +1,6 @@
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
 import { OnboardingService } from '../../services/onboarding.service';
@@ -16,6 +16,8 @@ export class FreeTrialPage implements OnInit {
   MonthPlanFreeTrial = 7;
   AnnualPlanFreeTrial = 14;
   isAdults = true;
+  @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+  
   constructor(
     private router: Router,private onboardingService:OnboardingService){
     this.Monthly = Constant.MonthlyPlan;
@@ -29,6 +31,14 @@ export class FreeTrialPage implements OnInit {
   }
 
   ngOnInit() {
+   
+    let addtraction = localStorage.getItem('callAddtraction');
+
+    if(addtraction === 'Y') {
+      setTimeout(() => {
+        this.payementSubmitBtnClick.nativeElement.click();
+      }, 2000);
+    }
     
     this.GetDataFromLocalStorage();
   }
