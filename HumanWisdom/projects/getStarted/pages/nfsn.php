@@ -221,7 +221,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Overcome loneliness by having relationships with depth, meaning and less conflict.
+                  Have happier relationships with depth, meaning and less conflict.   
                   </h5>
                 </div>
               </div>
@@ -255,7 +255,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb12px fs_15px fw_400 lh_150p fc_000000">
-                    Learn soft skills, emotional intelligence, communication, leadership and resilience to thrive at work.
+                  Be happier at work and develop your resilience, communication, and leadership skills. 
                   </h5>
                 </div>
               </div>
