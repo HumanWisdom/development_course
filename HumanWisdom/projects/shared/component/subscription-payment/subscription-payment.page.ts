@@ -43,6 +43,7 @@ export class SubscriptionPaymentPage implements OnInit {
   countryCode: any = '';
   defaultCountry: any;
   defaultCountryname: any;
+  defaultCurrencyName: any;
   defaultCurrencySymbol: any
   obj:any;
   enableAlert = false;
@@ -135,6 +136,8 @@ export class SubscriptionPaymentPage implements OnInit {
       this.getPricing()
       this.defaultCountry = res.country_name
       this.defaultCountryname = res.country
+      this.defaultCurrencyName = res.currency
+      
     },
       error => {
         console.log(error)
@@ -242,7 +245,7 @@ export class SubscriptionPaymentPage implements OnInit {
                     // let ti = ev.paymentMethod.id;
                     // let cpn = this.obj.DiscountCode;
                     let t = this.obj.Quantity;
-                    let c = this.defaultCountryname;
+                    let c = this.defaultCurrencyName;
 
                     localStorage.setItem('stripeamount', am.toString());
                     // localStorage.setItem('stripeid', ti);
@@ -281,7 +284,7 @@ export class SubscriptionPaymentPage implements OnInit {
                 // let ti = ev.paymentMethod.id;
                 // let cpn = this.obj.DiscountCode;
                 let t = this.obj.Quantity;
-                let c = this.defaultCountryname;
+                let c = this.defaultCurrencyName;
 
                 localStorage.setItem('stripeamount', am.toString());
                 // localStorage.setItem('stripeid', ti);
@@ -374,7 +377,7 @@ export class SubscriptionPaymentPage implements OnInit {
               // let ti = this.stripeId;
               // let cpn = this.obj.DiscountCode;
               let t = this.obj.Quantity;
-              let c = this.defaultCountryname;
+              let c = this.defaultCurrencyName;
 
               localStorage.setItem('stripeamount', am.toString());
               // localStorage.setItem('stripeid', ti);

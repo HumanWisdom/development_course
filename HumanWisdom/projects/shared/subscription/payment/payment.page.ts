@@ -8,6 +8,7 @@ import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
+import { OnboardingService } from '../../services/onboarding.service';
 
 @Component({
   selector: 'app-payment',
@@ -25,10 +26,12 @@ export class PaymentPage implements OnInit, AfterViewInit {
   isProduction: boolean = true;
   isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
-   amountGBP = "";
+  amountGBP = "";
+  defaultCurrencyName: any;
+
 
   constructor(private datePipe: DatePipe, private router: Router, private commonService:CommonService,
-    private location: Location) {
+    private location: Location, private service: OnboardingService) {
     this.selectedSubscription =
       this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
@@ -38,6 +41,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
     } else {
       this.isAdults = false;
     }
+    this.getCountry();
     this.GetDataFromLocalStorage();
   }
 
@@ -157,7 +161,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         }
 
         let am = this.amountGBP;
-        let c = this.getIsoCode();
+        let c = this.defaultCurrencyName;
 
         let discountCode = localStorage.getItem("discountCode");
 
@@ -225,6 +229,15 @@ export class PaymentPage implements OnInit, AfterViewInit {
       return ` (${this.pricingModel.ISOCode})`;
     }
     return '';
+  }
+
+  getCountry() {
+    this.service.getCountry().subscribe((res: any) => {
+      this.defaultCurrencyName = res.currency
+    },
+      error => {
+        console.log(error)
+      });
   }
 
   getCurrCode(){
