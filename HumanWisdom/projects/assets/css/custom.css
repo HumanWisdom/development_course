@@ -33598,7 +33598,7 @@ body *
 {
   height: 183px;
   background: #120F40;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   border-radius: 12px;
   padding: 15px !important;
   margin-bottom: 10px;
@@ -35952,10 +35952,10 @@ li ol > li:before {
   display:block;
 } 
 
-.ol_help_support ol > li:first-child 
+/* .ol_help_support ol > li:first-child 
 {
   counter-reset: item;
-}
+} */
 
 .ol_help_support ol > li 
 {
@@ -35974,6 +35974,7 @@ li ol > li:before {
 .ol_help_support ol
 {
   padding: 0 0 0 0 !important;
+  counter-reset: item;
 }
 
 .ol_help_support .ol_parent
@@ -36273,6 +36274,7 @@ li ol > li:before {
 {
   padding: 0;
   margin: 0 !important;
+  padding-top: 7px;
 }
 
 .h4_blogs p b 

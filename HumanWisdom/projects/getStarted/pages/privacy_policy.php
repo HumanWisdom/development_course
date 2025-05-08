@@ -51,6 +51,8 @@
                 <h2 class="hs_title">
                   Introduction
                 </h2>
+                <h6 class="hs_desc">
+                This privacy policy applies to both teenagers and adults who access the HappierMe web-app</h6>
 
                 <h6 class="hs_desc">
                   This privacy notice aims to inform you about how we collect and process any information that we collect from you, or that you provide to us. It covers information that could identify you (“personal information”) and information that could not. In the context of the law and this notice, “process” means collect, store, transfer, use or otherwise act on information. It tells you about your privacy rights and how the law protects you.
@@ -74,6 +76,9 @@
 
                 <h6 class="hs_desc">
                   We do not share, or sell, or disclose to a third party, any information collected through our website or app.
+                </h6>
+                <h6 class="hs_desc">
+                This privacy policy is GDPR and HIPAA compliant.
                 </h6>
 
                 <h2 class="hs_title">
@@ -103,7 +108,9 @@
                 <h6 class="hs_desc">
                   Your contact information includes information such as billing address, delivery address, email address, telephone numbers and any other information you have given to us for the purpose of communication or meeting.
                 </h6>
-
+                <h6 class="hs_desc">
+                In your profile you have the option of adding your photograph, age, occupation, email and phone number.
+                </h6>
                 <h6 class="hs_desc">
                   Your financial data includes information such as your bank account and payment card details.
                 </h6>
@@ -122,7 +129,8 @@
                 </h6>
 
                 <h6 class="hs_desc">
-                  Marketing data includes your preferences in receiving marketing from us; communication preferences; responses and actions in relation to your use of our services.
+                We do not collect any marketing data nor do we allow third parties to market to you. We do provide email updates regarding the app features and services.
+                  <!-- Marketing data includes your preferences in receiving marketing from us; communication preferences; responses and actions in relation to your use of our services. -->
                 </h6>
 
                 <h6 class="hs_desc">
@@ -156,10 +164,12 @@
                 <h6 class="hs_desc">
                   Where we need to collect personal data by law, or under the terms of a contract we have with you, and you fail to provide that data when requested, we may not be able to perform that contract. In that case, we may have to stop providing a service to you. If so, we will notify you of this at the time.
                 </h6>
+                <h6 class="hs_desc">
+                You do have the option of deleting all your data via the profile and opting out of all processing activities.                </h6>
+                <h6 class="hs_desc">
+                You can opt out of all processing activities and delete your entire data from the app at any time. You can do this via your profile. The bases on which we process information about you.
 
-                <h2 class="hs_title">
-                  The bases on which we process information about you
-                </h2>
+                </h6>
 
                 <h6 class="hs_desc">
                   The law requires us to determine under which of six defined bases we process different categories of your personal information, and to notify you of the basis for each category.
@@ -721,7 +731,12 @@
                 <h2 class="hs_title">
                   28. Use of site by children
                 </h2>
+                <h6 class="hs_desc">
+                The app is offering online preventive or counselling services to children and therefore does not obtain parental consent as they are legally obliged to not do so.  In order to help protect and safeguard children when providing preventive or counselling services, we must ensure that the parent/guardian is not aware of the child’s access to the service, as this could result in exposing the child to harm.                </h6>
+                <h6 class="hs_desc">
+                Children have been consulted in the design of the HappierMe app for teenagers, and in the writing of this policy.
 
+                </h6>
                 <h6 class="hs_desc">
                   We do not sell products or provide services for purchase by children, nor do we market to children. We do have programs for children and teenagers, but they are to be used only with the consent of a parent, guardian or the educational institution you study in.
                 </h6>
@@ -850,6 +865,41 @@
                 <h6 class="hs_desc">
                   If you have any question regarding our privacy policy, please contact us via email, team@happierme.app.
                 </h6>
+
+                <h2 class="hs_title">
+                  38. Access to Personal Health Information
+
+                </h2>
+
+                <h6 class="hs_desc">
+                You can access your personal health information by emailing: support@happierme.app. You have a right to access the personal data we hold about you. We keep an audit trail of access to your PHI. Your personal health information is not shared with anyone else. We do not use that data. You have access to it for your own purposes. You do have the right to restrict the use of your personal data, and can also object to the processing of your personal data. You can also withdraw consent for the processing of your personal data by writing to us: support@happierme.app.                 </h6>
+                <h2 class="hs_title">
+                  39. Profiling and automated processing
+
+
+                </h2>
+
+                <h6 class="hs_desc">
+                You are never subject to profiling and no decisions are made based on automated processing. You do have the right to have an access denial reviewed.
+                </h6>    
+                <h2 class="hs_title">
+                  40. State laws + Miscellaneous 
+
+
+                </h2>
+
+                <h6 class="hs_desc">
+                Depending on where you live, local state laws may provide you with additional rights with regards to your data, and this is not pre-empted by HIPAA.
+                </h6>     
+                <h6 class="hs_desc">
+                You do have the right to be reached somewhere other than your home, should the need arise.
+                </h6> 
+                <h6 class="hs_desc">
+                We have a process of verifying the identity of the requester before responding to a request.
+                </h6> 
+                <h6 class="hs_desc">
+                In different countries where the app is marketed, we take into account how old a ‘child’ is in that country.                 </h6>  
+
               </div>
             </div>
           </section>
