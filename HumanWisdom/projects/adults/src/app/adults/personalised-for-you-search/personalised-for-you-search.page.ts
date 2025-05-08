@@ -172,7 +172,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: "end"
         }
-      },
+      }
+       /*,
       {
         element: ".tour_find_inspiration",
         popover: {
@@ -181,7 +182,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right"
         }
       }
-      /*,
+     ,
       {
         element: ".tour_exercises",
         popover: {

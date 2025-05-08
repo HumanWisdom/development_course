@@ -131,7 +131,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   continueTour() {
     const driver = window['driver'].js.driver;
     let stepList = [
-      {
+    /*   {
         element: ".tour_find_inspiration",
         popover: {
           title: 'Get more out of HappierMe',
@@ -139,7 +139,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: "end"
         }
-      },
+      }, */
       {
        element: ".tour_exercises",
        popover: {
