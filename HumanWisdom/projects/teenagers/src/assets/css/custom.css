@@ -35453,7 +35453,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   margin: -20px -20px 0 -20px;
 }
-
+.bg_profile_blog {
+  background: #ffffff !important;
+  margin: -20px -20px 0;
+  padding: 20px;
+}
 .div_like_cnt 
 {
   border-radius: 100px;
@@ -35472,13 +35476,13 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: auto;
   height: 34px;
   border-radius: 360px;
-  background: #0C2B5F;
+  background: rgba(0,0,0,.1);
   margin-right: 8px;
   margin-bottom: 8px;
   font-size: 12px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .div_tag_btns .btn_ls_tags:last-child 
@@ -36160,7 +36164,7 @@ li ol > li:before {
   font-weight: 400;
   line-height: 150%;
   font-style: normal;
-  color: #FFFFFF !important;
+  color: #000000 !important;
   background-color: transparent !important;
 }
 
