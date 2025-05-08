@@ -159,6 +159,10 @@ export class PaymentPage implements OnInit, AfterViewInit {
         let am = this.amountGBP;
         let c = this.getIsoCode();
 
+        let discountCode = localStorage.getItem("discountCode");
+
+        localStorage.setItem('stripeDiscountCode', discountCode ?? "");
+
         localStorage.setItem('stripeamount', am.toString());
         localStorage.setItem('stripecountrycode', c);
         localStorage.setItem('callAddtraction', "Y");
