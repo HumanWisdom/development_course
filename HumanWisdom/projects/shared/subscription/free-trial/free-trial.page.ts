@@ -35,9 +35,14 @@ export class FreeTrialPage implements OnInit {
     let addtraction = localStorage.getItem('callAddtraction');
 
     if(addtraction === 'Y') {
-      setTimeout(() => {
+      let userId = JSON.parse(localStorage.getItem("userId"))
+      this.onboardingService.getOrderId(userId).subscribe(res => {
+        localStorage.setItem('stripeid', res);
         this.payementSubmitBtnClick.nativeElement.click();
-      }, 2000);
+      }, (err) => {
+        
+      }
+      )
     }
     
     this.GetDataFromLocalStorage();
