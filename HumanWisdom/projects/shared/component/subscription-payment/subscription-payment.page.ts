@@ -237,6 +237,21 @@ export class SubscriptionPaymentPage implements OnInit {
                     // The payment failed -- ask your customer for a new payment method.
                   } else {
                     this.logEventService.logEvent('Payment_Complete');
+                    this.getOrderId();
+                    let am = this.amountGBP;
+                    // let ti = ev.paymentMethod.id;
+                    // let cpn = this.obj.DiscountCode;
+                    let t = this.obj.Quantity;
+                    let c = this.defaultCountryname;
+
+                    localStorage.setItem('stripeamount', am.toString());
+                    // localStorage.setItem('stripeid', ti);
+                    localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
+                    localStorage.setItem('stripeqty', t);
+                    localStorage.setItem('stripecountrycode', c);
+
+                    // this.payementSubmitBtnClick.nativeElement.click();
+
                     // The payment has succeeded.
                     localStorage.setItem('personalised', 'F');
                     if (localStorage.getItem('ispartnershipClick') == 'T') {
@@ -250,19 +265,6 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                       }
                     } else {
-                      let am = this.amountGBP;
-                      let ti = ev.paymentMethod.id;
-                      // let cpn = this.obj.DiscountCode;
-                      let t = this.obj.Quantity;
-                      let c = this.defaultCountryname;
-
-                      localStorage.setItem('stripeamount', am.toString());
-                      localStorage.setItem('stripeid', ti);
-                      localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
-                      localStorage.setItem('stripeqty', t);
-                      localStorage.setItem('stripecountrycode', c);
-
-                      this.payementSubmitBtnClick.nativeElement.click();
                      
                       this.content = 'Your Payment Is Successfully Submitted';
                       this.enableAlert = true;
@@ -274,6 +276,20 @@ export class SubscriptionPaymentPage implements OnInit {
                   }
                 });
               } else {
+
+                let am = this.amountGBP;
+                // let ti = ev.paymentMethod.id;
+                // let cpn = this.obj.DiscountCode;
+                let t = this.obj.Quantity;
+                let c = this.defaultCountryname;
+
+                localStorage.setItem('stripeamount', am.toString());
+                // localStorage.setItem('stripeid', ti);
+                localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
+                localStorage.setItem('stripeqty', t);
+                localStorage.setItem('stripecountrycode', c);
+                    
+                // this.payementSubmitBtnClick.nativeElement.click();
 
                 // The payment has succeeded.0.
                 localStorage.setItem('personalised', 'F');
@@ -290,20 +306,6 @@ export class SubscriptionPaymentPage implements OnInit {
                 } else {
                   this.content = 'Your Payment Is Successfully Submitted';
                   this.enableAlert = true;
-
-                  let am = this.amountGBP;
-                  let ti = ev.paymentMethod.id;
-                  // let cpn = this.obj.DiscountCode;
-                  let t = this.obj.Quantity;
-                  let c = this.defaultCountryname;
-
-                  localStorage.setItem('stripeamount', am.toString());
-                  localStorage.setItem('stripeid', ti);
-                  localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
-                  localStorage.setItem('stripeqty', t);
-                  localStorage.setItem('stripecountrycode', c);
-                      
-                  this.payementSubmitBtnClick.nativeElement.click();
                   // alert('Your Payment Is Successfully Submitted');
                   setTimeout(() => {
                     this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
@@ -366,6 +368,21 @@ export class SubscriptionPaymentPage implements OnInit {
               this.enableAlert = true;
               // alert(result.error.message);
             } else {
+              this.getOrderId();
+
+              let am = this.amountGBP;
+              // let ti = this.stripeId;
+              // let cpn = this.obj.DiscountCode;
+              let t = this.obj.Quantity;
+              let c = this.defaultCountryname;
+
+              localStorage.setItem('stripeamount', am.toString());
+              // localStorage.setItem('stripeid', ti);
+              localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
+              localStorage.setItem('stripeqty', t);
+              localStorage.setItem('stripecountrycode', c);
+
+              
               localStorage.setItem('personalised', 'F');
               if (localStorage.getItem('ispartnershipClick') == 'T') {
                 if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
@@ -380,20 +397,6 @@ export class SubscriptionPaymentPage implements OnInit {
               } else {
                 this.content = 'Your Payment Is Successfully Submitted';
                 this.enableAlert = true;
-
-                let am = this.amountGBP;
-                let ti = this.stripeId;
-                // let cpn = this.obj.DiscountCode;
-                let t = this.obj.Quantity;
-                let c = this.defaultCountryname;
-
-                localStorage.setItem('stripeamount', am.toString());
-                localStorage.setItem('stripeid', ti);
-                localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
-                localStorage.setItem('stripeqty', t);
-                localStorage.setItem('stripecountrycode', c);
-
-                this.payementSubmitBtnClick.nativeElement.click();
                 
                 setTimeout(() => {
                   this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
@@ -407,6 +410,17 @@ export class SubscriptionPaymentPage implements OnInit {
       }
     }, 9000)
 
+  }
+
+  getOrderId() {
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    this.service.getOrderId(userId).subscribe(res => {
+      localStorage.setItem('stripeid', res);
+      this.payementSubmitBtnClick.nativeElement.click();
+    }, (err) => {
+      
+    }
+    )
   }
 
   back(){
