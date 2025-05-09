@@ -33545,9 +33545,9 @@ body *
 
 .box_v3_04a
 {
-  height: 173px;
+  height: 183px;
   background: #0C2B5F;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   border-radius: 12px;
   padding: 15px !important;
   margin-bottom: 10px;
@@ -36211,6 +36211,7 @@ h3_blogs p a font,
 {
   padding: 0;
   margin: 0 !important;
+  padding-top: 7px;
 }
 
 .h4_blogs p b 
