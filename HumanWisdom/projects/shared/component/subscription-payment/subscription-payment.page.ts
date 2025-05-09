@@ -240,17 +240,13 @@ export class SubscriptionPaymentPage implements OnInit {
                     // The payment failed -- ask your customer for a new payment method.
                   } else {
                     this.logEventService.logEvent('Payment_Complete');
-                   
-                    setTimeout(() => {
-                      this.getOrderId();
-                    }, 2000);
-                    
+                                 
                     let am = this.amountGBP;
                     // let ti = ev.paymentMethod.id;
                     // let cpn = this.obj.DiscountCode;
                     let t = this.obj.Quantity;
                     let c = this.defaultCurrencyName;
-
+                    this.getOrderId();   
                     localStorage.setItem('stripeamount', am.toString());
                     // localStorage.setItem('stripeid', ti);
                     localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
@@ -375,15 +371,13 @@ export class SubscriptionPaymentPage implements OnInit {
               this.enableAlert = true;
               // alert(result.error.message);
             } else {
-              setTimeout(() => {
-              this.getOrderId();
-            }, 2000);
+              
               let am = this.amountGBP;
               // let ti = this.stripeId;
               // let cpn = this.obj.DiscountCode;
               let t = this.obj.Quantity;
               let c = this.defaultCurrencyName;
-
+              this.getOrderId();
               localStorage.setItem('stripeamount', am.toString());
               // localStorage.setItem('stripeid', ti);
               localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
@@ -422,13 +416,15 @@ export class SubscriptionPaymentPage implements OnInit {
 
   getOrderId() {
     let userId = JSON.parse(localStorage.getItem("userId"))
-    this.service.getOrderId(userId).subscribe(res => {
-      localStorage.setItem('stripeid', res);
-      this.payementSubmitBtnClick.nativeElement.click();
-    }, (err) => {
-      
-    }
-    )
+    setTimeout(() => {     
+      this.service.getOrderId(userId).subscribe(res => {
+        localStorage.setItem('stripeid', res);
+        
+      }, (err) => {
+      } 
+     )
+     }, 2000);
+     this.payementSubmitBtnClick.nativeElement.click();
   }
 
   back(){
