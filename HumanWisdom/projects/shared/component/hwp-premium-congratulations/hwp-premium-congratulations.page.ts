@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from "@angular/common";
 import { SharedService } from '../../services/shared.service';
@@ -11,6 +11,8 @@ import { ProgramType } from '../../models/program-model';
 })
 export class HwpPremiumCongratulationsPage implements OnInit {
    isAdults=true;
+   @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+   
   constructor(public router:Router,
     private location: Location,
     private onboardingService:OnboardingService
@@ -24,6 +26,19 @@ export class HwpPremiumCongratulationsPage implements OnInit {
       this.isAdults = true;
     } else {
       this.isAdults = false;
+    }
+
+    let addtraction = localStorage.getItem('callAddtraction');
+
+    if(addtraction === 'Y') {
+      let userId = JSON.parse(localStorage.getItem("userId"))
+      this.onboardingService.getOrderId(userId).subscribe(res => {
+        localStorage.setItem('stripeid', res);
+        this.payementSubmitBtnClick.nativeElement.click();
+      }, (err) => {
+        
+      }
+      )
     }
   }
 

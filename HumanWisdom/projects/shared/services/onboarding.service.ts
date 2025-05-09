@@ -363,6 +363,16 @@ export class OnboardingService {
     return of(this.countryData);
   }
 
+  getGBPcuurency(data: any, c): Observable<any> {
+
+    return this.http.get(this.path + `/ConvertCurrency/${c}/GBP/${data}`)
+  }
+
+  getOrderId(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/myOrderNo/${data}`)
+  }
+
   getToken() {
     return JSON.parse(localStorage.getItem("token"))
   }

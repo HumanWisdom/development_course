@@ -840,8 +840,24 @@ The app is based on looking and learning about yourself, and not on a book, phil
                 </h4>
 
                 <h6 class="hs_desc">
-                The clinical safety officer is Dr Manoj Krishna, and can be reached on manoj@happierme.app
+                The clinical safety officer for patient safety risks  is Dr Manoj Krishna, and can be reached on manoj@happierme.app. You can submit any safety concerns via this email. 
+
                 </h6>
+                <h4 class="hs_sub_title">
+                  17. User involvement and feedback. Design standards.
+
+                </h4>
+                <h6 class="hs_desc">
+                User feedback was obtained during the design of the app, both from teens and adults. Users are also involved in testing of the app. This feedback is used to develop the app and make changes to suit our users. For example, in a recent iteration we added the Daily Check-in emoji’s to help users identify how they were feeling. 
+                </h6>
+                <h4 class="hs_sub_title">
+                18. Raising a query about your health
+
+                </h4>
+                <h6 class="hs_desc">
+                The HappierMe app is not a treatment app for medical conditions, but you can use the Forum to ask a coach a question anonymously and they will respond. You can also email a query regarding any content within the app to support@happierme.app. Coaches will typically respond within 48 hours. 
+                </h6>
+
 
                 <h6 class="hs_desc">
                   These Terms are effective and were last updated on March 4th, 2025.

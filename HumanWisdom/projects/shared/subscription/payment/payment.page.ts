@@ -8,17 +8,7 @@ import { StripeModel } from '../../models/search-data-model';
 import { environment } from '../../../environments/environment'
 import { Location } from '@angular/common';
 import { ProgramType, SubscriptionType } from '../../models/program-model';
-
-// var ADT = ADT || {};
-// ADT.Tag = ADT.Tag || {};
-// ADT.Tag.t = 0;
-// ADT.Tag.c = "";
-// ADT.Tag.tp = 0;
-// ADT.Tag.am = 0;
-// ADT.Tag.ti = "";
-// ADT.Tag.xd = "";
-// ADT.Tag.cpn = "";
-
+import { OnboardingService } from '../../services/onboarding.service';
 
 @Component({
   selector: 'app-payment',
@@ -36,10 +26,12 @@ export class PaymentPage implements OnInit, AfterViewInit {
   isProduction: boolean = true;
   isAdults = true;
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
-   @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+  amountGBP = "";
+  defaultCurrencyName: any;
+
 
   constructor(private datePipe: DatePipe, private router: Router, private commonService:CommonService,
-    private location: Location) {
+    private location: Location, private service: OnboardingService) {
     this.selectedSubscription =
       this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
@@ -49,6 +41,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
     } else {
       this.isAdults = false;
     }
+    this.getCountry();
     this.GetDataFromLocalStorage();
   }
 
@@ -70,7 +63,16 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+   let am = this.GetAmount();
 
+   let c = this.getCurrCode();
+
+   this.commonService.getGBPcuurency(am, c).subscribe((res: any) => {
+    this.amountGBP = res;
+   },
+     error => {
+       console.log(error)
+     });
   }
 
 
@@ -157,6 +159,20 @@ export class PaymentPage implements OnInit, AfterViewInit {
           localStorage.setItem('ispartnershipClick', 'F');
           url = `/${SharedService.getprogramName()}/hwp-premium-congratulations`;
         }
+
+        let am = this.amountGBP;
+        let c = this.defaultCurrencyName;
+
+        let discountCode = localStorage.getItem("discountCode");
+
+        localStorage.setItem('stripeDiscountCode', discountCode ?? "");
+
+        localStorage.setItem('stripeamount', am.toString());
+        localStorage.setItem('stripecountrycode', c);
+        localStorage.setItem('callAddtraction', "Y");
+
+        // this.payementSubmitBtnClick.nativeElement.click();
+
         const { error } = await stripe.confirmSetup({
           elements,
           confirmParams: {
@@ -179,24 +195,6 @@ export class PaymentPage implements OnInit, AfterViewInit {
           messageContainer.textContent = error.message;
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
         } else {
-
-          // ADT.Tag.am = this.GetAmount();
-          // ADT.Tag.c = this.getIsoCode();
-
-          let am = this.GetAmount();
-          // let ti = ev.paymentMethod.id;
-          // let cpn = this.obj.DiscountCode;
-          // let t = this.obj.Quantity;
-          let c = this.getIsoCode();
-
-          localStorage.setItem('stripeamount', am.toString());
-          // localStorage.setItem('stripeid', ti);
-          // localStorage.setItem('stripeDiscountCode', cpn);
-          // localStorage.setItem('stripeqty', t);
-          localStorage.setItem('stripecountrycode', c);
-
-          this.payementSubmitBtnClick.nativeElement.click();
-
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
         }
       });
@@ -231,6 +229,19 @@ export class PaymentPage implements OnInit, AfterViewInit {
       return ` (${this.pricingModel.ISOCode})`;
     }
     return '';
+  }
+
+  getCountry() {
+    this.service.getCountry().subscribe((res: any) => {
+      this.defaultCurrencyName = res.currency
+    },
+      error => {
+        console.log(error)
+      });
+  }
+
+  getCurrCode(){
+    return this.pricingModel.ISOCode;
   }
 
 }

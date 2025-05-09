@@ -83,7 +83,7 @@ export class ViewcartPage implements OnInit {
   }
 
   ngOnInit() {
-
+    localStorage.setItem('callAddtraction', "N");
     this.isUpgradeToPremium = localStorage.getItem('upgradeToPremium');
     this.userEmail = JSON.parse(localStorage.getItem("userEmail"))
     localStorage.setItem("couponid", '0')

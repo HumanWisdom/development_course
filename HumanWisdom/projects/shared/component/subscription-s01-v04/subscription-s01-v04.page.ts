@@ -550,6 +550,8 @@ export class SubscriptionS01V04Page implements OnInit {
 
       this.cartList = obj;
 
+      localStorage.setItem('ISOCode', obj[0]['ISOCode']);
+
       // this.cartList.forEach((element, i) => {
       //   element.Monthly = parseInt(element.Monthly)
       //   element.Annual = parseInt(element.Annual)

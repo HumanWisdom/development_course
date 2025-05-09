@@ -343,6 +343,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem('callAddtraction', "N");
     SharedService.isRoutedFromLogin = false;
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.isIos = true;

@@ -50,7 +50,9 @@ export class ProceedToPaymentPage implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem("discountCode", "")
     localStorage.setItem("couponid", '0');
+    localStorage.setItem('callAddtraction', "N");
     this.GetDataFromLocalStorage();
     this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
     this.InitializePlanModel();
