@@ -240,7 +240,11 @@ export class SubscriptionPaymentPage implements OnInit {
                     // The payment failed -- ask your customer for a new payment method.
                   } else {
                     this.logEventService.logEvent('Payment_Complete');
-                    this.getOrderId();
+                   
+                    setTimeout(() => {
+                      this.getOrderId();
+                    }, 2000);
+                    
                     let am = this.amountGBP;
                     // let ti = ev.paymentMethod.id;
                     // let cpn = this.obj.DiscountCode;
@@ -371,8 +375,9 @@ export class SubscriptionPaymentPage implements OnInit {
               this.enableAlert = true;
               // alert(result.error.message);
             } else {
+              setTimeout(() => {
               this.getOrderId();
-
+            }, 2000);
               let am = this.amountGBP;
               // let ti = this.stripeId;
               // let cpn = this.obj.DiscountCode;
