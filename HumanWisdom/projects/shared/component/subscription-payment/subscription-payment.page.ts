@@ -269,12 +269,13 @@ export class SubscriptionPaymentPage implements OnInit {
                       }
                     } else {
                      
-                      this.content = 'Your Payment Is Successfully Submitted';
-                      this.enableAlert = true;
+                     
                       // alert('Your Payment Is Successfully Submitted');
                       setTimeout(() => {
+                        this.content = 'Your Payment Is Successfully Submitted';
+                        this.enableAlert = true;
                         this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                      }, 800);
+                      }, 3000);
                     }
                   }
                 });
@@ -307,12 +308,13 @@ export class SubscriptionPaymentPage implements OnInit {
                     this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                   }
                 } else {
-                  this.content = 'Your Payment Is Successfully Submitted';
-                  this.enableAlert = true;
+                  
                   // alert('Your Payment Is Successfully Submitted');
                   setTimeout(() => {
+                    this.content = 'Your Payment Is Successfully Submitted';
+                    this.enableAlert = true;
                     this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                  }, 800);
+                  }, 3000);
                 }
 
               }
@@ -397,12 +399,11 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
               } else {
-                this.content = 'Your Payment Is Successfully Submitted';
-                this.enableAlert = true;
-                
                 setTimeout(() => {
+                  this.content = 'Your Payment Is Successfully Submitted';
+                  this.enableAlert = true;
                   this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                }, 800);
+                }, 3000);
                 // alert('Your Payment Is Successfully Submitted');
               }
             }
@@ -419,12 +420,11 @@ export class SubscriptionPaymentPage implements OnInit {
     setTimeout(() => {     
       this.service.getOrderId(userId).subscribe(res => {
         localStorage.setItem('stripeid', res);
-        
+        this.payementSubmitBtnClick.nativeElement.click();
       }, (err) => {
       } 
      )
      }, 2000);
-     this.payementSubmitBtnClick.nativeElement.click();
   }
 
   back(){
