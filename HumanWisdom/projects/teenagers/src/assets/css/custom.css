@@ -37620,17 +37620,17 @@ a.fc_e58d82:hover
 .h4_blogs ol 
 {
   padding: 0 15px !important;
-  color: #FFF !important;
+  color: #000 !important;
 }
 
 .h4_blogs ol li
 {
-  color: #FFF !important;
+  color: #000 !important;
   background: transparent !important;
 }
 .h4_blogs ul li
 {
-  color: #FFF !important;
+  color: #000 !important;
   background: transparent !important;
 }
 
@@ -37638,6 +37638,7 @@ a.fc_e58d82:hover
 {
   padding: 0;
   margin: 0 !important;
+  padding-top: 7px;
 }
 
 .h4_blogs p b 
