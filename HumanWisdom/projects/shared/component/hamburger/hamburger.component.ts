@@ -82,6 +82,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   onProgramChange() {
+    localStorage.setItem("IsProgramSwitch", "T");
     if (this.isAdults) {
       window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
     } else {

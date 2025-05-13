@@ -189,8 +189,9 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     //   })
     //  // this.commonService.verifyTokenAndHandleResponse(authtoken);
     // }
-    
-    if (authtoken) {
+    const isProgrwamSwitch = localStorage.getItem('isProgrwamSwitch');
+    if (authtoken || isProgrwamSwitch == 'T') {
+      localStorage.setItem("IsProgramSwitch", "F");
       console.log("APPPLE LOGIN");
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');

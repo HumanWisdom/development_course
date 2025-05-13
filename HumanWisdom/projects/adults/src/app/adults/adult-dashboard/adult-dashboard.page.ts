@@ -162,8 +162,9 @@ export class AdultDashboardPage implements OnInit {
     catch(e){ 
       authtoken = localStorage.getItem("token");
     }
-
-    if (authtoken) {
+    const isProgrwamSwitch = localStorage.getItem('isProgrwamSwitch');
+    if (authtoken || isProgrwamSwitch == 'T') {
+      localStorage.setItem("IsProgramSwitch", "F");
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
