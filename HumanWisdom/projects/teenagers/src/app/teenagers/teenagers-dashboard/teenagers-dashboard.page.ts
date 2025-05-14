@@ -196,13 +196,14 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
       this.services.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
-
         if (res) {
           localStorage.setItem("email", res['Email'])
           localStorage.setItem("name", res['Name'])
           let namedata = localStorage.getItem('name').split(' ')
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          console.log("ProgramSwitch");
+          console.log(res['Subscriber']);
           localStorage.setItem("Subscriber", res['Subscriber']);
           this.isSubscriber = SharedService.isSubscriber();
           this.loginadult(res);
