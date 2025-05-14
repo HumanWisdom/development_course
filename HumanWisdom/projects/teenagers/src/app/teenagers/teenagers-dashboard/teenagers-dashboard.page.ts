@@ -169,7 +169,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }
     localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
-    this.route.queryParams.subscribe(params => {
+    this.route?.queryParams?.subscribe(params => {
       authtoken = params?.authtoken
     });
     let authtoken= '';
