@@ -318,6 +318,11 @@ export class OnboardingService {
     return this.http.get(this.path + `/VerifyActKey/${userId}/${data}/${code}`)
   }
 
+    verifytoken(encrypt,progId) {
+      return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${progId}`)
+    }
+  
+
   redeemGiftery(data: any): Observable<any> {
     return this.http.post(this.path + `/RedeemGiftery`, data)
   }

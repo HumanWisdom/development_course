@@ -82,13 +82,58 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   onProgramChange() {
-    const token = localStorage.getItem("token");
-    localStorage.clear();
-    if (this.isAdults) {
-      window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard?authToken="+token;
-    } else {
-      window.location.href = environment.clientUrl + '/adults/adult-dashboard?authToken='+token;;
+    let authtoken= '';
+    try{
+       authtoken = JSON.parse(localStorage.getItem("token"));
     }
+    catch(e){
+        authtoken = localStorage.getItem("token");
+    }
+          this.Onboardingservice.verifytoken(authtoken,this.isAdults?11:9).subscribe((res) => {
+            if (res) {
+              localStorage.setItem("email", res['Email'])
+              localStorage.setItem("name", res['Name'])
+              let namedata = localStorage.getItem('name').split(' ')
+              localStorage.setItem("FnName", namedata[0])
+              localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+              console.log("ProgramSwitch");
+              console.log(res['Subscriber']);
+              localStorage.setItem("Subscriber", res['Subscriber']);
+              setTimeout(() => {
+                if (this.isAdults) {
+                  window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
+                } else {
+                  window.location.href = environment.clientUrl + '/adults/adult-dashboard';
+                }
+              }, 200);
+         
+              if(res["LastVisit"] &&  new Date(res["LastVisit"]).getDate()){
+                if(new Date().getDate() > new Date(res["LastVisit"]).getDate()){
+                  SharedService.FirstLoginOfTheDay =true;
+                }
+                else 
+                {
+                  SharedService.FirstLoginOfTheDay =false;
+                }
+                console.log(SharedService.FirstLoginOfTheDay)
+              }
+            } else {
+              localStorage.setItem("email", 'guest@humanwisdom.me');
+              localStorage.setItem("pswd", '12345');
+              localStorage.setItem('guest', 'T');
+              localStorage.setItem('isloggedin', 'F');
+            }
+          }, error => {
+            localStorage.setItem("email", 'guest@humanwisdom.me');
+            localStorage.setItem("pswd", '12345');
+            localStorage.setItem('guest', 'T');
+            localStorage.setItem('isloggedin', 'F');
+    
+          },
+          )
+
+
+ 
   }
 
   getmenuevent() {
