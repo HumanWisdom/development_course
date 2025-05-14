@@ -86,7 +86,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (this.isAdults) {
       window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard?authToken="+token;
     } else {
-      window.location.href = environment.clientUrl + '/adults/adult-dashboard?authToken="+token;';
+      window.location.href = environment.clientUrl + '/adults/adult-dashboard?authToken='+token;
     }
   }
 
