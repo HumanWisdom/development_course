@@ -82,15 +82,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   onProgramChange() {
-    const token = localStorage.getItem("token");
     localStorage.clear();
-    localStorage.setItem("IsProgramSwitch", "T");
-    localStorage.setItem("token",token);
-
     if (this.isAdults) {
-      window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard";
+      window.location.href = environment.clientUrl + "/teenagers/teenager-dashboard?authToken="+token;
     } else {
-      window.location.href = environment.clientUrl + '/adults/adult-dashboard';
+      window.location.href = environment.clientUrl + '/adults/adult-dashboard?authToken="+token;';
     }
   }
 
