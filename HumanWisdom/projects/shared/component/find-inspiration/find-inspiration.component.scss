@@ -12,7 +12,7 @@
     // grid-auto-flow: column; /* Items flow into columns */
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
+    width: 680px;
     gap: 10px; /* Space between items */
     // max-height: 200px; /* Adjust based on your item height */
     white-space: nowrap; /* Prevents wrapping */
@@ -30,13 +30,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 14px;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    // min-height: 80px;
-    //min-width: 125px;
+    height:  59px;
+    min-width:60px;
 
     &.highlight {
       background-color: #120f40;
@@ -66,14 +66,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2px;
-    font-size: 24px;
-    height: 28px;
+    margin-bottom: 5px;
+   /*  font-size: 24px;
+    height: 28px; */
   }
   
   .item-title {
     font-size: 12px;
     font-weight: 400;
+    line-height: 120%;
   }
 .h-24{
   height:24px !important
