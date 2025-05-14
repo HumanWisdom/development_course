@@ -4289,6 +4289,16 @@ audio::-webkit-media-controls-enclosure
   top: 100px;
 }
 /* /customisation */
+
+/* /newlandig */
+.testnew{
+background: #FCF2EC;
+    padding: 36px;
+    margin: 10px;
+    height: 302px;
+    border-radius: 20px;
+
+}
 /* /portfolio */
 
 .absolute_teens_launch
