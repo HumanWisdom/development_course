@@ -44,7 +44,7 @@ setTimeout(() => {
             })
         document.getElementById('newsPopup').click();
     }
-    if(window.location.href.includes('index.php')){
+    if(window.location.href.includes('adtraction')){
         localstorage("adtraction",true);
     }
    
