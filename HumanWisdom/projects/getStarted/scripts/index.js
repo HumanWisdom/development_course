@@ -44,6 +44,11 @@ setTimeout(() => {
             })
         document.getElementById('newsPopup').click();
     }
+    if(window.location.href.includes('index.php')){
+        localstorage("adtraction",true);
+    }
+   
+
 }, 5000);
 
 const loginClick = document.getElementById('loginClick');
