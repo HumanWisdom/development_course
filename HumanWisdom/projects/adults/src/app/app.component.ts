@@ -333,7 +333,7 @@ export class AppComponent implements OnDestroy {
   }
   
   async getUserInformationById(loggedInUserId){
-   this.onboardingService.getuser(loggedInUserId,).subscribe(res=>{
+   this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
     if(res){
       this.userdetail=res[0];
       let subscriber = res[0].IsSubscribed;
