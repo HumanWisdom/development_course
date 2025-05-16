@@ -333,9 +333,12 @@ export class AppComponent implements OnDestroy {
   }
   
   async getUserInformationById(loggedInUserId){
-   this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
+   this.onboardingService.getuser(loggedInUserId,).subscribe(res=>{
     if(res){
       this.userdetail=res[0];
+      let subscriber = res[0].IsSubscribed;
+      console.log('subscriber', subscriber);
+      localStorage.setItem('Subscriber', subscriber);
       this.onboardingService.userDetails = this.userdetail;
       this.getFreeScreens();
       if(res[0]?.SurveyDone=='0'){

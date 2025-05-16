@@ -406,7 +406,7 @@ export class OnboardingService {
   }
 
   getuser(data) {
-    return this.http.get(this.path + `/Users/${data}`)
+    return this.http.get(this.path + `/Users/${data}/${SharedService.ProgramId}`);
   }
 
   updateUser(data: any): Observable<any> {
