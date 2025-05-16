@@ -1,4 +1,4 @@
-import { Component, OnDestroy,Renderer2 } from '@angular/core';
+import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { NavigationService } from '../../../shared/services/navigation.service';
@@ -39,7 +39,7 @@ export class AppComponent implements OnDestroy {
   constructor(private navigationService: NavigationService,
     private router: Router,
     private renderer: Renderer2,
-    private services: TeenagersService,private commonService:CommonService,private onboardingService:OnboardingService) {
+    private services: TeenagersService, private commonService: CommonService, private onboardingService: OnboardingService) {
     SharedService.ProgramId = 11;
     moengage.initialize({
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
@@ -49,12 +49,12 @@ export class AppComponent implements OnDestroy {
       this.getUserInformationById(SharedService.getUserId())
     }
     let urls = this.router.url.split('authtoken=');
-    if(!urls && urls[1] == undefined){
+    if (!urls && urls[1] == undefined) {
       if (localStorage.getItem("isloggedin") !== 'T') {
         this.services.emaillogin();
       }
     }
-  
+
     this.navigationSubs = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -63,9 +63,9 @@ export class AppComponent implements OnDestroy {
       setTimeout(() => {
         this.pageLoaded = true;
       }, 2000)
-      if(!event.url.includes('/login')){
-        this.removeRecaptchaScript();      
-       }
+      if (!event.url.includes('/login')) {
+        this.removeRecaptchaScript();
+      }
       //  this.navigationService.routeToPath(event.url);
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
@@ -86,18 +86,21 @@ export class AppComponent implements OnDestroy {
     }
   }
 
-   getUserInformationById(loggedInUserId){
-    this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
-     if(res){
-       if(res[0]?.SurveyDone=='0'){
-         setTimeout(() => {
-           this.commonService.updateSurveyData(1);
-         }, 180000);
-       }
-     }
-   });
-  
- }
+  getUserInformationById(loggedInUserId) {
+    this.onboardingService.getuser(loggedInUserId).subscribe(res => {
+      if (res) {
+        let subscriber = res[0].IsSubscribed;
+        console.log('subscriber', subscriber);
+        localStorage.setItem('Subscriber', subscriber);
+        if (res[0]?.SurveyDone == '0') {
+          setTimeout(() => {
+            this.commonService.updateSurveyData(1);
+          }, 180000);
+        }
+      }
+    });
+
+  }
 
 
   setDynamicCSS() {
