@@ -293,7 +293,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
     <!-- happyuser -->
  
-        <div class="section-header">
+        <div class="section-headernew">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
@@ -315,7 +315,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
              <!-- video -->
       <section>
-        <div class="section-header">
+      <div class="section-headernew">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
