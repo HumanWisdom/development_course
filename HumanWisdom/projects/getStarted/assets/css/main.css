@@ -93,6 +93,10 @@ section {
   text-align: center;
   padding-bottom: 50px;
 }
+.section-headernew {
+  text-align: center;
+  padding-bottom: 30px;
+}
 
 /* .section-header h2 {
   font-size: 13px;
@@ -2439,7 +2443,7 @@ a
 }
 .divhome{
   background: rgba(0, 0, 0, .75);
-    padding: 58px;
+    padding: 28px;
 }
 
 .mr6px
