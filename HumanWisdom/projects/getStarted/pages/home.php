@@ -178,10 +178,10 @@
 
             
 
-            <div class="row mt30px">
+            <div class="row mt30px" id="PricingSelectBtnHomePage">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
-              <a href="https://happierme.app/adults/intro/intro-carousel" class="">
+              <a class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                     Start your free trial
                     </button>
@@ -451,9 +451,9 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
               </div>
             </div>
 
-            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
+            <div id="PricingSelectBtn" class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" >
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-              <a id="teenagersPricing"> 
+              <a > 
               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Start your free trial today
                 </button>

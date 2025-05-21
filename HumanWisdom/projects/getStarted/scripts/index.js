@@ -90,6 +90,16 @@ if (pricingSelectBtn) {
     });
 }
 
+const PricingSelectBtnHomePage = document.getElementById('PricingSelectBtnHomePage');
+if (PricingSelectBtnHomePage) {
+    PricingSelectBtnHomePage.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
+        localStorage.setItem('login',false);
+        logevent("start_your_free_trial_button_click", "index.php");
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
 const discoverSectionPricingClick = document.getElementById('discoverSectionPricingClick');
 if (discoverSectionPricingClick) {
     discoverSectionPricingClick.addEventListener('click', function () {
@@ -144,7 +154,7 @@ if (adultsClick) {
         }
         else if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
-               localStorage.setItem('pricing',false);
+            localStorage.setItem('pricing',false);
            window.location.href = url+"/adults/onboarding/login";
         } else {
              localStorage.setItem('login',false);
