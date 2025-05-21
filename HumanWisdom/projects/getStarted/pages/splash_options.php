@@ -61,7 +61,7 @@
         
         <div class="row mb20px center_flex" id="teenagersClick">
           <div class="backcolor">
-          <a id="teenagers">
+          <a>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img  style="width:120px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_teenagers.png" class="img-responsive">
               <h4 class="mtb5px fs_18px fw_500 lh_140p fc_ffffff td_underline">
@@ -74,7 +74,7 @@
       
         <div class="row center_flex" id="adultsClick">
         <div class="backcolor">
-          <a id="adults">
+          <a>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img  style="width:120px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_adults.png" class="img-responsive">
               <h4 class="mtb5px fs_18px fw_500 lh_140p fc_ffffff td_underline">

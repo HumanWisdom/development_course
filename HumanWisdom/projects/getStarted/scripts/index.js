@@ -109,6 +109,7 @@ if (teenagersLogin) {
 const teenagersPricing = document.getElementById('teenagersPricing');
 if (teenagersPricing) {
     teenagersPricing.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
         window.location.href = url+"/teenagers/subscription/start-your-free-trial";
     });
 }
@@ -139,13 +140,15 @@ const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-            localStorage.setItem('pricing',false);
            window.location.href = url+"/adults/subscription/start-your-free-trial";
         }
         else if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
+               localStorage.setItem('pricing',false);
            window.location.href = url+"/adults/onboarding/login";
         } else {
+             localStorage.setItem('login',false);
+               localStorage.setItem('pricing',false);
             window.location.href = url + "/adults/onboarding/login";
         }
     });
