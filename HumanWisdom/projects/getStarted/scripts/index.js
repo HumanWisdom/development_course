@@ -45,7 +45,8 @@ setTimeout(() => {
         document.getElementById('newsPopup').click();
     }
     if(window.location.href.includes('adtraction')){
-        localStorage.setItem("adtraction",true);
+        var val =  window.location.href.split("at_gd=")
+        localStorage.setItem("adtraction",val[1]);
     }
    
 
