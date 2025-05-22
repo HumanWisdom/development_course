@@ -147,7 +147,36 @@ HappierMe </a>poll sheds light on just how widespread this issue is. An overwhel
               
               </h4>
 
+ <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Increased stress and anxiety:
+                  </span>
+Bullying leads to chronic stress, which can lower concentration, creativity, and motivation. In rare cases it leads to self-harm and suicide.
 
+                </h4>
+
+
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Higher absenteeism:
+                  </span>
+Employees who experience bullying are more likely to take time off work due to emotional exhaustion or fear of returning to a toxic environment.
+
+                </h4>
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Increased stress and anxiety:
+                  </span>
+Bullying leads to chronic stress, which can lower concentration, creativity, and motivation. In rare cases it leads to self-harm and suicide.
+
+                </h4>
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Increased stress and anxiety:
+                  </span>
+Bullying leads to chronic stress, which can lower concentration, creativity, and motivation. In rare cases it leads to self-harm and suicide.
+
+                </h4>
                 <h4 class="mtb0px blog_desc">
                 Stress-reduction techniques:
 
