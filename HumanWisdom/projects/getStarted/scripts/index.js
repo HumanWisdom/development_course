@@ -23,7 +23,7 @@ setTimeout(() => {
     if(sessionStorage.getItem('newsLetterOpened')!='true'){
         sessionStorage.setItem('newsLetterOpened','true')
         const newsLetterForm = document.getElementById("news-contact-form");
-        newsLetterForm.addEventListener("click", () => {
+        newsLetterForm?.addEventListener("click", () => {
                   const  email = document.getElementById("news-email").value;
                   const  name = document.getElementById("news-name").value;
                     const o = { Name: name, EmailID: email };
