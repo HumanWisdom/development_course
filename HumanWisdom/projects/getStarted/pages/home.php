@@ -207,29 +207,29 @@
         <div class="section-header">
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  ddflex_mblock">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 "  data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
            <div class="testnew">
               
 
            
 
              <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                  <h5 class="mtb0px fs_21px fw_600 lh_150p fc_000000">
+                  <h5  style="margin-top:21px ; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                         Brenda McChesney
                         </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" >
-                        Associate Director, National Family Suport Network. USA.
+                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000"style="text-align:left"; >
+                        Director, National Family Support Network, USA
     </h3>
                 </div>
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                        <img  style="margin-top:-50px; float:right;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
               </div>
             </div>
@@ -256,19 +256,20 @@ HappierMe is the best app I have found to assist entire families, and the root c
 
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                  <h5 class="mtb0px fs_21px fw_600 lh_150p fc_000000" style="text-align:left";>
+                  <h5  style="margin-top:25px; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
+                       
                         Adam Beagley
                         </h5>
                          <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left";>
 Student, UK    </h3>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                        <img  style="margin-top:-50px; float:right;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0  ">
+                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
               </div>
             </div>
