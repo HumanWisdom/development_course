@@ -4921,6 +4921,12 @@ padding: 15px;
 .slider-heading {
   font-size: 54px;
 }
+@media (min-width: 320px) and (max-width: 820px) {
+.cmh40px {
+      margin-left: 0px !important;
+      margin-top: 0px !important;
+}
+}
 
 @media (max-width: 540px) {
  .slider-heading {

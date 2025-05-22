@@ -130,6 +130,11 @@ export class SharedService {
     return value.toFixed(2);
   }
 
+  public static isAndroid(): boolean {
+    const userAgent = navigator.userAgent || navigator.vendor;
+    return /android/i.test(userAgent);
+  }
+
   private static iOS() {
     return [
       'iPad Simulator',
