@@ -37,13 +37,13 @@
   <body>
 
     <!-- header -->
-    <div class="row header_fixed center_flex">
+    <div class="row ">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header">
 
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
-      <a class="" href="../index.php">
+
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive"  alt="logo">
-      </a>
+      
     </div>
 
     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
@@ -94,7 +94,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <section class="hpt120px">
+    <section class="hpt1px">
         
       <div class="row center_flex web_home_div">
         <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
@@ -207,30 +207,32 @@
         <div class="section-header">
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  ddflex_mblock">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 "  data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
            <div class="testnew">
               
 
            
 
              <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+                        <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                  <h5 class="mtb0px fs_21px fw_600 lh_150p fc_000000">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                  <h5  style="margin-top:21px ; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                         Brenda McChesney
                         </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" >
-                        Associate Director, National Family Suport Network. USA.
+                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000"style="text-align:left"; >
+                        Director, National Family Support Network, USA
     </h3>
                 </div>
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                        <img  style="margin-top:-50px; float:right;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
-                </div>
+                 <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0">
+                  <div class="quatation-new1">
+                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                
+    </div>      </div>
               </div>
             </div>
 
@@ -239,7 +241,7 @@
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb20px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left" ;>
+                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left" ;>
 HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.               </div>
             </div>
 
@@ -256,20 +258,24 @@ HappierMe is the best app I have found to assist entire families, and the root c
 
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p0">
+                        <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                  <h5 class="mtb0px fs_21px fw_600 lh_150p fc_000000" style="text-align:left";>
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                  <h5  style="margin-top:25px; text-align:left;margin-left: -15px;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
+                       
                         Adam Beagley
                         </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left";>
+                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left;margin-left: -15px;";>
 Student, UK    </h3>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                        <img  style="margin-top:-50px; float:right;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
-                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0  ">
+                <div class="quatation-new">
+                        
+                <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+    </div>  
+              </div>
               </div>
             </div>
 
@@ -278,7 +284,7 @@ Student, UK    </h3>
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb20px fs_15px fw_400 lh_140p fc_000000 dinline_block"style=" text-align:left;";>
+                <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 dinline_block"style=" text-align:left;";>
 HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.              </div>
             </div>
     </div>

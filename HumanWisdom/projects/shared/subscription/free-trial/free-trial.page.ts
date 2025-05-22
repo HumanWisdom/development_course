@@ -38,7 +38,22 @@ export class FreeTrialPage implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
       this.onboardingService.getOrderId(userId).subscribe(res => {
         localStorage.setItem('stripeid', res);
-        this.payementSubmitBtnClick.nativeElement.click();
+        let am = localStorage.getItem('stripeamount');
+        let getAt_Gt = localStorage.getItem("adtraction");
+
+        let obj = {
+          "OrderValue": am ? am : 0,
+          "ActivationKey": res,
+          "at_gd": getAt_Gt,
+          "coupon": localStorage.getItem('stripeDiscountCode') ?? ""
+        }
+        this.onboardingService.callAddraction(obj).subscribe(res => {
+
+        }, (err) => {
+        }
+        )
+
+        // this.payementSubmitBtnClick.nativeElement.click();
       }, (err) => {
         
       }
