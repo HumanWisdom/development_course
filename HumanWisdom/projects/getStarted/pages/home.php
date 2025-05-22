@@ -257,7 +257,7 @@ HappierMe is the best app I have found to assist entire families, and the root c
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img style="height:108px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
