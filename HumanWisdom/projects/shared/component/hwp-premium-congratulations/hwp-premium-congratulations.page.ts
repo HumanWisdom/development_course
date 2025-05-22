@@ -10,14 +10,14 @@ import { ProgramType } from '../../models/program-model';
   styleUrls: ['./hwp-premium-congratulations.page.scss'],
 })
 export class HwpPremiumCongratulationsPage implements OnInit {
-   isAdults=true;
-   @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
-   
-  constructor(public router:Router,
+  isAdults = true;
+  @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+
+  constructor(public router: Router,
     private location: Location,
-    private onboardingService:OnboardingService
-    
-  ) { 
+    private onboardingService: OnboardingService
+
+  ) {
     this.onboardingService.updateUserDetails.next(true);
   }
 
@@ -30,35 +30,48 @@ export class HwpPremiumCongratulationsPage implements OnInit {
 
     let addtraction = localStorage.getItem('callAddtraction');
 
-    if(addtraction === 'Y') {
+    if (addtraction === 'Y') {
       let userId = JSON.parse(localStorage.getItem("userId"))
       this.onboardingService.getOrderId(userId).subscribe(res => {
         localStorage.setItem('stripeid', res);
-        this.payementSubmitBtnClick.nativeElement.click();
+        let getAt_Gt = localStorage.getItem("adtraction");
+        let am = localStorage.getItem('stripeamount');
+        let obj = {
+          "OrderValue": am ? am : 0,
+          "ActivationKey": res,
+          "at_gd": getAt_Gt,
+          "coupon": localStorage.getItem('stripeDiscountCode') ?? ""
+        }
+        this.onboardingService.callAddraction(obj).subscribe(res => {
+
+        }, (err) => {
+        }
+        )
+
+        // this.payementSubmitBtnClick.nativeElement.click();
       }, (err) => {
-        
+
       }
       )
     }
   }
 
-  JoinHumanWisdom(){
-    localStorage.setItem('btnClickBecomePartner','true');
+  JoinHumanWisdom() {
+    localStorage.setItem('btnClickBecomePartner', 'true');
     this.router.navigate(['adults/partnership-app/referral-code']);
   }
-  
-  NotNow(){
-    this.router.navigate([ `/${SharedService.getprogramName()}/hwp-premium-congratulations`])
+
+  NotNow() {
+    this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`])
   }
-  GoToIndex(){
+  GoToIndex() {
     this.router.navigate(['adults/partnership-webpage/partnership-index']);
   }
 
-  goBack() 
-  {
+  goBack() {
     this.location.back();
   }
-  ProceedToDashboard(){
-      this.router.navigate([SharedService.getDashboardUrls()]);
+  ProceedToDashboard() {
+    this.router.navigate([SharedService.getDashboardUrls()]);
   }
 }

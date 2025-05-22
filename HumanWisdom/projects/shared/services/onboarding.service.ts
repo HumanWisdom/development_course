@@ -378,6 +378,11 @@ export class OnboardingService {
     return this.http.get(this.path + `/myOrderNo/${data}`)
   }
 
+   callAddraction(data: any): Observable<any> {
+
+    return this.http.post(this.path + `/sendAdtraction`, data)
+  }
+
   getToken() {
     return JSON.parse(localStorage.getItem("token"))
   }

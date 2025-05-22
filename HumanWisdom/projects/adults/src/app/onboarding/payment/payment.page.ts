@@ -165,7 +165,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               localStorage.setItem('stripeqty', t);
               // localStorage.setItem('stripecountrycode', c);
 
-              this.payementSubmitBtnClick.nativeElement.click();
+              // this.payementSubmitBtnClick.nativeElement.click();
 
               this.enableAlert = true;
               // alert('Your Payment Is Successfully Submitted');

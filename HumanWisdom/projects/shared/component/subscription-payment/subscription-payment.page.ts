@@ -45,16 +45,16 @@ export class SubscriptionPaymentPage implements OnInit {
   defaultCountryname: any;
   defaultCurrencyName: any;
   defaultCurrencySymbol: any
-  obj:any;
+  obj: any;
   enableAlert = false;
   content = '';
   symbol: any
-  isoCode:any;
+  isoCode: any;
   isAdults = false;
   amountGBP = "";
 
   constructor(private service: OnboardingService,
-    private location:Location,
+    private location: Location,
     public logeventservice: LogEventService,
     private router: Router) {
     this.getCountry()
@@ -72,29 +72,29 @@ export class SubscriptionPaymentPage implements OnInit {
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
     var checkout = SharedService.getDataFromLocalStorage(Constant.Checkout);
-    if(checkout == 'T'){
-        this.obj = {
-          UserID: userId,
-          ProgramID: SharedService.ProgramId,
-          PlanId:  plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
-          DiscountCode:  parseInt(couponid) ?? 0,
-          Quantity: 1,
-          AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
-          MyselfSub: "1",
-          RateID: rateId
-        }
-  }else{
-    this.obj = {
-      UserID: userId,
-      ProgramID: SharedService.ProgramId ,
-      PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
-      DiscountCode: parseInt(couponid) ?? 0,
-      Quantity: quan,
-      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
+    if (checkout == 'T') {
+      this.obj = {
+        UserID: userId,
+        ProgramID: SharedService.ProgramId,
+        PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
+        DiscountCode: parseInt(couponid) ?? 0,
+        Quantity: 1,
+        AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
+        MyselfSub: "1",
+        RateID: rateId
+      }
+    } else {
+      this.obj = {
+        UserID: userId,
+        ProgramID: SharedService.ProgramId,
+        PlanId: plan === 'Annual' || plan === 'Yearly' ? '2' : '1',
+        DiscountCode: parseInt(couponid) ?? 0,
+        Quantity: quan,
+        AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : '',
+      }
     }
-  }
 
-    SharedService.setDataInLocalStorage(Constant.Checkout,'F')
+    SharedService.setDataInLocalStorage(Constant.Checkout, 'F')
     this.service.stripe(this.obj)
       .subscribe(res => {
         this.stripeId = res;
@@ -110,16 +110,16 @@ export class SubscriptionPaymentPage implements OnInit {
           // this.router.navigate(["/onboarding/assign-key"])
         })
 
-        if (SharedService.ProgramId == ProgramType.Adults) {
-          this.isAdults = true;
-        } else {
-          this.isAdults = false;
-        }
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   getGBPcuurency() {
     this.service.getGBPcuurency(this.amount, this.isoCode).subscribe((res: any) => {
-     this.amountGBP = res;
+      this.amountGBP = res;
     },
       error => {
         console.log(error)
@@ -137,7 +137,7 @@ export class SubscriptionPaymentPage implements OnInit {
       this.defaultCountry = res.country_name
       this.defaultCountryname = res.country
       this.defaultCurrencyName = res.currency
-      
+
     },
       error => {
         console.log(error)
@@ -161,7 +161,7 @@ export class SubscriptionPaymentPage implements OnInit {
         var style = {
           base: {
             iconColor: '#c4f0ff',
-             color: '#fff',
+            color: '#fff',
             '::placeholder': {
               fontFamily: "'Poppins', sans-serif",
               fontSize: '15px',
@@ -173,7 +173,7 @@ export class SubscriptionPaymentPage implements OnInit {
             ':-webkit-autofill': {
               color: '#000000',
               backgroundColor: '#120F40',
-              colorBackground:'#120F40',
+              colorBackground: '#120F40',
             },
             ':focus': {
               color: '#fff',
@@ -191,7 +191,7 @@ export class SubscriptionPaymentPage implements OnInit {
           currency: this.defaultCurrencySymbol.toLowerCase(),
           total: {
             label: 'Total Payable',
-            amount: parseFloat(this.amount)*100,
+            amount: parseFloat(this.amount) * 100,
           },
           requestPayerName: true,
           requestPayerEmail: true,
@@ -240,13 +240,13 @@ export class SubscriptionPaymentPage implements OnInit {
                     // The payment failed -- ask your customer for a new payment method.
                   } else {
                     this.logEventService.logEvent('Payment_Complete');
-                                 
+
                     let am = this.amountGBP;
                     // let ti = ev.paymentMethod.id;
                     // let cpn = this.obj.DiscountCode;
                     let t = this.obj.Quantity;
                     let c = this.defaultCurrencyName;
-                    this.getOrderId();   
+                    this.getOrderId();
                     localStorage.setItem('stripeamount', am.toString());
                     // localStorage.setItem('stripeid', ti);
                     localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
@@ -268,8 +268,8 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                       }
                     } else {
-                     
-                     
+
+
                       // alert('Your Payment Is Successfully Submitted');
                       setTimeout(() => {
                         this.content = 'Your Payment Is Successfully Submitted';
@@ -292,7 +292,7 @@ export class SubscriptionPaymentPage implements OnInit {
                 localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
                 localStorage.setItem('stripeqty', t);
                 localStorage.setItem('stripecountrycode', c);
-                    
+
                 // this.payementSubmitBtnClick.nativeElement.click();
 
                 // The payment has succeeded.0.
@@ -308,7 +308,7 @@ export class SubscriptionPaymentPage implements OnInit {
                     this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                   }
                 } else {
-                  
+
                   // alert('Your Payment Is Successfully Submitted');
                   setTimeout(() => {
                     this.content = 'Your Payment Is Successfully Submitted';
@@ -324,28 +324,33 @@ export class SubscriptionPaymentPage implements OnInit {
 
 
         var cardNumberElement = elements.create('cardNumber', {
-        placeholder: 'Card Number' ,
-        style: style,
-        classes: {
-          base: 'form-control w-full',
-          complete: 'is-valid',
-          empty: 'is-empty',
-          invalid: 'is-invalid',
-        },});
-        var cardExpiryElement = elements.create('cardExpiry',{style: style,
+          placeholder: 'Card Number',
+          style: style,
           classes: {
             base: 'form-control w-full',
             complete: 'is-valid',
             empty: 'is-empty',
             invalid: 'is-invalid',
-          },});
-        var cardCvcElement = elements.create('cardCvc',{ style: style,
+          },
+        });
+        var cardExpiryElement = elements.create('cardExpiry', {
+          style: style,
           classes: {
             base: 'form-control w-full',
             complete: 'is-valid',
             empty: 'is-empty',
             invalid: 'is-invalid',
-          },});
+          },
+        });
+        var cardCvcElement = elements.create('cardCvc', {
+          style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },
+        });
 
         cardNumberElement.mount('#card-number');
         cardExpiryElement.mount('#card-expiry');
@@ -373,7 +378,7 @@ export class SubscriptionPaymentPage implements OnInit {
               this.enableAlert = true;
               // alert(result.error.message);
             } else {
-              
+
               let am = this.amountGBP;
               // let ti = this.stripeId;
               // let cpn = this.obj.DiscountCode;
@@ -386,7 +391,7 @@ export class SubscriptionPaymentPage implements OnInit {
               localStorage.setItem('stripeqty', t);
               localStorage.setItem('stripecountrycode', c);
 
-              
+
               localStorage.setItem('personalised', 'F');
               if (localStorage.getItem('ispartnershipClick') == 'T') {
                 if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
@@ -417,17 +422,30 @@ export class SubscriptionPaymentPage implements OnInit {
 
   getOrderId() {
     let userId = JSON.parse(localStorage.getItem("userId"))
-    setTimeout(() => {     
+    setTimeout(() => {
       this.service.getOrderId(userId).subscribe(res => {
         localStorage.setItem('stripeid', res);
-        this.payementSubmitBtnClick.nativeElement.click();
+        let getAt_Gt = localStorage.getItem("adtraction");
+        let obj = {
+          "OrderValue": this.amountGBP,
+          "ActivationKey": res,
+          "at_gd": getAt_Gt,
+          "coupon": localStorage.getItem('discountCode') ?? ""
+        }
+        this.service.callAddraction(obj).subscribe(res => {
+
+        }, (err) => {
+        }
+        )
+
+        // this.payementSubmitBtnClick.nativeElement.click();
       }, (err) => {
-      } 
-     )
-     }, 2000);
+      }
+      )
+    }, 2000);
   }
 
-  back(){
+  back() {
     this.location.back();
   }
 
@@ -438,8 +456,8 @@ export class SubscriptionPaymentPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
-  getIsoCode(){
-    if(this.symbol == '$'){
+  getIsoCode() {
+    if (this.symbol == '$') {
       return ` (${this.isoCode})`;
     }
     return '';
