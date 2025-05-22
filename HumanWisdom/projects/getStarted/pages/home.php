@@ -216,8 +216,8 @@
 
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-3 col-md-3 col-sm-8 col-xs-8 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+                        <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -228,9 +228,11 @@
                         Director, National Family Support Network, USA
     </h3>
                 </div>
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive display_m_none w100p" alt="quotation" loading=lazy> 
-                </div>
+                 <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0">
+                  <div class="quatation-new1">
+                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                
+    </div>      </div>
               </div>
             </div>
 
@@ -239,7 +241,7 @@
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb20px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left" ;>
+                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left" ;>
 HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.               </div>
             </div>
 
@@ -257,20 +259,23 @@ HappierMe is the best app I have found to assist entire families, and the root c
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p0">
-                        <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                  <h5  style="margin-top:25px; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
+                  <h5  style="margin-top:25px; text-align:left;margin-left: -15px;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                        
                         Adam Beagley
                         </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left";>
+                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left;margin-left: -15px;";>
 Student, UK    </h3>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0  ">
-                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive display_m_none w100p" alt="quotation" loading=lazy> 
-                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0  ">
+                <div class="quatation-new">
+                        
+                <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+    </div>  
+              </div>
               </div>
             </div>
 
