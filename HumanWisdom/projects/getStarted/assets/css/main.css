@@ -2443,7 +2443,7 @@ a
 }
 .divhome{
   background: rgba(0, 0, 0, .75);
-    padding: 28px;
+    padding: 22px;
 }
 
 .mr6px
@@ -3543,6 +3543,9 @@ audio::-webkit-media-controls-enclosure
   /* padding-left: 10%;
   padding-right: 10%; */
 }
+.hpt1px {
+    padding-top: 1px;
+}
 .hptblog120px 
 {
   padding-top: 120px;
@@ -4309,7 +4312,7 @@ audio::-webkit-media-controls-enclosure
 background: #FCF2EC;
     padding: 36px;
     margin: 10px;
-    height: 302px;
+     height: 302px; 
     border-radius: 20px;
 
 }
