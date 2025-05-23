@@ -27,9 +27,92 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
       <!-- End Google Tag Manager -->
+  
+      <style>
+      @media (min-width:2000px) and (max-width: 2600px) {
+.fs_21px
+{
+  font-size: 30px !important;
+}
+.fs_15px
+{
+  font-size: 20px !important;
+}
+.btn_tff {
+  width: 50rem;
+  height: 75px;
+    border-radius: 42px;
+}
+.fs_12px {
+  font-size: 16px !important;
+}
 
-   
+.fs_24px {
+  font-size: 35px !important;
+}
+      }
+@media (min-width: 2600px) and (max-width: 3500px) {
+.fs_21px
+{
+  font-size: 35px !important;
+}
+.fs_15px
+{
+  font-size: 25px !important;
+}
+.fs_12px {
+  font-size: 21px !important;
+}
 
+.fs_24px {
+  font-size: 40px !important;
+}
+
+.btn_tff {
+  width: 50rem;
+  height: 75px;
+    border-radius: 42px;
+}
+.btn_subscription_trial {
+  width: 53%;
+  height: 36px;
+}
+}
+
+@media (min-width: 3500px) and (max-width: 5000px) {
+  .home_page_title{
+    margin-top:8% !important;
+  }
+.fs_21px
+{
+  font-size: 45px !important;
+}
+.fs_15px
+{
+  font-size: 35px !important;
+}
+.fs_12px {
+  font-size: 31px !important;
+}
+
+.fs_24px {
+  font-size: 5% !important;
+}
+
+.btn_tff {
+        width: 58rem;
+        height: 106px;
+        border-radius: 60px;
+}
+.btn_subscription_trial {
+  width: 53%;
+  height: 36px;
+}
+.testnew {
+  height: 392px !important;
+}
+}
+</style>
   
     
   </head>
@@ -110,7 +193,7 @@
 
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cmh40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 home_page_title">
               
 
             <div class="row mt20px">
