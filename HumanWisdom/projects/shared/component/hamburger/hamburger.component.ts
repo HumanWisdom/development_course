@@ -39,6 +39,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   subscriberType = "";
   enableprofile = true;
   enableAlert = false;
+  isAndroid = false;
   content = '';
   enablebecomepartner = false;
   @Input() userDetails: any
@@ -56,6 +57,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     public logeventservice: LogEventService,
     private cd: ChangeDetectorRef
   ) {
+    this.isAndroidDevice();
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -93,6 +95,10 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
+  }
+
+  isAndroidDevice(){
+    this.isAndroid = SharedService.isAndroid();
   }
 
   closemenuevent() {
