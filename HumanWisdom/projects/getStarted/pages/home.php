@@ -179,7 +179,7 @@
 
     <section class="hpt1px">
         
-      <div class="row center_flex web_home_div">
+      <div class="row center_flex web_home_divnew">
         <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
 
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
