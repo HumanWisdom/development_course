@@ -438,7 +438,7 @@ export class SubscriptionPaymentPage implements OnInit {
         }
         )
 
-        // this.payementSubmitBtnClick.nativeElement.click();
+        this.payementSubmitBtnClick.nativeElement.click();
       }, (err) => {
       }
       )
