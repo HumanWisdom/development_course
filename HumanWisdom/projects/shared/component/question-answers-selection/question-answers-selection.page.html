@@ -1,0 +1,40 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
+  [bg_tn]="bg_tn"></app-course-header>
+
+<form>
+  <div *ngFor="let o of questionAndAns; let ind=index">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h3 class="txt4">
+          {{o['Que']}}
+        </h3>
+      </div>
+    </div>
+
+    <br>
+
+    <div *ngFor="let m of o['OptStr']; let i=index">
+      <div class="row m-b-20 m-t-20" (click)="checkOption(ind, o['OptId'][i], i, o['OptStr'][i])">
+        <div class="col-md-12 col-sm-12 col-xs-12  p0">
+
+          <div>
+            <a class="sb_anchor" data-toggle="modal"
+              data-target="#lab-slide-bottom-popup">
+              <div id="{{o['OptStr'][i] + o['Que']}}" [ngClass]="{'single_select_active': (selectedObj[ind] === o['OptStr'][i]) || false}"
+                class="box select_box fleft">
+                <div>
+                  <h3 class="txt9 ctxt9" id="{{o['OptStr'][i] + o['Que'] + 'text'}}">
+                    {{m}}
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+</form>
