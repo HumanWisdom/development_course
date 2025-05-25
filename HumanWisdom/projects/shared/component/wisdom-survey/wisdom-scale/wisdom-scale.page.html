@@ -80,12 +80,15 @@
                   </h6>
                 </div>
               </div>
+
+              <app-QuestionAnswersSelection [questionAndAns]="questionAns" (sendRating)="receiveRating($event)"></app-QuestionAnswersSelection>
+
               <!-- Reversed Rating -->
-              <app-progress-slider [q]="q1" r="1" nFilter="Not at all anxious" pFilter="Very anxious"   (sendRating)="receiveRating($event)"></app-progress-slider>
-              <br>
+              <!-- <app-progress-slider [q]="q1" r="1" nFilter="Not at all anxious" pFilter="Very anxious"   (sendRating)="receiveRating($event)"></app-progress-slider> -->
+              <!-- <br> -->
               <!-- Reversed Rating -->
-              <app-progress-slider [q]="q2" r="2" nFilter="Not at all stressed" pFilter="Very stressed"  (sendRating)="receiveRating($event)"></app-progress-slider>
-              <br>
+              <!-- <app-progress-slider [q]="q2" r="2" nFilter="Not at all stressed" pFilter="Very stressed"  (sendRating)="receiveRating($event)"></app-progress-slider> -->
+              <!-- <br>
               <app-progress-slider [q]="q3" r="3" nFilter="Not well at all"   pFilter="Very well"   (sendRating)="receiveRating($event)"></app-progress-slider>
               <br>
               <app-progress-slider [q]="q4" r="4"  nFilter="Not calm at all"  pFilter="Very calm "  (sendRating)="receiveRating($event)"></app-progress-slider>
@@ -97,15 +100,15 @@
               <br>
 
               <app-progress-slider [q]="q7" r="7" nFilter="I don’t have any addictions" pFilter="I struggle with an addiction"  (sendRating)="receiveRating($event)"></app-progress-slider>
-              <br>
+              <br> -->
               <!-- Reversed Rating -->
-              <app-progress-slider [q]="q8" r="8" nFilter="Not well at all"  pFilter="I cope very well"   (sendRating)="receiveRating($event)"></app-progress-slider>
-              <br>
+              <!-- <app-progress-slider [q]="q8" r="8" nFilter="Not well at all"  pFilter="I cope very well"   (sendRating)="receiveRating($event)"></app-progress-slider>
+              <br> -->
                <!-- Reversed Rating -->
-              <app-progress-slider [q]="q9" r="9" nFilter="No compassion" pFilter="A lot of compassion"   (sendRating)="receiveRating($event)"></app-progress-slider>
+              <!-- <app-progress-slider [q]="q9" r="9" nFilter="No compassion" pFilter="A lot of compassion"   (sendRating)="receiveRating($event)"></app-progress-slider>
               <br>
               <app-progress-slider [q]="q10" r="10"  nFilter="Not happy at all"  pFilter="Very happy" (sendRating)="receiveRating($event)"></app-progress-slider>
-              <br>
+              <br>-->
 
               <div class="row mt30px mb40px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -115,7 +118,7 @@
                 </div>
               </div>
 
-              <div class="pagebreak"></div>
+              <!-- <div class="pagebreak"></div> -->
 
             </form>
           </div>
