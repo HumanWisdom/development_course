@@ -111,7 +111,7 @@
 
                
                 <h4 class="mtb0px blog_desc">
-                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Work">
+                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/work">
                     Workplace
                   </a>  
                  bullying is more common than we think, yet it often goes unnoticed or unaddressed. It can take many forms — verbal abuse, exclusion, excessive criticism, or even subtle manipulation. The impact extends beyond individuals, affecting team morale, productivity, and overall workplace culture.
