@@ -756,22 +756,22 @@
                 <h6 class="hs_desc">
                   Such child users and visitors will inevitably visit other parts of the site and will be subject to whatever on-site marketing they find, wherever they visit.
                 </h6>
-                <h2 class="hs_title">
+                <!-- <h2 class="hs_title">
                   29. This policy complies with International Data Management Standards
                 </h2>
 
                 <h6 class="hs_desc">
                 We conform to Cyber Essentials standards: https://bit.ly/4k3Xqqb                
-                </h6>
+                </h6> -->
                 <h2 class="hs_title">
-                  30. Re-obtaining consent
+                  29. Re-obtaining consent
                 </h2>
 
                 <h6 class="hs_desc">
                 This policy will be updated if there is a significant change in the purpose of data collection and consent in that case will be re-obtained.
                 </h6>
                 <h2 class="hs_title">
-                  31. Minimum data
+                  30. Minimum data
 
                 </h2>
 
@@ -781,7 +781,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  32. Encryption of data sent between us
+                  31. Encryption of data sent between us
                 </h2>
 
                 <h6 class="hs_desc">
@@ -793,7 +793,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  33. How you can complain
+                  32. How you can complain
                 </h2>
 
                 <h6 class="hs_desc">
@@ -813,7 +813,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  34. Retention period for personal data
+                  33. Retention period for personal data
                 </h2>
 
                 <h6 class="hs_desc">
@@ -835,7 +835,7 @@
                 </ul>
 
                 <h2 class="hs_title">
-                  35. Compliance with the law
+                  34. Compliance with the law
                 </h2>
 
                 <h6 class="hs_desc">
@@ -847,7 +847,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  36. Time frame to respond to requests
+                  35. Time frame to respond to requests
                 </h2>
 
                 <h6 class="hs_desc">
@@ -855,7 +855,7 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  37. Review of this privacy policy
+                  36. Review of this privacy policy
                 </h2>
 
                 <h6 class="hs_desc">
@@ -867,14 +867,14 @@
                 </h6>
 
                 <h2 class="hs_title">
-                  38. Access to Personal Health Information
+                  37. Access to Personal Health Information
 
                 </h2>
 
                 <h6 class="hs_desc">
                 You can access your personal health information by emailing: support@happierme.app. You have a right to access the personal data we hold about you. We keep an audit trail of access to your PHI. Your personal health information is not shared with anyone else. We do not use that data. You have access to it for your own purposes. You do have the right to restrict the use of your personal data, and can also object to the processing of your personal data. You can also withdraw consent for the processing of your personal data by writing to us: support@happierme.app.                 </h6>
                 <h2 class="hs_title">
-                  39. Profiling and automated processing
+                  38. Profiling and automated processing
 
 
                 </h2>
@@ -883,7 +883,7 @@
                 You are never subject to profiling and no decisions are made based on automated processing. You do have the right to have an access denial reviewed.
                 </h6>    
                 <h2 class="hs_title">
-                  40. State laws + Miscellaneous 
+                  39. State laws + Miscellaneous 
 
 
                 </h2>
