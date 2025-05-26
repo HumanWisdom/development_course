@@ -40,6 +40,7 @@ export class QuestionAnswersSelection implements OnInit {
   selectedObj = {};
   direction: string = '';
   currentSection = 0;
+ isAdults = false;
 
   constructor
     (
