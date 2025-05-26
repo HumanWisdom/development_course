@@ -449,7 +449,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
          <!-- subscription -->
       <section id="div_subscription">
-        <div class="row center_flex div_subscription">
+        <!-- <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
@@ -508,9 +508,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 700/mo.
-                      </h4> -->
+                     
 
                       <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
                     </div>
@@ -551,7 +549,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
             </div>
 
           </div>
-        </div>
+        </div> -->
       </section>
       <!-- /subscription -->
          

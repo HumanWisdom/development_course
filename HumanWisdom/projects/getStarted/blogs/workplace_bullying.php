@@ -111,7 +111,7 @@
 
                
                 <h4 class="mtb0px blog_desc">
-                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Work">
+                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Work">
                     Workplace
                   </a>  
                  bullying is more common than we think, yet it often goes unnoticed or unaddressed. It can take many forms — verbal abuse, exclusion, excessive criticism, or even subtle manipulation. The impact extends beyond individuals, affecting team morale, productivity, and overall workplace culture.
@@ -303,7 +303,7 @@ Here’s what can help:
                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
 
                 emotional intelligence,</a> and 
-               <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Stress">
+               <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
 
                       stress management </a>to equip users with strategies to handle difficult situations effectively.</h4>
 
@@ -340,7 +340,7 @@ HappierMe</a> empowers individuals to:
                   <ul>
                     <li>
                     Build resilience and manage 
-<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">stress.</a> 
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress.</a> 
                     </li>
 
                     <li>
@@ -352,7 +352,7 @@ HappierMe</a> empowers individuals to:
                     <li> Improve workplace  
                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
                     relationships</a> and 
-                                          <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Communication">
+                                          <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
 
                     communication.</a>
                     </li>
