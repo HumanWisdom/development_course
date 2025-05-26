@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -5,6 +6,20 @@ import { Router } from '@angular/router';
   selector: 'app-QuestionAnswersSelection',
   templateUrl: './question-answers-selection.page.html',
   styleUrls: ['./question-answers-selection.page.scss'],
+  animations: [
+      trigger('slideAnimation', [
+        // Wildcard transition for swipe left (next)
+        transition('* => left', [
+          style({ transform: 'translateX(100%)' }), // start from right
+          animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+        ]),
+        // Wildcard transition for swipe right (previous)
+        transition('* => right', [
+          style({ transform: 'translateX(-100%)' }), // start from left
+          animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+        ])
+      ])
+    ]
 })
 export class QuestionAnswersSelection implements OnInit {
   bg_tn = "bg_green_yellow"
@@ -23,6 +38,8 @@ export class QuestionAnswersSelection implements OnInit {
   @Output() sendRating = new EventEmitter<string>();
   bookmark = 0
   selectedObj = {};
+  direction: string = '';
+  currentSection = 0;
 
   constructor
     (
@@ -50,6 +67,26 @@ export class QuestionAnswersSelection implements OnInit {
     else
       this.bookmark = 0
     sessionStorage.setItem("bookmark11", JSON.stringify(this.bookmark))
+  }
+
+
+  next(event) {
+    window.scrollTo(0,0);
+    this.currentSection++;
+    if(this.currentSection>=10){
+      this.currentSection = 0;
+    }
+    this.direction = 'left';   
+  }
+
+  back(event) {
+    window.scrollTo(0,0);
+    if(this.currentSection==0){
+      this.currentSection=10;
+    }else{
+      this.currentSection--;
+    }
+      this.direction = 'right';
   }
 
 
