@@ -176,7 +176,7 @@ A hostile work environment can hinder collaboration and overall performance, aff
                   </span>
  Companies risk losing talented employees when 
  
-                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Work">                 
+                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/work">                 
 workplace </a>bullying goes unaddressed.
 
                 </h4>
@@ -187,7 +187,7 @@ workplace </a>bullying goes unaddressed.
  <h4 class="mtb0px blog_desc">
     Understanding the reasons behind bullying is crucial to addressing it effectively. The 
 
-                               <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/bullying">
+                               <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
                 HappierMe app</a> explores seven common reasons why people bully others:
 
 
@@ -265,9 +265,9 @@ Here’s what can help:
 
                     <li>
                    <b> Providing emotional intelligence training —</b>    Helping employees develop 
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness">
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/awareness">
                     self-awareness</a> and 
-                                        <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Communication">
+                                        <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
 
                     communication </a>skills.
               </li>
@@ -297,15 +297,15 @@ Here’s what can help:
                 HappierMe </a>
                 
                 provides tools and resources to help individuals and workplaces navigate bullying and emotional challenges. The app focuses on 
-                                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness">
+                                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Awareness">
 
-                self-awareness, 
-                                                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
+                self-awareness, </a>
+                 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
 
-                emotional intelligence, and 
-                                                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">
+                emotional intelligence,</a> and 
+               <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Stress">
 
-                stress management </a>to equip users with strategies to handle difficult situations effectively.</h4>
+                      stress management </a>to equip users with strategies to handle difficult situations effectively.</h4>
 
 
 
@@ -327,7 +327,7 @@ Through
  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise">
 
 guided exercises,</a> 
-<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/meditation">
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">
 
 meditations, </a>
 and emotional intelligence training, 
@@ -345,12 +345,12 @@ HappierMe</a> empowers individuals to:
 
                     <li>
                     Develop self-awareness and healthy 
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Emotional%20Needs">
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/emotional-needs">
                     emotional responses.    </a>
                     </li>
 
                     <li> Improve workplace  
-                      <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Relationships">
+                      <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
                     relationships</a> and 
                                           <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Communication">
 
@@ -359,7 +359,7 @@ HappierMe</a> empowers individuals to:
 
 
                      <li> Create a supportive and
-                      <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Diversity%20and%20Inclusion">
+                      <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/diversity-and-inclusion">
                     inclusive</a> work environment.
 
 
@@ -404,20 +404,20 @@ HappierMe,</a> we can shift from a culture of silence to one of support, ensurin
                 Other links
 </h4>
  <h4 class="mtb0px blog_desc">
-                1<a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+                1 .<a class="blog_highlight_peach td_underline" href="https://happierme.app/">
                Website
  </a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                  
-                               2<a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">
+                               2 .<a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">
                 Subscribe to our newsletter</a>
       </h4>
 
                 <h4 class="mtb0px blog_desc">
                  
-                      3    <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app">
+                      3 .   <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app">
               Follow HappierMe on social media
 </a> 
                 </h4>
