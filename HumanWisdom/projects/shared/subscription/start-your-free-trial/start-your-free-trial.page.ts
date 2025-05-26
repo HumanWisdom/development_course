@@ -30,7 +30,7 @@ export class StartYourFreeTrialPage implements OnInit {
 
   tryFreeSubscribe() {
     this.logeventservice.logEvent('click_start_trial');
-    if (!(SharedService.isIOSApp())) {
+    if (!(SharedService.isIOSApp() || SharedService.isAndroid())) {
       if (this.CheckIfUserIsLoggedIn()) {
         this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
       } else {

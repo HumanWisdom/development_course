@@ -318,6 +318,11 @@ export class OnboardingService {
     return this.http.get(this.path + `/VerifyActKey/${userId}/${data}/${code}`)
   }
 
+    verifytoken(encrypt,progId) {
+      return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}&progID=${progId}`)
+    }
+  
+
   redeemGiftery(data: any): Observable<any> {
     return this.http.post(this.path + `/RedeemGiftery`, data)
   }
@@ -373,6 +378,11 @@ export class OnboardingService {
     return this.http.get(this.path + `/myOrderNo/${data}`)
   }
 
+   callAddraction(data: any): Observable<any> {
+
+    return this.http.post(this.path + `/sendAdtraction`, data)
+  }
+
   getToken() {
     return JSON.parse(localStorage.getItem("token"))
   }
@@ -401,7 +411,7 @@ export class OnboardingService {
   }
 
   getuser(data) {
-    return this.http.get(this.path + `/Users/${data}`)
+    return this.http.get(this.path + `/Users/${data}/${SharedService.ProgramId}`);
   }
 
   updateUser(data: any): Observable<any> {

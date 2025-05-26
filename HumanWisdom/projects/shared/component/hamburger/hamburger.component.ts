@@ -39,6 +39,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   subscriberType = "";
   enableprofile = true;
   enableAlert = false;
+  isAndroid = false;
   content = '';
   enablebecomepartner = false;
   @Input() userDetails: any
@@ -47,7 +48,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   disableClick = true;
   isAdults: boolean = true;
   isDataRecieved = false;
-  url='';
+  url = '';
   private closeEventSubject: Subject<void> = new Subject();
   constructor(
     private router: Router,
@@ -56,6 +57,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     public logeventservice: LogEventService,
     private cd: ChangeDetectorRef
   ) {
+    this.isAndroidDevice();
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -74,7 +76,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         this.userDetails = res[0];
         this.isDataRecieved = true;
         this.setInitialData();
-        this.setProfileImage( this.userDetails);
+        this.setProfileImage(this.userDetails);
         console.log(res);
         this.isDataRecieved = false;
       }
@@ -93,6 +95,10 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
+  }
+
+  isAndroidDevice(){
+    this.isAndroid = SharedService.isAndroid();
   }
 
   closemenuevent() {
@@ -122,7 +128,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   setInitialData() {
     if (this.userDetails) {
-       //localStorage.setItem("isPartner", this.userDetails.IsPartner);
+      //localStorage.setItem("isPartner", this.userDetails.IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
       if (this.userDetails['UserImagePath'] != "") {
         this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
@@ -147,8 +153,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.ios = true;
     }
     let userId = JSON.parse(localStorage.getItem("userId"));
-     this.Onboardingservice.getuserDetail();
-      if (localStorage.getItem("isPartner") != null) {
+    this.Onboardingservice.getuserDetail();
+    if (localStorage.getItem("isPartner") != null) {
       this.isPartner = localStorage.getItem("isPartner");
     }
     if (localStorage.getItem("PartnerOption") != null) {
@@ -210,7 +216,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getName() {
-    return this.name===""? 'guest' :this.name
+    return this.name === "" ? 'guest' : this.name
 
   }
 
@@ -236,7 +242,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   loginroute() {
-      this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
+    this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
   }
 
   giftwisdom() {
@@ -374,7 +380,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   routeManageSubscriptiont(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (this.ios) {
+    if (this.ios || SharedService.isAndroid) {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
@@ -403,8 +409,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             localStorage.setItem("guest", "T");
             localStorage.setItem("navigateToUpgradeToPremium", "true");
             localStorage.setItem("btnClickBecomePartner", "true");
-       
-           // this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+
+            // this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
           } else {
             this.Onboardingservice.navigateToUpgradeToPremium = true;
             this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -438,7 +444,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
               auth2.signOut().then(() => {
                 this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
               });
-            }else {
+            } else {
               this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
             }
           }
@@ -462,7 +468,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   GetSubscriptionText() {
-    if (this.ios) {
+    if (this.ios || SharedService.isAndroid) {
       return "Manage Subscriptions"
     }
     return "My Subscriptions"
@@ -495,11 +501,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         let detail = JSON.parse(userdetail);
         this.setProfileImage(detail);
       }
-      else{
-        console.log("url:"+ (this.url))
-        if(this.url.toString().includes("https://") ==false)
-        this.url = this.url === '' || this.url.includes('undefined') ?'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' :'';
-        console.log("url:"+ (this.url))
+      else {
+        console.log("url:" + (this.url))
+        if (this.url.toString().includes("https://") == false)
+          this.url = this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : '';
+        console.log("url:" + (this.url))
       }
     }, 1000);
 
@@ -512,9 +518,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       }
     }
 
-   if(this.url.toString().includes("https://") ==false)
-    this.url = this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
-   console.log( "url:" + this.url )
+    if (this.url.toString().includes("https://") == false)
+      this.url = this.url === '' || this.url.includes('undefined') ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
+    console.log("url:" + this.url)
     this.cd.detectChanges();
   }
-  }
+}

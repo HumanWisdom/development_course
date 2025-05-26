@@ -93,6 +93,10 @@ section {
   text-align: center;
   padding-bottom: 50px;
 }
+.section-headernew {
+  text-align: center;
+  padding-bottom: 30px;
+}
 
 /* .section-header h2 {
   font-size: 13px;
@@ -325,6 +329,15 @@ section {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
 }
 
+.header_new {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    height: 120px;
+    border-bottom: 0;
+    padding: 30px 60px;
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10); */
+}
 @media (max-width: 575px) {
   .header {
     height: 70px;
@@ -2432,6 +2445,16 @@ a
   margin-left: 40px;
 }
 
+.cmh40px 
+{
+  margin-left: 60px;
+  margin-top: -100px;
+}
+.divhome{
+  background: rgba(0, 0, 0, .75);
+    padding: 22px;
+}
+
 .mr6px
 {
   margin-right: 6px;
@@ -3529,6 +3552,9 @@ audio::-webkit-media-controls-enclosure
   /* padding-left: 10%;
   padding-right: 10%; */
 }
+.hpt1px {
+    padding-top: 1px;
+}
 .hptblog120px 
 {
   padding-top: 120px;
@@ -4289,6 +4315,16 @@ audio::-webkit-media-controls-enclosure
   top: 100px;
 }
 /* /customisation */
+
+/* /newlandig */
+.testnew{
+background: #FCF2EC;
+    padding: 36px;
+    margin: 10px;
+     height: 302px; 
+    border-radius: 20px;
+
+}
 /* /portfolio */
 
 .absolute_teens_launch
@@ -4332,6 +4368,12 @@ audio::-webkit-media-controls-enclosure
 {
   background: #FCF2EC;
   padding: 60px 0;
+}
+
+.web_home_divnew 
+{
+  background: #FCF2EC;
+  padding: 30px 0;
 }
 .web_home_div1 
 {
@@ -4897,6 +4939,12 @@ padding: 15px;
 .slider-heading {
   font-size: 54px;
 }
+@media (min-width: 320px) and (max-width: 820px) {
+.cmh40px {
+      margin-left: 0px !important;
+      margin-top: 0px !important;
+}
+}
 
 @media (max-width: 540px) {
  .slider-heading {
@@ -5054,8 +5102,6 @@ padding: 15px;
    margin-top: 5% !important;
   }
 }
-
-
 
 
 

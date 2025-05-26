@@ -23,7 +23,7 @@ setTimeout(() => {
     if(sessionStorage.getItem('newsLetterOpened')!='true'){
         sessionStorage.setItem('newsLetterOpened','true')
         const newsLetterForm = document.getElementById("news-contact-form");
-        newsLetterForm.addEventListener("click", () => {
+        newsLetterForm?.addEventListener("click", () => {
                   const  email = document.getElementById("news-email").value;
                   const  name = document.getElementById("news-name").value;
                     const o = { Name: name, EmailID: email };
@@ -44,6 +44,12 @@ setTimeout(() => {
             })
         document.getElementById('newsPopup').click();
     }
+    if(window.location.href.includes('adtraction')){
+        var val =  window.location.href.split("at_gd=")
+        localStorage.setItem("adtraction",val[1]);
+    }
+   
+
 }, 5000);
 
 const loginClick = document.getElementById('loginClick');
@@ -85,6 +91,16 @@ if (pricingSelectBtn) {
     });
 }
 
+const PricingSelectBtnHomePage = document.getElementById('PricingSelectBtnHomePage');
+if (PricingSelectBtnHomePage) {
+    PricingSelectBtnHomePage.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
+        localStorage.setItem('login',false);
+        logevent("start_your_free_trial_button_click", "index.php");
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
 const discoverSectionPricingClick = document.getElementById('discoverSectionPricingClick');
 if (discoverSectionPricingClick) {
     discoverSectionPricingClick.addEventListener('click', function () {
@@ -104,6 +120,7 @@ if (teenagersLogin) {
 const teenagersPricing = document.getElementById('teenagersPricing');
 if (teenagersPricing) {
     teenagersPricing.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
         window.location.href = url+"/teenagers/subscription/start-your-free-trial";
     });
 }
@@ -134,13 +151,15 @@ const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-            localStorage.setItem('pricing',false);
            window.location.href = url+"/adults/subscription/start-your-free-trial";
         }
         else if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
+            localStorage.setItem('pricing',false);
            window.location.href = url+"/adults/onboarding/login";
         } else {
+             localStorage.setItem('login',false);
+               localStorage.setItem('pricing',false);
             window.location.href = url + "/adults/onboarding/login";
         }
     });
