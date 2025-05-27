@@ -25,7 +25,7 @@
 
             <a id="testimonialFooter" >
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                Testimonials
+                Success stories
               </h4>
             </a>
 
