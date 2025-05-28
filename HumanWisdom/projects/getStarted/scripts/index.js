@@ -18,6 +18,14 @@ function gtag() {
  function logevent(e, t) {
     gtag("event", e, { screen_name: t });
 }
+setTimeout(() => {
+    console.log("User Agent:", "adtraction");
+      if(window.location.href.includes('adtraction')){
+        var val =  window.location.href.split("at_gd=")
+        localStorage.setItem("adtraction",val[1]);
+        localStorage.setItem("adtraction",val[1]);
+    }  
+}, 1000);
 
 setTimeout(() => {
     if(sessionStorage.getItem('newsLetterOpened')!='true'){
