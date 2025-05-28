@@ -19,6 +19,10 @@ function gtag() {
     gtag("event", e, { screen_name: t });
 }
 
+    if(window.location.href.includes('adtraction')){
+        var val =  window.location.href.split("at_gd=")
+        localStorage.setItem("adtraction",val[1]);
+    }
 setTimeout(() => {
     if(sessionStorage.getItem('newsLetterOpened')!='true'){
         sessionStorage.setItem('newsLetterOpened','true')
@@ -44,12 +48,6 @@ setTimeout(() => {
             })
         document.getElementById('newsPopup')?.click();
     }
-    if(window.location.href.includes('adtraction')){
-        var val =  window.location.href.split("at_gd=")
-        localStorage.setItem("adtraction",val[1]);
-    }
-   
-
 }, 5000);
 
 const loginClick = document.getElementById('loginClick');
