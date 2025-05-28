@@ -45,7 +45,9 @@ export class FreeTrialPage implements OnInit {
           "OrderValue": am ? am : 0,
           "ActivationKey": res,
           "at_gd": getAt_Gt,
-          "coupon": localStorage.getItem('stripeDiscountCode') ?? ""
+          "coupon": localStorage.getItem('stripeDiscountCode') ?? "",
+          "userId": userId,
+          "programId": SharedService.ProgramId,
         }
         this.onboardingService.callAddraction(obj).subscribe(res => {
 
