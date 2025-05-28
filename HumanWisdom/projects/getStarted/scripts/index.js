@@ -42,7 +42,7 @@ setTimeout(() => {
                             console.error("Error:", e), alert(content);
                         });
             })
-        document.getElementById('newsPopup').click();
+        document.getElementById('newsPopup')?.click();
     }
     if(window.location.href.includes('adtraction')){
         var val =  window.location.href.split("at_gd=")
