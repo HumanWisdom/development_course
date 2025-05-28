@@ -36266,7 +36266,8 @@ li ol > li:before {
 
 .h4_blogs ol li
 {
-  color: #FFF !important;
+  padding: 0 15px !important;
+  color: #000 !important;
   background: transparent !important;
 }
 
