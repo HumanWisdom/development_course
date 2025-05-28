@@ -430,7 +430,9 @@ export class SubscriptionPaymentPage implements OnInit {
           "OrderValue": this.amountGBP,
           "ActivationKey": res,
           "at_gd": getAt_Gt,
-          "coupon": localStorage.getItem('discountCode') ?? ""
+          "coupon": localStorage.getItem('discountCode') ?? "",
+          "userId": userId,
+          "programId": SharedService.ProgramId,
         }
         this.service.callAddraction(obj).subscribe(res => {
 
