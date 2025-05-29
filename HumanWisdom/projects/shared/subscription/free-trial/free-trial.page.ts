@@ -32,7 +32,7 @@ export class FreeTrialPage implements OnInit {
 
   ngOnInit() {
    
-   /*  let addtraction = localStorage.getItem('callAddtraction');
+    let addtraction = localStorage.getItem('callAddtraction');
 
     if(addtraction === 'Y') {
       let userId = JSON.parse(localStorage.getItem("userId"))
@@ -60,7 +60,7 @@ export class FreeTrialPage implements OnInit {
         
       }
       )
-    } */
+    }
     
     this.GetDataFromLocalStorage();
   }
