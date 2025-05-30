@@ -426,6 +426,9 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   getOrderId() {
+    let addtraction = localStorage.getItem('callAddtraction');
+
+    if (addtraction === 'Y') {
     let userId = JSON.parse(localStorage.getItem("userId"))
     setTimeout(() => {
       this.service.getOrderId(userId).subscribe(res => {
@@ -450,6 +453,7 @@ export class SubscriptionPaymentPage implements OnInit {
       }
       )
     }, 2000);
+  }
   }
 
   back() {
