@@ -275,7 +275,7 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.content = 'Your Payment Is Successfully Submitted';
                         this.enableAlert = true;
                         this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                      }, 3000);
+                      }, 5000);
                     }
                   }
                 });
@@ -393,6 +393,7 @@ export class SubscriptionPaymentPage implements OnInit {
 
 
               localStorage.setItem('personalised', 'F');
+               setTimeout(() => {
               if (localStorage.getItem('ispartnershipClick') == 'T') {
                 if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                   localStorage.setItem('ispartnershipClick', 'F');
@@ -404,13 +405,13 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
               } else {
-                setTimeout(() => {
+               
                   this.content = 'Your Payment Is Successfully Submitted';
                   this.enableAlert = true;
                   this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                }, 3000);
+               
                 // alert('Your Payment Is Successfully Submitted');
-              }
+              } }, 5000);
             }
           });
         });
