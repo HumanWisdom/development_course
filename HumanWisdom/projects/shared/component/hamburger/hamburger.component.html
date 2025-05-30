@@ -263,7 +263,7 @@
       <!-- /multilayer li for partnership -->
 
 
-      <li *ngIf="!ios && !isAndroid">
+      <li *ngIf="!ios && !isAndroid || isWeb">
         <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness')"  class="p0 b0px">
         <!-- <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px"> -->
           <div class="row">
