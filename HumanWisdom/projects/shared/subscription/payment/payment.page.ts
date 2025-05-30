@@ -198,7 +198,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
         }
       });
-    }, 5000)
+    }, 9000)
   }
 
   back() {
