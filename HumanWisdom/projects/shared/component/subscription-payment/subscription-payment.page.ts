@@ -384,7 +384,11 @@ export class SubscriptionPaymentPage implements OnInit {
               // let cpn = this.obj.DiscountCode;
               let t = this.obj.Quantity;
               let c = this.defaultCurrencyName;
-              this.getOrderId();
+              setTimeout(() => {  
+                  this.getOrderId();
+              }, 5000);
+
+           
               localStorage.setItem('stripeamount', am.toString());
               // localStorage.setItem('stripeid', ti);
               localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
