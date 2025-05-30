@@ -140,7 +140,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               }
             }
           }).then((result) => {
-            
+           setTimeout(() => {             
+           
             if (result.error) {
               // alert(result.error.message);
               this.content = result.error.message;
@@ -174,6 +175,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               this.router.navigate(['/onboarding/myprogram'])
               // Successful subscription payment
             }
+
+             }, 5000);
           });
         });
       }
