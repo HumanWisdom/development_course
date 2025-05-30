@@ -98,7 +98,7 @@ if (PricingSelectBtnHomePage) {
     PricingSelectBtnHomePage.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        logevent("start_your_free_trial_button_click", "index.php");
+        logevent("start_your_free_trial_button_click", "home.php");
         window.location.href = "../pages/splash_options.php";
     });
 }
