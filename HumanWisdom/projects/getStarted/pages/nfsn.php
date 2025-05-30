@@ -761,7 +761,7 @@
         </div>
       </section>
       <!-- footer -->
-      <?php include('../includes/footer_new.php'); ?>
+      <?php include('../includes/footer.php'); ?>
       <!-- /footer -->
 
     </main>
