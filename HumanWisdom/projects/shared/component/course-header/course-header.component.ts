@@ -6,6 +6,8 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { ProgramType } from "../../models/program-model";
 import { SharedService } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -49,7 +51,8 @@ export class CourseHeaderComponent implements OnInit {
     private ac: ActivatedRoute,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
-    private naviagtorService: NavigationService
+    private naviagtorService: NavigationService,
+    private location: Location
   ) {
     if (this.router.getCurrentNavigation()) {
       this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
@@ -148,9 +151,13 @@ export class CourseHeaderComponent implements OnInit {
   goToToc() {
     // this.naviagtorService.getBackLink();
     // if(this.toc==""){
+    if(this.router.url.includes('wellness-survey')) {
+      this.location.back();
+    }else{ 
       let lastSlashIndex = this.router.url.lastIndexOf('/');
       let modifiedUrl = this.router.url.substring(0, lastSlashIndex);
       this.router.navigate(['/' + modifiedUrl])
+    }
     // }else{
     //   if(this.toc.includes(this.programName))
     //     this .router.navigate(['/' + this.toc])
