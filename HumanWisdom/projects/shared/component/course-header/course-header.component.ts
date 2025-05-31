@@ -29,7 +29,7 @@ export class CourseHeaderComponent implements OnInit {
   token = localStorage.getItem("shareToken")
   urlT: any
   shared = false
-  showheaderbar = true
+  @Input() showheaderbar = true
   address:any;
   modName: any
   scrNumber: any
@@ -76,7 +76,7 @@ export class CourseHeaderComponent implements OnInit {
     }
     this.address = this.router.url;
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
-    this.showheaderbar = true;
+    // this.showheaderbar = true;
     // 
     // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
 
