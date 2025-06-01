@@ -384,9 +384,9 @@ export class SubscriptionPaymentPage implements OnInit {
               // let cpn = this.obj.DiscountCode;
               let t = this.obj.Quantity;
               let c = this.defaultCurrencyName;
-              setTimeout(() => {  
-                  this.getOrderId();
-              }, 5000);
+            
+              this.getOrderId();
+             
 
            
               localStorage.setItem('stripeamount', am.toString());
@@ -427,34 +427,36 @@ export class SubscriptionPaymentPage implements OnInit {
 
   getOrderId() {
     
-     let getAt_Gt = localStorage.getItem("adtraction");
+    let getAt_Gt = localStorage.getItem("adtraction");
 
     if (getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != '') {
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    setTimeout(() => {
-      this.service.getOrderId(userId).subscribe(res => {
-        localStorage.setItem('stripeid', res);
+      let userId = JSON.parse(localStorage.getItem("userId"))
+      setTimeout(() => {
+          this.service.getOrderId(userId).subscribe(res => {  
+           localStorage.setItem('stripeid', res);
         
-        let obj = {
-          "OrderValue": this.amountGBP,
-          "ActivationKey": res,
-          "at_gd": getAt_Gt,
-          "coupon": localStorage.getItem('discountCode') ?? "",
-          "userId": userId,
-          "programId": SharedService.ProgramId,
-        }
-        this.service.callAddraction(obj).subscribe(res => {
-           this.payementSubmitBtnClick.nativeElement.click();
+            let obj = {
+              "OrderValue": this.amountGBP,
+              "ActivationKey": res,
+              "at_gd": getAt_Gt,
+              "coupon": localStorage.getItem('discountCode') ?? "",
+              "userId": userId,
+              "programId": SharedService.ProgramId,
+            }
+            this.service.callAddraction(obj).subscribe(res => {
+          
 
-        }, (err) => {
-        }
+             }, (err) => {
+              }
+            )
+
+          }, (err) => {
+          }
         )
+      }, 2000);
 
-      }, (err) => {
-      }
-      )
-    }, 2000);
-  }
+       this.payementSubmitBtnClick.nativeElement.click();
+    }
   }
 
   back() {
