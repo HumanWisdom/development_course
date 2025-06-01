@@ -426,14 +426,15 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   getOrderId() {
-    let addtraction = localStorage.getItem('callAddtraction');
+    
+     let getAt_Gt = localStorage.getItem("adtraction");
 
-    if (addtraction === 'Y') {
+    if (getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != '') {
     let userId = JSON.parse(localStorage.getItem("userId"))
     setTimeout(() => {
       this.service.getOrderId(userId).subscribe(res => {
         localStorage.setItem('stripeid', res);
-        let getAt_Gt = localStorage.getItem("adtraction");
+        
         let obj = {
           "OrderValue": this.amountGBP,
           "ActivationKey": res,
