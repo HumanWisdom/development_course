@@ -445,7 +445,7 @@ export class SubscriptionPaymentPage implements OnInit {
               "programId": SharedService.ProgramId,
             }
             this.service.callAddraction(obj).subscribe(res => {
-          
+                 this.payementSubmitBtnClick.nativeElement.click();
 
              }, (err) => {
               }
@@ -456,7 +456,7 @@ export class SubscriptionPaymentPage implements OnInit {
         )
       }, 2000);
 
-       this.payementSubmitBtnClick.nativeElement.click();
+      
     }
   }
 
