@@ -454,7 +454,7 @@ export class SubscriptionPaymentPage implements OnInit {
           }, (err) => {
           }
         )
-      }, 2000);
+      }, 4000);
 
       
     }
