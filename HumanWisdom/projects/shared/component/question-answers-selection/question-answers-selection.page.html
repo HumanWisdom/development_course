@@ -1,9 +1,5 @@
-<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
+<app-course-header [bookmark]="bookmark" [showheaderbar]="false" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
   [bg_tn]="bg_tn"></app-course-header>
-
-
-
-
 
 <div class="right_col mc_01" (swipeleft)="next('click_Daily_Practice_Next')"
   (swiperight)="back('click_Daily_Practice_Previous')">
@@ -21,7 +17,7 @@
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
                           <a class="skip" (click)="back('click_Breathingexercise_Previous')">
-                            <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                            <button [disabled]="prevBtnDisabled" type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                               <!-- Skip -->
                               Previous
                             </button>
@@ -31,9 +27,9 @@
                           <span class="fc_ffffff">{{ currentSection + 1 }} / 10</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
-                          <a data-slide="next" class="next" (click)="next('click_Daily_Practice_Next')">
-                            <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
-                              Next
+                          <a data-slide="next" class="next" (click)="this.currentSection === 9 ? this.submitProgress() : next('click_Daily_Practice_Next')">
+                            <button type="button" [disabled]="btnDisabled" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                              {{ this.currentSection === 9 ? 'Submit' : 'Next' }}
                             </button>
                           </a>
                         </div>

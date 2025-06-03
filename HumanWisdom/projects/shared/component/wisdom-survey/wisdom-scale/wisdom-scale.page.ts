@@ -261,7 +261,6 @@ export class WisdomScalePage implements OnInit {
           this.qrList.ListOfQueOpts.forEach((d) => {
             obj[d['Que']] = { "OptId": obj[d['Que']]?.OptId ? obj[d['Que']]['OptId'].concat(d['OptId']) : [], "OptStr": obj[d['Que']]?.OptStr ? obj[d['Que']]['OptStr'].concat(d['OptStr']) : [], "Points": obj[d['Que']]?.Points ? obj[d['Que']]['Points'].concat(d['Points']) : [] }
           });
-          console.log(obj);
 
           for (const property in obj) {
             let objRes = {
@@ -274,6 +273,8 @@ export class WisdomScalePage implements OnInit {
           }
 
           this.questionAns = result;
+          localStorage.setItem("questionAns", JSON.stringify(this.questionAns))
+          
 
           this.q1 = this.findQuestion(122).Question
           this.optionList1 = this.findQuestion(122).optionList
@@ -325,8 +326,8 @@ export class WisdomScalePage implements OnInit {
     switch (e.Id) {
       case "1": {
         this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
-        // this.s1 = e.s
+        // this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
+        this.s1 = e.s
         break;
       }
       case "2": {
@@ -334,57 +335,57 @@ export class WisdomScalePage implements OnInit {
         // this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
         // this.optionList2.sort((a, b) => a.OptId - b.OptId);
         // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
-        // this.s2 = e.s
-        this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
+        this.s2 = e.s
+        // this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
         break;
       }
       case "3": {
         this.rating3 = (e.Rating == 0) ? (1) : e.Rating
-        // this.s3 = e.s
-        this.s3 = this.optionList3.find(x => x.Points == this.rating3).OptId
+        this.s3 = e.s
+        // this.s3 = this.optionList3.find(x => x.Points == this.rating3).OptId
         break;
       } case "4": {
         this.rating4 = (e.Rating == 0) ? (1) : e.Rating
-        this.s4 = this.optionList4.find(x => x.Points == this.rating4).OptId
-        // this.s4 = e.s
+        // this.s4 = this.optionList4.find(x => x.Points == this.rating4).OptId
+        this.s4 = e.s
         break;
       } case "5": {
         this.rating5 = (e.Rating == 0) ? (1) : e.Rating
-        // this.s5 = e.s
-        this.s5 = this.optionList5.find(x => x.Points == this.rating5).OptId
+        this.s5 = e.s
+        // this.s5 = this.optionList5.find(x => x.Points == this.rating5).OptId
         break;
       } case "6": {
         this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        // this.s6 = e.s
-        this.s6 = this.optionList6.find(x => x.Points == this.rating6).OptId
+        this.s6 = e.s
+        // this.s6 = this.optionList6.find(x => x.Points == this.rating6).OptId
         break;
 
       }
       case "7": {
         this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        this.s7 = this.optionList7.find(x => x.Points == this.rating7).OptId
-        // this.s7 = e.s
+        // this.s7 = this.optionList7.find(x => x.Points == this.rating7).OptId
+        this.s7 = e.s
         break;
 
       }
       case "8": {
         this.rating8 = (e.Rating == 0) ? (1) : e.Rating
-        // this.s8 = e.s
-        this.s8 = this.optionList8.find(x => x.Points == this.rating8).OptId
+        this.s8 = e.s
+        // this.s8 = this.optionList8.find(x => x.Points == this.rating8).OptId
         break;
 
       }
       case "9": {
         this.rating9 = (e.Rating == 0) ? (1) : e.Rating
-        this.s9 = this.optionList9.find(x => x.Points == this.rating9).OptId
-        // this.s9 = e.s
+        // this.s9 = this.optionList9.find(x => x.Points == this.rating9).OptId
+        this.s9 = e.s
         break;
 
       }
       case "10": {
         this.rating10 = (e.Rating == 0) ? (1) : e.Rating
-        this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
-        // this.s10 = e.s
+        // this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
+        this.s10 = e.s
         break;
 
       }
@@ -479,6 +480,10 @@ export class WisdomScalePage implements OnInit {
     } else {
       this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
     }
+  }
+
+  startSurvey() {
+    this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey']);
   }
 
   getAlertcloseEvent(event) {
