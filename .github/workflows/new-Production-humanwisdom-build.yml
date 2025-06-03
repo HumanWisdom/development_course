@@ -20,7 +20,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: "18.19.0"
+          node-version: "24.0.0"
 
       - name: Cache node modules
         id: cache-nodemodules
@@ -110,7 +110,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: "18.19.0"
+          node-version: "24.0.0"
   
       - name: Cache node modules
         id: cache-nodemodules
