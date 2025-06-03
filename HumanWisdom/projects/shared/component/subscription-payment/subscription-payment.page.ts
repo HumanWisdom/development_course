@@ -246,12 +246,14 @@ export class SubscriptionPaymentPage implements OnInit {
                     // let cpn = this.obj.DiscountCode;
                     let t = this.obj.Quantity;
                     let c = this.defaultCurrencyName;
-                    this.getOrderId();
                     localStorage.setItem('stripeamount', am.toString());
                     // localStorage.setItem('stripeid', ti);
                     localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
                     localStorage.setItem('stripeqty', t);
                     localStorage.setItem('stripecountrycode', c);
+
+                    this.getOrderId();
+                
 
                     // this.payementSubmitBtnClick.nativeElement.click();
 
@@ -275,7 +277,7 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.content = 'Your Payment Is Successfully Submitted';
                         this.enableAlert = true;
                         this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                      }, 3000);
+                      }, 5000);
                     }
                   }
                 });
@@ -384,15 +386,21 @@ export class SubscriptionPaymentPage implements OnInit {
               // let cpn = this.obj.DiscountCode;
               let t = this.obj.Quantity;
               let c = this.defaultCurrencyName;
-              this.getOrderId();
+            
               localStorage.setItem('stripeamount', am.toString());
               // localStorage.setItem('stripeid', ti);
               localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
               localStorage.setItem('stripeqty', t);
               localStorage.setItem('stripecountrycode', c);
 
+              this.getOrderId();
+             
+
+           
+              
 
               localStorage.setItem('personalised', 'F');
+               setTimeout(() => {
               if (localStorage.getItem('ispartnershipClick') == 'T') {
                 if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                   localStorage.setItem('ispartnershipClick', 'F');
@@ -404,13 +412,13 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
               } else {
-                setTimeout(() => {
+               
                   this.content = 'Your Payment Is Successfully Submitted';
                   this.enableAlert = true;
                   this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                }, 3000);
+               
                 // alert('Your Payment Is Successfully Submitted');
-              }
+              } }, 5000);
             }
           });
         });
@@ -421,28 +429,37 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   getOrderId() {
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    setTimeout(() => {
-      this.service.getOrderId(userId).subscribe(res => {
-        localStorage.setItem('stripeid', res);
-        let getAt_Gt = localStorage.getItem("adtraction");
-        let obj = {
-          "OrderValue": this.amountGBP,
-          "ActivationKey": res,
-          "at_gd": getAt_Gt,
-          "coupon": localStorage.getItem('discountCode') ?? ""
-        }
-        this.service.callAddraction(obj).subscribe(res => {
+    
+    let getAt_Gt = localStorage.getItem("adtraction");
 
-        }, (err) => {
-        }
+    if (getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != '') {
+      let userId = JSON.parse(localStorage.getItem("userId"))
+      setTimeout(() => {
+          this.service.getOrderId(userId).subscribe(res => {  
+           localStorage.setItem('stripeid', res);
+        
+            let obj = {
+              "OrderValue": this.amountGBP,
+              "ActivationKey": res,
+              "at_gd": getAt_Gt,
+              "coupon": localStorage.getItem('discountCode') ?? "",
+              "userId": userId,
+              "programId": SharedService.ProgramId,
+            }
+            this.service.callAddraction(obj).subscribe(res => {
+                 this.payementSubmitBtnClick.nativeElement.click();
+
+             }, (err) => {
+              }
+            )
+
+          }, (err) => {
+          }
         )
+      }, 4000);
 
-        this.payementSubmitBtnClick.nativeElement.click();
-      }, (err) => {
-      }
-      )
-    }, 2000);
+      
+    }
   }
 
   back() {

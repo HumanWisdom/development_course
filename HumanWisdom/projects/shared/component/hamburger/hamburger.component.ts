@@ -36,6 +36,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   @Input()
   enableplaystore = true;
   ios = false;
+  isWeb = false;
   subscriberType = "";
   enableprofile = true;
   enableAlert = false;
@@ -146,11 +147,17 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
 
+ isBrowser() {
+    return typeof window !== 'undefined' && typeof window.document !== 'undefined';
+}
 
 
   ngOnInit() {
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.ios = true;
+    }
+    if(this.isBrowser()){
+        this.isWeb = true;
     }
     let userId = JSON.parse(localStorage.getItem("userId"));
     this.Onboardingservice.getuserDetail();

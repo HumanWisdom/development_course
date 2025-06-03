@@ -18,6 +18,14 @@ function gtag() {
  function logevent(e, t) {
     gtag("event", e, { screen_name: t });
 }
+setTimeout(() => {
+    console.log("User Agent:", "adtraction");
+      if(window.location.href.includes('adtraction')){
+        var val =  window.location.href.split("at_gd=")
+        localStorage.setItem("adtraction",val[1]);
+        localStorage.setItem("adtraction",val[1]);
+    }  
+}, 1000);
 
 setTimeout(() => {
     if(sessionStorage.getItem('newsLetterOpened')!='true'){
@@ -42,14 +50,8 @@ setTimeout(() => {
                             console.error("Error:", e), alert(content);
                         });
             })
-        document.getElementById('newsPopup').click();
+        document.getElementById('newsPopup')?.click();
     }
-    if(window.location.href.includes('adtraction')){
-        var val =  window.location.href.split("at_gd=")
-        localStorage.setItem("adtraction",val[1]);
-    }
-   
-
 }, 5000);
 
 const loginClick = document.getElementById('loginClick');
@@ -96,7 +98,7 @@ if (PricingSelectBtnHomePage) {
     PricingSelectBtnHomePage.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        logevent("start_your_free_trial_button_click", "index.php");
+        logevent("start_your_free_trial_button_click", "home.php");
         window.location.href = "../pages/splash_options.php";
     });
 }

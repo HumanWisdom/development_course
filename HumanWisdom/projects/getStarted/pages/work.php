@@ -642,7 +642,7 @@
                       <div class="div_testimonials">
                         <div class="row">
                           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/coach/images/1.webp" class="img-responsive" alt="Carolyn King" loading=lazy>
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/k1.webp" class="img-responsive" alt="Carolyn King" loading=lazy>
                           </div>
                         </div>
 
