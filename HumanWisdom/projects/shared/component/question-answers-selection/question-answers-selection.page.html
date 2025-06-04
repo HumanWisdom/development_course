@@ -1,5 +1,33 @@
-<app-course-header [bookmark]="bookmark" [showheaderbar]="false" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
-  [bg_tn]="bg_tn"></app-course-header>
+<!-- <app-course-header [bookmark]="bookmark" [showheaderbar]="false" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
+  [bg_tn]="bg_tn"></app-course-header> -->
+
+  <title>Wellness Survey | HumanWisdom</title>
+
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Wellness Survey
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+        <a (click)="changeType()" class="">                     
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0">
+    </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
 
 <div class="right_col mc_01" (swipeleft)="next('click_Daily_Practice_Next')"
   (swiperight)="back('click_Daily_Practice_Previous')">
@@ -15,22 +43,26 @@
                 <div>
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex  mdp_oli_traywell col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
                           <a class="skip" (click)="back('click_Breathingexercise_Previous')">
                             <button [disabled]="prevBtnDisabled" type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                               <!-- Skip -->
+                                <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+
                               Previous
                             </button>
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                          <span class="fc_ffffff">{{ currentSection + 1 }} / 10</span>
+                          <span class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc">{{ currentSection + 1 }} / 10</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
                           <a data-slide="next" class="next" (click)="this.currentSection === 9 ? this.submitProgress() : next('click_Daily_Practice_Next')">
                             <button type="button" [disabled]="btnDisabled" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                               {{ this.currentSection === 9 ? 'Submit' : 'Next' }}
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+
                             </button>
                           </a>
                         </div>
