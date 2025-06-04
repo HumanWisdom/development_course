@@ -32853,8 +32853,8 @@ body *
     /* background: #120F40;   */
    /* border: 1px solid rgba(255, 255, 255, 0.25);  */
   border-radius: 12px;
-   padding: 15px !important;
-  margin-right: 10px;
+   padding: 10px !important;
+  /* margin-right: 10px; */
   white-space: normal;
 }
 
