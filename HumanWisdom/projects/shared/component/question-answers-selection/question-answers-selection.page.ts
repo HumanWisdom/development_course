@@ -13,18 +13,19 @@ import { SharedService } from '../../services/shared.service';
     trigger('slideAnimation', [
       // Wildcard transition for swipe left (next)
       transition('* => left', [
-        style({ transform: 'translateX(100%)' }), // start from right
+        style({ transform: 'translateX(0%)' }), // start from right
         animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
       ]),
       // Wildcard transition for swipe right (previous)
       transition('* => right', [
-        style({ transform: 'translateX(-100%)' }), // start from left
+        style({ transform: 'translateX(0%)' }), // start from left
         animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
       ])
     ])
   ]
 })
 export class QuestionAnswersSelection implements OnInit {
+  [x: string]: any;
   bg_tn = "bg_green_yellow"
   bg = "comparison_envy_w7"
   toc = "/comparison/s0"
@@ -289,5 +290,10 @@ export class QuestionAnswersSelection implements OnInit {
 
 
   ngOnDestroy() { }
+
+  
+  goBack() {
+    this.location.back()
+  }
 
 }
