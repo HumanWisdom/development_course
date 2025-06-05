@@ -323,7 +323,7 @@
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left" ;>
+                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left; font-style:italic;" ; >
 HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.               </div>
             </div>
 
@@ -366,7 +366,7 @@ Student, UK    </h3>
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 dinline_block"style=" text-align:left;";>
+                <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 dinline_block"style=" text-align:left; font-style:italic;";>
 HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.              </div>
             </div>
     </div>
