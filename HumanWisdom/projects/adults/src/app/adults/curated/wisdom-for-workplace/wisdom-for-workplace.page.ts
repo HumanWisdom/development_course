@@ -559,7 +559,9 @@ export class WisdomForWorkplacePage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
-       this.router.navigate(['/adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
+             this.router.navigate(['adults/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
+
+      //  this.router.navigate(['/adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
   }
 

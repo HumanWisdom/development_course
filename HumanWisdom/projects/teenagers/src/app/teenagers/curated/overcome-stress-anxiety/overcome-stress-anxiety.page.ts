@@ -523,7 +523,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
     if (!this.isSubscriber && audioContent.id >= 4) {
       this.router.navigate(['teenagers/subscription/start-your-free-trial']);
     } else {
-      this.router.navigate(['teenagers/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
+            this.router.navigate(['teenagers/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
+
+      // this.router.navigate(['teenagers/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
     }
   }
 
