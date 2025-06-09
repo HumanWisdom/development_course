@@ -369,6 +369,11 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     if (!this.Subscriber && audioContent.id >= 4) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
+        if (audioContent.MediaUrl.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
+                audioContent.MediaUrl = audioContent.MediaUrl.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
+              }
+             audioContent.MediaUrl= encodeURIComponent(audioContent.MediaUrl.replaceAll('/', '~'));
+             audioContent.Title =  audioContent.Title?.replaceAll(' ', '-')
       this.router.navigate(['adults/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
 
       // this.router.navigate(['adults/curated/audiopage/', audioContent.url, audioContent.title, audioContent.id]);
