@@ -160,13 +160,13 @@
                         (CEB)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         1 in 6
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         people have a substance abuse disorder
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (CDC)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         38%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of UK employees experience interpersonal conflict at work
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (CIPD)
@@ -208,13 +208,13 @@
                           leadership 
                         </a>
                         section helps people learn these skills and flourish at work.
-                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive" alt="Critical thinking"></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive" alt="Critical thinking"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                         Critical thinking
                       </h3></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000"><a class="fc_cb6171" href="https://happierme.app/adults/awareness">
                           Self-awareness 
                         </a>
                         helps you to think clearly, understand your emotions, and make better decisions.
-                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_diversity.svg" class="img-responsive" alt="Diversity & inclusion"></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_diversity.svg" class="img-responsive" alt="Diversity & inclusion"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                         Diversity & inclusion
                       </h3></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         Our modules on 
@@ -308,7 +308,7 @@
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
                     <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <form action="javascript:void(0);">
+                        <form id="signup-form" action="javascript:void(0);">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
@@ -322,7 +322,7 @@
                           <!-- <div class="row mt15px"> -->
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
+                              <input type="text" class="form-control fc_01" id="signup-email" name="news-email" placeholder="Your email">
                               <div class="fc_icons">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
                               </div>
@@ -333,7 +333,7 @@
   <div class="row mb10px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Password">
+                                                     <input type="password" class="form-control fc_01" id="signup-password" name="signup-password" placeholder="Password">
 
                           <div class="fc_icons">
                                 <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
@@ -346,7 +346,7 @@
      <div class="row mb10px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Repeat Password">
+                                                     <input type="password" class="form-control fc_01" id="signup-repeat-password" name="signup-repeat-password" placeholder="Repeat Password">
 
                           <div class="fc_icons">
                                 <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
@@ -356,11 +356,6 @@
                        
                       </div>
     </div>
-         
-
-
-
-
      <div class="row middle">
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
                           <label for="privacy_checkbox" class="chkb_post_anonymously ">
@@ -402,7 +397,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
-                                <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
+                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
                               </div>
                             </div>
                           </div>
@@ -520,3 +515,72 @@
     <!-- </div></div> -->
   </body>
 </html>
+<script>
+// Replace with your actual API base URL and ProgramId
+const API_BASE_URL = 'https://www.humanwisdom.info/api';
+const ProgramId = '9';
+
+function emailLogin(email, password) {
+  const params = new URLSearchParams({
+    email: email,
+    pwd: password,
+    ProgID: ProgramId
+  });
+  return fetch(`${API_BASE_URL}/login?${params.toString()}`, {
+    method: 'GET'
+  })
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    });
+}
+
+// Password show/hide toggle
+function setupPasswordToggle(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+  if (!input || !icon) return;
+  icon.addEventListener('click', function() {
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg';
+    } else {
+      input.type = 'password';
+      icon.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Add eye icons with IDs if not already present
+  let pwdIcon = document.querySelector('#signup-password ~ .fc_icons img');
+  let repeatPwdIcon = document.querySelector('#signup-repeat-password ~ .fc_icons img');
+  if (pwdIcon) pwdIcon.id = 'signup-password-eye';
+  if (repeatPwdIcon) repeatPwdIcon.id = 'signup-repeat-password-eye';
+
+  setupPasswordToggle('signup-password', 'signup-password-eye');
+  setupPasswordToggle('signup-repeat-password', 'signup-repeat-password-eye');
+});
+
+document.getElementById('download-app-btn').addEventListener('click', function() {
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+  const repeatPassword = document.getElementById('signup-repeat-password').value;
+
+  if (password !== repeatPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
+  // Optionally, validate email/password here
+  emailLogin(email, password)
+    .then(data => {
+      // Handle successful login (e.g., redirect, show message, etc.)
+      alert('Login successful!');
+      // window.location.href = 'your-app-download-link';
+    })
+    .catch(err => {
+      // Handle error (e.g., show error message)
+      alert('Login failed: ' + err.message);
+    });
+});
+</script>
