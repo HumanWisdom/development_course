@@ -396,8 +396,16 @@
                      
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
+                              <!-- Google reCAPTCHA widget -->
+          <div class="row mt15px" style="margin-bottom:10px;">
+            <div id="recaptcha-container"></div>
+          </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
-                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
+                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" disabled> Download app </button>
                               </div>
                             </div>
                           </div>
@@ -576,11 +584,38 @@ document.getElementById('download-app-btn').addEventListener('click', function()
     .then(data => {
       // Handle successful login (e.g., redirect, show message, etc.)
       alert('Login successful!');
-      // window.location.href = 'your-app-download-link';
+       window.location.href = "../pages/download_qr.php";
     })
     .catch(err => {
       // Handle error (e.g., show error message)
       alert('Login failed: ' + err.message);
     });
 });
+
+// reCAPTCHA integration
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
+      // Add token to form before submitting
+      var form = document.getElementById('myForm');
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'g-recaptcha-response';
+      input.value = token;
+      form.appendChild(input);
+      form.submit();
+    });
+  });
+
+function onRecaptchaSuccess(token) {
+  document.getElementById('download-app-btn').disabled = false;
+}
+function onRecaptchaExpired() {
+  document.getElementById('download-app-btn').disabled = true;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // ...existing code...
+  document.getElementById('download-app-btn').disabled = true;
+});
 </script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></script>
