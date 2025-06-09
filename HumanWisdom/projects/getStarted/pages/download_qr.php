@@ -256,7 +256,7 @@
       <!-- /inspiring -->
      
         <div class="row center_flex div_subscriptionnews">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
             <div class=" back">
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   Bring HappierMe to your organization
@@ -277,26 +277,43 @@
                       
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Welcome to HappierMe</h1>
+                          <h1  style="text-align:center;"class="mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Scan to download the app</h1>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row mt40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <!-- <hr class="hr_style_v3_05"> -->
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                                  <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/qr.png" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <!-- <hr class="hr_style_v3_05"> -->
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row mtb30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <hr class="hr_style_v3_05">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                            OR
+                          </h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <hr class="hr_style_v3_05">
                         </div>
                       </div>
                     </div>
 
-                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
-                            Let’s get started
-                          </h4>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                      </div>
-                    </div>
+
+   
+      <!-- /desktop -->
                     <!-- <div class="row mtb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
@@ -306,202 +323,23 @@
                 Subscribe to our newsletter!
                 </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                    <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <form action="javascript:void(0);">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
-                                <div class="fc_icons">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- <div class="row mt15px"> -->
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
-                              <div class="fc_icons">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
-                              </div>
-                            </div>
-                          </div>
-                          <!-- </div> -->
 
-  <div class="row mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Password">
-
-                          <div class="fc_icons">
-                                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                                 class="img-responsive">
-                              </div>
-                        </div>
-                       
-                      </div>
-    </div>
-     <div class="row mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                                     <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Repeat Password">
-
-                          <div class="fc_icons">
-                                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                                 class="img-responsive">
-                              </div>
-                        </div>
-                       
-                      </div>
-    </div>
-         
-
-
-
-
-     <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input  style="margin-top:10px;"id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
-                            </h4>
-                          </label>
-                      </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5">
-                          <span>I agree to the 
-                            <a  class="fw_500 fc_000000"   
-                             > Terms of use</a>
-                          </span>
-                        </h4>
-                    </div>
-                    </div>
-
-
-
-                     <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input style="margin-top:10px;" id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
-                            </h4>
-                          </label>
-                      </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5">
-                          <span>I agree to the 
-                            <a  class="fw_500 fc_000000"   
-                             > Privacy policy</a>
-                          </span>
-                        </h4>
-                    </div>
-                    </div>
-                     
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <div class="row mt15px">
-                                <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <a>
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/google.svg" alt=""
+                class="img-responsive">
+            </a>
           </div>
-        </div>
-        </div>
-        </div>
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view">
-          <i class="fa fa-search"></i> News popup </button> -->
-  
-      <!-- /inspiring -->
-      <div class="modal fade product_view" id="product_view">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right">
-                <span class="glyphicon glyphicon-remove"></span>
-              </a>
-              <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class=" back">
-                    <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  Bring HappierMe to your organization
-                </h4></div></div> -->
-                    <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
-                  Connect with our specialists today and see how we can help you
-                </h4></div></div> -->
-                    <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
-                        </div>
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0"></div>   -->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                          <div class="box">
-                            <div class="row mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="row mt30px">
-                                  <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                                    <!-- Subscribe to our newsletter! -->
-                                  </h1>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc"> Sign up for our newsletter! </h1>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row mtb15px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
-                            </div>
-                          </div>
-                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                Subscribe to our newsletter!
-                </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
-                Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                          <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <form action="javascript:void(0);">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                      <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
-                                      <div class="fc_icons">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- <div class="row mt15px"> -->
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                    <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
-                                    <div class="fc_icons">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- </div> -->
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                    <div class="row mt15px">
-                                      <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0 flex_ai">
+            <a>
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt=""
+                class="img-responsive">
+            </a>
+          </div> 
                             </div>
                           </div>
                         </div>
