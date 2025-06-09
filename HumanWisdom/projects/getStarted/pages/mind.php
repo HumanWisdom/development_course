@@ -179,12 +179,12 @@
     <section class="hpt1px">
         
       <div class="row center_flex web_home_divnew">
-        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11  ddflex_mblock">
 
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
               <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_m_none max-width-px" loading="lazy"  alt="performance"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adult_mind.webp" class="img-responsive w100p display_m_none max-width-px" loading="lazy"  alt="performance"
                 >
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
 
@@ -198,7 +198,7 @@
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1  style=" color:#000c;" class="mt10px fs_45px fw_600 lh_130p  ta_lc">
-                Transform your life with HappierMe
+                Transform your emotional wellbeing with HappierMe
                 </h1>
               </div>
             </div>
@@ -224,25 +224,12 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
-                  Manage your emotions and be happier
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-             <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
-                </div>
-
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
                   Build stronger relationships
                   </h3>
                 </div>
               </div>
             </div>
+
              <div class="row mtb5px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
@@ -251,7 +238,20 @@
 
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                   <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
-                 Develop soft skills to succeed at work
+                  Address the root cause, not just the symptoms
+                  </h3>
+                </div>
+              </div>
+            </div>
+             <div class="row mtb5px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
+                </div>
+
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                  <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
+                 Manage your emotions and be happier
                   </h3>
                 </div>
               </div>
@@ -260,10 +260,10 @@
 
             
 
-            <div class="row mt30px" id="PricingSelectBtnHomePage">
+            <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
-              <a class="">
+              <a href="signup.php">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                     Let’s get started!
                     </button>
