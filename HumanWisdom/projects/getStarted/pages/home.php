@@ -112,6 +112,104 @@
   height: 392px !important;
 }
 }
+
+@media (min-width: 2000px) {
+  .res-testemonial{
+  width:70% !important
+  }
+ 
+}
+
+/* Base styles or fallback for very small screens (optional, if needed) */
+@media (max-width: 999px) {
+  .testnew {
+    height: 600px !important;
+  }
+  .img-test {
+    height: 120px !important;
+  }
+  .width_mob{
+    width: 550px !important;
+  }
+  .mob-section{
+    width: 550px !important;
+  }
+  .ml-mobile{
+    margin-left:66px !important
+  }
+}
+
+/* For viewports 1000px and above */
+@media (min-width: 1000px) {
+  .testnew {
+    height: 300px !important;
+  }
+  .img-test {
+    height: 100px !important;
+  }
+}
+
+/* For viewports 2000px to 3000px (more specific, so placed after) */
+@media (min-width: 2000px) and (max-width: 3000px) {
+  .testnew {
+    height: 450px !important;
+    margin-left:30px !important
+  }
+  .img-test {
+    height: 133px !important;
+  }
+    .w-img{
+    max-width: 655px !important;
+  }
+  .resp-font{
+    font-size:54px !important
+  }
+
+}
+
+/* For viewports 3001px to 5000px */
+@media (min-width: 3001px) and (max-width: 5000px) {
+  .testnew {
+    height: 730px !important;
+  }
+  .img-test {
+    height: 210px !important;
+  }
+  .w-img{
+    max-width: 650px !important;
+  }
+    .resp-font{
+    font-size:83px !important
+
+  }
+  .res-mr{
+      margin-top: 75px !important;
+  }
+      .fs_15px {
+        font-size: 40px !important;
+      }
+      .ml-res{
+        margin-left:45px !important;
+      }
+}
+
+/* For viewports above 5000px (optional, if specific behavior is needed) */
+@media (min-width: 5001px) {
+  .testnew {
+    height: 200px !important; /* Adjust as needed */
+  }
+  .img-test {
+    height: 100px !important; /* Adjust as needed */
+  }
+}
+.testi-flex{
+  display: flex;
+}
+
+.web_home_divnew {
+    background: #FCF2EC;
+    padding: 30px 0;
+}
 </style>
     
   </head>
@@ -178,13 +276,15 @@
 
     <section class="hpt1px">
         
-      <div class="row center_flex web_home_divnew">
+
+      <div class="row center_flex web_home_divnew width_mob">
+
         <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
 
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
               <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_m_none max-width-px" loading="lazy"  alt="performance"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/AdultHome2.svg" class="img-responsive w100p display_m_none max-width-px w-img" loading="lazy"  alt="performance"
                 >
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
 
@@ -197,7 +297,7 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1  style=" color:#000c;" class="mt10px fs_45px fw_600 lh_130p  ta_lc">
+                <h1  style=" color:#000c;" class="mt10px fs_45px fw_600 lh_130p  ta_lc resp-font">
                 Transform your life with HappierMe
                 </h1>
               </div>
@@ -289,7 +389,7 @@
         <div class="section-header">
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 res-testemonial testi-flex">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
            <div class="testnew">
               
@@ -299,7 +399,7 @@
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
-                        <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -323,7 +423,9 @@
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block" style="text-align:left; font-style:italic;" ; >
+
+                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block res-mr" style="text-align:left; font-style:italic;" ; >
+
 HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.               </div>
             </div>
 
@@ -331,7 +433,7 @@ HappierMe is the best app I have found to assist entire families, and the root c
     </div>
 
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 "  data-aos="fade-up" data-aos-delay="200">
-          <div class="testnew">  
+          <div class="testnew ml-res">  
           <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               
@@ -341,7 +443,7 @@ HappierMe is the best app I have found to assist entire families, and the root c
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p0">
-                        <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -366,7 +468,9 @@ Student, UK    </h3>
             
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 dinline_block"style=" text-align:left; font-style:italic;";>
+
+                <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 res-mr dinline_block"style=" text-align:left; font-style:italic;";>
+
 HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.              </div>
             </div>
     </div>
@@ -381,7 +485,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
     <!-- happyuser -->
  
-        <div class="section-headernew">
+        <div class="section-headernew mob-section">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
@@ -394,7 +498,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_user+.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none ml-mobile" alt="modules" loading=lazy>
           </div>
         </div>
      
@@ -403,7 +507,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
              <!-- video -->
       <section>
-      <div class="section-headernew">
+      <div class="section-headernew mob-section">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
@@ -413,7 +517,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
           </div>
         </div>
 
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="row center_flex mob-section" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
             <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
@@ -423,7 +527,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
                 type="video/mp4">
             </video> -->
 
-            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+            <ifttrame id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></ifttrame>
           </div>
         </div>
       </section>
@@ -558,7 +662,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
        
         
-      <div class="row center_flex divhome">
+      <div class="row center_flex divhome mob-section">
          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
