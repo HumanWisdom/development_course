@@ -96,7 +96,8 @@ export class WisdomScalePage implements OnInit {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 100
+          max: 100,
+          stepSize: 10,
         }
       }],
     },
@@ -354,8 +355,8 @@ export class WisdomScalePage implements OnInit {
         }
       })
 
-      this.lineChartOptions.scales.yAxes[0].ticks.min = this.minScore-10 ;
-            this.lineChartOptions.scales.yAxes[0].ticks.max = this.acheiviedScore+10 ;
+      this.lineChartOptions.scales.yAxes[0].ticks.min = (Math.floor(this.minScore / 10) * 10)-10 ;
+            this.lineChartOptions.scales.yAxes[0].ticks.max = (Math.floor(this.acheiviedScore / 10) * 10) +10;
 
 
     });
