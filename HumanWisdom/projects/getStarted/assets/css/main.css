@@ -5111,5 +5111,9 @@ padding: 15px;
   }
 }
 
+  input[type="password" i]::-ms-reveal {
+    display: none !important;
+  }
+
 
 

@@ -405,7 +405,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
-                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" disabled> Download app </button>
+                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
                               </div>
                             </div>
                           </div>
@@ -525,7 +525,8 @@
 </html>
 <script>
 // Replace with your actual API base URL and ProgramId
-const API_BASE_URL = 'https://www.humanwisdom.info/api';
+//const API_BASE_URL = 'https://www.humanwisdom.info/api';
+const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
 function emailLogin(email, password) {
@@ -583,7 +584,6 @@ document.getElementById('download-app-btn').addEventListener('click', function()
   emailLogin(email, password)
     .then(data => {
       // Handle successful login (e.g., redirect, show message, etc.)
-      alert('Login successful!');
        window.location.href = "../pages/download_qr.php";
     })
     .catch(err => {
@@ -607,10 +607,10 @@ document.getElementById('download-app-btn').addEventListener('click', function()
   });
 
 function onRecaptchaSuccess(token) {
-  document.getElementById('download-app-btn').disabled = false;
+  // document.getElementById('download-app-btn').disabled = false;
 }
 function onRecaptchaExpired() {
-  document.getElementById('download-app-btn').disabled = true;
+  // document.getElementById('download-app-btn').disabled = true;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
