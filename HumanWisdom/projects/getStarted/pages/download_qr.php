@@ -160,13 +160,13 @@
                         (CEB)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="500"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         1 in 6
-                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         people have a substance abuse disorder
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (CDC)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         38%
-                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of UK employees experience interpersonal conflict at work
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (CIPD)
@@ -208,13 +208,13 @@
                           leadership 
                         </a>
                         section helps people learn these skills and flourish at work.
-                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive" alt="Critical thinking"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="600"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive" alt="Critical thinking"></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                         Critical thinking
                       </h3></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000"><a class="fc_cb6171" href="https://happierme.app/adults/awareness">
                           Self-awareness 
                         </a>
                         helps you to think clearly, understand your emotions, and make better decisions.
-                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_diversity.svg" class="img-responsive" alt="Diversity & inclusion"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
+                      </h5></div></div></div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="700"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_diversity.svg" class="img-responsive" alt="Diversity & inclusion"></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
                         Diversity & inclusion
                       </h3></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         Our modules on 
@@ -256,7 +256,7 @@
       <!-- /inspiring -->
      
         <div class="row center_flex div_subscriptionnews">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
             <div class=" back">
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   Bring HappierMe to your organization
@@ -277,26 +277,43 @@
                       
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Welcome to HappierMe</h1>
+                          <h1  style="text-align:center;"class="mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Scan to download the app</h1>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row mt40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <!-- <hr class="hr_style_v3_05"> -->
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                                  <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/qr.png" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <!-- <hr class="hr_style_v3_05"> -->
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row mtb30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <hr class="hr_style_v3_05">
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                            OR
+                          </h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <hr class="hr_style_v3_05">
                         </div>
                       </div>
                     </div>
 
-                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
-                            Let’s get started
-                          </h4>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                      </div>
-                    </div>
+
+   
+      <!-- /desktop -->
                     <!-- <div class="row mtb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
@@ -306,205 +323,23 @@
                 Subscribe to our newsletter!
                 </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                    <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <form id="signup-form" action="javascript:void(0);">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
-                                <div class="fc_icons">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- <div class="row mt15px"> -->
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <input type="text" class="form-control fc_01" id="signup-email" name="news-email" placeholder="Your email">
-                              <div class="fc_icons">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
-                              </div>
-                            </div>
-                          </div>
-                          <!-- </div> -->
 
-  <div class="row mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                                     <input type="password" class="form-control fc_01" id="signup-password" name="signup-password" placeholder="Password">
-
-                          <div class="fc_icons">
-                                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                                 class="img-responsive">
-                              </div>
-                        </div>
-                       
-                      </div>
-    </div>
-     <div class="row mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                                     <input type="password" class="form-control fc_01" id="signup-repeat-password" name="signup-repeat-password" placeholder="Repeat Password">
-
-                          <div class="fc_icons">
-                                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                                 class="img-responsive">
-                              </div>
-                        </div>
-                       
-                      </div>
-    </div>
-     <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input  style="margin-top:10px;"id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
-                            </h4>
-                          </label>
-                      </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5">
-                          <span>I agree to the 
-                            <a  class="fw_500 fc_000000"   
-                             > Terms of use</a>
-                          </span>
-                        </h4>
-                    </div>
-                    </div>
-
-
-
-                     <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input style="margin-top:10px;" id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
-                            </h4>
-                          </label>
-                      </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5">
-                          <span>I agree to the 
-                            <a  class="fw_500 fc_000000"   
-                             > Privacy policy</a>
-                          </span>
-                        </h4>
-                    </div>
-                    </div>
-                     
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <!-- Google reCAPTCHA widget -->
-          <div class="row mt15px" style="margin-bottom:10px;">
-            <div id="recaptcha-container"></div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <a>
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/google.svg" alt=""
+                class="img-responsive">
+            </a>
           </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <div class="row mt15px">
-                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" disabled> Download app </button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view">
-          <i class="fa fa-search"></i> News popup </button> -->
-  
-      <!-- /inspiring -->
-      <div class="modal fade product_view" id="product_view">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right">
-                <span class="glyphicon glyphicon-remove"></span>
-              </a>
-              <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class=" back">
-                    <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  Bring HappierMe to your organization
-                </h4></div></div> -->
-                    <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
-                  Connect with our specialists today and see how we can help you
-                </h4></div></div> -->
-                    <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
-                        </div>
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0"></div>   -->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                          <div class="box">
-                            <div class="row mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="row mt30px">
-                                  <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                                    <!-- Subscribe to our newsletter! -->
-                                  </h1>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc"> Sign up for our newsletter! </h1>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row mtb15px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
-                            </div>
-                          </div>
-                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                Subscribe to our newsletter!
-                </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
-                Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                          <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <form action="javascript:void(0);">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                      <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
-                                      <div class="fc_icons">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- <div class="row mt15px"> -->
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                    <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
-                                    <div class="fc_icons">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- </div> -->
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                    <div class="row mt15px">
-                                      <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0 flex_ai">
+            <a>
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt=""
+                class="img-responsive">
+            </a>
+          </div> 
                             </div>
                           </div>
                         </div>
@@ -523,99 +358,3 @@
     <!-- </div></div> -->
   </body>
 </html>
-<script>
-// Replace with your actual API base URL and ProgramId
-const API_BASE_URL = 'https://www.humanwisdom.info/api';
-const ProgramId = '9';
-
-function emailLogin(email, password) {
-  const params = new URLSearchParams({
-    email: email,
-    pwd: password,
-    ProgID: ProgramId
-  });
-  return fetch(`${API_BASE_URL}/login?${params.toString()}`, {
-    method: 'GET'
-  })
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    });
-}
-
-// Password show/hide toggle
-function setupPasswordToggle(inputId, iconId) {
-  const input = document.getElementById(inputId);
-  const icon = document.getElementById(iconId);
-  if (!input || !icon) return;
-  icon.addEventListener('click', function() {
-    if (input.type === 'password') {
-      input.type = 'text';
-      icon.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg';
-    } else {
-      input.type = 'password';
-      icon.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg';
-    }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Add eye icons with IDs if not already present
-  let pwdIcon = document.querySelector('#signup-password ~ .fc_icons img');
-  let repeatPwdIcon = document.querySelector('#signup-repeat-password ~ .fc_icons img');
-  if (pwdIcon) pwdIcon.id = 'signup-password-eye';
-  if (repeatPwdIcon) repeatPwdIcon.id = 'signup-repeat-password-eye';
-
-  setupPasswordToggle('signup-password', 'signup-password-eye');
-  setupPasswordToggle('signup-repeat-password', 'signup-repeat-password-eye');
-});
-
-document.getElementById('download-app-btn').addEventListener('click', function() {
-  const email = document.getElementById('signup-email').value;
-  const password = document.getElementById('signup-password').value;
-  const repeatPassword = document.getElementById('signup-repeat-password').value;
-
-  if (password !== repeatPassword) {
-    alert('Passwords do not match.');
-    return;
-  }
-  // Optionally, validate email/password here
-  emailLogin(email, password)
-    .then(data => {
-      // Handle successful login (e.g., redirect, show message, etc.)
-      alert('Login successful!');
-       window.location.href = "../pages/download_qr.php";
-    })
-    .catch(err => {
-      // Handle error (e.g., show error message)
-      alert('Login failed: ' + err.message);
-    });
-});
-
-// reCAPTCHA integration
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
-      // Add token to form before submitting
-      var form = document.getElementById('myForm');
-      var input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = 'g-recaptcha-response';
-      input.value = token;
-      form.appendChild(input);
-      form.submit();
-    });
-  });
-
-function onRecaptchaSuccess(token) {
-  document.getElementById('download-app-btn').disabled = false;
-}
-function onRecaptchaExpired() {
-  document.getElementById('download-app-btn').disabled = true;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // ...existing code...
-  document.getElementById('download-app-btn').disabled = true;
-});
-</script>
-<script src="https://www.google.com/recaptcha/api.js?render=6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></script>
