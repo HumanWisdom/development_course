@@ -179,25 +179,25 @@
     <section class="hpt1px">
         
       <div class="row center_flex web_home_divnew">
-        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11  ddflex_mblock">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  ddflex_mblock">
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
               <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adult_mind.webp" class="img-responsive w100p display_m_none max-width-px" loading="lazy"  alt="performance"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adult_mind.webp" class="img-responsive" loading="lazy"  alt="performance"
                 >
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
 
           </div>
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cmh40px"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cmh40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 home_page_title">
               
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1  style=" color:#000c;" class="mt10px fs_45px fw_600 lh_130p  ta_lc">
+                <h1  style=" color:#000c;" class="mt10px fs_48px fw_600 lh_130p  ta_lc">
                 Transform your emotional wellbeing with HappierMe
                 </h1>
               </div>

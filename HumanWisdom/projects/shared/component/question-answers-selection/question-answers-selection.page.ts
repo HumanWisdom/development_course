@@ -190,53 +190,63 @@ export class QuestionAnswersSelection implements OnInit {
     e = JSON.parse(e)
     switch (e.Id) {
       case "1": {
-        this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        // this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        this.rating1 =  Number(e.Rating)
         this.s1 = e.s
         break;
       }
       case "2": {
-        this.rating2 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        // this.rating2 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+         this.rating2 = Number(e.Rating)
         this.s2 = e.s
         break;
       }
       case "3": {
-        this.rating3 = (e.Rating == 0) ? (1) : e.Rating
+        // this.rating3 = (e.Rating == 0) ? (1) : e.Rating
+         this.rating3 = Number(e.Rating)
         this.s3 = e.s
         break;
       } case "4": {
-        this.rating4 = (e.Rating == 0) ? (1) : e.Rating
+        // this.rating4 = (e.Rating == 0) ? (1) : e.Rating
+         this.rating4 = Number(e.Rating)
         this.s4 = e.s
         break;
       } case "5": {
-        this.rating5 = (e.Rating == 0) ? (1) : e.Rating
+        // this.rating5 = (e.Rating == 0) ? (1) : e.Rating
+         this.rating5 = Number(e.Rating)
         this.s5 = e.s
         break;
       } case "6": {
-        this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        // this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+         this.rating6 = Number(e.Rating)
         this.s6 = e.s
         break;
 
       }
       case "7": {
-        this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+        // this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
+         this.rating7 = Number(e.Rating)
         this.s7 = e.s
         break;
 
       }
       case "8": {
-        this.rating8 = (e.Rating == 0) ? (1) : e.Rating
+        // this.rating8 = (e.Rating == 0) ? (1) : e.Rating
+         this.rating8 = Number(e.Rating)
         this.s8 = e.s
         break;
 
       }
       case "9": {
-        this.rating9 = (e.Rating == 0) ? (1) : e.Rating
+        // this.rating9 = (e.Rating == 0) ? (1) : e.Rating
+         this.rating9 = Number(e.Rating)
         this.s9 = e.s
         break;
 
       }
       case "10": {
-        this.rating10 = (e.Rating == 0) ? (1) : e.Rating
+        // this.rating10 = (e.Rating == 0) ? (1) : e.Rating
+         this.rating10 = Number(e.Rating)
         this.s10 = e.s
         break;
 
@@ -293,7 +303,9 @@ export class QuestionAnswersSelection implements OnInit {
 
   
   goBack() {
-    this.location.back()
+    // this.location.back()
+              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
+
   }
 
 }

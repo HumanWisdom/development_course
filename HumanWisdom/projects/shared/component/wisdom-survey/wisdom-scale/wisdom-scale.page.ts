@@ -96,7 +96,8 @@ export class WisdomScalePage implements OnInit {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 100
+          max: 100,
+          stepSize: 10,
         }
       }],
     },
@@ -125,6 +126,9 @@ export class WisdomScalePage implements OnInit {
   public enableAlert = false;
   public content = '';
   public questionAns = [];
+  public acheiviedScore = 0;  
+  public minScore = 100;
+
 
   constructor(private router: Router,
     private service: OnboardingService,
@@ -259,7 +263,28 @@ export class WisdomScalePage implements OnInit {
           let obj = {};
           let result = [];
           this.qrList.ListOfQueOpts.forEach((d) => {
-            obj[d['Que']] = { "OptId": obj[d['Que']]?.OptId ? obj[d['Que']]['OptId'].concat(d['OptId']) : [], "OptStr": obj[d['Que']]?.OptStr ? obj[d['Que']]['OptStr'].concat(d['OptStr']) : [], "Points": obj[d['Que']]?.Points ? obj[d['Que']]['Points'].concat(d['Points']) : [] }
+            let dataObj = {};
+
+            if(obj[d['Que']]?.OptId) {
+                dataObj['OptId'] = obj[d['Que']]['OptId'].concat(d['OptId'])
+            }else {
+              dataObj['OptId'] = [d['OptId']]
+            }
+
+            if(obj[d['Que']]?.OptStr) {
+                dataObj['OptStr'] = obj[d['Que']]['OptStr'].concat(d['OptStr'])
+            }else {
+              dataObj['OptStr'] = [d['OptStr']]
+            }
+
+            if(obj[d['Que']]?.Points) {
+                dataObj['Points'] = obj[d['Que']]['Points'].concat(d['Points'])
+            }else {
+              dataObj['Points'] = [d['Points']]
+            }
+            obj[d['Que']] = dataObj;
+
+            // obj[d['Que']] = { "OptId": obj[d['Que']]?.OptId ? obj[d['Que']]['OptId'].concat(d['OptId']) : [], "OptStr": obj[d['Que']]?.OptStr ? obj[d['Que']]['OptStr'].concat(d['OptStr']) : [], "Points": obj[d['Que']]?.Points ? obj[d['Que']]['Points'].concat(d['Points']) : [] }
           });
 
           for (const property in obj) {
@@ -298,12 +323,27 @@ export class WisdomScalePage implements OnInit {
           this.optionList10 = this.findQuestion(131).optionList
         })
 
+    let dataScore = 0;
+
     this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
+      
       var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
       // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
       // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
+     
       r.forEach((d) => {
+        let dateStr = parseInt(d['wsDate'].split('-').join());
+        if(this.acheiviedScore < parseInt(d['Score']))
+          this.acheiviedScore = parseInt(d['Score']);
+
+         if(this.minScore > parseInt(d['Score']))
+          this.minScore = parseInt(d['Score']);
+
+        if(dateStr > dataScore) {
+          dateStr = parseInt(d['wsDate'].split('-').join());
+         
+        }
         if (this.lineChartData[0]['data'].length < 6) {
           let name = monthNames[d['month'] - 1];
           this.lineChartData[0]['data'].push(parseInt(d['Score']));
@@ -314,6 +354,11 @@ export class WisdomScalePage implements OnInit {
           }
         }
       })
+
+      this.lineChartOptions.scales.yAxes[0].ticks.min = (Math.floor(this.minScore / 10) * 10)-10 ;
+            this.lineChartOptions.scales.yAxes[0].ticks.max = (Math.floor(this.acheiviedScore / 10) * 10) +10;
+
+
     });
   }
 
