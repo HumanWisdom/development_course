@@ -99,7 +99,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-       setTimeout(() => {
+  setTimeout(() => {
       let stripe = Stripe(environment.stripeKey) as any;
       
       const appearance = {
@@ -189,16 +189,21 @@ export class PaymentPage implements OnInit, AfterViewInit {
           
           }
         });
+        setTimeout(() => 
+        {
+            if (error) {
+                  const messageContainer = document.querySelector('#error-message');
+                  messageContainer.textContent = error.message;
+                  this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
+                } else {
+                  this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
+                }
+        },
+        5000);
 
-        if (error) {
-          const messageContainer = document.querySelector('#error-message');
-          messageContainer.textContent = error.message;
-          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
-        } else {
-          this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
-        }
+       
       });
-    }, 4000)
+    }, 5000)
   }
 
   back() {

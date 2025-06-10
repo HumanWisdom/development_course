@@ -251,7 +251,9 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   buyGift() {
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/give-the-gift-of-wisdom`);
+    // this.router.navigateByUrl(`/${SharedService.getprogramName()}/give-the-gift-of-wisdom`);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/add-to-cart`);
+  
   }
 
   terms() {

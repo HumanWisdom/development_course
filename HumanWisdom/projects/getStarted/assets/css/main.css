@@ -302,6 +302,14 @@ section {
   }
 }
 
+
+
+
+
+.hr_style_v3_05 {
+    border: 1px solid rgba(0,0,0,.25);
+    /* opacity: .25; */
+}
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -329,6 +337,15 @@ section {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
 }
 
+.header_new {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    height: 120px;
+    border-bottom: 0;
+    padding: 30px 60px;
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10); */
+}
 @media (max-width: 575px) {
   .header {
     height: 70px;
@@ -4359,6 +4376,12 @@ background: #FCF2EC;
 {
   background: #FCF2EC;
   padding: 60px 0;
+}
+
+.web_home_divnew 
+{
+  background: #FCF2EC;
+  padding: 30px 0;
 }
 .web_home_div1 
 {
