@@ -287,7 +287,7 @@
                           <!-- <hr class="hr_style_v3_05"> -->
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                                                  <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/qr.png" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                  <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/scan.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
 
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
