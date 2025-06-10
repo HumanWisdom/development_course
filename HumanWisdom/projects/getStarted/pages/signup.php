@@ -142,19 +142,19 @@
                         (shrm.org)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         67%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of employees are disengaged
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (Gallup)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         76%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of employees have a mental health problem
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (US Surgeon General)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         50-70%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of leaders fail within 18 months
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (CEB)
@@ -302,7 +302,7 @@
                         <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
                       </div>
                     </div> -->
-                    <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
+                    <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
@@ -470,7 +470,7 @@
                               <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
                             </div>
                           </div>
-                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
+                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
@@ -535,8 +535,28 @@ function emailLogin(email, password) {
     pwd: password,
     ProgID: ProgramId
   });
-  return fetch(`${API_BASE_URL}/login?${params.toString()}`, {
-    method: 'GET'
+  return fetch(`${API_BASE_URL}/AddLearner`, {
+    method: 'POST'
+  })
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    });
+}
+
+function addLearner(fname, email, password) {
+  const body = JSON.stringify({
+    FName: fname,
+    Lname: "",
+    Email: email,
+    Pwd: password
+  });
+  return fetch(`${API_BASE_URL}/AddLearner`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: body
   })
     .then(response => {
       if (!response.ok) throw new Error('Network response was not ok');
@@ -572,6 +592,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('download-app-btn').addEventListener('click', function() {
+  const fname = document.getElementById('news-name').value;
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
   const repeatPassword = document.getElementById('signup-repeat-password').value;
@@ -581,18 +602,84 @@ document.getElementById('download-app-btn').addEventListener('click', function()
     return;
   }
   // Optionally, validate email/password here
-  emailLogin(email, password)
+  addLearner(fname, email, password)
     .then(data => {
-      // Handle successful login (e.g., redirect, show message, etc.)
-       window.location.href = "../pages/download_qr.php";
+      // If API returns an error structure, show it
+      if (data && (data.errorMessage || data.error || data.message)) {
+        alert('Signup failed: ' + (data.errorMessage || data.error || data.message));
+        return;
+      }
+      // Handle successful signup (e.g., redirect, show message, etc.)
+      window.location.href = "../pages/download_qr.php";
     })
     .catch(err => {
-      // Handle error (e.g., show error message)
-      alert('Login failed: ' + err.message);
+      // Fallback for unexpected errors
+      alert('Signup failed');
     });
 });
 
-// reCAPTCHA integration
+
+
+function onRecaptchaSuccess(token) {
+  // document.getElementById('download-app-btn').disabled = false;
+}
+function onRecaptchaExpired() {
+  // document.getElementById('download-app-btn').disabled = true;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // ...existing code...
+  document.getElementById('download-app-btn').disabled = true;
+
+  // Enable "Download app" button only when both checkboxes are checked
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]#privacy_checkbox');
+  const downloadBtn = document.getElementById('download-app-btn');
+  function updateDownloadBtnState() {
+    if (checkboxes.length === 2 && checkboxes[0].checked && checkboxes[1].checked) {
+      downloadBtn.disabled = false;
+    } else {
+      downloadBtn.disabled = true;
+    }
+  }
+  checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadBtnState));
+  updateDownloadBtnState();
+
+  // --- Require all fields to be filled and both checkboxes checked to enable the button ---
+  const nameInput = document.getElementById('news-name');
+  const emailInput = document.getElementById('signup-email');
+  const pwdInput = document.getElementById('signup-password');
+  const repeatPwdInput = document.getElementById('signup-repeat-password');
+
+  function allFieldsFilled() {
+    return (
+      nameInput.value.trim() !== '' &&
+      emailInput.value.trim() !== '' &&
+      pwdInput.value.trim() !== '' &&
+      repeatPwdInput.value.trim() !== ''
+    );
+  }
+
+  function updateDownloadBtnStateAll() {
+    if (
+      checkboxes.length === 2 &&
+      checkboxes[0].checked &&
+      checkboxes[1].checked &&
+      allFieldsFilled()
+    ) {
+      downloadBtn.disabled = false;
+    } else {
+      downloadBtn.disabled = true;
+    }
+  }
+
+  // Listen for changes on all fields and checkboxes
+  [nameInput, emailInput, pwdInput, repeatPwdInput].forEach(input => {
+    input.addEventListener('input', updateDownloadBtnStateAll);
+  });
+  checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadBtnStateAll));
+  updateDownloadBtnStateAll();
+
+  // reCAPTCHA integration
   grecaptcha.ready(function () {
     grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
       // Add token to form before submitting
@@ -605,17 +692,6 @@ document.getElementById('download-app-btn').addEventListener('click', function()
       form.submit();
     });
   });
-
-function onRecaptchaSuccess(token) {
-  // document.getElementById('download-app-btn').disabled = false;
-}
-function onRecaptchaExpired() {
-  // document.getElementById('download-app-btn').disabled = true;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // ...existing code...
-  document.getElementById('download-app-btn').disabled = true;
 });
 </script>
 <script src="https://www.google.com/recaptcha/api.js?render=6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></script>
