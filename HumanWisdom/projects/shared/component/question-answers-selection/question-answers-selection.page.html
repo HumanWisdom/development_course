@@ -89,7 +89,7 @@
 
 
                         <div *ngFor="let m of o['OptStr']; let i=index">
-                          <div class="row m-b-20 m-t-20" (click)="checkOption(ind, o['OptId'][i], i, o['OptStr'][i])">
+                          <div class="row m-b-20 m-t-20" (click)="checkOption(ind, o['OptId'][i],  o['Points'][i], o['OptStr'][i])">
                             <div class="col-md-12 col-sm-12 col-xs-12  p0">
 
                               <div>
@@ -98,9 +98,12 @@
                                     [ngClass]="{'single_select_active': (selectedObj[ind] === o['OptStr'][i]) || false}"
                                     class="box select_box fleft">
                                     <div>
-                                      <h3 class="txt9 ctxt9" id="{{o['OptStr'][i] + o['Que'] + 'text'}}">
-                                        {{m}}
+                                      <h3 class="txt9 ctxt9" id="{{o['OptStr'][i]}}">
+                                        {{m.split(".")[0]}}
                                       </h3>
+                                      <h1 class="txt12" id="{{o['OptStr'][i]+'text'}}">
+                                        {{m.split(".")[1]}}
+                                      </h1>
                                     </div>
                                   </div>
                                 </a>
