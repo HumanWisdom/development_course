@@ -303,7 +303,9 @@ export class QuestionAnswersSelection implements OnInit {
 
   
   goBack() {
-    this.location.back()
+    // this.location.back()
+              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
+
   }
 
 }
