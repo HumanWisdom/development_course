@@ -10725,7 +10725,7 @@ body,
 
 .select_box
 {
-  height: 57px !important;
+  height: 73px !important;
   padding: 10px;
   overflow: auto;
   width: 100%;
@@ -12313,27 +12313,27 @@ h1.module_title
 {
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 12px;
   line-height: 19px;
   /* identical to box height */
   text-align: center;
-  color: #6D6D6D;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .btn_grp.txt12.active,
 .txt12.active.focus,
 .txt12:hover
 {
-  background-color: #FFC455;
+  /* background-color: #FFC455; */
   border: 0;
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 12px;
   line-height: 19px;
   text-align: center;
-  color: #000000;
+  color: rgba(255, 255, 255, 0.75);
   filter: unset !important;
 }
 
