@@ -33,7 +33,7 @@ export class QuestionAnswersSelection implements OnInit {
     return this.router.url;
   }, 1000);
 
-
+progress=0;
 
   @Input()
   questionAndAns = JSON.parse(localStorage.getItem("questionAns"));
@@ -124,8 +124,9 @@ export class QuestionAnswersSelection implements OnInit {
     if (this.currentSection === 1) {
       this.prevBtnDisabled = false;
     }
-
+    this.progress =this.progress + 10;
     if (this.currentSection === 1 && this.s2) {
+
       this.btnDisabled = false;
     } else if (this.currentSection === 2 && this.s3) {
       this.btnDisabled = false;
@@ -161,6 +162,8 @@ export class QuestionAnswersSelection implements OnInit {
       this.currentSection--;
     }
     this.direction = 'right';
+        this.progress =this.progress- 10;
+
     if (this.currentSection === 0) {
       this.prevBtnDisabled = true;
     }
