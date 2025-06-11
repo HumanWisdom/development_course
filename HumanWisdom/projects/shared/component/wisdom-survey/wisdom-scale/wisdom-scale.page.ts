@@ -505,7 +505,7 @@ export class WisdomScalePage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    /* var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if (url && url != null && url != 'null') {
@@ -515,7 +515,8 @@ export class WisdomScalePage implements OnInit {
       }
     } else {
       this.router.navigate([url]);
-    }
+    } */
+    this.router.navigate([SharedService.getDashboardUrls()])
   }
 
   viewClickEvent(url) {
