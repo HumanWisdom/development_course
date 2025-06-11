@@ -534,6 +534,10 @@ const routes: Routes = [
   {
     path: "quotation/:id",
     component: HappierMeQuotationPage
+  },
+  {
+    path: 'wellness-survey',
+    component: QuestionAnswersSelection
   }
 ];
 
