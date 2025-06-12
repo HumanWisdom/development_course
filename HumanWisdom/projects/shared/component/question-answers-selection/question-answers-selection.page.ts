@@ -80,7 +80,7 @@ progress=0;
   public enableAlert = false;
   public content = '';
   btnDisabled = true;
-  prevBtnDisabled = true;
+  prevBtnDisabled = false;
 
   constructor
     (
@@ -122,7 +122,7 @@ progress=0;
     }
 
     if (this.currentSection === 1) {
-      this.prevBtnDisabled = false;
+      this.prevBtnDisabled = true;
     }
     this.progress =this.progress + 10;
     if (this.currentSection === 1 && this.s2) {
@@ -165,26 +165,29 @@ progress=0;
         this.progress =this.progress- 10;
 
     if (this.currentSection === 0) {
-      this.prevBtnDisabled = true;
+      this.prevBtnDisabled = false;
+      if(this.s1)
+        this.btnDisabled = false;
+      
     }
 
-    if (this.currentSection === 1 && this.s1) {
+    if (this.currentSection === 1 && this.s2) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 2 && this.s2) {
+    } else if (this.currentSection === 2 && this.s3) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 3 && this.s3) {
+    } else if (this.currentSection === 3 && this.s4) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 4 && this.s4) {
+    } else if (this.currentSection === 4 && this.s5) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 5 && this.s5) {
+    } else if (this.currentSection === 5 && this.s6) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 6 && this.s6) {
+    } else if (this.currentSection === 6 && this.s7) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 7 && this.s7) {
+    } else if (this.currentSection === 7 && this.s8) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 8 && this.s8) {
+    } else if (this.currentSection === 8 && this.s9) {
       this.btnDisabled = false;
-    } else if (this.currentSection === 9 && this.s9) {
+    } else if (this.currentSection === 9 && this.s10) {
       this.btnDisabled = false;
     }
   }
