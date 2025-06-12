@@ -4,7 +4,7 @@
   <title>Wellness Survey | HumanWisdom</title>
 
 <!-- top navigation -->
-<div class="row center_flex">
+<div class="row center_flex tn_module bg_stake col_cw">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
@@ -24,9 +24,15 @@
     </a>
     </div>
   </div>
- 
+   <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress" [ngStyle]="{'visibility': 'visible'}">
+        <div class="progress-bar" role="progressbar"
+          [ngStyle]="{'visibility': 'visible' ,'min-width': progress + '%', 'max-width': progress + '%', 'width': progress + '%'}"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
 </div>
-<div class="row center_flex">
+<!-- <div class="row center_flex">
  <div class="col-md-12 col-sm-12 col-xs-12 p0 col_cw hprogressdiv">
       <div class="progress progress-sm hprogress" [ngStyle]="{'visibility': 'visible'}">
         <div class="progress-bar" role="progressbar"
@@ -35,7 +41,7 @@
       </div>
     </div>
 
-</div>
+</div> -->
 <!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
