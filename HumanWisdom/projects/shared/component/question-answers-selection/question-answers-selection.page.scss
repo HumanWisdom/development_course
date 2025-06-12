@@ -8,10 +8,6 @@
 }
 
 .hprogressdiv {
-    position: relative;
-    top: 80px;
-    right: 0;
-    left: 0;
-    margin: auto; 
-    z-index: 0;  
+   bottom: -3px !important;
+    z-index: 9999 !important;  
 }
