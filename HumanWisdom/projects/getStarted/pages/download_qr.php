@@ -277,7 +277,7 @@
                       
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h1  style="text-align:center;"class="mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Scan to download the app</h1>
+                          <h1  style="text-align:center;"class="plr20px mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Scan to download the app</h1>
                         </div>
                       </div>
                     </div>
@@ -301,7 +301,7 @@
                           <hr class="hr_style_v3_05">
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tcenter">
                             OR
                           </h4>
                         </div>
@@ -329,13 +329,13 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <a>
+            <a href="https://apps.apple.com/in/app/happierme-for-a-happier-you/id1588535567">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/google.svg" alt=""
                 class="img-responsive">
             </a>
           </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0 flex_ai">
-            <a>
+            <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt=""
                 class="img-responsive">
             </a>
