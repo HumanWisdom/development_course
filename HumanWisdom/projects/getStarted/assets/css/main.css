@@ -337,6 +337,10 @@ label > input[type="checkbox"] + *::before {
     border-radius: 1px;
 }
 
+.check{
+  width:29px;
+  height:30px;
+}
 .hr_style_v3_05 {
     border: 1px solid rgba(0,0,0,.25);
     /* opacity: .25; */
