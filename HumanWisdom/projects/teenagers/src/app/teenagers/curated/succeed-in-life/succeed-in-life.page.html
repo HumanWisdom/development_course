@@ -1073,6 +1073,39 @@
                       </div>
                     </a>
                   </div>
+
+                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
+                    <a routerLink="/teenagers/pressure-of-exams">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/139.webp" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                               Pressure of Exams
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                2 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+  
   
                 </div>
               </div>
@@ -1156,7 +1189,7 @@
                           <div class="">
                             <div class="toc_adiv_02">
                              <!-- audio row -->
-                             <a (click)="audioevent(data.MediaUrl)" *ngFor="let data of mediaUrl; let i=index">
+                             <a (click)="audioevent(data)" *ngFor="let data of mediaUrl; let i=index">
                               <div class="row" *ngIf="i === 0 && enablePodcastViewMore">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 

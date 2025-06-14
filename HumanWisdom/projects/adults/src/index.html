@@ -229,7 +229,9 @@
       // var ADT = ADT || {};
       // ADT.Tag = ADT.Tag || {};
 
-      let t = localStorage.getItem('stripeqty');
+      let getAt_Gt = localStorage.getItem("adtraction");
+if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
+ {    let t = localStorage.getItem('stripeqty');
       let c = localStorage.getItem('stripecountrycode');
       let am = localStorage.getItem('stripeamount');
       let cpn = localStorage.getItem('stripeDiscountCode');
@@ -246,6 +248,7 @@
       // window.ADT.Tag.xd = "XD";
 
       window.ADT.Tag.doEvent();
+    }
     });
     
   </script>

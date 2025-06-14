@@ -36,6 +36,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   @Input()
   enableplaystore = true;
   ios = false;
+  isWeb = false;
   subscriberType = "";
   enableprofile = true;
   enableAlert = false;
@@ -146,11 +147,17 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
 
+ isBrowser() {
+    return typeof window !== 'undefined' && typeof window.document !== 'undefined';
+}
 
 
   ngOnInit() {
     if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
       this.ios = true;
+    }
+    if(this.isBrowser()){
+        this.isWeb = true;
     }
     let userId = JSON.parse(localStorage.getItem("userId"));
     this.Onboardingservice.getuserDetail();
@@ -380,7 +387,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   routeManageSubscriptiont(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (this.ios) {
+    if (this.ios || SharedService.isAndroid) {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
@@ -468,7 +475,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   GetSubscriptionText() {
-    if (this.ios) {
+    if (this.ios || SharedService.isAndroid) {
       return "Manage Subscriptions"
     }
     return "My Subscriptions"
