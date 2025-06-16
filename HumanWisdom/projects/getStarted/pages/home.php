@@ -210,11 +210,7 @@
     background: #FCF2EC;
     padding: 30px 0;
 }
-.quotation-comma{
-  justify-content: right;
-    display: flex
-;
-}
+
 .btn-start{
       width: 308px;
     height: 65px;

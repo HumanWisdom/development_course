@@ -5175,5 +5175,9 @@ padding: 15px;
 .m-top72{
 margin-top: -72px !important;
 }
-
+.quotation-comma{
+  justify-content: right;
+    display: flex
+;
+}
 
