@@ -12694,7 +12694,7 @@ textarea.form-control
 
   .select_box
   {
-    height: 90px !important;
+    height: 76px !important;
   }
 }
 
@@ -29450,7 +29450,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .sc_01
 {
   /* background: #1D3D7A; */
-  min-height: 100vh;
+  min-height: 110vh;
   /* padding: 20px 10px; */
   padding: 20px;
 }
@@ -35385,7 +35385,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
     box-shadow: 0 -1px 8px #0009;
     margin: 0 auto;
     z-index: 999;
-    background: #0c2b5f!important;
+    background: #183c79 !important;
     height: 70px;
 }
 .mdp_oli_tray 
