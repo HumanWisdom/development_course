@@ -215,6 +215,23 @@
     display: flex
 ;
 }
+.btn-start{
+      width: 308px;
+    height: 65px;
+    font-size: 21px;
+    border-radius: 36px;
+}
+.btn-end{
+  width: 376px;
+    height: 65px;
+    border-radius: 36px;
+    font-size: 21px;;
+}
+.txt-width{
+    width: 548px;
+    display: inline-flex;
+;
+}
 
 </style>
     
@@ -370,7 +387,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
               <a class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-start" >
                     Start your free trial
                     </button>
                   </a>
@@ -528,13 +545,13 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
         <div class="row center_flex mob-section" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
-            <!-- <video id="homeVideo" controls playinline class="w100p"
+            <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
               <source
                 src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
                 type="video/mp4">
-            </video> -->
+            </video>
 
             <ifttrame id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed" allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')" ></ifttrame>
           </div>
@@ -561,7 +578,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
          <!-- subscription -->
       <section id="div_subscription">
-        <!-- <div class="row center_flex div_subscription">
+        <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
@@ -632,7 +649,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
             <div class="row center_flex">
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
-                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000 txt-width" id="totalAnnualPricingModelHeading">
                   After your free trial, the yearly subscription is INR 5,999 and automatically 
                   renews each year until cancelled.
                   <span class="">
@@ -651,9 +668,9 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
             </div>
 
             <div id="PricingSelectBtn" class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" >
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
               <a > 
-              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-end">
                   Start your free trial today
                 </button>
               </div>
@@ -661,7 +678,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
             </div>
 
           </div>
-        </div> -->
+        </div>
       </section>
       <!-- /subscription -->
          
