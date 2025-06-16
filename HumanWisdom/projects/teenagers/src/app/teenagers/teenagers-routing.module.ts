@@ -11,6 +11,9 @@ import { NewsletterComponent } from '../../../../shared/component/newsletter/new
 import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
+import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -534,6 +537,10 @@ const routes: Routes = [
   {
     path: "quotation/:id",
     component: HappierMeQuotationPage
+  },
+  {
+    path: 'wellness-survey',
+    component: QuestionAnswersSelection
   }
 ];
 

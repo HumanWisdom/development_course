@@ -142,19 +142,19 @@
                         (shrm.org)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         67%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of employees are disengaged
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (Gallup)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="300"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         76%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of employees have a mental health problem
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (US Surgeon General)
                       </h6></div></div></div><div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="400"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
                         50-70%
-                      </h2></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      </h2></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                         of leaders fail within 18 months
                       </h5></div></div><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"><h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                         (CEB)
@@ -256,7 +256,7 @@
       <!-- /inspiring -->
      
         <div class="row center_flex div_subscriptionnews">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
             <div class=" back">
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   Bring HappierMe to your organization
@@ -264,7 +264,7 @@
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
                   Connect with our specialists today and see how we can help you
                 </h4></div></div> -->
-              <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
+              <div class="row center_flex mt20px mb10px" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
                   <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                   <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
@@ -276,19 +276,19 @@
                     <div class="box">
                       
                       <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_834b66 ta_lc"> Welcome to HappierMe</h1>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_834b66  tcenter ta_lc"> Welcome to HappierMe</h1>
                         </div>
                       </div>
                     </div>
 
-                     <div class="row">
+                     <div class="row mt10px" >
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                           <hr class="hr_style_v3_05">
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tcenter">
                             Let’s get started
                           </h4>
                         </div>
@@ -302,11 +302,11 @@
                         <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
                       </div>
                     </div> -->
-                    <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
+                    <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                    <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row center_flex mt20px mb10px" data-aos="fade-up" data-aos-delay="100">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <form id="signup-form" action="javascript:void(0);">
                           <div class="row">
@@ -342,9 +342,9 @@
                         </div>
                        
                       </div>
-    </div>
-     <div class="row mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
+
+
+                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                                      <input type="password" class="form-control fc_01" id="signup-repeat-password" name="signup-repeat-password" placeholder="Repeat Password">
 
@@ -356,56 +356,64 @@
                        
                       </div>
     </div>
-     <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
+     <!-- <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
+                                                     <input type="password" class="form-control fc_01" id="signup-repeat-password" name="signup-repeat-password" placeholder="Repeat Password">
+
+                          <div class="fc_icons">
+                                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                                 class="img-responsive">
+                              </div>
+                        </div>
+                       
+                      </div>
+    </div> -->
+     <div class="row mt5px">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check">
                           <label for="privacy_checkbox" class="chkb_post_anonymously ">
                             <input  style="margin-top:10px;"id="privacy_checkbox"formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
                             </h4>
                           </label>
                       </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5" style="margin-top:8px;">
                           <span>I agree to the 
-                            <a  class="fw_500 fc_000000"   
-                             > Terms of use</a>
+                            <a  class="blog_highlight_peach td_underline fs_12px fw_500 " href="https://happierme.app/pages/terms_conditions.php"  
+                             > User Agreement</a>
                           </span>
                         </h4>
                     </div>
+
+                    
                     </div>
 
 
 
-                     <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input style="margin-top:10px;" id="privacy_checkbox"formControlName="privacychk" type="checkbox">
+                     
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check">
+                          <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
+                            <input style="margin-top:10px;" id="marketing_checkbox" formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
                             </h4>
-                          </label>
+                          </label>    
                       </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5 " style="margin-top:7px;">
                           <span>I agree to the 
-                            <a  class="fw_500 fc_000000"   
+                            <a  class="blog_highlight_peach td_underline fs_12px fw_500 "   href="https://happierme.app/pages/privacy_policy.php"
                              > Privacy policy</a>
                           </span>
                         </h4>
                     </div>
-                    </div>
+                    
                      
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <!-- Google reCAPTCHA widget -->
-          <div class="row mt15px" style="margin-bottom:10px;">
-            <div id="recaptcha-container"></div>
-          </div>
-                            </div>
-                          </div>
+                          
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
-                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" disabled> Download app </button>
+                                <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
                               </div>
                             </div>
                           </div>
@@ -423,7 +431,7 @@
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view">
           <i class="fa fa-search"></i> News popup </button> -->
   
-      <!-- /inspiring -->
+   <!-- /inspiring -->
       <div class="modal fade product_view" id="product_view">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -470,7 +478,7 @@
                               <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
                             </div>
                           </div>
-                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
+                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
                 Subscribe to our newsletter!
                 </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
                 Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
@@ -520,12 +528,13 @@
       </div>
       </div> 
    
-    <!-- </div></div> -->
+    <!-- </div></div> -->   
   </body>
 </html>
 <script>
 // Replace with your actual API base URL and ProgramId
-const API_BASE_URL = 'https://www.humanwisdom.info/api';
+//const API_BASE_URL = 'https://www.humanwisdom.info/api';
+const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
 function emailLogin(email, password) {
@@ -534,8 +543,28 @@ function emailLogin(email, password) {
     pwd: password,
     ProgID: ProgramId
   });
-  return fetch(`${API_BASE_URL}/login?${params.toString()}`, {
-    method: 'GET'
+  return fetch(`${API_BASE_URL}/AddLearner`, {
+    method: 'POST'
+  })
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    });
+}
+
+function addLearner(fname, email, password) {
+  const body = JSON.stringify({
+    FName: fname,
+    Lname: "",
+    Email: email,
+    Pwd: password
+  });
+  return fetch(`${API_BASE_URL}/AddLearner`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: body
   })
     .then(response => {
       if (!response.ok) throw new Error('Network response was not ok');
@@ -571,6 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('download-app-btn').addEventListener('click', function() {
+  const fname = document.getElementById('news-name').value;
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
   const repeatPassword = document.getElementById('signup-repeat-password').value;
@@ -579,20 +609,105 @@ document.getElementById('download-app-btn').addEventListener('click', function()
     alert('Passwords do not match.');
     return;
   }
+
+  // Show non-blocking info message
+  let infoDiv = document.getElementById('signup-info-message');
+  if (!infoDiv) {
+    infoDiv = document.createElement('div');
+    infoDiv.id = 'signup-info-message';
+    infoDiv.style.position = 'fixed';
+    infoDiv.style.top = '20px';
+    infoDiv.style.left = '50%';
+    infoDiv.style.transform = 'translateX(-50%)';
+    infoDiv.style.background = '#333';
+    infoDiv.style.color = '#fff';
+    infoDiv.style.padding = '10px 24px';
+    infoDiv.style.borderRadius = '6px';
+    infoDiv.style.zIndex = '9999';
+    infoDiv.style.fontSize = '16px';
+    document.body.appendChild(infoDiv);
+  }
+  infoDiv.textContent = 'Your request is being processed...';
+  infoDiv.style.display = 'block';
+
   // Optionally, validate email/password here
-  emailLogin(email, password)
+  addLearner(fname, email, password)
     .then(data => {
-      // Handle successful login (e.g., redirect, show message, etc.)
-      alert('Login successful!');
-       window.location.href = "../pages/download_qr.php";
+      // Hide info message on success or error
+      if (infoDiv) infoDiv.style.display = 'none';
+      if (data && (data.errorMessage || data.error || data.message)) {
+        alert('Signup failed: ' + (data.errorMessage || data.error || data.message));
+        return;
+      }
+      window.location.href = "../pages/download_qr.php";
     })
     .catch(err => {
-      // Handle error (e.g., show error message)
-      alert('Login failed: ' + err.message);
+      if (infoDiv) infoDiv.style.display = 'none';
+      alert('Signup failed');
     });
 });
 
-// reCAPTCHA integration
+
+
+function onRecaptchaSuccess(token) {
+  // document.getElementById('download-app-btn').disabled = false;
+}
+function onRecaptchaExpired() {
+  // document.getElementById('download-app-btn').disabled = true;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // ...existing code...
+  document.getElementById('download-app-btn').disabled = true;
+
+  // Enable "Download app" button only when both checkboxes are checked
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]#privacy_checkbox');
+  const marketingcheckbox = document.querySelectorAll('input[type="checkbox"]#marketing_checkbox');
+  const downloadBtn = document.getElementById('download-app-btn');
+
+  checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadBtnStateAll));
+  marketingcheckbox.forEach(cb => cb.addEventListener('change', updateDownloadBtnStateAll));
+
+  // --- Require all fields to be filled and both checkboxes checked to enable the button ---
+  const nameInput = document.getElementById('news-name');
+  const emailInput = document.getElementById('signup-email');
+  const pwdInput = document.getElementById('signup-password');
+  const repeatPwdInput = document.getElementById('signup-repeat-password');
+
+  function allFieldsFilled() {
+    return (
+      nameInput.value.trim() !== '' &&
+      emailInput.value.trim() !== '' &&
+      pwdInput.value.trim() !== '' &&
+      repeatPwdInput.value.trim() !== ''
+    );
+  }
+
+  function updateDownloadBtnStateAll() {
+    if (
+      checkboxes.length === 1 &&
+      checkboxes[0].checked &&
+      marketingcheckbox.length === 1 &&
+      marketingcheckbox[0].checked &&
+      allFieldsFilled()
+    ) {
+      downloadBtn.disabled = false;
+      return false;
+      alert('Please fill up all the fields');
+    } else {
+      downloadBtn.disabled = true;
+      return true;
+    }
+  }
+
+  // Listen for changes on all fields and checkboxes
+  [nameInput, emailInput, pwdInput, repeatPwdInput].forEach(input => {
+    input.addEventListener('input', updateDownloadBtnStateAll);
+  });
+  checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadBtnStateAll));
+  updateDownloadBtnStateAll();
+
+  // reCAPTCHA integration
   grecaptcha.ready(function () {
     grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
       // Add token to form before submitting
@@ -605,17 +720,6 @@ document.getElementById('download-app-btn').addEventListener('click', function()
       form.submit();
     });
   });
-
-function onRecaptchaSuccess(token) {
-  document.getElementById('download-app-btn').disabled = false;
-}
-function onRecaptchaExpired() {
-  document.getElementById('download-app-btn').disabled = true;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // ...existing code...
-  document.getElementById('download-app-btn').disabled = true;
 });
 </script>
 <script src="https://www.google.com/recaptcha/api.js?render=6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></script>

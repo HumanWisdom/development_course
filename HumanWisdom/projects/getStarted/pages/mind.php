@@ -196,7 +196,7 @@
               <img
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adult_mind.webp" class="img-responsive w100p display_m_none max-width-px h-402" loading="lazy"  alt="performance"
                 >
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance"> -->
 
           </div>
 
@@ -272,7 +272,7 @@
 
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
               <a href="signup.php">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-started" >
                     Let’s get started!
@@ -409,7 +409,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_user+.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/survey.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
@@ -431,7 +431,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
         </div>
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 p0">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 p0">
             <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">

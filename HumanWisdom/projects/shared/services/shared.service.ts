@@ -254,6 +254,12 @@ export class SharedService {
           active: false,
           name: 'Manage your emotions',
         },
+         {
+          id: "18",
+          displayName: "Parenting",
+          active: false,
+          name: 'Effective Parenting ',
+        },
         {
           id: "0",
           active: false,
