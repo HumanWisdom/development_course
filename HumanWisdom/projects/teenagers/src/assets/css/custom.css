@@ -12336,27 +12336,27 @@ h1.module_title
 {
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 12px;
   line-height: 19px;
   /* identical to box height */
   text-align: center;
-  color: #6D6D6D;
+  color: #ffffffbf;
 }
 
 .btn_grp.txt12.active,
 .txt12.active.focus,
 .txt12:hover
 {
-  background-color: #FFC455;
+  /* background-color: #FFC455; */
   border: 0;
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 12px;
   line-height: 19px;
   text-align: center;
-  color: #000000;
+  color: #ffffffbf;
   filter: unset !important;
 }
 
@@ -12694,7 +12694,7 @@ textarea.form-control
 
   .select_box
   {
-    height: 90px !important;
+    height: 76px !important;
   }
 }
 
@@ -18356,7 +18356,7 @@ ngx-circular-player svg
 .single_select_active
 {
   /* background: #FFC455 !important; */
-  background: #120F40!important;
+  background: #0c2b5f!important;
   /* opacity: 1; */
   color: #FFFFFF !important;
 }
@@ -29450,7 +29450,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .sc_01
 {
   /* background: #1D3D7A; */
-  min-height: 100vh;
+  min-height: 110vh;
   /* padding: 20px 10px; */
   padding: 20px;
 }
@@ -35375,6 +35375,19 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   text-align: center;
 }
 
+.mdp_oli_traywell {
+    box-shadow: unset;
+    position: fixed;
+    bottom: 2px;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 0 -1px 8px #0009;
+    margin: 0 auto;
+    z-index: 999;
+    background: #183c79 !important;
+    height: 70px;
+}
 .mdp_oli_tray 
 {
   box-shadow: unset;

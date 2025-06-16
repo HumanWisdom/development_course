@@ -5157,4 +5157,27 @@ padding: 15px;
     }
 
 
+  .w-98p {
+    width: 98% !important;
+  }
+
+  .ml-3p{
+    margin-left: 3% !important;
+  }
+
+  .w-88p{
+    width: 88% !important;
+  }
+  .h-402{
+  width: 402px !important;
+  height: 525px !important;
+}
+.ml-5{
+  margin-left: 5px !important;
+}
+.p-tp{
+  padding-top:5% !important
+}
+
+
 
