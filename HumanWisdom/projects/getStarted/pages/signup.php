@@ -320,7 +320,7 @@
                             </div>
                           </div>
                           <!-- <div class="row mt15px"> -->
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent" >
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <input type="text" class="form-control fc_01" id="signup-email" name="news-email" placeholder="Your email">
                               <div class="fc_icons">
@@ -328,6 +328,8 @@
                               </div>
                             </div>
                           </div>
+                            <div id="input_parents"></div>
+
                           <!-- </div> -->
 
   <div class="row mb10px">
@@ -355,6 +357,7 @@
                         </div>
                        
                       </div>
+                      <div id="password-container"></div>
     </div>
      <!-- <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
@@ -605,10 +608,12 @@ document.getElementById('download-app-btn').addEventListener('click', function()
   const password = document.getElementById('signup-password').value;
   const repeatPassword = document.getElementById('signup-repeat-password').value;
 
-  if (password !== repeatPassword) {
-    alert('Passwords do not match.');
-    return;
-  }
+
+
+  // if(isValidEmail(email) === false) {
+  //   alert('Please enter a valid email address.');
+  //   return;
+  // }
 
   // Show non-blocking info message
   let infoDiv = document.getElementById('signup-info-message');
@@ -647,8 +652,7 @@ document.getElementById('download-app-btn').addEventListener('click', function()
     });
 });
 
-
-
+    
 function onRecaptchaSuccess(token) {
   // document.getElementById('download-app-btn').disabled = false;
 }
@@ -683,7 +687,35 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   }
 
+  function validateEmail() {
+      const emailInput = document.getElementById('signup-email');
+      const messageContainer = document.getElementById('input_parents');
+      messageContainer.innerHTML = '';
+      if(emailInput.value!=""){
+       if ( !isValidEmail(emailInput.value)) {
+        const errorSpan = document.createElement('span');
+        errorSpan.className = 'error';
+        errorSpan.textContent = 'Invalid email';
+        messageContainer.appendChild(errorSpan);
+      }
+      }
+    }
+
+
   function updateDownloadBtnStateAll() {
+    validateEmail();
+      const password = document.getElementById('signup-password').value;
+      const repeatPassword = document.getElementById('signup-repeat-password').value;
+      if (password !== repeatPassword) {
+      const pwdContainer = document.getElementById('password-container');
+      pwdContainer.innerHTML = '';
+        const errorSpan = document.createElement('span');
+        errorSpan.className = 'error';
+        errorSpan.textContent = 'Passwords do not match.';
+        pwdContainer.appendChild(errorSpan);
+  }else{
+   document.getElementById('password-container').innerHTML = '';
+  }
     if (
       checkboxes.length === 1 &&
       checkboxes[0].checked &&
@@ -692,13 +724,20 @@ document.addEventListener('DOMContentLoaded', function() {
       allFieldsFilled()
     ) {
       downloadBtn.disabled = false;
+      // alert('Please fill up all the fields');
       return false;
-      alert('Please fill up all the fields');
+    
     } else {
       downloadBtn.disabled = true;
       return true;
     }
   }
+  
+  function isValidEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
 
   // Listen for changes on all fields and checkboxes
   [nameInput, emailInput, pwdInput, repeatPwdInput].forEach(input => {

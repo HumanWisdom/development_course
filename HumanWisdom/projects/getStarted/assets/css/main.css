@@ -5150,5 +5150,11 @@ padding: 15px;
     display: none !important;
   }
 
+  .error {
+    margin-left: 3px;
+      color: red;
+      font-size: 0.9em;
+    }
+
 
 
