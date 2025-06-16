@@ -609,19 +609,40 @@ document.getElementById('download-app-btn').addEventListener('click', function()
     alert('Passwords do not match.');
     return;
   }
+
+  // Show non-blocking info message
+  let infoDiv = document.getElementById('signup-info-message');
+  if (!infoDiv) {
+    infoDiv = document.createElement('div');
+    infoDiv.id = 'signup-info-message';
+    infoDiv.style.position = 'fixed';
+    infoDiv.style.top = '20px';
+    infoDiv.style.left = '50%';
+    infoDiv.style.transform = 'translateX(-50%)';
+    infoDiv.style.background = '#333';
+    infoDiv.style.color = '#fff';
+    infoDiv.style.padding = '10px 24px';
+    infoDiv.style.borderRadius = '6px';
+    infoDiv.style.zIndex = '9999';
+    infoDiv.style.fontSize = '16px';
+    document.body.appendChild(infoDiv);
+  }
+  infoDiv.textContent = 'Your request is being processed...';
+  infoDiv.style.display = 'block';
+
   // Optionally, validate email/password here
   addLearner(fname, email, password)
     .then(data => {
-      // If API returns an error structure, show it
+      // Hide info message on success or error
+      if (infoDiv) infoDiv.style.display = 'none';
       if (data && (data.errorMessage || data.error || data.message)) {
         alert('Signup failed: ' + (data.errorMessage || data.error || data.message));
         return;
       }
-      // Handle successful signup (e.g., redirect, show message, etc.)
       window.location.href = "../pages/download_qr.php";
     })
     .catch(err => {
-      // Fallback for unexpected errors
+      if (infoDiv) infoDiv.style.display = 'none';
       alert('Signup failed');
     });
 });
@@ -641,16 +662,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Enable "Download app" button only when both checkboxes are checked
   const checkboxes = document.querySelectorAll('input[type="checkbox"]#privacy_checkbox');
+  const marketingcheckbox = document.querySelectorAll('input[type="checkbox"]#marketing_checkbox');
   const downloadBtn = document.getElementById('download-app-btn');
-  function updateDownloadBtnState() {
-    if (checkboxes.length === 2 && checkboxes[0].checked && checkboxes[1].checked) {
-      downloadBtn.disabled = false;
-    } else {
-      downloadBtn.disabled = true;
-    }
-  }
-  checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadBtnState));
-  updateDownloadBtnState();
+
+  checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadBtnStateAll));
+  marketingcheckbox.forEach(cb => cb.addEventListener('change', updateDownloadBtnStateAll));
 
   // --- Require all fields to be filled and both checkboxes checked to enable the button ---
   const nameInput = document.getElementById('news-name');
@@ -669,14 +685,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateDownloadBtnStateAll() {
     if (
-      checkboxes.length === 2 &&
+      checkboxes.length === 1 &&
       checkboxes[0].checked &&
-      checkboxes[1].checked &&
+      marketingcheckbox.length === 1 &&
+      marketingcheckbox[0].checked &&
       allFieldsFilled()
     ) {
       downloadBtn.disabled = false;
+      return false;
+      alert('Please fill up all the fields');
     } else {
       downloadBtn.disabled = true;
+      return true;
     }
   }
 
