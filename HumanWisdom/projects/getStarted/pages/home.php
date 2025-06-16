@@ -210,6 +210,12 @@
     background: #FCF2EC;
     padding: 30px 0;
 }
+.quotation-comma{
+  justify-content: right;
+    display: flex
+;
+}
+
 </style>
     
   </head>
@@ -284,19 +290,19 @@
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
               <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/AdultHome2.svg" class="img-responsive w100p display_m_none max-width-px w-img" loading="lazy"  alt="performance"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/AdultHome2.svg" class="img-responsive w100p display_m_none max-width-px w-img h-402"  loading="lazy"  alt="performance"
                 >
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Adults+homd.svg" class="img-responsive w100p display_d_none max-width-px"  loading="lazy"alt="performance">
 
           </div>
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cmh40px"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cmh40px ml-5"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 home_page_title">
               
 
             <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p-tp">
                 <h1  style=" color:#000c;" class="mt10px fs_45px fw_600 lh_130p  ta_lc resp-font">
                 Transform your life with HappierMe
                 </h1>
@@ -389,20 +395,26 @@
         <div class="section-header">
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 res-testemonial testi-flex">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 res-testemonial testi-flex">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
-           <div class="testnew">
+           <div class="testnew w-98p">
               
 
            
 
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="quotation-comma">
+                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                
+    </div>
+    </div> 
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
                         <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                   <h5  style="margin-top:21px ; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                         Brenda McChesney
                         </h5>
@@ -410,11 +422,7 @@
                         Director, National Family Support Network, USA
     </h3>
                 </div>
-                 <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0">
-                  <div class="quatation-new1">
-                        <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 
-    </div>      </div>
               </div>
             </div>
 
@@ -433,7 +441,7 @@ HappierMe is the best app I have found to assist entire families, and the root c
     </div>
 
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 "  data-aos="fade-up" data-aos-delay="200">
-          <div class="testnew ml-res">  
+          <div class="testnew ml-res w-88p ml-3p">  
           <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               
@@ -441,25 +449,26 @@ HappierMe is the best app I have found to assist entire families, and the root c
            
 
              <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="quotation-comma">
+                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                
+    </div>
+    </div> 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p0">
                         <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                  <h5  style="margin-top:25px; text-align:left;margin-left: -15px;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                  <h5  style="margin-top:21px; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                        
                         Adam Beagley
                         </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left;margin-left: -15px;";>
+                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left";>
 Student, UK    </h3>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 p0  ">
-                <div class="quatation-new">
-                        
-                <img  style="margin-top:-53px;  margin-left:38px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
-    </div>  
-              </div>
+                
               </div>
             </div>
 
