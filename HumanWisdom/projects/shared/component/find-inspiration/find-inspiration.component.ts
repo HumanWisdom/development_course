@@ -30,7 +30,7 @@ export class FindInspiration  {
     },   
      
     { 
-      title: 'Guided questions', 
+      title: 'Guided journaling', 
       icon: 'map', 
       color: '#191d3a',
       height:'',

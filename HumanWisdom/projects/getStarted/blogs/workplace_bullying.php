@@ -314,7 +314,7 @@ Here’s what can help:
 Helping bullies understand the impact of their behaviour
                 </h4> 
                 <h4 class="mtb0px blog_desc">
-                    Quite often, people who bully others are not aware of the impact of their words and actions on others, or that it can be classed as bullying. Through online journaling and guided questions, we help people understand the various influences that contribute to their behaviour and reflect on the impact it’s having on others.
+                    Quite often, people who bully others are not aware of the impact of their words and actions on others, or that it can be classed as bullying. Through online journaling and Guided journaling, we help people understand the various influences that contribute to their behaviour and reflect on the impact it’s having on others.
                
                 </h4>
 <h4 class="mtb0px blog_title">
