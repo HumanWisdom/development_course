@@ -247,6 +247,13 @@ export class SelectATopicToExplorePage implements OnInit {
         this.route.navigate(['/adults/dashboard/meditation'])
 
       }
+       else if (name === 'Parent hub') {
+        localStorage.setItem('curatedurl', '/adults/curated/parent-hub');
+        this.logeventservice.logEvent('click_parent_hub');
+        // this.route.navigate(['/adults/curated/have-calm-mind'])
+        this.route.navigate(['/adults/dashboard/parent-hub'])
+
+      }
     }else {
       if (this.isloggedIn) {
         let fill = this.personalisedforyou.filter((d) => d['name'] === name);

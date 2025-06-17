@@ -48,6 +48,10 @@ export class AdultsService {
     {
       id: "8",
       name: 'Manage your emotions',
+    },
+     {
+      id: "18",
+      name: 'Parent hub',
     }
   ]
 
