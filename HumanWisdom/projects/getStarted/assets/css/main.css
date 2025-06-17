@@ -5178,6 +5178,12 @@ padding: 15px;
 .p-tp{
   padding-top:5% !important
 }
-
-
+.m-top72{
+margin-top: -72px !important;
+}
+.quotation-comma{
+  justify-content: right;
+    display: flex
+;
+}
 
