@@ -256,9 +256,9 @@ export class SharedService {
         },
          {
           id: "18",
-          displayName: "Parenting",
+          displayName: "Parent-hub",
           active: false,
-          name: 'Effective Parenting ',
+          name: 'Parent hub',
         },
         {
           id: "0",
