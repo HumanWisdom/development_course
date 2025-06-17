@@ -300,7 +300,7 @@
                     Three steps to enquiry,
                   </a>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
-                    Guided questions
+                    Guided journaling
                   </a>
                 </h4>
 

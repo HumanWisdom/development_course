@@ -1722,7 +1722,7 @@
                       </h4>
 
                       <h4 class="mt10px mb15px fs_15px fw_400 lh_150p fc_000000">
-                        Journal your thoughts and feelings. Explore our guided questions to understand yourself, and find fresh ways of dealing with life’s challenges.
+                        Journal your thoughts and feelings. Explore our Guided journaling to understand yourself, and find fresh ways of dealing with life’s challenges.
                       </h4>
 
                       <a href="https://happierme.app/adults/journal">

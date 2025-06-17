@@ -212,7 +212,7 @@
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt30px mb60px">
               <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
-                With more than 70 bite-sized modules we help users feel better now, and then take them deeper to understand the root cause of problems, for prevention and long-term benefit. Additional support is available from our coaches and through our forum. Our online journal with guided questions aids self-reflection, which can bring transformation.
+                With more than 70 bite-sized modules we help users feel better now, and then take them deeper to understand the root cause of problems, for prevention and long-term benefit. Additional support is available from our coaches and through our forum. Our online journal with Guided journaling aids self-reflection, which can bring transformation.
               </h4>
             </div>
   
@@ -455,14 +455,14 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1000">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_journal.svg" class="img-responsive img_aspects" alt="Journal & Guided Questions">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_journal.svg" class="img-responsive img_aspects" alt="Journal & Guided journaling">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
-                    Journal & Guided Questions
+                    Journal & Guided journaling
                   </h3>
                 </div>
               </div>

@@ -210,7 +210,7 @@ How HappierMe is Making a Difference</h4>
 
                 <h4 class="mtb0px blog_desc">
                   
-                HappierMe provides resources to help teens manage their acute emotional distress and overwhelming emotions, through breathing exercises, meditations, tapping exercises and online journaling aided by guided questions. There is also a community forum where they can ask one of our trained coaches a question anonymously. They can also access coaches for individual conversations.
+                HappierMe provides resources to help teens manage their acute emotional distress and overwhelming emotions, through breathing exercises, meditations, tapping exercises and online journaling aided by Guided journaling. There is also a community forum where they can ask one of our trained coaches a question anonymously. They can also access coaches for individual conversations.
 
                 <h4 class="mtb0px blog_desc">
                   
