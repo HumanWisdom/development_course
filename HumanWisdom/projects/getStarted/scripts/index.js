@@ -52,7 +52,7 @@ setTimeout(() => {
             })
         document.getElementById('newsPopup')?.click();
     }
-}, 5000);
+}, 20000);
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {

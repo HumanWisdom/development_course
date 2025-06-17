@@ -5150,6 +5150,12 @@ padding: 15px;
     display: none !important;
   }
 
+  .error {
+    margin-left: 3px;
+      color: red;
+      font-size: 0.9em;
+    }
+
 
   .w-98p {
     width: 98% !important;
@@ -5172,6 +5178,12 @@ padding: 15px;
 .p-tp{
   padding-top:5% !important
 }
-
-
+.m-top72{
+margin-top: -72px !important;
+}
+.quotation-comma{
+  justify-content: right;
+    display: flex
+;
+}
 
