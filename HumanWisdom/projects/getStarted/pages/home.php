@@ -578,17 +578,17 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
         <div class="row center_flex div_subscription">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  40% off HappierMe Premium
-                </h2>
+              <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                    40% off HappierMe Premium
+                  </h2>
 
-                <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-                  Start your free trial today!
-                </h6>
+                  <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+                    Start your free trial today!
+                  </h6>
+                </div>
               </div>
-            </div>
 
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
@@ -664,15 +664,15 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
               </div>
             </div>
 
-            <div id="PricingSelectBtn" class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" >
+            <!-- <div id="PricingSelectBtn" class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" >
               <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-              <a > 
-              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-end">
-                  Start your free trial today
-                </button>
+                <a > 
+                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-end">
+                    Start your free trial today
+                  </button>
+                </a>
               </div>
-    </a>
-            </div>
+            </div> -->
 
           </div>
         </div>
