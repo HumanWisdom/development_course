@@ -33089,6 +33089,12 @@ body *
   background: #65BFC2;
 }
 
+.div_sate .col-lg-6:nth-child(9) button
+{
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
+  background: #F1AC5E;
+}
+
 .div_sate .col-lg-6,
 .div_fi_a .col-lg-6,
 .div_fi_b .col-lg-6
@@ -33868,7 +33874,11 @@ body *
   /* background: #CB6171; */
   background: #A54265;
 }
+.div_ct .col-lg-6:nth-child(9) button
+{
 
+  background: #F1AC5E;
+}
 .div_ct .col-lg-6
 {
   padding-bottom: 10px;
