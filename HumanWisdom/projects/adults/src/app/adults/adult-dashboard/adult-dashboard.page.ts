@@ -571,7 +571,7 @@ export class AdultDashboardPage implements OnInit {
         element: ".tour_journal",
         popover: {
           title: 'Journal',
-          description: 'Your private journal with guided questions (visible only to you).',
+          description: 'Your private journal with Guided journaling (visible only to you).',
           side: "top"
         }
       },

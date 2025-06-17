@@ -16,7 +16,7 @@ export class S35009Page implements OnInit {
   title="Program Features "
   content=[{"no":1,
   "heading":"Online Journal",
-  "text":"A record of your reflections as you go through the program, either within a module, or just a thought you had. There are also guided questions on a topic, and a question of the day.",
+  "text":"A record of your reflections as you go through the program, either within a module, or just a thought you had. There are also Guided journaling on a topic, and a question of the day.",
   "link":"/adults/journal",
   "linkText":"",
   "module-id":""},
