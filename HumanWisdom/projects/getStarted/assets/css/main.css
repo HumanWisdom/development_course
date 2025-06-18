@@ -5187,3 +5187,8 @@ margin-top: -72px !important;
 ;
 }
 
+.btn_disabled {
+  background: rgba(0, 0, 0, 0.2) !important;
+  cursor: not-allowed !important;
+}
+

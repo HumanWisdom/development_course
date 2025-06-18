@@ -724,11 +724,14 @@ document.addEventListener('DOMContentLoaded', function() {
       allFieldsFilled()
     ) {
       downloadBtn.disabled = false;
-      // alert('Please fill up all the fields');
+      downloadBtn.classList.remove('btn_disabled'); // Add class when enabled
+      // ...existing code...
       return false;
     
     } else {
       downloadBtn.disabled = true;
+      downloadBtn.classList.add('btn_disabled'); // Remove class when disabled
+      // ...existing code...
       return true;
     }
   }
