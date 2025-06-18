@@ -321,7 +321,7 @@
                           </div>
                           <!-- <div class="row mt15px"> -->
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent" >
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input " >
                               <input type="text" class="form-control fc_01" id="signup-email" name="news-email" placeholder="Your email">
                               <div class="fc_icons">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
@@ -334,7 +334,7 @@
 
   <div class="row mb10px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input" id="signup-password-conatiner">
                                                      <input type="password" class="form-control fc_01" id="signup-password" name="signup-password" placeholder="Password">
 
                           <div class="fc_icons">
@@ -540,21 +540,6 @@
 const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
-function emailLogin(email, password) {
-  const params = new URLSearchParams({
-    email: email,
-    pwd: password,
-    ProgID: ProgramId
-  });
-  return fetch(`${API_BASE_URL}/AddLearner`, {
-    method: 'POST'
-  })
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    });
-}
-
 function addLearner(fname, email, password) {
   const body = JSON.stringify({
     FName: fname,
@@ -562,7 +547,7 @@ function addLearner(fname, email, password) {
     Email: email,
     Pwd: password
   });
-  return fetch(`${API_BASE_URL}/AddLearner`, {
+  return fetch(`${API_BASE_URL}/AddLearner_Website`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -638,17 +623,19 @@ document.getElementById('download-app-btn').addEventListener('click', function()
   // Optionally, validate email/password here
   addLearner(fname, email, password)
     .then(data => {
-      // Hide info message on success or error
       if (infoDiv) infoDiv.style.display = 'none';
-      if (data && (data.errorMessage || data.error || data.message)) {
-        alert('Signup failed: ' + (data.errorMessage || data.error || data.message));
-        return;
+      let id = parseInt(data);
+      if(isNaN(id)) {
+         alert(data);
+      }else{
+           window.location.href = "../pages/download_qr.php";
       }
-      window.location.href = "../pages/download_qr.php";
+      // Hide info message on success or error
+   
     })
     .catch(err => {
       if (infoDiv) infoDiv.style.display = 'none';
-      alert('Signup failed');
+      alert('Internal Server Error');
     });
 });
 
@@ -690,13 +677,16 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateEmail() {
       const emailInput = document.getElementById('signup-email');
       const messageContainer = document.getElementById('input_parents');
+      const signuppasswordconatiner = document.getElementById('signup-password-conatiner');
       messageContainer.innerHTML = '';
+     signuppasswordconatiner.classList.remove('mt10');
       if(emailInput.value!=""){
        if ( !isValidEmail(emailInput.value)) {
         const errorSpan = document.createElement('span');
         errorSpan.className = 'error';
         errorSpan.textContent = 'Please enter a valid email address.';
         messageContainer.appendChild(errorSpan);
+        signuppasswordconatiner.classList.add('mt10');
       }
       }
     }
@@ -708,11 +698,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const repeatPassword = document.getElementById('signup-repeat-password').value;
       if (password !== repeatPassword) {
       const pwdContainer = document.getElementById('password-container');
-      pwdContainer.innerHTML = '';
+     
+        if(password.length>0 && repeatPassword.length>0){
+        pwdContainer.innerHTML = '';
         const errorSpan = document.createElement('span');
         errorSpan.className = 'error';
         errorSpan.textContent = 'Passwords do not match.';
         pwdContainer.appendChild(errorSpan);
+        }
   }else{
    document.getElementById('password-container').innerHTML = '';
   }
