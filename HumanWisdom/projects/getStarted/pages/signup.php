@@ -695,7 +695,7 @@ document.addEventListener('DOMContentLoaded', function() {
        if ( !isValidEmail(emailInput.value)) {
         const errorSpan = document.createElement('span');
         errorSpan.className = 'error';
-        errorSpan.textContent = 'Invalid email';
+        errorSpan.textContent = 'Please enter a valid email address.';
         messageContainer.appendChild(errorSpan);
       }
       }
