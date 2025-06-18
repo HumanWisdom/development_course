@@ -545,7 +545,8 @@ function addLearner(fname, email, password) {
     FName: fname,
     Lname: "",
     Email: email,
-    Pwd: password
+    Pwd: password,
+    OrchaId:'12345'
   });
   return fetch(`${API_BASE_URL}/AddLearner_Website`, {
     method: 'POST',
