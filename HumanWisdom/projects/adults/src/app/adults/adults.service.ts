@@ -518,13 +518,12 @@ export class AdultsService {
           localStorage.setItem("mediaAudio", JSON.stringify(mediaAudio))
           localStorage.setItem("mediaVideo", JSON.stringify(mediaVideo))
           if (localStorage.getItem("token") && (saveUsername == true)) {
-            userId = JSON.parse(localStorage.getItem("userId"))
-            userName = JSON.parse(localStorage.getItem("userName"))
+            userId = localStorage.getItem("userId")
+            userName = localStorage.getItem("userName")
           }
           else {
-            userId = JSON.parse(sessionStorage.getItem("userId"))
-            userName = JSON.parse(sessionStorage.getItem("userName"))
-
+            userId = sessionStorage.getItem("userId")
+            userName = sessionStorage.getItem("userName")
           }
           //this.getBookmarks()
           setTimeout(() => {

@@ -17,7 +17,7 @@ export class S131030Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/10"
-  link="/relationships/s131031"
+  link="/teenagers/relationships/s131031"
   name="#2  Different types of relationships"
   progressImg=""
   toc="teenagers/relationships/s131001"
@@ -35,6 +35,7 @@ export class S131030Page implements OnInit {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
       this.userName=JSON.parse(localStorage.getItem("userName"))
+     
   
     }
       this.getProgress()
