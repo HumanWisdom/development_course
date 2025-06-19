@@ -18,7 +18,7 @@ export class S131230Page implements OnInit
   userName:any
   progressPercent:any
   progressText="7/10"
-  link="/relationships/s131231"
+  link="/teenagers/relationships/s131231"
   name="#8  The art of successful relationships"
   progressImg=""
   toc="teenagers/relationships/s131001"
