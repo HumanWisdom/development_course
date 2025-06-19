@@ -29,7 +29,11 @@ const routes: Routes = [
   {
     path: 'newsletter-signup',
     component: NewsletterComponent
+  },  {
+    path: 'parent-hub',
+    loadChildren: () => import('./parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
   }
+
 ];
 
 @NgModule({

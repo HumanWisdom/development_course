@@ -13,10 +13,12 @@ import { ProgramType } from '../../../shared/models/program-model';
 import moengage from "@moengage/web-sdk";
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 
+
 // import { MoengageService } from './moengage.service';
 import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { CommonService } from '../../../shared/services/common.service';
+import { ParentHubPage } from './parent-hub/parent-hub.page';
 
 @Component({
   selector: 'app-root',
