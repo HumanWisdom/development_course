@@ -77,8 +77,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px mb0px">
             <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
-              HappierMe aims to bring human beings together to explore our shared humanity and live with wisdom. We are here to reduce suffering, help people lead happier lives, and make the world a better place.
-            </h4>
+Here you will find easy to use tools to manage your emotions and mental health, build fulfilling relationships and live a happier life, in peace with yourself and others. We support you to feel better, and then go deeper to understand yourself and the root cause of problems for lasting change. Our mission is to reduce suffering, help people lead happier lives, and make the world a better place.            </h4>
           </div>
         </div>
       </div>
@@ -111,7 +110,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
-                    70+ modules
+                    75+ modules
                   </h3>
                 </div>
               </div>
@@ -119,7 +118,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-                    An all-in-one app with 70+ modules, covering every aspect of life
+                    Hundreds of videos, podcasts, stories, blogs and more.
                   </h5>
                 </div>
               </div>
