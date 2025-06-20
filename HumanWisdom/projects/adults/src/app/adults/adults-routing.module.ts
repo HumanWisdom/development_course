@@ -14,6 +14,8 @@ import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
 import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
+import { ParentHubPageModule } from '../parent-hub/parent-hub.module';
+import { ParentHubPage } from '../parent-hub/parent-hub.page';
 
 const routes: Routes = [
   {
@@ -46,6 +48,11 @@ const routes: Routes = [
   {
     path: 'note',
     loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
+  },
+
+  {
+    path: 'parent-hub',
+    loadChildren: () => import('../parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
   },
   {
     path: 'coursenote',
