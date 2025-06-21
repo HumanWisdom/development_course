@@ -101,7 +101,7 @@ export class S47370p1Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/relationships/s47000'])
+    this.router.navigate(['/adults/relationships/s47370p1'])
   }
 
   ngOnDestroy() {

@@ -95,14 +95,14 @@ export class FindInspiration  {
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg',
       url:'find-answers/why-do-i'
     }, 
-   /*  { 
+    { 
       title: 'Soundscapes', 
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg',
-      url:'events'
-    },    */
+      url:'sound-capes'
+    },   
      
     { 
       title: 'Events', 
