@@ -702,9 +702,14 @@ const routes: Routes = [
     component: QuestionAnswersSelection
   },
   {
-    path: 'sound-capes',
+    path: 'soundscapes',
     component: CommonScreenPage
-  }
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
 ];
 
  @NgModule({

@@ -17,7 +17,7 @@ export class CommonScreenPage implements OnInit {
 
   config: any; // Accepts configuration JSON
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp"
+  tocImage:string='';
   tocColor = "white"
 
   path: string;
@@ -43,26 +43,27 @@ export class CommonScreenPage implements OnInit {
     this.address = this.router.url;
     this.config = SharedService.getScreenConfiguration("SoundCapes");
     this.prefData=this.config.preferenceData;
-
+   this.tocImage = this.config.tocImage;
   }
 
     getClickEvent(data) {
+    if(!this.isSubscriber && data['SoundscapeID'] > 3) {
+         this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
+         return ;
+    }
+
+
       if (data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')) {
         data['MediaUrl'] = data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
       }
       let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/', '~'));
       const title = data['Title']?.replaceAll(' ', '-')
-      this.router.navigate(['adults/audiopage/', concat, data['SoundscapeID'], 'T', title])
+      const moduleName = this.config['moduleName'];
+      this.router.navigate([`${SharedService.getprogramName()}/audiopage/`, concat, data['SoundscapeID'], 'T', title,moduleName])
   }
 
   ngOnInit() {
-    // Use config for meta if provided
-    // if (this.config?.meta) {
-    //   this.title.setTitle(this.config.meta.title);
-    //   this.meta.updateTag({ property: 'title', content: this.config.meta.title });
-    //   this.meta.updateTag({ property: 'description', content: this.config.meta.description });
-    //   this.meta.updateTag({ property: 'keywords', content: this.config.meta.keywords });
-    // }
+
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
     this.isSubscriber = (userid === 'T' && sub === '1');

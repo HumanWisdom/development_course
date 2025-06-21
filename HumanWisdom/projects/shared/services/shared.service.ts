@@ -459,7 +459,7 @@ export class SharedService {
   public static getScreenConfiguration(name="") {
       if(name =='SoundCapes'){
         return {
-          moduleName: "SoundsCapes",
+          moduleName: "Soundscapes",
           shortDescription: "Explore a variety of soundscapes designed to help you relax, focus, and sleep better.",
           preferenceData: [
               {
@@ -482,11 +482,12 @@ export class SharedService {
   filterByProgramId: "ProgIDs",
   sort: null,
   transform: null,
-  localStorageKey: "wisdomShortData",
+  localStorageKey: "soundsCapes",
   shareBaseUrl: "https://happierme.app",
   shareTitle: "HappierMe Program",
   shareText: "Hey, check out the HappierMe Program",
   checkIsFreeMethod: "CheckShortsIsFree",
+  tocImage:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sounndscapes.webp",
   searchFields: ["Title", "searchtags"],
   videoUrlField: "VideoUrl",
   titleField: "Title"

@@ -320,6 +320,11 @@ const routes: Routes = [
     component: SingleAudioContentComponent
   },
   {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
     path: 'audiopage/:audiolink/:RowId/:enable',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
@@ -544,7 +549,7 @@ const routes: Routes = [
     component: QuestionAnswersSelection
   },
   {
-    path: 'sound-capes',
+    path: 'soundscapes',
     component: CommonScreenPage
   }
 ];
