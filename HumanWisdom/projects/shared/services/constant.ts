@@ -1,4 +1,5 @@
 
+// constant file for shared services
 export class Constant {
     public static HwpSubscriptionPlan: string = "HwpSubscriptionPlan";
     public static MonthlyPlan = 'Monthly';
