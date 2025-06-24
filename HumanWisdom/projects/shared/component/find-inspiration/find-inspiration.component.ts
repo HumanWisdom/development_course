@@ -101,7 +101,7 @@ export class FindInspiration  {
       color: '#191d3a',
       height:'',
       img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg',
-      url:'sound-capes'
+      url:'soundscapes'
     },   
      
     { 
