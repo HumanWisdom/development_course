@@ -101,11 +101,11 @@ export class S47364Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/relationships/s47365'])
+        this.router.navigate(['/adults/relationships/s47370'])
 
       },
       () => {
-        this.router.navigate(['/adults/relationships/s47365'])
+        this.router.navigate(['/adults/relationships/s47370'])
       })
 
 

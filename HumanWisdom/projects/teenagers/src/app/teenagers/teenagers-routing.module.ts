@@ -12,6 +12,7 @@ import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
 import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
+import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 
 
 const routes: Routes = [
@@ -319,6 +320,11 @@ const routes: Routes = [
     component: SingleAudioContentComponent
   },
   {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
     path: 'audiopage/:audiolink/:RowId/:enable',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
@@ -541,6 +547,10 @@ const routes: Routes = [
   {
     path: 'wellness-survey',
     component: QuestionAnswersSelection
+  },
+  {
+    path: 'soundscapes',
+    component: CommonScreenPage
   }
 ];
 

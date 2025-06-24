@@ -454,6 +454,47 @@ export class SharedService {
       }
     }
   }
+
+
+  public static getScreenConfiguration(name="") {
+      if(name =='SoundCapes'){
+        return {
+          moduleName: "Soundscapes",
+          shortDescription: "Explore a variety of soundscapes designed to help you relax, focus, and sleep better.",
+          preferenceData: [
+              {
+                id: "999",
+                active: true,
+                name: 'All'
+              },
+              {
+                id: "1",
+                active: false,
+                name: 'Sound For Relaxation'
+              },
+              {
+                id: "2",
+                active: false,
+                name: 'Sound For Sleep'
+              }
+            ],
+            apiMethod: "getSoundsCapesList",
+  filterByProgramId: "ProgIDs",
+  sort: null,
+  transform: null,
+  localStorageKey: "soundsCapes",
+  shareBaseUrl: "https://happierme.app",
+  shareTitle: "HappierMe Program",
+  shareText: "Hey, check out the HappierMe Program",
+  checkIsFreeMethod: "CheckShortsIsFree",
+  tocImage:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sounndscapes.webp",
+  searchFields: ["Title", "searchtags"],
+  videoUrlField: "VideoUrl",
+  titleField: "Title"
+        };
+      }
+
+  }
 }
 
 

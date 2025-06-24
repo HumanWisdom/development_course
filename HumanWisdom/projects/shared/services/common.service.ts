@@ -568,4 +568,8 @@ export class CommonService {
   GetIntroContents(id): Observable<any> {
     return this.http.get(this.path + `/GetIntroContents/` + id)
   }
+
+  getSoundsCapesList(): Observable<any> {
+    return this.http.get(this.path + '/GetSoundsCapesList/9');
+  }
 }

@@ -10725,7 +10725,7 @@ body,
 
 .select_box
 {
-  height: 76px !important;
+  min-height: 57px !important;
   padding: 10px;
   overflow: auto;
   width: 100%;
@@ -14568,8 +14568,10 @@ input[type="number"] {
   color: #5D5D5D;
   border: 0;
   border-radius: 50%;
-  height: 6rem;
-  width: 6rem;
+  /* height: 6rem;
+  width: 6rem; */
+  height: 48px;
+  width: 48px;
   margin-right: 0;
 }
 
@@ -19233,9 +19235,9 @@ ngx-circular-player svg
 
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
   text-align: center;
   color: #FFFFFF;
   white-space: pre-wrap;
@@ -33952,10 +33954,10 @@ body *
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: #120F40;
-  padding: 20px 16px;
+  padding: 16px 16px;
   margin: 0;
   margin: 0 5px;
-  min-height: 160px;
+  /* min-height: 160px; */
 }
 
 .div_ns 

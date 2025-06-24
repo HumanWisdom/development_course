@@ -110,3 +110,6 @@ www
 *.pb
 # SvelteKit build output
 .scannerwork/scanner-report/issues-48.pb
+
+*.ppk
+*.pem

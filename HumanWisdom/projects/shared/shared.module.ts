@@ -105,6 +105,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from './component/happierme-quotation/happierme-quotation.page';
 import { FindInspiration } from './component/find-inspiration/find-inspiration.component';
 import { QuestionAnswersSelection } from './component/question-answers-selection/question-answers-selection.page';
+import { CommonScreenPage } from './component/common-screen/common-screen.page';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -204,7 +205,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     DashboardComponent,
     HappierMeQuotationPage,
     FindInspiration,
-    QuestionAnswersSelection
+    QuestionAnswersSelection,
+    CommonScreenPage
   ],
   imports: [
     CommonModule,
@@ -323,7 +325,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     SectionCard,
     MyDashboardComponent,
     FindInspiration,
-    QuestionAnswersSelection
+    QuestionAnswersSelection,
+    CommonScreenPage
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },

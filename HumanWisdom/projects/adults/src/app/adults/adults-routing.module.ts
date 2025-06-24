@@ -16,6 +16,8 @@ import { HappierMeQuotationPage } from '../../../../shared/component/happierme-q
 import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
 import { ParentHubPageModule } from '../parent-hub/parent-hub.module';
 import { ParentHubPage } from '../parent-hub/parent-hub.page';
+import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
+
 
 const routes: Routes = [
   {
@@ -706,7 +708,16 @@ const routes: Routes = [
   {
     path: 'wellness-survey',
     component: QuestionAnswersSelection
-  }
+  },
+  {
+    path: 'soundscapes',
+    component: CommonScreenPage
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
 ];
 
  @NgModule({
