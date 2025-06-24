@@ -228,7 +228,44 @@
     display: inline-flex;
 ;
 }
+@media (min-width: 1920px) {
+  /* Styles for screens 1920px wide and larger */
+  .max-w {
+    max-width: 59% !important;
+  }
+}
 
+.happy-wide-img {
+  display: none;
+}
+
+/* Show only on wide screens */
+@media (min-width: 1920px) {
+
+  .max-w {
+    max-width: 59% !important;
+  }
+  .happy-wide-img {
+    display: block;
+    width:100%
+  }
+  .w-51p{
+    width:51% !important
+  }
+
+  .display_mw_none, /* mobile image */
+  .display_dw_none { /* desktop image */
+    display: none !important;
+  }
+  .btn-start{
+    width: 529px;
+    height: 93px;
+    border-radius: 44px;
+  }
+  .h-64p{
+    height:64px !important;
+  }
+}
 </style>
     
   </head>
@@ -408,7 +445,7 @@
         <div class="section-header">
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 res-testemonial testi-flex">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 res-testemonial testi-flex max-w">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
            <div class="testnew w-98p">
               
@@ -418,7 +455,7 @@
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="quotation-comma">
-                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive h-64p width_unseti" alt="quotation" loading=lazy> 
                 
     </div>
     </div> 
@@ -464,7 +501,7 @@ HappierMe is the best app I have found to assist entire families, and the root c
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="quotation-comma">
-                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti h-64p" alt="quotation" loading=lazy> 
                 
     </div>
     </div> 
@@ -518,9 +555,11 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_user+.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_user+.webp" class="img-responsive display_m_none display_mw_none w100p" alt="modules" loading=lazy>
 
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none ml-mobile" alt="modules" loading=lazy>
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none display_dw_none ml-mobile" alt="modules" loading=lazy>
+          
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/imgs/happuUserWide.png" class="happy-wide-img" alt="happy user" loading=lazy>
           </div>
         </div>
      
@@ -531,7 +570,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
           <section>
             <div class="section-headernew mob-section">
               <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ">
                   <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0.7">
                     Discover HappierMe in just 1 minute
                   </h2>
@@ -540,7 +579,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
           
 
               <div class="row center_flex mob-section" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 w-51p">
                 <!--  <video id="homeVideo" controls playinline class="w100p"
                     poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
                     controlsList="nodownload">
