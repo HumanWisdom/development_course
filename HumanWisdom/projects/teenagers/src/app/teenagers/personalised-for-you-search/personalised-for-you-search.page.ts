@@ -69,7 +69,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public resume = []
   public bookmarkLength: any
   public exerciseNo: any;
-  public tourTotalIndex = 3;
+  public tourTotalIndex = 1;
   public tourIndex = 1;
   public Title: string = '';
   currentList = [];
