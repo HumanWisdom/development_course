@@ -78,7 +78,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bullyingP: any
   public externalapprovalP: any;
   public exerciseNo: any;
-  public tourTotalIndex = 3;
+  public tourTotalIndex = 1;
   public tourIndex = 1;
 
 
