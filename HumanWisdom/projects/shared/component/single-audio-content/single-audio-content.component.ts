@@ -41,7 +41,7 @@ export class SingleAudioContentComponent implements OnInit {
     let Id = rowid <= 9 ? '0' + rowid : rowid;
     let moduleName :any = this.route.snapshot.paramMap.get('moduleName');
     if( moduleName && moduleName != 'undefined') {
-      this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${moduleName}/${Id}.webp`;
+      this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${moduleName.toLowerCase()}/${Id}.webp`;
     }else{
         this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
     }
