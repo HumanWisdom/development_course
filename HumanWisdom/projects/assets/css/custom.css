@@ -34815,7 +34815,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .btn_ctd 
 {
-  height: 32px;
+  height: 50px;
   width: 100%;
   margin: 0;
   border: 0;
