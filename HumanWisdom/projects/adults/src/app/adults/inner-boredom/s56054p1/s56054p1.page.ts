@@ -101,7 +101,7 @@ export class S56054p1Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/inner-boredom/s56001'])
+    this.router.navigate(['/adults/inner-boredom/s56053'])
   }
 
   ngOnDestroy() {

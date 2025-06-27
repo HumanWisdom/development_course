@@ -101,7 +101,7 @@ export class S37017p1Page implements OnInit {
 
   prev() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/three-steps-enquiry/s37000'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37017'])
   }
 
   ngOnDestroy() {
