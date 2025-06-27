@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
 // import { NavigationService } from '../../../../../../shared/services/navigation.service';
 // import { SharedService } from '../../../../../../shared/services/shared.service';
 // import { Constant } from '../../../../../shared/services/constant';
-import { SharedService } from '../../../../shared/services/shared.service';
-import { NavigationService } from '../../../../shared/services/navigation.service';
-import { AdultsService } from '../adults/adults.service';
-import { Constant } from '../../../../shared/services/constant';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { AdultsService } from '../../adults.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 
 @Component({
@@ -542,8 +542,8 @@ export class ParentHubPage implements OnInit {
      }
    }
  
-   routeToMentalHealthDash(){
-     this.router.navigate(['/adults/dashboard/mental-health']);
+   routeToParentHubDash(){
+     this.router.navigate(['/adults/dashboard/parent-hub']);
    }
  }
  

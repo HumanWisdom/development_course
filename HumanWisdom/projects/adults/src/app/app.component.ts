@@ -18,7 +18,7 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { CommonService } from '../../../shared/services/common.service';
-import { ParentHubPage } from './parent-hub/parent-hub.page';
+import { ParentHubPage } from './adults/curated/parent-hub/parent-hub.page';
 
 @Component({
   selector: 'app-root',

@@ -387,7 +387,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   routeManageSubscriptiont(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (this.ios || SharedService.isAndroid) {
+    if (this.ios || this.isAndroid) {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {

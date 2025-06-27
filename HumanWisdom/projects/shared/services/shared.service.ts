@@ -355,7 +355,8 @@ export class SharedService {
         { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
-        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" },
+        { "id": 19, "name": "parent-hub" ,"title":"Parent hub" }
       ]
       return data.filter(x => x.name == name)[0];
     }

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ParentHubPageRoutingModule } from './parent-hub-routing.module';
 
 import { ParentHubPage } from './parent-hub.page';
-import { SharedModule } from '../../../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
