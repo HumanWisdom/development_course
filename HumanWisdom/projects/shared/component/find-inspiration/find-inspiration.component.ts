@@ -38,7 +38,7 @@ export class FindInspiration  {
     url:'journal'
     }, 
      { 
-      title: ' Guided programs', 
+      title: 'PATHWAY', 
       icon: 'star', 
       color: '#191d3a',
       height:'',
