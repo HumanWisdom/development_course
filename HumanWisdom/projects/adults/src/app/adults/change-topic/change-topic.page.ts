@@ -181,7 +181,12 @@ export class ChangeTopicPage implements OnInit {
                   localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
                   this.logeventservice.logEvent('click_calm_mind');
                   this.url='/adults/curated/have-calm-mind';
+                } else if (this.selectedname === 'Parent hub') {
+                  localStorage.setItem('curatedurl', '/adults/curated/parent-hub');
+                  this.logeventservice.logEvent('click_parent_hub');
+                  this.url='/adults/curated/parent-hub';
                 }
+
               }
             
 

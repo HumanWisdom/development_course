@@ -14,8 +14,8 @@ import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
 import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
-import { ParentHubPageModule } from '../parent-hub/parent-hub.module';
-import { ParentHubPage } from '../parent-hub/parent-hub.page';
+import { ParentHubPageModule } from './curated/parent-hub/parent-hub.module';
+import { ParentHubPage } from './curated/parent-hub/parent-hub.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 
 
@@ -54,7 +54,7 @@ const routes: Routes = [
 
   {
     path: 'parent-hub',
-    loadChildren: () => import('../parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
+    loadChildren: () => import('./curated/parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
   },
   {
     path: 'coursenote',
