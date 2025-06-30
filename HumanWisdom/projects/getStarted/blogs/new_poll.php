@@ -173,10 +173,7 @@ That’s 76% of people saying leadership failure has more to do with emotional r
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
   >
 </iframe>
-<h2 class="mtb30px fs_15px fw_600 lh_120p  tcenter">
-                Podcast on self-awareness and leadership
 
-              </h2>
 <h4 class="mtb0px blog_desc">
 
 </h4>
@@ -391,6 +388,11 @@ Decision making:</b> We help leaders make better decisions by understanding thei
                   </ul>
                 </h4>
                 <iframe title="Self-awareness helps leaders succeed" allowtransparency="true" height="300" width="100%" style="border: none; min-width: min(100%, 430px);height:300px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?from=embed&i=fpdcb-159b94d-pb&square=1&share=0&download=1&fonts=Arial&skin=654771&font-color=auto&rtl=0&logo_link=none&btn-skin=c73a3a&size=300" loading="lazy" allowfullscreen=""></iframe>
+
+                  <h2 class="mtb30px fs_15px fw_600 lh_120p  tcenter">
+                Podcast on self-awareness and leadership
+
+              </h2>
 
                                 <h4 class="mtb0px blog_title">
 
