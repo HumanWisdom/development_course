@@ -173,6 +173,10 @@ That’s 76% of people saying leadership failure has more to do with emotional r
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
   >
 </iframe>
+<h2 class="mtb30px fs_15px fw_600 lh_120p  tcenter">
+                Podcast on self-awareness and leadership
+
+              </h2>
 <h4 class="mtb0px blog_desc">
 
 </h4>
@@ -301,7 +305,7 @@ Decision-Making and Resilience Still Count
                  <h4 class="mtb0px blog_desc">
 
                
-                
+                Leaders who make poor decisions often do so because they’re emotionally overwhelmed or unaware.
 
                 
                 </h4>
@@ -327,9 +331,9 @@ The HappierMe Approach to Better Leadership
                 </h4>
                 <h4 class="mtb0px blog_desc">
 At 
-                               <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-
-HappierMe,</a> we believe leadership starts with self-awareness. You can’t lead others well if you don’t understand your own mind or can manage your own emotions.</h4>
+                               
+<span class="blog_highlight_black">
+HappierMe,</span> we believe leadership starts with self-awareness. You can’t lead others well if you don’t understand your own mind or can manage your own emotions.</h4>
 <h4 class="mtb0px blog_desc">
 That’s why our                                <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/wisdom-for-workplace">
 work and leadership section </a>focuses on emotional intelligence, mindfulness, and relationship-building, giving leaders the skills they often missed in traditional leadership training.</h4>
@@ -341,8 +345,9 @@ work and leadership section </a>focuses on emotional intelligence, mindfulness, 
 </span>
 </h4>
                 <h4 class="mtb0px blog_desc">
+                    <span class="blog_highlight_black">
 
-Here’s how HappierMe helps:
+Here’s how HappierMe helps:</span>
 
 
                
@@ -415,7 +420,9 @@ With the right tools, like those provided by   It’s time to shift the narrativ
                      At HappierMe, we’re on a mission to help leaders do the inner work that leads to wider organisational impact.
                 </span> </h4>
                  <h4 class="mtb0px blog_desc">
-               Because great leadership starts from within.
+                                                      <span class="blog_highlight_black">
+
+               Because great leadership starts from within.</span>
 </h4>
  <h4 class="mtb0px blog_desc">
 Want to learn more about our tools for successful leadership?
@@ -435,7 +442,7 @@ Download the Happierme app </a>and explore it for free.
 </iframe>
 
 
-<h4 class="mtb0px blog_title">
+<h4 class="mtb30px blog_title">
             Find out more:
             </h4>
              <ul>
