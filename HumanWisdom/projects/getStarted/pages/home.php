@@ -129,16 +129,22 @@
     height: 120px !important;
   }
   .width_mob{
-    width: 550px !important;
+    width: 620px !important;
   }
   .mob-section{
-    width: 550px !important;
+    width: 667px !important;
   }
   .ml-mobile{
-    margin-left:66px !important
+    margin-left:135px !important
+  }
+  
+}
+@media (min-width: 1800px) and (max-width: 2600px) {
+   .max-w-50 {
+    max-width: 57% !important;
+    margin-top:31px !important
   }
 }
-
 /* For viewports 1000px and above */
 @media (min-width: 1000px) {
   .testnew {
@@ -181,6 +187,9 @@
     .resp-font{
     font-size:83px !important
 
+  }
+    .max-w-50 {
+    max-width: 55% !important;
   }
   .res-mr{
       margin-top: 75px !important;
@@ -227,6 +236,7 @@
     width: 548px;
     display: inline-flex;
 ;
+
 }
 @media (min-width: 1920px) {
   /* Styles for screens 1920px wide and larger */
@@ -245,6 +255,7 @@
   .max-w {
     max-width: 59% !important;
   }
+
   .happy-wide-img {
     display: block;
     width:100%
@@ -266,6 +277,73 @@
     height:64px !important;
   }
 }
+
+@media (max-width: 767px) {
+  .img-test {
+    height: 74px !important;
+  }
+      .testnew {
+        width: 155% !important;
+        margin-left: 0 !important;
+    }
+ .single-line-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    .col-3 {
+      flex: 0 0 30%;
+      max-width: 30%;
+      padding: 0 5px;
+    }
+    .col-9 {
+      flex: 0 0 70%;
+      max-width: 70%;
+      padding: 0 5px;
+    }
+    .text-container {
+      padding-left: 8px;
+    }
+      .icon-container {
+      display: none;
+    }
+    .text-container {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+      padding: 0 15px;
+    }
+    .fs_21px {
+      font-size: 18px !important;
+      line-height: 1.4 !important;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-start {
+      padding: 10px 60px;
+    }
+}
+    @media (max-width: 767px) {
+      .testi-flex {
+        flex-direction: column;
+      }
+      .ml-13rem{
+        margin-left:13rem !important
+      }
+      .testnew {
+        width: 155% !important;
+        margin-left: 40px !important;
+        max-height:225px !important
+      }
+      .col-12 {
+        padding: 0 15px;
+      }
+      .btn-m8{    margin-left: 8rem !important}
+    }
+
 </style>
     
   </head>
@@ -335,9 +413,9 @@
 
       <div class="row center_flex web_home_divnew width_mob">
 
-        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock">
+        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10  ddflex_mblock max-w-50">
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 pd-left "  data-aos="fade-up" data-aos-delay="100">
             
               <img
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/AdultHome2.svg" class="img-responsive w100p display_m_none max-width-px w-img h-402"  loading="lazy"  alt="performance"
@@ -359,76 +437,75 @@
               </div>
             </div>
 
-             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
-                </div>
+ <div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p icon-container">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading="lazy">
+    </div>
+    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 text-container">
+      <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
+        Overcome stress and anxiety
+      </h3>
+    </div>
+  </div>
+</div>
 
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
-                 Overcome stress and anxiety  </h3>
-                </div>
-              </div>
-            </div>
+<div class="row mtb5px">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p icon-container">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading="lazy">
+    </div>
+    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 text-container">
+      <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
+        Manage your emotions and be happier
+      </h3>
+    </div>
+  </div>
+</div>
 
-            <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
-                </div>
+<div class="row mtb5px">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p icon-container">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading="lazy">
+    </div>
+    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 text-container">
+      <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
+        Build stronger relationships
+      </h3>
+    </div>
+  </div>
+</div>
 
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
-                  Manage your emotions and be happier
-                  </h3>
-                </div>
-              </div>
-            </div>
+<div class="row mtb5px">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p icon-container">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading="lazy">
+    </div>
+    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 text-container">
+      <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
+        Develop soft skills to succeed at work
+      </h3>
+    </div>
+  </div>
+</div>
 
-             <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
-                </div>
-
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
-                  Build stronger relationships
-                  </h3>
-                </div>
-              </div>
-            </div>
-             <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
-                </div>
-
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                  <h3 class="mtb0px fs_21px fw_400 lh_140p fc_000000">
-                 Develop soft skills to succeed at work
-                  </h3>
-                </div>
-              </div>
-            </div>
-            
 
             
 
-            <div class="row mt30px" id="PricingSelectBtnHomePage">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
-              <a class="">
+            
+
+<div class="row mt30px" id="PricingSelectBtnHomePage">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+              <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res btn-m8">
+      <a class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-start" >
-                    Start your free trial
-                    </button>
-                  </a>
-                </div>
+          Start your free trial
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
 
-                
-              </div>
-            </div>
 
             
 
@@ -441,104 +518,85 @@
     <main id="main">
 
      
-       <section>
-        <div class="section-header">
-                    <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 res-testemonial testi-flex max-w">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
-           <div class="testnew w-98p">
-              
-
-           
-
-             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="quotation-comma">
-                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive h-64p width_unseti" alt="quotation" loading=lazy> 
-                
-    </div>
-    </div> 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
-                        <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
-                </div>
-
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                  <h5  style="margin-top:21px ; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
-                        Brenda McChesney
-                        </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000"style="text-align:left"; >
-                        Director, National Family Support Network, USA
-    </h3>
-                </div>
-                
-              </div>
-            </div>
-
-           
-
-            
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block res-mr" style="text-align:left; font-style:italic;" ; >
-
-HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.               </div>
-            </div>
-
-          </div>
-    </div>
-
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 "  data-aos="fade-up" data-aos-delay="200">
-          <div class="testnew ml-res w-88p ml-3p">  
+<section>
+<div class="section-header">
+  <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+    <div class="col-lg-9 col-md-9 col-sm-12 col-12 p0 res-testemonial testi-flex max-w">
+      <!-- First Testimonial (Unchanged) -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up" data-aos-delay="100">
+        <div class="testnew w-98p">
           <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              
-
-           
-
-             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-12">
               <div class="quotation-comma">
-                        <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti h-64p" alt="quotation" loading=lazy> 
-                
-    </div>
-    </div> 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p0">
-                        <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
-                </div>
-
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                  <h5  style="margin-top:21px; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
-                       
-                        Adam Beagley
-                        </h5>
-                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left";>
-Student, UK    </h3>
-                </div>
-                
+                <img style="margin-top:-53px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive h-64p width_unseti" alt="quotation" loading="lazy">
               </div>
             </div>
-
-           
-
-            
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 res-mr dinline_block"style=" text-align:left; font-style:italic;";>
-
-HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.              </div>
+            <div class="col-12">
+              <div class="row align-items-center single-line-container">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 p0">
+                  <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive img-test width_unseti" alt="Brenda McChesney" loading="lazy">
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-9 text-container">
+                  <h5 class="mtb0px fs_21px fw_600 lh_150p fc_000000" style="text-align:left; margin: 0;">
+                    Brenda McChesney
+                  </h5>
+                  <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left; margin: 0;">
+                    Director, National Family Support Network, USA
+                  </h3>
+                </div>
+              </div>
             </div>
-    </div>
           </div>
-    </div>
+          <div class="row">
+            <div class="col-12 p0">
+              <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block res-mr" style="text-align:left; font-style:italic;">
+                HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.
+              </h3>
+            </div>
+          </div>
         </div>
-    </div>
       </div>
-    </section>
+
+      <!-- Second Testimonial (Updated) -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up" data-aos-delay="200">
+        <div class="testnew w-98p">
+          <div class="row">
+            <div class="col-12">
+              <div class="quotation-comma">
+                <img style="margin-top:-53px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti h-64p" alt="quotation" loading="lazy">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row align-items-center single-line-container">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 p0">
+                  <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive img-test width_unseti" alt="Adam Beagley" loading="lazy">
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-9 text-container">
+                  <h5 class="mtb0px fs_21px fw_600 lh_150p fc_000000" style="text-align:left; margin: 0;">
+                    Adam Beagley
+                  </h5>
+                  <h3 class="mtb0px fs_15px fw_400 lh_150p fc_00000" style="text-align:left; margin: 0;">
+                    Student, UK
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 p0">
+              <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 res-mr dinline_block" style="text-align:left; font-style:italic;">
+                HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</section>
      
       
 
