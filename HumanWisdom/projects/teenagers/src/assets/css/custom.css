@@ -888,7 +888,7 @@ h2 {
   width: 100%;
   float: left;
   clear: both;
-  margin-top: 5px;
+  margin-top: 50px !important; 
 }
 /* .x_content h4 {
   font-size: 16px;

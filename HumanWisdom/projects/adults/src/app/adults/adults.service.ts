@@ -51,7 +51,7 @@ export class AdultsService {
     },
      {
       id: "18",
-      name: 'Parent hub',
+      name: 'For Parents',
     }
   ]
 

@@ -258,7 +258,7 @@ export class SharedService {
           id: "18",
           displayName: "Parent-hub",
           active: false,
-          name: 'Parent hub',
+          name: 'For Parents',
         },
         {
           id: "0",
@@ -356,7 +356,7 @@ export class SharedService {
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
         { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" },
-        { "id": 19, "name": "parent-hub" ,"title":"Parent hub" }
+        { "id": 19, "name": "parent-hub" ,"title":"For parents" }
       ]
       return data.filter(x => x.name == name)[0];
     }
@@ -461,7 +461,7 @@ export class SharedService {
       if(name =='SoundCapes'){
         return {
           moduleName: "Soundscapes",
-          shortDescription: "Explore a variety of soundscapes designed to help you relax, focus, and sleep better.",
+          shortDescription: "Explore a variety of soundscapes designed to help you relax, focus, and sleep better. These sounds have been carefully chosen to help you relax. You can also use them as part of your meditation or breathing practice.",
           preferenceData: [
               {
                 id: "999",
