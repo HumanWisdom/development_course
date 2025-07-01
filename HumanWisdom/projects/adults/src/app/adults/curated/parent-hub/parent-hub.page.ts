@@ -54,13 +54,13 @@ export class ParentHubPage implements OnInit {
         this.guest = localStorage.getItem('guest') === 'T' ? true : false;
         this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
   
-        this.service.GetPodcastsListing('2').subscribe((res) => {
+        this.service.GetPodcastsListing('18').subscribe((res) => {
           if (res) {
             this.mediaUrl = res
           }
         })
   
-        this.service.GetWisdomShortsListing('2').subscribe((res) => {
+        this.service.GetWisdomShortsListing('18').subscribe((res) => {
           if (res) {
             this.wisdomShortsDynamic = res
           }
