@@ -183,7 +183,7 @@ export class CommonService {
   }
 
   GetPodcastList(): Observable<any> {
-    return this.http.get(this.path + '/GetPodcastsListing');
+    return this.http.get(this.path + `/GetPodcastsListing/${SharedService.ProgramId}`);
   }
 
   emaillogin(id = '') {

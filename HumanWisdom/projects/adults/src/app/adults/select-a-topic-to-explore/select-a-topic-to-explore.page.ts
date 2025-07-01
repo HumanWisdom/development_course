@@ -247,9 +247,9 @@ export class SelectATopicToExplorePage implements OnInit {
         this.route.navigate(['/adults/dashboard/meditation'])
 
       }
-       else if (name === 'Parent hub') {
+       else if (name === 'For Parents') {
         localStorage.setItem('curatedurl', '/adults/curated/parent-hub');
-        this.logeventservice.logEvent('click_parent_hub');
+        this.logeventservice.logEvent('click_for_parents');
         // this.route.navigate(['/adults/curated/have-calm-mind'])
         this.route.navigate(['/adults/dashboard/parent-hub'])
 
