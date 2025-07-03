@@ -1920,7 +1920,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-    } else if (name === 'Manage your mental health') {
+    } else if (name === 'Manage your mental wellbeing') {
       this.logeventservice.logEvent('click_mental_health');
       this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
     } else if (name === 'Overcome unhelpful habits') {
@@ -1941,6 +1941,9 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }  else if (name === 'Succeed in life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
+    } else if (name === 'Build your self awareness') {
+      this.logeventservice.logEvent('click_self_awareness');
+      this.router.navigate(['/teenagers/wisdom-exercise'])
     }
   }
 

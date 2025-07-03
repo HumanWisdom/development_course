@@ -33936,6 +33936,11 @@ body *
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
   background: #E58D82;
 }
+.div_ct .col-lg-6:nth-child(10) button
+{
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
+  background: #834B66;
+}
 
 .div_ct .col-lg-6
 {

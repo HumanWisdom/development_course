@@ -202,56 +202,63 @@ export class SelectATopicToExplorePage implements OnInit {
   clickbtn(name, val = '', event, ind, id) {
     if (val === '') {
       localStorage.setItem('storyNumber', id);
-      if (name === 'Manage your emotions') {
+      if (id==8) {
         localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
         // this.route.navigate(['/adults/curated/manage-your-emotions'])
         this.route.navigate(['/adults/dashboard/manage-your-emotions'])
-      } else if (name === 'Manage your mental health') {
+      } else if (id==2) {
         localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
         // this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
         this.route.navigate(['/adults/dashboard/mental-health'])
-      } else if (name === 'Work and Leadership') {
+      } else if (id==1) {
         localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
         this.logeventservice.logEvent('click_workplace');
         // this.route.navigate(['/adults/curated/wisdom-for-workplace'])
         this.route.navigate(['/adults/dashboard/work-and-leadership'])
 
-      } else if (name.includes('Relationship')) {
+      } else if (id==3) {
         localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
         // this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
         this.route.navigate(['/adults/dashboard/relationships'])
-      } else if (name === 'Be happier') {
+      } else if (id==4) {
         localStorage.setItem('curatedurl', '/adults/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
         // this.route.navigate(['/adults/curated/be-happier'])
         this.route.navigate(['/adults/dashboard/be-happier'])
-      } else if (name === 'Habits and Addiction') {
+      } else if (id==5) {
         localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
         this.logeventservice.logEvent('click_habits_addiction');
         // this.route.navigate(['/adults/curated/change-unhelpful-habits'])
         this.route.navigate(['/adults/dashboard/habits-and-addiction'])
 
-      } else if (name.includes('loss')) {
+      } else if (id==6) {
         localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
         this.logeventservice.logEvent('click_sorrow_loss');
         // this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
         this.route.navigate(['/adults/dashboard/deal-with-loss'])
 
-      } else if (name === 'Meditation') {
+      } else if (id==7) {
         localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
         this.logeventservice.logEvent('click_calm_mind');
         // this.route.navigate(['/adults/curated/have-calm-mind'])
         this.route.navigate(['/adults/dashboard/meditation'])
 
       }
-       else if (name === 'For Parents') {
+       else if (id==18) {
         localStorage.setItem('curatedurl', '/adults/curated/parent-hub');
         this.logeventservice.logEvent('click_for_parents');
         // this.route.navigate(['/adults/curated/have-calm-mind'])
         this.route.navigate(['/adults/dashboard/parent-hub'])
+
+      }
+       else if (id === "19") {
+        localStorage.setItem('curatedurl', '/adults/wisdom-exercise');
+        this.logeventservice.logEvent('click_for_self_awareness');
+        // this.route.navigate(['/adults/curated/have-calm-mind'])
+        this.route.navigate(['/adults/wisdom-exercise'])
 
       }
     }else {

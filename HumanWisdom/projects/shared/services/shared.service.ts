@@ -356,7 +356,8 @@ export class SharedService {
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
         { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" },
-        { "id": 19, "name": "parent-hub" ,"title":"For parents" }
+        { "id": 19, "name": "parent-hub" ,"title":"For Parents" },
+        { "id": 20, "name": "wisdom-exercise" ,"title":"Build your self awareness" }
       ]
       return data.filter(x => x.name == name)[0];
     }
@@ -370,7 +371,8 @@ export class SharedService {
         { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
         { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome Unhelpful Habits"},
         { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
-        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"}]
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"},
+        { "id": 21, "name": "wisdom-exercise" ,"title":"Build your self awareness" }]
       return data.filter(x => x.name == name)[0];
     }
   }
@@ -386,7 +388,9 @@ export class SharedService {
         { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addiction" },
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
-        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" },
+        { "id": 19, "name": "parent-hub" ,"title":"For Parents" },
+        { "id": 20, "name": "wisdom-exercise" ,"title":"Build your self awareness" }
       ]
       return data.filter(x => x.title == name)[0];
     }
@@ -400,7 +404,8 @@ export class SharedService {
         { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
         { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome unhelpful habits"},
         { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
-        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in life"}]
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in life"},
+        { "id": 21, "name": "wisdom-exercise" ,"title":"Build your self awareness" }]
       return data.filter(x => x.title == name)[0];
     }
   }
