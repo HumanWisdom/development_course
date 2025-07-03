@@ -51,7 +51,11 @@ export class TeenagersService {
     },
     {
       id: "10",
-      name: 'Manage your mental health'
+      name: 'Manage your mental wellbeing'
+    },
+    {
+      id: "20",
+      name: 'Build your self awareness'
     }
   ]
 

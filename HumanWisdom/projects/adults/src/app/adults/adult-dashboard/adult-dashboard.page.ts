@@ -4258,7 +4258,7 @@ export class AdultDashboardPage implements OnInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
-    } else if (name === 'Manage your mental health') {
+    } else if (name === 'Manage your mental wellbeing') {
       this.logeventservice.logEvent('click_stress_anxiety');
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
     } else if (name === 'Work and Leadership') {
@@ -4279,6 +4279,14 @@ export class AdultDashboardPage implements OnInit {
     } else if (name === 'Meditation') {
       this.logeventservice.logEvent('click_calm_mind');
       this.router.navigate(['/adults/curated/have-calm-mind'])
+    }
+    else if (name === 'For Parents') {
+      this.logeventservice.logEvent('click_for_parents');
+      this.router.navigate(['/adults/curated/parent-hub'])
+    }
+    else if (name === 'Build your self awareness') {
+      this.logeventservice.logEvent('click_self_awareness');
+      this.router.navigate(['/adults/wisdom-exercise'])
     }
   }
 

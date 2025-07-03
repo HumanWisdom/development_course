@@ -23,7 +23,7 @@ export class AdultsService {
     },
     {
       id: "2",
-      name: 'Manage your mental health'
+      name: 'Manage your mental wellbeing'
     },
     {
       id: "3",
@@ -52,6 +52,10 @@ export class AdultsService {
      {
       id: "18",
       name: 'For Parents',
+    },
+     {
+      id: "19",
+      name: 'Build your self awareness',
     }
   ]
 
