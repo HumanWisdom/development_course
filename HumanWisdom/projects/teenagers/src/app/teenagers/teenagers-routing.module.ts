@@ -293,8 +293,8 @@ const routes: Routes = [
   },
   {
     path: 'find-answers/:url',
-    loadChildren: () => import('../teenagers/find-answers/find-answers.module').then(m => m.FindAnswersModule)
-  },
+    loadChildren: () => import('./find-answers/find-answers.module').then(m => m.FindAnswersModule)
+  }, 
   {
     path: 'feel-better-now',
     loadChildren: () => import('../../../../shared/component/feel-better-now/feel-better-now.module').then(m => m.FeelBetterNowModule),

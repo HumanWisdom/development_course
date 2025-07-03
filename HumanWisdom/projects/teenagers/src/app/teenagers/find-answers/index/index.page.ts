@@ -72,8 +72,8 @@ export class IndexPage implements OnInit {
 
   changeURLParams(parameter: string) {
     const newUrl = this.location.path().split('/')[0] + `${parameter}`;
-    this.location.replaceState('/find-answers/'+newUrl);
-    this.router.navigate(['/find-answers/'+newUrl], { replaceUrl: true, skipLocationChange: true })
+    this.location.replaceState('teenagers/find-answers/'+newUrl);
+    this.router.navigate(['teenagers/find-answers/'+newUrl], { replaceUrl: true, skipLocationChange: true })
   }
 
   youtube(link) {

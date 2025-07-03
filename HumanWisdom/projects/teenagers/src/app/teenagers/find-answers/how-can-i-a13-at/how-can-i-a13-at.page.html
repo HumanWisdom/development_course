@@ -1,9 +1,122 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>how_can_i_a13_at</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
 
-<ion-content>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
 
-</ion-content>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0 mt40px">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                        Choose a career
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <app-audio-player class="audio-test" 
+                          audioLink="https://d1tenzemoxuh75.cloudfront.net/podcasts/129.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+These days there are so many choices in terms of a career it can be confusing to decide what to do, especially when you are young.                     </p>
+
+                    <p>
+You have so many voices telling you what to do - your parents, family, your friends and your teachers. You are also being influenced by what you see on social media. In addition to this there are your own fears for the future you may not be aware of, or your desire to be rich and famous because you think that will make you happy. In the midst of this snow storm of confusion you need to find clarity, listen to your own voice and make a decision. 
+                    </p>
+
+                    <p>
+How do you decide? Journaling is a good way to find that clarity in your own mind.
+Begin by writing about what your interests are, and your strengths. A good career is a combination of the two. There is no point aspiring to be an accountant if you are not good with numbers or a basketball player if you are not tall enough. You aslo need to earn a living and be practical about how you are going to do that.
+
+                    <p>
+                   The next step is to explore all your conditioning influences which are impacting your thinking - these influences are not wrong but being aware of them can help you decide for yourself. If your parents have been teachers, you may decide on a teaching career - but is that what you really want? Or if you see TikTok influencers having a good time, you may want to be one yourself - but do you realise that only a small fraction make any moeny from it?
+
+                    </p>
+
+                    <p>
+You are often told to follow your passion - but what if you don’t know what that is yet? And you may hear of many famous people who were successful doing that - singers and actors for example, but you don’t hear of the countless others who weren’t successful. You can love acting for example, but don’t have to make a living from that. It could become a hobby instead.
+
+                    <p>
+Being happy and loving what you do is as important as doing what you love. You can be a delivery driver and be happy or the prime minister and be unhappy. Our jobs can contribute to our happiness, but its mostly an inside job and depends on many other factors.
+
+                    <p>
+
+Understanding the many fears operating in the background is useful becasue these fears shape our decisions in many ways - stopping us from doing something we love, or pushing us to do something we don’t like at all becasue of our fear for the future. 
+
+                    </p>
+
+                    <p>
+You will have many different careers in your life and some jobs you will do have not been created as yet. The important thing is to get started with a positive attitude.
+
+
+
+                    </p>
+                    <p>
+The module that follows offers a way to find that clarity for yourself, so you can make the right choice, for this stage of your life.
+</p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
